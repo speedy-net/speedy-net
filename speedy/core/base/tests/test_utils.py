@@ -3,13 +3,15 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     from datetime import date
 
-    from django.test import override_settings
-
-    from speedy.core.base.test.mixins import TestCaseMixin
     from speedy.core.base.test.models import SiteTestCase
-    from speedy.core.base.test.decorators import only_on_sites_with_login
 
     from speedy.core.base.utils import normalize_slug, normalize_username, timesince
+
+    if (django_settings.LOGIN_ENABLED):
+        from django.test import override_settings
+
+        from speedy.core.base.test.mixins import TestCaseMixin
+        from speedy.core.base.test.decorators import only_on_sites_with_login
 
 
     class NormalizeSlugOnlyEnglishTestCase(SiteTestCase):
@@ -88,96 +90,97 @@ if (django_settings.TESTS):
             self.assertEqual(first=normalize_username(username='.this_is...a_slug--'), second='thisisaslug')
 
 
-    class TimeSinceTestCaseMixin(TestCaseMixin):
-        def test_timesince(self):
-            today = date.today()
-            self.assertEqual(first=timesince(d=today, now=today), second="")
+    if (django_settings.LOGIN_ENABLED):
+        class TimeSinceTestCaseMixin(TestCaseMixin):
+            def test_timesince(self):
+                today = date.today()
+                self.assertEqual(first=timesince(d=today, now=today), second="")
 
 
-    @only_on_sites_with_login
-    class TimeSinceEnglishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='en')
+        @only_on_sites_with_login
+        class TimeSinceEnglishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='en')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='fr')
-    class TimeSinceFrenchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='fr')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fr')
+        class TimeSinceFrenchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fr')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='de')
-    class TimeSinceGermanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='de')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='de')
+        class TimeSinceGermanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='de')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='es')
-    class TimeSinceSpanishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='es')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='es')
+        class TimeSinceSpanishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='es')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='pt')
-    class TimeSincePortugueseTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='pt')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pt')
+        class TimeSincePortugueseTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pt')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='it')
-    class TimeSinceItalianTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='it')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='it')
+        class TimeSinceItalianTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='it')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='nl')
-    class TimeSinceDutchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='nl')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='nl')
+        class TimeSinceDutchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='nl')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='sv')
-    class TimeSinceSwedishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='sv')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class TimeSinceSwedishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='ko')
-    class TimeSinceKoreanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='ko')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class TimeSinceKoreanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='fi')
-    class TimeSinceFinnishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='fi')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class TimeSinceFinnishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
-    @only_on_sites_with_login
-    @override_settings(LANGUAGE_CODE='he')
-    class TimeSinceHebrewTestCase(TimeSinceTestCaseMixin, SiteTestCase):
-        def validate_all_values(self):
-            super().validate_all_values()
-            self.assertEqual(first=self.language_code, second='he')
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='he')
+        class TimeSinceHebrewTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='he')
 
 
