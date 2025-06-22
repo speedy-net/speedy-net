@@ -25,7 +25,7 @@ jobs:
           - 'ubuntu-22.04'
           - 'ubuntu-24.04'
         is-all-languages:
-          - ${{ contains(github.ref, 'all-languages') }}
+          - ${{ contains(github.ref, 'test-all-languages') }}
         is-main-or-staging:
           - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
