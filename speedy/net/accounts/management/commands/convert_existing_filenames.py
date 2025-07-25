@@ -40,7 +40,7 @@ class Command(BaseCommand):
             if (old_path == new_path):
                 logger.debug('convert_existing_filenames::Skipped renaming file {id}.'.format(id=file.id))
             else:
-                logger.info('convert_existing_filenames::Renaming file {id} from {old_path} to {new_path}.'.format(
+                logger.debug('convert_existing_filenames::Renaming file {id} from {old_path} to {new_path}.'.format(
                     id=file.id,
                     old_path=old_path,
                     new_path=new_path,
