@@ -7,7 +7,10 @@ def uuid_dir(instance, filename):
         instance.generate_id_if_needed()
 
     str_id = str(instance.id)
-    stem = hashlib.md5('$$$-{}-$$$'.format(instance.id).encode('utf-8')).hexdigest()
+    stem_sha384 = hashlib.sha384('$$$-{}-$$$'.format(instance.id).encode('utf-8')).hexdigest()
+    assert (len(stem_sha384) == 96)
+    stem = stem_sha384[-32:]
+    assert (len(stem) == 32)
     _, extension = os.path.splitext(filename)
     filename = '{}{}'.format(stem, extension.lower())
     return '/'.join([

@@ -215,7 +215,7 @@ class SiteProfileManager(BaseManager):
                         other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                     else:
                         # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                        s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "97-97a").encode('utf-8')).hexdigest(), 16) % 12
+                        s = int(hashlib.sha384("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "97-97a").encode('utf-8')).hexdigest()[-32:], 16) % 12
                         if (5 <= s < 9):  # 4/12
                             other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
                         elif (9 <= s < 12):  # 3/12
@@ -224,7 +224,7 @@ class SiteProfileManager(BaseManager):
                             other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 if (django_settings.USE_DISTANCE_BETWEEN_USERS_FROM_IPAPI_RESULTS):
                     # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                    s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "92-92a").encode('utf-8')).hexdigest(), 16) % 6000
+                    s = int(hashlib.sha384("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "92-92a").encode('utf-8')).hexdigest()[-32:], 16) % 6000
                     if (0 <= s < 1920):  # 1920/6000
                         if (0 <= s < 144):  # 144/6000
                             index = (s % 3) * 2
@@ -331,7 +331,7 @@ class SiteProfileManager(BaseManager):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 20 * 30
                 other_user.speedy_match_profile._user_last_visit_days_offset += other_user.speedy_match_profile.profile_picture_months_offset * 30
                 # Generate a random number which changes every 4 hours, but doesn't change when reloading the page.
-                s = int(hashlib.md5("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "98-98a").encode('utf-8')).hexdigest(), 16) % 77
+                s = int(hashlib.sha384("$$$-{}-{}-{}-{}-{}-$$$".format(user.id, other_user.id, today.isoformat(), (datetime_now.hour // 4), "98-98a").encode('utf-8')).hexdigest()[-32:], 16) % 77
                 if (74 <= s < 77):  # 3/77
                     other_user.speedy_match_profile._user_last_visit_days_offset -= 6 * 30
                 elif (71 <= s < 74):  # 3/77
