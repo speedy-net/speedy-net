@@ -9,8 +9,10 @@ def uuid_dir(instance, filename):
     str_id = str(instance.id)
     stem_sha384 = hashlib.sha384('$$$-{}-$$$'.format(instance.id).encode('utf-8')).hexdigest()
     assert (len(stem_sha384) == 96)
+    assert (stem_sha384 == stem_sha384.lower())
     stem = stem_sha384[-32:]
     assert (len(stem) == 32)
+    assert (stem == stem.lower())
     _, extension = os.path.splitext(filename)
     filename = '{}{}'.format(stem, extension.lower())
     return '/'.join([

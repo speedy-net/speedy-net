@@ -48,6 +48,7 @@ if (django_settings.TESTS):
                 json_response = json.loads(r.content.decode())
                 self.assertEqual(first=len(json_response['files'][0]['uuid']), second=20)
                 stem_sha384 = hashlib.sha384('$$$-{}-$$$'.format(json_response['files'][0]['uuid']).encode('utf-8')).hexdigest()
+                self.assertEqual(first=stem_sha384, second=stem_sha384.lower())
                 self.assertEqual(first=json_response['files'][0]['name'], second=stem_sha384[-32:])
                 self.assertEqual(first=json_response['files'][0]['name'], second=stem_sha384[64:96])
                 self.assertEqual(first=json_response['files'][0]['name'], second=stem_sha384[64:])
