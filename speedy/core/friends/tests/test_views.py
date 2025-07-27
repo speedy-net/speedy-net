@@ -241,7 +241,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserFriendshipRequestViewEnglishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesEnglishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -249,7 +249,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserFriendshipRequestViewFrenchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesFrenchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -257,7 +257,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserFriendshipRequestViewGermanTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesGermanTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -265,7 +265,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserFriendshipRequestViewSpanishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesSpanishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -273,7 +273,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserFriendshipRequestViewPortugueseTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesPortugueseTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -281,7 +281,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserFriendshipRequestViewItalianTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesItalianTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -289,7 +289,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserFriendshipRequestViewDutchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesDutchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -297,7 +297,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='sv')
-        class UserFriendshipRequestViewSwedishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesSwedishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -305,7 +305,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='ko')
-        class UserFriendshipRequestViewKoreanTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesKoreanTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -313,7 +313,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
-        class UserFriendshipRequestViewFinnishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesFinnishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -321,7 +321,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserFriendshipRequestViewHebrewTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class UserFriendshipRequestViewAllLanguagesHebrewTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -354,7 +354,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class CancelFriendshipRequestViewEnglishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesEnglishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -362,7 +362,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class CancelFriendshipRequestViewFrenchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesFrenchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -370,7 +370,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class CancelFriendshipRequestViewGermanTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesGermanTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -378,7 +378,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class CancelFriendshipRequestViewSpanishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesSpanishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -386,7 +386,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class CancelFriendshipRequestViewPortugueseTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesPortugueseTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -394,7 +394,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class CancelFriendshipRequestViewItalianTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesItalianTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -402,7 +402,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class CancelFriendshipRequestViewDutchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesDutchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -410,7 +410,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='sv')
-        class CancelFriendshipRequestViewSwedishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesSwedishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -418,7 +418,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='ko')
-        class CancelFriendshipRequestViewKoreanTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesKoreanTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -426,7 +426,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
-        class CancelFriendshipRequestViewFinnishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesFinnishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -434,7 +434,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class CancelFriendshipRequestViewHebrewTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class CancelFriendshipRequestViewAllLanguagesHebrewTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -543,7 +543,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class AcceptFriendshipRequestViewEnglishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesEnglishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -551,7 +551,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class AcceptFriendshipRequestViewFrenchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesFrenchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -559,7 +559,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class AcceptFriendshipRequestViewGermanTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesGermanTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -567,7 +567,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class AcceptFriendshipRequestViewSpanishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesSpanishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -575,7 +575,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class AcceptFriendshipRequestViewPortugueseTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesPortugueseTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -583,7 +583,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class AcceptFriendshipRequestViewItalianTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesItalianTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -591,7 +591,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class AcceptFriendshipRequestViewDutchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesDutchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -599,7 +599,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='sv')
-        class AcceptFriendshipRequestViewSwedishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesSwedishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -607,7 +607,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='ko')
-        class AcceptFriendshipRequestViewKoreanTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesKoreanTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -615,7 +615,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
-        class AcceptFriendshipRequestViewFinnishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesFinnishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -623,7 +623,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class AcceptFriendshipRequestViewHebrewTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class AcceptFriendshipRequestViewAllLanguagesHebrewTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -665,7 +665,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RejectFriendshipRequestViewEnglishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesEnglishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -673,7 +673,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class RejectFriendshipRequestViewFrenchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesFrenchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -681,7 +681,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class RejectFriendshipRequestViewGermanTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesGermanTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -689,7 +689,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class RejectFriendshipRequestViewSpanishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesSpanishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -697,7 +697,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class RejectFriendshipRequestViewPortugueseTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesPortugueseTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -705,7 +705,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class RejectFriendshipRequestViewItalianTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesItalianTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -713,7 +713,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class RejectFriendshipRequestViewDutchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesDutchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -721,7 +721,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='sv')
-        class RejectFriendshipRequestViewSwedishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesSwedishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -729,7 +729,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='ko')
-        class RejectFriendshipRequestViewKoreanTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesKoreanTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -737,7 +737,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
-        class RejectFriendshipRequestViewFinnishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesFinnishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -745,7 +745,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class RejectFriendshipRequestViewHebrewTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
+        class RejectFriendshipRequestViewAllLanguagesHebrewTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -793,7 +793,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RemoveFriendViewEnglishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesEnglishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -801,7 +801,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class RemoveFriendViewFrenchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesFrenchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -809,7 +809,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class RemoveFriendViewGermanTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesGermanTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -817,7 +817,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class RemoveFriendViewSpanishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesSpanishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -825,7 +825,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class RemoveFriendViewPortugueseTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesPortugueseTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -833,7 +833,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class RemoveFriendViewItalianTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesItalianTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -841,7 +841,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class RemoveFriendViewDutchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesDutchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -849,7 +849,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='sv')
-        class RemoveFriendViewSwedishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesSwedishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -857,7 +857,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='ko')
-        class RemoveFriendViewKoreanTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesKoreanTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -865,7 +865,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
-        class RemoveFriendViewFinnishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesFinnishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -873,7 +873,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class RemoveFriendViewHebrewTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
+        class RemoveFriendViewAllLanguagesHebrewTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
