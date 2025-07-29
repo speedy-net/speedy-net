@@ -664,7 +664,7 @@ if (django_settings.TESTS):
                 # Using a password that is too short or with too few unique characters.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=480000)
-                invalid_password = random.choice(['8' * 3, '8' * 10, '10203040', 'abcdef'])
+                invalid_password = random.choice(['8' * 3, '8' * 10, '10203040', 'abc', 'abcdef'])
                 hasher = PBKDF2PasswordHasher()
                 encoded = hasher.encode(password=invalid_password, salt=hasher.salt(), iterations=iterations)
                 user = DefaultUserFactory()
