@@ -3052,7 +3052,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_message_dict_by_gender[self.user.get_gender()]])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_confirmed_your_email_address_success_message_dict_by_gender[self.user.get_gender()]])
                 self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=True)
 
             def test_wrong_user_login_logs_user_out_and_redirects_to_login(self):
@@ -3264,7 +3264,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address='email@example.com')])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(email_address='email@example.com')])
                 email_address = UserEmailAddress.objects.get(email='email@example.com')
                 self.assertIs(expr1=email_address.is_primary, expr2=False)
                 self.assertEqual(first=len(mail.outbox), second=1)
@@ -3449,7 +3449,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_error_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
                 self.assertEqual(first=len(mail.outbox), second=1)
                 self.assertEqual(first=mail.outbox[0].subject, second={
                     django_settings.SPEEDY_NET_SITE_ID: self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.user.get_gender()],
@@ -3697,7 +3697,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_error_message])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._the_email_address_was_deleted_success_message])
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
@@ -3922,7 +3922,7 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 r = self.client.get(path='/edit-profile/credentials/')
                 self.assertEqual(first=r.status_code, second=200)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_error_message])
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._you_have_changed_your_primary_email_address_success_message])
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
