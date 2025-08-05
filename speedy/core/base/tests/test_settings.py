@@ -14,12 +14,19 @@ if (django_settings.TESTS):
         def test_xd_auth_sites(self):
             self.assertListEqual(list1=django_settings.XD_AUTH_SITES, list2=django_settings.SITES_WITH_LOGIN)
 
+        def test_templates_top_sites(self):
+            self.assertListEqual(list1=django_settings.TEMPLATES_TOP_SITES, list2=django_settings.SITES_WITH_LOGIN)
+
         def test_login_enabled(self):
             self.assertEqual(first=django_settings.LOGIN_ENABLED, second=(django_settings.SITE_ID in django_settings.SITES_WITH_LOGIN))
+            self.assertEqual(first=django_settings.LOGIN_ENABLED, second={django_settings.SPEEDY_NET_SITE_ID: True, django_settings.SPEEDY_MATCH_SITE_ID: True, django_settings.SPEEDY_COMPOSER_SITE_ID: False, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: False}[self.site.id])
 
         def test_languages(self):
             self.assertListEqual(list1=[language_code for language_code, language_name in django_settings.LANGUAGES], list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
             self.assertListEqual(list1=self.all_language_codes, list2=[language_code for language_code, language_name in django_settings.LANGUAGES])
+            self.assertEqual(first=len([language_code for language_code, language_name in django_settings.LANGUAGES]), second={django_settings.SPEEDY_NET_SITE_ID: 11, django_settings.SPEEDY_MATCH_SITE_ID: 11, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
+            self.assertEqual(first=len(django_settings.LANGUAGES), second={django_settings.SPEEDY_NET_SITE_ID: 11, django_settings.SPEEDY_MATCH_SITE_ID: 11, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
+            self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 11, django_settings.SPEEDY_MATCH_SITE_ID: 11, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
 
         def test_languages_with_ads(self):
             self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2={django_settings.SPEEDY_NET_SITE_ID: {'en', 'fr', 'de', 'es', 'pt'}, django_settings.SPEEDY_MATCH_SITE_ID: {'en', 'fr', 'de', 'es', 'pt'}, django_settings.SPEEDY_COMPOSER_SITE_ID: set(), django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: set()}[self.site.id])
