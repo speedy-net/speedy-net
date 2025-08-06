@@ -39,7 +39,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 2):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
 
             def test_correct_password_and_delete_my_account_text(self):
                 data = {

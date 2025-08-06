@@ -43,7 +43,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
                     self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
 
 
         @only_on_speedy_net

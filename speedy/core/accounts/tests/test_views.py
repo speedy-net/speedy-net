@@ -66,7 +66,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
                         self.assert_me_url_redirects_to_welcome_url()
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     if (random_choice == 1):
                         self.assertEqual(first=user.is_active, second=True)
@@ -87,9 +87,9 @@ if (django_settings.TESTS):
                         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
                         self.assert_me_url_redirects_to_welcome_url()
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
@@ -103,7 +103,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
@@ -161,7 +161,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.assert_models_count(
@@ -1600,7 +1600,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
                     entity_count=1,
@@ -1631,7 +1631,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
                         self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     if (self.random_choice == 1):
                         self.assertEqual(first=self.user.is_active, second=True)
@@ -1652,9 +1652,9 @@ if (django_settings.TESTS):
                         self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
                         self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_can_logout(self):
                 r = self.client.get(path='/')
@@ -1687,7 +1687,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.original_first_name = self.user.first_name
                 self.original_last_name = self.user.last_name
                 self.data = {
@@ -2398,7 +2398,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
@@ -2461,7 +2461,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
                     entity_count=1,
@@ -2504,7 +2504,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_models_count(
@@ -2806,7 +2806,7 @@ if (django_settings.TESTS):
                     r = self.client.get(path='/')
                     self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_inactive_user_can_open_the_page(self):
                 r = self.client.get(path=self.page_url)
@@ -2974,7 +2974,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
                         self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                     self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
                     r = self.client.get(path='/edit-profile/emails/')
                     self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
@@ -3008,9 +3008,9 @@ if (django_settings.TESTS):
                         self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
                         r = self.client.get(path='/edit-profile/credentials/')
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 return r
 
             def test_wrong_link_gives_404(self):
@@ -3173,7 +3173,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.confirmed_email_address.make_primary()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -3415,7 +3415,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -3556,7 +3556,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
                 self.confirmed_email_address_url = '/edit-profile/emails/{}/delete/'.format(self.confirmed_email_address.id)
@@ -3676,7 +3676,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     pass
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
@@ -3826,7 +3826,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.unconfirmed_email_address_url = '/edit-profile/emails/{}/set-primary/'.format(self.unconfirmed_email_address.id)
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
@@ -4039,7 +4039,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.email.make_primary()
                 self.assert_models_count(

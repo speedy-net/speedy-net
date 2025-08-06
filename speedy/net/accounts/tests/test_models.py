@@ -29,7 +29,7 @@ if (django_settings.TESTS):
                 elif (random_choice == 2):
                     user = SpeedyNetInactiveUserFactory(**user_factory_dict)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 user.save_user_and_profile()
                 return user
 

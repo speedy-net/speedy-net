@@ -170,7 +170,7 @@ if (django_settings.TESTS):
                     elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                         self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Unsupported SITE_ID.")
                     self.assertNotIn(member=escape(user.id), container=r.content.decode())
                 self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=0)
 
@@ -276,14 +276,14 @@ if (django_settings.TESTS):
                     elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                         self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Unsupported SITE_ID.")
                     self.assertIn(member=escape(user.id), container=r.content.decode())
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=0)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=3)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login
@@ -387,14 +387,14 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertIn(member=escape(user.id), container=r.content.decode())
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=0)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=1)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login

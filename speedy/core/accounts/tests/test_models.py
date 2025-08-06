@@ -1314,7 +1314,7 @@ if (django_settings.TESTS):
                         self.assertEqual(first=user.name, second=user.speedy_match_profile.get_name())
                         self.assertNotEqual(first=user.name, second=user.speedy_net_profile.get_name())
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_profile_last_visit_str(self):
                 """
@@ -1450,7 +1450,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.main_language_code, second=self.language_code)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 user.is_active = False
                 user.save()
                 user = User.objects.get(pk=user.pk)
@@ -1463,7 +1463,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.main_language_code, second=self.language_code)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 user.speedy_net_profile.deactivate()
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.main_language_code, second='en')
@@ -1474,7 +1474,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.main_language_code, second=self.language_code)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     pass
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
@@ -1497,7 +1497,7 @@ if (django_settings.TESTS):
                         else:
                             self.assertEqual(first=user.main_language_code, second='en')
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_deleted_user_name(self):
                 user = DefaultUserFactory()
@@ -1517,7 +1517,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.name, second=self._speedy_match_deleted_user_name)
                     self.assertNotEqual(first=user.name, second=self._speedy_net_deleted_user_name)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_deactivate_race_condition_profile_should_not_become_active(self):
                 user = ActiveUserFactory()
@@ -1531,7 +1531,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user_instance_2.is_active, second=True)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 # Race condition: profile should not become active.
                 with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
@@ -1543,7 +1543,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.is_active, second=True)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
                 user = ActiveUserFactory()
@@ -1555,14 +1555,14 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.profile.activation_step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
                     self.assertEqual(first=user.profile.activation_step, second=10)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 user_instance_2 = User.objects.get(pk=user.pk)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertIs(expr1=user_instance_2.photo is None, expr2=True)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertIs(expr1=user_instance_2.photo is None, expr2=False)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 if (not (user_instance_2.photo is None)):
                     image = user_instance_2.photo
                     image.visible_on_website = False
@@ -1578,7 +1578,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user_instance_2.profile.activation_step, second=2)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 # Race condition: profile should not become active.
                 with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
@@ -1590,7 +1590,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertEqual(first=user.profile.activation_step, second=2)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 # Reactivate.
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     user_instance_2.profile.activate()
@@ -1608,7 +1608,7 @@ if (django_settings.TESTS):
                     step, error_messages = user_instance_2.profile.validate_profile_and_activate()
                     self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertEqual(first=user_instance_2.profile.is_active, second=True)
                 # Race condition: profile should not become inactive.
                 with self.assertRaises(ConcurrencyError) as cm:
@@ -1622,7 +1622,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.profile.activation_step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
                     self.assertEqual(first=user.profile.activation_step, second=10)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_set_is_active_race_condition_user_model_should_not_change(self):
                 user = ActiveUserFactory()

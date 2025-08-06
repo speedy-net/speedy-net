@@ -155,7 +155,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 sleep(0.01)
                 self.user_5.profile.update_last_visit()
                 self.user_1 = User.objects.get(pk=self.user_1.pk)
@@ -174,7 +174,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_site_received_friendship_requests_list(self):
                 Friend.objects.add_friend(from_user=self.user_5, to_user=self.user_1)

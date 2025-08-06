@@ -103,7 +103,7 @@ if (django_settings.TESTS):
                     else:
                         raise NotImplementedError()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.user.save()
                 self.user_profile_url = '/{}/'.format(self.user.slug)
                 self.other_user = ActiveUserFactory()
@@ -138,7 +138,7 @@ if (django_settings.TESTS):
                     expected_url = '/login/?next={}'.format(self.user_profile_url)
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.deactivate_user()
                 r = self.client.get(path=self.user_profile_url)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
@@ -149,7 +149,7 @@ if (django_settings.TESTS):
                     expected_url = '/login/?next={}'.format(self.user_profile_url)
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_own_profile_logged_in(self):
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -161,7 +161,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotIn(member=escape(self.full_name), container=r.content.decode())
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                 self.assertIn(member=escape(self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
@@ -179,7 +179,7 @@ if (django_settings.TESTS):
                     expected_url = '/welcome/'
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_profile_month_day_format_from_friend(self):
                 # First, check if only the day and month are visible.
@@ -196,7 +196,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotIn(member=escape(self.full_name), container=r.content.decode())
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                 self.assertIn(member=escape(self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(self.birth_year), container=r.content.decode())
@@ -259,7 +259,7 @@ if (django_settings.TESTS):
                     expected_url = '/login/?next={}'.format(self.user_profile_url)
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.other_user.speedy_match_profile.min_age_to_match = 80
@@ -300,7 +300,7 @@ if (django_settings.TESTS):
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                     self.other_user.speedy_match_profile.min_age_to_match = 12
                     self.other_user.save_user_and_profile()
                     r = self.client.get(path=self.user_profile_url)
@@ -366,7 +366,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / Speedy Match",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Page Not Found / Speedy Net [alpha]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Page Not Found / Speedy Match",
@@ -425,7 +425,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "aliz-e-jacotey / Speedy Match [alpha]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Page Non Trouvée / Speedy Net [alpha]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Page Non Trouvée / Speedy Match [alpha]",
@@ -484,7 +484,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alpha]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Seite Nicht Gefunden / Speedy Net [alpha]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Seite Nicht Gefunden / Speedy Match [alpha]",
@@ -543,7 +543,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "lionel-messi / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Página No Encontrada / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Página No Encontrada / Speedy Match [alfa]",
@@ -602,7 +602,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "cristiano-ronaldo / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Página Não Encontrada / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Página Não Encontrada / Speedy Match [alfa]",
@@ -661,7 +661,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "andrea-bocelli / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Pagina Non Trovata / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Non Trovata / Speedy Match [alfa]",
@@ -720,7 +720,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
@@ -779,7 +779,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Sidan Kunde Inte Hittas / Speedy Match [alfa]",
@@ -838,7 +838,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [알파]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Net [알파]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "페이지를 찾을 수 없습니다. / Speedy Match [알파]",
@@ -897,7 +897,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "Sivua Ei Löydy / Speedy Net [alfa]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "Sivua Ei Löydy / Speedy Match [alfa]",
@@ -956,7 +956,7 @@ if (django_settings.TESTS):
                         django_settings.SPEEDY_MATCH_SITE_ID: "jennifer-connelly / ספידי מץ' [אלפא]",
                     }
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.expected_404_title = {
                     django_settings.SPEEDY_NET_SITE_ID: "הדף לא נמצא / ספידי נט [אלפא]",
                     django_settings.SPEEDY_MATCH_SITE_ID: "הדף לא נמצא / ספידי מץ' [אלפא]",

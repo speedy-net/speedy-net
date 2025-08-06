@@ -39,7 +39,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
                     self.assertRedirects(response=r, expected_url='/welcome/', status_code=302, target_status_code=200)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
 
 
         @only_on_speedy_match
@@ -64,7 +64,7 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented.")
 
 
         @only_on_speedy_match
@@ -73,6 +73,6 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented.")
 
 

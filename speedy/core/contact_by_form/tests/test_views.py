@@ -38,7 +38,7 @@ if (django_settings.TESTS):
                     elif (self.random_choice == 3):
                         self.user = SpeedyNetInactiveUserFactory()
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid random choice.")
                 self.set_up_class()
                 self.page_url = self.get_page_url()
 

@@ -1052,7 +1052,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
                 ))
             return received_friendship_requests
         else:
-            raise NotImplementedError()
+            raise NotImplementedError("Unsupported SITE_ID.")
 
     def get_sent_friendship_requests(self):
         """
@@ -1092,7 +1092,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
                 ))
             return sent_friendship_requests
         else:
-            raise NotImplementedError()
+            raise NotImplementedError("Unsupported SITE_ID.")
 
     def get_speedy_net_friends(self):
         """
@@ -1158,7 +1158,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
                 ))
             return friends
         else:
-            raise NotImplementedError()
+            raise NotImplementedError("Unsupported SITE_ID.")
 
     def save_user_and_profile(self):
         """

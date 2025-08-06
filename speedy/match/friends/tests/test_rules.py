@@ -14,7 +14,7 @@ if (django_settings.TESTS):
         class ViewFriendListRulesOnlyEnglishTestCase(ViewFriendListRulesTestCaseMixin, SiteTestCase):
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_user_can_view_another_user_friend_list(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented.")
 
             def test_user_cannot_view_another_user_friend_list(self):
                 self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user), expr2=False)

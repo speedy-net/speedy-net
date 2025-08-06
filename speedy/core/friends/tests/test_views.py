@@ -968,7 +968,7 @@ if (django_settings.TESTS):
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotEqual(first=self.user_1.site_friends, second=self.user_1.speedy_net_friends)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login
