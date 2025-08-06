@@ -729,7 +729,7 @@ if (django_settings.TESTS):
                 elif (test_choice == 2):
                     user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = user_instance_2.id, user_instance_2.id, True
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid test choice.")
                 user_instance_2.save()
                 if (test_choice == 1):
                     self.assertEqual(first=user_instance_2.username, second="jenniferconnelly1234")
@@ -738,7 +738,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user_instance_2.username, second=user.id)
                     self.assertEqual(first=user_instance_2.slug, second=user.id)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid test choice.")
                 # Race condition: username and slug should not change.
                 with self.assertRaises(ConcurrencyError) as cm:
                     user.save_user_and_profile()
@@ -751,7 +751,7 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.username, second=user.id)
                     self.assertEqual(first=user.slug, second=user.id)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid test choice.")
                 user_instance_2.username, user_instance_2.slug, user_instance_2.special_username = username, username, False
                 user_instance_2.save()
                 self.assertEqual(first=user_instance_2.username, second=username)

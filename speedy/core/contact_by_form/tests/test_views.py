@@ -21,10 +21,10 @@ if (django_settings.TESTS):
 
         class FeedbackViewBaseMixin(TestCaseMixin):
             def set_up_class(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This method is not implemented in this mixin.")
 
             def get_page_url(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This method is not implemented in this mixin.")
 
             def set_up(self):
                 super().set_up()

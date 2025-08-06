@@ -176,7 +176,7 @@ if (django_settings.TESTS):
                 if (user == self.user):
                     random_choice = self.random_choice
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid user.")
                 self.assert_me_url_redirects_after_login_by_site_user_and_random_choice(user=user, random_choice=random_choice)
 
             def test_user_can_login_with_slug(self):
@@ -1196,7 +1196,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice_1 == 3):
                     self.user = SpeedyNetInactiveUserFactory(**user_factory_dict)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.user_email = UserEmailAddressFactory(user=self.user)
                 self.random_choice_2 = random.choice([1, 2, 3])
                 if (self.random_choice_2 == 1):
@@ -1206,7 +1206,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice_2 == 3):
                     self.other_user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.other_user.set_password(raw_password=self._other_user_password)
                 self.other_user.save_user_and_profile()
                 self.other_user_email = UserEmailAddressFactory(user=self.other_user)
@@ -1228,7 +1228,7 @@ if (django_settings.TESTS):
                 elif (user == self.other_user):
                     random_choice = self.random_choice_2
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid user.")
                 self.assert_me_url_redirects_after_login_by_site_user_and_random_choice(user=user, random_choice=random_choice)
                 if (user == self.user):
                     if (random_choice == 1):
@@ -1352,7 +1352,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice_2 == 3):
                     self.other_user_2 = SpeedyNetInactiveUserFactory(**user_factory_dict)
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 data = {
                     'username': "mike@example.com",
                     'password': self._other_user_password,
@@ -1930,7 +1930,7 @@ if (django_settings.TESTS):
                         self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is True), expr2=True)
                         self.assertIs(expr1=(user.has_usable_password() is False), expr2=True)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid number_of_date_of_birth_changes.")
                 self.assertIs(expr1=(number_of_date_of_birth_changes == 12), expr2=True)
 
             def test_change_date_of_birth_unlimited_times(self):
@@ -2488,7 +2488,7 @@ if (django_settings.TESTS):
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
 
             def test_user_can_save_his_settings(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
@@ -2815,7 +2815,7 @@ if (django_settings.TESTS):
                     self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
 
             def test_inactive_user_can_request_activation(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         class ActivateSiteProfileViewTestCaseMixin1(ActivateSiteProfileViewTestCaseMixin):
@@ -2930,7 +2930,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice_1 == 3):
                     self.user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.random_choice_2 = random.choice([1, 2, 3])
                 if (self.random_choice_2 == 1):
                     self.other_user = ActiveUserFactory()
@@ -2939,7 +2939,7 @@ if (django_settings.TESTS):
                 elif (self.random_choice_2 == 3):
                     self.other_user = SpeedyNetInactiveUserFactory()
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid random choice.")
                 self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.assert_models_count(
@@ -2956,7 +2956,7 @@ if (django_settings.TESTS):
                 elif (user == self.other_user):
                     random_choice = self.random_choice_2
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid user.")
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     if (random_choice == 1):
                         self.assertEqual(first=user.is_active, second=True)

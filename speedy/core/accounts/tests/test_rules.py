@@ -40,9 +40,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=self.other_user.has_perm(perm='accounts.view_profile', obj=self.user), expr2=False)
 
             def test_doron_and_jennifer_have_access(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
             def test_doron_and_jennifer_have_no_access(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
 

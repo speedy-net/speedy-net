@@ -36,7 +36,7 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         elif (self.any_language):
             filter_dict["speedy_match_site_profile__active_languages__len__gt"] = 0
         else:
-            raise NotImplementedError()
+            raise NotImplementedError("Invalid only_current_language and any_language.")
         return filter_dict
 
     def get_total_number_of_active_members_text(self):

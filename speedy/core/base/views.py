@@ -67,7 +67,7 @@ class FormValidMessageMixin(object):
 
 class PaginationMixin(object):
     def redirect_on_exception(self):
-        raise NotImplementedError()
+        raise NotImplementedError("This method is not implemented in this mixin.")
 
     def dispatch(self, request, *args, **kwargs):
         object_list = self.get_object_list()

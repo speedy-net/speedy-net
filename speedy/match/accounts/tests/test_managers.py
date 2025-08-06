@@ -410,7 +410,7 @@ if (django_settings.TESTS):
                     # Test only one language should be fast. Don't run the full test.
                     n_range, i_range = 3, 5
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Unsupported TEST_LANGUAGES.")
                 matches_list = SpeedyMatchSiteProfile.objects.get_matches(user=self.user_5)
                 self.assertEqual(first=len(matches_list), second=4)
                 self.assertIs(expr1=self.user_4 in matches_list, expr2=True)

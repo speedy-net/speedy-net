@@ -902,7 +902,7 @@ if (django_settings.TESTS):
                 self.user = ActiveUserFactory()
 
             def test_has_correct_fields(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         @only_on_sites_with_login

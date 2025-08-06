@@ -12,10 +12,10 @@ if (django_settings.TESTS):
 
         class EditViewBaseMixin(TestCaseMixin):
             def get_page_url(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This method is not implemented in this mixin.")
 
             def get_template_name(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This method is not implemented in this mixin.")
 
             def set_up(self):
                 super().set_up()

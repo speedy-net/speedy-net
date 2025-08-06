@@ -16,7 +16,7 @@ if (django_settings.TESTS):
 
         class AdminViewBaseMixin(SpeedyCoreAdminLanguageMixin, TestCaseMixin):
             def get_page_url(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This method is not implemented in this mixin.")
 
             def assert_permission_denied(self, r):
                 self.assertEqual(first=r.status_code, second=403)

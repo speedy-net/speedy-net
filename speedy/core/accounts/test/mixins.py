@@ -197,14 +197,14 @@ if (django_settings.TESTS):
                 elif (model is User):
                     errors_dict['slug'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid model.")
             if (username_fail):
                 if (model is Entity):
                     errors_dict['username'] = [self._entity_username_must_start_with_4_or_more_letters_error_message]
                 elif (model is User):
                     errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid model.")
             return errors_dict
 
         def _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False):
@@ -216,7 +216,7 @@ if (django_settings.TESTS):
                 elif (model is User):
                     errors_dict['username'] = [self._user_username_must_start_with_4_or_more_letters_error_message]
                 else:
-                    raise NotImplementedError()
+                    raise NotImplementedError("Invalid model.")
             return errors_dict
 
         def _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth):
@@ -259,7 +259,7 @@ if (django_settings.TESTS):
                     elif (value == ''):
                         errors_dict['first_name_{language_code}'.format(language_code=language_code)] = [self._this_field_cannot_be_blank_error_message]
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Invalid value.")
                 errors_dict['password'] = [self._this_field_cannot_be_blank_error_message]
             else:
                 self.assertNotEqual(first=str_value, second='')

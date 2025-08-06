@@ -67,7 +67,7 @@ if (django_settings.TESTS):
                 num_tests = self.NUM_FAST_TESTS
                 by_time_sorted_reverse = False
             else:
-                raise NotImplementedError()
+                raise NotImplementedError("Invalid slowest_or_fastest.")
 
             by_time = sorted(self.test_times, key=lambda x: x[1], reverse=by_time_sorted_reverse)
             if by_time is not None:
@@ -261,7 +261,7 @@ if (django_settings.TESTS):
             if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'he'}):
                 pass
             else:
-                raise NotImplementedError()
+                raise NotImplementedError("Unsupported language_code.")
             run_this_test = False
             if (django_settings.TEST_LANGUAGES == "test-all-languages"):
                 # Test all languages, and don't skip languages.
@@ -280,7 +280,7 @@ if (django_settings.TESTS):
                 if (self.language_code == django_settings.TEST_LANGUAGES):
                     run_this_test = True
             else:
-                raise NotImplementedError()
+                raise NotImplementedError("Unsupported TEST_LANGUAGES.")
             if (not (run_this_test)):
                 self.skipTest(reason="Skipped test - language code skipped.")
 

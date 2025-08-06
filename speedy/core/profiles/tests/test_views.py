@@ -78,7 +78,7 @@ if (django_settings.TESTS):
                         # Check names in English alphabet.
                         self.user = ActiveUserFactory(first_name_en="Bar", last_name_en="Refaeli", slug="bar-refaeli", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Unsupported language_code.")
                 elif (self.random_choice == 2):
                     if (self.language_code in {'en', 'he'}):
                         # Check names in English alphabet and in Hebrew alphabet.
@@ -101,7 +101,7 @@ if (django_settings.TESTS):
                         # Check names in English alphabet.
                         self.user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
                     else:
-                        raise NotImplementedError()
+                        raise NotImplementedError("Unsupported language_code.")
                 else:
                     raise NotImplementedError("Invalid random choice.")
                 self.user.save()
@@ -277,7 +277,7 @@ if (django_settings.TESTS):
                         elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
                             self.assertEqual(first=self.user.slug, second="bar-refaeli")
                         else:
-                            raise NotImplementedError()
+                            raise NotImplementedError("Unsupported language_code.")
                         self.assertEqual(first=r.status_code, second=404)
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
@@ -295,7 +295,7 @@ if (django_settings.TESTS):
                         elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi'}):
                             self.assertEqual(first=self.user.slug, second="doron-matalon")
                         else:
-                            raise NotImplementedError()
+                            raise NotImplementedError("Unsupported language_code.")
                         self.assertEqual(first=r.status_code, second=200)
                         self.assertNotIn(member="<title>{}</title>".format(escape(self.expected_title_no_match[self.site.id])), container=r.content.decode())
                         self.assertIn(member="<title>{}</title>".format(escape(self.expected_title[self.site.id])), container=r.content.decode())

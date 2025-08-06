@@ -63,10 +63,10 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.user), expr2=True)
 
             def test_user_can_view_another_user_friend_list(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
             def test_user_cannot_view_another_user_friend_list(self):
-                raise NotImplementedError()
+                raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         @only_on_sites_with_login
