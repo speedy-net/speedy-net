@@ -223,8 +223,8 @@ class ActivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequi
         return super().dispatch(request=request, *args, **kwargs)
 
     def get_account_activation_url(self):
-        # This function is not defined in this base (abstract) view.
-        raise NotImplementedError("This function is not defined in this base (abstract) view.")
+        # This method is not defined in this base (abstract) view.
+        raise NotImplementedError("This method is not defined in this base (abstract) view.")
 
     def post(self, request, *args, **kwargs):
         if (request.user.has_confirmed_email_or_registered_now):

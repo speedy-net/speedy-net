@@ -280,12 +280,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return self.instance
 
     def get_fields(self):
-        # This function is not defined in this base (abstract) form.
-        raise NotImplementedError("This function is not defined in this base (abstract) form.")
+        # This method is not defined in this base (abstract) form.
+        raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
     def get_visible_fields(self):
-        # This function is not defined in this base (abstract) form.
-        raise NotImplementedError("This function is not defined in this base (abstract) form.")
+        # This method is not defined in this base (abstract) form.
+        raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
     def get_hidden_fields(self):
         fields = self.get_fields()

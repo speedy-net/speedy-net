@@ -396,9 +396,9 @@ class SiteProfileManager(BaseManager):
         :return: matching users.
         """
         language_code = get_language()
-        # Log this function only 0.2% of the time, since it's called very often.
-        log_this_function = (random.randint(0, 499) == 0)
-        if (log_this_function):
+        # Log this method only 0.2% of the time, since it's called very often.
+        log_this_method = (random.randint(0, 499) == 0)
+        if (log_this_method):
             logger.debug("SiteProfileManager::get_matches_from_list:start:user={user}, language_code={language_code}".format(
                 user=user,
                 language_code=language_code,
@@ -435,7 +435,7 @@ class SiteProfileManager(BaseManager):
                     number_of_matches=len(matches_list),
                 ))
         matches_list = sorted(matches_list, key=lambda u: (-((timezone_now - u.speedy_match_profile.last_visit).days // 40), u.speedy_match_profile.rank, u.speedy_match_profile.last_visit), reverse=True)
-        if (log_this_function):
+        if (log_this_method):
             logger.debug("SiteProfileManager::get_matches_from_list:end:user={user}, language_code={language_code}, from_list_len={from_list_len}, number_of_users={number_of_users}, number_of_matches={number_of_matches}".format(
                 user=user,
                 language_code=language_code,

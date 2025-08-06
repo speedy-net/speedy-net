@@ -39,8 +39,8 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
         )
 
     def get_field_pairs(self):
-        # This function is not defined in this base (abstract) form.
-        raise NotImplementedError("This function is not defined in this base (abstract) form.")
+        # This method is not defined in this base (abstract) form.
+        raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
 
 class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
