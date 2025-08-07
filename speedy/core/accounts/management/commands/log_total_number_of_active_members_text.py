@@ -1,10 +1,16 @@
 import logging
 
+from django.conf import settings as django_settings
 from django.core.management import BaseCommand
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
 
-from speedy.net.accounts import utils
+if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+    from speedy.net.accounts import utils
+elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+    from speedy.match.accounts import utils
+else:
+    raise NotImplementedError("Utility functions for logging total number of active members are not implemented for this site.")
 
 logger = logging.getLogger(__name__)
 
