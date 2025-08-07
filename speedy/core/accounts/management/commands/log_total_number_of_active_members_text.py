@@ -39,7 +39,7 @@ class Command(BaseCommand):
             **options: Arbitrary keyword arguments.
         """
         site = Site.objects.get_current()
-        logger.debug("{site_name}::log_total_number_of_active_members_text:: {total_number_of_active_members_text}".format(
+        logger.debug("{site_name}::log_total_number_of_active_members_text::{total_number_of_active_members_text}".format(
             site_name=_(site.name),
             total_number_of_active_members_text=utils.get_total_number_of_active_members_text(),
         ))
