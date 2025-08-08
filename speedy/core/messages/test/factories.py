@@ -2,14 +2,20 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
+        from typing import TYPE_CHECKING
+
         import factory
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
         from speedy.core.messages.models import Chat
 
+        ChatTypeHintMixin = object
+        if (TYPE_CHECKING):
+            ChatTypeHintMixin = Chat
 
-        class ChatFactory(factory.django.DjangoModelFactory):
+
+        class ChatFactory(factory.django.DjangoModelFactory, ChatTypeHintMixin):
             ent1 = factory.SubFactory(ActiveUserFactory)
             ent2 = factory.SubFactory(ActiveUserFactory)
 
