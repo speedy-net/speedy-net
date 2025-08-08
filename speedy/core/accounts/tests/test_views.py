@@ -2818,7 +2818,7 @@ if (django_settings.TESTS):
                 raise NotImplementedError("This test is not implemented in this mixin.")
 
 
-        class ActivateSiteProfileViewTestCaseMixin1(ActivateSiteProfileViewTestCaseMixin):
+        class ActivateSiteProfileViewWithInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user = InactiveUserFactory()
@@ -2834,7 +2834,7 @@ if (django_settings.TESTS):
                 )
 
 
-        class ActivateSiteProfileViewTestCaseMixin2(ActivateSiteProfileViewTestCaseMixin):
+        class ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.user = SpeedyNetInactiveUserFactory()

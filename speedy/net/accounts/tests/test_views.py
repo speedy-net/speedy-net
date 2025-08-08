@@ -14,7 +14,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
-        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin1, ActivateSiteProfileViewTestCaseMixin2
+        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewWithInactiveUserTestCaseMixin, ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin
 
         from speedy.core.accounts.models import User
 
@@ -60,7 +60,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class ActivateSiteProfileViewOnlyEnglishTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
+        class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithInactiveUserTestCaseMixin, SiteTestCase):
             redirect_url = '/welcome/'
 
             def test_inactive_user_can_request_activation(self):
@@ -74,7 +74,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        class ActivateSiteProfileViewOnlyEnglishTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
+        class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin, SiteTestCase):
             redirect_url = '/welcome/'
 
             def test_inactive_user_can_request_activation(self):

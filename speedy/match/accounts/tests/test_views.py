@@ -8,9 +8,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
 
-        from speedy.core.accounts.test.user_factories import ActiveUserFactory
-
-        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewTestCaseMixin1, ActivateSiteProfileViewTestCaseMixin2
+        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewWithInactiveUserTestCaseMixin, ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin
 
         from speedy.core.accounts.models import User
 
@@ -59,7 +57,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ActivateSiteProfileViewOnlyEnglishTestCase1(ActivateSiteProfileViewTestCaseMixin1, SiteTestCase):
+        class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithInactiveUserTestCaseMixin, SiteTestCase):
             redirect_url = '/registration-step-2/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
@@ -68,7 +66,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ActivateSiteProfileViewOnlyEnglishTestCase2(ActivateSiteProfileViewTestCaseMixin2, SiteTestCase):
+        class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin, SiteTestCase):
             redirect_url = '/welcome/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
