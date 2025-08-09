@@ -1,8 +1,8 @@
 # python==3.12
-Django==5.1.9
-asgiref==3.8.1
-boto3==1.38.38
-botocore==1.38.38
+Django==5.1.11
+asgiref==3.9.1
+boto3==1.40.6
+botocore==1.40.6
 crispy-bootstrap4==2025.6
 django-admin-inline-paginator-plus==0.1.4
 django-crispy-forms==2.4
@@ -11,17 +11,17 @@ django-friendship==1.9.6
 django-translated-fields==0.13.0
 haversine==2.9.0
 jmespath==1.0.1
-pillow==11.2.1
+pillow==11.3.0
 psycopg==3.2.9
 pymemcache==4.0.0
 python-dateutil==2.9.0.post0
 rules==3.5
-s3transfer==0.13.0
+s3transfer==0.13.1
 setuptools==80.9.0
 six==1.17.0
 sorl-thumbnail==12.11.0
 sqlparse==0.5.3
-typing_extensions==4.14.0
+typing_extensions==4.14.1
 tzdata==2025.2
 urllib3==2.5.0
 wheel==0.45.1
