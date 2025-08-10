@@ -62,7 +62,7 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
 
         @only_on_speedy_match
@@ -71,6 +71,6 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
 

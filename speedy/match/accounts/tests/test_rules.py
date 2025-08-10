@@ -14,7 +14,7 @@ if (django_settings.TESTS):
         class ViewProfileRulesOnlyEnglishTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_doron_and_jennifer_have_access(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
             def test_doron_and_jennifer_have_no_access(self):
                 self.assertIs(expr1=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer), expr2=False)

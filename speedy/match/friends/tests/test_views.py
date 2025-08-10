@@ -14,7 +14,7 @@ if (django_settings.TESTS):
         class UserFriendListViewOnlyEnglishTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_visitor_can_open_the_page(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
             def test_visitor_cannot_open_the_page(self):
                 self.client.logout()
@@ -23,7 +23,7 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_user_can_open_other_users_friends_page(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
             def test_user_cannot_open_other_users_friends_page(self):
                 r = self.client.get(path=self.second_user_friends_list_url)

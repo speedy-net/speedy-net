@@ -20,7 +20,7 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Net.")
             def test_doron_and_jennifer_have_no_access(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
 
         @only_on_speedy_net

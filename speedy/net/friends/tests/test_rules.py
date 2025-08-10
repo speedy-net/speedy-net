@@ -17,6 +17,6 @@ if (django_settings.TESTS):
 
             @unittest.skip(reason="This test is irrelevant in Speedy Net.")
             def test_user_cannot_view_another_user_friend_list(self):
-                raise NotImplementedError("This test is not implemented.")
+                raise NotImplementedError("This test is not implemented in this class.")
 
 
