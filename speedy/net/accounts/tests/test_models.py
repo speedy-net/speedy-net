@@ -79,7 +79,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
                 with self.assertRaises(NotImplementedError) as cm:
                     user.speedy_net_profile.validate_profile_and_activate()
-                self.assertEqual(first=str(cm.exception), second="validate_profile_and_activate is not implemented.")
+                self.assertEqual(first=str(cm.exception), second="validate_profile_and_activate is not implemented in this base class.")
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
 
