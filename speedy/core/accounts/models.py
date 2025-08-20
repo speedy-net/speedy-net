@@ -1382,7 +1382,7 @@ class SiteProfileBase(TimeStampedModel):
 
     @cached_property
     def is_active_and_valid(self):
-        raise NotImplementedError("is_active_and_valid is not implemented in this base class.")
+        raise NotImplementedError("is_active_and_valid is not implemented in this user's profile model class.")
 
     @cached_property
     def last_visit_str(self):
@@ -1408,7 +1408,7 @@ class SiteProfileBase(TimeStampedModel):
         # return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
     def _get_deleted_name(self):
-        raise NotImplementedError("_get_deleted_name is not implemented in this base class.")
+        raise NotImplementedError("_get_deleted_name is not implemented in this user's profile model class.")
 
     def save(self, *args, **kwargs):
         """
@@ -1432,19 +1432,19 @@ class SiteProfileBase(TimeStampedModel):
             del self._in_update_last_visit
 
     def activate(self):
-        raise NotImplementedError("activate is not implemented in this base class.")
+        raise NotImplementedError("activate is not implemented in this user's profile model class.")
 
     def deactivate(self):
-        raise NotImplementedError("deactivate is not implemented in this base class.")
+        raise NotImplementedError("deactivate is not implemented in this user's profile model class.")
 
     def get_name(self):
-        raise NotImplementedError("get_name is not implemented in this base class.")
+        raise NotImplementedError("get_name is not implemented in this user's profile model class.")
 
     def validate_profile_and_activate(self, commit=True):
-        raise NotImplementedError("validate_profile_and_activate is not implemented in this base class.")
+        raise NotImplementedError("validate_profile_and_activate is not implemented in this user's profile model class.")
 
     def call_after_verify_email_address(self):
-        raise NotImplementedError("call_after_verify_email_address is not implemented in this base class.")
+        raise NotImplementedError("call_after_verify_email_address is not implemented in this user's profile model class.")
 
 
 @receiver(signal=models.signals.post_save, sender=UserEmailAddress)
