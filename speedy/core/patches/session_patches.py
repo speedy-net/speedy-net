@@ -7,7 +7,7 @@ def patch():
         decoded = self.decode(encoded=encoded)
         return ((decoded["iterations"] != self.iterations) and (decoded["iterations"] <= 140000))
 
-    PBKDF2PasswordHasher.iterations = 480000
+    PBKDF2PasswordHasher.iterations = 560000
     PBKDF2PasswordHasher.must_update = must_update
 
 
