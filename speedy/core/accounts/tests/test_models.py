@@ -663,7 +663,7 @@ if (django_settings.TESTS):
             def run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self, iterations):
                 # Using a password that is too short or with too few unique characters.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
-                self.assertNotEqual(first=iterations, second=480000)
+                self.assertNotEqual(first=iterations, second=560000)
                 invalid_password = random.choice(['8' * 3, '8' * 10, '10203040', 'abc', 'abcdef'])
                 hasher = PBKDF2PasswordHasher()
                 encoded = hasher.encode(password=invalid_password, salt=hasher.salt(), iterations=iterations)
@@ -682,7 +682,7 @@ if (django_settings.TESTS):
             def run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(self, iterations):
                 # Using a valid password that will pass all password validators.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
-                self.assertNotEqual(first=iterations, second=480000)
+                self.assertNotEqual(first=iterations, second=560000)
                 valid_password = 'abcdef12'
                 hasher = PBKDF2PasswordHasher()
                 encoded = hasher.encode(password=valid_password, salt=hasher.salt(), iterations=iterations)
@@ -694,7 +694,7 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=valid_password), expr2=True)
                 self.assertIsNot(expr1=user.password, expr2=encoded)
                 decoded = hasher.decode(encoded=user.password)
-                self.assertEqual(first=decoded["iterations"], second=480000)
+                self.assertEqual(first=decoded["iterations"], second=560000)
                 encoded = user.password
                 self.assertIs(expr1=user.check_password(raw_password=valid_password), expr2=True)
                 self.assertIs(expr1=user.password, expr2=encoded)
@@ -702,7 +702,7 @@ if (django_settings.TESTS):
             def run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(self, iterations):
                 # Using a valid password that will pass all password validators.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
-                self.assertNotEqual(first=iterations, second=480000)
+                self.assertNotEqual(first=iterations, second=560000)
                 valid_password = 'abcdef12'
                 hasher = PBKDF2PasswordHasher()
                 encoded = hasher.encode(password=valid_password, salt=hasher.salt(), iterations=iterations)
