@@ -1235,22 +1235,22 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_1(self):
-                self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=140000)
+                self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=160000)
 
             def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_2(self):
                 self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=36000)
 
             def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_1(self):
-                self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=140000)
+                self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=160000)
 
             def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_2(self):
                 self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=36000)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_1(self):
-                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=140001)
+                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=160001)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_2(self):
-                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=150000)
+                self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=170000)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_3(self):
                 self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=390000)
