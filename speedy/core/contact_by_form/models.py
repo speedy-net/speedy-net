@@ -74,6 +74,7 @@ def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
         **kwargs: Additional keyword arguments.
     """
     if (created):
-        mail_managers(template_name_prefix='email/contact_by_form/admin_feedback', context={'feedback': instance}, headers={'Reply-To': instance.sender_email or instance.sender.email})
+        headers = {'Reply-To': instance.sender_email or instance.sender.email} if (instance.sender_email or instance.sender.email) else None
+        mail_managers(template_name_prefix='email/contact_by_form/admin_feedback', context={'feedback': instance}, headers=headers)
 
 
