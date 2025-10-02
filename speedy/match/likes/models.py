@@ -18,8 +18,8 @@ class UserLike(TimeStampedModel):
         to_user (ForeignKey): The user who is liked.
         date_viewed (DateTimeField): The date when the like was viewed.
     """
-    from_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('from user'), on_delete=models.CASCADE, related_name='likes_from_user')
-    to_user = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('to user'), on_delete=models.CASCADE, related_name='likes_to_user')
+    from_user: User = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('from user'), on_delete=models.CASCADE, related_name='likes_from_user')
+    to_user: User = models.ForeignKey(to=django_settings.AUTH_USER_MODEL, verbose_name=_('to user'), on_delete=models.CASCADE, related_name='likes_to_user')
     date_viewed = models.DateTimeField(blank=True, null=True, db_index=True)  # May be used later.
 
     objects = UserLikeManager()
