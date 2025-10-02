@@ -74,6 +74,7 @@ def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
         **kwargs: Additional keyword arguments.
     """
     if (created):
-        mail_managers(template_name_prefix='email/contact_by_form/admin_feedback', context={'feedback': instance}, headers={'Reply-To': instance.sender_email or instance.sender.email})
+        headers = {'Reply-To': instance.sender_email or instance.sender.email or "no-reply@{}".format(django_settings.DEFAULT_FROM_EMAIL.strip().rsplit("@", 1)[-1])}
+        mail_managers(template_name_prefix='email/contact_by_form/admin_feedback', context={'feedback': instance}, headers=headers)
 
 
