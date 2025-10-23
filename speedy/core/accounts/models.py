@@ -128,7 +128,7 @@ class OptimisticLockingModelMixin:
                 self._modified.add(name)
         super().__setattr__(name, value)
 
-    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update, returning_fields):
         updated = None
 
         # Patch: Include optimistic locking fields in filter of current model (may be parent table) if not modified.
@@ -136,7 +136,7 @@ class OptimisticLockingModelMixin:
         filters = {name: getattr(self, name) for name in self._optimistic_locking_fields if name not in self._modified and name in field_names}
         if filters:
             filtered = base_qs.filter(**filters)
-            updated = super()._do_update(base_qs=filtered, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
+            updated = super()._do_update(base_qs=filtered, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update, returning_fields=returning_fields)
             if ((not updated) and (base_qs.filter(pk=pk_val).exists())):
                 if forced_update:
                     raise ConcurrencyError("Forced update did not affect any rows.")
@@ -145,7 +145,7 @@ class OptimisticLockingModelMixin:
         self._modified.difference_update(field_names)
 
         if (updated is None):
-            updated = super()._do_update(base_qs=base_qs, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update)
+            updated = super()._do_update(base_qs=base_qs, using=using, pk_val=pk_val, values=values, update_fields=update_fields, forced_update=forced_update, returning_fields=returning_fields)
 
         return updated
 
