@@ -10,9 +10,6 @@ Disallow: /
 User-agent: Yandex
 Disallow: /
 
-User-agent: ClaudeBot
-Disallow: /
-
 User-agent: meta-externalagent
 Disallow: /
 
@@ -20,5 +17,14 @@ User-agent: GPTBot
 Disallow: /
 
 User-agent: SemrushBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+User-agent: Claude-SearchBot
 Disallow: /
 
