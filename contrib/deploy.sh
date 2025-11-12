@@ -18,7 +18,7 @@ ${PIP} uninstall -y Faker # Faker should never be installed in production or sta
 for site in ${SITES}
 do
     cd "${DIR}/speedy/${site}"
-    ${PY} manage.py migrate
-    ${PY} manage.py collect_static --no-input
+    PYTHONUNBUFFERED=1 ${PY} manage.py migrate
+    PYTHONUNBUFFERED=1 ${PY} manage.py collect_static --no-input
     touch "/run/uwsgi/app/speedy_${site}/reload"
 done

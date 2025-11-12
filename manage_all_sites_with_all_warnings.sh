@@ -9,7 +9,7 @@ exitcode=0
 for site in ${SITES}
 do
     cd "../${site}"
-    python -W error manage.py ${@}
+    PYTHONUNBUFFERED=1 python -W error manage.py ${@}
 
     tmp=$?
     if [[ $tmp -ne 0 ]]

@@ -104,7 +104,7 @@ To run Speedy Match tests:
 
 To run tests with all warnings (in any directory):
 
-    python -W error tests_manage.py test
+    PYTHONUNBUFFERED=1 python -W error tests_manage.py test
 
 You need to run both Speedy Net and Speedy Match in parallel in separate console tabs.
 

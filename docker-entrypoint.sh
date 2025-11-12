@@ -13,7 +13,7 @@ case "${1}" in
             echo "@@@ speedy-${site} @@@"
 
             cd /app/speedy/${site}
-            python manage.py "${@:2}"
+            PYTHONUNBUFFERED=1 python manage.py "${@:2}"
         done
     ;;
     python)
@@ -26,6 +26,6 @@ case "${1}" in
         echo
         echo "@@@ speedy-${CURRENT_SITE} @@@"
         cd /app/speedy/${CURRENT_SITE}
-        python manage.py "${@}"
+        PYTHONUNBUFFERED=1 python manage.py "${@}"
     ;;
 esac
