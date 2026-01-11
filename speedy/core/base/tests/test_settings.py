@@ -29,7 +29,7 @@ if (django_settings.TESTS):
             self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 11, django_settings.SPEEDY_MATCH_SITE_ID: 11, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
 
         def test_languages_with_ads(self):
-            self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2={django_settings.SPEEDY_NET_SITE_ID: {'en', 'fr', 'de', 'es', 'pt'}, django_settings.SPEEDY_MATCH_SITE_ID: {'en', 'fr', 'de', 'es', 'pt'}, django_settings.SPEEDY_COMPOSER_SITE_ID: set(), django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: set()}[self.site.id])
+            self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2=set())
 
 
     class TestsSettingsOnlyEnglishTestCase(SiteTestCase):
