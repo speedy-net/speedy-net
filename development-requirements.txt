@@ -1,2 +1,2 @@
-# python==3.12
+# python==3.13
 psycopg-binary==3.2.13
