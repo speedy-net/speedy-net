@@ -148,10 +148,10 @@ Install all dependencies using **apt-get**:
     sudo apt update
     sudo apt-get install python3.13 python3-pip python3.13-venv python3.13-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
-    sudo apt-get install postgresql-16 postgresql-client-16 nginx uwsgi uwsgi-src postfix memcached
+    sudo apt-get install postgresql-17 postgresql-client-17 nginx uwsgi uwsgi-src postfix memcached
     sudo apt-get install libpq-dev  # psycopg[c] dependency
 
-In **/etc/postgresql/16/main/pg_hba.conf** change the lines:
+In **/etc/postgresql/17/main/pg_hba.conf** change the lines:
 
     host    all             all             127.0.0.1/32            scram-sha-256
     host    all             all             ::1/128                 scram-sha-256
