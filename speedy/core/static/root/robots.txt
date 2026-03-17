@@ -1,3 +1,5 @@
+# We don't allow more than 5,000 requests per 24 hours per robot. Robots with more than 5,000 requests per 24 hours will be blocked.
+
 User-agent: *
 Disallow: /admin/
 Disallow: /google*.html
