@@ -17,7 +17,6 @@ jobs:
           - '3.13'
           - '3.14'
         postgresql-version:
-          - '14'
           - '15'
           - '16'
           - '17'
@@ -38,12 +37,8 @@ jobs:
             python-version: '3.13'
           - os: 'ubuntu-24.04'
             python-version: '3.14'
-          - postgresql-version: '14'
-            python-version: '3.11'
           - postgresql-version: '15'
             python-version: '3.11'
-          - postgresql-version: '14'
-            is-main-or-staging: false
           - postgresql-version: '15'
             is-main-or-staging: false
           - postgresql-version: '17'
