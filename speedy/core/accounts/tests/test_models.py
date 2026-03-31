@@ -1008,11 +1008,11 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(is_superuser=True, is_staff=False)
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="['{}']".format(self._superuser_must_be_equal_to_staff_error_message))
+                self.assertListEqual(list1=list(cm.exception), list2=[self._superuser_must_be_equal_to_staff_error_message])
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(is_superuser=False, is_staff=True)
                     user.save_user_and_profile()
-                self.assertEqual(first=str(cm.exception), second="['{}']".format(self._superuser_must_be_equal_to_staff_error_message))
+                self.assertListEqual(list1=list(cm.exception), list2=[self._superuser_must_be_equal_to_staff_error_message])
 
             def test_has_no_confirmed_email(self):
                 user = DefaultUserFactory()
