@@ -1000,6 +1000,20 @@ if (django_settings.TESTS):
                     user_2.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
+            def test_cannot_create_user_with_is_superuser_and_is_staff_not_equal(self):
+                user = DefaultUserFactory(is_superuser=False, is_staff=False)
+                user.save_user_and_profile()
+                user = DefaultUserFactory(is_superuser=True, is_staff=True)
+                user.save_user_and_profile()
+                with self.assertRaises(ValidationError) as cm:
+                    user = DefaultUserFactory(is_superuser=True, is_staff=False)
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="['{}']".format(self._superuser_must_be_equal_to_staff_error_message))
+                with self.assertRaises(ValidationError) as cm:
+                    user = DefaultUserFactory(is_superuser=False, is_staff=True)
+                    user.save_user_and_profile()
+                self.assertEqual(first=str(cm.exception), second="['{}']".format(self._superuser_must_be_equal_to_staff_error_message))
+
             def test_has_no_confirmed_email(self):
                 user = DefaultUserFactory()
                 UserEmailAddressFactory(user=user, is_confirmed=False)
