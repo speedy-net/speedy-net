@@ -360,15 +360,15 @@ if (django_settings.TESTS):
             _slug_does_not_parse_to_username_error_message_dict = {'en': 'Slug does not parse to username.', 'fr': 'Slug ne correspond pas à un nom d’utilisateur.', 'de': "Slug wird nicht in Benutzername umgewandelt.", 'es': "Slug no analiza el nombre de usuario.", 'pt': "O slug não pode ser usado como nome de utilizador.", 'it': "Lo slug non viene analizzato come nome utente.", 'nl': "Slug parseert niet naar gebruikersnaam.", 'sv': "Slug tolkas inte som användarnamn.", 'ko': "슬러그는 사용자명을 구문분석하지 않습니다", 'fi': "Slug ei jäsenny käyttäjänimeksi.", 'he': 'slug לא מתאים לשם המשתמש/ת.'}
             _youve_already_confirmed_this_email_address_error_message_dict = {'en': "You've already confirmed this email address.", 'fr': "Vous avez déjà confirmé cette adresse e-mail.", 'de': "Sie haben diese E-Mail-Adresse bereits bestätigt.", 'es': "Ya has confirmado esta dirección de correo electrónico.", 'pt': "Tu já confirmaste esta caixa de e-mail.", 'it': "Hai già confermato questo indirizzo e-mail.", 'nl': "Je hebt dit e-mailadres al bevestigd.", 'sv': "Du har redan bekräftat den här e-postadressen.", 'ko': "이 이메일 주소를 이미 확인했습니다.", 'fi': "Olet jo vahvistanut tämän sähköpostiosoitteen.", 'he': 'כבר אימתת את כתובת הדואר האלקטרוני שלך.'}
             _invalid_confirmation_link_error_message_dict = {'en': "Invalid confirmation link.", 'fr': "Lien de confirmation invalide.", 'de': "Ungültiger Bestätigungslink.", 'es': "Enlace de confirmación no válido.", 'pt': "Link de confirmação inválido.", 'it': "Link di conferma non valido.", 'nl': "Ongeldige bevestigingslink.", 'sv': "Ogiltig bekräftelselänk.", 'ko': "잘못된 확인 링크.", 'fi': "Virheellinen vahvistuslinkki.", 'he': 'קישור אימות לא חוקי.'}
-            _the_email_address_was_deleted_success_message_dict = {'en': 'The email address was deleted.', 'fr': 'L’adresse e-mail a été supprimée.', 'de': "Die E-Mail-Adresse wurde gelöscht.", 'es': "La dirección de correo electrónico fue eliminada.", 'pt': "A direcção de e-mail foi excluída.", 'it': "L'indirizzo e-mail è stato eliminato.", 'nl': "Het e-mailadres is verwijderd.", 'sv': "E-postadressen raderades.", 'ko': "이메일 주소가 삭제되었습니다.", 'fi': "Vahvistusviesti lähetettiin osoitteeseen.", 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
-            _you_have_changed_your_primary_email_address_success_message_dict = {'en': 'You have made this email address primary.', 'fr': 'Vous avez défini cette adresse e-mail comme adresse primaire.', 'de': "Sie haben diese E-Mail-Adresse zu Ihrer Hauptadresse gemacht.", 'es': "Has convertido esta dirección de correo electrónico en principal.", 'pt': "Configuraste esta caixa de e-mail como principal.", 'it': "Questo indirizzo e-mail è diventato l’indirizzo principale.", 'nl': "Je heb die je primaire e-mailadres gemaakt.", 'sv': "Du har gjort den här e-postadressen primär.", 'ko': "이 이메일 주소를 기본으로 설정했습니다.", 'fi': "Olet määrittänyt tämän sähköpostiosoitteen ensisijaiseksi.", 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
             _username_is_required_error_message_dict = {'en': 'Username is required.', 'fr': 'Nom d’utilisateur requis.', 'de': "Benutzername ist erforderlich.", 'es': "Se requiere nombre de usuario.", 'pt': "O nome de utilizador é obrigatório.", 'it': "Il nome utente è richiesto.", 'nl': "Gebruikersnaam is vereist.", 'sv': "Username är obligatoriskt.", 'ko': "사용자명이 필요합니다.", 'fi': "Käyttäjätunnus vaaditaan.", 'he': 'שם המשתמש/ת נדרש.'}
-            _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'fr': "Réinitialisation du mot de passe sur Speedy Net", 'de': "Passwort auf Speedy Net zurücksetzen", 'es': "Contraseña restablecida en Speedy Net", 'pt': "Redefinição de palavra-passe em Speedy Net", 'it': "Password reset su Speedy Net", 'nl': "Wachtwoordherinitialisatie voor Speedy Net", 'sv': "Lösenord nollställt på Speedy Net", 'ko': "Speedy Net의 비밀번호 재설정", 'fi': "Salasanan nollaus sivustolla Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
-            _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'fr': "Réinitialisation du mot de passe sur Speedy Match", 'de': "Passwort auf Speedy Match zurücksetzen", 'es': "Contraseña restablecida en Speedy Match", 'pt': "Redefinição de palavra-passe em Speedy Match", 'it': "Password reset su Speedy Match", 'nl': "Wachtwoordherinitialisatie voor Speedy Match", 'sv': "Lösenord nollställt på Speedy Match", 'ko': "Speedy Match의 비밀번호 재설정", 'fi': "Salasanan nollaus sivustolla Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
             _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict = {'en': 'Ensure this value is greater than or equal to -32768.', 'fr': 'Assurez-vous que cette valeur est supérieure ou égale à -32768.', 'de': "Dieser Wert muss größer oder gleich -32768 sein.", 'es': "Asegúrese de que este valor es mayor o igual a -32768.", 'pt': "Garanta que este valor seja maior ou igual a -32768.", 'it': "Assicurati che questo valore sia maggiore o uguale a -32768.", 'nl': "Zorg ervoor dat deze waarde minstens -32768 is.", 'sv': "Kontrollera att detta värde är större än eller lika med -32768.", 'ko': "-32768 이상의 값을 입력해 주세요.", 'fi': "Tämän luvun on oltava vähintään -32768.", 'he': 'יש לוודא שערך זה גדול מ או שווה ל־-32768.'}
             _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict = {'en': 'Ensure this value is less than or equal to 32767.', 'fr': 'Assurez-vous que cette valeur est inférieure ou égale à 32767.', 'de': "Dieser Wert muss kleiner oder gleich 32767 sein.", 'es': "Asegúrese de que este valor es menor o igual a 32767.", 'pt': "Garanta que este valor seja menor ou igual a 32767.", 'it': "Assicurati che questo valore sia minore o uguale a 32767.", 'nl': "Zorg ervoor dat deze waarde hoogstens 32767 is.", 'sv': "Kontrollera att detta värde är mindre än eller lika med 32767.", 'ko': "32767 이하의 값을 입력해 주세요.", 'fi': "Tämän arvon on oltava enintään 32767.", 'he': 'יש לוודא שערך זה פחות מ או שווה ל־32767.'}
             _value_too_long_for_type_character_varying_255_error_message_dict = {'en': 'value too long for type character varying(255)', 'fr': 'value too long for type character varying(255)', 'de': 'value too long for type character varying(255)', 'es': 'value too long for type character varying(255)', 'pt': 'value too long for type character varying(255)', 'it': 'value too long for type character varying(255)', 'nl': 'value too long for type character varying(255)', 'sv': 'value too long for type character varying(255)', 'ko': 'value too long for type character varying(255)', 'fi': 'value too long for type character varying(255)', 'he': 'value too long for type character varying(255)'}
             _superuser_must_be_equal_to_staff_error_message_dict = {'en': 'Superuser must be equal to staff.', 'fr': 'Le superutilisateur doit être égal au staff.', 'de': 'Superbenutzer muss dem Personal entsprechen', 'es': 'El superusuario debe ser igual al personal.', 'pt': 'Superuser precisa ser igual a funcionário.', 'it': 'Il superutente deve essere uguale allo staff.', 'nl': 'Supergebruiker moet gelijk zijn aan personeel.', 'sv': 'Superanvändare måste vara lika med personal.', 'ko': '슈퍼사용자는 스태프와 동일해야 합니다.', 'fi': 'Pääkäyttäjän on oltava yhtäläinen henkilöstöön nähden.', 'he': 'Superuser must be equal to staff.'}
+            _the_email_address_was_deleted_success_message_dict = {'en': 'The email address was deleted.', 'fr': 'L’adresse e-mail a été supprimée.', 'de': "Die E-Mail-Adresse wurde gelöscht.", 'es': "La dirección de correo electrónico fue eliminada.", 'pt': "A direcção de e-mail foi excluída.", 'it': "L'indirizzo e-mail è stato eliminato.", 'nl': "Het e-mailadres is verwijderd.", 'sv': "E-postadressen raderades.", 'ko': "이메일 주소가 삭제되었습니다.", 'fi': "Vahvistusviesti lähetettiin osoitteeseen.", 'he': 'כתובת הדואר האלקטרוני נמחקה.'}
+            _you_have_changed_your_primary_email_address_success_message_dict = {'en': 'You have made this email address primary.', 'fr': 'Vous avez défini cette adresse e-mail comme adresse primaire.', 'de': "Sie haben diese E-Mail-Adresse zu Ihrer Hauptadresse gemacht.", 'es': "Has convertido esta dirección de correo electrónico en principal.", 'pt': "Configuraste esta caixa de e-mail como principal.", 'it': "Questo indirizzo e-mail è diventato l’indirizzo principale.", 'nl': "Je heb die je primaire e-mailadres gemaakt.", 'sv': "Du har gjort den här e-postadressen primär.", 'ko': "이 이메일 주소를 기본으로 설정했습니다.", 'fi': "Olet määrittänyt tämän sähköpostiosoitteen ensisijaiseksi.", 'he': 'הפכת את כתובת הדואר האלקטרוני הזאת לראשית.'}
+            _password_reset_on_speedy_net_subject_dict = {'en': "Password reset on Speedy Net", 'fr': "Réinitialisation du mot de passe sur Speedy Net", 'de': "Passwort auf Speedy Net zurücksetzen", 'es': "Contraseña restablecida en Speedy Net", 'pt': "Redefinição de palavra-passe em Speedy Net", 'it': "Password reset su Speedy Net", 'nl': "Wachtwoordherinitialisatie voor Speedy Net", 'sv': "Lösenord nollställt på Speedy Net", 'ko': "Speedy Net의 비밀번호 재설정", 'fi': "Salasanan nollaus sivustolla Speedy Net", 'he': "איפוס סיסמה בספידי נט"}
+            _password_reset_on_speedy_match_subject_dict = {'en': "Password reset on Speedy Match", 'fr': "Réinitialisation du mot de passe sur Speedy Match", 'de': "Passwort auf Speedy Match zurücksetzen", 'es': "Contraseña restablecida en Speedy Match", 'pt': "Redefinição de palavra-passe em Speedy Match", 'it': "Password reset su Speedy Match", 'nl': "Wachtwoordherinitialisatie voor Speedy Match", 'sv': "Lösenord nollställt på Speedy Match", 'ko': "Speedy Match의 비밀번호 재설정", 'fi': "Salasanan nollaus sivustolla Speedy Match", 'he': "איפוס סיסמה בספידי מץ'"}
             _speedy_net_deleted_user_name_dict = {'en': 'Speedy Net User', 'fr': 'Utilisateur de Speedy Net', 'de': 'Speedy Net Benutzer', 'es': 'Usuario de Speedy Net', 'pt': 'Utilizador do Speedy Net', 'it': 'Utente Speedy Net', 'nl': 'Speedy Net Gebruiker', 'sv': 'Speedy Net Användare', 'ko': 'Speedy Net 사용자', 'fi': 'Speedy Net Käyttäjä', 'he': "משתמש/ת ספידי נט"}
             _speedy_match_deleted_user_name_dict = {'en': 'Speedy Match User', 'fr': 'Utilisateur de Speedy Match', 'de': 'Speedy Match Benutzer', 'es': 'Usuario de Speedy Match', 'pt': 'Utilizador do Speedy Match', 'it': 'Utente Speedy Match', 'nl': 'Speedy Match Gebruiker', 'sv': 'Speedy Match Användare', 'ko': 'Speedy Match 사용자', 'fi': 'Speedy Match Käyttäjä', 'he': "משתמש/ת ספידי מץ'"}
 
@@ -379,42 +379,6 @@ if (django_settings.TESTS):
             _username_must_contain_at_least_min_length_characters_error_message_to_format_dict = {'en': 'Username must contain at least {min_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au moins {min_length}\xa0caractères (il en contient {value_length}).', 'de': "Der Benutzername muss mindestens {min_length} Zeichen (er hat {value_length}) enthalten.", 'es': "El nombre de usuario debe contener al menos {min_length} caracteres (tiene {value_length}).", 'pt': "O nome do utilizador deve conter pelo menos {min_length} caracteres (contém {value_length}).", 'it': "Il nome utente deve contenere almeno {min_length} caratteri (ha {value_length}).", 'nl': "De gebruikersnaam moet ten minste {min_length} karakter bevatten (het bevat {value_length}).", 'sv': "Username måste innehålla minst {min_length} tecken (det har {value_length}).", 'ko': "사용자명에는 최소 {min_length}자의 문자가 포함되어야 합니다 ({value_length}자).", 'fi': "Käyttäjätunnuksessa on oltava vähintään {min_length} merkkiä (sillä on {value_length}).", 'he': 'נא לוודא ששם המשתמש/ת מכיל {min_length} תווים לפחות (מכיל {value_length}).'}
             _username_must_contain_at_most_max_length_characters_error_message_to_format_dict = {'en': 'Username must contain at most {max_length} characters (it has {value_length}).', 'fr': 'Le nom d’utilisateur doit contenir au maximum {max_length}\xa0caractères (il en contient {value_length}).', 'de': "Der Benutzername darf höchstens {max_length} Zeichen (er hat {value_length}) enthalten.", 'es': "El nombre de usuario debe contener como máximo {max_length} caracteres (tiene {value_length}).", 'pt': "O nome do utilizador deve conter no máximo {max_length} caracteres (contém {value_length}).", 'it': "Il nome utente deve contenere al massimo {max_length} caratteri (ha {value_length}).", 'nl': "De gebruikersnaam mag maximaal {max_length} tekens bevatten (het bevat {value_length}).", 'sv': "Username måste innehålla minst {max_length} tecken (det har {value_length}).", 'ko': "사용자명에는 최대 {max_length}자의 문자가 포함되어야 합니다 ({value_length}자).", 'fi': "Käyttäjätunnuksessa saa olla enintään {max_length} merkkiä (sillä on {value_length}).", 'he': 'נא לוודא ששם המשתמש/ת מכיל {max_length} תווים לכל היותר (מכיל {value_length}).'}
             _a_confirmation_message_was_sent_to_email_address_success_message_to_format_dict = {'en': 'A confirmation message was sent to {email_address}', 'fr': 'Un message de confirmation a été envoyé à {email_address}', 'de': "Eine Bestätigungnachricht wurde gesendet an {email_address}", 'es': "Se envió un mensaje de confirmación a {email_address}", 'pt': "Uma mensagem de confirmação foi enviada para {email_address}", 'it': "È stato inviato un messaggio di conferma a {email_address}", 'nl': "Er is een bevestigingsbericht verzonden naar {email_address}", 'sv': "Ett bekräftelsemeddelande skickades till {email_address}", 'ko': "확인 메시지를 {email_address}(으)로 보냈습니다", 'fi': "Vahvistusviesti lähetettiin osoitteeseen {email_address}", 'he': 'הודעת אימות נשלחה ל-‎{email_address}‎'}
-
-            _youve_confirmed_your_email_address_success_message_dict_by_gender = {
-                'en': {
-                    **{gender: "You've confirmed your email address." for gender in User.ALL_GENDERS},
-                },
-                'fr': {
-                    **{gender: "Vous avez confirmé votre adresse e-mail." for gender in User.ALL_GENDERS},
-                },
-                'de': {
-                    **{gender: "Sie haben Ihre E-Mail-Adresse bestätigt." for gender in User.ALL_GENDERS},
-                },
-                'es': {
-                    **{gender: "Has confirmado tu dirección de correo electrónico." for gender in User.ALL_GENDERS},
-                },
-                'pt': {
-                    **{gender: "Tu confirmaste teu e-mail." for gender in User.ALL_GENDERS},
-                },
-                'it': {
-                    **{gender: "Hai già confermato il tuo indirizzo e-mail." for gender in User.ALL_GENDERS},
-                },
-                'nl': {
-                    **{gender: "Je hebt je e-mailadres bevestigd." for gender in User.ALL_GENDERS},
-                },
-                'sv': {
-                    **{gender: "Du har bekräftat din e-postadress." for gender in User.ALL_GENDERS},
-                },
-                'ko': {
-                    **{gender: "귀하의 이메일 주소를 확인했습니다." for gender in User.ALL_GENDERS},
-                },
-                'fi': {
-                    **{gender: "Olet vahvistanut sähköpostiosoitteesi." for gender in User.ALL_GENDERS},
-                },
-                'he': {
-                    **{gender: 'אימתת את כתובת הדואר האלקטרוני שלך.' for gender in User.ALL_GENDERS},
-                },
-            }
 
             _you_cant_change_your_username_error_message_dict_by_gender = {
                 'en': {
@@ -453,6 +417,42 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: "לא ניתן לשנות שם משתמשת.",
                     User.GENDER_MALE_STRING: "לא ניתן לשנות שם משתמש.",
                     User.GENDER_OTHER_STRING: "לא ניתן לשנות שם משתמש/ת.",
+                },
+            }
+
+            _youve_confirmed_your_email_address_success_message_dict_by_gender = {
+                'en': {
+                    **{gender: "You've confirmed your email address." for gender in User.ALL_GENDERS},
+                },
+                'fr': {
+                    **{gender: "Vous avez confirmé votre adresse e-mail." for gender in User.ALL_GENDERS},
+                },
+                'de': {
+                    **{gender: "Sie haben Ihre E-Mail-Adresse bestätigt." for gender in User.ALL_GENDERS},
+                },
+                'es': {
+                    **{gender: "Has confirmado tu dirección de correo electrónico." for gender in User.ALL_GENDERS},
+                },
+                'pt': {
+                    **{gender: "Tu confirmaste teu e-mail." for gender in User.ALL_GENDERS},
+                },
+                'it': {
+                    **{gender: "Hai già confermato il tuo indirizzo e-mail." for gender in User.ALL_GENDERS},
+                },
+                'nl': {
+                    **{gender: "Je hebt je e-mailadres bevestigd." for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: "Du har bekräftat din e-postadress." for gender in User.ALL_GENDERS},
+                },
+                'ko': {
+                    **{gender: "귀하의 이메일 주소를 확인했습니다." for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: "Olet vahvistanut sähköpostiosoitteesi." for gender in User.ALL_GENDERS},
+                },
+                'he': {
+                    **{gender: 'אימתת את כתובת הדואר האלקטרוני שלך.' for gender in User.ALL_GENDERS},
                 },
             }
 
@@ -552,15 +552,15 @@ if (django_settings.TESTS):
             self._slug_does_not_parse_to_username_error_message = _slug_does_not_parse_to_username_error_message_dict[self.language_code]
             self._youve_already_confirmed_this_email_address_error_message = _youve_already_confirmed_this_email_address_error_message_dict[self.language_code]
             self._invalid_confirmation_link_error_message = _invalid_confirmation_link_error_message_dict[self.language_code]
-            self._the_email_address_was_deleted_success_message = _the_email_address_was_deleted_success_message_dict[self.language_code]
-            self._you_have_changed_your_primary_email_address_success_message = _you_have_changed_your_primary_email_address_success_message_dict[self.language_code]
             self._username_is_required_error_message = _username_is_required_error_message_dict[self.language_code]
-            self._password_reset_on_speedy_net_subject = _password_reset_on_speedy_net_subject_dict[self.language_code]
-            self._password_reset_on_speedy_match_subject = _password_reset_on_speedy_match_subject_dict[self.language_code]
             self._ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message = _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict[self.language_code]
             self._ensure_this_value_is_less_than_or_equal_to_32767_error_message = _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict[self.language_code]
             self._value_too_long_for_type_character_varying_255_error_message = _value_too_long_for_type_character_varying_255_error_message_dict[self.language_code]
             self._superuser_must_be_equal_to_staff_error_message = _superuser_must_be_equal_to_staff_error_message_dict[self.language_code]
+            self._the_email_address_was_deleted_success_message = _the_email_address_was_deleted_success_message_dict[self.language_code]
+            self._you_have_changed_your_primary_email_address_success_message = _you_have_changed_your_primary_email_address_success_message_dict[self.language_code]
+            self._password_reset_on_speedy_net_subject = _password_reset_on_speedy_net_subject_dict[self.language_code]
+            self._password_reset_on_speedy_match_subject = _password_reset_on_speedy_match_subject_dict[self.language_code]
             self._speedy_net_deleted_user_name = _speedy_net_deleted_user_name_dict[self.language_code]
             self._speedy_match_deleted_user_name = _speedy_match_deleted_user_name_dict[self.language_code]
 
@@ -572,18 +572,18 @@ if (django_settings.TESTS):
             self._username_must_contain_at_most_max_length_characters_error_message_to_format = _username_must_contain_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
             self._a_confirmation_message_was_sent_to_email_address_success_message_to_format = _a_confirmation_message_was_sent_to_email_address_success_message_to_format_dict[self.language_code]
 
-            self._youve_confirmed_your_email_address_success_message_dict_by_gender = _youve_confirmed_your_email_address_success_message_dict_by_gender[self.language_code]
             self._you_cant_change_your_username_error_message_dict_by_gender = _you_cant_change_your_username_error_message_dict_by_gender[self.language_code]
+            self._youve_confirmed_your_email_address_success_message_dict_by_gender = _youve_confirmed_your_email_address_success_message_dict_by_gender[self.language_code]
             self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender = _confirm_your_email_address_on_speedy_net_subject_dict_by_gender[self.language_code]
             self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender = _confirm_your_email_address_on_speedy_match_subject_dict_by_gender[self.language_code]
 
-            self.assertSetEqual(set1=set(self._youve_confirmed_your_email_address_success_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._you_cant_change_your_username_error_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
+            self.assertSetEqual(set1=set(self._youve_confirmed_your_email_address_success_message_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
             self.assertSetEqual(set1=set(self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender.keys()), set2=set(User.ALL_GENDERS))
 
-            self.assertEqual(first=len(set(self._youve_confirmed_your_email_address_success_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._you_cant_change_your_username_error_message_dict_by_gender.keys())), second=3)
+            self.assertEqual(first=len(set(self._youve_confirmed_your_email_address_success_message_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender.keys())), second=3)
 
