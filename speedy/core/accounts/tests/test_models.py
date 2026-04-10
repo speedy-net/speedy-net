@@ -1805,7 +1805,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
+        class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
                 self.password = get_random_user_password()
