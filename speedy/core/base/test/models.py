@@ -70,11 +70,11 @@ if (django_settings.TESTS):
                 raise NotImplementedError("Invalid slowest_or_fastest.")
 
             by_time = sorted(self.test_times, key=lambda x: x[1], reverse=by_time_sorted_reverse)
-            if by_time is not None:
+            if (by_time is not None):
                 by_time = by_time[:num_tests]
             test_results = by_time
             test_result_count = len(test_results)
-            if test_result_count:
+            if (test_result_count):
                 print()
                 print("{test_result_count} {slowest_or_fastest} tests:".format(
                     test_result_count=test_result_count,
@@ -304,7 +304,7 @@ if (django_settings.TESTS):
         def get_elapsed_time(self, stop=False):
             if (not (hasattr(self, '_start_time'))):
                 return None
-            if stop:
+            if (stop):
                 self.stop_time()
             stop_time = getattr(self, '_stop_time', None)
             if (stop_time is None):
