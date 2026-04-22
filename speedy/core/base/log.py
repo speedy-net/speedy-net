@@ -30,7 +30,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
     def _should_send_mail(self, subject):
         """
         Returns whether to send mail or not, and the number of times the subject was logged in the last hour.
-        If this is a WARNING message, it will be sent by mail only once per hour.
+        If this is a WARNING message or specific ERROR message, it will be sent by mail only once per hour.
         Some specific messages are never sent by mail.
 
         :param subject: Required. The subject of the log message.
@@ -80,8 +80,8 @@ class AdminEmailHandler(log.AdminEmailHandler):
 
     def send_mail(self, subject, message, *args, **kwargs):
         """
-        Override to send mail only once per hour for WARNING messages.
-        If this is a WARNING message, it will be sent by mail only once per hour.
+        Override to send mail only once per hour for WARNING messages or specific ERROR messages.
+        If this is a WARNING message or specific ERROR message, it will be sent by mail only once per hour.
         Some specific messages are never sent by mail.
 
         :param subject: Required. The subject of the log message.
