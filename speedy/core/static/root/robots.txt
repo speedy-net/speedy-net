@@ -39,3 +39,6 @@ Disallow: /
 User-agent: Claude-SearchBot
 Disallow: /
 
+User-agent: Amazonbot
+Disallow: /
+
