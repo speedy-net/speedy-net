@@ -10,6 +10,7 @@ django-friendship
 django-translated-fields
 haversine
 jmespath
+packaging
 pillow
 psycopg
 pymemcache
