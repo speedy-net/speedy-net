@@ -54,11 +54,6 @@ IGNORE_LAST_VISIT = [
     '/set-session/',
 ]
 
-LOCALE_PATHS += [
-    str(ROOT_DIR / 'speedy/net/locale'),
-    str(ROOT_DIR / 'speedy/match/locale'),
-]
-
 LANGUAGES_TO_ADD = [
     ('fr', _('French')),
     ('de', _('German')),

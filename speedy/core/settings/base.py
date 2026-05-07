@@ -195,11 +195,6 @@ LANGUAGES = [
 
 LANGUAGES_WITH_ADS = set()
 
-LOCALE_PATHS = [
-    str(APP_DIR / 'locale'),
-    str(ROOT_DIR / 'speedy/core/locale'),
-]
-
 TIME_ZONE = 'UTC'
 
 USE_TZ = True
