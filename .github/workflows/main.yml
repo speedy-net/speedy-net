@@ -12,7 +12,6 @@ jobs:
           - 'test-default-languages'
           - 'test-only-english'
         python-version:
-          - '3.11'
           - '3.12'
           - '3.13'
           - '3.14'
@@ -29,16 +28,12 @@ jobs:
         is-main-or-staging:
           - ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging' }}
         exclude:
-          - os: 'ubuntu-24.04'
-            python-version: '3.11'
           - os: 'ubuntu-22.04'
             python-version: '3.12'
           - os: 'ubuntu-24.04'
             python-version: '3.13'
           - os: 'ubuntu-24.04'
             python-version: '3.14'
-          - postgresql-version: '15'
-            python-version: '3.11'
           - postgresql-version: '15'
             is-main-or-staging: false
           - postgresql-version: '16'
@@ -49,8 +44,6 @@ jobs:
             is-all-languages: true
           - languages: 'test-only-english'
             is-main-or-staging: true
-          - languages: 'test-only-english'
-            python-version: '3.11'
           - languages: 'test-all-languages'
             is-all-languages: false
     services:

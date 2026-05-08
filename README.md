@@ -280,7 +280,7 @@ Refer to [django-environ documentation](https://django-environ.readthedocs.io/en
 
 ## How to upgrade required packages
 
-To upgrade all the requirements (with Django>=5.2,<5.3), run:
+To upgrade all the requirements (with Django>=6.0,<6.1), run:
 
     pip install --upgrade -r requirements-pip-upgrade.txt
 
