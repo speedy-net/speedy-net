@@ -5,6 +5,7 @@ Disallow: /admin/
 Disallow: /google*.html
 Disallow: /registration-step-*
 Disallow: /login/?*
+Crawl-Delay: 40
 
 User-agent: MJ12bot
 Disallow: /
