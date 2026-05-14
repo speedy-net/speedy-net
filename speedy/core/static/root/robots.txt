@@ -48,3 +48,6 @@ Disallow: /
 User-agent: Amzn-User
 Disallow: /
 
+User-agent: AhrefsBot
+Disallow: /
+
