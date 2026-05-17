@@ -7,39 +7,6 @@ Disallow: /registration-step-*
 Disallow: /login/?*
 Crawl-Delay: 40
 
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: Yandex
-Disallow: /
-
-User-agent: meta-webindexer
-Disallow: /
-
-User-agent: meta-externalads
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-User-agent: meta-externalfetcher
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-User
-Disallow: /
-
-User-agent: Claude-SearchBot
-Disallow: /
-
 User-agent: Amazonbot
 Disallow: /
 
@@ -47,8 +14,5 @@ User-agent: Amzn-SearchBot
 Disallow: /
 
 User-agent: Amzn-User
-Disallow: /
-
-User-agent: AhrefsBot
 Disallow: /
 
