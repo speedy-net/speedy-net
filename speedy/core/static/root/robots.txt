@@ -16,3 +16,6 @@ Disallow: /
 User-agent: Amzn-User
 Disallow: /
 
+User-agent: barkrowler
+Disallow: /
+
