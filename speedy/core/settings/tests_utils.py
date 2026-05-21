@@ -2,6 +2,14 @@ from .utils import ROOT_DIR
 
 TESTS_MEDIA_ROOT = str(ROOT_DIR / 'tests' / 'media')
 
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.locmem.EmailBackend",
+        "OPTIONS": {
+        },
+    },
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -66,7 +74,7 @@ LOGGING = {
 
 def activate_tests(settings):
     settings.update({
-        'EMAIL_BACKEND': 'django.core.mail.backends.locmem.EmailBackend',  # Django sets it to locmem.EmailBackend anyway.
+        'MAILERS': MAILERS,
         'TESTS_MEDIA_ROOT': TESTS_MEDIA_ROOT,
         'MEDIA_ROOT': TESTS_MEDIA_ROOT,
         'LOGGING': LOGGING,
