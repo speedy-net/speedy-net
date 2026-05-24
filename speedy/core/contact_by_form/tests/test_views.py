@@ -139,7 +139,7 @@ if (django_settings.TESTS):
                 data = {
                     'sender_name': 'Mike',
                     'sender_email': 'mike@example.com',
-                    'text': "I personally don't like this user. {} 1".format(random.choice(["https://t.me/pump_upp", "https://datebest.net"])),
+                    'text': "I personally don't like this user. {} 1".format(random.choice(["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"])),
                     'no_bots': ' 17 ',
                 }
                 self.assertEqual(first=Feedback.objects.count(), second=0)

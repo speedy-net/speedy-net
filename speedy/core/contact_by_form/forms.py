@@ -10,7 +10,7 @@ from .models import Feedback
 
 
 class FeedbackForm(AddAttributesToFieldsMixin, ModelFormWithDefaults):
-    _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net"]
+    _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"]
     no_bots = forms.CharField(label=_('Type the number "17"'), required=True)
 
     class Meta:
