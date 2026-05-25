@@ -17,6 +17,7 @@ if (django_settings.TESTS):
         from speedy.core.uploads.test.factories import FileFactory
 
         from speedy.core.contact_by_form.models import Feedback
+        from speedy.core.contact_by_form.forms import FeedbackForm
 
 
         class FeedbackViewBaseMixin(TestCaseMixin):
@@ -136,10 +137,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=Feedback.objects.count(), second=0)
 
             def test_visitor_cannot_submit_form_with_not_allowed_strings(self):
+                _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"]
+                self.assertListEqual(list1=_not_allowed_strings, list2=FeedbackForm._not_allowed_strings)
                 data = {
                     'sender_name': 'Mike',
                     'sender_email': 'mike@example.com',
-                    'text': "I personally don't like this user. {} 1".format(random.choice(["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"])),
+                    'text': "I personally don't like this user. {} 1".format(random.choice(_not_allowed_strings)),
                     'no_bots': ' 17 ',
                 }
                 self.assertEqual(first=Feedback.objects.count(), second=0)
