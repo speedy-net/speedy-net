@@ -11,7 +11,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin
+        from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin
 
         from speedy.core.accounts.test.user_factories import InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
         from speedy.core.uploads.test.factories import FileFactory
@@ -20,7 +20,7 @@ if (django_settings.TESTS):
         from speedy.core.contact_by_form.forms import FeedbackForm
 
 
-        class FeedbackViewBaseMixin(TestCaseMixin):
+        class FeedbackViewBaseMixin(SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             def set_up_class(self):
                 raise NotImplementedError("This method is not implemented in this mixin.")
 
@@ -137,12 +137,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=Feedback.objects.count(), second=0)
 
             def test_visitor_cannot_submit_form_with_not_allowed_strings(self):
-                _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"]
-                self.assertListEqual(list1=_not_allowed_strings, list2=FeedbackForm._not_allowed_strings)
+                self.assertListEqual(list1=self._not_allowed_strings, list2=FeedbackForm._not_allowed_strings)
                 data = {
                     'sender_name': 'Mike',
                     'sender_email': 'mike@example.com',
-                    'text': "I personally don't like this user. {} 1".format(random.choice(_not_allowed_strings)),
+                    'text': "I personally don't like this user. {} 1".format(random.choice(self._not_allowed_strings)),
                     'no_bots': ' 17 ',
                 }
                 self.assertEqual(first=Feedback.objects.count(), second=0)
@@ -237,7 +236,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
 
-        class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
+        class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             def set_up_class(self):
                 self.expected_feedback_type = Feedback.TYPE_FEEDBACK
                 self.expected_report_entity_id = None
@@ -334,7 +333,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
+        class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             def set_up_class(self):
                 self.other_user = ActiveUserFactory()
                 self.expected_feedback_type = Feedback.TYPE_REPORT_ENTITY
@@ -436,7 +435,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
+        class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             def set_up_class(self):
                 self.file = FileFactory()
                 self.expected_feedback_type = Feedback.TYPE_REPORT_FILE

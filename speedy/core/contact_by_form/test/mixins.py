@@ -4,6 +4,10 @@ if (django_settings.TESTS):
     from speedy.core.base.test.mixins import SpeedyCoreBaseLanguageMixin, TestCaseMixin
 
 
+    class SpeedyCoreFeedbackModelsMixin(TestCaseMixin):
+        _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"]
+
+
     class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         def _feedback_form_all_the_required_fields_keys(self, user_is_logged_in):
             if (user_is_logged_in):

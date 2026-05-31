@@ -7,7 +7,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackLanguageMixin
+        from speedy.core.contact_by_form.test.mixins import SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
@@ -15,7 +15,7 @@ if (django_settings.TESTS):
         from speedy.core.contact_by_form.models import Feedback
 
 
-        class FeedbackFormTestCaseMixin(SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
+        class FeedbackFormTestCaseMixin(SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             def assert_form_text_field(self, form):
                 self.assertIs(expr1=form.fields['text'].required, expr2=True)
 
