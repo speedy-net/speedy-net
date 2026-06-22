@@ -19,17 +19,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "Excluir conta"
+msgstr "Eliminar conta"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "Excluir conta"
+msgstr "Eliminar conta"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "Excluir conta"
+msgstr "Eliminar conta"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -39,9 +39,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tem certeza de que deseja excluir sua conta Speedy Net? Isso é permanente e "
-"irreversível. Excluir sua conta Speedy Net também excluirá sua conta Speedy "
-"Match. Se tiver certeza, digite “Sim. Excluir minha conta.” neste campo, com "
+"Tem certeza de que deseja eliminar sua conta Speedy Net? Isso é permanente e "
+"irreversível. Eliminar sua conta Speedy Net também eliminará sua conta Speedy "
+"Match. Se tiver certeza, digite “Sim. Eliminar minha conta.” neste campo, com "
 "exatidão e distinção entre maiúsculas e minúsculas."
 
 #: .\__translations\__translations.py:7
@@ -52,9 +52,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tem certeza de que deseja excluir sua conta Speedy Net? Isso é permanente e "
-"irreversível. Excluir sua conta Speedy Net também excluirá sua conta Speedy "
-"Match. Se tiver certeza, digite “Sim. Excluir minha conta.” neste campo, com "
+"Tem certeza de que deseja eliminar sua conta Speedy Net? Isso é permanente e "
+"irreversível. Eliminar sua conta Speedy Net também eliminará sua conta Speedy "
+"Match. Se tiver certeza, digite “Sim. Eliminar minha conta.” neste campo, com "
 "exatidão e distinção entre maiúsculas e minúsculas."
 
 #: .\__translations\__translations.py:8
@@ -65,28 +65,28 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tem certeza de que deseja excluir sua conta Speedy Net? Isso é permanente e "
-"irreversível. Excluir sua conta Speedy Net também excluirá sua conta Speedy "
-"Match. Se tiver certeza, digite “Sim. Excluir minha conta.” neste campo, com "
+"Tem certeza de que deseja eliminar sua conta Speedy Net? Isso é permanente e "
+"irreversível. Eliminar sua conta Speedy Net também eliminará sua conta Speedy "
+"Match. Se tiver certeza, digite “Sim. Eliminar minha conta.” neste campo, com "
 "exatidão e distinção entre maiúsculas e minúsculas."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "Excluir permanentemente sua conta no {site_name}"
+msgstr "Eliminar permanentemente sua conta no {site_name}"
 
 #: .\__translations\__translations.py:11
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "Excluir permanentemente sua conta no {site_name}"
+msgstr "Eliminar permanentemente sua conta no {site_name}"
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "Excluir permanentemente sua conta no {site_name}"
+msgstr "Eliminar permanentemente sua conta no {site_name}"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -133,9 +133,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tem certeza de que deseja excluir sua conta Speedy Net? Isso é permanente e "
-"irreversível. Excluir sua conta Speedy Net também excluirá sua conta Speedy "
-"Match. Se tiver certeza, digite “Sim. Excluir minha conta.” neste campo, com "
+"Tem certeza de que deseja eliminar sua conta Speedy Net? Isso é permanente e "
+"irreversível. Eliminar sua conta Speedy Net também eliminará sua conta Speedy "
+"Match. Se tiver certeza, digite “Sim. Eliminar minha conta.” neste campo, com "
 "exatidão e distinção entre maiúsculas e minúsculas."
 
 #: .\accounts\forms.py:33
@@ -145,7 +145,7 @@ msgstr "Palavra-passe inválida."
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
 msgid "Yes. Delete my account."
-msgstr "Sim. Excluir minha conta."
+msgstr "Sim. Eliminar minha conta."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
@@ -314,7 +314,7 @@ msgstr "Utilizadores bloqueados"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "Excluir conta"
+msgstr "Eliminar conta"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -369,4 +369,4 @@ msgstr "Teu amigo"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "Solicitação de amizade enviada"
+msgstr "Pedido de amizade enviada"

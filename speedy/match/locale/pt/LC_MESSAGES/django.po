@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-08 09:36+0300\n"
+"POT-Creation-Date: 2026-06-22 22:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,8 +67,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas configurações de "
-"pesquisa ou verifique novamente mais tarde."
+"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -76,8 +76,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas configurações de "
-"pesquisa ou verifique novamente mais tarde."
+"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -85,23 +85,23 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas configurações de "
-"pesquisa ou verifique novamente mais tarde."
+"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "Configurações de correspondências"
+msgstr "Definições de correspondências"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "Configurações de correspondências"
+msgstr "Definições de correspondências"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "Configurações de correspondências"
+msgstr "Definições de correspondências"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -1052,7 +1052,7 @@ msgstr "Correspondências do Speedy Match"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
-msgstr "Tuas configurações de correspondências foram guardadas."
+msgstr "Tuas definições de correspondências foram guardadas."
 
 #: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
 msgid "Unknown"
@@ -1236,13 +1236,13 @@ msgstr "Curtidas"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr "Tuas configurações de correspondências"
+msgstr "Tuas definições de correspondências"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "Configurações de correspondências"
+msgstr "Definições de correspondências"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
@@ -1260,7 +1260,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas configurações de notificações ou para "
+"Acesse esta página para alterar tuas definições de notificações ou para "
 "cancelar o cadastro:"
 
 #: .\templates\email\likes\like_subject.txt:1
@@ -1337,8 +1337,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas configurações de "
-"pesquisa ou verifique novamente mais tarde."
+"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"ou verifica novamente mais tarde."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
@@ -1378,7 +1378,7 @@ msgstr "Tu curtes"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr "Solicitação de amizade enviada"
+msgstr "Pedido de amizade enviada"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"

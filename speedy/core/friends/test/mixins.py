@@ -16,9 +16,10 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Solicitação de amizade enviada.", 'it': "Richiesta di amicizia inviata.", 'nl': "Vriendschapsverzoek verzonden.", 'sv': "Vänskapsförfrågan skickad.", 'ko': "친구 요청 전송됨.", 'fi': "Ystävyyspyyntö lähetetty.", 'he': 'בקשת חברות נשלחה.'}
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Solicitação de amizade aceita.", 'it': "Richiesta di amicizia accettata.", 'nl': "Vriendschapsverzoek geaccepteerd.", 'sv': "Vänskapsförfrågan accepterad.", 'ko': "친구 요청 수락됨.", 'fi': "Ystävyyspyyntö hyväksytty.", 'he': 'בקשת החברות התקבלה.'}
-            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Solicitação de amizade recusada.", 'it': "Richiesta di amicizia rifiutata.", 'nl': "Vriendschapsverzoek afgewezen.", 'sv': "Vänskapsförfrågan avvisad.", 'ko': "친구 요청 거부됨.", 'fi': "Ystävyyspyyntö hylätty.", 'he': 'בקשת החברות נדחתה.'}
+            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': "Freundschaftsanfrage gesendet.", 'es': "Solicitud de amistad enviada.", 'pt': "Pedido de amizade enviado.", 'it': "Richiesta di amicizia inviata.", 'nl': "Vriendschapsverzoek verzonden.", 'sv': "Vänskapsförfrågan skickad.", 'ko': "친구 요청 전송됨.", 'fi': "Ystävyyspyyntö lähetetty.", 'he': 'בקשת חברות נשלחה.'}
+
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': "Freundschaftsanfrage akzeptiert.", 'es': "Solicitud de amistad aceptada.", 'pt': "Pedido de amizade aceita.", 'it': "Richiesta di amicizia accettata.", 'nl': "Vriendschapsverzoek geaccepteerd.", 'sv': "Vänskapsförfrågan accepterad.", 'ko': "친구 요청 수락됨.", 'fi': "Ystävyyspyyntö hyväksytty.", 'he': 'בקשת החברות התקבלה.'}
+            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': "Freundschaftsanfrage abgelehnt.", 'es': "Solicitud de amistad rechazada.", 'pt': "Pedido de amizade recusada.", 'it': "Richiesta di amicizia rifiutata.", 'nl': "Vriendschapsverzoek afgewezen.", 'sv': "Vänskapsförfrågan avvisad.", 'ko': "친구 요청 거부됨.", 'fi': "Ystävyyspyyntö hylätty.", 'he': 'בקשת החברות נדחתה.'}
 
             _youve_cancelled_your_friendship_request_success_message_dict_by_gender = {
                 'en': {
@@ -34,7 +35,7 @@ if (django_settings.TESTS):
                     **{gender: "Has cancelado tu solicitud de amistad." for gender in User.ALL_GENDERS},
                 },
                 'pt': {
-                    **{gender: "Tu cancelaste tua solicitação de amizade." for gender in User.ALL_GENDERS},
+                    **{gender: "Cancelaste o teu pedido de amizade." for gender in User.ALL_GENDERS},
                 },
                 'it': {
                     **{gender: "Hai annullato la tua richiesta di amicizia." for gender in User.ALL_GENDERS},
@@ -372,9 +373,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Este usuario ya tiene {0} amigos. No pueden tener más de {1} amigos en Speedy Net. Pídeles que eliminen a tus amigos antes de continuar." for user_gender in User.ALL_GENDERS},
                 },
                 'pt': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na Speedy Net. Peça que ela remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na Speedy Net. Peça que ele remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na Speedy Net. Peça que eles removam amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Esse utilizadora já tem {0} amigos. Ela não pode ter mais de {1} amigos na Speedy Net. Peça que ela remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Esse utilizador já tem {0} amigos. Ele não pode ter mais de {1} amigos na Speedy Net. Peça que ele remova amigos antes de continuar." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Esse utilizador já tem {0} amigos. Eles não podem ter mais de {1} amigos na Speedy Net. Peça que eles removam amigos antes de continuar." for user_gender in User.ALL_GENDERS},
                 },
                 'it': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Questo utente ha già {0} amici. Non può avere più di {1} amici su Speedy Net. Chiedile di rimuovere gli amici prima di procedere." for user_gender in User.ALL_GENDERS},

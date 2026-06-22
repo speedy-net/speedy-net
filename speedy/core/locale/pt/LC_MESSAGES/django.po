@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 19:18+0300\n"
+"POT-Creation-Date: 2026-06-22 22:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,28 @@ msgstr "Teu amigo"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Solicitação de amizade enviada"
+msgstr "Pedido de amizade enviado"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "Tu não confirmaste teu e-mail. Verifique tua caixa de entrada."
+msgstr ""
+"Ainda não confirmaste o teu endereço de e-mail. Verifica a tua caixa de "
+"entrada."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "Tu não confirmaste teu e-mail. Verifique tua caixa de entrada."
+msgstr ""
+"Ainda não confirmaste o teu endereço de e-mail. Verifica a tua caixa de "
+"entrada."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "Tu não confirmaste teu e-mail. Verifique tua caixa de entrada."
+msgstr ""
+"Ainda não confirmaste o teu endereço de e-mail. Verifica a tua caixa de "
+"entrada."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -61,8 +67,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, seja "
-"bem-vinda novamente a %(site_name)s!"
+"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bem-"
+"vinda de volta ao %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -71,8 +77,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, seja "
-"bem-vindo novamente a %(site_name)s!"
+"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bem-"
+"vindo de volta ao %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -81,23 +87,23 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, seja "
-"bem-vindo novamente a %(site_name)s!"
+"Olá <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bem-"
+"vindo de volta ao %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "Confirma teu e-mail."
+msgstr "Confirma o teu endereço de e-mail."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "Confirma teu e-mail."
+msgstr "Confirma o teu endereço de e-mail."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "Confirma teu e-mail."
+msgstr "Confirma o teu endereço de e-mail."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
@@ -117,62 +123,62 @@ msgstr "Desativar conta"
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr "Reenviar um e-mail de confirmação"
+msgstr "Reenviar o e-mail de confirmação"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr "Reenviar um e-mail de confirmação"
+msgstr "Reenviar o e-mail de confirmação"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr "Reenviar um e-mail de confirmação"
+msgstr "Reenviar o e-mail de confirmação"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "Configurar esta caixa de e-mail como principal"
+msgstr "Definir este endereço de e-mail como principal"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "Configurar esta caixa de e-mail como principal"
+msgstr "Definir este endereço de e-mail como principal"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "Configurar esta caixa de e-mail como principal"
+msgstr "Definir este endereço de e-mail como principal"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens certeza de que desejas excluir esta caixa de e-mail?"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens certeza de que desejas excluir esta caixa de e-mail?"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens certeza de que desejas excluir esta caixa de e-mail?"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr "Excluir esta caixa de e-mail"
+msgstr "Eliminar este endereço de e-mail"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr "Excluir esta caixa de e-mail"
+msgstr "Eliminar este endereço de e-mail"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr "Excluir esta caixa de e-mail"
+msgstr "Eliminar este endereço de e-mail"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
@@ -208,19 +214,19 @@ msgstr "Alterar palavra-passe"
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar configurações de privacidade das caixas de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar configurações de privacidade das caixas de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar configurações de privacidade das caixas de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
@@ -456,17 +462,17 @@ msgstr "Adicionar em Amigos"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que desejas bloquear "
+msgstr "Tens certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que desejas bloquear "
+msgstr "Tens certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que desejas bloquear "
+msgstr "Tens certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -546,17 +552,17 @@ msgstr "Remover Amigo"
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Cancelar Solicitação de Amizade"
+msgstr "Cancelar pedido de amizade"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Cancelar Solicitação de Amizade"
+msgstr "Cancelar pedido de amizade"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Cancelar Solicitação de Amizade"
+msgstr "Cancelar pedido de amizade"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
@@ -591,32 +597,32 @@ msgstr "Rejeitar"
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Aceitar Solicitação de Amizade"
+msgstr "Aceitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Aceitar Solicitação de Amizade"
+msgstr "Aceitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Aceitar Solicitação de Amizade"
+msgstr "Aceitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Rejeitar Solicitação de Amizade"
+msgstr "Rejeitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Rejeitar Solicitação de Amizade"
+msgstr "Rejeitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Rejeitar Solicitação de Amizade"
+msgstr "Rejeitar Pedido de Amizade"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
@@ -748,19 +754,19 @@ msgstr "Leia:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirme teu e-mail em %(site_name)s"
+msgstr "Confirma o teu endereço de e-mail em %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirme teu e-mail em %(site_name)s"
+msgstr "Confirma o teu endereço de e-mail em %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirme teu e-mail em %(site_name)s"
+msgstr "Confirma o teu endereço de e-mail em %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -830,7 +836,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Tu estás cadastrada para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas configurações de notificações ou para "
+"Acesse esta página para alterar tuas definições de notificações ou para "
 "cancelar o cadastro:"
 
 #: .\__translations\__translations.html:213
@@ -841,7 +847,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas configurações de notificações ou para "
+"Acesse esta página para alterar tuas definições de notificações ou para "
 "cancelar o cadastro:"
 
 #: .\__translations\__translations.html:214
@@ -852,7 +858,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas configurações de notificações ou para "
+"Acesse esta página para alterar tuas definições de notificações ou para "
 "cancelar o cadastro:"
 
 #: .\__translations\__translations.py:7
@@ -895,11 +901,11 @@ msgstr "Mensagem"
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr "Solicitação de Amizade"
+msgstr "Pedido de Amizade"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr "Solicitação de Amizade"
+msgstr "Pedido de Amizade"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
@@ -1441,17 +1447,17 @@ msgstr ""
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "Tu já confirmaste esta caixa de e-mail."
+msgstr "Tu já confirmaste esta endereço de e-mail."
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "Tu já confirmaste esta caixa de e-mail."
+msgstr "Tu já confirmaste esta endereço de e-mail."
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "Tu já confirmaste esta caixa de e-mail."
+msgstr "Tu já confirmaste esta endereço de e-mail."
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
@@ -1520,7 +1526,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
+"Esse utilizadora já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ela remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:182
@@ -1530,7 +1536,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ele remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:183
@@ -1540,7 +1546,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
 "Speedy Net. Peça que eles removam amigos antes de continuar."
 
 #: .\__translations\__translations.py:184
@@ -1550,7 +1556,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
+"Esse utilizadora já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ela remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:185
@@ -1560,7 +1566,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ele remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:186
@@ -1570,7 +1576,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
 "Speedy Net. Peça que eles removam amigos antes de continuar."
 
 #: .\__translations\__translations.py:187
@@ -1580,7 +1586,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
+"Esse utilizadora já tem {0} amigos. Ela não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ela remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:188
@@ -1590,7 +1596,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Ele não pode ter mais de {1} amigos na "
 "Speedy Net. Peça que ele remova amigos antes de continuar."
 
 #: .\__translations\__translations.py:189
@@ -1600,7 +1606,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Esse usuário já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
+"Esse utilizador já tem {0} amigos. Eles não podem ter mais de {1} amigos na "
 "Speedy Net. Peça que eles removam amigos antes de continuar."
 
 #: .\__translations\__translations.py:191
@@ -1696,17 +1702,17 @@ msgstr "Tu já és amigo deste utilizador."
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "Tu cancelaste tua solicitação de amizade."
+msgstr "Cancelaste o teu pedido de amizade."
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "Tu cancelaste tua solicitação de amizade."
+msgstr "Cancelaste o teu pedido de amizade."
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "Tu cancelaste tua solicitação de amizade."
+msgstr "Cancelaste o teu pedido de amizade."
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
@@ -2375,8 +2381,8 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Sua senha deve conter pelo menos %(min_unique_characters)d caracteres "
-"exclusivos."
+"Sua palavra-passe deve conter pelo menos %(min_unique_characters)d "
+"caracteres exclusivos."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
@@ -2424,7 +2430,7 @@ msgstr "A direcção de e-mail foi excluída."
 
 #: .\accounts\views.py:371
 msgid "You have made this email address primary."
-msgstr "Configuraste esta caixa de e-mail como principal."
+msgstr "Configuraste esta endereço de e-mail como principal."
 
 #: .\admin\views.py:72
 #, python-brace-format
@@ -2612,19 +2618,19 @@ msgstr "avaliações"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
-msgstr "Solicitação de amizade enviada."
+msgstr "Pedido de amizade enviado."
 
 #: .\friends\views.py:204
 msgid "No friendship request."
-msgstr "Nenhuma solicitação de amizade."
+msgstr "Nenhuma pedido de amizade."
 
 #: .\friends\views.py:243
 msgid "Friendship request accepted."
-msgstr "Solicitação de amizade aceita."
+msgstr "Pedido de amizade aceita."
 
 #: .\friends\views.py:261
 msgid "Friendship request rejected."
-msgstr "Solicitação de amizade recusada."
+msgstr "Pedido de amizade recusada."
 
 #: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2732,11 +2738,11 @@ msgstr "Finlandês"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Solicitação incorrecta"
+msgstr "Pedido incorrecta"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "A Speedy lamenta, mas não podemos tratar tua solicitação."
+msgstr "A Speedy lamenta, mas não podemos tratar tua pedido."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2825,19 +2831,19 @@ msgstr "Primário"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "Reenviar um e-mail de confirmação"
+msgstr "Reenviar o e-mail de confirmação"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Configurar esta caixa de e-mail como principal"
+msgstr "Definir este endereço de e-mail como principal"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens certeza de que desejas excluir esta caixa de e-mail?"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr "Excluir esta caixa de e-mail"
+msgstr "Eliminar este endereço de e-mail"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
@@ -2854,7 +2860,7 @@ msgstr "Tua idade estará visível para tuas correspondências no Speedy Match."
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar configurações de privacidade das caixas de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
@@ -2924,7 +2930,9 @@ msgstr "This site is under construction"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "Tu não confirmaste teu e-mail. Verifique tua caixa de entrada."
+msgstr ""
+"Ainda não confirmaste o teu endereço de e-mail. Verifica a tua caixa de "
+"entrada."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
@@ -3077,7 +3085,7 @@ msgstr "Utilize este link para activar tua conta:"
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirme teu e-mail em %(site_name)s"
+msgstr "Confirma o teu endereço de e-mail em %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3107,7 +3115,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas configurações de notificações ou para "
+"Acesse esta página para alterar tuas definições de notificações ou para "
 "cancelar o cadastro:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
@@ -3200,10 +3208,10 @@ msgstr ""
 "Teu perfil no Speedy Net fica visível para todos, mas podes escolher com "
 "quem compartilhar tua direcção de e-mail e tua data de nascimento. Se tu se "
 "inscreveste no Speech Match, teu perfil do Speech Match será visível apenas "
-"para pessoas que correspondam a ti de acordo com as configurações que "
+"para pessoas que correspondam a ti de acordo com as definições que "
 "definistes no sítio, e que tu correspondas a elas de acordo com as "
-"configurações delas. Teu perfil no Speech Match não aparecerá no Google e "
-"não ficará visível para pessoas que não estejam cadastradas no sítio."
+"definições delas. Teu perfil no Speech Match não aparecerá no Google e não "
+"ficará visível para pessoas que não estejam cadastradas no sítio."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3232,10 +3240,10 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Se quiser, você pode excluir sua conta no Speedy Net. Excluir sua conta "
-"Speedy Net também excluirá automaticamente sua conta Speedy Match. Para "
-"excluir sua conta do Speedy Net, faça login no Speedy Net, desative sua "
-"conta e clique em “Excluir conta” (no menu “Editar perfil”). Preencha os "
+"Se quiser, você pode eliminar sua conta no Speedy Net. Eliminar sua conta "
+"Speedy Net também eliminará automaticamente sua conta Speedy Match. Para "
+"eliminar sua conta do Speedy Net, faça login no Speedy Net, desative sua "
+"conta e clique em “Eliminar conta” (no menu “Editar perfil”). Preencha os "
 "detalhes no formulário e confirme. Observe que uma conta excluída não pode "
 "ser recuperada. A exclusão da conta é permanente e irreversível."
 
@@ -3254,7 +3262,7 @@ msgstr " bloqueou a ti."
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Aceitar Solicitação de Amizade"
+msgstr "Aceitar Pedido de Amizade"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
@@ -3264,7 +3272,7 @@ msgstr "Aceitar"
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Rejeitar Solicitação de Amizade"
+msgstr "Rejeitar Pedido de Amizade"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
@@ -3283,7 +3291,7 @@ msgstr "Activar menu suspenso"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que desejas bloquear "
+msgstr "Tens certeza de que pretendes bloquear "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3309,7 +3317,7 @@ msgstr "Denunciar esta foto"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Cancelar Solicitação de Amizade"
+msgstr "Cancelar pedido de amizade"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"

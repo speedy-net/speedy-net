@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 19:18+0300\n"
+"POT-Creation-Date: 2026-06-22 22:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2975,7 +2975,7 @@ msgstr "Abmelden"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Home"
+msgstr "Startseite"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"

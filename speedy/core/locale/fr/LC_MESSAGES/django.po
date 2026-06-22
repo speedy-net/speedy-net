@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 19:18+0300\n"
+"POT-Creation-Date: 2026-06-22 22:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,21 +29,21 @@ msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "Vous n’avez pas confirmé votre adresse e-mail. Veuillez vérifier votre boîte "
-"mail."
+"de réception."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "Vous n’avez pas confirmé votre adresse e-mail. Veuillez vérifier votre boîte "
-"mail."
+"de réception."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "Vous n’avez pas confirmé votre adresse e-mail. Veuillez vérifier votre boîte "
-"mail."
+"de réception."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -2582,7 +2582,7 @@ msgstr "Pas 17."
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "Feedback"
+msgstr "Commentaire"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
@@ -2622,11 +2622,11 @@ msgstr "photo signalée"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "feedback"
+msgstr "commentaire"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "feedbacks"
+msgstr "commentaires"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
@@ -2946,7 +2946,7 @@ msgstr "This site is under construction"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
 "Vous n’avez pas confirmé votre adresse e-mail. Veuillez vérifier votre boîte "
-"mail."
+"de réception."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
