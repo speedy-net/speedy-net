@@ -2582,7 +2582,7 @@ msgstr "Nicht 17."
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "R?ckmeldung"
+msgstr "Rückmeldung"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
@@ -2622,11 +2622,11 @@ msgstr "gemeldetes Foto"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "R?ckmeldung"
+msgstr "Rückmeldung"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "R?ckmeldungen"
+msgstr "Rückmeldungen"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
