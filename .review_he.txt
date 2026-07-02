@@ -1,0 +1,3103 @@
+[1]
+ID: Speedy Composer Accounts
+TR: Speedy Composer Accounts
+
+[2]
+ID: Speedy Net User
+TR: משתמש/ת ספידי נט
+
+[3]
+ID: User
+TR: משתמש/ת
+
+[4]
+ID: Speedy Composer Profile
+TR: פרופיל ספידי קומפוזר
+
+[5]
+ID: Speedy Composer Profiles
+TR: פרופילים ספידי קומפוזר
+
+[6]
+ID: chords template
+TR: chords template
+
+[7]
+ID: chords templates
+TR: chords templates
+
+[8]
+ID: accompaniment
+TR: accompaniment
+
+[9]
+ID: accompaniments
+TR: accompaniments
+
+[10]
+ID: user
+TR: משתמש/ת
+
+[11]
+ID: folder
+TR: folder
+
+[12]
+ID: folders
+TR: folders
+
+[13]
+ID: tempo
+TR: tempo
+
+[14]
+ID: public
+TR: public
+
+[15]
+ID: composition
+TR: composition
+
+[16]
+ID: compositions
+TR: compositions
+
+[17]
+ID: About Speedy Composer
+TR: אודות ספידי קומפוזר
+
+[18]
+ID: <a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"Speedy Composer\">Speedy Composer</a> will be a new website for composing melodies automatically for members of Speedy Net. It will use the technology of Artificial Neural Networks to compose melodies for you. The melodies you compose will be saved in your personal compositions directory. You will be able to rename compositions, delete them and share them with your friends.
+TR: <a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"ספידי קומפוזר\">ספידי קומפוזר</a> יהיה אתר אינטרנט חדש להלחנה אוטומטית של מנגינות לחברי ספידי נט. האתר ישתמש בטכנולוגיה של רשתות נוירונים ממוחשבות על מנת להלחין עבורכם מנגינות. המנגינות שתלחינו יישמרו בתיקיית המנגינות האישית שלכם. אתם תוכלו לשנות את שם המנגינות, למחוק מנגינות ולשתף אותן עם חברים שלכם.
+
+[19]
+ID: Speedy Composer will be available in two languages - English and Hebrew. If you want to know how it works, you can read the <a href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer (November 1999)\">documentation</a> from November 1999.
+TR: ספידי קומפוזר יהיה זמין בשתי שפות - עברית ואנגלית. אם אתם רוצים לדעת איך זה עובד, תוכלו לקרוא את <a href=\"https://www.speedysoftware.com/composer/\" title=\"ספידי קומפוזר (נובמבר 1999)\">התיעוד</a> מנובמבר 1999 (באנגלית).
+
+[20]
+ID: All the features on Speedy Composer will be free of charge. Speedy Net and Speedy Composer are free software & open source projects. If you want to help developing Speedy Composer, please contact me by email.
+TR: כל הפיצ'רים בספידי קומפוזר יהיו ללא תשלום. ספידי נט וספידי קומפוזר הם פרויקטים של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח ספידי קומפוזר, אנא צרו איתי קשר באמצעות דואר אלקטרוני.
+
+[21]
+ID: Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: ספידי קומפוזר נקרא על שם <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי המליטה 7 גורים בשנת 1988.
+
+[22]
+ID: Thank you and good luck,
+TR: תודה ובהצלחה,
+
+[23]
+ID: Uri Rodberg
+TR: אורי רודברג
+
+[24]
+ID: Founder and Director of Speedy Net and Speedy Composer,
+TR: מייסד ומנהל ספידי נט וספידי קומפוזר,
+
+[25]
+ID: Speedy Paz Technologies Ltd.
+TR: ספידי פז טכנולוגיות בע\"מ.
+
+[26]
+ID: We are currently looking for volunteers to help us convert Speedy Composer to Python.
+TR: אנחנו מחפשים כיום מתנדבים שיעזרו לנו להמיר את ספידי קומפוזר לשפת Python.
+
+[27]
+ID: Welcome to Speedy Composer!
+TR: ברוכים הבאים לספידי קומפוזר!
+
+[28]
+ID: Thank you for your interest in Speedy Composer. Speedy Composer is an automated application for composing melodies for Speedy Net members. We recently made changes to the source code of Speedy Net, and converted it into the Python language and Django framework. Since Speedy Composer was originally written in PHP, it is not adapted to work with Speedy Net in its current form. So unfortunately we were forced to temporarily close the app Speedy Composer. But don't worry, we kept backups of all the tunes composed by Speedy Composer, and when the website is reopened we will upload them to the new site.
+TR: תודה על ההתעניינות בספידי קומפוזר. ספידי קומפוזר היא אפליקציית הלחנת מנגינות אוטומטיות עבור חברי ספידי נט. לאחרונה ערכנו שינויים בקוד המקור של ספידי נט, והמרנו אותו לשפת Python ומערכת Django. מכיוון שספידי קומפוזר נכתבה במקור בשפת PHP, היא אינה מותאמת לעבוד עם ספידי נט במתכונתה הנוכחית. לכן לצערי נאלצנו לסגור זמנית את אפליקציית ספידי קומפוזר. אך אל דאגה, שמרנו גיבויים של כל המנגינות שהולחנו על-ידי ספידי קומפוזר, וכשהאתר ייפתח מחדש נעלה אותן לאתר החדש.
+
+[29]
+ID: Speedy Composer and Speedy Net are open source applications, free software. We are currently looking for volunteers to help us convert Speedy Composer to Python. If you are interested in volunteering, please contact me by email.
+TR: ספידי קומפוזר וספידי נט הן אפליקציות בקוד פתוח, תוכנה חופשית. אנחנו מחפשים כיום מתנדבים שיעזרו לנו להמיר את ספידי קומפוזר לשפת Python. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני.
+
+[30]
+ID: Your friend
+TR: חבר/ה שלך
+
+[31]
+ID: Friendship request sent
+TR: בקשת חברות נשלחה
+
+[32]
+ID: You haven't confirmed your email address. Please check your inbox.
+TR: עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדקי את תיבת הדואר הנכנס שלך.
+
+[33]
+ID: You haven't confirmed your email address. Please check your inbox.
+TR: עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק את תיבת הדואר הנכנס שלך.
+
+[34]
+ID: You haven't confirmed your email address. Please check your inbox.
+TR: עדיין לא אימתת את כתובת הדואר האלקטרוני שלך. בדוק/י את תיבת הדואר הנכנס שלך.
+
+[35]
+ID: Logout
+TR: התנתקי
+
+[36]
+ID: Logout
+TR: התנתק
+
+[37]
+ID: Logout
+TR: התנתק/י
+
+[38]
+ID: Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, welcome back to %(site_name)s!
+TR: היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, ברוכה השבה ל%(site_name)s!
+
+[39]
+ID: Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, welcome back to %(site_name)s!
+TR: היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, ברוך השב ל%(site_name)s!
+
+[40]
+ID: Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, welcome back to %(site_name)s!
+TR: היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, ברוכ/ה השב/ה ל%(site_name)s!
+
+[41]
+ID: Please confirm your email address.
+TR: אמתי בבקשה את כתובת הדואר האלקטרוני שלך.
+
+[42]
+ID: Please confirm your email address.
+TR: אמת בבקשה את כתובת הדואר האלקטרוני שלך.
+
+[43]
+ID: Please confirm your email address.
+TR: אמת/י בבקשה את כתובת הדואר האלקטרוני שלך.
+
+[44]
+ID: Deactivate Account
+TR: הקפיאי את פעילות החשבון
+
+[45]
+ID: Deactivate Account
+TR: הקפא את פעילות החשבון
+
+[46]
+ID: Deactivate Account
+TR: הקפא/י את פעילות החשבון
+
+[47]
+ID: Resend a confirmation email
+TR: שלחי שוב הודעת אימות
+
+[48]
+ID: Resend a confirmation email
+TR: שלח שוב הודעת אימות
+
+[49]
+ID: Resend a confirmation email
+TR: שלח/י שוב הודעת אימות
+
+[50]
+ID: Make this email address primary
+TR: הפכי כתובת דואר אלקטרוני זאת לראשית
+
+[51]
+ID: Make this email address primary
+TR: הפוך כתובת דואר אלקטרוני זאת לראשית
+
+[52]
+ID: Make this email address primary
+TR: הפוך/י כתובת דואר אלקטרוני זאת לראשית
+
+[53]
+ID: Are you sure you want to delete this email address?
+TR: האם את בטוחה שברצונך למחוק כתובת זאת?
+
+[54]
+ID: Are you sure you want to delete this email address?
+TR: האם אתה בטוח שברצונך למחוק כתובת זאת?
+
+[55]
+ID: Are you sure you want to delete this email address?
+TR: האם את/ה בטוח/ה שברצונך למחוק כתובת זאת?
+
+[56]
+ID: Delete this email address
+TR: מחקי כתובת דואר אלקטרוני זאת
+
+[57]
+ID: Delete this email address
+TR: מחק כתובת דואר אלקטרוני זאת
+
+[58]
+ID: Delete this email address
+TR: מחק/י כתובת דואר אלקטרוני זאת
+
+[59]
+ID: Add Another
+TR: הוסיפי חדשה
+
+[60]
+ID: Add Another
+TR: הוסף חדשה
+
+[61]
+ID: Add Another
+TR: הוסף/י חדשה
+
+[62]
+ID: Change Password
+TR: שני סיסמה
+
+[63]
+ID: Change Password
+TR: שנה סיסמה
+
+[64]
+ID: Change Password
+TR: שנה/י סיסמה
+
+[65]
+ID: Change privacy settings of email addresses on your profile.
+TR: שני הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך.
+
+[66]
+ID: Change privacy settings of email addresses on your profile.
+TR: שנה הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך.
+
+[67]
+ID: Change privacy settings of email addresses on your profile.
+TR: שנה/י הגדרות פרטיות לכתובות דואר אלקטרוני בפרופיל שלך.
+
+[68]
+ID: You're not blocking anybody.
+TR: את לא חוסמת אף אחד.
+
+[69]
+ID: You're not blocking anybody.
+TR: אתה לא חוסם אף אחד.
+
+[70]
+ID: You're not blocking anybody.
+TR: את/ה לא חוסם/ת אף אחד.
+
+[71]
+ID: Report a User
+TR: דיווח על משתמשת
+
+[72]
+ID: Report a User
+TR: דיווח על משתמש
+
+[73]
+ID: Report a User
+TR: דיווח על משתמש/ת
+
+[74]
+ID: Your feedback was sent to administrators.
+TR: המשוב שלך נשלח למנהלים.
+
+[75]
+ID: Send a message to %(user_name)s
+TR: שלחי הודעה ל%(user_name)s
+
+[76]
+ID: Send a message to %(user_name)s
+TR: שלח הודעה ל%(user_name)s
+
+[77]
+ID: Send a message to %(user_name)s
+TR: שלח/י הודעה ל%(user_name)s
+
+[78]
+ID: Mark All as Read
+TR: סמני שכל ההודעות נקראו
+
+[79]
+ID: Mark All as Read
+TR: סמן שכל ההודעות נקראו
+
+[80]
+ID: Mark All as Read
+TR: סמנ/י שכל ההודעות נקראו
+
+[81]
+ID: You:
+TR: את:
+
+[82]
+ID: You:
+TR: אתה:
+
+[83]
+ID: You:
+TR: את/ה:
+
+[84]
+ID: You have no messages yet.
+TR: עדיין אין לך הודעות.
+
+[85]
+ID: You blocked 
+TR: חסמת את 
+
+[86]
+ID:  blocked you.
+TR:  חסמה אותך.
+
+[87]
+ID:  blocked you.
+TR:  חסם אותך.
+
+[88]
+ID:  blocked you.
+TR:  חסמ/ה אותך.
+
+[89]
+ID: %(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile on Speedy Match.
+TR: ל%(user_name)s יש גם פרופיל בספידי מץ'. צפי בפרופיל של %(user_name)s בספידי מץ'.
+
+[90]
+ID: %(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile on Speedy Match.
+TR: ל%(user_name)s יש גם פרופיל בספידי מץ'. צפה בפרופיל של %(user_name)s בספידי מץ'.
+
+[91]
+ID: %(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile on Speedy Match.
+TR: ל%(user_name)s יש גם פרופיל בספידי מץ'. צפה/י בפרופיל של %(user_name)s בספידי מץ'.
+
+[92]
+ID: %(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on Speedy Net.
+TR: ל%(user_name)s יש גם פרופיל בספידי נט. צפי בפרופיל של %(user_name)s בספידי נט.
+
+[93]
+ID: %(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on Speedy Net.
+TR: ל%(user_name)s יש גם פרופיל בספידי נט. צפה בפרופיל של %(user_name)s בספידי נט.
+
+[94]
+ID: %(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on Speedy Net.
+TR: ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי נט.
+
+[95]
+ID: You also have a Speedy Net profile. View your profile on Speedy Net.
+TR: יש לך גם פרופיל בספידי נט. צפי בפרופיל שלך בספידי נט.
+
+[96]
+ID: You also have a Speedy Net profile. View your profile on Speedy Net.
+TR: יש לך גם פרופיל בספידי נט. צפה בפרופיל שלך בספידי נט.
+
+[97]
+ID: You also have a Speedy Net profile. View your profile on Speedy Net.
+TR: יש לך גם פרופיל בספידי נט. צפה/י בפרופיל שלך בספידי נט.
+
+[98]
+ID: Add to Friends
+TR: הוסיפי לחברים/ות
+
+[99]
+ID: Add to Friends
+TR: הוסף לחברים/ות
+
+[100]
+ID: Add to Friends
+TR: הוסף/י לחברים/ות
+
+[101]
+ID: Are you sure you want to block 
+TR: האם את בטוחה שברצונך לחסום את 
+
+[102]
+ID: Are you sure you want to block 
+TR: האם אתה בטוח שברצונך לחסום את 
+
+[103]
+ID: Are you sure you want to block 
+TR: האם את/ה בטוח/ה שברצונך לחסום את 
+
+[104]
+ID: Block 
+TR: חסמי את 
+
+[105]
+ID: Block 
+TR: חסום את 
+
+[106]
+ID: Block 
+TR: חסום/י את 
+
+[107]
+ID: Unblock 
+TR: בטלי את חסימת 
+
+[108]
+ID: Unblock 
+TR: בטל את חסימת 
+
+[109]
+ID: Unblock 
+TR: בטל/י את חסימת 
+
+[110]
+ID: Report 
+TR: דווחי על 
+
+[111]
+ID: Report 
+TR: דווח על 
+
+[112]
+ID: Report 
+TR: דווח/י על 
+
+[113]
+ID: Report this photo
+TR: דווחי על תמונה זו
+
+[114]
+ID: Report this photo
+TR: דווח על תמונה זו
+
+[115]
+ID: Report this photo
+TR: דווח/י על תמונה זו
+
+[116]
+ID: Remove Friend
+TR: בטלי חברות
+
+[117]
+ID: Remove Friend
+TR: בטל חברות
+
+[118]
+ID: Remove Friend
+TR: בטל/י חברות
+
+[119]
+ID: Cancel Friendship Request
+TR: בטלי בקשת חברות
+
+[120]
+ID: Cancel Friendship Request
+TR: בטל בקשת חברות
+
+[121]
+ID: Cancel Friendship Request
+TR: בטל/י בקשת חברות
+
+[122]
+ID: Accept
+TR: קבלי
+
+[123]
+ID: Accept
+TR: קבל
+
+[124]
+ID: Accept
+TR: קבל/י
+
+[125]
+ID: Reject
+TR: דחי
+
+[126]
+ID: Reject
+TR: דחה
+
+[127]
+ID: Reject
+TR: דחה/י
+
+[128]
+ID: Accept Friendship Request
+TR: קבלי הצעת חברות
+
+[129]
+ID: Accept Friendship Request
+TR: קבל הצעת חברות
+
+[130]
+ID: Accept Friendship Request
+TR: קבל/י הצעת חברות
+
+[131]
+ID: Reject Friendship Request
+TR: דחי הצעת חברות
+
+[132]
+ID: Reject Friendship Request
+TR: דחה הצעת חברות
+
+[133]
+ID: Reject Friendship Request
+TR: דחה/י הצעת חברות
+
+[134]
+ID: Send Message
+TR: שלחי הודעה
+
+[135]
+ID: Send Message
+TR: שלח הודעה
+
+[136]
+ID: Send Message
+TR: שלח/י הודעה
+
+[137]
+ID: Welcome
+TR: ברוכה הבאה
+
+[138]
+ID: Welcome
+TR: ברוך הבא
+
+[139]
+ID: Welcome
+TR: ברוכ/ה הבא/ה
+
+[140]
+ID: Your friend
+TR: חברה שלך
+
+[141]
+ID: Your friend
+TR: חבר שלך
+
+[142]
+ID: See All
+TR: ראי הכול
+
+[143]
+ID: See All
+TR: ראה הכול
+
+[144]
+ID: See All
+TR: ראה/י הכול
+
+[145]
+ID: Your Speedy Net account is not active. Enter this page to activate it.
+TR: החשבון שלך בספידי נט אינו פעיל. היכנסי לדף זה כדי להפעיל אותו.
+
+[146]
+ID: Your Speedy Net account is not active. Enter this page to activate it.
+TR: החשבון שלך בספידי נט אינו פעיל. היכנס לדף זה כדי להפעיל אותו.
+
+[147]
+ID: Your Speedy Net account is not active. Enter this page to activate it.
+TR: החשבון שלך בספידי נט אינו פעיל. היכנס/י לדף זה כדי להפעיל אותו.
+
+[148]
+ID: Welcome to %(site_name)s
+TR: ברוכה הבאה ל%(site_name)s
+
+[149]
+ID: Welcome to %(site_name)s
+TR: ברוך הבא ל%(site_name)s
+
+[150]
+ID: Welcome to %(site_name)s
+TR: ברוכ/ה הבא/ה ל%(site_name)s
+
+[151]
+ID: has sent you a message.
+TR: שלחה לך הודעה.
+
+[152]
+ID: has sent you a message.
+TR: שלח לך הודעה.
+
+[153]
+ID: has sent you a message.
+TR: שלח/ה לך הודעה.
+
+[154]
+ID: Read it:
+TR: קראי אותה:
+
+[155]
+ID: Read it:
+TR: קרא אותה:
+
+[156]
+ID: Read it:
+TR: קרא/י אותה:
+
+[157]
+ID: Confirm your email address on %(site_name)s
+TR: אמתי את כתובת הדואר האלקטרוני שלך ב%(site_name)s
+
+[158]
+ID: Confirm your email address on %(site_name)s
+TR: אמת את כתובת הדואר האלקטרוני שלך ב%(site_name)s
+
+[159]
+ID: Confirm your email address on %(site_name)s
+TR: אמת/י את כתובת הדואר האלקטרוני שלך ב%(site_name)s
+
+[160]
+ID: Use this link to activate your account:
+TR: השתמשי בקישור זה כדי להפעיל את חשבונך:
+
+[161]
+ID: Use this link to activate your account:
+TR: השתמש בקישור זה כדי להפעיל את חשבונך:
+
+[162]
+ID: Use this link to activate your account:
+TR: השתמש/י בקישור זה כדי להפעיל את חשבונך:
+
+[163]
+ID: Use this link to verify your email address:
+TR: השתמשי בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:
+
+[164]
+ID: Use this link to verify your email address:
+TR: השתמש בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:
+
+[165]
+ID: Use this link to verify your email address:
+TR: השתמש/י בקישור זה כדי לאמת את כתובת הדואר האלקטרוני שלך:
+
+[166]
+ID: Use this link to change your password:
+TR: השתמשי בקישור זה כדי לשנות את הסיסמה שלך:
+
+[167]
+ID: Use this link to change your password:
+TR: השתמש בקישור זה כדי לשנות את הסיסמה שלך:
+
+[168]
+ID: Use this link to change your password:
+TR: השתמש/י בקישור זה כדי לשנות את הסיסמה שלך:
+
+[169]
+ID: Username
+TR: שם משתמשת
+
+[170]
+ID: Username
+TR: שם משתמש
+
+[171]
+ID: Username
+TR: שם משתמש/ת
+
+[172]
+ID: You are subscribed to receive this type of notifications from %(site_name)s. Enter this page to change your notifications settings or opt out:
+TR: את רשומה לקבלת התראות מסוג זה מ%(site_name)s. היכנסי לדף זה כדי לשנות את הגדרות ההתראות שלך או לבטל את הסכמתך:
+
+[173]
+ID: You are subscribed to receive this type of notifications from %(site_name)s. Enter this page to change your notifications settings or opt out:
+TR: אתה רשום לקבלת התראות מסוג זה מ%(site_name)s. היכנס לדף זה כדי לשנות את הגדרות ההתראות שלך או לבטל את הסכמתך:
+
+[174]
+ID: You are subscribed to receive this type of notifications from %(site_name)s. Enter this page to change your notifications settings or opt out:
+TR: את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את הגדרות ההתראות שלך או לבטל את הסכמתך:
+
+[175]
+ID: Enter a valid email address.
+TR: נא להזין כתובת דואר אלקטרוני חוקית.
+
+[176]
+ID: Email address
+TR: כתובת דואר אלקטרוני
+
+[177]
+ID: email address
+TR: כתובת דואר אלקטרוני
+
+[178]
+ID: Email address:
+TR: כתובת דואר אלקטרוני:
+
+[179]
+ID: Email
+TR: דואר אלקטרוני
+
+[180]
+ID: Value must be valid JSON.
+TR: ערך חייב להיות JSON חוקי.
+
+[181]
+ID: Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.
+TR: נא להזין %(username)s וסיסמה נכונים. נא לשים לב כי שני השדות רגישים לאותיות גדולות/קטנות.
+
+[182]
+ID: Message
+TR: הודעה
+
+[183]
+ID: Friendship Request
+TR: בקשת חברות
+
+[184]
+ID: Friendship Requests
+TR: בקשות חברות
+
+[185]
+ID: Friend
+TR: חבר/ה
+
+[186]
+ID: Friends
+TR: חברים/ות
+
+[187]
+ID: Following Relationship
+TR: Following Relationship
+
+[188]
+ID: Following Relationships
+TR: Following Relationships
+
+[189]
+ID: Blocker Relationship
+TR: Blocker Relationship
+
+[190]
+ID: Blocked Relationships
+TR: Blocked Relationships
+
+[191]
+ID: username (slug)
+TR: שם משתמשת (slug)
+
+[192]
+ID: username (slug)
+TR: שם משתמש (slug)
+
+[193]
+ID: username (slug)
+TR: שם משתמש/ת (slug)
+
+[194]
+ID: Update your profile picture
+TR: עדכני את תמונת הפרופיל שלך
+
+[195]
+ID: Update your profile picture
+TR: עדכן את תמונת הפרופיל שלך
+
+[196]
+ID: Update your profile picture
+TR: עדכנ/י את תמונת הפרופיל שלך
+
+[197]
+ID: Save Changes
+TR: שמרי את השינויים
+
+[198]
+ID: Save Changes
+TR: שמור את השינויים
+
+[199]
+ID: Save Changes
+TR: שמור/י את השינויים
+
+[200]
+ID: You can't change your username.
+TR: לא ניתן לשנות שם משתמשת.
+
+[201]
+ID: You can't change your username.
+TR: לא ניתן לשנות שם משתמש.
+
+[202]
+ID: You can't change your username.
+TR: לא ניתן לשנות שם משתמש/ת.
+
+[203]
+ID: Activate your {site_name} account
+TR: הפעילי את החשבון שלך ב{site_name}
+
+[204]
+ID: Activate your {site_name} account
+TR: הפעל את החשבון שלך ב{site_name}
+
+[205]
+ID: Activate your {site_name} account
+TR: הפעל/י את החשבון שלך ב{site_name}
+
+[206]
+ID: Deactivate your {site_name} account
+TR: הקפיאי את פעילות החשבון שלך ב{site_name}
+
+[207]
+ID: Deactivate your {site_name} account
+TR: הקפא את פעילות החשבון שלך ב{site_name}
+
+[208]
+ID: Deactivate your {site_name} account
+TR: הקפא/י את פעילות החשבון שלך ב{site_name}
+
+[209]
+ID: Add
+TR: הוסיפי
+
+[210]
+ID: Add
+TR: הוסף
+
+[211]
+ID: Add
+TR: הוסף/י
+
+[212]
+ID: Where do I live?
+TR: איפה אני גרה?
+
+[213]
+ID: Where do I live?
+TR: איפה אני גר?
+
+[214]
+ID: Where do I live?
+TR: איפה אני גר/ה?
+
+[215]
+ID: Where do you live?
+TR: איפה את גרה?
+
+[216]
+ID: Where do you live?
+TR: איפה אתה גר?
+
+[217]
+ID: Where do you live?
+TR: איפה את/ה גר/ה?
+
+[218]
+ID: Please write where you live.
+TR: אנא כתבי איפה את גרה.
+
+[219]
+ID: Please write where you live.
+TR: אנא כתוב איפה אתה גר.
+
+[220]
+ID: Please write where you live.
+TR: אנא כתוב/י איפה את/ה גר/ה.
+
+[221]
+ID: Vegan (eats only plants and fungi)
+TR: טבעונית (אוכלת רק צמחים ופטריות)
+
+[222]
+ID: Vegan (eats only plants and fungi)
+TR: טבעוני (אוכל רק צמחים ופטריות)
+
+[223]
+ID: Vegan (eats only plants and fungi)
+TR: טבעוני/ת (אוכל/ת רק צמחים ופטריות)
+
+[224]
+ID: Vegetarian (doesn't eat fish and meat)
+TR: צמחונית (לא אוכלת דגים ובשר)
+
+[225]
+ID: Vegetarian (doesn't eat fish and meat)
+TR: צמחוני (לא אוכל דגים ובשר)
+
+[226]
+ID: Vegetarian (doesn't eat fish and meat)
+TR: צמחוני/ת (לא אוכל/ת דגים ובשר)
+
+[227]
+ID: Carnist (eats animals)
+TR: קרניסטית (אוכלת חיות)
+
+[228]
+ID: Carnist (eats animals)
+TR: קרניסט (אוכל חיות)
+
+[229]
+ID: Carnist (eats animals)
+TR: קרניסט/ית (אוכל/ת חיות)
+
+[230]
+ID: Vegan
+TR: טבעונית
+
+[231]
+ID: Vegan
+TR: טבעוני
+
+[232]
+ID: Vegan
+TR: טבעוני/ת
+
+[233]
+ID: Vegetarian
+TR: צמחונית
+
+[234]
+ID: Vegetarian
+TR: צמחוני
+
+[235]
+ID: Vegetarian
+TR: צמחוני/ת
+
+[236]
+ID: Carnist
+TR: קרניסטית
+
+[237]
+ID: Carnist
+TR: קרניסט
+
+[238]
+ID: Carnist
+TR: קרניסט/ית
+
+[239]
+ID: Not smoking
+TR: לא מעשנת
+
+[240]
+ID: Not smoking
+TR: לא מעשן
+
+[241]
+ID: Not smoking
+TR: לא מעשנ/ת
+
+[242]
+ID: Smoking occasionally
+TR: מעשנת מדי פעם
+
+[243]
+ID: Smoking occasionally
+TR: מעשן מדי פעם
+
+[244]
+ID: Smoking occasionally
+TR: מעשנ/ת מדי פעם
+
+[245]
+ID: Smoking
+TR: מעשנת
+
+[246]
+ID: Smoking
+TR: מעשן
+
+[247]
+ID: Smoking
+TR: מעשנ/ת
+
+[248]
+ID: Single
+TR: רווקה
+
+[249]
+ID: Single
+TR: רווק
+
+[250]
+ID: Single
+TR: רווק/ה
+
+[251]
+ID: Divorced
+TR: גרושה
+
+[252]
+ID: Divorced
+TR: גרוש
+
+[253]
+ID: Divorced
+TR: גרוש/ה
+
+[254]
+ID: Widowed
+TR: אלמנה
+
+[255]
+ID: Widowed
+TR: אלמן
+
+[256]
+ID: Widowed
+TR: אלמן/אלמנה
+
+[257]
+ID: In a relationship
+TR: במערכת יחסים
+
+[258]
+ID: In an open relationship
+TR: במערכת יחסים פתוחה
+
+[259]
+ID: It's complicated
+TR: זה מסובך
+
+[260]
+ID: Separated
+TR: פרודה
+
+[261]
+ID: Separated
+TR: פרוד
+
+[262]
+ID: Separated
+TR: פרוד/ה
+
+[263]
+ID: Engaged
+TR: מאורסת
+
+[264]
+ID: Engaged
+TR: מאורס
+
+[265]
+ID: Engaged
+TR: מאורס/ת
+
+[266]
+ID: Married
+TR: נשואה
+
+[267]
+ID: Married
+TR: נשוי
+
+[268]
+ID: Married
+TR: נשוי/נשואה
+
+[269]
+ID: Your new password has been saved.
+TR: הסיסמה החדשה שלך נשמרה.
+
+[270]
+ID: Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.
+TR: החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכלי להפעיל אותם בכל זמן שתבחרי.
+
+[271]
+ID: Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.
+TR: החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל להפעיל אותם בכל זמן שתבחר.
+
+[272]
+ID: Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.
+TR: החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן שתבחר/י.
+
+[273]
+ID: Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.
+TR: החשבון שלך ב{site_name} הוקפא. תוכלי להפעיל אותו בכל זמן שתבחרי. החשבון שלך בספידי נט נשאר פעיל.
+
+[274]
+ID: Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.
+TR: החשבון שלך ב{site_name} הוקפא. תוכל להפעיל אותו בכל זמן שתבחר. החשבון שלך בספידי נט נשאר פעיל.
+
+[275]
+ID: Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.
+TR: החשבון שלך ב{site_name} הוקפא. תוכל/י להפעיל אותו בכל זמן שתבחר/י. החשבון שלך בספידי נט נשאר פעיל.
+
+[276]
+ID: You've already confirmed this email address.
+TR: כבר אימתת את כתובת הדואר האלקטרוני שלך.
+
+[277]
+ID: You've confirmed your email address.
+TR: אימתת את כתובת הדואר האלקטרוני שלך.
+
+[278]
+ID: Send
+TR: שלחי
+
+[279]
+ID: Send
+TR: שלח
+
+[280]
+ID: Send
+TR: שלח/י
+
+[281]
+ID: You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
+TR: כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה.
+
+[282]
+ID: You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
+TR: כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסר חברים/ות לפני שאתה ממשיך.
+
+[283]
+ID: You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
+TR: כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים בספידי נט. אנא הסר/י חברים/ות לפני שאת/ה ממשיך/ה.
+
+[284]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות וחברים בספידי נט. אנא בקשי ממנה להסיר חברים/ות לפני שאת ממשיכה.
+
+[285]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות וחברים בספידי נט. אנא בקשי ממנו להסיר חברים/ות לפני שאת ממשיכה.
+
+[286]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות וחברים בספידי נט. אנא בקשי ממנו/ה להסיר חברים/ות לפני שאת ממשיכה.
+
+[287]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות וחברים בספידי נט. אנא בקש ממנה להסיר חברים/ות לפני שאתה ממשיך.
+
+[288]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות וחברים בספידי נט. אנא בקש ממנו להסיר חברים/ות לפני שאתה ממשיך.
+
+[289]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות וחברים בספידי נט. אנא בקש ממנו/ה להסיר חברים/ות לפני שאתה ממשיך.
+
+[290]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמשת זאת כבר יש {0} חברות וחברים. לא יכולים להיות לה יותר מ-{1} חברות וחברים בספידי נט. אנא בקש/י ממנה להסיר חברים/ות לפני שאת/ה ממשיך/ה.
+
+[291]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש זה כבר יש {0} חברות וחברים. לא יכולים להיות לו יותר מ-{1} חברות וחברים בספידי נט. אנא בקש/י ממנו להסיר חברים/ות לפני שאת/ה ממשיך/ה.
+
+[292]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: למשתמש/ת זה כבר יש {0} חברות וחברים. לא יכולים להיות לו/ה יותר מ-{1} חברות וחברים בספידי נט. אנא בקש/י ממנו/ה להסיר חברים/ות לפני שאת/ה ממשיך/ה.
+
+[293]
+ID: You cannot be friends with yourself.
+TR: את לא יכולה להיות חברה של עצמך.
+
+[294]
+ID: You cannot be friends with yourself.
+TR: אתה לא יכול להיות חבר של עצמך.
+
+[295]
+ID: You cannot be friends with yourself.
+TR: את/ה לא יכול/ה להיות חבר/ה של עצמך.
+
+[296]
+ID: You already requested friendship from this user.
+TR: כבר ביקשת חברות מהמשתמשת הזאת.
+
+[297]
+ID: You already requested friendship from this user.
+TR: כבר ביקשת חברות מהמשתמש הזה.
+
+[298]
+ID: You already requested friendship from this user.
+TR: כבר ביקשת חברות מהמשתמש/ת הזאת.
+
+[299]
+ID: This user already requested friendship from you.
+TR: המשתמשת הזאת כבר ביקשה ממך חברות.
+
+[300]
+ID: This user already requested friendship from you.
+TR: המשתמש הזה כבר ביקש ממך חברות.
+
+[301]
+ID: This user already requested friendship from you.
+TR: המשתמש/ת הזאת כבר ביקש/ה ממך חברות.
+
+[302]
+ID: You already are friends with this user.
+TR: את כבר חברה של המשתמשת הזאת.
+
+[303]
+ID: You already are friends with this user.
+TR: את כבר חברה של המשתמש הזה.
+
+[304]
+ID: You already are friends with this user.
+TR: את כבר חברה של המשתמש/ת הזאת.
+
+[305]
+ID: You already are friends with this user.
+TR: אתה כבר חבר של המשתמשת הזאת.
+
+[306]
+ID: You already are friends with this user.
+TR: אתה כבר חבר של המשתמש הזה.
+
+[307]
+ID: You already are friends with this user.
+TR: אתה כבר חבר של המשתמש/ת הזאת.
+
+[308]
+ID: You already are friends with this user.
+TR: את/ה כבר חבר/ה של המשתמשת הזאת.
+
+[309]
+ID: You already are friends with this user.
+TR: את/ה כבר חבר/ה של המשתמש הזה.
+
+[310]
+ID: You already are friends with this user.
+TR: את/ה כבר חבר/ה של המשתמש/ת הזאת.
+
+[311]
+ID: You've cancelled your friendship request.
+TR: ביטלת את בקשת החברות שלך.
+
+[312]
+ID: You have removed this user from your friends.
+TR: הסרת את המשתמשת הזאת מהחברים שלך.
+
+[313]
+ID: You have removed this user from your friends.
+TR: הסרת את המשתמש הזה מהחברים שלך.
+
+[314]
+ID: You have removed this user from your friends.
+TR: הסרת את המשתמש/ת הזאת מהחברים שלך.
+
+[315]
+ID: Welcome to {site_name}!
+TR: ברוכה הבאה ל{site_name}!
+
+[316]
+ID: Welcome to {site_name}!
+TR: ברוך הבא ל{site_name}!
+
+[317]
+ID: Welcome to {site_name}!
+TR: ברוכ/ה הבא/ה ל{site_name}!
+
+[318]
+ID: Welcome to {site_name}! Your account is now active.
+TR: ברוכה הבאה ל{site_name}! החשבון שלך פעיל עכשיו.
+
+[319]
+ID: Welcome to {site_name}! Your account is now active.
+TR: ברוך הבא ל{site_name}! החשבון שלך פעיל עכשיו.
+
+[320]
+ID: Welcome to {site_name}! Your account is now active.
+TR: ברוכ/ה הבא/ה ל{site_name}! החשבון שלך פעיל עכשיו.
+
+[321]
+ID: Friends
+TR: חברות
+
+[322]
+ID: Friends
+TR: חברים
+
+[323]
+ID: Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: בגלל ניצול לרעה של האתר לשליחת הודעות ספאם, נאלצנו להגביל את מספר ההודעות שאפשר לשלוח לחברים אחרים באתר ביום אחד. נסי שוב מחר. שימי לב שאין להשתמש בספידי נט בשביל לשלוח הודעות ספאם, או הודעות בעלות תוכן זהה למספר גדול של אנשים.
+
+[324]
+ID: Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: בגלל ניצול לרעה של האתר לשליחת הודעות ספאם, נאלצנו להגביל את מספר ההודעות שאפשר לשלוח לחברים אחרים באתר ביום אחד. נסה שוב מחר. שים לב שאין להשתמש בספידי נט בשביל לשלוח הודעות ספאם, או הודעות בעלות תוכן זהה למספר גדול של אנשים.
+
+[325]
+ID: Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: בגלל ניצול לרעה של האתר לשליחת הודעות ספאם, נאלצנו להגביל את מספר ההודעות שאפשר לשלוח לחברים אחרים באתר ביום אחד. נסה/י שוב מחר. שימ/י לב שאין להשתמש בספידי נט בשביל לשלוח הודעות ספאם, או הודעות בעלות תוכן זהה למספר גדול של אנשים.
+
+[326]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפי בפרופיל של משתמשת זאת בספידי נט.
+
+[327]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפי בפרופיל של משתמש זה בספידי נט.
+
+[328]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. צפי בפרופיל של משתמש/ת זה/זאת בספידי נט.
+
+[329]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה בפרופיל של משתמשת זאת בספידי נט.
+
+[330]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפה בפרופיל של משתמש זה בספידי נט.
+
+[331]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. צפה בפרופיל של משתמש/ת זה/זאת בספידי נט.
+
+[332]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה/י בפרופיל של משתמשת זאת בספידי נט.
+
+[333]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש הזה לא מתאים לפרופיל שלך, אבל באפשרותך לראות אותו בספידי נט. צפה/י בפרופיל של משתמש זה בספידי נט.
+
+[334]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: המשתמש/ת הזאת לא מתאימ/ה לפרופיל שלך, אבל באפשרותך לראות אותו/ה בספידי נט. צפה/י בפרופיל של משתמש/ת זה/זאת בספידי נט.
+
+[335]
+ID: Your profile picture can't be transparent. Please upload a nontransparent image.
+TR: תמונת הפרופיל שלך לא יכולה להיות שקופה. העלי בבקשה תמונה לא שקופה.
+
+[336]
+ID: Your profile picture can't be transparent. Please upload a nontransparent image.
+TR: תמונת הפרופיל שלך לא יכולה להיות שקופה. העלה בבקשה תמונה לא שקופה.
+
+[337]
+ID: Your profile picture can't be transparent. Please upload a nontransparent image.
+TR: תמונת הפרופיל שלך לא יכולה להיות שקופה. העלה/י בבקשה תמונה לא שקופה.
+
+[338]
+ID: Speedy Core Accounts
+TR: Speedy Core Accounts
+
+[339]
+ID: Only me
+TR: רק אני
+
+[340]
+ID: Me and my friends
+TR: אני והחברים/ות שלי
+
+[341]
+ID: Anyone
+TR: כל אחד/ת
+
+[342]
+ID: Last name (optional)
+TR: שם משפחה (אופציונלי)
+
+[343]
+ID: Your email
+TR: הדואר האלקטרוני שלך
+
+[344]
+ID: New password
+TR: סיסמה חדשה
+
+[345]
+ID: New username
+TR: שם משתמש/ת חדש
+
+[346]
+ID: Create an account
+TR: צור/י חשבון
+
+[347]
+ID: A profile picture is required.
+TR: נדרשת תמונת פרופיל.
+
+[348]
+ID: Email or Username
+TR: דואר אלקטרוני או שם משתמש/ת
+
+[349]
+ID: Login
+TR: כניסה
+
+[350]
+ID: Forgot your password?
+TR: שכחת את הסיסמה שלך?
+
+[351]
+ID: Submit
+TR: שלח/י
+
+[352]
+ID: Your password
+TR: הסיסמה שלך
+
+[353]
+ID: Invalid password.
+TR: הסיסמה לא תקינה.
+
+[354]
+ID: username
+TR: שם משתמש/ת
+
+[355]
+ID: This username is already taken.
+TR: שם המשתמש/ת הזה כבר תפוס.
+
+[356]
+ID: photo
+TR: תמונה
+
+[357]
+ID: Special username
+TR: שם משתמש/ת מיוחד
+
+[358]
+ID: entity
+TR: ישות
+
+[359]
+ID: entities
+TR: ישויות
+
+[360]
+ID: Slug does not parse to username.
+TR: slug לא מתאים לשם המשתמש/ת.
+
+[361]
+ID: Username is required.
+TR: שם המשתמש/ת נדרש.
+
+[362]
+ID: name
+TR: שם
+
+[363]
+ID: description
+TR: תיאור
+
+[364]
+ID: Female
+TR: נקבה
+
+[365]
+ID: Male
+TR: זכר
+
+[366]
+ID: Other
+TR: אחר/ת
+
+[367]
+ID: Unknown
+TR: לא ידוע
+
+[368]
+ID: Notify me
+TR: הודיעו לי
+
+[369]
+ID: Don't notify me
+TR: אל תודיעו לי
+
+[370]
+ID: first name
+TR: שם פרטי
+
+[371]
+ID: last name
+TR: שם משפחה
+
+[372]
+ID: I am
+TR: אני
+
+[373]
+ID: date of birth
+TR: תאריך לידה
+
+[374]
+ID: diet
+TR: תזונה
+
+[375]
+ID: smoking status
+TR: הרגלי עישון
+
+[376]
+ID: relationship status
+TR: סטטוס מערכת יחסים
+
+[377]
+ID: Who can view my birth month and day
+TR: מי יכול/ה לראות את חודש ויום הלידה שלי
+
+[378]
+ID: Who can view my birth year
+TR: מי יכול/ה לראות את שנת הלידה שלי
+
+[379]
+ID: On new messages
+TR: כאשר יש הודעות חדשות
+
+[380]
+ID: Last IP address used https://ipapi.com/ time
+TR: Last IP address used https://ipapi.com/ time
+
+[381]
+ID: Last IP address used raw https://ipapi.com/ results
+TR: Last IP address used raw https://ipapi.com/ results
+
+[382]
+ID: users
+TR: משתמשים
+
+[383]
+ID: Superuser must be equal to staff.
+TR: Superuser must be equal to staff.
+
+[384]
+ID: email
+TR: דואר אלקטרוני
+
+[385]
+ID: is confirmed
+TR: מאומת
+
+[386]
+ID: is primary
+TR: ראשי
+
+[387]
+ID: confirmation token
+TR: confirmation token
+
+[388]
+ID: confirmation sent
+TR: confirmation sent
+
+[389]
+ID: Who can see this email
+TR: מי יכול/ה לראות את הדואר האלקטרוני הזה
+
+[390]
+ID: email addresses
+TR: כתובות דואר אלקטרוני
+
+[391]
+ID: last visit
+TR: ביקור אחרון
+
+[392]
+ID: Today
+TR: היום
+
+[393]
+ID: Yesterday
+TR: אתמול
+
+[394]
+ID: On {date} ({timesince_ago})
+TR: בתאריך {date} ({timesince_ago})
+
+[395]
+ID: {timesince} ago
+TR: לפני {timesince}
+
+[396]
+ID: Username must start with 4 or more letters, and may contain letters, digits or dashes.
+TR: שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, ויכול להכיל אותיות, ספרות או מקפים. שם המשתמש/ת חייב להיות באנגלית.
+
+[397]
+ID: Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.
+TR: שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית.
+
+[398]
+ID: Your password must contain at least %(min_unique_characters)d unique characters.
+TR: הסיסמה שלך חייבת להכיל לפחות %(min_unique_characters)d תווים ייחודיים.
+
+[399]
+ID: This field cannot be null.
+TR: שדה זה אינו יכול להיות ריק.
+
+[400]
+ID: This field cannot be blank.
+TR: שדה זה אינו יכול להיות ריק.
+
+[401]
+ID: Enter a valid date.
+TR: יש להזין תאריך חוקי.
+
+[402]
+ID: This email is already in use.
+TR: הדואר האלקטרוני הזה כבר נמצא בשימוש.
+
+[403]
+ID: This picture's file size is too big. The maximal file size allowed is 30 MB.
+TR: גודל קובץ תמונה זה גדול מדי. גודל הקובץ המקסימלי המותר הוא 30 מגה בייט.
+
+[404]
+ID: You can't use this format for your profile picture. Only JPEG or PNG formats are accepted.
+TR: אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG מתקבלים.
+
+[405]
+ID: Invalid confirmation link.
+TR: קישור אימות לא חוקי.
+
+[406]
+ID: A confirmation message was sent to {email_address}
+TR: הודעת אימות נשלחה ל-‎{email_address}‎
+
+[407]
+ID: The email address was deleted.
+TR: כתובת הדואר האלקטרוני נמחקה.
+
+[408]
+ID: You have made this email address primary.
+TR: הפכת את כתובת הדואר האלקטרוני הזאת לראשית.
+
+[409]
+ID: Admin: The total number of members on the site is {total_number_of_members}, of which {total_number_of_members_in_the_last_week} members entered the site in the last week, {total_number_of_members_in_the_last_month} members entered the site in the last month, {total_number_of_members_in_the_last_four_months} members entered the site in the last four months, {total_number_of_members_in_the_last_eight_months} members entered the site in the last eight months, and {total_number_of_members_in_the_last_two_years} members entered the site in the last two years.
+TR: אדמין: מספר החברים באתר הוא {total_number_of_members}, מתוכם {total_number_of_members_in_the_last_week} חברים נכנסו לאתר בשבוע האחרון, {total_number_of_members_in_the_last_month} חברים נכנסו לאתר בחודש האחרון, {total_number_of_members_in_the_last_four_months} חברים נכנסו לאתר בארבעת החודשים האחרונים, {total_number_of_members_in_the_last_eight_months} חברים נכנסו לאתר בשמונת החודשים האחרונים, ו-{total_number_of_members_in_the_last_two_years} חברים נכנסו לאתר בשנתיים האחרונות.
+
+[410]
+ID: Admin: {total_number_of_members_registered_in_the_last_week} members registered in the last week. {total_number_of_members_registered_in_the_last_month} members registered in the last month. {total_number_of_members_registered_in_the_last_four_months} members registered in the last four months. {total_number_of_members_registered_more_than_four_months_ago} members registered more than four months ago. {total_number_of_members_registered_in_the_last_eight_months} members registered in the last eight months. {total_number_of_members_registered_more_than_eight_months_ago} members registered more than eight months ago. {total_number_of_members_registered_in_the_last_two_years} members registered in the last two years. {total_number_of_members_registered_more_than_two_years_ago} members registered more than two years ago. {total_number_of_members_registered_before_2019_08_01} members registered before 1 August 2019.
+TR: אדמין: בשבוע האחרון נרשמו לאתר {total_number_of_members_registered_in_the_last_week} חברים. בחודש האחרון נרשמו לאתר {total_number_of_members_registered_in_the_last_month} חברים. בארבעת החודשים האחרונים נרשמו לאתר {total_number_of_members_registered_in_the_last_four_months} חברים. {total_number_of_members_registered_more_than_four_months_ago} חברים נרשמו לאתר לפני יותר מארבעה חודשים. בשמונת החודשים האחרונים נרשמו לאתר {total_number_of_members_registered_in_the_last_eight_months} חברים. {total_number_of_members_registered_more_than_eight_months_ago} חברים נרשמו לאתר לפני יותר משמונה חודשים. בשנתיים האחרונות נרשמו לאתר {total_number_of_members_registered_in_the_last_two_years} חברים. {total_number_of_members_registered_more_than_two_years_ago} חברים נרשמו לאתר לפני יותר משנתיים. {total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני 1 באוגוסט 2019.
+
+[411]
+ID: Admin: {total_number_of_members_registered_in_year} members registered in {year}.
+TR: אדמין: {total_number_of_members_registered_in_year} חברים נרשמו לאתר בשנת {year}.
+
+[412]
+ID: Speedy Core Base App
+TR: Speedy Core Base App
+
+[413]
+ID: ID
+TR: ID
+
+[414]
+ID: , 
+TR:  ו
+
+[415]
+ID: id contains illegal characters.
+TR: id מכיל תווים לא חוקיים.
+
+[416]
+ID: Changes saved.
+TR: השינויים נשמרו.
+
+[417]
+ID: Users cannot block themselves.
+TR: משתמשים לא יכולים לחסום את עצמם.
+
+[418]
+ID: blocked user
+TR: blocked user
+
+[419]
+ID: block
+TR: block
+
+[420]
+ID: user blocks
+TR: user blocks
+
+[421]
+ID: You have blocked {}.
+TR: חסמת את {}.
+
+[422]
+ID: You have unblocked {}.
+TR: ביטלת את חסימת {}.
+
+[423]
+ID: Contact By Form
+TR: Contact By Form
+
+[424]
+ID: Type the number \"17\"
+TR: הקלד/הקלידי את המספר \"17\"
+
+[425]
+ID: Please contact us by email.
+TR: אנא צרו איתנו קשר באמצעות הדואר האלקטרוני.
+
+[426]
+ID: Not 17.
+TR: לא 17.
+
+[427]
+ID: Feedback
+TR: פידבק
+
+[428]
+ID: Abuse (User)
+TR: Abuse (User)
+
+[429]
+ID: Abuse (Photo)
+TR: Abuse (Photo)
+
+[430]
+ID: sender
+TR: שולח/ת
+
+[431]
+ID: your name
+TR: השם שלך
+
+[432]
+ID: your email
+TR: הדואר האלקטרוני שלך
+
+[433]
+ID: type
+TR: type
+
+[434]
+ID: your message
+TR: ההודעה שלך
+
+[435]
+ID: reported entity
+TR: reported entity
+
+[436]
+ID: reported photo
+TR: reported photo
+
+[437]
+ID: feedback
+TR: פידבק
+
+[438]
+ID: feedbacks
+TR: פידבקים
+
+[439]
+ID: Friendship request sent.
+TR: בקשת חברות נשלחה.
+
+[440]
+ID: No friendship request.
+TR: אין בקשת חברות.
+
+[441]
+ID: Friendship request accepted.
+TR: בקשת החברות התקבלה.
+
+[442]
+ID: Friendship request rejected.
+TR: בקשת החברות נדחתה.
+
+[443]
+ID: Messages
+TR: הודעות
+
+[444]
+ID: site
+TR: אתר
+
+[445]
+ID: participant 1
+TR: משתתפ/ת 1
+
+[446]
+ID: participant 2
+TR: משתתפ/ת 2
+
+[447]
+ID: participants
+TR: משתתפים
+
+[448]
+ID: is group chat
+TR: is group chat
+
+[449]
+ID: last message
+TR: הודעה אחרונה
+
+[450]
+ID: chat
+TR: צ'ט
+
+[451]
+ID: chats
+TR: צ'טים
+
+[452]
+ID: None
+TR: אין
+
+[453]
+ID: message
+TR: הודעה
+
+[454]
+ID: messages
+TR: הודעות
+
+[455]
+ID: read mark
+TR: read mark
+
+[456]
+ID: read marks
+TR: read marks
+
+[457]
+ID: English
+TR: אנגלית
+
+[458]
+ID: Hebrew
+TR: עברית
+
+[459]
+ID: French
+TR: צרפתית
+
+[460]
+ID: German
+TR: גרמנית
+
+[461]
+ID: Spanish
+TR: ספרדית
+
+[462]
+ID: Portuguese
+TR: פורטוגזית
+
+[463]
+ID: Italian
+TR: איטלקית
+
+[464]
+ID: Dutch
+TR: הולנדית
+
+[465]
+ID: Swedish
+TR: שוודית
+
+[466]
+ID: Korean
+TR: קוריאנית
+
+[467]
+ID: Finnish
+TR: פינית
+
+[468]
+ID: Bad request
+TR: בקשה לא טובה
+
+[469]
+ID: Speedy is sorry, but we can't handle your request.
+TR: ספידי מצטערת, אבל איננו יכולים לטפל בבקשתך.
+
+[470]
+ID: Permission denied
+TR: ההרשאה נדחתה
+
+[471]
+ID: Speedy is sorry, but this page is private.
+TR: ספידי מצטערת, אבל הדף הזה פרטי.
+
+[472]
+ID: Page not found
+TR: הדף לא נמצא
+
+[473]
+ID: Speedy is sorry, but the page is not found.
+TR: ספידי מצטערת, אבל הדף לא נמצא.
+
+[474]
+ID: Internal server error
+TR: שגיאת שרת פנימית
+
+[475]
+ID: About
+TR: אודות
+
+[476]
+ID: Edit Profile
+TR: עריכת פרופיל
+
+[477]
+ID: Profile Info
+TR: פרטי פרופיל
+
+[478]
+ID: Privacy
+TR: פרטיות
+
+[479]
+ID: Notifications
+TR: התראות
+
+[480]
+ID: Emails & Password
+TR: דואר אלקטרוני וסיסמה
+
+[481]
+ID: Email Addresses
+TR: כתובות דואר אלקטרוני
+
+[482]
+ID: Address
+TR: כתובת
+
+[483]
+ID: Added
+TR: הוספה
+
+[484]
+ID: Visibility
+TR: נראות
+
+[485]
+ID: Actions
+TR: פעולות
+
+[486]
+ID: Unconfirmed
+TR: לא מאומתת
+
+[487]
+ID: Primary
+TR: ראשית
+
+[488]
+ID: Your age will be visible to your matches on Speedy Match.
+TR: הגיל שלך יהיה גלוי להתאמות שלך בספידי מץ'.
+
+[489]
+ID: Add Email
+TR: הוספת דואר אלקטרוני
+
+[490]
+ID: Logged Out
+TR: התנתקת מהאתר
+
+[491]
+ID: Reset Password
+TR: איפוס סיסמה
+
+[492]
+ID: Password reset successfully.
+TR: סיסמה אופסה בהצלחה.
+
+[493]
+ID: Password reset failed. Invalid link.
+TR: איפוס סיסמה נכשל. קישור לא תקין.
+
+[494]
+ID: Email with password reset instructions has been sent.
+TR: נשלח לך דואר אלקטרוני עם הוראות לאיפוס סיסמה.
+
+[495]
+ID: Admin - Friends
+TR: אדמין: חברים/ות
+
+[496]
+ID: friends
+TR: חברים/ות
+
+[497]
+ID: No friends yet.
+TR: אין חברים/ות עדיין.
+
+[498]
+ID: Admin Information
+TR: אדמין: פרטים
+
+[499]
+ID: Admin - All Users
+TR: אדמין - כל המשתמשים
+
+[500]
+ID: No users.
+TR: אין משתמשים.
+
+[501]
+ID: This site is under construction
+TR: אתר זה נמצא בבנייה
+
+[502]
+ID: Speedy Net Blog
+TR: הבלוג של ספידי נט
+
+[503]
+ID: Speedy Paz
+TR: ספידי פז
+
+[504]
+ID: Speedy Software
+TR: ספידי תוכנה
+
+[505]
+ID: Speedy Sale
+TR: ספידי סייל
+
+[506]
+ID: A vegan friendly website
+TR: אתר ידידותי לטבעונים
+
+[507]
+ID: Speedy
+TR: ספידי
+
+[508]
+ID: Home
+TR: דף הבית
+
+[509]
+ID: Password
+TR: סיסמה
+
+[510]
+ID: Speedy Net
+TR: ספידי נט
+
+[511]
+ID: Speedy Match
+TR: ספידי מץ'
+
+[512]
+ID: Speedy Net's Shop
+TR: החנות של ספידי נט
+
+[513]
+ID: Speedy Match's Shop
+TR: החנות של ספידי מץ'
+
+[514]
+ID: Speedy S-logo Shop
+TR: החנות של ספידי S-לוגו
+
+[515]
+ID: Privacy Policy
+TR: מדיניות פרטיות
+
+[516]
+ID: Terms of Service
+TR: תנאי שימוש
+
+[517]
+ID: Terms
+TR: תנאים
+
+[518]
+ID: Contact Us
+TR: צרו קשר
+
+[519]
+ID: Speedy Composer
+TR: ספידי קומפוזר
+
+[520]
+ID: Speedy Mail Software
+TR: תוכנת דואר ספידי
+
+[521]
+ID: Speedy Composer's Shop
+TR: החנות של ספידי קומפוזר
+
+[522]
+ID: Blocked Users
+TR: משתמשים חסומים
+
+[523]
+ID: If you have any questions, suggestions or are interested in joining the team - please contact us by email.
+TR: אם יש לכם שאלות, הצעות או אם אתם מעוניינים להצטרף לצוות - צרו איתנו קשר בדואר אלקטרוני.
+
+[524]
+ID: Uri Rodberg, founder and webmaster:
+TR: אורי רודברג, מייסד ומנהל האתר:
+
+[525]
+ID: Report a Photo
+TR: דיווח על תמונה
+
+[526]
+ID: Thank You
+TR: תודה
+
+[527]
+ID: Previous
+TR: הקודם
+
+[528]
+ID: Next
+TR: הבא
+
+[529]
+ID: Password reset on %(site_name)s
+TR: איפוס סיסמה ב%(site_name)s
+
+[530]
+ID: You have a new message on %(site_name)s
+TR: יש לך הודעה חדשה ב%(site_name)s
+
+[531]
+ID: Received Requests
+TR: בקשות חברות שקיבלת
+
+[532]
+ID: Sent Requests
+TR: בקשות חברות ששלחת
+
+[533]
+ID: There are no pending friendship requests.
+TR: אין פה בקשות חברות.
+
+[534]
+ID: Welcome to %(site_name)s!
+TR: ברוכים הבאים ל%(site_name)s!
+
+[535]
+ID: Join %(site_name)s!
+TR: הצטרפו ל%(site_name)s!
+
+[536]
+ID: It's free and anyone can join!
+TR: זה בחינם וכולם יכולים להצטרף!
+
+[537]
+ID: Chat with <a href=\"%(link)s\">%(user_name)s</a>
+TR: שיחה עם <a href=\"%(link)s\">%(user_name)s</a>
+
+[538]
+ID: Unread
+TR: לא נקראה
+
+[539]
+ID: New
+TR: חדשה
+
+[540]
+ID: We respect your privacy. We will not sell or share your personal details, including your name, your date of birth, your email address and your password. Messages you send to people on Speedy Net are personal and will not be shared with other people or websites. Your password is saved encrypted on our database.
+TR: אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים שלכם, כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה שלכם. הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים או אתרים אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו.
+
+[541]
+ID: Your profile on Speedy Net is visible to everyone, but you can choose who to share with your email address and your date of birth. If you signed up for Speech Match, your Speech Match profile will only be visible to people who match you according to the settings you have set up on the site, and that you match them according to their settings. Your profile on Speech Match will not appear on Google and is not visible to people who are not registered to the site.
+TR: הפרופיל שלכם בספידי נט גלוי לכולם, אך אתם תוכלו לבחור עם מי לשתף את כתובת הדואר האלקטרוני שלכם ותאריך הלידה שלכם. אם נרשמתם לספידי מץ', הפרופיל שלכם בספידי מץ' יהיה גלוי רק לבני-זוג שמתאימים לכם לפי ההגדרות שהגדרתם באתר, ושאתם מתאימים להם לפי ההגדרות שלהם. הפרופיל שלכם בספידי מץ' לא יופיע בגוגל ולא גלוי למי שלא רשום לאתר.
+
+[542]
+ID: If you have deactivated your account on Speedy Net or Speech Match, your profile on that site will be removed from the site and you will not appear in other people's search results on the site. Note that deactivating your account on Speedy Net also automatically deactivates your account at Speedy Match. You can deactivate only your account at Speedy Match, in which case your Speedy Net account will remain active. You can reactivate your account after you deactivate it whenever you like.
+TR: אם הקפאתם את פעילות החשבון שלכם בספידי נט או בספידי מץ', הפרופיל שלכם באותו אתר יוסר מהאתר ולא תופיעו בתוצאות החיפוש של אנשים אחרים באתר. שימו לב שהקפאת החשבון בספידי נט מקפיאה אוטומטית גם את החשבון בספידי מץ'. ניתן להקפיא רק את החשבון בספידי מץ', ובמקרה כזה החשבון שלכם בספידי נט יישאר פעיל. ניתן להפעיל מחדש את החשבון לאחר שהקפאתם אותו, מתי שתרצו.
+
+[543]
+ID: If you want, you can delete your account on Speedy Net. Deleting your Speedy Net account will automatically delete your Speedy Match account as well. To delete your Speedy Net account, log in to Speedy Net, deactivate your account, and then click “Delete Account” (in the “Edit Profile” menu). Fill out the details in the form and confirm. Please note that a deleted account cannot be recovered. Account deletion is permanent and irreversible.
+TR: אם תרצו, תוכלו למחוק את החשבון שלכם בספידי נט. מחיקת החשבון שלכם בספידי נט תמחק אוטומטית גם את החשבון שלכם בספידי מץ'. על-מנת למחוק את החשבון בספידי נט, היכנסו לספידי נט, הקפיאו את החשבון ולאחר מכן לחצו על \"מחק את החשבון\" או \"מחקי את החשבון\" (בתפריט \"עריכת פרופיל\"). מלאו את הפרטים בטופס ואשרו. שימו לב שלא ניתן לשחזר חשבון שנמחק. מחיקת החשבון היא קבועה ובלתי הפיכה.
+
+[544]
+ID: .
+TR: .
+
+[545]
+ID: Toggle Dropdown
+TR: החלף/י את התפריט הנפתח
+
+[546]
+ID: ?
+TR: ?
+
+[547]
+ID: Information
+TR: פרטים
+
+[548]
+ID: Name
+TR: שם
+
+[549]
+ID: Gender
+TR: מין
+
+[550]
+ID: Birth Date
+TR: תאריך לידה
+
+[551]
+ID: Birth Year
+TR: שנת לידה
+
+[552]
+ID: Age
+TR: גיל
+
+[553]
+ID: The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.
+TR: האתר באלפא, ייתכן שיהיו תקלות באתר. הנהלת האתר אינה אחראית על תקלות שיהיו באתר.
+
+[554]
+ID: You can use Speedy Net for legal purposes only. You are not allowed to upload contents related to hate, violence, animal abuse, nudity or pornography. You are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: אתם יכולים להשתמש בספידי נט למטרות חוקיות בלבד. אין להעלות לאתר תכנים הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש בספידי נט בשביל לשלוח הודעות ספאם, או הודעות בעלות תוכן זהה למספר גדול של אנשים.
+
+[555]
+ID: Site management cannot verify personal information provided by users of the site. Some users' personal information may not be correct. Site management is not responsible for user activity outside the site. If you choose to meet or talk on the phone with people you met on the site, the responsibility for the results of the meeting or phone call is yours.
+TR: להנהלת האתר אין אפשרות לאמת פרטים אישיים שמסרו המשתמשים באתר. ייתכן שחלק מהפרטים האישיים של משתמשים באתר אינם נכונים. הנהלת האתר אינה אחראית על פעילות המשתמשים מחוץ לאתר. אם בחרתם להפגש או לשוחח בטלפון עם אנשים שהכרתם באתר, האחריות לתוצאות הפגישה או שיחת הטלפון היא שלכם.
+
+[556]
+ID: After signing up for the site you are asked to verify your email address via a link sent to you. Accounts without a verified email address will be deleted from the site after 10 days.
+TR: לאחר ההרשמה לאתר אתם מתבקשים לאמת את כתובת הדואר האלקטרוני שלכם באמצעות קישור שנשלח אליכם. חשבונות ללא כתובת דואר אלקטרוני מאומתת יימחקו מהאתר לאחר 10 ימים.
+
+[557]
+ID: If you mistakenly signed up for the site with an incorrect email address, add a new email address to your account and verify it. You can attach several email addresses to your account on the site.
+TR: אם נרשמתם לאתר בטעות עם כתובת דואר אלקטרוני שגויה, הוסיפו כתובת דואר אלקטרוני חדשה לחשבון שלכם ואמתו אותה. ניתן לצרף מספר כתובות דואר אלקטרוני לחשבון שלכם באתר.
+
+[558]
+ID: Your profile picture should be a picture of you, where we can see your face. It is allowed to upload a profile picture with other people. Do not upload nude photos, photos showing genitals (of men or women) or bare-chested images (of men or women).
+TR: תמונת הפרופיל שלכם צריכה להיות תמונה שלכם, שבה רואים את הפנים שלכם. מותר להעלות תמונת פרופיל עם אנשים נוספים. אין להעלות תמונות עירום, תמונות שבהן רואים אברי מין (של גברים או נשים) או תמונות בחזה חשוף (של גברים או נשים).
+
+[559]
+ID: Browse...
+TR: עיון...
+
+[560]
+ID: owner
+TR: בעלים
+
+[561]
+ID: file
+TR: קובץ
+
+[562]
+ID: is stored
+TR: is stored
+
+[563]
+ID: file size
+TR: גודל קובץ
+
+[564]
+ID: uploaded file
+TR: uploaded file
+
+[565]
+ID: uploaded files
+TR: uploaded files
+
+[566]
+ID: visible on website
+TR: visible on website
+
+[567]
+ID: Speedy image moderation time
+TR: Speedy image moderation time
+
+[568]
+ID: AWS image moderation time
+TR: AWS image moderation time
+
+[569]
+ID: AWS facial analysis time
+TR: AWS facial analysis time
+
+[570]
+ID: AWS raw image moderation results
+TR: AWS raw image moderation results
+
+[571]
+ID: AWS raw facial analysis results
+TR: AWS raw facial analysis results
+
+[572]
+ID: number of faces
+TR: number of faces
+
+[573]
+ID: uploaded image
+TR: uploaded image
+
+[574]
+ID: uploaded images
+TR: uploaded images
+
+[575]
+ID: Speedy Mail Software Accounts
+TR: Speedy Mail Software Accounts
+
+[576]
+ID: Speedy Mail Profile
+TR: פרופיל דואר ספידי
+
+[577]
+ID: Speedy Mail Profiles
+TR: פרופילים דואר ספידי
+
+[578]
+ID: About Speedy Mail Software
+TR: אודות תוכנת דואר ספידי
+
+[579]
+ID: Speedy Mail Software will be a free software and open source web-based email such as Gmail. We want the mail to be as similar as possible to the excellent email of Google, Gmail. When we develop such a mail software, we intend to run a free email service to all members of Speedy Net, so that the username of each person at Speedy Net + the speedy.net domain name will be the email address of the user. In the past we operated an email like this, but unfortunately we had to close it because it was a lot worse than Gmail, in terms of features and storage, and also because we were not able to control the problem of spam (\"junk mail\") sent to our clients. But if we can recruit volunteers to create a good email program, we will reactivate Speedy Mail and will allow any company or organization to operate a similar web-based email on their site.
+TR: תוכנת דואר ספידי תהיה תוכנה חופשית בקוד פתוח לדואר אלקטרוני מבוסס web כמו Gmail. אנחנו רוצים שהדואר יהיה דומה ככל האפשר לדואר האלקטרוני המצויין של חברת גוגל, Gmail. כאשר נפתח תוכנת דואר כזאת, בכוונתנו להפעיל שירות דואר אלקטרוני בחינם לכל חברי ספידי נט, כך ששם המשתמש של כל אדם בספידי נט + שם הדומיין speedy.net יהווה את כתובת הדואר האלקטרוני של המשתמש. בעבר הפעלנו דואר אלקטרוני כזה, אך לצערי נאלצנו לסגור אותו מכיוון שהוא היה הרבה פחות טוב מ-Gmail, מבחינת פיצ'רים וגם נפח אחסון, וגם מכיוון שלא הצלחנו להשתלט על בעיית הספאם (\"דואר זבל\") שנשלח ללקוחותינו. אך אם נצליח לגייס מתנדבים שייבנו תוכנת דואר אלקטרוני טובה, נפעיל מחדש את דואר ספידי וגם נאפשר לכל חברה או ארגון אחר להפעיל דואר אלקטרוני דומה באתר שלהם.
+
+[580]
+ID: Speedy Mail Software will be available in two languages - English and Hebrew, and will be free of charge. Speedy Net and Speedy Mail Software are free software & open source projects. If you want to help developing Speedy Mail Software, please contact me by email.
+TR: תוכנת דואר ספידי תהיה זמינה בשתי שפות - עברית ואנגלית, ותהיה ללא תשלום. ספידי נט ותוכנת דואר ספידי הם פרויקטים של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח תוכנת דואר ספידי, אנא צרו איתי קשר באמצעות דואר אלקטרוני.
+
+[581]
+ID: Speedy Mail Software is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: תוכנת דואר ספידי נקראת על שם <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי המליטה 7 גורים בשנת 1988.
+
+[582]
+ID: Founder and director of Speedy Net and Speedy Mail,
+TR: מייסד ומנהל ספידי נט ודואר ספידי,
+
+[583]
+ID: We are looking for volunteers to help us develop Speedy Mail Software, a free software and open source web-based email such as Gmail.
+TR: אנחנו מחפשים מתנדבים שיעזרו לנו לפתח את תוכנת דואר ספידי, תוכנה חופשית בקוד פתוח לדואר אלקטרוני מבוסס web כמו Gmail.
+
+[584]
+ID: Welcome to Speedy Mail Software!
+TR: ברוכים הבאים לתוכנת דואר ספידי!
+
+[585]
+ID: We are looking for volunteers to help us develop Speedy Mail Software, a free software and open source web-based email such as Gmail. We want the mail to be as similar as possible to the excellent email of Google, Gmail. When we develop such a mail software, we intend to run a free email service to all members of Speedy Net, so that the username of each person at Speedy Net + the speedy.net domain name will be the email address of the user. In the past we operated an email like this, but unfortunately we had to close it because it was a lot worse than Gmail, in terms of features and storage, and also because we were not able to control the problem of spam (\"junk mail\") sent to our clients. But if we can recruit volunteers to create a good email program, we will reactivate Speedy Mail and will allow any company or organization to operate a similar web-based email on their site.
+TR: אנחנו מחפשים מתנדבים שיעזרו לנו לפתח את תוכנת דואר ספידי, תוכנה חופשית בקוד פתוח לדואר אלקטרוני מבוסס web כמו Gmail. אנחנו רוצים שהדואר יהיה דומה ככל האפשר לדואר האלקטרוני המצויין של חברת גוגל, Gmail. כאשר נפתח תוכנת דואר כזאת, בכוונתנו להפעיל שירות דואר אלקטרוני בחינם לכל חברי ספידי נט, כך ששם המשתמש של כל אדם בספידי נט + שם הדומיין speedy.net יהווה את כתובת הדואר האלקטרוני של המשתמש. בעבר הפעלנו דואר אלקטרוני כזה, אך לצערי נאלצנו לסגור אותו מכיוון שהוא היה הרבה פחות טוב מ-Gmail, מבחינת פיצ'רים וגם נפח אחסון, וגם מכיוון שלא הצלחנו להשתלט על בעיית הספאם (\"דואר זבל\") שנשלח ללקוחותינו. אך אם נצליח לגייס מתנדבים שייבנו תוכנת דואר אלקטרוני טובה, נפעיל מחדש את דואר ספידי וגם נאפשר לכל חברה או ארגון אחר להפעיל דואר אלקטרוני דומה באתר שלהם.
+
+[586]
+ID: Speedy Mail Software will use the Python and JavaScript languages. Speedy Net is also free software and open source. If you are interested in volunteering, please contact me by email.
+TR: תוכנת דואר ספידי תשתמש בשפות Python ו-JavaScript. ספידי נט היא גם תוכנה חופשית בקוד פתוח. אם אתם מעוניינים להתנדב, צרו איתי קשר בדואר אלקטרוני.
+
+[587]
+ID: You have no likes here.
+TR: אין פה אנשים.
+
+[588]
+ID: Update matches
+TR: עדכון התאמות
+
+[589]
+ID: Add more options
+TR: הוסיפי עוד אפשרויות
+
+[590]
+ID: Add more options
+TR: הוסף עוד אפשרויות
+
+[591]
+ID: Add more options
+TR: הוסף/י עוד אפשרויות
+
+[592]
+ID: You don't have any matches yet. Try to broaden your search settings or check again later.
+TR: אין לך עדיין התאמות. נסי להרחיב את טווח החיפוש שלך או חזרי לאתר מאוחר יותר.
+
+[593]
+ID: You don't have any matches yet. Try to broaden your search settings or check again later.
+TR: אין לך עדיין התאמות. נסה להרחיב את טווח החיפוש שלך או חזור לאתר מאוחר יותר.
+
+[594]
+ID: You don't have any matches yet. Try to broaden your search settings or check again later.
+TR: אין לך עדיין התאמות. נסה/י להרחיב את טווח החיפוש שלך או חזור/חזרי לאתר מאוחר יותר.
+
+[595]
+ID: Match Settings
+TR: הגדרת התאמות
+
+[596]
+ID: Like
+TR: לייק
+
+[597]
+ID: Unlike
+TR: בטלי לייק
+
+[598]
+ID: Unlike
+TR: בטל לייק
+
+[599]
+ID: Unlike
+TR: בטל/י לייק
+
+[600]
+ID: Your Matches
+TR: ההתאמות שלך
+
+[601]
+ID: Your Friends
+TR: החברות שלך
+
+[602]
+ID: Your Friends
+TR: החברים שלך
+
+[603]
+ID: Your Friends
+TR: החברות והחברים שלך
+
+[604]
+ID: You don't have any friends yet.
+TR: עדיין אין לך חברות.
+
+[605]
+ID: You don't have any friends yet.
+TR: עדיין אין לך חברים.
+
+[606]
+ID: You don't have any friends yet.
+TR: עדיין אין לך חברים/ות.
+
+[607]
+ID: About me
+TR: על עצמי
+
+[608]
+ID: About my match
+TR: על בת הזוג שלי
+
+[609]
+ID: About my match
+TR: על בן הזוג שלי
+
+[610]
+ID: About my match
+TR: על בן/בת הזוג שלי
+
+[611]
+ID: Gender to match
+TR: מין בת הזוג
+
+[612]
+ID: Gender to match
+TR: מין בן הזוג
+
+[613]
+ID: Gender to match
+TR: מין בן/בת הזוג
+
+[614]
+ID: Someone likes you on %(site_name)s
+TR: מישהי עשתה לך לייק ב%(site_name)s
+
+[615]
+ID: Someone likes you on %(site_name)s
+TR: מישהו עשה לך לייק ב%(site_name)s
+
+[616]
+ID: likes you.
+TR: מחבבת אותך.
+
+[617]
+ID: likes you.
+TR: מחבב אותך.
+
+[618]
+ID: likes you.
+TR: מחבב/ת אותך.
+
+[619]
+ID: likes you
+TR: מחבבת אותך
+
+[620]
+ID: likes you
+TR: מחבב אותך
+
+[621]
+ID: likes you
+TR: מחבב/ת אותך
+
+[622]
+ID: You like
+TR: את מחבבת את
+
+[623]
+ID: You like
+TR: אתה מחבב את
+
+[624]
+ID: You like
+TR: את/ה מחבב/ת את
+
+[625]
+ID: Last visited Speedy Match
+TR: ביקרה לאחרונה בספידי מץ'
+
+[626]
+ID: Last visited Speedy Match
+TR: ביקר לאחרונה בספידי מץ'
+
+[627]
+ID: Last visited Speedy Match
+TR: ביקר/ה לאחרונה בספידי מץ'
+
+[628]
+ID: My height in centimeters
+TR: הגובה שלי בסנטימטרים
+
+[629]
+ID: Add profile picture
+TR: צרפי תמונת פרופיל
+
+[630]
+ID: Add profile picture
+TR: צרף תמונת פרופיל
+
+[631]
+ID: Add profile picture
+TR: צרפ/י תמונת פרופיל
+
+[632]
+ID: My ideal match
+TR: בת הזוג האידיאלית שלי
+
+[633]
+ID: My ideal match
+TR: בן הזוג האידיאלי שלי
+
+[634]
+ID: My ideal match
+TR: בן/בת הזוג האידיאלי/ת שלי
+
+[635]
+ID: Minimal age to match
+TR: גיל מינימלי לבת הזוג
+
+[636]
+ID: Minimal age to match
+TR: גיל מינימלי לבן הזוג
+
+[637]
+ID: Minimal age to match
+TR: גיל מינימלי לבן/בת הזוג
+
+[638]
+ID: Maximal age to match
+TR: גיל מקסימלי לבת הזוג
+
+[639]
+ID: Maximal age to match
+TR: גיל מקסימלי לבן הזוג
+
+[640]
+ID: Maximal age to match
+TR: גיל מקסימלי לבן/בת הזוג
+
+[641]
+ID: Please write a few words about yourself.
+TR: אנא כתבי כמה מילים על עצמך.
+
+[642]
+ID: Please write a few words about yourself.
+TR: אנא כתוב כמה מילים על עצמך.
+
+[643]
+ID: Please write a few words about yourself.
+TR: אנא כתוב/י כמה מילים על עצמך.
+
+[644]
+ID: Do you have children? How many?
+TR: יש לך ילדים? כמה?
+
+[645]
+ID: Do you want (more) children?
+TR: את רוצה (עוד) ילדים?
+
+[646]
+ID: Do you want (more) children?
+TR: אתה רוצה (עוד) ילדים?
+
+[647]
+ID: Do you want (more) children?
+TR: את/ה רוצה (עוד) ילדים?
+
+[648]
+ID: Who is your ideal partner?
+TR: מי בת הזוג האידיאלית שלך?
+
+[649]
+ID: Who is your ideal partner?
+TR: מי בן הזוג האידיאלי שלך?
+
+[650]
+ID: Who is your ideal partner?
+TR: מי בן או בת הזוג האידיאלי/ת שלך?
+
+[651]
+ID: We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.
+TR: אנו מצטערים, אך אינך מורשה להשתמש באתר {site_name}. גילינו שחלק מהמידע שמסרת בעת ההרשמה לאתר אינו נכון או שהפרת את כללי השימוש באתר. לכן אינך מורשה להשתמש באתר.
+
+[652]
+ID: Speedy Match Accounts
+TR: Speedy Match Accounts
+
+[653]
+ID: My diet
+TR: התזונה שלי
+
+[654]
+ID: Your diet is required.
+TR: התזונה שלך נדרשת.
+
+[655]
+ID: My smoking status
+TR: הרגלי העישון שלי
+
+[656]
+ID: Your smoking status is required.
+TR: הרגלי העישון שלך נדרשים.
+
+[657]
+ID: My relationship status
+TR: סטטוס מערכת היחסים שלי
+
+[658]
+ID: Your relationship status is required.
+TR: סטטוס מערכת היחסים שלך נדרש.
+
+[659]
+ID: Gender to match is required.
+TR: מין בן/בת הזוג שלך נדרש.
+
+[660]
+ID: Your height is required.
+TR: הגובה שלך נדרש.
+
+[661]
+ID: Minimal age to match is required.
+TR: הגיל המינימלי לבן/בת הזוג נדרש.
+
+[662]
+ID: Maximal age to match is required.
+TR: הגיל המקסימלי לבן/בת הזוג נדרש.
+
+[663]
+ID: Diet match is required.
+TR: התאמת התזונה נדרשת.
+
+[664]
+ID: Smoking status match is required.
+TR: התאמת הרגלי העישון נדרשת.
+
+[665]
+ID: Relationship status match is required.
+TR: התאמת סטטוס מערכת היחסים נדרשת.
+
+[666]
+ID: Speedy Match User
+TR: משתמש/ת ספידי מץ'
+
+[667]
+ID: No match
+TR: אין התאמה
+
+[668]
+ID: One heart
+TR: לב אחד
+
+[669]
+ID: Two hearts
+TR: שני לבבות
+
+[670]
+ID: Three hearts
+TR: שלושה לבבות
+
+[671]
+ID: Four hearts
+TR: ארבעה לבבות
+
+[672]
+ID: Five hearts
+TR: חמישה לבבות
+
+[673]
+ID: On new likes
+TR: כאשר יש לייקים חדשים
+
+[674]
+ID: Active languages
+TR: שפות פעילות
+
+[675]
+ID: Height
+TR: גובה
+
+[676]
+ID: cm
+TR: ס\"מ
+
+[677]
+ID: Few words about me
+TR: כמה מילים על עצמי
+
+[678]
+ID: Diet match
+TR: התאמת תזונה
+
+[679]
+ID: Smoking status match
+TR: התאמת הרגלי עישון
+
+[680]
+ID: Relationship status match
+TR: התאמת סטטוס מערכת יחסים
+
+[681]
+ID: Diet to match
+TR: התאמת תזונה
+
+[682]
+ID: Smoking status to match
+TR: התאמת הרגלי עישון
+
+[683]
+ID: Relationship status to match
+TR: התאמת סטטוס מערכת יחסים
+
+[684]
+ID: Activation step
+TR: Activation step
+
+[685]
+ID: Number of matches on last user's search
+TR: Number of matches on last user's search
+
+[686]
+ID: Speedy Match Profile
+TR: פרופיל ספידי מץ'
+
+[687]
+ID: Speedy Match Profiles
+TR: פרופילים ספידי מץ'
+
+[688]
+ID: The total number of active members on the site is {total_number_of_active_members_in_the_last_four_months}, of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week.
+TR: מספר החברים הפעילים באתר הוא {total_number_of_active_members_in_the_last_four_months}, מתוכם {total_number_of_active_members_in_the_last_week} חברים נכנסו לאתר בשבוע האחרון.
+
+[689]
+ID: Height must be from 1 to 450 cm.
+TR: הגובה חייב להיות בין 1 ל-450 ס\"מ.
+
+[690]
+ID: Minimal age to match must be from 0 to 180 years.
+TR: הגיל המינימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה.
+
+[691]
+ID: Maximal age to match must be from 0 to 180 years.
+TR: הגיל המקסימלי לבן/בת הזוג חייב להיות בין 0 ל-180 שנה.
+
+[692]
+ID: Maximal age to match can't be less than minimal age to match.
+TR: הגיל המקסימלי לבן/בת הזוג לא יכול להיות פחות מהגיל המינימלי לבן/בת הזוג.
+
+[693]
+ID: At least one diet match option should be five hearts.
+TR: לפחות אפשרות אחת להתאמת תזונה צריכה להיות חמישה לבבות.
+
+[694]
+ID: At least one smoking status match option should be five hearts.
+TR: לפחות אפשרות אחת להתאמת הרגלי עישון צריכה להיות חמישה לבבות.
+
+[695]
+ID: At least one relationship status match option should be five hearts.
+TR: לפחות אפשרות אחת להתאמת סטטוס מערכת יחסים צריכה להיות חמישה לבבות.
+
+[696]
+ID: Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others; {total_percent_of_female_active_members} females, {total_percent_of_male_active_members} males, {total_percent_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members ({total_number_of_female_active_members_in_the_last_week} females, {total_number_of_male_active_members_in_the_last_week} males, {total_number_of_other_active_members_in_the_last_week} others; {total_percent_of_female_active_members_in_the_last_week} females, {total_percent_of_male_active_members_in_the_last_week} males, {total_percent_of_other_active_members_in_the_last_week} others) entered the site in the last week, {total_number_of_active_members_in_the_last_month} members ({total_number_of_female_active_members_in_the_last_month} females, {total_number_of_male_active_members_in_the_last_month} males, {total_number_of_other_active_members_in_the_last_month} others; {total_percent_of_female_active_members_in_the_last_month} females, {total_percent_of_male_active_members_in_the_last_month} males, {total_percent_of_other_active_members_in_the_last_month} others) entered the site in the last month, {total_number_of_active_members_in_the_last_four_months} members ({total_number_of_female_active_members_in_the_last_four_months} females, {total_number_of_male_active_members_in_the_last_four_months} males, {total_number_of_other_active_members_in_the_last_four_months} others; {total_percent_of_female_active_members_in_the_last_four_months} females, {total_percent_of_male_active_members_in_the_last_four_months} males, {total_percent_of_other_active_members_in_the_last_four_months} others) entered the site in the last four months, {total_number_of_active_members_in_the_last_eight_months} members ({total_number_of_female_active_members_in_the_last_eight_months} females, {total_number_of_male_active_members_in_the_last_eight_months} males, {total_number_of_other_active_members_in_the_last_eight_months} others; {total_percent_of_female_active_members_in_the_last_eight_months} females, {total_percent_of_male_active_members_in_the_last_eight_months} males, {total_percent_of_other_active_members_in_the_last_eight_months} others) entered the site in the last eight months, and {total_number_of_active_members_in_the_last_two_years} members ({total_number_of_female_active_members_in_the_last_two_years} females, {total_number_of_male_active_members_in_the_last_two_years} males, {total_number_of_other_active_members_in_the_last_two_years} others; {total_percent_of_female_active_members_in_the_last_two_years} females, {total_percent_of_male_active_members_in_the_last_two_years} males, {total_percent_of_other_active_members_in_the_last_two_years} others) entered the site in the last two years.
+TR: אדמין: מספר החברים הפעילים באתר הוא {total_number_of_active_members} ({total_number_of_female_active_members} נקבות, {total_number_of_male_active_members} זכרים, {total_number_of_other_active_members} אחרים/ות; {total_percent_of_female_active_members} נקבות, {total_percent_of_male_active_members} זכרים, {total_percent_of_other_active_members} אחרים/ות), מתוכם {total_number_of_active_members_in_the_last_week} חברים ({total_number_of_female_active_members_in_the_last_week} נקבות, {total_number_of_male_active_members_in_the_last_week} זכרים, {total_number_of_other_active_members_in_the_last_week} אחרים/ות; {total_percent_of_female_active_members_in_the_last_week} נקבות, {total_percent_of_male_active_members_in_the_last_week} זכרים, {total_percent_of_other_active_members_in_the_last_week} אחרים/ות) נכנסו לאתר בשבוע האחרון, {total_number_of_active_members_in_the_last_month} חברים ({total_number_of_female_active_members_in_the_last_month} נקבות, {total_number_of_male_active_members_in_the_last_month} זכרים, {total_number_of_other_active_members_in_the_last_month} אחרים/ות; {total_percent_of_female_active_members_in_the_last_month} נקבות, {total_percent_of_male_active_members_in_the_last_month} זכרים, {total_percent_of_other_active_members_in_the_last_month} אחרים/ות) נכנסו לאתר בחודש האחרון, {total_number_of_active_members_in_the_last_four_months} חברים ({total_number_of_female_active_members_in_the_last_four_months} נקבות, {total_number_of_male_active_members_in_the_last_four_months} זכרים, {total_number_of_other_active_members_in_the_last_four_months} אחרים/ות; {total_percent_of_female_active_members_in_the_last_four_months} נקבות, {total_percent_of_male_active_members_in_the_last_four_months} זכרים, {total_percent_of_other_active_members_in_the_last_four_months} אחרים/ות) נכנסו לאתר בארבעת החודשים האחרונים, {total_number_of_active_members_in_the_last_eight_months} חברים ({total_number_of_female_active_members_in_the_last_eight_months} נקבות, {total_number_of_male_active_members_in_the_last_eight_months} זכרים, {total_number_of_other_active_members_in_the_last_eight_months} אחרים/ות; {total_percent_of_female_active_members_in_the_last_eight_months} נקבות, {total_percent_of_male_active_members_in_the_last_eight_months} זכרים, {total_percent_of_other_active_members_in_the_last_eight_months} אחרים/ות) נכנסו לאתר בשמונת החודשים האחרונים, ו-{total_number_of_active_members_in_the_last_two_years} חברים ({total_number_of_female_active_members_in_the_last_two_years} נקבות, {total_number_of_male_active_members_in_the_last_two_years} זכרים, {total_number_of_other_active_members_in_the_last_two_years} אחרים/ות; {total_percent_of_female_active_members_in_the_last_two_years} נקבות, {total_percent_of_male_active_members_in_the_last_two_years} זכרים, {total_percent_of_other_active_members_in_the_last_two_years} אחרים/ות) נכנסו לאתר בשנתיים האחרונות.
+
+[697]
+ID: Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_in_the_last_eight_months} active members registered in the last eight months. {total_number_of_active_members_registered_more_than_eight_months_ago} active members registered more than eight months ago. {total_number_of_active_members_registered_in_the_last_two_years} active members registered in the last two years. {total_number_of_active_members_registered_more_than_two_years_ago} active members registered more than two years ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.
+TR: אדמין: בשבוע האחרון נרשמו לאתר {total_number_of_active_members_registered_in_the_last_week} חברים פעילים. בחודש האחרון נרשמו לאתר {total_number_of_active_members_registered_in_the_last_month} חברים פעילים. בארבעת החודשים האחרונים נרשמו לאתר {total_number_of_active_members_registered_in_the_last_four_months} חברים פעילים. {total_number_of_active_members_registered_more_than_four_months_ago} חברים פעילים נרשמו לאתר לפני יותר מארבעה חודשים. בשמונת החודשים האחרונים נרשמו לאתר {total_number_of_active_members_registered_in_the_last_eight_months} חברים פעילים. {total_number_of_active_members_registered_more_than_eight_months_ago} חברים פעילים נרשמו לאתר לפני יותר משמונה חודשים. בשנתיים האחרונות נרשמו לאתר {total_number_of_active_members_registered_in_the_last_two_years} חברים פעילים. {total_number_of_active_members_registered_more_than_two_years_ago} חברים פעילים נרשמו לאתר לפני יותר משנתיים. {total_number_of_active_members_registered_before_2019_08_01} חברים פעילים נרשמו לאתר לפני 1 באוגוסט 2019.
+
+[698]
+ID: Admin: {total_number_of_active_members_registered_in_year} active members registered in {year}.
+TR: אדמין: {total_number_of_active_members_registered_in_year} חברים פעילים נרשמו לאתר בשנת {year}.
+
+[699]
+ID: Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range} females, {total_percent_of_male_active_members_in_age_range} males, {total_percent_of_other_active_members_in_age_range} others).
+TR: אדמין: יש באתר {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} נקבות, {total_number_of_male_active_members_in_age_range} זכרים, {total_number_of_other_active_members_in_age_range} אחרים/ות) חברים פעילים בגיל {min_age} עד {max_age} ({total_percent_of_female_active_members_in_age_range} נקבות, {total_percent_of_male_active_members_in_age_range} זכרים, {total_percent_of_other_active_members_in_age_range} אחרים/ות).
+
+[700]
+ID: Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} ({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_eight_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_eight_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} others) entered the site in the last eight months.
+TR: אדמין: יש באתר {total_number_of_active_members_in_age_range_in_the_last_eight_months} ({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} נקבות, {total_number_of_male_active_members_in_age_range_in_the_last_eight_months} זכרים, {total_number_of_other_active_members_in_age_range_in_the_last_eight_months} אחרים/ות) חברים פעילים בגיל {min_age} עד {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} נקבות, {total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} זכרים, {total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} אחרים/ות) שנכנסו לאתר בשמונת החודשים האחרונים.
+
+[701]
+ID: Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} ({total_number_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_four_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months} others) entered the site in the last four months.
+TR: אדמין: יש באתר {total_number_of_active_members_in_age_range_in_the_last_four_months} ({total_number_of_female_active_members_in_age_range_in_the_last_four_months} נקבות, {total_number_of_male_active_members_in_age_range_in_the_last_four_months} זכרים, {total_number_of_other_active_members_in_age_range_in_the_last_four_months} אחרים/ות) חברים פעילים בגיל {min_age} עד {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} נקבות, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months} זכרים, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months} אחרים/ות) שנכנסו לאתר בארבעת החודשים האחרונים.
+
+[702]
+ID: Users cannot like themselves.
+TR: משתמשים לא יכולים לעשות לייק לעצמם.
+
+[703]
+ID: User already likes other user.
+TR: המשתמש כבר עשה לייק למשתמש האחר.
+
+[704]
+ID: User cannot like a blocked user.
+TR: המשתמש לא יכול לעשות לייק למשתמש חסום.
+
+[705]
+ID: from user
+TR: from user
+
+[706]
+ID: to user
+TR: to user
+
+[707]
+ID: user like
+TR: user like
+
+[708]
+ID: user likes
+TR: user likes
+
+[709]
+ID: Girls You Like
+TR: בנות שעשית להן לייק
+
+[710]
+ID: Boys You Like
+TR: בנים שעשית להם לייק
+
+[711]
+ID: People You Like
+TR: אנשים שעשית להם לייק
+
+[712]
+ID: Girls Who Like You
+TR: בנות שעשו לך לייק
+
+[713]
+ID: Boys Who Like You
+TR: בנים שעשו לך לייק
+
+[714]
+ID: People Who Like You
+TR: אנשים שעשו לך לייק
+
+[715]
+ID: Mutual Likes
+TR: לייקים הדדיים
+
+[716]
+ID: Speedy Match Matches
+TR: Speedy Match Matches
+
+[717]
+ID: Your match settings were saved.
+TR: הגדרת ההתאמות שלך נשמרה.
+
+[718]
+ID: Speedy Match [alpha]
+TR: ספידי מץ' [אלפא]
+
+[719]
+ID: About Speedy Match
+TR: אודות ספידי מץ'
+
+[720]
+ID: <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a> is a new dating/matching web app for romantic purposes for singles who are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can find matching people for dating and chat with them online. You can add people as friends on Speedy Net, like people and send them messages. Speedy Match is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in %(languages_num)s languages.
+TR: <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"ספידי מץ'\">ספידי מץ'</a> הוא אתר הכרויות/התאמות למטרות רומנטיות לפנויות/פנויים חברי <a href=\"https://%(language_code)s.speedy.net/\" title=\"ספידי נט\">ספידי נט</a>. עם ספידי מץ' אתם יכולים למצוא בנות זוג ובני זוג מתאימים ולשוחח איתם אונליין. אתם יכולים להוסיף אנשים כחברים בספידי נט, לעשות לייק לאנשים ולשלוח להם הודעות. ספידי מץ' פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים. כיום האתר זמין ב-%(languages_num)s שפות.
+
+[721]
+ID: The founders of Speedy Match are vegan, support animal rights and object to experiments on animals. Speedy Match is a dating app friendly for vegan and vegetarian people and animals.
+TR: המייסדים של ספידי מץ' הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים לניסויים בבעלי חיים. ספידי מץ' היא אפליקציית הכרויות ידידותית לאנשים טבעוניים וצמחוניים ולבעלי חיים.
+
+[722]
+ID: Only people who match your requirements will be able to see your profile and contact you. We don't allow anonymous searches and Speedy Match profiles are visible to matching partners only. You can select who will be able to see your profile and which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.
+TR: רק אנשים שמתאימים לדרישות שלכם יוכלו לראות את הפרופיל שלכם וליצור איתכם קשר. אנחנו לא נאפשר חיפושים אנונימיים ופרופילים בספידי מץ' גלויים לבני זוג מתאימים בלבד. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו רק לכם.
+
+[723]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Match today to find matching partners, it only takes a few minutes. <a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join.
+TR: כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי מץ' למצוא בני זוג מתאימים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו כאן</a> כדי להצטרף.
+
+[724]
+ID: Speedy Match is a free software & open source project. If you want to help developing and improving Speedy Match, please contact me by email.
+TR: ספידי מץ' היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח ושיפור ספידי מץ', אנא צרו איתי קשר באמצעות דואר אלקטרוני.
+
+[725]
+ID: Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: ספידי מץ' נקראת על שם <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי המליטה 7 גורים בשנת 1988.
+
+[726]
+ID: Speedy Match is currently in alpha. It was launched in August 2019. The English version of Speedy Match is in production.
+TR: ספידי מץ' היא כרגע באלפא. היא הושקה באוגוסט 2019. הגרסה האנגלית של ספידי מץ' נמצאת בפרודקשן.
+
+[727]
+ID: Founder and director of Speedy Net and Speedy Match,
+TR: מייסד ומנהל ספידי נט וספידי מץ',
+
+[728]
+ID: Registration Step
+TR: הרשמה שלב
+
+[729]
+ID: Back
+TR: לשלב הקודם
+
+[730]
+ID: Next step
+TR: לשלב הבא
+
+[731]
+ID: Admin - All Matches
+TR: אדמין - כל ההתאמות
+
+[732]
+ID: Matches
+TR: התאמות
+
+[733]
+ID: Likes
+TR: לייקים
+
+[734]
+ID: Your Match Settings
+TR: הגדרת ההתאמות שלך
+
+[735]
+ID: Free online dating
+TR: הכרויות אונליין בחינם - בואו להכיר בספידי
+
+[736]
+ID: Speedy Match is a new dating/matching web app for romantic purposes for singles who are members of Speedy Net. With Speedy Match you can find matching people for dating and chat with them online. The site is vegan and vegetarian friendly.
+TR: ספידי מץ' הוא אתר הכרויות/התאמות למטרות רומנטיות לפנויות/פנויים חברי ספידי נט. עם ספידי מץ' אתם יכולים למצוא בנות זוג ובני זוג מתאימים ולשוחח איתם אונליין. האתר הוא ידידותי לטבעונים ולצמחונים.
+
+[737]
+ID: Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!
+TR: מחפשת חבר? מחפש חברה? בואו להכיר בספידי!
+
+[738]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Match today to find matching partners, it only takes a few minutes.
+TR: כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי מץ' למצוא בני זוג מתאימים, זה לוקח רק כמה דקות.
+
+[739]
+ID: Diet
+TR: תזונה
+
+[740]
+ID: Age:
+TR: גיל:
+
+[741]
+ID: Refresh
+TR: עדכון
+
+[742]
+ID: Back to Matches
+TR: חזרה להתאמות
+
+[743]
+ID: More Information
+TR: פרטים נוספים
+
+[744]
+ID: Smoking status
+TR: הרגלי עישון
+
+[745]
+ID: Relationship status
+TR: סטטוס מערכת יחסים
+
+[746]
+ID: Match rank
+TR: דרגת התאמה
+
+[747]
+ID: There is no match.
+TR: אין התאמה.
+
+[748]
+ID: Delete Account
+TR: מחקי את החשבון
+
+[749]
+ID: Delete Account
+TR: מחק את החשבון
+
+[750]
+ID: Delete Account
+TR: מחק/י את החשבון
+
+[751]
+ID: Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in this field, exactly and case sensitive.
+TR: האם את בטוחה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את בטוחה, הקלידי \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.
+
+[752]
+ID: Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in this field, exactly and case sensitive.
+TR: האם אתה בטוח שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם אתה בטוח, הקלד \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.
+
+[753]
+ID: Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in this field, exactly and case sensitive.
+TR: האם את/ה בטוח/ה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה, הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.
+
+[754]
+ID: Permanently delete your {site_name} account
+TR: מחקי את החשבון שלך ב{site_name} לצמיתות
+
+[755]
+ID: Permanently delete your {site_name} account
+TR: מחק את החשבון שלך ב{site_name} לצמיתות
+
+[756]
+ID: Permanently delete your {site_name} account
+TR: מחק/י את החשבון שלך ב{site_name} לצמיתות
+
+[757]
+ID: Your Speedy Net and Speedy Match accounts have been deleted. Thank you for using {site_name}.
+TR: החשבונות שלך בספידי נט וספידי מץ' נמחקו. תודה שהשתמשת ב{site_name}.
+
+[758]
+ID: Speedy Net Accounts
+TR: Speedy Net Accounts
+
+[759]
+ID: Yes. Delete my account.
+TR: כן. מחקו את החשבון שלי.
+
+[760]
+ID: Number of friends on last user's visit
+TR: Number of friends on last user's visit
+
+[761]
+ID: Speedy Net Profile
+TR: פרופיל ספידי נט
+
+[762]
+ID: Speedy Net Profiles
+TR: פרופילים ספידי נט
+
+[763]
+ID: Speedy Net [alpha]
+TR: ספידי נט [אלפא]
+
+[764]
+ID: About Speedy Net
+TR: אודות ספידי נט
+
+[765]
+ID: <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in %(languages_num)s languages.
+TR: <a href=\"https://%(language_code)s.speedy.net/\" title=\"ספידי נט\">ספידי נט</a> היא רשת חברתית חדשה. עם ספידי נט אתם יכולים ליצור קשר עם החברות והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים. כיום האתר זמין ב-%(languages_num)s שפות.
+
+[766]
+ID: The founders of Speedy Net are vegan, support animal rights and object to experiments on animals. Speedy Net is a social network friendly for vegan and vegetarian people and animals.
+TR: המייסדים של ספידי נט הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים לניסויים בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים ולבעלי חיים.
+
+[767]
+ID: We decided to limit the number of friends on Speedy Net to 800. We encourage you to add as friends only people you know personally. You can select which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.
+TR: החלטנו להגביל את מספר החברים בספידי נט ל-800. אנחנו מעודדים אתכם לצרף כחברים רק אנשים שאתם מכירים אישית. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו רק לכם.
+
+[768]
+ID: You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.
+TR: אתם מוזמנים להשתמש באפליקציה החדשה שלנו, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"ספידי מץ'\">ספידי מץ'</a>, להכיר בני-זוג או בנות-זוג מתאימים. ספידי מץ' פתוחה לפנויות/פנויים מכל הגילים.
+
+[769]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" title=\"Join Speedy Net\">Click here</a> to join.
+TR: כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט למצוא חברות וחברים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי נט\">לחצו כאן</a> כדי להצטרף.
+
+[770]
+ID: Speedy Net is a free software & open source project. If you want to help developing and improving Speedy Net, please contact me by email.
+TR: ספידי נט היא פרויקט של תוכנה חופשית וקוד פתוח. אם אתם רוצים לעזור בפיתוח ושיפור ספידי נט, אנא צרו איתי קשר באמצעות דואר אלקטרוני.
+
+[771]
+ID: Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: ספידי נט נקראת על שם <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי המליטה 7 גורים בשנת 1988.
+
+[772]
+ID: Speedy Net is currently in alpha. It was launched in June 2012.
+TR: ספידי נט היא כרגע באלפא. היא הושקה ביוני 2012.
+
+[773]
+ID: Speedy Net is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly.
+TR: ספידי נט היא רשת חברתית חדשה. עם ספידי נט אתם יכולים ליצור קשר עם החברות והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים.
+
+[774]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.
+TR: כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט למצוא חברות וחברים, זה לוקח רק כמה דקות.
+
+[775]
+ID: Speedy Match – dating Speedy
+TR: ספידי מץ' - להכיר בספידי
+
+[776]
+ID: Free Online Dating
+TR: הכרויות אונליין בחינם

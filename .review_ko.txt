@@ -1,0 +1,2015 @@
+[1]
+ID: Your friend
+TR: 귀하의 친구
+
+[2]
+ID: Friendship request sent
+TR: 친구 요청 전송됨
+
+[3]
+ID: You haven't confirmed your email address. Please check your inbox.
+TR: 이메일 주소를 확인하지 않았습니다. 받은 편지함을 확인하여 주십시오.
+
+[4]
+ID: Logout
+TR: 로그아웃
+
+[5]
+ID: Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, welcome back to %(site_name)s!
+TR: 안녕하세요 <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, %(site_name)s에 다시 오신 것을 환영합니다!
+
+[6]
+ID: Please confirm your email address.
+TR: 이메일 주소를 확인해주세요.
+
+[7]
+ID: Deactivate Account
+TR: 계정 비활성화
+
+[8]
+ID: Resend a confirmation email
+TR: 확인 이메일 다시 보내기
+
+[9]
+ID: Make this email address primary
+TR: 이 이메일 주소를 기본으로 설정
+
+[10]
+ID: Are you sure you want to delete this email address?
+TR: 이 이메일 주소를 삭제하시겠습니까?
+
+[11]
+ID: Delete this email address
+TR: 이 이메일 주소 삭제
+
+[12]
+ID: Add Another
+TR: 다른 것 추가
+
+[13]
+ID: Change Password
+TR: 암호 변경
+
+[14]
+ID: Change privacy settings of email addresses on your profile.
+TR: 귀하의 프로필에서 이메일 주소의 개인정보보호 설정을 변경하세요.
+
+[15]
+ID: You're not blocking anybody.
+TR: 누구도 차단하지 않고 있습니다.
+
+[16]
+ID: Report a User
+TR: 사용자 신고
+
+[17]
+ID: Your feedback was sent to administrators.
+TR: 피드백이 관리자에게 전송되었습니다.
+
+[18]
+ID: Send a message to %(user_name)s
+TR: %(user_name)s에 메시지 보내기
+
+[19]
+ID: Mark All as Read
+TR: 모두 읽음으로 표시
+
+[20]
+ID: You:
+TR: 귀하:
+
+[21]
+ID: You have no messages yet.
+TR: 아직 메시지가 없습니다.
+
+[22]
+ID: You blocked 
+TR: 다음 사람을 차단했습니다 
+
+[23]
+ID:  blocked you.
+TR:  님이 귀하를 차단했습니다.
+
+[24]
+ID: %(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile on Speedy Match.
+TR: %(user_name)s님에게도 Speedy Match 프로필이 있습니다. Speedy Match에서 %(user_name)s님의 프로필 보기.
+
+[25]
+ID: %(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on Speedy Net.
+TR: %(user_name)s님에게도 Speedy Net 프로필이 있습니다. Speedy Net에서 %(user_name)s님의 프로필 보기.
+
+[26]
+ID: You also have a Speedy Net profile. View your profile on Speedy Net.
+TR: 귀하에게도 Speedy Net 프로필이 있습니다. Speedy Net에서 귀하의 프로필 보기.
+
+[27]
+ID: Add to Friends
+TR: 친구에 추가
+
+[28]
+ID: Are you sure you want to block 
+TR: 정말로 차단하시겠습니까 
+
+[29]
+ID: Block 
+TR: 차단 
+
+[30]
+ID: Unblock 
+TR: 차단 해제 
+
+[31]
+ID: Report 
+TR: 신고 
+
+[32]
+ID: Report this photo
+TR: 이 사진 신고
+
+[33]
+ID: Remove Friend
+TR: 친구 제거
+
+[34]
+ID: Cancel Friendship Request
+TR: 친구 요청 취소
+
+[35]
+ID: Accept
+TR: 수락
+
+[36]
+ID: Reject
+TR: 거부
+
+[37]
+ID: Accept Friendship Request
+TR: 친구 요청 수락
+
+[38]
+ID: Reject Friendship Request
+TR: 친구 요청 거부
+
+[39]
+ID: Send Message
+TR: 메시지 보내기
+
+[40]
+ID: Welcome
+TR: 환영합니다
+
+[41]
+ID: See All
+TR: 모두 보기
+
+[42]
+ID: Your Speedy Net account is not active. Enter this page to activate it.
+TR: 귀하의 Speedy Net 계정이 활성화되어 있지 않습니다. 이 페이지를 입력하여 활성화하세요.
+
+[43]
+ID: Welcome to %(site_name)s
+TR: %(site_name)s에 오신 것을 환영합니다
+
+[44]
+ID: has sent you a message.
+TR: 님이 귀하에게 메시지를 보냈습니다.
+
+[45]
+ID: Read it:
+TR: 읽기:
+
+[46]
+ID: Confirm your email address on %(site_name)s
+TR: 다음에서 이메일 주소 확인 %(site_name)s
+
+[47]
+ID: Use this link to activate your account:
+TR: 이 링크를 사용하여 계정을 활성화하세요:
+
+[48]
+ID: Use this link to verify your email address:
+TR: 이 링크를 사용하여 이메일 주소를 확인하세요:
+
+[49]
+ID: Use this link to change your password:
+TR: 이 링크를 사용하여 암호를 변경하세요:
+
+[50]
+ID: Username
+TR: 사용자명
+
+[51]
+ID: You are subscribed to receive this type of notifications from %(site_name)s. Enter this page to change your notifications settings or opt out:
+TR: %(site_name)s(으)로부터 이러한 유형의 알림을 받기로 구독했습니다. 이 페이지를 입력하여 알림 설정을 변경하거나 수신 취소하세요:
+
+[52]
+ID: Enter a valid email address.
+TR: 올바른 이메일 주소를 입력하세요.
+
+[53]
+ID: Email address
+TR: 이메일 주소
+
+[54]
+ID: email address
+TR: 이메일 주소
+
+[55]
+ID: Email address:
+TR: 이메일 주소:
+
+[56]
+ID: Email
+TR: 이메일
+
+[57]
+ID: Value must be valid JSON.
+TR: 올바른 JSON 형식이여야 합니다.
+
+[58]
+ID: Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.
+TR: 올바른 %(username)s와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문자를 구별합니다.
+
+[59]
+ID: Message
+TR: 메시지
+
+[60]
+ID: Friendship Request
+TR: 친구 요청
+
+[61]
+ID: Friendship Requests
+TR: 친구 요청
+
+[62]
+ID: Friend
+TR: 친구
+
+[63]
+ID: Friends
+TR: 친구
+
+[64]
+ID: Following Relationship
+TR: 팔로잉 관계
+
+[65]
+ID: Following Relationships
+TR: 팔로잉 관계
+
+[66]
+ID: Blocker Relationship
+TR: 블로커 관계
+
+[67]
+ID: Blocked Relationships
+TR: 차단된 관계
+
+[68]
+ID: username (slug)
+TR: 사용자명 (slug)
+
+[69]
+ID: Update your profile picture
+TR: 프로필 사진을 업데이트하세요
+
+[70]
+ID: Save Changes
+TR: 변경 사항 저장
+
+[71]
+ID: You can't change your username.
+TR: 사용자명은 변경할 수 없습니다.
+
+[72]
+ID: Activate your {site_name} account
+TR: {site_name} 계정을 활성화하세요
+
+[73]
+ID: Deactivate your {site_name} account
+TR: {site_name} 계정을 비활성화하세요
+
+[74]
+ID: Add
+TR: 추가
+
+[75]
+ID: Where do I live?
+TR: 내가 살고 있는 곳은?
+
+[76]
+ID: Where do you live?
+TR: 어디에 살고 계신가요?
+
+[77]
+ID: Please write where you live.
+TR: 살고 있는 곳을 적어 주세요.
+
+[78]
+ID: Vegan (eats only plants and fungi)
+TR: 비건(야채와 버섯 종류만 먹음)
+
+[79]
+ID: Vegetarian (doesn't eat fish and meat)
+TR: 채식주의자(생선과 육류를 먹지 않음)
+
+[80]
+ID: Carnist (eats animals)
+TR: 육식주의자(육류를 먹음)
+
+[81]
+ID: Vegan
+TR: 비건
+
+[82]
+ID: Vegetarian
+TR: 채식주의자
+
+[83]
+ID: Carnist
+TR: 육식주의자
+
+[84]
+ID: Not smoking
+TR: 비흡연자
+
+[85]
+ID: Smoking occasionally
+TR: 종종 흡연함
+
+[86]
+ID: Smoking
+TR: 흡연자
+
+[87]
+ID: Single
+TR: 독신
+
+[88]
+ID: Divorced
+TR: 이혼자
+
+[89]
+ID: Widowed
+TR: 사별자
+
+[90]
+ID: In a relationship
+TR: 만남 중
+
+[91]
+ID: In an open relationship
+TR: 개방적 만남 중
+
+[92]
+ID: It's complicated
+TR: 복잡함
+
+[93]
+ID: Separated
+TR: 별거
+
+[94]
+ID: Engaged
+TR: 약혼
+
+[95]
+ID: Married
+TR: 기혼
+
+[96]
+ID: Your new password has been saved.
+TR: 새 암호가 저장되었습니다.
+
+[97]
+ID: Your Speedy Net and Speedy Match accounts have been deactivated. You can reactivate them any time.
+TR: Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 수 있습니다.
+
+[98]
+ID: Your {site_name} account has been deactivated. You can reactivate it any time. Your Speedy Net account remains active.
+TR: {site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. Speedy Net 계정이 계속 활성화되어 있습니다.
+
+[99]
+ID: You've already confirmed this email address.
+TR: 이 이메일 주소를 이미 확인했습니다.
+
+[100]
+ID: You've confirmed your email address.
+TR: 귀하의 이메일 주소를 확인했습니다.
+
+[101]
+ID: Send
+TR: 보내기
+
+[102]
+ID: You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed.
+TR: 이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우시기 바랍니다.
+
+[103]
+ID: This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed.
+TR: 이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요.
+
+[104]
+ID: You cannot be friends with yourself.
+TR: 나 자신과 친구가 될 수 없습니다.
+
+[105]
+ID: You already requested friendship from this user.
+TR: 이미 이 사용자로부터 친구를 요청했습니다.
+
+[106]
+ID: This user already requested friendship from you.
+TR: 이 사용자는 이미 귀하로부터 친구를 요청했습니다.
+
+[107]
+ID: You already are friends with this user.
+TR: 이미 이 사용자와 친구입니다.
+
+[108]
+ID: You've cancelled your friendship request.
+TR: 친구 요청을 취소했습니다.
+
+[109]
+ID: You have removed this user from your friends.
+TR: 귀하의 친구 목록에서 이 사용자를 지웠습니다.
+
+[110]
+ID: Welcome to {site_name}!
+TR: {site_name}에 오신 것을 환영합니다!
+
+[111]
+ID: Welcome to {site_name}! Your account is now active.
+TR: {site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다.
+
+[112]
+ID: Due to the abuse of the site to send spam messages, we had to limit the number of messages that can be sent to other members of the site in one day. Please try again tomorrow. Please note that you are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: 스팸 메시지를 보내기 위해 사이트를 남용하는 경우를 방지하기 위해, 사이트의 다른 회원들에게 하루에 보낼 수 있는 메시지의 수를 제한해야만 합니다. 내일 다시 시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다.
+
+[113]
+ID: This user doesn't match your profile, but you can visit their Speedy Net profile. View user's profile on Speedy Net.
+TR: 이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기.
+
+[114]
+ID: Your profile picture can't be transparent. Please upload a nontransparent image.
+TR: 프로필 사진을 투명하게 할 수 없습니다. 투명하지 않은 이미지를 업로드해주세요.
+
+[115]
+ID: Speedy Core Accounts
+TR: Speedy Core 계정
+
+[116]
+ID: Only me
+TR: 나만
+
+[117]
+ID: Me and my friends
+TR: 나와 내 친구
+
+[118]
+ID: Anyone
+TR: 누구나
+
+[119]
+ID: Last name (optional)
+TR: 성 (옵션)
+
+[120]
+ID: Your email
+TR: 내 이메일
+
+[121]
+ID: New password
+TR: 새 암호
+
+[122]
+ID: New username
+TR: 새 사용자이름
+
+[123]
+ID: Create an account
+TR: 계정 생성
+
+[124]
+ID: A profile picture is required.
+TR: 프로필 사진이 필요합니다.
+
+[125]
+ID: Email or Username
+TR: 전자메일 또는 사용자명
+
+[126]
+ID: Login
+TR: 로그인
+
+[127]
+ID: Forgot your password?
+TR: 암호를 잊으셨습니까?
+
+[128]
+ID: Submit
+TR: 제출
+
+[129]
+ID: Your password
+TR: 내 암호
+
+[130]
+ID: Invalid password.
+TR: 잘못된 암호.
+
+[131]
+ID: username
+TR: 사용자명
+
+[132]
+ID: This username is already taken.
+TR: 이 사용자명은 이미 사용 중입니다.
+
+[133]
+ID: photo
+TR: 사진
+
+[134]
+ID: Special username
+TR: 특별한 사용자명
+
+[135]
+ID: entity
+TR: 엔티티
+
+[136]
+ID: entities
+TR: 엔티티
+
+[137]
+ID: Slug does not parse to username.
+TR: 슬러그는 사용자명을 구문분석하지 않습니다
+
+[138]
+ID: Username is required.
+TR: 사용자명이 필요합니다.
+
+[139]
+ID: name
+TR: 이름
+
+[140]
+ID: description
+TR: 설명
+
+[141]
+ID: Female
+TR: 여성
+
+[142]
+ID: Male
+TR: 남성
+
+[143]
+ID: Other
+TR: 기타
+
+[144]
+ID: Unknown
+TR: 알 수 없음
+
+[145]
+ID: Notify me
+TR: 나에게 알림
+
+[146]
+ID: Don't notify me
+TR: 나에게 알리지 않음
+
+[147]
+ID: first name
+TR: 이름
+
+[148]
+ID: last name
+TR: 성
+
+[149]
+ID: I am
+TR: 저는
+
+[150]
+ID: date of birth
+TR: 출생일
+
+[151]
+ID: diet
+TR: 식단
+
+[152]
+ID: smoking status
+TR: 흡연 여부
+
+[153]
+ID: relationship status
+TR: 관계 상태
+
+[154]
+ID: Who can view my birth month and day
+TR: 내가 태어난 달과 날짜를 볼 수 있는 사람
+
+[155]
+ID: Who can view my birth year
+TR: 내가 태어난 연도를 볼 수 있는 사람
+
+[156]
+ID: On new messages
+TR: 새 메시지에
+
+[157]
+ID: Last IP address used https://ipapi.com/ time
+TR: https://ipapi.com/ time을 사용한 최종 IP 주소
+
+[158]
+ID: Last IP address used raw https://ipapi.com/ results
+TR: https://ipapi.com/ results를 사용한 최종 IP 주소
+
+[159]
+ID: user
+TR: 사용자
+
+[160]
+ID: users
+TR: 사용자
+
+[161]
+ID: Superuser must be equal to staff.
+TR: 슈퍼사용자는 스태프와 동일해야 합니다.
+
+[162]
+ID: email
+TR: 이메일
+
+[163]
+ID: is confirmed
+TR: 은(는) 확인되었습니다
+
+[164]
+ID: is primary
+TR: 은(는) 기본입니다
+
+[165]
+ID: confirmation token
+TR: 확인 토큰
+
+[166]
+ID: confirmation sent
+TR: 확인 보냄
+
+[167]
+ID: Who can see this email
+TR: 이 이메일을 볼 수 있는 사람
+
+[168]
+ID: email addresses
+TR: 이메일 주소
+
+[169]
+ID: User
+TR: 사용자
+
+[170]
+ID: last visit
+TR: 최근 방문
+
+[171]
+ID: Today
+TR: 오늘
+
+[172]
+ID: Yesterday
+TR: 어제
+
+[173]
+ID: On {date} ({timesince_ago})
+TR: {date} ({timesince_ago})에
+
+[174]
+ID: {timesince} ago
+TR: {timesince} 전에
+
+[175]
+ID: Username must start with 4 or more letters, and may contain letters, digits or dashes.
+TR: 사용자명은 4글자 이상으로 시작되어야 하며, 글자, 숫자 또는 대시를 포함할 수 있습니다.
+
+[176]
+ID: Username must start with 4 or more letters, after which can be any number of digits. You can add dashes between words.
+TR: 사용자명은 4글자 이상으로 시작되어야 하며, 이후 숫자가 올 수 있습니다. 단어 사이에 대시를 추가할 수 있습니다.
+
+[177]
+ID: Your password must contain at least %(min_unique_characters)d unique characters.
+TR: 암호에는 최소 %(min_unique_characters)d자의 고유 문자가 포함되어야 합니다.
+
+[178]
+ID: This field cannot be null.
+TR: 이 필드는 null 값을 사용할 수 없습니다.
+
+[179]
+ID: This field cannot be blank.
+TR: 이 필드는 빈 칸으로 둘 수 없습니다.
+
+[180]
+ID: Enter a valid date.
+TR: 올바른 날짜를 입력하세요.
+
+[181]
+ID: This email is already in use.
+TR: 이 이메일은 이미 사용 중입니다.
+
+[182]
+ID: This picture's file size is too big. The maximal file size allowed is 30 MB.
+TR: 이 사진의 파일 크기가 너무 큽니다. 허용되는 최대 파일 크기는 30MB입니다.
+
+[183]
+ID: You can't use this format for your profile picture. Only JPEG or PNG formats are accepted.
+TR: 프로필 사진에 이 형식을 사용할 수 없습니다. JPEG 또는 PNG 형식만 가능합니다.
+
+[184]
+ID: Invalid confirmation link.
+TR: 잘못된 확인 링크.
+
+[185]
+ID: A confirmation message was sent to {email_address}
+TR: 확인 메시지를 {email_address}(으)로 보냈습니다
+
+[186]
+ID: The email address was deleted.
+TR: 이메일 주소가 삭제되었습니다.
+
+[187]
+ID: You have made this email address primary.
+TR: 이 이메일 주소를 기본으로 설정했습니다.
+
+[188]
+ID: Admin: The total number of members on the site is {total_number_of_members}, of which {total_number_of_members_in_the_last_week} members entered the site in the last week, {total_number_of_members_in_the_last_month} members entered the site in the last month, {total_number_of_members_in_the_last_four_months} members entered the site in the last four months, {total_number_of_members_in_the_last_eight_months} members entered the site in the last eight months, and {total_number_of_members_in_the_last_two_years} members entered the site in the last two years.
+TR: 관리자: 이 사이트의 총 회원 수는 {total_number_of_members}이며, 이 가운데 {total_number_of_members_in_the_last_week}명의 회원들이 지난 주에 사이트에 들어왔었고, {total_number_of_members_in_the_last_month}명의 회원들이 지난 달에 사이트에 들어왔었으며, {total_number_of_members_in_the_last_four_months}명의 회원들이 지난 4개월 동안에 사이트에 들어왔었고, {total_number_of_members_in_the_last_eight_months}명의 회원들이 지난 8개월 동안에 사이트에 들어왔었으며, {total_number_of_members_in_the_last_two_years}명의 회원들이 지난 2년 동안에 사이트에 들어왔었습니다.
+
+[189]
+ID: Admin: {total_number_of_members_registered_in_the_last_week} members registered in the last week. {total_number_of_members_registered_in_the_last_month} members registered in the last month. {total_number_of_members_registered_in_the_last_four_months} members registered in the last four months. {total_number_of_members_registered_more_than_four_months_ago} members registered more than four months ago. {total_number_of_members_registered_in_the_last_eight_months} members registered in the last eight months. {total_number_of_members_registered_more_than_eight_months_ago} members registered more than eight months ago. {total_number_of_members_registered_in_the_last_two_years} members registered in the last two years. {total_number_of_members_registered_more_than_two_years_ago} members registered more than two years ago. {total_number_of_members_registered_before_2019_08_01} members registered before 1 August 2019.
+TR: 관리자: {total_number_of_members_registered_in_the_last_week}명의 회원들이 지난 주에 등록했습니다. {total_number_of_members_registered_in_the_last_month}명의 회원들이 지난 달에 등록했습니다. {total_number_of_members_registered_in_the_last_four_months}명의 회원들이 지난 4개월 동안에 등록했습니다. {total_number_of_members_registered_more_than_four_months_ago}명의 회원들이 4개월보다 이전에 등록했습니다. {total_number_of_members_registered_in_the_last_eight_months}명의 회원들이 지난 8개월 동안에 등록했습니다. {total_number_of_members_registered_more_than_eight_months_ago}명의 회원들이 8개월보다 이전에 등록했습니다. {total_number_of_members_registered_in_the_last_two_years}명의 회원들이 지난 2년 동안에 등록했습니다. {total_number_of_members_registered_more_than_two_years_ago}명의 회원들이 2년보다 이전에 등록했습니다. {total_number_of_members_registered_before_2019_08_01}명의 회원들이 2019년 8월 1일 이전에 등록했습니다.
+
+[190]
+ID: Admin: {total_number_of_members_registered_in_year} members registered in {year}.
+TR: 관리자: {total_number_of_members_registered_in_year}명의 회원들이 {year}에 등록했습니다.
+
+[191]
+ID: Speedy Core Base App
+TR: Speedy Core 베이스 앱
+
+[192]
+ID: ID
+TR: ID
+
+[193]
+ID: , 
+TR: , 
+
+[194]
+ID: id contains illegal characters.
+TR: ID에 잘못된 문자가 있습니다.
+
+[195]
+ID: Changes saved.
+TR: 변경 내용이 저장되었습니다.
+
+[196]
+ID: Users cannot block themselves.
+TR: 사용자는 본인을 차단할 수 없습니다.
+
+[197]
+ID: blocked user
+TR: 차단된 사용자
+
+[198]
+ID: block
+TR: 차단
+
+[199]
+ID: user blocks
+TR: 사용자 차단
+
+[200]
+ID: You have blocked {}.
+TR: {}을(를) 차단했습니다.
+
+[201]
+ID: You have unblocked {}.
+TR: {}을(를) 차단 해제했습니다.
+
+[202]
+ID: Contact By Form
+TR: 양식 별 연락처
+
+[203]
+ID: Type the number \"17\"
+TR: 숫자 “17” 입력
+
+[204]
+ID: Please contact us by email.
+TR: 이메일로 연락해주세요.
+
+[205]
+ID: Not 17.
+TR: 17이 아님.
+
+[206]
+ID: Feedback
+TR: 피드백
+
+[207]
+ID: Abuse (User)
+TR: 남용 (사용자)
+
+[208]
+ID: Abuse (Photo)
+TR: 남용 (사진)
+
+[209]
+ID: sender
+TR: 보내는 사람
+
+[210]
+ID: your name
+TR: 내 이름
+
+[211]
+ID: your email
+TR: 내 이메일
+
+[212]
+ID: type
+TR: 유형
+
+[213]
+ID: your message
+TR: 내 메시지
+
+[214]
+ID: reported entity
+TR: 신고된 엔티티
+
+[215]
+ID: reported photo
+TR: 신고된 사진
+
+[216]
+ID: feedback
+TR: 피드백
+
+[217]
+ID: feedbacks
+TR: 피드백
+
+[218]
+ID: Friendship request sent.
+TR: 친구 요청 전송됨.
+
+[219]
+ID: No friendship request.
+TR: 친구 요청 없음.
+
+[220]
+ID: Friendship request accepted.
+TR: 친구 요청 수락됨.
+
+[221]
+ID: Friendship request rejected.
+TR: 친구 요청 거부됨.
+
+[222]
+ID: Messages
+TR: 메시지
+
+[223]
+ID: site
+TR: 사이트
+
+[224]
+ID: participant 1
+TR: 참가자 1
+
+[225]
+ID: participant 2
+TR: 참가자 2
+
+[226]
+ID: participants
+TR: 참가자
+
+[227]
+ID: is group chat
+TR: 은(는) 그룹 채팅입니다
+
+[228]
+ID: last message
+TR: 마지막 메시지
+
+[229]
+ID: chat
+TR: 채팅
+
+[230]
+ID: chats
+TR: 채팅
+
+[231]
+ID: None
+TR: 없음
+
+[232]
+ID: message
+TR: 메시지
+
+[233]
+ID: messages
+TR: 메시지
+
+[234]
+ID: read mark
+TR: 읽은 표시
+
+[235]
+ID: read marks
+TR: 읽은 표시
+
+[236]
+ID: English
+TR: 영어
+
+[237]
+ID: Hebrew
+TR: 히브리어
+
+[238]
+ID: French
+TR: 프랑스어
+
+[239]
+ID: German
+TR: 독일어
+
+[240]
+ID: Spanish
+TR: 스페인어
+
+[241]
+ID: Portuguese
+TR: 포르투갈어
+
+[242]
+ID: Italian
+TR: 이탈리아어
+
+[243]
+ID: Dutch
+TR: 네덜란드어
+
+[244]
+ID: Swedish
+TR: 스웨덴어
+
+[245]
+ID: Korean
+TR: 한국어
+
+[246]
+ID: Finnish
+TR: 핀란드어
+
+[247]
+ID: Bad request
+TR: 잘못된 요청
+
+[248]
+ID: Speedy is sorry, but we can't handle your request.
+TR: Speedy에서 죄송하게 생각합니다만, 귀하의 요청을 처리할 수 없습니다.
+
+[249]
+ID: Permission denied
+TR: 권한 거부됨
+
+[250]
+ID: Speedy is sorry, but this page is private.
+TR: Speedy에서 죄송하게 생각합니다만, 이 페이지는 비공개입니다.
+
+[251]
+ID: Page not found
+TR: 페이지를 찾을 수 없습니다.
+
+[252]
+ID: Speedy is sorry, but the page is not found.
+TR: Speedy에서 죄송하게 생각합니다만, 해당 페이지를 찾을 수 없습니다.
+
+[253]
+ID: Internal server error
+TR: 내부 서버 오류
+
+[254]
+ID: About
+TR: 정보
+
+[255]
+ID: Edit Profile
+TR: 프로필 편집
+
+[256]
+ID: Profile Info
+TR: 프로필 정보
+
+[257]
+ID: Privacy
+TR: 개인정보보호
+
+[258]
+ID: Notifications
+TR: 알림
+
+[259]
+ID: Emails & Password
+TR: 이메일 및 암호
+
+[260]
+ID: Email Addresses
+TR: 이메일 주소
+
+[261]
+ID: Address
+TR: 주소
+
+[262]
+ID: Added
+TR: 추가됨
+
+[263]
+ID: Visibility
+TR: 가시성
+
+[264]
+ID: Actions
+TR: 작업
+
+[265]
+ID: Unconfirmed
+TR: 확인되지 않음
+
+[266]
+ID: Primary
+TR: 기본
+
+[267]
+ID: Your age will be visible to your matches on Speedy Match.
+TR: 귀하의 연령이 Speedy Match의 매칭 대상에게 보여집니다.
+
+[268]
+ID: Add Email
+TR: 이메일 추가
+
+[269]
+ID: Logged Out
+TR: 로그아웃함
+
+[270]
+ID: Reset Password
+TR: 암호 재설정
+
+[271]
+ID: Password reset successfully.
+TR: 암호가 다시 설정되었습니다
+
+[272]
+ID: Password reset failed. Invalid link.
+TR: 암호 재설정 실패 잘못된 링크.
+
+[273]
+ID: Email with password reset instructions has been sent.
+TR: 암호 재설정 안내가 포함된 이메일을 발송했습니다.
+
+[274]
+ID: Admin - Friends
+TR: 관리자 - 친구
+
+[275]
+ID: friends
+TR: 친구
+
+[276]
+ID: No friends yet.
+TR: 아직 친구가 없습니다.
+
+[277]
+ID: Admin Information
+TR: 관리자 정보
+
+[278]
+ID: Admin - All Users
+TR: 관리자 - 모든 사용자
+
+[279]
+ID: No users.
+TR: 사용자가 없습니다.
+
+[280]
+ID: This site is under construction
+TR: This site is under construction
+
+[281]
+ID: Speedy Net Blog
+TR: Speedy Net 블로그
+
+[282]
+ID: Speedy Paz
+TR: Speedy Paz
+
+[283]
+ID: Speedy Software
+TR: Speedy 소프트웨어
+
+[284]
+ID: Speedy Sale
+TR: Speedy 세일
+
+[285]
+ID: A vegan friendly website
+TR: 비건 친화적인 웹사이트
+
+[286]
+ID: Speedy
+TR: Speedy
+
+[287]
+ID: Home
+TR: 홈
+
+[288]
+ID: Password
+TR: 암호
+
+[289]
+ID: Speedy Net
+TR: Speedy Net
+
+[290]
+ID: Speedy Match
+TR: Speedy Match
+
+[291]
+ID: Speedy Net's Shop
+TR: Speedy Net의 상점
+
+[292]
+ID: Speedy Match's Shop
+TR: Speedy Match의 상점
+
+[293]
+ID: Speedy S-logo Shop
+TR: Speedy S-로고 상점
+
+[294]
+ID: Privacy Policy
+TR: 개인정보 보호 정책
+
+[295]
+ID: Terms of Service
+TR: 서비스 약관
+
+[296]
+ID: Terms
+TR: 약관
+
+[297]
+ID: Contact Us
+TR: 사용자 문의
+
+[298]
+ID: Speedy Composer
+TR: Speedy Composer
+
+[299]
+ID: Speedy Mail Software
+TR: Speedy 메일 소프트웨어
+
+[300]
+ID: Speedy Composer's Shop
+TR: Speedy Composer의 상점
+
+[301]
+ID: Blocked Users
+TR: 차단된 사용자
+
+[302]
+ID: If you have any questions, suggestions or are interested in joining the team - please contact us by email.
+TR: 질문, 추천 또는 팀 합류에 관심이 있으시면, 저희에게 메일로 연락해 주세요.
+
+[303]
+ID: Uri Rodberg, founder and webmaster:
+TR: 유리 로드버그, 설립자 겸 웹마스터:
+
+[304]
+ID: Report a Photo
+TR: 사진 신고
+
+[305]
+ID: Thank You
+TR: 감사합니다,
+
+[306]
+ID: Previous
+TR: 이전
+
+[307]
+ID: Next
+TR: 다음
+
+[308]
+ID: Password reset on %(site_name)s
+TR: %(site_name)s의 비밀번호 재설정
+
+[309]
+ID: You have a new message on %(site_name)s
+TR: %(site_name)s에 새 메시지가 있습니다
+
+[310]
+ID: Received Requests
+TR: 받은 요청
+
+[311]
+ID: Sent Requests
+TR: 보낸 요청
+
+[312]
+ID: There are no pending friendship requests.
+TR: 대기 중인 친구 요청이 없습니다.
+
+[313]
+ID: Welcome to %(site_name)s!
+TR: %(site_name)s에 오신 것을 환영합니다!
+
+[314]
+ID: Join %(site_name)s!
+TR: %(site_name)s와 함께 하세요!
+
+[315]
+ID: It's free and anyone can join!
+TR: 무료이고 누구나 가입할 수 있습니다!
+
+[316]
+ID: Chat with <a href=\"%(link)s\">%(user_name)s</a>
+TR: <a href=\"%(link)s\">%(user_name)s</a>와(과) 채팅
+
+[317]
+ID: Unread
+TR: 읽지 않음
+
+[318]
+ID: New
+TR: 신규
+
+[319]
+ID: We respect your privacy. We will not sell or share your personal details, including your name, your date of birth, your email address and your password. Messages you send to people on Speedy Net are personal and will not be shared with other people or websites. Your password is saved encrypted on our database.
+TR: 저희는 귀하의 개인정보를 존중합니다. 당사는 귀하의 이름, 생년월일, 이메일 주소 및 암호를 포함하는 개인정보를 판매하거나 공유하지 않습니다. Speedy Net에서 귀하가 사람들에게 보내는 메시지는 개인적인 것이며 다른 사람이나 웹사이트에 공유되지 않습니다. 귀하의 암호는 당사 데이터베이스에 암호화되어 저장됩니다.
+
+[320]
+ID: Your profile on Speedy Net is visible to everyone, but you can choose who to share with your email address and your date of birth. If you signed up for Speech Match, your Speech Match profile will only be visible to people who match you according to the settings you have set up on the site, and that you match them according to their settings. Your profile on Speech Match will not appear on Google and is not visible to people who are not registered to the site.
+TR: 귀하의 Speedy Net 프로필은 모두가 볼 수 있지만, 귀하의 이메일 주소와 생일을 공유할 사람을 선택할 수 있습니다. 귀하가 Speedy Match에 가입한 경우, 귀하의 Speedy Match 프로필은 귀하가 해당 사이트에 만들어 놓은 설정에 따라 귀하와 매치되는 사람들에게 그들의 설정에 따라 귀하가 매치되는 경우에만 보여집니다. Speedy Match의 프로필은 Google에 나타나지 않으며 저희 사이트에 등록하지 않은 사람에게는 보여지지 않습니다.
+
+[321]
+ID: If you have deactivated your account on Speedy Net or Speech Match, your profile on that site will be removed from the site and you will not appear in other people's search results on the site. Note that deactivating your account on Speedy Net also automatically deactivates your account at Speedy Match. You can deactivate only your account at Speedy Match, in which case your Speedy Net account will remain active. You can reactivate your account after you deactivate it whenever you like.
+TR: Speedy Net 또는 Speech Match의 계정을 비활성화하면, 해당 사이트의 프로필이 제거되며, 해당 사이트에서 다른 사람들이 하는 검색 결과에 나타나지 않게 됩니다. Speedy Net에서 계정을 비활성화하면 Speedy Match의 계정 또한 자동으로 비활성화됨에 유의하시기 바랍니다. Speedy Match의 계정만 비활성화할 수 있으며, 이 경우 Speedy Net의 계정은 계속 활성화됩니다. 계정을 비활성화한 후 언제든지 원할 때에 다시 활성화할 수 있습니다.
+
+[322]
+ID: If you want, you can delete your account on Speedy Net. Deleting your Speedy Net account will automatically delete your Speedy Match account as well. To delete your Speedy Net account, log in to Speedy Net, deactivate your account, and then click “Delete Account” (in the “Edit Profile” menu). Fill out the details in the form and confirm. Please note that a deleted account cannot be recovered. Account deletion is permanent and irreversible.
+TR: 원하는 경우 Speedy Net에서 계정을 삭제할 수 있습니다.Speedy Net 계정을 삭제하면 Speedy Match 계정도 자동으로 삭제됩니다.Speedy Net 계정을 삭제하려면 Speedy Net에 로그인하여 계정을 비활성화한 다음 “프로필 편집” 메뉴에서 “계정 삭제”를 클릭하십시오.양식에 세부 정보를 입력하고 확인합니다.삭제된 계정은 복구할 수 없다는 점을 참고하세요.계정 삭제는 영구적이며 되돌릴 수 없습니다.
+
+[323]
+ID: .
+TR: .
+
+[324]
+ID: Toggle Dropdown
+TR: 토글 드롭다운
+
+[325]
+ID: ?
+TR: ?
+
+[326]
+ID: Information
+TR: 정보
+
+[327]
+ID: Name
+TR: 이름
+
+[328]
+ID: Gender
+TR: 성별
+
+[329]
+ID: Birth Date
+TR: 생일
+
+[330]
+ID: Birth Year
+TR: 생년
+
+[331]
+ID: Age
+TR: 나이
+
+[332]
+ID: The site is in alpha, there may be errors. Site management is not responsible for any faults on the site.
+TR: 이 사이트는 알파 버전이며, 오류가 있을 수 있습니다. 사이트 관리진은 해당 사이트의 어떠한 오류에 대해서도 책임을 지지 않습니다.
+
+[333]
+ID: You can use Speedy Net for legal purposes only. You are not allowed to upload contents related to hate, violence, animal abuse, nudity or pornography. You are not allowed to use Speedy Net to send spam messages, or messages with the same content to a large number of people.
+TR: Speedy Net은 합법적 목적으로만 사용할 수 있습니다. 증오, 폭력, 동물 학대, 누드 또는 포르노와 관련된 콘텐츠를 업로드할 수 없습니다. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 보내기 위해 Speedy Net을 이용하는 것은 허용되지 않습니다.
+
+[334]
+ID: Site management cannot verify personal information provided by users of the site. Some users' personal information may not be correct. Site management is not responsible for user activity outside the site. If you choose to meet or talk on the phone with people you met on the site, the responsibility for the results of the meeting or phone call is yours.
+TR: 사이트 관리진은 사이트의 사용자가 제공한 개인정보를 확인할 수 없습니다. 일부 사용자의 개인정보는 정확하지 않을 수도 있습니다. 사이트 관리진은 사이트 외부의 사용자 활동에 대해서 책임을 지지 않습니다. 사이트에서 만난 사람들과 만나거나 전화 통화를 하는 경우, 그러한 만남이나 전화 통화에 따른 결과는 귀하의 책임입니다.
+
+[335]
+ID: After signing up for the site you are asked to verify your email address via a link sent to you. Accounts without a verified email address will be deleted from the site after 10 days.
+TR: 사이트에 가입한 후 귀하에게 보낸 링크를 통해 귀하의 이메일 주소를 확인해야 합니다. 이메일 주소가 확인되지 않은 계정은 10일 후에 사이트에서 삭제됩니다.
+
+[336]
+ID: If you mistakenly signed up for the site with an incorrect email address, add a new email address to your account and verify it. You can attach several email addresses to your account on the site.
+TR: 실수로 정확하지 않은 이메일 주소로 사이트에 가입한 경우, 계정에 새로운 이메일 주소를 추가한 다음 확인하여 주십시오. 사이트의 계정에 여러 이메일 주소를 첨부할 수 있습니다.
+
+[337]
+ID: Your profile picture should be a picture of you, where we can see your face. It is allowed to upload a profile picture with other people. Do not upload nude photos, photos showing genitals (of men or women) or bare-chested images (of men or women).
+TR: 프로필 사진은 귀하의 사진이어야 하며, 얼굴을 볼 수 있어야 합니다. 다른 사람들과 함께 있는 프로필 사진을 업로드할 수 있습니다. 누드 사진이나, (남성이나 여성의) 생식기가 보이는 사진 또는 (남성이나 여성의) 맨가슴이 보이는 사진은 업로드하지 마십시오.
+
+[338]
+ID: Browse...
+TR: 검색...
+
+[339]
+ID: owner
+TR: 소유자
+
+[340]
+ID: file
+TR: 파일
+
+[341]
+ID: is stored
+TR: 이(가) 저장되었습니다
+
+[342]
+ID: file size
+TR: 파일 크기
+
+[343]
+ID: uploaded file
+TR: 파일 업로드함
+
+[344]
+ID: uploaded files
+TR: 파일 업로드함
+
+[345]
+ID: visible on website
+TR: 웹사이트에서 볼 수 있음
+
+[346]
+ID: Speedy image moderation time
+TR: Speedy image moderation time
+
+[347]
+ID: AWS image moderation time
+TR: AWS 이미지 보정 시간
+
+[348]
+ID: AWS facial analysis time
+TR: AWS 얼굴 분석 시간
+
+[349]
+ID: AWS raw image moderation results
+TR: AWS 미가공 이미지 조정 결과
+
+[350]
+ID: AWS raw facial analysis results
+TR: AWS 미가공 얼굴 분석 결과
+
+[351]
+ID: number of faces
+TR: 얼굴 수
+
+[352]
+ID: uploaded image
+TR: 이미지 업로드함
+
+[353]
+ID: uploaded images
+TR: 이미지 업로드함
+
+[354]
+ID: You have no likes here.
+TR: 여기에 좋아요가 없습니다.
+
+[355]
+ID: Update matches
+TR: 매치 업데이트
+
+[356]
+ID: Add more options
+TR: 다른 옵션 추가
+
+[357]
+ID: You don't have any matches yet. Try to broaden your search settings or check again later.
+TR: 아직 매치가 없습니다. 검색 설정을 확대하여 시도하거나 나중에 다시 확인하십시오.
+
+[358]
+ID: Match Settings
+TR: 매치 설정
+
+[359]
+ID: Like
+TR: 좋아요
+
+[360]
+ID: Unlike
+TR: 싫어요
+
+[361]
+ID: Your Matches
+TR: 내 매치
+
+[362]
+ID: Your Friends
+TR: 내 친구
+
+[363]
+ID: You don't have any friends yet.
+TR: 아직 친구가 없습니다.
+
+[364]
+ID: About me
+TR: 내 소개
+
+[365]
+ID: About my match
+TR: 내 매치 정보
+
+[366]
+ID: Gender to match
+TR: 매치 성별
+
+[367]
+ID: Someone likes you on %(site_name)s
+TR: 누군가가 다음에서 귀하를 좋아합니다 %(site_name)s
+
+[368]
+ID: likes you.
+TR: 이(가) 귀하를 좋아합니다.
+
+[369]
+ID: likes you
+TR: 이(가) 귀하를 좋아합니다
+
+[370]
+ID: You like
+TR: 귀하가 다음 사람을 좋아합니다
+
+[371]
+ID: Last visited Speedy Match
+TR: Speedy Match 최근 방문
+
+[372]
+ID: My height in centimeters
+TR: 내 키(cm)
+
+[373]
+ID: Add profile picture
+TR: 프로필 사진 추가
+
+[374]
+ID: My ideal match
+TR: 내 이상적 매치
+
+[375]
+ID: Minimal age to match
+TR: 매치 최소 연령
+
+[376]
+ID: Maximal age to match
+TR: 매치 최고 연령
+
+[377]
+ID: Please write a few words about yourself.
+TR: 귀하에 대한 몇 가지 단어를 적어주세요.
+
+[378]
+ID: Do you have children? How many?
+TR: 자녀가 있습니까? 몇 명입니까?
+
+[379]
+ID: Do you want (more) children?
+TR: (더 많은) 자녀를 원합니까?
+
+[380]
+ID: Who is your ideal partner?
+TR: 이상적인 파트너는 누구입니까?
+
+[381]
+ID: We're sorry, but you are not authorized to use the {site_name} website. We have found that some of the information you provided when registering on the site is incorrect or that you have violated the rules of use of the site. Therefore you are not authorized to use the site.
+TR: 죄송합니다만, {site_name} 웹사이트를 사용할 권한이 없습니다. 해당 사이트에서 등록할 때 제공하신 정보 중 일부가 정확하지 않거나 해당 사이트의 규칙을 위반하신 것으로 밝혀졌습니다. 따라서 해당 사이트를 사용할 권한이 없습니다.
+
+[382]
+ID: Speedy Match Accounts
+TR: Speedy Match 계정
+
+[383]
+ID: My diet
+TR: 내 식단
+
+[384]
+ID: Your diet is required.
+TR: 식단이 필요합니다.
+
+[385]
+ID: My smoking status
+TR: 내 흡연 여부
+
+[386]
+ID: Your smoking status is required.
+TR: 흡연 여부를 알려주셔야 합니다.
+
+[387]
+ID: My relationship status
+TR: 관계 상태
+
+[388]
+ID: Your relationship status is required.
+TR: 관계 상태를 알려주셔야 합니다.
+
+[389]
+ID: Gender to match is required.
+TR: 매치 성별이 필요합니다.
+
+[390]
+ID: Your height is required.
+TR: 키를 알려주셔야 합니다.
+
+[391]
+ID: Minimal age to match is required.
+TR: 매치 최소 연령을 알려주셔야 합니다.
+
+[392]
+ID: Maximal age to match is required.
+TR: 매치 최고 연령을 알려주셔야 합니다.
+
+[393]
+ID: Diet match is required.
+TR: 식단 매치를 알려주셔야 합니다.
+
+[394]
+ID: Smoking status match is required.
+TR: 흡연 여부 매치를 알려주셔야 합니다.
+
+[395]
+ID: Relationship status match is required.
+TR: 관계 상태 매치를 알려주셔야 합니다.
+
+[396]
+ID: Speedy Match User
+TR: Speedy Match 사용자
+
+[397]
+ID: No match
+TR: 매치 없음
+
+[398]
+ID: One heart
+TR: 하트 1개
+
+[399]
+ID: Two hearts
+TR: 하트 2개
+
+[400]
+ID: Three hearts
+TR: 하트 3개
+
+[401]
+ID: Four hearts
+TR: 하트 4개
+
+[402]
+ID: Five hearts
+TR: 하트 5개
+
+[403]
+ID: On new likes
+TR: 새로운 좋아요에
+
+[404]
+ID: Active languages
+TR: 활성 언어
+
+[405]
+ID: Height
+TR: 키
+
+[406]
+ID: cm
+TR: cm
+
+[407]
+ID: Few words about me
+TR: 나에 대한 몇 가지 단어
+
+[408]
+ID: Diet match
+TR: 식단 매치
+
+[409]
+ID: Smoking status match
+TR: 흡연 여부 매치
+
+[410]
+ID: Relationship status match
+TR: 관계 상태 매치
+
+[411]
+ID: Diet to match
+TR: 매치에 대한 식단
+
+[412]
+ID: Smoking status to match
+TR: 매치에 대한 흡연 여부
+
+[413]
+ID: Relationship status to match
+TR: 매치에 대한 관계 상태
+
+[414]
+ID: Activation step
+TR: 활성화 단계
+
+[415]
+ID: Number of matches on last user's search
+TR: 최근 사용자 검색에서 매치의 수
+
+[416]
+ID: Speedy Match Profile
+TR: Speedy Match 프로필
+
+[417]
+ID: Speedy Match Profiles
+TR: Speedy Match 프로필
+
+[418]
+ID: The total number of active members on the site is {total_number_of_active_members_in_the_last_four_months}, of which {total_number_of_active_members_in_the_last_week} members entered the site in the last week.
+TR: 이 사이트의 총 활성 회원의 수는 {total_number_of_active_members_in_the_last_four_months}명이며, 이 가운데 {total_number_of_active_members_in_the_last_week}명의 회원들이 지난 주 해당 사이트를 방문했습니다.
+
+[419]
+ID: Height must be from 1 to 450 cm.
+TR: 키는 1~450cm이어야 합니다.
+
+[420]
+ID: Minimal age to match must be from 0 to 180 years.
+TR: 매치의 최소 연령은 0~180세이어야 합니다.
+
+[421]
+ID: Maximal age to match must be from 0 to 180 years.
+TR: 매치의 최고 연령은 0~180세이어야 합니다.
+
+[422]
+ID: Maximal age to match can't be less than minimal age to match.
+TR: 매치의 최고 연령은 매치의 최소 연령보다 적을 수 없습니다.
+
+[423]
+ID: At least one diet match option should be five hearts.
+TR: 적어도 하나의 식단 매치 옵션이 하트 5개이어야 합니다.
+
+[424]
+ID: At least one smoking status match option should be five hearts.
+TR: 적어도 하나의 흡연 여부 매치 옵션이 하트 5개이어야 합니다.
+
+[425]
+ID: At least one relationship status match option should be five hearts.
+TR: 적어도 하나의 관계 상태 매치 옵션이 하트 5개이어야 합니다.
+
+[426]
+ID: Admin: The total number of active members on the site is {total_number_of_active_members} ({total_number_of_female_active_members} females, {total_number_of_male_active_members} males, {total_number_of_other_active_members} others; {total_percent_of_female_active_members} females, {total_percent_of_male_active_members} males, {total_percent_of_other_active_members} others), of which {total_number_of_active_members_in_the_last_week} members ({total_number_of_female_active_members_in_the_last_week} females, {total_number_of_male_active_members_in_the_last_week} males, {total_number_of_other_active_members_in_the_last_week} others; {total_percent_of_female_active_members_in_the_last_week} females, {total_percent_of_male_active_members_in_the_last_week} males, {total_percent_of_other_active_members_in_the_last_week} others) entered the site in the last week, {total_number_of_active_members_in_the_last_month} members ({total_number_of_female_active_members_in_the_last_month} females, {total_number_of_male_active_members_in_the_last_month} males, {total_number_of_other_active_members_in_the_last_month} others; {total_percent_of_female_active_members_in_the_last_month} females, {total_percent_of_male_active_members_in_the_last_month} males, {total_percent_of_other_active_members_in_the_last_month} others) entered the site in the last month, {total_number_of_active_members_in_the_last_four_months} members ({total_number_of_female_active_members_in_the_last_four_months} females, {total_number_of_male_active_members_in_the_last_four_months} males, {total_number_of_other_active_members_in_the_last_four_months} others; {total_percent_of_female_active_members_in_the_last_four_months} females, {total_percent_of_male_active_members_in_the_last_four_months} males, {total_percent_of_other_active_members_in_the_last_four_months} others) entered the site in the last four months, {total_number_of_active_members_in_the_last_eight_months} members ({total_number_of_female_active_members_in_the_last_eight_months} females, {total_number_of_male_active_members_in_the_last_eight_months} males, {total_number_of_other_active_members_in_the_last_eight_months} others; {total_percent_of_female_active_members_in_the_last_eight_months} females, {total_percent_of_male_active_members_in_the_last_eight_months} males, {total_percent_of_other_active_members_in_the_last_eight_months} others) entered the site in the last eight months, and {total_number_of_active_members_in_the_last_two_years} members ({total_number_of_female_active_members_in_the_last_two_years} females, {total_number_of_male_active_members_in_the_last_two_years} males, {total_number_of_other_active_members_in_the_last_two_years} others; {total_percent_of_female_active_members_in_the_last_two_years} females, {total_percent_of_male_active_members_in_the_last_two_years} males, {total_percent_of_other_active_members_in_the_last_two_years} others) entered the site in the last two years.
+TR: 관리자: 이 사이트의 총 활성 회원의 수는 {total_number_of_active_members}명이고, ({total_number_of_female_active_members}명의 여성 회원, {total_number_of_male_active_members}명의 남성 회원, {total_number_of_other_active_members}명의 기타 회원, {total_percent_of_female_active_members}의 여성 회원, {total_percent_of_male_active_members}의 남성 회원, {total_percent_of_other_active_members} 의 기타 회원)으로 구성되며, 이 가운데 {total_number_of_active_members_in_the_last_week}명의 회원, ({total_number_of_female_active_members_in_the_last_week}명의 여성 회원, {total_number_of_male_active_members_in_the_last_week}명의 남성 회원, {total_number_of_other_active_members_in_the_last_week}명의 기타 회원; {total_percent_of_female_active_members_in_the_last_week}의 여성 회원, {total_percent_of_male_active_members_in_the_last_week}의 남성 회원, {total_percent_of_other_active_members_in_the_last_week} 의 기타 회원)이 지난 주에 사이트를 방문했고, {total_number_of_active_members_in_the_last_month}명의 회원, ({total_number_of_female_active_members_in_the_last_month}명의 여성 회원, {total_number_of_male_active_members_in_the_last_month}명의 남성 회원, {total_number_of_other_active_members_in_the_last_month}명의 기타 회원; {total_percent_of_female_active_members_in_the_last_month}의 여성 회원, {total_percent_of_male_active_members_in_the_last_month}의 남성 회원, {total_percent_of_other_active_members_in_the_last_month} 의 기타 회원)이 지난 달에 사이트를 방문했으며, {total_number_of_active_members_in_the_last_four_months}명의 회원, ({total_number_of_female_active_members_in_the_last_four_months}명의 여성 회원, {total_number_of_male_active_members_in_the_last_four_months}명의 남성 회원, {total_number_of_other_active_members_in_the_last_four_months}명의 기타 회원, {total_percent_of_female_active_members_in_the_last_four_months}의 여성 회원, {total_percent_of_male_active_members_in_the_last_four_months}의 남성 회원, {total_percent_of_other_active_members_in_the_last_four_months} 의 기타 회원)이 지난 4개월 동안에 사이트를 방문했고, {total_number_of_active_members_in_the_last_eight_months}명의 회원, ({total_number_of_female_active_members_in_the_last_eight_months}명의 여성 회원, {total_number_of_male_active_members_in_the_last_eight_months}명의 남성 회원, {total_number_of_other_active_members_in_the_last_eight_months}명의 기타 회원, {total_percent_of_female_active_members_in_the_last_eight_months}의 여성 회원, {total_percent_of_male_active_members_in_the_last_eight_months}의 남성 회원, {total_percent_of_other_active_members_in_the_last_eight_months} 의 기타 회원)이 지난 8개월 동안 사이트를 방문했으며, {total_number_of_active_members_in_the_last_two_years}명의 회원, ({total_number_of_female_active_members_in_the_last_two_years}명의 여성 회원, {total_number_of_male_active_members_in_the_last_two_years}명의 남성 회원, {total_number_of_other_active_members_in_the_last_two_years}명의 기타 회원, {total_percent_of_female_active_members_in_the_last_two_years}명의 여성 회원, {total_percent_of_male_active_members_in_the_last_two_years}명의 남성 회원, {total_percent_of_other_active_members_in_the_last_two_years} 의 기타 회원)이 지난 2년 동안에 사이트를 방문했습니다.
+
+[427]
+ID: Admin: {total_number_of_active_members_registered_in_the_last_week} active members registered in the last week. {total_number_of_active_members_registered_in_the_last_month} active members registered in the last month. {total_number_of_active_members_registered_in_the_last_four_months} active members registered in the last four months. {total_number_of_active_members_registered_more_than_four_months_ago} active members registered more than four months ago. {total_number_of_active_members_registered_in_the_last_eight_months} active members registered in the last eight months. {total_number_of_active_members_registered_more_than_eight_months_ago} active members registered more than eight months ago. {total_number_of_active_members_registered_in_the_last_two_years} active members registered in the last two years. {total_number_of_active_members_registered_more_than_two_years_ago} active members registered more than two years ago. {total_number_of_active_members_registered_before_2019_08_01} active members registered before 1 August 2019.
+TR: 관리자: {total_number_of_active_members_registered_in_the_last_week}명의 활성 회원들이 지난 주에 등록했습니다.. {total_number_of_active_members_registered_in_the_last_month}명의 활성 회원들이 지난 달에 등록했습니다. {total_number_of_active_members_registered_in_the_last_four_months}명의 활성 회원들이 지난 4개월 동안에 등록했습니다. {total_number_of_active_members_registered_more_than_four_months_ago}명의 활성 회원들이 4개월보다 이전에 등록했습니다. {total_number_of_active_members_registered_in_the_last_eight_months}명의 활성 회원들이 지난 8개월 동안에 등록했습니다. {total_number_of_active_members_registered_more_than_eight_months_ago}명의 활성 회원들이 8개월보다 이전에 등록했습니다. {total_number_of_active_members_registered_in_the_last_two_years}명의 활성 회원들이 지난 2년 동안에 등록했습니다. {total_number_of_active_members_registered_more_than_two_years_ago}명의 활성 회원들이 2년보다 이전에 등록했습니다. {total_number_of_active_members_registered_before_2019_08_01}명의 활성 회원들이 2019년 8월 1일 이전에 등록했습니다.
+
+[428]
+ID: Admin: {total_number_of_active_members_registered_in_year} active members registered in {year}.
+TR: 관리자: {total_number_of_active_members_registered_in_year}명의 활성 회원들이 {year}에 등록했습니다.
+
+[429]
+ID: Admin: {total_number_of_active_members_in_age_range} ({total_number_of_female_active_members_in_age_range} females, {total_number_of_male_active_members_in_age_range} males, {total_number_of_other_active_members_in_age_range} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range} females, {total_percent_of_male_active_members_in_age_range} males, {total_percent_of_other_active_members_in_age_range} others).
+TR: 관리자: {total_number_of_active_members_in_age_range}명의 활성 회원, ({total_number_of_female_active_members_in_age_range}명의 여성 활성 회원, {total_number_of_male_active_members_in_age_range}명의 남성 활성 회원, {total_number_of_other_active_members_in_age_range}명의 기타 활성 회원)의 연령대가 {min_age}~{max_age}세임 ({total_percent_of_female_active_members_in_age_range}가 여성 회원, {total_percent_of_male_active_members_in_age_range}가 남성 회원, {total_percent_of_other_active_members_in_age_range}가 기타 회원임).
+
+[430]
+ID: Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} ({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_eight_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_eight_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} others) entered the site in the last eight months.
+TR: 관리자: {total_number_of_active_members_in_age_range_in_the_last_eight_months}명의 활성 회원 ({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}명의 여성 활성 회원, {total_number_of_male_active_members_in_age_range_in_the_last_eight_months}명의 남성 활성 회원, {total_number_of_other_active_members_in_age_range_in_the_last_eight_months}명의 기타 활성 회원) 연령대는 {min_age}~{max_age}이고 ({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}의 여성 회원, {total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}의 남성 회원, {total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}의 기타 회원) 지난 8개월 동안에 해당 사이트를 방문했음.
+
+[431]
+ID: Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} ({total_number_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_number_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_number_of_other_active_members_in_age_range_in_the_last_four_months} others) active members aged {min_age} to {max_age} ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} females, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months} males, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months} others) entered the site in the last four months.
+TR: 관리자: {total_number_of_active_members_in_age_range_in_the_last_four_months}명의 활성 회원 ({total_number_of_female_active_members_in_age_range_in_the_last_four_months}명의 여성 활성 회원, {total_number_of_male_active_members_in_age_range_in_the_last_four_months}명의 남성 활성 회원, {total_number_of_other_active_members_in_age_range_in_the_last_four_months}명의 기타 활성 회원) 연령대는 {min_age}~{max_age}이고 ({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}의 여성 활성 회원, {total_percent_of_male_active_members_in_age_range_in_the_last_four_months}의 남성 활성 회원, {total_percent_of_other_active_members_in_age_range_in_the_last_four_months}의 기타 활성 회원) 지난 4개월 동안에 해당 사이트를 방문했음.
+
+[432]
+ID: Users cannot like themselves.
+TR: 사용자는 본인을 좋아할 수 없습니다.
+
+[433]
+ID: User already likes other user.
+TR: 사용자가 이미 다른 사용자를 좋아합니다.
+
+[434]
+ID: User cannot like a blocked user.
+TR: 사용자는 차단된 사용자를 좋아할 수 없습니다.
+
+[435]
+ID: from user
+TR: 사용자로부터
+
+[436]
+ID: to user
+TR: 사용자에게
+
+[437]
+ID: user like
+TR: 사용자 좋아요
+
+[438]
+ID: user likes
+TR: 사용자 좋아요
+
+[439]
+ID: Girls You Like
+TR: 귀하가 좋아하는 여성
+
+[440]
+ID: Boys You Like
+TR: 귀하가 좋아하는 남성
+
+[441]
+ID: People You Like
+TR: 귀하가 좋아하는 사람
+
+[442]
+ID: Girls Who Like You
+TR: 귀하를 좋아하는 여성
+
+[443]
+ID: Boys Who Like You
+TR: 귀하를 좋아하는 남성
+
+[444]
+ID: People Who Like You
+TR: 귀하를 좋아하는 사람
+
+[445]
+ID: Mutual Likes
+TR: 상호 좋아요
+
+[446]
+ID: Speedy Match Matches
+TR: Speedy Match의 매치
+
+[447]
+ID: Your match settings were saved.
+TR: 매치 설정이 저장되었습니다.
+
+[448]
+ID: Speedy Match [alpha]
+TR: Speedy Match [알파]
+
+[449]
+ID: About Speedy Match
+TR: Speedy Match 소개
+
+[450]
+ID: <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a> is a new dating/matching web app for romantic purposes for singles who are members of <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can find matching people for dating and chat with them online. You can add people as friends on Speedy Net, like people and send them messages. Speedy Match is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in %(languages_num)s languages.
+TR: <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>는 <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>의 회원인 싱글을 위한 새로운 데이팅/매칭 웹 앱으로 로맨틱한 만남을 목적으로 합니다. Speedy Match로 데이팅과 온라인 채팅을 위한 매칭 대상을 찾을 수 있습니다. Speedy Net에 친구로 추가하고, 좋아하고, 메시지를 보낼 수 있습니다. Speedy Match는 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다. 현재 %(languages_num)s개 언어로 사용할 수 있습니다.
+
+[451]
+ID: The founders of Speedy Match are vegan, support animal rights and object to experiments on animals. Speedy Match is a dating app friendly for vegan and vegetarian people and animals.
+TR: Speedy Match의 설립자는 비건이며, 동물의 권리를 지지하고, 동물 실험에 반대합니다. Speedy Match는 비건 및 채식주의자 그리고 동물 친화적인 데이팅 앱입니다.
+
+[452]
+ID: Only people who match your requirements will be able to see your profile and contact you. We don't allow anonymous searches and Speedy Match profiles are visible to matching partners only. You can select who will be able to see your profile and which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.
+TR: 귀하의 요구 사항에 일치하는 사람들만 귀하의 프로필을 보고 귀하에게 연락할 수 있습니다. 저희는 익명의 검색을 허용하지 않으며 Speedy Match 프로필은 매칭 파트너에게만 보입니다. 귀하의 프로필을 볼 수 있는 사람을 선택할 수 있으며, 어떤 세부 정보를 프로필에 공개하고, 어떤 세부 정보를 친구에게만 보여주며, 어떤 세부 정보를 비공개로 할지 선택할 수 있습니다. 비공개 세부 정보는 귀하에게만 나타납니다.
+
+[453]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Match today to find matching partners, it only takes a few minutes. <a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join.
+TR: Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Match에 가입하여 매칭 파트너를 찾아보세요. 몇 분밖에 걸리지 않습니다. <a href=\"/\" title=\"Speedy Match와 함께 하세요\">여기를 클릭</a>하여 가입하세요.
+
+[454]
+ID: Speedy Match is a free software & open source project. If you want to help developing and improving Speedy Match, please contact me by email.
+TR: Speedy Match는 무료 소프트웨어이며 오픈 소스 프로젝트입니다. Speedy Match의 개발과 개선에 도움을 주고 싶으시면, 이메일로 연락해주세요.
+
+[455]
+ID: Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: Speedy Match는 오랜 세월 저희와 함께 하고 2003년에 세상을 떠난 암컷 반려견인 <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>의 이름을 딴 것입니다. Speedy는 1988년 7마리의 강아지를 낳았습니다.
+
+[456]
+ID: Speedy Match is currently in alpha. It was launched in August 2019. The English version of Speedy Match is in production.
+TR: Speedy Match는 현재 알파 버전입니다. Speedy Match는 2019년 8월에 출시되었습니다. Speedy Match의 영어 버전이 제작 중입니다.
+
+[457]
+ID: Thank you and good luck,
+TR: 감사드리며 행운을 빕니다,
+
+[458]
+ID: Uri Rodberg
+TR: Uri Rodberg
+
+[459]
+ID: Founder and director of Speedy Net and Speedy Match,
+TR: Speedy Net과 Speedy Match의 설립자 겸 디렉터,
+
+[460]
+ID: Speedy Paz Technologies Ltd.
+TR: Speedy Paz Technologies Ltd.
+
+[461]
+ID: Registration Step
+TR: 관계 단계
+
+[462]
+ID: Back
+TR: 뒤로
+
+[463]
+ID: Next step
+TR: 다음 단계
+
+[464]
+ID: Admin - All Matches
+TR: 관리자 - 모든 매치
+
+[465]
+ID: Matches
+TR: 매치
+
+[466]
+ID: Likes
+TR: 좋아요
+
+[467]
+ID: Your Match Settings
+TR: 내 매치 설정
+
+[468]
+ID: Free online dating
+TR: 무료 온라인 데이팅
+
+[469]
+ID: Speedy Match is a new dating/matching web app for romantic purposes for singles who are members of Speedy Net. With Speedy Match you can find matching people for dating and chat with them online. The site is vegan and vegetarian friendly.
+TR: Speedy Match는 Speedy Net의 회원인 싱글을 위한 새로운 데이팅/매칭 웹 앱으로 로맨틱한 만남을 목적으로 합니다. Speedy Match로 데이팅과 온라인 채팅을 위한 매칭 대상을 찾을 수 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다.
+
+[470]
+ID: Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!
+TR: 남자 친구를 찾고 계십니까? 여자 친구를 찾고 계십니까? 오셔서 Speedy를 만나보세요!
+
+[471]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Match today to find matching partners, it only takes a few minutes.
+TR: Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Match에 가입하여 매칭 파트너를 찾아보세요. 몇 분밖에 걸리지 않습니다.
+
+[472]
+ID: Diet
+TR: 식단
+
+[473]
+ID: Age:
+TR: 나이:
+
+[474]
+ID: Refresh
+TR: 새로 고침
+
+[475]
+ID: Back to Matches
+TR: 매치로 돌아가기
+
+[476]
+ID: More Information
+TR: 자세히 알아보기
+
+[477]
+ID: Smoking status
+TR: 흡연 여부
+
+[478]
+ID: Relationship status
+TR: 관계 상태
+
+[479]
+ID: Match rank
+TR: 매치 순위
+
+[480]
+ID: There is no match.
+TR: 매치가 없습니다.
+
+[481]
+ID: Delete Account
+TR: 계정 삭제
+
+[482]
+ID: Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in this field, exactly and case sensitive.
+TR: Speedy Net 계정을 삭제하시겠습니까? 이는 영구적이며 되돌릴 수 없습니다. Speedy Net 계정을 삭제하면 Speedy Match 계정도 삭제됩니다. 확실하다면 \"네. 내 계정을 삭제하세요.\"라고 입력하세요. 이 필드에서는 정확하게 대소문자를 구분합니다.
+
+[483]
+ID: Permanently delete your {site_name} account
+TR: {site_name} 계정을 영구적으로 삭제하세요
+
+[484]
+ID: Your Speedy Net and Speedy Match accounts have been deleted. Thank you for using {site_name}.
+TR: 귀하의 Speedy Net 및 Speedy Match 계정이 삭제되었습니다. {site_name}을(를) 이용해 주셔서 감사합니다.
+
+[485]
+ID: Speedy Net Accounts
+TR: Speedy Net 계정
+
+[486]
+ID: Yes. Delete my account.
+TR: 네. 내 계정을 삭제하세요.
+
+[487]
+ID: Speedy Net User
+TR: Speedy Net 사용자
+
+[488]
+ID: Number of friends on last user's visit
+TR: 최근 사용자 방문에서 친구의 수
+
+[489]
+ID: Speedy Net Profile
+TR: Speedy Net 프로필
+
+[490]
+ID: Speedy Net Profiles
+TR: Speedy Net 프로필
+
+[491]
+ID: Speedy Net [alpha]
+TR: Speedy Net [알파]
+
+[492]
+ID: About Speedy Net
+TR: Speedy Net 소개
+
+[493]
+ID: <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly. It is currently available in %(languages_num)s languages.
+TR: <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>은 새로운 소셜 네트워크입니다. Speedy Net으로 친구와 소통할 수 있습니다. Speedy Net은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다. 현재 %(languages_num)s개 언어로 사용할 수 있습니다.
+
+[494]
+ID: The founders of Speedy Net are vegan, support animal rights and object to experiments on animals. Speedy Net is a social network friendly for vegan and vegetarian people and animals.
+TR: Speedy Net의 설립자는 비건이며, 동물의 권리를 지지하고, 동물 실험에 반대합니다. Speedy Net은 비건 및 채식주의자 그리고 동물 친화적인 소셜 네트워크입니다.
+
+[495]
+ID: We decided to limit the number of friends on Speedy Net to 800. We encourage you to add as friends only people you know personally. You can select which details will appear on your profile as public, which details only to friends and which details will be private. Private details will appear only to you.
+TR: 저희는 Speedy Net의 친구 수를 800명으로 제한하기로 했습니다. 귀하가 개인적으로 아는 사람만 친구로 추가하시기 바랍니다. 귀하의 프로필에서 공개할 세부 정보를 선택하고, 어떤 세부 정보를 친구에게만 보여주며, 어떤 세부 정보를 비공개로 할지 선택할 수 있습니다. 비공개 세부 정보는 귀하에게만 나타납니다.
+
+[496]
+ID: You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for dating. Speedy Match is open to singles of all ages.
+TR: 저희의 새로운 앱, <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>로 데이팅을 위한 매칭 대상을 찾아보세요. Speedy Match는 모든 연령의 싱글에게 개방되어 있습니다.
+
+[497]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" title=\"Join Speedy Net\">Click here</a> to join.
+TR: Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Net에 가입하여 친구를 찾아보세요. 몇 분밖에 걸리지 않습니다. <a href=\"/\" title=\"Speedy Net와 함께 하세요\">여기를 클릭</a>하여 가입하세요.
+
+[498]
+ID: Speedy Net is a free software & open source project. If you want to help developing and improving Speedy Net, please contact me by email.
+TR: Speedy Net은 무료 소프트웨어이며 오픈 소스 프로젝트입니다. Speedy Net의 개발과 개선에 도움을 주고 싶으시면, 이메일로 연락해주세요.
+
+[499]
+ID: Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for many years and died in 2003. Speedy gave birth to 7 puppies in 1988.
+TR: Speedy Net은 오랜 세월 저희와 함께 하고 2003년에 세상을 떠난 암컷 반려견인 <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>의 이름을 딴 것입니다. Speedy는 1988년 7마리의 강아지를 낳았습니다.
+
+[500]
+ID: Speedy Net is currently in alpha. It was launched in June 2012.
+TR: Speedy Net은 현재 알파 버전입니다. Speedy Net은 2012년 6월에 출시되었습니다.
+
+[501]
+ID: Speedy Net is a new social network. With Speedy Net you can communicate with your friends. Speedy Net is open to free registration for people from all countries and ages (no age limit!). The site is vegan and vegetarian friendly.
+TR: Speedy Net은 새로운 소셜 네트워크입니다. Speedy Net으로 친구와 소통할 수 있습니다. Speedy Net은 모든 국가와 모든 연령대(연령 제한 없음!)의 사람들을 위해 무료 등록이 가능하도록 개방되어 있습니다. 이 사이트는 비건 및 채식주의자 친화적입니다.
+
+[502]
+ID: All the features on Speedy Net and Speedy Match are free of charge. Join Speedy Net today to find friends, it only takes a few minutes.
+TR: Speedy Net과 Speedy Match의 모든 기능은 무료입니다. 지금 Speedy Net에 가입하여 친구를 찾아보세요. 몇 분밖에 걸리지 않습니다.
+
+[503]
+ID: Speedy Match – dating Speedy
+TR: Speedy Match – 데이팅 Speedy
+
+[504]
+ID: Free Online Dating
+TR: 무료 온라인 데이팅
