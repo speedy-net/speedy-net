@@ -111,7 +111,7 @@ msgstr "החשבונות שלך בספידי נט וספידי מץ' נמחקו.
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "??????? Speedy Net"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -147,7 +147,7 @@ msgstr "משתמש/ת"
 
 #: .\accounts\models.py:34
 msgid "Number of friends on last user's visit"
-msgstr "Number of friends on last user's visit"
+msgstr "???? ?????? ?????? ?????? ?? ??????"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"

@@ -1188,12 +1188,12 @@ msgstr "Carnistin"
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "Karnist"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "Karnist"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
@@ -1243,17 +1243,17 @@ msgstr "Raucher"
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr "Single"
+msgstr "Ledig"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Single"
+msgstr "Ledig"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Single"
+msgstr "Ledig"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
@@ -2107,7 +2107,7 @@ msgstr "Raucher"
 
 #: .\accounts\models.py:524
 msgid "Single"
-msgstr "Single"
+msgstr "Ledig"
 
 #: .\accounts\models.py:525
 msgid "Divorced"
@@ -2517,7 +2517,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Speedy Core Basis-App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2582,7 +2582,7 @@ msgstr "Nicht 17."
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "Feedback"
+msgstr "R?ckmeldung"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
@@ -2622,11 +2622,11 @@ msgstr "gemeldetes Foto"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "feedback"
+msgstr "R?ckmeldung"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "feedbacks"
+msgstr "R?ckmeldungen"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
@@ -2936,7 +2936,7 @@ msgstr "Keine Benutzer"
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Diese Seite befindet sich im Aufbau"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3500,7 +3500,7 @@ msgstr "auf der Website sichtbar"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Dauer der Speedy-Bildmoderation"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
