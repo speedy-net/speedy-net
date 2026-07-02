@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 22:22+0300\n"
+"POT-Creation-Date: 2026-07-02 13:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -503,7 +503,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "חשבונות Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -691,11 +691,11 @@ msgstr "התאמת סטטוס מערכת יחסים"
 
 #: .\accounts\models.py:267
 msgid "Activation step"
-msgstr "Activation step"
+msgstr "שלב הפעלה"
 
 #: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
-msgstr "Number of matches on last user's search"
+msgstr "מספר ההתאמות בחיפוש האחרון של המשתמש"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
@@ -995,19 +995,19 @@ msgstr "המשתמש לא יכול לעשות לייק למשתמש חסום."
 
 #: .\likes\models.py:21
 msgid "from user"
-msgstr "from user"
+msgstr "ממשתמש"
 
 #: .\likes\models.py:22
 msgid "to user"
-msgstr "to user"
+msgstr "למשתמש"
 
 #: .\likes\models.py:28
 msgid "user like"
-msgstr "user like"
+msgstr "לייק של משתמש"
 
 #: .\likes\models.py:29
 msgid "user likes"
-msgstr "user likes"
+msgstr "לייקים של משתמש"
 
 #: .\likes\views.py:28
 msgid "Girls You Like"
@@ -1039,7 +1039,7 @@ msgstr "לייקים הדדיים"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "התאמות Speedy Match"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."

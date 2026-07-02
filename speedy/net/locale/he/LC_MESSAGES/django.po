@@ -10,7 +10,7 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,7 +111,7 @@ msgstr "החשבונות שלך בספידי נט וספידי מץ' נמחקו.
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "חשבונות Speedy Net"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -147,7 +147,7 @@ msgstr "משתמש/ת"
 
 #: .\accounts\models.py:34
 msgid "Number of friends on last user's visit"
-msgstr "Number of friends on last user's visit"
+msgstr "מספר החברים בביקור האחרון של המשתמש"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
