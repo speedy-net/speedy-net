@@ -21,7 +21,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'sv': 'Ja. Ta bort mitt konto.', 'ko': '네. 내 계정을 삭제하세요.', 'fi': 'Kyllä. Poista tilini.', 'he': 'כן. מחקו את החשבון שלי.'}
+            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'sv': 'Ja. Ta bort mitt konto.', 'ko': '네. 내 계정을 삭제하세요.', 'fi': 'Kyllä. Poista tilini.', 'he': 'כן. מחקו את החשבון שלי.'}
 
             _delete_account_text_dict_by_gender = {
                 'en': {
@@ -75,7 +75,7 @@ if (django_settings.TESTS):
                     **{gender: '¿Estás seguro de que deseas eliminar tu cuenta de Speedy Net? Esto es permanente e irreversible. Al eliminar tu cuenta de Speedy Net también se eliminará tu cuenta de Speedy Match. Si estás seguro, escribe «Sí. Elimina mi cuenta.» en este campo, exactamente y sin distinción entre mayúsculas y minúsculas.' for gender in User.ALL_GENDERS},
                 },
                 'pt': {
-                    **{gender: 'Tem certeza de que deseja eliminar sua conta Speedy Net? Isso é permanente e irreversível. Eliminar sua conta Speedy Net também eliminará sua conta Speedy Match. Se tiver certeza, digite “Sim. Eliminar minha conta.” neste campo, com exatidão e distinção entre maiúsculas e minúsculas.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Tens a certeza de que pretendes eliminar a tua conta Speedy Net? Isso é permanente e irreversível. Eliminar a tua conta Speedy Net também eliminará a tua conta Speedy Match. Se tiveres a certeza, escreve “Sim. Eliminar a minha conta.” neste campo, com exatidão e distinção entre maiúsculas e minúsculas.' for gender in User.ALL_GENDERS},
                 },
                 'it': {
                     **{gender: "Sei sicuro di voler eliminare il tuo account Speedy Net? Questo è permanente e irreversibile. L'eliminazione del tuo account Speedy Net eliminerà anche il tuo account Speedy Match. Se sei sicuro, digita «Sì. Elimina il mio account.» in questo campo, esattamente e con distinzione tra maiuscole e minuscole." for gender in User.ALL_GENDERS},
@@ -113,7 +113,7 @@ if (django_settings.TESTS):
                     **{gender: 'Eliminar permanentemente tu cuenta de Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'pt': {
-                    **{gender: 'Eliminar permanentemente sua conta no Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Eliminar permanentemente tua conta no Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'it': {
                     **{gender: 'Elimina definitivamente il tuo account Speedy Net' for gender in User.ALL_GENDERS},
@@ -151,7 +151,7 @@ if (django_settings.TESTS):
                     **{gender: 'Se eliminaron tus cuentas de Speedy Net y Speedy Match. Gracias por usar Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'pt': {
-                    **{gender: 'Suas contas Speedy Net e Speedy Match foram excluídas. Obrigado por usar o Speedy Net.' for gender in User.ALL_GENDERS},
+                    **{gender: 'As tuas contas Speedy Net e Speedy Match foram excluídas. Obrigado por usar o Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'it': {
                     **{gender: 'I tuoi account Speedy Net e Speedy Match sono stati eliminati. Grazie per aver scelto Speedy Net.' for gender in User.ALL_GENDERS},
