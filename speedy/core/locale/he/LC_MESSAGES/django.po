@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 09:27+0300\n"
+"POT-Creation-Date: 2026-07-02 09:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -902,19 +902,19 @@ msgstr "חברים/ות"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr "??? ????"
+msgstr "קשר מעקב"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr "???? ????"
+msgstr "קשרי מעקב"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
-msgstr "??? ????"
+msgstr "קשר חוסם"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr "????? ??????"
+msgstr "קשרים חסומים"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -1906,7 +1906,7 @@ msgstr "תמונת הפרופיל שלך לא יכולה להיות שקופה. 
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "??????? Speedy Core"
+msgstr "חשבונות Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2151,11 +2151,11 @@ msgstr "כאשר יש הודעות חדשות"
 
 #: .\accounts\models.py:615
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "??? ????? ????? ?????? IP https://ipapi.com/"
+msgstr "זמן שימוש אחרון בכתובת IP https://ipapi.com/"
 
 #: .\accounts\models.py:616
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "?????? ??????? ?? ????? ????? ?????? IP ?-https://ipapi.com/"
+msgstr "תוצאות גולמיות של שימוש אחרון בכתובת IP מ-https://ipapi.com/"
 
 #: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
 msgid "user"
@@ -2167,7 +2167,7 @@ msgstr "משתמשים"
 
 #: .\accounts\models.py:869
 msgid "Superuser must be equal to staff."
-msgstr "?????-?? ???? ????? ?? ??? ????."
+msgstr "משתמש-על חייב להיות גם איש צוות."
 
 #: .\accounts\models.py:1280
 msgid "email"
@@ -2183,11 +2183,11 @@ msgstr "ראשי"
 
 #: .\accounts\models.py:1283
 msgid "confirmation token"
-msgstr "?????? ?????"
+msgstr "אסימון אימות"
 
 #: .\accounts\models.py:1284
 msgid "confirmation sent"
-msgstr "????? ????"
+msgstr "אימות נשלח"
 
 #: .\accounts\models.py:1285
 msgid "Who can see this email"
@@ -2455,7 +2455,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "????????? ???? Speedy Core"
+msgstr "אפליקציית בסיס Speedy Core"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2480,15 +2480,15 @@ msgstr "משתמשים לא יכולים לחסום את עצמם."
 
 #: .\blocks\models.py:23
 msgid "blocked user"
-msgstr "????? ????"
+msgstr "משתמש חסום"
 
 #: .\blocks\models.py:28
 msgid "block"
-msgstr "?????"
+msgstr "חסימה"
 
 #: .\blocks\models.py:29
 msgid "user blocks"
-msgstr "?????? ?????"
+msgstr "חסימות משתמש"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
@@ -2500,7 +2500,7 @@ msgstr "ביטלת את חסימת {}."
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
-msgstr "????? ??? ??????? ????"
+msgstr "יצירת קשר באמצעות טופס"
 
 #: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
@@ -2524,11 +2524,11 @@ msgstr "פידבק"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
-msgstr "????? ??????? (?????)"
+msgstr "דיווח התעללות (משתמש)"
 
 #: .\contact_by_form\models.py:35
 msgid "Abuse (Photo)"
-msgstr "????? ??????? (?????)"
+msgstr "דיווח התעללות (תמונה)"
 
 #: .\contact_by_form\models.py:38 .\messages\models.py:156
 msgid "sender"
@@ -2544,7 +2544,7 @@ msgstr "הדואר האלקטרוני שלך"
 
 #: .\contact_by_form\models.py:41
 msgid "type"
-msgstr "???"
+msgstr "סוג"
 
 #: .\contact_by_form\models.py:42
 msgid "your message"
@@ -2552,11 +2552,11 @@ msgstr "ההודעה שלך"
 
 #: .\contact_by_form\models.py:44
 msgid "reported entity"
-msgstr "???? ??????"
+msgstr "ישות שדווחה"
 
 #: .\contact_by_form\models.py:45
 msgid "reported photo"
-msgstr "????? ??????"
+msgstr "תמונה שדווחה"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
@@ -2608,7 +2608,7 @@ msgstr "משתתפים"
 
 #: .\messages\models.py:33
 msgid "is group chat"
-msgstr "??? ???? ??????"
+msgstr "האם צ׳אט קבוצתי"
 
 #: .\messages\models.py:34
 msgid "last message"
@@ -2636,11 +2636,11 @@ msgstr "הודעות"
 
 #: .\messages\models.py:191
 msgid "read mark"
-msgstr "????? ?????"
+msgstr "סימון קריאה"
 
 #: .\messages\models.py:192
 msgid "read marks"
-msgstr "?????? ?????"
+msgstr "סימוני קריאה"
 
 #: .\settings\base.py:193
 msgid "English"
@@ -3396,7 +3396,7 @@ msgstr "קובץ"
 
 #: .\uploads\models.py:26
 msgid "is stored"
-msgstr "??????"
+msgstr "מאוחסן"
 
 #: .\uploads\models.py:27
 msgid "file size"
@@ -3404,44 +3404,44 @@ msgstr "גודל קובץ"
 
 #: .\uploads\models.py:36
 msgid "uploaded file"
-msgstr "???? ??????"
+msgstr "קובץ שהועלה"
 
 #: .\uploads\models.py:37
 msgid "uploaded files"
-msgstr "????? ??????"
+msgstr "קבצים שהועלו"
 
 #: .\uploads\models.py:75
 msgid "visible on website"
-msgstr "???? ????"
+msgstr "גלוי באתר"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "??? ????? ?????? Speedy"
+msgstr "זמן סינון תמונות Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
-msgstr "??? ????? ?????? AWS"
+msgstr "זמן סינון תמונות AWS"
 
 #: .\uploads\models.py:78
 msgid "AWS facial analysis time"
-msgstr "??? ????? ???? AWS"
+msgstr "זמן ניתוח פנים AWS"
 
 #: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
-msgstr "?????? ??????? ?? ????? ?????? AWS"
+msgstr "תוצאות גולמיות של סינון תמונות AWS"
 
 #: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
-msgstr "?????? ??????? ?? ????? ???? AWS"
+msgstr "תוצאות גולמיות של ניתוח פנים AWS"
 
 #: .\uploads\models.py:81
 msgid "number of faces"
-msgstr "???? ?????"
+msgstr "מספר הפנים"
 
 #: .\uploads\models.py:86
 msgid "uploaded image"
-msgstr "????? ???????"
+msgstr "תמונה שהועלתה"
 
 #: .\uploads\models.py:87
 msgid "uploaded images"
-msgstr "?????? ??????"
+msgstr "תמונות שהועלו"
