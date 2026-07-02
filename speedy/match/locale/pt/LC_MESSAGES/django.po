@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 08:41+0300\n"
+"POT-Creation-Date: 2026-07-02 09:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"Ainda não tens correspondências. Tenta ampliar tuas definições de pesquisa "
 "ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:19
@@ -76,7 +76,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"Ainda não tens correspondências. Tenta ampliar tuas definições de pesquisa "
 "ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:20
@@ -85,7 +85,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"Ainda não tens correspondências. Tenta ampliar tuas definições de pesquisa "
 "ou verifica novamente mais tarde."
 
 #: .\__translations\__translations.html:22
@@ -1116,8 +1116,8 @@ msgstr ""
 "Apenas as pessoas que correspondam às tuas necessidades poderão ver teu "
 "perfil e entrar em contacto contigo. Não permitimos pesquisas anônimas e os "
 "perfis do Speedy Match são visíveis apenas para os parceiros "
-"correspondentes. Podes seleccionar quem poderá ver teu perfil e quais "
-"detalhes aparecerão como públicos em teu perfil, cujos detalhes serão "
+"correspondentes. Podes seleccionar quem poderá ver o o teu perfil e quais "
+"detalhes aparecerão como públicos em o teu perfil, cujos detalhes serão "
 "visíveis apenas para amigos e serão privativos. Detalhes privativos "
 "aparecerão apenas para ti."
 
@@ -1213,7 +1213,7 @@ msgstr "Próxima etapa"
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tua conta Speedy Net não está activa. Acesse esta página para activá-la."
+"A tua conta Speedy Net não está ativa. Acede a esta página para a ativar."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1232,7 +1232,7 @@ msgstr "Correspondências"
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "Curtidas"
+msgstr "Gostos"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1247,11 +1247,11 @@ msgstr "Definições de correspondências"
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "Um sítio voltado aos veganos"
+msgstr "Um sítio amigo dos veganos"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "curtiu a ti."
+msgstr "gostou de ti."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1259,8 +1259,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas definições de notificações ou para "
+"Estás registado para receber este tipo de notificação de %(site_name)s. "
+"Acede a esta página para alterar as tuas definições de notificações ou para "
 "cancelar o registo:"
 
 #: .\templates\email\likes\like_subject.txt:1
@@ -1337,7 +1337,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Ainda não tens correspondências. Tente ampliar tuas definições de pesquisa "
+"Ainda não tens correspondências. Tenta ampliar tuas definições de pesquisa "
 "ou verifica novamente mais tarde."
 
 #: .\templates\matches\settings\base.html:27

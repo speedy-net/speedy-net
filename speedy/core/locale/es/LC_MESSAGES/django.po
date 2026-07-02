@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 08:42+0300\n"
+"POT-Creation-Date: 2026-07-02 09:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2927,7 +2927,7 @@ msgstr "No hay usuarios."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Este sitio esta en construccion"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3484,7 +3484,7 @@ msgstr "visible en el sitio web"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Tiempo de moderación de imagen de Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
