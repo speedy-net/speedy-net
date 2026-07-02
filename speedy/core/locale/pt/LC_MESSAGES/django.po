@@ -10,7 +10,7 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -837,7 +837,7 @@ msgid ""
 msgstr ""
 "Tu estás cadastrada para receber este tipo de notificação de %(site_name)s. "
 "Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"cancelar o registo:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -848,7 +848,7 @@ msgid ""
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
 "Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"cancelar o registo:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -859,7 +859,7 @@ msgid ""
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
 "Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"cancelar o registo:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -1939,7 +1939,7 @@ msgstr "Contas Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
-msgstr "Somente eu"
+msgstr "Apenas eu"
 
 #: .\accounts\fields.py:13
 msgid "Me and my friends"
@@ -2349,9 +2349,9 @@ msgstr[1] ""
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-"A sua palavra-passe deve conter pelo menos %(min_length)d caractere."
+"A tua palavra-passe deve conter pelo menos %(min_length)d caractere."
 msgstr[1] ""
-"A sua palavra-passe deve conter pelo menos %(min_length)d caracteres."
+"A tua palavra-passe deve conter pelo menos %(min_length)d caracteres."
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2412,7 +2412,7 @@ msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
-"Tu não podes utilizar este formato para a tua foto de perfil. Somente os "
+"Tu não podes utilizar este formato para a tua foto de perfil. Apenas os "
 "formatos JPEG ou PNG são aceitos."
 
 #: .\accounts\views.py:299
@@ -3116,7 +3116,7 @@ msgid ""
 msgstr ""
 "Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
 "Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"cancelar o registo:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3240,9 +3240,9 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Se quiser, você pode eliminar sua conta no Speedy Net. Eliminar sua conta "
-"Speedy Net também eliminará automaticamente sua conta Speedy Match. Para "
-"eliminar sua conta do Speedy Net, faça login no Speedy Net, desative sua "
+"Se quiser, tu podes eliminar tua conta no Speedy Net. Eliminar tua conta "
+"Speedy Net também eliminará automaticamente tua conta Speedy Match. Para "
+"eliminar tua conta do Speedy Net, faça login no Speedy Net, desative tua "
 "conta e clique em “Eliminar conta” (no menu “Editar perfil”). Preencha os "
 "detalhes no formulário e confirme. Observe que uma conta excluída não pode "
 "ser recuperada. A exclusão da conta é permanente e irreversível."
