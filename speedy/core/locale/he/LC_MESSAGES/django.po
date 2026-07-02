@@ -3416,7 +3416,7 @@ msgstr "visible on website"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "זמן ניהול תמונה ספידי"
+msgstr "Speedy image moderation time"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
