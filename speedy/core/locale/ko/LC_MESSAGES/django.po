@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 14:03+0300\n"
+"POT-Creation-Date: 2026-07-03 15:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2874,7 +2874,7 @@ msgstr "사용자가 없습니다."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "이 사이트는 공사 중입니다"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3419,7 +3419,7 @@ msgstr "웹사이트에서 볼 수 있음"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Speedy 이미지 검토 시간"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

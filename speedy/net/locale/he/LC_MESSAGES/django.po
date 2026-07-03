@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -111,7 +111,7 @@ msgstr "החשבונות שלך בספידי נט וספידי מץ' נמחקו.
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "חשבונות Speedy Net"
+msgstr "חשבונות ספידי נט"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
