@@ -18,7 +18,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Composer Accounts"
-msgstr "Speedy Composer Accounts"
+msgstr "חשבונות Speedy Composer"
 
 #: .\accounts\models.py:31
 msgid "Speedy Net User"

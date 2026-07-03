@@ -2919,7 +2919,7 @@ msgstr "Geen gebruikers."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Deze site is in aanbouw"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3472,7 +3472,7 @@ msgstr "zichtbaar op website"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Tijd voor Speedy-afbeeldingsmoderatie"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

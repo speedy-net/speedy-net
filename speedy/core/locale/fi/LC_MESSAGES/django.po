@@ -2905,7 +2905,7 @@ msgstr "Ei käyttäjiä."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Tämä sivusto on rakenteilla"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3006,7 +3006,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Speedy Composerin kauppa"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3455,7 +3455,7 @@ msgstr "näkyy verkkosivuilla"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Speedy-kuvan moderoinnin aika"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

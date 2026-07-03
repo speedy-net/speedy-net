@@ -511,7 +511,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Speedy Match-accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
