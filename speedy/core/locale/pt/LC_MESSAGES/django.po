@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 07:29+0300\n"
+"POT-Creation-Date: 2026-07-03 15:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -153,17 +153,17 @@ msgstr "Definir este endereço de e-mail como principal"
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -214,19 +214,19 @@ msgstr "Alterar palavra-passe"
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do o teu perfil."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do o teu perfil."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do o teu perfil."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
@@ -430,19 +430,19 @@ msgstr ""
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Tu também tens um perfil Speedy Net. Visualize teu perfil no Speedy Net."
+"Tu também tens um perfil Speedy Net. Visualize o teu perfil no Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Tu também tens um perfil Speedy Net. Visualize teu perfil no Speedy Net."
+"Tu também tens um perfil Speedy Net. Visualize o teu perfil no Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Tu também tens um perfil Speedy Net. Visualize teu perfil no Speedy Net."
+"Tu também tens um perfil Speedy Net. Visualize o teu perfil no Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -462,17 +462,17 @@ msgstr "Adicionar em Amigos"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que pretendes bloquear "
+msgstr "Tens a certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que pretendes bloquear "
+msgstr "Tens a certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que pretendes bloquear "
+msgstr "Tens a certeza de que pretendes bloquear "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -688,19 +688,19 @@ msgstr "Ver todos"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tua conta Speedy Net não está activa. Acesse esta página para activá-la."
+"A tua conta Speedy Net não está ativa. Acede a esta página para a ativar."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tua conta Speedy Net não está activa. Acesse esta página para activá-la."
+"A tua conta Speedy Net não está ativa. Acede a esta página para a ativar."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tua conta Speedy Net não está activa. Acesse esta página para activá-la."
+"A tua conta Speedy Net não está ativa. Acede a esta página para a ativar."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -835,9 +835,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Tu estás cadastrada para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"Estás registada para receber este tipo de notificação de %(site_name)s. "
+"Acede a esta página para alterar as tuas definições de notificações ou para "
+"cancelar o registo:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -846,9 +846,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"Estás registado para receber este tipo de notificação de %(site_name)s. "
+"Acede a esta página para alterar as tuas definições de notificações ou para "
+"cancelar o registo:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -857,9 +857,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"Estás registado para receber este tipo de notificação de %(site_name)s. "
+"Acede a esta página para alterar as tuas definições de notificações ou para "
+"cancelar o registo:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -964,17 +964,17 @@ msgstr "nome do utilizador (slug)"
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "Actualize a foto do teu perfil"
+msgstr "Actualize a foto do o teu perfil"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "Actualize a foto do teu perfil"
+msgstr "Actualize a foto do o teu perfil"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "Actualize a foto do teu perfil"
+msgstr "Actualize a foto do o teu perfil"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
@@ -1831,7 +1831,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Esta utilizadora não corresponde ao teu perfil, mas tu podes visitar o "
+"Esta utilizadora não corresponde ao o teu perfil, mas tu podes visitar o "
 "perfil dela no Speedy Net. Visualize o perfil da utilizadora no Speedy Net."
 
 #: .\__translations\__translations.py:242
@@ -1840,8 +1840,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1849,8 +1849,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1858,7 +1858,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Esta utilizadora não corresponde ao teu perfil, mas tu podes visitar o "
+"Esta utilizadora não corresponde ao o teu perfil, mas tu podes visitar o "
 "perfil dela no Speedy Net. Visualize o perfil da utilizadora no Speedy Net."
 
 #: .\__translations\__translations.py:245
@@ -1867,8 +1867,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1876,8 +1876,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1885,7 +1885,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Esta utilizadora não corresponde ao teu perfil, mas tu podes visitar o "
+"Esta utilizadora não corresponde ao o teu perfil, mas tu podes visitar o "
 "perfil dela no Speedy Net. Visualize o perfil da utilizadora no Speedy Net."
 
 #: .\__translations\__translations.py:248
@@ -1894,8 +1894,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1903,8 +1903,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Este utilizador não corresponde ao teu perfil, mas tu podes visitar o perfil "
-"dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
+"Este utilizador não corresponde ao o teu perfil, mas tu podes visitar o "
+"perfil dele no Speedy Net. Visualize o perfil do utilizador no Speedy Net."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1912,7 +1912,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"A foto do teu perfil não pode ser transparente. Carregue uma foto sem "
+"A foto do o teu perfil não pode ser transparente. Carregue uma foto sem "
 "transparência."
 
 #: .\__translations\__translations.py:252
@@ -1921,7 +1921,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"A foto do teu perfil não pode ser transparente. Carregue uma foto sem "
+"A foto do o teu perfil não pode ser transparente. Carregue uma foto sem "
 "transparência."
 
 #: .\__translations\__translations.py:253
@@ -1930,7 +1930,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"A foto do teu perfil não pode ser transparente. Carregue uma foto sem "
+"A foto do o teu perfil não pode ser transparente. Carregue uma foto sem "
 "transparência."
 
 #: .\accounts\apps.py:8
@@ -1939,7 +1939,7 @@ msgstr "Contas Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
-msgstr "Somente eu"
+msgstr "Apenas eu"
 
 #: .\accounts\fields.py:13
 msgid "Me and my friends"
@@ -1971,7 +1971,7 @@ msgstr "Criar uma conta"
 
 #: .\accounts\forms.py:167
 msgid "Update your profile picture"
-msgstr "Actualize a foto do teu perfil"
+msgstr "Actualize a foto do o teu perfil"
 
 #: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
@@ -1985,7 +1985,7 @@ msgstr "E-mail ou Nome de Utilizador"
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
-msgstr "Login"
+msgstr "Iniciar sessão"
 
 #: .\accounts\forms.py:322 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
@@ -2349,9 +2349,9 @@ msgstr[1] ""
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-"A sua palavra-passe deve conter pelo menos %(min_length)d caractere."
+"A tua palavra-passe deve conter pelo menos %(min_length)d caractere."
 msgstr[1] ""
-"A sua palavra-passe deve conter pelo menos %(min_length)d caracteres."
+"A tua palavra-passe deve conter pelo menos %(min_length)d caracteres."
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2412,7 +2412,7 @@ msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
-"Tu não podes utilizar este formato para a tua foto de perfil. Somente os "
+"Tu não podes utilizar este formato para a tua foto de perfil. Apenas os "
 "formatos JPEG ou PNG são aceitos."
 
 #: .\accounts\views.py:299
@@ -2839,7 +2839,7 @@ msgstr "Definir este endereço de e-mail como principal"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail??"
+msgstr "Tens a certeza de que pretendes eliminar este endereço de e-mail?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
@@ -2860,7 +2860,7 @@ msgstr "Tua idade estará visível para tuas correspondências no Speedy Match."
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
 msgstr ""
-"Alterar as definições de privacidade dos endereços de e-mail do teu perfil."
+"Alterar as definições de privacidade dos endereços de e-mail do o teu perfil."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
@@ -2926,7 +2926,7 @@ msgstr "Nenhum utilizador."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Este site está em construção"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3114,9 +3114,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Tu estás cadastrado para receber este tipo de notificação de %(site_name)s. "
-"Acesse esta página para alterar tuas definições de notificações ou para "
-"cancelar o cadastro:"
+"Estás registado para receber este tipo de notificação de %(site_name)s. "
+"Acede a esta página para alterar as tuas definições de notificações ou para "
+"cancelar o registo:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3189,7 +3189,7 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"Respeitamos tua privacidade. Não venderemos ou compartilharemos teus dados "
+"Respeitamos tua privacidade. Não venderemos ou partilharemos teus dados "
 "pessoais, incluindo teu nome, data de nascimento, direcção de e-mail e "
 "palavra-passe. As mensagens que tu envias para pessoas no Speedy Net são "
 "privativas e não serão compartilhadas com outras pessoas ou sítios. Tua "
@@ -3206,12 +3206,12 @@ msgid ""
 "registered to the site."
 msgstr ""
 "Teu perfil no Speedy Net fica visível para todos, mas podes escolher com "
-"quem compartilhar tua direcção de e-mail e tua data de nascimento. Se tu se "
-"inscreveste no Speedy Match, teu perfil do Speedy Match será visível apenas "
-"para pessoas que correspondam a ti de acordo com as definições que "
+"quem partilhar tua direcção de e-mail e tua data de nascimento. Se tu se "
+"inscreveste no Speedy Match, o teu perfil do Speedy Match será visível "
+"apenas para pessoas que correspondam a ti de acordo com as definições que "
 "definistes no sítio, e que tu correspondas a elas de acordo com as "
 "definições delas. Teu perfil no Speedy Match não aparecerá no Google e não "
-"ficará visível para pessoas que não estejam cadastradas no sítio."
+"ficará visível para pessoas que não estejam registadas no sítio."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3223,7 +3223,7 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Se desactivastes tua conta no Speedy Net ou Speedy Match, teu perfil será "
+"Se desactivastes tua conta no Speedy Net ou Speedy Match, o teu perfil será "
 "removido do sítio e tu não aparecerás nos resultados de pesquisa de outras "
 "pessoas no sítio. Observe que a desactivação da tua conta no Speedy Net "
 "também desactiva automaticamente tua conta no Speedy Match. Podes desactivar "
@@ -3240,9 +3240,9 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Se quiser, você pode eliminar sua conta no Speedy Net. Eliminar sua conta "
-"Speedy Net também eliminará automaticamente sua conta Speedy Match. Para "
-"eliminar sua conta do Speedy Net, faça login no Speedy Net, desative sua "
+"Se quiser, tu podes eliminar tua conta no Speedy Net. Eliminar tua conta "
+"Speedy Net também eliminará automaticamente tua conta Speedy Match. Para "
+"eliminar tua conta do Speedy Net, faça login no Speedy Net, desative tua "
 "conta e clique em “Eliminar conta” (no menu “Editar perfil”). Preencha os "
 "detalhes no formulário e confirme. Observe que uma conta excluída não pode "
 "ser recuperada. A exclusão da conta é permanente e irreversível."
@@ -3291,7 +3291,7 @@ msgstr "Activar menu suspenso"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Tens certeza de que pretendes bloquear "
+msgstr "Tens a certeza de que pretendes bloquear "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3368,7 +3368,7 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Tu também tens um perfil Speedy Net. Visualize teu perfil no Speedy Net."
+"Tu também tens um perfil Speedy Net. Visualize o teu perfil no Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3442,7 +3442,7 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"A foto do teu perfil deve ser uma foto tua, onde possamos ver teu rosto. É "
+"A foto do o teu perfil deve ser uma foto tua, onde possamos ver teu rosto. É "
 "permitido carregar uma foto de perfil com outras pessoas. Não carregue fotos "
 "de nudez, fotos que mostrem órgãos genitais (de homens ou mulheres) ou "
 "imagens com o peito nu (de homens ou mulheres)."
@@ -3481,7 +3481,7 @@ msgstr "visível no sítio"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Tempo de moderação de imagem do Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
