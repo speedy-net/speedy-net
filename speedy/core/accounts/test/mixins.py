@@ -64,7 +64,14 @@ if (django_settings.TESTS):
                         user_name=user.name,
                     ))
                     field_name_localized_list.append(field_name_localized)
-            self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_sv', 'last_name_ko', 'last_name_fi', 'last_name_he'])
+            self.assertListEqual(
+                list1=field_name_localized_list,
+                list2=[
+                    to_attribute(name=base_field_name, language_code=language_code)
+                    for base_field_name in User.NAME_LOCALIZABLE_FIELDS
+                    for language_code, language_name in django_settings.LANGUAGES
+                ],
+            )
 
 
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
@@ -602,8 +609,14 @@ if (django_settings.TESTS):
             self.assertNotEqual(first=[to_attribute(name='first_name')], second=['first_name'])
             self.assertNotEqual(first=[to_attribute(name='first_name'), to_attribute(name='last_name')], second=['first_name', 'last_name'])
             self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=[to_attribute(name='first_name', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES])
-            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=[to_attribute(name='first_name', language_code='en'), to_attribute(name='first_name', language_code='fr'), to_attribute(name='first_name', language_code='de'), to_attribute(name='first_name', language_code='es'), to_attribute(name='first_name', language_code='pt'), to_attribute(name='first_name', language_code='it'), to_attribute(name='first_name', language_code='nl'), to_attribute(name='first_name', language_code='sv'), to_attribute(name='first_name', language_code='ko'), to_attribute(name='first_name', language_code='fi'), to_attribute(name='first_name', language_code='he')])
-            self.assertListEqual(list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)], list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_sv', 'first_name_ko', 'first_name_fi', 'first_name_he'])
+            self.assertListEqual(
+                list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)],
+                list2=[to_attribute(name='first_name', language_code=language_code) for language_code, language_name in django_settings.LANGUAGES],
+            )
+            self.assertListEqual(
+                list1=self._user_all_the_required_fields_keys()[:len(django_settings.LANGUAGES)],
+                list2=[f'first_name_{language_code}' for language_code, language_name in django_settings.LANGUAGES],
+            )
             self.assertListEqual(list1=self._registration_form_all_the_required_fields_keys()[:1], list2=[to_attribute(name='first_name')])
             self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys()[:1], list2=[to_attribute(name='first_name')])
 
@@ -616,5 +629,4 @@ if (django_settings.TESTS):
 
         def assert_profile_form_required_fields(self, required_fields):
             self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
-
 
