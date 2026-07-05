@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -369,8 +369,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s също има профил на Speedy Match. Вижте профила на "
-"%(user_name)s в Speedy Match."
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -379,8 +379,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s също има профил на Speedy Match. Вижте профила на "
-"%(user_name)s в Speedy Match."
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -389,53 +389,53 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s също има профил на Speedy Match. Вижте профила на "
-"%(user_name)s в Speedy Match."
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
+msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
+msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
+msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -681,22 +681,19 @@ msgstr "Вижте всички"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -828,31 +825,34 @@ msgstr "Потребителско име"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Абонирани сте да получавате този тип известия от %(site_name)s. Влезте в "
-"тази страница, за да промените настройките си за известия или да се откажете:"
+"тази страница, за да промените настройките си за известия или да се "
+"откажете:"
 
 #: .\__translations\__translations.html:213
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Абонирани сте да получавате този тип известия от %(site_name)s. Влезте в "
-"тази страница, за да промените настройките си за известия или да се откажете:"
+"тази страница, за да промените настройките си за известия или да се "
+"откажете:"
 
 #: .\__translations\__translations.html:214
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Абонирани сте да получавате този тип известия от %(site_name)s. Влезте в "
-"тази страница, за да промените настройките си за известия или да се откажете:"
+"тази страница, за да промените настройките си за известия или да се "
+"откажете:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -1386,8 +1386,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
-"активирате отново по всяко време."
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1395,8 +1395,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
-"активирате отново по всяко време."
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1404,8 +1404,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
-"активирате отново по всяко време."
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1414,8 +1414,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1424,8 +1424,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1434,8 +1434,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
@@ -1486,31 +1486,31 @@ msgstr "Изпратете"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1519,9 +1519,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1530,9 +1529,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1541,9 +1539,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1552,9 +1549,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1563,9 +1559,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1574,9 +1569,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1585,9 +1579,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1596,9 +1589,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1607,9 +1599,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
-"приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1786,46 +1777,46 @@ msgstr "приятели"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Поради злоупотребата със сайта за изпращане на спам съобщения, трябваше да "
-"ограничим броя на съобщенията, които могат да бъдат изпратени до други "
-"членове на сайта за един ден. Моля, опитайте отново утре. Моля, обърнете "
-"внимание, че нямате право да използвате Speedy Net за изпращане на спам "
-"съобщения или съобщения с едно и също съдържание до голям брой хора."
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Поради злоупотребата със сайта за изпращане на спам съобщения, трябваше да "
-"ограничим броя на съобщенията, които могат да бъдат изпратени до други "
-"членове на сайта за един ден. Моля, опитайте отново утре. Моля, обърнете "
-"внимание, че нямате право да използвате Speedy Net за изпращане на спам "
-"съобщения или съобщения с едно и също съдържание до голям брой хора."
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Поради злоупотребата със сайта за изпращане на спам съобщения, трябваше да "
-"ограничим броя на съобщенията, които могат да бъдат изпратени до други "
-"членове на сайта за един ден. Моля, опитайте отново утре. Моля, обърнете "
-"внимание, че нямате право да използвате Speedy Net за изпращане на спам "
-"съобщения или съобщения с едно и също съдържание до голям брой хора."
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1833,8 +1824,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1842,8 +1833,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1851,8 +1842,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1860,8 +1851,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1869,8 +1860,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1878,8 +1869,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1887,8 +1878,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1896,8 +1887,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1905,8 +1896,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Този потребител не съответства на вашия профил, но можете да посетите "
-"неговия профил в Speedy Net. Вижте профила на потребителя в Спиди Нет."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -2259,13 +2250,13 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"Потребителското име трябва да започва с 4 или повече букви и може да съдържа "
-"букви, цифри или тирета."
+"Потребителското име трябва да започва с 4 или повече букви и може да съдържа"
+" букви, цифри или тирета."
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
 "Потребителското име трябва да започва с 4 или повече букви, след които може "
 "да има произволен брой цифри. Можете да добавяте тирета между думите."
@@ -2288,8 +2279,8 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
@@ -2355,11 +2346,13 @@ msgstr[1] "Вашата парола трябва да съдържа поне %
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
 "Тази парола е твърде дълга. Трябва да съдържа най-много %(max_length)d знак."
 msgstr[1] ""
-"Тази парола е твърде дълга. Трябва да съдържа най-много %(max_length)d знака."
+"Тази парола е твърде дълга. Трябва да съдържа най-много %(max_length)d "
+"знака."
 
 #: .\accounts\validators.py:145
 #, python-format
@@ -2402,8 +2395,8 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
 "Не можете да използвате този формат за вашата профилна снимка. Приемат се "
 "само JPEG или PNG формати."
@@ -2428,9 +2421,9 @@ msgstr "Вие сте направили този имейл адрес осно
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2440,23 +2433,24 @@ msgid ""
 msgstr ""
 "Администратор: Общият брой членове на сайта е {total_number_of_members}, от "
 "които {total_number_of_members_in_the_last_week} членове влязоха в сайта "
-"през последната седмица, {total_number_of_members_in_the_last_month} членове "
-"влязоха в сайта през последния месец, "
+"през последната седмица, {total_number_of_members_in_the_last_month} членове"
+" влязоха в сайта през последния месец, "
 "{total_number_of_members_in_the_last_four_months} членове влязоха в сайта "
 "през последните четири месеца, "
 "{total_number_of_members_in_the_last_eight_months} членове влязоха в сайта "
 "през последните осем месеца и "
-"{total_number_of_members_in_the_last_two_years} членове влязоха в сайта през "
-"последните две години."
+"{total_number_of_members_in_the_last_two_years} членове влязоха в сайта през"
+" последните две години."
 
 #: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2472,8 +2466,8 @@ msgid ""
 msgstr ""
 "Администратор: {total_number_of_members_registered_in_the_last_week} "
 "членове, регистрирани през последната седмица. "
-"{total_number_of_members_registered_in_the_last_month} членове, регистрирани "
-"през последния месец. "
+"{total_number_of_members_registered_in_the_last_month} членове, регистрирани"
+" през последния месец. "
 "{total_number_of_members_registered_in_the_last_four_months} членове, "
 "регистрирани през последните четири месеца. "
 "{total_number_of_members_registered_more_than_four_months_ago} членове, "
@@ -2486,8 +2480,8 @@ msgstr ""
 "регистрирани през последните две години. "
 "{total_number_of_members_registered_more_than_two_years_ago} членове, "
 "регистрирани преди повече от две години. "
-"{total_number_of_members_registered_before_2019_08_01} членове, регистрирани "
-"преди 1 август 2019 г."
+"{total_number_of_members_registered_before_2019_08_01} членове, регистрирани"
+" преди 1 август 2019 г."
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2500,7 +2494,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Приложение Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2841,7 +2835,7 @@ msgstr "Лоша молба"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Спиди съжалява, но не можем да обработим вашата заявка."
+msgstr "Speedy is sorry, but we can't handle your request."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2849,7 +2843,7 @@ msgstr "Разрешението е отказано"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Спиди съжалява, но тази страница е лична."
+msgstr "Speedy is sorry, but this page is private."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2857,7 +2851,7 @@ msgstr "Страницата не е намерена"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy се извинява, но страницата не е намерена."
+msgstr "Speedy is sorry, but the page is not found."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -3033,19 +3027,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Блог на Спиди Нет"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Спиди Пас"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Софтуер Speedy"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Бърза продажба"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3054,7 +3048,7 @@ msgstr "Удобен за вегани уебсайт"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Спиди"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3070,7 +3064,7 @@ msgstr "Парола"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Спиди Нет"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
@@ -3078,11 +3072,11 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Магазин Спиди Нет"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Магазин на Speedy Match"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3118,15 +3112,15 @@ msgstr "Свържете се с нас"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Бърз композитор"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Софтуер Speedy Mail"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Композиторски магазин Speedy"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3138,8 +3132,8 @@ msgstr "Не блокираш никого."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
 "Ако имате въпроси, предложения или се интересувате да се присъедините към "
 "екипа - свържете се с нас по имейл."
@@ -3208,11 +3202,12 @@ msgstr "Прочетете го:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Абонирани сте да получавате този тип известия от %(site_name)s. Влезте в "
-"тази страница, за да промените настройките си за известия или да се откажете:"
+"тази страница, за да промените настройките си за известия или да се "
+"откажете:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3285,29 +3280,29 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"Ние уважаваме вашата поверителност. Няма да продаваме или споделяме вашите "
-"лични данни, включително вашето име, дата на раждане, имейл адрес и парола. "
-"Съобщенията, които изпращате до хора в Спиди Нет, са лични и няма да бъдат "
-"споделяни с други хора или уебсайтове. Вашата парола се записва криптирана в "
-"нашата база данни."
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Вашият профил в Спиди Нет е видим за всички, но можете да изберете кой да "
-"споделите с вашия имейл адрес и вашата дата на раждане. Ако сте се "
-"регистрирали за Speedy Match, вашият Speedy Match профил ще бъде видим само "
-"за хора, които отговарят на вас според настройките, които сте задали на "
-"сайта, и че вие ​​ги свързвате според техните настройки. Вашият профил в "
-"Speedy Match няма да се показва в Google и не е видим за хора, които не са "
-"регистрирани в сайта."
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3319,30 +3314,29 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Ако сте деактивирали акаунта си в Speedy Net или Speedy Match, вашият профил "
-"в този сайт ще бъде премахнат от сайта и няма да се показвате в резултатите "
-"от търсенето на други хора в сайта. Обърнете внимание, че деактивирането на "
-"вашия акаунт в Speedy Net автоматично деактивира и вашия акаунт в Speedy "
-"Match. Можете да деактивирате само акаунта си в Speedy Match, като в този "
-"случай вашият акаунт в Speedy Net ще остане активен. Можете да активирате "
-"отново акаунта си, след като го деактивирате, когато пожелаете."
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Ако желаете, можете да изтриете акаунта си в Спиди Нет. Изтриването на вашия "
-"акаунт в Speedy Net автоматично ще изтрие и вашия акаунт в Speedy Match. За "
-"да изтриете акаунта си в Speedy Net, влезте в Speedy Net, деактивирайте "
-"акаунта си и след това щракнете върху „Изтриване на акаунт“ (в менюто "
-"„Редактиране на профил“). Попълнете данните във формата и потвърдете. Моля, "
-"имайте предвид, че изтрит акаунт не може да бъде възстановен. Изтриването на "
-"акаунта е окончателно и необратимо."
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3459,21 +3453,21 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s също има профил на Speedy Match. Вижте профила на "
-"%(user_name)s в Speedy Match."
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
+msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3487,24 +3481,24 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
-"Можете да използвате Speedy Net само за законни цели. Нямате право да "
-"качвате съдържание, свързано с омраза, насилие, малтретиране на животни, "
-"голота или порнография. Нямате право да използвате Speedy Net за изпращане "
-"на спам съобщения или съобщения с едно и също съдържание до голям брой хора."
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
-"Ръководството на сайта не може да проверява личната информация, предоставена "
-"от потребителите на сайта. Личната информация на някои потребители може да "
+"Ръководството на сайта не може да проверява личната информация, предоставена"
+" от потребителите на сайта. Личната информация на някои потребители може да "
 "не е правилна. Ръководството на сайта не носи отговорност за дейността на "
 "потребителите извън сайта. Ако решите да се срещнете или да говорите по "
 "телефона с хора, които сте срещнали на сайта, отговорността за резултатите "
@@ -3512,13 +3506,13 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
 "След като се регистрирате в сайта, ще бъдете помолени да потвърдите имейл "
-"адреса си чрез връзка, изпратена до вас. Акаунтите без потвърден имейл адрес "
-"ще бъдат изтрити от сайта след 10 дни."
+"адреса си чрез връзка, изпратена до вас. Акаунтите без потвърден имейл адрес"
+" ще бъдат изтрити от сайта след 10 дни."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3527,13 +3521,13 @@ msgid ""
 "several email addresses to your account on the site."
 msgstr ""
 "Ако по погрешка сте се регистрирали в сайта с неправилен имейл адрес, "
-"добавете нов имейл адрес към акаунта си и го потвърдете. Можете да прикачите "
-"няколко имейл адреса към вашия акаунт в сайта."
+"добавете нов имейл адрес към акаунта си и го потвърдете. Можете да прикачите"
+" няколко имейл адреса към вашия акаунт в сайта."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
@@ -3576,7 +3570,7 @@ msgstr "видими на уебсайта"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Бързо време за модериране на изображението"
+msgstr "Speedy image moderation time"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

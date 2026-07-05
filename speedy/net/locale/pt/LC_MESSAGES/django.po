@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -39,10 +39,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tens a certeza de que pretendes eliminar a tua conta Speedy Net? Isso é permanente e "
-"irreversível. Eliminar a tua conta Speedy Net também eliminará a tua conta Speedy "
-"Match. Se tiveres a certeza, escreve “Sim. Eliminar a minha conta.” neste campo, com "
-"exatidão e distinção entre maiúsculas e minúsculas."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,10 +52,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tens a certeza de que pretendes eliminar a tua conta Speedy Net? Isso é permanente e "
-"irreversível. Eliminar a tua conta Speedy Net também eliminará a tua conta Speedy "
-"Match. Se tiveres a certeza, escreve “Sim. Eliminar a minha conta.” neste campo, com "
-"exatidão e distinção entre maiúsculas e minúsculas."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -65,10 +65,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tens a certeza de que pretendes eliminar a tua conta Speedy Net? Isso é permanente e "
-"irreversível. Eliminar a tua conta Speedy Net também eliminará a tua conta Speedy "
-"Match. Se tiveres a certeza, escreve “Sim. Eliminar a minha conta.” neste campo, com "
-"exatidão e distinção entre maiúsculas e minúsculas."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -95,8 +95,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"As tuas contas Speedy Net e Speedy Match foram excluídas. Obrigado por usar o "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -105,8 +105,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"As tuas contas Speedy Net e Speedy Match foram excluídas. Obrigado por usar o "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -115,12 +115,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"As tuas contas Speedy Net e Speedy Match foram excluídas. Obrigado por usar o "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Contas Speedy Net"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -133,10 +133,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Tens a certeza de que pretendes eliminar a tua conta Speedy Net? Isso é permanente e "
-"irreversível. Eliminar a tua conta Speedy Net também eliminará a tua conta Speedy "
-"Match. Se tiveres a certeza, escreve “Sim. Eliminar a minha conta.” neste campo, com "
-"exatidão e distinção entre maiúsculas e minúsculas."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -149,7 +149,7 @@ msgstr "Sim. Eliminar a minha conta."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Utilizador do Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "Número de amigos na última visita do utilizador"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Perfil do Speedy Net"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Perfis do Speedy Net"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -175,9 +175,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"O número total de membros ativos no sítio é {total_number_of_active_members_in_the_last_four_months}, "
-"dos quais {total_number_of_active_members_in_the_last_week} membros entraram "
-"no sítio nesta última semana."
+"O número total de membros ativos no sítio é "
+"{total_number_of_active_members_in_the_last_four_months}, dos quais "
+"{total_number_of_active_members_in_the_last_week} membros entraram no sítio "
+"nesta última semana."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -197,12 +198,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"O <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> é uma nova rede social. Com o Speedy Net tu podes se "
-"comunicar com teus amigos. O Speedy Net está aberto para o registo gratuito "
-"de pessoas de todos os países e idades (sem limite de idade!). O sítio é "
-"amigável aos veganos e vegetarianos. Actualmente está disponível em "
-"%(languages_num)s idiomas."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -210,69 +211,70 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Os fundadores do Speedy Net são veganos, apoiam os direitos dos animais e se "
-"opõem a experiências com animais. O Speedy Net é uma aplicação de rede "
-"social amigável para pessoas veganas e vegetarianas e para animais."
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"Decidimos limitar o número de amigos no Speedy Net em 800. Encorajamos a "
-"adicionar como amigos apenas as pessoas que tu conheces pessoalmente. Podes "
-"seleccionar quais detalhes aparecerão como públicos em o teu perfil, cujos "
-"detalhes serão visíveis apenas para amigos e serão privativos. Detalhes "
-"privativos aparecerão apenas para ti."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Podes utilizar nosso novo app, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, para encontrar "
-"pessoas que combinem contigo para encontros. O Speedy Match está aberto para "
-"pessoas solteiras de todas as idades."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Todos os recursos do Speedy Net e Speedy Match são gratuitos. Registe-se no "
-"Speedy Net para encontrar amigos, leva apenas alguns minutos. <a href=\"/\" "
-"title=\"Participe de Speedy Net\">Clique aqui</a> para participar."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"O Speedy Net é um projeto de software gratuito e de código aberto. Se "
-"quiseres ajudar a desenvolver e melhorar o Speedy Net, entre em contacto "
-"comigo por e-mail."
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"O Speedy Net recebeu este nome por causa da <a href=\"https://www.facebook."
-"com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, uma cachorra que "
-"viveu conosco por muitos anos e morreu em 2003. Speedy deu à luz 7 filhotes "
-"em 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr ""
-"O Speedy Net está actualmente na fase alfa. Foi lançado em junho de 2012."
+msgstr "Speedy Net is currently in alpha. It was launched in June 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -284,7 +286,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fundador e director do Speedy Net e Speedy Match,"
+msgstr "Founder and director of Speedy Net and Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -306,7 +308,7 @@ msgstr "Confirma teu e-mail."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"A tua conta Speedy Net não está ativa. Acede a esta página para a ativar."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -326,23 +328,23 @@ msgstr "Teus amigos"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"O Speedy Net é uma nova rede social. Com o Speedy Net tu podes se comunicar "
-"com teus amigos. O Speedy Net está aberto para o registo gratuito de pessoas "
-"de todos os países e idades (sem limite de idade!). O sítio é amigável aos "
-"veganos e vegetarianos."
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Todos os recursos do Speedy Net e Speedy Match são gratuitos. Registe-se no "
-"Speedy Net para encontrar amigos, leva apenas alguns minutos."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"

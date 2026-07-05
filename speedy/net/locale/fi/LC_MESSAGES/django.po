@@ -39,10 +39,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja "
-"peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match "
-"-tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, "
-"täsmälleen ja isot kirjaimet huomioon."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,10 +52,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja "
-"peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match "
-"-tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, "
-"täsmälleen ja isot kirjaimet huomioon."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -65,10 +65,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja "
-"peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match "
-"-tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, "
-"täsmälleen ja isot kirjaimet huomioon."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -95,8 +95,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net- ja Speedy Match -tilisi on poistettu. Kiitos, että käytit "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -105,8 +105,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net- ja Speedy Match -tilisi on poistettu. Kiitos, että käytit "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -115,12 +115,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net- ja Speedy Match -tilisi on poistettu. Kiitos, että käytit "
-"{site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-tilit"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -133,10 +133,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja "
-"peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match "
-"-tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, "
-"täsmälleen ja isot kirjaimet huomioon."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -149,7 +149,7 @@ msgstr "Kyllä. Poista tilini."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Käyttäjä"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "Ystävien määrä käyttäjän edellisellä vierailulla"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profiilit"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiilit"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -199,11 +199,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> on uusi sosiaalinen verkosto. Speedy Netillä voit "
-"kommunikoida ystäviesi kanssa. Speedy Net on avoinna ilmaiselle "
-"rekisteröinnille kaikille maista ja ikäryhmistä (ei ikärajaa!). Sivusto on "
-"vegaani- ja kasvissyöjäystävällinen. Se on tällä hetkellä saatavilla "
-"%(languages_num)s kielellä."
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -211,9 +211,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Speedy Netin perustajat ovat vegaaneja, kannattavat eläinten oikeuksia ja "
-"vastustavat eläinkokeita. Speedy Net on sosiaalinen verkosto, joka sopii "
-"vegaaneille ja kasvissyöjille ja eläimille."
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -223,11 +223,11 @@ msgid ""
 "friends and which details will be private. Private details will appear only "
 "to you."
 msgstr ""
-"Päätimme rajoittaa Speedy Netin ystävien määrän 800:aan. Suosittelemme "
-"lisäämään ystäviksi vain henkilöitä, jotka tunnet henkilökohtaisesti. Voit "
-"valita, mitkä tiedot näkyvät profiilissasi julkisina, mitkä tiedot näkyvät "
-"vain ystävillesi ja mitkä tiedot ovat yksityisiä. Yksityiset tiedot näkyvät "
-"vain sinulle."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -237,10 +237,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"Voit käyttää uutta appiamme, <a "
+"You can use our new app, <a "
 "href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, löytääksesi tapaamiseen sopivia henkilöitä. Speedy"
-" Match on aovin kaikenikäisille sinkuille"
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -248,17 +248,17 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
 " title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Kaikki Speedy Netin ja Speedy Matchin ominaisuudet ovat ilmaisia. Liity "
-"Speedy Netin tänään löytääksesi ystäviä, se vie vain muutaman minuutin. "
-"Liity <a href=\"/\" title=\"Liity Speedy Netin\">Napsauta tätä</a>."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net on ilmainen ja vapaan koodin ohjelmisto. Jos haluat autta "
-"kehittämään Speedy Netiä, ota yhteyttä minuun sähköpostilla."
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -267,14 +267,14 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net on nimetty <a "
+"Speedy Net is named after <a "
 "href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> mukaan, tyttökoiran, joka oli meillä monta "
-"vuotta ja kuoli vuonna 2003. Speedy sai 7 pentua vuonna 1988."
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Speedy Net on alpha-vaiheessa. Se lanseerattiin 2012."
+msgstr "Speedy Net is currently in alpha. It was launched in June 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -286,7 +286,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Netin ja Speedy Matchin perustaja ja johtaja,"
+msgstr "Founder and director of Speedy Net and Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -308,8 +308,7 @@ msgstr "Vahvista sähköpostiosoitteesi."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Speedy Net-tilisi ei ole aktiivinen. Vieraile tällä sivulla aktivoidaksesi "
-"sen."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -334,22 +333,22 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net on uusi sosiaalinen verkosto. Speedy Netin avulla voit "
-"kommunikoida ystäviesi kanssa. Spedy Netiin voi liittyä kaikista maista ja "
-"kaikenikäiset (ei ikärajaa!). Speedy Net on vegaani- ja "
-"vegetaristiystävällinen"
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Kaikki Speedy Netin ja Speedy Matchin ominaisuudet ovat ilmaisia. Liity "
-"Speedy Netin tänään löytääksesi ystäviä, se vie vain muutaman minuutin."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy match - deittaile Speedyä"
+msgstr "Speedy Match – dating Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""

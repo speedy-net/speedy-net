@@ -38,10 +38,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat "
-"permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan "
-"menghapus akun Speedy Match Anda. Jika Anda yakin, ketik \"Yes. Hapus akun "
-"saya\". di bidang ini, persis dan peka huruf besar-kecil."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -51,10 +51,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat "
-"permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan "
-"menghapus akun Speedy Match Anda. Jika Anda yakin, ketik \"Yes. Hapus akun "
-"saya\". di bidang ini, persis dan peka huruf besar-kecil."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -64,10 +64,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat "
-"permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan "
-"menghapus akun Speedy Match Anda. Jika Anda yakin, ketik \"Yes. Hapus akun "
-"saya\". di bidang ini, persis dan peka huruf besar-kecil."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -94,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Akun Speedy Net dan Speedy Match Anda telah dihapus. Terima kasih telah "
-"menggunakan {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -104,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Akun Speedy Net dan Speedy Match Anda telah dihapus. Terima kasih telah "
-"menggunakan {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Akun Speedy Net dan Speedy Match Anda telah dihapus. Terima kasih telah "
-"menggunakan {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Akun Bersih Cepat"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -132,10 +132,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat "
-"permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan "
-"menghapus akun Speedy Match Anda. Jika Anda yakin, ketik \"Yes. Hapus akun "
-"saya\". di bidang ini, persis dan peka huruf besar-kecil."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -148,7 +148,7 @@ msgstr "Ya. Hapus akun saya."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Pengguna Internet Cepat"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Jumlah teman pada kunjungan pengguna terakhir"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Jaringan Cepat"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profil Net Cepat"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,7 +181,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Jaringan Cepat [alfa]"
+msgstr "Speedy Net [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -198,11 +198,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> adalah jejaring sosial baru. Dengan Speedy Net Anda "
-"dapat berkomunikasi dengan teman Anda. Speedy Net terbuka untuk pendaftaran "
-"gratis bagi orang-orang dari semua negara dan usia (tidak ada batasan "
-"usia!). Situs ini ramah vegan dan vegetarian. Saat ini tersedia dalam bahasa"
-" %(languages_num)s."
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -210,9 +210,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Pendiri Speedy Net adalah vegan, mendukung hak-hak hewan dan menolak "
-"eksperimen terhadap hewan. Speedy Net adalah jejaring sosial yang ramah bagi"
-" orang-orang dan hewan vegan dan vegetarian."
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -222,11 +222,11 @@ msgid ""
 "friends and which details will be private. Private details will appear only "
 "to you."
 msgstr ""
-"Kami memutuskan untuk membatasi jumlah teman di Speedy Net menjadi 800. Kami"
-" mendorong Anda untuk menambahkan hanya orang yang Anda kenal secara pribadi"
-" sebagai teman. Anda dapat memilih detail mana yang akan ditampilkan di "
-"profil Anda sebagai publik, detail mana yang hanya untuk teman, dan detail "
-"mana yang bersifat pribadi. Detail pribadi hanya akan muncul untuk Anda."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -236,10 +236,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"Anda dapat menggunakan aplikasi baru kami, <a "
+"You can use our new app, <a "
 "href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, untuk menemukan orang yang cocok untuk berkencan. "
-"Speedy Match terbuka untuk para lajang dari segala usia."
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -247,19 +247,17 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
 " title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Semua fitur di Speedy Net dan Speedy Match tidak dipungut biaya. "
-"Bergabunglah dengan Speedy Net hari ini untuk mencari teman, hanya perlu "
-"beberapa menit. <a href=\"/\" title=\"Join Speedy Net\">Klik di sini</a> "
-"untuk bergabung."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net adalah perangkat lunak gratis & proyek sumber terbuka. Jika Anda "
-"ingin membantu mengembangkan dan meningkatkan Speedy Net, silakan hubungi "
-"saya melalui email."
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -268,17 +266,14 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net diberi nama setelah <a "
+"Speedy Net is named after <a "
 "href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama kami selama "
-"bertahun-tahun dan meninggal pada tahun 2003. Speedy melahirkan 7 anak "
-"anjing pada tahun 1988."
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr ""
-"Speedy Net saat ini masih dalam versi alfa. Diluncurkan pada bulan Juni "
-"2012."
+msgstr "Speedy Net is currently in alpha. It was launched in June 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -290,7 +285,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pendiri dan direktur Speedy Net dan Speedy Match,"
+msgstr "Founder and director of Speedy Net and Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -312,8 +307,7 @@ msgstr "Harap konfirmasi alamat email Anda."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Akun Speedy Net Anda tidak aktif. Masuk ke halaman ini untuk "
-"mengaktifkannya."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -338,23 +332,22 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net adalah jejaring sosial baru. Dengan Speedy Net Anda dapat "
-"berkomunikasi dengan teman Anda. Speedy Net terbuka untuk pendaftaran gratis"
-" bagi orang-orang dari semua negara dan usia (tidak ada batasan usia!). "
-"Situs ini ramah vegan dan vegetarian."
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Semua fitur di Speedy Net dan Speedy Match tidak dipungut biaya. "
-"Bergabunglah dengan Speedy Net hari ini untuk mencari teman, hanya perlu "
-"beberapa menit."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Pertandingan Cepat – berkencan dengan Speedy"
+msgstr "Speedy Match – dating Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""

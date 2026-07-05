@@ -38,11 +38,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
-"vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
-"thường."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,11 +51,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
-"vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
-"thường."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -66,11 +64,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
-"vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
-"thường."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -97,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -107,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -117,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng {site_name}."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Tài khoản Net nhanh chóng"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -135,11 +132,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
-"vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
-"thường."
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -152,7 +148,7 @@ msgstr "Đúng. Xóa tài khoản của tôi."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Người dùng mạng nhanh chóng"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +160,11 @@ msgstr "Số lượng bạn bè trong lần truy cập cuối cùng của ngư�
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Hồ sơ mạng nhanh chóng"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Hồ sơ mạng nhanh chóng"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -185,7 +181,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Mạng nhanh [alpha]"
+msgstr "Speedy Net [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -201,12 +197,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Net "
-"Speedy</a> là mạng xã hội mới. Với Speedy Net bạn có thể liên lạc với bạn bè"
-" của mình. Speedy Net mở cửa đăng ký miễn phí cho mọi người từ mọi quốc gia "
-"và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn chay và "
-"thân thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s ngôn "
-"ngữ."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -214,9 +210,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Những người sáng lập Speedy Net là những người ăn chay trường, ủng hộ quyền "
-"động vật và phản đối các thí nghiệm trên động vật. Speedy Net là mạng xã hội"
-" thân thiện với người ăn chay và động vật."
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -226,11 +222,11 @@ msgid ""
 "friends and which details will be private. Private details will appear only "
 "to you."
 msgstr ""
-"Chúng tôi đã quyết định giới hạn số lượng bạn bè trên Speedy Net ở mức 800. "
-"Chúng tôi khuyến khích bạn chỉ thêm những người bạn quen biết làm bạn bè. "
-"Bạn có thể chọn chi tiết nào sẽ xuất hiện trên hồ sơ của mình ở chế độ công "
-"khai, chi tiết nào chỉ hiển thị với bạn bè và chi tiết nào sẽ ở chế độ riêng"
-" tư. Thông tin chi tiết riêng tư sẽ chỉ xuất hiện với bạn."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -240,10 +236,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"Bạn có thể sử dụng ứng dụng mới của chúng tôi, <a "
+"You can use our new app, <a "
 "href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Trận đấu nhanh</a>, để tìm người phù hợp để hẹn hò. Speedy Match mở "
-"cửa cho người độc thân ở mọi lứa tuổi."
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -251,17 +247,17 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
 " title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Tất cả các tính năng trên Speedy Net và Speedy Match đều miễn phí. Tham gia "
-"Speedy Net ngay hôm nay để tìm bạn bè, chỉ mất vài phút. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click vào đây</a> để tham gia."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net là một dự án phần mềm và nguồn mở miễn phí. Nếu bạn muốn giúp "
-"phát triển và cải thiện Speedy Net, vui lòng liên hệ với tôi qua email."
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -270,15 +266,14 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net được đặt theo tên của <a "
+"Speedy Net is named after <a "
 "href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, một chú chó cái đã ở với chúng tôi trong nhiều "
-"năm và qua đời vào năm 2003. Speedy đã sinh 7 chú chó con vào năm 1988."
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr ""
-"Speedy Net hiện đang ở giai đoạn alpha. Nó được ra mắt vào tháng 6 năm 2012."
+msgstr "Speedy Net is currently in alpha. It was launched in June 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -290,11 +285,11 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Người sáng lập và giám đốc của Speedy Net và Speedy Match,"
+msgstr "Founder and director of Speedy Net and Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Công ty TNHH Công nghệ Speedy Paz"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -312,7 +307,7 @@ msgstr "Vui lòng xác nhận địa chỉ email của bạn."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tài khoản Speedy Net của bạn không hoạt động. Vào trang này để kích hoạt nó."
+"Your Speedy Net account is not active. Enter this page to activate it."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -337,18 +332,18 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net là một mạng xã hội mới. Với Speedy Net bạn có thể liên lạc với "
-"bạn bè của mình. Speedy Net mở cửa đăng ký miễn phí cho mọi người từ mọi "
-"quốc gia và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn "
-"chay và thân thiện với người ăn chay."
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Tất cả các tính năng trên Speedy Net và Speedy Match đều miễn phí. Tham gia "
-"Speedy Net ngay hôm nay để tìm bạn bè, chỉ mất vài phút."
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
