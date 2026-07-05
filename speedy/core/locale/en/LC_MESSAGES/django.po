@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:16+0300\n"
+"POT-Creation-Date: 2026-07-06 02:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2572,23 +2572,23 @@ msgstr ""
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr "Japanese"
+msgstr ""
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr "Russian"
+msgstr ""
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "Chinese"
+msgstr ""
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "Polish"
+msgstr ""
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "Persian"
+msgstr ""
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
@@ -2596,27 +2596,27 @@ msgstr ""
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr "Arabic"
+msgstr ""
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr "Indonesian"
+msgstr ""
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr "Ukrainian"
+msgstr ""
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr "Turkish"
+msgstr ""
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr ""
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr "Czech"
+msgstr ""
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
@@ -2628,63 +2628,63 @@ msgstr ""
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "Hungarian"
+msgstr ""
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr "Thai"
+msgstr ""
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr "Greek"
+msgstr ""
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr "Malay"
+msgstr ""
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr "Serbian"
+msgstr ""
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "Romanian"
+msgstr ""
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr "Bengali"
+msgstr ""
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr "Catalan"
+msgstr ""
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr "Norwegian (Bokmål)"
+msgstr ""
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr "Bulgarian"
+msgstr ""
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr "Danish"
+msgstr ""
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "Slovak"
+msgstr ""
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
-msgstr "Hindi"
+msgstr ""
 
 #: .\settings\base_with_login.py:101
 msgid "Estonian"
-msgstr "Estonian"
+msgstr ""
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr "Croatian"
+msgstr ""
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
