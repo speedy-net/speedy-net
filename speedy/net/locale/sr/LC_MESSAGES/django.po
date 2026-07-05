@@ -73,19 +73,19 @@ msgstr ""
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "Трајно избришите свој __ПХ0__ налог"
+msgstr "Permanently delete your {site_name} account"
 
 #: .\__translations\__translations.py:11
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "Трајно избришите свој __ПХ0__ налог"
+msgstr "Permanently delete your {site_name} account"
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "Трајно избришите свој __ПХ0__ налог"
+msgstr "Permanently delete your {site_name} account"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -94,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су избрисани. Хвала вам што користите "
-"__ПХ0__."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -104,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су избрисани. Хвала вам што користите "
-"__ПХ0__."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -114,8 +114,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су избрисани. Хвала вам што користите "
-"__ПХ0__."
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -174,8 +174,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"Укупан број активних чланова на сајту је __ПХ0__, од којих је __ПХ1__ "
-"чланова ушло на сајт прошле недеље."
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -195,11 +197,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"__ПХ0__Спееди Нет__ПХ1__ је нова друштвена мрежа. Са Спееди Нет-ом можете "
-"комуницирати са својим пријатељима. Спееди Нет је отворен за бесплатну "
-"регистрацију за људе из свих земаља и узраста (без старосне границе!). Сајт "
-"је прилагођен за вегане и вегетаријанце. Тренутно је доступан на __ПХ2__ "
-"језика."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -233,9 +236,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"Можете да користите нашу нову апликацију, __ПХ0__Спееди Матцх__ПХ1__, да "
-"пронађете одговарајуће људе за упознавање. Спееди Матцх је отворен за самце "
-"свих узраста."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -293,7 +297,7 @@ msgstr "Добродошли"
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Добро дошли у __ПХ0__"
+msgstr "Welcome to %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
