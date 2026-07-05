@@ -1489,8 +1489,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy"
 " Net. Please remove friends before you proceed."
 msgstr ""
-"Већ имате __ПХ0__ пријатеља. Не можете имати више од __ПХ1__ пријатеља на "
-"Спееди Нету. Уклоните пријатеље пре него што наставите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1499,8 +1499,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy"
 " Net. Please remove friends before you proceed."
 msgstr ""
-"Већ имате __ПХ0__ пријатеља. Не можете имати више од __ПХ1__ пријатеља на "
-"Спееди Нету. Уклоните пријатеље пре него што наставите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1509,8 +1509,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy"
 " Net. Please remove friends before you proceed."
 msgstr ""
-"Већ имате __ПХ0__ пријатеља. Не можете имати више од __ПХ1__ пријатеља на "
-"Спееди Нету. Уклоните пријатеље пре него што наставите."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1519,9 +1519,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1530,9 +1529,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1541,9 +1539,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1552,9 +1549,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1563,9 +1559,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1574,9 +1569,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1585,9 +1579,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1596,9 +1589,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1607,9 +1599,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Овај корисник већ има __ПХ0__ пријатеља. Не могу имати више од __ПХ1__ "
-"пријатеља на Спееди Нету. Замолите их да уклоне пријатеље пре него што "
-"наставите."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
