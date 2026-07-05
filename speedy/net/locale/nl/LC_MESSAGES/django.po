@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -40,8 +40,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Weet je zeker dat je je Speedy Net-account wilt verwijderen? Dit is "
-"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook "
-"uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
+"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook"
+" uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
 "Verwijder mijn account.” in dit veld, precies en hoofdlettergevoelig."
 
 #: .\__translations\__translations.py:7
@@ -53,8 +53,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Weet je zeker dat je je Speedy Net-account wilt verwijderen? Dit is "
-"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook "
-"uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
+"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook"
+" uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
 "Verwijder mijn account.” in dit veld, precies en hoofdlettergevoelig."
 
 #: .\__translations\__translations.py:8
@@ -66,8 +66,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Weet je zeker dat je je Speedy Net-account wilt verwijderen? Dit is "
-"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook "
-"uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
+"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook"
+" uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
 "Verwijder mijn account.” in dit veld, precies en hoofdlettergevoelig."
 
 #: .\__translations\__translations.py:10
@@ -134,8 +134,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Weet je zeker dat je je Speedy Net-account wilt verwijderen? Dit is "
-"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook "
-"uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
+"permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook"
+" uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. "
 "Verwijder mijn account.” in dit veld, precies en hoofdlettergevoelig."
 
 #: .\accounts\forms.py:33
@@ -149,7 +149,7 @@ msgstr "Ja. Verwijder mijn account."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Gebruiker"
+msgstr "Speedy Net Gebruiker (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "Aantal vrienden tijdens laatste bezoek van de gebruiker"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profiel"
+msgstr "Speedy Net Profiel (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profielen"
+msgstr "Speedy Net Profielen (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -177,8 +177,8 @@ msgid ""
 msgstr ""
 "Het totale aantal actieve leden op de website is "
 "{total_number_of_active_members_in_the_last_four_months}, waarvan "
-"{total_number_of_active_members_in_the_last_week} leden in de afgelopen week "
-"de website hebben bezocht."
+"{total_number_of_active_members_in_the_last_week} leden in de afgelopen week"
+" de website hebben bezocht."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -199,10 +199,10 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> is een nieuw sociaal netwerk. Met Speedy Net kun je met "
-"je vrienden communiceren. Speedy Net staat open voor gratis registratie voor "
-"mensen uit alle landen en leeftijden (geen leeftijdsgrens!). De site is "
-"veganistisch en vegetarisch vriendelijk. Het is momenteel beschikbaar in "
+"Net\">Speedy Net</a> is een nieuw sociaal netwerk. Met Speedy Net kun je met"
+" je vrienden communiceren. Speedy Net staat open voor gratis registratie "
+"voor mensen uit alle landen en leeftijden (geen leeftijdsgrens!). De site is"
+" veganistisch en vegetarisch vriendelijk. Het is momenteel beschikbaar in "
 "%(languages_num)s talen."
 
 #: .\templates\about\about.html:19
@@ -217,13 +217,14 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"We hebben besloten om het aantal vrienden op Speedy Net te beperken tot 800. "
-"We raden je dan ook aan om alleen mensen toe te voegen die je persoonlijk "
+"We hebben besloten om het aantal vrienden op Speedy Net te beperken tot 800."
+" We raden je dan ook aan om alleen mensen toe te voegen die je persoonlijk "
 "kent. Je kunt kiezen welke gegevens als openbaar op je profiel verschijnen, "
 "welke alleen voor vrienden zichtbaar zijn en welke privé blijven. "
 "Privégegevens zijn alleen voor jou zichtbaar."
@@ -231,24 +232,26 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"U kunt onze nieuwe app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, gebruiken om matchende mensen te "
-"vinden voor daten. Speedy Match staat open voor singles van alle leeftijden."
+"U kunt onze nieuwe app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, gebruiken om matchende mensen te vinden voor "
+"daten. Speedy Match staat open voor singles van alle leeftijden."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Alle functies van Speedy Net en Speedy Match zijn gratis. Word nog vandaag "
 "lid van Speedy Net om vrienden te vinden. Het duurt maar een paar minuten! "
-"<a href=\"/\" title=\"Wordt nog lid van Speedy Net\">Klik hier</a> om lid te "
-"worden."
+"<a href=\"/\" title=\"Wordt nog lid van Speedy Net\">Klik hier</a> om lid te"
+" worden."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -256,18 +259,20 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net is een gratis software- en open source-project. Als je wilt "
-"helpen bij het ontwikkelen en verbeteren van Speedy Net, neem dan per e-mail "
-"contact met mij op."
+"helpen bij het ontwikkelen en verbeteren van Speedy Net, neem dan per e-mail"
+" contact met mij op."
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net is vernoemd naar <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, een teefje dat vele jaren bij ons "
-"was en stierf in 2003. Speedy beviel in 1988 van 7 puppy's."
+"Speedy Net is vernoemd naar <a "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, een teefje dat vele jaren bij ons was en stierf"
+" in 2003. Speedy beviel in 1988 van 7 puppy's."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -327,15 +332,15 @@ msgstr "Je Vrienden"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
 "Speedy Net is een nieuw sociaal netwerk. Met Speedy Net kun je met je "
 "vrienden communiceren. Lid worden van Speedy Net is gratis voor mensen uit "
-"alle landen en leeftijden (geen leeftijdsgrens!). De website is veganistisch "
-"en vegetarisch vriendelijk."
+"alle landen en leeftijden (geen leeftijdsgrens!). De website is veganistisch"
+" en vegetarisch vriendelijk."
 
 #: .\templates\main\main_page.html:17
 msgid ""
