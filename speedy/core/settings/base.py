@@ -194,6 +194,8 @@ LANGUAGES = [
     ('he', _('Hebrew')),
 ]
 
+LANGUAGES_IN_HTML = LANGUAGES
+
 LANGUAGES_WITH_ADS = set()
 
 LOCALE_PATHS = [

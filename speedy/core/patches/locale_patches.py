@@ -11,4 +11,6 @@ def patch():
     # Note: translation('pt').add_fallback(translation('pt-br')) will set translation('pt')._fallback[='en']._fallback[='pt-br']
     translation('pt')._fallback = translation('pt-br')
 
+    # translation('zh')._fallback = translation('zh-hant')
+    # translation('zh-hant')._fallback = translation('zh-tw')
 
