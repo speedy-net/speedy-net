@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "Delete Account"
+msgstr "Hesabı Sil"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "Delete Account"
+msgstr "Hesabı Sil"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "Delete Account"
+msgstr "Hesabı Sil"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -38,10 +38,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
+"Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve "
+"geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız"
+" da silinir. Eminseniz \"Evet. Hesabımı sil\" yazın. bu alanda tam olarak ve"
+" büyük/küçük harfe duyarlıdır."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -51,10 +51,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
+"Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve "
+"geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız"
+" da silinir. Eminseniz \"Evet. Hesabımı sil\" yazın. bu alanda tam olarak ve"
+" büyük/küçük harfe duyarlıdır."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -64,28 +64,28 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
+"Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve "
+"geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız"
+" da silinir. Eminseniz \"Evet. Hesabımı sil\" yazın. bu alanda tam olarak ve"
+" büyük/küçük harfe duyarlıdır."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "Permanently delete your {site_name} account"
+msgstr "{site_name} hesabınızı kalıcı olarak silin"
 
 #: .\__translations\__translations.py:11
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "Permanently delete your {site_name} account"
+msgstr "{site_name} hesabınızı kalıcı olarak silin"
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "Permanently delete your {site_name} account"
+msgstr "{site_name} hesabınızı kalıcı olarak silin"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -94,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
+"Speedy Net ve Speedy Match hesaplarınız silinmiştir. {site_name} "
+"kullandığınız için teşekkür ederiz."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -104,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
+"Speedy Net ve Speedy Match hesaplarınız silinmiştir. {site_name} "
+"kullandığınız için teşekkür ederiz."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -114,16 +114,16 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
+"Speedy Net ve Speedy Match hesaplarınız silinmiştir. {site_name} "
+"kullandığınız için teşekkür ederiz."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Hızlı Net Hesaplar"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
-msgstr "Your password"
+msgstr "Şifreniz"
 
 #: .\accounts\forms.py:19
 msgid ""
@@ -132,39 +132,39 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
+"Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve "
+"geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız"
+" da silinir. Eminseniz \"Evet. Hesabımı sil\" yazın. bu alanda tam olarak ve"
+" büyük/küçük harfe duyarlıdır."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
-msgstr "Invalid password."
+msgstr "Geçersiz şifre."
 
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
 msgid "Yes. Delete my account."
-msgstr "Yes. Delete my account."
+msgstr "Evet. Hesabımı sil."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Hızlı Net Kullanıcı"
 
 #: .\accounts\models.py:32
 msgid "User"
-msgstr "User"
+msgstr "Kullanıcı"
 
 #: .\accounts\models.py:34
 msgid "Number of friends on last user's visit"
-msgstr "Number of friends on last user's visit"
+msgstr "Son kullanıcının ziyaretindeki arkadaş sayısı"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Hızlı Net Profil"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Hızlı Net Profiller"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -174,18 +174,18 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"The total number of active members on the site is "
-"{total_number_of_active_members_in_the_last_four_months}, of which "
-"{total_number_of_active_members_in_the_last_week} members entered the site "
-"in the last week."
+"Sitedeki toplam aktif üye sayısı "
+"{total_number_of_active_members_in_the_last_four_months} olup, bunların "
+"{total_number_of_active_members_in_the_last_week} üyeleri geçen hafta siteye"
+" girmiştir."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Hızlı Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "About Speedy Net"
+msgstr "Speedy Net Hakkında"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -198,11 +198,10 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
-"communicate with your friends. Speedy Net is open to free registration for "
-"people from all countries and ages (no age limit!). The site is vegan and "
-"vegetarian friendly. It is currently available in %(languages_num)s "
-"languages."
+"Net\">Speedy Net</a> yeni bir sosyal ağdır. Speedy Net ile arkadaşlarınızla "
+"iletişim kurabilirsiniz. Speedy Net, tüm ülkelerden ve yaşlardan kişilerin "
+"ücretsiz kaydına açıktır (yaş sınırı yoktur!). Site vegan ve vejetaryen "
+"dostudur. Şu anda %(languages_num)s dillerinde mevcuttur."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -210,9 +209,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"The founders of Speedy Net are vegan, support animal rights and object to "
-"experiments on animals. Speedy Net is a social network friendly for vegan "
-"and vegetarian people and animals."
+"Speedy Net'in kurucuları vegandır, hayvan haklarını savunur ve hayvanlar "
+"üzerinde yapılan deneylere karşı çıkar. Speedy Net, vegan ve vejetaryen "
+"insanlar ve hayvanlar için uygun bir sosyal ağdır."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -222,11 +221,11 @@ msgid ""
 "friends and which details will be private. Private details will appear only "
 "to you."
 msgstr ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"Speedy Net'teki arkadaş sayısını 800 ile sınırlamaya karar verdik. Yalnızca "
+"kişisel olarak tanıdığınız kişileri arkadaş olarak eklemenizi öneririz. "
+"Profilinizde hangi ayrıntıların herkese açık olarak görüneceğini, hangi "
+"ayrıntıların yalnızca arkadaşlarınıza görüneceğini ve hangi ayrıntıların "
+"özel olacağını seçebilirsiniz. Özel ayrıntılar yalnızca size görünecektir."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -236,10 +235,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"You can use our new app, <a "
+"Flört için eşleşen kişileri bulmak için yeni uygulamamız <a "
 "href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"Match\">Speedy Match</a>'i kullanabilirsiniz. Speedy Match her yaştan "
+"bekarlara açıktır."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -247,17 +246,18 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
 " title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net ve Speedy Match'in tüm özellikleri ücretsizdir. Arkadaş bulmak "
+"için bugün Speedy Net'e katılın, yalnızca birkaç dakika sürer. <a href=\"/\""
+" title=\"Join Speedy Net\">Katılmak için burayı tıklayın</a>."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net is a free software & open source project. If you want to help "
-"developing and improving Speedy Net, please contact me by email."
+"Speedy Net ücretsiz bir yazılım ve açık kaynak projesidir. Speedy Net'in "
+"geliştirilmesine ve iyileştirilmesine yardımcı olmak istiyorsanız lütfen "
+"benimle e-posta yoluyla iletişime geçin."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -266,18 +266,19 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net, adını uzun yıllar bizimle birlikte olan ve 2003 yılında ölen "
+"dişi köpek <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>'den almıştır. Speedy, 1988 yılında 7 yavru "
+"doğurmuştur."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Speedy Net is currently in alpha. It was launched in June 2012."
+msgstr ""
+"Speedy Net şu anda alfa aşamasındadır. Haziran 2012'de piyasaya sürüldü."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
-msgstr "Thank you and good luck,"
+msgstr "Teşekkür ederim ve iyi şanslar,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
@@ -285,45 +286,45 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Speedy Net ve Speedy Match'in kurucusu ve yöneticisi,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Teknolojileri Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr "Welcome"
+msgstr "Hoş geldin"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "%(site_name)s'a hoş geldiniz"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "Please confirm your email address."
+msgstr "Lütfen e-posta adresinizi doğrulayın."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Your Speedy Net account is not active. Enter this page to activate it."
+"Speedy Net hesabınız aktif değil. Etkinleştirmek için bu sayfaya girin."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
-msgstr "Blocked Users"
+msgstr "Engellenen Kullanıcılar"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "Delete Account"
+msgstr "Hesabı Sil"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "You don't have any friends yet."
+msgstr "Henüz hiç arkadaşın yok."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Your Friends"
+msgstr "Arkadaşların"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -332,41 +333,41 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
-"countries and ages (no age limit!). The site is vegan and vegetarian "
-"friendly."
+"Speedy Net yeni bir sosyal ağdır. Speedy Net ile arkadaşlarınızla iletişim "
+"kurabilirsiniz. Speedy Net, tüm ülkelerden ve yaşlardan kişilerin ücretsiz "
+"kaydına açıktır (yaş sınırı yoktur!). Site vegan ve vejetaryen dostudur."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes."
+"Speedy Net ve Speedy Match'in tüm özellikleri ücretsizdir. Arkadaş bulmak "
+"için bugün Speedy Net'e katılın, yalnızca birkaç dakika sürer."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – dating Speedy"
+msgstr "Hızlı Maç – Speedy ile çıkmak"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+"Bir erkek arkadaş mı arıyorsunuz? Bir kız arkadaş mı arıyorsunuz? Gelin ve "
+"Speedy ile tanışın!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr "Free Online Dating"
+msgstr "Ücretsiz Çevrimiçi Arkadaşlık"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "Friends"
+msgstr "Arkadaşlar"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Arkadaşın"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "Friendship request sent"
+msgstr "Arkadaşlık isteği gönderildi"

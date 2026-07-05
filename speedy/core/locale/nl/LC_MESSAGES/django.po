@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -391,8 +391,8 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s heeft ook een Speedy Net-profiel. Bekijk het profiel van "
 "%(user_name)s op Speedy Net."
@@ -401,8 +401,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s heeft ook een Speedy Net-profiel. Bekijk het profiel van "
 "%(user_name)s op Speedy Net."
@@ -411,8 +411,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s heeft ook een Speedy Net-profiel. Bekijk het profiel van "
 "%(user_name)s op Speedy Net."
@@ -823,8 +823,8 @@ msgstr "Gebruikersnaam"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Je bent aangemeld om dit soort meldingen van %(site_name)s te ontvangen. Ga "
 "naar deze pagina om je meldingsinstellingen te wijzigen of om je af te "
@@ -834,8 +834,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Je bent aangemeld om dit soort meldingen van %(site_name)s te ontvangen. Ga "
 "naar deze pagina om je meldingsinstellingen te wijzigen of om je af te "
@@ -845,8 +845,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Je bent aangemeld om dit soort meldingen van %(site_name)s te ontvangen. Ga "
 "naar deze pagina om je meldingsinstellingen te wijzigen of om je af te "
@@ -934,8 +934,8 @@ msgstr[0] ""
 "Lijst bevat %(show_value)d element, maar mag niet meer dan %(limit_value)d "
 "elementen bevatten."
 msgstr[1] ""
-"Lijst bevat %(show_value)d elementen, maar mag niet meer dan %(limit_value)d "
-"elementen bevatten."
+"Lijst bevat %(show_value)d elementen, maar mag niet meer dan %(limit_value)d"
+" elementen bevatten."
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -1231,17 +1231,17 @@ msgstr "Roker"
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr "Single"
+msgstr "Enkel"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Single"
+msgstr "Enkel"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Single"
+msgstr "Enkel"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
@@ -1484,31 +1484,31 @@ msgstr "Verstuur"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
-"Net. Verwijder vrienden voordat je doorgaat."
+"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy"
+" Net. Verwijder vrienden voordat je doorgaat."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
-"Net. Verwijder vrienden voordat je doorgaat."
+"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy"
+" Net. Verwijder vrienden voordat je doorgaat."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
-"Net. Verwijder vrienden voordat je doorgaat."
+"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy"
+" Net. Verwijder vrienden voordat je doorgaat."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1529,8 +1529,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
-"gaat."
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder"
+" gaat."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1562,8 +1562,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
-"gaat."
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder"
+" gaat."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1595,8 +1595,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
-"gaat."
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder"
+" gaat."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1784,14 +1784,14 @@ msgstr "Vrienden"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Vanwege het misbruiken van de website om spamberichten te verzenden, hebben "
-"we het aantal berichten moeten beperken dat op één dag naar andere leden van "
-"de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
+"we het aantal berichten moeten beperken dat op één dag naar andere leden van"
+" de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
@@ -1799,14 +1799,14 @@ msgstr ""
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Vanwege het misbruiken van de website om spamberichten te verzenden, hebben "
-"we het aantal berichten moeten beperken dat op één dag naar andere leden van "
-"de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
+"we het aantal berichten moeten beperken dat op één dag naar andere leden van"
+" de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
@@ -1814,14 +1814,14 @@ msgstr ""
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Vanwege het misbruiken van de website om spamberichten te verzenden, hebben "
-"we het aantal berichten moeten beperken dat op één dag naar andere leden van "
-"de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
+"we het aantal berichten moeten beperken dat op één dag naar andere leden van"
+" de website kan worden verzonden. Probeer het morgen opnieuw. Houd er "
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
@@ -1935,7 +1935,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Snelle kernaccounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2092,7 +2092,7 @@ msgstr "Roker"
 
 #: .\accounts\models.py:524
 msgid "Single"
-msgstr "Single"
+msgstr "Enkel"
 
 #: .\accounts\models.py:525
 msgid "Divorced"
@@ -2262,8 +2262,8 @@ msgstr ""
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
 "De gebruikersnaam moet beginnen met 4 of meer letters, met daarna een "
 "willekeurig aantal cijfers. Je kunt ook streepjes tussen woorden gebruiken."
@@ -2286,17 +2286,17 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"De gebruikersnaam mag maximaal %(limit_value)d alfanumerieke tekens bevatten "
-"(het bevat %(show_value)d)."
+"De gebruikersnaam mag maximaal %(limit_value)d alfanumerieke tekens bevatten"
+" (het bevat %(show_value)d)."
 msgstr[1] ""
-"De gebruikersnaam mag maximaal %(limit_value)d alfanumerieke tekens bevatten "
-"(het bevat %(show_value)d)."
+"De gebruikersnaam mag maximaal %(limit_value)d alfanumerieke tekens bevatten"
+" (het bevat %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2353,7 +2353,8 @@ msgstr[1] "Uw wachtwoord moet minstens %(min_length)d tekens lang zijn."
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
 "Dit wachtwoord is te lang. Het mag maximaal %(max_length)d tekens bevatten."
 msgstr[1] ""
@@ -2372,7 +2373,8 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Je wachtwoord moet minstens %(min_unique_characters)d unieke tekens bevatten."
+"Je wachtwoord moet minstens %(min_unique_characters)d unieke tekens "
+"bevatten."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
@@ -2399,8 +2401,8 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
 "Je kunt dit formaat niet gebruiken voor je profielfoto. Alleen JPEG- of PNG-"
 "formaten worden geaccepteerd."
@@ -2425,9 +2427,9 @@ msgstr "Je heb die je primaire e-mailadres gemaakt."
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2452,9 +2454,10 @@ msgstr ""
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2477,9 +2480,9 @@ msgstr ""
 "{total_number_of_members_registered_more_than_four_months_ago} zijn in meer "
 "dan vier maanden geleden lid geworden. "
 "{total_number_of_members_registered_in_the_last_eight_months} leden zijn in "
-"de afgelopen acht maanden lid geworden."
-"{total_number_of_members_registered_more_than_eight_months_ago} leden zijn "
-"meer dan acht maanden geleden lid geworden. "
+"de afgelopen acht maanden lid "
+"geworden.{total_number_of_members_registered_more_than_eight_months_ago} "
+"leden zijn meer dan acht maanden geleden lid geworden. "
 "{total_number_of_members_registered_in_the_last_two_years} zijn in de "
 "afgelopen twee jaar lid geworden. "
 "{total_number_of_members_registered_more_than_two_years_ago} zijn meer dan "
@@ -2498,7 +2501,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Speedy Core Base-app"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2635,7 +2638,7 @@ msgstr "Berichten"
 
 #: .\messages\models.py:29
 msgid "site"
-msgstr "site"
+msgstr "plaats"
 
 #: .\messages\models.py:30
 msgid "participant 1"
@@ -2719,23 +2722,23 @@ msgstr "Nederlands"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr ""
+msgstr "Japanse"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr ""
+msgstr "Russisch"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr ""
+msgstr "Chinese"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr ""
+msgstr "Pools"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr ""
+msgstr "Perzisch"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
@@ -2743,27 +2746,27 @@ msgstr "Koreaans"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr ""
+msgstr "Arabisch"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr ""
+msgstr "Indonesisch"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr ""
+msgstr "Oekraïens"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr ""
+msgstr "Turks"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamees"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr ""
+msgstr "Tsjechisch"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
@@ -2775,63 +2778,63 @@ msgstr "Fins"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr ""
+msgstr "Hongaars"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr ""
+msgstr "Thais"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr ""
+msgstr "Grieks"
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr ""
+msgstr "Maleis"
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr ""
+msgstr "Servisch"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr ""
+msgstr "Roemeense"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr ""
+msgstr "Bengaals"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr ""
+msgstr "Catalaans"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr ""
+msgstr "Noors (Bokmål)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr ""
+msgstr "Bulgaars"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr ""
+msgstr "Deens"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr ""
+msgstr "Slowaaks"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
-msgstr ""
+msgstr "Hindi"
 
 #: .\settings\base_with_login.py:101
 msgid "Estonian"
-msgstr ""
+msgstr "Ests"
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr ""
+msgstr "Kroatisch"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2839,7 +2842,8 @@ msgstr "Foute aanvraag"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Het spijt Speedy, maar we kunnen je verzoek niet in behandeling nemen."
+msgstr ""
+"Het spijt Speedy, maar we kunnen je verzoek niet in behandeling nemen."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -3031,19 +3035,19 @@ msgstr "Je hebt je e-mailadres nog niet bevestigd. Controleer je inbox."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net-blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Speedy Paz"
+msgstr "Snelle Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Speedy Software"
+msgstr "Snelle software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Speedy Sale"
+msgstr "Snelle verkoop"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3052,7 +3056,7 @@ msgstr "Een veganistisch vriendelijke site"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Speedy"
+msgstr "Snel"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3060,7 +3064,7 @@ msgstr "Uitloggen"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Home"
+msgstr "Thuis"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3068,11 +3072,11 @@ msgstr "Wachtwoord"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Speedy Net"
+msgstr "Snel Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Speedy Match"
+msgstr "Snelle wedstrijd"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3116,11 +3120,11 @@ msgstr "Neem contact met ons op"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Speedy Composer"
+msgstr "Snelle componist"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail Software"
+msgstr "Snelle e-mailsoftware"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
@@ -3136,8 +3140,8 @@ msgstr "Je blokkeert nog niemand."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
 "Als je vragen of suggesties hebt, of als je geïnteresseerd bent om lid vanj "
 "het team te sluiten, kun je per e-mail contact met ons opnemen."
@@ -3206,8 +3210,8 @@ msgstr "Lees het:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Je bent aangemeld om dit soort meldingen van %(site_name)s te ontvangen. Ga "
 "naar deze pagina om je meldingsinstellingen te wijzigen of om je af te "
@@ -3292,8 +3296,8 @@ msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
@@ -3303,9 +3307,10 @@ msgstr ""
 "Je profiel op Speedy Net is voor iedereen zichtbaar, maar je kunt zelf "
 "kiezen met wie je jouw e-mailadres en geboortedatum deelt. Als je lid bent "
 "geworden van Speedy Match, is je Speedy Match-profiel alleen zichtbaar voor "
-"mensen die met jij matcht en die met jou matchen volgens de instellingen die "
-"je op de website hebt ingesteld. je profiel op Speedy Match verschijnt niet "
-"op Google en is niet zichtbaar voor mensen die geen lid zijn van de website."
+"mensen die met jij matcht en die met jou matchen volgens de instellingen die"
+" je op de website hebt ingesteld. je profiel op Speedy Match verschijnt niet"
+" op Google en is niet zichtbaar voor mensen die geen lid zijn van de "
+"website."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3327,9 +3332,9 @@ msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
@@ -3337,11 +3342,10 @@ msgstr ""
 "Als je wilt, kun je je account op Speedy Net verwijderen. Als u uw Speedy "
 "Net-account verwijdert, wordt ook automatisch uw Speedy Match-account "
 "verwijderd. Om uw Speedy Net-account te verwijderen, logt u in op Speedy "
-"Net, deactiveert u uw account en klikt u vervolgens op „Account "
-"verwijderen” (in het menu „Bewerk profiel”). Vul de gegevens in het "
-"formulier in en bevestig. Houd er rekening mee dat een verwijderd account "
-"niet kan worden hersteld. Het verwijderen van een account is permanent en "
-"onomkeerbaar."
+"Net, deactiveert u uw account en klikt u vervolgens op „Account verwijderen”"
+" (in het menu „Bewerk profiel”). Vul de gegevens in het formulier in en "
+"bevestig. Houd er rekening mee dat een verwijderd account niet kan worden "
+"hersteld. Het verwijderen van een account is permanent en onomkeerbaar."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3468,8 +3472,8 @@ msgstr "Je hebt ook een Speedy Net-profiel. Bekijk je profiel op Speedy Net."
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s heeft ook een Speedy Net-profiel. Bekijk het profiel van "
 "%(user_name)s op Speedy Net."
@@ -3486,8 +3490,8 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
 "Je kunt Speedy Net alleen voor legale doeleinden gebruiken. Je mag dus geen "
 "inhoud uploaden die verband houdt met haat, geweld, dierenmishandeling, "
@@ -3499,9 +3503,9 @@ msgstr ""
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
 "Het sitebeheer kan de door gebruikers van de site verstrekte persoonlijke "
 "informatie niet verifiëren. Het sitebeheer is niet verantwoordelijk voor "
@@ -3511,8 +3515,8 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
 "Nadat je jou bij de website hebt aangemeld, moet je jouw e-mailadres "
@@ -3525,26 +3529,26 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
-"Als je per ongeluk bij de website bent aangemeld met een onjuist e-"
-"mailadres, voeg dan een nieuw e-mailadres toe aan uw account en verifieer "
+"Als je per ongeluk bij de website bent aangemeld met een onjuist "
+"e-mailadres, voeg dan een nieuw e-mailadres toe aan uw account en verifieer "
 "dit. Je kunt verschillende e-mailadressen aan je account op de website "
 "koppelen."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"Je profielfoto moet een foto van jou zijn, waarop we je gezicht kunnen zien. "
-"Het is toegestaan om een profielfoto waar je met anderen opstaat, te "
+"Je profielfoto moet een foto van jou zijn, waarop we je gezicht kunnen zien."
+" Het is toegestaan om een profielfoto waar je met anderen opstaat, te "
 "uploaden. Upload geen naaktfoto's, foto's waarop geslachtsdelen (van mannen "
 "of vrouwen) of ontbloot bovenlijf (van mannen of vrouwen) te zien zijn."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr "Browse..."
+msgstr "Blader..."
 
 #: .\uploads\models.py:24
 msgid "owner"

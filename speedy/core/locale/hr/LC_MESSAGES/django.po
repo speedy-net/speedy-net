@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -17,41 +17,41 @@ msgstr ""
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Tvoj prijatelj"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Friendship request sent"
+msgstr "Zahtjev za prijateljstvo poslan"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "You haven't confirmed your email address. Please check your inbox."
+msgstr "Niste potvrdili svoju email adresu. Provjerite svoju pristiglu poštu."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "You haven't confirmed your email address. Please check your inbox."
+msgstr "Niste potvrdili svoju email adresu. Provjerite svoju pristiglu poštu."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "You haven't confirmed your email address. Please check your inbox."
+msgstr "Niste potvrdili svoju email adresu. Provjerite svoju pristiglu poštu."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
 msgid "Logout"
-msgstr "Logout"
+msgstr "Odjava"
 
 #: .\__translations\__translations.html:13
 msgctxt "male"
 msgid "Logout"
-msgstr "Logout"
+msgstr "Odjava"
 
 #: .\__translations\__translations.html:14
 msgctxt "other"
 msgid "Logout"
-msgstr "Logout"
+msgstr "Odjava"
 
 #: .\__translations\__translations.html:16
 #, python-format
@@ -60,8 +60,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Bok <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, dobro"
+" došao natrag u %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -70,8 +70,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Bok <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, dobro"
+" došao natrag u %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -80,281 +80,281 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Bok <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, dobro"
+" došao natrag u %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "Please confirm your email address."
+msgstr "Molimo potvrdite svoju email adresu."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "Please confirm your email address."
+msgstr "Molimo potvrdite svoju email adresu."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "Please confirm your email address."
+msgstr "Molimo potvrdite svoju email adresu."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
 msgid "Deactivate Account"
-msgstr "Deactivate Account"
+msgstr "Deaktiviraj račun"
 
 #: .\__translations\__translations.html:25
 msgctxt "male"
 msgid "Deactivate Account"
-msgstr "Deactivate Account"
+msgstr "Deaktiviraj račun"
 
 #: .\__translations\__translations.html:26
 msgctxt "other"
 msgid "Deactivate Account"
-msgstr "Deactivate Account"
+msgstr "Deaktiviraj račun"
 
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr "Resend a confirmation email"
+msgstr "Ponovno pošalji potvrdnu e-poštu"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr "Resend a confirmation email"
+msgstr "Ponovno pošalji potvrdnu e-poštu"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr "Resend a confirmation email"
+msgstr "Ponovno pošalji potvrdnu e-poštu"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "Make this email address primary"
+msgstr "Neka ova adresa e-pošte bude primarna"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "Make this email address primary"
+msgstr "Neka ova adresa e-pošte bude primarna"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "Make this email address primary"
+msgstr "Neka ova adresa e-pošte bude primarna"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Are you sure you want to delete this email address?"
+msgstr "Jeste li sigurni da želite izbrisati ovu adresu e-pošte?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Are you sure you want to delete this email address?"
+msgstr "Jeste li sigurni da želite izbrisati ovu adresu e-pošte?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Are you sure you want to delete this email address?"
+msgstr "Jeste li sigurni da želite izbrisati ovu adresu e-pošte?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr "Delete this email address"
+msgstr "Izbriši ovu adresu e-pošte"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr "Delete this email address"
+msgstr "Izbriši ovu adresu e-pošte"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr "Delete this email address"
+msgstr "Izbriši ovu adresu e-pošte"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
 msgid "Add Another"
-msgstr "Add Another"
+msgstr "Dodaj drugu"
 
 #: .\__translations\__translations.html:45
 msgctxt "male"
 msgid "Add Another"
-msgstr "Add Another"
+msgstr "Dodaj drugu"
 
 #: .\__translations\__translations.html:46
 msgctxt "other"
 msgid "Add Another"
-msgstr "Add Another"
+msgstr "Dodaj drugu"
 
 #: .\__translations\__translations.html:48
 msgctxt "female"
 msgid "Change Password"
-msgstr "Change Password"
+msgstr "Promjena lozinke"
 
 #: .\__translations\__translations.html:49
 msgctxt "male"
 msgid "Change Password"
-msgstr "Change Password"
+msgstr "Promjena lozinke"
 
 #: .\__translations\__translations.html:50
 msgctxt "other"
 msgid "Change Password"
-msgstr "Change Password"
+msgstr "Promjena lozinke"
 
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Change privacy settings of email addresses on your profile."
+msgstr "Promijenite postavke privatnosti adresa e-pošte na svom profilu."
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Change privacy settings of email addresses on your profile."
+msgstr "Promijenite postavke privatnosti adresa e-pošte na svom profilu."
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Change privacy settings of email addresses on your profile."
+msgstr "Promijenite postavke privatnosti adresa e-pošte na svom profilu."
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "You're not blocking anybody."
+msgstr "Ne blokiraš nikoga."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "You're not blocking anybody."
+msgstr "Ne blokiraš nikoga."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "You're not blocking anybody."
+msgstr "Ne blokiraš nikoga."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "Report a User"
+msgstr "Prijavi korisnika"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
 msgid "Report a User"
-msgstr "Report a User"
+msgstr "Prijavi korisnika"
 
 #: .\__translations\__translations.html:62
 msgctxt "other"
 msgid "Report a User"
-msgstr "Report a User"
+msgstr "Prijavi korisnika"
 
 #: .\__translations\__translations.html:72
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr "Your feedback was sent to administrators."
+msgstr "Vaše povratne informacije poslane su administratorima."
 
 #: .\__translations\__translations.html:73
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr "Your feedback was sent to administrators."
+msgstr "Vaše povratne informacije poslane su administratorima."
 
 #: .\__translations\__translations.html:74
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr "Your feedback was sent to administrators."
+msgstr "Vaše povratne informacije poslane su administratorima."
 
 #: .\__translations\__translations.html:76
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Pošalji poruku na %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Pošalji poruku na %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Pošalji poruku na %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
 msgid "Mark All as Read"
-msgstr "Mark All as Read"
+msgstr "Označi sve kao pročitano"
 
 #: .\__translations\__translations.html:81
 msgctxt "male"
 msgid "Mark All as Read"
-msgstr "Mark All as Read"
+msgstr "Označi sve kao pročitano"
 
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr "Mark All as Read"
+msgstr "Označi sve kao pročitano"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "You:"
+msgstr "Vas:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "You:"
+msgstr "Vas:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "You:"
+msgstr "Vas:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
 msgid "You have no messages yet."
-msgstr "You have no messages yet."
+msgstr "Još nemate nijednu poruku."
 
 #: .\__translations\__translations.html:89
 msgctxt "male"
 msgid "You have no messages yet."
-msgstr "You have no messages yet."
+msgstr "Još nemate nijednu poruku."
 
 #: .\__translations\__translations.html:90
 msgctxt "other"
 msgid "You have no messages yet."
-msgstr "You have no messages yet."
+msgstr "Još nemate nijednu poruku."
 
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "You blocked "
+msgstr "Blokirali ste"
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "You blocked "
+msgstr "Blokirali ste"
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "You blocked "
+msgstr "Blokirali ste"
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " blocked you."
+msgstr "blokirao te."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " blocked you."
+msgstr "blokirao te."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " blocked you."
+msgstr "blokirao te."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -363,8 +363,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s također ima Speedy Match profil. Pogledajte profil "
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -373,8 +373,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s također ima Speedy Match profil. Pogledajte profil "
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -383,489 +383,498 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s također ima Speedy Match profil. Pogledajte profil "
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s"
+" na Speedy Netu."
 
 #: .\__translations\__translations.html:105
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s"
+" na Speedy Netu."
 
 #: .\__translations\__translations.html:106
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s"
+" na Speedy Netu."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
-msgstr "Add to Friends"
+msgstr "Dodaj u prijatelje"
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
-msgstr "Add to Friends"
+msgstr "Dodaj u prijatelje"
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
-msgstr "Add to Friends"
+msgstr "Dodaj u prijatelje"
 
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Are you sure you want to block "
+msgstr "Jeste li sigurni da želite blokirati"
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Are you sure you want to block "
+msgstr "Jeste li sigurni da želite blokirati"
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Are you sure you want to block "
+msgstr "Jeste li sigurni da želite blokirati"
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Block "
+msgstr "Blokirati"
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Block "
+msgstr "Blokirati"
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Block "
+msgstr "Blokirati"
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Unblock "
+msgstr "Odblokiraj"
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Unblock "
+msgstr "Odblokiraj"
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Unblock "
+msgstr "Odblokiraj"
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Report "
+msgstr "Izvješće"
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Report "
+msgstr "Izvješće"
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Report "
+msgstr "Izvješće"
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
 msgid "Report this photo"
-msgstr "Report this photo"
+msgstr "Prijavi ovu fotografiju"
 
 #: .\__translations\__translations.html:133
 msgctxt "male"
 msgid "Report this photo"
-msgstr "Report this photo"
+msgstr "Prijavi ovu fotografiju"
 
 #: .\__translations\__translations.html:134
 msgctxt "other"
 msgid "Report this photo"
-msgstr "Report this photo"
+msgstr "Prijavi ovu fotografiju"
 
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "Remove Friend"
+msgstr "Ukloni prijatelja"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
-msgstr "Remove Friend"
+msgstr "Ukloni prijatelja"
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
-msgstr "Remove Friend"
+msgstr "Ukloni prijatelja"
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Cancel Friendship Request"
+msgstr "Otkaži zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Cancel Friendship Request"
+msgstr "Otkaži zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Cancel Friendship Request"
+msgstr "Otkaži zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr "Accept"
+msgstr "Prihvatiti"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr "Accept"
+msgstr "Prihvatiti"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr "Accept"
+msgstr "Prihvatiti"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr "Reject"
+msgstr "Odbiti"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr "Reject"
+msgstr "Odbiti"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr "Reject"
+msgstr "Odbiti"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Accept Friendship Request"
+msgstr "Prihvati zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Accept Friendship Request"
+msgstr "Prihvati zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Accept Friendship Request"
+msgstr "Prihvati zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Reject Friendship Request"
+msgstr "Odbij zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Reject Friendship Request"
+msgstr "Odbij zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Reject Friendship Request"
+msgstr "Odbij zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
 msgid "Send Message"
-msgstr "Send Message"
+msgstr "Pošalji poruku"
 
 #: .\__translations\__translations.html:161
 msgctxt "male"
 msgid "Send Message"
-msgstr "Send Message"
+msgstr "Pošalji poruku"
 
 #: .\__translations\__translations.html:162
 msgctxt "other"
 msgid "Send Message"
-msgstr "Send Message"
+msgstr "Pošalji poruku"
 
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr "Welcome"
+msgstr "Dobrodošli"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr "Welcome"
+msgstr "Dobrodošli"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr "Welcome"
+msgstr "Dobrodošli"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Tvoj prijatelj"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Tvoj prijatelj"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Tvoj prijatelj"
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
 msgid "See All"
-msgstr "See All"
+msgstr "Vidi sve"
 
 #: .\__translations\__translations.html:173
 msgctxt "male"
 msgid "See All"
-msgstr "See All"
+msgstr "Vidi sve"
 
 #: .\__translations\__translations.html:174
 msgctxt "other"
 msgid "See All"
-msgstr "See All"
+msgstr "Vidi sve"
 
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Vaš Speedy Net račun nije aktivan. Uđite na ovu stranicu da biste je "
+"aktivirali."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Vaš Speedy Net račun nije aktivan. Uđite na ovu stranicu da biste je "
+"aktivirali."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Vaš Speedy Net račun nije aktivan. Uđite na ovu stranicu da biste je "
+"aktivirali."
 
 #: .\__translations\__translations.html:180
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Dobrodošli u %(site_name)s"
 
 #: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Dobrodošli u %(site_name)s"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Dobrodošli u %(site_name)s"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
 msgid "has sent you a message."
-msgstr "has sent you a message."
+msgstr "poslao vam je poruku."
 
 #: .\__translations\__translations.html:185
 msgctxt "male"
 msgid "has sent you a message."
-msgstr "has sent you a message."
+msgstr "poslao vam je poruku."
 
 #: .\__translations\__translations.html:186
 msgctxt "other"
 msgid "has sent you a message."
-msgstr "has sent you a message."
+msgstr "poslao vam je poruku."
 
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr "Read it:"
+msgstr "Pročitajte:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr "Read it:"
+msgstr "Pročitajte:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr "Read it:"
+msgstr "Pročitajte:"
 
 #: .\__translations\__translations.html:192
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Potvrdite svoju adresu e-pošte na %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Potvrdite svoju adresu e-pošte na %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Potvrdite svoju adresu e-pošte na %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
-msgstr "Use this link to activate your account:"
+msgstr "Upotrijebite ovu poveznicu da aktivirate svoj račun:"
 
 #: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
-msgstr "Use this link to activate your account:"
+msgstr "Upotrijebite ovu poveznicu da aktivirate svoj račun:"
 
 #: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
-msgstr "Use this link to activate your account:"
+msgstr "Upotrijebite ovu poveznicu da aktivirate svoj račun:"
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
 msgid "Use this link to verify your email address:"
-msgstr "Use this link to verify your email address:"
+msgstr "Upotrijebite ovu vezu za potvrdu svoje adrese e-pošte:"
 
 #: .\__translations\__translations.html:201
 msgctxt "male"
 msgid "Use this link to verify your email address:"
-msgstr "Use this link to verify your email address:"
+msgstr "Upotrijebite ovu vezu za potvrdu svoje adrese e-pošte:"
 
 #: .\__translations\__translations.html:202
 msgctxt "other"
 msgid "Use this link to verify your email address:"
-msgstr "Use this link to verify your email address:"
+msgstr "Upotrijebite ovu vezu za potvrdu svoje adrese e-pošte:"
 
 #: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
-msgstr "Use this link to change your password:"
+msgstr "Za promjenu lozinke koristite ovu vezu:"
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
-msgstr "Use this link to change your password:"
+msgstr "Za promjenu lozinke koristite ovu vezu:"
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
-msgstr "Use this link to change your password:"
+msgstr "Za promjenu lozinke koristite ovu vezu:"
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
 msgid "Username"
-msgstr "Username"
+msgstr "Korisničko ime"
 
 #: .\__translations\__translations.html:209
 msgctxt "male"
 msgid "Username"
-msgstr "Username"
+msgstr "Korisničko ime"
 
 #: .\__translations\__translations.html:210
 msgctxt "other"
 msgid "Username"
-msgstr "Username"
+msgstr "Korisničko ime"
 
 #: .\__translations\__translations.html:212
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Pretplaćeni ste na primanje ove vrste obavijesti od %(site_name)s. Uđite na "
+"ovu stranicu kako biste promijenili svoje postavke obavijesti ili se "
+"isključili:"
 
 #: .\__translations\__translations.html:213
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Pretplaćeni ste na primanje ove vrste obavijesti od %(site_name)s. Uđite na "
+"ovu stranicu kako biste promijenili svoje postavke obavijesti ili se "
+"isključili:"
 
 #: .\__translations\__translations.html:214
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Pretplaćeni ste na primanje ove vrste obavijesti od %(site_name)s. Uđite na "
+"ovu stranicu kako biste promijenili svoje postavke obavijesti ili se "
+"isključili:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Enter a valid email address."
+msgstr "Unesite valjanu adresu e-pošte."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
-msgstr "Email address"
+msgstr "E-mail adresa"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:1295
 msgid "email address"
-msgstr "email address"
+msgstr "e-mail adresa"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
-msgstr "Email address:"
+msgstr "E-mail adresa:"
 
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Value must be valid JSON."
+msgstr "Vrijednost mora biti važeći JSON."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -873,44 +882,44 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Please enter a correct %(username)s and password. Note that both fields may "
-"be case-sensitive."
+"Unesite ispravan %(username)s i lozinku. Imajte na umu da oba polja mogu "
+"biti osjetljiva na velika i mala slova."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
-msgstr "Message"
+msgstr "Poruka"
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr "Friendship Request"
+msgstr "Zahtjev za prijateljstvo"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr "Friendship Requests"
+msgstr "Zahtjevi za prijateljstvo"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr "Friend"
+msgstr "Prijatelj"
 
 #: .\__translations\__translations.py:23 .\accounts\models.py:797
 msgid "Friends"
-msgstr "Friends"
+msgstr "Prijatelji"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr "Following Relationship"
+msgstr "Slijedeći odnos"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr "Following Relationships"
+msgstr "Praćenje odnosa"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
-msgstr "Blocker Relationship"
+msgstr "Odnos blokatora"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr "Blocked Relationships"
+msgstr "Blokirani odnosi"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -921,452 +930,452 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"List contains %(show_value)d item, it should contain no more than "
+"Popis sadrži %(show_value)d stavku, ne smije sadržavati više od "
 "%(limit_value)d."
 msgstr[1] ""
-"List contains %(show_value)d items, it should contain no more than "
+"Popis sadrži %(show_value)d stavki, ne smije sadržavati više od "
 "%(limit_value)d."
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "username (slug)"
-msgstr "username (slug)"
+msgstr "korisničko ime (slug)"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "username (slug)"
-msgstr "username (slug)"
+msgstr "korisničko ime (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "username (slug)"
-msgstr "username (slug)"
+msgstr "korisničko ime (slug)"
 
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "Update your profile picture"
+msgstr "Ažurirajte svoju profilnu sliku"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "Update your profile picture"
+msgstr "Ažurirajte svoju profilnu sliku"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "Update your profile picture"
+msgstr "Ažurirajte svoju profilnu sliku"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Spremi promjene"
 
 #: .\__translations\__translations.py:50
 msgctxt "male"
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Spremi promjene"
 
 #: .\__translations\__translations.py:51
 msgctxt "other"
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Spremi promjene"
 
 #: .\__translations\__translations.py:53
 msgctxt "female"
 msgid "You can't change your username."
-msgstr "You can't change your username."
+msgstr "Ne možete promijeniti svoje korisničko ime."
 
 #: .\__translations\__translations.py:54
 msgctxt "male"
 msgid "You can't change your username."
-msgstr "You can't change your username."
+msgstr "Ne možete promijeniti svoje korisničko ime."
 
 #: .\__translations\__translations.py:55
 msgctxt "other"
 msgid "You can't change your username."
-msgstr "You can't change your username."
+msgstr "Ne možete promijeniti svoje korisničko ime."
 
 #: .\__translations\__translations.py:57
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Aktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Aktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Aktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Deaktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Deaktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Deaktivirajte svoj {site_name} račun"
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
 msgid "Add"
-msgstr "Add"
+msgstr "Dodati"
 
 #: .\__translations\__translations.py:66
 msgctxt "male"
 msgid "Add"
-msgstr "Add"
+msgstr "Dodati"
 
 #: .\__translations\__translations.py:67
 msgctxt "other"
 msgid "Add"
-msgstr "Add"
+msgstr "Dodati"
 
 #: .\__translations\__translations.py:69
 msgctxt "female"
 msgid "Where do I live?"
-msgstr "Where do I live?"
+msgstr "Gdje živim?"
 
 #: .\__translations\__translations.py:70
 msgctxt "male"
 msgid "Where do I live?"
-msgstr "Where do I live?"
+msgstr "Gdje živim?"
 
 #: .\__translations\__translations.py:71
 msgctxt "other"
 msgid "Where do I live?"
-msgstr "Where do I live?"
+msgstr "Gdje živim?"
 
 #: .\__translations\__translations.py:73
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "Where do you live?"
+msgstr "gdje živiš"
 
 #: .\__translations\__translations.py:74
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "Where do you live?"
+msgstr "gdje živiš"
 
 #: .\__translations\__translations.py:75
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "Where do you live?"
+msgstr "gdje živiš"
 
 #: .\__translations\__translations.py:77
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Please write where you live."
+msgstr "Napiši gdje živiš."
 
 #: .\__translations\__translations.py:78
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Please write where you live."
+msgstr "Napiši gdje živiš."
 
 #: .\__translations\__translations.py:79
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Please write where you live."
+msgstr "Napiši gdje živiš."
 
 #: .\__translations\__translations.py:81
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (eats only plants and fungi)"
+msgstr "Vegan (jede samo biljke i gljive)"
 
 #: .\__translations\__translations.py:82
 msgctxt "male"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (eats only plants and fungi)"
+msgstr "Vegan (jede samo biljke i gljive)"
 
 #: .\__translations\__translations.py:83
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (eats only plants and fungi)"
+msgstr "Vegan (jede samo biljke i gljive)"
 
 #: .\__translations\__translations.py:85
 msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarijanac (ne jede ribu i meso)"
 
 #: .\__translations\__translations.py:86
 msgctxt "male"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarijanac (ne jede ribu i meso)"
 
 #: .\__translations\__translations.py:87
 msgctxt "other"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarijanac (ne jede ribu i meso)"
 
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (eats animals)"
+msgstr "karnist (jede životinje)"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (eats animals)"
+msgstr "karnist (jede životinje)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (eats animals)"
+msgstr "karnist (jede životinje)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "veganska"
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "veganska"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "veganska"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
 msgid "Vegetarian"
-msgstr "Vegetarian"
+msgstr "Vegetarijanac"
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
 msgid "Vegetarian"
-msgstr "Vegetarian"
+msgstr "Vegetarijanac"
 
 #: .\__translations\__translations.py:99
 msgctxt "other"
 msgid "Vegetarian"
-msgstr "Vegetarian"
+msgstr "Vegetarijanac"
 
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "karnist"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "karnist"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "karnist"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Not smoking"
+msgstr "Ne puši"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Not smoking"
+msgstr "Ne puši"
 
 #: .\__translations\__translations.py:107
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Not smoking"
+msgstr "Ne puši"
 
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Smoking occasionally"
+msgstr "Pušenje povremeno"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Smoking occasionally"
+msgstr "Pušenje povremeno"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Smoking occasionally"
+msgstr "Pušenje povremeno"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
 msgid "Smoking"
-msgstr "Smoking"
+msgstr "Pušenje"
 
 #: .\__translations\__translations.py:114
 msgctxt "male"
 msgid "Smoking"
-msgstr "Smoking"
+msgstr "Pušenje"
 
 #: .\__translations\__translations.py:115
 msgctxt "other"
 msgid "Smoking"
-msgstr "Smoking"
+msgstr "Pušenje"
 
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr "Single"
+msgstr "Singl"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Single"
+msgstr "Singl"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Single"
+msgstr "Singl"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
 msgid "Divorced"
-msgstr "Divorced"
+msgstr "Rastavljen"
 
 #: .\__translations\__translations.py:122
 msgctxt "male"
 msgid "Divorced"
-msgstr "Divorced"
+msgstr "Rastavljen"
 
 #: .\__translations\__translations.py:123
 msgctxt "other"
 msgid "Divorced"
-msgstr "Divorced"
+msgstr "Rastavljen"
 
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "Widowed"
-msgstr "Widowed"
+msgstr "Udovica"
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Widowed"
-msgstr "Widowed"
+msgstr "Udovica"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Widowed"
-msgstr "Widowed"
+msgstr "Udovica"
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
 msgid "In a relationship"
-msgstr "In a relationship"
+msgstr "U vezi"
 
 #: .\__translations\__translations.py:130
 msgctxt "male"
 msgid "In a relationship"
-msgstr "In a relationship"
+msgstr "U vezi"
 
 #: .\__translations\__translations.py:131
 msgctxt "other"
 msgid "In a relationship"
-msgstr "In a relationship"
+msgstr "U vezi"
 
 #: .\__translations\__translations.py:133
 msgctxt "female"
 msgid "In an open relationship"
-msgstr "In an open relationship"
+msgstr "U otvorenoj vezi"
 
 #: .\__translations\__translations.py:134
 msgctxt "male"
 msgid "In an open relationship"
-msgstr "In an open relationship"
+msgstr "U otvorenoj vezi"
 
 #: .\__translations\__translations.py:135
 msgctxt "other"
 msgid "In an open relationship"
-msgstr "In an open relationship"
+msgstr "U otvorenoj vezi"
 
 #: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "It's complicated"
-msgstr "It's complicated"
+msgstr "Komplicirano je"
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "It's complicated"
-msgstr "It's complicated"
+msgstr "Komplicirano je"
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "It's complicated"
-msgstr "It's complicated"
+msgstr "Komplicirano je"
 
 #: .\__translations\__translations.py:141
 msgctxt "female"
 msgid "Separated"
-msgstr "Separated"
+msgstr "Odvojeni"
 
 #: .\__translations\__translations.py:142
 msgctxt "male"
 msgid "Separated"
-msgstr "Separated"
+msgstr "Odvojeni"
 
 #: .\__translations\__translations.py:143
 msgctxt "other"
 msgid "Separated"
-msgstr "Separated"
+msgstr "Odvojeni"
 
 #: .\__translations\__translations.py:145
 msgctxt "female"
 msgid "Engaged"
-msgstr "Engaged"
+msgstr "Zaručen"
 
 #: .\__translations\__translations.py:146
 msgctxt "male"
 msgid "Engaged"
-msgstr "Engaged"
+msgstr "Zaručen"
 
 #: .\__translations\__translations.py:147
 msgctxt "other"
 msgid "Engaged"
-msgstr "Engaged"
+msgstr "Zaručen"
 
 #: .\__translations\__translations.py:149
 msgctxt "female"
 msgid "Married"
-msgstr "Married"
+msgstr "Oženjen"
 
 #: .\__translations\__translations.py:150
 msgctxt "male"
 msgid "Married"
-msgstr "Married"
+msgstr "Oženjen"
 
 #: .\__translations\__translations.py:151
 msgctxt "other"
 msgid "Married"
-msgstr "Married"
+msgstr "Oženjen"
 
 #: .\__translations\__translations.py:153
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "Your new password has been saved."
+msgstr "Vaša nova lozinka je spremljena."
 
 #: .\__translations\__translations.py:154
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "Your new password has been saved."
+msgstr "Vaša nova lozinka je spremljena."
 
 #: .\__translations\__translations.py:155
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "Your new password has been saved."
+msgstr "Vaša nova lozinka je spremljena."
 
 #: .\__translations\__translations.py:157
 msgctxt "female"
@@ -1374,8 +1383,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Vaši Speedy Net i Speedy Match računi su deaktivirani. Možete ih ponovno "
+"aktivirati u bilo kojem trenutku."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1383,8 +1392,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Vaši Speedy Net i Speedy Match računi su deaktivirani. Možete ih ponovno "
+"aktivirati u bilo kojem trenutku."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1392,8 +1401,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Vaši Speedy Net i Speedy Match računi su deaktivirani. Možete ih ponovno "
+"aktivirati u bilo kojem trenutku."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1402,8 +1411,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Vaš {site_name} račun je deaktiviran. Možete ga ponovno aktivirati bilo "
+"kada. Vaš Speedy Net račun ostaje aktivan."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1412,8 +1421,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Vaš {site_name} račun je deaktiviran. Možete ga ponovno aktivirati bilo "
+"kada. Vaš Speedy Net račun ostaje aktivan."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1422,83 +1431,83 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Vaš {site_name} račun je deaktiviran. Možete ga ponovno aktivirati bilo "
+"kada. Vaš Speedy Net račun ostaje aktivan."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "You've already confirmed this email address."
+msgstr "Već ste potvrdili ovu adresu e-pošte."
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "You've already confirmed this email address."
+msgstr "Već ste potvrdili ovu adresu e-pošte."
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "You've already confirmed this email address."
+msgstr "Već ste potvrdili ovu adresu e-pošte."
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr "You've confirmed your email address."
+msgstr "Potvrdili ste svoju adresu e-pošte."
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr "You've confirmed your email address."
+msgstr "Potvrdili ste svoju adresu e-pošte."
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr "You've confirmed your email address."
+msgstr "Potvrdili ste svoju adresu e-pošte."
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
 msgid "Send"
-msgstr "Send"
+msgstr "Poslati"
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
 msgid "Send"
-msgstr "Send"
+msgstr "Poslati"
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
 msgid "Send"
-msgstr "Send"
+msgstr "Poslati"
 
 #: .\__translations\__translations.py:177
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1507,8 +1516,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1517,8 +1526,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1527,8 +1536,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1537,8 +1546,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1547,8 +1556,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1557,8 +1566,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1567,8 +1576,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1577,8 +1586,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1587,224 +1596,221 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "You cannot be friends with yourself."
+msgstr "Ne možete sami sebi biti prijatelji."
 
 #: .\__translations\__translations.py:192
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "You cannot be friends with yourself."
+msgstr "Ne možete sami sebi biti prijatelji."
 
 #: .\__translations\__translations.py:193
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "You cannot be friends with yourself."
+msgstr "Ne možete sami sebi biti prijatelji."
 
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "You already requested friendship from this user."
+msgstr "Već ste zatražili prijateljstvo od ovog korisnika."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "You already requested friendship from this user."
+msgstr "Već ste zatražili prijateljstvo od ovog korisnika."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "You already requested friendship from this user."
+msgstr "Već ste zatražili prijateljstvo od ovog korisnika."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "This user already requested friendship from you."
+msgstr "Ovaj korisnik je već zatražio prijateljstvo od vas."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "This user already requested friendship from you."
+msgstr "Ovaj korisnik je već zatražio prijateljstvo od vas."
 
 #: .\__translations\__translations.py:201
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "This user already requested friendship from you."
+msgstr "Ovaj korisnik je već zatražio prijateljstvo od vas."
 
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "You already are friends with this user."
+msgstr "Već ste prijatelji s ovim korisnikom."
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "You've cancelled your friendship request."
+msgstr "Otkazali ste svoj zahtjev za prijateljstvo."
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "You've cancelled your friendship request."
+msgstr "Otkazali ste svoj zahtjev za prijateljstvo."
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "You've cancelled your friendship request."
+msgstr "Otkazali ste svoj zahtjev za prijateljstvo."
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "You have removed this user from your friends."
+msgstr "Uklonili ste ovog korisnika iz svojih prijatelja."
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "You have removed this user from your friends."
+msgstr "Uklonili ste ovog korisnika iz svojih prijatelja."
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "You have removed this user from your friends."
+msgstr "Uklonili ste ovog korisnika iz svojih prijatelja."
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Dobrodošli u {site_name}!"
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Dobrodošli u {site_name}!"
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Dobrodošli u {site_name}!"
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Dobrodošli u {site_name}! Vaš račun je sada aktivan."
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Dobrodošli u {site_name}! Vaš račun je sada aktivan."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Dobrodošli u {site_name}! Vaš račun je sada aktivan."
 
 #: .\__translations\__translations.py:229
 msgctxt "female"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Prijatelji"
 
 #: .\__translations\__translations.py:230
 msgctxt "male"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Prijatelji"
 
 #: .\__translations\__translations.py:231
 msgctxt "other"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Prijatelji"
 
 #: .\__translations\__translations.py:233
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
+"poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
+"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za"
+" slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
+"poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
+"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za"
+" slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
+"poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
+"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za"
+" slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1812,8 +1818,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1821,8 +1827,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1830,8 +1836,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1839,8 +1845,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1848,8 +1854,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1857,8 +1863,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1866,8 +1872,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1875,8 +1881,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1884,8 +1890,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
+"Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1893,8 +1899,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Your profile picture can't be transparent. Please upload a nontransparent "
-"image."
+"Vaša profilna slika ne može biti prozirna. Učitajte netransparentnu sliku."
 
 #: .\__translations\__translations.py:252
 msgctxt "male"
@@ -1902,8 +1907,7 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Your profile picture can't be transparent. Please upload a nontransparent "
-"image."
+"Vaša profilna slika ne može biti prozirna. Učitajte netransparentnu sliku."
 
 #: .\__translations\__translations.py:253
 msgctxt "other"
@@ -1911,343 +1915,342 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Your profile picture can't be transparent. Please upload a nontransparent "
-"image."
+"Vaša profilna slika ne može biti prozirna. Učitajte netransparentnu sliku."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Brzi osnovni računi"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
-msgstr "Only me"
+msgstr "Samo ja"
 
 #: .\accounts\fields.py:13
 msgid "Me and my friends"
-msgstr "Me and my friends"
+msgstr "Ja i moji prijatelji"
 
 #: .\accounts\fields.py:15
 msgid "Anyone"
-msgstr "Anyone"
+msgstr "Bilo tko"
 
 #: .\accounts\forms.py:66
 msgid "Last name (optional)"
-msgstr "Last name (optional)"
+msgstr "Prezime (nije obavezno)"
 
 #: .\accounts\forms.py:130
 msgid "Your email"
-msgstr "Your email"
+msgstr "Vaš email"
 
 #: .\accounts\forms.py:131
 msgid "New password"
-msgstr "New password"
+msgstr "Nova lozinka"
 
 #: .\accounts\forms.py:139
 msgid "New username"
-msgstr "New username"
+msgstr "Novo korisničko ime"
 
 #: .\accounts\forms.py:142
 msgid "Create an account"
-msgstr "Create an account"
+msgstr "Napravi račun"
 
 #: .\accounts\forms.py:167
 msgid "Update your profile picture"
-msgstr "Update your profile picture"
+msgstr "Ažurirajte svoju profilnu sliku"
 
 #: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
-msgstr "A profile picture is required."
+msgstr "Potrebna je profilna slika."
 
 #: .\accounts\forms.py:313 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "Email or Username"
+msgstr "Email ili korisničko ime"
 
 #: .\accounts\forms.py:319 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
-msgstr "Login"
+msgstr "Prijava"
 
 #: .\accounts\forms.py:322 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
-msgstr "Forgot your password?"
+msgstr "Zaboravili ste lozinku?"
 
 #: .\accounts\forms.py:335
 msgid "Submit"
-msgstr "Submit"
+msgstr "Pošalji"
 
 #: .\accounts\forms.py:437
 msgid "Your password"
-msgstr "Your password"
+msgstr "Vaša lozinka"
 
 #: .\accounts\forms.py:449
 msgid "Invalid password."
-msgstr "Invalid password."
+msgstr "Nevažeća lozinka."
 
 #: .\accounts\models.py:178
 msgid "username"
-msgstr "username"
+msgstr "korisničko ime"
 
 #: .\accounts\models.py:178 .\accounts\models.py:179
 #: .\accounts\validators.py:21
 msgid "This username is already taken."
-msgstr "This username is already taken."
+msgstr "Ovo korisničko ime je već zauzeto."
 
 #: .\accounts\models.py:179
 msgid "username (slug)"
-msgstr "username (slug)"
+msgstr "korisničko ime (slug)"
 
 #: .\accounts\models.py:180
 msgid "photo"
-msgstr "photo"
+msgstr "fotografija"
 
 #: .\accounts\models.py:181
 msgid "Special username"
-msgstr "Special username"
+msgstr "Posebno korisničko ime"
 
 #: .\accounts\models.py:221 .\messages\models.py:185
 msgid "entity"
-msgstr "entity"
+msgstr "entitet"
 
 #: .\accounts\models.py:222
 msgid "entities"
-msgstr "entities"
+msgstr "entiteta"
 
 #: .\accounts\models.py:249
 msgid "Slug does not parse to username."
-msgstr "Slug does not parse to username."
+msgstr "Slug ne analizira korisničko ime."
 
 #: .\accounts\models.py:253
 msgid "Username is required."
-msgstr "Username is required."
+msgstr "Korisničko ime je potrebno."
 
 #: .\accounts\models.py:298
 msgid "name"
-msgstr "name"
+msgstr "ime"
 
 #: .\accounts\models.py:329
 msgid "description"
-msgstr "description"
+msgstr "opis"
 
 #: .\accounts\models.py:473
 msgid "Female"
-msgstr "Female"
+msgstr "Žena"
 
 #: .\accounts\models.py:474
 msgid "Male"
-msgstr "Male"
+msgstr "Muški"
 
 #: .\accounts\models.py:475
 msgid "Other"
-msgstr "Other"
+msgstr "ostalo"
 
 #: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "Nepoznato"
 
 #: .\accounts\models.py:488
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (eats only plants and fungi)"
+msgstr "Vegan (jede samo biljke i gljive)"
 
 #: .\accounts\models.py:489
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarijanac (ne jede ribu i meso)"
 
 #: .\accounts\models.py:490
 msgid "Carnist (eats animals)"
-msgstr "Carnist (eats animals)"
+msgstr "karnist (jede životinje)"
 
 #: .\accounts\models.py:503
 msgid "Not smoking"
-msgstr "Not smoking"
+msgstr "Ne puši"
 
 #: .\accounts\models.py:504
 msgid "Smoking occasionally"
-msgstr "Smoking occasionally"
+msgstr "Pušenje povremeno"
 
 #: .\accounts\models.py:505
 msgid "Smoking"
-msgstr "Smoking"
+msgstr "Pušenje"
 
 #: .\accounts\models.py:524
 msgid "Single"
-msgstr "Single"
+msgstr "Singl"
 
 #: .\accounts\models.py:525
 msgid "Divorced"
-msgstr "Divorced"
+msgstr "Rastavljen"
 
 #: .\accounts\models.py:526
 msgid "Widowed"
-msgstr "Widowed"
+msgstr "Udovica"
 
 #: .\accounts\models.py:527
 msgid "In a relationship"
-msgstr "In a relationship"
+msgstr "U vezi"
 
 #: .\accounts\models.py:528
 msgid "In an open relationship"
-msgstr "In an open relationship"
+msgstr "U otvorenoj vezi"
 
 #: .\accounts\models.py:529
 msgid "It's complicated"
-msgstr "It's complicated"
+msgstr "Komplicirano je"
 
 #: .\accounts\models.py:530
 msgid "Separated"
-msgstr "Separated"
+msgstr "Odvojeni"
 
 #: .\accounts\models.py:531
 msgid "Engaged"
-msgstr "Engaged"
+msgstr "Zaručen"
 
 #: .\accounts\models.py:532
 msgid "Married"
-msgstr "Married"
+msgstr "Oženjen"
 
 #: .\accounts\models.py:541
 msgid "Notify me"
-msgstr "Notify me"
+msgstr "Obavijesti me"
 
 #: .\accounts\models.py:542
 msgid "Don't notify me"
-msgstr "Don't notify me"
+msgstr "Nemoj me obavijestiti"
 
 #: .\accounts\models.py:589
 msgid "first name"
-msgstr "first name"
+msgstr "ime"
 
 #: .\accounts\models.py:592
 msgid "last name"
-msgstr "last name"
+msgstr "prezime"
 
 #: .\accounts\models.py:594
 msgid "I am"
-msgstr "I am"
+msgstr "ja sam"
 
 #: .\accounts\models.py:595
 msgid "date of birth"
-msgstr "date of birth"
+msgstr "datum rođenja"
 
 #: .\accounts\models.py:596
 msgid "diet"
-msgstr "diet"
+msgstr "dijeta"
 
 #: .\accounts\models.py:597
 msgid "smoking status"
-msgstr "smoking status"
+msgstr "pušački status"
 
 #: .\accounts\models.py:598
 msgid "relationship status"
-msgstr "relationship status"
+msgstr "status veze"
 
 #: .\accounts\models.py:600
 msgid "Where do I live?"
-msgstr "Where do I live?"
+msgstr "Gdje živim?"
 
 #: .\accounts\models.py:607
 msgid "Who can view my birth month and day"
-msgstr "Who can view my birth month and day"
+msgstr "Tko može vidjeti mjesec i dan mog rođenja"
 
 #: .\accounts\models.py:608
 msgid "Who can view my birth year"
-msgstr "Who can view my birth year"
+msgstr "Tko može vidjeti moju godinu rođenja"
 
 #: .\accounts\models.py:609
 msgid "On new messages"
-msgstr "On new messages"
+msgstr "Na nove poruke"
 
 #: .\accounts\models.py:615
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Last IP address used https://ipapi.com/ time"
+msgstr "Zadnja IP adresa korištena https://ipapi.com/ put"
 
 #: .\accounts\models.py:616
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Last IP address used raw https://ipapi.com/ results"
+msgstr "Zadnja IP adresa koristila je neobrađene https://ipapi.com/ rezultate"
 
 #: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
 msgid "user"
-msgstr "user"
+msgstr "korisnik"
 
 #: .\accounts\models.py:823
 msgid "users"
-msgstr "users"
+msgstr "korisnika"
 
 #: .\accounts\models.py:869
 msgid "Superuser must be equal to staff."
-msgstr "Superuser must be equal to staff."
+msgstr "Superkorisnik mora biti jednak osoblju."
 
 #: .\accounts\models.py:1280
 msgid "email"
-msgstr "email"
+msgstr "elektronička pošta"
 
 #: .\accounts\models.py:1281
 msgid "is confirmed"
-msgstr "is confirmed"
+msgstr "je potvrđeno"
 
 #: .\accounts\models.py:1282
 msgid "is primary"
-msgstr "is primary"
+msgstr "je primarni"
 
 #: .\accounts\models.py:1283
 msgid "confirmation token"
-msgstr "confirmation token"
+msgstr "potvrdni token"
 
 #: .\accounts\models.py:1284
 msgid "confirmation sent"
-msgstr "confirmation sent"
+msgstr "potvrda poslana"
 
 #: .\accounts\models.py:1285
 msgid "Who can see this email"
-msgstr "Who can see this email"
+msgstr "Tko može vidjeti ovu e-poštu"
 
 #: .\accounts\models.py:1296
 msgid "email addresses"
-msgstr "email addresses"
+msgstr "email adrese"
 
 #: .\accounts\models.py:1379
 msgid "User"
-msgstr "User"
+msgstr "Korisnik"
 
 #: .\accounts\models.py:1380
 msgid "last visit"
-msgstr "last visit"
+msgstr "posljednji posjet"
 
 #: .\accounts\models.py:1392
 msgid "Today"
-msgstr "Today"
+msgstr "Danas"
 
 #: .\accounts\models.py:1394
 msgid "Yesterday"
-msgstr "Yesterday"
+msgstr "Jučer"
 
 #: .\accounts\models.py:1396
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr "On {date} ({timesince_ago})"
+msgstr "Dana {date} ({timesince_ago})"
 
 #: .\accounts\models.py:1398
 #, python-brace-format
 msgid "{timesince} ago"
-msgstr "{timesince} ago"
+msgstr "prije {timesince}"
 
 #: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"Username must start with 4 or more letters, and may contain letters, digits "
-"or dashes."
+"Korisničko ime mora započeti s 4 ili više slova, a može sadržavati slova, "
+"znamenke ili crtice."
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Korisničko ime mora započeti s 4 ili više slova, nakon čega može biti bilo "
+"koji broj znamenki. Između riječi možete dodati crtice."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2258,26 +2261,26 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Username must contain at least %(limit_value)d alphanumeric character (it "
-"has %(show_value)d)."
+"Korisničko ime mora sadržavati najmanje %(limit_value)d alfanumeričkih "
+"znakova (ima %(show_value)d)."
 msgstr[1] ""
-"Username must contain at least %(limit_value)d alphanumeric characters (it "
-"has %(show_value)d)."
+"Korisničko ime mora sadržavati najmanje %(limit_value)d alfanumeričkih "
+"znakova (ima %(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Korisničko ime mora sadržavati najviše %(limit_value)d alfanumeričkih "
+"znakova (ima %(show_value)d)."
 msgstr[1] ""
-"Username must contain at most %(limit_value)d alphanumeric characters (it "
-"has %(show_value)d)."
+"Korisničko ime mora sadržavati najviše %(limit_value)d alfanumeričkih "
+"znakova (ima %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2288,10 +2291,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Username must contain at least %(limit_value)d character (it has "
+"Korisničko ime mora sadržavati najmanje %(limit_value)d znak (ima "
 "%(show_value)d)."
 msgstr[1] ""
-"Username must contain at least %(limit_value)d characters (it has "
+"Korisničko ime mora sadržavati najmanje %(limit_value)d znakova (ima "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:80
@@ -2303,10 +2306,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Username must contain at most %(limit_value)d character (it has "
+"Korisničko ime mora sadržavati najviše %(limit_value)d znakova (ima "
 "%(show_value)d)."
 msgstr[1] ""
-"Username must contain at most %(limit_value)d characters (it has "
+"Korisničko ime mora sadržavati najviše %(limit_value)d znakova (ima "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:104
@@ -2318,36 +2321,35 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"This password is too short. It must contain at least %(min_length)d "
-"character."
+"Ova lozinka je prekratka. Mora sadržavati najmanje %(min_length)d znak."
 msgstr[1] ""
-"This password is too short. It must contain at least %(min_length)d "
-"characters."
+"Ova lozinka je prekratka. Mora sadržavati najmanje %(min_length)d znakova."
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Your password must contain at least %(min_length)d character."
-msgstr[1] "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Vaša lozinka mora sadržavati najmanje %(min_length)d znak."
+msgstr[1] "Vaša lozinka mora sadržavati najmanje %(min_length)d znakova."
 
 #: .\accounts\validators.py:135
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
-"This password is too long. It must contain at most %(max_length)d character."
+"Ova lozinka je preduga. Mora sadržavati najviše %(max_length)d znak."
 msgstr[1] ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"Ova lozinka je preduga. Mora sadržavati najviše %(max_length)d znakova."
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "Your password must contain at most %(max_length)d character."
-msgstr[1] "Your password must contain at most %(max_length)d characters."
+msgstr[0] "Vaša lozinka mora sadržavati najviše %(max_length)d znakova."
+msgstr[1] "Vaša lozinka mora sadržavati najviše %(max_length)d znakova."
 
 #: .\accounts\validators.py:165 .\accounts\validators.py:170
 #, python-format
@@ -2355,62 +2357,63 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Your password must contain at least %(min_unique_characters)d unique "
-"characters."
+"Vaša lozinka mora sadržavati najmanje %(min_unique_characters)d jedinstvenih"
+" znakova."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
-msgstr "This field cannot be null."
+msgstr "Ovo polje ne može biti nula."
 
 #: .\accounts\validators.py:214
 msgid "This field cannot be blank."
-msgstr "This field cannot be blank."
+msgstr "Ovo polje ne može biti prazno."
 
 #: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
-msgstr "Enter a valid date."
+msgstr "Unesite važeći datum."
 
 #: .\accounts\validators.py:246
 msgid "This email is already in use."
-msgstr "This email is already in use."
+msgstr "Ovaj email je već u upotrebi."
 
 #: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
-"This picture's file size is too big. The maximal file size allowed is 30 MB."
+"Veličina datoteke ove slike je prevelika. Maksimalna dopuštena veličina "
+"datoteke je 30 MB."
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"Ne možete koristiti ovaj format za svoju profilnu sliku. Prihvaćaju se samo "
+"JPEG ili PNG formati."
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
-msgstr "Invalid confirmation link."
+msgstr "Nevažeći link za potvrdu."
 
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "A confirmation message was sent to {email_address}"
+msgstr "Poruka potvrde poslana je na {email_address}"
 
 #: .\accounts\views.py:355
 msgid "The email address was deleted."
-msgstr "The email address was deleted."
+msgstr "E-mail adresa je izbrisana."
 
 #: .\accounts\views.py:371
 msgid "You have made this email address primary."
-msgstr "You have made this email address primary."
+msgstr "Postavili ste ovu adresu e-pošte kao primarnu."
 
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2418,24 +2421,26 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
-"entered the site in the last month, "
-"{total_number_of_members_in_the_last_four_months} members entered the site "
-"in the last four months, {total_number_of_members_in_the_last_eight_months} "
-"members entered the site in the last eight months, and "
-"{total_number_of_members_in_the_last_two_years} members entered the site in "
-"the last two years."
+"Administrator: Ukupan broj članova na stranici je {total_number_of_members},"
+" od kojih je {total_number_of_members_in_the_last_week} članova ušlo na "
+"stranicu u prošlom tjednu, {total_number_of_members_in_the_last_month} "
+"članova ušlo je na stranicu u prošlom mjesecu, "
+"{total_number_of_members_in_the_last_four_months} članova ušlo je na "
+"stranicu u posljednja četiri mjeseca, "
+"{total_number_of_members_in_the_last_eight_months} članova ušlo je na "
+"stranicu u zadnjih osam mjeseci i "
+"{total_number_of_members_in_the_last_two_years} članova ušlo je na stranicu "
+"u zadnje dvije godine."
 
 #: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2449,23 +2454,24 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
-"Admin: {total_number_of_members_registered_in_the_last_week} members "
-"registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
-"{total_number_of_members_registered_more_than_four_months_ago} members "
-"registered more than four months ago. "
-"{total_number_of_members_registered_in_the_last_eight_months} members "
-"registered in the last eight months. "
-"{total_number_of_members_registered_more_than_eight_months_ago} members "
-"registered more than eight months ago. "
-"{total_number_of_members_registered_in_the_last_two_years} members "
-"registered in the last two years. "
-"{total_number_of_members_registered_more_than_two_years_ago} members "
-"registered more than two years ago. "
-"{total_number_of_members_registered_before_2019_08_01} members registered "
-"before 1 August 2019."
+"Administrator: {total_number_of_members_registered_in_the_last_week} članova"
+" registriranih prošlog tjedna. "
+"{total_number_of_members_registered_in_the_last_month} članova registriranih"
+" u prošlom mjesecu. "
+"{total_number_of_members_registered_in_the_last_four_months} članova "
+"registriranih u posljednja četiri mjeseca. "
+"{total_number_of_members_registered_more_than_four_months_ago} članova "
+"registrirano prije više od četiri mjeseca. "
+"{total_number_of_members_registered_in_the_last_eight_months} članova "
+"registriranih u posljednjih osam mjeseci. "
+"{total_number_of_members_registered_more_than_eight_months_ago} članova "
+"registrirano prije više od osam mjeseci. "
+"{total_number_of_members_registered_in_the_last_two_years} članova "
+"registriranih u posljednje dvije godine. "
+"{total_number_of_members_registered_more_than_two_years_ago} članova "
+"registrirano prije više od dvije godine. "
+"{total_number_of_members_registered_before_2019_08_01} članova registriranih"
+" prije 1. kolovoza 2019."
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2473,12 +2479,12 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Admin: {total_number_of_members_registered_in_year} members registered in "
-"{year}."
+"Administrator: {total_number_of_members_registered_in_year} članova "
+"registrirano u {year}."
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Aplikacija Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2487,123 +2493,123 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr ", "
+msgstr "None"
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
-msgstr "id contains illegal characters."
+msgstr "id sadrži nedopuštene znakove."
 
 #: .\base\views.py:57
 msgid "Changes saved."
-msgstr "Changes saved."
+msgstr "Promjene spremljene."
 
 #: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
-msgstr "Users cannot block themselves."
+msgstr "Korisnici se ne mogu sami blokirati."
 
 #: .\blocks\models.py:23
 msgid "blocked user"
-msgstr "blocked user"
+msgstr "blokirani korisnik"
 
 #: .\blocks\models.py:28
 msgid "block"
-msgstr "block"
+msgstr "blokirati"
 
 #: .\blocks\models.py:29
 msgid "user blocks"
-msgstr "user blocks"
+msgstr "korisničkih blokova"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
-msgstr "You have blocked {}."
+msgstr "Blokirali ste {}."
 
 #: .\blocks\views.py:31
 msgid "You have unblocked {}."
-msgstr "You have unblocked {}."
+msgstr "Deblokirali ste {}."
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
-msgstr "Contact By Form"
+msgstr "Kontakt putem obrasca"
 
 #: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
-msgstr "Type the number \"17\""
+msgstr "Upišite broj \"17\""
 
 #: .\contact_by_form\forms.py:41
 msgid "Send"
-msgstr "Send"
+msgstr "Poslati"
 
 #: .\contact_by_form\forms.py:47
 msgid "Please contact us by email."
-msgstr "Please contact us by email."
+msgstr "Molimo kontaktirajte nas e-poštom."
 
 #: .\contact_by_form\forms.py:53
 msgid "Not 17."
-msgstr "Not 17."
+msgstr "Ne 17."
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "Feedback"
+msgstr "Povratne informacije"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
-msgstr "Abuse (User)"
+msgstr "Zloupotreba (korisnik)"
 
 #: .\contact_by_form\models.py:35
 msgid "Abuse (Photo)"
-msgstr "Abuse (Photo)"
+msgstr "Zlostavljanje (foto)"
 
 #: .\contact_by_form\models.py:38 .\messages\models.py:156
 msgid "sender"
-msgstr "sender"
+msgstr "pošiljatelj"
 
 #: .\contact_by_form\models.py:39
 msgid "your name"
-msgstr "your name"
+msgstr "tvoje ime"
 
 #: .\contact_by_form\models.py:40
 msgid "your email"
-msgstr "your email"
+msgstr "tvoj email"
 
 #: .\contact_by_form\models.py:41
 msgid "type"
-msgstr "type"
+msgstr "tip"
 
 #: .\contact_by_form\models.py:42
 msgid "your message"
-msgstr "your message"
+msgstr "tvoja poruka"
 
 #: .\contact_by_form\models.py:44
 msgid "reported entity"
-msgstr "reported entity"
+msgstr "prijavljeni entitet"
 
 #: .\contact_by_form\models.py:45
 msgid "reported photo"
-msgstr "reported photo"
+msgstr "prijavljena fotografija"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "feedback"
+msgstr "povratna informacija"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "feedbacks"
+msgstr "povratne informacije"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
-msgstr "Friendship request sent."
+msgstr "Zahtjev za prijateljstvo poslan."
 
 #: .\friends\views.py:204
 msgid "No friendship request."
-msgstr "No friendship request."
+msgstr "Nema zahtjeva za prijateljstvo."
 
 #: .\friends\views.py:243
 msgid "Friendship request accepted."
-msgstr "Friendship request accepted."
+msgstr "Zahtjev za prijateljstvo prihvaćen."
 
 #: .\friends\views.py:261
 msgid "Friendship request rejected."
-msgstr "Friendship request rejected."
+msgstr "Zahtjev za prijateljstvo odbijen."
 
 #: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2611,241 +2617,241 @@ msgstr "Friendship request rejected."
 #: .\templates\messages\chat_list.html:8
 #: .\templates\messages\chat_list.html:29
 msgid "Messages"
-msgstr "Messages"
+msgstr "Poruke"
 
 #: .\messages\models.py:29
 msgid "site"
-msgstr "site"
+msgstr "mjesto"
 
 #: .\messages\models.py:30
 msgid "participant 1"
-msgstr "participant 1"
+msgstr "sudionik 1"
 
 #: .\messages\models.py:31
 msgid "participant 2"
-msgstr "participant 2"
+msgstr "sudionik 2"
 
 #: .\messages\models.py:32
 msgid "participants"
-msgstr "participants"
+msgstr "sudionika"
 
 #: .\messages\models.py:33
 msgid "is group chat"
-msgstr "is group chat"
+msgstr "je grupni chat"
 
 #: .\messages\models.py:34
 msgid "last message"
-msgstr "last message"
+msgstr "zadnja poruka"
 
 #: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
 msgid "chat"
-msgstr "chat"
+msgstr "razgovor"
 
 #: .\messages\models.py:68
 msgid "chats"
-msgstr "chats"
+msgstr "razgovori"
 
 #: .\messages\models.py:77
 msgid "None"
-msgstr "None"
+msgstr "Nijedan"
 
 #: .\messages\models.py:157 .\messages\models.py:162
 msgid "message"
-msgstr "message"
+msgstr "poruka"
 
 #: .\messages\models.py:163
 msgid "messages"
-msgstr "messages"
+msgstr "poruke"
 
 #: .\messages\models.py:191
 msgid "read mark"
-msgstr "read mark"
+msgstr "čitaj oznaku"
 
 #: .\messages\models.py:192
 msgid "read marks"
-msgstr "read marks"
+msgstr "čitati oznake"
 
 #: .\settings\base.py:193
 msgid "English"
-msgstr "English"
+msgstr "engleski"
 
 #: .\settings\base.py:194
 msgid "Hebrew"
-msgstr "Hebrew"
+msgstr "hebrejski"
 
 #: .\settings\base_with_login.py:65
 msgid "French"
-msgstr "French"
+msgstr "francuski"
 
 #: .\settings\base_with_login.py:66
 msgid "German"
-msgstr "German"
+msgstr "njemački"
 
 #: .\settings\base_with_login.py:67
 msgid "Spanish"
-msgstr "Spanish"
+msgstr "španjolski"
 
 #: .\settings\base_with_login.py:68
 msgid "Portuguese"
-msgstr "Portuguese"
+msgstr "portugalski"
 
 #: .\settings\base_with_login.py:69
 msgid "Italian"
-msgstr "Italian"
+msgstr "talijanski"
 
 #: .\settings\base_with_login.py:70
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "nizozemski"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr "Japanese"
+msgstr "japanski"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr "Russian"
+msgstr "ruski"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "Chinese"
+msgstr "kineski"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "Polish"
+msgstr "Polirati"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "Persian"
+msgstr "perzijski"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
-msgstr "Korean"
+msgstr "korejski"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr "Arabic"
+msgstr "arapski"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr "Indonesian"
+msgstr "indonezijski"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr "Ukrainian"
+msgstr "ukrajinski"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr "Turkish"
+msgstr "turski"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr "vijetnamski"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr "Czech"
+msgstr "češki"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
-msgstr "Swedish"
+msgstr "švedski"
 
 #: .\settings\base_with_login.py:87
 msgid "Finnish"
-msgstr "Finnish"
+msgstr "finski"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "Hungarian"
+msgstr "mađarski"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr "Thai"
+msgstr "tajlandski"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr "Greek"
+msgstr "grčki"
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr "Malay"
+msgstr "malajski"
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr "Serbian"
+msgstr "srpski"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "Romanian"
+msgstr "rumunjski"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr "Bengali"
+msgstr "bengalski"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr "Catalan"
+msgstr "katalonski"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr "Norwegian (Bokmål)"
+msgstr "norveški (bokmol)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr "Bulgarian"
+msgstr "bugarski"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr "Danish"
+msgstr "danski"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "Slovak"
+msgstr "slovački"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
-msgstr "Hindi"
+msgstr "hindski"
 
 #: .\settings\base_with_login.py:101
 msgid "Estonian"
-msgstr "Estonian"
+msgstr "estonski"
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr "Croatian"
+msgstr "hrvatski"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Bad request"
+msgstr "Loš zahtjev"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Speedy is sorry, but we can't handle your request."
+msgstr "Speedyju je žao, ali ne možemo obraditi vaš zahtjev."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "Permission denied"
+msgstr "Dopuštenje odbijeno"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy is sorry, but this page is private."
+msgstr "Speedy se ispričava, ali ova stranica je privatna."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
-msgstr "Page not found"
+msgstr "Stranica nije pronađena"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy is sorry, but the page is not found."
+msgstr "Speedy se ispričava, ali stranica nije pronađena."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
-msgstr "Internal server error"
+msgstr "Interna greška poslužitelja"
 
 #: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
-msgstr "About"
+msgstr "Oko"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
@@ -2854,98 +2860,98 @@ msgstr "About"
 #: .\templates\profiles\tools\edit_profile.html:4
 #: .\templates\profiles\tools\edit_profile.html:6
 msgid "Edit Profile"
-msgstr "Edit Profile"
+msgstr "Uredi profil"
 
 #: .\templates\accounts\edit_profile\core_base.html:19
 msgid "Profile Info"
-msgstr "Profile Info"
+msgstr "Informacije o profilu"
 
 #: .\templates\accounts\edit_profile\core_base.html:25
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
-msgstr "Privacy"
+msgstr "Privatnost"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
-msgstr "Notifications"
+msgstr "Obavijesti"
 
 #: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
-msgstr "Emails & Password"
+msgstr "E-pošta i lozinka"
 
 #: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
-msgstr "Deactivate Account"
+msgstr "Deaktiviraj račun"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "Email Addresses"
+msgstr "E-mail adrese"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr "Address"
+msgstr "Adresa"
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
-msgstr "Added"
+msgstr "Dodano"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr "Visibility"
+msgstr "Vidljivost"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr "Actions"
+msgstr "Radnje"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
-msgstr "Unconfirmed"
+msgstr "Nepotvrđeno"
 
 #: .\templates\accounts\edit_profile\credentials.html:25
 msgid "Primary"
-msgstr "Primary"
+msgstr "Primarni"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "Resend a confirmation email"
+msgstr "Ponovno pošalji potvrdnu e-poštu"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Make this email address primary"
+msgstr "Neka ova adresa e-pošte bude primarna"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Are you sure you want to delete this email address?"
+msgstr "Jeste li sigurni da želite izbrisati ovu adresu e-pošte?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr "Delete this email address"
+msgstr "Izbriši ovu adresu e-pošte"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
-msgstr "Add Another"
+msgstr "Dodaj drugu"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
-msgstr "Change Password"
+msgstr "Promjena lozinke"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Your age will be visible to your matches on Speedy Match."
+msgstr "Vaša će dob biti vidljiva vašim utakmicama na Speedy Matchu."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Change privacy settings of email addresses on your profile."
+msgstr "Promijenite postavke privatnosti adresa e-pošte na svom profilu."
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr "Add Email"
+msgstr "Dodajte e-poštu"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
-msgstr "Logged Out"
+msgstr "Odjavljen"
 
 #: .\templates\accounts\password_reset\complete.html:5
 #: .\templates\accounts\password_reset\complete.html:11
@@ -2956,93 +2962,93 @@ msgstr "Logged Out"
 #: .\templates\accounts\password_reset\form.html:6
 #: .\templates\accounts\password_reset\form.html:12
 msgid "Reset Password"
-msgstr "Reset Password"
+msgstr "Ponovno postavljanje lozinke"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr "Password reset successfully."
+msgstr "Ponovno postavljanje lozinke uspješno."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr "Password reset failed. Invalid link."
+msgstr "Ponovno postavljanje lozinke nije uspjelo. Nevažeći link."
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
-msgstr "Email with password reset instructions has been sent."
+msgstr "E-pošta s uputama za ponovno postavljanje lozinke je poslana."
 
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
-msgstr "See All"
+msgstr "Vidi sve"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "Admin - Friends"
+msgstr "Admin - Prijatelji"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
-msgstr "friends"
+msgstr "prijatelji"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
-msgstr "No friends yet."
+msgstr "Još nema prijatelja."
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
-msgstr "Admin Information"
+msgstr "Informacije o administratoru"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr "Admin - All Users"
+msgstr "Administrator - Svi korisnici"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr "No users."
+msgstr "Nema korisnika."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "This site is under construction"
+msgstr "Ova stranica je u izradi"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "You haven't confirmed your email address. Please check your inbox."
+msgstr "Niste potvrdili svoju email adresu. Provjerite svoju pristiglu poštu."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Speedy Paz"
+msgstr "Brzi Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Speedy Software"
+msgstr "Brzi softver"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Speedy Sale"
+msgstr "Brza prodaja"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "A vegan friendly website"
+msgstr "Web stranica prilagođena veganima"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Speedy"
+msgstr "Brz"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
-msgstr "Logout"
+msgstr "Odjava"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Home"
+msgstr "Dom"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
-msgstr "Password"
+msgstr "Lozinka"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
@@ -3050,7 +3056,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Speedy Match"
+msgstr "Brzo podudaranje"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3058,7 +3064,7 @@ msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Speedy Match trgovina"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3069,19 +3075,19 @@ msgstr "Speedy S-logo Shop"
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
-msgstr "Privacy Policy"
+msgstr "Politika privatnosti"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
-msgstr "Terms of Service"
+msgstr "Uvjeti usluge"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
-msgstr "Terms"
+msgstr "Uvjeti"
 
 #: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
 #: .\templates\contact_by_email\contact_us.html:8
@@ -3090,168 +3096,169 @@ msgstr "Terms"
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
-msgstr "Contact Us"
+msgstr "Kontaktirajte nas"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Speedy Composer"
+msgstr "Brzi skladatelj"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail Software"
+msgstr "Softver Speedy Mail"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Brza skladateljska trgovina"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
-msgstr "Blocked Users"
+msgstr "Blokirani korisnici"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "You're not blocking anybody."
+msgstr "Ne blokiraš nikoga."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"Ako imate pitanja, prijedloga ili ste zainteresirani pridružiti se timu - "
+"kontaktirajte nas putem e-pošte."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, osnivač i webmaster:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
 msgid "Report a User"
-msgstr "Report a User"
+msgstr "Prijavi korisnika"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr "Report a Photo"
+msgstr "Prijavite fotografiju"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr "Thank You"
+msgstr "Hvala"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr "Your feedback was sent to administrators."
+msgstr "Vaše povratne informacije poslane su administratorima."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
-msgstr "Previous"
+msgstr "Prethodno"
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
-msgstr "Next"
+msgstr "Sljedeći"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr "Use this link to activate your account:"
+msgstr "Upotrijebite ovu poveznicu da aktivirate svoj račun:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Potvrdite svoju adresu e-pošte na %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
-msgstr "Use this link to verify your email address:"
+msgstr "Upotrijebite ovu vezu za potvrdu svoje adrese e-pošte:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr "Use this link to change your password:"
+msgstr "Za promjenu lozinke koristite ovu vezu:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Password reset on %(site_name)s"
+msgstr "Ponovno postavljanje lozinke %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
-msgstr "has sent you a message."
+msgstr "poslao vam je poruku."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "Read it:"
+msgstr "Pročitajte:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Pretplaćeni ste na primanje ove vrste obavijesti od %(site_name)s. Uđite na "
+"ovu stranicu kako biste promijenili svoje postavke obavijesti ili se "
+"isključili:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "You have a new message on %(site_name)s"
+msgstr "Imate novu poruku na %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
-msgstr "Received Requests"
+msgstr "Primljeni zahtjevi"
 
 #: .\templates\friends\base.html:41
 msgid "Sent Requests"
-msgstr "Sent Requests"
+msgstr "Poslani zahtjevi"
 
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr "There are no pending friendship requests."
+msgstr "Nema neriješenih zahtjeva za prijateljstvo."
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "Welcome to %(site_name)s!"
+msgstr "Dobrodošli u %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "Join %(site_name)s!"
+msgstr "Pridružite se %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
-msgstr "It's free and anyone can join!"
+msgstr "Besplatno je i svatko se može pridružiti!"
 
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Razgovarajte s <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Pošalji poruku na %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
-msgstr "Mark All as Read"
+msgstr "Označi sve kao pročitano"
 
 #: .\templates\messages\chat_list.html:56
 msgid "Unread"
-msgstr "Unread"
+msgstr "Nepročitano"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "You:"
+msgstr "Vas:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
-msgstr "You have no messages yet."
+msgstr "Još nemate nijednu poruku."
 
 #: .\templates\messages\message.html:20
 msgid "New"
-msgstr "New"
+msgstr "Novi"
 
 #: .\templates\privacy\privacy_policy.html:19
 msgid ""
@@ -3261,29 +3268,28 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"We respect your privacy. We will not sell or share your personal details, "
-"including your name, your date of birth, your email address and your "
-"password. Messages you send to people on Speedy Net are personal and will "
-"not be shared with other people or websites. Your password is saved "
-"encrypted on our database."
+"Poštujemo Vašu privatnost. Nećemo prodavati niti dijeliti vaše osobne "
+"podatke, uključujući vaše ime, datum rođenja, adresu e-pošte i lozinku. "
+"Poruke koje šaljete osobama na Speedy Netu su osobne i neće se dijeliti s "
+"drugim ljudima ili web stranicama. Vaša lozinka je šifrirana u našoj bazi "
+"podataka."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
-"Speedy Match, your Speedy Match profile will only be visible to people who "
-"match you according to the settings you have set up on the site, and that "
-"you match them according to their settings. Your profile on Speedy Match "
-"will not appear on Google and is not visible to people who are not "
-"registered to the site."
+"Vaš profil na Speedy Netu vidljiv je svima, ali možete odabrati kome želite "
+"podijeliti svoju e-mail adresu i datum rođenja. Ako ste se prijavili za "
+"Speedy Match, vaš Speedy Match profil bit će vidljiv samo osobama koje vas "
+"spajaju prema postavkama koje ste postavili na web mjestu i koje vi spajate "
+"prema njihovim postavkama. Vaš profil na Speedy Matchu neće se pojaviti na "
+"Googleu i nije vidljiv osobama koje nisu registrirane na stranici."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3295,138 +3301,138 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"If you have deactivated your account on Speedy Net or Speedy Match, your "
-"profile on that site will be removed from the site and you will not appear "
-"in other people's search results on the site. Note that deactivating your "
-"account on Speedy Net also automatically deactivates your account at Speedy "
-"Match. You can deactivate only your account at Speedy Match, in which case "
-"your Speedy Net account will remain active. You can reactivate your account "
-"after you deactivate it whenever you like."
+"Ako ste deaktivirali svoj račun na Speedy Netu ili Speedy Matchu, vaš profil"
+" na toj stranici bit će uklonjen sa stranice i nećete se pojaviti u "
+"rezultatima pretraživanja drugih ljudi na stranici. Imajte na umu da "
+"deaktivacija vašeg računa na Speedy Netu također automatski deaktivira vaš "
+"račun na Speedy Matchu. Možete deaktivirati samo svoj račun na Speedy "
+"Matchu, u kojem će slučaju vaš Speedy Net račun ostati aktivan. Možete "
+"ponovno aktivirati svoj račun nakon što ga deaktivirate kad god želite."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
-"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
-"out the details in the form and confirm. Please note that a deleted account "
-"cannot be recovered. Account deletion is permanent and irreversible."
+"Ako želite, možete izbrisati svoj račun na Speedy Netu. Brisanje vašeg "
+"Speedy Net računa automatski će izbrisati i vaš Speedy Match račun. Kako "
+"biste izbrisali svoj Speedy Net račun, prijavite se na Speedy Net, "
+"deaktivirajte svoj račun, a zatim kliknite “Delete Account” (u izborniku "
+"“Edit Profile”). Ispunite podatke u obrascu i potvrdite. Imajte na umu da se"
+" izbrisani račun ne može vratiti. Brisanje računa je trajno i nepovratno."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "You blocked "
+msgstr "Blokirali ste"
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "."
+msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " blocked you."
+msgstr "blokirao te."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Accept Friendship Request"
+msgstr "Prihvati zahtjev za prijateljstvo"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Accept"
+msgstr "Prihvatiti"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Reject Friendship Request"
+msgstr "Odbij zahtjev za prijateljstvo"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr "Reject"
+msgstr "Odbiti"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr "Add to Friends"
+msgstr "Dodaj u prijatelje"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Toggle Dropdown"
+msgstr "Uključi padajući izbornik"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Are you sure you want to block "
+msgstr "Jeste li sigurni da želite blokirati"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "?"
+msgstr "None"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Block "
+msgstr "Blokirati"
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Unblock "
+msgstr "Odblokiraj"
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Report "
+msgstr "Izvješće"
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
-msgstr "Report this photo"
+msgstr "Prijavi ovu fotografiju"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Cancel Friendship Request"
+msgstr "Otkaži zahtjev za prijateljstvo"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr "Remove Friend"
+msgstr "Ukloni prijatelja"
 
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
-msgstr "Send Message"
+msgstr "Pošalji poruku"
 
 #: .\templates\profiles\user_info_widget.html:12
 msgid "Information"
-msgstr "Information"
+msgstr "Informacija"
 
 #: .\templates\profiles\user_info_widget.html:19
 msgid "Name"
-msgstr "Name"
+msgstr "Ime"
 
 #: .\templates\profiles\user_info_widget.html:25
 msgid "Username"
-msgstr "Username"
+msgstr "Korisničko ime"
 
 #: .\templates\profiles\user_info_widget.html:35
 msgid "Gender"
-msgstr "Gender"
+msgstr "Spol"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Date"
-msgstr "Birth Date"
+msgstr "Datum rođenja"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Year"
-msgstr "Birth Year"
+msgstr "Godina rođenja"
 
 #: .\templates\profiles\user_info_widget.html:61
 msgid "Age"
-msgstr "Age"
+msgstr "Dob"
 
 #: .\templates\profiles\user_on_speedy_match_widget.html:6
 #, python-format
@@ -3434,65 +3440,65 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s također ima Speedy Match profil. Pogledajte profil "
+"%(user_name)s na Speedy Matchu."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s"
+" na Speedy Netu."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"The site is in alpha, there may be errors. Site management is not "
-"responsible for any faults on the site."
+"Stranica je u alfa verziji, moguće su greške. Uprava stranice nije odgovorna"
+" za bilo kakve greške na stranici."
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
-"You can use Speedy Net for legal purposes only. You are not allowed to "
-"upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"Speedy Net možete koristiti samo u legalne svrhe. Nije vam dopušteno "
+"učitavanje sadržaja koji se odnose na mržnju, nasilje, zlostavljanje "
+"životinja, golotinju ili pornografiju. Ne smijete koristiti Speedy Net za "
+"slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
-"Site management cannot verify personal information provided by users of the "
-"site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"Uprava stranice ne može provjeriti osobne podatke koje daju korisnici "
+"stranice. Osobni podaci nekih korisnika možda nisu točni. Uprava stranice "
+"nije odgovorna za aktivnosti korisnika izvan stranice. Ako se odlučite "
+"sastati ili razgovarati telefonom s ljudima koje ste upoznali na stranici, "
+"odgovornost za rezultate sastanka ili telefonskog poziva je vaša."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
-"deleted from the site after 10 days."
+"Nakon što se prijavite na stranicu, od vas se traži da potvrdite svoju "
+"adresu e-pošte putem veze koja vam je poslana. Računi bez verificirane "
+"adrese e-pošte bit će izbrisani sa stranice nakon 10 dana."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3500,82 +3506,82 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
-"If you mistakenly signed up for the site with an incorrect email address, "
-"add a new email address to your account and verify it. You can attach "
-"several email addresses to your account on the site."
+"Ako ste se greškom prijavili na stranicu s netočnom adresom e-pošte, dodajte"
+" novu adresu e-pošte svom računu i potvrdite je. Možete priložiti nekoliko "
+"adresa e-pošte svom računu na stranici."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
-"nude photos, photos showing genitals (of men or women) or bare-chested "
-"images (of men or women)."
+"Vaša profilna slika trebala bi biti vaša slika na kojoj možemo vidjeti vaše "
+"lice. Dopušteno je uploadati profilnu sliku s drugim osobama. Ne "
+"postavljajte gole fotografije, fotografije koje prikazuju genitalije "
+"(muškaraca ili žena) ili slike golih prsa (muškaraca ili žena)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr "Browse..."
+msgstr "Pregledaj..."
 
 #: .\uploads\models.py:24
 msgid "owner"
-msgstr "owner"
+msgstr "vlasnik"
 
 #: .\uploads\models.py:25
 msgid "file"
-msgstr "file"
+msgstr "datoteka"
 
 #: .\uploads\models.py:26
 msgid "is stored"
-msgstr "is stored"
+msgstr "je pohranjeno"
 
 #: .\uploads\models.py:27
 msgid "file size"
-msgstr "file size"
+msgstr "veličina datoteke"
 
 #: .\uploads\models.py:36
 msgid "uploaded file"
-msgstr "uploaded file"
+msgstr "prenesena datoteka"
 
 #: .\uploads\models.py:37
 msgid "uploaded files"
-msgstr "uploaded files"
+msgstr "prenesene datoteke"
 
 #: .\uploads\models.py:75
 msgid "visible on website"
-msgstr "visible on website"
+msgstr "vidljivo na web stranici"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Speedy image moderation time"
+msgstr "Brzo vrijeme moderiranja slike"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
-msgstr "AWS image moderation time"
+msgstr "Vrijeme moderiranja AWS slike"
 
 #: .\uploads\models.py:78
 msgid "AWS facial analysis time"
-msgstr "AWS facial analysis time"
+msgstr "AWS vrijeme analize lica"
 
 #: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
-msgstr "AWS raw image moderation results"
+msgstr "AWS rezultati moderiranja sirove slike"
 
 #: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
-msgstr "AWS raw facial analysis results"
+msgstr "AWS neobrađeni rezultati analize lica"
 
 #: .\uploads\models.py:81
 msgid "number of faces"
-msgstr "number of faces"
+msgstr "broj lica"
 
 #: .\uploads\models.py:86
 msgid "uploaded image"
-msgstr "uploaded image"
+msgstr "prenesena slika"
 
 #: .\uploads\models.py:87
 msgid "uploaded images"
-msgstr "uploaded images"
+msgstr "prenesene slike"

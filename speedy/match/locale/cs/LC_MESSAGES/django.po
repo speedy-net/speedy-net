@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,634 +18,634 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "You have no likes here."
+msgstr "Nemáte zde žádné lajky."
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "You have no likes here."
+msgstr "Nemáte zde žádné lajky."
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "You have no likes here."
+msgstr "Nemáte zde žádné lajky."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr "Update matches"
+msgstr "Aktualizovat zápasy"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr "Update matches"
+msgstr "Aktualizovat zápasy"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr "Update matches"
+msgstr "Aktualizovat zápasy"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
 msgid "Add more options"
-msgstr "Add more options"
+msgstr "Přidejte další možnosti"
 
 #: .\__translations\__translations.html:15
 msgctxt "male"
 msgid "Add more options"
-msgstr "Add more options"
+msgstr "Přidejte další možnosti"
 
 #: .\__translations\__translations.html:16
 msgctxt "other"
 msgid "Add more options"
-msgstr "Add more options"
+msgstr "Přidejte další možnosti"
 
 #: .\__translations\__translations.html:18
 msgctxt "female"
 msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
 msgstr ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"Zatím nemáte žádné zápasy. Zkuste rozšířit nastavení vyhledávání nebo to "
+"znovu zkontrolujte později."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
 msgstr ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"Zatím nemáte žádné zápasy. Zkuste rozšířit nastavení vyhledávání nebo to "
+"znovu zkontrolujte později."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
 msgstr ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"Zatím nemáte žádné zápasy. Zkuste rozšířit nastavení vyhledávání nebo to "
+"znovu zkontrolujte později."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Nastavení shody"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Nastavení shody"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Nastavení shody"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "Like"
+msgstr "Jako"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "Like"
+msgstr "Jako"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "Like"
+msgstr "Jako"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "Unlike"
+msgstr "Na rozdíl od"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "Unlike"
+msgstr "Na rozdíl od"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "Unlike"
+msgstr "Na rozdíl od"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "Your Matches"
+msgstr "Vaše zápasy"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "Your Matches"
+msgstr "Vaše zápasy"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Your Matches"
+msgstr "Vaše zápasy"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Přátelé"
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Přátelé"
 
 #: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Friends"
-msgstr "Friends"
+msgstr "Přátelé"
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr "Your Friends"
+msgstr "Vaši přátelé"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
 msgid "Your Friends"
-msgstr "Your Friends"
+msgstr "Vaši přátelé"
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
-msgstr "Your Friends"
+msgstr "Vaši přátelé"
 
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "You don't have any friends yet."
+msgstr "Zatím nemáte žádné přátele."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr "You don't have any friends yet."
+msgstr "Zatím nemáte žádné přátele."
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "You don't have any friends yet."
+msgstr "Zatím nemáte žádné přátele."
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
 msgid "About me"
-msgstr "About me"
+msgstr "O mně"
 
 #: .\__translations\__translations.html:51
 msgctxt "male"
 msgid "About me"
-msgstr "About me"
+msgstr "O mně"
 
 #: .\__translations\__translations.html:52
 msgctxt "other"
 msgid "About me"
-msgstr "About me"
+msgstr "O mně"
 
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "About my match"
+msgstr "O mém zápase"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "About my match"
+msgstr "O mém zápase"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "About my match"
+msgstr "O mém zápase"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "Gender to match"
+msgstr "Pohlaví, aby odpovídalo"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "Gender to match"
+msgstr "Pohlaví, aby odpovídalo"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "Gender to match"
+msgstr "Pohlaví, aby odpovídalo"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Someone likes you on %(site_name)s"
+msgstr "Někdo vás má rád na %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Someone likes you on %(site_name)s"
+msgstr "Někdo vás má rád na %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Someone likes you on %(site_name)s"
+msgstr "Někdo vás má rád na %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "likes you."
+msgstr "má tě rád."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "likes you."
+msgstr "má tě rád."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "likes you."
+msgstr "má tě rád."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "likes you"
+msgstr "má tě rád"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "likes you"
+msgstr "má tě rád"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "likes you"
+msgstr "má tě rád"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "You like"
+msgstr "líbí se ti"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "You like"
+msgstr "líbí se ti"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "You like"
+msgstr "líbí se ti"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Last visited Speedy Match"
+msgstr "Poslední návštěva Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Last visited Speedy Match"
+msgstr "Poslední návštěva Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Last visited Speedy Match"
+msgstr "Poslední návštěva Speedy Match"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
-msgstr "My height in centimeters"
+msgstr "Moje výška v centimetrech"
 
 #: .\__translations\__translations.py:9
 msgctxt "female"
 msgid "Add profile picture"
-msgstr "Add profile picture"
+msgstr "Přidat profilový obrázek"
 
 #: .\__translations\__translations.py:10
 msgctxt "male"
 msgid "Add profile picture"
-msgstr "Add profile picture"
+msgstr "Přidat profilový obrázek"
 
 #: .\__translations\__translations.py:11
 msgctxt "other"
 msgid "Add profile picture"
-msgstr "Add profile picture"
+msgstr "Přidat profilový obrázek"
 
 #: .\__translations\__translations.py:13
 msgctxt "female"
 msgid "My height in centimeters"
-msgstr "My height in centimeters"
+msgstr "Moje výška v centimetrech"
 
 #: .\__translations\__translations.py:14
 msgctxt "male"
 msgid "My height in centimeters"
-msgstr "My height in centimeters"
+msgstr "Moje výška v centimetrech"
 
 #: .\__translations\__translations.py:15
 msgctxt "other"
 msgid "My height in centimeters"
-msgstr "My height in centimeters"
+msgstr "Moje výška v centimetrech"
 
 #: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "My ideal match"
+msgstr "Můj ideální zápas"
 
 #: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "My ideal match"
+msgstr "Můj ideální zápas"
 
 #: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "My ideal match"
+msgstr "Můj ideální zápas"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "Minimal age to match"
+msgstr "Minimální věk odpovídající"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "Minimal age to match"
+msgstr "Minimální věk odpovídající"
 
 #: .\__translations\__translations.py:23
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "Minimal age to match"
+msgstr "Minimální věk odpovídající"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "Maximal age to match"
+msgstr "Maximální věk odpovídající"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "Maximal age to match"
+msgstr "Maximální věk odpovídající"
 
 #: .\__translations\__translations.py:27
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "Maximal age to match"
+msgstr "Maximální věk odpovídající"
 
 #: .\__translations\__translations.py:29
 msgctxt "female"
 msgid "Please write a few words about yourself."
-msgstr "Please write a few words about yourself."
+msgstr "Napište prosím pár slov o sobě."
 
 #: .\__translations\__translations.py:30
 msgctxt "male"
 msgid "Please write a few words about yourself."
-msgstr "Please write a few words about yourself."
+msgstr "Napište prosím pár slov o sobě."
 
 #: .\__translations\__translations.py:31
 msgctxt "other"
 msgid "Please write a few words about yourself."
-msgstr "Please write a few words about yourself."
+msgstr "Napište prosím pár slov o sobě."
 
 #: .\__translations\__translations.py:33
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "Do you have children? How many?"
+msgstr "Máte děti? Kolik?"
 
 #: .\__translations\__translations.py:34
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "Do you have children? How many?"
+msgstr "Máte děti? Kolik?"
 
 #: .\__translations\__translations.py:35
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "Do you have children? How many?"
+msgstr "Máte děti? Kolik?"
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
 msgid "Do you want (more) children?"
-msgstr "Do you want (more) children?"
+msgstr "Chcete (více) dětí?"
 
 #: .\__translations\__translations.py:38
 msgctxt "male"
 msgid "Do you want (more) children?"
-msgstr "Do you want (more) children?"
+msgstr "Chcete (více) dětí?"
 
 #: .\__translations\__translations.py:39
 msgctxt "other"
 msgid "Do you want (more) children?"
-msgstr "Do you want (more) children?"
+msgstr "Chcete (více) dětí?"
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "Who is your ideal partner?"
+msgstr "Kdo je tvůj ideální partner?"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "Who is your ideal partner?"
+msgstr "Kdo je tvůj ideální partner?"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Who is your ideal partner?"
+msgstr "Kdo je tvůj ideální partner?"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
 msgctxt "female"
 msgid ""
 "We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
-"Therefore you are not authorized to use the site."
+"Je nám líto, ale nemáte oprávnění používat web {site_name}. Zjistili jsme, "
+"že některé informace, které jste uvedli při registraci na stránce, jsou "
+"nesprávné nebo že jste porušili pravidla používání stránek. Proto nejste "
+"oprávněni používat stránky."
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
 msgctxt "male"
 msgid ""
 "We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
-"Therefore you are not authorized to use the site."
+"Je nám líto, ale nemáte oprávnění používat web {site_name}. Zjistili jsme, "
+"že některé informace, které jste uvedli při registraci na stránce, jsou "
+"nesprávné nebo že jste porušili pravidla používání stránek. Proto nejste "
+"oprávněni používat stránky."
 
 #: .\__translations\__translations.py:47
 #, python-brace-format
 msgctxt "other"
 msgid ""
 "We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"We're sorry, but you are not authorized to use the {site_name} website. We "
-"have found that some of the information you provided when registering on the "
-"site is incorrect or that you have violated the rules of use of the site. "
-"Therefore you are not authorized to use the site."
+"Je nám líto, ale nemáte oprávnění používat web {site_name}. Zjistili jsme, "
+"že některé informace, které jste uvedli při registraci na stránce, jsou "
+"nesprávné nebo že jste porušili pravidla používání stránek. Proto nejste "
+"oprávněni používat stránky."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Rychlé účty"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
-msgstr "Add profile picture"
+msgstr "Přidat profilový obrázek"
 
 #: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
-msgstr "A profile picture is required."
+msgstr "Je vyžadován profilový obrázek."
 
 #: .\accounts\forms.py:59
 msgid "My diet"
-msgstr "My diet"
+msgstr "Moje dieta"
 
 #: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
 msgid "Your diet is required."
-msgstr "Your diet is required."
+msgstr "Vaše dieta je vyžadována."
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
-msgstr "My smoking status"
+msgstr "Můj kuřácký status"
 
 #: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
 msgid "Your smoking status is required."
-msgstr "Your smoking status is required."
+msgstr "Je vyžadován váš kuřácký status."
 
 #: .\accounts\forms.py:61
 msgid "My relationship status"
-msgstr "My relationship status"
+msgstr "Můj vztahový stav"
 
 #: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
 msgid "Your relationship status is required."
-msgstr "Your relationship status is required."
+msgstr "Je vyžadován stav vašeho vztahu."
 
 #: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
 msgid "Gender to match is required."
-msgstr "Gender to match is required."
+msgstr "Je vyžadováno odpovídající pohlaví."
 
 #: .\accounts\forms.py:100
 msgid "Your height is required."
-msgstr "Your height is required."
+msgstr "Je vyžadována vaše výška."
 
 #: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
-msgstr "Please write a few words about yourself."
+msgstr "Napište prosím pár slov o sobě."
 
 #: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
-msgstr "Please write where you live."
+msgstr "Napište prosím, kde bydlíte."
 
 #: .\accounts\forms.py:118 .\accounts\models.py:221
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "Do you have children? How many?"
+msgstr "Máte děti? Kolik?"
 
 #: .\accounts\forms.py:121 .\accounts\models.py:224
 #: .\accounts\validators.py:58
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
-msgstr "Do you want (more) children?"
+msgstr "Chcete (více) dětí?"
 
 #: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
-msgstr "Who is your ideal partner?"
+msgstr "Kdo je tvůj ideální partner?"
 
 #: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
-msgstr "Minimal age to match is required."
+msgstr "Je vyžadován minimální věk."
 
 #: .\accounts\forms.py:133
 msgid "Maximal age to match is required."
-msgstr "Maximal age to match is required."
+msgstr "Je vyžadován maximální věk pro shodu."
 
 #: .\accounts\forms.py:136 .\accounts\validators.py:110
 msgid "Diet match is required."
-msgstr "Diet match is required."
+msgstr "Je vyžadována shoda stravy."
 
 #: .\accounts\forms.py:139 .\accounts\validators.py:118
 msgid "Smoking status match is required."
-msgstr "Smoking status match is required."
+msgstr "Je vyžadována shoda stavu kouření."
 
 #: .\accounts\forms.py:142 .\accounts\validators.py:126
 msgid "Relationship status match is required."
-msgstr "Relationship status match is required."
+msgstr "Je vyžadována shoda stavu vztahu."
 
 #: .\accounts\forms.py:150
 msgid "Where do you live?"
-msgstr "Where do you live?"
+msgstr "kde bydlíš?"
 
 #: .\accounts\forms.py:186 .\accounts\models.py:231
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "Gender to match"
+msgstr "Pohlaví, aby odpovídalo"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match User"
+msgstr "Uživatel Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
-msgstr "No match"
+msgstr "Žádná shoda"
 
 #: .\accounts\models.py:75 .\accounts\models.py:198
 msgid "One heart"
-msgstr "One heart"
+msgstr "Jedno srdce"
 
 #: .\accounts\models.py:76 .\accounts\models.py:199
 msgid "Two hearts"
-msgstr "Two hearts"
+msgstr "Dvě srdce"
 
 #: .\accounts\models.py:77 .\accounts\models.py:200
 msgid "Three hearts"
-msgstr "Three hearts"
+msgstr "Tři srdce"
 
 #: .\accounts\models.py:78 .\accounts\models.py:201
 msgid "Four hearts"
-msgstr "Four hearts"
+msgstr "Čtyři srdce"
 
 #: .\accounts\models.py:79 .\accounts\models.py:202
 msgid "Five hearts"
-msgstr "Five hearts"
+msgstr "Pět srdcí"
 
 #: .\accounts\models.py:206
 msgid "User"
-msgstr "User"
+msgstr "Uživatel"
 
 #: .\accounts\models.py:207
 msgid "On new likes"
-msgstr "On new likes"
+msgstr "Na nových lajcích"
 
 #: .\accounts\models.py:210
 msgid "Active languages"
-msgstr "Active languages"
+msgstr "Aktivní jazyky"
 
 #: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:26
 msgid "Height"
-msgstr "Height"
+msgstr "Výška"
 
 #: .\accounts\models.py:216
 #: .\templates\profiles\user_extra_info_widget.html:27
@@ -654,64 +654,64 @@ msgstr "cm"
 
 #: .\accounts\models.py:218
 msgid "Few words about me"
-msgstr "Few words about me"
+msgstr "Pár slov o mně"
 
 #: .\accounts\models.py:227
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "My ideal match"
+msgstr "Můj ideální zápas"
 
 #: .\accounts\models.py:237
 msgid "Minimal age to match"
-msgstr "Minimal age to match"
+msgstr "Minimální věk odpovídající"
 
 #: .\accounts\models.py:238
 msgid "Maximal age to match"
-msgstr "Maximal age to match"
+msgstr "Maximální věk odpovídající"
 
 #: .\accounts\models.py:239
 msgid "Diet match"
-msgstr "Diet match"
+msgstr "Dietní zápas"
 
 #: .\accounts\models.py:240
 msgid "Smoking status match"
-msgstr "Smoking status match"
+msgstr "Shoda stavu kouření"
 
 #: .\accounts\models.py:241
 msgid "Relationship status match"
-msgstr "Relationship status match"
+msgstr "Shoda stavu vztahu"
 
 #: .\accounts\models.py:244
 msgid "Diet to match"
-msgstr "Diet to match"
+msgstr "Dieta, aby odpovídala"
 
 #: .\accounts\models.py:252
 msgid "Smoking status to match"
-msgstr "Smoking status to match"
+msgstr "Odpovídající stav kouření"
 
 #: .\accounts\models.py:260
 msgid "Relationship status to match"
-msgstr "Relationship status to match"
+msgstr "Stav vztahu, který se má shodovat"
 
 #: .\accounts\models.py:267
 msgid "Activation step"
-msgstr "Activation step"
+msgstr "Krok aktivace"
 
 #: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
-msgstr "Number of matches on last user's search"
+msgstr "Počet shod při hledání posledního uživatele"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Profil rychlého zápasu"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Rychlé profily zápasů"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr "Please confirm your email address."
+msgstr "Potvrďte prosím svou e-mailovou adresu."
 
 #: .\accounts\utils.py:89
 #, python-brace-format
@@ -721,38 +721,38 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"The total number of active members on the site is "
-"{total_number_of_active_members_in_the_last_four_months}, of which "
-"{total_number_of_active_members_in_the_last_week} members entered the site "
-"in the last week."
+"Celkový počet aktivních členů na webu je "
+"{total_number_of_active_members_in_the_last_four_months}, z toho "
+"{total_number_of_active_members_in_the_last_week} členů vstoupilo na web za "
+"poslední týden."
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
-msgstr "Height must be from 1 to 450 cm."
+msgstr "Výška musí být od 1 do 450 cm."
 
 #: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "Minimal age to match must be from 0 to 180 years."
+msgstr "Minimální věk pro shodu musí být od 0 do 180 let."
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "Maximal age to match must be from 0 to 180 years."
+msgstr "Maximální věk pro shodu musí být od 0 do 180 let."
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr "Maximal age to match can't be less than minimal age to match."
+msgstr "Maximální věk pro shodu nemůže být nižší než minimální věk pro shodu."
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
-msgstr "At least one diet match option should be five hearts."
+msgstr "Alespoň jedna možnost shody diety by měla být pět srdcí."
 
 #: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be five hearts."
-msgstr "At least one smoking status match option should be five hearts."
+msgstr "Alespoň jedna možnost shody stavu kouření by měla být pět srdcí."
 
 #: .\accounts\validators.py:128
 msgid "At least one relationship status match option should be five hearts."
-msgstr "At least one relationship status match option should be five hearts."
+msgstr "Alespoň jedna možnost shody stavu vztahu by měla být pět srdcí."
 
 #: .\admin\views.py:202
 #, python-brace-format
@@ -770,8 +770,8 @@ msgid ""
 "{total_number_of_other_active_members_in_the_last_week} others; "
 "{total_percent_of_female_active_members_in_the_last_week} females, "
 "{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the"
+" site in the last week, {total_number_of_active_members_in_the_last_month} "
 "members ({total_number_of_female_active_members_in_the_last_month} females, "
 "{total_number_of_male_active_members_in_the_last_month} males, "
 "{total_number_of_other_active_members_in_the_last_month} others; "
@@ -804,64 +804,54 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
+"Správce: Celkový počet aktivních členů na webu je "
 "{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"žen, {total_number_of_male_active_members} mužů, "
+"{total_number_of_other_active_members} ostatní; "
+"{total_percent_of_female_active_members} žen, "
+"{total_percent_of_male_active_members} mužů, "
+"{total_percent_of_other_active_members} dalších), z toho "
+"{total_number_of_active_members_in_the_last_week} členů (__PH8_1_0 žen, "
+"__PH8_1_PH žen ostatní; "
+"{total_percent_of_female_active_members_in_the_last_week} ženy, "
+"{total_percent_of_male_active_members_in_the_last_week} muži, "
+"{total_percent_of_other_active_members_in_the_last_week} další) vstoupilo na"
+" web za poslední týden, {total_number_of_active_members_in_the_last_month} "
+"členů ({total_number_of_female_active_members_in_the_last_month} žen, "
+"{total_number_of_male_active_members_in_the_last_month} mužů, "
+"{total_number_of_other_active_members_in_the_last_month} ostatní; muži "
+"__PH_PH18_PH_2_9 ostatní) za poslední měsíc vstoupilo na web za poslední "
+"čtyři měsíce {total_number_of_active_members_in_the_last_four_months} členů "
+"({total_number_of_female_active_members_in_the_last_four_months} žen, "
+"{total_number_of_male_active_members_in_the_last_four_months} mužů, "
+"{total_number_of_other_active_members_in_the_last_four_months} dalších; "
+"{total_percent_of_female_active_members_in_the_last_four_months} žen, "
+"{total_percent_of_male_active_members_in_the_last_four_months} mužů, "
+"{total_percent_of_other_active_members_in_the_last_four_months} dalších "
+"mužů), ___PH_3, žen____PH28_9, žen "
+"{total_number_of_other_active_members_in_the_last_eight_months} další ženy, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} muži, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} další) "
+"vstoupilo na stránky za posledních osm měsíců a "
+"{total_number_of_active_members_in_the_last_two_years} členů "
+"({total_number_of_female_active_members_in_the_last_two_years} žen, "
+"{total_number_of_male_active_members_in_the_last_two_years} mužů, __PH_PH4_3"
+" žen, dalších __PH_PH4__9_; další "
+"{total_number_of_active_members_in_the_last_two_years} členů; "
+"{total_percent_of_other_active_members_in_the_last_two_years} další) "
+"vstoupili na web v posledních dvou letech."
 
 #: .\admin\views.py:284
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
 "members registered in the last week. "
-"{total_number_of_active_members_registered_in_the_last_month} active members "
-"registered in the last month. "
+"{total_number_of_active_members_registered_in_the_last_month} active members"
+" registered in the last month. "
 "{total_number_of_active_members_registered_in_the_last_four_months} active "
 "members registered in the last four months. "
-"{total_number_of_active_members_registered_more_than_four_months_ago} active "
-"members registered more than four months ago. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} active"
+" members registered more than four months ago. "
 "{total_number_of_active_members_registered_in_the_last_eight_months} active "
 "members registered in the last eight months. "
 "{total_number_of_active_members_registered_more_than_eight_months_ago} "
@@ -870,27 +860,27 @@ msgid ""
 "members registered in the last two years. "
 "{total_number_of_active_members_registered_more_than_two_years_ago} active "
 "members registered more than two years ago. "
-"{total_number_of_active_members_registered_before_2019_08_01} active members "
-"registered before 1 August 2019."
+"{total_number_of_active_members_registered_before_2019_08_01} active members"
+" registered before 1 August 2019."
 msgstr ""
-"Admin: {total_number_of_active_members_registered_in_the_last_week} active "
-"members registered in the last week. "
-"{total_number_of_active_members_registered_in_the_last_month} active members "
-"registered in the last month. "
-"{total_number_of_active_members_registered_in_the_last_four_months} active "
-"members registered in the last four months. "
-"{total_number_of_active_members_registered_more_than_four_months_ago} active "
-"members registered more than four months ago. "
-"{total_number_of_active_members_registered_in_the_last_eight_months} active "
-"members registered in the last eight months. "
+"Správce: {total_number_of_active_members_registered_in_the_last_week} "
+"aktivních členů registrovaných za poslední týden. "
+"{total_number_of_active_members_registered_in_the_last_month} aktivních "
+"členů registrovaných za poslední měsíc. "
+"{total_number_of_active_members_registered_in_the_last_four_months} "
+"aktivních členů registrovaných za poslední čtyři měsíce. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} "
+"aktivních členů registrovaných před více než čtyřmi měsíci. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} "
+"aktivních členů registrovaných za posledních osm měsíců. "
 "{total_number_of_active_members_registered_more_than_eight_months_ago} "
-"active members registered more than eight months ago. "
-"{total_number_of_active_members_registered_in_the_last_two_years} active "
-"members registered in the last two years. "
-"{total_number_of_active_members_registered_more_than_two_years_ago} active "
-"members registered more than two years ago. "
-"{total_number_of_active_members_registered_before_2019_08_01} active members "
-"registered before 1 August 2019."
+"aktivních členů registrovaných před více než osmi měsíci. "
+"{total_number_of_active_members_registered_in_the_last_two_years} aktivních "
+"členů registrovaných za poslední dva roky. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} "
+"aktivních členů registrovaných před více než dvěma lety. "
+"{total_number_of_active_members_registered_before_2019_08_01} aktivních "
+"členů zaregistrovaných před 1. srpnem 2019."
 
 #: .\admin\views.py:304
 #, python-brace-format
@@ -898,8 +888,8 @@ msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
-"Admin: {total_number_of_active_members_registered_in_year} active members "
-"registered in {year}."
+"Správce: {total_number_of_active_members_registered_in_year} aktivních členů"
+" registrovaných v {year}."
 
 #: .\admin\views.py:359
 #, python-brace-format
@@ -913,179 +903,185 @@ msgid ""
 "{total_percent_of_male_active_members_in_age_range} males, "
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
-"Admin: {total_number_of_active_members_in_age_range} "
-"({total_number_of_female_active_members_in_age_range} females, "
-"{total_number_of_male_active_members_in_age_range} males, "
-"{total_number_of_other_active_members_in_age_range} others) active members "
-"aged {min_age} to {max_age} "
-"({total_percent_of_female_active_members_in_age_range} females, "
-"{total_percent_of_male_active_members_in_age_range} males, "
-"{total_percent_of_other_active_members_in_age_range} others)."
+"Správce: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} ženy, "
+"{total_number_of_male_active_members_in_age_range} muži, "
+"{total_number_of_other_active_members_in_age_range} další) aktivní členové "
+"ve věku {min_age} až {max_age} "
+"({total_percent_of_female_active_members_in_age_range} ženy, "
+"{total_percent_of_male_active_members_in_age_range} muži, "
+"{total_percent_of_other_active_members_in_age_range} další)."
 
 #: .\admin\views.py:423
 #, python-brace-format
 msgid ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"females, "
+"Admin: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
 "males, "
-"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"others) active members aged {min_age} to {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"females, "
-"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"males, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"others) entered the site in the last eight months."
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) entered the site in the last eight months."
 msgstr ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"females, "
+"Správce: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" žen, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"males, "
-"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"others) active members aged {min_age} to {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"females, "
-"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"males, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"others) entered the site in the last eight months."
+"mužů, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" dalších) aktivních členů ve věku {min_age} až {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" žen, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" mužů, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" dalších) vstoupilo na web za posledních osm měsíců."
 
 #: .\admin\views.py:487
 #, python-brace-format
 msgid ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
-"females, "
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months}"
+" "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
 "males, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) active members aged {min_age} to {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
-"females, "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
 "males, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"others) entered the site in the last four months."
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" others) entered the site in the last four months."
 msgstr ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
-"females, "
+"Správce: "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" žen, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
-"males, "
+"mužů, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
-"others) active members aged {min_age} to {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
-"females, "
+"dalších) aktivních členů ve věku {min_age} až {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" žen, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
-"males, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"others) entered the site in the last four months."
+"mužů, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" dalších) vstoupilo na web za poslední čtyři měsíce."
 
 #: .\likes\managers.py:14 .\likes\models.py:48
 msgid "Users cannot like themselves."
-msgstr "Users cannot like themselves."
+msgstr "Uživatelé se nemohou mít rádi."
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr "User already likes other user."
+msgstr "Uživatel už má rád jiného uživatele."
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
-msgstr "User cannot like a blocked user."
+msgstr "Uživatel nemůže dát like zablokovanému uživateli."
 
 #: .\likes\models.py:21
 msgid "from user"
-msgstr "from user"
+msgstr "od uživatele"
 
 #: .\likes\models.py:22
 msgid "to user"
-msgstr "to user"
+msgstr "uživateli"
 
 #: .\likes\models.py:28
 msgid "user like"
-msgstr "user like"
+msgstr "uživatelsky rád"
 
 #: .\likes\models.py:29
 msgid "user likes"
-msgstr "user likes"
+msgstr "uživateli se líbí"
 
 #: .\likes\views.py:28
 msgid "Girls You Like"
-msgstr "Girls You Like"
+msgstr "Dívky, které se vám líbí"
 
 #: .\likes\views.py:29
 msgid "Boys You Like"
-msgstr "Boys You Like"
+msgstr "Kluci, které se vám líbí"
 
 #: .\likes\views.py:30
 msgid "People You Like"
-msgstr "People You Like"
+msgstr "Lidé, které máte rádi"
 
 #: .\likes\views.py:33
 msgid "Girls Who Like You"
-msgstr "Girls Who Like You"
+msgstr "Dívky, které tě mají rády"
 
 #: .\likes\views.py:34
 msgid "Boys Who Like You"
-msgstr "Boys Who Like You"
+msgstr "Kluci, kteří tě mají rádi"
 
 #: .\likes\views.py:35
 msgid "People Who Like You"
-msgstr "People Who Like You"
+msgstr "Lidé, kteří vás mají rádi"
 
 #: .\likes\views.py:37
 msgid "Mutual Likes"
-msgstr "Mutual Likes"
+msgstr "Vzájemné lajky"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Rychlé zápasy"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
-msgstr "Your match settings were saved."
+msgstr "Vaše nastavení zápasu byla uložena."
 
 #: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "Neznámý"
 
 #: .\profiles\widgets.py:64
 msgid "None"
-msgstr "None"
+msgstr "Žádný"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Rychlý zápas [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "About Speedy Match"
+msgstr "O Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
 msgid ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> is a new dating/matching web app for romantic "
-"purposes for singles who are members of <a href=\"https://%(language_code)s."
-"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
-"find matching people for dating and chat with them online. You can add "
-"people as friends on Speedy Net, like people and send them messages. Speedy "
-"Match is open to free registration for people from all countries and ages "
-"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
-"available in %(languages_num)s languages."
+"purposes for singles who are members of <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a>. With Speedy Match you can find matching people for dating and chat "
+"with them online. You can add people as friends on Speedy Net, like people "
+"and send them messages. Speedy Match is open to free registration for people"
+" from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
-"purposes for singles who are members of <a href=\"https://%(language_code)s."
-"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
-"find matching people for dating and chat with them online. You can add "
-"people as friends on Speedy Net, like people and send them messages. Speedy "
-"Match is open to free registration for people from all countries and ages "
-"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
-"available in %(languages_num)s languages."
+"Match\">Speedy Match</a> je nová webová aplikace pro seznamování a párování "
+"pro romantické účely pro nezadané, kteří jsou členy <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a>. S Speedy Match můžete najít odpovídající lidi pro randění a "
+"chatovat s nimi online. Na Speedy Net si můžete přidat lidi jako přátele, "
+"dát jim like a posílat jim zprávy. Speedy Match je otevřen pro bezplatnou "
+"registraci pro lidi ze všech zemí a věkových kategorií (bez věkového "
+"omezení!). Stránka je vhodná pro vegany a vegetariány. Momentálně je k "
+"dispozici v %(languages_num)s jazycích."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1093,25 +1089,25 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"The founders of Speedy Match are vegan, support animal rights and object to "
-"experiments on animals. Speedy Match is a dating app friendly for vegan and "
-"vegetarian people and animals."
+"Zakladatelé Speedy Match jsou vegani, podporují práva zvířat a protestují "
+"proti experimentům na zvířatech. Speedy Match je seznamovací aplikace vhodná"
+" pro vegany a vegetariány a zvířata."
 
 #: .\templates\about\about.html:21
 msgid ""
-"Only people who match your requirements will be able to see your profile and "
-"contact you. We don't allow anonymous searches and Speedy Match profiles are "
-"visible to matching partners only. You can select who will be able to see "
-"your profile and which details will appear on your profile as public, which "
-"details only to friends and which details will be private. Private details "
-"will appear only to you."
+"Only people who match your requirements will be able to see your profile and"
+" contact you. We don't allow anonymous searches and Speedy Match profiles "
+"are visible to matching partners only. You can select who will be able to "
+"see your profile and which details will appear on your profile as public, "
+"which details only to friends and which details will be private. Private "
+"details will appear only to you."
 msgstr ""
-"Only people who match your requirements will be able to see your profile and "
-"contact you. We don't allow anonymous searches and Speedy Match profiles are "
-"visible to matching partners only. You can select who will be able to see "
-"your profile and which details will appear on your profile as public, which "
-"details only to friends and which details will be private. Private details "
-"will appear only to you."
+"Pouze lidé, kteří splňují vaše požadavky, uvidí váš profil a budou vás moci "
+"kontaktovat. Nepovolujeme anonymní vyhledávání a profily Speedy Match jsou "
+"viditelné pouze pro odpovídající partnery. Můžete si vybrat, kdo bude moci "
+"vidět váš profil a které podrobnosti se ve vašem profilu zobrazí jako "
+"veřejné, které pouze přátelům a které podrobnosti budou soukromé. Soukromé "
+"údaje se zobrazí pouze vám."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1119,39 +1115,43 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Match today to find matching partners, it only takes a few minutes. "
-"<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
+"Všechny funkce na Speedy Net a Speedy Match jsou zdarma. Připojte se ke "
+"Speedy Match ještě dnes a najděte odpovídající partnery, zabere to jen pár "
+"minut. <a href=\"/\" title=\"Join Speedy Match\">Klikněte sem</a> a připojte"
+" se."
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"Speedy Match is a free software & open source project. If you want to help "
-"developing and improving Speedy Match, please contact me by email."
+"Speedy Match je bezplatný software a projekt s otevřeným zdrojovým kódem. "
+"Pokud chcete pomoci s vývojem a vylepšením Speedy Match, kontaktujte mě "
+"prosím e-mailem."
 
 #: .\templates\about\about.html:27
 msgid ""
-"Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Match is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Match je pojmenován po <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, fence, která s námi byla mnoho let a zemřela v "
+"roce 2003. Speedy porodila v roce 1988 7 štěňat."
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match is currently in alpha. It was launched in August 2019. The "
-"English version of Speedy Match is in production."
+"Speedy Match je momentálně ve verzi alfa. Byl spuštěn v srpnu 2019. Anglická"
+" verze Speedy Match je ve výrobě."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
-msgstr "Thank you and good luck,"
+msgstr "Děkuji a přeji hodně štěstí,"
 
 #: .\templates\about\about.html:32
 msgid "Uri Rodberg"
@@ -1159,117 +1159,118 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Zakladatel a ředitel Speedy Net a Speedy Match,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr "Společnost Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
-msgstr "Registration Step"
+msgstr "Krok registrace"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Welcome"
-msgstr "Welcome"
+msgstr "Vítejte"
 
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Vítejte v %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
 #: .\templates\matches\settings\base.html:41
 #: .\templates\profiles\user_extra_info_widget.html:18
 msgid "About me"
-msgstr "About me"
+msgstr "O mně"
 
 #: .\templates\accounts\edit_profile\activate.html:48
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "About my match"
+msgstr "O mém zápase"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
-msgstr "Back"
+msgstr "Zadní"
 
 #: .\templates\accounts\edit_profile\activate.html:79
 msgid "Next step"
-msgstr "Next step"
+msgstr "Další krok"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Váš účet Speedy Net není aktivní. Vstupte na tuto stránku a aktivujte ji."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "Admin - All Matches"
+msgstr "Admin - Všechny zápasy"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Your Matches"
+msgstr "Vaše zápasy"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "Matches"
+msgstr "Zápasy"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "Likes"
+msgstr "Líbí se"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr "Your Match Settings"
+msgstr "Vaše nastavení shody"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Nastavení shody"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "A vegan friendly website"
+msgstr "Web přátelský k veganům"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "likes you."
+msgstr "má tě rád."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Jste přihlášeni k odběru tohoto typu oznámení z %(site_name)s. Chcete-li "
+"změnit nastavení oznámení nebo se odhlásit, přejděte na tuto stránku:"
 
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Someone likes you on %(site_name)s"
+msgstr "Někdo vás má rád na %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "You don't have any friends yet."
+msgstr "Zatím nemáte žádné přátele."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Your Friends"
+msgstr "Vaši přátelé"
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "You have no likes here."
+msgstr "Nemáte zde žádné lajky."
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
-msgstr "Free online dating"
+msgstr "Seznamka online zdarma"
 
 #: .\templates\main\main_page.html:10
 msgid ""
@@ -1278,118 +1279,118 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Speedy Match is a new dating/matching web app for romantic purposes for "
-"singles who are members of Speedy Net. With Speedy Match you can find "
-"matching people for dating and chat with them online. The site is vegan and "
-"vegetarian friendly."
+"Speedy Match je nová webová aplikace pro seznamování / párování pro "
+"romantické účely pro nezadané, kteří jsou členy Speedy Net. S Speedy Match "
+"můžete najít odpovídající lidi pro randění a chatovat s nimi online. Stránka"
+" je vhodná pro vegany a vegetariány."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
-"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr "hledáš přítele? hledáš přítelkyni? Přijďte se seznámit se Speedym!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Match today to find matching partners, it only takes a few minutes."
+"Všechny funkce na Speedy Net a Speedy Match jsou zdarma. Připojte se ke "
+"Speedy Match ještě dnes a najděte odpovídající partnery, zabere to jen pár "
+"minut."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
-msgstr "Update matches"
+msgstr "Aktualizovat zápasy"
 
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "Diet"
+msgstr "Strava"
 
 #: .\templates\matches\match_list.html:60
 msgid "Age:"
-msgstr "Age:"
+msgstr "Stáří:"
 
 #: .\templates\matches\match_list.html:74
 msgid "Refresh"
-msgstr "Refresh"
+msgstr "Obnovit"
 
 #: .\templates\matches\match_list.html:81
 msgid "Add more options"
-msgstr "Add more options"
+msgstr "Přidejte další možnosti"
 
 #: .\templates\matches\match_list.html:110
 msgid ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
 msgstr ""
-"You don't have any matches yet. Try to broaden your search settings or check "
-"again later."
+"Zatím nemáte žádné zápasy. Zkuste rozšířit nastavení vyhledávání nebo to "
+"znovu zkontrolujte později."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "Back to Matches"
+msgstr "Zpět na zápasy"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
-msgstr "Profile Info"
+msgstr "Informace o profilu"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "Friends"
+msgstr "Přátelé"
 
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "Like"
+msgstr "Jako"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "Unlike"
+msgstr "Na rozdíl od"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Your friend"
+msgstr "Váš přítel"
 
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "likes you"
+msgstr "má tě rád"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "You like"
+msgstr "líbí se ti"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr "Friendship request sent"
+msgstr "Žádost o přátelství odeslána"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
-msgstr "More Information"
+msgstr "Další informace"
 
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
-msgstr "Where do I live?"
+msgstr "kde bydlím?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Smoking status"
+msgstr "Stav kouření"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "Relationship status"
+msgstr "Stav vztahu"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Last visited Speedy Match"
+msgstr "Poslední návštěva Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "Match rank"
+msgstr "Pořadí zápasu"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr "There is no match."
+msgstr "Žádná shoda."
