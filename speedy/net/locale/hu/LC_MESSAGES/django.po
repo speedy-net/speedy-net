@@ -160,11 +160,11 @@ msgstr "Ismerősök száma az utolsó felhasználó látogatása során"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net profil"
+msgstr "Speedy Net profil (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net profilok"
+msgstr "Speedy Net profilok (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -268,7 +268,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "A Speedy Net nevét <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>-ról kapta, egy nőstény kutyáról, aki sok éven át"
 " velünk volt, és 2003-ban pusztult el. Speedy 1988-ban 7 kiskutyát szült."
 

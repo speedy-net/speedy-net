@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Conturi Speedy Net"
+msgstr "Conturi Speedy Net (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -160,11 +160,11 @@ msgstr "Numărul de prieteni la ultima vizită a utilizatorului"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Speedy Net"
+msgstr "Profil Speedy Net (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profiluri Speedy Net"
+msgstr "Profiluri Speedy Net (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -269,7 +269,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net poartă numele lui <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți ani și a "
 "murit în 2003. Speedy a născut 7 căței în 1988."
 

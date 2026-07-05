@@ -122,7 +122,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Comptes de xarxa ràpida"
+msgstr "Comptes de xarxa ràpida (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -152,7 +152,7 @@ msgstr "Sí. Esborra el meu compte."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Usuari de xarxa ràpida"
+msgstr "Usuari de xarxa ràpida (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +164,11 @@ msgstr "Nombre d'amics a la darrera visita de l'usuari"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Perfil Speedy Net"
+msgstr "Perfil Speedy Net (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Perfils Speedy Net"
+msgstr "Perfils Speedy Net (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -272,7 +272,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net porta el nom de <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, una gossa que va estar amb nosaltres durant "
 "molts anys i que va morir el 2003. Speedy va donar a llum 7 cadells el 1988."
 

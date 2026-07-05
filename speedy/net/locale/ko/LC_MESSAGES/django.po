@@ -267,7 +267,7 @@ msgstr "감사드리며 행운을 빕니다,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr "유리 로드버그"
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
@@ -275,7 +275,7 @@ msgstr "Speedy Net과 Speedy Match의 설립자 겸 디렉터,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "스피디 파즈 테크놀로지스(Speedy Paz Technologies Ltd.)"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"

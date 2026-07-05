@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Спиди Нет сметки"
+msgstr "Спиди Нет сметки (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "да Изтрий акаунта ми."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Потребител на Speedy Net"
+msgstr "Потребител на Speedy Net (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -185,7 +185,7 @@ msgstr "Speedy Net [алфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Относно Спиди Нет"
+msgstr "Относно Спиди Нет (Speedy Net)"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -225,7 +225,7 @@ msgstr ""
 "добавяте като приятели само хора, които познавате лично. Можете да изберете "
 "кои подробности ще се показват в профила ви като публични, кои подробности "
 "само за приятели и кои подробности ще бъдат лични. Личните данни ще се "
-"показват само на вас."
+"показват само на вас. (Speedy Net)"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -268,13 +268,15 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net е кръстен на <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в продължение на "
 "много години и умря през 2003 г. Speedy роди 7 кученца през 1988 г."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Спиди Нет в момента е в алфа версия. Лансиран е през юни 2012 г."
+msgstr ""
+"Спиди Нет в момента е в алфа версия. Лансиран е през юни 2012 г. (Speedy "
+"Net)"
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -309,7 +311,7 @@ msgstr "Моля, потвърдете своя имейл адрес."
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 "Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате."
+"активирате. (Speedy Net)"
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -355,7 +357,8 @@ msgstr "Speedy Match – запознанства със Speedy"
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди!"
+"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди! "
+"(Speedy)"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

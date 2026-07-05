@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Akun Bersih Cepat"
+msgstr "Akun Bersih Cepat (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ya. Hapus akun saya."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Pengguna Internet Cepat"
+msgstr "Pengguna Internet Cepat (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Jumlah teman pada kunjungan pengguna terakhir"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Jaringan Cepat"
+msgstr "Profil Jaringan Cepat (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profil Net Cepat"
+msgstr "Profil Net Cepat (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,7 +181,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Jaringan Cepat [alfa]"
+msgstr "Jaringan Cepat [alfa] (Speedy Net)"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -269,7 +269,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net diberi nama setelah <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama kami selama "
 "bertahun-tahun dan meninggal pada tahun 2003. Speedy melahirkan 7 anak "
 "anjing pada tahun 1988."
@@ -354,7 +354,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Pertandingan Cepat – berkencan dengan Speedy"
+msgstr "Pertandingan Cepat – berkencan dengan Speedy (Speedy Match)"
 
 #: .\templates\main\main_page.html:49
 msgid ""
