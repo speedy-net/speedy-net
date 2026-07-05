@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Účty rýchlej siete"
+msgstr "Účty rýchlej siete (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "áno. Odstrániť môj účet."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Používateľ rýchlej siete"
+msgstr "Používateľ rýchlej siete (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Počet priateľov pri poslednej návšteve používateľa"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil rýchlej siete"
+msgstr "Profil rýchlej siete (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profily rýchlej siete"
+msgstr "Profily rýchlej siete (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -267,7 +267,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net je pomenovaný po <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, sučke, ktorá bola s nami mnoho rokov a zomrela "
 "v roku 2003. Speedy porodila v roku 1988 7 šteniatok."
 

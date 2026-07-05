@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-konti"
+msgstr "Speedy Net-konti (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ja. Slet min konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Hurtig netbruger"
+msgstr "Hurtig netbruger (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Antal venner ved sidste brugers besøg"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net-profil"
+msgstr "Speedy Net-profil (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net-profiler"
+msgstr "Speedy Net-profiler (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -267,7 +267,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net er opkaldt efter <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, en hunhund, som var hos os i mange år og døde i"
 " 2003. Speedy fødte 7 hvalpe i 1988."
 

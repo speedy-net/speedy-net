@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "บัญชีเน็ตที่รวดเร็ว"
+msgstr "บัญชีเน็ตที่รวดเร็ว (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -149,7 +149,7 @@ msgstr "ใช่. ลบบัญชีของฉัน"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "ผู้ใช้เน็ตที่รวดเร็ว"
+msgstr "ผู้ใช้เน็ตที่รวดเร็ว (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "จำนวนเพื่อนในการเข้าชมคร
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "โปรไฟล์ Speedy Net"
+msgstr "โปรไฟล์ Speedy Net (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "โปรไฟล์เน็ตที่รวดเร็ว"
+msgstr "โปรไฟล์เน็ตที่รวดเร็ว (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -186,7 +186,7 @@ msgstr "Speedy Net [อัลฟ่า]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "เกี่ยวกับ สปีดี้ เน็ต"
+msgstr "เกี่ยวกับ สปีดี้ เน็ต (Speedy Net)"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -268,7 +268,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net ตั้งชื่อตาม <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a> "
 "สุนัขตัวเมียที่อยู่กับเรามานานหลายปีและเสียชีวิตในปี 2546 Speedy "
 "ให้กำเนิดลูกสุนัข 7 ตัวในปี 1988"
@@ -291,7 +291,7 @@ msgstr "ผู้ก่อตั้งและผู้อำนวยการ
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "บริษัท สปีดี้แพซ เทคโนโลยีส์ จำกัด"
+msgstr "บริษัท สปีดี้แพซ เทคโนโลยีส์ จำกัด (Speedy Paz Technologies Ltd.)"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -353,7 +353,7 @@ msgstr "Speedy Match – ออกเดท Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "กำลังมองหาแฟน? กำลังมองหาแฟน? มาพบกับสปีดี้!"
+msgstr "กำลังมองหาแฟน? กำลังมองหาแฟน? มาพบกับสปีดี้! (Speedy)"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

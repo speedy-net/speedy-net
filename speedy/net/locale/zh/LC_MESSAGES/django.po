@@ -107,7 +107,7 @@ msgstr "您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您使用 
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "快速網路帳戶"
+msgstr "快速網路帳戶 (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -134,7 +134,7 @@ msgstr "是的。刪除我的帳戶。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "快速網路用戶"
+msgstr "快速網路用戶 (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -146,11 +146,11 @@ msgstr "用戶上次造訪時的好友數量"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "速網簡介"
+msgstr "速網簡介 (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "快速網路設定檔"
+msgstr "快速網路設定檔 (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -165,11 +165,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "極速網 [alpha]"
+msgstr "極速網 [alpha] (Speedy Net)"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "關於極速網"
+msgstr "關於極速網 (Speedy Net)"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -238,7 +238,7 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net以<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"Speedy Net以<a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>命名，是一隻陪伴我們多年的母狗，於2003年去世。 1988年，Speedy生下了7隻小狗。"
 
 #: .\templates\about\about.html:31
@@ -255,11 +255,11 @@ msgstr "尤里·羅德伯格"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "速網、速配創辦人兼董事，"
+msgstr "速網、速配創辦人兼董事， (Speedy Net) (Speedy Match)"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "快速帕茲技術有限公司"
+msgstr "快速帕茲技術有限公司 (Speedy Paz Technologies Ltd.)"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -312,7 +312,7 @@ msgstr "Speedy Net 和 Speedy Match 上的所有功能都是免費的。今天�
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "快速配對 – 約會快速"
+msgstr "快速配對 – 約會快速 (Speedy Match) (Speedy)"
 
 #: .\templates\main\main_page.html:49
 msgid ""

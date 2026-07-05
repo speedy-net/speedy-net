@@ -113,7 +113,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "スピーディーなネット口座"
+msgstr "スピーディーなネット口座 (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -141,7 +141,7 @@ msgstr "はい。アカウントを削除してください。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "スピーディネットユーザー"
+msgstr "スピーディネットユーザー (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -153,11 +153,11 @@ msgstr "前回のユーザーの訪問時の友人の数"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "スピーディーネットプロファイル"
+msgstr "スピーディーネットプロファイル (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "スピーディなネットプロファイル"
+msgstr "スピーディなネットプロファイル (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -173,11 +173,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "スピーディーネット【α】"
+msgstr "スピーディーネット【α】 (Speedy Net)"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "スピーディネットについて"
+msgstr "スピーディネットについて (Speedy Net)"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -252,8 +252,9 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "スピーディ ネットの名前は、長年私たちと一緒に暮らし、2003 年に亡くなったメス犬 <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> にちなんで名付けられました。スピーディは 1988 年に 7 匹の子犬を出産しました。"
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> にちなんで名付けられました。スピーディは 1988 年に 7 匹の子犬を出産しました。 "
+"(Speedy Net)"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -273,7 +274,7 @@ msgstr "Speedy Net および Speedy Match の創設者兼ディレクター、"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "スピーディ・パス・テクノロジーズ株式会社"
+msgstr "スピーディ・パス・テクノロジーズ株式会社 (Speedy Paz Technologies Ltd.)"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -328,12 +329,12 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "スピーディマッチ – スピーディとのデート"
+msgstr "スピーディマッチ – スピーディとのデート (Speedy Match) (Speedy)"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "彼氏を探していますか？ガールフレンドを探していますか？スピーディに会いに来てください！"
+msgstr "彼氏を探していますか？ガールフレンドを探していますか？スピーディに会いに来てください！ (Speedy)"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

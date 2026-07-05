@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "حساب های خالص سریع"
+msgstr "حساب های خالص سریع (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "بله. اکانت من رو پاک کن"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "کاربر شبکه سریع"
+msgstr "کاربر شبکه سریع (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "تعداد دوستان در آخرین بازدید کاربر"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "مشخصات خالص سریع"
+msgstr "مشخصات خالص سریع (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "پروفایل های شبکه سریع"
+msgstr "پروفایل های شبکه سریع (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,11 +181,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "شبکه سریع [آلفا]"
+msgstr "شبکه سریع [آلفا] (Speedy Net)"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "درباره اسپیدی نت"
+msgstr "درباره اسپیدی نت (Speedy Net)"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -266,7 +266,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net به افتخار <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a> نامگذاری شده است، یک سگ ماده که سالها با ما بود "
 "و در سال 2003 مرد. اسپیدی در سال 1988 7 توله سگ به دنیا آورد."
 
@@ -284,7 +284,7 @@ msgstr "اوری رودبرگ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "بنیانگذار و مدیر اسپیدی نت و اسپیدی مچ،"
+msgstr "بنیانگذار و مدیر اسپیدی نت و اسپیدی مچ، (Speedy Net) (Speedy Match)"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -350,7 +350,8 @@ msgstr "Speedy Match – دوستیابی Speedy"
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"دنبال دوست پسر میگردی؟ دنبال دوست دختر میگردی؟ بیا و با اسپیدی ملاقات کن!"
+"دنبال دوست پسر میگردی؟ دنبال دوست دختر میگردی؟ بیا و با اسپیدی ملاقات کن! "
+"(Speedy)"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

@@ -124,7 +124,7 @@ msgstr "Speedy Net-tilit"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
-msgstr "Salasanasi"
+msgstr "Your password"
 
 #: .\accounts\forms.py:19
 msgid ""

@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net računi"
+msgstr "Speedy Net računi (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Da. Izbriši moj račun."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Korisnik Speedy Neta"
+msgstr "Korisnik Speedy Neta (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Broj prijatelja pri zadnjem posjetu korisnika"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net profil"
+msgstr "Speedy Net profil (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net profili"
+msgstr "Speedy Net profili (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -267,7 +267,7 @@ msgid ""
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net je dobio ime po <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>, ženki psa koja je bila s nama mnogo godina i "
 "uginula 2003. Speedy je okotila 7 štenaca 1988."
 
