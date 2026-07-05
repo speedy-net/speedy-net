@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,7 +508,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Cuentas Speedy Match"
+msgstr "Cuentas Speedy Match (Speedy Match Accounts)"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -605,7 +605,7 @@ msgstr "Género para coincidencia"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Usuario de Speedy Match"
+msgstr "Usuario de Speedy Match (Speedy Match User)"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -704,11 +704,11 @@ msgstr "Número de coincidencias en la última búsqueda del usuario"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Perfil de Speedy Match"
+msgstr "Perfil de Speedy Match (Speedy Match Profile)"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Perfiles de Speedy Match"
+msgstr "Perfiles de Speedy Match (Speedy Match Profiles)"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1050,7 +1050,7 @@ msgstr "Me gusta mutuos"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Coincidencias Speedy Match"
+msgstr "Coincidencias Speedy Match (Speedy Match Matches)"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1149,7 +1149,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match lleva el nombre de <a href=\"https://www.facebook.com/speedy."
+"Speedy Match lleva el nombre de <a href=\"https://www.facebook.com/Speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, una perra que estuvo con "
 "nosotros durante muchos años y murió en 2003. Speedy dio a luz a 7 cachorros "
 "en 1988."

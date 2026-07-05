@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,7 +511,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match-accounts"
+msgstr "Speedy Match-accounts (Speedy Match Accounts)"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -608,7 +608,7 @@ msgstr "Geslacht voor matchen"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match Gebruiker"
+msgstr "Speedy Match Gebruiker (Speedy Match User)"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -707,11 +707,11 @@ msgstr "Aantal matches in de laatste zoekopdracht van de gebruiker"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profiel"
+msgstr "Speedy Match Profiel (Speedy Match Profile)"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profielen"
+msgstr "Speedy Match Profielen (Speedy Match Profiles)"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1147,7 +1147,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match is vernoemd naar <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match is vernoemd naar <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, een teefje dat al vele jaren bij "
 "ons was en stierf in 2003. Speedy beviel in 1988 van 7 puppy's."
 

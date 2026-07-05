@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 02:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-Konten"
+msgstr "Speedy Net-Konten (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -153,7 +153,7 @@ msgstr "Ja. Lösche mein Konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Benutzer"
+msgstr "Speedy Net Benutzer (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -165,11 +165,11 @@ msgstr "Anzahl Freunde beim letzten Besuch des Benutzers"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net-Profil"
+msgstr "Speedy Net-Profil (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net-Profile"
+msgstr "Speedy Net-Profile (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -271,7 +271,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net ist nach <a href=\"https://www.facebook.com/speedy.the.female."
+"Speedy Net ist nach <a href=\"https://www.facebook.com/Speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a> benannt, einer Hündin, die jahrelang mit "
 "uns lebte und im Jahre 2003 verstarb. Speedy brachte 1988 7 Welpen auf die "
 "Welt."

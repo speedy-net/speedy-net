@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 02:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net 계정"
+msgstr "Speedy Net 계정 (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -149,7 +149,7 @@ msgstr "네. 내 계정을 삭제하세요."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net 사용자"
+msgstr "Speedy Net 사용자 (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "최근 사용자 방문에서 친구의 수"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net 프로필"
+msgstr "Speedy Net 프로필 (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net 프로필"
+msgstr "Speedy Net 프로필 (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -260,7 +260,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net은 오랜 세월 저희와 함께 하고 2003년에 세상을 떠난 암컷 반려견인 "
-"<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"<a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>의 이름을 딴 것입니다. Speedy는 1988년 7마리의 강"
 "아지를 낳았습니다."
 

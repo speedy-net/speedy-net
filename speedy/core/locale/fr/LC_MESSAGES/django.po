@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1945,7 +1945,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Comptes Speedy Core"
+msgstr "Comptes Speedy Core (Speedy Core Accounts)"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2517,7 +2517,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Application de base Speedy Core"
+msgstr "Application de base Speedy Core (Speedy Core Base App)"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3054,7 +3054,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Speedy Net"
+msgstr "Blog Speedy Net (Speedy Net Blog)"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3062,7 +3062,7 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Logiciel Speedy"
+msgstr "Logiciel Speedy (Speedy Software)"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
@@ -3099,15 +3099,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Boutique Speedy Net"
+msgstr "Boutique Speedy Net (Speedy Net's Shop)"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Boutique Speedy Match"
+msgstr "Boutique Speedy Match (Speedy Match's Shop)"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Boutique Speedy S-logo"
+msgstr "Boutique Speedy S-logo (Speedy S-logo Shop)"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3143,11 +3143,11 @@ msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Logiciel Speedy Mail"
+msgstr "Logiciel Speedy Mail (Speedy Mail Software)"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Boutique Speedy Composer"
+msgstr "Boutique Speedy Composer (Speedy Composer's Shop)"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"

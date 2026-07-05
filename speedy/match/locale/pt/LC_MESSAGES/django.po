@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,7 +508,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Contas Speedy Match"
+msgstr "Contas Speedy Match (Speedy Match Accounts)"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -605,7 +605,7 @@ msgstr "Gênero para correspondência"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Utilizador do Speedy Match"
+msgstr "Utilizador do Speedy Match (Speedy Match User)"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -704,11 +704,11 @@ msgstr "Número de correspondências na última busca do utilizador"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Perfil do Speedy Match"
+msgstr "Perfil do Speedy Match (Speedy Match Profile)"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Perfis do Speedy Match"
+msgstr "Perfis do Speedy Match (Speedy Match Profiles)"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1048,7 +1048,7 @@ msgstr "Curtidas recíprocas"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Correspondências do Speedy Match"
+msgstr "Correspondências do Speedy Match (Speedy Match Matches)"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1148,7 +1148,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "O Speedy Match recebeu este nome por causa da <a href=\"https://www.facebook."
-"com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, uma cachorra que "
+"com/Speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, uma cachorra que "
 "viveu conosco por muitos anos e morreu em 2003. Speedy deu à luz 7 filhotes "
 "em 1988."
 

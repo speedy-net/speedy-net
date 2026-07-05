@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1920,7 +1920,7 @@ msgstr "Profiilikuvasi ei saa olla läpinäkyvä. Lataa läpinäkymätön kuva."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Tilit"
+msgstr "Speedy Core Tilit (Speedy Core Accounts)"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2486,7 +2486,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Perusappi"
+msgstr "Speedy Core Perusappi (Speedy Core Base App)"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3110,7 +3110,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composerin kauppa"
+msgstr "Speedy Composerin kauppa (Speedy Composer's Shop)"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"

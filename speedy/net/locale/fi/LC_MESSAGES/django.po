@@ -1,12 +1,12 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 02:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-tilit"
+msgstr "Speedy Net-tilit (Speedy Net Accounts)"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -149,7 +149,7 @@ msgstr "Kyllä. Poista tilini."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Käyttäjä"
+msgstr "Speedy Net Käyttäjä (Speedy Net User)"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "Ystävien määrä käyttäjän edellisellä vierailulla"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profiilit"
+msgstr "Speedy Net Profiilit (Speedy Net Profile)"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiilit"
+msgstr "Speedy Net Profiilit (Speedy Net Profiles)"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -263,7 +263,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net on nimetty <a href=\"https://www.facebook.com/speedy.the.female."
+"Speedy Net on nimetty <a href=\"https://www.facebook.com/Speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a> mukaan, tyttökoiran, joka oli meillä monta "
 "vuotta ja kuoli vuonna 2003. Speedy sai 7 pentua vuonna 1988."
 
@@ -344,7 +344,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy match - deittaile Speedyä"
+msgstr "Speedy Match - deittaile Speedyä"
 
 #: .\templates\main\main_page.html:49
 msgid ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 02:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,7 +511,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match-Konten"
+msgstr "Speedy Match-Konten (Speedy Match Accounts)"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -608,7 +608,7 @@ msgstr "Geschlecht, das übereinstimmen muss"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match Benutzer"
+msgstr "Speedy Match Benutzer (Speedy Match User)"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -707,11 +707,11 @@ msgstr "Anzahl Matches bei der letzten Suche des Benutzers"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match-Profil"
+msgstr "Speedy Match-Profil (Speedy Match Profile)"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match-Profile"
+msgstr "Speedy Match-Profile (Speedy Match Profiles)"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1052,7 +1052,7 @@ msgstr "Gegenseitige Likes"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match-Matches"
+msgstr "Speedy Match-Matches (Speedy Match Matches)"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1151,7 +1151,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match ist nach <a href=\"https://www.facebook.com/speedy.the.female."
+"Speedy Match ist nach <a href=\"https://www.facebook.com/Speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a> benannt, einer Hündin, die jahrelang mit "
 "uns lebte und im Jahre 2003 verstarb. Speedy brachte 1988 7 Welpen auf die "
 "Welt."
