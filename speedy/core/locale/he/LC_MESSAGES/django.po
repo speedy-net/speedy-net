@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -64,8 +64,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, ברוכה "
-"השבה ל%(site_name)s!"
+"היי <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, ברוכה"
+" השבה ל%(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -394,8 +394,8 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפי בפרופיל של %(user_name)s בספידי "
 "נט."
@@ -404,8 +404,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "ל%(user_name)s יש גם פרופיל בספידי נט. צפה בפרופיל של %(user_name)s בספידי "
 "נט."
@@ -414,11 +414,11 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי "
-"נט."
+"ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי"
+" נט."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -820,8 +820,8 @@ msgstr "שם משתמש/ת"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "את רשומה לקבלת התראות מסוג זה מ%(site_name)s. היכנסי לדף זה כדי לשנות את "
 "הגדרות ההתראות שלך או לבטל את הסכמתך:"
@@ -830,8 +830,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "אתה רשום לקבלת התראות מסוג זה מ%(site_name)s. היכנס לדף זה כדי לשנות את "
 "הגדרות ההתראות שלך או לבטל את הסכמתך:"
@@ -840,11 +840,11 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את "
-"הגדרות ההתראות שלך או לבטל את הסכמתך:"
+"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את"
+" הגדרות ההתראות שלך או לבטל את הסכמתך:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -1392,7 +1392,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן שתבחר/י."
+"החשבונות שלך בספידי נט וספידי מץ' הוקפאו. תוכל/י להפעיל אותם בכל זמן "
+"שתבחר/י."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1473,8 +1474,8 @@ msgstr "שלח/י"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסירי חברים/ות לפני שאת ממשיכה."
@@ -1483,8 +1484,8 @@ msgstr ""
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסר חברים/ות לפני שאתה ממשיך."
@@ -1493,8 +1494,8 @@ msgstr ""
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "כבר יש לך {0} חברות וחברים. לא יכולים להיות לך יותר מ-{1} חברות וחברים "
 "בספידי נט. אנא הסר/י חברים/ות לפני שאת/ה ממשיך/ה."
@@ -1764,8 +1765,8 @@ msgstr "חברים/ות"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1778,8 +1779,8 @@ msgstr ""
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1792,8 +1793,8 @@ msgstr ""
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1862,8 +1863,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה/י "
-"בפרופיל של משתמשת זאת בספידי נט."
+"המשתמשת הזאת לא מתאימה לפרופיל שלך, אבל באפשרותך לראות אותה בספידי נט. צפה/י"
+" בפרופיל של משתמשת זאת בספידי נט."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -2233,11 +2234,11 @@ msgstr ""
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
-"שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו "
-"של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית."
+"שם המשתמש/ת חייב להתחיל עם 4 אותיות או יותר, לאחר מכן ניתן להוסיף מספר כלשהו"
+" של ספרות. ניתן להוסיף מקפים בין מילים. שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2257,8 +2258,8 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
@@ -2266,8 +2267,8 @@ msgstr[0] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תו אלפאנומרי לכל היותר (מכיל "
 "%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 msgstr[1] ""
-"נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל "
-"%(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
+"נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים אלפאנומריים לכל היותר (מכיל"
+" %(show_value)d). שם המשתמש/ת חייב להיות באנגלית."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2280,7 +2281,8 @@ msgid_plural ""
 msgstr[0] ""
 "נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תו לפחות (מכיל %(show_value)d)."
 msgstr[1] ""
-"נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל %(show_value)d)."
+"נא לוודא ששם המשתמש/ת מכיל %(limit_value)d תווים לפחות (מכיל "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2320,9 +2322,11 @@ msgstr[1] "הסיסמה שלך חייבת להכיל לפחות %(min_length)d �
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] "סיסמה זו ארוכה מדי. היא יכולה להכיל תו %(max_length)d לכל היותר."
-msgstr[1] "סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
+msgstr[1] ""
+"סיסמה זו ארוכה מדי. היא יכולה להכיל %(max_length)d תווים לכל היותר."
 
 #: .\accounts\validators.py:145
 #, python-format
@@ -2336,7 +2340,8 @@ msgstr[1] "על הסיסמה שלך להכיל עד %(max_length)d תווים."
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr "הסיסמה שלך חייבת להכיל לפחות %(min_unique_characters)d תווים ייחודיים."
+msgstr ""
+"הסיסמה שלך חייבת להכיל לפחות %(min_unique_characters)d תווים ייחודיים."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
@@ -2362,11 +2367,11 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
-"אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG "
-"מתקבלים."
+"אין לך אפשרות להשתמש בפורמט זה לתמונת הפרופיל שלך. רק פורמטים של JPEG או PNG"
+" מתקבלים."
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
@@ -2388,9 +2393,9 @@ msgstr "הפכת את כתובת הדואר האלקטרוני הזאת לראש
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2412,9 +2417,10 @@ msgstr ""
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2441,8 +2447,8 @@ msgstr ""
 "{total_number_of_members_registered_in_the_last_two_years} חברים. "
 "{total_number_of_members_registered_more_than_two_years_ago} חברים נרשמו "
 "לאתר לפני יותר משנתיים. "
-"{total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני "
-"1 באוגוסט 2019."
+"{total_number_of_members_registered_before_2019_08_01} חברים נרשמו לאתר לפני"
+" 1 באוגוסט 2019."
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2459,7 +2465,7 @@ msgstr "אפליקציית בסיס Speedy Core"
 
 #: .\base\fields.py:17
 msgid "ID"
-msgstr "ID"
+msgstr "תְעוּדַת זֶהוּת"
 
 #: .\base\utils.py:417
 msgctxt "timesince"
@@ -2676,23 +2682,23 @@ msgstr "הולנדית"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr ""
+msgstr "יַפָּנִית"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr ""
+msgstr "רוּסִי"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr ""
+msgstr "סִינִית"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr ""
+msgstr "פּוֹלָנִית"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr ""
+msgstr "פַּרסִית"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
@@ -2700,27 +2706,27 @@ msgstr "קוריאנית"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr ""
+msgstr "עֲרָבִית"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr ""
+msgstr "אינדונזית"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr ""
+msgstr "אוקראינית"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr ""
+msgstr "טוּרקִית"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr ""
+msgstr "וייטנאמית"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr ""
+msgstr "צ'כית"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
@@ -2732,63 +2738,63 @@ msgstr "פינית"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr ""
+msgstr "הוּנגָרִי"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr ""
+msgstr "תאילנדית"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr ""
+msgstr "יוונית"
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr ""
+msgstr "מלאית"
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr ""
+msgstr "סרבית"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr ""
+msgstr "רומנית"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr ""
+msgstr "בנגלית"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr ""
+msgstr "קטלאנית"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr ""
+msgstr "נורבגית (בוקמול)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr ""
+msgstr "בולגרית"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr ""
+msgstr "דַנִי"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr ""
+msgstr "סלובקית"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
-msgstr ""
+msgstr "הינדי"
 
 #: .\settings\base_with_login.py:101
 msgid "Estonian"
-msgstr ""
+msgstr "אסטונית"
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr ""
+msgstr "קרואטית"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -3092,8 +3098,8 @@ msgstr "את/ה לא חוסם/ת אף אחד."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
 "אם יש לכם שאלות, הצעות או אם אתם מעוניינים להצטרף לצוות - צרו איתנו קשר "
 "בדואר אלקטרוני."
@@ -3162,11 +3168,11 @@ msgstr "קרא/י אותה:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את "
-"הגדרות ההתראות שלך או לבטל את הסכמתך:"
+"את/ה רשומ/ה לקבלת התראות מסוג זה מ%(site_name)s. היכנס/י לדף זה כדי לשנות את"
+" הגדרות ההתראות שלך או לבטל את הסכמתך:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3239,15 +3245,15 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים שלכם, "
-"כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה שלכם. "
+"אנחנו מכבדים את הפרטיות שלכם. אנחנו לא נמכור או נשתף את הפרטים האישיים שלכם,"
+" כולל השם שלכם, תאריך הלידה שלכם, כתובת הדואר האלקטרוני שלכם והסיסמה שלכם. "
 "הודעות שאתם שולחים לאנשים בספידי נט הן פרטיות ולא ישותפו עם אנשים או אתרים "
 "אחרים. הסיסמה שלכם שמורה מוצפנת בבסיס הנתונים שלנו."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
@@ -3271,16 +3277,16 @@ msgid ""
 "after you deactivate it whenever you like."
 msgstr ""
 "אם הקפאתם את פעילות החשבון שלכם בספידי נט או בספידי מץ', הפרופיל שלכם באותו "
-"אתר יוסר מהאתר ולא תופיעו בתוצאות החיפוש של אנשים אחרים באתר. שימו לב שהקפאת "
-"החשבון בספידי נט מקפיאה אוטומטית גם את החשבון בספידי מץ'. ניתן להקפיא רק את "
-"החשבון בספידי מץ', ובמקרה כזה החשבון שלכם בספידי נט יישאר פעיל. ניתן להפעיל "
-"מחדש את החשבון לאחר שהקפאתם אותו, מתי שתרצו."
+"אתר יוסר מהאתר ולא תופיעו בתוצאות החיפוש של אנשים אחרים באתר. שימו לב שהקפאת"
+" החשבון בספידי נט מקפיאה אוטומטית גם את החשבון בספידי מץ'. ניתן להקפיא רק את"
+" החשבון בספידי מץ', ובמקרה כזה החשבון שלכם בספידי נט יישאר פעיל. ניתן להפעיל"
+" מחדש את החשבון לאחר שהקפאתם אותו, מתי שתרצו."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
@@ -3288,8 +3294,8 @@ msgstr ""
 "אם תרצו, תוכלו למחוק את החשבון שלכם בספידי נט. מחיקת החשבון שלכם בספידי נט "
 "תמחק אוטומטית גם את החשבון שלכם בספידי מץ'. על-מנת למחוק את החשבון בספידי "
 "נט, היכנסו לספידי נט, הקפיאו את החשבון ולאחר מכן לחצו על \"מחק את החשבון\" "
-"או \"מחקי את החשבון\" (בתפריט \"עריכת פרופיל\"). מלאו את הפרטים בטופס ואשרו. "
-"שימו לב שלא ניתן לשחזר חשבון שנמחק. מחיקת החשבון היא קבועה ובלתי הפיכה."
+"או \"מחקי את החשבון\" (בתפריט \"עריכת פרופיל\"). מלאו את הפרטים בטופס ואשרו."
+" שימו לב שלא ניתן לשחזר חשבון שנמחק. מחיקת החשבון היא קבועה ובלתי הפיכה."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3416,11 +3422,11 @@ msgstr "יש לך גם פרופיל בספידי נט. צפה/י בפרופיל 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי "
-"נט."
+"ל%(user_name)s יש גם פרופיל בספידי נט. צפה/י בפרופיל של %(user_name)s בספידי"
+" נט."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3434,8 +3440,8 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
 "אתם יכולים להשתמש בספידי נט למטרות חוקיות בלבד. אין להעלות לאתר תכנים "
 "הקשורים לשנאה, אלימות, ניצול בעלי חיים, עירום או פורנוגרפיה. אין להשתמש "
@@ -3446,9 +3452,9 @@ msgstr ""
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
 "להנהלת האתר אין אפשרות לאמת פרטים אישיים שמסרו המשתמשים באתר. ייתכן שחלק "
 "מהפרטים האישיים של משתמשים באתר אינם נכונים. הנהלת האתר אינה אחראית על "
@@ -3457,8 +3463,8 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
 "לאחר ההרשמה לאתר אתם מתבקשים לאמת את כתובת הדואר האלקטרוני שלכם באמצעות "
@@ -3477,8 +3483,8 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
