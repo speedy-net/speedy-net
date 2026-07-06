@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net računi"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Da. Izbriši moj račun."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Korisnik Speedy Neta"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Broj prijatelja pri zadnjem posjetu korisnika"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net profil"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net profili"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -184,7 +184,7 @@ msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "O Speedy Netu"
+msgstr "O Speedy Net u"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -196,12 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> je nova društvena mreža. Uz Speedy Net možete "
-"komunicirati sa svojim prijateljima. Speedy Net je otvoren za besplatnu "
-"registraciju za ljude iz svih zemalja i dobi (bez dobnih ograničenja!). "
-"Stranica je prilagođena veganima i vegetarijancima. Trenutno je dostupan na "
-"%(languages_num)s jezika."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> je nova društvena mreža. Uz Speedy Net možete komunicirati sa svojim "
+"prijateljima. Net Speedy Net je otvoren za besplatnu registraciju za ljude "
+"iz svih zemalja i dobi (bez dobnih ograničenja!). Stranica je prilagođena "
+"veganima i vegetarijancima. Trenutno je dostupan na %(languages_num)s jezika."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -244,8 +243,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Sve značajke na Speedy Netu i Speedy Matchu su besplatne. Pridružite se "
-"Speedy Netu danas i pronađite prijatelje, potrebno je samo nekoliko minuta. "
+"Sve značajke na Speedy Netu i Speedy Matchu su besplatne. Pridružite se u "
+"danas Speedy Net i pronađite prijatelje, potrebno je samo nekoliko minuta. "
 "<a href=\"/\" title=\"Join Speedy Net\">Kliknite ovdje</a> za pridruživanje."
 
 #: .\templates\about\about.html:27
@@ -262,9 +261,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net je dobio ime po <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Net je dobio ime po <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, ženki psa koja je bila s nama "
-"mnogo godina i uginula 2003. Speedy je okotila 7 štenaca 1988."
+"mnogo godina i uginula 2003. je okotila 7 štenaca 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -280,7 +279,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Osnivač i direktor tvrtki Speedy Net i Speedy Match,"
+msgstr "Osnivač i direktor Speedy Net tvrtki Speedy Match i,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

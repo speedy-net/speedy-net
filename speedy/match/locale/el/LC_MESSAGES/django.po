@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Λογαριασμοί Speedy Match"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -607,7 +607,7 @@ msgstr "Φύλο που ταιριάζει"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Χρήστης Speedy Match"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -706,11 +706,11 @@ msgstr "Αριθμός αντιστοιχιών στην αναζήτηση το
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Προφίλ Speedy Match"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Προφίλ ταχείας αντιστοίχισης"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1054,7 +1054,7 @@ msgstr "Αμοιβαία Likes"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Ταχύτατοι Αγώνες"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1092,13 +1092,14 @@ msgstr ""
 "Το <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> είναι μια νέα εφαρμογή ιστού γνωριμιών/αντιστοιχιών "
 "για ρομαντικούς σκοπούς για singles που είναι μέλη του <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Με το "
-"Speedy Match μπορείτε να βρείτε άτομα που ταιριάζουν για ραντεβού και να "
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Με το Speedy "
+"Match μπορείτε να βρείτε άτομα που ταιριάζουν για ραντεβού και να "
 "συνομιλήσετε μαζί τους στο διαδίκτυο. Μπορείτε να προσθέσετε άτομα ως φίλους "
-"στο Speedy Net, να τους αρέσετε και να τους στείλετε μηνύματα. Το Speedy "
-"Match είναι ανοιχτό σε δωρεάν εγγραφή για άτομα από όλες τις χώρες και "
-"ηλικίες (χωρίς όριο ηλικίας!). Ο ιστότοπος είναι vegan και φιλικός προς τους "
-"χορτοφάγους. Προς το παρόν είναι διαθέσιμο σε %(languages_num)s γλώσσες."
+"στο Speedy Net, να τους αρέσετε και να τους στείλετε μηνύματα. Το Match "
+"είναι ανοιχτό σε δωρεάν εγγραφή για άτομα από όλες τις χώρες και ηλικίες "
+"(χωρίς όριο ηλικίας!). Ο ιστότοπος είναι vegan και φιλικός προς τους "
+"χορτοφάγους. Προς το παρόν είναι διαθέσιμο σε %(languages_num)s γλώσσες. "
+"Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1121,7 +1122,7 @@ msgid ""
 msgstr ""
 "Μόνο άτομα που ανταποκρίνονται στις απαιτήσεις σας θα μπορούν να δουν το "
 "προφίλ σας και να επικοινωνήσουν μαζί σας. Δεν επιτρέπουμε ανώνυμες "
-"αναζητήσεις και τα προφίλ Speedy Match είναι ορατά μόνο στους αντίστοιχους "
+"αναζητήσεις Speedy Match και τα προφίλ είναι ορατά μόνο στους αντίστοιχους "
 "συνεργάτες. Μπορείτε να επιλέξετε ποιος θα μπορεί να δει το προφίλ σας και "
 "ποιες λεπτομέρειες θα εμφανίζονται στο προφίλ σας ως δημόσιες, ποιες "
 "λεπτομέρειες μόνο σε φίλους και ποιες λεπτομέρειες θα είναι ιδιωτικές. Τα "
@@ -1153,10 +1154,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Το Speedy Match πήρε το όνομα του <a href=\"https://www.facebook.com/speedy."
+"Το Speedy Match πήρε το όνομα του <a href=\"https://www.facebook.com/Speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, ενός θηλυκού σκύλου που ήταν "
-"μαζί μας για πολλά χρόνια και πέθανε το 2003. Ο Speedy γέννησε 7 κουτάβια το "
-"1988."
+"μαζί μας για πολλά χρόνια και πέθανε το 2003. Ο γέννησε 7 κουτάβια το 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1176,7 +1176,7 @@ msgstr "Ούρι Ρόντμπεργκ"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Ιδρυτής και διευθυντής των Speedy Net και Speedy Match,"
+msgstr "Ιδρυτής και διευθυντής των Speedy Net Speedy Speedy Match Net και,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1900,7 +1900,7 @@ msgstr "รูปโปรไฟล์ของคุณต้องไม่โ
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "บัญชีหลักที่รวดเร็ว"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2436,7 +2436,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "แอพ Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2967,19 +2967,19 @@ msgstr "คุณยังไม่ได้ยืนยันที่อยู
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "บล็อกเน็ตรวดเร็ว"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "สปีดี้พัซ"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "ซอฟต์แวร์ที่รวดเร็ว"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "ขายด่วน"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -2988,7 +2988,7 @@ msgstr "เว็บไซต์ที่เป็นมิตรต่อมั
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "รวดเร็ว"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3004,23 +3004,23 @@ msgstr "รหัสผ่าน"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "สปีดดี้เน็ต"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "การแข่งขันที่รวดเร็ว"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "ร้านสปีดี้เน็ต"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "ร้านสปีดี้แมทช์"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "ร้านสปีดี้ เอส โลโก้"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3052,15 +3052,15 @@ msgstr "ติดต่อเรา"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "ผู้แต่งเพลงเร็ว"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "ซอฟต์แวร์จดหมายด่วน"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "ร้านนักแต่งเพลงสปีดดี้"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3251,7 +3251,7 @@ msgstr ""
 "หากคุณปิดใช้งานบัญชีของคุณบน Speedy Net หรือ Speedy Match "
 "โปรไฟล์ของคุณบนไซต์นั้นจะถูกลบออกจากไซต์ และคุณจะไม่ปรากฏในผลการค้นหาของบุคคลอื่นบนไซต์ "
 "โปรดทราบว่าการปิดใช้งานบัญชีของคุณบน Speedy Net จะเป็นการปิดใช้งานบัญชีของคุณโดยอัตโนมัติที่ "
-"Speedy Match คุณสามารถปิดการใช้งานบัญชีของคุณได้ที่ Speedy Match เท่านั้น ซึ่งในกรณีนี้บัญชี "
+"Speedy Match คุณสามารถปิดการใช้งานบัญชีของคุณได้ที่ เท่านั้น ซึ่งในกรณ Speedy Match ีนี้บัญชี "
 "Speedy Net ของคุณจะยังคงใช้งานได้ "
 "คุณสามารถเปิดใช้งานบัญชีของคุณอีกครั้งได้หลังจากปิดใช้งานเมื่อใดก็ได้ที่คุณต้องการ"
 
@@ -3416,7 +3416,7 @@ msgid ""
 msgstr ""
 "คุณสามารถใช้ Speedy Net เพื่อวัตถุประสงค์ทางกฎหมายเท่านั้น "
 "คุณไม่ได้รับอนุญาตให้อัปโหลดเนื้อหาที่เกี่ยวข้องกับความเกลียดชัง ความรุนแรง การทารุณกรรมสัตว์ "
-"ภาพเปลือย หรือสื่อลามก คุณไม่ได้รับอนุญาตให้ใช้ Speedy Net "
+"ภาพเปลือย หรือสื่อลามก Speedy Net คุณไม่ได้รับอนุญาตให้ใช้ "
 "เพื่อส่งข้อความสแปมหรือข้อความที่มีเนื้อหาเดียวกันไปยังผู้คนจำนวนมาก"
 
 #: .\templates\terms\terms_of_service.html:23
@@ -3497,7 +3497,7 @@ msgstr "มองเห็นได้บนเว็บไซต์"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "เวลาการกลั่นกรองภาพที่รวดเร็ว"
+msgstr "เวลาการกลั่นกรองภาพที่รวดเร็ว Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match računi"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Spol za slaganje"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Korisnik Speedy Match-a"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Broj podudaranja u pretrazi zadnjeg korisnika"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match profil"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match profili"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1048,7 +1048,7 @@ msgstr "Međusobni lajkovi"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Utakmice"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1064,11 +1064,11 @@ msgstr "Nijedan"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Brzo podudaranje [alfa]"
+msgstr "Speedy Match Brzo podudaranje [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "O Speedy Matchu"
+msgstr "O Speedy Match u"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1086,13 +1086,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> nova je web-aplikacija za upoznavanje/spajanje u "
 "romantične svrhe za samce koji su članovi <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Uz "
-"Speedy Match možete pronaći odgovarajuće ljude za spojeve i razgovarati s "
-"njima na mreži. Možete dodati ljude kao prijatelje na Speedy Netu, lajkati "
-"ljude i slati im poruke. Speedy Match je otvoren za besplatnu registraciju "
-"za ljude iz svih zemalja i dobi (bez dobnog ograničenja!). Stranica je "
-"prilagođena veganima i vegetarijancima. Trenutno je dostupan na "
-"%(languages_num)s jezika."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Uz Speedy "
+"Match možete pronaći odgovarajuće ljude za spojeve i razgovarati s njima na "
+"mreži. Možete dodati ljude kao prijatelje na Speedy Netu, lajkati ljude i "
+"slati im poruke. Match je otvoren za besplatnu registraciju za ljude iz svih "
+"zemalja i dobi (bez dobnog ograničenja!). Stranica je prilagođena veganima i "
+"vegetarijancima. Trenutno je dostupan na %(languages_num)s jezika. Speedy "
+"Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1126,8 +1126,8 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Sve značajke na Speedy Netu i Speedy Matchu su besplatne. Pridružite se "
-"Speedy Matchu danas kako biste pronašli odgovarajuće partnere, potrebno je "
+"Sve značajke na Speedy Netu i Speedy Matchu su besplatne. Pridružite se u "
+"danas Speedy Match kako biste pronašli odgovarajuće partnere, potrebno je "
 "samo nekoliko minuta. <a href=\"/\" title=\"Join Speedy Match\">Kliknite "
 "ovdje</a> za pridruživanje."
 
@@ -1145,9 +1145,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match je dobio ime po <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match je dobio ime po <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, ženki psa koja je bila s nama "
-"mnogo godina i uginula 2003. Speedy je okotila 7 štenaca 1988."
+"mnogo godina i uginula 2003. je okotila 7 štenaca 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1167,7 +1167,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Osnivač i direktor tvrtki Speedy Net i Speedy Match,"
+msgstr "Osnivač i direktor Speedy Net tvrtki Speedy Match i,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

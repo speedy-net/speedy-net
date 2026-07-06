@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Conturi Speedy Net"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -160,11 +160,11 @@ msgstr "Numărul de prieteni la ultima vizită a utilizatorului"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Speedy Net"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profiluri Speedy Net"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -196,12 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica "
-"cu prietenii tăi. Speedy Net este deschis pentru înregistrarea gratuită "
-"pentru persoane din toate țările și vârstele (fără limită de vârstă!). Site-"
-"ul este vegan și vegetarian. În prezent este disponibil în %(languages_num)s "
-"limbi."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> este o nouă rețea socială. Cu Speedy Net poți comunica cu prietenii tăi. "
+"Net este deschis Speedy Net pentru înregistrarea gratuită pentru persoane "
+"din toate țările și vârstele (fără limită de vârstă!). Site-ul este vegan și "
+"vegetarian. În prezent este disponibil în %(languages_num)s limbi."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -264,9 +263,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net poartă numele lui <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Net poartă numele lui <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți "
-"ani și a murit în 2003. Speedy a născut 7 căței în 1988."
+"ani și a murit în 2003. a născut 7 căței în 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -282,7 +281,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net și Speedy Match,"
+msgstr "Fondator și director al Speedy Net Speedy Speedy Match Net și,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

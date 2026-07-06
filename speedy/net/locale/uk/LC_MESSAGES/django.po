@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваші облікові записи Speedy Net і Speedy Match видалено. Дякуємо за "
+"Ваші Speedy Net облікові Speedy Match записи і видалено. Дякуємо за "
 "використання {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -107,7 +107,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваші облікові записи Speedy Net і Speedy Match видалено. Дякуємо за "
+"Ваші Speedy Net облікові Speedy Match записи і видалено. Дякуємо за "
 "використання {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -117,12 +117,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ваші облікові записи Speedy Net і Speedy Match видалено. Дякуємо за "
+"Ваші Speedy Net облікові Speedy Match записи і видалено. Дякуємо за "
 "використання {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Рахунки Speedy Net"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -152,7 +152,7 @@ msgstr "так Видалити мій обліковий запис."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Користувач Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +164,11 @@ msgstr "Кількість друзів під час останнього ві�
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Профіль Speedy Net"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Профілі Speedy Net"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -201,11 +201,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> — це нова соціальна мережа. За допомогою Speedy Net ви "
-"можете спілкуватися з друзями. Speedy Net відкритий для безкоштовної "
-"реєстрації для людей з усіх країн і вікових категорій (без вікових "
-"обмежень!). Сайт підходить для веганів і вегетаріанців. Наразі він доступний "
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> — це нова соціальна мережа. За допомогою Speedy Net ви можете "
+"спілкуватися з друзями. Net Speedy Net відкритий для безкоштовної реєстрації "
+"для людей з усіх країн і вікових категорій (без вікових обмежень!). Сайт "
+"підходить для веганів і вегетаріанців. Наразі він доступний "
 "%(languages_num)s мовами."
 
 #: .\templates\about\about.html:19
@@ -248,9 +248,9 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Усі функції на Speedy Net і Speedy Match безкоштовні. Приєднайтеся до Speedy "
-"Net сьогодні, щоб знайти друзів, це займе всього кілька хвилин. <a href=\"/"
-"\" title=\"Join Speedy Net\">Натисніть тут</a>, щоб приєднатися."
+"Усі функції на Speedy Net і Speedy Match безкоштовні. Приєднайтеся до "
+"сьогодні Speedy Net, щоб знайти друзів, це займе всього кілька хвилин. <a "
+"href=\"/\" title=\"Join Speedy Net\">Натисніть тут</a>, щоб приєднатися."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -267,9 +267,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net названо на честь <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Net названо на честь <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, собаки, яка була з нами багато "
-"років і померла в 2003 році. Speedy народила 7 цуценят у 1988 році."
+"років і померла в 2003 році. народила 7 цуценят у 1988 році."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -287,7 +287,7 @@ msgstr "Урі Родберг"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Засновник і директор Speedy Net і Speedy Match,"
+msgstr "Засновник і директор Speedy Net Speedy Speedy Match Net і,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -355,7 +355,7 @@ msgstr "Speedy Match – знайомства Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді!"
+msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді! Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

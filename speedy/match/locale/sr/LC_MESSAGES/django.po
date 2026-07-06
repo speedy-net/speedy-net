@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "Волите"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Последњи пут посећен Спееди Матцх"
+msgstr "Последњи пут посећен Speedy Match Спееди Матцх"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Последњи пут посећен Спееди Матцх"
+msgstr "Последњи пут посећен Speedy Match Спееди Матцх"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Последњи пут посећен Спееди Матцх"
+msgstr "Последњи пут посећен Speedy Match Спееди Матцх"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Спееди Матцх рачуни"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Подударање пола"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Корисник Спееди Матцх"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Број подударања у претрази последњег к�
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Спееди Матцх Профил"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Спееди Матцх Профили"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1044,7 +1044,7 @@ msgstr "Мутуал Ликес"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Брзи мечеви"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1060,11 +1060,11 @@ msgstr "Ниједан"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Спееди Матцх [алфа]"
+msgstr "Speedy Match Спееди Матцх [алфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "О Спееди Матцх-у"
+msgstr "О Спееди Матцх-у Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1081,13 +1081,13 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> is a new dating/matching web app for romantic "
-"purposes for singles who are members of <a href=\"https://%(language_code)s."
-"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
-"find matching people for dating and chat with them online. You can add "
-"people as friends on Speedy Net, like people and send them messages. Speedy "
-"Match is open to free registration for people from all countries and ages "
-"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
-"available in %(languages_num)s languages."
+"purposes for singles who are members of <a href=\"https://%(language_code)s.."
+"net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can find "
+"matching people for dating and chat with them online. You can add people as "
+"friends on Speedy Net, like people and send them messages. Match is open to "
+"free registration for people from all countries and ages (no age limit!). "
+"The site is vegan and vegetarian friendly. It is currently available in "
+"%(languages_num)s languages. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1095,9 +1095,9 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"Оснивачи Спееди Матцх-а су вегани, подржавају права животиња и противе се "
-"експериментима на животињама. Спееди Матцх је апликација за упознавање "
-"прилагођена веганима и вегетаријанцима и животињама."
+"Оснивачи Спееди Матцх Speedy Match -а су вегани, подржавају права животиња и "
+"противе се експериментима на животињама Speedy Match. Спееди Матцх је "
+"апликација за упознавање прилагођена веганима и вегетаријанцима и животињама."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1109,11 +1109,11 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Само људи који одговарају вашим захтевима ће моћи да виде ваш профил и "
-"контактирају вас. Не дозвољавамо анонимне претраге и Спееди Матцх профили су "
-"видљиви само одговарајућим партнерима. Можете да изаберете ко ће моћи да "
-"види ваш профил и који детаљи ће се појавити на вашем профилу као јавни, "
-"који детаљи ће бити само пријатељима, а који ће бити приватни. Приватни "
-"детаљи ће се појавити само вама."
+"контактирају вас. Не дозвољавамо анонимне претраге и Спееди Speedy Match "
+"Матцх профили су видљиви само одговарајућим партнерима. Можете да изаберете "
+"ко ће моћи да види ваш профил и који детаљи ће се појавити на вашем профилу "
+"као јавни, који детаљи ће бити само пријатељима, а који ће бити приватни. "
+"Приватни детаљи ће се појавити само вама."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1121,18 +1121,19 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Све функције Спееди Нет-а и Спееди Матцх-а су бесплатне. Придружите се "
-"Спееди Матцх-у данас да бисте пронашли одговарајуће партнере, потребно је "
-"само неколико минута. __ПХ0__Кликните овде__ПХ1__ да бисте се придружили."
+"Све функције Спееди Нет- Speedy Net а и Спееди Матцх-а Speedy Match су "
+"бесплатне. Придружите се Спееди Speedy Match Матцх-у данас да бисте пронашли "
+"одговарајуће партнере, потребно је само неколико минута. __ПХ0__Кликните "
+"овде__ПХ1__ да бисте се придружили. Speedy Match"
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"Спееди Матцх је бесплатан софтвер и пројекат отвореног кода. Ако желите да "
-"помогнете у развоју и побољшању Спееди Матцх-а, контактирајте ме путем е-"
-"поште."
+"Speedy Match Спееди Матцх је бесплатан софтвер и пројекат отвореног кода. "
+"Ако желите да помогнете у развоју и побољшању Спееди Матцх-а, контактирајте "
+"ме путем е-поште. Speedy Match"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1140,17 +1141,17 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Спееди Матцх је добио име по __ПХ0__Спееди__ПХ1__, женки која је била са "
-"нама дуги низ година и која је угинула 2003. Спееди је 1988. родила 7 "
-"штенаца."
+"Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Спееди Матцх је тренутно у алфа верзији. Лансиран је у августу 2019. "
-"Енглеска верзија Спееди Матцх-а је у производњи."
+"Speedy Match Спееди Матцх је тренутно у алфа верзији. Лансиран је у августу "
+"2019. Енглеска верзија Спееди Матцх-а је у производњи. Speedy Match"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1162,11 +1163,11 @@ msgstr "Ури Родберг"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Оснивач и директор Спееди Нет и Спееди Матцх,"
+msgstr "Оснивач и директор Спееди Нет Speedy Net и Спееди Матцх, Speedy Match"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Спееди Паз Тецхнологиес Лтд."
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1205,8 +1206,8 @@ msgstr "Следећи корак"
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ваш Спееди Нет налог није активан. Унесите ову страницу да бисте је "
-"активирали."
+"Ваш Спееди Speedy Net Нет налог није активан. Унесите ову страницу да бисте "
+"је активирали."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1283,24 +1284,24 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Спееди Матцх је нова веб апликација за упознавање/упаривање у романтичне "
-"сврхе за самце који су чланови Спееди Нет-а. Помоћу Спееди Матцх-а можете "
-"пронаћи одговарајуће људе за упознавање и ћаскати са њима на мрежи. Сајт је "
-"прилагођен за вегане и вегетаријанце."
+"Speedy Match Спееди Матцх је нова веб апликација за упознавање/упаривање у "
+"романтичне сврхе за самце који су чланови Спееди Speedy Net Нет-а. Помоћу "
+"Speedy Match Спееди Матцх-а можете пронаћи одговарајуће људе за упознавање и "
+"ћаскати са њима на мрежи. Сајт је прилагођен за вегане и вегетаријанце."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Тражите дечка? Тражите девојку? Дођите и упознајте Спеедија!"
+msgstr "Тражите дечка? Тражите девојку? Дођите и упознајте Спеедија! Speedy"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Све функције Спееди Нет-а и Спееди Матцх-а су бесплатне. Придружите се "
-"Спееди Матцх-у данас да бисте пронашли одговарајуће партнере, потребно је "
-"само неколико минута."
+"Све функције Спееди Нет-а Speedy Net и Спееди Матцх-а су Speedy Match "
+"бесплатне. Придружите се Спееди Матцх Speedy Match -у данас да бисте "
+"пронашли одговарајуће партнере, потребно је само неколико минута."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1389,7 +1390,7 @@ msgstr "Статус везе"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Последњи пут посећен Спееди Матцх"
+msgstr "Последњи пут посећен Speedy Match Спееди Матцх"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

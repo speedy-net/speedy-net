@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Comptes de Speedy Match"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Gènere per coincidir"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Usuari de Speedy Match"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Nombre de coincidències a la cerca de l'últim usuari"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Perfil Speedy Match"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Perfils de partit ràpid"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1049,7 +1049,7 @@ msgstr "M'agrada mutu"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Partits ràpids"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1087,13 +1087,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> és una nova aplicació web de cites/concordes amb "
 "finalitats romàntiques per a solters que són membres de <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Amb "
-"Speedy Match pots trobar persones que coincideixin amb les cites i xatejar "
-"amb elles en línia. Pots afegir persones com a amics a Speedy Net, donar-los "
-"like i enviar-los missatges. Speedy Match està obert al registre gratuït per "
-"a persones de tots els països i edats (sense límit d'edat!). El lloc és vegà "
-"i apte per a vegetarians. Actualment està disponible en %(languages_num)s "
-"idiomes."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Amb Speedy "
+"Match pots trobar persones que coincideixin amb les cites i xatejar amb "
+"elles en línia. Pots afegir persones com a amics a Speedy Net, donar-los "
+"like i enviar-los missatges. Match està obert al registre gratuït per a "
+"persones de tots els països i edats (sense límit d'edat!). El lloc és vegà i "
+"apte per a vegetarians. Actualment està disponible en %(languages_num)s "
+"idiomes. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1115,8 +1115,8 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Només les persones que compleixin els vostres requisits podran veure el "
-"vostre perfil i contactar amb vosaltres. No permetem cerques anònimes i els "
-"perfils de Speedy Match només són visibles per als socis coincidents. Pots "
+"vostre perfil i contactar amb vosaltres. No permetem cerques anònimes Speedy "
+"Match i els perfils de només són visibles per als socis coincidents. Pots "
 "seleccionar qui podrà veure el teu perfil i quins detalls apareixeran al teu "
 "perfil com a públics, quins detalls només per als amics i quins detalls "
 "seran privats. Els detalls privats només us apareixeran a vosaltres."
@@ -1127,9 +1127,9 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Totes les funcions de Speedy Net i Speedy Match són gratuïtes. Uneix-te a "
-"Speedy Match avui per trobar socis coincidents, només triguen uns minuts. <a "
-"href=\"/\" title=\"Join Speedy Match\">Fes clic aquí</a> per unir-te."
+"Totes les funcions de Speedy Net Speedy Match i són gratuïtes Speedy Match. "
+"Uneix -te a avui per trobar socis coincidents, només triguen uns minuts. <a "
+"href=\"/\" title= Speedy Match \" Join \">Fes clic aquí</a> per unir-te."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1137,7 +1137,7 @@ msgid ""
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
 "Speedy Match és un projecte de programari lliure i de codi obert. Si voleu "
-"ajudar a desenvolupar i millorar Speedy Match, poseu-vos en contacte amb mi "
+"ajudar a desenvolupar i millorar, poseu Speedy Match -vos en contacte amb mi "
 "per correu electrònic."
 
 #: .\templates\about\about.html:27
@@ -1146,9 +1146,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match porta el nom de <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match porta el nom de <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, una gossa que va estar amb "
-"nosaltres durant molts anys i que va morir el 2003. Speedy va donar a llum 7 "
+"nosaltres durant molts anys i que va morir el 2003. va donar a llum 7 "
 "cadells el 1988."
 
 #: .\templates\about\about.html:29
@@ -1169,7 +1169,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fundador i director de Speedy Net i Speedy Match,"
+msgstr "Fundador i director de Speedy Net Speedy Speedy Match Net i,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1292,7 +1292,7 @@ msgid ""
 "vegetarian friendly."
 msgstr ""
 "Speedy Match és una nova aplicació web de cites/concordança amb finalitats "
-"romàntiques per a solters que són membres de Speedy Net. Amb Speedy Match "
+"romàntiques per a solters que són Speedy Net membres de Speedy Match. Amb "
 "pots trobar persones que coincideixin amb les cites i xatejar amb elles en "
 "línia. El lloc és vegà i apte per a vegetarians."
 
@@ -1306,8 +1306,8 @@ msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Totes les funcions de Speedy Net i Speedy Match són gratuïtes. Uneix-te a "
-"Speedy Match avui per trobar socis coincidents, només triguen uns minuts."
+"Totes les funcions Speedy Net de Speedy Match i són gratuïtes Speedy Match. "
+"Uneix -te a avui per trobar socis coincidents, només triguen uns minuts."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"

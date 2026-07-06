@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,9 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻す"
-"ことはできません。 Speedy Net アカウントを削除すると、Speedy Match アカウント"
-"も削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力"
-"します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"ことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウン"
+"トも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入"
+"力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,9 +52,9 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻す"
-"ことはできません。 Speedy Net アカウントを削除すると、Speedy Match アカウント"
-"も削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力"
-"します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"ことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウン"
+"トも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入"
+"力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -65,9 +65,9 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻す"
-"ことはできません。 Speedy Net アカウントを削除すると、Speedy Match アカウント"
-"も削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力"
-"します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"ことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウン"
+"トも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入"
+"力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "スピーディーなネット口座"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -133,9 +133,9 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻す"
-"ことはできません。 Speedy Net アカウントを削除すると、Speedy Match アカウント"
-"も削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力"
-"します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"ことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウン"
+"トも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入"
+"力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -148,7 +148,7 @@ msgstr "はい。アカウントを削除してください。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "スピーディネットユーザー"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "前回のユーザーの訪問時の友人の数"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "スピーディーネットプロファイル"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "スピーディなネットプロファイル"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,11 +181,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "スピーディーネット【α】"
+msgstr "Speedy Net スピーディーネット【α】"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "スピーディネットについて"
+msgstr "スピーディネットについて Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -197,12 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> は新しいソーシャル ネットワークです。 Speedy Net を使用"
-"すると、友達とコミュニケーションをとることができます。 Speedy Net は、あらゆ"
-"る国と年齢の人々が無料で登録できます (年齢制限はありません!)。このサイトは"
-"ビーガンとベジタリアンに優しいサイトです。現在、%(languages_num)s 言語で利用"
-"できます。"
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a Speedy Net > は新しいソーシャル ネットワークです。 Speedy Net を使用する"
+"と、友達とコミュニケーションをとることができます。 Net は、あらゆる国と年齢の"
+"人々が無料で登録できます (年齢制限はありません!)。このサイトはビーガンとベジ"
+"タリアンに優しいサイトです。現在、%(languages_num)s 言語で利用できます。"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -243,8 +242,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Speedy Net と Speedy Match のすべての機能は無料です。今すぐ Speedy Net に参加"
-"して友達を見つけましょう。わずか数分で完了します。 <a href=\"/\" "
+"Speedy Net と Speedy Match のすべての機能は無料です。今すぐ に参加して友達を"
+"見つけましょう Speedy Net 。わずか数分で完了します。 <a href=\"/\" "
 "title=\"Join Speedy Net\">ここをクリック</a>して参加してください。"
 
 #: .\templates\about\about.html:27
@@ -252,8 +251,8 @@ msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net は、フリー ソフトウェアおよびオープンソース プロジェクトです。 "
-"Speedy Net の開発と改善に協力したい場合は、電子メールで私に連絡してください。"
+"Speedy Net は、フリー ソフトウェアおよびオープンソース プロジェクトです。 の"
+"開発と改善に協力したい場合は Speedy Net 、電子メールで私に連絡してください。"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -261,8 +260,8 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"スピーディ ネットの名前は、長年私たちと一緒に暮らし、2003 年に亡くなったメス"
-"犬 <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"Speedy Net スピーディ ネットの名前は、長年私たちと一緒に暮らし、2003 年に亡く"
+"なったメス犬 <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a> にちなんで名付けられました。スピーディは 1988 年"
 "に 7 匹の子犬を出産しました。"
 
@@ -280,11 +279,13 @@ msgstr "ウリ・ロドベリ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Net および Speedy Match の創設者兼ディレクター、"
+msgstr ""
+"および の創設者兼ディレクター Speedy Speedy Speedy Net Speedy Speedy Match "
+"Net Net Net 、"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "スピーディ・パス・テクノロジーズ株式会社"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -343,14 +344,14 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "スピーディマッチ – スピーディとのデート"
+msgstr "Speedy Match スピーディマッチ – スピーディとのデート Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
 "彼氏を探していますか？ガールフレンドを探していますか？スピーディに会いに来て"
-"ください！"
+"ください！ Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

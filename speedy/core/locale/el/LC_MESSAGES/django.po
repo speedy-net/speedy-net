@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,7 +372,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Match. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:101
@@ -382,7 +382,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Match. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:102
@@ -392,7 +392,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Match. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:104
@@ -402,7 +402,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Net. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -412,7 +412,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Net. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -422,26 +422,26 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Net. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα προφίλ Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
+"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα προφίλ Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
+"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα προφίλ Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
+"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -1404,7 +1404,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν απενεργοποιηθεί. "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
 "Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:158
@@ -1413,7 +1413,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν απενεργοποιηθεί. "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
 "Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:159
@@ -1422,7 +1422,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν απενεργοποιηθεί. "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
 "Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:161
@@ -2546,7 +2546,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Εφαρμογή Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3080,7 +3080,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Ιστολόγιο Speedy Net"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3092,7 +3092,7 @@ msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Γρήγορη πώληση"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3101,7 +3101,7 @@ msgstr "Μια ιστοσελίδα φιλική προς τους vegan"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Ταχύς"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3121,7 +3121,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Ταχυδρομικός αγώνας"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3165,11 +3165,11 @@ msgstr "Επικοινωνήστε μαζί μας"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Ταχύς συνθέτης"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Λογισμικό Speedy Mail"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
@@ -3355,7 +3355,7 @@ msgid ""
 msgstr ""
 "Το προφίλ σας στο Speedy Net είναι ορατό σε όλους, αλλά μπορείτε να "
 "επιλέξετε ποιον θα μοιραστείτε με τη διεύθυνση email σας και την ημερομηνία "
-"γέννησής σας. Εάν έχετε εγγραφεί στο Speedy Match, το προφίλ σας στο Speedy "
+"γέννησής σας. Εάν έχετε Speedy Match εγγραφεί στο, το προφίλ σας στο Speedy "
 "Match θα είναι ορατό μόνο σε άτομα που ταιριάζουν με εσάς σύμφωνα με τις "
 "ρυθμίσεις που έχετε ορίσει στον ιστότοπο και ότι τα ταιριάζετε σύμφωνα με "
 "τις ρυθμίσεις τους. Το προφίλ σας στο Speedy Match δεν θα εμφανίζεται στο "
@@ -3514,13 +3514,13 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Match. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα προφίλ Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
+"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3528,7 +3528,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης προφίλ Speedy Net. Δείτε το προφίλ του "
+"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
 "%(user_name)s στο Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3637,7 +3637,7 @@ msgstr "ορατό στον ιστότοπο"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Γρήγορος χρόνος μετριασμού εικόνας"
+msgstr "Γρήγορος χρόνος μετριασμού εικόνας Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

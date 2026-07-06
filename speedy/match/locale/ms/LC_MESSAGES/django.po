@@ -1,11 +1,11 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Akaun Speedy Match"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -607,7 +607,7 @@ msgstr "Jantina untuk dipadankan"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Pengguna Speedy Match"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -706,11 +706,11 @@ msgstr "Bilangan padanan pada carian pengguna terakhir"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Profil Perlawanan Cepat"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Profil Speedy Match"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1051,7 +1051,7 @@ msgstr "Saling Suka"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Perlawanan Perlawanan Cepat"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1067,7 +1067,7 @@ msgstr "tiada"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Perlawanan Cepat [alpha]"
+msgstr "Speedy Match Perlawanan Cepat [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1089,13 +1089,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> ialah apl web temu janji/padanan baharu untuk "
 "tujuan romantik untuk perseorangan yang menjadi ahli <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Dengan "
-"Speedy Match anda boleh mencari orang yang sepadan untuk dating dan "
-"bersembang dengan mereka dalam talian. Anda boleh menambah orang sebagai "
-"rakan di Speedy Net, seperti orang dan menghantar mesej kepada mereka. "
-"Speedy Match terbuka kepada pendaftaran percuma untuk orang dari semua "
-"negara dan umur (tiada had umur!). Tapak ini mesra vegan dan vegetarian. Ia "
-"kini tersedia dalam %(languages_num)s bahasa."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Dengan Speedy "
+"Match anda boleh mencari orang yang sepadan untuk dating dan bersembang "
+"dengan mereka dalam talian. Anda boleh menambah orang sebagai rakan di "
+"Speedy Net, seperti orang dan menghantar mesej kepada mereka. Match terbuka "
+"kepada pendaftaran percuma untuk orang dari semua negara dan umur (tiada had "
+"umur!). Tapak ini mesra vegan dan vegetarian. Ia kini tersedia dalam "
+"%(languages_num)s bahasa. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1130,8 +1130,8 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai Speedy "
-"Match hari ini untuk mencari rakan kongsi yang sepadan, ia hanya mengambil "
+"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai hari ini "
+"untuk Speedy Match mencari rakan kongsi yang sepadan, ia hanya mengambil "
 "masa beberapa minit. <a href=\"/\" title=\"Join Speedy Match\">Klik di sini</"
 "a> untuk menyertai."
 
@@ -1150,10 +1150,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match dinamakan sempena <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match dinamakan sempena <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama "
-"kami selama bertahun-tahun dan mati pada tahun 2003. Speedy melahirkan 7 "
-"ekor anak anjing pada tahun 1988."
+"kami selama bertahun-tahun dan mati pada tahun 2003. melahirkan 7 ekor anak "
+"anjing pada tahun 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1173,7 +1173,8 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pengasas dan pengarah Speedy Net dan Speedy Match,"
+msgstr ""
+"Pengasas dan pengarah Speedy Speedy Net Speedy Speedy Match Net Net dan,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
