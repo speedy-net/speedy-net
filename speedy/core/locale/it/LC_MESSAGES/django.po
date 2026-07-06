@@ -342,32 +342,32 @@ msgstr "Non hai ancora ricevuto messaggi."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Hai bloccato "
+msgstr "Hai bloccato"
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Hai bloccato "
+msgstr "Hai bloccato"
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Hai bloccato "
+msgstr "Hai bloccato"
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " ti ha bloccata."
+msgstr "ti ha bloccata."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " ti ha bloccato."
+msgstr "ti ha bloccato."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " ti ha bloccato/a."
+msgstr "ti ha bloccato/a."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -403,8 +403,8 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s ha anche un profilo Speedy Net. Visualizza il profilo di "
 "%(user_name)s su Speedy Net."
@@ -413,8 +413,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s ha anche un profilo Speedy Net. Visualizza il profilo di "
 "%(user_name)s su Speedy Net."
@@ -423,8 +423,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s ha anche un profilo Speedy Net. Visualizza il profilo di "
 "%(user_name)s su Speedy Net."
@@ -465,62 +465,62 @@ msgstr "Aggiungi agli amici"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Sei sicura di voler bloccare "
+msgstr "Sei sicura di voler bloccare"
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Sei sicuro di voler bloccare "
+msgstr "Sei sicuro di voler bloccare"
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Sei sicuro/a di voler bloccare "
+msgstr "Sei sicuro/a di voler bloccare"
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blocca "
+msgstr "Blocca"
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blocca "
+msgstr "Blocca"
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blocca "
+msgstr "Blocca"
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Sblocca "
+msgstr "Sblocca"
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Sblocca "
+msgstr "Sblocca"
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Sblocca "
+msgstr "Sblocca"
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Segnala "
+msgstr "Segnala"
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Segnala "
+msgstr "Segnala"
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Segnala "
+msgstr "Segnala"
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -691,19 +691,22 @@ msgstr "Visualizza tutto"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Il tuo account Speedy Net non è attivo. Entra in questa pagina per attivarlo."
+"Il tuo account Speedy Net non è attivo. Entra in questa pagina per "
+"attivarlo."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Il tuo account Speedy Net non è attivo. Entra in questa pagina per attivarlo."
+"Il tuo account Speedy Net non è attivo. Entra in questa pagina per "
+"attivarlo."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Il tuo account Speedy Net non è attivo. Entra in questa pagina per attivarlo."
+"Il tuo account Speedy Net non è attivo. Entra in questa pagina per "
+"attivarlo."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -835,8 +838,8 @@ msgstr "Nome utente"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Ti sei iscritta per ricevere questo tipo di notifiche da %(site_name)s. "
 "Accedi a questa pagina per modificare le impostazioni delle notifiche o per "
@@ -846,8 +849,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Ti sei iscritta per ricevere questo tipo di notifiche da %(site_name)s. "
 "Accedi a questa pagina per modificare le impostazioni delle notifiche o per "
@@ -857,8 +860,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Ti sei iscritta per ricevere questo tipo di notifiche da %(site_name)s. "
 "Accedi a questa pagina per modificare le impostazioni delle notifiche o per "
@@ -895,8 +898,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Inserisci %(username)s e password corretti. In entrambi i campi le maiuscole "
-"potrebbero essere significative."
+"Inserisci %(username)s e password corretti. In entrambi i campi le maiuscole"
+" potrebbero essere significative."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -1496,8 +1499,8 @@ msgstr "Invia"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "Hai già {0} amici. Non puoi avere più di {1} amici su Speedy Net. "
 "Cortesemente, rimuovi gli amici prima di procedere."
@@ -1506,8 +1509,8 @@ msgstr ""
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "Hai già {0} amici. Non puoi avere più di {1} amici su Speedy Net. "
 "Cortesemente, rimuovi gli amici prima di procedere."
@@ -1516,8 +1519,8 @@ msgstr ""
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
 "Hai già {0} amici. Non puoi avere più di {1} amici su Speedy Net. "
 "Cortesemente, rimuovi gli amici prima di procedere."
@@ -1549,8 +1552,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy "
-"Net. Chiedi loro di rimuovere gli amici prima di procedere."
+"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy"
+" Net. Chiedi loro di rimuovere gli amici prima di procedere."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1579,8 +1582,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy "
-"Net. Chiedi loro di rimuovere gli amici prima di procedere."
+"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy"
+" Net. Chiedi loro di rimuovere gli amici prima di procedere."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1609,8 +1612,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy "
-"Net. Chiedi loro di rimuovere gli amici prima di procedere."
+"Questo utente ha già {0} amici. Non possono avere più di {1} amici su Speedy"
+" Net. Chiedi loro di rimuovere gli amici prima di procedere."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1787,8 +1790,8 @@ msgstr "Amici/Amiche"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1802,8 +1805,8 @@ msgstr ""
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1817,8 +1820,8 @@ msgstr ""
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
@@ -1938,7 +1941,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Account Speedy Core (Speedy Core Accounts)"
+msgstr "Account Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2266,8 +2269,8 @@ msgstr ""
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
 "Il nome utente deve iniziare con 4 o più caratteri, dopo i quali può essere "
 "inserito un numero qualsiasi di cifre. Puoi aggiungere trattini tra le "
@@ -2291,8 +2294,8 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
@@ -2360,7 +2363,8 @@ msgstr[1] "La tua password deve contenere almeno %(min_length)d caratteri."
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
 "Questa password è troppo lunga. Deve contenere al massimo %(max_length)d "
 "carattere."
@@ -2372,8 +2376,10 @@ msgstr[1] ""
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "La tua password deve contenere al massimo %(max_length)d carattere."
-msgstr[1] "La tua password deve contenere al massimo %(max_length)d caratteri."
+msgstr[0] ""
+"La tua password deve contenere al massimo %(max_length)d carattere."
+msgstr[1] ""
+"La tua password deve contenere al massimo %(max_length)d caratteri."
 
 #: .\accounts\validators.py:165 .\accounts\validators.py:170
 #, python-format
@@ -2409,8 +2415,8 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
 "Non puoi utilizzare questo formato per l‘immagine del profilo. Sono "
 "accettati solo i formati JPEG o PNG."
@@ -2435,9 +2441,9 @@ msgstr "Questo indirizzo e-mail è diventato l’indirizzo principale."
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2453,17 +2459,18 @@ msgstr ""
 "sito negli ultimi quattro mesi, "
 "{total_number_of_members_in_the_last_eight_months} membri sono entrati nel "
 "sito negli ultimi otto mesi e "
-"{total_number_of_members_in_the_last_two_years} membri sono entrati nel sito "
-"negli ultimi due anni."
+"{total_number_of_members_in_the_last_two_years} membri sono entrati nel sito"
+" negli ultimi due anni."
 
 #: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2489,8 +2496,8 @@ msgstr ""
 "registrati negli ultimi otto mesi. "
 "{total_number_of_members_registered_more_than_eight_months_ago} membri "
 "registrati più di otto mesi fa. "
-"{total_number_of_members_registered_in_the_last_two_years} membri registrati "
-"negli ultimi due anni. "
+"{total_number_of_members_registered_in_the_last_two_years} membri registrati"
+" negli ultimi due anni. "
 "{total_number_of_members_registered_more_than_two_years_ago} membri "
 "registrati più di due anni fa. "
 "{total_number_of_members_registered_before_2019_08_01} membri registrati "
@@ -2507,7 +2514,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "App di base Speedy Core (Speedy Core Base App)"
+msgstr "App di base Speedy Core"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2516,7 +2523,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -3044,7 +3051,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Speedy Net (Speedy Net Blog)"
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3052,11 +3059,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Software Speedy (Speedy Software)"
+msgstr "Software Speedy"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Vendite Speedy (Speedy Sale)"
+msgstr "Vendite Speedy"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3089,15 +3096,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Negozio Speedy Net (Speedy Net's Shop)"
+msgstr "Negozio Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Negozio Speedy Match (Speedy Match's Shop)"
+msgstr "Negozio Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Negozio Speedy S-logo (Speedy S-logo Shop)"
+msgstr "Negozio Speedy S-logo"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3133,11 +3140,11 @@ msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Software di posta elettronica Speedy (Speedy Mail Software)"
+msgstr "Software di posta elettronica Speedy"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Negozio Speedy Composer (Speedy Composer's Shop)"
+msgstr "Negozio Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3149,8 +3156,8 @@ msgstr "Al momento non hai persone bloccate."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
 "Se hai domande, suggerimenti o sei interessato a far parte del team, "
 "contattaci tramite e-mail."
@@ -3219,8 +3226,8 @@ msgstr "Leggilo:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "Ti sei iscritta per ricevere questo tipo di notifiche da %(site_name)s. "
 "Accedi a questa pagina per modificare le impostazioni delle notifiche o per "
@@ -3305,8 +3312,8 @@ msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
@@ -3335,15 +3342,15 @@ msgstr ""
 "profilo su sarà rimosso dal sito e non apparirà nei risultati di ricerca di "
 "altre persone sul sito. Nota che la disattivazione dell’account su Speedy "
 "Net disattiva automaticamente anche l’account su Speedy Match. Puoi "
-"disattivare solo l’account su Speedy Match, in quel caso l’account su Speedy "
-"Net rimarrà attivo. Puoi riattivare il tuo account dopo averlo disattivato "
+"disattivare solo l’account su Speedy Match, in quel caso l’account su Speedy"
+" Net rimarrà attivo. Puoi riattivare il tuo account dopo averlo disattivato "
 "ogni volta che lo desideri."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
@@ -3358,7 +3365,7 @@ msgstr ""
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Hai bloccato "
+msgstr "Hai bloccato"
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3366,7 +3373,7 @@ msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " ti ha bloccato/a."
+msgstr "ti ha bloccato/a."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3400,7 +3407,7 @@ msgstr "Apri/Chiudi il menù a tendina"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Sei sicuro/a di voler bloccare "
+msgstr "Sei sicuro/a di voler bloccare"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3409,16 +3416,16 @@ msgstr "?"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blocca "
+msgstr "Blocca"
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Sblocca "
+msgstr "Sblocca"
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Segnala "
+msgstr "Segnala"
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3482,8 +3489,8 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s ha anche un profilo Speedy Net. Visualizza il profilo di "
 "%(user_name)s su Speedy Net."
@@ -3500,22 +3507,22 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
 "Puoi utilizzare Speedy Net solo per scopi legali. Non è consentito caricare "
 "contenuti legati all’odio, alla violenza, all’abuso sugli animali, alla "
 "nudità o alla pornografia. Non è consentito utilizzare Speedy Net per "
-"inviare messaggi spam o messaggi con lo stesso contenuto a un gran numero di "
-"persone."
+"inviare messaggi spam o messaggi con lo stesso contenuto a un gran numero di"
+" persone."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
 "La direzione del sito non può verificare le informazioni personali fornite "
 "dagli utenti. Alcune informazioni personali degli utenti potrebbero non "
@@ -3526,12 +3533,12 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"Dopo l’iscrizione al sito, viene richiesto di verificare il tuo indirizzo e-"
-"mail tramite un link inviato. Gli account privi di un indirizzo e-mail "
+"Dopo l’iscrizione al sito, viene richiesto di verificare il tuo indirizzo "
+"e-mail tramite un link inviato. Gli account privi di un indirizzo e-mail "
 "verificato saranno cancellati dal sito dopo 10 giorni."
 
 #: .\templates\terms\terms_of_service.html:27
@@ -3546,8 +3553,8 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""

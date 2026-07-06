@@ -123,7 +123,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-Konten (Speedy Net Accounts)"
+msgstr "Speedy Net-Konten"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -153,7 +153,7 @@ msgstr "Ja. Lösche mein Konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Benutzer (Speedy Net User)"
+msgstr "Speedy Net Benutzer"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -165,11 +165,11 @@ msgstr "Anzahl Freunde beim letzten Besuch des Benutzers"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net-Profil (Speedy Net Profile)"
+msgstr "Speedy Net-Profil"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net-Profile (Speedy Net Profiles)"
+msgstr "Speedy Net-Profile"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -221,35 +221,37 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"Wir haben uns dafür entschieden, die Zahl der Freunde auf Speedy Net auf 800 "
-"zu beschränken. Wir ermuntern Sie, nur Leute als Freunde hinzuzufügen, die "
-"Sie persönlich kennen. Sie können auswählen, welche Angaben auf Ihrem Profil "
-"öffentlich, welche nur für Freunden sichtbar sein werden und welche Details "
-"vertraulich behandelt werden. Vertrauliche Angaben können nur Sie allein "
+"Wir haben uns dafür entschieden, die Zahl der Freunde auf Speedy Net auf 800"
+" zu beschränken. Wir ermuntern Sie, nur Leute als Freunde hinzuzufügen, die "
+"Sie persönlich kennen. Sie können auswählen, welche Angaben auf Ihrem Profil"
+" öffentlich, welche nur für Freunden sichtbar sein werden und welche Details"
+" vertraulich behandelt werden. Vertrauliche Angaben können nur Sie allein "
 "sehen."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Sie können unsere neue App, <a href=\"https://%(language_code)s.speedymatch."
-"com/\" title=\"Speedy Match\">Speedy Match</a>, benutzen, um die "
-"übereinstimmenden Leute für Dates zu finden. Speedy Match steht Singles "
-"jedes Alters offen."
+"Sie können unsere neue App, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, benutzen, um die übereinstimmenden Leute für Dates"
+" zu finden. Speedy Match steht Singles jedes Alters offen."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Alle Funktionen auf Speedy Net und Speedy Match sind kostenlos. Melden Sie "
 "sich bei Speedy Net noch heute an, um Freunde zu finden. Es dauert nur "
@@ -267,14 +269,15 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net ist nach <a href=\"https://www.facebook.com/Speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a> benannt, einer Hündin, die jahrelang mit "
-"uns lebte und im Jahre 2003 verstarb. Speedy brachte 1988 7 Welpen auf die "
-"Welt."
+"Speedy Net ist nach <a "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> benannt, einer Hündin, die jahrelang mit uns "
+"lebte und im Jahre 2003 verstarb. Speedy brachte 1988 7 Welpen auf die Welt."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -335,14 +338,14 @@ msgstr "Ihre Freunde"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
 "Speedy Net ist ein neues soziales Netzwerk. Mit Speedy Net können Sie mit "
-"Freunden kommunizieren. Speedy Net ermöglicht Menschen aus allen Ländern und "
-"jedes Alters (keine Altersbeschränkung!) eine kostenlose Anmeldung. Die "
+"Freunden kommunizieren. Speedy Net ermöglicht Menschen aus allen Ländern und"
+" jedes Alters (keine Altersbeschränkung!) eine kostenlose Anmeldung. Die "
 "Website ist Veganer- und Vegetarier-freundlich."
 
 #: .\templates\main\main_page.html:17
@@ -362,8 +365,8 @@ msgstr "Speedy Match - eine schnelle Partnersuche"
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"Suchen Sie nach einem Freund? Suchen Sie nach einer Freundin? Kommen Sie und "
-"lernen Sie Speedy kennen!"
+"Suchen Sie nach einem Freund? Suchen Sie nach einer Freundin? Kommen Sie und"
+" lernen Sie Speedy kennen!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

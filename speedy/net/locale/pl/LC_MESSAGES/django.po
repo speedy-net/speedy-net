@@ -40,8 +40,8 @@ msgid ""
 msgstr ""
 "Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i "
 "nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta "
-"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu, "
-"dokładnie i rozróżniana jest wielkość liter."
+"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu,"
+" dokładnie i rozróżniana jest wielkość liter."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i "
 "nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta "
-"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu, "
-"dokładnie i rozróżniana jest wielkość liter."
+"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu,"
+" dokładnie i rozróżniana jest wielkość liter."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -66,8 +66,8 @@ msgid ""
 msgstr ""
 "Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i "
 "nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta "
-"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu, "
-"dokładnie i rozróżniana jest wielkość liter."
+"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu,"
+" dokładnie i rozróżniana jest wielkość liter."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Szybkie konta sieciowe (Speedy Net Accounts)"
+msgstr "Szybkie konta sieciowe"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -134,8 +134,8 @@ msgid ""
 msgstr ""
 "Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i "
 "nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta "
-"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu, "
-"dokładnie i rozróżniana jest wielkość liter."
+"Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto”. w tym polu,"
+" dokładnie i rozróżniana jest wielkość liter."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -148,7 +148,7 @@ msgstr "Tak. Usuń moje konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Szybki użytkownik sieci (Speedy Net User)"
+msgstr "Szybki użytkownik sieci"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Liczba znajomych podczas ostatniej wizyty użytkownika"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Szybki profil sieciowy (Speedy Net Profile)"
+msgstr "Szybki profil sieciowy"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Szybkie profile sieciowe (Speedy Net Profiles)"
+msgstr "Szybkie profile sieciowe"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,7 +181,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Szybka sieć [alfa] (Speedy Net)"
+msgstr "Szybka sieć [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -216,13 +216,14 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"Postanowiliśmy ograniczyć liczbę znajomych w Speedy Net do 800. Zachęcamy do "
-"dodawania do znajomych tylko osób, które znasz osobiście. Możesz wybrać, "
+"Postanowiliśmy ograniczyć liczbę znajomych w Speedy Net do 800. Zachęcamy do"
+" dodawania do znajomych tylko osób, które znasz osobiście. Możesz wybrać, "
 "które dane będą widoczne w Twoim profilu jako publiczne, które tylko dla "
 "znajomych, a które będą prywatne. Dane prywatne będą widoczne tylko dla "
 "Ciebie."
@@ -230,20 +231,21 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Możesz skorzystać z naszej nowej aplikacji <a href=\"https://"
-"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
-"a>, aby znaleźć osoby pasujące do randek. Speedy Match jest otwarty dla "
-"singli w każdym wieku."
+"Możesz skorzystać z naszej nowej aplikacji <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, aby znaleźć osoby pasujące do randek. Speedy Match"
+" jest otwarty dla singli w każdym wieku."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Wszystkie funkcje Speedy Net i Speedy Match są bezpłatne. Dołącz do Speedy "
 "Net już dziś, aby znaleźć przyjaciół, zajmie to tylko kilka minut. <a "
@@ -255,23 +257,26 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net to darmowe oprogramowanie i projekt typu open source. Jeśli "
-"chcesz pomóc w rozwoju i udoskonalaniu Speedy Net, skontaktuj się ze mną e-"
-"mailem."
+"chcesz pomóc w rozwoju i udoskonalaniu Speedy Net, skontaktuj się ze mną "
+"e-mailem."
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Nazwa Speedy Net pochodzi od <a href=\"https://www.facebook.com/Speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, suczki, która była z nami przez "
-"wiele lat i zmarła w 2003 roku. Speedy urodziła 7 szczeniąt w 1988 roku."
+"Nazwa Speedy Net pochodzi od <a "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, suczki, która była z nami przez wiele lat i "
+"zmarła w 2003 roku. Speedy urodziła 7 szczeniąt w 1988 roku."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
-"Speedy Net jest obecnie w fazie alfa. Został uruchomiony w czerwcu 2012 roku."
+"Speedy Net jest obecnie w fazie alfa. Został uruchomiony w czerwcu 2012 "
+"roku."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -305,7 +310,8 @@ msgstr "Proszę potwierdzić swój adres e-mail."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Twoje konto Speedy Net jest nieaktywne. Wejdź na tę stronę, aby ją aktywować."
+"Twoje konto Speedy Net jest nieaktywne. Wejdź na tę stronę, aby ją "
+"aktywować."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -325,8 +331,8 @@ msgstr "Twoi przyjaciele"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
