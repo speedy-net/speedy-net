@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Рахунки Speedy Match"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Стать відповідати"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Користувач Speedy Match"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Кількість збігів у пошуковому запиті о�
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Профіль Speedy Match"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Профілі Speedy Match"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1049,7 +1049,7 @@ msgstr "Взаємні лайки"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Матчі"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1087,13 +1087,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> — це нова веб-програма для знайомств/знаходжень для "
 "романтичних цілей для неодружених, які є членами <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. За "
-"допомогою Speedy Match ви можете знайти відповідних людей для знайомства та "
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. За допомогою "
+"Speedy Match ви можете знайти відповідних людей для знайомства та "
 "спілкуватися з ними онлайн. Ви можете додавати людей у ​​друзі на Speedy Net, "
-"лайкати людей і надсилати їм повідомлення. Speedy Match відкритий для "
-"безкоштовної реєстрації для людей з усіх країн і вікових категорій (без "
-"вікових обмежень!). Сайт підходить для веганів і вегетаріанців. Наразі він "
-"доступний %(languages_num)s мовами."
+"лайкати людей і надсилати їм повідомлення. Match відкритий для безкоштовної "
+"реєстрації для людей з усіх країн і вікових категорій (без вікових "
+"обмежень!). Сайт підходить для веганів і вегетаріанців. Наразі він доступний "
+"%(languages_num)s мовами. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1115,7 +1115,7 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Тільки люди, які відповідають вашим вимогам, зможуть побачити ваш профіль і "
-"зв'язатися з вами. Ми не дозволяємо анонімний пошук, а профілі Speedy Match "
+"зв'язатися з вами. Ми не дозволяємо анонімний Speedy Match пошук, а профілі "
 "бачать лише відповідні партнери. Ви можете вибрати, хто зможе бачити ваш "
 "профіль і які відомості відображатимуться у вашому профілі як "
 "загальнодоступні, які лише для друзів, а які – приватні. Приватні дані "
@@ -1127,10 +1127,10 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Усі функції на Speedy Net і Speedy Match безкоштовні. Приєднайтеся до Speedy "
-"Match сьогодні, щоб знайти відповідних партнерів, це займе лише кілька "
-"хвилин. <a href=\"/\" title=\"Join Speedy Match\">Натисніть тут</a>, щоб "
-"приєднатися."
+"Усі функції на Speedy Net і Speedy Match безкоштовні. Приєднайтеся до "
+"сьогодні Speedy Match, щоб знайти відповідних партнерів, це займе лише "
+"кілька хвилин. <a href=\"/\" title=\"Join Speedy Match\">Натисніть тут</a>, "
+"щоб приєднатися."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1149,7 +1149,7 @@ msgid ""
 msgstr ""
 "Speedy Match названо на честь <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, собаки, яка була з нами багато "
-"років і померла в 2003 році. Speedy народила 7 цуценят у 1988 році."
+"років і померла в 2003 році. народила 7 цуценят у 1988 році."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1169,7 +1169,7 @@ msgstr "Урі Родберг"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Засновник і директор Speedy Net і Speedy Match,"
+msgstr "Засновник і директор Speedy Net Speedy Speedy Match Net і,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1298,7 +1298,7 @@ msgstr ""
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді!"
+msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді! Speedy"
 
 #: .\templates\main\main_page.html:16
 msgid ""

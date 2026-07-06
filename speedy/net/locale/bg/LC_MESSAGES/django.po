@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Спиди Нет сметки"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "да Изтрий акаунта ми."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Потребител на Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -185,7 +185,7 @@ msgstr "Speedy Net [алфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Относно Спиди Нет"
+msgstr "Относно Спиди Нет Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -197,11 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> е нова социална мрежа. Със Спиди Нет можете да общувате "
-"с приятелите си. Speedy Net е отворен за безплатна регистрация за хора от "
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> е нова социална мрежа. Със Спиди Нет Speedy Net можете да общувате с "
+"приятелите си. е Speedy Net отворен за безплатна регистрация за хора от "
 "всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за "
-"вегани и вегетарианци. В момента се предлага на %(languages_num)s езика."
+"вегани и вегетарианци. В момента се предлага на %(languages_num)s езика. Net"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -209,9 +209,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Основателите на Спиди Нет са вегани, подкрепят правата на животните и се "
-"противопоставят на опитите върху животни. Speedy Net е социална мрежа, "
-"удобна за вегани и вегетарианци и животни."
+"Основателите на Speedy Net Спиди Нет са вегани, подкрепят правата на "
+"животните и се противопоставят Speedy Net на опитите върху животни. е "
+"социална мрежа, удобна за вегани и вегетарианци и животни."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -220,11 +220,11 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
-"Решихме да ограничим броя на приятелите в Спиди Нет до 800. Съветваме ви да "
-"добавяте като приятели само хора, които познавате лично. Можете да изберете "
-"кои подробности ще се показват в профила ви като публични, кои подробности "
-"само за приятели и кои подробности ще бъдат лични. Личните данни ще се "
-"показват само на вас."
+"Решихме да ограничим броя на приятелите в Спиди Speedy Net Нет до 800. "
+"Съветваме ви да добавяте като приятели само хора, които познавате лично. "
+"Можете да изберете кои подробности ще се показват в профила ви като "
+"публични, кои подробности само за приятели и кои подробности ще бъдат лични. "
+"Личните данни ще се показват само на вас."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -265,12 +265,12 @@ msgid ""
 msgstr ""
 "Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в "
-"продължение на много години и умря през 2003 г. Speedy роди 7 кученца през "
-"1988 г."
+"продължение на много години и умря през 2003 г. роди 7 кученца през 1988 г."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Спиди Нет в момента е в алфа версия. Лансиран е през юни 2012 г."
+msgstr ""
+"Speedy Net Спиди Нет в момента е в алфа версия. Лансиран е през юни 2012 г."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -282,7 +282,7 @@ msgstr "Ури Родберг"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Основател и директор на Speedy Net и Speedy Match,"
+msgstr "Основател и директор на Speedy Net Speedy Speedy Match Net и,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -304,8 +304,8 @@ msgstr "Моля, потвърдете своя имейл адрес."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате."
+"Вашият Speedy Net акаунт в Спиди Нет не е активен. Влезте в тази страница, "
+"за да я активирате."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -330,10 +330,10 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Спиди Нет е нова социална мрежа. Със Спиди Нет можете да общувате с "
-"приятелите си. Speedy Net е отворен за безплатна регистрация за хора от "
-"всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за "
-"вегани и вегетарианци."
+"Спиди Нет е нова социална мрежа. Със Спиди Нет Speedy Net Speedy Net можете "
+"да общувате с приятелите Speedy Net си. е отворен за безплатна регистрация "
+"за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е "
+"подходящ за вегани и вегетарианци."
 
 #: .\templates\main\main_page.html:17
 msgid ""
@@ -350,7 +350,8 @@ msgstr "Speedy Match – запознанства със Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди!"
+msgstr ""
+"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди! Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

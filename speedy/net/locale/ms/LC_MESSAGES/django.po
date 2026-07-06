@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Akaun Speedy Net"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "ya. Padam akaun saya."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Pengguna Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Bilangan rakan pada lawatan pengguna terakhir"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Speedy Net"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profil Speedy Net"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -196,11 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> ialah rangkaian sosial baharu. Dengan Speedy Net anda "
-"boleh berkomunikasi dengan rakan anda. Speedy Net terbuka kepada pendaftaran "
-"percuma untuk orang dari semua negara dan umur (tiada had umur!). Tapak ini "
-"mesra vegan dan vegetarian. Ia kini tersedia dalam %(languages_num)s bahasa."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> ialah rangkaian sosial baharu. Dengan Speedy Net anda boleh berkomunikasi "
+"dengan rakan Speedy Net anda. Net terbuka kepada pendaftaran percuma untuk "
+"orang dari semua negara dan umur (tiada had umur!). Tapak ini mesra vegan "
+"dan vegetarian. Ia kini tersedia dalam %(languages_num)s bahasa."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -244,8 +244,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai Speedy "
-"Net hari ini untuk mencari rakan, ia hanya mengambil masa beberapa minit. <a "
+"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai hari ini "
+"untuk Speedy Net mencari rakan, ia hanya mengambil masa beberapa minit. <a "
 "href=\"/\" title=\"Join Speedy Net\">Klik di sini</a> untuk menyertai."
 
 #: .\templates\about\about.html:27
@@ -265,12 +265,12 @@ msgid ""
 msgstr ""
 "Speedy Net dinamakan sempena <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama "
-"kami selama bertahun-tahun dan mati pada tahun 2003. Speedy melahirkan 7 "
-"ekor anak anjing pada tahun 1988."
+"kami selama bertahun-tahun dan mati pada tahun 2003. melahirkan 7 ekor anak "
+"anjing pada tahun 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Speedy Net kini berada dalam alpha. Ia dilancarkan pada Jun 2012."
+msgstr "Speedy Net kini berada dalam alfa. Ia dilancarkan pada Jun 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -282,7 +282,8 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pengasas dan pengarah Speedy Net dan Speedy Match,"
+msgstr ""
+"Pengasas dan pengarah Speedy Speedy Net Speedy Speedy Match Net Net dan,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

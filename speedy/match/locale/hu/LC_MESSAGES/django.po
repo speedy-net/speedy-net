@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1047,7 +1047,7 @@ msgstr "Kölcsönös kedvelések"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match mérkőzések"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1063,11 +1063,11 @@ msgstr "Egyik sem"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "A Speedy Match-ről"
+msgstr "A Speedy Match -ről"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1085,13 +1085,13 @@ msgstr ""
 "A <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> egy új randevúzási/párkereső internetes alkalmazás "
 "romantikus célokra olyan egyedülállók számára, akik a <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> tagjai. "
-"A Speedy Match segítségével megtalálhatja a megfelelő embereket "
-"randevúzáshoz, és online cseveghet velük. Hozzáadhat embereket barátokként a "
-"Speedy Neten, kedvelheti az embereket, és üzeneteket küldhet nekik. A Speedy "
-"Match ingyenes regisztrációra nyitva áll minden országból és korosztályból "
-"(korhatár nélkül!). Az oldal vegán és vegetáriánusbarát. Jelenleg "
-"%(languages_num)s nyelven érhető el."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a> tagjai. A "
+"Speedy Match segítségével megtalálhatja a megfelelő embereket randevúzáshoz, "
+"és online cseveghet velük. Hozzáadhat embereket barátokként a Speedy Neten, "
+"kedvelheti az embereket, és üzeneteket küldhet nekik. A Match ingyenes "
+"regisztrációra nyitva áll minden országból és korosztályból (korhatár "
+"nélkül!). Az oldal vegán és vegetáriánusbarát. Jelenleg %(languages_num)s "
+"nyelven érhető el. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1113,11 +1113,11 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Csak az Ön igényeinek megfelelő személyek láthatják profilját, és "
-"kapcsolatba léphetnek Önnel. Nem engedélyezzük az anonim kereséseket, és a "
-"Speedy Match profilokat csak a megfelelő partnerek láthatják. "
-"Kiválaszthatja, hogy ki láthatja profilját, és mely adatok jelenjenek meg a "
-"profiljában nyilvánosként, melyek csak az ismerősök számára, és melyek "
-"legyenek privátok. A privát adatok csak Önnek jelennek meg."
+"kapcsolatba léphetnek Önnel. Nem engedélyezzük az anonim kereséseket Speedy "
+"Match, és a profilokat csak a megfelelő partnerek láthatják. Kiválaszthatja, "
+"hogy ki láthatja profilját, és mely adatok jelenjenek meg a profiljában "
+"nyilvánosként, melyek csak az ismerősök számára, és melyek legyenek "
+"privátok. A privát adatok csak Önnek jelennek meg."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1125,10 +1125,10 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a "
-"Speedy Matchhez még ma, hogy megfelelő partnereket találjon, mindössze "
-"néhány percet vesz igénybe. <a href=\"/\" title=\"Join Speedy "
-"Match\">Kattintson ide</a> a csatlakozáshoz."
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a hez "
+"még Speedy Match ma, hogy megfelelő partnereket találjon, mindössze néhány "
+"percet vesz igénybe. <a href=\"/\" title=\"Join Speedy Match\">Kattintson "
+"ide</a> a csatlakozáshoz."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1136,7 +1136,7 @@ msgid ""
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
 "A Speedy Match egy ingyenes szoftveres és nyílt forráskódú projekt. Ha "
-"segíteni szeretne a Speedy Match fejlesztésében és javításában, forduljon "
+"segíteni szeretne a fejlesztésében Speedy Match és javításában, forduljon "
 "hozzám e-mailben."
 
 #: .\templates\about\about.html:27
@@ -1147,8 +1147,8 @@ msgid ""
 msgstr ""
 "A Speedy Match nevét <a href=\"https://www.facebook.com/speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a>-ról kapta, egy nőstény kutyáról, aki sok "
-"éven át velünk volt, és 2003-ban pusztult el. Speedy 1988-ban 7 "
-"kölyökkutyának adott életet."
+"éven át velünk volt, és 2003-ban pusztult el. 1988-ban 7 kölyökkutyának "
+"adott életet."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1156,7 +1156,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "A Speedy Match jelenleg alfában van. 2019 augusztusában indították el. A "
-"Speedy Match angol verziója gyártás alatt áll."
+"angol Speedy Match verziója gyártás alatt áll."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1168,7 +1168,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "A Speedy Net és a Speedy Match alapítója és igazgatója,"
+msgstr "A és a alapítója és Speedy Net Speedy Match igazgatója,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1290,7 +1290,7 @@ msgid ""
 "vegetarian friendly."
 msgstr ""
 "A Speedy Match egy új randevúzási/egyeztetési webalkalmazás romantikus "
-"célokra a Speedy Net tagjainak szinglik számára. A Speedy Match segítségével "
+"célokra a tagjainak szinglik számára Speedy Net. A Speedy Match segítségével "
 "megtalálhatja a megfelelő embereket randevúzáshoz, és online cseveghet "
 "velük. Az oldal vegán és vegetáriánusbarát."
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,17 +297,17 @@ msgstr "你喜歡"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽"
+msgstr "最後一次造訪的快速比賽 Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽"
+msgstr "最後一次造訪的快速比賽 Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽"
+msgstr "最後一次造訪的快速比賽 Speedy Match"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -495,7 +495,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "快速匹配帳戶"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -592,7 +592,7 @@ msgstr "性別要匹配"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "快速匹配用戶"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -691,11 +691,11 @@ msgstr "上次用戶搜尋的匹配數"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "快速配對簡介"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "快速匹配設定檔"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1025,7 +1025,7 @@ msgstr "互相喜歡"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "快速比賽"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1041,11 +1041,11 @@ msgstr "沒有任何"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "快速匹配 [alpha]"
+msgstr "Speedy Match [阿爾法]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "關於極速匹配"
+msgstr "關於極速匹配 Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1062,11 +1062,11 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> 是一款新的約會/匹配網絡應用程序，適用於 <a "
-"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> 會員的單身人士。透過 Speedy Match，您可以找到匹配的人進行約會並與他們"
-"在線聊天。您可以在 Speedy Net 上添加他人為好友、喜歡他人並向他們發送訊息。 "
-"Speedy Match 向所有國家和年齡的人開放免費註冊（沒有年齡限制！）。該網站是素食"
-"主義者和素食主義者友好的。目前提供 %(languages_num)s 語言版本。"
+"href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a> "
+"會員的單身人士。透過 Speedy Match，您可以找到匹配的人進行約會並與他們在線聊"
+"天。您可以在 Speedy Net 上添加他人為好友、喜歡他人並向他們發送訊息。 Match 向"
+"所有國家和年齡的人開放免費註冊（沒有年齡限制！）。該網站是素食主義者和素食主"
+"義者友好的。目前提供 %(languages_num)s 語言版本。 Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1087,9 +1087,9 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "只有符合您要求的人才能查看您的個人資料並與您聯繫。我們不允許匿名搜索，並且快"
-"速匹配個人資料僅對匹配合作夥伴可見。您可以選擇誰能夠查看您的個人資料，以及哪"
-"些詳細資訊將在您的個人資料中顯示為公開、哪些詳細資訊僅供朋友查看以及哪些詳細"
-"資訊將是私人的。私人詳細資訊只會顯示給您。"
+"速匹配個人資料僅對匹配合作夥伴可見 Speedy Match 。您可以選擇誰能夠查看您的個"
+"人資料，以及哪些詳細資訊將在您的個人資料中顯示為公開、哪些詳細資訊僅供朋友查"
+"看以及哪些詳細資訊將是私人的。私人詳細資訊只會顯示給您。"
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1106,7 +1106,7 @@ msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"Speedy Match 是一個免費軟體和開源專案。如果您想幫助開發和改進 Speedy Match，"
+"Speedy Match 是一個免費軟體和開源專案。如果您想幫助開發和改進 Speedy Match ，"
 "請透過電子郵件與我聯繫。"
 
 #: .\templates\about\about.html:27
@@ -1117,15 +1117,15 @@ msgid ""
 msgstr ""
 "Speedy Match以<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>命名，這是一隻陪伴我們多年的母狗，於2003年去世。 "
-"1988年，Speedy生下了7隻小狗。"
+"1988年，生下了7隻小狗。"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match 目前處於 alpha 階段。於2019年8月上線，《Speedy Match》英文版正在"
-"製作中。"
+"Speedy Match 目前處於 阿爾法 階段。於2019年8月上線 Speedy Match ，《》英文版"
+"正在製作中。"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1137,11 +1137,13 @@ msgstr "尤里·羅德伯格"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "速網、速配創辦人兼董事，"
+msgstr ""
+"速網、速配創辦人兼董事， Speedy Speedy Speedy Net Speedy Speedy Match Net "
+"Net Net"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "快速帕茲技術有限公司"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1256,9 +1258,9 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Speedy Match 是一款新的約會/匹配網絡應用程序，專為 Speedy Net 會員的單身人士"
-"提供浪漫目的。透過 Speedy Match，您可以找到匹配的人進行約會並與他們在線聊天。"
-"該網站是素食主義者和素食主義者友好的。"
+"Speedy Match 是一款新的約會/匹配網絡應用程序，專為 會員的單身人士提供浪漫目"
+"的 Speedy Speedy Net Speedy Speedy Match Net Net 。透過 ，您可以找到匹配的人"
+"進行約會並與他們在線聊天。該網站是素食主義者和素食主義者友好的。"
 
 #: .\templates\main\main_page.html:14
 msgid ""
@@ -1358,7 +1360,7 @@ msgstr "關係狀況"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽"
+msgstr "最後一次造訪的快速比賽 Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

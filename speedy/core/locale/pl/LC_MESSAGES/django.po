@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -366,7 +366,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ma również profil Speedy Match. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Match profil. Zobacz profil %(user_name)s w "
 "Speedy Match."
 
 #: .\__translations\__translations.html:101
@@ -376,7 +376,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ma również profil Speedy Match. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Match profil. Zobacz profil %(user_name)s w "
 "Speedy Match."
 
 #: .\__translations\__translations.html:102
@@ -386,7 +386,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ma również profil Speedy Match. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Match profil. Zobacz profil %(user_name)s w "
 "Speedy Match."
 
 #: .\__translations\__translations.html:104
@@ -396,7 +396,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s ma również profil Speedy Net. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Net profil. Zobacz profil %(user_name)s w "
 "Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -406,7 +406,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s ma również profil Speedy Net. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Net profil. Zobacz profil %(user_name)s w "
 "Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -416,7 +416,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s ma również profil Speedy Net. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Net profil. Zobacz profil %(user_name)s w "
 "Speedy Net."
 
 #: .\__translations\__translations.html:108
@@ -1380,7 +1380,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały dezaktywowane. Możesz je "
+"Twoje Speedy Net konta Speedy Match i zostały dezaktywowane. Możesz je "
 "ponownie aktywować w dowolnym momencie."
 
 #: .\__translations\__translations.py:158
@@ -1389,7 +1389,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały dezaktywowane. Możesz je "
+"Twoje Speedy Net konta Speedy Match i zostały dezaktywowane. Możesz je "
 "ponownie aktywować w dowolnym momencie."
 
 #: .\__translations\__translations.py:159
@@ -1398,7 +1398,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały dezaktywowane. Możesz je "
+"Twoje Speedy Net konta Speedy Match i zostały dezaktywowane. Możesz je "
 "ponownie aktywować w dowolnym momencie."
 
 #: .\__translations\__translations.py:161
@@ -1483,8 +1483,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych."
+"Masz już {0} znajomych. W nie możesz mieć więcej niż {1} znajomych Speedy "
+"Net. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1493,8 +1493,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych."
+"Masz już {0} znajomych. W nie możesz mieć więcej niż {1} znajomych Speedy "
+"Net. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1503,8 +1503,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych."
+"Masz już {0} znajomych. W nie możesz mieć więcej niż {1} znajomych Speedy "
+"Net. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1922,7 +1922,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Szybkie konta podstawowe"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2486,7 +2486,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Szybka aplikacja podstawowa"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3018,7 +3018,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Speedy Net"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3026,11 +3026,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Szybkie oprogramowanie"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Szybka sprzedaż"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3039,7 +3039,7 @@ msgstr "Strona przyjazna weganom"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Szybki"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3055,23 +3055,23 @@ msgstr "Hasło"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Szybka sieć"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Szybki mecz"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Sklep Speedy Net"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Sklep Speedy Match"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Szybki sklep z logo S"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3103,15 +3103,15 @@ msgstr "Skontaktuj się z nami"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Szybki kompozytor"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Oprogramowanie do szybkiej poczty"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Sklep szybkiego kompozytora"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3288,7 +3288,7 @@ msgid ""
 msgstr ""
 "Twój profil w Speedy Net jest widoczny dla wszystkich, ale możesz wybrać, "
 "komu chcesz udostępnić swój adres e-mail i datę urodzenia. Jeśli "
-"zarejestrowałeś się w Speedy Match, Twój profil Speedy Match będzie widoczny "
+"zarejestrowałeś Speedy Match się w, Twój profil Speedy Match będzie widoczny "
 "tylko dla osób, które pasują do Ciebie zgodnie z ustawieniami "
 "skonfigurowanymi na stronie i które dopasujesz do nich zgodnie z ich "
 "ustawieniami. Twój profil w Speedy Match nie pojawi się w Google i nie "
@@ -3443,7 +3443,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ma również profil Speedy Match. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Match profil. Zobacz profil %(user_name)s w "
 "Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
@@ -3456,7 +3456,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s ma również profil Speedy Net. Zobacz profil %(user_name)s w "
+"%(user_name)s ma również Speedy Net profil. Zobacz profil %(user_name)s w "
 "Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3476,9 +3476,9 @@ msgid ""
 msgstr ""
 "Z Speedy Net możesz korzystać wyłącznie w celach zgodnych z prawem. "
 "Zabronione jest przesyłanie treści związanych z nienawiścią, przemocą, "
-"znęcaniem się nad zwierzętami, nagością lub pornografią. Zabrania się "
-"używania Speedy Net do wysyłania spamu lub wiadomości o tej samej treści do "
-"dużej liczby osób."
+"znęcaniem się nad zwierzętami, nagością lub pornografią Speedy Net. Zabrania "
+"się używania do wysyłania spamu lub wiadomości o tej samej treści do dużej "
+"liczby osób."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3562,7 +3562,7 @@ msgstr "widoczne na stronie internetowej"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Szybki czas moderacji obrazu"
+msgstr "Szybki czas moderacji obrazu Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
