@@ -45,19 +45,97 @@ if (django_settings.TESTS):
                 'nl': {
                     **{gender: 'Account verwijderen' for gender in User.ALL_GENDERS},
                 },
-                'sv': {
-                    **{gender: 'Radera konto' for gender in User.ALL_GENDERS},
+                'ja': {
+                    **{gender: 'アカウントの削除' for gender in User.ALL_GENDERS},
                 },
-                'ko': {
-                    **{gender: '계정 삭제' for gender in User.ALL_GENDERS},
+                'ru': {
+                    **{gender: 'Удалить аккаунт' for gender in User.ALL_GENDERS},
                 },
-                'fi': {
-                    **{gender: 'Poista tili' for gender in User.ALL_GENDERS},
+                'zh': {
+                    **{gender: '刪除帳戶' for gender in User.ALL_GENDERS},
+                },
+                'pl': {
+                    **{gender: 'Usuń konto' for gender in User.ALL_GENDERS},
+                },
+                'fa': {
+                    **{gender: 'حذف اکانت' for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מחקי את החשבון",
                     User.GENDER_MALE_STRING: "מחק את החשבון",
                     User.GENDER_OTHER_STRING: "מחק/י את החשבון",
+                },
+                'ko': {
+                    **{gender: '계정 삭제' for gender in User.ALL_GENDERS},
+                },
+                'ar': {
+                    **{gender: 'حذف الحساب' for gender in User.ALL_GENDERS},
+                },
+                'id': {
+                    **{gender: 'Hapus Akun' for gender in User.ALL_GENDERS},
+                },
+                'uk': {
+                    **{gender: 'Видалити акаунт' for gender in User.ALL_GENDERS},
+                },
+                'tr': {
+                    **{gender: 'Hesabı Sil' for gender in User.ALL_GENDERS},
+                },
+                'vi': {
+                    **{gender: 'Xóa tài khoản' for gender in User.ALL_GENDERS},
+                },
+                'cs': {
+                    **{gender: 'Smazat účet' for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: 'Radera konto' for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: 'Poista tili' for gender in User.ALL_GENDERS},
+                },
+                'hu': {
+                    **{gender: 'Fiók törlése lehetőségre' for gender in User.ALL_GENDERS},
+                },
+                'th': {
+                    **{gender: 'ลบบัญชี' for gender in User.ALL_GENDERS},
+                },
+                'el': {
+                    **{gender: 'Διαγραφή λογαριασμού' for gender in User.ALL_GENDERS},
+                },
+                'ms': {
+                    **{gender: 'Padam Akaun' for gender in User.ALL_GENDERS},
+                },
+                'sr': {
+                    **{gender: 'Избриши налог' for gender in User.ALL_GENDERS},
+                },
+                'ro': {
+                    **{gender: 'Șterge contul' for gender in User.ALL_GENDERS},
+                },
+                'bn': {
+                    **{gender: 'অ্যাকাউন্ট মুছুন' for gender in User.ALL_GENDERS},
+                },
+                'ca': {
+                    **{gender: 'Suprimeix el compte' for gender in User.ALL_GENDERS},
+                },
+                'no': {
+                    **{gender: 'Slett konto' for gender in User.ALL_GENDERS},
+                },
+                'bg': {
+                    **{gender: 'Изтриване на акаунт' for gender in User.ALL_GENDERS},
+                },
+                'da': {
+                    **{gender: 'Slet konto' for gender in User.ALL_GENDERS},
+                },
+                'sk': {
+                    **{gender: 'Odstrániť účet' for gender in User.ALL_GENDERS},
+                },
+                'hi': {
+                    **{gender: 'खाता हटा दो' for gender in User.ALL_GENDERS},
+                },
+                'et': {
+                    **{gender: 'Kustuta konto' for gender in User.ALL_GENDERS},
+                },
+                'hr': {
+                    **{gender: 'Izbriši račun' for gender in User.ALL_GENDERS},
                 },
             }
 
