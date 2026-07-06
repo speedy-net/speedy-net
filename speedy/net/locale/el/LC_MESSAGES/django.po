@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 04:17+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [αλφα]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -269,15 +269,14 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Το Speedy Net πήρε το όνομα του <a href=\"https://www.facebook.com/Speedy."
+"Το Speedy Net πήρε το όνομα του <a href=\"https://www.facebook.com/speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, ενός θηλυκού σκύλου που ήταν "
 "μαζί μας για πολλά χρόνια και πέθανε το 2003. Το γέννησε 7 κουτάβια το 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
-"Το Speedy Net είναι αυτή τη στιγμή στο alpha. Κυκλοφόρησε τον Ιούνιο του "
-"2012."
+"Το Speedy Net είναι αυτή τη στιγμή στο αλφα. Κυκλοφόρησε τον Ιούνιο του 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"

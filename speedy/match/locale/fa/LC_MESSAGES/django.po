@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1060,7 +1060,7 @@ msgstr "هیچ کدام"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match مسابقه سریع [آلفا]"
+msgstr "Speedy Match [آلفا]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1139,7 +1139,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match از نام <a href=\"https://www.facebook.com/Speedy.the.female."
+"Speedy Match از نام <a href=\"https://www.facebook.com/speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a>، یک سگ ماده که سالها با ما بود و در سال "
 "2003 مرد، نامگذاری شده است. اسپیدی در سال 1988 7 توله سگ به دنیا آورد."
 

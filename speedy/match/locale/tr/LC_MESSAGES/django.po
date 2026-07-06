@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1059,7 +1059,7 @@ msgstr "Hiçbiri"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match Hızlı Eşleştirme [alfa]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1142,7 +1142,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Match, adını uzun yıllar bizimle birlikte olan ve 2003 yılında ölen "
-"dişi köpek <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"dişi köpek <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>'den almıştır. , 1988 yılında 7 yavru doğurmuştur."
 
 #: .\templates\about\about.html:29
