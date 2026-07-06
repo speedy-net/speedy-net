@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -197,7 +197,7 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy "
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
 "Net</a> یک شبکه اجتماعی جدید است. با Speedy Net می توانید با دوستان خود "
 "ارتباط برقرار Speedy Net کنید. Net برای ثبت نام رایگان برای افراد از همه "
 "کشورها و سنین باز است (بدون محدودیت سنی!). این سایت گیاهخوار و گیاهخوار است."
