@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Akaun Speedy Match (Speedy Match Accounts)"
+msgstr "Akaun Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -607,7 +607,7 @@ msgstr "Jantina untuk dipadankan"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Pengguna Speedy Match (Speedy Match User)"
+msgstr "Pengguna Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -706,11 +706,11 @@ msgstr "Bilangan padanan pada carian pengguna terakhir"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Profil Perlawanan Cepat (Speedy Match Profile)"
+msgstr "Profil Perlawanan Cepat"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Profil Speedy Match (Speedy Match Profiles)"
+msgstr "Profil Speedy Match"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1051,7 +1051,7 @@ msgstr "Saling Suka"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Perlawanan Perlawanan Cepat (Speedy Match Matches)"
+msgstr "Perlawanan Perlawanan Cepat"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1067,7 +1067,7 @@ msgstr "tiada"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Perlawanan Cepat [alpha] (Speedy Match)"
+msgstr "Perlawanan Cepat [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1150,7 +1150,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match dinamakan sempena <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Match dinamakan sempena <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama "
 "kami selama bertahun-tahun dan mati pada tahun 2003. Speedy melahirkan 7 "
 "ekor anak anjing pada tahun 1988."
@@ -1298,8 +1298,7 @@ msgstr ""
 "Speedy Match ialah apl web temu janji/padanan baharu untuk tujuan romantik "
 "untuk perseorangan yang menjadi ahli Speedy Net. Dengan Speedy Match anda "
 "boleh mencari orang yang sepadan untuk dating dan bersembang dengan mereka "
-"dalam talian. Tapak ini mesra vegan dan vegetarian. (Speedy Net. With Speedy "
-"Match)"
+"dalam talian. Tapak ini mesra vegan dan vegetarian."
 
 #: .\templates\main\main_page.html:14
 msgid ""

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,32 +329,32 @@ msgstr "Još nemate nijednu poruku."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Blokirali ste"
+msgstr "Blokirali ste "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Blokirali ste"
+msgstr "Blokirali ste "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Blokirali ste"
+msgstr "Blokirali ste "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "blokirao te."
+msgstr " blokirao te."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "blokirao te."
+msgstr " blokirao te."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "blokirao te."
+msgstr " blokirao te."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -364,7 +364,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s također ima Speedy Match profil. Pogledajte profil "
-"%(user_name)s na Speedy Matchu. (Speedy Match.)"
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -374,7 +374,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s također ima Speedy Match profil. Pogledajte profil "
-"%(user_name)s na Speedy Matchu. (Speedy Match.)"
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -384,7 +384,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s također ima Speedy Match profil. Pogledajte profil "
-"%(user_name)s na Speedy Matchu. (Speedy Match.)"
+"%(user_name)s na Speedy Matchu."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -394,7 +394,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s "
-"na Speedy Netu. (Speedy Net.)"
+"na Speedy Netu."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -404,7 +404,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s "
-"na Speedy Netu. (Speedy Net.)"
+"na Speedy Netu."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -414,28 +414,22 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s "
-"na Speedy Netu. (Speedy Net.)"
+"na Speedy Netu."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu. (Speedy "
-"Net.)"
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu. (Speedy "
-"Net.)"
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu. (Speedy "
-"Net.)"
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -455,62 +449,62 @@ msgstr "Dodaj u prijatelje"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Jeste li sigurni da želite blokirati"
+msgstr "Jeste li sigurni da želite blokirati "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Jeste li sigurni da želite blokirati"
+msgstr "Jeste li sigurni da želite blokirati "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Jeste li sigurni da želite blokirati"
+msgstr "Jeste li sigurni da želite blokirati "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blokirati"
+msgstr "Blokirati "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blokirati"
+msgstr "Blokirati "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blokirati"
+msgstr "Blokirati "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Odblokiraj"
+msgstr "Odblokiraj "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Odblokiraj"
+msgstr "Odblokiraj "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Odblokiraj"
+msgstr "Odblokiraj "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Izvješće"
+msgstr "Izvješće "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Izvješće"
+msgstr "Izvješće "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Izvješće"
+msgstr "Izvješće "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1493,7 +1487,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
-"Netu. Prije nastavka uklonite prijatelje. (Speedy Net. Please)"
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1503,7 +1497,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
-"Netu. Prije nastavka uklonite prijatelje. (Speedy Net. Please)"
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1513,7 +1507,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy "
-"Netu. Prije nastavka uklonite prijatelje. (Speedy Net. Please)"
+"Netu. Prije nastavka uklonite prijatelje."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1523,8 +1517,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1534,8 +1527,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1545,8 +1537,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1556,8 +1547,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1567,8 +1557,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1578,8 +1567,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1589,8 +1577,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1600,8 +1587,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1611,8 +1597,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja "
-"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite. "
-"(Speedy Net. Please)"
+"na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1834,7 +1819,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1843,7 +1828,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1852,7 +1837,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1861,7 +1846,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1870,7 +1855,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1879,7 +1864,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1888,7 +1873,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1897,7 +1882,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1906,7 +1891,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ovaj korisnik ne odgovara vašem profilu, ali možete posjetiti njegov Speedy "
-"Net profil. Pogledajte profil korisnika na Speedy Netu. (Speedy Net.)"
+"Net profil. Pogledajte profil korisnika na Speedy Netu."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1934,7 +1919,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Brzi osnovni računi (Speedy Core Accounts)"
+msgstr "Brzi osnovni računi"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2497,7 +2482,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Aplikacija Speedy Core Base (Speedy Core Base App)"
+msgstr "Aplikacija Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2506,7 +2491,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -2951,8 +2936,7 @@ msgstr "Promjena lozinke"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr ""
-"Vaša će dob biti vidljiva vašim utakmicama na Speedy Matchu. (Speedy Match.)"
+msgstr "Vaša će dob biti vidljiva vašim utakmicama na Speedy Matchu."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3037,11 +3021,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Brzi softver (Speedy Software)"
+msgstr "Brzi softver"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Brza prodaja (Speedy Sale)"
+msgstr "Brza prodaja"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3050,7 +3034,7 @@ msgstr "Web stranica prilagođena veganima"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Brz (Speedy)"
+msgstr "Brz"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3070,7 +3054,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Brzo podudaranje (Speedy Match)"
+msgstr "Brzo podudaranje"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3078,7 +3062,7 @@ msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match trgovina (Speedy Match's Shop)"
+msgstr "Speedy Match trgovina"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3114,15 +3098,15 @@ msgstr "Kontaktirajte nas"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Brzi skladatelj (Speedy Composer)"
+msgstr "Brzi skladatelj"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Softver Speedy Mail (Speedy Mail Software)"
+msgstr "Softver Speedy Mail"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Brza skladateljska trgovina (Speedy Composer's Shop)"
+msgstr "Brza skladateljska trgovina"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3321,8 +3305,7 @@ msgstr ""
 "deaktivacija vašeg računa na Speedy Netu također automatski deaktivira vaš "
 "račun na Speedy Matchu. Možete deaktivirati samo svoj račun na Speedy "
 "Matchu, u kojem će slučaju vaš Speedy Net račun ostati aktivan. Možete "
-"ponovno aktivirati svoj račun nakon što ga deaktivirate kad god želite. "
-"(Speedy Match. You)"
+"ponovno aktivirati svoj račun nakon što ga deaktivirate kad god želite."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3338,12 +3321,11 @@ msgstr ""
 "biste izbrisali svoj Speedy Net račun, prijavite se na Speedy Net, "
 "deaktivirajte svoj račun, a zatim kliknite “Delete Account” (u izborniku "
 "“Edit Profile”). Ispunite podatke u obrascu i potvrdite. Imajte na umu da se "
-"izbrisani račun ne može vratiti. Brisanje računa je trajno i nepovratno. "
-"(Speedy Net. Deleting)"
+"izbrisani račun ne može vratiti. Brisanje računa je trajno i nepovratno."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Blokirali ste"
+msgstr "Blokirali ste "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3351,7 +3333,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "blokirao te."
+msgstr " blokirao te."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3385,7 +3367,7 @@ msgstr "Uključi padajući izbornik"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Jeste li sigurni da želite blokirati"
+msgstr "Jeste li sigurni da želite blokirati "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3394,16 +3376,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blokirati"
+msgstr "Blokirati "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Odblokiraj"
+msgstr "Odblokiraj "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Izvješće"
+msgstr "Izvješće "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3457,13 +3439,11 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s također ima Speedy Match profil. Pogledajte profil "
-"%(user_name)s na Speedy Matchu. (Speedy Match.)"
+"%(user_name)s na Speedy Matchu."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu. (Speedy "
-"Net.)"
+msgstr "Imate i Speedy Net profil. Pogledajte svoj profil na Speedy Netu."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3472,7 +3452,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s također ima Speedy Net profil. Pogledajte profil %(user_name)s "
-"na Speedy Netu. (Speedy Net.)"
+"na Speedy Netu."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3574,7 +3554,7 @@ msgstr "vidljivo na web stranici"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Brzo vrijeme moderiranja slike (Speedy)"
+msgstr "Brzo vrijeme moderiranja slike"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

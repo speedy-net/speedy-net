@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,32 +332,32 @@ msgstr "Nie masz jeszcze żadnych wiadomości."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Zablokowałeś"
+msgstr "Zablokowałeś "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Zablokowałeś"
+msgstr "Zablokowałeś "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Zablokowałeś"
+msgstr "Zablokowałeś "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "zablokował Cię."
+msgstr " zablokował Cię."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "zablokował Cię."
+msgstr " zablokował Cię."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "zablokował Cię."
+msgstr " zablokował Cię."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -452,62 +452,62 @@ msgstr "Dodaj do znajomych"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Czy na pewno chcesz zablokować"
+msgstr "Czy na pewno chcesz zablokować "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Czy na pewno chcesz zablokować"
+msgstr "Czy na pewno chcesz zablokować "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Czy na pewno chcesz zablokować"
+msgstr "Czy na pewno chcesz zablokować "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Odblokować"
+msgstr "Odblokować "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Odblokować"
+msgstr "Odblokować "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Odblokować"
+msgstr "Odblokować "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Raport"
+msgstr "Raport "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Raport"
+msgstr "Raport "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Raport"
+msgstr "Raport "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1484,7 +1484,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych. (Speedy Net. Please)"
+"znajomych. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1494,7 +1494,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych. (Speedy Net. Please)"
+"znajomych. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1504,7 +1504,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Masz już {0} znajomych. W Speedy Net nie możesz mieć więcej niż {1} "
-"znajomych. Zanim będziesz kontynuować, usuń znajomych. (Speedy Net. Please)"
+"znajomych. Zanim będziesz kontynuować, usuń znajomych."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1514,8 +1514,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1525,8 +1524,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1536,8 +1534,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1547,8 +1544,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1558,8 +1554,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1569,8 +1564,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1580,8 +1574,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1591,8 +1584,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1602,8 +1594,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych "
-"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych. "
-"(Speedy Net. Please)"
+"w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1931,7 +1922,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Szybkie konta podstawowe (Speedy Core Accounts)"
+msgstr "Szybkie konta podstawowe"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2495,7 +2486,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Szybka aplikacja podstawowa (Speedy Core Base App)"
+msgstr "Szybka aplikacja podstawowa"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2504,7 +2495,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -3027,7 +3018,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Speedy Net (Speedy Net Blog)"
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3035,11 +3026,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Szybkie oprogramowanie (Speedy Software)"
+msgstr "Szybkie oprogramowanie"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Szybka sprzedaż (Speedy Sale)"
+msgstr "Szybka sprzedaż"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3048,7 +3039,7 @@ msgstr "Strona przyjazna weganom"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Szybki (Speedy)"
+msgstr "Szybki"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3064,23 +3055,23 @@ msgstr "Hasło"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Szybka sieć (Speedy Net)"
+msgstr "Szybka sieć"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Szybki mecz (Speedy Match)"
+msgstr "Szybki mecz"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Sklep Speedy Net (Speedy Net's Shop)"
+msgstr "Sklep Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Sklep Speedy Match (Speedy Match's Shop)"
+msgstr "Sklep Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Szybki sklep z logo S (Speedy S-logo Shop)"
+msgstr "Szybki sklep z logo S"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3112,15 +3103,15 @@ msgstr "Skontaktuj się z nami"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Szybki kompozytor (Speedy Composer)"
+msgstr "Szybki kompozytor"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Oprogramowanie do szybkiej poczty (Speedy Mail Software)"
+msgstr "Oprogramowanie do szybkiej poczty"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Sklep szybkiego kompozytora (Speedy Composer's Shop)"
+msgstr "Sklep szybkiego kompozytora"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3319,8 +3310,7 @@ msgstr ""
 "Twojego konta w Speedy Net powoduje również automatyczną dezaktywację "
 "Twojego konta w Speedy Match. Możesz dezaktywować tylko swoje konto w Speedy "
 "Match, w takim przypadku Twoje konto Speedy Net pozostanie aktywne. Możesz "
-"ponownie aktywować swoje konto po jego dezaktywacji, kiedy tylko chcesz. "
-"(Speedy Match. You)"
+"ponownie aktywować swoje konto po jego dezaktywacji, kiedy tylko chcesz."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3336,11 +3326,11 @@ msgstr ""
 "usunąć swoje konto Speedy Net, zaloguj się do Speedy Net, dezaktywuj swoje "
 "konto, a następnie kliknij „Usuń konto” (w menu „Edytuj profil”). Wypełnij "
 "dane w formularzu i potwierdź. Pamiętaj, że usuniętego konta nie można "
-"odzyskać. Usunięcie konta jest trwałe i nieodwracalne. (Speedy Net. Deleting)"
+"odzyskać. Usunięcie konta jest trwałe i nieodwracalne."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Zablokowałeś"
+msgstr "Zablokowałeś "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3348,7 +3338,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "zablokował Cię."
+msgstr " zablokował Cię."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3382,7 +3372,7 @@ msgstr "Przełącz menu rozwijane"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Czy na pewno chcesz zablokować"
+msgstr "Czy na pewno chcesz zablokować "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3391,16 +3381,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Odblokować"
+msgstr "Odblokować "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Raport"
+msgstr "Raport "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3572,7 +3562,7 @@ msgstr "widoczne na stronie internetowej"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Szybki czas moderacji obrazu (Speedy)"
+msgstr "Szybki czas moderacji obrazu"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

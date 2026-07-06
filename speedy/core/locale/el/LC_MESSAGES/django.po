@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,32 +338,32 @@ msgstr "Δεν έχετε ακόμα μηνύματα."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Αποκλείσατε"
+msgstr "Αποκλείσατε "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Αποκλείσατε"
+msgstr "Αποκλείσατε "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Αποκλείσατε"
+msgstr "Αποκλείσατε "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "σε μπλόκαρε."
+msgstr " σε μπλόκαρε."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "σε μπλόκαρε."
+msgstr " σε μπλόκαρε."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "σε μπλόκαρε."
+msgstr " σε μπλόκαρε."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -461,62 +461,62 @@ msgstr "Προσθήκη στους φίλους"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε"
+msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε"
+msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε"
+msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Φραγμός"
+msgstr "Φραγμός "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Φραγμός"
+msgstr "Φραγμός "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Φραγμός"
+msgstr "Φραγμός "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Ξεβουλώνω"
+msgstr "Ξεβουλώνω "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Ξεβουλώνω"
+msgstr "Ξεβουλώνω "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Ξεβουλώνω"
+msgstr "Ξεβουλώνω "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Εκθεση"
+msgstr "Εκθεση "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Εκθεση"
+msgstr "Εκθεση "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Εκθεση"
+msgstr "Εκθεση "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1511,7 +1511,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε. (Speedy Net. Please)"
+"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1521,7 +1521,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε. (Speedy Net. Please)"
+"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1531,7 +1531,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε. (Speedy Net. Please)"
+"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1542,7 +1542,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1553,7 +1553,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1564,7 +1564,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1575,7 +1575,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1586,7 +1586,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1597,7 +1597,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1608,7 +1608,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1619,7 +1619,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1630,7 +1630,7 @@ msgid ""
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
 "{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε. (Speedy Net. Please)"
+"προχωρήσετε."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -2546,7 +2546,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Εφαρμογή Speedy Core Base (Speedy Core Base App)"
+msgstr "Εφαρμογή Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2555,7 +2555,7 @@ msgstr "ταυτότητα"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -3080,7 +3080,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Ιστολόγιο Speedy Net (Speedy Net Blog)"
+msgstr "Ιστολόγιο Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3092,7 +3092,7 @@ msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Γρήγορη πώληση (Speedy Sale)"
+msgstr "Γρήγορη πώληση"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3101,7 +3101,7 @@ msgstr "Μια ιστοσελίδα φιλική προς τους vegan"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Ταχύς (Speedy)"
+msgstr "Ταχύς"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3121,7 +3121,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Ταχυδρομικός αγώνας (Speedy Match)"
+msgstr "Ταχυδρομικός αγώνας"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3165,11 +3165,11 @@ msgstr "Επικοινωνήστε μαζί μας"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Ταχύς συνθέτης (Speedy Composer)"
+msgstr "Ταχύς συνθέτης"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Λογισμικό Speedy Mail (Speedy Mail Software)"
+msgstr "Λογισμικό Speedy Mail"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
@@ -3379,7 +3379,7 @@ msgstr ""
 "απενεργοποιήσετε μόνο τον λογαριασμό σας στο Speedy Match, οπότε ο "
 "λογαριασμός σας στο Speedy Net θα παραμείνει ενεργός. Μπορείτε να "
 "ενεργοποιήσετε ξανά τον λογαριασμό σας αφού τον απενεργοποιήσετε όποτε "
-"θέλετε. (Speedy Match. You)"
+"θέλετε."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3397,12 +3397,11 @@ msgstr ""
 "και, στη συνέχεια, κάντε κλικ στο «Διαγραφή λογαριασμού» (στο μενού "
 "«Επεξεργασία προφίλ»). Συμπληρώστε τα στοιχεία στη φόρμα και επιβεβαιώστε. "
 "Λάβετε υπόψη ότι δεν είναι δυνατή η ανάκτηση ενός διαγραμμένου λογαριασμού. "
-"Η διαγραφή λογαριασμού είναι μόνιμη και μη αναστρέψιμη. (Speedy Net. "
-"Deleting)"
+"Η διαγραφή λογαριασμού είναι μόνιμη και μη αναστρέψιμη."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Αποκλείσατε"
+msgstr "Αποκλείσατε "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3410,7 +3409,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "σε μπλόκαρε."
+msgstr " σε μπλόκαρε."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3444,7 +3443,7 @@ msgstr "Εναλλαγή αναπτυσσόμενου μενού"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε"
+msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3453,16 +3452,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Φραγμός"
+msgstr "Φραγμός "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Ξεβουλώνω"
+msgstr "Ξεβουλώνω "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Εκθεση"
+msgstr "Εκθεση "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3638,7 +3637,7 @@ msgstr "ορατό στον ιστότοπο"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Γρήγορος χρόνος μετριασμού εικόνας (Speedy)"
+msgstr "Γρήγορος χρόνος μετριασμού εικόνας"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

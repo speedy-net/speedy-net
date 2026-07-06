@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Rychlé účty (Speedy Match Accounts)"
+msgstr "Rychlé účty"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Pohlaví, aby odpovídalo"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Uživatel Speedy Match (Speedy Match User)"
+msgstr "Uživatel Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Počet shod při hledání posledního uživatele"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Profil rychlého zápasu (Speedy Match Profile)"
+msgstr "Profil rychlého zápasu"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Rychlé profily zápasů (Speedy Match Profiles)"
+msgstr "Rychlé profily zápasů"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1043,7 +1043,7 @@ msgstr "Vzájemné lajky"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Rychlé zápasy (Speedy Match Matches)"
+msgstr "Rychlé zápasy"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1059,7 +1059,7 @@ msgstr "Žádný"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Rychlý zápas [alfa] (Speedy Match)"
+msgstr "Rychlý zápas [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1141,7 +1141,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match je pojmenován po <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Match je pojmenován po <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, fence, která s námi byla mnoho let "
 "a zemřela v roce 2003. Speedy porodila v roce 1988 7 štěňat."
 
@@ -1286,7 +1286,7 @@ msgstr ""
 "Speedy Match je nová webová aplikace pro seznamování / párování pro "
 "romantické účely pro nezadané, kteří jsou členy Speedy Net. S Speedy Match "
 "můžete najít odpovídající lidi pro randění a chatovat s nimi online. Stránka "
-"je vhodná pro vegany a vegetariány. (Speedy Net. With Speedy Match)"
+"je vhodná pro vegany a vegetariány."
 
 #: .\templates\main\main_page.html:14
 msgid ""

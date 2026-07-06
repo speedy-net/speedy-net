@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -504,7 +504,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "حسابات المباراة السريعة (Speedy Match Accounts)"
+msgstr "حسابات المباراة السريعة"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -601,7 +601,7 @@ msgstr "الجنس المناسب"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "مستخدم المباراة السريعة (Speedy Match User)"
+msgstr "مستخدم المباراة السريعة"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -700,11 +700,11 @@ msgstr "عدد المطابقات في بحث المستخدم الأخير"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "الملف الشخصي للمطابقة السريعة (Speedy Match Profile)"
+msgstr "الملف الشخصي للمطابقة السريعة"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "ملفات تعريف المطابقة السريعة (Speedy Match Profiles)"
+msgstr "ملفات تعريف المطابقة السريعة"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1043,7 +1043,7 @@ msgstr "الإعجابات المتبادلة"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "مباريات المباراة السريعة (Speedy Match Matches)"
+msgstr "مباريات المباراة السريعة"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1059,11 +1059,11 @@ msgstr "لا أحد"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "مباراة سريعة [ألفا] (Speedy Match)"
+msgstr "مباراة سريعة [ألفا]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "حول سبيدي ماتش (Speedy Match)"
+msgstr "حول سبيدي ماتش"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1137,9 +1137,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"تم تسمية سبيدي ماتش على اسم <a href=\"https://www.facebook.com/Speedy.the."
+"تم تسمية سبيدي ماتش على اسم <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا لسنوات "
-"عديدة وتوفيت في عام 2003. وأنجبت سبيدي 7 جراء في عام 1988. (Speedy Match)"
+"عديدة وتوفيت في عام 2003. وأنجبت سبيدي 7 جراء في عام 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1159,11 +1159,11 @@ msgstr "أوري رودبيرج"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "مؤسس ومدير سبيدي نت وسبيدي ماتش، (Speedy Net) (Speedy Match)"
+msgstr "مؤسس ومدير سبيدي نت وسبيدي ماتش،"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "سبيدي باز تكنولوجيز المحدودة (Speedy Paz Technologies Ltd.)"
+msgstr "سبيدي باز تكنولوجيز المحدودة"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1201,7 +1201,7 @@ msgstr "الخطوة التالية"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها. (Speedy Net)"
+msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1280,13 +1280,12 @@ msgid ""
 msgstr ""
 "Speedy Match هو تطبيق ويب جديد للمواعدة/المطابقة للأغراض الرومانسية للأفراد "
 "الذين هم أعضاء في Speedy Net. مع سبيدي ماتش، يمكنك العثور على أشخاص متطابقين "
-"للتعارف والدردشة معهم عبر الإنترنت. الموقع نباتي وصديق للنباتيين. (Speedy "
-"Net. With Speedy Match)"
+"للتعارف والدردشة معهم عبر الإنترنت. الموقع نباتي وصديق للنباتيين."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "تبحث عن صديقها؟ تبحث عن صديقة؟ تعال وتلبية سبيدي! (Speedy)"
+msgstr "تبحث عن صديقها؟ تبحث عن صديقة؟ تعال وتلبية سبيدي!"
 
 #: .\templates\main\main_page.html:16
 msgid ""

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,32 +329,32 @@ msgstr "Du har ingen beskeder endnu."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Du blokerede"
+msgstr "Du blokerede "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Du blokerede"
+msgstr "Du blokerede "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Du blokerede"
+msgstr "Du blokerede "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "blokerede dig."
+msgstr " blokerede dig."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "blokerede dig."
+msgstr " blokerede dig."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "blokerede dig."
+msgstr " blokerede dig."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -449,62 +449,62 @@ msgstr "Føj til venner"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Er du sikker på, at du vil blokere"
+msgstr "Er du sikker på, at du vil blokere "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Er du sikker på, at du vil blokere"
+msgstr "Er du sikker på, at du vil blokere "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Er du sikker på, at du vil blokere"
+msgstr "Er du sikker på, at du vil blokere "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Fjern blokering"
+msgstr "Fjern blokering "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Fjern blokering"
+msgstr "Fjern blokering "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Fjern blokering"
+msgstr "Fjern blokering "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Rapport"
+msgstr "Rapport "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Rapport"
+msgstr "Rapport "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Rapport"
+msgstr "Rapport "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1481,7 +1481,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Du har allerede {0} venner. Du kan ikke have mere end {1} venner på Speedy "
-"Net. Fjern venligst venner, før du fortsætter. (Speedy Net. Please)"
+"Net. Fjern venligst venner, før du fortsætter."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1491,7 +1491,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Du har allerede {0} venner. Du kan ikke have mere end {1} venner på Speedy "
-"Net. Fjern venligst venner, før du fortsætter. (Speedy Net. Please)"
+"Net. Fjern venligst venner, før du fortsætter."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1501,7 +1501,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Du har allerede {0} venner. Du kan ikke have mere end {1} venner på Speedy "
-"Net. Fjern venligst venner, før du fortsætter. (Speedy Net. Please)"
+"Net. Fjern venligst venner, før du fortsætter."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1511,8 +1511,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1522,8 +1521,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1533,8 +1531,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1544,8 +1541,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1555,8 +1551,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1566,8 +1561,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1577,8 +1571,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1588,8 +1581,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1599,8 +1591,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner "
-"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter. "
-"(Speedy Net. Please)"
+"på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1928,7 +1919,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Hurtige kernekonti (Speedy Core Accounts)"
+msgstr "Hurtige kernekonti"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2499,7 +2490,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -3030,11 +3021,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Hurtig software (Speedy Software)"
+msgstr "Hurtig software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Hurtigt udsalg (Speedy Sale)"
+msgstr "Hurtigt udsalg"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3043,7 +3034,7 @@ msgstr "En vegansk venlig hjemmeside"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Hurtig (Speedy)"
+msgstr "Hurtig"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3067,15 +3058,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Nets butik (Speedy Net's Shop)"
+msgstr "Speedy Nets butik"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's butik (Speedy Match's Shop)"
+msgstr "Speedy Match's butik"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo butik (Speedy S-logo Shop)"
+msgstr "Speedy S-logo butik"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3107,15 +3098,15 @@ msgstr "Kontakt os"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Hurtig komponist (Speedy Composer)"
+msgstr "Hurtig komponist"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail-software (Speedy Mail Software)"
+msgstr "Speedy Mail-software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Hurtig komponistbutik (Speedy Composer's Shop)"
+msgstr "Hurtig komponistbutik"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3314,7 +3305,7 @@ msgstr ""
 "Speedy Net også automatisk deaktiverer din konto hos Speedy Match. Du kan "
 "kun deaktivere din konto hos Speedy Match, i hvilket tilfælde din Speedy Net-"
 "konto forbliver aktiv. Du kan genaktivere din konto, når du har deaktiveret "
-"den, når du vil. (Speedy Match. You)"
+"den, når du vil."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3330,12 +3321,11 @@ msgstr ""
 "din Speedy Net-konto skal du logge ind på Speedy Net, deaktivere din konto "
 "og derefter klikke på \"Slet konto\" (i menuen \"Rediger profil\"). Udfyld "
 "detaljerne i formularen og bekræft. Bemærk venligst, at en slettet konto "
-"ikke kan gendannes. Sletning af konto er permanent og irreversibel. (Speedy "
-"Net. Deleting)"
+"ikke kan gendannes. Sletning af konto er permanent og irreversibel."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Du blokerede"
+msgstr "Du blokerede "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3343,7 +3333,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "blokerede dig."
+msgstr " blokerede dig."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3377,7 +3367,7 @@ msgstr "Skift dropdown"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Er du sikker på, at du vil blokere"
+msgstr "Er du sikker på, at du vil blokere "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3386,16 +3376,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Fjern blokering"
+msgstr "Fjern blokering "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Rapport"
+msgstr "Rapport "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3565,7 +3555,7 @@ msgstr "synlig på hjemmesiden"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Hurtig billedmodereringstid (Speedy)"
+msgstr "Hurtig billedmodereringstid"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

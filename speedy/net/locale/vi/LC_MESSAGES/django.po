@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 03:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Tài khoản Net nhanh chóng (Speedy Net Accounts)"
+msgstr "Tài khoản Net nhanh chóng"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -152,7 +152,7 @@ msgstr "Đúng. Xóa tài khoản của tôi."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Người dùng mạng nhanh chóng (Speedy Net User)"
+msgstr "Người dùng mạng nhanh chóng"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +164,11 @@ msgstr "Số lượng bạn bè trong lần truy cập cuối cùng của ngư�
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Hồ sơ mạng nhanh chóng (Speedy Net Profile)"
+msgstr "Hồ sơ mạng nhanh chóng"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Hồ sơ mạng nhanh chóng (Speedy Net Profiles)"
+msgstr "Hồ sơ mạng nhanh chóng"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -185,7 +185,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Mạng nhanh [alpha] (Speedy Net)"
+msgstr "Mạng nhanh [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -266,7 +266,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net được đặt theo tên của <a href=\"https://www.facebook.com/Speedy."
+"Speedy Net được đặt theo tên của <a href=\"https://www.facebook.com/speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, một chú chó cái đã ở với chúng "
 "tôi trong nhiều năm và qua đời vào năm 2003. Speedy đã sinh 7 chú chó con "
 "vào năm 1988."
@@ -290,7 +290,7 @@ msgstr "Người sáng lập và giám đốc của Speedy Net và Speedy Match,
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Công ty TNHH Công nghệ Speedy Paz (Speedy Paz Technologies Ltd.)"
+msgstr "Công ty TNHH Công nghệ Speedy Paz"
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"

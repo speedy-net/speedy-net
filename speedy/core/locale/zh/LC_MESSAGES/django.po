@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,32 +329,32 @@ msgstr "您還沒有消息。"
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "你屏蔽了"
+msgstr "你屏蔽了 "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "你屏蔽了"
+msgstr "你屏蔽了 "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "你屏蔽了"
+msgstr "你屏蔽了 "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "阻止了你。"
+msgstr " 阻止了你。"
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "阻止了你。"
+msgstr " 阻止了你。"
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "阻止了你。"
+msgstr " 阻止了你。"
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -364,7 +364,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s 還具有快速匹配設定檔。查看 %(user_name)s 在 Speedy Match 上的個"
-"人資料。 (Speedy Match.)"
+"人資料。"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -374,7 +374,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s 還具有快速匹配設定檔。查看 %(user_name)s 在 Speedy Match 上的個"
-"人資料。 (Speedy Match.)"
+"人資料。"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -384,7 +384,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s 還具有快速匹配設定檔。查看 %(user_name)s 在 Speedy Match 上的個"
-"人資料。 (Speedy Match.)"
+"人資料。"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -394,7 +394,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s 還具有 Speedy Net 設定檔。查看 %(user_name)s 在 Speedy Net 上的"
-"個人資料。 (Speedy Net.)"
+"個人資料。"
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -404,7 +404,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s 還具有 Speedy Net 設定檔。查看 %(user_name)s 在 Speedy Net 上的"
-"個人資料。 (Speedy Net.)"
+"個人資料。"
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -414,28 +414,22 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s 還具有 Speedy Net 設定檔。查看 %(user_name)s 在 Speedy Net 上的"
-"個人資料。 (Speedy Net.)"
+"個人資料。"
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。 (Speedy "
-"Net.)"
+msgstr "您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。"
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。 (Speedy "
-"Net.)"
+msgstr "您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。"
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。 (Speedy "
-"Net.)"
+msgstr "您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。"
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -455,62 +449,62 @@ msgstr "新增至好友"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "您確定要封鎖嗎"
+msgstr "您確定要封鎖嗎 "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "您確定要封鎖嗎"
+msgstr "您確定要封鎖嗎 "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "您確定要封鎖嗎"
+msgstr "您確定要封鎖嗎 "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "堵塞"
+msgstr "堵塞 "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "堵塞"
+msgstr "堵塞 "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "堵塞"
+msgstr "堵塞 "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "解鎖"
+msgstr "解鎖 "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "解鎖"
+msgstr "解鎖 "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "解鎖"
+msgstr "解鎖 "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "報告"
+msgstr "報告 "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "報告"
+msgstr "報告 "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "報告"
+msgstr "報告 "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1472,7 +1466,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "您已經有 {0} 個朋友。您在 Speedy Net 上的好友不能超過 {1} 個。請先刪除好友，"
-"然後再繼續。 (Speedy Net. Please)"
+"然後再繼續。"
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1482,7 +1476,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "您已經有 {0} 個朋友。您在 Speedy Net 上的好友不能超過 {1} 個。請先刪除好友，"
-"然後再繼續。 (Speedy Net. Please)"
+"然後再繼續。"
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1492,7 +1486,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "您已經有 {0} 個朋友。您在 Speedy Net 上的好友不能超過 {1} 個。請先刪除好友，"
-"然後再繼續。 (Speedy Net. Please)"
+"然後再繼續。"
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1502,7 +1496,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1512,7 +1506,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1522,7 +1516,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1532,7 +1526,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1542,7 +1536,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1552,7 +1546,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1562,7 +1556,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1572,7 +1566,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1582,7 +1576,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "該用戶已有 {0} 個好友。他們在 Speedy Net 的好友不能超過 {1} 個。請先要求他們"
-"刪除好友，然後再繼續。 (Speedy Net. Please)"
+"刪除好友，然後再繼續。"
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1766,7 +1760,7 @@ msgid ""
 msgstr ""
 "由於網站濫用發送垃圾郵件的行為，我們不得不限制一天內可以發送給該網站其他會員"
 "的郵件數量。請明天再試一次。請注意，您不得使用極速網向大量人員發送垃圾郵件或"
-"內容相同的郵件。 (Speedy Net)"
+"內容相同的郵件。"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1779,7 +1773,7 @@ msgid ""
 msgstr ""
 "由於網站濫用發送垃圾郵件的行為，我們不得不限制一天內可以發送給該網站其他會員"
 "的郵件數量。請明天再試一次。請注意，您不得使用極速網向大量人員發送垃圾郵件或"
-"內容相同的郵件。 (Speedy Net)"
+"內容相同的郵件。"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1792,7 +1786,7 @@ msgid ""
 msgstr ""
 "由於網站濫用發送垃圾郵件的行為，我們不得不限制一天內可以發送給該網站其他會員"
 "的郵件數量。請明天再試一次。請注意，您不得使用極速網向大量人員發送垃圾郵件或"
-"內容相同的郵件。 (Speedy Net)"
+"內容相同的郵件。"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1801,7 +1795,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1810,7 +1804,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1819,7 +1813,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1828,7 +1822,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1837,7 +1831,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1846,7 +1840,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1855,7 +1849,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1864,7 +1858,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1873,7 +1867,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "該用戶與您的個人資料不匹配，但您可以訪問他們的 Speedy Net 個人資料。在 "
-"Speedy Net 上查看使用者的個人資料。 (Speedy Net.)"
+"Speedy Net 上查看使用者的個人資料。"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1898,7 +1892,7 @@ msgstr "您的個人資料圖片不能是透明的。請上傳不透明的圖像
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "快速核心帳戶 (Speedy Core Accounts)"
+msgstr "快速核心帳戶"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2431,7 +2425,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "快速核心基礎應用程式 (Speedy Core Base App)"
+msgstr "快速核心基礎應用程式"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2440,7 +2434,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -2885,7 +2879,7 @@ msgstr "更改密碼"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Speedy Match 上的比賽將顯示您的年齡。 (Speedy Match.)"
+msgstr "Speedy Match 上的比賽將顯示您的年齡。"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2962,19 +2956,19 @@ msgstr "您尚未確認您的電子郵件地址。請檢查您的收件匣。"
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "極速網部落格 (Speedy Net Blog)"
+msgstr "極速網部落格"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "快速帕茲 (Speedy Paz)"
+msgstr "快速帕茲"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "極速軟體 (Speedy Software)"
+msgstr "極速軟體"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "快速銷售 (Speedy Sale)"
+msgstr "快速銷售"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -2983,7 +2977,7 @@ msgstr "素食友善網站"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "迅速 (Speedy)"
+msgstr "迅速"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -2999,23 +2993,23 @@ msgstr "密碼"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "極速網 (Speedy Net)"
+msgstr "極速網"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "快速匹配 (Speedy Match)"
+msgstr "快速匹配"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "極速網店 (Speedy Net's Shop)"
+msgstr "極速網店"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "快速火柴店 (Speedy Match's Shop)"
+msgstr "快速火柴店"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "快速S標誌店 (Speedy S-logo Shop)"
+msgstr "快速S標誌店"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3047,15 +3041,15 @@ msgstr "聯絡我們"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "快速作曲家 (Speedy Composer)"
+msgstr "快速作曲家"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "極速郵件軟體 (Speedy Mail Software)"
+msgstr "極速郵件軟體"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "快速作曲家商店 (Speedy Composer's Shop)"
+msgstr "快速作曲家商店"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3246,7 +3240,7 @@ msgstr ""
 "該網站中刪除，並且您將不會出現在該網站上其他人的搜尋結果中。請注意，停用您在 "
 "Speedy Net 上的帳戶也會自動停用您在 Speedy Match 上的帳戶。您只能停用您在 "
 "Speedy Match 中的帳戶，在這種情況下，您的 Speedy Net 帳戶將保持活動狀態。停用"
-"帳戶後，您可以隨時重新啟用帳戶。 (Speedy Match. You)"
+"帳戶後，您可以隨時重新啟用帳戶。"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3261,11 +3255,11 @@ msgstr ""
 "動刪除您的 Speedy Match 帳戶。若要刪除您的 Speedy Net 帳戶，請登入 Speedy "
 "Net，停用您的帳戶，然後按一下「刪除帳戶」（在「編輯個人資料」功能表中）。填寫"
 "表格中的詳細資料並確認。請注意，已刪除的帳戶無法恢復。帳戶刪除是永久性且不可"
-"逆轉的。 (Speedy Net. Deleting)"
+"逆轉的。"
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "你屏蔽了"
+msgstr "你屏蔽了 "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3273,7 +3267,7 @@ msgstr "。"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "阻止了你。"
+msgstr " 阻止了你。"
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3307,7 +3301,7 @@ msgstr "切換下拉式選單"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "您確定要封鎖嗎"
+msgstr "您確定要封鎖嗎 "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3316,16 +3310,16 @@ msgstr "？"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "堵塞"
+msgstr "堵塞 "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "解鎖"
+msgstr "解鎖 "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "報告"
+msgstr "報告 "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3379,13 +3373,11 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s 還具有快速匹配設定檔。查看 %(user_name)s 在 Speedy Match 上的個"
-"人資料。 (Speedy Match.)"
+"人資料。"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。 (Speedy "
-"Net.)"
+msgstr "您還有一個 Speedy Net 個人資料。在 Speedy Net 上查看您的個人資料。"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3394,7 +3386,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "%(user_name)s 還具有 Speedy Net 設定檔。查看 %(user_name)s 在 Speedy Net 上的"
-"個人資料。 (Speedy Net.)"
+"個人資料。"
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3489,7 +3481,7 @@ msgstr "在網站上可見"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "快速的影像審核時間 (Speedy)"
+msgstr "快速的影像審核時間"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

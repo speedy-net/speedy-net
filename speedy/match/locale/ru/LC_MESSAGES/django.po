@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Счета Speedy Match (Speedy Match Accounts)"
+msgstr "Счета Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Пол, соответствующий"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Пользователь Speedy Match (Speedy Match User)"
+msgstr "Пользователь Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Количество совпадений при поиске после
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Профиль спиди-матча (Speedy Match Profile)"
+msgstr "Профиль спиди-матча"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Профили скоростных матчей (Speedy Match Profiles)"
+msgstr "Профили скоростных матчей"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1053,7 +1053,7 @@ msgstr "Взаимные лайки"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Скоростные матчи (Speedy Match Matches)"
+msgstr "Скоростные матчи"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1069,11 +1069,11 @@ msgstr "Никто"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Скоростной матч [альфа] (Speedy Match)"
+msgstr "Скоростной матч [альфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "О Спиди Матче (Speedy Match)"
+msgstr "О Спиди Матче"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1151,10 +1151,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Спиди Матч назван в честь <a href=\"https://www.facebook.com/Speedy.the."
+"Спиди Матч назван в честь <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, собаки-самки, которая жила с нами "
-"много лет и умерла в 2003 году. В 1988 году Спиди родила 7 щенков. (Speedy "
-"Match)"
+"много лет и умерла в 2003 году. В 1988 году Спиди родила 7 щенков."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1179,7 +1178,7 @@ msgstr "Основатель и директор Speedy Net и Speedy Match,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "ООО «Спиди Пас Технологии» (Speedy Paz Technologies Ltd.)"
+msgstr "ООО «Спиди Пас Технологии»"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1299,14 +1298,12 @@ msgstr ""
 "Speedy Match — это новое веб-приложение для знакомств и знакомств для "
 "романтических целей для одиноких людей, являющихся членами Speedy Net. С "
 "помощью Speedy Match вы можете найти подходящих людей для знакомств и "
-"пообщаться с ними в Интернете. Сайт подходит для веганов и вегетарианцев. "
-"(Speedy Net. With Speedy Match)"
+"пообщаться с ними в Интернете. Сайт подходит для веганов и вегетарианцев."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
-"Ищешь парня? Ищете девушку? Приходите и познакомьтесь со Спиди! (Speedy)"
+msgstr "Ищешь парня? Ищете девушку? Приходите и познакомьтесь со Спиди!"
 
 #: .\templates\main\main_page.html:16
 msgid ""

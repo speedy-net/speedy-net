@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,32 +338,32 @@ msgstr "Zatím nemáte žádné zprávy."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Zablokovali jste"
+msgstr "Zablokovali jste "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Zablokovali jste"
+msgstr "Zablokovali jste "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Zablokovali jste"
+msgstr "Zablokovali jste "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "zablokoval vás."
+msgstr " zablokoval vás."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "zablokoval vás."
+msgstr " zablokoval vás."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "zablokoval vás."
+msgstr " zablokoval vás."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -461,62 +461,62 @@ msgstr "Přidat do přátel"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Opravdu chcete blokovat?"
+msgstr "Opravdu chcete blokovat? "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Opravdu chcete blokovat?"
+msgstr "Opravdu chcete blokovat? "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Opravdu chcete blokovat?"
+msgstr "Opravdu chcete blokovat? "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Odblokovat"
+msgstr "Odblokovat "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Odblokovat"
+msgstr "Odblokovat "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Odblokovat"
+msgstr "Odblokovat "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Zpráva"
+msgstr "Zpráva "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Zpráva"
+msgstr "Zpráva "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Zpráva"
+msgstr "Zpráva "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1493,7 +1493,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Již máte {0} přátel. Na Speedy Net nemůžete mít více než {1} přátel. Než "
-"budete pokračovat, odeberte přátele. (Speedy Net. Please)"
+"budete pokračovat, odeberte přátele."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1503,7 +1503,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Již máte {0} přátel. Na Speedy Net nemůžete mít více než {1} přátel. Než "
-"budete pokračovat, odeberte přátele. (Speedy Net. Please)"
+"budete pokračovat, odeberte přátele."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1513,7 +1513,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Již máte {0} přátel. Na Speedy Net nemůžete mít více než {1} přátel. Než "
-"budete pokračovat, odeberte přátele. (Speedy Net. Please)"
+"budete pokračovat, odeberte přátele."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1523,8 +1523,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1534,8 +1533,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1545,8 +1543,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1556,8 +1553,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1567,8 +1563,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1578,8 +1573,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1589,8 +1583,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1600,8 +1593,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1611,8 +1603,7 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Tento uživatel již má {0} přátel. Na Speedy Net nemohou mít více než {1} "
-"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele. (Speedy "
-"Net. Please)"
+"přátel. Než budete pokračovat, požádejte je, aby odstranili přátele."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1940,7 +1931,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Rychlé základní účty (Speedy Core Accounts)"
+msgstr "Rychlé základní účty"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2501,7 +2492,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Aplikace Speedy Core Base (Speedy Core Base App)"
+msgstr "Aplikace Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2510,7 +2501,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -3035,7 +3026,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Speedy Net (Speedy Net Blog)"
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3043,11 +3034,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Rychlý software (Speedy Software)"
+msgstr "Rychlý software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Rychlý prodej (Speedy Sale)"
+msgstr "Rychlý prodej"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3056,7 +3047,7 @@ msgstr "Web přátelský k veganům"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Rychlý (Speedy)"
+msgstr "Rychlý"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3072,15 +3063,15 @@ msgstr "Heslo"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Rychlá síť (Speedy Net)"
+msgstr "Rychlá síť"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Rychlý zápas (Speedy Match)"
+msgstr "Rychlý zápas"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Obchod Speedy Net (Speedy Net's Shop)"
+msgstr "Obchod Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
@@ -3088,7 +3079,7 @@ msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Rychlý obchod s logem S (Speedy S-logo Shop)"
+msgstr "Rychlý obchod s logem S"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3120,15 +3111,15 @@ msgstr "Kontaktujte nás"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Rychlý skladatel (Speedy Composer)"
+msgstr "Rychlý skladatel"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Software pro rychlou poštu (Speedy Mail Software)"
+msgstr "Software pro rychlou poštu"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Rychlý skladatelský obchod (Speedy Composer's Shop)"
+msgstr "Rychlý skladatelský obchod"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3327,7 +3318,7 @@ msgstr ""
 "na Speedy Net se automaticky deaktivuje i váš účet na Speedy Match. Na "
 "Speedy Match můžete deaktivovat pouze svůj účet, v takovém případě váš účet "
 "na Speedy Net zůstane aktivní. Po deaktivaci můžete svůj účet kdykoli znovu "
-"aktivovat. (Speedy Match. You)"
+"aktivovat."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3343,11 +3334,11 @@ msgstr ""
 "Speedy Net, přihlaste se do Speedy Net, deaktivujte svůj účet a poté "
 "klikněte na „Smazat účet“ (v nabídce „Upravit profil“). Vyplňte údaje ve "
 "formuláři a potvrďte. Upozorňujeme, že smazaný účet nelze obnovit. Smazání "
-"účtu je trvalé a nevratné. (Speedy Net. Deleting)"
+"účtu je trvalé a nevratné."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Zablokovali jste"
+msgstr "Zablokovali jste "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3355,7 +3346,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "zablokoval vás."
+msgstr " zablokoval vás."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3389,7 +3380,7 @@ msgstr "Přepnout rozbalovací nabídku"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Opravdu chcete blokovat?"
+msgstr "Opravdu chcete blokovat? "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3398,16 +3389,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blok"
+msgstr "Blok "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Odblokovat"
+msgstr "Odblokovat "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Zpráva"
+msgstr "Zpráva "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3577,7 +3568,7 @@ msgstr "viditelné na webu"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Rychlý čas moderování obrazu (Speedy)"
+msgstr "Rychlý čas moderování obrazu"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
