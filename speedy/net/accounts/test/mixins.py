@@ -141,7 +141,7 @@ if (django_settings.TESTS):
 
             _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = {
                 'en': {
-                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. ถ้าคุณแน่ใจ พิมพ์ "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
                 },
                 'fr': {
                     **{gender: "Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent et irréversible. La suppression de votre compte Speedy Net entraîne également la suppression de votre compte Speedy Match. Si vous êtes sûr, tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et distinction majuscules/minuscules." for gender in User.ALL_GENDERS},
@@ -212,7 +212,7 @@ if (django_settings.TESTS):
                     **{gender: 'Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is törlődik. Ha biztos Speedy Match benne, írja be az "Igen. Fiókom törlése." kifejezést. ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type "ใช่. ลบบัญชีของฉัน" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},
+                    **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย ถ้าคุณแน่ใจ พิมพ์ "ใช่. ลบบัญชีของฉัน" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},
                 },
                 'el': {
                     **{gender: 'Είστε βέβαιοι ότι θέλετε να διαγράψετε τον λογαριασμό σας Speedy Net; Αυτό είναι μόνιμο και μη αναστρέψιμο. Η διαγραφή του λογαριασμού σας στο Speedy Net θα διαγράψει επίσης τον λογαριασμό σας στο Speedy Match. Εάν είστε σίγουροι, πληκτρολογήστε "Ναί. Διαγραφή του λογαριασμού μου.". σε αυτόν τον τομέα, ακριβώς και με διάκριση πεζών-κεφαλαίων.' for gender in User.ALL_GENDERS},

@@ -63,8 +63,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Здраво <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"добродошли назад на %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -73,8 +73,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Здраво <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"добродошли назад на %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -83,8 +83,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"welcome back to %(site_name)s!"
+"Здраво <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"добродошли назад на %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -270,19 +270,19 @@ msgstr "Ваше повратне информације су послате а�
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Пошаљи поруку %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Пошаљи поруку %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Пошаљи поруку %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
@@ -366,8 +366,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s такође има профил на Speedy Match. Погледај профил "
+"%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -376,8 +376,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s такође има профил на Speedy Match. Погледај профил "
+"%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -386,38 +386,38 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s такође има профил на Speedy Match. Погледај профил "
+"%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s такође има профил на Speedy Net. Погледај профил %(user_name)s"
+" на Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s такође има профил на Speedy Net. Погледај профил %(user_name)s"
+" на Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s такође има профил на Speedy Net. Погледај профил %(user_name)s"
+" на Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -705,19 +705,19 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Добродошли на %(site_name)s"
 
 #: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Добродошли на %(site_name)s"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr "Welcome to %(site_name)s"
+msgstr "Добродошли на %(site_name)s"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
@@ -753,19 +753,19 @@ msgstr "Прочитајте:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Потврдите своју адресу е-поште на %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Потврдите своју адресу е-поште на %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Потврдите своју адресу е-поште на %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -831,31 +831,31 @@ msgstr "Корисничко име"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Претплаћени сте да примате ову врсту обавештења са %(site_name)s. Отворите "
+"ову страницу да промените подешавања обавештења или да се одјавите:"
 
 #: .\__translations\__translations.html:213
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Претплаћени сте да примате ову врсту обавештења са %(site_name)s. Отворите "
+"ову страницу да промените подешавања обавештења или да се одјавите:"
 
 #: .\__translations\__translations.html:214
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Претплаћени сте да примате ову врсту обавештења са %(site_name)s. Отворите "
+"ову страницу да промените подешавања обавештења или да се одјавите:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -888,8 +888,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Please enter a correct %(username)s and password. Note that both fields may "
-"be case-sensitive."
+"Молимо унесите исправно %(username)s и лозинку. Имајте на уму да оба поља "
+"могу бити осетљива на велика и мала слова."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -1006,37 +1006,37 @@ msgstr "Не можете променити своје корисничко и�
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Активирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Активирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "Activate your {site_name} account"
+msgstr "Активирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Деактивирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Деактивирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Deactivate your {site_name} account"
+msgstr "Деактивирај свој {site_name} налог"
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
@@ -1417,8 +1417,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Твој {site_name} налог је деактивиран. Можеш га поново активирати у сваком "
+"тренутку. Твој Speedy Net налог остаје активан."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1427,8 +1427,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Твој {site_name} налог је деактивиран. Можеш га поново активирати у сваком "
+"тренутку. Твој Speedy Net налог остаје активан."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1437,8 +1437,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Твој {site_name} налог је деактивиран. Можеш га поново активирати у сваком "
+"тренутку. Твој Speedy Net налог остаје активан."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
@@ -1489,31 +1489,31 @@ msgstr "Пошаљи"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Већ имаш {0} пријатеља. Не можеш имати више од {1} пријатеља на Speedy Net. "
+"Молимо те да уклониш пријатеље пре него што наставиш."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Већ имаш {0} пријатеља. Не можеш имати више од {1} пријатеља на Speedy Net. "
+"Молимо те да уклониш пријатеље пре него што наставиш."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"Већ имаш {0} пријатеља. Не можеш имати више од {1} пријатеља на Speedy Net. "
+"Молимо те да уклониш пријатеље пре него што наставиш."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1522,8 +1522,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1532,8 +1532,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1542,8 +1542,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1552,8 +1552,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1562,8 +1562,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1572,8 +1572,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1582,8 +1582,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1592,8 +1592,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1602,8 +1602,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља"
+" на Speedy Net. Молимо их да уклоне пријатеље пре него што наставе."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1729,37 +1729,37 @@ msgstr "Уклонили сте овог корисника из својих п
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Добродошли на {site_name}!"
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Добродошли на {site_name}!"
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "Welcome to {site_name}!"
+msgstr "Добродошли на {site_name}!"
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Добродошли на {site_name}! Твој налог је сада активан."
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Добродошли на {site_name}! Твој налог је сада активан."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welcome to {site_name}! Your account is now active."
+msgstr "Добродошли на {site_name}! Твој налог је сада активан."
 
 #: .\__translations\__translations.py:229
 msgctxt "female"
@@ -1780,46 +1780,46 @@ msgstr "Пријатељи"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Због злоупотребе сајта за слање нежељених порука, морали смо да ограничимо "
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
-"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи. Speedy Net"
+"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју"
+" људи. Speedy Net"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Због злоупотребе сајта за слање нежељених порука, морали смо да ограничимо "
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
-"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи. Speedy Net"
+"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју"
+" људи. Speedy Net"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
 "Због злоупотребе сајта за слање нежељених порука, морали смо да ограничимо "
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
-"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи. Speedy Net"
+"Спееди Нет за слање нежељених порука или порука истог садржаја великом броју"
+" људи. Speedy Net"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -2250,7 +2250,7 @@ msgstr "Јучер"
 #: .\accounts\models.py:1396
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr "On {date} ({timesince_ago})"
+msgstr "Дана {date} ({timesince_ago})"
 
 #: .\accounts\models.py:1398
 #, python-brace-format
@@ -2267,8 +2267,8 @@ msgstr ""
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
 "Корисничко име мора да почиње са 4 или више слова, после којих може бити "
 "било који број цифара. Можете додати цртице између речи."
@@ -2291,14 +2291,14 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgstr[1] ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
@@ -2360,11 +2360,13 @@ msgstr[1] "Your password must contain at least %(min_length)d characters."
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgstr[1] ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 
 #: .\accounts\validators.py:145
 #, python-format
@@ -2379,8 +2381,8 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Your password must contain at least %(min_unique_characters)d unique "
-"characters."
+"Ваша лозинка мора садржати најмање %(min_unique_characters)d јединствених "
+"знакова."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
@@ -2407,8 +2409,8 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
 "Не можете да користите овај формат за своју слику профила. Прихватају се "
 "само ЈПЕГ или ПНГ формати."
@@ -2420,7 +2422,7 @@ msgstr "Неважећа веза за потврду."
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "A confirmation message was sent to {email_address}"
+msgstr "Порука за потврду је послата на {email_address}"
 
 #: .\accounts\views.py:355
 msgid "The email address was deleted."
@@ -2433,9 +2435,9 @@ msgstr "Ову адресу е-поште сте учинили примарно
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2443,9 +2445,9 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2458,9 +2460,10 @@ msgstr ""
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2476,9 +2479,10 @@ msgid ""
 msgstr ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -3141,8 +3145,8 @@ msgstr "Не блокираш никога."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
 "Ако имате питања, сугестије или сте заинтересовани да се придружите тиму - "
 "контактирајте нас путем е-поште."
@@ -3185,7 +3189,7 @@ msgstr "Користите ову везу да активирате свој н
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Confirm your email address on %(site_name)s"
+msgstr "Потврдите своју адресу е-поште на %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3198,7 +3202,7 @@ msgstr "Користите ову везу да промените лозинк�
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Password reset on %(site_name)s"
+msgstr "Ресетовање лозинке на %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3211,16 +3215,16 @@ msgstr "Прочитајте:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"Претплаћени сте да примате ову врсту обавештења са %(site_name)s. Отворите "
+"ову страницу да промените подешавања обавештења или да се одјавите:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "You have a new message on %(site_name)s"
+msgstr "Имате нову поруку на %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
@@ -3238,7 +3242,7 @@ msgstr "Нема нерешених захтева за пријатељство
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "Welcome to %(site_name)s!"
+msgstr "Добродошли на %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
@@ -3252,13 +3256,13 @@ msgstr "Бесплатно је и свако може да се придруж�
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Ћаскај са <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr "Send a message to %(user_name)s"
+msgstr "Пошаљи поруку %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
@@ -3291,13 +3295,13 @@ msgstr ""
 "Поштујемо вашу приватност. Нећемо продавати или делити ваше личне податке, "
 "укључујући ваше име, датум рођења, адресу е-поште и лозинку. Поруке које "
 "шаљете људима на Спееди Нет- Speedy Net у су личне и неће се делити са "
-"другим људима или веб локацијама. Ваша лозинка је сачувана шифрована у нашој "
-"бази података."
+"другим људима или веб локацијама. Ваша лозинка је сачувана шифрована у нашој"
+" бази података."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
@@ -3322,10 +3326,10 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Ако сте деактивирали свој налог на Спееди Нет Speedy Net -у или Спееди Матцх "
-"Speedy Match -у, ваш профил на том сајту ће бити уклоњен са сајта и нећете "
-"се појављивати у резултатима претраге других људи на сајту. Имајте на уму да "
-"деактивирање вашег налога на Спееди Speedy Net Нет-у такође аутоматски "
+"Ако сте деактивирали свој налог на Спееди Нет Speedy Net -у или Спееди Матцх"
+" Speedy Match -у, ваш профил на том сајту ће бити уклоњен са сајта и нећете "
+"се појављивати у резултатима претраге других људи на сајту. Имајте на уму да"
+" деактивирање вашег налога на Спееди Speedy Net Нет-у такође аутоматски "
 "деактивира ваш налог на Спееди Матцх-у. Можете деактивирати Speedy Match "
 "само свој налог на Спееди Матцх-у, у ком случају ће ваш Спееди Нет налог "
 "остати активан. Можете поново да активирате свој налог након што га "
@@ -3333,9 +3337,9 @@ msgstr ""
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
@@ -3343,8 +3347,8 @@ msgstr ""
 "Ако желите, можете избрисати свој налог на Спееди Speedy Net Нет-у. Брисање "
 "Speedy Net вашег Спееди Нет налога ће аутоматски избрисати и ваш Спееди "
 "Матцх Speedy Match налог. Да бисте Speedy Net избрисали свој Спееди Speedy "
-"Net Нет налог, пријавите се на Спееди Нет, деактивирајте свој налог, а затим "
-"кликните на „Делете Аццоунт“ (у менију „Едит Профиле“). Попуните податке у "
+"Net Нет налог, пријавите се на Спееди Нет, деактивирајте свој налог, а затим"
+" кликните на „Делете Аццоунт“ (у менију „Едит Профиле“). Попуните податке у "
 "формулару и потврдите. Имајте на уму да се избрисани налог не може вратити. "
 "Брисање налога је трајно и неповратно."
 
@@ -3463,8 +3467,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
-"on Speedy Match."
+"%(user_name)s такође има профил на Speedy Match. Погледај профил "
+"%(user_name)s на Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3475,11 +3479,11 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s такође има профил на Speedy Net. Погледај профил %(user_name)s"
+" на Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3493,12 +3497,12 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
 "Спееди Нет можете Speedy Net користити само у легалне сврхе. Није вам "
-"дозвољено да отпремате садржаје који се односе на мржњу, насиље, злостављање "
-"животиња, голотињу или порнографију. Није вам дозвољено Speedy Net да "
+"дозвољено да отпремате садржаје који се односе на мржњу, насиље, злостављање"
+" животиња, голотињу или порнографију. Није вам дозвољено Speedy Net да "
 "користите Спееди Нет за слање нежељених порука или порука истог садржаја "
 "великом броју људи."
 
@@ -3506,9 +3510,9 @@ msgstr ""
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
 "Менаџмент сајта не може да провери личне податке које дају корисници сајта. "
 "Лични подаци неких корисника можда нису тачни. Менаџмент сајта није "
@@ -3518,13 +3522,13 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"Након регистрације на сајту од вас се тражи да верификујете своју адресу е-"
-"поште путем везе која вам је послата. Налози без верификоване адресе е-поште "
-"биће избрисани са сајта након 10 дана."
+"Након регистрације на сајту од вас се тражи да верификујете своју адресу "
+"е-поште путем везе која вам је послата. Налози без верификоване адресе "
+"е-поште биће избрисани са сајта након 10 дана."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3538,15 +3542,15 @@ msgstr ""
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
 "Ваша профилна слика треба да буде ваша слика, где можемо да видимо ваше "
-"лице. Дозвољено је постављање слике профила са другим људима. Не постављајте "
-"голе фотографије, фотографије које приказују гениталије (мушкараца или жена) "
-"или слике голих груди (мушкараца или жена)."
+"лице. Дозвољено је постављање слике профила са другим људима. Не постављајте"
+" голе фотографије, фотографије које приказују гениталије (мушкараца или "
+"жена) или слике голих груди (мушкараца или жена)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
