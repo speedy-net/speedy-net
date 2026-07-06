@@ -15,6 +15,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.tests.test_forms import ProfileNotificationsFormTestCaseMixin
 
+        from speedy.core.accounts.models import User
         from speedy.core.accounts.forms import ProfileNotificationsForm
         from speedy.net.accounts.forms import DeleteAccountForm
 
@@ -89,6 +90,19 @@ if (django_settings.TESTS):
                 form = DeleteAccountForm(user=self.user, data=data)
                 self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._delete_account_form_all_the_required_fields_are_required_errors_dict())
+
+            def test_yes_delete_my_account_text_is_contained_in_are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender_for_all_genders_with_and_without_quotes(self):
+                for gender in User.ALL_GENDERS:
+                    self.assertIs(expr1=self._yes_delete_my_account_text in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender], expr2=True)
+                    _yes_delete_my_account_text_with_quotes_1_is_contained_in_string = '"{}"'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_2_is_contained_in_string = '„{}"'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_3_is_contained_in_string = '„{}”'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_4_is_contained_in_string = '„{}“'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_5_is_contained_in_string = '“{}”'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_6_is_contained_in_string = '«{}»'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_7_is_contained_in_string = '「{}」'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_8_is_contained_in_string = '« {} »'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    self.assertIs(expr1=_yes_delete_my_account_text_with_quotes_1_is_contained_in_string or _yes_delete_my_account_text_with_quotes_2_is_contained_in_string or _yes_delete_my_account_text_with_quotes_3_is_contained_in_string or _yes_delete_my_account_text_with_quotes_4_is_contained_in_string or _yes_delete_my_account_text_with_quotes_5_is_contained_in_string or _yes_delete_my_account_text_with_quotes_6_is_contained_in_string or _yes_delete_my_account_text_with_quotes_7_is_contained_in_string or _yes_delete_my_account_text_with_quotes_8_is_contained_in_string, expr2=True)
 
 
         @only_on_speedy_net
