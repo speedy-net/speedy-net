@@ -37,12 +37,7 @@ msgid ""
 "and irreversible. Deleting your Speedy Net account will also delete your "
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
-msgstr ""
-"Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és "
-"permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també "
-"se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu "
-"\"Sí. Esborra el meu compte.\". en aquest camp, exactament i distingeix "
-"entre majúscules i minúscules."
+msgstr "Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el meu compte.” en aquest camp, exactament i sensible a les majúscules."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -51,12 +46,7 @@ msgid ""
 "and irreversible. Deleting your Speedy Net account will also delete your "
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
-msgstr ""
-"Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és "
-"permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també "
-"se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu "
-"\"Sí. Esborra el meu compte.\". en aquest camp, exactament i distingeix "
-"entre majúscules i minúscules."
+msgstr "Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el meu compte.” en aquest camp, exactament i sensible a les majúscules."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -65,12 +55,7 @@ msgid ""
 "and irreversible. Deleting your Speedy Net account will also delete your "
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
-msgstr ""
-"Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és "
-"permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també "
-"se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu "
-"\"Sí. Esborra el meu compte.\". en aquest camp, exactament i distingeix "
-"entre majúscules i minúscules."
+msgstr "Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el meu compte.” en aquest camp, exactament i sensible a les majúscules."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -134,12 +119,7 @@ msgid ""
 "and irreversible. Deleting your Speedy Net account will also delete your "
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
-msgstr ""
-"Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és "
-"permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també "
-"se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu "
-"\"Sí. Esborra el meu compte.\". en aquest camp, exactament i distingeix "
-"entre majúscules i minúscules."
+msgstr "Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el meu compte.” en aquest camp, exactament i sensible a les majúscules."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -148,7 +128,7 @@ msgstr "Contrasenya no vàlida."
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
 msgid "Yes. Delete my account."
-msgstr "Sí. Esborra el meu compte."
+msgstr "Sí. Suprimeix el meu compte."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
