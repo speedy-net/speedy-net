@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1061,7 +1061,7 @@ msgstr "なし"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match スピーディーマッチ【α】"
+msgstr "Speedy Match スピーディーマッチ【α】 ????"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1143,7 +1143,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Match スピーディ マッチの名前は、長年私たちと一緒に暮らし、2003 年に亡"
-"くなったメス犬 <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"くなったメス犬 <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a> にちなんで名付けられました。スピーディは 1988 年"
 "に 7 匹の子犬を出産しました。"
 
@@ -1153,7 +1153,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "Speedy Match は現在アルファ版です。 2019 年 8 月にリリースされました Speedy "
-"Match 。 の英語版は現在制作中です。"
+"Match 。 の英語版は現在制作中です。 ????"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

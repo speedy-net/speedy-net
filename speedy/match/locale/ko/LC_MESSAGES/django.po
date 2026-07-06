@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1058,7 +1058,7 @@ msgstr "없음"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [알파]"
+msgstr "Speedy Match [알파] ??"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1147,7 +1147,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "Speedy Match는 현재 알파 버전입니다. Speedy Match는 2019년 8월에 출시되었습니"
-"다. Speedy Match의 영어 버전이 제작 중입니다."
+"다. Speedy Match의 영어 버전이 제작 중입니다. ??"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

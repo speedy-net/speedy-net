@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1041,7 +1041,7 @@ msgstr "沒有任何"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match 快速匹配 [alpha]"
+msgstr "Speedy Match 快速匹配 [???]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1115,7 +1115,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match以<a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"Speedy Match以<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>命名，這是一隻陪伴我們多年的母狗，於2003年去世。 "
 "1988年，生下了7隻小狗。"
 
@@ -1124,8 +1124,8 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match 目前處於 alpha 階段。於2019年8月上線 Speedy Match ，《》英文版正"
-"在製作中。"
+"Speedy Match 目前處於 ??? 階段。於2019年8月上線 Speedy Match ，《》英文版正在"
+"製作中。"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

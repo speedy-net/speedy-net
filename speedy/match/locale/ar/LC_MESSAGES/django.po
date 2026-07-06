@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1059,7 +1059,7 @@ msgstr "لا أحد"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match مباراة سريعة [ألفا]"
+msgstr "Speedy Match مباراة سريعة [ألفا] ????"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1138,7 +1138,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Match تم تسمية سبيدي ماتش على اسم <a href=\"https://www.facebook.com/"
-"Speedy.the.female.dog\" title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا "
+"speedy.the.female.dog\" title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا "
 "لسنوات عديدة وتوفيت في عام 2003. وأنجبت سبيدي 7 جراء في عام 1988."
 
 #: .\templates\about\about.html:29
@@ -1147,7 +1147,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "Speedy Match مباراة سريعة حاليا في مرحلة ألفا. تم إطلاقه في أغسطس 2019. "
-"النسخة الإنجليزية من قيد الإنتاج. Speedy Match"
+"النسخة الإنجليزية من قيد الإنتاج. Speedy Match ????"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

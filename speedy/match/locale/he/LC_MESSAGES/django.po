@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 05:21+0300\n"
+"POT-Creation-Date: 2026-07-06 06:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1055,7 +1055,7 @@ msgstr "אין"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "ספידי מץ' [אלפא]"
+msgstr "ספידי מץ' [אלפא] ????"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1141,7 +1141,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "ספידי מץ' היא כרגע באלפא. היא הושקה באוגוסט 2019. הגרסה האנגלית של ספידי מץ' "
-"נמצאת בפרודקשן."
+"נמצאת בפרודקשן. ????"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
