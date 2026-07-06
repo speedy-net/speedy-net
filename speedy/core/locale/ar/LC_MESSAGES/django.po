@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -367,7 +367,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s لديه أيضًا ملف تعريف Speedy Match. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي ماتش."
+"%(user_name)s على سبيدي ماتش. Speedy Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -377,7 +377,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s لديه أيضًا ملف تعريف Speedy Match. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي ماتش."
+"%(user_name)s على سبيدي ماتش. Speedy Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -387,7 +387,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s لديه أيضًا ملف تعريف Speedy Match. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي ماتش."
+"%(user_name)s على سبيدي ماتش. Speedy Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -396,8 +396,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s لديه أيضًا ملف شخصي على Speedy Net. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي نت."
+"%(user_name)s لديه أيضًا ملف Speedy Net شخصي على. عرض الملف الشخصي لـ "
+"%(user_name)s على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -406,8 +406,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s لديه أيضًا ملف شخصي على Speedy Net. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي نت."
+"%(user_name)s لديه أيضًا ملف Speedy Net شخصي على. عرض الملف الشخصي لـ "
+"%(user_name)s على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -416,23 +416,29 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s لديه أيضًا ملف شخصي على Speedy Net. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي نت."
+"%(user_name)s لديه أيضًا ملف Speedy Net شخصي على. عرض الملف الشخصي لـ "
+"%(user_name)s على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "لديك أيضًا ملف شخصي في سبيدي نت. عرض ملف التعريف الخاص بك على سبيدي نت."
+msgstr ""
+"لديك أيضًا ملف شخصي Speedy Net في سبيدي نت. عرض ملف التعريف الخاص بك على "
+"سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "لديك أيضًا ملف شخصي في سبيدي نت. عرض ملف التعريف الخاص بك على سبيدي نت."
+msgstr ""
+"لديك أيضًا ملف شخصي Speedy Net في سبيدي نت. عرض ملف التعريف الخاص بك على "
+"سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "لديك أيضًا ملف شخصي في سبيدي نت. عرض ملف التعريف الخاص بك على سبيدي نت."
+msgstr ""
+"لديك أيضًا ملف شخصي Speedy Net في سبيدي نت. عرض ملف التعريف الخاص بك على "
+"سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -677,17 +683,17 @@ msgstr "رؤية الكل"
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
+msgstr "حسابك Speedy Net في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
+msgstr "حسابك Speedy Net في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
+msgstr "حسابك Speedy Net في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -1377,8 +1383,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"لقد تم إلغاء تنشيط حسابات سبيدي نت وسبيدي ماتش الخاصة بك. ويمكنك إعادة "
-"تنشيطها في أي وقت."
+"لقد تم Speedy Net إلغاء تنشيط حسابات Speedy Match سبيدي نت وسبيدي ماتش "
+"الخاصة بك. ويمكنك إعادة تنشيطها في أي وقت."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1386,8 +1392,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"لقد تم إلغاء تنشيط حسابات سبيدي نت وسبيدي ماتش الخاصة بك. ويمكنك إعادة "
-"تنشيطها في أي وقت."
+"لقد تم Speedy Net إلغاء تنشيط حسابات Speedy Match سبيدي نت وسبيدي ماتش "
+"الخاصة بك. ويمكنك إعادة تنشيطها في أي وقت."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1395,8 +1401,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"لقد تم إلغاء تنشيط حسابات سبيدي نت وسبيدي ماتش الخاصة بك. ويمكنك إعادة "
-"تنشيطها في أي وقت."
+"لقد تم Speedy Net إلغاء تنشيط حسابات Speedy Match سبيدي نت وسبيدي ماتش "
+"الخاصة بك. ويمكنك إعادة تنشيطها في أي وقت."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1406,7 +1412,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "لقد تم إلغاء تنشيط حسابك {site_name}. ويمكنك إعادة تنشيطه في أي وقت. يظل "
-"حسابك في سبيدي نت نشطًا."
+"حسابك في سبيدي نت نشطًا. Speedy Net"
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1416,7 +1422,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "لقد تم إلغاء تنشيط حسابك {site_name}. ويمكنك إعادة تنشيطه في أي وقت. يظل "
-"حسابك في سبيدي نت نشطًا."
+"حسابك في سبيدي نت نشطًا. Speedy Net"
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1426,7 +1432,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "لقد تم إلغاء تنشيط حسابك {site_name}. ويمكنك إعادة تنشيطه في أي وقت. يظل "
-"حسابك في سبيدي نت نشطًا."
+"حسابك في سبيدي نت نشطًا. Speedy Net"
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
@@ -1480,8 +1486,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء على "
-"سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
+"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء Speedy "
+"Net على سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1490,8 +1496,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء على "
-"سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
+"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء Speedy "
+"Net على سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1500,8 +1506,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء على "
-"سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
+"لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء Speedy "
+"Net على سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1511,7 +1517,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1521,7 +1528,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1531,7 +1539,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1541,7 +1550,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1551,7 +1561,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1561,7 +1572,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1571,7 +1583,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1581,7 +1594,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1591,7 +1605,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من "
-"الأصدقاء على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة."
+"الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل "
+"المتابعة."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1776,7 +1791,8 @@ msgstr ""
 "نظراً لإساءة استخدام الموقع لإرسال رسائل غير مرغوب فيها، فقد اضطررنا إلى "
 "تحديد عدد الرسائل التي يمكن إرسالها إلى أعضاء الموقع الآخرين في اليوم "
 "الواحد. يرجى المحاولة مرة أخرى غدا. يرجى ملاحظة أنه لا يجوز لك استخدام سبيدي "
-"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص."
+"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1790,7 +1806,8 @@ msgstr ""
 "نظراً لإساءة استخدام الموقع لإرسال رسائل غير مرغوب فيها، فقد اضطررنا إلى "
 "تحديد عدد الرسائل التي يمكن إرسالها إلى أعضاء الموقع الآخرين في اليوم "
 "الواحد. يرجى المحاولة مرة أخرى غدا. يرجى ملاحظة أنه لا يجوز لك استخدام سبيدي "
-"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص."
+"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1804,7 +1821,8 @@ msgstr ""
 "نظراً لإساءة استخدام الموقع لإرسال رسائل غير مرغوب فيها، فقد اضطررنا إلى "
 "تحديد عدد الرسائل التي يمكن إرسالها إلى أعضاء الموقع الآخرين في اليوم "
 "الواحد. يرجى المحاولة مرة أخرى غدا. يرجى ملاحظة أنه لا يجوز لك استخدام سبيدي "
-"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص."
+"نت لإرسال رسائل غير مرغوب فيها، أو رسائل بنفس المحتوى لعدد كبير من الأشخاص. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1812,8 +1830,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1821,8 +1839,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1830,8 +1848,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1839,8 +1857,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1848,8 +1866,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1857,8 +1875,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1866,8 +1884,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1875,8 +1893,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1884,8 +1902,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على سبيدي "
-"نت. عرض الملف الشخصي للمستخدم على سبيدي نت."
+"هذا المستخدم لا يطابق ملفك الشخصي، ولكن يمكنك زيارة ملفه الشخصي على Speedy "
+"Net سبيدي نت. عرض الملف الشخصي للمستخدم على سبيدي نت. Speedy Net"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1910,7 +1928,7 @@ msgstr "لا يمكن أن تكون صورة ملفك الشخصي شفافة. �
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "الحسابات الأساسية السريعة"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2473,7 +2491,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "تطبيق قاعدة أساسية سريعة"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2814,7 +2832,7 @@ msgstr "اقتراح غير جيد"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "سبيدي آسف، ولكن لا يمكننا التعامل مع طلبك."
+msgstr "سبيدي آسف، ولكن لا يمكننا التعامل مع طلبك. Speedy"
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2822,7 +2840,7 @@ msgstr "تم رفض الإذن"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "سبيدي آسف، ولكن هذه الصفحة خاصة."
+msgstr "سبيدي آسف، ولكن هذه الصفحة خاصة. Speedy"
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2830,7 +2848,7 @@ msgstr "لم يتم العثور على الصفحة"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "سبيدي آسف، ولكن لم يتم العثور على الصفحة."
+msgstr "سبيدي آسف، ولكن لم يتم العثور على الصفحة. Speedy"
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -3005,19 +3023,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "مدونة سبيدي نت"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "سبيدي باز"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "البرمجيات السريعة"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "بيع سريع"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3026,7 +3044,7 @@ msgstr "موقع صديق للنباتيين"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "سريع"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3042,23 +3060,23 @@ msgstr "كلمة المرور"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "سبيدي نت"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "مباراة سريعة"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "متجر سبيدي نت"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "متجر سبيدي ماتش"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "متجر سريع لشعار S"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3090,15 +3108,15 @@ msgstr "اتصل بنا"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "الملحن السريع"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "برنامج البريد السريع"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "متجر الملحن السريع"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3259,9 +3277,9 @@ msgid ""
 msgstr ""
 "نحن نحترم خصوصيتك. لن نبيع أو نشارك بياناتك الشخصية، بما في ذلك اسمك وتاريخ "
 "ميلادك وعنوان بريدك الإلكتروني وكلمة المرور الخاصة بك. الرسائل التي ترسلها "
-"إلى الأشخاص على سبيدي نت هي رسائل شخصية ولن تتم مشاركتها مع أشخاص آخرين أو "
-"مواقع ويب أخرى. يتم حفظ كلمة المرور الخاصة بك مشفرة في قاعدة البيانات الخاصة "
-"بنا."
+"إلى الأشخاص على سبيدي نت هي رسائل Speedy Net شخصية ولن تتم مشاركتها مع أشخاص "
+"آخرين أو مواقع ويب أخرى. يتم حفظ كلمة المرور الخاصة بك مشفرة في قاعدة "
+"البيانات الخاصة بنا."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3273,12 +3291,12 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"ملفك الشخصي على سبيدي نت مرئي للجميع، ولكن يمكنك اختيار من تريد مشاركته مع "
-"عنوان بريدك الإلكتروني وتاريخ ميلادك. إذا قمت بالتسجيل في سبيدي ماتش، فإن "
-"ملفك الشخصي في سبيدي ماتش سيكون مرئيًا فقط للأشخاص الذين يتطابقون معك وفقًا "
-"للإعدادات التي قمت بإعدادها على الموقع، والتي تقوم بمطابقتهم وفقًا "
-"لإعداداتهم. لن يظهر ملفك الشخصي على Speedy Match على Google ولن يكون مرئيًا "
-"للأشخاص غير المسجلين في الموقع."
+"ملفك الشخصي على Speedy Net سبيدي نت مرئي للجميع، ولكن يمكنك اختيار من تريد "
+"مشاركته مع عنوان بريدك الإلكتروني وتاريخ ميلادك. إذا قمت بالتسجيل Speedy "
+"Match في سبيدي ماتش Speedy Match ، فإن ملفك الشخصي في سبيدي ماتش سيكون مرئيًا "
+"فقط للأشخاص الذين يتطابقون معك وفقًا للإعدادات التي قمت بإعدادها على الموقع، "
+"والتي تقوم بمطابقتهم وفقًا لإعداداتهم. لن يظهر ملفك الشخصي على على Google ولن "
+"يكون مرئيًا للأشخاص غير المسجلين في الموقع. Speedy Match"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3290,12 +3308,13 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"إذا قمت بإلغاء تنشيط حسابك على سبيدي نت أو سبيدي ماتش، فسيتم إزالة ملفك "
-"الشخصي على ذلك الموقع من الموقع ولن تظهر في نتائج بحث الأشخاص الآخرين على "
-"الموقع. لاحظ أن إلغاء تنشيط حسابك على سبيدي نت يؤدي أيضًا إلى إلغاء تنشيط "
-"حسابك تلقائيًا على سبيدي ماتش. يمكنك فقط إلغاء تنشيط حسابك في سبيدي ماتش، وفي "
-"هذه الحالة سيظل حسابك في سبيدي نت نشطًا. يمكنك إعادة تنشيط حسابك بعد إلغاء "
-"تنشيطه وقتما تشاء."
+"إذا قمت بإلغاء تنشيط حسابك على سبيدي Speedy Net نت أو سبيدي Speedy Match "
+"ماتش، فسيتم إزالة ملفك الشخصي على ذلك الموقع من الموقع ولن تظهر في نتائج بحث "
+"الأشخاص الآخرين على الموقع. لاحظ أن إلغاء تنشيط حسابك على سبيدي Speedy Net "
+"نت يؤدي أيضًا إلى إلغاء تنشيط حسابك تلقائيًا على سبيدي ماتش. يمكنك Speedy "
+"Match فقط إلغاء تنشيط حسابك في سبيدي ماتش، وفي هذه الحالة سيظل حسابك في "
+"سبيدي نت نشطًا. يمكنك إعادة تنشيط حسابك بعد إلغاء تنشيطه وقتما تشاء. Speedy "
+"Match Speedy Net"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3306,12 +3325,12 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"إذا أردت، يمكنك حذف حسابك على سبيدي نت. سيؤدي حذف حساب سبيدي نت الخاص بك إلى "
-"حذف حساب سبيدي ماتش الخاص بك تلقائيًا أيضًا. لحذف حساب سبيدي نت الخاص بك، قم "
-"بتسجيل الدخول إلى سبيدي نت، وقم بإلغاء تنشيط حسابك، ثم انقر فوق \"حذف "
-"الحساب\" (في قائمة \"تحرير الملف الشخصي\"). املأ التفاصيل في النموذج ثم قم "
-"بالتأكيد. يرجى ملاحظة أنه لا يمكن استرداد الحساب المحذوف. حذف الحساب نهائي "
-"ولا رجعة فيه."
+"إذا أردت، يمكنك حذف حسابك على سبيدي نت. سيؤدي Speedy Net حذف حساب سبيدي "
+"Speedy Net نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك تلقائيًا Speedy Match "
+"أيضًا. لحذف Speedy Net حساب سبيدي نت الخاص Speedy Net بك، قم بتسجيل الدخول "
+"إلى سبيدي نت، وقم بإلغاء تنشيط حسابك، ثم انقر فوق \"حذف الحساب\" (في قائمة "
+"\"تحرير الملف الشخصي\"). املأ التفاصيل في النموذج ثم قم بالتأكيد. يرجى "
+"ملاحظة أنه لا يمكن استرداد الحساب المحذوف. حذف الحساب نهائي ولا رجعة فيه."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3429,11 +3448,13 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "%(user_name)s لديه أيضًا ملف تعريف Speedy Match. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي ماتش."
+"%(user_name)s على سبيدي ماتش. Speedy Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "لديك أيضًا ملف شخصي في سبيدي نت. عرض ملف التعريف الخاص بك على سبيدي نت."
+msgstr ""
+"لديك أيضًا ملف شخصي Speedy Net في سبيدي نت. عرض ملف التعريف الخاص بك على "
+"سبيدي نت. Speedy Net"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3441,8 +3462,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s لديه أيضًا ملف شخصي على Speedy Net. عرض الملف الشخصي لـ "
-"%(user_name)s على سبيدي نت."
+"%(user_name)s لديه أيضًا ملف Speedy Net شخصي على. عرض الملف الشخصي لـ "
+"%(user_name)s على سبيدي نت. Speedy Net"
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3459,10 +3480,10 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"يمكنك استخدام سبيدي نت للأغراض القانونية فقط. لا يُسمح لك بتحميل محتويات "
-"تتعلق بالكراهية أو العنف أو إساءة معاملة الحيوانات أو العري أو المواد "
-"الإباحية. لا يجوز لك استخدام سبيدي نت لإرسال رسائل مزعجة، أو رسائل بنفس "
-"المحتوى لعدد كبير من الأشخاص."
+"يمكنك استخدام Speedy Net سبيدي نت للأغراض القانونية فقط. لا يُسمح لك بتحميل "
+"محتويات تتعلق بالكراهية أو العنف أو إساءة معاملة الحيوانات أو العري أو "
+"المواد الإباحية. لا Speedy Net يجوز لك استخدام سبيدي نت لإرسال رسائل مزعجة، "
+"أو رسائل بنفس المحتوى لعدد كبير من الأشخاص."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3543,7 +3564,7 @@ msgstr "مرئية على الموقع"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "وقت سريع لتعديل الصورة"
+msgstr "وقت سريع لتعديل الصورة Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

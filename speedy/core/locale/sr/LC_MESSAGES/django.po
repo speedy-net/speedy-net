@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -423,19 +423,22 @@ msgstr ""
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Такође имате Спееди Нет профил. Погледајте свој профил на Спееди Нет-у."
+"Такође имате Спееди Speedy Net Нет профил. Погледајте свој профил на Спееди "
+"Нет-у. Speedy Net"
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Такође имате Спееди Нет профил. Погледајте свој профил на Спееди Нет-у."
+"Такође имате Спееди Speedy Net Нет профил. Погледајте свој профил на Спееди "
+"Нет-у. Speedy Net"
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Такође имате Спееди Нет профил. Погледајте свој профил на Спееди Нет-у."
+"Такође имате Спееди Speedy Net Нет профил. Погледајте свој профил на Спееди "
+"Нет-у. Speedy Net"
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -681,22 +684,22 @@ msgstr "Види све"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ваш Спееди Нет налог није активан. Унесите ову страницу да бисте је "
-"активирали."
+"Ваш Спееди Speedy Net Нет налог није активан. Унесите ову страницу да бисте "
+"је активирали."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ваш Спееди Нет налог није активан. Унесите ову страницу да бисте је "
-"активирали."
+"Ваш Спееди Speedy Net Нет налог није активан. Унесите ову страницу да бисте "
+"је активирали."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ваш Спееди Нет налог није активан. Унесите ову страницу да бисте је "
-"активирали."
+"Ваш Спееди Speedy Net Нет налог није активан. Унесите ову страницу да бисте "
+"је активирали."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -1386,8 +1389,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су деактивирани. Можете их поново "
-"активирати у било ком тренутку."
+"Ваши Speedy Net Спееди Нет и Спееди Speedy Match Матцх налози су "
+"деактивирани. Можете их поново активирати у било ком тренутку."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1395,8 +1398,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су деактивирани. Можете их поново "
-"активирати у било ком тренутку."
+"Ваши Speedy Net Спееди Нет и Спееди Speedy Match Матцх налози су "
+"деактивирани. Можете их поново активирати у било ком тренутку."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1404,8 +1407,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Ваши Спееди Нет и Спееди Матцх налози су деактивирани. Можете их поново "
-"активирати у било ком тренутку."
+"Ваши Speedy Net Спееди Нет и Спееди Speedy Match Матцх налози су "
+"деактивирани. Можете их поново активирати у било ком тренутку."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1786,7 +1789,7 @@ msgstr ""
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
 "Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи."
+"људи. Speedy Net"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1801,7 +1804,7 @@ msgstr ""
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
 "Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи."
+"људи. Speedy Net"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1816,7 +1819,7 @@ msgstr ""
 "број порука које се могу послати другим члановима сајта у једном дану. "
 "Покушајте поново сутра. Имајте на уму да вам није дозвољено да користите "
 "Спееди Нет за слање нежељених порука или порука истог садржаја великом броју "
-"људи."
+"људи. Speedy Net"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1825,7 +1828,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1834,7 +1838,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1843,7 +1848,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1852,7 +1858,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1861,7 +1868,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1870,7 +1878,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1879,7 +1888,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1888,7 +1898,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1897,7 +1908,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Овај корисник се не подудара са вашим профилом, али можете посетити његов "
-"Спееди Нет профил. Погледајте профил корисника на Спееди Нет-у."
+"Спееди Speedy Net Нет профил. Погледајте профил корисника на Спееди Нет-у. "
+"Speedy Net"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1928,7 +1940,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Спееди Цоре налози"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2491,7 +2503,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Апликација Спееди Цоре Басе"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2832,7 +2844,7 @@ msgstr "Лош захтев"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Спееди је жао, али не можемо да одговоримо на ваш захтев."
+msgstr "Спееди је жао, али не можемо да одговоримо на ваш захтев. Speedy"
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2840,7 +2852,7 @@ msgstr "Дозвола одбијена"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Спееди је жао, али ова страница је приватна."
+msgstr "Спееди је жао, али ова страница је приватна. Speedy"
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2848,7 +2860,7 @@ msgstr "Страница није пронађена"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Спееди је жао, али страница није пронађена."
+msgstr "Спееди је жао, али страница није пронађена. Speedy"
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -2945,7 +2957,8 @@ msgstr "Промени лозинку"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Ваше године ће бити видљиве вашим утакмицама на Спееди Матцх-у."
+msgstr ""
+"Ваше године ће бити видљиве вашим утакмицама на Спееди Матцх-у. Speedy Match"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3023,19 +3036,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Спееди Нет Блог"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Спееди Паз"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Спееди Софтваре"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Спееди Сале"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3044,7 +3057,7 @@ msgstr "Веб страница прилагођена веганима"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Спееди"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3060,23 +3073,23 @@ msgstr "Лозинка"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Спееди Нет"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Спееди Матцх"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Спееди Нет'с Схоп"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Спееди Матцх'с Схоп"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Спееди С-лого Схоп"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3108,15 +3121,15 @@ msgstr "Контактирајте нас"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Спееди Цомпосер"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Спееди Маил софтвер"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Спееди Цомпосер'с Схоп"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3277,8 +3290,9 @@ msgid ""
 msgstr ""
 "Поштујемо вашу приватност. Нећемо продавати или делити ваше личне податке, "
 "укључујући ваше име, датум рођења, адресу е-поште и лозинку. Поруке које "
-"шаљете људима на Спееди Нет-у су личне и неће се делити са другим људима или "
-"веб локацијама. Ваша лозинка је сачувана шифрована у нашој бази података."
+"шаљете људима на Спееди Нет- Speedy Net у су личне и неће се делити са "
+"другим људима или веб локацијама. Ваша лозинка је сачувана шифрована у нашој "
+"бази података."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3290,12 +3304,13 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Ваш профил на Спееди Нет-у је видљив свима, али можете изабрати кога ћете "
-"делити са својом адресом е-поште и датумом рођења. Ако сте се регистровали "
-"за Спееди Матцх, ваш Спееди Матцх профил ће бити видљив само људима који вам "
-"одговарају у складу са подешавањима која сте поставили на сајту, а ви им "
-"одговарате према њиховим подешавањима. Ваш профил на Спееди Матцх-у се неће "
-"појавити на Гоогле-у и није видљив људима који нису регистровани на сајту."
+"Ваш профил на Спееди Speedy Net Нет-у је видљив свима, али можете изабрати "
+"кога ћете делити са својом адресом е-поште и датумом рођења. Ако сте се "
+"регистровали Speedy Match за Спееди Матцх, Speedy Match ваш Спееди Матцх "
+"профил ће бити видљив само људима који вам одговарају у складу са "
+"подешавањима која сте поставили на сајту, а ви им одговарате према њиховим "
+"подешавањима. Ваш профил на Спееди Матцх-у се неће појавити на Гоогле-у и "
+"није видљив људима који нису регистровани на сајту. Speedy Match"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3307,13 +3322,14 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Ако сте деактивирали свој налог на Спееди Нет-у или Спееди Матцх-у, ваш "
-"профил на том сајту ће бити уклоњен са сајта и нећете се појављивати у "
-"резултатима претраге других људи на сајту. Имајте на уму да деактивирање "
-"вашег налога на Спееди Нет-у такође аутоматски деактивира ваш налог на "
-"Спееди Матцх-у. Можете деактивирати само свој налог на Спееди Матцх-у, у ком "
-"случају ће ваш Спееди Нет налог остати активан. Можете поново да активирате "
-"свој налог након што га деактивирате кад год желите."
+"Ако сте деактивирали свој налог на Спееди Нет Speedy Net -у или Спееди Матцх "
+"Speedy Match -у, ваш профил на том сајту ће бити уклоњен са сајта и нећете "
+"се појављивати у резултатима претраге других људи на сајту. Имајте на уму да "
+"деактивирање вашег налога на Спееди Speedy Net Нет-у такође аутоматски "
+"деактивира ваш налог на Спееди Матцх-у. Можете деактивирати Speedy Match "
+"само свој налог на Спееди Матцх-у, у ком случају ће ваш Спееди Нет налог "
+"остати активан. Можете поново да активирате свој налог након што га "
+"деактивирате кад год желите. Speedy Match Speedy Net"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3324,12 +3340,13 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Ако желите, можете избрисати свој налог на Спееди Нет-у. Брисање вашег "
-"Спееди Нет налога ће аутоматски избрисати и ваш Спееди Матцх налог. Да бисте "
-"избрисали свој Спееди Нет налог, пријавите се на Спееди Нет, деактивирајте "
-"свој налог, а затим кликните на „Делете Аццоунт“ (у менију „Едит Профиле“). "
-"Попуните податке у формулару и потврдите. Имајте на уму да се избрисани "
-"налог не може вратити. Брисање налога је трајно и неповратно."
+"Ако желите, можете избрисати свој налог на Спееди Speedy Net Нет-у. Брисање "
+"Speedy Net вашег Спееди Нет налога ће аутоматски избрисати и ваш Спееди "
+"Матцх Speedy Match налог. Да бисте Speedy Net избрисали свој Спееди Speedy "
+"Net Нет налог, пријавите се на Спееди Нет, деактивирајте свој налог, а затим "
+"кликните на „Делете Аццоунт“ (у менију „Едит Профиле“). Попуните податке у "
+"формулару и потврдите. Имајте на уму да се избрисани налог не може вратити. "
+"Брисање налога је трајно и неповратно."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3452,7 +3469,8 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Такође имате Спееди Нет профил. Погледајте свој профил на Спееди Нет-у."
+"Такође имате Спееди Speedy Net Нет профил. Погледајте свој профил на Спееди "
+"Нет-у. Speedy Net"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3478,10 +3496,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Спееди Нет можете користити само у легалне сврхе. Није вам дозвољено да "
-"отпремате садржаје који се односе на мржњу, насиље, злостављање животиња, "
-"голотињу или порнографију. Није вам дозвољено да користите Спееди Нет за "
-"слање нежељених порука или порука истог садржаја великом броју људи."
+"Спееди Нет можете Speedy Net користити само у легалне сврхе. Није вам "
+"дозвољено да отпремате садржаје који се односе на мржњу, насиље, злостављање "
+"животиња, голотињу или порнографију. Није вам дозвољено Speedy Net да "
+"користите Спееди Нет за слање нежељених порука или порука истог садржаја "
+"великом броју људи."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3563,7 +3582,7 @@ msgstr "видљиво на веб страници"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Брзо време модерирања слике"
+msgstr "Брзо време модерирања слике Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1916,7 +1916,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Kiired põhikontod"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2935,7 +2935,7 @@ msgstr "Muuda parooli"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Teie vanus on Speedy Matchi matšidele nähtav."
+msgstr "Teie vanus on i matšidele Speedy Match nähtav."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3020,11 +3020,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Kiire tarkvara"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Kiire müük"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3033,7 +3033,7 @@ msgstr "Veganisõbralik veebisait"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Kiire"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3049,11 +3049,11 @@ msgstr "Parool"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Kiire võrk"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Kiire matš"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3061,11 +3061,11 @@ msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Matchi pood"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Kiire S-logo pood"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3097,15 +3097,15 @@ msgstr "Võtke meiega ühendust"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Kiire helilooja"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Kiire postitarkvara"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Kiire helilooja pood"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3301,7 +3301,7 @@ msgstr ""
 "eemaldatakse teie sellel saidil olev profiil sellelt saidilt ja teid ei "
 "kuvata sellel saidil teiste inimeste otsingutulemustes. Pange tähele, et "
 "Speedy Netis konto deaktiveerimine deaktiveerib automaatselt ka teie konto "
-"Speedy Matchis. Speedy Matchis saate deaktiveerida ainult oma konto, sel "
+"Speedy Matchis. is saate deaktiveerida Speedy Match ainult oma konto, sel "
 "juhul jääb teie Speedy Neti konto aktiivseks. Pärast desaktiveerimist saate "
 "oma konto igal ajal uuesti aktiveerida."
 
@@ -3315,8 +3315,8 @@ msgid ""
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
 "Soovi korral saate oma konto Speedy Netis kustutada. Speedy Neti konto "
-"kustutamisel kustutatakse automaatselt ka teie Speedy Matchi konto. Speedy "
-"Net'i konto kustutamiseks logige Speedy Net'i sisse, deaktiveerige oma konto "
+"kustutamisel kustutatakse automaatselt ka teie Speedy Matchi konto. 'i konto "
+"kustutamiseks Speedy Net logige Speedy Net'i sisse, deaktiveerige oma konto "
 "ja seejärel klõpsake \"Kustuta konto\" (menüüs \"Redigeeri profiili\"). "
 "Täitke vormis olevad andmed ja kinnitage. Pange tähele, et kustutatud kontot "
 "ei saa taastada. Konto kustutamine on püsiv ja pöördumatu."
@@ -3552,7 +3552,7 @@ msgstr "kodulehel näha"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Kiire pildi modereerimise aeg"
+msgstr "Kiire pildi modereerimise aeg Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

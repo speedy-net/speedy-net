@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Conturi Speedy Match"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -607,7 +607,7 @@ msgstr "Gen pentru a se potrivi"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Utilizator Speedy Match"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -706,11 +706,11 @@ msgstr "Numărul de potriviri la căutarea ultimului utilizator"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Profil de meci rapid"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Profiluri de meci rapid"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1055,7 +1055,7 @@ msgstr "Like-uri reciproce"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Meciuri rapide"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1071,7 +1071,7 @@ msgstr "Nici unul"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Meci rapid [alfa]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1093,13 +1093,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> este o nouă aplicație web de întâlniri/potrivire în "
 "scopuri romantice pentru cei singuri care sunt membri ai <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Cu "
-"Speedy Match puteți găsi persoane potrivite pentru întâlniri și puteți "
-"discuta cu ei online. Puteți să adăugați persoane ca prieteni pe Speedy Net, "
-"să le apreciați și să le trimiteți mesaje. Speedy Match este deschis pentru "
-"înregistrarea gratuită pentru persoane din toate țările și vârstele (fără "
-"limită de vârstă!). Site-ul este vegan și vegetarian. În prezent este "
-"disponibil în %(languages_num)s limbi."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Cu Speedy "
+"Match puteți găsi persoane potrivite pentru întâlniri și puteți discuta cu "
+"ei online. Puteți să adăugați persoane ca prieteni pe Speedy Net, să le "
+"apreciați și să le trimiteți mesaje. Match este deschis pentru înregistrarea "
+"gratuită pentru persoane din toate țările și vârstele (fără limită de "
+"vârstă!). Site-ul este vegan și vegetarian. În prezent este disponibil în "
+"%(languages_num)s limbi. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1121,8 +1121,8 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Doar persoanele care corespund cerințelor dvs. vor putea să vă vadă profilul "
-"și să vă contacteze. Nu permitem căutări anonime, iar profilurile Speedy "
-"Match sunt vizibile numai pentru partenerii care se potrivesc. Puteți "
+"și să vă contacteze. Nu permitem căutări anonime, iar Speedy Match "
+"profilurile sunt vizibile numai pentru partenerii care se potrivesc. Puteți "
 "selecta cine vă va putea vedea profilul și ce detalii vor apărea pe profilul "
 "dvs. ca publice, care detalii numai prietenilor și ce detalii vor fi "
 "private. Detaliile private vor apărea numai pentru dvs."
@@ -1134,7 +1134,7 @@ msgid ""
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
 "Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Alăturați-vă "
-"Speedy Match astăzi pentru a găsi parteneri care se potrivesc, durează doar "
+"astăzi Speedy Match pentru a găsi parteneri care se potrivesc, durează doar "
 "câteva minute. <a href=\"/\" title=\"Join Speedy Match\">Faceți clic aici</"
 "a> pentru a vă alătura."
 
@@ -1155,7 +1155,7 @@ msgid ""
 msgstr ""
 "Speedy Match poartă numele lui <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți "
-"ani și a murit în 2003. Speedy a născut 7 căței în 1988."
+"ani și a murit în 2003. a născut 7 căței în 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1175,7 +1175,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net și Speedy Match,"
+msgstr "Fondator și director al Speedy Net Speedy Speedy Match Net și,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

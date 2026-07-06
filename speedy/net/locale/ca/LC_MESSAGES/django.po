@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han suprimit els vostres comptes de Speedy Net i Speedy Match. Gràcies per "
+"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
 "utilitzar {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -107,7 +107,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han suprimit els vostres comptes de Speedy Net i Speedy Match. Gràcies per "
+"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
 "utilitzar {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -117,12 +117,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han suprimit els vostres comptes de Speedy Net i Speedy Match. Gràcies per "
+"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
 "utilitzar {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Comptes de xarxa ràpida"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -152,7 +152,7 @@ msgstr "Sí. Esborra el meu compte."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Usuari de xarxa ràpida"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +164,11 @@ msgstr "Nombre d'amics a la darrera visita de l'usuari"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Perfil Speedy Net"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Perfils Speedy Net"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -200,12 +200,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> és una nova xarxa social. Amb Speedy Net pots comunicar-"
-"te amb els teus amics. Speedy Net està obert al registre gratuït per a "
-"persones de tots els països i edats (sense límit d'edat!). El lloc és vegà i "
-"apte per a vegetarians. Actualment està disponible en %(languages_num)s "
-"idiomes."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> és una nova xarxa social. Amb Speedy Net pots comunicar-te amb els teus "
+"amics. Net està Speedy Net obert al registre gratuït per a persones de tots "
+"els països i edats (sense límit d'edat!). El lloc és vegà i apte per a "
+"vegetarians. Actualment està disponible en %(languages_num)s idiomes."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -258,7 +257,7 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net és un projecte de programari lliure i de codi obert. Si voleu "
-"ajudar a desenvolupar i millorar Speedy Net, poseu-vos en contacte amb mi "
+"ajudar a desenvolupar i millorar, poseu Speedy Net -vos en contacte amb mi "
 "per correu electrònic."
 
 #: .\templates\about\about.html:29
@@ -269,7 +268,7 @@ msgid ""
 msgstr ""
 "Speedy Net porta el nom de <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, una gossa que va estar amb "
-"nosaltres durant molts anys i que va morir el 2003. Speedy va donar a llum 7 "
+"nosaltres durant molts anys i que va morir el 2003. va donar a llum 7 "
 "cadells el 1988."
 
 #: .\templates\about\about.html:31
@@ -287,7 +286,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fundador i director de Speedy Net i Speedy Match,"
+msgstr "Fundador i director de Speedy Net Speedy Speedy Match Net i,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

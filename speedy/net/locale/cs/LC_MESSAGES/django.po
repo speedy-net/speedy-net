@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaše účty Speedy Net a Speedy Match byly smazány. Děkujeme, že používáte "
+"Vaše Speedy Net účty Speedy Match a byly smazány. Děkujeme, že používáte "
 "{site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaše účty Speedy Net a Speedy Match byly smazány. Děkujeme, že používáte "
+"Vaše Speedy Net účty Speedy Match a byly smazány. Děkujeme, že používáte "
 "{site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaše účty Speedy Net a Speedy Match byly smazány. Děkujeme, že používáte "
+"Vaše Speedy Net účty Speedy Match a byly smazány. Děkujeme, že používáte "
 "{site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Účty rychlé sítě"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ano. Smazat můj účet."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Rychlý uživatel sítě"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Počet přátel při poslední návštěvě uživatele"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil rychlé sítě"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Rychlé síťové profily"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -196,12 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> je nová sociální síť. S Speedy Net můžete komunikovat "
-"se svými přáteli. Speedy Net je otevřena pro bezplatnou registraci pro lidi "
-"ze všech zemí a věkových kategorií (bez věkového omezení!). Stránka je "
-"vhodná pro vegany a vegetariány. Momentálně je k dispozici v "
-"%(languages_num)s jazycích."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> je nová sociální síť. S Speedy Net můžete komunikovat se svými přáteli. "
+"Net je otevřena Speedy Net pro bezplatnou registraci pro lidi ze všech zemí "
+"a věkových kategorií (bez věkového omezení!). Stránka je vhodná pro vegany a "
+"vegetariány. Momentálně je k dispozici v %(languages_num)s jazycích."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -263,7 +262,7 @@ msgid ""
 msgstr ""
 "Speedy Net je pojmenována po <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, fence, která s námi byla mnoho let "
-"a zemřela v roce 2003. Speedy porodila v roce 1988 7 štěňat."
+"a zemřela v roce 2003. porodila v roce 1988 7 štěňat."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -279,11 +278,11 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Zakladatel a ředitel Speedy Net a Speedy Match,"
+msgstr "Zakladatel a ředitel Speedy Net Speedy Speedy Match Net a,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Společnost Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"

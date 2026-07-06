@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "आप चाहते हैं"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीडी मैच देखा गया"
+msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीडी मैच देखा गया"
+msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीडी मैच देखा गया"
+msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "शीघ्र मिलान खाते"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "मिलान के लिए लिंग"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "शीघ्र मिलान उपयोगकर्ता"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "अंतिम उपयोगकर्ता की खोज पर �
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "शीघ्र मिलान प्रोफ़ाइल"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "शीघ्र मिलान प्रोफाइल"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1041,7 +1041,7 @@ msgstr "आपसी पसंद"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "शीघ्र मैच मैच"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1057,11 +1057,11 @@ msgstr "कोई नहीं"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "शीघ्र मैच [अल्फा]"
+msgstr "Speedy Match [अल्फा]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "स्पीडी मैच के बारे में"
+msgstr "स्पीडी मैच के बारे में Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1077,13 +1077,14 @@ msgid ""
 "available in %(languages_num)s languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">स्पीडी मैच</a> एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक नया डेटिंग/मैचिंग वेब "
-"ऐप है जो <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">स्पीडी नेट</a> के सदस्य हैं। स्पीडी मैच के साथ आप डेटिंग के लिए मेल खाने वाले लोगों को "
-"ढूंढ सकते हैं और उनके साथ ऑनलाइन चैट कर सकते हैं। आप स्पीडी नेट पर लोगों को मित्र के रूप में "
-"जोड़ सकते हैं, लोगों को पसंद कर सकते हैं और उन्हें संदेश भेज सकते हैं। स्पीडी मैच सभी देशों और उम्र "
-"के लोगों के लिए निःशुल्क पंजीकरण के लिए खुला है (कोई आयु सीमा नहीं!)। यह साइट शाकाहारी "
-"और शाकाहार के अनुकूल है। यह वर्तमान में %(languages_num)s भाषाओं में उपलब्ध है।"
+"Match\">स्पीडी मैच</ Speedy Match a> एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक "
+"नया डेटिंग/मैचिंग वेब ऐप है जो <a href=\"https://%(language_code)s..net/\" "
+"title=\"\">स्पीडी नेट</a> के सदस्य हैं। स्पीडी मैच Speedy Net के Speedy Net साथ आप "
+"डेटिंग के लिए मे Speedy Match ल खाने वाले लोगों को ढूंढ सकते हैं और उनके साथ ऑनलाइन चैट कर "
+"सकते हैं। आप स्पीडी नेट पर लोगों को मित्र के रूप Speedy Net में जोड़ सकते हैं, लोगों को पसंद "
+"कर सकते हैं और उन्हें संदेश भेज सकते हैं। स्पीडी मैच सभी देशों और उम्र के लोगों के लिए निःशुल्क "
+"पंजीकरण के लिए खुला है (कोई आयु सीमा नहीं!)। यह साइट शाकाहारी और शाकाहार के अनुकूल है। "
+"यह वर्तमान में %(languages_num)s भाषाओं में उपलब्ध है। Speedy Match Net"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1091,9 +1092,9 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"स्पीडी मैच के संस्थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते हैं और जानवरों पर प्रयोगों "
-"पर आपत्ति जताते हैं। स्पीडी मैच एक डेटिंग ऐप है जो शाकाहारी लोगों और जानवरों के लिए अनुकूल "
-"है।"
+"स्पीडी मैच के संस Speedy Match ्थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते हैं और "
+"जानवरों पर प्रयोगों पर आपत Speedy Match ्ति जताते हैं। स्पीडी मैच एक डेटिंग ऐप है जो "
+"शाकाहारी लोगों और जानवरों के लिए अनुकूल है।"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1105,10 +1106,11 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "केवल आपकी आवश्यकताओं से मेल खाने वाले लोग ही आपकी प्रोफ़ाइल देख पाएंगे और आपसे संपर्क कर "
-"पाएंगे। हम गुमनाम खोजों की अनुमति नहीं देते हैं और स्पीडी मैच प्रोफ़ाइल केवल मेल खाने वाले "
-"भागीदारों को दिखाई देती हैं। आप यह चुन सकते हैं कि आपकी प्रोफ़ाइल कौन देख पाएगा और कौन "
-"सी जानकारी आपकी प्रोफ़ाइल पर सार्वजनिक दिखाई देगी, कौन सी जानकारी केवल दोस्तों के "
-"लिए दिखाई देगी और कौन सी जानकारी निजी होगी। निजी विवरण केवल आपको दिखाई देंगे."
+"पाएंगे। हम गुमनाम खोजों की अनुमति नहीं देते है Speedy Match ं और स्पीडी मैच प्रोफ़ाइल केवल "
+"मेल खाने वाले भागीदारों को दिखाई देती हैं। आप यह चुन सकते हैं कि आपकी प्रोफ़ाइल कौन देख "
+"पाएगा और कौन सी जानकारी आपकी प्रोफ़ाइल पर सार्वजनिक दिखाई देगी, कौन सी जानकारी "
+"केवल दोस्तों के लिए दिखाई देगी और कौन सी जानकारी निजी होगी। निजी विवरण केवल आपको "
+"दिखाई देंगे."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1116,17 +1118,17 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"स्पीडी नेट और स्पीडी मैच पर सभी सुविधाएँ निःशुल्क हैं। मैचिंग पार्टनर ढूंढने के लिए आज ही "
-"स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे। <a href=\"/\" title=\"Join Speedy "
-"Match\">शामिल होने के लिए यहां क्लिक करें</a>।"
+"स्पीडी नेट और स्पीडी मै Speedy Net च पर सभी सुविधाएँ Speedy Match निःशुल्क हैं। मैचिंग "
+"पार्टनर ढ Speedy Match ूंढने के लिए आज ही स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे। <a "
+"href=\"/\" title=\"Join \">शामिल होने के लिए यहां क्लिक करें</a>। Speedy Match"
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"स्पीडी मैच एक निःशुल्क सॉफ्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि आप स्पीडी मैच के विकास और "
-"सुधार में मदद करना चाहते हैं, तो कृपया मुझे ईमेल से संपर्क करें।"
+"Speedy Match स्पीडी मैच एक निःशुल्क सॉफ्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि आप स्पीडी "
+"मैच के विकास और सुधार में मदद करना चाहते हैं, तो कृपया मुझे ईमेल से संपर्क करें। Speedy Match"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1134,17 +1136,18 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"स्पीडी मैच का नाम <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">स्पीडी</a> के नाम पर रखा गया है, एक मादा कुत्ता जो कई वर्षों तक "
-"हमारे साथ थी और 2003 में उसकी मृत्यु हो गई। स्पीडी ने 1988 में 7 पिल्लों को जन्म दिया।"
+"Speedy Match स्पीडी मैच का नाम <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">स्पीडी</a> के नाम पर रखा गया है, एक मादा कुत्ता जो "
+"कई वर्षों तक हमारे साथ थी और 2003 में उसकी मृत्यु हो गई। स्पीडी ने 1988 में 7 पिल्लों को "
+"जन्म दिया। Speedy"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"स्पीडी मैच फिलहाल अल्फा में है। इसे अगस्त 2019 में लॉन्च किया गया था। स्पीडी मैच का अंग्रेजी "
-"संस्करण उत्पादन में है।"
+"Speedy Match स्पीडी मैच फिलहाल अल्फा में है। इसे अगस्त 2019 में लॉन्च किया गया था। "
+"स्पीडी मैच का अंग्रेजी संस्करण उत्पादन में है। Speedy Match"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1156,11 +1159,11 @@ msgstr "उरी रोडबर्ग"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "स्पीडी नेट और स्पीडी मैच के संस्थापक और निदेशक,"
+msgstr "स्पीडी नेट और स्पीडी मैच के Speedy Net संस्थापक और निदेशक, Speedy Match"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "स्पीडी पाज़ टेक्नोलॉजीज लिमिटेड"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1198,7 +1201,9 @@ msgstr "अगला कदम"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "आपका स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज करें."
+msgstr ""
+"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज "
+"करें."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1275,22 +1280,23 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"स्पीडी मैच एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक नया डेटिंग/मैचिंग वेब ऐप है जो "
-"स्पीडी नेट के सदस्य हैं। स्पीडी मैच के साथ आप डेटिंग के लिए मेल खाने वाले लोगों को ढूंढ सकते हैं "
-"और उनके साथ ऑनलाइन चैट कर सकते हैं। यह साइट शाकाहारी और शाकाहार के अनुकूल है।"
+"Speedy Match स्पीडी मैच एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक नया डेटिंग/मैचिंग "
+"वेब ऐप है जो स्पीडी नेट के सदस्य Speedy Net हैं। स्पीडी मैच क Speedy Match े साथ आप "
+"डेटिंग के लिए मेल खाने वाले लोगों को ढूंढ सकते हैं और उनके साथ ऑनलाइन चैट कर सकते हैं। यह "
+"साइट शाकाहारी और शाकाहार के अनुकूल है।"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "एक प्रेमी की तलाश है? प्रेमिका ढूंढ रहा हूं? आओ और स्पीडी से मिलो!"
+msgstr "एक प्रेमी की तलाश है? प्रेमिका ढूंढ रहा हूं? आओ और स्पीडी से मिलो! Speedy"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"स्पीडी नेट और स्पीडी मैच पर सभी सुविधाएँ निःशुल्क हैं। मैचिंग पार्टनर ढूंढने के लिए आज ही "
-"स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे।"
+"स्पीडी नेट और स्पीडी म Speedy Net ैच पर सभी सुविधा Speedy Match एँ निःशुल्क हैं। मैचिंग "
+"पार्टनर Speedy Match ढूंढने के लिए आज ही स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे।"
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1379,7 +1385,7 @@ msgstr "रिश्ते की स्थिति"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीडी मैच देखा गया"
+msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

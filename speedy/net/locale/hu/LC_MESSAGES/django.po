@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,10 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiók is "
-"törlődik. Ha biztos benne, írja be az \"Igen. Fiókom törlése\" kifejezést. "
-"ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével."
+"visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is "
+"törlődik. Ha biztos Speedy Match benne, írja be az \"Igen. Fiókom törlése\" "
+"kifejezést. ezen a területen pontosan és a kis- és nagybetűk "
+"megkülönböztetésével."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,9 +53,10 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiók is "
-"törlődik. Ha biztos benne, írja be az \"Igen. Fiókom törlése\" kifejezést. "
-"ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével."
+"visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is "
+"törlődik. Ha biztos Speedy Match benne, írja be az \"Igen. Fiókom törlése\" "
+"kifejezést. ezen a területen pontosan és a kis- és nagybetűk "
+"megkülönböztetésével."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -65,9 +67,10 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiók is "
-"törlődik. Ha biztos benne, írja be az \"Igen. Fiókom törlése\" kifejezést. "
-"ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével."
+"visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is "
+"törlődik. Ha biztos Speedy Match benne, írja be az \"Igen. Fiókom törlése\" "
+"kifejezést. ezen a területen pontosan és a kis- és nagybetűk "
+"megkülönböztetésével."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -133,9 +136,10 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiók is "
-"törlődik. Ha biztos benne, írja be az \"Igen. Fiókom törlése\" kifejezést. "
-"ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével."
+"visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is "
+"törlődik. Ha biztos Speedy Match benne, írja be az \"Igen. Fiókom törlése\" "
+"kifejezést. ezen a területen pontosan és a kis- és nagybetűk "
+"megkülönböztetésével."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -160,11 +164,11 @@ msgstr "Ismerősök száma az utolsó felhasználó látogatása során"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net profil"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net profilok"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -180,11 +184,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "A Speedy Netről"
+msgstr "A Speedy Net ről"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -196,10 +200,10 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"A <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> egy új közösségi hálózat. A Speedy Net segítségével "
-"kommunikálhat barátaival. A Speedy Net ingyenes regisztrációra nyitva áll "
-"minden országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
+"A <a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy "
+"Net</a> egy új közösségi hálózat. A Speedy Net segítségével kommunikálhat "
+"barátaival Speedy Net. A Net ingyenes regisztrációra nyitva áll minden "
+"országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
 "vegetáriánusbarát. Jelenleg %(languages_num)s nyelven érhető el."
 
 #: .\templates\about\about.html:19
@@ -243,8 +247,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a "
-"Speedy Nethez még ma, hogy barátokat találjon, mindössze néhány percet vesz "
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a hez "
+"még ma Speedy Net, hogy barátokat találjon, mindössze néhány percet vesz "
 "igénybe. <a href=\"/\" title=\"Join Speedy Net\">Kattintson ide</a> a "
 "csatlakozáshoz."
 
@@ -254,7 +258,7 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "A Speedy Net egy ingyenes szoftver és nyílt forráskódú projekt. Ha segíteni "
-"szeretne a Speedy Net fejlesztésében és javításában, kérjük, vegye fel velem "
+"szeretne a fejlesztésében és javításában, Speedy Net kérjük, vegye fel velem "
 "a kapcsolatot e-mailben."
 
 #: .\templates\about\about.html:29
@@ -265,8 +269,7 @@ msgid ""
 msgstr ""
 "A Speedy Net nevét <a href=\"https://www.facebook.com/speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a>-ról kapta, egy nőstény kutyáról, aki sok "
-"éven át velünk volt, és 2003-ban pusztult el. Speedy 1988-ban 7 kiskutyát "
-"szült."
+"éven át velünk volt, és 2003-ban pusztult el. 1988-ban 7 kiskutyát szült."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -282,7 +285,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "A Speedy Net és a Speedy Match alapítója és igazgatója,"
+msgstr "A és a alapítója és Speedy Net Speedy Match igazgatója,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

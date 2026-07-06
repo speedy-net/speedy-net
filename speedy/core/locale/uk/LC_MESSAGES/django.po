@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -375,7 +375,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s також має профіль Speedy Match. Перегляньте профіль "
+"%(user_name)s також має Speedy Match профіль. Перегляньте профіль "
 "%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:101
@@ -385,7 +385,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s також має профіль Speedy Match. Перегляньте профіль "
+"%(user_name)s також має Speedy Match профіль. Перегляньте профіль "
 "%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:102
@@ -395,7 +395,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s також має профіль Speedy Match. Перегляньте профіль "
+"%(user_name)s також має Speedy Match профіль. Перегляньте профіль "
 "%(user_name)s на Speedy Match."
 
 #: .\__translations\__translations.html:104
@@ -405,7 +405,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s також має профіль Speedy Net. Переглянути профіль "
+"%(user_name)s також має Speedy Net профіль. Переглянути профіль "
 "%(user_name)s на Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -415,7 +415,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s також має профіль Speedy Net. Переглянути профіль "
+"%(user_name)s також має Speedy Net профіль. Переглянути профіль "
 "%(user_name)s на Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -425,7 +425,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s також має профіль Speedy Net. Переглянути профіль "
+"%(user_name)s також має Speedy Net профіль. Переглянути профіль "
 "%(user_name)s на Speedy Net."
 
 #: .\__translations\__translations.html:108
@@ -1937,7 +1937,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Швидкісні основні облікові записи"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2499,7 +2499,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Додаток Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2856,7 +2856,7 @@ msgstr "Сторінка не знайдена"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Спіді вибачте, але сторінка не знайдена."
+msgstr "Спіді вибачте, але сторінка не знайдена. Speedy"
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -3034,19 +3034,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Блог Speedy Net"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Спіді Пас"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Програмне забезпечення Speedy"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Швидкий продаж"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3055,7 +3055,7 @@ msgstr "Веб-сайт для веганів"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Швидкий"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3079,15 +3079,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Магазин Спіді Нет"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Магазин Speedy Match"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Магазин Speedy S-logo"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3119,15 +3119,15 @@ msgstr "Зв'яжіться з нами"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Швидкий композитор"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Програмне забезпечення Speedy Mail"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Композиторський магазин Speedy"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3304,7 +3304,7 @@ msgid ""
 msgstr ""
 "Ваш профіль на Speedy Net видимий для всіх, але ви можете вибрати, кому "
 "надати доступ до своєї електронної адреси та дати народження. Якщо ви "
-"зареєструвалися в Speedy Match, ваш профіль Speedy Match бачитимуть лише ті "
+"зареєструвалися Speedy Match в, ваш профіль Speedy Match бачитимуть лише ті "
 "люди, які відповідають вам відповідно до налаштувань, які ви встановили на "
 "сайті, і яким ви підбираєте їх відповідно до їхніх налаштувань. Ваш профіль "
 "у Speedy Match не відображатиметься в Google і його не бачитимуть люди, які "
@@ -3461,7 +3461,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s також має профіль Speedy Match. Перегляньте профіль "
+"%(user_name)s також має Speedy Match профіль. Перегляньте профіль "
 "%(user_name)s на Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
@@ -3475,7 +3475,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s також має профіль Speedy Net. Переглянути профіль "
+"%(user_name)s також має Speedy Net профіль. Переглянути профіль "
 "%(user_name)s на Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3495,8 +3495,8 @@ msgid ""
 msgstr ""
 "Ви можете використовувати Speedy Net лише в законних цілях. Вам заборонено "
 "завантажувати вміст, пов’язаний з ненавистю, насильством, жорстоким "
-"поводженням з тваринами, оголеним тілом або порнографією. Вам заборонено "
-"використовувати Speedy Net для надсилання спаму або повідомлень з однаковим "
+"поводженням з тваринами, оголеним тілом або порнографією. Вам Speedy Net "
+"заборонено використовувати для надсилання спаму або повідомлень з однаковим "
 "вмістом великій кількості людей."
 
 #: .\templates\terms\terms_of_service.html:23
@@ -3581,7 +3581,7 @@ msgstr "видно на веб-сайті"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Швидкий час модерації зображення"
+msgstr "Швидкий час модерації зображення Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

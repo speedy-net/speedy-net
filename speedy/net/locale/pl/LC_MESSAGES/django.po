@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały usunięte. Dziękujemy za "
+"Twoje Speedy Net konta Speedy Match i zostały usunięte. Dziękujemy za "
 "skorzystanie z {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały usunięte. Dziękujemy za "
+"Twoje Speedy Net konta Speedy Match i zostały usunięte. Dziękujemy za "
 "skorzystanie z {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Twoje konta Speedy Net i Speedy Match zostały usunięte. Dziękujemy za "
+"Twoje Speedy Net konta Speedy Match i zostały usunięte. Dziękujemy za "
 "skorzystanie z {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Szybkie konta sieciowe"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Tak. Usuń moje konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Szybki użytkownik sieci"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Liczba znajomych podczas ostatniej wizyty użytkownika"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Szybki profil sieciowy"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Szybkie profile sieciowe"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,11 +181,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Szybka sieć [alfa]"
+msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "O Speedy Net"
+msgstr "Speedy Net O"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -197,12 +197,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> to nowa sieć społecznościowa. Dzięki Speedy Net możesz "
-"komunikować się ze znajomymi. Speedy Net jest otwarty na bezpłatną "
-"rejestrację dla osób ze wszystkich krajów i grup wiekowych (bez ograniczeń "
-"wiekowych!). Strona jest przyjazna weganom i wegetarianom. Jest obecnie "
-"dostępny w %(languages_num)s językach."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> to nowa sieć społecznościowa. Dzięki Speedy Net możesz komunikować się ze "
+"znajomymi. Net jest Speedy Net otwarty na bezpłatną rejestrację dla osób ze "
+"wszystkich krajów i grup wiekowych (bez ograniczeń wiekowych!). Strona jest "
+"przyjazna weganom i wegetarianom. Jest obecnie dostępny w %(languages_num)s "
+"językach."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -245,9 +245,9 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Wszystkie funkcje Speedy Net i Speedy Match są bezpłatne. Dołącz do Speedy "
-"Net już dziś, aby znaleźć przyjaciół, zajmie to tylko kilka minut. <a "
-"href=\"/\" title=\"Join Speedy Net\">Kliknij tutaj</a>, aby dołączyć."
+"Wszystkie funkcje Speedy Net i Speedy Match są bezpłatne. Dołącz do już dziś "
+"Speedy Net, aby znaleźć przyjaciół, zajmie to tylko kilka minut. <a href=\"/"
+"\" title=\"Join Speedy Net\">Kliknij tutaj</a>, aby dołączyć."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -266,7 +266,7 @@ msgid ""
 msgstr ""
 "Nazwa Speedy Net pochodzi od <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, suczki, która była z nami przez "
-"wiele lat i zmarła w 2003 roku. Speedy urodziła 7 szczeniąt w 1988 roku."
+"wiele lat i zmarła w 2003 roku. urodziła 7 szczeniąt w 1988 roku."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -283,7 +283,7 @@ msgstr "Uriego Rodberga"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Założyciel i dyrektor Speedy Net i Speedy Match,"
+msgstr "Założyciel i dyrektor Speedy Net Speedy Speedy Match Net i,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

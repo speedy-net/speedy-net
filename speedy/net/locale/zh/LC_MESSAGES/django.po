@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您使用 {site_name}。"
+msgstr "您的 Speedy Net Speedy Match 和 帳戶已被刪除。感謝您使用 {site_name}。"
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -98,7 +98,7 @@ msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您使用 {site_name}。"
+msgstr "您的 Speedy Net Speedy Match 和 帳戶已被刪除。感謝您使用 {site_name}。"
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -106,11 +106,11 @@ msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您使用 {site_name}。"
+msgstr "您的 Speedy Net Speedy Match 和 帳戶已被刪除。感謝您使用 {site_name}。"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "快速網路帳戶"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -138,7 +138,7 @@ msgstr "是的。刪除我的帳戶。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "快速網路用戶"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -150,11 +150,11 @@ msgstr "用戶上次造訪時的好友數量"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "速網簡介"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "快速網路設定檔"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -170,11 +170,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "極速網 [alpha]"
+msgstr "Speedy Net [阿爾法]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "關於極速網"
+msgstr "關於極速網 Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -186,10 +186,10 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> 是一個新的社交網路。透過 Speedy Net，您可以與您的朋友進"
-"行交流。 Speedy Net 向所有國家和年齡的人開放免費註冊（沒有年齡限制！）。該網"
-"站是素食主義者和素食主義者友好的。目前提供 %(languages_num)s 語言版本。"
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\" Speedy Net "
+"Speedy Net ></a> 是一個新的社交網路。透過 ，您可以與您的朋友進行交流。 Net 向"
+"所有國家和年齡的人開放免費註冊（沒有年齡限制！）。該網站是素食主義者和素食主"
+"義者友好的。目前提供 %(languages_num)s 語言版本。 Speedy Net"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -228,15 +228,16 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Speedy Net 和 Speedy Match 上的所有功能都是免費的。今天加入極速網尋找朋友，只"
-"需幾分鐘。 <a href=\"/\" title=\"Join Speedy Net\">點此</a>加入。"
+"Speedy Net 和 Speedy Match 上的所有功能都是免費的。 Speedy Net 今天加入極速網"
+"尋找朋友，只需幾分鐘。 <a href=\"/\" title=\"Join \">點此</a>加入。 Speedy "
+"Net"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net 是一個免費軟體和開源專案。如果您想協助開發和改進 Speedy Net，請透"
+"Speedy Net 是一個免費軟體和開源專案。如果您想協助開發和改進 Speedy Net ，請透"
 "過電子郵件與我聯絡。"
 
 #: .\templates\about\about.html:29
@@ -247,11 +248,11 @@ msgid ""
 msgstr ""
 "Speedy Net以<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>命名，是一隻陪伴我們多年的母狗，於2003年去世。 "
-"1988年，Speedy生下了7隻小狗。"
+"1988年，生下了7隻小狗。"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "Speedy Net 目前處於 alpha 階段。它於 2012 年 6 月推出。"
+msgstr "Speedy Net 目前處於 阿爾法 階段。它於 2012 年 6 月推出。"
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -263,11 +264,13 @@ msgstr "尤里·羅德伯格"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "速網、速配創辦人兼董事，"
+msgstr ""
+"速網、速配創辦人兼董事， Speedy Speedy Speedy Net Speedy Speedy Match Net "
+"Net Net"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "快速帕茲技術有限公司"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -318,12 +321,12 @@ msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Speedy Net 和 Speedy Match 上的所有功能都是免費的。今天加入極速網尋找朋友，只"
-"需幾分鐘。"
+"Speedy Net 和 Speedy Match 上的所有功能都是免費的 Speedy Net 。今天加入極速網"
+"尋找朋友，只需幾分鐘。"
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "快速配對 – 約會快速"
+msgstr "Speedy Match 快速配對 – 約會快速 Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""

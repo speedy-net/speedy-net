@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -498,7 +498,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "บัญชีการแข่งขันที่รวดเร็ว"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -595,7 +595,7 @@ msgstr "เพศให้ตรงกัน"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "ผู้ใช้การจับคู่ที่รวดเร็ว"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -694,11 +694,11 @@ msgstr "จำนวนการแข่งขันในการค้นห
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "โปรไฟล์การแข่งขันที่รวดเร็ว"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "โปรไฟล์การแข่งขันที่รวดเร็ว"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1035,7 +1035,7 @@ msgstr "ความชอบร่วมกัน"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "การแข่งขันการแข่งขันที่รวดเร็ว"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1051,11 +1051,11 @@ msgstr "ไม่มี"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "การแข่งขันที่รวดเร็ว [อัลฟ่า]"
+msgstr "Speedy Match [อัลฟา]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "เกี่ยวกับ สปีดี้ แมตช์"
+msgstr "เกี่ยวกับ สปีดี้ แมตช์ Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1070,13 +1070,13 @@ msgid ""
 "(no age limit!). The site is vegan and vegetarian friendly. It is currently "
 "available in %(languages_num)s languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a> เป็นเว็บแอปหาคู่/"
+"<a href=\"https://%(language_code)s.speedymatch.com/ Speedy Match \" Speedy "
+"Match title=\"\"></a> เป็นเว็บแอปหาคู่/"
 "จับคู่ใหม่เพื่อจุดประสงค์โรแมนติกสำหรับคนโสดที่เป็นสมาชิกของ <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> ด้วย "
-"Speedy Match คุณสามารถค้นหาผู้คนที่ตรงกันเพื่อออกเดทและแชทกับพวกเขาทางออนไลน์ "
-"คุณสามารถเพิ่มผู้คนเป็นเพื่อนบน Speedy Net กดไลค์ผู้คนและส่งข้อความถึงพวกเขาได้ Speedy "
-"Match เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
+"%(language_code)s. Speedy Net.net Speedy Net /\" title= Speedy Match \"\"></"
+"a> ด้วย คุณสามารถค้นหาผู้คนที่ตรงกันเพื่อออกเดทและแชทกับพวกเขาทางออนไลน์ คุณสามารถเพิ ่มผ "
+"Speedy Net ู้คนเป็นเพื่อนบน กดไลค์ผู้คนและส Speedy Match ่งข ้อความถึงพวกเขาได้ Match "
+"เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
 "เว็บไซต์นี้เป็นมิตรกับมังสวิรัติและมังสวิรัติ ขณะนี้มีให้บริการในภาษา %(languages_num)s"
 
 #: .\templates\about\about.html:19
@@ -1129,15 +1129,15 @@ msgid ""
 msgstr ""
 "Speedy Match ตั้งชื่อตาม <a href=\"https://www.facebook.com/speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a> สุนัขตัวเมียที่อยู่กับเรามานานหลายปีและเสียชีวิตในปี "
-"2546 Speedy ให้กำเนิดลูกสุนัข 7 ตัวในปี 1988"
+"2546 ให้กำเนิดลูกสุนัข 7 ตัวในปี 1988"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"ขณะนี้ Speedy Match อยู่ในเวอร์ชันอัลฟ่า เปิดตัวในเดือนสิงหาคม 2019 Speedy Match "
-"เวอร์ชันภาษาอังกฤษอยู่ระหว่างการผลิต"
+"ขณะนี้ Speedy Match อยู่ในเวอร์ชันอัลฟ่า เปิดตัวในเดือนสิงหาคม 2019 เวอร์ชันภาษาอ Speedy "
+"Match ังกฤษอยู่ระหว่างการผลิต"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1149,11 +1149,11 @@ msgstr "อูรี ร็อดเบิร์ก"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net และ Speedy Match"
+msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Speedy Match Net และ"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "บริษัท สปีดี้แพซ เทคโนโลยีส์ จำกัด"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1276,7 +1276,7 @@ msgstr ""
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "กำลังมองหาแฟน? กำลังมองหาแฟน? มาพบกับสปีดี้!"
+msgstr "กำลังมองหาแฟน? กำลังมองหาแฟน? มาพบกับสปีดี้! Speedy"
 
 #: .\templates\main\main_page.html:16
 msgid ""

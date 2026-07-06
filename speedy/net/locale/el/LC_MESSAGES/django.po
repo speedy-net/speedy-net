@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν διαγραφεί. Σας "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν διαγραφεί. Σας "
 "ευχαριστούμε που χρησιμοποιείτε το {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -107,7 +107,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν διαγραφεί. Σας "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν διαγραφεί. Σας "
 "ευχαριστούμε που χρησιμοποιείτε το {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -117,7 +117,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Οι λογαριασμοί σας Speedy Net και Speedy Match έχουν διαγραφεί. Σας "
+"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν διαγραφεί. Σας "
 "ευχαριστούμε που χρησιμοποιείτε το {site_name}."
 
 #: .\accounts\apps.py:8
@@ -185,7 +185,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [αλφα]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -201,12 +201,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"Το <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> είναι ένα νέο κοινωνικό δίκτυο. Με το Speedy Net "
-"μπορείτε να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι ανοιχτό σε "
-"δωρεάν εγγραφή για άτομα από όλες τις χώρες και ηλικίες (χωρίς όριο "
-"ηλικίας!). Ο ιστότοπος είναι vegan και φιλικός προς τους χορτοφάγους. Προς "
-"το παρόν είναι διαθέσιμο σε %(languages_num)s γλώσσες."
+"Το <a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy "
+"Net</a> είναι ένα νέο κοινωνικό δίκτυο. Με το Speedy Net μπορείτε να "
+"επικοινωνείτε με τους φίλους σας. Το Net Speedy Net είναι ανοιχτό σε δωρεάν "
+"εγγραφή για άτομα από όλες τις χώρες και ηλικίες (χωρίς όριο ηλικίας!). Ο "
+"ιστότοπος είναι vegan και φιλικός προς τους χορτοφάγους. Προς το παρόν είναι "
+"διαθέσιμο σε %(languages_num)s γλώσσες."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -271,14 +271,12 @@ msgid ""
 msgstr ""
 "Το Speedy Net πήρε το όνομα του <a href=\"https://www.facebook.com/speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, ενός θηλυκού σκύλου που ήταν "
-"μαζί μας για πολλά χρόνια και πέθανε το 2003. Το Speedy γέννησε 7 κουτάβια "
-"το 1988."
+"μαζί μας για πολλά χρόνια και πέθανε το 2003. Το γέννησε 7 κουτάβια το 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
-"Το Speedy Net είναι αυτή τη στιγμή στο alpha. Κυκλοφόρησε τον Ιούνιο του "
-"2012."
+"Το Speedy Net είναι αυτή τη στιγμή στο αλφα. Κυκλοφόρησε τον Ιούνιο του 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -290,7 +288,7 @@ msgstr "Ούρι Ρόντμπεργκ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Ιδρυτής και διευθυντής των Speedy Net και Speedy Match,"
+msgstr "Ιδρυτής και διευθυντής των Speedy Net Speedy Speedy Match Net και,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

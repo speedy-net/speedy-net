@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 07:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1781,7 +1781,7 @@ msgid ""
 msgstr ""
 "Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
 "poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
-"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za "
+"Pokušajte ponovno sutra. Imajte na umu da ne Speedy Net smijete koristiti za "
 "slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:234
@@ -1795,7 +1795,7 @@ msgid ""
 msgstr ""
 "Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
 "poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
-"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za "
+"Pokušajte ponovno sutra. Imajte na umu da ne Speedy Net smijete koristiti za "
 "slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:235
@@ -1809,7 +1809,7 @@ msgid ""
 msgstr ""
 "Zbog zlouporabe stranice za slanje spam poruka, morali smo ograničiti broj "
 "poruka koje se mogu poslati ostalim članovima stranice u jednom danu. "
-"Pokušajte ponovno sutra. Imajte na umu da Speedy Net ne smijete koristiti za "
+"Pokušajte ponovno sutra. Imajte na umu da ne Speedy Net smijete koristiti za "
 "slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\__translations\__translations.py:241
@@ -1919,7 +1919,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Brzi osnovni računi"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2482,7 +2482,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Aplikacija Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3021,11 +3021,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Brzi softver"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Brza prodaja"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3034,7 +3034,7 @@ msgstr "Web stranica prilagođena veganima"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Brz"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3054,7 +3054,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Brzo podudaranje"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3062,7 +3062,7 @@ msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match trgovina"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3098,15 +3098,15 @@ msgstr "Kontaktirajte nas"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Brzi skladatelj"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Softver Speedy Mail"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Brza skladateljska trgovina"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3283,8 +3283,8 @@ msgid ""
 "registered to the site."
 msgstr ""
 "Vaš profil na Speedy Netu vidljiv je svima, ali možete odabrati kome želite "
-"podijeliti svoju e-mail adresu i datum rođenja. Ako ste se prijavili za "
-"Speedy Match, vaš Speedy Match profil bit će vidljiv samo osobama koje vas "
+"podijeliti svoju e-mail adresu i datum rođenja. Ako ste se prijavili Speedy "
+"Match za, vaš Speedy Match profil bit će vidljiv samo osobama koje vas "
 "spajaju prema postavkama koje ste postavili na web mjestu i koje vi spajate "
 "prema njihovim postavkama. Vaš profil na Speedy Matchu neće se pojaviti na "
 "Googleu i nije vidljiv osobama koje nisu registrirane na stranici."
@@ -3471,7 +3471,7 @@ msgid ""
 msgstr ""
 "Speedy Net možete koristiti samo u legalne svrhe. Nije vam dopušteno "
 "učitavanje sadržaja koji se odnose na mržnju, nasilje, zlostavljanje "
-"životinja, golotinju ili pornografiju. Ne smijete koristiti Speedy Net za "
+"životinja, golotinju ili pornografiju Speedy Net. Ne smijete koristiti za "
 "slanje spam poruka ili poruka istog sadržaja većem broju ljudi."
 
 #: .\templates\terms\terms_of_service.html:23
@@ -3554,7 +3554,7 @@ msgstr "vidljivo na web stranici"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Brzo vrijeme moderiranja slike"
+msgstr "Brzo vrijeme moderiranja slike Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
