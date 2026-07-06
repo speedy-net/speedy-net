@@ -64,8 +64,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "האם את/ה בטוח/ה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. "
-"מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה, "
-"הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק."
+"מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה,"
+" הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -125,8 +125,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "האם את/ה בטוח/ה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. "
-"מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה, "
-"הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק."
+"מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את/ה בטוח/ה,"
+" הקלד/י \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -172,7 +172,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "ספידי נט [אלפא]"
+msgstr "ספידי נט [אלפא] ????"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -190,8 +190,8 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"ספידי נט\">ספידי "
 "נט</a> היא רשת חברתית חדשה. עם ספידי נט אתם יכולים ליצור קשר עם החברות "
-"והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין "
-"הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים. כיום האתר זמין "
+"והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין"
+" הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים. כיום האתר זמין "
 "ב-%(languages_num)s שפות."
 
 #: .\templates\about\about.html:19
@@ -200,42 +200,45 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"המייסדים של ספידי נט הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים לניסויים "
-"בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים "
+"המייסדים של ספידי נט הם טבעוניים, תומכים בזכויות בעלי חיים ומתנגדים לניסויים"
+" בבעלי חיים. ספידי נט היא רשת חברתית ידידותית לאנשים טבעוניים וצמחוניים "
 "ולבעלי חיים."
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"החלטנו להגביל את מספר החברים בספידי נט ל-800. אנחנו מעודדים אתכם לצרף כחברים "
-"רק אנשים שאתם מכירים אישית. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם "
-"כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים יופיעו "
-"רק לכם."
+"החלטנו להגביל את מספר החברים בספידי נט ל-800. אנחנו מעודדים אתכם לצרף כחברים"
+" רק אנשים שאתם מכירים אישית. אתם יכולים לבחור אילו פרטים יופיעו בפרופיל שלכם"
+" כציבוריים, אילו פרטים רק לחברים ואילו פרטים יהיו פרטיים. פרטים פרטיים "
+"יופיעו רק לכם."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"אתם מוזמנים להשתמש באפליקציה החדשה שלנו, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"ספידי מץ'\">ספידי מץ'</a>, להכיר בני-זוג או "
-"בנות-זוג מתאימים. ספידי מץ' פתוחה לפנויות/פנויים מכל הגילים."
+"אתם מוזמנים להשתמש באפליקציה החדשה שלנו, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"ספידי "
+"מץ'\">ספידי מץ'</a>, להכיר בני-זוג או בנות-זוג מתאימים. ספידי מץ' פתוחה "
+"לפנויות/פנויים מכל הגילים."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "כל הפיצ'רים בספידי נט וספידי מץ' הם ללא תשלום. הצטרפו עוד היום לספידי נט "
-"למצוא חברות וחברים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי "
-"נט\">לחצו כאן</a> כדי להצטרף."
+"למצוא חברות וחברים, זה לוקח רק כמה דקות. <a href=\"/\" title=\"הצטרפו לספידי"
+" נט\">לחצו כאן</a> כדי להצטרף."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -247,17 +250,19 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"ספידי נט נקראת על שם <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. "
-"ספידי המליטה 7 גורים בשנת 1988."
+"ספידי נט נקראת על שם <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"ספידי\">ספידי</a>, כלבה שהייתה איתנו שנים רבות ומתה בשנת 2003. ספידי"
+" המליטה 7 גורים בשנת 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "ספידי נט היא כרגע באלפא. היא הושקה ביוני 2012."
+msgstr "ספידי נט היא כרגע באלפא. היא הושקה ביוני 2012. ????"
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -310,14 +315,14 @@ msgstr "החברות והחברים שלך"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
 "ספידי נט היא רשת חברתית חדשה. עם ספידי נט אתם יכולים ליצור קשר עם החברות "
-"והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין "
-"הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים."
+"והחברים שלכם. ספידי נט פתוחה להרשמה חופשית לאנשים מכל העולם ומכל הגילים (אין"
+" הגבלת גיל!). האתר הוא ידידותי לטבעונים ולצמחונים."
 
 #: .\templates\main\main_page.html:17
 msgid ""
