@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -262,7 +262,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net, adını uzun yıllar bizimle birlikte olan ve 2003 yılında ölen "
-"dişi köpek <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"dişi köpek <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>'den almıştır. Speedy, 1988 yılında 7 yavru "
 "doğurmuştur."
 

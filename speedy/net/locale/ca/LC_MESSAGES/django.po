@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -267,7 +267,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net porta el nom de <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Net porta el nom de <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, una gossa que va estar amb "
 "nosaltres durant molts anys i que va morir el 2003. Speedy va donar a llum 7 "
 "cadells el 1988."
