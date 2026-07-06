@@ -393,17 +393,95 @@ if (django_settings.TESTS):
                 'nl': {
                     **{gender: 'Je Speedy Net- en Speedy Match-accounts zijn verwijderd. Bedankt voor het gebruik van Speedy Net.' for gender in User.ALL_GENDERS},
                 },
-                'sv': {
-                    **{gender: 'Dina Speedy Net- och Speedy Match-konton har raderats. Tack för att du använder Speedy Net.' for gender in User.ALL_GENDERS},
+                'ja': {
+                    **{gender: 'Speedy Net および Speedy Match のアカウントは削除されました。 Speedy Net をご利用いただきありがとうございます。' for gender in User.ALL_GENDERS},
+                },
+                'ru': {
+                    **{gender: 'Ваши учетные записи Speedy Net и Speedy Match были удалены. Благодарим вас за использование Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'zh': {
+                    **{gender: '您的 Speedy Net Speedy Match 和 帳戶已被刪除。感謝您使用 Speedy Net。' for gender in User.ALL_GENDERS},
+                },
+                'pl': {
+                    **{gender: 'Twoje Speedy Net konta Speedy Match i zostały usunięte. Dziękujemy za skorzystanie z Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'fa': {
+                    **{gender: 'حساب‌های Speedy Net و Speedy Match شما حذف شده‌اند. از اینکه از Speedy Net استفاده کردید متشکریم.' for gender in User.ALL_GENDERS},
+                },
+                'he': {
+                    **{gender: "החשבונות שלך בספידי נט וספידי מץ' נמחקו. תודה שהשתמשת בספידי נט." for gender in User.ALL_GENDERS},
                 },
                 'ko': {
                     **{gender: '귀하의 Speedy Net 및 Speedy Match 계정이 삭제되었습니다. Speedy Net을(를) 이용해 주셔서 감사합니다.' for gender in User.ALL_GENDERS},
                 },
+                'ar': {
+                    **{gender: 'لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'id': {
+                    **{gender: 'Akun Speedy Net dan Speedy Match Anda telah dihapus. Terima kasih telah menggunakan Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'uk': {
+                    **{gender: 'Ваші Speedy Net облікові Speedy Match записи і видалено. Дякуємо за використання Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'tr': {
+                    **{gender: 'Speedy Net ve Speedy Match hesaplarınız silinmiştir. Speedy Net kullandığınız için teşekkür ederiz.' for gender in User.ALL_GENDERS},
+                },
+                'vi': {
+                    **{gender: 'Tài Speedy Net khoản Speedy Match và của bạn đã bị xóa. Cảm ơn bạn đã sử dụng Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'cs': {
+                    **{gender: 'Vaše Speedy Net účty Speedy Match a byly smazány. Děkujeme, že používáte Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: 'Dina Speedy Net- och Speedy Match-konton har raderats. Tack för att du använder Speedy Net.' for gender in User.ALL_GENDERS},
+                },
                 'fi': {
                     **{gender: 'Speedy Net- ja Speedy Match -tilisi on poistettu. Kiitos, että käytit Speedy Net.' for gender in User.ALL_GENDERS},
                 },
-                'he': {
-                    **{gender: "החשבונות שלך בספידי נט וספידי מץ' נמחקו. תודה שהשתמשת בספידי נט." for gender in User.ALL_GENDERS},
+                'hu': {
+                    **{gender: 'A Speedy Net és Speedy Match fiókokat töröltük. Köszönjük, hogy a Speedy Net szolgáltatást használja.' for gender in User.ALL_GENDERS},
+                },
+                'th': {
+                    **{gender: 'บัญช Speedy Net Speedy Match ี และ ของคุณถูกลบแล้ว ขอบคุณที่ใช้ Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'el': {
+                    **{gender: 'Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν διαγραφεί. Σας ευχαριστούμε που χρησιμοποιείτε το Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'ms': {
+                    **{gender: 'Akaun Speedy Net dan Speedy Match anda telah dipadamkan. Terima kasih kerana menggunakan Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'sr': {
+                    **{gender: 'Ваши Speedy Net и Speedy Match налози су избрисани. Хвала вам на коришћењу Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'ro': {
+                    **{gender: 'Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că folosiți Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'bn': {
+                    **{gender: 'আপনার Speedy Net স্পিডি নেট এবং স্পি Speedy Match ডি ম্যাচ অ্যাকাউন্ট মুছে ফেলা হয়েছে। Speedy Net ব্যবহার করার জন্য আপনাকে ধন্যবাদ।' for gender in User.ALL_GENDERS},
+                },
+                'ca': {
+                    **{gender: 'S\'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per utilitzar Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'no': {
+                    **{gender: 'Speedy Net- og Speedy Match-kontoene dine er slettet. Takk for at du bruker Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'bg': {
+                    **{gender: 'Вашите акаунти в Speedy Net и Speedy Match са изтрити. Благодарим ви, че използвате Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'da': {
+                    **{gender: 'Dine Speedy Net- og Speedy Match-konti er blevet slettet. Tak, fordi du bruger Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'sk': {
+                    **{gender: 'Vaše Speedy Net účty Speedy Match a boli odstránené. Ďakujeme, že používate Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'hi': {
+                    **{gender: 'आपके Speedy Net स्पीडी नेट और स्प Speedy Match ीडी मैच खाते हटा दिए गए हैं। Speedy Net का उपयोग करने के लिए धन्यवाद।' for gender in User.ALL_GENDERS},
+                },
+                'et': {
+                    **{gender: 'Teie Speedy Net ja Speedy Match kontod on kustutatud. Täname teid teenuse Speedy Net kasutamise eest.' for gender in User.ALL_GENDERS},
+                },
+                'hr': {
+                    **{gender: 'Vaši Speedy Net i Speedy Match računi su izbrisani. Hvala što koristite Speedy Net.' for gender in User.ALL_GENDERS},
                 },
             }
 
