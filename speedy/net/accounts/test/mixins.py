@@ -277,19 +277,97 @@ if (django_settings.TESTS):
                 'nl': {
                     **{gender: 'Verwijder je Speedy Net-account permanent' for gender in User.ALL_GENDERS},
                 },
-                'sv': {
-                    **{gender: 'Radera ditt Speedy Net-konto permanent' for gender in User.ALL_GENDERS},
+                'ja': {
+                    **{gender: 'Speedy Net アカウントを完全に削除します' for gender in User.ALL_GENDERS},
                 },
-                'ko': {
-                    **{gender: 'Speedy Net 계정을 영구적으로 삭제하세요' for gender in User.ALL_GENDERS},
+                'ru': {
+                    **{gender: 'Удалите навсегда свою учетную запись Speedy Net.' for gender in User.ALL_GENDERS},
                 },
-                'fi': {
-                    **{gender: 'Poista Speedy Net-tilisi pysyvästi' for gender in User.ALL_GENDERS},
+                'zh': {
+                    **{gender: '永久刪除您的 Speedy Net 帳戶' for gender in User.ALL_GENDERS},
+                },
+                'pl': {
+                    **{gender: 'Usuń trwale swoje konto Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'fa': {
+                    **{gender: 'حساب Speedy Net خود را برای همیشه حذف کنید' for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מחקי את החשבון שלך בספידי נט לצמיתות",
                     User.GENDER_MALE_STRING: "מחק את החשבון שלך בספידי נט לצמיתות",
                     User.GENDER_OTHER_STRING: "מחק/י את החשבון שלך בספידי נט לצמיתות",
+                },
+                'ko': {
+                    **{gender: 'Speedy Net 계정을 영구적으로 삭제하세요' for gender in User.ALL_GENDERS},
+                },
+                'ar': {
+                    **{gender: 'احذف حسابك Speedy Net نهائيًا' for gender in User.ALL_GENDERS},
+                },
+                'id': {
+                    **{gender: 'Hapus akun Speedy Net Anda secara permanen' for gender in User.ALL_GENDERS},
+                },
+                'uk': {
+                    **{gender: 'Назавжди видалити свій обліковий запис Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'tr': {
+                    **{gender: 'Speedy Net hesabınızı kalıcı olarak silin' for gender in User.ALL_GENDERS},
+                },
+                'vi': {
+                    **{gender: 'Xóa vĩnh viễn tài khoản Speedy Net của bạn' for gender in User.ALL_GENDERS},
+                },
+                'cs': {
+                    **{gender: 'Trvale smažte svůj účet Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'sv': {
+                    **{gender: 'Radera ditt Speedy Net-konto permanent' for gender in User.ALL_GENDERS},
+                },
+                'fi': {
+                    **{gender: 'Poista Speedy Net-tilisi pysyvästi' for gender in User.ALL_GENDERS},
+                },
+                'hu': {
+                    **{gender: 'Véglegesen törölje Speedy Net fiókját' for gender in User.ALL_GENDERS},
+                },
+                'th': {
+                    **{gender: 'ลบบัญชี Speedy Net ของคุณอย่างถาวร' for gender in User.ALL_GENDERS},
+                },
+                'el': {
+                    **{gender: 'Διαγράψτε οριστικά τον λογαριασμό Speedy Net σας' for gender in User.ALL_GENDERS},
+                },
+                'ms': {
+                    **{gender: 'Padamkan akaun Speedy Net anda secara kekal' for gender in User.ALL_GENDERS},
+                },
+                'sr': {
+                    **{gender: 'Трајно избришите свој Speedy Net налог' for gender in User.ALL_GENDERS},
+                },
+                'ro': {
+                    **{gender: 'Ștergeți definitiv contul dvs. Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'bn': {
+                    **{gender: 'স্থায়ীভাবে আপনার Speedy Net অ্যাকাউন্ট মুছে দিন' for gender in User.ALL_GENDERS},
+                },
+                'ca': {
+                    **{gender: 'Suprimeix permanentment el teu compte Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'no': {
+                    **{gender: 'Slett Speedy Net-kontoen din permanent' for gender in User.ALL_GENDERS},
+                },
+                'bg': {
+                    **{gender: 'Изтрийте за постоянно вашия Speedy Net акаунт' for gender in User.ALL_GENDERS},
+                },
+                'da': {
+                    **{gender: 'Slet din Speedy Net-konto permanent' for gender in User.ALL_GENDERS},
+                },
+                'sk': {
+                    **{gender: 'Natrvalo odstráňte svoj účet Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'hi': {
+                    **{gender: 'अपना Speedy Net खाता स्थायी रूप से हटाएं' for gender in User.ALL_GENDERS},
+                },
+                'et': {
+                    **{gender: 'Kustutage jäädavalt oma Speedy Net konto' for gender in User.ALL_GENDERS},
+                },
+                'hr': {
+                    **{gender: 'Trajno izbrišite svoj Speedy Net račun' for gender in User.ALL_GENDERS},
                 },
             }
 
