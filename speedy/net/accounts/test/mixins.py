@@ -141,7 +141,7 @@ if (django_settings.TESTS):
 
             _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = {
                 'en': {
-                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "ใช่. ลบบัญชีของฉัน" in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
                 },
                 'fr': {
                     **{gender: "Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent et irréversible. La suppression de votre compte Speedy Net entraîne également la suppression de votre compte Speedy Match. Si vous êtes sûr, tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et distinction majuscules/minuscules." for gender in User.ALL_GENDERS},
@@ -230,7 +230,7 @@ if (django_settings.TESTS):
                     **{gender: 'আপনি কি আপনার স্পিডি নেট অ্যাকাউন্ট মুছে Speedy Net ফেলার বিষয়ে নিশ্চিত? এটি স্থায়ী এবং অপরিবর্তনীয়। আপনার স্পিডি নেট Speedy Net অ্যাকাউন্ট মুছে দিলে আপনার স্পিডি ম্যাচ অ্যাকাউন্টও মুছে Speedy Match যাবে। আপনি যদি নিশ্চিত হন, টাইপ করুন "হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।" এই ক্ষেত্রে, ঠিক এবং কেস সংবেদনশীল.' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: "Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu \"Sí. Suprimeix el meu compte\". en aquest camp, exactament i distingeix entre majúscules i minúscules." for gender in User.ALL_GENDERS},
+                    **{gender: "Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu \"Sí. Esborra el meu compte.\" en aquest camp, exactament i distingeix entre majúscules i minúscules." for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Er du sikker på at du vil slette Speedy Net-kontoen din? Dette er permanent og irreversibelt. Sletting av Speedy Net-kontoen din vil også slette Speedy Match-kontoen din. Hvis du er sikker, skriv "Ja. Slett kontoen min." i dette feltet, nøyaktig og skiller mellom store og små bokstaver.' for gender in User.ALL_GENDERS},
