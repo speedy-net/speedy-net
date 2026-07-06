@@ -95,7 +95,7 @@ if (django_settings.TESTS):
                 for gender in User.ALL_GENDERS:
                     self.assertIs(expr1=self._yes_delete_my_account_text in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender], expr2=True)
                     _yes_delete_my_account_text_with_quotes_1_is_contained_in_string = '"{}"'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
-                    _yes_delete_my_account_text_with_quotes_2_is_contained_in_string = '„{}"'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
+                    _yes_delete_my_account_text_with_quotes_2_is_contained_in_string = '”{}”'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
                     _yes_delete_my_account_text_with_quotes_3_is_contained_in_string = '„{}”'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
                     _yes_delete_my_account_text_with_quotes_4_is_contained_in_string = '„{}“'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
                     _yes_delete_my_account_text_with_quotes_5_is_contained_in_string = '“{}”'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]

@@ -14,3 +14,6 @@ def patch():
     # translation('zh')._fallback = translation('zh-hant')
     # translation('zh-hant')._fallback = translation('zh-tw')
 
+    translation('no')._fallback = translation('nb')
+
+
