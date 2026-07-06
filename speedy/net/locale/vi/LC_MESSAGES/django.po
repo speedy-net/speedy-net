@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
 "vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Đúng. Xóa "
 "tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
 "thường."
 
@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
 "vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Đúng. Xóa "
 "tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
 "thường."
 
@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
 "vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Đúng. Xóa "
 "tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
 "thường."
 
@@ -137,7 +137,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là "
 "vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Đúng. Xóa "
 "tài khoản của tôi.\" trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ "
 "thường."
 

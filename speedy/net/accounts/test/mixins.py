@@ -21,7 +21,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的。刪除我的帳戶。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'так Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Đúng. Xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναί. Διαγραφή του λογαριασμού μου.', 'ms': 'ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।', 'ca': 'Sí. Esborra el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'да Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा एकाउंट हटा दो।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
+            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的。刪除我的帳戶。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Đúng. Xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναί. Διαγραφή του λογαριασμού μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।', 'ca': 'Sí. Esborra el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा एकाउंट हटा दो।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
 
             _delete_account_text_dict_by_gender = {
                 'en': {
@@ -141,7 +141,7 @@ if (django_settings.TESTS):
 
             _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = {
                 'en': {
-                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "ใช่. ลบบัญชีของฉัน" in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
                 },
                 'fr': {
                     **{gender: "Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent et irréversible. La suppression de votre compte Speedy Net entraîne également la suppression de votre compte Speedy Match. Si vous êtes sûr, tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et distinction majuscules/minuscules." for gender in User.ALL_GENDERS},
@@ -162,19 +162,19 @@ if (django_settings.TESTS):
                     **{gender: 'Weet je zeker dat je je Speedy Net-account wilt verwijderen? Dit is permanent en onomkeerbaar. Als u uw Speedy Net-account verwijdert, wordt ook uw Speedy Match-account verwijderd. Als je het zeker weet, typ dan „Ja. Verwijder mijn account.” in dit veld, precies en hoofdlettergevoelig.' for gender in User.ALL_GENDERS},
                 },
                 'ja': {
-                    **{gender: 'Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net 、Speedy Match アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除してください。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。' for gender in User.ALL_GENDERS},
                 },
                 'ru': {
-                    **{gender: 'Вы уверены, что хотите удалить свою учетную запись Speedy Net? Это навсегда и необратимо. Удаление вашей учетной записи Speedy Net также приведет к удалению вашей учетной записи Speedy Match. Если вы уверены, введите «Да. Удалить мою учетную запись». в этом поле точно и с учетом регистра.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Вы уверены, что хотите удалить свою учетную запись Speedy Net? Это навсегда и необратимо. Удаление вашей учетной записи Speedy Net также приведет к удалению вашей учетной записи Speedy Match. Если вы уверены, введите «Да. Удалить мою учетную запись.» в этом поле точно и с учетом регистра.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您確定要刪除您的 Speedy Net 帳戶嗎？這是永久且不可逆轉的。刪除您的 Speedy Net 帳戶也會刪除您的 Speedy Match 帳戶。如果您確定，請輸入「是。刪除我的帳戶」。在此欄位中，完全區分大小寫。' for gender in User.ALL_GENDERS},
+                    **{gender: '您確定要刪除您的 Speedy Net 帳戶嗎？這是永久且不可逆轉的。刪除您的 Speedy Net 帳戶也會刪除您的 Speedy Match 帳戶。如果您確定，請輸入「是的。刪除我的帳戶。」。在此欄位中，完全區分大小寫。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
-                    **{gender: 'Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto". w tym polu, dokładnie i rozróżniana jest wielkość liter.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto." w tym polu, dokładnie i rozróżniana jest wielkość liter.' for gender in User.ALL_GENDERS},
                 },
                 'fa': {
-                    **{gender: 'آیا مطمئن هستید که می خواهید حساب Speedy Net خود را حذف کنید؟ این دائمی و غیر قابل برگشت است. با حذف حساب Speedy Net، حساب Speedy Match شما نیز حذف می شود. اگر مطمئن هستید، "Yes. Delete my account" را تایپ کنید. در این زمینه دقیقا و حساس به حروف کوچک و بزرگ است.' for gender in User.ALL_GENDERS},
+                    **{gender: 'آیا مطمئن هستید که می خواهید حساب Speedy Net خود را حذف کنید؟ این دائمی و غیر قابل برگشت است. با حذف حساب Speedy Net، حساب Speedy Match شما نیز حذف می شود. اگر مطمئن هستید، "بله. اکانت من رو پاک کن" را تایپ کنید. در این زمینه دقیقا و حساس به حروف کوچک و بزرگ است.' for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "האם את בטוחה שברצונך למחוק את החשבון שלך בספידי נט? זה קבוע ובלתי הפיך. מחיקת החשבון שלך בספידי נט תמחק גם את החשבון שלך בספידי מץ'. אם את בטוחה, הקלידי \"כן. מחקו את החשבון שלי.\" בשדה זה, בדיוק.",
@@ -185,19 +185,19 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Net 계정을 삭제하시겠습니까? 이는 영구적이며 되돌릴 수 없습니다. Speedy Net 계정을 삭제하면 Speedy Match 계정도 삭제됩니다. 확실하다면 "네. 내 계정을 삭제하세요."라고 입력하세요. 이 필드에서는 정확하게 대소문자를 구분합니다.' for gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{gender: 'هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب "نعم. احذف حسابي". في هذا المجال، بدقة وحساسة لحالة الأحرف.' for gender in User.ALL_GENDERS},
+                    **{gender: 'هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب "نعم. حذف حسابي.". في هذا المجال، بدقة وحساسة لحالة الأحرف.' for gender in User.ALL_GENDERS},
                 },
                 'id': {
-                    **{gender: 'Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan menghapus akun Speedy Match Anda. Jika Anda yakin, ketik "Yes. Hapus akun saya". di bidang ini, persis dan peka huruf besar-kecil.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan menghapus akun Speedy Match Anda. Jika Anda yakin, ketik "Ya. Hapus akun saya.". di bidang ini, persis dan peka huruf besar-kecil.' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Ви впевнені, що хочете видалити свій обліковий запис Speedy Net? Це є постійним і незворотнім. Видалення облікового запису Speedy Net також призведе до видалення облікового запису Speedy Match. Якщо ви впевнені, введіть "Так. Видалити мій обліковий запис". у цьому полі точно та з урахуванням регістру.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ви впевнені, що хочете видалити свій обліковий запис Speedy Net? Це є постійним і незворотнім. Видалення облікового запису Speedy Net також призведе до видалення облікового запису Speedy Match. Якщо ви впевнені, введіть "Так. Видалити мій обліковий запис.". у цьому полі точно та з урахуванням регістру.' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{gender: 'Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız da silinir. Eminseniz "Evet. Hesabımı sil" yazın. bu alanda tam olarak ve büyük/küçük harfe duyarlıdır.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız da silinir. Eminseniz "Evet. Hesabımı sil." yazın. bu alanda tam olarak ve büyük/küçük harfe duyarlıdır.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập "Có. Xóa tài khoản của tôi." trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ thường.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập "Đúng. Xóa tài khoản của tôi." trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ thường.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Opravdu chcete smazat svůj účet Speedy Net? To je trvalé a nevratné. Smazáním svého účtu Speedy Net smažete také svůj účet Speedy Match. Pokud jste si jisti, napište "Ano. Smazat můj účet." v této oblasti, přesně a velká a malá písmena.' for gender in User.ALL_GENDERS},
@@ -209,25 +209,25 @@ if (django_settings.TESTS):
                     **{gender: 'Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match -tilisi. Jos olet varma, kirjoita "Kyllä. Poista tilini." tässä kentässä, täsmälleen ja isot kirjaimet huomioon.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is törlődik. Ha biztos Speedy Match benne, írja be az "Igen. Fiókom törlése" kifejezést. ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is törlődik. Ha biztos Speedy Match benne, írja be az "Igen. Fiókom törlése." kifejezést. ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type "Yes. Delete my account." ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},
+                    **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type "ใช่. ลบบัญชีของฉัน" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Είστε βέβαιοι ότι θέλετε να διαγράψετε τον λογαριασμό σας Speedy Net; Αυτό είναι μόνιμο και μη αναστρέψιμο. Η διαγραφή του λογαριασμού σας στο Speedy Net θα διαγράψει επίσης τον λογαριασμό σας στο Speedy Match. Εάν είστε σίγουροι, πληκτρολογήστε "Ναι. Διαγραφή του λογαριασμού μου". σε αυτόν τον τομέα, ακριβώς και με διάκριση πεζών-κεφαλαίων.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Είστε βέβαιοι ότι θέλετε να διαγράψετε τον λογαριασμό σας Speedy Net; Αυτό είναι μόνιμο και μη αναστρέψιμο. Η διαγραφή του λογαριασμού σας στο Speedy Net θα διαγράψει επίσης τον λογαριασμό σας στο Speedy Match. Εάν είστε σίγουροι, πληκτρολογήστε "Ναί. Διαγραφή του λογαριασμού μου.". σε αυτόν τον τομέα, ακριβώς και με διάκριση πεζών-κεφαλαίων.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun Speedy Match anda. Jika anda pasti, taip "Ya. Padam akaun saya." dalam bidang ini, tepat dan sensitif huruf besar.' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, откуцајте „Да. Избриши мој налог". у овом пољу, тачно и осетљиво на велика и мала слова.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, откуцајте „Да. Избриши мој налог." у овом пољу, тачно и осетљиво на велика и мала слова.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu". în acest domeniu, exact și cu majuscule și minuscule.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu." în acest domeniu, exact și cu majuscule și minuscule.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি কি আপনার স্পিডি নেট অ্যাকাউন্ট মুছে Speedy Net ফেলার বিষয়ে নিশ্চিত? এটি স্থায়ী এবং অপরিবর্তনীয়। আপনার স্পিডি নেট Speedy Net অ্যাকাউন্ট মুছে দিলে আপনার স্পিডি ম্যাচ অ্যাকাউন্টও মুছে Speedy Match যাবে। আপনি যদি নিশ্চিত হন, টাইপ করুন "হ্যাঁ। আমার অ্যাকাউন্ট মুছুন।" এই ক্ষেত্রে, ঠিক এবং কেস সংবেদনশীল.' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি কি আপনার স্পিডি নেট অ্যাকাউন্ট মুছে Speedy Net ফেলার বিষয়ে নিশ্চিত? এটি স্থায়ী এবং অপরিবর্তনীয়। আপনার স্পিডি নেট Speedy Net অ্যাকাউন্ট মুছে দিলে আপনার স্পিডি ম্যাচ অ্যাকাউন্টও মুছে Speedy Match যাবে। আপনি যদি নিশ্চিত হন, টাইপ করুন "হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।" এই ক্ষেত্রে, ঠিক এবং কেস সংবেদনশীল.' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Esteu segur que voleu suprimir el vostre compte de Speedy Net? Això és permanent i irreversible. Si suprimiu el vostre compte de Speedy Net, també se suprimirà el vostre compte de Speedy Match. Si n'estàs segur, escriviu \"Sí. Suprimeix el meu compte\". en aquest camp, exactament i distingeix entre majúscules i minúscules." for gender in User.ALL_GENDERS},
@@ -245,10 +245,10 @@ if (django_settings.TESTS):
                     **{gender: 'Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si istí, napíšte "Áno. Odstrániť môj účet." v tejto oblasti, presne a veľké a malé písmená.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो "हाँ। मेरा खाता हटाएँ" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।' for gender in User.ALL_GENDERS},
+                    **{gender: 'क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो "हाँ। मेरा एकाउंट हटा दो।" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
-                    **{gender: 'Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy Matchi konto. Kui olete kindel, tippige "Jah. Kustuta minu konto". selles valdkonnas täpselt ja tõstutundlikult.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy Matchi konto. Kui olete kindel, tippige "Jah. Kustuta minu konto." selles valdkonnas täpselt ja tõstutundlikult.' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
                     **{gender: 'Jeste li sigurni da želite izbrisati svoj Speedy Net račun? Ovo je trajno i nepovratno. Brisanjem vašeg Speedy Net računa izbrisat ćete i svoj Speedy Match račun. Ako ste sigurni, upišite "Da. Izbriši moj račun." u ovom polju, točno i razlikuje velika i mala slova.' for gender in User.ALL_GENDERS},

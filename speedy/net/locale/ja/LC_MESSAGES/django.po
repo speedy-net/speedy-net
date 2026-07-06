@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net"
 " 、Speedy Match "
-"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除してください。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net"
 " 、Speedy Match "
-"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除してください。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net"
 " 、Speedy Match "
-"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除してください。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -128,7 +128,7 @@ msgid ""
 msgstr ""
 "Speedy Net アカウントを削除してもよろしいですか?これは永続的であり、元に戻すことはできません。 アカウントを削除すると Speedy Net"
 " 、Speedy Match "
-"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除します。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
+"アカウントも削除されます。間違いがない場合は、「はい。アカウントを削除してください。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."

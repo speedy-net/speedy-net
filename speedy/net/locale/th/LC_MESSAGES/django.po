@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -40,9 +40,8 @@ msgid ""
 msgstr ""
 "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? "
 "นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net "
-"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"Yes. "
-"Delete my account.\" ในฟิลด์นี้ "
-"ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
+"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"ใช่. "
+"ลบบัญชีของฉัน\" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -54,9 +53,8 @@ msgid ""
 msgstr ""
 "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? "
 "นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net "
-"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"Yes. "
-"Delete my account.\" ในฟิลด์นี้ "
-"ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
+"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"ใช่. "
+"ลบบัญชีของฉัน\" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -68,9 +66,8 @@ msgid ""
 msgstr ""
 "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? "
 "นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net "
-"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"Yes. "
-"Delete my account.\" ในฟิลด์นี้ "
-"ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
+"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"ใช่. "
+"ลบบัญชีของฉัน\" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -134,9 +131,8 @@ msgid ""
 msgstr ""
 "คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? "
 "นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net "
-"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"Yes. "
-"Delete my account.\" ในฟิลด์นี้ "
-"ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
+"ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย If you are sure, type \"ใช่. "
+"ลบบัญชีของฉัน\" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
