@@ -141,7 +141,7 @@ if (django_settings.TESTS):
 
             _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = {
                 'en': {
-                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. ถ้าคุณแน่ใจ พิมพ์ "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.' for gender in User.ALL_GENDERS},
                 },
                 'fr': {
                     **{gender: "Êtes-vous sûr de vouloir supprimer votre compte Speedy Net ? C'est permanent et irréversible. La suppression de votre compte Speedy Net entraîne également la suppression de votre compte Speedy Match. Si vous êtes sûr, tapez « Oui. Supprimer mon compte. » dans ce champ, avec précision et distinction majuscules/minuscules." for gender in User.ALL_GENDERS},
@@ -451,7 +451,7 @@ if (django_settings.TESTS):
                     **{gender: 'Akaun Speedy Net dan Speedy Match anda telah dipadamkan. Terima kasih kerana menggunakan Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Vaši Speedi Net i Speedi Match nalozi su izbrisani. Hvala vam što koristite Speedy Net.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
                     **{gender: 'Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că folosiți Speedy Net.' for gender in User.ALL_GENDERS},
