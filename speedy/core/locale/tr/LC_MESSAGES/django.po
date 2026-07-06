@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -363,8 +363,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s aynı zamanda Hızlı Eşleşme profiline de sahiptir. Speedy "
-"Match'te %(user_name)s adlı kişinin profilini görüntüleyin."
+"%(user_name)s aynı zamanda Hızlı Eşleşme Speedy Match profiline de sahiptir."
+" 'te %(user_name)s adlı kişinin profilini görüntüleyin. Speedy Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -373,8 +373,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s aynı zamanda Hızlı Eşleşme profiline de sahiptir. Speedy "
-"Match'te %(user_name)s adlı kişinin profilini görüntüleyin."
+"%(user_name)s aynı zamanda Hızlı Eşleşme Speedy Match profiline de sahiptir."
+" 'te %(user_name)s adlı kişinin profilini görüntüleyin. Speedy Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -383,56 +383,56 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s aynı zamanda Hızlı Eşleşme profiline de sahiptir. Speedy "
-"Match'te %(user_name)s adlı kişinin profilini görüntüleyin."
+"%(user_name)s aynı zamanda Hızlı Eşleşme Speedy Match profiline de sahiptir."
+" 'te %(user_name)s adlı kişinin profilini görüntüleyin. Speedy Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. Speedy Net'te "
-"%(user_name)s'in profilini görüntüleyin."
+"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. 'te "
+"%(user_name)s'in profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.html:105
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. Speedy Net'te "
-"%(user_name)s'in profilini görüntüleyin."
+"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. 'te "
+"%(user_name)s'in profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.html:106
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. Speedy Net'te "
-"%(user_name)s'in profilini görüntüleyin."
+"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. 'te "
+"%(user_name)s'in profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Ayrıca Speedy Net profiliniz var. Profilinizi Speedy Net'te görüntüleyin."
+"Ayrıca Speedy Net profiliniz var. Profilinizi 'te görüntüleyin Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Ayrıca Speedy Net profiliniz var. Profilinizi Speedy Net'te görüntüleyin."
+"Ayrıca Speedy Net profiliniz var. Profilinizi 'te görüntüleyin Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Ayrıca Speedy Net profiliniz var. Profilinizi Speedy Net'te görüntüleyin."
+"Ayrıca Speedy Net profiliniz var. Profilinizi 'te görüntüleyin Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -822,8 +822,8 @@ msgstr "Kullanıcı adı"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "%(site_name)s adresinden bu tür bildirimler almak için abone oldunuz. "
 "Bildirim ayarlarınızı değiştirmek veya devre dışı bırakmak için bu sayfaya "
@@ -833,8 +833,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "%(site_name)s adresinden bu tür bildirimler almak için abone oldunuz. "
 "Bildirim ayarlarınızı değiştirmek veya devre dışı bırakmak için bu sayfaya "
@@ -844,8 +844,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "%(site_name)s adresinden bu tür bildirimler almak için abone oldunuz. "
 "Bildirim ayarlarınızı değiştirmek veya devre dışı bırakmak için bu sayfaya "
@@ -1481,31 +1481,31 @@ msgstr "Göndermek"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Zaten {0} arkadaşınız var. Speedy Net'te {1}'den fazla arkadaşınız olamaz. "
-"Devam etmeden önce lütfen arkadaşlarınızı kaldırın."
+"Zaten {0} arkadaşınız var. 'te {1}'den fazla arkadaşınız olamaz. Devam "
+"Speedy Net etmeden önce lütfen arkadaşlarınızı kaldırın."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Zaten {0} arkadaşınız var. Speedy Net'te {1}'den fazla arkadaşınız olamaz. "
-"Devam etmeden önce lütfen arkadaşlarınızı kaldırın."
+"Zaten {0} arkadaşınız var. 'te {1}'den fazla arkadaşınız olamaz. Devam "
+"Speedy Net etmeden önce lütfen arkadaşlarınızı kaldırın."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"Zaten {0} arkadaşınız var. Speedy Net'te {1}'den fazla arkadaşınız olamaz. "
-"Devam etmeden önce lütfen arkadaşlarınızı kaldırın."
+"Zaten {0} arkadaşınız var. 'te {1}'den fazla arkadaşınız olamaz. Devam "
+"Speedy Net etmeden önce lütfen arkadaşlarınızı kaldırın."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1514,8 +1514,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1524,8 +1524,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1534,8 +1534,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1544,8 +1544,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1554,8 +1554,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1564,8 +1564,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1574,8 +1574,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1584,8 +1584,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1594,8 +1594,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Bu kullanıcının zaten {0} arkadaşı var. Speedy Net'te {1}'den fazla arkadaşı "
-"olamaz. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
+"Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz "
+"Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1772,45 +1772,45 @@ msgstr "Arkadaşlar"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin "
-"diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
-"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe "
-"sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
+"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin"
+" diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
+"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe"
+" sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
 "izin verilmediğini lütfen unutmayın."
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin "
-"diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
-"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe "
-"sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
+"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin"
+" diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
+"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe"
+" sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
 "izin verilmediğini lütfen unutmayın."
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin "
-"diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
-"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe "
-"sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
+"Sitenin spam mesaj göndermek amacıyla kötüye kullanılması nedeniyle, sitenin"
+" diğer üyelerine bir gün içinde gönderilebilecek mesaj sayısını sınırlamak "
+"zorunda kaldık. Lütfen yarın tekrar deneyin. Spam mesajlar veya aynı içeriğe"
+" sahip mesajları çok sayıda kişiye göndermek için Speedy Net'i kullanmanıza "
 "izin verilmediğini lütfen unutmayın."
 
 #: .\__translations\__translations.py:241
@@ -1819,8 +1819,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1828,8 +1828,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1837,8 +1837,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1846,8 +1846,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1855,8 +1855,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1864,8 +1864,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1873,8 +1873,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1882,8 +1882,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1891,8 +1891,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Bu kullanıcı profilinizle eşleşmiyor ancak Speedy Net profilini ziyaret "
-"edebilirsiniz. Speedy Net'te kullanıcının profilini görüntüleyin."
+"Bu kullanıcı profilinizle eşleşmiyor ancak profilini ziyaret edebilirsiniz "
+"Speedy Net. 'te kullanıcının profilini Speedy Net görüntüleyin."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -2242,16 +2242,16 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"Kullanıcı adı 4 veya daha fazla harfle başlamalıdır ve harf, rakam veya tire "
-"içerebilir."
+"Kullanıcı adı 4 veya daha fazla harfle başlamalıdır ve harf, rakam veya tire"
+" içerebilir."
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
-"Kullanıcı adı 4 veya daha fazla harfle başlamalıdır, sonrasında herhangi bir "
-"sayıda rakam olabilir. Kelimelerin arasına tire ekleyebilirsiniz."
+"Kullanıcı adı 4 veya daha fazla harfle başlamalıdır, sonrasında herhangi bir"
+" sayıda rakam olabilir. Kelimelerin arasına tire ekleyebilirsiniz."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2271,8 +2271,8 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
@@ -2307,8 +2307,8 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Kullanıcı adı en fazla %(limit_value)d karakteri içermelidir (%(show_value)d "
-"içerir)."
+"Kullanıcı adı en fazla %(limit_value)d karakteri içermelidir (%(show_value)d"
+" içerir)."
 msgstr[1] ""
 "Kullanıcı adı en fazla %(limit_value)d karakter içermelidir (%(show_value)d "
 "içerir)."
@@ -2336,7 +2336,8 @@ msgstr[1] "Şifreniz en az %(min_length)d karakter içermelidir."
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] "Bu şifre çok uzun. En fazla %(max_length)d karakteri içermelidir."
 msgstr[1] "Bu şifre çok uzun. En fazla %(max_length)d karakter içermelidir."
 
@@ -2380,8 +2381,8 @@ msgstr ""
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
 "Profil resminiz için bu formatı kullanamazsınız. Yalnızca JPEG veya PNG "
 "formatları kabul edilir."
@@ -2406,9 +2407,9 @@ msgstr "Bu e-posta adresini birincil yaptınız."
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2421,17 +2422,18 @@ msgstr ""
 "hafta, {total_number_of_members_in_the_last_month} üyeleri siteye son ayda, "
 "{total_number_of_members_in_the_last_four_months} üyeleri siteye son dört "
 "ayda, {total_number_of_members_in_the_last_eight_months} üyeleri siteye son "
-"sekiz ayda ve {total_number_of_members_in_the_last_two_years} üyeleri siteye "
-"son iki yılda giriş yapmıştır."
+"sekiz ayda ve {total_number_of_members_in_the_last_two_years} üyeleri siteye"
+" son iki yılda giriş yapmıştır."
 
 #: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2468,7 +2470,8 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Yönetici: {year}'de kayıtlı {total_number_of_members_registered_in_year} üye."
+"Yönetici: {year}'de kayıtlı {total_number_of_members_registered_in_year} "
+"üye."
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
@@ -2926,7 +2929,7 @@ msgstr "Şifre değiştir"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Yaşınız Speedy Match'teki maçlarınızda görülecektir."
+msgstr "Yaşınız 'teki maçlarınızda görülecektir Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3003,7 +3006,7 @@ msgstr "E-posta adresinizi onaylamadınız. Lütfen gelen kutunuzu kontrol edin.
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Hızlı Net Blogu"
+msgstr "Speedy Net Hızlı Net Blogu"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3015,7 +3018,7 @@ msgstr "Hızlı Yazılım"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Hızlı Satış"
+msgstr "Speedy Sale Hızlı Satış"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3024,7 +3027,7 @@ msgstr "Vegan dostu bir web sitesi"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Hızlı"
+msgstr "Hızlı Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3044,7 +3047,7 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Hızlı Maç"
+msgstr "Speedy Match Hızlı Maç"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
@@ -3052,7 +3055,7 @@ msgstr "Speedy Net'in Mağazası"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Hızlı Maç Mağazası"
+msgstr "Speedy Match Hızlı Maç Mağazası"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3088,7 +3091,7 @@ msgstr "Bize Ulaşın"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Hızlı Besteci"
+msgstr "Speedy Composer Hızlı Besteci"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
@@ -3096,7 +3099,7 @@ msgstr "Hızlı Posta Yazılımı"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Hızlı Besteci Dükkanı"
+msgstr "Speedy Composer Hızlı Besteci Dükkanı"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3108,11 +3111,11 @@ msgstr "Kimseyi engellemiyorsun."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
-"Herhangi bir sorunuz, öneriniz varsa veya ekibe katılmakla ilgileniyorsanız, "
-"lütfen bizimle e-posta yoluyla iletişime geçin."
+"Herhangi bir sorunuz, öneriniz varsa veya ekibe katılmakla ilgileniyorsanız,"
+" lütfen bizimle e-posta yoluyla iletişime geçin."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3178,8 +3181,8 @@ msgstr "Okuyun:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "%(site_name)s adresinden bu tür bildirimler almak için abone oldunuz. "
 "Bildirim ayarlarınızı değiştirmek veya devre dışı bırakmak için bu sayfaya "
@@ -3256,16 +3259,16 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"Gizliliğinize saygı duyuyoruz. Adınız, doğum tarihiniz, e-posta adresiniz ve "
-"şifreniz dahil kişisel bilgilerinizi satmayacağız veya paylaşmayacağız. "
-"Speedy Net'te kişilere göndereceğiniz mesajlar kişisel olup, başka kişi veya "
-"sitelerle paylaşılmayacaktır. Şifreniz veri tabanımıza şifrelenmiş olarak "
+"Gizliliğinize saygı duyuyoruz. Adınız, doğum tarihiniz, e-posta adresiniz ve"
+" şifreniz dahil kişisel bilgilerinizi satmayacağız veya paylaşmayacağız. "
+"Speedy Net'te kişilere göndereceğiniz mesajlar kişisel olup, başka kişi veya"
+" sitelerle paylaşılmayacaktır. Şifreniz veri tabanımıza şifrelenmiş olarak "
 "kaydedilmektedir."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
@@ -3294,23 +3297,22 @@ msgstr ""
 "profiliniz siteden kaldırılacak ve başkalarının sitedeki arama sonuçlarında "
 "görünmeyeceksiniz. Hesabınızı Speedy Net'te devre dışı bırakmanın aynı "
 "zamanda Speedy Match'teki hesabınızı da otomatik olarak devre dışı "
-"bırakacağını unutmayın. Speedy Match'te yalnızca hesabınızı "
-"dondurabilirsiniz, bu durumda Speedy Net hesabınız aktif kalacaktır. "
-"Hesabınızı devre dışı bıraktıktan sonra dilediğiniz zaman yeniden "
-"etkinleştirebilirsiniz."
+"bırakacağını unutmayın. 'te yalnızca hesabınızı dondurabilirsiniz Speedy "
+"Match, bu durumda Speedy Net hesabınız aktif kalacaktır. Hesabınızı devre "
+"dışı bıraktıktan sonra dilediğiniz zaman yeniden etkinleştirebilirsiniz."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
 "İsterseniz Speedy Net'teki hesabınızı silebilirsiniz. Speedy Net hesabınızı "
-"sildiğinizde Speedy Match hesabınız da otomatik olarak silinir. Speedy Net "
-"hesabınızı silmek için Speedy Net'te oturum açın, hesabınızı devre dışı "
+"sildiğinizde Speedy Match hesabınız da otomatik olarak silinir. hesabınızı "
+"silmek için Speedy Net Speedy Net'te oturum açın, hesabınızı devre dışı "
 "bırakın ve ardından “Hesabı Sil”e (“Profili Düzenle” menüsünde) tıklayın. "
 "Formdaki bilgileri doldurun ve onaylayın. Silinen bir hesabın "
 "kurtarılamayacağını lütfen unutmayın. Hesap silme işlemi kalıcıdır ve geri "
@@ -3431,22 +3433,22 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s aynı zamanda Hızlı Eşleşme profiline de sahiptir. Speedy "
-"Match'te %(user_name)s adlı kişinin profilini görüntüleyin."
+"%(user_name)s aynı zamanda Hızlı Eşleşme Speedy Match profiline de sahiptir."
+" 'te %(user_name)s adlı kişinin profilini görüntüleyin. Speedy Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Ayrıca Speedy Net profiliniz var. Profilinizi Speedy Net'te görüntüleyin."
+"Ayrıca Speedy Net profiliniz var. Profilinizi 'te görüntüleyin Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
-"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. Speedy Net'te "
-"%(user_name)s'in profilini görüntüleyin."
+"%(user_name)s aynı zamanda Speedy Net profiline de sahiptir. 'te "
+"%(user_name)s'in profilini Speedy Net görüntüleyin."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3460,36 +3462,36 @@ msgstr ""
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
 "Speedy Net'i yalnızca yasal amaçlarla kullanabilirsiniz. Nefret, şiddet, "
 "hayvan istismarı, çıplaklık veya pornografiyle ilgili içerik yüklemenize "
-"izin verilmez. Çok sayıda kişiye spam mesaj veya aynı içeriğe sahip mesajlar "
-"göndermek için Speedy Net'i kullanmanıza izin verilmez."
+"izin verilmez. Çok sayıda kişiye Speedy Net spam mesaj veya aynı içeriğe "
+"sahip mesajlar göndermek için 'i kullanmanıza izin verilmez."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
 "Site yönetimi, site kullanıcıları tarafından sağlanan kişisel bilgileri "
 "doğrulayamaz. Bazı kullanıcıların kişisel bilgileri doğru olmayabilir. Site "
-"yönetimi, site dışındaki kullanıcı aktivitelerinden sorumlu değildir. Sitede "
-"tanıştığınız kişilerle buluşmayı veya telefonda konuşmayı tercih ederseniz, "
-"toplantının veya telefon görüşmesinin sonuçlarının sorumluluğu size aittir."
+"yönetimi, site dışındaki kullanıcı aktivitelerinden sorumlu değildir. Sitede"
+" tanıştığınız kişilerle buluşmayı veya telefonda konuşmayı tercih ederseniz,"
+" toplantının veya telefon görüşmesinin sonuçlarının sorumluluğu size aittir."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"Siteye üye olduktan sonra tarafınıza gönderilen bağlantı aracılığıyla e-"
-"posta adresinizi doğrulamanız istenmektedir. Doğrulanmış e-posta adresi "
+"Siteye üye olduktan sonra tarafınıza gönderilen bağlantı aracılığıyla "
+"e-posta adresinizi doğrulamanız istenmektedir. Doğrulanmış e-posta adresi "
 "olmayan hesaplar 10 gün sonra siteden silinecektir."
 
 #: .\templates\terms\terms_of_service.html:27
@@ -3499,20 +3501,20 @@ msgid ""
 "several email addresses to your account on the site."
 msgstr ""
 "Siteye yanlışlıkla yanlış bir e-posta adresiyle kaydolduysanız, hesabınıza "
-"yeni bir e-posta adresi ekleyin ve doğrulayın. Sitedeki hesabınıza birkaç e-"
-"posta adresi ekleyebilirsiniz."
+"yeni bir e-posta adresi ekleyin ve doğrulayın. Sitedeki hesabınıza birkaç "
+"e-posta adresi ekleyebilirsiniz."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
 "Profil resminiz yüzünüzü görebileceğimiz bir resminiz olmalıdır. "
 "Başkalarıyla profil resmi yüklenmesine izin verilir. Çıplak fotoğraflar, "
-"cinsel organları gösteren fotoğraflar (erkek veya kadın) veya çıplak göğüslü "
-"resimler (erkek veya kadın) yüklemeyin."
+"cinsel organları gösteren fotoğraflar (erkek veya kadın) veya çıplak göğüslü"
+" resimler (erkek veya kadın) yüklemeyin."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3548,7 +3550,7 @@ msgstr "web sitesinde görülebilir"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Hızlı görüntü denetleme süresi"
+msgstr "Hızlı görüntü denetleme süresi Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

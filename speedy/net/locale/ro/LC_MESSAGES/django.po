@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -38,8 +38,8 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și"
+" ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
 "Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu”. în "
 "acest domeniu, exact și cu majuscule și minuscule."
 
@@ -51,8 +51,8 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și"
+" ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
 "Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu”. în "
 "acest domeniu, exact și cu majuscule și minuscule."
 
@@ -64,8 +64,8 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și"
+" ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
 "Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu”. în "
 "acest domeniu, exact și cu majuscule și minuscule."
 
@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim că "
+"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
 "folosiți {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Conturi Speedy Net"
+msgstr "Speedy Net Conturi"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -132,8 +132,8 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și"
+" ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
 "Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu”. în "
 "acest domeniu, exact și cu majuscule și minuscule."
 
@@ -160,11 +160,11 @@ msgstr "Numărul de prieteni la ultima vizită a utilizatorului"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Speedy Net"
+msgstr "Speedy Net Profil"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profiluri Speedy Net"
+msgstr "Speedy Net Profiluri"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -174,9 +174,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"Numărul total de membri activi pe site este de {total_number_of_active_members_in_the_last_four_months}, "
-"dintre care {total_number_of_active_members_in_the_last_week} membri au "
-"intrat pe site în ultima săptămână."
+"Numărul total de membri activi pe site este de "
+"{total_number_of_active_members_in_the_last_four_months}, dintre care "
+"{total_number_of_active_members_in_the_last_week} membri au intrat pe site "
+"în ultima săptămână."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -196,12 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica "
-"cu prietenii tăi. Speedy Net este deschis pentru înregistrarea gratuită "
-"pentru persoane din toate țările și vârstele (fără limită de vârstă!). Site-"
-"ul este vegan și vegetarian. În prezent este disponibil în %(languages_num)s "
-"limbi."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy "
+"Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica cu prietenii "
+"tăi. Net este deschis Speedy Net pentru înregistrarea gratuită pentru "
+"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul este"
+" vegan și vegetarian. În prezent este disponibil în %(languages_num)s limbi."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -215,10 +215,11 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
 "Am decis să limităm numărul de prieteni de pe Speedy Net la 800. Vă "
 "încurajăm să adăugați ca prieteni doar persoane pe care le cunoașteți "
@@ -229,24 +230,25 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Puteți folosi noua noastră aplicație, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, pentru a găsi "
-"persoane potrivite pentru întâlniri. Speedy Match este deschis single-urilor "
-"de toate vârstele."
+"Puteți folosi noua noastră aplicație, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, pentru a găsi persoane potrivite pentru întâlniri."
+" Speedy Match este deschis single-urilor de toate vârstele."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Înscrieți-vă "
-"la Speedy Net astăzi pentru a găsi prieteni, durează doar câteva minute. <a "
-"href=\"/\" title=\"Join Speedy Net\">Faceți clic aici</a> pentru a vă "
+"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Înscrieți-vă"
+" la Speedy Net astăzi pentru a găsi prieteni, durează doar câteva minute. <a"
+" href=\"/\" title=\"Join Speedy Net\">Faceți clic aici</a> pentru a vă "
 "alătura."
 
 #: .\templates\about\about.html:27
@@ -260,13 +262,15 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net poartă numele lui <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți "
-"ani și a murit în 2003. Speedy a născut 7 căței în 1988."
+"Speedy Net poartă numele lui <a "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți ani și a "
+"murit în 2003. a născut 7 căței în 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -282,7 +286,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net și Speedy Match,"
+msgstr "Fondator și director al Speedy Net Speedy Speedy Match Net și,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -325,23 +329,23 @@ msgstr "Prietenii tăi"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
 "Speedy Net este o nouă rețea socială. Cu Speedy Net poți comunica cu "
 "prietenii tăi. Speedy Net este deschis pentru înregistrarea gratuită pentru "
-"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul este "
-"vegan și vegetarian."
+"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul este"
+" vegan și vegetarian."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Înscrieți-vă "
-"la Speedy Net astăzi pentru a găsi prieteni, durează doar câteva minute."
+"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Înscrieți-vă"
+" la Speedy Net astăzi pentru a găsi prieteni, durează doar câteva minute."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
