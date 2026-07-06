@@ -367,6 +367,8 @@ if (django_settings.TESTS):
                 self.assert_user_is_logged_in(user=self.user, user_is_active=False)
 
 
+
+
         @only_on_speedy_net
         class DeleteAccountViewAllLanguagesEnglishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -423,11 +425,51 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        @override_settings(LANGUAGE_CODE='sv')
-        class DeleteAccountViewAllLanguagesSwedishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+        @override_settings(LANGUAGE_CODE='ja')
+        class DeleteAccountViewAllLanguagesJapaneseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='ru')
+        class DeleteAccountViewAllLanguagesRussianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='zh')
+        class DeleteAccountViewAllLanguagesChineseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='pl')
+        class DeleteAccountViewAllLanguagesPolishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='fa')
+        class DeleteAccountViewAllLanguagesPersianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='he')
+        class DeleteAccountViewAllLanguagesHebrewTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_speedy_net
@@ -439,6 +481,62 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='ar')
+        class DeleteAccountViewAllLanguagesArabicTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='id')
+        class DeleteAccountViewAllLanguagesIndonesianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='uk')
+        class DeleteAccountViewAllLanguagesUkrainianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='tr')
+        class DeleteAccountViewAllLanguagesTurkishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='vi')
+        class DeleteAccountViewAllLanguagesVietnameseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='cs')
+        class DeleteAccountViewAllLanguagesCzechTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='sv')
+        class DeleteAccountViewAllLanguagesSwedishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='fi')
         class DeleteAccountViewAllLanguagesFinnishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -447,10 +545,122 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_net
-        @override_settings(LANGUAGE_CODE='he')
-        class DeleteAccountViewAllLanguagesHebrewTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+        @override_settings(LANGUAGE_CODE='hu')
+        class DeleteAccountViewAllLanguagesHungarianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='he')
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='th')
+        class DeleteAccountViewAllLanguagesThaiTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='el')
+        class DeleteAccountViewAllLanguagesGreekTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='ms')
+        class DeleteAccountViewAllLanguagesMalayTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='sr')
+        class DeleteAccountViewAllLanguagesSerbianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='ro')
+        class DeleteAccountViewAllLanguagesRomanianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='bn')
+        class DeleteAccountViewAllLanguagesBengaliTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='ca')
+        class DeleteAccountViewAllLanguagesCatalanTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='no')
+        class DeleteAccountViewAllLanguagesNorwegianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='bg')
+        class DeleteAccountViewAllLanguagesBulgarianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='da')
+        class DeleteAccountViewAllLanguagesDanishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='sk')
+        class DeleteAccountViewAllLanguagesSlovakTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='hi')
+        class DeleteAccountViewAllLanguagesHindiTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='et')
+        class DeleteAccountViewAllLanguagesEstonianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='hr')
+        class DeleteAccountViewAllLanguagesCroatianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
 
 
