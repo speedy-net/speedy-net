@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Účty rychlé sítě"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ano. Smazat můj účet."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Rychlý uživatel sítě"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Počet přátel při poslední návštěvě uživatele"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profil rychlé sítě"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Rychlé síťové profily"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -174,9 +174,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"Celkový počet aktivních členů na webu je {total_number_of_active_members_in_the_last_four_months}, "
-"z toho {total_number_of_active_members_in_the_last_week} členů vstoupilo na "
-"web za poslední týden."
+"Celkový počet aktivních členů na webu je "
+"{total_number_of_active_members_in_the_last_four_months}, z toho "
+"{total_number_of_active_members_in_the_last_week} členů vstoupilo na web za "
+"poslední týden."
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -196,11 +197,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
-"a> je nová sociální síť. S Speedy Net můžete komunikovat se svými přáteli. "
-"Net je otevřena Speedy Net pro bezplatnou registraci pro lidi ze všech zemí "
-"a věkových kategorií (bez věkového omezení!). Stránka je vhodná pro vegany a "
-"vegetariány. Momentálně je k dispozici v %(languages_num)s jazycích."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy "
+"Net</a> je nová sociální síť. S Speedy Net můžete komunikovat se svými "
+"přáteli. Net je otevřena Speedy Net pro bezplatnou registraci pro lidi ze "
+"všech zemí a věkových kategorií (bez věkového omezení!). Stránka je vhodná "
+"pro vegany a vegetariány. Momentálně je k dispozici v %(languages_num)s "
+"jazycích."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -214,10 +216,11 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
 "Rozhodli jsme se omezit počet přátel na Speedy Net na 800. Doporučujeme vám "
 "přidat si mezi přátele pouze lidi, které osobně znáte. Můžete si vybrat, "
@@ -227,19 +230,21 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Pomocí naší nové aplikace <a href=\"https://%(language_code)s.speedymatch."
-"com/\" title=\"Speedy Match\">Speedy Match</a> můžete najít vhodné lidi na "
-"seznamování. Speedy Match je otevřen pro nezadané všech věkových kategorií."
+"Pomocí naší nové aplikace <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> můžete najít vhodné lidi na seznamování. Speedy "
+"Match je otevřen pro nezadané všech věkových kategorií."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Všechny funkce na Speedy Net a Speedy Match jsou zdarma. Připojte se ke "
 "Speedy Net ještě dnes a najděte si přátele, zabere to jen pár minut. <a "
@@ -251,18 +256,20 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net je bezplatný software a projekt s otevřeným zdrojovým kódem. "
-"Pokud chcete pomoci s vývojem a vylepšením Speedy Net, kontaktujte mě prosím "
-"e-mailem."
+"Pokud chcete pomoci s vývojem a vylepšením Speedy Net, kontaktujte mě prosím"
+" e-mailem."
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net je pojmenována po <a href=\"https://www.facebook.com/Speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, fence, která s námi byla mnoho let "
-"a zemřela v roce 2003. porodila v roce 1988 7 štěňat."
+"Speedy Net je pojmenována po <a "
+"href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, fence, která s námi byla mnoho let a zemřela v "
+"roce 2003. porodila v roce 1988 7 štěňat."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -282,7 +289,7 @@ msgstr "Zakladatel a ředitel Speedy Net Speedy Speedy Match Net a,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Společnost Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -320,8 +327,8 @@ msgstr "Vaši přátelé"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""

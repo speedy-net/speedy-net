@@ -363,8 +363,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি ম্যাচে "
-"%(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
+"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি "
+"ম্যাচে %(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -373,8 +373,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি ম্যাচে "
-"%(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
+"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি "
+"ম্যাচে %(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -383,15 +383,15 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি ম্যাচে "
-"%(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
+"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি "
+"ম্যাচে %(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
 msgctxt "female"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s এর একটি স্পিডি ন Speedy Net েট প্রোফাইলও রয়েছে৷ স্পিডি নেটে "
 "%(user_name)s-এর প্রোফাইল দেখুন। Speedy Net"
@@ -400,8 +400,8 @@ msgstr ""
 #, python-format
 msgctxt "male"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s এর একটি স্পিডি ন Speedy Net েট প্রোফাইলও রয়েছে৷ স্পিডি নেটে "
 "%(user_name)s-এর প্রোফাইল দেখুন। Speedy Net"
@@ -410,8 +410,8 @@ msgstr ""
 #, python-format
 msgctxt "other"
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s এর একটি স্পিডি ন Speedy Net েট প্রোফাইলও রয়েছে৷ স্পিডি নেটে "
 "%(user_name)s-এর প্রোফাইল দেখুন। Speedy Net"
@@ -681,22 +681,22 @@ msgstr "সব দেখুন"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ "
-"করুন."
+"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই "
+"পৃষ্ঠায় প্রবেশ করুন."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ "
-"করুন."
+"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই "
+"পৃষ্ঠায় প্রবেশ করুন."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ "
-"করুন."
+"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই "
+"পৃষ্ঠায় প্রবেশ করুন."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -828,31 +828,31 @@ msgstr "ব্যবহারকারীর নাম"
 #, python-format
 msgctxt "female"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার বিজ্ঞপ্তি "
-"সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার "
+"বিজ্ঞপ্তি সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.html:213
 #, python-format
 msgctxt "male"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার বিজ্ঞপ্তি "
-"সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার "
+"বিজ্ঞপ্তি সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.html:214
 #, python-format
 msgctxt "other"
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার বিজ্ঞপ্তি "
-"সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার "
+"বিজ্ঞপ্তি সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -885,8 +885,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"অনুগ্রহ করে একটি সঠিক %(username)s এবং পাসওয়ার্ড লিখুন। মনে রাখবেন উভয় ক্ষেত্রই "
-"কেস-সংবেদনশীল হতে পারে।"
+"অনুগ্রহ করে একটি সঠিক %(username)s এবং পাসওয়ার্ড লিখুন। মনে রাখবেন উভয় "
+"ক্ষেত্রই কেস-সংবেদনশীল হতে পারে।"
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -933,9 +933,11 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"তালিকায় %(show_value)d আইটেম রয়েছে, এতে %(limit_value)d এর বেশি থাকা উচিত নয়।"
+"তালিকায় %(show_value)d আইটেম রয়েছে, এতে %(limit_value)d এর বেশি থাকা উচিত "
+"নয়।"
 msgstr[1] ""
-"তালিকায় %(show_value)d আইটেম রয়েছে, এতে %(limit_value)d এর বেশি থাকা উচিত নয়।"
+"তালিকায় %(show_value)d আইটেম রয়েছে, এতে %(limit_value)d এর বেশি থাকা উচিত "
+"নয়।"
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -1384,8 +1386,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট নিষ্ক্রিয় করা "
-"হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
+"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট "
+"নিষ্ক্রিয় করা হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1393,8 +1395,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট নিষ্ক্রিয় করা "
-"হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
+"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট "
+"নিষ্ক্রিয় করা হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1402,8 +1404,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট নিষ্ক্রিয় করা "
-"হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
+"আপনার Speedy Net স্পিডি নেট এবং স্পিড Speedy Match ি ম্যাচ অ্যাকাউন্ট "
+"নিষ্ক্রিয় করা হয়েছে। আপনি যে কোনো সময় তাদের পুনরায় সক্রিয় করতে পারেন."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1412,8 +1414,9 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে পুনরায় "
-"সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy Net"
+"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে "
+"পুনরায় সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy"
+" Net"
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1422,8 +1425,9 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে পুনরায় "
-"সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy Net"
+"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে "
+"পুনরায় সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy"
+" Net"
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1432,8 +1436,9 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে পুনরায় "
-"সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy Net"
+"আপনার {site_name} অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটিকে "
+"পুনরায় সক্রিয় করতে পারেন। আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকে। Speedy"
+" Net"
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
@@ -1484,31 +1489,31 @@ msgstr "পাঠান"
 #, python-brace-format
 msgctxt "female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy Net "
-"াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
+"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy "
+"Net াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
 msgctxt "male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy Net "
-"াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
+"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy "
+"Net াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy Net "
-"াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
+"আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy "
+"Net াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1517,8 +1522,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1527,8 +1533,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1537,8 +1544,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1547,8 +1555,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1557,8 +1566,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1567,8 +1577,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1577,8 +1588,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1587,8 +1599,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1597,8 +1610,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত "
-"Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি "
+"বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের "
+"বন্ধুদের সরাতে বলুন।"
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1775,43 +1789,46 @@ msgstr "বন্ধুরা"
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের অন্যান্য "
-"সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল আবার চেষ্টা করুন. "
-"অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে স্পিডি নেট ব্যবহার করতে পারবেন "
-"না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে বার্তা পাঠাতে পারবেন না। Speedy Net"
+"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের "
+"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল "
+"আবার চেষ্টা করুন. অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে "
+"স্পিডি নেট ব্যবহার করতে পারবেন না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে "
+"বার্তা পাঠাতে পারবেন না। Speedy Net"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের অন্যান্য "
-"সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল আবার চেষ্টা করুন. "
-"অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে স্পিডি নেট ব্যবহার করতে পারবেন "
-"না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে বার্তা পাঠাতে পারবেন না। Speedy Net"
+"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের "
+"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল "
+"আবার চেষ্টা করুন. অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে "
+"স্পিডি নেট ব্যবহার করতে পারবেন না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে "
+"বার্তা পাঠাতে পারবেন না। Speedy Net"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের অন্যান্য "
-"সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল আবার চেষ্টা করুন. "
-"অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে স্পিডি নেট ব্যবহার করতে পারবেন "
-"না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে বার্তা পাঠাতে পারবেন না। Speedy Net"
+"স্প্যাম বার্তা পাঠানোর জন্য সাইটের অপব্যবহারের কারণে, আমাদের একদিনে সাইটের "
+"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছিল। আগামীকাল "
+"আবার চেষ্টা করুন. অনুগ্রহ করে মনে রাখবেন যে আপনি স্প্যাম বার্তা পাঠাতে "
+"স্পিডি নেট ব্যবহার করতে পারবেন না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে "
+"বার্তা পাঠাতে পারবেন না। Speedy Net"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1819,8 +1836,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1828,8 +1846,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1837,8 +1856,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1846,8 +1866,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1855,8 +1876,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1864,8 +1886,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1873,8 +1896,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1882,8 +1906,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1891,8 +1916,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট প্রোফ "
-"Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। Speedy Net"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, তবে আপনি তাদের স্পিডি নেট "
+"প্রোফ Speedy Net াইলে যেতে পারেন৷ স্পিডি নেটে ব্যবহারকারীর প্রোফাইল দেখুন। "
+"Speedy Net"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1917,7 +1943,7 @@ msgstr "আপনার প্রোফাইল ছবি স্বচ্ছ �
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "দ্রুত কোর অ্যাকাউন্ট"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2239,16 +2265,16 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"ব্যবহারকারীর নাম অবশ্যই 4 বা তার বেশি অক্ষর দিয়ে শুরু করতে হবে এবং এতে অক্ষর, "
-"সংখ্যা বা ড্যাশ থাকতে পারে।"
+"ব্যবহারকারীর নাম অবশ্যই 4 বা তার বেশি অক্ষর দিয়ে শুরু করতে হবে এবং এতে "
+"অক্ষর, সংখ্যা বা ড্যাশ থাকতে পারে।"
 
 #: .\accounts\validators.py:41
 msgid ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. You can add dashes between words."
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
 msgstr ""
-"ব্যবহারকারীর নাম অবশ্যই 4 বা তার বেশি অক্ষর দিয়ে শুরু করতে হবে, যার পরে যেকোনো "
-"সংখ্যা হতে পারে। আপনি শব্দের মধ্যে ড্যাশ যোগ করতে পারেন।"
+"ব্যবহারকারীর নাম অবশ্যই 4 বা তার বেশি অক্ষর দিয়ে শুরু করতে হবে, যার পরে "
+"যেকোনো সংখ্যা হতে পারে। আপনি শব্দের মধ্যে ড্যাশ যোগ করতে পারেন।"
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2268,17 +2294,17 @@ msgstr[1] ""
 #: .\accounts\validators.py:58
 #, python-format
 msgid ""
-"Username must contain at most %(limit_value)d alphanumeric character (it has "
-"%(show_value)d)."
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ব্যবহারকারীর নামের মধ্যে অবশ্যই সর্বাধিক %(limit_value)d বর্ণসংখ্যার অক্ষর থাকতে "
-"হবে (এটিতে %(show_value)d আছে)।"
+"ব্যবহারকারীর নামের মধ্যে অবশ্যই সর্বাধিক %(limit_value)d বর্ণসংখ্যার অক্ষর "
+"থাকতে হবে (এটিতে %(show_value)d আছে)।"
 msgstr[1] ""
-"ইউজারনেমে অবশ্যই সর্বাধিক %(limit_value)d বর্ণসংখ্যার অক্ষর থাকতে হবে (এটিতে "
-"%(show_value)d আছে)।"
+"ইউজারনেমে অবশ্যই সর্বাধিক %(limit_value)d বর্ণসংখ্যার অক্ষর থাকতে হবে (এটিতে"
+" %(show_value)d আছে)।"
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2304,11 +2330,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"ব্যবহারকারীর নাম সর্বাধিক %(limit_value)d অক্ষর থাকতে হবে (এটিতে %(show_value)d "
-"আছে)।"
+"ব্যবহারকারীর নাম সর্বাধিক %(limit_value)d অক্ষর থাকতে হবে (এটিতে "
+"%(show_value)d আছে)।"
 msgstr[1] ""
-"ইউজারনেমে অবশ্যই সর্বাধিক %(limit_value)d অক্ষর থাকতে হবে (এটিতে %(show_value)d "
-"আছে)।"
+"ইউজারনেমে অবশ্যই সর্বাধিক %(limit_value)d অক্ষর থাকতে হবে (এটিতে "
+"%(show_value)d আছে)।"
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2333,11 +2359,14 @@ msgstr[1] "আপনার পাসওয়ার্ডে কমপক্ষ�
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
-"This password is too long. It must contain at most %(max_length)d characters."
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
 msgstr[0] ""
-"এই পাসওয়ার্ডটি খুব দীর্ঘ৷ এতে অবশ্যই সর্বাধিক %(max_length)d অক্ষর থাকতে হবে।"
+"এই পাসওয়ার্ডটি খুব দীর্ঘ৷ এতে অবশ্যই সর্বাধিক %(max_length)d অক্ষর থাকতে "
+"হবে।"
 msgstr[1] ""
-"এই পাসওয়ার্ডটি খুব দীর্ঘ৷ এতে অবশ্যই সর্বাধিক %(max_length)d অক্ষর থাকতে হবে।"
+"এই পাসওয়ার্ডটি খুব দীর্ঘ৷ এতে অবশ্যই সর্বাধিক %(max_length)d অক্ষর থাকতে "
+"হবে।"
 
 #: .\accounts\validators.py:145
 #, python-format
@@ -2351,7 +2380,8 @@ msgstr[1] "আপনার পাসওয়ার্ডে অবশ্যই 
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr "আপনার পাসওয়ার্ডে কমপক্ষে %(min_unique_characters)d অনন্য অক্ষর থাকতে হবে।"
+msgstr ""
+"আপনার পাসওয়ার্ডে কমপক্ষে %(min_unique_characters)d অনন্য অক্ষর থাকতে হবে।"
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
@@ -2372,15 +2402,16 @@ msgstr "এই ইমেলটি ইতিমধ্যেই ব্যবহা
 #: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
-msgstr "এই ছবির ফাইলের আকার অনেক বড়। সর্বাধিক অনুমোদিত ফাইলের আকার হল 30 এমবি।"
+msgstr ""
+"এই ছবির ফাইলের আকার অনেক বড়। সর্বাধিক অনুমোদিত ফাইলের আকার হল 30 এমবি।"
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
-"You can't use this format for your profile picture. Only JPEG or PNG formats "
-"are accepted."
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
 msgstr ""
-"আপনি আপনার প্রোফাইল ছবির জন্য এই বিন্যাস ব্যবহার করতে পারবেন না. শুধুমাত্র JPEG বা "
-"PNG ফরম্যাট গৃহীত হয়।"
+"আপনি আপনার প্রোফাইল ছবির জন্য এই বিন্যাস ব্যবহার করতে পারবেন না. শুধুমাত্র "
+"JPEG বা PNG ফরম্যাট গৃহীত হয়।"
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
@@ -2402,9 +2433,9 @@ msgstr "আপনি এই ইমেল ঠিকানা প্রাথম�
 #: .\admin\views.py:72
 #, python-brace-format
 msgid ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
 "entered the site in the last month, "
 "{total_number_of_members_in_the_last_four_months} members entered the site "
 "in the last four months, {total_number_of_members_in_the_last_eight_months} "
@@ -2413,21 +2444,23 @@ msgid ""
 "the last two years."
 msgstr ""
 "অ্যাডমিন: সাইটের মোট সদস্য সংখ্যা হল {total_number_of_members}, যার মধ্যে "
-"{total_number_of_members_in_the_last_week} সদস্য গত সপ্তাহে সাইটে প্রবেশ করেছে, "
-"{total_number_of_members_in_the_last_month} সদস্য গত মাসে সাইটে প্রবেশ করেছে, "
-"{total_number_of_members_in_the_last_four_months} সদস্য গত চার মাসে সাইটে "
-"প্রবেশ করেছে, {total_number_of_members_in_the_last_eight_months} সদস্য গত আট "
-"মাসে সাইটে প্রবেশ করেছে, এবং {total_number_of_members_in_the_last_two_years} "
-"সদস্য গত দুই বছরে সাইটে প্রবেশ করেছে।"
+"{total_number_of_members_in_the_last_week} সদস্য গত সপ্তাহে সাইটে প্রবেশ "
+"করেছে, {total_number_of_members_in_the_last_month} সদস্য গত মাসে সাইটে "
+"প্রবেশ করেছে, {total_number_of_members_in_the_last_four_months} সদস্য গত চার"
+" মাসে সাইটে প্রবেশ করেছে, {total_number_of_members_in_the_last_eight_months}"
+" সদস্য গত আট মাসে সাইটে প্রবেশ করেছে, এবং "
+"{total_number_of_members_in_the_last_two_years} সদস্য গত দুই বছরে সাইটে "
+"প্রবেশ করেছে।"
 
 #: .\admin\views.py:118
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
 "registered in the last week. "
-"{total_number_of_members_registered_in_the_last_month} members registered in "
-"the last month. {total_number_of_members_registered_in_the_last_four_months} "
-"members registered in the last four months. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
 "{total_number_of_members_registered_more_than_four_months_ago} members "
 "registered more than four months ago. "
 "{total_number_of_members_registered_in_the_last_eight_months} members "
@@ -2442,20 +2475,21 @@ msgid ""
 "before 1 August 2019."
 msgstr ""
 "অ্যাডমিন: {total_number_of_members_registered_in_the_last_week} সদস্য গত "
-"সপ্তাহে নিবন্ধিত হয়েছে। {total_number_of_members_registered_in_the_last_month} "
-"সদস্য গত মাসে নিবন্ধিত। "
-"{total_number_of_members_registered_in_the_last_four_months} সদস্য গত চার "
-"মাসে নিবন্ধিত। {total_number_of_members_registered_more_than_four_months_ago} "
-"সদস্যরা চার মাসেরও বেশি আগে নিবন্ধিত হয়েছেন। "
+"সপ্তাহে নিবন্ধিত হয়েছে। "
+"{total_number_of_members_registered_in_the_last_month} সদস্য গত মাসে "
+"নিবন্ধিত। {total_number_of_members_registered_in_the_last_four_months} সদস্য"
+" গত চার মাসে নিবন্ধিত। "
+"{total_number_of_members_registered_more_than_four_months_ago} সদস্যরা চার "
+"মাসেরও বেশি আগে নিবন্ধিত হয়েছেন। "
 "{total_number_of_members_registered_in_the_last_eight_months} সদস্য গত আট "
 "মাসে নিবন্ধিত। "
 "{total_number_of_members_registered_more_than_eight_months_ago} সদস্য আট "
 "মাসেরও বেশি আগে নিবন্ধিত হয়েছে। "
-"{total_number_of_members_registered_in_the_last_two_years} সদস্য গত দুই বছরে "
-"নিবন্ধিত। {total_number_of_members_registered_more_than_two_years_ago} সদস্য "
-"দুই বছরেরও বেশি আগে নিবন্ধিত হয়েছে। "
-"{total_number_of_members_registered_before_2019_08_01} সদস্য 1 আগস্ট 2019 এর "
-"আগে নিবন্ধিত।"
+"{total_number_of_members_registered_in_the_last_two_years} সদস্য গত দুই বছরে"
+" নিবন্ধিত। {total_number_of_members_registered_more_than_two_years_ago} "
+"সদস্য দুই বছরেরও বেশি আগে নিবন্ধিত হয়েছে। "
+"{total_number_of_members_registered_before_2019_08_01} সদস্য 1 আগস্ট 2019 এর"
+" আগে নিবন্ধিত।"
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2468,7 +2502,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "স্পিডি কোর বেস অ্যাপ"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2999,19 +3033,19 @@ msgstr "আপনি আপনার ইমেল ঠিকানা নিশ�
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net দ্রুত নেট ব্লগ"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Speedy Paz দ্রুত পাজ"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "দ্রুত সফটওয়্যার"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Speedy Sale দ্রুত বিক্রয়"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3020,7 +3054,7 @@ msgstr "একটি নিরামিষাশী বন্ধুত্বপ�
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "দ্রুত Speedy"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3036,23 +3070,23 @@ msgstr "পাসওয়ার্ড"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Speedy Net দ্রুত নেট"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Speedy Match দ্রুত ম্যাচ"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net স্পিডি নেট এর দোকান"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match স্পিডি ম্যাচের দোকান"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "দ্রুত S-লোগো দোকান"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3084,15 +3118,15 @@ msgstr "আমাদের সাথে যোগাযোগ করুন"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Speedy Composer দ্রুত সুরকার"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "দ্রুত মেইল ​​সফটওয়্যার"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer স্পিডি কম্পোজারের দোকান"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3104,11 +3138,11 @@ msgstr "আপনি কাউকে ব্লক করছেন না।"
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
-"If you have any questions, suggestions or are interested in joining the team "
-"- please contact us by email."
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
 msgstr ""
-"আপনার যদি কোন প্রশ্ন থাকে, পরামর্শ থাকে বা দলে যোগদান করতে আগ্রহী হন - অনুগ্রহ করে "
-"ইমেলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।"
+"আপনার যদি কোন প্রশ্ন থাকে, পরামর্শ থাকে বা দলে যোগদান করতে আগ্রহী হন - "
+"অনুগ্রহ করে ইমেলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।"
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3174,11 +3208,11 @@ msgstr "এটি পড়ুন:"
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
 msgid ""
-"You are subscribed to receive this type of notifications from %(site_name)s. "
-"Enter this page to change your notifications settings or opt out:"
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার বিজ্ঞপ্তি "
-"সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার "
+"বিজ্ঞপ্তি সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3252,28 +3286,29 @@ msgid ""
 "encrypted on our database."
 msgstr ""
 "আমরা আপনার গোপনীয়তা সম্মান. আমরা আপনার নাম, আপনার জন্ম তারিখ, আপনার ইমেল "
-"ঠিকানা এবং আপনার পাসওয়ার্ড সহ আপনার ব্যক্তিগত বিবরণ বিক্রি বা শেয়ার করব না। আপনি "
-"স্পিডি নেটে লোকেদের কাছে যে বার্তা Speedy Net গুলি পাঠান তা ব্যক্তিগত এবং অন্য "
-"ব্যক্তি বা ওয়েবসাইটের সাথে শেয়ার করা হবে না৷ আপনার পাসওয়ার্ড আমাদের ডাটাবেসে "
-"এনক্রিপ্ট করা আছে।"
+"ঠিকানা এবং আপনার পাসওয়ার্ড সহ আপনার ব্যক্তিগত বিবরণ বিক্রি বা শেয়ার করব "
+"না। আপনি স্পিডি নেটে লোকেদের কাছে যে বার্তা Speedy Net গুলি পাঠান তা "
+"ব্যক্তিগত এবং অন্য ব্যক্তি বা ওয়েবসাইটের সাথে শেয়ার করা হবে না৷ আপনার "
+"পাসওয়ার্ড আমাদের ডাটাবেসে এনক্রিপ্ট করা আছে।"
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
-"Your profile on Speedy Net is visible to everyone, but you can choose who to "
-"share with your email address and your date of birth. If you signed up for "
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
 "Speedy Match, your Speedy Match profile will only be visible to people who "
 "match you according to the settings you have set up on the site, and that "
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"স্পিডি নেট-এ আপনার Speedy Net প্রোফাইল সকলের কাছে দৃশ্যমান, কিন্তু আপনি আপনার ইমেল "
-"ঠিকানা এবং আপনার জন্ম তারিখের সাথে কাকে ভাগ করবেন তা চয়ন করতে পারেন৷ আপনি যদি "
-"স্পিডি ম Speedy Match ্যাচের জন্য সাইন আপ Speedy Match করে থাকেন, তবে আপনার "
-"স্পিডি ম্যাচ প্রোফাইলটি কেবলমাত্র সেই ব্যক্তিদের কাছেই দৃশ্যমান হবে যারা সাইটে আপনার "
-"সেট আপ করা সেটিংস অনুসারে আপনার সাথে মেলে এবং আপনি তাদের সেটিংস অনুসারে তাদের "
-"সাথে মেলে। স্পিডি ম্যাচে আপনার প্রোফাইল Google-এ প্রদর্শিত হবে না এবং যারা সাইটে "
-"নিবন্ধিত নন তাদের কাছে দৃশ্যমান হবে না। Speedy Match"
+"স্পিডি নেট-এ আপনার Speedy Net প্রোফাইল সকলের কাছে দৃশ্যমান, কিন্তু আপনি "
+"আপনার ইমেল ঠিকানা এবং আপনার জন্ম তারিখের সাথে কাকে ভাগ করবেন তা চয়ন করতে "
+"পারেন৷ আপনি যদি স্পিডি ম Speedy Match ্যাচের জন্য সাইন আপ Speedy Match করে "
+"থাকেন, তবে আপনার স্পিডি ম্যাচ প্রোফাইলটি কেবলমাত্র সেই ব্যক্তিদের কাছেই "
+"দৃশ্যমান হবে যারা সাইটে আপনার সেট আপ করা সেটিংস অনুসারে আপনার সাথে মেলে এবং "
+"আপনি তাদের সেটিংস অনুসারে তাদের সাথে মেলে। স্পিডি ম্যাচে আপনার প্রোফাইল "
+"Google-এ প্রদর্শিত হবে না এবং যারা সাইটে নিবন্ধিত নন তাদের কাছে দৃশ্যমান হবে"
+" না। Speedy Match"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3285,31 +3320,32 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"আপনি যদি Speedy Net বা Speedy Match-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করে থাকেন, "
-"তাহলে সেই সাইটের আপনার প্রোফাইলটি সাইট থেকে সরিয়ে দেওয়া হবে এবং আপনি সাইটের "
-"অন্য লোকেদের অনুসন্ধানের ফলাফলে উপস্থিত হবেন না। মনে রাখবেন যে স্পিডি নেট-এ আপনার "
-"অ্যাকাউন্ট নিষ্ক্রিয় করাও স্পিডি ম্য Speedy Net াচে স্বয়ংক্রিয়ভাবে আপনার অ্যাকাউন্ট "
-"নিষ্ক্রিয় করে দেয়। আপনি স্ Speedy Match পিডি ম্যাচে শুধুমাত্র আপনার অ্যাকাউন্ট "
-"নিষ্ক্রিয় করতে পারেন, এই ক্ষেত্রে আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকবে। আপনি "
-"যখনই চান আপনার অ্যাকাউন্ট নিষ্ক্রিয় করার পরে আপনি পুনরায় সক্রিয় করতে পারেন। Speedy "
-"Match Speedy Net"
+"আপনি যদি Speedy Net বা Speedy Match-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করে থাকেন,"
+" তাহলে সেই সাইটের আপনার প্রোফাইলটি সাইট থেকে সরিয়ে দেওয়া হবে এবং আপনি "
+"সাইটের অন্য লোকেদের অনুসন্ধানের ফলাফলে উপস্থিত হবেন না। মনে রাখবেন যে স্পিডি"
+" নেট-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করাও স্পিডি ম্য Speedy Net াচে "
+"স্বয়ংক্রিয়ভাবে আপনার অ্যাকাউন্ট নিষ্ক্রিয় করে দেয়। আপনি স্ Speedy Match "
+"পিডি ম্যাচে শুধুমাত্র আপনার অ্যাকাউন্ট নিষ্ক্রিয় করতে পারেন, এই ক্ষেত্রে "
+"আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় থাকবে। আপনি যখনই চান আপনার অ্যাকাউন্ট "
+"নিষ্ক্রিয় করার পরে আপনি পুনরায় সক্রিয় করতে পারেন। Speedy Match Speedy Net"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
-"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
-"Net account will automatically delete your Speedy Match account as well. To "
-"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
 "আপনি চাইলে স্পিডি নেটে আপনার অ্যাকাউন্ট মুছে ফেলতে পা Speedy Net রেন। আপনার "
 "স্পিডি ন Speedy Net েট অ্যাকাউন্ট মুছে ফেললে আপনার স্পিডি ম্যাচ অ্যাকাউন্টও "
-"স্বয়ংক্রিয়ভাবে Speedy Match মুছে যাবে। আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট মুছে "
-"Speedy Net ফেলতে, স্পিডি নেট-এ লগ ইন করুন, আপনার অ্যাকাউন্ট নিষ্ক্রিয় করুন এবং "
-"তারপরে \"অ্যাকাউন্ট মুছুন\" (\"প্রোফাইল সম্পাদনা\" মেনুতে) ক্লিক করুন৷ ফর্মে বিস্তারিত "
-"পূরণ করুন এবং নিশ্চিত করুন। দয়া করে মনে রাখবেন যে একটি মুছে ফেলা অ্যাকাউন্ট পুনরুদ্ধার "
-"করা যাবে না। অ্যাকাউন্ট মুছে ফেলা স্থায়ী এবং অপরিবর্তনীয়।"
+"স্বয়ংক্রিয়ভাবে Speedy Match মুছে যাবে। আপনার Speedy Net স্পিডি নেট "
+"অ্যাকাউন্ট মুছে Speedy Net ফেলতে, স্পিডি নেট-এ লগ ইন করুন, আপনার অ্যাকাউন্ট "
+"নিষ্ক্রিয় করুন এবং তারপরে \"অ্যাকাউন্ট মুছুন\" (\"প্রোফাইল সম্পাদনা\" "
+"মেনুতে) ক্লিক করুন৷ ফর্মে বিস্তারিত পূরণ করুন এবং নিশ্চিত করুন। দয়া করে মনে"
+" রাখবেন যে একটি মুছে ফেলা অ্যাকাউন্ট পুনরুদ্ধার করা যাবে না। অ্যাকাউন্ট মুছে"
+" ফেলা স্থায়ী এবং অপরিবর্তনীয়।"
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3426,8 +3462,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি ম্যাচে "
-"%(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
+"%(user_name)s এরও একটি দ্রুত ম Speedy Match ্যাচ প্রোফাইল রয়েছে৷ স্পিডি "
+"ম্যাচে %(user_name)s-এর প্রোফাইল দেখুন। Speedy Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3438,8 +3474,8 @@ msgstr ""
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
-"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
-"Speedy Net."
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
 msgstr ""
 "%(user_name)s এর একটি স্পিডি ন Speedy Net েট প্রোফাইলও রয়েছে৷ স্পিডি নেটে "
 "%(user_name)s-এর প্রোফাইল দেখুন। Speedy Net"
@@ -3449,43 +3485,45 @@ msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"সাইটটি আলফাতে আছে, ত্রুটি থাকতে পারে। সাইটের কোনো ত্রুটির জন্য সাইট ম্যানেজমেন্ট "
-"দায়ী নয়।"
+"সাইটটি আলফাতে আছে, ত্রুটি থাকতে পারে। সাইটের কোনো ত্রুটির জন্য সাইট "
+"ম্যানেজমেন্ট দায়ী নয়।"
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
 "You can use Speedy Net for legal purposes only. You are not allowed to "
 "upload contents related to hate, violence, animal abuse, nudity or "
-"pornography. You are not allowed to use Speedy Net to send spam messages, or "
-"messages with the same content to a large number of people."
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
 msgstr ""
-"আপনি শুধুমাত্ Speedy Net র আইনি উদ্দেশ্যে স্পিডি নেট ব্যবহার করতে পারেন। আপনাকে "
-"ঘৃণা, সহিংসতা, পশু নির্যাতন, নগ্নতা বা পর্নোগ্রাফি সম্পর্কিত বিষয়বস্তু আপলোড করার "
-"অনুমতি নেই। আপনি স্প্যাম বার্তা Speedy Net পাঠাতে স্পিডি নেট ব্যবহার করতে পারবেন "
-"না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে বার্তা পাঠাতে পারবেন না৷"
+"আপনি শুধুমাত্ Speedy Net র আইনি উদ্দেশ্যে স্পিডি নেট ব্যবহার করতে পারেন। "
+"আপনাকে ঘৃণা, সহিংসতা, পশু নির্যাতন, নগ্নতা বা পর্নোগ্রাফি সম্পর্কিত "
+"বিষয়বস্তু আপলোড করার অনুমতি নেই। আপনি স্প্যাম বার্তা Speedy Net পাঠাতে "
+"স্পিডি নেট ব্যবহার করতে পারবেন না, বা একই বিষয়বস্তু সহ বহু সংখ্যক লোককে "
+"বার্তা পাঠাতে পারবেন না৷"
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
 "Site management cannot verify personal information provided by users of the "
 "site. Some users' personal information may not be correct. Site management "
-"is not responsible for user activity outside the site. If you choose to meet "
-"or talk on the phone with people you met on the site, the responsibility for "
-"the results of the meeting or phone call is yours."
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
 msgstr ""
-"সাইট ম্যানেজমেন্ট সাইটের ব্যবহারকারীদের দ্বারা প্রদত্ত ব্যক্তিগত তথ্য যাচাই করতে পারে "
-"না। কিছু ব্যবহারকারীর ব্যক্তিগত তথ্য সঠিক নাও হতে পারে। সাইটের বাইরে ব্যবহারকারীর "
-"কার্যকলাপের জন্য সাইট ব্যবস্থাপনা দায়ী নয়। আপনি যদি সাইটে দেখা লোকেদের সাথে ফোনে "
-"দেখা বা কথা বলতে বেছে নেন, তাহলে মিটিং বা ফোন কলের ফলাফলের দায়িত্ব আপনার।"
+"সাইট ম্যানেজমেন্ট সাইটের ব্যবহারকারীদের দ্বারা প্রদত্ত ব্যক্তিগত তথ্য যাচাই "
+"করতে পারে না। কিছু ব্যবহারকারীর ব্যক্তিগত তথ্য সঠিক নাও হতে পারে। সাইটের "
+"বাইরে ব্যবহারকারীর কার্যকলাপের জন্য সাইট ব্যবস্থাপনা দায়ী নয়। আপনি যদি "
+"সাইটে দেখা লোকেদের সাথে ফোনে দেখা বা কথা বলতে বেছে নেন, তাহলে মিটিং বা ফোন "
+"কলের ফলাফলের দায়িত্ব আপনার।"
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
-"After signing up for the site you are asked to verify your email address via "
-"a link sent to you. Accounts without a verified email address will be "
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
 "সাইটে সাইন আপ করার পরে আপনাকে পাঠানো একটি লিঙ্কের মাধ্যমে আপনার ইমেল ঠিকানা "
-"যাচাই করতে বলা হবে। যাচাইকৃত ইমেল ঠিকানা ছাড়া অ্যাকাউন্ট 10 দিন পরে সাইট থেকে "
-"মুছে ফেলা হবে।"
+"যাচাই করতে বলা হবে। যাচাইকৃত ইমেল ঠিকানা ছাড়া অ্যাকাউন্ট 10 দিন পরে সাইট "
+"থেকে মুছে ফেলা হবে।"
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3494,20 +3532,20 @@ msgid ""
 "several email addresses to your account on the site."
 msgstr ""
 "আপনি যদি ভুলবশত একটি ভুল ইমেল ঠিকানা দিয়ে সাইটের জন্য সাইন আপ করেন, আপনার "
-"অ্যাকাউন্টে একটি নতুন ইমেল ঠিকানা যোগ করুন এবং এটি যাচাই করুন৷ আপনি সাইটে আপনার "
-"অ্যাকাউন্টে বেশ কয়েকটি ইমেল ঠিকানা সংযুক্ত করতে পারেন।"
+"অ্যাকাউন্টে একটি নতুন ইমেল ঠিকানা যোগ করুন এবং এটি যাচাই করুন৷ আপনি সাইটে "
+"আপনার অ্যাকাউন্টে বেশ কয়েকটি ইমেল ঠিকানা সংযুক্ত করতে পারেন।"
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
-"Your profile picture should be a picture of you, where we can see your face. "
-"It is allowed to upload a profile picture with other people. Do not upload "
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"আপনার প্রোফাইল ছবি আপনার একটি ছবি হওয়া উচিত, যেখানে আমরা আপনার মুখ দেখতে পারি। "
-"এটি অন্য ব্যক্তির সাথে একটি প্রোফাইল ছবি আপলোড করার অনুমতি দেওয়া হয়. নগ্ন ছবি "
-"আপলোড করবেন না, যৌনাঙ্গ দেখানো ছবি (পুরুষ বা মহিলাদের) বা খালি বুকের ছবি (পুরুষ বা "
-"মহিলাদের)।"
+"আপনার প্রোফাইল ছবি আপনার একটি ছবি হওয়া উচিত, যেখানে আমরা আপনার মুখ দেখতে "
+"পারি। এটি অন্য ব্যক্তির সাথে একটি প্রোফাইল ছবি আপলোড করার অনুমতি দেওয়া হয়."
+" নগ্ন ছবি আপলোড করবেন না, যৌনাঙ্গ দেখানো ছবি (পুরুষ বা মহিলাদের) বা খালি "
+"বুকের ছবি (পুরুষ বা মহিলাদের)।"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
