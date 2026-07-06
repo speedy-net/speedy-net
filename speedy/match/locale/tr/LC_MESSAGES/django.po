@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "beğendin"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Son ziyaret edilen Hızlı Maç (Speedy Match)"
+msgstr "Son ziyaret edilen Hızlı Maç"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Son ziyaret edilen Hızlı Maç (Speedy Match)"
+msgstr "Son ziyaret edilen Hızlı Maç"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Son ziyaret edilen Hızlı Maç (Speedy Match)"
+msgstr "Son ziyaret edilen Hızlı Maç"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Hızlı Eşleştirme Hesapları (Speedy Match Accounts)"
+msgstr "Hızlı Eşleştirme Hesapları"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Eşleşecek cinsiyet"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Hızlı Eşleştirme Kullanıcısı (Speedy Match User)"
+msgstr "Hızlı Eşleştirme Kullanıcısı"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Son kullanıcının aramasındaki eşleşme sayısı"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Hızlı Eşleşme Profili (Speedy Match Profile)"
+msgstr "Hızlı Eşleşme Profili"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Hızlı Eşleştirme Profilleri (Speedy Match Profiles)"
+msgstr "Hızlı Eşleştirme Profilleri"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1043,7 +1043,7 @@ msgstr "Karşılıklı Beğeniler"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Hızlı Maç Maçları (Speedy Match Matches)"
+msgstr "Hızlı Maç Maçları"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1059,11 +1059,11 @@ msgstr "Hiçbiri"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Hızlı Eşleştirme [alfa] (Speedy Match)"
+msgstr "Hızlı Eşleştirme [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Hızlı Maç Hakkında (Speedy Match)"
+msgstr "Hızlı Maç Hakkında"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1141,7 +1141,7 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Match, adını uzun yıllar bizimle birlikte olan ve 2003 yılında ölen "
-"dişi köpek <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"dişi köpek <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a>'den almıştır. Speedy, 1988 yılında 7 yavru "
 "doğurmuştur."
 
@@ -1167,7 +1167,7 @@ msgstr "Speedy Net ve Speedy Match'in kurucusu ve yöneticisi,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Teknolojileri Ltd. (Speedy Paz Technologies Ltd.)"
+msgstr "Speedy Paz Teknolojileri Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1287,8 +1287,7 @@ msgstr ""
 "Speedy Match, Speedy Net üyesi olan bekarlara yönelik, romantik amaçlara "
 "yönelik yeni bir flört/eşleşme web uygulamasıdır. Speedy Match ile flört "
 "etmek için eşleşen kişileri bulabilir ve onlarla çevrimiçi sohbet "
-"edebilirsiniz. Site vegan ve vejetaryen dostudur. (Speedy Net. With Speedy "
-"Match)"
+"edebilirsiniz. Site vegan ve vejetaryen dostudur."
 
 #: .\templates\main\main_page.html:14
 msgid ""
@@ -1392,7 +1391,7 @@ msgstr "İlişki durumu"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Son ziyaret edilen Hızlı Maç (Speedy Match)"
+msgstr "Son ziyaret edilen Hızlı Maç"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

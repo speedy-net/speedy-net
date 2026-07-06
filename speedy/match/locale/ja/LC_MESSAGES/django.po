@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "あなたは好きです"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "最後に訪問したスピーディ マッチ (Speedy Match)"
+msgstr "最後に訪問したスピーディ マッチ"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "最後に訪問したスピーディ マッチ (Speedy Match)"
+msgstr "最後に訪問したスピーディ マッチ"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "最後に訪問したスピーディ マッチ (Speedy Match)"
+msgstr "最後に訪問したスピーディ マッチ"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -504,7 +504,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "スピーディマッチアカウント (Speedy Match Accounts)"
+msgstr "スピーディマッチアカウント"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -601,7 +601,7 @@ msgstr "一致する性別"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "スピーディーマッチユーザー (Speedy Match User)"
+msgstr "スピーディーマッチユーザー"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -700,11 +700,11 @@ msgstr "最後のユーザーの検索で一致した数"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "スピーディマッチプロファイル (Speedy Match Profile)"
+msgstr "スピーディマッチプロファイル"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "スピーディなマッチングプロファイル (Speedy Match Profiles)"
+msgstr "スピーディなマッチングプロファイル"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1045,7 +1045,7 @@ msgstr "相互いいね"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "スピーディーマッチ マッチ (Speedy Match Matches)"
+msgstr "スピーディーマッチ マッチ"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1061,11 +1061,11 @@ msgstr "なし"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "スピーディーマッチ【α】 (Speedy Match)"
+msgstr "スピーディーマッチ【α】"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "スピーディーマッチについて (Speedy Match)"
+msgstr "スピーディーマッチについて"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1143,9 +1143,9 @@ msgid ""
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "スピーディ マッチの名前は、長年私たちと一緒に暮らし、2003 年に亡くなったメス"
-"犬 <a href=\"https://www.facebook.com/Speedy.the.female.dog\" "
+"犬 <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">Speedy</a> にちなんで名付けられました。スピーディは 1988 年"
-"に 7 匹の子犬を出産しました。 (Speedy Match)"
+"に 7 匹の子犬を出産しました。"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1169,8 +1169,7 @@ msgstr "Speedy Net および Speedy Match の創設者兼ディレクター、"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
-"スピーディ・パス・テクノロジーズ株式会社 (Speedy Paz Technologies Ltd.)"
+msgstr "スピーディ・パス・テクノロジーズ株式会社"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1290,14 +1289,14 @@ msgstr ""
 "Speedy Match は、Speedy Net の会員である独身者向けの、恋愛目的のための新しい"
 "デート/マッチング Web アプリです。 Speedy Match を使用すると、デートに適した"
 "相手を見つけてオンラインでチャットできます。このサイトはビーガンとベジタリア"
-"ンに優しいサイトです。 (Speedy Net. With Speedy Match)"
+"ンに優しいサイトです。"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
 "彼氏を探していますか？ガールフレンドを探していますか？スピーディに会いに来て"
-"ください！ (Speedy)"
+"ください！"
 
 #: .\templates\main\main_page.html:16
 msgid ""
@@ -1394,7 +1393,7 @@ msgstr "関係ステータス"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "最後に訪問したスピーディ マッチ (Speedy Match)"
+msgstr "最後に訪問したスピーディ マッチ"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

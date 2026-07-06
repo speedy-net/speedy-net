@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -335,32 +335,32 @@ msgstr "Все още нямате съобщения."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Вие блокирахте"
+msgstr "Вие блокирахте "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Вие блокирахте"
+msgstr "Вие блокирахте "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Вие блокирахте"
+msgstr "Вие блокирахте "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "те блокира."
+msgstr " те блокира."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "те блокира."
+msgstr " те блокира."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "те блокира."
+msgstr " те блокира."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -425,23 +425,17 @@ msgstr ""
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет. (Speedy Net) "
-"(Speedy Net.)"
+msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет. (Speedy Net) "
-"(Speedy Net.)"
+msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет. (Speedy Net) "
-"(Speedy Net.)"
+msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -461,62 +455,62 @@ msgstr "Добавяне към Приятели"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Сигурни ли сте, че искате да блокирате"
+msgstr "Сигурни ли сте, че искате да блокирате "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Сигурни ли сте, че искате да блокирате"
+msgstr "Сигурни ли сте, че искате да блокирате "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Сигурни ли сте, че искате да блокирате"
+msgstr "Сигурни ли сте, че искате да блокирате "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Блокирайте"
+msgstr "Блокирайте "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Блокирайте"
+msgstr "Блокирайте "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Блокирайте"
+msgstr "Блокирайте "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Разблокирай"
+msgstr "Разблокирай "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Разблокирай"
+msgstr "Разблокирай "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Разблокирай"
+msgstr "Разблокирай "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Докладвай"
+msgstr "Докладвай "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Докладвай"
+msgstr "Докладвай "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Докладвай"
+msgstr "Докладвай "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -688,21 +682,21 @@ msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 "Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате. (Speedy Net)"
+"активирате."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 "Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате. (Speedy Net)"
+"активирате."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
 "Вашият акаунт в Спиди Нет не е активен. Влезте в тази страница, за да я "
-"активирате. (Speedy Net)"
+"активирате."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -1421,7 +1415,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен. (Speedy Net)"
+"всяко време. Вашият акаунт в Спиди Нет остава активен."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1431,7 +1425,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен. (Speedy Net)"
+"всяко време. Вашият акаунт в Спиди Нет остава активен."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1441,7 +1435,7 @@ msgid ""
 "time. Your Speedy Net account remains active."
 msgstr ""
 "Вашият акаунт {site_name} е деактивиран. Можете да го активирате отново по "
-"всяко време. Вашият акаунт в Спиди Нет остава активен. (Speedy Net)"
+"всяко време. Вашият акаунт в Спиди Нет остава активен."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
@@ -1496,7 +1490,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите. (Speedy Net. Please)"
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1506,7 +1500,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите. (Speedy Net. Please)"
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1516,7 +1510,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
-"Net. Моля, премахнете приятели, преди да продължите. (Speedy Net. Please)"
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1527,7 +1521,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1538,7 +1532,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1549,7 +1543,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1560,7 +1554,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1571,7 +1565,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1582,7 +1576,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1593,7 +1587,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1604,7 +1598,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1615,7 +1609,7 @@ msgid ""
 msgstr ""
 "Този потребител вече има {0} приятели. Те не могат да имат повече от {1} "
 "приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да "
-"продължите. (Speedy Net. Please)"
+"продължите."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -2506,7 +2500,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Приложение Speedy Core Base (Speedy Core Base App)"
+msgstr "Приложение Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2515,7 +2509,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -2847,7 +2841,7 @@ msgstr "Лоша молба"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Спиди съжалява, но не можем да обработим вашата заявка. (Speedy)"
+msgstr "Спиди съжалява, но не можем да обработим вашата заявка."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2855,7 +2849,7 @@ msgstr "Разрешението е отказано"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Спиди съжалява, но тази страница е лична. (Speedy)"
+msgstr "Спиди съжалява, но тази страница е лична."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -3039,19 +3033,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Блог на Спиди Нет (Speedy Net Blog)"
+msgstr "Блог на Спиди Нет"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Спиди Пас (Speedy Paz)"
+msgstr "Спиди Пас"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Софтуер Speedy (Speedy Software)"
+msgstr "Софтуер Speedy"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Бърза продажба (Speedy Sale)"
+msgstr "Бърза продажба"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3060,7 +3054,7 @@ msgstr "Удобен за вегани уебсайт"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Спиди (Speedy)"
+msgstr "Спиди"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3076,7 +3070,7 @@ msgstr "Парола"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Спиди Нет (Speedy Net)"
+msgstr "Спиди Нет"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
@@ -3084,11 +3078,11 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Магазин Спиди Нет (Speedy Net's Shop)"
+msgstr "Магазин Спиди Нет"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Магазин на Speedy Match (Speedy Match's Shop)"
+msgstr "Магазин на Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3124,15 +3118,15 @@ msgstr "Свържете се с нас"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Бърз композитор (Speedy Composer)"
+msgstr "Бърз композитор"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Софтуер Speedy Mail (Speedy Mail Software)"
+msgstr "Софтуер Speedy Mail"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Композиторски магазин Speedy (Speedy Composer's Shop)"
+msgstr "Композиторски магазин Speedy"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3295,7 +3289,7 @@ msgstr ""
 "лични данни, включително вашето име, дата на раждане, имейл адрес и парола. "
 "Съобщенията, които изпращате до хора в Спиди Нет, са лични и няма да бъдат "
 "споделяни с други хора или уебсайтове. Вашата парола се записва криптирана в "
-"нашата база данни. (Speedy Net)"
+"нашата база данни."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3313,7 +3307,7 @@ msgstr ""
 "за хора, които отговарят на вас според настройките, които сте задали на "
 "сайта, и че вие ​​ги свързвате според техните настройки. Вашият профил в "
 "Speedy Match няма да се показва в Google и не е видим за хора, които не са "
-"регистрирани в сайта. (Speedy Net)"
+"регистрирани в сайта."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3331,8 +3325,7 @@ msgstr ""
 "вашия акаунт в Speedy Net автоматично деактивира и вашия акаунт в Speedy "
 "Match. Можете да деактивирате само акаунта си в Speedy Match, като в този "
 "случай вашият акаунт в Speedy Net ще остане активен. Можете да активирате "
-"отново акаунта си, след като го деактивирате, когато пожелаете. (Speedy "
-"Match. You)"
+"отново акаунта си, след като го деактивирате, когато пожелаете."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3349,11 +3342,11 @@ msgstr ""
 "акаунта си и след това щракнете върху „Изтриване на акаунт“ (в менюто "
 "„Редактиране на профил“). Попълнете данните във формата и потвърдете. Моля, "
 "имайте предвид, че изтрит акаунт не може да бъде възстановен. Изтриването на "
-"акаунта е окончателно и необратимо. (Speedy Net. Deleting)"
+"акаунта е окончателно и необратимо."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Вие блокирахте"
+msgstr "Вие блокирахте "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3361,7 +3354,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "те блокира."
+msgstr " те блокира."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3395,7 +3388,7 @@ msgstr "Превключване на падащото меню"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Сигурни ли сте, че искате да блокирате"
+msgstr "Сигурни ли сте, че искате да блокирате "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3404,16 +3397,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Блокирайте"
+msgstr "Блокирайте "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Разблокирай"
+msgstr "Разблокирай "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Докладвай"
+msgstr "Докладвай "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3471,9 +3464,7 @@ msgstr ""
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет. (Speedy Net) "
-"(Speedy Net.)"
+msgstr "Имате и профил в Спиди Нет. Вижте вашия профил в Спиди Нет."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3585,7 +3576,7 @@ msgstr "видими на уебсайта"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Бързо време за модериране на изображението (Speedy)"
+msgstr "Бързо време за модериране на изображението"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

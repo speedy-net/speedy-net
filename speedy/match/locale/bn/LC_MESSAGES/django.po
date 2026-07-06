@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "আপনি পছন্দ করেন"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ (Speedy Match)"
+msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ (Speedy Match)"
+msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ (Speedy Match)"
+msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -504,7 +504,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "দ্রুত ম্যাচ অ্যাকাউন্ট (Speedy Match Accounts)"
+msgstr "দ্রুত ম্যাচ অ্যাকাউন্ট"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -601,7 +601,7 @@ msgstr "লিঙ্গ মিলবে"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "দ্রুত ম্যাচ ব্যবহারকারী (Speedy Match User)"
+msgstr "দ্রুত ম্যাচ ব্যবহারকারী"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -700,11 +700,11 @@ msgstr "শেষ ব্যবহারকারীর অনুসন্ধা�
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "দ্রুত ম্যাচ প্রোফাইল (Speedy Match Profile)"
+msgstr "দ্রুত ম্যাচ প্রোফাইল"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "দ্রুত ম্যাচ প্রোফাইল (Speedy Match Profiles)"
+msgstr "দ্রুত ম্যাচ প্রোফাইল"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1041,7 +1041,7 @@ msgstr "পারস্পরিক পছন্দ"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "স্পিডি ম্যাচ ম্যাচ (Speedy Match Matches)"
+msgstr "স্পিডি ম্যাচ ম্যাচ"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1057,11 +1057,11 @@ msgstr "কোনোটিই নয়"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "দ্রুত ম্যাচ [আলফা] (Speedy Match)"
+msgstr "দ্রুত ম্যাচ [আলফা]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "দ্রুত ম্যাচ সম্পর্কে (Speedy Match)"
+msgstr "দ্রুত ম্যাচ সম্পর্কে"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1094,7 +1094,7 @@ msgid ""
 msgstr ""
 "স্পিডি ম্যাচের প্রতিষ্ঠাতারা নিরামিষাশী, প্রাণীদের অধিকার সমর্থন করে এবং প্রাণীদের "
 "উপর পরীক্ষা-নিরীক্ষায় আপত্তি জানায়। স্পিডি ম্যাচ হল একটি ডেটিং অ্যাপ যা নিরামিষাশী "
-"এবং নিরামিষাশী মানুষ এবং প্রাণীদের জন্য বন্ধুত্বপূর্ণ। (Speedy Match)"
+"এবং নিরামিষাশী মানুষ এবং প্রাণীদের জন্য বন্ধুত্বপূর্ণ।"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1110,7 +1110,7 @@ msgstr ""
 "শুধুমাত্র মিলে যাওয়া অংশীদারদের কাছে দৃশ্যমান। আপনি নির্বাচন করতে পারেন কে আপনার "
 "প্রোফাইল দেখতে সক্ষম হবে এবং কোন বিবরণ আপনার প্রোফাইলে সর্বজনীন হিসাবে প্রদর্শিত "
 "হবে, কোন বিবরণ শুধুমাত্র বন্ধুদের জন্য এবং কোন বিবরণ ব্যক্তিগত হবে৷ ব্যক্তিগত বিবরণ "
-"শুধুমাত্র আপনি প্রদর্শিত হবে. (Speedy Match)"
+"শুধুমাত্র আপনি প্রদর্শিত হবে."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1120,7 +1120,7 @@ msgid ""
 msgstr ""
 "স্পিডি নেট এবং স্পিডি ম্যাচের সমস্ত বৈশিষ্ট্য বিনামূল্যে। মিলে যাওয়া অংশীদারদের খুঁজে "
 "পেতে আজই স্পিডি ম্যাচে যোগ দিন, এটি মাত্র কয়েক মিনিট সময় নেয়। যোগ দিতে <a "
-"href=\"/\" title=\"Join Speedy Match\">এখানে ক্লিক করুন</a> (Speedy Net)"
+"href=\"/\" title=\"Join Speedy Match\">এখানে ক্লিক করুন</a>"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1129,7 +1129,7 @@ msgid ""
 msgstr ""
 "স্পিডি ম্যাচ একটি বিনামূল্যের সফ্টওয়্যার এবং ওপেন সোর্স প্রকল্প। আপনি যদি দ্রুত ম্যাচের "
 "উন্নয়ন এবং উন্নতি করতে সাহায্য করতে চান, তাহলে অনুগ্রহ করে ইমেলের মাধ্যমে আমার "
-"সাথে যোগাযোগ করুন। (Speedy Match)"
+"সাথে যোগাযোগ করুন।"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1137,10 +1137,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"স্পিডি ম্যাচের নামকরণ করা হয়েছে <a href=\"https://www.facebook.com/Speedy.the."
+"স্পিডি ম্যাচের নামকরণ করা হয়েছে <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a> নামে, একটি মহিলা কুকুর যেটি বহু বছর "
 "ধরে আমাদের সাথে ছিল এবং 2003 সালে মারা গিয়েছিল। স্পিডি 1988 সালে 7টি কুকুরছানার "
-"জন্ম দেয়। (Speedy Match)"
+"জন্ম দেয়।"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1148,7 +1148,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "স্পিডি ম্যাচ বর্তমানে আলফাতে রয়েছে। এটি আগস্ট 2019 এ লঞ্চ করা হয়েছিল। স্পিডি "
-"ম্যাচের ইংরেজি সংস্করণটি তৈরি হচ্ছে। (Speedy Match)"
+"ম্যাচের ইংরেজি সংস্করণটি তৈরি হচ্ছে।"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1160,12 +1160,11 @@ msgstr "উরি রডবার্গ"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"স্পিডি নেট এবং স্পিডি ম্যাচের প্রতিষ্ঠাতা ও পরিচালক, (Speedy Net) (Speedy Match)"
+msgstr "স্পিডি নেট এবং স্পিডি ম্যাচের প্রতিষ্ঠাতা ও পরিচালক,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "স্পিডি পাজ টেকনোলজিস লিমিটেড (Speedy Paz Technologies Ltd.)"
+msgstr "স্পিডি পাজ টেকনোলজিস লিমিটেড"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1203,9 +1202,7 @@ msgstr "পরবর্তী ধাপ"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ করুন. "
-"(Speedy Net)"
+msgstr "আপনার স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ করুন."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1285,12 +1282,12 @@ msgstr ""
 "Speedy Match হল একটি নতুন ডেটিং/ম্যাচিং ওয়েব অ্যাপ যারা স্পিডি নেট-এর সদস্য "
 "এককদের জন্য রোমান্টিক উদ্দেশ্যে। স্পিডি ম্যাচের মাধ্যমে আপনি ডেটিং করার জন্য উপযুক্ত "
 "লোক খুঁজে পেতে পারেন এবং তাদের সাথে অনলাইনে চ্যাট করতে পারেন। সাইটটি নিরামিষাশী "
-"এবং নিরামিষ বন্ধুত্বপূর্ণ। (Speedy Net. With Speedy Match)"
+"এবং নিরামিষ বন্ধুত্বপূর্ণ।"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "প্রেমিক খুঁজছেন? গার্লফ্রেন্ড খুঁজছেন? আসুন এবং দ্রুত দেখা! (Speedy)"
+msgstr "প্রেমিক খুঁজছেন? গার্লফ্রেন্ড খুঁজছেন? আসুন এবং দ্রুত দেখা!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
@@ -1298,8 +1295,7 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
 "স্পিডি নেট এবং স্পিডি ম্যাচের সমস্ত বৈশিষ্ট্য বিনামূল্যে। মিলে যাওয়া অংশীদারদের খুঁজে "
-"পেতে আজই স্পিডি ম্যাচে যোগ দিন, এটি মাত্র কয়েক মিনিট সময় নেয়। (Speedy Net) "
-"(Speedy Match)"
+"পেতে আজই স্পিডি ম্যাচে যোগ দিন, এটি মাত্র কয়েক মিনিট সময় নেয়।"
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1388,7 +1384,7 @@ msgstr "সম্পর্কের অবস্থা"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ (Speedy Match)"
+msgstr "শেষ পরিদর্শন দ্রুত ম্যাচ"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

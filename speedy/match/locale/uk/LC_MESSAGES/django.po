@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Рахунки Speedy Match (Speedy Match Accounts)"
+msgstr "Рахунки Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Стать відповідати"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Користувач Speedy Match (Speedy Match User)"
+msgstr "Користувач Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Кількість збігів у пошуковому запиті о�
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Профіль Speedy Match (Speedy Match Profile)"
+msgstr "Профіль Speedy Match"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Профілі Speedy Match (Speedy Match Profiles)"
+msgstr "Профілі Speedy Match"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1049,7 +1049,7 @@ msgstr "Взаємні лайки"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Матчі (Speedy Match Matches)"
+msgstr "Speedy Match Матчі"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1147,7 +1147,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match названо на честь <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Match названо на честь <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, собаки, яка була з нами багато "
 "років і померла в 2003 році. Speedy народила 7 цуценят у 1988 році."
 
@@ -1293,13 +1293,12 @@ msgstr ""
 "Speedy Match — це нова веб-програма для знайомств/знаходжень для романтичних "
 "цілей для неодружених, які є членами Speedy Net. За допомогою Speedy Match "
 "ви можете знайти відповідних людей для знайомства та спілкуватися з ними "
-"онлайн. Сайт підходить для веганів і вегетаріанців. (Speedy Net. With Speedy "
-"Match)"
+"онлайн. Сайт підходить для веганів і вегетаріанців."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді! (Speedy)"
+msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді!"
 
 #: .\templates\main\main_page.html:16
 msgid ""

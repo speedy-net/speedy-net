@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,32 +332,32 @@ msgstr "Még nincsenek üzenetei."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Ön letiltotta"
+msgstr "Ön letiltotta "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Ön letiltotta"
+msgstr "Ön letiltotta "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Ön letiltotta"
+msgstr "Ön letiltotta "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr "blokkolt téged."
+msgstr " blokkolt téged."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr "blokkolt téged."
+msgstr " blokkolt téged."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr "blokkolt téged."
+msgstr " blokkolt téged."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -367,7 +367,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Match oldalon. (Speedy Match.)"
+"%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -377,7 +377,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Match oldalon. (Speedy Match.)"
+"%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -387,7 +387,7 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Match oldalon. (Speedy Match.)"
+"%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -397,7 +397,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten. (Speedy Net.)"
+"%(user_name)s profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -407,7 +407,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten. (Speedy Net.)"
+"%(user_name)s profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -417,28 +417,25 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten. (Speedy Net.)"
+"%(user_name)s profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten. "
-"(Speedy Net.)"
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten. "
-"(Speedy Net.)"
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten. "
-"(Speedy Net.)"
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -458,62 +455,62 @@ msgstr "Hozzáadás a barátokhoz"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani?"
+msgstr "Biztos benne, hogy le szeretné tiltani? "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani?"
+msgstr "Biztos benne, hogy le szeretné tiltani? "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani?"
+msgstr "Biztos benne, hogy le szeretné tiltani? "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Tömb"
+msgstr "Tömb "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Tömb"
+msgstr "Tömb "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Tömb"
+msgstr "Tömb "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Blokkolás feloldása"
+msgstr "Blokkolás feloldása "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Blokkolás feloldása"
+msgstr "Blokkolás feloldása "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Blokkolás feloldása"
+msgstr "Blokkolás feloldása "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Jelentés"
+msgstr "Jelentés "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Jelentés"
+msgstr "Jelentés "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Jelentés"
+msgstr "Jelentés "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -1493,7 +1490,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná. (Speedy Net. Please)"
+"távolítsa el az ismerőseit, mielőtt folytatná."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1503,7 +1500,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná. (Speedy Net. Please)"
+"távolítsa el az ismerőseit, mielőtt folytatná."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1513,7 +1510,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná. (Speedy Net. Please)"
+"távolítsa el az ismerőseit, mielőtt folytatná."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1524,7 +1521,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1535,7 +1532,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1546,7 +1543,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1557,7 +1554,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1568,7 +1565,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1579,7 +1576,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1590,7 +1587,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1601,7 +1598,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1612,7 +1609,7 @@ msgid ""
 msgstr ""
 "Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
 "Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
-"folytatná. (Speedy Net. Please)"
+"folytatná."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1834,7 +1831,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1843,7 +1840,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1852,7 +1849,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1861,7 +1858,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1870,7 +1867,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1879,7 +1876,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1888,7 +1885,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1897,7 +1894,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1906,7 +1903,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten. (Speedy Net.)"
+"profilját. Felhasználói profil megtekintése a Speedy Neten."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1934,7 +1931,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Gyors alapszámlák (Speedy Core Accounts)"
+msgstr "Gyors alapszámlák"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2500,7 +2497,7 @@ msgstr "ID"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None"
+msgstr "None "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
@@ -2945,7 +2942,7 @@ msgstr "Jelszó módosítása"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Életkora látható lesz a Speedy Match meccsein. (Speedy Match.)"
+msgstr "Életkora látható lesz a Speedy Match meccsein."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3031,11 +3028,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Gyors szoftver (Speedy Software)"
+msgstr "Gyors szoftver"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Gyors kiárusítás (Speedy Sale)"
+msgstr "Gyors kiárusítás"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3044,7 +3041,7 @@ msgstr "Vegánbarát weboldal"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Gyors (Speedy)"
+msgstr "Gyors"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3108,15 +3105,15 @@ msgstr "Lépjen kapcsolatba velünk"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Gyors zeneszerző (Speedy Composer)"
+msgstr "Gyors zeneszerző"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail szoftver (Speedy Mail Software)"
+msgstr "Speedy Mail szoftver"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Gyors zeneszerző bolt (Speedy Composer's Shop)"
+msgstr "Gyors zeneszerző bolt"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3316,7 +3313,7 @@ msgstr ""
 "fiókjának deaktiválása a Speedy Net-en automatikusan deaktiválja a Speedy "
 "Match-en is. A Speedy Match-en csak a fiókját deaktiválhatja, ebben az "
 "esetben a Speedy Net fiók aktív marad. A deaktiválás után bármikor "
-"újraaktiválhatja fiókját. (Speedy Match. You)"
+"újraaktiválhatja fiókját."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3332,12 +3329,11 @@ msgstr ""
 "jelentkezzen be a Speedy Netbe, deaktiválja fiókját, majd kattintson a „Fiók "
 "törlése” gombra (a „Profil szerkesztése” menüben). Töltse ki az adatokat az "
 "űrlapon, és erősítse meg. Felhívjuk figyelmét, hogy a törölt fiókot nem "
-"lehet visszaállítani. A fiók törlése végleges és visszafordíthatatlan. "
-"(Speedy Net. Deleting)"
+"lehet visszaállítani. A fiók törlése végleges és visszafordíthatatlan."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Ön letiltotta"
+msgstr "Ön letiltotta "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
@@ -3345,7 +3341,7 @@ msgstr "None"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr "blokkolt téged."
+msgstr " blokkolt téged."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3379,7 +3375,7 @@ msgstr "Váltás a legördülő menüben"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani?"
+msgstr "Biztos benne, hogy le szeretné tiltani? "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3388,16 +3384,16 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Tömb"
+msgstr "Tömb "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Blokkolás feloldása"
+msgstr "Blokkolás feloldása "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Jelentés"
+msgstr "Jelentés "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3451,13 +3447,12 @@ msgid ""
 "on Speedy Match."
 msgstr ""
 "A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Match oldalon. (Speedy Match.)"
+"%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten. "
-"(Speedy Net.)"
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3466,7 +3461,7 @@ msgid ""
 "Speedy Net."
 msgstr ""
 "A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten. (Speedy Net.)"
+"%(user_name)s profilját a Speedy Neten."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3569,7 +3564,7 @@ msgstr "honlapon látható"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Gyors képmoderálási idő (Speedy)"
+msgstr "Gyors képmoderálási idő"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

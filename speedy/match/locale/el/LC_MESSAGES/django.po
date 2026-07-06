@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -510,7 +510,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Λογαριασμοί Speedy Match (Speedy Match Accounts)"
+msgstr "Λογαριασμοί Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -607,7 +607,7 @@ msgstr "Φύλο που ταιριάζει"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Χρήστης Speedy Match (Speedy Match User)"
+msgstr "Χρήστης Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -706,11 +706,11 @@ msgstr "Αριθμός αντιστοιχιών στην αναζήτηση το
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Προφίλ Speedy Match (Speedy Match Profile)"
+msgstr "Προφίλ Speedy Match"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Προφίλ ταχείας αντιστοίχισης (Speedy Match Profiles)"
+msgstr "Προφίλ ταχείας αντιστοίχισης"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1054,7 +1054,7 @@ msgstr "Αμοιβαία Likes"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Ταχύτατοι Αγώνες (Speedy Match Matches)"
+msgstr "Ταχύτατοι Αγώνες"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1153,7 +1153,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Το Speedy Match πήρε το όνομα του <a href=\"https://www.facebook.com/Speedy."
+"Το Speedy Match πήρε το όνομα του <a href=\"https://www.facebook.com/speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, ενός θηλυκού σκύλου που ήταν "
 "μαζί μας για πολλά χρόνια και πέθανε το 2003. Ο Speedy γέννησε 7 κουτάβια το "
 "1988."
@@ -1302,7 +1302,7 @@ msgstr ""
 "για ρομαντικούς σκοπούς για singles που είναι μέλη του Speedy Net. Με το "
 "Speedy Match μπορείτε να βρείτε άτομα που ταιριάζουν για ραντεβού και να "
 "συνομιλήσετε μαζί τους στο διαδίκτυο. Ο ιστότοπος είναι vegan και φιλικός "
-"προς τους χορτοφάγους. (Speedy Net. With Speedy Match)"
+"προς τους χορτοφάγους."
 
 #: .\templates\main\main_page.html:14
 msgid ""

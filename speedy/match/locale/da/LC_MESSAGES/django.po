@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:34+0300\n"
+"POT-Creation-Date: 2026-07-06 03:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match-konti (Speedy Match Accounts)"
+msgstr "Speedy Match-konti"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Køn til at matche"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match bruger (Speedy Match User)"
+msgstr "Speedy Match bruger"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Antal match ved sidste brugers søgning"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match-profil (Speedy Match Profile)"
+msgstr "Speedy Match-profil"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match-profiler (Speedy Match Profiles)"
+msgstr "Speedy Match-profiler"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1141,7 +1141,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match er opkaldt efter <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Match er opkaldt efter <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, en hunhund, der var hos os i mange "
 "år og døde i 2003. Speedy fødte 7 hvalpe i 1988."
 
@@ -1286,7 +1286,7 @@ msgstr ""
 "Speedy Match er en ny dating/matchende webapp til romantiske formål for "
 "singler, der er medlemmer af Speedy Net. Med Speedy Match kan du finde "
 "matchende personer til dating og chatte med dem online. Siden er vegansk og "
-"vegetarvenlig. (Speedy Net. With Speedy Match)"
+"vegetarvenlig."
 
 #: .\templates\main\main_page.html:14
 msgid ""

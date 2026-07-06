@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 02:15+0300\n"
+"POT-Creation-Date: 2026-07-06 03:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Рахунки Speedy Net (Speedy Net Accounts)"
+msgstr "Рахунки Speedy Net"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -152,7 +152,7 @@ msgstr "так Видалити мій обліковий запис."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Користувач Speedy Net (Speedy Net User)"
+msgstr "Користувач Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -164,11 +164,11 @@ msgstr "Кількість друзів під час останнього ві�
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Профіль Speedy Net (Speedy Net Profile)"
+msgstr "Профіль Speedy Net"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Профілі Speedy Net (Speedy Net Profiles)"
+msgstr "Профілі Speedy Net"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -267,7 +267,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net названо на честь <a href=\"https://www.facebook.com/Speedy.the."
+"Speedy Net названо на честь <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, собаки, яка була з нами багато "
 "років і померла в 2003 році. Speedy народила 7 цуценят у 1988 році."
 
@@ -355,7 +355,7 @@ msgstr "Speedy Match – знайомства Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді! (Speedy)"
+msgstr "Шукаєте хлопця? Шукаєте дівчину? Приходь і знайомся зі Спіді!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
