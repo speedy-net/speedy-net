@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "kamu suka"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Pertandingan Cepat yang terakhir dikunjungi"
+msgstr "Pertandingan Cepat yang Speedy Match terakhir dikunjungi"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Pertandingan Cepat yang terakhir dikunjungi"
+msgstr "Pertandingan Cepat yang Speedy Match terakhir dikunjungi"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Pertandingan Cepat yang terakhir dikunjungi"
+msgstr "Pertandingan Cepat yang Speedy Match terakhir dikunjungi"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Akun Pertandingan Cepat"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Jenis kelamin yang cocok"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Pengguna Pencocokan Cepat"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Jumlah kecocokan pada penelusuran pengguna terakhir"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Profil Pertandingan Cepat"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Profil Pertandingan Cepat"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1046,7 +1046,7 @@ msgstr "Saling Suka"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Pertandingan Pertandingan Cepat"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1062,11 +1062,11 @@ msgstr "Tidak ada"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Pertandingan Cepat [alfa]"
+msgstr "Speedy Match Pertandingan Cepat [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Tentang Pertandingan Cepat"
+msgstr "Tentang Pertandingan Speedy Match Cepat"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1084,13 +1084,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> adalah aplikasi web kencan/pencocokan baru untuk "
 "tujuan romantis bagi para lajang yang menjadi anggota <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Dengan "
-"Speedy Match Anda dapat menemukan orang yang cocok untuk berkencan dan "
-"mengobrol dengan mereka secara online. Anda dapat menambahkan orang sebagai "
-"teman di Speedy Net, menyukai orang, dan mengirimi mereka pesan. Speedy "
-"Match terbuka untuk pendaftaran gratis bagi orang-orang dari semua negara "
-"dan usia (tidak ada batasan usia!). Situs ini ramah vegan dan vegetarian. "
-"Saat ini tersedia dalam bahasa %(languages_num)s."
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a>. Dengan Speedy "
+"Match Anda dapat menemukan orang yang cocok untuk berkencan dan mengobrol "
+"dengan mereka secara online. Anda dapat menambahkan orang sebagai teman di "
+"Speedy Net, menyukai orang, dan mengirimi mereka pesan. Match terbuka untuk "
+"pendaftaran gratis bagi orang-orang dari semua negara dan usia (tidak ada "
+"batasan usia!). Situs ini ramah vegan dan vegetarian. Saat ini tersedia "
+"dalam bahasa %(languages_num)s. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1112,10 +1112,10 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Hanya orang yang sesuai dengan kebutuhan Anda yang dapat melihat profil Anda "
-"dan menghubungi Anda. Kami tidak mengizinkan penelusuran anonim dan profil "
-"Pencocokan Cepat hanya dapat dilihat oleh mitra yang cocok. Anda dapat "
-"memilih siapa yang dapat melihat profil Anda dan detail mana yang akan "
-"ditampilkan di profil Anda sebagai publik, detail mana yang hanya untuk "
+"dan menghubungi Anda. Kami tidak mengizinkan penelusuran anonim dan Speedy "
+"Match profil Pencocokan Cepat hanya dapat dilihat oleh mitra yang cocok. "
+"Anda dapat memilih siapa yang dapat melihat profil Anda dan detail mana yang "
+"akan ditampilkan di profil Anda sebagai publik, detail mana yang hanya untuk "
 "teman, dan detail mana yang bersifat pribadi. Detail pribadi hanya akan "
 "muncul untuk Anda."
 
@@ -1145,18 +1145,18 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match diberi nama setelah <a href=\"https://www.facebook.com/speedy."
+"Speedy Match diberi nama setelah <a href=\"https://www.facebook.com/Speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang "
-"bersama kami selama bertahun-tahun dan meninggal pada tahun 2003. Speedy "
-"melahirkan 7 anak anjing pada tahun 1988."
+"bersama kami selama bertahun-tahun dan meninggal pada tahun 2003. melahirkan "
+"7 anak anjing pada tahun 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Pertandingan Cepat saat ini dalam versi alfa. Diluncurkan pada Agustus 2019. "
-"Speedy Match versi bahasa Inggris sedang dalam produksi."
+"Speedy Match Pertandingan Cepat saat ini dalam versi alfa. Diluncurkan pada "
+"Agustus 2019. versi bahasa Inggris sedang dalam produksi. Speedy Match"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1168,7 +1168,8 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pendiri dan direktur Speedy Net dan Speedy Match,"
+msgstr ""
+"Pendiri dan direktur Speedy Speedy Net Speedy Speedy Match Net Net dan,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1395,7 +1396,7 @@ msgstr "Status hubungan"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Pertandingan Cepat yang terakhir dikunjungi"
+msgstr "Pertandingan Cepat yang Speedy Match terakhir dikunjungi"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

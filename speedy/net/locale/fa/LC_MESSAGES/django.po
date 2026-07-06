@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "حساب های خالص سریع"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "بله. اکانت من رو پاک کن"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "کاربر شبکه سریع"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "تعداد دوستان در آخرین بازدید کاربر"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "مشخصات خالص سریع"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "پروفایل های شبکه سریع"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,11 +181,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "شبکه سریع [آلفا]"
+msgstr "Speedy Net شبکه سریع [آلفا]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "درباره اسپیدی نت"
+msgstr "درباره اسپیدی نت Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -197,11 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> یک شبکه اجتماعی جدید است. با Speedy Net می توانید با "
-"دوستان خود ارتباط برقرار کنید. Speedy Net برای ثبت نام رایگان برای افراد از "
-"همه کشورها و سنین باز است (بدون محدودیت سنی!). این سایت گیاهخوار و گیاهخوار "
-"است. در حال حاضر به زبان %(languages_num)s در دسترس است."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> یک شبکه اجتماعی جدید است. با Speedy Net می توانید با دوستان خود ارتباط "
+"برقرار Speedy Net کنید. Net برای ثبت نام رایگان برای افراد از همه کشورها و "
+"سنین باز است (بدون محدودیت سنی!). این سایت گیاهخوار و گیاهخوار است. در حال "
+"حاضر به زبان %(languages_num)s در دسترس است."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -244,8 +244,8 @@ msgid ""
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "تمام ویژگی‌های Speedy Net و Speedy Match رایگان هستند. امروز به اسپیدی نت "
-"بپیوندید تا دوستان پیدا کنید، فقط چند دقیقه طول می کشد. <a href=\"/\" "
-"title=\"Join Speedy Net\">برای پیوستن اینجا</a> را کلیک کنید."
+"بپیوندید Speedy Net تا دوستان پیدا کنید، فقط چند دقیقه طول می کشد. <a "
+"href=\"/\" title=\"Join \">برای پیوستن اینجا</a> را کلیک کنید. Speedy Net"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -253,7 +253,7 @@ msgid ""
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
 "Speedy Net یک نرم افزار رایگان و پروژه منبع باز است. اگر می‌خواهید به توسعه و "
-"بهبود Speedy Net کمک کنید، لطفاً از طریق ایمیل با من تماس بگیرید."
+"بهبود کمک کنید، Speedy Net لطفاً از طریق ایمیل با من تماس بگیرید."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -261,7 +261,7 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net به افتخار <a href=\"https://www.facebook.com/speedy.the.female."
+"Speedy Net به افتخار <a href=\"https://www.facebook.com/Speedy.the.female."
 "dog\" title=\"Speedy\">Speedy</a> نامگذاری شده است، یک سگ ماده که سالها با "
 "ما بود و در سال 2003 مرد. اسپیدی در سال 1988 7 توله سگ به دنیا آورد."
 
@@ -279,7 +279,7 @@ msgstr "اوری رودبرگ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "بنیانگذار و مدیر اسپیدی نت و اسپیدی مچ،"
+msgstr "بنیانگذار و مدیر اسپیدی Speedy Net نت و اسپیدی مچ Speedy Match ،"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -334,8 +334,8 @@ msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"تمام ویژگی‌های Speedy Net و Speedy Match رایگان هستند. امروز به اسپیدی نت "
-"بپیوندید تا دوستان پیدا کنید، فقط چند دقیقه طول می کشد."
+"تمام ویژگی‌های Speedy Net و Speedy Match رایگان هستند. امروز به اسپیدی Speedy "
+"Net نت بپیوندید تا دوستان پیدا کنید، فقط چند دقیقه طول می کشد."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
@@ -345,7 +345,8 @@ msgstr "Speedy Match – دوستیابی Speedy"
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"دنبال دوست پسر میگردی؟ دنبال دوست دختر میگردی؟ بیا و با اسپیدی ملاقات کن!"
+"دنبال دوست پسر میگردی؟ دنبال دوست دختر میگردی؟ بیا و با اسپیدی ملاقات کن! "
+"Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

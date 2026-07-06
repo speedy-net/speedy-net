@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -366,8 +366,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga memiliki profil Pertandingan Cepat. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga memiliki Speedy Match profil Pertandingan Cepat. Lihat "
+"profil %(user_name)s di. Speedy Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -376,8 +376,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga memiliki profil Pertandingan Cepat. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga memiliki Speedy Match profil Pertandingan Cepat. Lihat "
+"profil %(user_name)s di. Speedy Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -386,8 +386,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga memiliki profil Pertandingan Cepat. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga memiliki Speedy Match profil Pertandingan Cepat. Lihat "
+"profil %(user_name)s di. Speedy Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -396,7 +396,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga memiliki profil Speedy Net. Lihat profil %(user_name)s di "
+"%(user_name)s juga memiliki Speedy Net profil. Lihat profil %(user_name)s di "
 "Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -406,7 +406,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga memiliki profil Speedy Net. Lihat profil %(user_name)s di "
+"%(user_name)s juga memiliki Speedy Net profil. Lihat profil %(user_name)s di "
 "Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -416,23 +416,23 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga memiliki profil Speedy Net. Lihat profil %(user_name)s di "
+"%(user_name)s juga memiliki Speedy Net profil. Lihat profil %(user_name)s di "
 "Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Anda juga memiliki profil Speedy Net. Lihat profil Anda di Speedy Net."
+msgstr "Anda juga memiliki Speedy Net profil. Lihat profil Anda di Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Anda juga memiliki profil Speedy Net. Lihat profil Anda di Speedy Net."
+msgstr "Anda juga memiliki Speedy Net profil. Lihat profil Anda di Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Anda juga memiliki profil Speedy Net. Lihat profil Anda di Speedy Net."
+msgstr "Anda juga memiliki Speedy Net profil. Lihat profil Anda di Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -1932,7 +1932,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Akun Inti Cepat"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2502,7 +2502,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Aplikasi Basis Inti Cepat"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3034,19 +3034,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog Internet Cepat"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Paz Cepat"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Perangkat Lunak Cepat"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Penjualan Cepat"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3055,7 +3055,7 @@ msgstr "Situs web yang ramah vegan"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Cepat"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3071,23 +3071,23 @@ msgstr "Kata sandi"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Jaringan Cepat"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Pertandingan Cepat"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Toko Speedy Net"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Toko Pertandingan Cepat"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Toko berlogo S cepat"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3119,15 +3119,15 @@ msgstr "Hubungi kami"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Komposer Cepat"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Perangkat Lunak Email Cepat"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Toko Komposer Cepat"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3305,7 +3305,7 @@ msgid ""
 msgstr ""
 "Profil Anda di Speedy Net dapat dilihat oleh semua orang, namun Anda dapat "
 "memilih siapa yang akan dibagikan dengan alamat email dan tanggal lahir "
-"Anda. Jika Anda mendaftar ke Speedy Match, profil Speedy Match Anda hanya "
+"Anda. Jika Anda Speedy Match mendaftar ke, profil Speedy Match Anda hanya "
 "akan terlihat oleh orang yang cocok dengan Anda sesuai dengan pengaturan "
 "yang telah Anda atur di situs, dan Anda mencocokkannya sesuai dengan "
 "pengaturannya. Profil Anda di Speedy Match tidak akan muncul di Google dan "
@@ -3461,12 +3461,12 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga memiliki profil Pertandingan Cepat. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga memiliki Speedy Match profil Pertandingan Cepat. Lihat "
+"profil %(user_name)s di. Speedy Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Anda juga memiliki profil Speedy Net. Lihat profil Anda di Speedy Net."
+msgstr "Anda juga memiliki Speedy Net profil. Lihat profil Anda di Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3474,7 +3474,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga memiliki profil Speedy Net. Lihat profil %(user_name)s di "
+"%(user_name)s juga memiliki Speedy Net profil. Lihat profil %(user_name)s di "
 "Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3494,9 +3494,9 @@ msgid ""
 msgstr ""
 "Anda dapat menggunakan Speedy Net hanya untuk tujuan hukum. Anda tidak "
 "diperbolehkan mengunggah konten yang berkaitan dengan kebencian, kekerasan, "
-"pelecehan terhadap hewan, ketelanjangan, atau pornografi. Anda tidak "
-"diperbolehkan menggunakan Speedy Net untuk mengirim pesan spam, atau pesan "
-"dengan konten yang sama ke banyak orang."
+"pelecehan terhadap hewan, ketelanjangan, atau pornografi. Anda Speedy Net "
+"tidak diperbolehkan menggunakan untuk mengirim pesan spam, atau pesan dengan "
+"konten yang sama ke banyak orang."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3579,7 +3579,7 @@ msgstr "terlihat di situs web"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Waktu moderasi gambar yang cepat"
+msgstr "Waktu moderasi gambar yang cepat Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

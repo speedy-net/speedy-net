@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match-kontoer"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Kjønn å matche"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match-bruker"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Antall treff på siste brukers søk"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match-profil"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match-profiler"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1046,7 +1046,7 @@ msgstr "Gjensidige liker"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match-kamper"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1083,13 +1083,13 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> er en ny dating/matchende webapp for romantiske "
-"formål for single som er medlemmer av <a href=\"https://%(language_code)s."
-"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Med Speedy Match kan du "
-"finne matchende personer for dating og chatte med dem på nettet. Du kan "
-"legge til folk som venner på Speedy Net, like folk og sende dem meldinger. "
-"Speedy Match er åpen for gratis registrering for folk fra alle land og aldre "
-"(ingen aldersgrense!). Siden er vegansk og vegetarvennlig. Den er for "
-"øyeblikket tilgjengelig på %(languages_num)s språk."
+"formål for single som er medlemmer av <a href=\"https://%(language_code)s.."
+"net/\" title=\"Speedy Net\">Speedy Net</a>. Med Speedy Match kan du finne "
+"matchende personer for dating og chatte med dem på nettet. Du kan legge til "
+"folk som venner på Speedy Net, like folk og sende dem meldinger. Match er "
+"åpen for gratis registrering for folk fra alle land og aldre (ingen "
+"aldersgrense!). Siden er vegansk og vegetarvennlig. Den er for øyeblikket "
+"tilgjengelig på %(languages_num)s språk. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1123,9 +1123,9 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Alle funksjonene på Speedy Net og Speedy Match er gratis. Bli med i Speedy "
-"Match i dag for å finne matchende partnere, det tar bare noen få minutter. "
-"<a href=\"/\" title=\"Join Speedy Match\">Klikk her</a> for å bli med."
+"Alle funksjonene på Speedy Net og Speedy Match er gratis. Bli med i i Speedy "
+"Match dag for å finne matchende partnere, det tar bare noen få minutter. <a "
+"href=\"/\" title=\"Join Speedy Match\">Klikk her</a> for å bli med."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1142,9 +1142,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match er oppkalt etter <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match er oppkalt etter <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, en hunnhund som var med oss ​​i "
-"mange år og døde i 2003. Speedy fødte 7 valper i 1988."
+"mange år og døde i 2003. fødte 7 valper i 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1164,7 +1164,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Grunnlegger og direktør for Speedy Net og Speedy Match,"
+msgstr "Grunnlegger og direktør Speedy Net for Speedy Match og,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -375,7 +375,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Match. Consulta el perfil de "
+"%(user_name)s també té Speedy Match un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Match."
 
 #: .\__translations\__translations.html:101
@@ -385,7 +385,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Match. Consulta el perfil de "
+"%(user_name)s també té Speedy Match un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Match."
 
 #: .\__translations\__translations.html:102
@@ -395,7 +395,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Match. Consulta el perfil de "
+"%(user_name)s també té Speedy Match un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Match."
 
 #: .\__translations\__translations.html:104
@@ -405,7 +405,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Net. Consulta el perfil de "
+"%(user_name)s també té Speedy Net un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -415,7 +415,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Net. Consulta el perfil de "
+"%(user_name)s també té Speedy Net un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -425,7 +425,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Net. Consulta el perfil de "
+"%(user_name)s també té Speedy Net un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Net."
 
 #: .\__translations\__translations.html:108
@@ -1398,7 +1398,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Els vostres comptes de Speedy Net i Speedy Match s'han desactivat. Podeu "
+"Els Speedy Net vostres comptes Speedy Match de i s'han desactivat. Podeu "
 "reactivar-los en qualsevol moment."
 
 #: .\__translations\__translations.py:158
@@ -1407,7 +1407,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Els vostres comptes de Speedy Net i Speedy Match s'han desactivat. Podeu "
+"Els Speedy Net vostres comptes Speedy Match de i s'han desactivat. Podeu "
 "reactivar-los en qualsevol moment."
 
 #: .\__translations\__translations.py:159
@@ -1416,7 +1416,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Els vostres comptes de Speedy Net i Speedy Match s'han desactivat. Podeu "
+"Els Speedy Net vostres comptes Speedy Match de i s'han desactivat. Podeu "
 "reactivar-los en qualsevol moment."
 
 #: .\__translations\__translations.py:161
@@ -1940,7 +1940,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Comptes bàsics ràpids"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2510,7 +2510,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Aplicació base Speedy Core"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -3047,7 +3047,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Bloc Speedy Net"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3055,11 +3055,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Programari ràpid"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Venda ràpida"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3068,7 +3068,7 @@ msgstr "Una pàgina web vegana"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Ràpid"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3084,23 +3084,23 @@ msgstr "Contrasenya"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Xarxa ràpida"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Partit ràpid"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Botiga de Speedy Net"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Botiga de Speedy Match"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Botiga de logotip S Speedy"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3132,15 +3132,15 @@ msgstr "Contacta amb nosaltres"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Speedy Compositor"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Programari Speedy Mail"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Botiga del compositor Speedy"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3319,7 +3319,7 @@ msgid ""
 msgstr ""
 "El teu perfil a Speedy Net és visible per a tothom, però pots triar qui "
 "compartir amb la teva adreça de correu electrònic i la teva data de "
-"naixement. Si us heu registrat a Speedy Match, el vostre perfil de Speedy "
+"naixement. Si us heu Speedy Match registrat a, el vostre perfil de Speedy "
 "Match només serà visible per a les persones que us coincideixin segons la "
 "configuració que hàgiu configurat al lloc i que els coincideixis segons la "
 "seva configuració. El teu perfil a Speedy Match no apareixerà a Google i no "
@@ -3475,7 +3475,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Match. Consulta el perfil de "
+"%(user_name)s també té Speedy Match un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
@@ -3488,7 +3488,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s també té un perfil Speedy Net. Consulta el perfil de "
+"%(user_name)s també té Speedy Net un perfil. Consulta el perfil de "
 "%(user_name)s a Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3594,7 +3594,7 @@ msgstr "visible al lloc web"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Temps ràpid de moderació de la imatge"
+msgstr "Temps ràpid de moderació de la imatge Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

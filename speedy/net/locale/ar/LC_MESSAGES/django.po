@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,10 +38,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"هل أنت متأكد أنك تريد حذف حساب سبيدي نت الخاص بك؟ وهذا أمر دائم ولا رجعة "
-"فيه. سيؤدي حذف حساب سبيدي نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيضًا. "
-"إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". في هذا المجال، بدقة وحساسة لحالة "
-"الأحرف."
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي "
+"ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". "
+"في هذا المجال، بدقة وحساسة لحالة الأحرف."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -51,10 +51,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"هل أنت متأكد أنك تريد حذف حساب سبيدي نت الخاص بك؟ وهذا أمر دائم ولا رجعة "
-"فيه. سيؤدي حذف حساب سبيدي نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيضًا. "
-"إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". في هذا المجال، بدقة وحساسة لحالة "
-"الأحرف."
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي "
+"ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". "
+"في هذا المجال، بدقة وحساسة لحالة الأحرف."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -64,10 +64,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"هل أنت متأكد أنك تريد حذف حساب سبيدي نت الخاص بك؟ وهذا أمر دائم ولا رجعة "
-"فيه. سيؤدي حذف حساب سبيدي نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيضًا. "
-"إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". في هذا المجال، بدقة وحساسة لحالة "
-"الأحرف."
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي "
+"ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". "
+"في هذا المجال، بدقة وحساسة لحالة الأحرف."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"لقد تم حذف حساباتك على Speedy Net وSpeedy Match. شكرًا لك على استخدام "
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
 "{site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"لقد تم حذف حساباتك على Speedy Net وSpeedy Match. شكرًا لك على استخدام "
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
 "{site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"لقد تم حذف حساباتك على Speedy Net وSpeedy Match. شكرًا لك على استخدام "
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
 "{site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "حسابات نت سريعة"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -132,10 +132,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"هل أنت متأكد أنك تريد حذف حساب سبيدي نت الخاص بك؟ وهذا أمر دائم ولا رجعة "
-"فيه. سيؤدي حذف حساب سبيدي نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيضًا. "
-"إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". في هذا المجال، بدقة وحساسة لحالة "
-"الأحرف."
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي "
+"ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. احذف حسابي\". "
+"في هذا المجال، بدقة وحساسة لحالة الأحرف."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -148,7 +148,7 @@ msgstr "نعم. حذف حسابي."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "مستخدم نت سريع"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "عدد الأصدقاء في زيارة المستخدم الأخير"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "ملف تعريف نت سريع"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "ملفات تعريف الشبكة السريعة"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -181,11 +181,11 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "سبيدي نت [ألفا]"
+msgstr "Speedy Net سبيدي نت [ألفا]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "حول سبيدي نت"
+msgstr "حول سبيدي نت Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -197,11 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> هي شبكة اجتماعية جديدة. مع سبيدي نت يمكنك التواصل مع "
-"أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من جميع البلدان والأعمار "
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> هي شبكة اجتماعية جديدة Speedy Net. مع سبيدي نت يمكنك التواصل مع Speedy "
+"Net أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من جميع البلدان والأعمار "
 "(بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو متوفر حاليًا بلغات "
-"%(languages_num)s."
+"%(languages_num)s. Net"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -209,8 +209,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"مؤسسو سبيدي نت نباتيون ويدعمون حقوق الحيوان ويعترضون على التجارب على "
-"الحيوانات. سبيدي نت هي شبكة اجتماعية صديقة للأشخاص والحيوانات النباتية."
+"مؤسسو سبيدي نت Speedy Net نباتيون ويدعمون حقوق الحيوان ويعترضون على التجارب "
+"على الحيوانات Speedy Net. سبيدي نت هي شبكة اجتماعية صديقة للأشخاص والحيوانات "
+"النباتية."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -219,10 +220,10 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
-"قررنا تحديد عدد الأصدقاء على سبيدي نت بـ 800 صديق. ونحن نشجعك على إضافة "
-"الأشخاص الذين تعرفهم شخصيًا فقط كأصدقاء. يمكنك تحديد التفاصيل التي ستظهر في "
-"ملفك الشخصي للعامة، والتفاصيل التي سيتم عرضها على الأصدقاء فقط، والتفاصيل "
-"التي ستكون خاصة. سوف تظهر التفاصيل الخاصة لك فقط."
+"قررنا تحديد عدد الأصدقاء على سبيدي نت بـ Speedy Net 800 صديق. ونحن نشجعك على "
+"إضافة الأشخاص الذين تعرفهم شخصيًا فقط كأصدقاء. يمكنك تحديد التفاصيل التي "
+"ستظهر في ملفك الشخصي للعامة، والتفاصيل التي سيتم عرضها على الأصدقاء فقط، "
+"والتفاصيل التي ستكون خاصة. سوف تظهر التفاصيل الخاصة لك فقط."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -241,17 +242,18 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي نت "
-"اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق. <a href=\"/\" "
-"title=\"Join Speedy Net\">انقر هنا</a> للانضمام."
+"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي "
+"Speedy Net نت اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق. <a "
+"href=\"/\" title=\"Join \">انقر هنا</a> للانضمام. Speedy Net"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"سبيدي نت هو برنامج مجاني ومشروع مفتوح المصدر. إذا كنت تريد المساعدة في تطوير "
-"وتحسين سبيدي نت، يرجى الاتصال بي عبر البريد الإلكتروني."
+"Speedy Net سبيدي نت هو برنامج مجاني ومشروع مفتوح المصدر. إذا كنت تريد "
+"المساعدة في تطوير وتحسين سبيدي نت، يرجى الاتصال بي عبر البريد الإلكتروني. "
+"Speedy Net"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -259,13 +261,13 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"تم تسمية سبيدي نت على اسم <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا لسنوات "
-"عديدة وتوفيت في عام 2003. وأنجبت سبيدي 7 جراء في عام 1988."
+"Speedy Net تم تسمية سبيدي نت على اسم <a href=\"https://www.facebook.com/"
+"Speedy.the.female.dog\" title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا "
+"لسنوات عديدة وتوفيت في عام 2003. وأنجبت سبيدي 7 جراء في عام 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "سبيدي نت حاليا في مرحلة ألفا. تم إطلاقه في يونيو 2012."
+msgstr "Speedy Net سبيدي نت حاليا في مرحلة ألفا. تم إطلاقه في يونيو 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -277,11 +279,11 @@ msgstr "أوري رودبيرج"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "مؤسس ومدير سبيدي نت وسبيدي ماتش،"
+msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Speedy Match Net ماتش،"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
-msgstr "سبيدي باز تكنولوجيز المحدودة"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
@@ -298,7 +300,7 @@ msgstr "يرجى تأكيد عنوان بريدك الإلكتروني."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "حسابك في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
+msgstr "حسابك Speedy Net في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -323,26 +325,26 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"سبيدي نت هي شبكة اجتماعية جديدة. مع سبيدي نت يمكنك التواصل مع أصدقائك. سبيدي "
-"نت مفتوح للتسجيل المجاني للأشخاص من جميع البلدان والأعمار (بدون حد عمري!). "
-"الموقع نباتي وصديق للنباتيين."
+"Speedy Net سبيدي نت هي شبكة اجتماعية Speedy Net جديدة. مع سبيدي نت يمكنك "
+"التواصل Speedy Net مع أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من "
+"جميع البلدان والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي نت "
-"اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق."
+"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي "
+"Speedy Net نت اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "مباراة سريعة – المواعدة السريعة"
+msgstr "Speedy Match مباراة سريعة – المواعدة السريعة Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "تبحث عن صديقها؟ تبحث عن صديقة؟ تعال وتلبية سبيدي!"
+msgstr "تبحث عن صديقها؟ تبحث عن صديقة؟ تعال وتلبية سبيدي! Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

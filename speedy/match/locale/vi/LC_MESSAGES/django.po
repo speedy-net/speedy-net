@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,17 +303,17 @@ msgstr "bạn thích"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Lần xem cuối cùng"
+msgstr "Lần xem cuối cùng Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Lần xem cuối cùng"
+msgstr "Lần xem cuối cùng Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Lần xem cuối cùng"
+msgstr "Lần xem cuối cùng Speedy Match"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Tài khoản khớp nhanh"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Giới tính phù hợp"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Người dùng trận đấu nhanh chóng"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Số lượng kết quả phù hợp với tìm kiếm của người d�
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Hồ sơ trận đấu nhanh chóng"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Hồ sơ trận đấu nhanh chóng"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1047,7 +1047,7 @@ msgstr "Lượt thích lẫn nhau"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Trận đấu thần tốc"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1063,11 +1063,11 @@ msgstr "Không có"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Trận đấu tốc độ [alpha]"
+msgstr "Speedy Match Trận đấu tốc độ [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Về trận đấu thần tốc"
+msgstr "Về trận đấu thần tốc Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1084,14 +1084,14 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> là một ứng dụng web hẹn hò/kết đôi mới dành cho "
-"những người độc thân là thành viên của <a href=\"https://%(language_code)s."
-"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Với Speedy Match, bạn có "
-"thể tìm thấy những người phù hợp để hẹn hò và trò chuyện trực tuyến với họ. "
-"Bạn có thể thêm mọi người làm bạn bè trên Speedy Net, thích mọi người và gửi "
-"tin nhắn cho họ. Speedy Match mở cửa đăng ký miễn phí cho mọi người từ mọi "
-"quốc gia và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn "
-"chay và thân thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s "
-"ngôn ngữ."
+"những người độc thân là thành viên của <a href=\"https://%(language_code)s.."
+"net/\" title=\"Speedy Net\">Speedy Net</a>. Với Speedy Match, bạn có thể tìm "
+"thấy những người phù hợp để hẹn hò và trò chuyện trực tuyến với họ. Bạn có "
+"thể thêm mọi người làm bạn bè trên Speedy Net, thích mọi người và gửi tin "
+"nhắn cho họ. Match mở cửa đăng ký miễn phí cho mọi người từ mọi quốc gia và "
+"lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn chay và thân "
+"thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s ngôn ngữ. "
+"Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1113,11 +1113,12 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Chỉ những người phù hợp với yêu cầu của bạn mới có thể xem hồ sơ của bạn và "
-"liên hệ với bạn. Chúng tôi không cho phép tìm kiếm ẩn danh và hồ sơ Trận đấu "
-"nhanh chỉ hiển thị với các đối tác phù hợp. Bạn có thể chọn ai sẽ có thể xem "
-"hồ sơ của bạn và chi tiết nào sẽ xuất hiện trên hồ sơ của bạn ở chế độ công "
-"khai, chi tiết nào chỉ hiển thị với bạn bè và chi tiết nào sẽ ở chế độ riêng "
-"tư. Thông tin chi tiết riêng tư sẽ chỉ xuất hiện với bạn."
+"liên hệ với bạn. Chúng tôi không cho phép tìm kiếm ẩn danh và hồ Speedy "
+"Match sơ Trận đấu nhanh chỉ hiển thị với các đối tác phù hợp. Bạn có thể "
+"chọn ai sẽ có thể xem hồ sơ của bạn và chi tiết nào sẽ xuất hiện trên hồ sơ "
+"của bạn ở chế độ công khai, chi tiết nào chỉ hiển thị với bạn bè và chi tiết "
+"nào sẽ ở chế độ riêng tư. Thông tin chi tiết riêng tư sẽ chỉ xuất hiện với "
+"bạn."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1125,9 +1126,9 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Tất cả các tính năng trên Speedy Net và Speedy Match đều miễn phí. Tham gia "
-"Speedy Match ngay hôm nay để tìm được đối tác phù hợp, chỉ mất vài phút. <a "
-"href=\"/\" title=\"Join Speedy Match\">Click vào đây</a> để tham gia."
+"Tất cả các tính năng Speedy Net Speedy Match trên và đều miễn Speedy Match "
+"phí. Tham gia ngay hôm nay để tìm được đối tác phù hợp, chỉ mất vài phút. <a "
+"href=\"/\" title= Speedy Match \" Join \">Click vào đây</a> để tham gia."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1143,18 +1144,18 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match được đặt theo tên của <a href=\"https://www.facebook.com/speedy."
+"Speedy Match được đặt theo tên của <a href=\"https://www.facebook.com/Speedy."
 "the.female.dog\" title=\"Speedy\">Speedy</a>, một chú chó cái đã gắn bó với "
-"chúng tôi trong nhiều năm và qua đời vào năm 2003. Speedy đã sinh 7 chú chó "
-"con vào năm 1988."
+"chúng tôi trong nhiều năm và qua đời vào năm 2003. đã sinh 7 chú chó con vào "
+"năm 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Trận đấu nhanh hiện đang ở giai đoạn alpha. Nó được ra mắt vào tháng 8 năm "
-"2019. Phiên bản tiếng Anh của Speedy Match đang được sản xuất."
+"Speedy Match Trận đấu nhanh hiện đang ở giai đoạn alpha. Nó được ra mắt vào "
+"tháng 8 năm 2019. Phiên bản tiếng Anh của đang được sản xuất. Speedy Match"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1166,11 +1167,11 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Người sáng lập và giám đốc của Speedy Net và Speedy Match,"
+msgstr "Người sáng lập và giám Speedy Net đốc của Speedy Match và,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Công ty TNHH Công nghệ Speedy Paz"
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1301,8 +1302,8 @@ msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Tất cả các tính năng trên Speedy Net và Speedy Match đều miễn phí. Tham gia "
-"Speedy Match ngay hôm nay để tìm được đối tác phù hợp, chỉ mất vài phút."
+"Tất cả các tính năng Speedy Net Speedy Match trên và đều miễn Speedy Match "
+"phí. Tham gia ngay hôm nay để tìm được đối tác phù hợp, chỉ mất vài phút."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1391,7 +1392,7 @@ msgstr "Tình trạng mối quan hệ"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Lần xem cuối cùng"
+msgstr "Lần xem cuối cùng Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"

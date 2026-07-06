@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match kontod"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Sugu sobitada"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Matchi kasutaja"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Vastete arv viimase kasutaja otsingul"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Kiire matši profiil"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match profiilid"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1043,7 +1043,7 @@ msgstr "Vastastikused meeldimised"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Kiired matšid"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1059,11 +1059,11 @@ msgstr "Mitte ühtegi"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Kiire matš [alfa]"
+msgstr "Speedy Match Kiire matš [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Speedy Matchi kohta"
+msgstr "i Speedy Match kohta"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1081,13 +1081,13 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
 "Match\">Speedy Match</a> on uus tutvumis-/sobitamise veebirakendus "
 "romantilistel eesmärkidel vallalistele, kes on <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> liikmed. "
+"%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</a> liikmed. "
 "Speedy Matchi abil saate tutvumiseks leida sobivaid inimesi ja nendega "
 "võrgus vestelda. Saate inimesi Speedy Netis sõpradeks lisada, inimestele "
-"meeldida ja neile sõnumeid saata. Speedy Match on avatud tasuta "
-"registreerimiseks kõikidest riikidest ja vanuses inimestele "
-"(vanusepiiranguta!). Sait on vegan- ja taimetoitlastele sõbralik. See on "
-"praegu saadaval %(languages_num)s keeles."
+"meeldida ja neile sõnumeid saata. Match on avatud tasuta registreerimiseks "
+"kõikidest riikidest ja vanuses inimestele (vanusepiiranguta!). Sait on "
+"vegan- ja taimetoitlastele sõbralik. See on praegu saadaval "
+"%(languages_num)s keeles. Speedy Match"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1109,7 +1109,7 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Ainult inimesed, kes vastavad teie nõuetele, näevad teie profiili ja saavad "
-"teiega ühendust võtta. Me ei luba anonüümseid otsinguid ja Speedy Matchi "
+"teiega ühendust võtta. Me ei luba anonüümseid Speedy Match otsinguid ja i "
 "profiile näevad ainult vastavad partnerid. Saate valida, kes teie profiili "
 "näevad ja millised andmed kuvatakse teie profiilil avalikuna, millised on "
 "ainult sõpradele ja millised on privaatsed. Privaatsed andmed kuvatakse "
@@ -1121,8 +1121,8 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Kõik Speedy Neti ja Speedy Matchi funktsioonid on tasuta. Liituge Speedy "
-"Matchiga juba täna, et leida sobivaid partnereid – selleks kulub vaid mõni "
+"Kõik Speedy Neti ja Speedy Matchi funktsioonid on tasuta. Liituge iga juba "
+"Speedy Match täna, et leida sobivaid partnereid – selleks kulub vaid mõni "
 "minut. <a href=\"/\" title=\"Join Speedy Match\">Liitumiseks klõpsake siin</"
 "a>."
 
@@ -1132,7 +1132,7 @@ msgid ""
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
 "Speedy Match on tasuta tarkvara ja avatud lähtekoodiga projekt. Kui soovite "
-"aidata Speedy Matchi arendamisel ja täiustamisel, võtke minuga ühendust e-"
+"aidata i arendamisel ja täiustamisel Speedy Match, võtke minuga ühendust e-"
 "posti teel."
 
 #: .\templates\about\about.html:27
@@ -1141,17 +1141,17 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match on saanud nime <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Match on saanud nime <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, emase koera järgi, kes oli meiega "
-"palju aastaid ja suri 2003. aastal. Speedy sünnitas 1988. aastal 7 kutsikat."
+"palju aastaid ja suri 2003. aastal. sünnitas 1988. aastal 7 kutsikat."
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match on praegu alfarežiimis. See käivitati augustis 2019. Speedy "
-"Matchi ingliskeelne versioon on tootmises."
+"Speedy Match on praegu alfarežiimis. See käivitati augustis 2019. i "
+"ingliskeelne Speedy Match versioon on tootmises."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1163,7 +1163,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Neti ja Speedy Matchi asutaja ja direktor,"
+msgstr "i ja i asutaja ja Speedy Net Speedy Match direktor,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

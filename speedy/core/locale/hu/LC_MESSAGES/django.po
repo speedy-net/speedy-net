@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1931,7 +1931,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Gyors alapszámlák"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2942,7 +2942,7 @@ msgstr "Jelszó módosítása"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Életkora látható lesz a Speedy Match meccsein."
+msgstr "Életkora látható lesz a meccsein Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3028,11 +3028,11 @@ msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Gyors szoftver"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Gyors kiárusítás"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3041,7 +3041,7 @@ msgstr "Vegánbarát weboldal"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Gyors"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3105,15 +3105,15 @@ msgstr "Lépjen kapcsolatba velünk"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Gyors zeneszerző"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail szoftver"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Gyors zeneszerző bolt"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3324,9 +3324,9 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Ha szeretné, törölheti fiókját a Speedy Neten. A Speedy Net fiók törlése "
-"automatikusan törli Speedy Match fiókját is. A Speedy Net fiók törléséhez "
-"jelentkezzen be a Speedy Netbe, deaktiválja fiókját, majd kattintson a „Fiók "
+"Ha szeretné, törölheti fiókját a en. A Speedy Net fiók törlése automatikusan "
+"Speedy Net törli fiókját is. A fiók törléséhez Speedy Match jelentkezzen be "
+"a be Speedy Net, deaktiválja fiókját, Speedy Net majd kattintson a „Fiók "
 "törlése” gombra (a „Profil szerkesztése” menüben). Töltse ki az adatokat az "
 "űrlapon, és erősítse meg. Felhívjuk figyelmét, hogy a törölt fiókot nem "
 "lehet visszaállítani. A fiók törlése végleges és visszafordíthatatlan."
@@ -3480,8 +3480,8 @@ msgid ""
 msgstr ""
 "A Speedy Netet kizárólag jogi célokra használhatja. Nem tölthet fel "
 "gyűlöletkel, erőszakkal, állatkínzásokkal, meztelenséggel vagy "
-"pornográfiával kapcsolatos tartalmakat. Nem használhatja a Speedy Netet spam "
-"vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
+"pornográfiával kapcsolatos tartalmakat Speedy Net. Nem használhatja a et "
+"spam vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3564,7 +3564,7 @@ msgstr "honlapon látható"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Gyors képmoderálási idő"
+msgstr "Gyors képmoderálási idő Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

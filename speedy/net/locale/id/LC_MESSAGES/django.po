@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Akun Bersih Cepat"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ya. Hapus akun saya."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Pengguna Internet Cepat"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Jumlah teman pada kunjungan pengguna terakhir"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Profil Jaringan Cepat"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Profil Net Cepat"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -180,7 +180,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Jaringan Cepat [alfa]"
+msgstr "Speedy Net Jaringan Cepat [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -196,12 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> adalah jejaring sosial baru. Dengan Speedy Net Anda "
-"dapat berkomunikasi dengan teman Anda. Speedy Net terbuka untuk pendaftaran "
-"gratis bagi orang-orang dari semua negara dan usia (tidak ada batasan "
-"usia!). Situs ini ramah vegan dan vegetarian. Saat ini tersedia dalam bahasa "
-"%(languages_num)s."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> adalah jejaring sosial baru. Dengan Speedy Net Anda dapat berkomunikasi "
+"dengan teman Anda Speedy Net. Net terbuka untuk pendaftaran gratis bagi "
+"orang-orang dari semua negara dan usia (tidak ada batasan usia!). Situs ini "
+"ramah vegan dan vegetarian. Saat ini tersedia dalam bahasa %(languages_num)s."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -264,10 +263,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net diberi nama setelah <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Net diberi nama setelah <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama "
-"kami selama bertahun-tahun dan meninggal pada tahun 2003. Speedy melahirkan "
-"7 anak anjing pada tahun 1988."
+"kami selama bertahun-tahun dan meninggal pada tahun 2003. melahirkan 7 anak "
+"anjing pada tahun 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -284,7 +283,8 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pendiri dan direktur Speedy Net dan Speedy Match,"
+msgstr ""
+"Pendiri dan direktur Speedy Speedy Net Speedy Speedy Match Net Net dan,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -347,7 +347,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Pertandingan Cepat – berkencan dengan Speedy"
+msgstr "Speedy Match Pertandingan Cepat – berkencan dengan Speedy Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""

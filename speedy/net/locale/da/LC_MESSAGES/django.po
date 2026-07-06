@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:07+0300\n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net-konti"
+msgstr "Speedy Net Accounts"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -148,7 +148,7 @@ msgstr "Ja. Slet min konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Hurtig netbruger"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -160,11 +160,11 @@ msgstr "Antal venner ved sidste brugers besøg"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net-profil"
+msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net-profiler"
+msgstr "Speedy Net Profiles"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -196,11 +196,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> er et nyt socialt netværk. Med Speedy Net kan du "
-"kommunikere med dine venner. Speedy Net er åben for gratis registrering for "
-"folk fra alle lande og aldre (ingen aldersgrænse!). Siden er vegansk og "
-"vegetarvenlig. Den er i øjeblikket tilgængelig på %(languages_num)s sprog."
+"<a href=\"https://%(language_code)s..net/\" title=\"Speedy Net\">Speedy Net</"
+"a> er et nyt socialt netværk. Med Speedy Net kan du kommunikere med dine "
+"venner. Speedy Net Net er åben for gratis registrering for folk fra alle "
+"lande og aldre (ingen aldersgrænse!). Siden er vegansk og vegetarvenlig. Den "
+"er i øjeblikket tilgængelig på %(languages_num)s sprog."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -260,9 +260,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net er opkaldt efter <a href=\"https://www.facebook.com/speedy.the."
+"Speedy Net er opkaldt efter <a href=\"https://www.facebook.com/Speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, en hunhund, som var hos os i mange "
-"år og døde i 2003. Speedy fødte 7 hvalpe i 1988."
+"år og døde i 2003. fødte 7 hvalpe i 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -278,7 +278,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Grundlægger og direktør for Speedy Net og Speedy Match,"
+msgstr "Grundlægger og direktør Speedy Net for Speedy Match og,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

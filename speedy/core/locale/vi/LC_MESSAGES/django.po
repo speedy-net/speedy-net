@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -369,8 +369,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Trận đấu nhanh. Xem hồ sơ của %(user_name)s trên "
-"Trận đấu nhanh."
+"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
+"%(user_name)s trên Trận đấu nhanh. Speedy Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -379,8 +379,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Trận đấu nhanh. Xem hồ sơ của %(user_name)s trên "
-"Trận đấu nhanh."
+"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
+"%(user_name)s trên Trận đấu nhanh. Speedy Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -389,8 +389,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Trận đấu nhanh. Xem hồ sơ của %(user_name)s trên "
-"Trận đấu nhanh."
+"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
+"%(user_name)s trên Trận đấu nhanh. Speedy Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -399,7 +399,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Net. Xem hồ sơ của %(user_name)s trên "
+"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
 "Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -409,7 +409,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Net. Xem hồ sơ của %(user_name)s trên "
+"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
 "Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -419,7 +419,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Net. Xem hồ sơ của %(user_name)s trên "
+"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
 "Speedy Net."
 
 #: .\__translations\__translations.html:108
@@ -1925,7 +1925,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Tài khoản cốt lõi nhanh chóng"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2479,7 +2479,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Ứng dụng cơ sở cốt lõi nhanh chóng"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2934,7 +2934,8 @@ msgstr "Thay đổi mật khẩu"
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
 msgstr ""
-"Tuổi của bạn sẽ được hiển thị trong các trận đấu của bạn trên Trận đấu nhanh."
+"Tuổi của bạn sẽ được hiển thị trong các trận đấu của bạn trên Trận đấu "
+"nhanh. Speedy Match"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3013,19 +3014,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Blog mạng nhanh chóng"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Paz tốc độ"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Phần mềm nhanh"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Bán nhanh"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3034,7 +3035,7 @@ msgstr "Một trang web thân thiện với người ăn chay"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Nhanh chóng"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3050,23 +3051,23 @@ msgstr "Mật khẩu"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Mạng nhanh"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Trận đấu thần tốc"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Cửa hàng của Speedy Net"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Cửa hàng bán diêm tốc độ"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Cửa hàng logo chữ S nhanh chóng"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3098,15 +3099,15 @@ msgstr "Liên hệ với chúng tôi"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Nhà soạn nhạc nhanh chóng"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Phần mềm gửi thư nhanh"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Cửa hàng soạn nhạc nhanh chóng"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3283,10 +3284,11 @@ msgid ""
 msgstr ""
 "Hồ sơ của bạn trên Speedy Net hiển thị với mọi người nhưng bạn có thể chọn "
 "người chia sẻ với địa chỉ email và ngày sinh của mình. Nếu bạn đã đăng ký "
-"Trận đấu nhanh, hồ sơ Trận đấu nhanh của bạn sẽ chỉ hiển thị với những người "
-"phù hợp với bạn theo cài đặt bạn đã thiết lập trên trang web và bạn kết hợp "
-"họ theo cài đặt của họ. Hồ sơ của bạn trên Speedy Match sẽ không xuất hiện "
-"trên Google và không hiển thị với những người chưa đăng ký trang web."
+"Trận Speedy Match đấu Speedy Match nhanh, hồ sơ Trận đấu nhanh của bạn sẽ "
+"chỉ hiển thị với những người phù hợp với bạn theo cài đặt bạn đã thiết lập "
+"trên trang web và bạn kết hợp họ theo cài đặt của họ. Hồ sơ của bạn trên sẽ "
+"không xuất hiện trên Google và không hiển thị với những người chưa đăng ký "
+"trang web. Speedy Match"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3439,8 +3441,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Trận đấu nhanh. Xem hồ sơ của %(user_name)s trên "
-"Trận đấu nhanh."
+"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
+"%(user_name)s trên Trận đấu nhanh. Speedy Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3452,7 +3454,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Net. Xem hồ sơ của %(user_name)s trên "
+"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
 "Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3472,7 +3474,7 @@ msgid ""
 msgstr ""
 "Bạn chỉ có thể sử dụng Speedy Net cho mục đích hợp pháp. Bạn không được phép "
 "tải lên các nội dung liên quan đến thù hận, bạo lực, ngược đãi động vật, ảnh "
-"khoả thân hoặc nội dung khiêu dâm. Bạn không được phép sử dụng Speedy Net để "
+"khoả thân hoặc nội dung khiêu dâm Speedy Net. Bạn không được phép sử dụng để "
 "gửi tin nhắn rác, hoặc tin nhắn có cùng nội dung đến nhiều người."
 
 #: .\templates\terms\terms_of_service.html:23
@@ -3556,7 +3558,7 @@ msgstr "hiển thị trên trang web"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Thời gian kiểm duyệt hình ảnh nhanh chóng"
+msgstr "Thời gian kiểm duyệt hình ảnh nhanh chóng Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 03:35+0300\n"
+"POT-Creation-Date: 2026-07-06 05:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -396,7 +396,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s همچنین دارای نمایه Speedy Net است. نمایه %(user_name)s را در "
+"%(user_name)s همچنین دارای Speedy Net نمایه است. نمایه %(user_name)s را در "
 "Speedy Net مشاهده کنید."
 
 #: .\__translations\__translations.html:105
@@ -406,7 +406,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s همچنین دارای نمایه Speedy Net است. نمایه %(user_name)s را در "
+"%(user_name)s همچنین دارای Speedy Net نمایه است. نمایه %(user_name)s را در "
 "Speedy Net مشاهده کنید."
 
 #: .\__translations\__translations.html:106
@@ -416,7 +416,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s همچنین دارای نمایه Speedy Net است. نمایه %(user_name)s را در "
+"%(user_name)s همچنین دارای Speedy Net نمایه است. نمایه %(user_name)s را در "
 "Speedy Net مشاهده کنید."
 
 #: .\__translations\__translations.html:108
@@ -1817,7 +1817,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1826,7 +1826,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1835,7 +1835,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1844,7 +1844,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1853,7 +1853,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1862,7 +1862,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1871,7 +1871,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1880,7 +1880,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1889,7 +1889,7 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "این کاربر با نمایه شما مطابقت ندارد، اما می توانید از نمایه Speedy Net "
-"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید."
+"بازدید کنید. نمایه کاربر را در اسپیدی نت مشاهده کنید. Speedy Net"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1914,7 +1914,7 @@ msgstr "عکس نمایه شما نمی تواند شفاف باشد. لطفا �
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "حساب های اصلی سریع"
+msgstr "Speedy Core Accounts"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -2473,7 +2473,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "برنامه Speedy Core Base"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2927,7 +2927,7 @@ msgstr "رمز عبور را تغییر دهید"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "سن شما برای مسابقات شما در Speedy Match قابل مشاهده خواهد بود."
+msgstr "سن شما برای مسابقات شما در قابل مشاهده Speedy Match خواهد بود."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3005,19 +3005,19 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "وبلاگ اسپیدی نت"
+msgstr "Speedy Net Blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "اسپیدی پاز"
+msgstr "Speedy Paz"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "نرم افزار Speedy"
+msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "فروش سریع"
+msgstr "Speedy Sale"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
@@ -3026,7 +3026,7 @@ msgstr "یک وب سایت دوستدار وگان"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "سریع"
+msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3042,23 +3042,23 @@ msgstr "رمز عبور"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "اسپیدی نت"
+msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "مسابقه سریع"
+msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "فروشگاه اسپیدی نت"
+msgstr "Speedy Net's Shop"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "فروشگاه اسپیدی مچ"
+msgstr "Speedy Match's Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "فروشگاه لوگوی اس سریع"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3090,15 +3090,15 @@ msgstr "تماس با ما"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "آهنگساز سریع"
+msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "نرم افزار ایمیل سریع"
+msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "فروشگاه آهنگساز سریع"
+msgstr "Speedy Composer's Shop"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3294,10 +3294,10 @@ msgstr ""
 "اگر حساب خود را در Speedy Net یا Speedy Match غیرفعال کرده باشید، نمایه شما "
 "در آن سایت از سایت حذف می شود و در نتایج جستجوی افراد دیگر در سایت ظاهر نمی "
 "شوید. توجه داشته باشید که غیرفعال کردن حساب خود در Speedy Net به طور خودکار "
-"حساب شما را در Speedy Match غیرفعال می کند. در Speedy Match می توانید فقط "
-"حساب خود را غیرفعال کنید، در این صورت حساب Speedy Net شما فعال باقی می ماند. "
-"هر زمان که مایل بودید، می توانید حساب خود را پس از غیرفعال کردن دوباره فعال "
-"کنید."
+"حساب شما را در Speedy Match غیرفعال می کند. در می توانید فقط حساب خود را "
+"غیرفعال کنید، Speedy Match در این صورت حساب Speedy Net شما فعال باقی می "
+"ماند. هر زمان که مایل بودید، می توانید حساب خود را پس از غیرفعال کردن دوباره "
+"فعال کنید."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3308,12 +3308,12 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"در صورت تمایل می توانید اکانت خود را در اسپیدی نت حذف کنید. با حذف حساب "
-"Speedy Net، حساب Speedy Match شما نیز به طور خودکار حذف می شود. برای حذف "
-"حساب Speedy Net خود، وارد Speedy Net شوید، حساب خود را غیرفعال کنید و سپس "
-"روی «Delete Account» (در منوی «Edit Profile») کلیک کنید. مشخصات را در فرم پر "
-"کنید و تایید کنید. لطفاً توجه داشته باشید که حساب حذف شده قابل بازیابی نیست. "
-"حذف حساب دائمی و غیر قابل برگشت است."
+"در صورت تمایل می توانید اکانت خود را در اسپیدی نت حذف کنید. با حذف Speedy "
+"Net حساب Speedy Net، حساب Speedy Match شما نیز به طور خودکار حذف می شود. "
+"برای حذف حساب خود، وارد Speedy Net Speedy Net شوید، حساب خود را غیرفعال کنید "
+"و سپس روی «Delete Account» (در منوی «Edit Profile») کلیک کنید. مشخصات را در "
+"فرم پر کنید و تایید کنید. لطفاً توجه داشته باشید که حساب حذف شده قابل بازیابی "
+"نیست. حذف حساب دائمی و غیر قابل برگشت است."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3444,7 +3444,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s همچنین دارای نمایه Speedy Net است. نمایه %(user_name)s را در "
+"%(user_name)s همچنین دارای Speedy Net نمایه است. نمایه %(user_name)s را در "
 "Speedy Net مشاهده کنید."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3547,7 +3547,7 @@ msgstr "قابل مشاهده در وب سایت"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "زمان تعدیل تصویر سریع"
+msgstr "زمان تعدیل تصویر سریع Speedy"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
