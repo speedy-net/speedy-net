@@ -367,8 +367,6 @@ if (django_settings.TESTS):
                 self.assert_user_is_logged_in(user=self.user, user_is_active=False)
 
 
-
-
         @only_on_speedy_net
         class DeleteAccountViewAllLanguagesEnglishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):

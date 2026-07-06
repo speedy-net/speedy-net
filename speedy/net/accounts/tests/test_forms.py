@@ -91,8 +91,6 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2=self._delete_account_form_all_the_required_fields_are_required_errors_dict())
 
 
-
-
         @only_on_speedy_net
         class DeleteAccountFormAllLanguagesEnglishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
