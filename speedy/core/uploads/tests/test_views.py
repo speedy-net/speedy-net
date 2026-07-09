@@ -32,7 +32,7 @@ if (django_settings.TESTS):
                     'file': SimpleUploadedFile(upload_file.name, upload_file.read())
                 }
                 self.upload_file = upload_file
-                self.upload_file.file.close()
+                self.upload_file.close()
 
             def test_visitor_has_no_access(self):
                 self.client.logout()
