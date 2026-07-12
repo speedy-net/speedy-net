@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 18:02+0300\n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2676,23 +2676,23 @@ msgstr "הולנדית"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr "יַפָּנִית"
+msgstr "יפנית"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr "רוּסִי"
+msgstr "רוסית"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "סִינִית"
+msgstr "סינית"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "פּוֹלָנִית"
+msgstr "פולנית"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "פַּרסִית"
+msgstr "פרסית"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
@@ -2700,7 +2700,7 @@ msgstr "קוריאנית"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr "עֲרָבִית"
+msgstr "ערבית"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
@@ -2712,7 +2712,7 @@ msgstr "אוקראינית"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr "טוּרקִית"
+msgstr "טורקית"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
@@ -2732,7 +2732,7 @@ msgstr "פינית"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "הוּנגָרִי"
+msgstr "הונגרית"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
@@ -2756,15 +2756,15 @@ msgstr "רומנית"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr "בנגלית"
+msgstr "בנגאלית"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr "קטלאנית"
+msgstr "קאטלונית"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr "נורבגית (בוקמול)"
+msgstr "נורווגית (בוקמטית)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
@@ -2772,7 +2772,7 @@ msgstr "בולגרית"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr "דַנִי"
+msgstr "דנית"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
