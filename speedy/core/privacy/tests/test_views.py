@@ -8,12 +8,13 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
         from speedy.net.accounts.test.mixins import SpeedyNetAccountsLanguageMixin
 
         from speedy.core.accounts.models import User
 
 
-        class PrivacyPolicyViewTestCaseMixin(SpeedyNetAccountsLanguageMixin, TestCaseMixin):
+        class PrivacyPolicyViewTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             def test_translations(self):
                 for gender in User.ALL_GENDERS:
                     _if_you_want_you_can_delete_your_account_on_speedy_net_english_text = "If you want, you can delete your account on Speedy Net. Deleting your Speedy Net account will automatically delete your Speedy Match account as well. To delete your Speedy Net account, log in to Speedy Net, deactivate your account, and then click “Delete Account” (in the “Edit Profile” menu). Fill out the details in the form and confirm. Please note that a deleted account cannot be recovered. Account deletion is permanent and irreversible."
@@ -23,6 +24,7 @@ if (django_settings.TESTS):
                     _delete_account_text = str(pgettext_lazy(context=gender, message=_delete_account_english_text))
                     _edit_profile_text = str(_(_edit_profile_english_text))
                     self.assertEqual(first=_delete_account_text, second=self._delete_account_text_dict_by_gender[gender])
+                    self.assertEqual(first=_edit_profile_text, second=self._edit_profile_text)
                     if (self.language_code == 'en'):
                         self.assertEqual(first=_if_you_want_you_can_delete_your_account_on_speedy_net_text, second=_if_you_want_you_can_delete_your_account_on_speedy_net_english_text)
                         self.assertEqual(first=_delete_account_text, second=_delete_account_english_text)
