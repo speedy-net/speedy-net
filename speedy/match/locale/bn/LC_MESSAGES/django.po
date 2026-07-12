@@ -1,0 +1,1401 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "You have no likes here."
+msgstr "আপনি এখানে কোন পছন্দ আছে."
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "You have no likes here."
+msgstr "আপনি এখানে কোন পছন্দ আছে."
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "You have no likes here."
+msgstr "আপনি এখানে কোন পছন্দ আছে."
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "Update matches"
+msgstr "ম্যাচ আপডেট করুন"
+
+#: .\__translations\__translations.html:11
+msgctxt "male"
+msgid "Update matches"
+msgstr "ম্যাচ আপডেট করুন"
+
+#: .\__translations\__translations.html:12
+msgctxt "other"
+msgid "Update matches"
+msgstr "ম্যাচ আপডেট করুন"
+
+#: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "Add more options"
+msgstr "আরো বিকল্প যোগ করুন"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "Add more options"
+msgstr "আরো বিকল্প যোগ করুন"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "Add more options"
+msgstr "আরো বিকল্প যোগ করুন"
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"আপনার এখনো কোনো মিল নেই। আপনার অনুসন্ধান সেটিংস প্রসারিত করার চেষ্টা করুন বা পরে "
+"আবার চেক করুন।"
+
+#: .\__translations\__translations.html:19
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"আপনার এখনো কোনো মিল নেই। আপনার অনুসন্ধান সেটিংস প্রসারিত করার চেষ্টা করুন বা পরে "
+"আবার চেক করুন।"
+
+#: .\__translations\__translations.html:20
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"আপনার এখনো কোনো মিল নেই। আপনার অনুসন্ধান সেটিংস প্রসারিত করার চেষ্টা করুন বা পরে "
+"আবার চেক করুন।"
+
+#: .\__translations\__translations.html:22
+msgctxt "female"
+msgid "Match Settings"
+msgstr "ম্যাচ সেটিংস"
+
+#: .\__translations\__translations.html:23
+msgctxt "male"
+msgid "Match Settings"
+msgstr "ম্যাচ সেটিংস"
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Match Settings"
+msgstr "ম্যাচ সেটিংস"
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
+msgid "Like"
+msgstr "লাইক"
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Like"
+msgstr "লাইক"
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid "Like"
+msgstr "লাইক"
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Unlike"
+msgstr "অপছন্দ"
+
+#: .\__translations\__translations.html:31
+msgctxt "male"
+msgid "Unlike"
+msgstr "অপছন্দ"
+
+#: .\__translations\__translations.html:32
+msgctxt "other"
+msgid "Unlike"
+msgstr "অপছন্দ"
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Your Matches"
+msgstr "আপনার ম্যাচ"
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Your Matches"
+msgstr "আপনার ম্যাচ"
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Your Matches"
+msgstr "আপনার ম্যাচ"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Friends"
+msgstr "বন্ধুরা"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Friends"
+msgstr "বন্ধুরা"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Friends"
+msgstr "বন্ধুরা"
+
+#: .\__translations\__translations.html:42
+msgctxt "female"
+msgid "Your Friends"
+msgstr "আপনার বন্ধুরা"
+
+#: .\__translations\__translations.html:43
+msgctxt "male"
+msgid "Your Friends"
+msgstr "আপনার বন্ধুরা"
+
+#: .\__translations\__translations.html:44
+msgctxt "other"
+msgid "Your Friends"
+msgstr "আপনার বন্ধুরা"
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
+msgid "You don't have any friends yet."
+msgstr "আপনার এখনো কোনো বন্ধু নেই"
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr "আপনার এখনো কোনো বন্ধু নেই"
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr "আপনার এখনো কোনো বন্ধু নেই"
+
+#: .\__translations\__translations.html:50
+msgctxt "female"
+msgid "About me"
+msgstr "আমার সম্পর্কে"
+
+#: .\__translations\__translations.html:51
+msgctxt "male"
+msgid "About me"
+msgstr "আমার সম্পর্কে"
+
+#: .\__translations\__translations.html:52
+msgctxt "other"
+msgid "About me"
+msgstr "আমার সম্পর্কে"
+
+#: .\__translations\__translations.html:54
+msgctxt "female"
+msgid "About my match"
+msgstr "আমার ম্যাচ সম্পর্কে"
+
+#: .\__translations\__translations.html:55
+msgctxt "male"
+msgid "About my match"
+msgstr "আমার ম্যাচ সম্পর্কে"
+
+#: .\__translations\__translations.html:56
+msgctxt "other"
+msgid "About my match"
+msgstr "আমার ম্যাচ সম্পর্কে"
+
+#: .\__translations\__translations.html:58
+msgctxt "female"
+msgid "Gender to match"
+msgstr "লিঙ্গ মিলবে"
+
+#: .\__translations\__translations.html:59
+msgctxt "male"
+msgid "Gender to match"
+msgstr "লিঙ্গ মিলবে"
+
+#: .\__translations\__translations.html:60
+msgctxt "other"
+msgid "Gender to match"
+msgstr "লিঙ্গ মিলবে"
+
+#: .\__translations\__translations.html:62
+#, python-format
+msgctxt "female"
+msgid "Someone likes you on %(site_name)s"
+msgstr "কেউ আপনাকে %(site_name)s এ পছন্দ করে"
+
+#: .\__translations\__translations.html:63
+#, python-format
+msgctxt "male"
+msgid "Someone likes you on %(site_name)s"
+msgstr "কেউ আপনাকে %(site_name)s এ পছন্দ করে"
+
+#: .\__translations\__translations.html:64
+#, python-format
+msgctxt "other"
+msgid "Someone likes you on %(site_name)s"
+msgstr "কেউ আপনাকে %(site_name)s এ পছন্দ করে"
+
+#: .\__translations\__translations.html:66
+msgctxt "female"
+msgid "likes you."
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:67
+msgctxt "male"
+msgid "likes you."
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:68
+msgctxt "other"
+msgid "likes you."
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr "আপনি পছন্দ করেন"
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr "আপনি পছন্দ করেন"
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
+msgstr "আপনি পছন্দ করেন"
+
+#: .\__translations\__translations.html:78
+msgctxt "female"
+msgid "Last visited Speedy Match"
+msgstr "শেষ পরিদর্শন Speedy Match দ্রুত ম্যাচ"
+
+#: .\__translations\__translations.html:79
+msgctxt "male"
+msgid "Last visited Speedy Match"
+msgstr "শেষ পরিদর্শন Speedy Match দ্রুত ম্যাচ"
+
+#: .\__translations\__translations.html:80
+msgctxt "other"
+msgid "Last visited Speedy Match"
+msgstr "শেষ পরিদর্শন Speedy Match দ্রুত ম্যাচ"
+
+#: .\__translations\__translations.py:6
+msgid "My height in centimeters"
+msgstr "সেন্টিমিটারে আমার উচ্চতা"
+
+#: .\__translations\__translations.py:9
+msgctxt "female"
+msgid "Add profile picture"
+msgstr "প্রোফাইল ছবি যোগ করুন"
+
+#: .\__translations\__translations.py:10
+msgctxt "male"
+msgid "Add profile picture"
+msgstr "প্রোফাইল ছবি যোগ করুন"
+
+#: .\__translations\__translations.py:11
+msgctxt "other"
+msgid "Add profile picture"
+msgstr "প্রোফাইল ছবি যোগ করুন"
+
+#: .\__translations\__translations.py:13
+msgctxt "female"
+msgid "My height in centimeters"
+msgstr "সেন্টিমিটারে আমার উচ্চতা"
+
+#: .\__translations\__translations.py:14
+msgctxt "male"
+msgid "My height in centimeters"
+msgstr "সেন্টিমিটারে আমার উচ্চতা"
+
+#: .\__translations\__translations.py:15
+msgctxt "other"
+msgid "My height in centimeters"
+msgstr "সেন্টিমিটারে আমার উচ্চতা"
+
+#: .\__translations\__translations.py:17
+#: .\templates\accounts\edit_profile\activate.html:115
+msgctxt "female"
+msgid "My ideal match"
+msgstr "আমার আদর্শ ম্যাচ"
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:121
+msgctxt "male"
+msgid "My ideal match"
+msgstr "আমার আদর্শ ম্যাচ"
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:128
+msgctxt "other"
+msgid "My ideal match"
+msgstr "আমার আদর্শ ম্যাচ"
+
+#: .\__translations\__translations.py:21
+#: .\templates\accounts\edit_profile\activate.html:116
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr "মেলে ন্যূনতম বয়স"
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:122
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr "মেলে ন্যূনতম বয়স"
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:129
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr "মেলে ন্যূনতম বয়স"
+
+#: .\__translations\__translations.py:25
+#: .\templates\accounts\edit_profile\activate.html:117
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr "মেলে সর্বোচ্চ বয়স"
+
+#: .\__translations\__translations.py:26
+#: .\templates\accounts\edit_profile\activate.html:123
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr "মেলে সর্বোচ্চ বয়স"
+
+#: .\__translations\__translations.py:27
+#: .\templates\accounts\edit_profile\activate.html:130
+msgctxt "other"
+msgid "Maximal age to match"
+msgstr "মেলে সর্বোচ্চ বয়স"
+
+#: .\__translations\__translations.py:29
+msgctxt "female"
+msgid "Please write a few words about yourself."
+msgstr "আপনার সম্পর্কে কিছু শব্দ লিখুন."
+
+#: .\__translations\__translations.py:30
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "আপনার সম্পর্কে কিছু শব্দ লিখুন."
+
+#: .\__translations\__translations.py:31
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr "আপনার সম্পর্কে কিছু শব্দ লিখুন."
+
+#: .\__translations\__translations.py:33
+msgctxt "female"
+msgid "Do you have children? How many?"
+msgstr "আপনার কি সন্তান আছে? কয়টি?"
+
+#: .\__translations\__translations.py:34
+msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "আপনার কি সন্তান আছে? কয়টি?"
+
+#: .\__translations\__translations.py:35
+msgctxt "other"
+msgid "Do you have children? How many?"
+msgstr "আপনার কি সন্তান আছে? কয়টি?"
+
+#: .\__translations\__translations.py:37
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr "আপনি কি (আরো) সন্তান চান?"
+
+#: .\__translations\__translations.py:38
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "আপনি কি (আরো) সন্তান চান?"
+
+#: .\__translations\__translations.py:39
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr "আপনি কি (আরো) সন্তান চান?"
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "Who is your ideal partner?"
+msgstr "আপনার আদর্শ অংশীদার কে?"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "আপনার আদর্শ অংশীদার কে?"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "Who is your ideal partner?"
+msgstr "আপনার আদর্শ অংশীদার কে?"
+
+#: .\__translations\__translations.py:45
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"আমরা দুঃখিত, কিন্তু আপনি {site_name} ওয়েবসাইটটি ব্যবহার করার জন্য অনুমোদিত নন৷ "
+"আমরা দেখেছি যে সাইটে নিবন্ধন করার সময় আপনার দেওয়া কিছু তথ্য ভুল বা আপনি সাইটের "
+"ব্যবহারের নিয়ম লঙ্ঘন করেছেন। তাই আপনি সাইটটি ব্যবহার করার জন্য অনুমোদিত নন।"
+
+#: .\__translations\__translations.py:46
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"আমরা দুঃখিত, কিন্তু আপনি {site_name} ওয়েবসাইটটি ব্যবহার করার জন্য অনুমোদিত নন৷ "
+"আমরা দেখেছি যে সাইটে নিবন্ধন করার সময় আপনার দেওয়া কিছু তথ্য ভুল বা আপনি সাইটের "
+"ব্যবহারের নিয়ম লঙ্ঘন করেছেন। তাই আপনি সাইটটি ব্যবহার করার জন্য অনুমোদিত নন।"
+
+#: .\__translations\__translations.py:47
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"আমরা দুঃখিত, কিন্তু আপনি {site_name} ওয়েবসাইটটি ব্যবহার করার জন্য অনুমোদিত নন৷ "
+"আমরা দেখেছি যে সাইটে নিবন্ধন করার সময় আপনার দেওয়া কিছু তথ্য ভুল বা আপনি সাইটের "
+"ব্যবহারের নিয়ম লঙ্ঘন করেছেন। তাই আপনি সাইটটি ব্যবহার করার জন্য অনুমোদিত নন।"
+
+#: .\accounts\apps.py:8
+msgid "Speedy Match Accounts"
+msgstr "Speedy Match Accounts"
+
+#: .\accounts\forms.py:58
+msgid "Add profile picture"
+msgstr "প্রোফাইল ছবি যোগ করুন"
+
+#: .\accounts\forms.py:58 .\accounts\forms.py:97
+msgid "A profile picture is required."
+msgstr "একটি প্রোফাইল ছবি প্রয়োজন."
+
+#: .\accounts\forms.py:59
+msgid "My diet"
+msgstr "আমার খাদ্য"
+
+#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
+msgid "Your diet is required."
+msgstr "আপনার খাদ্য প্রয়োজন."
+
+#: .\accounts\forms.py:60
+msgid "My smoking status"
+msgstr "আমার ধূমপানের অবস্থা"
+
+#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
+msgid "Your smoking status is required."
+msgstr "আপনার ধূমপান অবস্থা প্রয়োজন."
+
+#: .\accounts\forms.py:61
+msgid "My relationship status"
+msgstr "আমার সম্পর্কের অবস্থা"
+
+#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
+msgid "Your relationship status is required."
+msgstr "আপনার সম্পর্কের অবস্থা প্রয়োজন."
+
+#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
+msgid "Gender to match is required."
+msgstr "মিলের জন্য লিঙ্গ প্রয়োজন।"
+
+#: .\accounts\forms.py:100
+msgid "Your height is required."
+msgstr "আপনার উচ্চতা প্রয়োজন."
+
+#: .\accounts\forms.py:112 .\accounts\validators.py:43
+msgid "Please write a few words about yourself."
+msgstr "আপনার সম্পর্কে কিছু শব্দ লিখুন."
+
+#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
+msgid "Please write where you live."
+msgstr "আপনি কোথায় থাকেন দয়া করে লিখুন।"
+
+#: .\accounts\forms.py:118 .\accounts\models.py:221
+#: .\accounts\validators.py:53
+#: .\templates\profiles\user_extra_info_widget.html:30
+msgid "Do you have children? How many?"
+msgstr "আপনার কি সন্তান আছে? কয়টি?"
+
+#: .\accounts\forms.py:121 .\accounts\models.py:224
+#: .\accounts\validators.py:58
+#: .\templates\profiles\user_extra_info_widget.html:34
+msgid "Do you want (more) children?"
+msgstr "আপনি কি (আরো) সন্তান চান?"
+
+#: .\accounts\forms.py:124 .\accounts\validators.py:63
+msgid "Who is your ideal partner?"
+msgstr "আপনার আদর্শ অংশীদার কে?"
+
+#: .\accounts\forms.py:130
+msgid "Minimal age to match is required."
+msgstr "মিলের জন্য ন্যূনতম বয়স প্রয়োজন।"
+
+#: .\accounts\forms.py:133
+msgid "Maximal age to match is required."
+msgstr "মিলের জন্য সর্বোচ্চ বয়স প্রয়োজন।"
+
+#: .\accounts\forms.py:136 .\accounts\validators.py:110
+msgid "Diet match is required."
+msgstr "ডায়েট ম্যাচ প্রয়োজন।"
+
+#: .\accounts\forms.py:139 .\accounts\validators.py:118
+msgid "Smoking status match is required."
+msgstr "ধূমপান অবস্থা ম্যাচ প্রয়োজন."
+
+#: .\accounts\forms.py:142 .\accounts\validators.py:126
+msgid "Relationship status match is required."
+msgstr "রিলেশনশিপ স্ট্যাটাস ম্যাচ প্রয়োজন।"
+
+#: .\accounts\forms.py:150
+msgid "Where do you live?"
+msgstr "আপনি কোথায় থাকেন?"
+
+#: .\accounts\forms.py:186 .\accounts\models.py:231
+#: .\templates\profiles\user_extra_info_widget.html:50
+msgid "Gender to match"
+msgstr "লিঙ্গ মিলবে"
+
+#: .\accounts\models.py:64
+msgid "Speedy Match User"
+msgstr "Speedy Match User"
+
+#: .\accounts\models.py:74 .\accounts\models.py:197
+msgid "No match"
+msgstr "কোন মিল নেই"
+
+#: .\accounts\models.py:75 .\accounts\models.py:198
+msgid "One heart"
+msgstr "এক হৃদয়"
+
+#: .\accounts\models.py:76 .\accounts\models.py:199
+msgid "Two hearts"
+msgstr "দুটি হৃদয়"
+
+#: .\accounts\models.py:77 .\accounts\models.py:200
+msgid "Three hearts"
+msgstr "তিনটি হৃদয়"
+
+#: .\accounts\models.py:78 .\accounts\models.py:201
+msgid "Four hearts"
+msgstr "চারটি হৃদয়"
+
+#: .\accounts\models.py:79 .\accounts\models.py:202
+msgid "Five hearts"
+msgstr "পাঁচটি হৃদয়"
+
+#: .\accounts\models.py:206
+msgid "User"
+msgstr "ব্যবহারকারী"
+
+#: .\accounts\models.py:207
+msgid "On new likes"
+msgstr "নতুন লাইকের উপর"
+
+#: .\accounts\models.py:210
+msgid "Active languages"
+msgstr "সক্রিয় ভাষা"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:26
+msgid "Height"
+msgstr "উচ্চতা"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:27
+msgid "cm"
+msgstr "সেমি"
+
+#: .\accounts\models.py:218
+msgid "Few words about me"
+msgstr "আমার সম্পর্কে কিছু শব্দ"
+
+#: .\accounts\models.py:227
+#: .\templates\profiles\user_extra_info_widget.html:54
+msgid "My ideal match"
+msgstr "আমার আদর্শ ম্যাচ"
+
+#: .\accounts\models.py:237
+msgid "Minimal age to match"
+msgstr "মেলে ন্যূনতম বয়স"
+
+#: .\accounts\models.py:238
+msgid "Maximal age to match"
+msgstr "মেলে সর্বোচ্চ বয়স"
+
+#: .\accounts\models.py:239
+msgid "Diet match"
+msgstr "ডায়েট ম্যাচ"
+
+#: .\accounts\models.py:240
+msgid "Smoking status match"
+msgstr "ধূমপান অবস্থা ম্যাচ"
+
+#: .\accounts\models.py:241
+msgid "Relationship status match"
+msgstr "রিলেশনশিপ স্ট্যাটাস মেলে"
+
+#: .\accounts\models.py:244
+msgid "Diet to match"
+msgstr "মেলে ডায়েট"
+
+#: .\accounts\models.py:252
+msgid "Smoking status to match"
+msgstr "ধূমপানের অবস্থা মেলে"
+
+#: .\accounts\models.py:260
+msgid "Relationship status to match"
+msgstr "রিলেশনশিপ স্ট্যাটাস মেলে"
+
+#: .\accounts\models.py:267
+msgid "Activation step"
+msgstr "সক্রিয়করণ পদক্ষেপ"
+
+#: .\accounts\models.py:270
+msgid "Number of matches on last user's search"
+msgstr "শেষ ব্যবহারকারীর অনুসন্ধানে মিলের সংখ্যা"
+
+#: .\accounts\models.py:346
+msgid "Speedy Match Profile"
+msgstr "Speedy Match Profile"
+
+#: .\accounts\models.py:347 .\profiles\apps.py:8
+msgid "Speedy Match Profiles"
+msgstr "Speedy Match Profiles"
+
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
+msgid "Please confirm your email address."
+msgstr "আপনার ইমেল ঠিকানা নিশ্চিত করুন."
+
+#: .\accounts\utils.py:89
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"সাইটে সক্রিয় সদস্যের মোট সংখ্যা হল "
+"{total_number_of_active_members_in_the_last_four_months}, যার মধ্যে "
+"{total_number_of_active_members_in_the_last_week} সদস্য গত সপ্তাহে সাইটে প্রবেশ "
+"করেছে৷"
+
+#: .\accounts\validators.py:68
+msgid "Height must be from 1 to 450 cm."
+msgstr "উচ্চতা 1 থেকে 450 সেমি হতে হবে।"
+
+#: .\accounts\validators.py:93
+msgid "Minimal age to match must be from 0 to 180 years."
+msgstr "মিলের ন্যূনতম বয়স 0 থেকে 180 বছর হতে হবে।"
+
+#: .\accounts\validators.py:98
+msgid "Maximal age to match must be from 0 to 180 years."
+msgstr "মিলের জন্য সর্বোচ্চ বয়স অবশ্যই 0 থেকে 180 বছর হতে হবে।"
+
+#: .\accounts\validators.py:104
+msgid "Maximal age to match can't be less than minimal age to match."
+msgstr "মিলের সর্বোচ্চ বয়স মেলার সর্বনিম্ন বয়সের চেয়ে কম হতে পারে না।"
+
+#: .\accounts\validators.py:112
+msgid "At least one diet match option should be five hearts."
+msgstr "কমপক্ষে একটি ডায়েট ম্যাচ বিকল্প পাঁচটি হৃদয় হওয়া উচিত।"
+
+#: .\accounts\validators.py:120
+msgid "At least one smoking status match option should be five hearts."
+msgstr "অন্তত একটি ধূমপান অবস্থা ম্যাচ বিকল্প পাঁচটি হৃদয় হওয়া উচিত."
+
+#: .\accounts\validators.py:128
+msgid "At least one relationship status match option should be five hearts."
+msgstr "অন্তত একটি সম্পর্ক অবস্থা ম্যাচ বিকল্প পাঁচটি হৃদয় হওয়া উচিত."
+
+#: .\admin\views.py:202
+#, python-brace-format
+msgid ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
+"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+msgstr ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
+"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+
+#: .\admin\views.py:284
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_the_last_week} active "
+"members registered in the last week. "
+"{total_number_of_active_members_registered_in_the_last_month} active members "
+"registered in the last month. "
+"{total_number_of_active_members_registered_in_the_last_four_months} active "
+"members registered in the last four months. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} active "
+"members registered more than four months ago. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} active "
+"members registered in the last eight months. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"active members registered more than eight months ago. "
+"{total_number_of_active_members_registered_in_the_last_two_years} active "
+"members registered in the last two years. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} active "
+"members registered more than two years ago. "
+"{total_number_of_active_members_registered_before_2019_08_01} active members "
+"registered before 1 August 2019."
+msgstr ""
+"অ্যাডমিন: {total_number_of_active_members_registered_in_the_last_week} সক্রিয় "
+"সদস্য গত সপ্তাহে নিবন্ধিত। "
+"{total_number_of_active_members_registered_in_the_last_month} সক্রিয় সদস্য গত "
+"মাসে নিবন্ধিত। "
+"{total_number_of_active_members_registered_in_the_last_four_months} সক্রিয় "
+"সদস্য গত চার মাসে নিবন্ধিত। "
+"{total_number_of_active_members_registered_more_than_four_months_ago} সক্রিয় "
+"সদস্যরা চার মাসেরও বেশি আগে নিবন্ধিত হয়েছেন। "
+"{total_number_of_active_members_registered_in_the_last_eight_months} সক্রিয় "
+"সদস্য গত আট মাসে নিবন্ধিত। "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} সক্রিয় "
+"সদস্য আট মাসেরও বেশি আগে নিবন্ধিত হয়েছে। "
+"{total_number_of_active_members_registered_in_the_last_two_years} সক্রিয় সদস্য "
+"গত দুই বছরে নিবন্ধিত। "
+"{total_number_of_active_members_registered_more_than_two_years_ago} সক্রিয় "
+"সদস্য দুই বছরেরও বেশি আগে নিবন্ধিত হয়েছে। "
+"{total_number_of_active_members_registered_before_2019_08_01} সক্রিয় সদস্য 1 "
+"আগস্ট 2019 এর আগে নিবন্ধিত।"
+
+#: .\admin\views.py:304
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
+msgstr ""
+"অ্যাডমিন: {total_number_of_active_members_registered_in_year} সক্রিয় সদস্য "
+"{year} এ নিবন্ধিত।"
+
+#: .\admin\views.py:359
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} females, "
+"{total_number_of_male_active_members_in_age_range} males, "
+"{total_number_of_other_active_members_in_age_range} others) active members "
+"aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range} females, "
+"{total_percent_of_male_active_members_in_age_range} males, "
+"{total_percent_of_other_active_members_in_age_range} others)."
+msgstr ""
+"অ্যাডমিন: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} মহিলা, "
+"{total_number_of_male_active_members_in_age_range} পুরুষ, "
+"{total_number_of_other_active_members_in_age_range} অন্যান্য) {min_age} থেকে "
+"{max_age} বয়সী সক্রিয় সদস্য "
+"({total_percent_of_female_active_members_in_age_range} মহিলা, "
+"{total_percent_of_male_active_members_in_age_range} পুরুষ, "
+"{total_percent_of_other_active_members_in_age_range} অন্যান্য)।"
+
+#: .\admin\views.py:423
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) entered the site in the last eight months."
+msgstr ""
+"অ্যাডমিন: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"মহিলা, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"পুরুষ, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"অন্যান্য) {min_age} থেকে {max_age} বয়সী সক্রিয় সদস্য "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"মহিলা, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"পুরুষ, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"অন্যান্য) গত আট মাসে সাইটটিতে প্রবেশ করেছে৷"
+
+#: .\admin\views.py:487
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) entered the site in the last four months."
+msgstr ""
+"অ্যাডমিন: "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
+"মহিলা, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"পুরুষ, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"অন্যান্য) {min_age} থেকে {max_age} বয়সী সক্রিয় সদস্য "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
+"মহিলা, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"পুরুষ, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
+"অন্যান্য) গত চার মাসে সাইটটিতে প্রবেশ করেছেন৷"
+
+#: .\likes\managers.py:14 .\likes\models.py:48
+msgid "Users cannot like themselves."
+msgstr "ব্যবহারকারীরা নিজেদের পছন্দ করতে পারে না।"
+
+#: .\likes\managers.py:17
+msgid "User already likes other user."
+msgstr "ব্যবহারকারী ইতিমধ্যে অন্য ব্যবহারকারী পছন্দ করে."
+
+#: .\likes\managers.py:20
+msgid "User cannot like a blocked user."
+msgstr "ব্যবহারকারী অবরুদ্ধ ব্যবহারকারীকে পছন্দ করতে পারে না।"
+
+#: .\likes\models.py:21
+msgid "from user"
+msgstr "ব্যবহারকারীর কাছ থেকে"
+
+#: .\likes\models.py:22
+msgid "to user"
+msgstr "ব্যবহারকারীর কাছে"
+
+#: .\likes\models.py:28
+msgid "user like"
+msgstr "ব্যবহারকারীর মত"
+
+#: .\likes\models.py:29
+msgid "user likes"
+msgstr "ব্যবহারকারী পছন্দ করে"
+
+#: .\likes\views.py:28
+msgid "Girls You Like"
+msgstr "আপনার পছন্দের মেয়েরা"
+
+#: .\likes\views.py:29
+msgid "Boys You Like"
+msgstr "বয়েজ ইউ লাইক"
+
+#: .\likes\views.py:30
+msgid "People You Like"
+msgstr "আপনি পছন্দ মানুষ"
+
+#: .\likes\views.py:33
+msgid "Girls Who Like You"
+msgstr "মেয়েরা যারা তোমাকে পছন্দ করে"
+
+#: .\likes\views.py:34
+msgid "Boys Who Like You"
+msgstr "বয়েজ হু লাইক ইউ"
+
+#: .\likes\views.py:35
+msgid "People Who Like You"
+msgstr "যারা আপনাকে পছন্দ করে"
+
+#: .\likes\views.py:37
+msgid "Mutual Likes"
+msgstr "পারস্পরিক পছন্দ"
+
+#: .\matches\apps.py:8
+msgid "Speedy Match Matches"
+msgstr "Speedy Match Matches"
+
+#: .\matches\views.py:84 .\matches\views.py:98
+msgid "Your match settings were saved."
+msgstr "আপনার ম্যাচ সেটিংস সংরক্ষণ করা হয়েছে."
+
+#: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
+msgid "Unknown"
+msgstr "অজানা"
+
+#: .\profiles\widgets.py:64
+msgid "None"
+msgstr "কোনোটিই নয়"
+
+#: .\settings\base_site.py:12
+msgid "Speedy Match [alpha]"
+msgstr "Speedy Match [আলফা]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Match"
+msgstr "দ্রুত ম্যাচ সম্পর্কে Speedy Match"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
+"find matching people for dating and chat with them online. You can add "
+"people as friends on Speedy Net, like people and send them messages. Speedy "
+"Match is open to free registration for people from all countries and ages "
+"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
+"available in %(languages_num)s languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> হল একটি নতুন ডেটিং/ম্যাচিং ওয়েব অ্যাপ যারা <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"\"></a> এর সদস্য "
+"এককদের জন্য রোমান্টিক উদ্দেশ্যে। স্পিডি ম্যা Speedy Net Speedy Net চের মাধ্যমে আপনি "
+"ডেটিং কর Speedy Match ার জন্য উপযুক্ত লোক খুঁজে পেতে পারেন এবং তাদের সাথে অনলাইনে "
+"চ্যাট করতে পারেন। আপনি স্পিডি নেটে লোকেদের বন্ধু হ Speedy Net িসাবে যুক্ত করতে "
+"পারেন, লোকেদের মতো এবং তাদের বার্তা পাঠাতে পারেন৷ স্পিডি ম্যাচ সব দেশ এবং বয়সের "
+"লোকেদের জন্য বিনামূল্যে নিবন্ধনের জন্য উন্মুক্ত (বয়স সীমা নেই!)। সাইটটি নিরামিষাশী "
+"এবং নিরামিষ বন্ধুত্বপূর্ণ। এটি বর্তমানে %(languages_num)s ভাষায় উপলব্ধ। Speedy "
+"Match Net"
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Match are vegan, support animal rights and object to "
+"experiments on animals. Speedy Match is a dating app friendly for vegan and "
+"vegetarian people and animals."
+msgstr ""
+"স্পিডি ম্যাচের প্রতি Speedy Match ষ্ঠাতারা নিরামিষাশী, প্রাণীদের অধিকার সমর্থন করে "
+"এবং প্রাণীদের উপর পরীক্ষা-নিরীক্ষায় আপত্তি জান Speedy Match ায়। স্পিডি ম্যাচ হল "
+"একটি ডেটিং অ্যাপ যা নিরামিষাশী এবং নিরামিষাশী মানুষ এবং প্রাণীদের জন্য বন্ধুত্বপূর্ণ।"
+
+#: .\templates\about\about.html:21
+msgid ""
+"Only people who match your requirements will be able to see your profile and "
+"contact you. We don't allow anonymous searches and Speedy Match profiles are "
+"visible to matching partners only. You can select who will be able to see "
+"your profile and which details will appear on your profile as public, which "
+"details only to friends and which details will be private. Private details "
+"will appear only to you."
+msgstr ""
+"শুধুমাত্র আপনার প্রয়োজনীয়তা মেলে যারা আপনার প্রোফাইল দেখতে এবং আপনার সাথে যোগাযোগ "
+"করতে সক্ষম হবে. আমরা বেনামী অনুসন্ধানের অনুমতি দিই না এবং Speedy Match দ্রুত ম্যাচ "
+"প্রোফাইলগুলি শুধুমাত্র মিলে যাওয়া অংশীদারদের কাছে দৃশ্যমান। আপনি নির্বাচন করতে পারেন "
+"কে আপনার প্রোফাইল দেখতে সক্ষম হবে এবং কোন বিবরণ আপনার প্রোফাইলে সর্বজনীন হিসাবে "
+"প্রদর্শিত হবে, কোন বিবরণ শুধুমাত্র বন্ধুদের জন্য এবং কোন বিবরণ ব্যক্তিগত হবে৷ ব্যক্তিগত "
+"বিবরণ শুধুমাত্র আপনি প্রদর্শিত হবে."
+
+#: .\templates\about\about.html:23
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes. "
+"<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
+msgstr ""
+"স্পিডি নেট এবং স্পিডি ম Speedy Net ্যাচের সমস্ত বৈশি Speedy Match ষ্ট্য বিনামূল্যে। "
+"মিলে যাওয়া অ Speedy Match ংশীদারদের খুঁজে পেতে আজই স্পিডি ম্যাচে যোগ দিন, এটি "
+"মাত্র কয়েক মিনিট সময় নেয়। যোগ দিতে <a href=\"/\" title=\"Join \">এখানে ক্লিক "
+"করুন</a> Speedy Match"
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Match is a free software & open source project. If you want to help "
+"developing and improving Speedy Match, please contact me by email."
+msgstr ""
+"Speedy Match স্পিডি ম্যাচ একটি বিনামূল্যের সফ্টওয়্যার এবং ওপেন সোর্স প্রকল্প। আপনি "
+"যদি দ্রুত ম্যাচের উন্নয়ন এবং উন্নতি করতে সাহায্য করতে চান, তাহলে অনুগ্রহ করে ইমেলের "
+"মাধ্যমে আমার সাথে যোগাযোগ করুন। Speedy Match"
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Match স্পিডি ম্যাচের নামকরণ করা হয়েছে <a href=\"https://www.facebook."
+"com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a> নামে, একটি মহিলা কুকুর "
+"যেটি বহু বছর ধরে আমাদের সাথে ছিল এবং 2003 সালে মারা গিয়েছিল। স্পিডি 1988 সালে "
+"7টি কুকুরছানার জন্ম দেয়।"
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
+msgstr ""
+"Speedy Match স্পিডি ম্যাচ বর্তমানে আলফাতে রয়েছে। এটি আগস্ট 2019 এ লঞ্চ করা "
+"হয়েছিল। স্পিডি ম্যাচের ইংরেজি সংস্করণটি তৈরি হচ্ছে। Speedy Match"
+
+#: .\templates\about\about.html:31
+msgid "Thank you and good luck,"
+msgstr "ধন্যবাদ এবং শুভকামনা,"
+
+#: .\templates\about\about.html:32
+msgid "Uri Rodberg"
+msgstr "উরি রডবার্গ"
+
+#: .\templates\about\about.html:33
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr ""
+"স্পিডি নেট এবং স্পিডি ম্যাচের Speedy Net প্রতিষ্ঠাতা ও পরিচালক, Speedy Match"
+
+#: .\templates\about\about.html:34
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Registration Step"
+msgstr "নিবন্ধন ধাপ"
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Welcome"
+msgstr "স্বাগতম"
+
+#: .\templates\accounts\edit_profile\activate.html:25
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s এ স্বাগতম"
+
+#: .\templates\accounts\edit_profile\activate.html:46
+#: .\templates\accounts\edit_profile\base.html:10
+#: .\templates\matches\settings\base.html:41
+#: .\templates\profiles\user_extra_info_widget.html:18
+msgid "About me"
+msgstr "আমার সম্পর্কে"
+
+#: .\templates\accounts\edit_profile\activate.html:48
+#: .\templates\accounts\edit_profile\base.html:15
+#: .\templates\matches\settings\base.html:36
+msgid "About my match"
+msgstr "আমার ম্যাচ সম্পর্কে"
+
+#: .\templates\accounts\edit_profile\activate.html:76
+msgid "Back"
+msgstr "ব্যাক"
+
+#: .\templates\accounts\edit_profile\activate.html:79
+msgid "Next step"
+msgstr "পরবর্তী ধাপ"
+
+#: .\templates\accounts\edit_profile\activate.html:85
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"আপনার Speedy Net স্পিডি নেট অ্যাকাউন্ট সক্রিয় নেই। এটি সক্রিয় করতে এই পৃষ্ঠায় প্রবেশ "
+"করুন."
+
+#: .\templates\admin\matches\match_list.html:5
+msgid "Admin - All Matches"
+msgstr "অ্যাডমিন - সমস্ত ম্যাচ"
+
+#: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "আপনার ম্যাচ"
+
+#: .\templates\base_site.html:29
+#: .\templates\menu\user_menu_profile_is_active.html:11
+msgid "Matches"
+msgstr "মেলে"
+
+#: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:22
+#: .\templates\menu\user_menu_profile_is_active.html:20
+msgid "Likes"
+msgstr "পছন্দ"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:48
+msgid "Your Match Settings"
+msgstr "আপনার ম্যাচ সেটিংস"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:50
+#: .\templates\matches\settings\base.html:10
+#: .\templates\matches\settings\base.html:30
+msgid "Match Settings"
+msgstr "ম্যাচ সেটিংস"
+
+#: .\templates\base_site.html:105 .\templates\base_site.html:106
+#: .\templates\base_site.html:114 .\templates\base_site.html:115
+msgid "A vegan friendly website"
+msgstr "একটি নিরামিষাশী বন্ধুত্বপূর্ণ ওয়েবসাইট"
+
+#: .\templates\email\likes\like_body.txt:1
+msgid "likes you."
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\templates\email\likes\like_body.txt:6
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পেতে সদস্যতা নিয়েছেন৷ আপনার বিজ্ঞপ্তি "
+"সেটিংস পরিবর্তন করতে বা অপ্ট আউট করতে এই পৃষ্ঠায় প্রবেশ করুন:"
+
+#: .\templates\email\likes\like_subject.txt:1
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "কেউ আপনাকে %(site_name)s এ পছন্দ করে"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "আপনার এখনো কোনো বন্ধু নেই"
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "আপনার বন্ধুরা"
+
+#: .\templates\likes\like_list.html:51
+msgid "You have no likes here."
+msgstr "আপনি এখানে কোন পছন্দ আছে."
+
+#: .\templates\main\main_page.html:7
+msgid "Free online dating"
+msgstr "বিনামূল্যে অনলাইন ডেটিং"
+
+#: .\templates\main\main_page.html:10
+msgid ""
+"Speedy Match is a new dating/matching web app for romantic purposes for "
+"singles who are members of Speedy Net. With Speedy Match you can find "
+"matching people for dating and chat with them online. The site is vegan and "
+"vegetarian friendly."
+msgstr ""
+"Speedy Match হল একটি নতুন ডেটিং/ম্যাচিং ওয়েব অ্যাপ যারা স্পিডি নেট-এর সদস্য "
+"এককদের জন্য রোমান্টিক উদ্দেশ্যে। স্পিডি Speedy Net ম্যাচের মাধ্যমে আপন Speedy Match "
+"ি ডেটিং করার জন্য উপযুক্ত লোক খুঁজে পেতে পারেন এবং তাদের সাথে অনলাইনে চ্যাট করতে "
+"পারেন। সাইটটি নিরামিষাশী এবং নিরামিষ বন্ধুত্বপূর্ণ।"
+
+#: .\templates\main\main_page.html:14
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr "প্রেমিক খুঁজছেন? গার্লফ্রেন্ড খুঁজছেন? আসুন এবং দ্রুত দেখা! Speedy"
+
+#: .\templates\main\main_page.html:16
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes."
+msgstr ""
+"স্পিডি নেট এবং স্পিডি ম্ Speedy Net যাচের সমস্ত বৈশিষ Speedy Match ্ট্য বিনামূল্যে। "
+"মিলে যাওয়া অংশ Speedy Match ীদারদের খুঁজে পেতে আজই স্পিডি ম্যাচে যোগ দিন, এটি "
+"মাত্র কয়েক মিনিট সময় নেয়।"
+
+#: .\templates\matches\match_list.html:41
+msgid "Update matches"
+msgstr "ম্যাচ আপডেট করুন"
+
+#: .\templates\matches\match_list.html:49
+#: .\templates\profiles\user_extra_info_widget.html:38
+msgid "Diet"
+msgstr "ডায়েট"
+
+#: .\templates\matches\match_list.html:60
+msgid "Age:"
+msgstr "বয়স:"
+
+#: .\templates\matches\match_list.html:74
+msgid "Refresh"
+msgstr "রিফ্রেশ"
+
+#: .\templates\matches\match_list.html:81
+msgid "Add more options"
+msgstr "আরো বিকল্প যোগ করুন"
+
+#: .\templates\matches\match_list.html:110
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"আপনার এখনো কোনো মিল নেই। আপনার অনুসন্ধান সেটিংস প্রসারিত করার চেষ্টা করুন বা পরে "
+"আবার চেক করুন।"
+
+#: .\templates\matches\settings\base.html:27
+msgid "Back to Matches"
+msgstr "ম্যাচগুলিতে ফিরে যান"
+
+#: .\templates\matches\settings\base.html:46
+msgid "Profile Info"
+msgstr "প্রোফাইল তথ্য"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "বন্ধুরা"
+
+#: .\templates\profiles\tools\like.html:11
+#: .\templates\profiles\tools\like.html:13
+msgid "Like"
+msgstr "লাইক"
+
+#: .\templates\profiles\tools\like.html:19
+#: .\templates\profiles\tools\like.html:21
+msgid "Unlike"
+msgstr "অপছন্দ"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "তোমার বন্ধু"
+
+#: .\templates\profiles\user_base_site.html:10
+#: .\templates\profiles\user_base_site.html:16
+msgid "likes you"
+msgstr "তোমাকে পছন্দ করে"
+
+#: .\templates\profiles\user_base_site.html:12
+#: .\templates\profiles\user_base_site.html:18
+msgid "You like"
+msgstr "আপনি পছন্দ করেন"
+
+#: .\templates\profiles\user_base_site.html:14
+msgid "Friendship request sent"
+msgstr "বন্ধুত্বের অনুরোধ পাঠানো হয়েছে"
+
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "আরো তথ্য"
+
+#: .\templates\profiles\user_extra_info_widget.html:22
+msgid "Where do I live?"
+msgstr "আমি কোথায় থাকি?"
+
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
+msgstr "ধূমপানের অবস্থা"
+
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
+msgstr "সম্পর্কের অবস্থা"
+
+#: .\templates\profiles\user_extra_info_widget.html:58
+msgid "Last visited Speedy Match"
+msgstr "শেষ পরিদর্শন Speedy Match দ্রুত ম্যাচ"
+
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "ম্যাচ র‍্যাঙ্ক"
+
+#: .\templates\profiles\user_rank_widget.html:28
+msgid "There is no match."
+msgstr "কোন মিল নেই।"

@@ -1,0 +1,379 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-06 04:32+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "Delete Account"
+msgstr "Избриши налог"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "Delete Account"
+msgstr "Избриши налог"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "Delete Account"
+msgstr "Избриши налог"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
+"Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
+"такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
+" мала слова."
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
+"Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
+"такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
+" мала слова."
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
+"Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
+"такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
+" мала слова."
+
+#: .\__translations\__translations.py:10
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Trajno izbrišite svoj {site_name} nalog"
+
+#: .\__translations\__translations.py:11
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "Trajno izbrišite svoj {site_name} nalog"
+
+#: .\__translations\__translations.py:12
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Trajno izbrišite svoj {site_name} nalog"
+
+#: .\__translations\__translations.py:14
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite "
+"{site_name}."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite "
+"{site_name}."
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite "
+"{site_name}."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Net Accounts"
+msgstr "Speedy Net Accounts"
+
+#: .\accounts\forms.py:18
+msgid "Your password"
+msgstr "Ваша лозинка"
+
+#: .\accounts\forms.py:19
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
+"Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
+"такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
+" мала слова."
+
+#: .\accounts\forms.py:33
+msgid "Invalid password."
+msgstr "Неважећа лозинка."
+
+#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
+#: .\accounts\views.py:82
+msgid "Yes. Delete my account."
+msgstr "Да. Избриши мој налог."
+
+#: .\accounts\models.py:30
+msgid "Speedy Net User"
+msgstr "Speedy Net User"
+
+#: .\accounts\models.py:32
+msgid "User"
+msgstr "Корисник"
+
+#: .\accounts\models.py:34
+msgid "Number of friends on last user's visit"
+msgstr "Број пријатеља приликом последње посете корисника"
+
+#: .\accounts\models.py:50
+msgid "Speedy Net Profile"
+msgstr "Speedy Net Profile"
+
+#: .\accounts\models.py:51
+msgid "Speedy Net Profiles"
+msgstr "Speedy Net Profiles"
+
+#: .\accounts\utils.py:23
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"Укупан број активних чланова на сајту је "
+"{total_number_of_active_members_in_the_last_four_months}, од чега је "
+"{total_number_of_active_members_in_the_last_week} чланова ушло на сајт у "
+"прошлој недељи."
+
+#: .\settings\base_site.py:12
+msgid "Speedy Net [alpha]"
+msgstr "Speedy Net [алфа]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Net"
+msgstr "О Спееди Нету Speedy Net"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:13
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> је нова друштвена мрежа. Помоћу Speedy Net можете да "
+"комуницирате са својим пријатељима. Speedy Net је отворен за бесплатну "
+"регистрацију свима из свих земаља и свих узраста (без старосне границе!). "
+"Сајт је прилагођен веганима и вегетаријанцима. Тренутно је доступан на "
+"%(languages_num)s језика."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
+msgstr ""
+"Оснивачи Спееди Нета Speedy Net су вегани, подржавају права животиња и "
+"противе се експериментима на животињама Speedy Net. Спееди Нет је друштвена "
+"мрежа прилагођена веганима и вегетаријанцима и животињама."
+
+#: .\templates\about\about.html:21
+msgid ""
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
+msgstr ""
+"Одлучили смо да ограничимо број пријатеља на Speedy Net Спееди Нет-у на 800."
+" Препоручујемо вам да као пријатеље додате само особе које познајете лично. "
+"Можете одабрати који ће се детаљи појавити на вашем профилу као јавни, који "
+"само пријатељима, а који ће бити приватни. Приватни детаљи ће се појавити "
+"само вама."
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, python-format
+msgid ""
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
+msgstr ""
+"Можете користити нашу нову апликацију, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, да пронађете одговарајуће особе за излазак. Speedy"
+" Match је отворен за самце свих узраста."
+
+#: .\templates\about\about.html:25
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"Све функције Спееди Нет- Speedy Net а и Спееди Матцх-а Speedy Match су "
+"бесплатне. Придружите Speedy Net се Спееди Нет-у данас да бисте пронашли "
+"пријатеље, потребно је само неколико минута. Kliknite <a href=\"/\" title=\"Join Speedy Net\">ovde da se pridružite</a>."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
+msgstr ""
+"Speedy Net Спееди Нет је бесплатни софтвер и пројекат отвореног кода. Ако "
+"желите да помогнете у развоју и побољшању Спееди Нета, контактирајте ме "
+"путем е-поште."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Net је добио назив по <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Спиди</a>, женском псу који је био са нама много година и "
+"умро 2003. Спиди је 1988. оштенио 7 штенаца."
+
+#: .\templates\about\about.html:31
+msgid "Speedy Net is currently in alpha. It was launched in June 2012."
+msgstr ""
+"Speedy Net Спееди Нет је тренутно у алфа верзији. Покренут је у јуну 2012."
+
+#: .\templates\about\about.html:33
+msgid "Thank you and good luck,"
+msgstr "Хвала и срећно,"
+
+#: .\templates\about\about.html:34
+msgid "Uri Rodberg"
+msgstr "Ури Родберг"
+
+#: .\templates\about\about.html:35
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Оснивач и директор Спееди Нет Speedy Net и Спееди Матцх, Speedy Match"
+
+#: .\templates\about\about.html:36
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:6
+msgid "Welcome"
+msgstr "Добродошли"
+
+#: .\templates\accounts\edit_profile\activate.html:12
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "Добродошли на %(site_name)s"
+
+#: .\templates\accounts\edit_profile\activate.html:16
+msgid "Please confirm your email address."
+msgstr "Молимо потврдите своју адресу е-поште."
+
+#: .\templates\accounts\edit_profile\activate.html:22
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Ваш Спееди Speedy Net Нет налог није активан. Унесите ову страницу да бисте "
+"је активирали."
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
+msgstr "Блокирани корисници"
+
+#: .\templates\accounts\edit_profile\base.html:17
+msgid "Delete Account"
+msgstr "Избриши налог"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "Још увек немаш ниједног пријатеља."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "Ваши пријатељи"
+
+#: .\templates\main\main_page.html:9
+msgid ""
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
+msgstr ""
+"Speedy Net Спееди Нет је нова друштвена мрежа. Са Speedy Net Спееди Нет-ом "
+"можете комуницирати са својим пријатељима Speedy Net. Спееди Нет је отворен "
+"за бесплатну регистрацију за људе из свих земаља и узраста (без старосне "
+"границе!). Сајт је прилагођен за вегане и вегетаријанце."
+
+#: .\templates\main\main_page.html:17
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
+msgstr ""
+"Све функције Спееди Нет-а Speedy Net и Спееди Матцх-а су Speedy Match "
+"бесплатне. Придружите се Speedy Net Спееди Нет-у данас да бисте пронашли "
+"пријатеље, потребно је само неколико минута."
+
+#: .\templates\main\main_page.html:49
+msgid "Speedy Match – dating Speedy"
+msgstr "Speedy Match Спееди Матцх – забављање Спееди Speedy"
+
+#: .\templates\main\main_page.html:49
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr "Тражите дечка? Тражите девојку? Дођите и упознајте Спеедија! Speedy"
+
+#: .\templates\main\main_page.html:78
+msgid "Free Online Dating"
+msgstr "Фрее Онлине Датинг"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "Пријатељи"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "Твој пријатељ"
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr "Захтев за пријатељство је послат"

@@ -1,0 +1,368 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-06 06:58+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "Delete Account"
+msgstr "حذف الحساب"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "Delete Account"
+msgstr "حذف الحساب"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "Delete Account"
+msgstr "حذف الحساب"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي"
+" ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. حذف "
+"حسابي.\". في هذا المجال، بدقة وحساسة لحالة الأحرف."
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي"
+" ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. حذف "
+"حسابي.\". في هذا المجال، بدقة وحساسة لحالة الأحرف."
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي"
+" ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. حذف "
+"حسابي.\". في هذا المجال، بدقة وحساسة لحالة الأحرف."
+
+#: .\__translations\__translations.py:10
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "احذف حسابك {site_name} نهائيًا"
+
+#: .\__translations\__translations.py:11
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "احذف حسابك {site_name} نهائيًا"
+
+#: .\__translations\__translations.py:12
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "احذف حسابك {site_name} نهائيًا"
+
+#: .\__translations\__translations.py:14
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
+"{site_name}."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
+"{site_name}."
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام "
+"{site_name}."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Net Accounts"
+msgstr "Speedy Net Accounts"
+
+#: .\accounts\forms.py:18
+msgid "Your password"
+msgstr "كلمة المرور الخاصة بك"
+
+#: .\accounts\forms.py:19
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم "
+"ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي"
+" ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب \"نعم. حذف "
+"حسابي.\". في هذا المجال، بدقة وحساسة لحالة الأحرف."
+
+#: .\accounts\forms.py:33
+msgid "Invalid password."
+msgstr "كلمة المرور غير صالحة."
+
+#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
+#: .\accounts\views.py:82
+msgid "Yes. Delete my account."
+msgstr "نعم. حذف حسابي."
+
+#: .\accounts\models.py:30
+msgid "Speedy Net User"
+msgstr "Speedy Net User"
+
+#: .\accounts\models.py:32
+msgid "User"
+msgstr "مستخدم"
+
+#: .\accounts\models.py:34
+msgid "Number of friends on last user's visit"
+msgstr "عدد الأصدقاء في زيارة المستخدم الأخير"
+
+#: .\accounts\models.py:50
+msgid "Speedy Net Profile"
+msgstr "Speedy Net Profile"
+
+#: .\accounts\models.py:51
+msgid "Speedy Net Profiles"
+msgstr "Speedy Net Profiles"
+
+#: .\accounts\utils.py:23
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"إجمالي عدد الأعضاء النشطين على الموقع هو "
+"{total_number_of_active_members_in_the_last_four_months}، منهم "
+"{total_number_of_active_members_in_the_last_week} دخلوا الموقع في الأسبوع "
+"الماضي."
+
+#: .\settings\base_site.py:12
+msgid "Speedy Net [alpha]"
+msgstr "Speedy Net [ألفا]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Net"
+msgstr "حول سبيدي نت Speedy Net"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:13
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a> هي شبكة اجتماعية جديدة Speedy Net. مع سبيدي نت يمكنك التواصل مع "
+"Speedy Net أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من جميع البلدان "
+"والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو متوفر حاليًا "
+"بلغات %(languages_num)s. Net"
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
+msgstr ""
+"مؤسسو سبيدي نت Speedy Net نباتيون ويدعمون حقوق الحيوان ويعترضون على التجارب "
+"على الحيوانات Speedy Net. سبيدي نت هي شبكة اجتماعية صديقة للأشخاص والحيوانات"
+" النباتية."
+
+#: .\templates\about\about.html:21
+msgid ""
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
+msgstr ""
+"قررنا تحديد عدد الأصدقاء على سبيدي نت بـ Speedy Net 800 صديق. ونحن نشجعك على"
+" إضافة الأشخاص الذين تعرفهم شخصيًا فقط كأصدقاء. يمكنك تحديد التفاصيل التي "
+"ستظهر في ملفك الشخصي للعامة، والتفاصيل التي سيتم عرضها على الأصدقاء فقط، "
+"والتفاصيل التي ستكون خاصة. سوف تظهر التفاصيل الخاصة لك فقط."
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, python-format
+msgid ""
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
+msgstr ""
+"يمكنك استخدام تطبيقنا الجديد، <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>، للعثور على الأشخاص المناسبين للمواعدة. Speedy "
+"Match مفتوح للأفراد من جميع الأعمار."
+
+#: .\templates\about\about.html:25
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي "
+"Speedy Net نت اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق. <a "
+"href=\"/\" title=\"Join \">انقر هنا</a> للانضمام. Speedy Net"
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
+msgstr ""
+"Speedy Net سبيدي نت هو برنامج مجاني ومشروع مفتوح المصدر. إذا كنت تريد "
+"المساعدة في تطوير وتحسين سبيدي نت، يرجى الاتصال بي عبر البريد الإلكتروني. "
+"Speedy Net"
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Net تم تسمية سبيدي نت على اسم <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>، وهي أنثى كلبة كانت معنا لسنوات عديدة وتوفيت في "
+"عام 2003. وأنجبت سبيدي 7 جراء في عام 1988."
+
+#: .\templates\about\about.html:31
+msgid "Speedy Net is currently in alpha. It was launched in June 2012."
+msgstr "Speedy Net سبيدي نت حاليا في مرحلة ألفا. تم إطلاقه في يونيو 2012."
+
+#: .\templates\about\about.html:33
+msgid "Thank you and good luck,"
+msgstr "شكرا لكم وحظا سعيدا،"
+
+#: .\templates\about\about.html:34
+msgid "Uri Rodberg"
+msgstr "أوري رودبيرج"
+
+#: .\templates\about\about.html:35
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Speedy Match Net ماتش،"
+
+#: .\templates\about\about.html:36
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:6
+msgid "Welcome"
+msgstr "مرحباً"
+
+#: .\templates\accounts\edit_profile\activate.html:12
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "مرحبًا بك في %(site_name)s"
+
+#: .\templates\accounts\edit_profile\activate.html:16
+msgid "Please confirm your email address."
+msgstr "يرجى تأكيد عنوان بريدك الإلكتروني."
+
+#: .\templates\accounts\edit_profile\activate.html:22
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr "حسابك Speedy Net في سبيدي نت غير نشط. أدخل إلى هذه الصفحة لتفعيلها."
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
+msgstr "المستخدمون المحظورون"
+
+#: .\templates\accounts\edit_profile\base.html:17
+msgid "Delete Account"
+msgstr "حذف الحساب"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "ليس لديك أي أصدقاء حتى الآن."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "أصدقائك"
+
+#: .\templates\main\main_page.html:9
+msgid ""
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
+msgstr ""
+"Speedy Net سبيدي نت هي شبكة اجتماعية Speedy Net جديدة. مع سبيدي نت يمكنك "
+"التواصل Speedy Net مع أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من "
+"جميع البلدان والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين."
+
+#: .\templates\main\main_page.html:17
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
+msgstr ""
+"جميع الميزات المتوفرة في Speedy Net وSpeedy Match مجانية. انضم إلى سبيدي "
+"Speedy Net نت اليوم للعثور على أصدقاء، الأمر لا يستغرق سوى بضع دقائق."
+
+#: .\templates\main\main_page.html:49
+msgid "Speedy Match – dating Speedy"
+msgstr "Speedy Match مباراة سريعة – المواعدة السريعة Speedy"
+
+#: .\templates\main\main_page.html:49
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr "تبحث عن صديقها؟ تبحث عن صديقة؟ تعال وتلبية سبيدي! Speedy"
+
+#: .\templates\main\main_page.html:78
+msgid "Free Online Dating"
+msgstr "التعارف عن طريق الانترنت مجانا"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "أصدقاء"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "صديقك"
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr "تم إرسال طلب الصداقة"
