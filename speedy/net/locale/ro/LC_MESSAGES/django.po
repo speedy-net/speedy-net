@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "Șterge contul"
+msgstr "Ștergeți contul"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "Șterge contul"
+msgstr "Ștergeți contul"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "Șterge contul"
+msgstr "Ștergeți contul"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -197,11 +197,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica cu prietenii "
-"tăi. Net este deschis Speedy Net pentru înregistrarea gratuită pentru "
-"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul este"
-" vegan și vegetarian. În prezent este disponibil în %(languages_num)s limbi."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica "
+"cu prietenii tăi. Net este deschis Speedy Net pentru înregistrarea gratuită "
+"pentru persoane din toate țările și vârstele (fără limită de vârstă!). Site-"
+"ul este vegan și vegetarian. În prezent este disponibil în %(languages_num)s"
+" limbi."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -317,7 +318,7 @@ msgstr "Utilizatori blocați"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "Șterge contul"
+msgstr "Ștergeți contul"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."

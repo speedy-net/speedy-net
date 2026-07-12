@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "Видалити акаунт"
+msgstr "Видалити обліковий запис"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "Видалити акаунт"
+msgstr "Видалити обліковий запис"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "Видалити акаунт"
+msgstr "Видалити обліковий запис"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -201,12 +201,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> — це нова соціальна мережа. За допомогою Speedy Net ви можете "
-"спілкуватися з друзями. Net Speedy Net відкритий для безкоштовної реєстрації"
-" для людей з усіх країн і вікових категорій (без вікових обмежень!). Сайт "
-"підходить для веганів і вегетаріанців. Наразі він доступний "
-"%(languages_num)s мовами."
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> — це нова соціальна мережа. За допомогою Speedy Net ви "
+"можете спілкуватися з друзями. Net Speedy Net відкритий для безкоштовної "
+"реєстрації для людей з усіх країн і вікових категорій (без вікових "
+"обмежень!). Сайт підходить для веганів і вегетаріанців. Наразі він доступний"
+" %(languages_num)s мовами."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -322,7 +322,7 @@ msgstr "Заблоковані користувачі"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "Видалити акаунт"
+msgstr "Видалити обліковий запис"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
