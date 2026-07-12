@@ -252,11 +252,11 @@ msgstr "謝謝你，祝你好運，"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr "尤里·羅德伯格"
+msgstr "乌里·罗德贝格"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "速網、速配創辦人兼董事， Speedy Speedy Speedy Net Speedy Speedy Match Net Net Net"
+msgstr "Speedy Net 和 Speedy Match 的創始人兼董事，"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
