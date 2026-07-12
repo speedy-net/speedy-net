@@ -152,7 +152,7 @@ msgstr "Đúng. Xóa tài khoản của tôi."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Người dùng Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -201,12 +201,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Net </a> là"
-" mạng xã hội mới. Với Speedy Net bạn có thể Speedy Net liên lạc với bạn bè "
-"của mình. Net mở cửa Speedy Net đăng ký miễn phí cho mọi người từ mọi quốc "
-"gia và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn chay và"
-" thân thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s ngôn "
-"ngữ. Net"
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Net "
+"</a> là mạng xã hội mới. Với Speedy Net bạn có thể Speedy Net liên lạc với "
+"bạn bè của mình. Net mở cửa Speedy Net đăng ký miễn phí cho mọi người từ mọi"
+" quốc gia và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn "
+"chay và thân thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s "
+"ngôn ngữ. Net"
 
 #: .\templates\about\about.html:19
 msgid ""

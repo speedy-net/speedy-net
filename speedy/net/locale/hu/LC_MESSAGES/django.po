@@ -152,7 +152,7 @@ msgstr "Igen. Fiókom törlése."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net Felhasználó"
 
 #: .\accounts\models.py:32
 msgid "User"
