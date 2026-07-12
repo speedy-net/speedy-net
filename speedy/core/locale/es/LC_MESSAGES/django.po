@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-05 14:19+0300\n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2698,41 +2698,145 @@ msgstr "Inglés"
 msgid "Hebrew"
 msgstr "Hebreo"
 
-#: .\settings\base_with_login.py:63
+#: .\settings\base_with_login.py:65
 msgid "French"
 msgstr "Francés"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:66
 msgid "German"
 msgstr "Alemán"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:67
 msgid "Spanish"
 msgstr "Español"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:68
 msgid "Portuguese"
 msgstr "Portugués"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:69
 msgid "Italian"
 msgstr "Italiano"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:70
 msgid "Dutch"
 msgstr "Holandés"
 
-#: .\settings\base_with_login.py:69
-msgid "Swedish"
-msgstr "Sueco"
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "japonés"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "ruso"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "Chino"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Polaco"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "persa"
+
+#: .\settings\base_with_login.py:79
 msgid "Korean"
 msgstr "Coreano"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "árabe"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "indonesio"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "ucranio"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "turco"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "vietnamita"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "checo"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "Sueco"
+
+#: .\settings\base_with_login.py:87
 msgid "Finnish"
 msgstr "Finés"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "húngaro"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "tailandés"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "Griego"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "malayo"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "serbio"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "rumano"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "bengalí"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "catalán"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "noruego (bokmål)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "búlgaro"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "danés"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "eslovaco"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "hindi"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "estonio"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "croata"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2762,7 +2866,7 @@ msgstr "Speedy lo siente, pero no se encuentra la página."
 msgid "Internal server error"
 msgstr "Error Interno del Servidor"
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:230
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"

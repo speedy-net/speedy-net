@@ -59,19 +59,52 @@ LOCALE_PATHS += [
     str(ROOT_DIR / 'speedy/match/locale'),
 ]
 
-LANGUAGES_TO_ADD = [
+_LANGUAGES = LANGUAGES
+
+_LANGUAGES_TO_ADD_1 = [
     ('fr', _('French')),
     ('de', _('German')),
     ('es', _('Spanish')),
     ('pt', _('Portuguese')),
     ('it', _('Italian')),
     ('nl', _('Dutch')),
-    ('sv', _('Swedish')),
-    ('ko', _('Korean')),
-    ('fi', _('Finnish')),
+    ('ja', _('Japanese')),
+    ('ru', _('Russian')),
+    ('zh', _('Chinese')),
+    ('pl', _('Polish')),
+    ('fa', _('Persian')),
 ]
 
-LANGUAGES = LANGUAGES[:1] + LANGUAGES_TO_ADD + LANGUAGES[1:]
+_LANGUAGES_TO_ADD_2 = [
+    ('ko', _('Korean')),
+    ('ar', _('Arabic')),
+    ('id', _('Indonesian')),
+    ('uk', _('Ukrainian')),
+    ('tr', _('Turkish')),
+    ('vi', _('Vietnamese')),
+    ('cs', _('Czech')),
+    ('sv', _('Swedish')),
+    ('fi', _('Finnish')),
+    ('hu', _('Hungarian')),
+    ('th', _('Thai')),
+    ('el', _('Greek')),
+    ('ms', _('Malay')),
+    ('sr', _('Serbian')),
+    ('ro', _('Romanian')),
+    ('bn', _('Bengali')),
+    ('ca', _('Catalan')),
+    ('no', _('Norwegian (Bokmål)')),
+    ('bg', _('Bulgarian')),
+    ('da', _('Danish')),
+    ('sk', _('Slovak')),
+    ('hi', _('Hindi')),
+    ('et', _('Estonian')),
+    ('hr', _('Croatian')),
+]
+
+LANGUAGES = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1 + _LANGUAGES[1:] + _LANGUAGES_TO_ADD_2
+
+LANGUAGES_IN_HTML = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1[:6] + _LANGUAGES[1:]
 
 # LANGUAGES_WITH_ADS = {'en'}
 # LANGUAGES_WITH_ADS = set()

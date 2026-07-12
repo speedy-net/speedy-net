@@ -1,0 +1,3594 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: no\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:5
+msgid "Your friend"
+msgstr "Din venn"
+
+#: .\__translations\__translations.html:6
+msgid "Friendship request sent"
+msgstr "Venneforespørsel sendt"
+
+#: .\__translations\__translations.html:8
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Du har ikke bekreftet e-postadressen din. Vennligst sjekk innboksen din."
+
+#: .\__translations\__translations.html:9
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Du har ikke bekreftet e-postadressen din. Vennligst sjekk innboksen din."
+
+#: .\__translations\__translations.html:10
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Du har ikke bekreftet e-postadressen din. Vennligst sjekk innboksen din."
+
+#: .\__translations\__translations.html:12
+msgctxt "female"
+msgid "Logout"
+msgstr "Logg ut"
+
+#: .\__translations\__translations.html:13
+msgctxt "male"
+msgid "Logout"
+msgstr "Logg ut"
+
+#: .\__translations\__translations.html:14
+msgctxt "other"
+msgid "Logout"
+msgstr "Logg ut"
+
+#: .\__translations\__translations.html:16
+#, python-format
+msgctxt "female"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Hei <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"velkommen tilbake til %(site_name)s!"
+
+#: .\__translations\__translations.html:17
+#, python-format
+msgctxt "male"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Hei <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"velkommen tilbake til %(site_name)s!"
+
+#: .\__translations\__translations.html:18
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Hei <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"velkommen tilbake til %(site_name)s!"
+
+#: .\__translations\__translations.html:20
+msgctxt "female"
+msgid "Please confirm your email address."
+msgstr "Vennligst bekreft e-postadressen din."
+
+#: .\__translations\__translations.html:21
+msgctxt "male"
+msgid "Please confirm your email address."
+msgstr "Vennligst bekreft e-postadressen din."
+
+#: .\__translations\__translations.html:22
+msgctxt "other"
+msgid "Please confirm your email address."
+msgstr "Vennligst bekreft e-postadressen din."
+
+#: .\__translations\__translations.html:24
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr "Deaktiver konto"
+
+#: .\__translations\__translations.html:25
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr "Deaktiver konto"
+
+#: .\__translations\__translations.html:26
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr "Deaktiver konto"
+
+#: .\__translations\__translations.html:28
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr "Send en bekreftelses-e-post på nytt"
+
+#: .\__translations\__translations.html:29
+msgctxt "male"
+msgid "Resend a confirmation email"
+msgstr "Send en bekreftelses-e-post på nytt"
+
+#: .\__translations\__translations.html:30
+msgctxt "other"
+msgid "Resend a confirmation email"
+msgstr "Send en bekreftelses-e-post på nytt"
+
+#: .\__translations\__translations.html:32
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr "Gjør denne e-postadressen til primær"
+
+#: .\__translations\__translations.html:33
+msgctxt "male"
+msgid "Make this email address primary"
+msgstr "Gjør denne e-postadressen til primær"
+
+#: .\__translations\__translations.html:34
+msgctxt "other"
+msgid "Make this email address primary"
+msgstr "Gjør denne e-postadressen til primær"
+
+#: .\__translations\__translations.html:36
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Er du sikker på at du vil slette denne e-postadressen?"
+
+#: .\__translations\__translations.html:37
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Er du sikker på at du vil slette denne e-postadressen?"
+
+#: .\__translations\__translations.html:38
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Er du sikker på at du vil slette denne e-postadressen?"
+
+#: .\__translations\__translations.html:40
+msgctxt "female"
+msgid "Delete this email address"
+msgstr "Slett denne e-postadressen"
+
+#: .\__translations\__translations.html:41
+msgctxt "male"
+msgid "Delete this email address"
+msgstr "Slett denne e-postadressen"
+
+#: .\__translations\__translations.html:42
+msgctxt "other"
+msgid "Delete this email address"
+msgstr "Slett denne e-postadressen"
+
+#: .\__translations\__translations.html:44
+msgctxt "female"
+msgid "Add Another"
+msgstr "Legg til en annen"
+
+#: .\__translations\__translations.html:45
+msgctxt "male"
+msgid "Add Another"
+msgstr "Legg til en annen"
+
+#: .\__translations\__translations.html:46
+msgctxt "other"
+msgid "Add Another"
+msgstr "Legg til en annen"
+
+#: .\__translations\__translations.html:48
+msgctxt "female"
+msgid "Change Password"
+msgstr "Endre passord"
+
+#: .\__translations\__translations.html:49
+msgctxt "male"
+msgid "Change Password"
+msgstr "Endre passord"
+
+#: .\__translations\__translations.html:50
+msgctxt "other"
+msgid "Change Password"
+msgstr "Endre passord"
+
+#: .\__translations\__translations.html:52
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "Endre personverninnstillingene for e-postadresser på profilen din."
+
+#: .\__translations\__translations.html:53
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "Endre personverninnstillingene for e-postadresser på profilen din."
+
+#: .\__translations\__translations.html:54
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "Endre personverninnstillingene for e-postadresser på profilen din."
+
+#: .\__translations\__translations.html:56
+msgctxt "female"
+msgid "You're not blocking anybody."
+msgstr "Du blokkerer ikke noen."
+
+#: .\__translations\__translations.html:57
+msgctxt "male"
+msgid "You're not blocking anybody."
+msgstr "Du blokkerer ikke noen."
+
+#: .\__translations\__translations.html:58
+msgctxt "other"
+msgid "You're not blocking anybody."
+msgstr "Du blokkerer ikke noen."
+
+#: .\__translations\__translations.html:60
+msgctxt "female"
+msgid "Report a User"
+msgstr "Rapporter en bruker"
+
+#: .\__translations\__translations.html:61
+msgctxt "male"
+msgid "Report a User"
+msgstr "Rapporter en bruker"
+
+#: .\__translations\__translations.html:62
+msgctxt "other"
+msgid "Report a User"
+msgstr "Rapporter en bruker"
+
+#: .\__translations\__translations.html:72
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
+msgstr "Tilbakemeldingen din ble sendt til administratorer."
+
+#: .\__translations\__translations.html:73
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
+msgstr "Tilbakemeldingen din ble sendt til administratorer."
+
+#: .\__translations\__translations.html:74
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
+msgstr "Tilbakemeldingen din ble sendt til administratorer."
+
+#: .\__translations\__translations.html:76
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(user_name)s"
+msgstr "Send en melding til %(user_name)s"
+
+#: .\__translations\__translations.html:77
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(user_name)s"
+msgstr "Send en melding til %(user_name)s"
+
+#: .\__translations\__translations.html:78
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(user_name)s"
+msgstr "Send en melding til %(user_name)s"
+
+#: .\__translations\__translations.html:80
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "Merk alle som lest"
+
+#: .\__translations\__translations.html:81
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "Merk alle som lest"
+
+#: .\__translations\__translations.html:82
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "Merk alle som lest"
+
+#: .\__translations\__translations.html:84
+msgctxt "female"
+msgid "You:"
+msgstr "Du:"
+
+#: .\__translations\__translations.html:85
+msgctxt "male"
+msgid "You:"
+msgstr "Du:"
+
+#: .\__translations\__translations.html:86
+msgctxt "other"
+msgid "You:"
+msgstr "Du:"
+
+#: .\__translations\__translations.html:88
+msgctxt "female"
+msgid "You have no messages yet."
+msgstr "Du har ingen meldinger ennå."
+
+#: .\__translations\__translations.html:89
+msgctxt "male"
+msgid "You have no messages yet."
+msgstr "Du har ingen meldinger ennå."
+
+#: .\__translations\__translations.html:90
+msgctxt "other"
+msgid "You have no messages yet."
+msgstr "Du har ingen meldinger ennå."
+
+#: .\__translations\__translations.html:92
+msgctxt "female"
+msgid "You blocked "
+msgstr "Du blokkerte "
+
+#: .\__translations\__translations.html:93
+msgctxt "male"
+msgid "You blocked "
+msgstr "Du blokkerte "
+
+#: .\__translations\__translations.html:94
+msgctxt "other"
+msgid "You blocked "
+msgstr "Du blokkerte "
+
+#: .\__translations\__translations.html:96
+msgctxt "female"
+msgid " blocked you."
+msgstr " blokkerte deg."
+
+#: .\__translations\__translations.html:97
+msgctxt "male"
+msgid " blocked you."
+msgstr " blokkerte deg."
+
+#: .\__translations\__translations.html:98
+msgctxt "other"
+msgid " blocked you."
+msgstr " blokkerte deg."
+
+#: .\__translations\__translations.html:100
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen til %(user_name)s "
+"på Speedy Match."
+
+#: .\__translations\__translations.html:101
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen til %(user_name)s "
+"på Speedy Match."
+
+#: .\__translations\__translations.html:102
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen til %(user_name)s "
+"på Speedy Match."
+
+#: .\__translations\__translations.html:104
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen til %(user_name)s "
+"på Speedy Net."
+
+#: .\__translations\__translations.html:105
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen til %(user_name)s "
+"på Speedy Net."
+
+#: .\__translations\__translations.html:106
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen til %(user_name)s "
+"på Speedy Net."
+
+#: .\__translations\__translations.html:108
+msgctxt "female"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Du har også en Speedy Net-profil. Se profilen din på Speedy Net."
+
+#: .\__translations\__translations.html:109
+msgctxt "male"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Du har også en Speedy Net-profil. Se profilen din på Speedy Net."
+
+#: .\__translations\__translations.html:110
+msgctxt "other"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Du har også en Speedy Net-profil. Se profilen din på Speedy Net."
+
+#: .\__translations\__translations.html:112
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "Legg til i venner"
+
+#: .\__translations\__translations.html:113
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "Legg til i venner"
+
+#: .\__translations\__translations.html:114
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "Legg til i venner"
+
+#: .\__translations\__translations.html:116
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "Er du sikker på at du vil blokkere "
+
+#: .\__translations\__translations.html:117
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "Er du sikker på at du vil blokkere "
+
+#: .\__translations\__translations.html:118
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "Er du sikker på at du vil blokkere "
+
+#: .\__translations\__translations.html:120
+msgctxt "female"
+msgid "Block "
+msgstr "Blokkere "
+
+#: .\__translations\__translations.html:121
+msgctxt "male"
+msgid "Block "
+msgstr "Blokkere "
+
+#: .\__translations\__translations.html:122
+msgctxt "other"
+msgid "Block "
+msgstr "Blokkere "
+
+#: .\__translations\__translations.html:124
+msgctxt "female"
+msgid "Unblock "
+msgstr "Fjern blokkering "
+
+#: .\__translations\__translations.html:125
+msgctxt "male"
+msgid "Unblock "
+msgstr "Fjern blokkering "
+
+#: .\__translations\__translations.html:126
+msgctxt "other"
+msgid "Unblock "
+msgstr "Fjern blokkering "
+
+#: .\__translations\__translations.html:128
+msgctxt "female"
+msgid "Report "
+msgstr "Rapportere "
+
+#: .\__translations\__translations.html:129
+msgctxt "male"
+msgid "Report "
+msgstr "Rapportere "
+
+#: .\__translations\__translations.html:130
+msgctxt "other"
+msgid "Report "
+msgstr "Rapportere "
+
+#: .\__translations\__translations.html:132
+msgctxt "female"
+msgid "Report this photo"
+msgstr "Rapporter dette bildet"
+
+#: .\__translations\__translations.html:133
+msgctxt "male"
+msgid "Report this photo"
+msgstr "Rapporter dette bildet"
+
+#: .\__translations\__translations.html:134
+msgctxt "other"
+msgid "Report this photo"
+msgstr "Rapporter dette bildet"
+
+#: .\__translations\__translations.html:136
+msgctxt "female"
+msgid "Remove Friend"
+msgstr "Fjern venn"
+
+#: .\__translations\__translations.html:137
+msgctxt "male"
+msgid "Remove Friend"
+msgstr "Fjern venn"
+
+#: .\__translations\__translations.html:138
+msgctxt "other"
+msgid "Remove Friend"
+msgstr "Fjern venn"
+
+#: .\__translations\__translations.html:140
+msgctxt "female"
+msgid "Cancel Friendship Request"
+msgstr "Avbryt venneforespørsel"
+
+#: .\__translations\__translations.html:141
+msgctxt "male"
+msgid "Cancel Friendship Request"
+msgstr "Avbryt venneforespørsel"
+
+#: .\__translations\__translations.html:142
+msgctxt "other"
+msgid "Cancel Friendship Request"
+msgstr "Avbryt venneforespørsel"
+
+#: .\__translations\__translations.html:144
+msgctxt "female"
+msgid "Accept"
+msgstr "Akseptere"
+
+#: .\__translations\__translations.html:145
+msgctxt "male"
+msgid "Accept"
+msgstr "Akseptere"
+
+#: .\__translations\__translations.html:146
+msgctxt "other"
+msgid "Accept"
+msgstr "Akseptere"
+
+#: .\__translations\__translations.html:148
+msgctxt "female"
+msgid "Reject"
+msgstr "Avvis"
+
+#: .\__translations\__translations.html:149
+msgctxt "male"
+msgid "Reject"
+msgstr "Avvis"
+
+#: .\__translations\__translations.html:150
+msgctxt "other"
+msgid "Reject"
+msgstr "Avvis"
+
+#: .\__translations\__translations.html:152
+msgctxt "female"
+msgid "Accept Friendship Request"
+msgstr "Godta venneforespørsel"
+
+#: .\__translations\__translations.html:153
+msgctxt "male"
+msgid "Accept Friendship Request"
+msgstr "Godta venneforespørsel"
+
+#: .\__translations\__translations.html:154
+msgctxt "other"
+msgid "Accept Friendship Request"
+msgstr "Godta venneforespørsel"
+
+#: .\__translations\__translations.html:156
+msgctxt "female"
+msgid "Reject Friendship Request"
+msgstr "Avvis vennskapsforespørsel"
+
+#: .\__translations\__translations.html:157
+msgctxt "male"
+msgid "Reject Friendship Request"
+msgstr "Avvis vennskapsforespørsel"
+
+#: .\__translations\__translations.html:158
+msgctxt "other"
+msgid "Reject Friendship Request"
+msgstr "Avvis vennskapsforespørsel"
+
+#: .\__translations\__translations.html:160
+msgctxt "female"
+msgid "Send Message"
+msgstr "Send melding"
+
+#: .\__translations\__translations.html:161
+msgctxt "male"
+msgid "Send Message"
+msgstr "Send melding"
+
+#: .\__translations\__translations.html:162
+msgctxt "other"
+msgid "Send Message"
+msgstr "Send melding"
+
+#: .\__translations\__translations.html:164
+msgctxt "female"
+msgid "Welcome"
+msgstr "Velkomst"
+
+#: .\__translations\__translations.html:165
+msgctxt "male"
+msgid "Welcome"
+msgstr "Velkomst"
+
+#: .\__translations\__translations.html:166
+msgctxt "other"
+msgid "Welcome"
+msgstr "Velkomst"
+
+#: .\__translations\__translations.html:168
+msgctxt "female"
+msgid "Your friend"
+msgstr "Din venn"
+
+#: .\__translations\__translations.html:169
+msgctxt "male"
+msgid "Your friend"
+msgstr "Din venn"
+
+#: .\__translations\__translations.html:170
+msgctxt "other"
+msgid "Your friend"
+msgstr "Din venn"
+
+#: .\__translations\__translations.html:172
+msgctxt "female"
+msgid "See All"
+msgstr "Se alle"
+
+#: .\__translations\__translations.html:173
+msgctxt "male"
+msgid "See All"
+msgstr "Se alle"
+
+#: .\__translations\__translations.html:174
+msgctxt "other"
+msgid "See All"
+msgstr "Se alle"
+
+#: .\__translations\__translations.html:176
+msgctxt "female"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net-kontoen din er ikke aktiv. Gå inn på denne siden for å aktivere "
+"den."
+
+#: .\__translations\__translations.html:177
+msgctxt "male"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net-kontoen din er ikke aktiv. Gå inn på denne siden for å aktivere "
+"den."
+
+#: .\__translations\__translations.html:178
+msgctxt "other"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net-kontoen din er ikke aktiv. Gå inn på denne siden for å aktivere "
+"den."
+
+#: .\__translations\__translations.html:180
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "Velkommen til %(site_name)s"
+
+#: .\__translations\__translations.html:181
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "Velkommen til %(site_name)s"
+
+#: .\__translations\__translations.html:182
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "Velkommen til %(site_name)s"
+
+#: .\__translations\__translations.html:184
+msgctxt "female"
+msgid "has sent you a message."
+msgstr "har sendt deg en melding."
+
+#: .\__translations\__translations.html:185
+msgctxt "male"
+msgid "has sent you a message."
+msgstr "har sendt deg en melding."
+
+#: .\__translations\__translations.html:186
+msgctxt "other"
+msgid "has sent you a message."
+msgstr "har sendt deg en melding."
+
+#: .\__translations\__translations.html:188
+msgctxt "female"
+msgid "Read it:"
+msgstr "Les det:"
+
+#: .\__translations\__translations.html:189
+msgctxt "male"
+msgid "Read it:"
+msgstr "Les det:"
+
+#: .\__translations\__translations.html:190
+msgctxt "other"
+msgid "Read it:"
+msgstr "Les det:"
+
+#: .\__translations\__translations.html:192
+#, python-format
+msgctxt "female"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bekreft e-postadressen din på %(site_name)s"
+
+#: .\__translations\__translations.html:193
+#, python-format
+msgctxt "male"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bekreft e-postadressen din på %(site_name)s"
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "other"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bekreft e-postadressen din på %(site_name)s"
+
+#: .\__translations\__translations.html:196
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "Bruk denne lenken for å aktivere kontoen din:"
+
+#: .\__translations\__translations.html:197
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "Bruk denne lenken for å aktivere kontoen din:"
+
+#: .\__translations\__translations.html:198
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "Bruk denne lenken for å aktivere kontoen din:"
+
+#: .\__translations\__translations.html:200
+msgctxt "female"
+msgid "Use this link to verify your email address:"
+msgstr "Bruk denne lenken for å bekrefte e-postadressen din:"
+
+#: .\__translations\__translations.html:201
+msgctxt "male"
+msgid "Use this link to verify your email address:"
+msgstr "Bruk denne lenken for å bekrefte e-postadressen din:"
+
+#: .\__translations\__translations.html:202
+msgctxt "other"
+msgid "Use this link to verify your email address:"
+msgstr "Bruk denne lenken for å bekrefte e-postadressen din:"
+
+#: .\__translations\__translations.html:204
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "Bruk denne lenken for å endre passordet ditt:"
+
+#: .\__translations\__translations.html:205
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "Bruk denne lenken for å endre passordet ditt:"
+
+#: .\__translations\__translations.html:206
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "Bruk denne lenken for å endre passordet ditt:"
+
+#: .\__translations\__translations.html:208
+msgctxt "female"
+msgid "Username"
+msgstr "Brukernavn"
+
+#: .\__translations\__translations.html:209
+msgctxt "male"
+msgid "Username"
+msgstr "Brukernavn"
+
+#: .\__translations\__translations.html:210
+msgctxt "other"
+msgid "Username"
+msgstr "Brukernavn"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Du abonnerer på å motta denne typen varsler fra %(site_name)s. Gå inn på "
+"denne siden for å endre varslingsinnstillingene eller velge bort:"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Du abonnerer på å motta denne typen varsler fra %(site_name)s. Gå inn på "
+"denne siden for å endre varslingsinnstillingene eller velge bort:"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Du abonnerer på å motta denne typen varsler fra %(site_name)s. Gå inn på "
+"denne siden for å endre varslingsinnstillingene eller velge bort:"
+
+#: .\__translations\__translations.py:7
+msgid "Enter a valid email address."
+msgstr "Skriv inn en gyldig e-postadresse."
+
+#: .\__translations\__translations.py:8
+msgid "Email address"
+msgstr "E-postadresse"
+
+#: .\__translations\__translations.py:9 .\accounts\models.py:1295
+msgid "email address"
+msgstr "e-postadresse"
+
+#: .\__translations\__translations.py:10
+msgid "Email address:"
+msgstr "E-postadresse:"
+
+#: .\__translations\__translations.py:11
+#: .\templates\profiles\user_info_widget.html:70
+msgid "Email"
+msgstr "E-post"
+
+#: .\__translations\__translations.py:12
+msgid "Value must be valid JSON."
+msgstr "Verdien må være gyldig JSON."
+
+#: .\__translations\__translations.py:13
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Vennligst skriv inn riktig %(username)s og passord. Merk at begge feltene "
+"kan skille mellom store og små bokstaver."
+
+#: .\__translations\__translations.py:17
+msgid "Message"
+msgstr "Beskjed"
+
+#: .\__translations\__translations.py:19
+msgid "Friendship Request"
+msgstr "Venneforespørsel"
+
+#: .\__translations\__translations.py:20
+msgid "Friendship Requests"
+msgstr "Venneforespørsler"
+
+#: .\__translations\__translations.py:22
+msgid "Friend"
+msgstr "Venn"
+
+#: .\__translations\__translations.py:23 .\accounts\models.py:797
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.py:25
+msgid "Following Relationship"
+msgstr "Følger forholdet"
+
+#: .\__translations\__translations.py:26
+msgid "Following Relationships"
+msgstr "Følger forhold"
+
+#: .\__translations\__translations.py:28
+msgid "Blocker Relationship"
+msgstr "Blocker forhold"
+
+#: .\__translations\__translations.py:29
+msgid "Blocked Relationships"
+msgstr "Blokkerte forhold"
+
+#: .\__translations\__translations.py:34
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+"Listen inneholder %(show_value)d element, den skal ikke inneholde mer enn "
+"%(limit_value)d."
+msgstr[1] ""
+"Listen inneholder %(show_value)d elementer, den skal ikke inneholde mer enn "
+"%(limit_value)d."
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:45
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
+
+#: .\__translations\__translations.py:46
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
+
+#: .\__translations\__translations.py:47
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
+
+#: .\__translations\__translations.py:49
+msgctxt "female"
+msgid "Save Changes"
+msgstr "Lagre endringer"
+
+#: .\__translations\__translations.py:50
+msgctxt "male"
+msgid "Save Changes"
+msgstr "Lagre endringer"
+
+#: .\__translations\__translations.py:51
+msgctxt "other"
+msgid "Save Changes"
+msgstr "Lagre endringer"
+
+#: .\__translations\__translations.py:53
+msgctxt "female"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
+
+#: .\__translations\__translations.py:54
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
+
+#: .\__translations\__translations.py:55
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
+
+#: .\__translations\__translations.py:57
+#, python-brace-format
+msgctxt "female"
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:58
+#, python-brace-format
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:59
+#, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:61
+#, python-brace-format
+msgctxt "female"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
+
+#: .\__translations\__translations.py:65
+msgctxt "female"
+msgid "Add"
+msgstr "Legge til"
+
+#: .\__translations\__translations.py:66
+msgctxt "male"
+msgid "Add"
+msgstr "Legge til"
+
+#: .\__translations\__translations.py:67
+msgctxt "other"
+msgid "Add"
+msgstr "Legge til"
+
+#: .\__translations\__translations.py:69
+msgctxt "female"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
+
+#: .\__translations\__translations.py:70
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
+
+#: .\__translations\__translations.py:71
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
+
+#: .\__translations\__translations.py:73
+msgctxt "female"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
+
+#: .\__translations\__translations.py:74
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
+
+#: .\__translations\__translations.py:75
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
+
+#: .\__translations\__translations.py:77
+msgctxt "female"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
+
+#: .\__translations\__translations.py:78
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
+
+#: .\__translations\__translations.py:79
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
+
+#: .\__translations\__translations.py:81
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
+
+#: .\__translations\__translations.py:82
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
+
+#: .\__translations\__translations.py:83
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
+
+#: .\__translations\__translations.py:85
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+
+#: .\__translations\__translations.py:86
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+
+#: .\__translations\__translations.py:87
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+
+#: .\__translations\__translations.py:89
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
+
+#: .\__translations\__translations.py:90
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
+
+#: .\__translations\__translations.py:91
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
+
+#: .\__translations\__translations.py:93
+msgctxt "female"
+msgid "Vegan"
+msgstr "Vegansk"
+
+#: .\__translations\__translations.py:94
+msgctxt "male"
+msgid "Vegan"
+msgstr "Vegansk"
+
+#: .\__translations\__translations.py:95
+msgctxt "other"
+msgid "Vegan"
+msgstr "Vegansk"
+
+#: .\__translations\__translations.py:97
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
+
+#: .\__translations\__translations.py:98
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
+
+#: .\__translations\__translations.py:99
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
+
+#: .\__translations\__translations.py:101
+msgctxt "female"
+msgid "Carnist"
+msgstr "Carnist"
+
+#: .\__translations\__translations.py:102
+msgctxt "male"
+msgid "Carnist"
+msgstr "Carnist"
+
+#: .\__translations\__translations.py:103
+msgctxt "other"
+msgid "Carnist"
+msgstr "Carnist"
+
+#: .\__translations\__translations.py:105
+msgctxt "female"
+msgid "Not smoking"
+msgstr "Ikke røyker"
+
+#: .\__translations\__translations.py:106
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Ikke røyker"
+
+#: .\__translations\__translations.py:107
+msgctxt "other"
+msgid "Not smoking"
+msgstr "Ikke røyker"
+
+#: .\__translations\__translations.py:109
+msgctxt "female"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
+
+#: .\__translations\__translations.py:110
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
+
+#: .\__translations\__translations.py:111
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
+
+#: .\__translations\__translations.py:113
+msgctxt "female"
+msgid "Smoking"
+msgstr "Røyking"
+
+#: .\__translations\__translations.py:114
+msgctxt "male"
+msgid "Smoking"
+msgstr "Røyking"
+
+#: .\__translations\__translations.py:115
+msgctxt "other"
+msgid "Smoking"
+msgstr "Røyking"
+
+#: .\__translations\__translations.py:117
+msgctxt "female"
+msgid "Single"
+msgstr "Enkelt"
+
+#: .\__translations\__translations.py:118
+msgctxt "male"
+msgid "Single"
+msgstr "Enkelt"
+
+#: .\__translations\__translations.py:119
+msgctxt "other"
+msgid "Single"
+msgstr "Enkelt"
+
+#: .\__translations\__translations.py:121
+msgctxt "female"
+msgid "Divorced"
+msgstr "Skilt"
+
+#: .\__translations\__translations.py:122
+msgctxt "male"
+msgid "Divorced"
+msgstr "Skilt"
+
+#: .\__translations\__translations.py:123
+msgctxt "other"
+msgid "Divorced"
+msgstr "Skilt"
+
+#: .\__translations\__translations.py:125
+msgctxt "female"
+msgid "Widowed"
+msgstr "Enke"
+
+#: .\__translations\__translations.py:126
+msgctxt "male"
+msgid "Widowed"
+msgstr "Enke"
+
+#: .\__translations\__translations.py:127
+msgctxt "other"
+msgid "Widowed"
+msgstr "Enke"
+
+#: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "In a relationship"
+msgstr "I et forhold"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "In a relationship"
+msgstr "I et forhold"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "In a relationship"
+msgstr "I et forhold"
+
+#: .\__translations\__translations.py:133
+msgctxt "female"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
+
+#: .\__translations\__translations.py:134
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
+
+#: .\__translations\__translations.py:135
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
+
+#: .\__translations\__translations.py:137
+msgctxt "female"
+msgid "It's complicated"
+msgstr "Det er komplisert"
+
+#: .\__translations\__translations.py:138
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Det er komplisert"
+
+#: .\__translations\__translations.py:139
+msgctxt "other"
+msgid "It's complicated"
+msgstr "Det er komplisert"
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
+msgid "Separated"
+msgstr "Separert"
+
+#: .\__translations\__translations.py:142
+msgctxt "male"
+msgid "Separated"
+msgstr "Separert"
+
+#: .\__translations\__translations.py:143
+msgctxt "other"
+msgid "Separated"
+msgstr "Separert"
+
+#: .\__translations\__translations.py:145
+msgctxt "female"
+msgid "Engaged"
+msgstr "Forlovet"
+
+#: .\__translations\__translations.py:146
+msgctxt "male"
+msgid "Engaged"
+msgstr "Forlovet"
+
+#: .\__translations\__translations.py:147
+msgctxt "other"
+msgid "Engaged"
+msgstr "Forlovet"
+
+#: .\__translations\__translations.py:149
+msgctxt "female"
+msgid "Married"
+msgstr "Gift"
+
+#: .\__translations\__translations.py:150
+msgctxt "male"
+msgid "Married"
+msgstr "Gift"
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "Married"
+msgstr "Gift"
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
+
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
+
+#: .\__translations\__translations.py:155
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
+
+#: .\__translations\__translations.py:157
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
+
+#: .\__translations\__translations.py:158
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
+
+#: .\__translations\__translations.py:159
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
+
+#: .\__translations\__translations.py:161
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
+
+#: .\__translations\__translations.py:162
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
+
+#: .\__translations\__translations.py:165
+msgctxt "female"
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
+
+#: .\__translations\__translations.py:166
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
+
+#: .\__translations\__translations.py:167
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
+
+#: .\__translations\__translations.py:169
+msgctxt "female"
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
+
+#: .\__translations\__translations.py:170
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
+
+#: .\__translations\__translations.py:171
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
+
+#: .\__translations\__translations.py:173
+msgctxt "female"
+msgid "Send"
+msgstr "Sende"
+
+#: .\__translations\__translations.py:174
+msgctxt "male"
+msgid "Send"
+msgstr "Sende"
+
+#: .\__translations\__translations.py:175
+msgctxt "other"
+msgid "Send"
+msgstr "Sende"
+
+#: .\__translations\__translations.py:177
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
+
+#: .\__translations\__translations.py:178
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
+
+#: .\__translations\__translations.py:179
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
+
+#: .\__translations\__translations.py:181
+#, python-brace-format
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:183
+#, python-brace-format
+msgctxt "female_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:184
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:186
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:187
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:188
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:191
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
+
+#: .\__translations\__translations.py:192
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
+
+#: .\__translations\__translations.py:193
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
+
+#: .\__translations\__translations.py:195
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+
+#: .\__translations\__translations.py:196
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+
+#: .\__translations\__translations.py:197
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+
+#: .\__translations\__translations.py:199
+msgctxt "female"
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
+
+#: .\__translations\__translations.py:200
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
+
+#: .\__translations\__translations.py:201
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
+
+#: .\__translations\__translations.py:203
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:204
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:205
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:206
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:207
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:208
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:209
+msgctxt "other_female"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:210
+msgctxt "other_male"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:211
+msgctxt "other_other"
+msgid "You already are friends with this user."
+msgstr "Du er allerede venner med denne brukeren."
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:215
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:217
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
+
+#: .\__translations\__translations.py:218
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
+
+#: .\__translations\__translations.py:219
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
+
+#: .\__translations\__translations.py:221
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
+
+#: .\__translations\__translations.py:222
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
+
+#: .\__translations\__translations.py:223
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
+
+#: .\__translations\__translations.py:225
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+
+#: .\__translations\__translations.py:229
+msgctxt "female"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.py:230
+msgctxt "male"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.py:231
+msgctxt "other"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
+"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
+"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
+"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
+"innhold til et stort antall personer."
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
+"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
+"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
+"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
+"innhold til et stort antall personer."
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
+"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
+"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
+"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
+"innhold til et stort antall personer."
+
+#: .\__translations\__translations.py:241
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:242
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:243
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:244
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:246
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:247
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:248
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:249
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profilbildet ditt kan ikke være gjennomsiktig. Last opp et ugjennomsiktig "
+"bilde."
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profilbildet ditt kan ikke være gjennomsiktig. Last opp et ugjennomsiktig "
+"bilde."
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profilbildet ditt kan ikke være gjennomsiktig. Last opp et ugjennomsiktig "
+"bilde."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core Accounts"
+
+#: .\accounts\fields.py:12
+msgid "Only me"
+msgstr "Bare meg"
+
+#: .\accounts\fields.py:13
+msgid "Me and my friends"
+msgstr "Meg og vennene mine"
+
+#: .\accounts\fields.py:15
+msgid "Anyone"
+msgstr "Hvem som helst"
+
+#: .\accounts\forms.py:66
+msgid "Last name (optional)"
+msgstr "Etternavn (valgfritt)"
+
+#: .\accounts\forms.py:130
+msgid "Your email"
+msgstr "Din e-post"
+
+#: .\accounts\forms.py:131
+msgid "New password"
+msgstr "Nytt passord"
+
+#: .\accounts\forms.py:139
+msgid "New username"
+msgstr "Nytt brukernavn"
+
+#: .\accounts\forms.py:142
+msgid "Create an account"
+msgstr "Opprett en konto"
+
+#: .\accounts\forms.py:167
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
+
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
+msgid "A profile picture is required."
+msgstr "Det kreves et profilbilde."
+
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+msgid "Email or Username"
+msgstr "E-post eller brukernavn"
+
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
+msgid "Login"
+msgstr "Logg inn"
+
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
+msgid "Forgot your password?"
+msgstr "Glemt passordet ditt?"
+
+#: .\accounts\forms.py:335
+msgid "Submit"
+msgstr "Send inn"
+
+#: .\accounts\forms.py:437
+msgid "Your password"
+msgstr "Ditt passord"
+
+#: .\accounts\forms.py:449
+msgid "Invalid password."
+msgstr "Ugyldig passord."
+
+#: .\accounts\models.py:178
+msgid "username"
+msgstr "brukernavn"
+
+#: .\accounts\models.py:178 .\accounts\models.py:179
+#: .\accounts\validators.py:21
+msgid "This username is already taken."
+msgstr "Dette brukernavnet er allerede tatt."
+
+#: .\accounts\models.py:179
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\accounts\models.py:180
+msgid "photo"
+msgstr "bilde"
+
+#: .\accounts\models.py:181
+msgid "Special username"
+msgstr "Spesielt brukernavn"
+
+#: .\accounts\models.py:221 .\messages\models.py:185
+msgid "entity"
+msgstr "enhet"
+
+#: .\accounts\models.py:222
+msgid "entities"
+msgstr "enheter"
+
+#: .\accounts\models.py:249
+msgid "Slug does not parse to username."
+msgstr "Slug analyserer ikke til brukernavn."
+
+#: .\accounts\models.py:253
+msgid "Username is required."
+msgstr "Brukernavn er påkrevd."
+
+#: .\accounts\models.py:298
+msgid "name"
+msgstr "navn"
+
+#: .\accounts\models.py:329
+msgid "description"
+msgstr "beskrivelse"
+
+#: .\accounts\models.py:473
+msgid "Female"
+msgstr "Hunn"
+
+#: .\accounts\models.py:474
+msgid "Male"
+msgstr "Mann"
+
+#: .\accounts\models.py:475
+msgid "Other"
+msgstr "Annen"
+
+#: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+msgid "Unknown"
+msgstr "Ukjent"
+
+#: .\accounts\models.py:488
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
+
+#: .\accounts\models.py:489
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+
+#: .\accounts\models.py:490
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
+
+#: .\accounts\models.py:503
+msgid "Not smoking"
+msgstr "Ikke røyker"
+
+#: .\accounts\models.py:504
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
+
+#: .\accounts\models.py:505
+msgid "Smoking"
+msgstr "Røyking"
+
+#: .\accounts\models.py:524
+msgid "Single"
+msgstr "Enkelt"
+
+#: .\accounts\models.py:525
+msgid "Divorced"
+msgstr "Skilt"
+
+#: .\accounts\models.py:526
+msgid "Widowed"
+msgstr "Enke"
+
+#: .\accounts\models.py:527
+msgid "In a relationship"
+msgstr "I et forhold"
+
+#: .\accounts\models.py:528
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
+
+#: .\accounts\models.py:529
+msgid "It's complicated"
+msgstr "Det er komplisert"
+
+#: .\accounts\models.py:530
+msgid "Separated"
+msgstr "Separert"
+
+#: .\accounts\models.py:531
+msgid "Engaged"
+msgstr "Forlovet"
+
+#: .\accounts\models.py:532
+msgid "Married"
+msgstr "Gift"
+
+#: .\accounts\models.py:541
+msgid "Notify me"
+msgstr "Gi meg beskjed"
+
+#: .\accounts\models.py:542
+msgid "Don't notify me"
+msgstr "Ikke gi meg beskjed"
+
+#: .\accounts\models.py:589
+msgid "first name"
+msgstr "fornavn"
+
+#: .\accounts\models.py:592
+msgid "last name"
+msgstr "etternavn"
+
+#: .\accounts\models.py:594
+msgid "I am"
+msgstr "jeg er"
+
+#: .\accounts\models.py:595
+msgid "date of birth"
+msgstr "fødselsdato"
+
+#: .\accounts\models.py:596
+msgid "diet"
+msgstr "kosthold"
+
+#: .\accounts\models.py:597
+msgid "smoking status"
+msgstr "røykestatus"
+
+#: .\accounts\models.py:598
+msgid "relationship status"
+msgstr "forholdsstatus"
+
+#: .\accounts\models.py:600
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
+
+#: .\accounts\models.py:607
+msgid "Who can view my birth month and day"
+msgstr "Hvem kan se fødselsmåneden og -dagen min"
+
+#: .\accounts\models.py:608
+msgid "Who can view my birth year"
+msgstr "Hvem kan se fødselsåret mitt"
+
+#: .\accounts\models.py:609
+msgid "On new messages"
+msgstr "På nye meldinger"
+
+#: .\accounts\models.py:615
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "Siste IP-adresse ble brukt https://ipapi.com/ tid"
+
+#: .\accounts\models.py:616
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "Siste IP-adresse brukte rå https://ipapi.com/ resultater"
+
+#: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
+msgid "user"
+msgstr "bruker"
+
+#: .\accounts\models.py:823
+msgid "users"
+msgstr "brukere"
+
+#: .\accounts\models.py:869
+msgid "Superuser must be equal to staff."
+msgstr "Superbruker skal være lik personalet."
+
+#: .\accounts\models.py:1280
+msgid "email"
+msgstr "e-post"
+
+#: .\accounts\models.py:1281
+msgid "is confirmed"
+msgstr "er bekreftet"
+
+#: .\accounts\models.py:1282
+msgid "is primary"
+msgstr "er primær"
+
+#: .\accounts\models.py:1283
+msgid "confirmation token"
+msgstr "bekreftelsestoken"
+
+#: .\accounts\models.py:1284
+msgid "confirmation sent"
+msgstr "bekreftelse sendt"
+
+#: .\accounts\models.py:1285
+msgid "Who can see this email"
+msgstr "Hvem kan se denne e-posten"
+
+#: .\accounts\models.py:1296
+msgid "email addresses"
+msgstr "e-postadresser"
+
+#: .\accounts\models.py:1379
+msgid "User"
+msgstr "Bruker"
+
+#: .\accounts\models.py:1380
+msgid "last visit"
+msgstr "siste besøk"
+
+#: .\accounts\models.py:1392
+msgid "Today"
+msgstr "I dag"
+
+#: .\accounts\models.py:1394
+msgid "Yesterday"
+msgstr "I går"
+
+#: .\accounts\models.py:1396
+#, python-brace-format
+msgid "On {date} ({timesince_ago})"
+msgstr "På {date} ({timesince_ago})"
+
+#: .\accounts\models.py:1398
+#, python-brace-format
+msgid "{timesince} ago"
+msgstr "{timesince} siden"
+
+#: .\accounts\validators.py:39
+msgid ""
+"Username must start with 4 or more letters, and may contain letters, digits "
+"or dashes."
+msgstr ""
+"Brukernavn må begynne med 4 eller flere bokstaver, og kan inneholde "
+"bokstaver, sifre eller bindestreker."
+
+#: .\accounts\validators.py:41
+msgid ""
+"Username must start with 4 or more letters, after which can be any number of "
+"digits. You can add dashes between words."
+msgstr ""
+"Brukernavnet må begynne med 4 eller flere bokstaver, hvoretter det kan være "
+"et hvilket som helst antall sifre. Du kan legge til bindestreker mellom ord."
+
+#: .\accounts\validators.py:47
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Brukernavnet må inneholde minst %(limit_value)d alfanumerisk tegn (det har "
+"%(show_value)d)."
+msgstr[1] ""
+"Brukernavnet må inneholde minst %(limit_value)d alfanumeriske tegn (det har "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:58
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Brukernavnet må inneholde maksimalt %(limit_value)d alfanumerisk tegn (det "
+"har %(show_value)d)."
+msgstr[1] ""
+"Brukernavnet må inneholde maksimalt %(limit_value)d alfanumeriske tegn (det "
+"har %(show_value)d)."
+
+#: .\accounts\validators.py:69
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Brukernavnet må inneholde minst %(limit_value)d tegn (det har "
+"%(show_value)d)."
+msgstr[1] ""
+"Brukernavnet må inneholde minst %(limit_value)d tegn (det har "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:80
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Brukernavnet må inneholde maksimalt %(limit_value)d tegn (det har "
+"%(show_value)d)."
+msgstr[1] ""
+"Brukernavnet må inneholde maksimalt %(limit_value)d tegn (det har "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:104
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Dette passordet er for kort. Den må inneholde minst %(min_length)d tegn."
+msgstr[1] ""
+"Dette passordet er for kort. Den må inneholde minst %(min_length)d tegn."
+
+#: .\accounts\validators.py:114
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Passordet ditt må inneholde minst %(min_length)d tegn."
+msgstr[1] "Passordet ditt må inneholde minst %(min_length)d tegn."
+
+#: .\accounts\validators.py:135
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d characters."
+msgstr[0] ""
+"Dette passordet er for langt. Den må inneholde maksimalt %(max_length)d tegn."
+msgstr[1] ""
+"Dette passordet er for langt. Den må inneholde maksimalt %(max_length)d tegn."
+
+#: .\accounts\validators.py:145
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] "Passordet ditt må inneholde maksimalt %(max_length)d tegn."
+msgstr[1] "Passordet ditt må inneholde maksimalt %(max_length)d tegn."
+
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Passordet ditt må inneholde minst %(min_unique_characters)d unike tegn."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
+msgid "This field cannot be null."
+msgstr "Dette feltet kan ikke være null."
+
+#: .\accounts\validators.py:214
+msgid "This field cannot be blank."
+msgstr "Dette feltet kan ikke være tomt."
+
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
+msgid "Enter a valid date."
+msgstr "Angi en gyldig dato."
+
+#: .\accounts\validators.py:246
+msgid "This email is already in use."
+msgstr "Denne e-posten er allerede i bruk."
+
+#: .\accounts\validators.py:257
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
+msgstr ""
+"Dette bildets filstørrelse er for stor. Maksimal filstørrelse tillatt er 30 "
+"MB."
+
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats "
+"are accepted."
+msgstr ""
+"Du kan ikke bruke dette formatet for profilbildet ditt. Kun JPEG- eller PNG-"
+"formater godtas."
+
+#: .\accounts\views.py:299
+msgid "Invalid confirmation link."
+msgstr "Ugyldig bekreftelseslenke."
+
+#: .\accounts\views.py:324 .\accounts\views.py:340
+#, python-brace-format
+msgid "A confirmation message was sent to {email_address}"
+msgstr "En bekreftelsesmelding ble sendt til {email_address}"
+
+#: .\accounts\views.py:355
+msgid "The email address was deleted."
+msgstr "E-postadressen ble slettet."
+
+#: .\accounts\views.py:371
+msgid "You have made this email address primary."
+msgstr "Du har gjort denne e-postadressen til primær."
+
+#: .\admin\views.py:72
+#, python-brace-format
+msgid ""
+"Admin: The total number of members on the site is {total_number_of_members}, "
+"of which {total_number_of_members_in_the_last_week} members entered the site "
+"in the last week, {total_number_of_members_in_the_last_month} members "
+"entered the site in the last month, "
+"{total_number_of_members_in_the_last_four_months} members entered the site "
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
+msgstr ""
+"Administrator: Det totale antallet medlemmer på nettstedet er "
+"{total_number_of_members}, hvorav {total_number_of_members_in_the_last_week}-"
+"medlemmer kom inn på nettstedet i løpet av den siste uken, "
+"{total_number_of_members_in_the_last_month}-medlemmer kom inn på nettstedet "
+"i løpet av den siste måneden, "
+"{total_number_of_members_in_the_last_four_months}-medlemmer kom inn på "
+"nettstedet i løpet av de siste fire månedene, "
+"{total_number_of_members_in_the_last_eight_months}-medlemmer kom inn på "
+"nettstedet i løpet av de siste åtte månedene, og "
+"{total_number_of_members_in_the_last_two_years}-medlemmer kom inn på "
+"nettstedet i løpet av de siste to årene."
+
+#: .\admin\views.py:118
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_the_last_week} members "
+"registered in the last week. "
+"{total_number_of_members_registered_in_the_last_month} members registered in "
+"the last month. {total_number_of_members_registered_in_the_last_four_months} "
+"members registered in the last four months. "
+"{total_number_of_members_registered_more_than_four_months_ago} members "
+"registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
+"{total_number_of_members_registered_before_2019_08_01} members registered "
+"before 1 August 2019."
+msgstr ""
+"Admin: {total_number_of_members_registered_in_the_last_week} medlemmer "
+"registrert den siste uken. "
+"{total_number_of_members_registered_in_the_last_month} medlemmer registrert "
+"den siste måneden. "
+"{total_number_of_members_registered_in_the_last_four_months} medlemmer "
+"registrert de siste fire månedene. "
+"{total_number_of_members_registered_more_than_four_months_ago} medlemmer "
+"registrerte seg for mer enn fire måneder siden. "
+"{total_number_of_members_registered_in_the_last_eight_months} medlemmer "
+"registrert de siste åtte månedene. "
+"{total_number_of_members_registered_more_than_eight_months_ago} medlemmer "
+"registrerte seg for mer enn åtte måneder siden. "
+"{total_number_of_members_registered_in_the_last_two_years} medlemmer "
+"registrert de siste to årene. "
+"{total_number_of_members_registered_more_than_two_years_ago} medlemmer "
+"registrerte seg for mer enn to år siden. "
+"{total_number_of_members_registered_before_2019_08_01} medlemmer registrert "
+"før 1. august 2019."
+
+#: .\admin\views.py:138
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_year} members registered in "
+"{year}."
+msgstr ""
+"Administrator: {total_number_of_members_registered_in_year} medlemmer "
+"registrert i {year}."
+
+#: .\base\apps.py:13
+msgid "Speedy Core Base App"
+msgstr "Speedy Core Base App"
+
+#: .\base\fields.py:17
+msgid "ID"
+msgstr "ID"
+
+#: .\base\utils.py:417
+msgctxt "timesince"
+msgid ", "
+msgstr "None "
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
+msgstr "ID inneholder ulovlige tegn."
+
+#: .\base\views.py:57
+msgid "Changes saved."
+msgstr "Endringer lagret."
+
+#: .\blocks\managers.py:30 .\blocks\models.py:43
+msgid "Users cannot block themselves."
+msgstr "Brukere kan ikke blokkere seg selv."
+
+#: .\blocks\models.py:23
+msgid "blocked user"
+msgstr "blokkert bruker"
+
+#: .\blocks\models.py:28
+msgid "block"
+msgstr "blokkere"
+
+#: .\blocks\models.py:29
+msgid "user blocks"
+msgstr "bruker blokkerer"
+
+#: .\blocks\views.py:19
+msgid "You have blocked {}."
+msgstr "Du har blokkert {}."
+
+#: .\blocks\views.py:31
+msgid "You have unblocked {}."
+msgstr "Du har opphevet blokkeringen av {}."
+
+#: .\contact_by_form\apps.py:8
+msgid "Contact By Form"
+msgstr "Kontakt via skjema"
+
+#: .\contact_by_form\forms.py:14
+msgid "Type the number \"17\""
+msgstr "Skriv inn tallet \"17\""
+
+#: .\contact_by_form\forms.py:41
+msgid "Send"
+msgstr "Sende"
+
+#: .\contact_by_form\forms.py:47
+msgid "Please contact us by email."
+msgstr "Vennligst kontakt oss på e-post."
+
+#: .\contact_by_form\forms.py:53
+msgid "Not 17."
+msgstr "Ikke 17."
+
+#: .\contact_by_form\models.py:33
+msgid "Feedback"
+msgstr "Tilbakemelding"
+
+#: .\contact_by_form\models.py:34
+msgid "Abuse (User)"
+msgstr "Misbruk (bruker)"
+
+#: .\contact_by_form\models.py:35
+msgid "Abuse (Photo)"
+msgstr "Misbruk (Foto)"
+
+#: .\contact_by_form\models.py:38 .\messages\models.py:156
+msgid "sender"
+msgstr "avsender"
+
+#: .\contact_by_form\models.py:39
+msgid "your name"
+msgstr "navnet ditt"
+
+#: .\contact_by_form\models.py:40
+msgid "your email"
+msgstr "e-posten din"
+
+#: .\contact_by_form\models.py:41
+msgid "type"
+msgstr "type"
+
+#: .\contact_by_form\models.py:42
+msgid "your message"
+msgstr "meldingen din"
+
+#: .\contact_by_form\models.py:44
+msgid "reported entity"
+msgstr "rapportert enhet"
+
+#: .\contact_by_form\models.py:45
+msgid "reported photo"
+msgstr "rapporterte bilde"
+
+#: .\contact_by_form\models.py:48
+msgid "feedback"
+msgstr "tilbakemelding"
+
+#: .\contact_by_form\models.py:49
+msgid "feedbacks"
+msgstr "tilbakemeldinger"
+
+#: .\friends\views.py:189
+msgid "Friendship request sent."
+msgstr "Venneforespørsel sendt."
+
+#: .\friends\views.py:204
+msgid "No friendship request."
+msgstr "Ingen vennskapsforespørsel."
+
+#: .\friends\views.py:243
+msgid "Friendship request accepted."
+msgstr "Venneforespørsel akseptert."
+
+#: .\friends\views.py:261
+msgid "Friendship request rejected."
+msgstr "Venneforespørsel avvist."
+
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:13
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:29
+msgid "Messages"
+msgstr "Meldinger"
+
+#: .\messages\models.py:29
+msgid "site"
+msgstr "nettstedet"
+
+#: .\messages\models.py:30
+msgid "participant 1"
+msgstr "deltaker 1"
+
+#: .\messages\models.py:31
+msgid "participant 2"
+msgstr "deltaker 2"
+
+#: .\messages\models.py:32
+msgid "participants"
+msgstr "deltakere"
+
+#: .\messages\models.py:33
+msgid "is group chat"
+msgstr "er gruppechat"
+
+#: .\messages\models.py:34
+msgid "last message"
+msgstr "siste melding"
+
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+msgid "chat"
+msgstr "chatte"
+
+#: .\messages\models.py:68
+msgid "chats"
+msgstr "chatter"
+
+#: .\messages\models.py:77
+msgid "None"
+msgstr "Ingen"
+
+#: .\messages\models.py:157 .\messages\models.py:162
+msgid "message"
+msgstr "beskjed"
+
+#: .\messages\models.py:163
+msgid "messages"
+msgstr "meldinger"
+
+#: .\messages\models.py:191
+msgid "read mark"
+msgstr "lesemerke"
+
+#: .\messages\models.py:192
+msgid "read marks"
+msgstr "lese merker"
+
+#: .\settings\base.py:193
+msgid "English"
+msgstr "engelsk"
+
+#: .\settings\base.py:194
+msgid "Hebrew"
+msgstr "hebraisk"
+
+#: .\settings\base_with_login.py:65
+msgid "French"
+msgstr "fransk"
+
+#: .\settings\base_with_login.py:66
+msgid "German"
+msgstr "tysk"
+
+#: .\settings\base_with_login.py:67
+msgid "Spanish"
+msgstr "spansk"
+
+#: .\settings\base_with_login.py:68
+msgid "Portuguese"
+msgstr "portugisisk"
+
+#: .\settings\base_with_login.py:69
+msgid "Italian"
+msgstr "italiensk"
+
+#: .\settings\base_with_login.py:70
+msgid "Dutch"
+msgstr "nederlandsk"
+
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "japansk"
+
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "russisk"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "kinesisk"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Pusse"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "persisk"
+
+#: .\settings\base_with_login.py:79
+msgid "Korean"
+msgstr "koreansk"
+
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "arabisk"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "indonesisk"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "ukrainsk"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "tyrkisk"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "vietnamesisk"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "tsjekkisk"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "svensk"
+
+#: .\settings\base_with_login.py:87
+msgid "Finnish"
+msgstr "finsk"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "ungarsk"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "Thai"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "gresk"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "malaysisk"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "serbisk"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "rumensk"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "bengali"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "katalansk"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "norsk (bokmål)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "Bulgarsk"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "dansk"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "slovakisk"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "Hindi"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "estisk"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "kroatisk"
+
+#: .\templates\400.html:6 .\templates\400.html:10
+msgid "Bad request"
+msgstr "Dårlig forespørsel"
+
+#: .\templates\400.html:14 .\templates\500.html:14
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr "Speedy beklager, men vi kan ikke håndtere forespørselen din."
+
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr "Tillatelse nektet"
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr "Speedy beklager, men denne siden er privat."
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr "Siden ikke funnet"
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr "Speedy beklager, men siden ble ikke funnet."
+
+#: .\templates\500.html:6 .\templates\500.html:10
+msgid "Internal server error"
+msgstr "Intern serverfeil"
+
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:36
+#: .\templates\menu\about_mobile_menu_links.html:11
+msgid "About"
+msgstr "Om"
+
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:12
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
+#: .\templates\profiles\tools\edit_profile.html:4
+#: .\templates\profiles\tools\edit_profile.html:6
+msgid "Edit Profile"
+msgstr "Rediger profil"
+
+#: .\templates\accounts\edit_profile\core_base.html:19
+msgid "Profile Info"
+msgstr "Profilinformasjon"
+
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+msgid "Privacy"
+msgstr "Privatliv"
+
+#: .\templates\accounts\edit_profile\core_base.html:31
+msgid "Notifications"
+msgstr "Varsler"
+
+#: .\templates\accounts\edit_profile\core_base.html:37
+msgid "Emails & Password"
+msgstr "E-post og passord"
+
+#: .\templates\accounts\edit_profile\core_base.html:45
+msgid "Deactivate Account"
+msgstr "Deaktiver konto"
+
+#: .\templates\accounts\edit_profile\credentials.html:7
+msgid "Email Addresses"
+msgstr "E-postadresser"
+
+#: .\templates\accounts\edit_profile\credentials.html:12
+msgid "Address"
+msgstr "Adresse"
+
+#: .\templates\accounts\edit_profile\credentials.html:13
+msgid "Added"
+msgstr "Lagt til"
+
+#: .\templates\accounts\edit_profile\credentials.html:14
+msgid "Visibility"
+msgstr "Synlighet"
+
+#: .\templates\accounts\edit_profile\credentials.html:15
+msgid "Actions"
+msgstr "Handlinger"
+
+#: .\templates\accounts\edit_profile\credentials.html:23
+msgid "Unconfirmed"
+msgstr "Ubekreftet"
+
+#: .\templates\accounts\edit_profile\credentials.html:25
+msgid "Primary"
+msgstr "Primær"
+
+#: .\templates\accounts\edit_profile\credentials.html:45
+msgid "Resend a confirmation email"
+msgstr "Send en bekreftelses-e-post på nytt"
+
+#: .\templates\accounts\edit_profile\credentials.html:53
+msgid "Make this email address primary"
+msgstr "Gjør denne e-postadressen til primær"
+
+#: .\templates\accounts\edit_profile\credentials.html:59
+msgid "Are you sure you want to delete this email address?"
+msgstr "Er du sikker på at du vil slette denne e-postadressen?"
+
+#: .\templates\accounts\edit_profile\credentials.html:61
+msgid "Delete this email address"
+msgstr "Slett denne e-postadressen"
+
+#: .\templates\accounts\edit_profile\credentials.html:77
+msgid "Add Another"
+msgstr "Legg til en annen"
+
+#: .\templates\accounts\edit_profile\credentials.html:84
+msgid "Change Password"
+msgstr "Endre passord"
+
+#: .\templates\accounts\edit_profile\privacy.html:12
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "Din alder vil være synlig for kampene dine på Speedy Match."
+
+#: .\templates\accounts\edit_profile\privacy.html:16
+msgid "Change privacy settings of email addresses on your profile."
+msgstr "Endre personverninnstillingene for e-postadresser på profilen din."
+
+#: .\templates\accounts\email_address_form.html:6
+#: .\templates\accounts\email_address_form.html:12
+msgid "Add Email"
+msgstr "Legg til e-post"
+
+#: .\templates\accounts\logged_out.html:5
+msgid "Logged Out"
+msgstr "Logget ut"
+
+#: .\templates\accounts\password_reset\complete.html:5
+#: .\templates\accounts\password_reset\complete.html:11
+#: .\templates\accounts\password_reset\confirm.html:6
+#: .\templates\accounts\password_reset\confirm.html:12
+#: .\templates\accounts\password_reset\done.html:5
+#: .\templates\accounts\password_reset\done.html:11
+#: .\templates\accounts\password_reset\form.html:6
+#: .\templates\accounts\password_reset\form.html:12
+msgid "Reset Password"
+msgstr "Tilbakestill passord"
+
+#: .\templates\accounts\password_reset\complete.html:14
+msgid "Password reset successfully."
+msgstr "Passord tilbakestilt."
+
+#: .\templates\accounts\password_reset\confirm.html:18
+msgid "Password reset failed. Invalid link."
+msgstr "Tilbakestilling av passord mislyktes. Ugyldig link."
+
+#: .\templates\accounts\password_reset\done.html:14
+msgid "Email with password reset instructions has been sent."
+msgstr "E-post med instruksjoner for tilbakestilling av passord er sendt."
+
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "Se alle"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "Admin - Venner"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
+msgstr "venner"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "Ingen venner ennå."
+
+#: .\templates\admin\profiles\user_info_widget.html:11
+msgid "Admin Information"
+msgstr "Administratorinformasjon"
+
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr "Admin - Alle brukere"
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr "Ingen brukere."
+
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "Denne siden er under konstruksjon"
+
+#: .\templates\base.html:110
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Du har ikke bekreftet e-postadressen din. Vennligst sjekk innboksen din."
+
+#: .\templates\base.html:163
+msgid "Speedy Net Blog"
+msgstr "Speedy Net Blog"
+
+#: .\templates\base.html:165
+msgid "Speedy Paz"
+msgstr "Speedy Paz"
+
+#: .\templates\base.html:167
+msgid "Speedy Software"
+msgstr "Speedy Software"
+
+#: .\templates\base.html:169
+msgid "Speedy Sale"
+msgstr "Speedy Sale"
+
+#: .\templates\base.html:195 .\templates\base.html:196
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
+msgid "A vegan friendly website"
+msgstr "En veganervennlig nettside"
+
+#: .\templates\base.html:212 .\templates\base.html:214
+msgid "Speedy"
+msgstr "Speedy"
+
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
+msgid "Logout"
+msgstr "Logg ut"
+
+#: .\templates\base_with_login.html:67
+msgid "Home"
+msgstr "Hjem"
+
+#: .\templates\base_with_login.html:133
+msgid "Password"
+msgstr "Passord"
+
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
+msgid "Speedy Net"
+msgstr "Speedy Net"
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
+msgid "Speedy Match"
+msgstr "Speedy Match"
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
+msgid "Speedy Net's Shop"
+msgstr "Speedy Net's Shop"
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
+msgid "Speedy Match's Shop"
+msgstr "Speedy Match's Shop"
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
+msgid "Speedy S-logo Shop"
+msgstr "Speedy S-logo Shop"
+
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:15
+msgid "Privacy Policy"
+msgstr "Personvernerklæring"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:15
+msgid "Terms of Service"
+msgstr "Vilkår for bruk"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "Vilkår"
+
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
+#: .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:15
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
+#: .\templates\menu\about_mobile_menu_links.html:20
+msgid "Contact Us"
+msgstr "Kontakt oss"
+
+#: .\templates\base_without_login.html:19
+msgid "Speedy Composer"
+msgstr "Speedy Composer"
+
+#: .\templates\base_without_login.html:20
+msgid "Speedy Mail Software"
+msgstr "Speedy Mail Software"
+
+#: .\templates\base_without_login.html:28
+msgid "Speedy Composer's Shop"
+msgstr "Speedy Composer's Shop"
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
+msgstr "Blokkerte brukere"
+
+#: .\templates\blocks\block_list.html:15
+msgid "You're not blocking anybody."
+msgstr "Du blokkerer ikke noen."
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team "
+"- please contact us by email."
+msgstr ""
+"Hvis du har spørsmål, forslag eller er interessert i å bli med på laget - "
+"vennligst kontakt oss på e-post."
+
+#: .\templates\contact_by_email\contact_us.html:21
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, gründer og webmaster:"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr "Rapporter en bruker"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr "Rapporter et bilde"
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr "Takk"
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr "Tilbakemeldingen din ble sendt til administratorer."
+
+#: .\templates\core\pagination.html:9
+msgid "Previous"
+msgstr "Tidligere"
+
+#: .\templates\core\pagination.html:32
+msgid "Next"
+msgstr "Neste"
+
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "Bruk denne lenken for å aktivere kontoen din:"
+
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Bekreft e-postadressen din på %(site_name)s"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to verify your email address:"
+msgstr "Bruk denne lenken for å bekrefte e-postadressen din:"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "Bruk denne lenken for å endre passordet ditt:"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "Passord tilbakestilt på %(site_name)s"
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr "har sendt deg en melding."
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr "Les det:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Du abonnerer på å motta denne typen varsler fra %(site_name)s. Gå inn på "
+"denne siden for å endre varslingsinnstillingene eller velge bort:"
+
+#: .\templates\email\messages\new_message_subject.txt:1
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Du har en ny melding på %(site_name)s"
+
+#: .\templates\friends\base.html:35
+msgid "Received Requests"
+msgstr "Mottatte forespørsler"
+
+#: .\templates\friends\base.html:41
+msgid "Sent Requests"
+msgstr "Sendte forespørsler"
+
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
+msgid "There are no pending friendship requests."
+msgstr "Det er ingen ventende vennskapsforespørsler."
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr "Velkommen til %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:21
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr "Bli med %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:24
+msgid "It's free and anyone can join!"
+msgstr "Det er gratis og alle kan bli med!"
+
+#: .\templates\messages\chat_detail.html:35
+#, python-format
+msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Chat med <a href=\"%(link)s\">%(user_name)s</a>"
+
+#: .\templates\messages\chat_detail.html:41
+#: .\templates\messages\message_form.html:9
+#, python-format
+msgid "Send a message to %(user_name)s"
+msgstr "Send en melding til %(user_name)s"
+
+#: .\templates\messages\chat_detail.html:55
+msgid "Mark All as Read"
+msgstr "Merk alle som lest"
+
+#: .\templates\messages\chat_list.html:56
+msgid "Unread"
+msgstr "Ulest"
+
+#: .\templates\messages\chat_list.html:63
+msgid "You:"
+msgstr "Du:"
+
+#: .\templates\messages\chat_list.html:83
+msgid "You have no messages yet."
+msgstr "Du har ingen meldinger ennå."
+
+#: .\templates\messages\message.html:20
+msgid "New"
+msgstr "Ny"
+
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"Vi respekterer ditt privatliv. Vi vil ikke selge eller dele dine personlige "
+"opplysninger, inkludert navn, fødselsdato, e-postadresse og passord. "
+"Meldinger du sender til folk på Speedy Net er personlige og vil ikke bli "
+"delt med andre personer eller nettsteder. Passordet ditt lagres kryptert i "
+"vår database."
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to "
+"share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
+msgstr ""
+"Profilen din på Speedy Net er synlig for alle, men du kan velge hvem du vil "
+"dele med e-postadressen din og fødselsdatoen din. Hvis du har registrert deg "
+"for Speedy Match, vil Speedy Match-profilen din kun være synlig for personer "
+"som matcher deg i henhold til innstillingene du har satt opp på siden, og at "
+"du matcher dem i henhold til innstillingene deres. Profilen din på Speedy "
+"Match vil ikke vises på Google og er ikke synlig for personer som ikke er "
+"registrert på siden."
+
+#: .\templates\privacy\privacy_policy.html:23
+msgid ""
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+"Hvis du har deaktivert kontoen din på Speedy Net eller Speedy Match, vil "
+"profilen din på det nettstedet bli fjernet fra nettstedet, og du vil ikke "
+"vises i andres søkeresultater på nettstedet. Merk at deaktivering av kontoen "
+"din på Speedy Net også automatisk deaktiverer kontoen din hos Speedy Match. "
+"Du kan deaktivere kun kontoen din hos Speedy Match, i så fall vil Speedy Net-"
+"kontoen din forbli aktiv. Du kan aktivere kontoen din på nytt etter at du "
+"har deaktivert den når du vil."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy "
+"Net account will automatically delete your Speedy Match account as well. To "
+"delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
+msgstr ""
+"Hvis du vil, kan du slette kontoen din på Speedy Net. Sletting av Speedy Net-"
+"kontoen din vil også automatisk slette Speedy Match-kontoen din. For å "
+"slette Speedy Net-kontoen din, logg inn på Speedy Net, deaktiver kontoen din "
+"og klikk deretter \"Slett konto\" (i \"Rediger profil\"-menyen). Fyll ut "
+"detaljene i skjemaet og bekreft. Vær oppmerksom på at en slettet konto ikke "
+"kan gjenopprettes. Sletting av konto er permanent og irreversibel."
+
+#: .\templates\profiles\block_warning.html:9
+msgid "You blocked "
+msgstr "Du blokkerte "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr "None"
+
+#: .\templates\profiles\block_warning.html:11
+msgid " blocked you."
+msgstr " blokkerte deg."
+
+#: .\templates\profiles\tools\add_to_friends.html:10
+#: .\templates\profiles\user_list_item.html:30
+msgid "Accept Friendship Request"
+msgstr "Godta venneforespørsel"
+
+#: .\templates\profiles\tools\add_to_friends.html:12
+#: .\templates\profiles\user_list_item.html:32
+msgid "Accept"
+msgstr "Akseptere"
+
+#: .\templates\profiles\tools\add_to_friends.html:17
+#: .\templates\profiles\user_list_item.html:37
+msgid "Reject Friendship Request"
+msgstr "Avvis vennskapsforespørsel"
+
+#: .\templates\profiles\tools\add_to_friends.html:19
+#: .\templates\profiles\user_list_item.html:39
+msgid "Reject"
+msgstr "Avvis"
+
+#: .\templates\profiles\tools\add_to_friends.html:25
+#: .\templates\profiles\tools\add_to_friends.html:27
+msgid "Add to Friends"
+msgstr "Legg til i venner"
+
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
+msgid "Toggle Dropdown"
+msgstr "Slå på rullegardinmenyen"
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "Are you sure you want to block "
+msgstr "Er du sikker på at du vil blokkere "
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "?"
+msgstr "None"
+
+#: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
+msgid "Block "
+msgstr "Blokkere "
+
+#: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
+msgid "Unblock "
+msgstr "Fjern blokkering "
+
+#: .\templates\profiles\tools\block_user.html:30
+msgid "Report "
+msgstr "Rapportere "
+
+#: .\templates\profiles\tools\block_user.html:32
+msgid "Report this photo"
+msgstr "Rapporter dette bildet"
+
+#: .\templates\profiles\tools\friendship_request_sent.html:7
+msgid "Cancel Friendship Request"
+msgstr "Avbryt venneforespørsel"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
+msgstr "Fjern venn"
+
+#: .\templates\profiles\tools\send_message.html:9
+#: .\templates\profiles\tools\send_message.html:11
+msgid "Send Message"
+msgstr "Send melding"
+
+#: .\templates\profiles\user_info_widget.html:12
+msgid "Information"
+msgstr "Informasjon"
+
+#: .\templates\profiles\user_info_widget.html:19
+msgid "Name"
+msgstr "Navn"
+
+#: .\templates\profiles\user_info_widget.html:25
+msgid "Username"
+msgstr "Brukernavn"
+
+#: .\templates\profiles\user_info_widget.html:35
+msgid "Gender"
+msgstr "Kjønn"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Date"
+msgstr "Fødselsdato"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Year"
+msgstr "Fødselsår"
+
+#: .\templates\profiles\user_info_widget.html:61
+msgid "Age"
+msgstr "Alder"
+
+#: .\templates\profiles\user_on_speedy_match_widget.html:6
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen til %(user_name)s "
+"på Speedy Match."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr "Du har også en Speedy Net-profil. Se profilen din på Speedy Net."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
+"Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen til %(user_name)s "
+"på Speedy Net."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr ""
+"Siden er i alfa, det kan være feil. Nettstedets ledelse er ikke ansvarlig "
+"for eventuelle feil på siden."
+
+#: .\templates\terms\terms_of_service.html:21
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or "
+"messages with the same content to a large number of people."
+msgstr ""
+"Du kan kun bruke Speedy Net til lovlige formål. Du har ikke lov til å laste "
+"opp innhold relatert til hat, vold, dyremishandling, nakenhet eller "
+"pornografi. Du har ikke lov til å bruke Speedy Net til å sende "
+"spammeldinger, eller meldinger med samme innhold til et stort antall "
+"personer."
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet "
+"or talk on the phone with people you met on the site, the responsibility for "
+"the results of the meeting or phone call is yours."
+msgstr ""
+"Nettstedsadministrasjon kan ikke bekrefte personlig informasjon gitt av "
+"brukere av nettstedet. Enkelte brukeres personlige opplysninger er kanskje "
+"ikke korrekte. Nettstedets ledelse er ikke ansvarlig for brukeraktivitet "
+"utenfor nettstedet. Hvis du velger å møte eller snakke på telefon med "
+"personer du møtte på siden, er ansvaret for resultatet av møtet eller "
+"telefonsamtalen ditt."
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"After signing up for the site you are asked to verify your email address via "
+"a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+"Etter at du har registrert deg for nettstedet, blir du bedt om å bekrefte e-"
+"postadressen din via en lenke sendt til deg. Kontoer uten bekreftet e-"
+"postadresse vil bli slettet fra nettstedet etter 10 dager."
+
+#: .\templates\terms\terms_of_service.html:27
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
+msgstr ""
+"Hvis du ved en feiltakelse har registrert deg for nettstedet med en feil e-"
+"postadresse, legg til en ny e-postadresse på kontoen din og bekreft den. Du "
+"kan legge ved flere e-postadresser til kontoen din på nettstedet."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face. "
+"It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"Profilbildet ditt skal være et bilde av deg, der vi kan se ansiktet ditt. "
+"Det er lov å laste opp et profilbilde med andre. Ikke last opp nakenbilder, "
+"bilder som viser kjønnsorganer (av menn eller kvinner) eller bilder med bar "
+"bryst (av menn eller kvinner)."
+
+#: .\templates\uploads\file_input.html:6
+msgid "Browse..."
+msgstr "Bla gjennom..."
+
+#: .\uploads\models.py:24
+msgid "owner"
+msgstr "eier"
+
+#: .\uploads\models.py:25
+msgid "file"
+msgstr "fil"
+
+#: .\uploads\models.py:26
+msgid "is stored"
+msgstr "er lagret"
+
+#: .\uploads\models.py:27
+msgid "file size"
+msgstr "filstørrelse"
+
+#: .\uploads\models.py:36
+msgid "uploaded file"
+msgstr "opplastet fil"
+
+#: .\uploads\models.py:37
+msgid "uploaded files"
+msgstr "opplastede filer"
+
+#: .\uploads\models.py:75
+msgid "visible on website"
+msgstr "synlig på nettsiden"
+
+#: .\uploads\models.py:76
+msgid "Speedy image moderation time"
+msgstr "Rask bildemodereringstid Speedy"
+
+#: .\uploads\models.py:77
+msgid "AWS image moderation time"
+msgstr "AWS-bildemodereringstid"
+
+#: .\uploads\models.py:78
+msgid "AWS facial analysis time"
+msgstr "AWS ansiktsanalysetid"
+
+#: .\uploads\models.py:79
+msgid "AWS raw image moderation results"
+msgstr "AWS råbildemodereringsresultater"
+
+#: .\uploads\models.py:80
+msgid "AWS raw facial analysis results"
+msgstr "AWS rå ansiktsanalyseresultater"
+
+#: .\uploads\models.py:81
+msgid "number of faces"
+msgstr "antall ansikter"
+
+#: .\uploads\models.py:86
+msgid "uploaded image"
+msgstr "opplastet bilde"
+
+#: .\uploads\models.py:87
+msgid "uploaded images"
+msgstr "opplastede bilder"

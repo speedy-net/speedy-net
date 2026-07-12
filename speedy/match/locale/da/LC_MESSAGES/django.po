@@ -1,0 +1,1401 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "You have no likes here."
+msgstr "Du har ingen likes her."
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "You have no likes here."
+msgstr "Du har ingen likes her."
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "You have no likes here."
+msgstr "Du har ingen likes her."
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "Update matches"
+msgstr "Opdater kampe"
+
+#: .\__translations\__translations.html:11
+msgctxt "male"
+msgid "Update matches"
+msgstr "Opdater kampe"
+
+#: .\__translations\__translations.html:12
+msgctxt "other"
+msgid "Update matches"
+msgstr "Opdater kampe"
+
+#: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "Add more options"
+msgstr "Tilføj flere muligheder"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "Add more options"
+msgstr "Tilføj flere muligheder"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "Add more options"
+msgstr "Tilføj flere muligheder"
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"Du har ingen match endnu. Prøv at udvide dine søgeindstillinger, eller tjek "
+"igen senere."
+
+#: .\__translations\__translations.html:19
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"Du har ingen match endnu. Prøv at udvide dine søgeindstillinger, eller tjek "
+"igen senere."
+
+#: .\__translations\__translations.html:20
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"Du har ingen match endnu. Prøv at udvide dine søgeindstillinger, eller tjek "
+"igen senere."
+
+#: .\__translations\__translations.html:22
+msgctxt "female"
+msgid "Match Settings"
+msgstr "Matchindstillinger"
+
+#: .\__translations\__translations.html:23
+msgctxt "male"
+msgid "Match Settings"
+msgstr "Matchindstillinger"
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Match Settings"
+msgstr "Matchindstillinger"
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
+msgid "Like"
+msgstr "Ligesom"
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Like"
+msgstr "Ligesom"
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid "Like"
+msgstr "Ligesom"
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Unlike"
+msgstr "I modsætning til"
+
+#: .\__translations\__translations.html:31
+msgctxt "male"
+msgid "Unlike"
+msgstr "I modsætning til"
+
+#: .\__translations\__translations.html:32
+msgctxt "other"
+msgid "Unlike"
+msgstr "I modsætning til"
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Your Matches"
+msgstr "Dine kampe"
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Your Matches"
+msgstr "Dine kampe"
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Your Matches"
+msgstr "Dine kampe"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Friends"
+msgstr "Venner"
+
+#: .\__translations\__translations.html:42
+msgctxt "female"
+msgid "Your Friends"
+msgstr "Dine venner"
+
+#: .\__translations\__translations.html:43
+msgctxt "male"
+msgid "Your Friends"
+msgstr "Dine venner"
+
+#: .\__translations\__translations.html:44
+msgctxt "other"
+msgid "Your Friends"
+msgstr "Dine venner"
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
+msgid "You don't have any friends yet."
+msgstr "Du har ingen venner endnu."
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr "Du har ingen venner endnu."
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr "Du har ingen venner endnu."
+
+#: .\__translations\__translations.html:50
+msgctxt "female"
+msgid "About me"
+msgstr "Om mig"
+
+#: .\__translations\__translations.html:51
+msgctxt "male"
+msgid "About me"
+msgstr "Om mig"
+
+#: .\__translations\__translations.html:52
+msgctxt "other"
+msgid "About me"
+msgstr "Om mig"
+
+#: .\__translations\__translations.html:54
+msgctxt "female"
+msgid "About my match"
+msgstr "Om mit match"
+
+#: .\__translations\__translations.html:55
+msgctxt "male"
+msgid "About my match"
+msgstr "Om mit match"
+
+#: .\__translations\__translations.html:56
+msgctxt "other"
+msgid "About my match"
+msgstr "Om mit match"
+
+#: .\__translations\__translations.html:58
+msgctxt "female"
+msgid "Gender to match"
+msgstr "Køn til at matche"
+
+#: .\__translations\__translations.html:59
+msgctxt "male"
+msgid "Gender to match"
+msgstr "Køn til at matche"
+
+#: .\__translations\__translations.html:60
+msgctxt "other"
+msgid "Gender to match"
+msgstr "Køn til at matche"
+
+#: .\__translations\__translations.html:62
+#, python-format
+msgctxt "female"
+msgid "Someone likes you on %(site_name)s"
+msgstr "Nogen kan lide dig på %(site_name)s"
+
+#: .\__translations\__translations.html:63
+#, python-format
+msgctxt "male"
+msgid "Someone likes you on %(site_name)s"
+msgstr "Nogen kan lide dig på %(site_name)s"
+
+#: .\__translations\__translations.html:64
+#, python-format
+msgctxt "other"
+msgid "Someone likes you on %(site_name)s"
+msgstr "Nogen kan lide dig på %(site_name)s"
+
+#: .\__translations\__translations.html:66
+msgctxt "female"
+msgid "likes you."
+msgstr "kan lide dig."
+
+#: .\__translations\__translations.html:67
+msgctxt "male"
+msgid "likes you."
+msgstr "kan lide dig."
+
+#: .\__translations\__translations.html:68
+msgctxt "other"
+msgid "likes you."
+msgstr "kan lide dig."
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr "kan lide dig"
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr "kan lide dig"
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr "kan lide dig"
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr "Du kan lide"
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr "Du kan lide"
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
+msgstr "Du kan lide"
+
+#: .\__translations\__translations.html:78
+msgctxt "female"
+msgid "Last visited Speedy Match"
+msgstr "Sidst besøgte Speedy Match"
+
+#: .\__translations\__translations.html:79
+msgctxt "male"
+msgid "Last visited Speedy Match"
+msgstr "Sidst besøgte Speedy Match"
+
+#: .\__translations\__translations.html:80
+msgctxt "other"
+msgid "Last visited Speedy Match"
+msgstr "Sidst besøgte Speedy Match"
+
+#: .\__translations\__translations.py:6
+msgid "My height in centimeters"
+msgstr "Min højde i centimeter"
+
+#: .\__translations\__translations.py:9
+msgctxt "female"
+msgid "Add profile picture"
+msgstr "Tilføj profilbillede"
+
+#: .\__translations\__translations.py:10
+msgctxt "male"
+msgid "Add profile picture"
+msgstr "Tilføj profilbillede"
+
+#: .\__translations\__translations.py:11
+msgctxt "other"
+msgid "Add profile picture"
+msgstr "Tilføj profilbillede"
+
+#: .\__translations\__translations.py:13
+msgctxt "female"
+msgid "My height in centimeters"
+msgstr "Min højde i centimeter"
+
+#: .\__translations\__translations.py:14
+msgctxt "male"
+msgid "My height in centimeters"
+msgstr "Min højde i centimeter"
+
+#: .\__translations\__translations.py:15
+msgctxt "other"
+msgid "My height in centimeters"
+msgstr "Min højde i centimeter"
+
+#: .\__translations\__translations.py:17
+#: .\templates\accounts\edit_profile\activate.html:115
+msgctxt "female"
+msgid "My ideal match"
+msgstr "Mit ideelle match"
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:121
+msgctxt "male"
+msgid "My ideal match"
+msgstr "Mit ideelle match"
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:128
+msgctxt "other"
+msgid "My ideal match"
+msgstr "Mit ideelle match"
+
+#: .\__translations\__translations.py:21
+#: .\templates\accounts\edit_profile\activate.html:116
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr "Minimal alder til at matche"
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:122
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr "Minimal alder til at matche"
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:129
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr "Minimal alder til at matche"
+
+#: .\__translations\__translations.py:25
+#: .\templates\accounts\edit_profile\activate.html:117
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr "Maksimal alder til at matche"
+
+#: .\__translations\__translations.py:26
+#: .\templates\accounts\edit_profile\activate.html:123
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr "Maksimal alder til at matche"
+
+#: .\__translations\__translations.py:27
+#: .\templates\accounts\edit_profile\activate.html:130
+msgctxt "other"
+msgid "Maximal age to match"
+msgstr "Maksimal alder til at matche"
+
+#: .\__translations\__translations.py:29
+msgctxt "female"
+msgid "Please write a few words about yourself."
+msgstr "Skriv venligst et par ord om dig selv."
+
+#: .\__translations\__translations.py:30
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "Skriv venligst et par ord om dig selv."
+
+#: .\__translations\__translations.py:31
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr "Skriv venligst et par ord om dig selv."
+
+#: .\__translations\__translations.py:33
+msgctxt "female"
+msgid "Do you have children? How many?"
+msgstr "Har du børn? Hvor mange?"
+
+#: .\__translations\__translations.py:34
+msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "Har du børn? Hvor mange?"
+
+#: .\__translations\__translations.py:35
+msgctxt "other"
+msgid "Do you have children? How many?"
+msgstr "Har du børn? Hvor mange?"
+
+#: .\__translations\__translations.py:37
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr "Vil du have (flere) børn?"
+
+#: .\__translations\__translations.py:38
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "Vil du have (flere) børn?"
+
+#: .\__translations\__translations.py:39
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr "Vil du have (flere) børn?"
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "Who is your ideal partner?"
+msgstr "Hvem er din ideelle partner?"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "Hvem er din ideelle partner?"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "Who is your ideal partner?"
+msgstr "Hvem er din ideelle partner?"
+
+#: .\__translations\__translations.py:45
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Vi beklager, men du er ikke autoriseret til at bruge webstedet {site_name}. "
+"Vi har konstateret, at nogle af de oplysninger, du har givet ved "
+"registrering på siden, er forkerte, eller at du har overtrådt reglerne for "
+"brug af siden. Derfor har du ikke tilladelse til at bruge siden."
+
+#: .\__translations\__translations.py:46
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Vi beklager, men du er ikke autoriseret til at bruge webstedet {site_name}. "
+"Vi har konstateret, at nogle af de oplysninger, du har givet ved "
+"registrering på siden, er forkerte, eller at du har overtrådt reglerne for "
+"brug af siden. Derfor har du ikke tilladelse til at bruge siden."
+
+#: .\__translations\__translations.py:47
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the "
+"site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Vi beklager, men du er ikke autoriseret til at bruge webstedet {site_name}. "
+"Vi har konstateret, at nogle af de oplysninger, du har givet ved "
+"registrering på siden, er forkerte, eller at du har overtrådt reglerne for "
+"brug af siden. Derfor har du ikke tilladelse til at bruge siden."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Match Accounts"
+msgstr "Speedy Match Accounts"
+
+#: .\accounts\forms.py:58
+msgid "Add profile picture"
+msgstr "Tilføj profilbillede"
+
+#: .\accounts\forms.py:58 .\accounts\forms.py:97
+msgid "A profile picture is required."
+msgstr "Et profilbillede er påkrævet."
+
+#: .\accounts\forms.py:59
+msgid "My diet"
+msgstr "Min kost"
+
+#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
+msgid "Your diet is required."
+msgstr "Din kost er påkrævet."
+
+#: .\accounts\forms.py:60
+msgid "My smoking status"
+msgstr "Min rygestatus"
+
+#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
+msgid "Your smoking status is required."
+msgstr "Din rygestatus er påkrævet."
+
+#: .\accounts\forms.py:61
+msgid "My relationship status"
+msgstr "Min forholdsstatus"
+
+#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
+msgid "Your relationship status is required."
+msgstr "Din forholdsstatus er påkrævet."
+
+#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
+msgid "Gender to match is required."
+msgstr "Køn til at matche er påkrævet."
+
+#: .\accounts\forms.py:100
+msgid "Your height is required."
+msgstr "Din højde er påkrævet."
+
+#: .\accounts\forms.py:112 .\accounts\validators.py:43
+msgid "Please write a few words about yourself."
+msgstr "Skriv venligst et par ord om dig selv."
+
+#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
+msgid "Please write where you live."
+msgstr "Skriv venligst hvor du bor."
+
+#: .\accounts\forms.py:118 .\accounts\models.py:221
+#: .\accounts\validators.py:53
+#: .\templates\profiles\user_extra_info_widget.html:30
+msgid "Do you have children? How many?"
+msgstr "Har du børn? Hvor mange?"
+
+#: .\accounts\forms.py:121 .\accounts\models.py:224
+#: .\accounts\validators.py:58
+#: .\templates\profiles\user_extra_info_widget.html:34
+msgid "Do you want (more) children?"
+msgstr "Vil du have (flere) børn?"
+
+#: .\accounts\forms.py:124 .\accounts\validators.py:63
+msgid "Who is your ideal partner?"
+msgstr "Hvem er din ideelle partner?"
+
+#: .\accounts\forms.py:130
+msgid "Minimal age to match is required."
+msgstr "Minimum alder for at matche er påkrævet."
+
+#: .\accounts\forms.py:133
+msgid "Maximal age to match is required."
+msgstr "Maksimal alder for at matche er påkrævet."
+
+#: .\accounts\forms.py:136 .\accounts\validators.py:110
+msgid "Diet match is required."
+msgstr "Kostmatch er påkrævet."
+
+#: .\accounts\forms.py:139 .\accounts\validators.py:118
+msgid "Smoking status match is required."
+msgstr "Rygestatus match er påkrævet."
+
+#: .\accounts\forms.py:142 .\accounts\validators.py:126
+msgid "Relationship status match is required."
+msgstr "Relationsstatus match er påkrævet."
+
+#: .\accounts\forms.py:150
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
+
+#: .\accounts\forms.py:186 .\accounts\models.py:231
+#: .\templates\profiles\user_extra_info_widget.html:50
+msgid "Gender to match"
+msgstr "Køn til at matche"
+
+#: .\accounts\models.py:64
+msgid "Speedy Match User"
+msgstr "Speedy Match User"
+
+#: .\accounts\models.py:74 .\accounts\models.py:197
+msgid "No match"
+msgstr "Ingen match"
+
+#: .\accounts\models.py:75 .\accounts\models.py:198
+msgid "One heart"
+msgstr "Et hjerte"
+
+#: .\accounts\models.py:76 .\accounts\models.py:199
+msgid "Two hearts"
+msgstr "To hjerter"
+
+#: .\accounts\models.py:77 .\accounts\models.py:200
+msgid "Three hearts"
+msgstr "Tre hjerter"
+
+#: .\accounts\models.py:78 .\accounts\models.py:201
+msgid "Four hearts"
+msgstr "Fire hjerter"
+
+#: .\accounts\models.py:79 .\accounts\models.py:202
+msgid "Five hearts"
+msgstr "Fem hjerter"
+
+#: .\accounts\models.py:206
+msgid "User"
+msgstr "Bruger"
+
+#: .\accounts\models.py:207
+msgid "On new likes"
+msgstr "På nye likes"
+
+#: .\accounts\models.py:210
+msgid "Active languages"
+msgstr "Aktive sprog"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:26
+msgid "Height"
+msgstr "Højde"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:27
+msgid "cm"
+msgstr "cm"
+
+#: .\accounts\models.py:218
+msgid "Few words about me"
+msgstr "Få ord om mig"
+
+#: .\accounts\models.py:227
+#: .\templates\profiles\user_extra_info_widget.html:54
+msgid "My ideal match"
+msgstr "Mit ideelle match"
+
+#: .\accounts\models.py:237
+msgid "Minimal age to match"
+msgstr "Minimal alder til at matche"
+
+#: .\accounts\models.py:238
+msgid "Maximal age to match"
+msgstr "Maksimal alder til at matche"
+
+#: .\accounts\models.py:239
+msgid "Diet match"
+msgstr "Kostmatch"
+
+#: .\accounts\models.py:240
+msgid "Smoking status match"
+msgstr "Rygestatus match"
+
+#: .\accounts\models.py:241
+msgid "Relationship status match"
+msgstr "Forholdsstatus match"
+
+#: .\accounts\models.py:244
+msgid "Diet to match"
+msgstr "Kost til at matche"
+
+#: .\accounts\models.py:252
+msgid "Smoking status to match"
+msgstr "Rygestatus til at matche"
+
+#: .\accounts\models.py:260
+msgid "Relationship status to match"
+msgstr "Forholdsstatus skal matche"
+
+#: .\accounts\models.py:267
+msgid "Activation step"
+msgstr "Aktiveringstrin"
+
+#: .\accounts\models.py:270
+msgid "Number of matches on last user's search"
+msgstr "Antal match ved sidste brugers søgning"
+
+#: .\accounts\models.py:346
+msgid "Speedy Match Profile"
+msgstr "Speedy Match Profile"
+
+#: .\accounts\models.py:347 .\profiles\apps.py:8
+msgid "Speedy Match Profiles"
+msgstr "Speedy Match Profiles"
+
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
+msgid "Please confirm your email address."
+msgstr "Bekræft venligst din e-mailadresse."
+
+#: .\accounts\utils.py:89
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"Det samlede antal aktive medlemmer på siden er {total_number_of_active_members_in_the_last_four_months}, "
+"hvoraf {total_number_of_active_members_in_the_last_week} medlemmer er kommet "
+"ind på siden i den sidste uge."
+
+#: .\accounts\validators.py:68
+msgid "Height must be from 1 to 450 cm."
+msgstr "Højden skal være fra 1 til 450 cm."
+
+#: .\accounts\validators.py:93
+msgid "Minimal age to match must be from 0 to 180 years."
+msgstr "Minimumsalder for at matche skal være fra 0 til 180 år."
+
+#: .\accounts\validators.py:98
+msgid "Maximal age to match must be from 0 to 180 years."
+msgstr "Maksimal alder for at matche skal være fra 0 til 180 år."
+
+#: .\accounts\validators.py:104
+msgid "Maximal age to match can't be less than minimal age to match."
+msgstr ""
+"Maksimal alder til at matche kan ikke være mindre end minimumsalder at "
+"matche."
+
+#: .\accounts\validators.py:112
+msgid "At least one diet match option should be five hearts."
+msgstr "Mindst én kosttilpasningsmulighed bør være fem hjerter."
+
+#: .\accounts\validators.py:120
+msgid "At least one smoking status match option should be five hearts."
+msgstr "Mindst én mulighed for rygestatus skal være fem hjerter."
+
+#: .\accounts\validators.py:128
+msgid "At least one relationship status match option should be five hearts."
+msgstr "Mindst én match-mulighed for forholdsstatus skal være fem hjerter."
+
+#: .\admin\views.py:202
+#, python-brace-format
+msgid ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
+"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+msgstr ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
+"site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+
+#: .\admin\views.py:284
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_the_last_week} active "
+"members registered in the last week. "
+"{total_number_of_active_members_registered_in_the_last_month} active members "
+"registered in the last month. "
+"{total_number_of_active_members_registered_in_the_last_four_months} active "
+"members registered in the last four months. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} active "
+"members registered more than four months ago. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} active "
+"members registered in the last eight months. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"active members registered more than eight months ago. "
+"{total_number_of_active_members_registered_in_the_last_two_years} active "
+"members registered in the last two years. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} active "
+"members registered more than two years ago. "
+"{total_number_of_active_members_registered_before_2019_08_01} active members "
+"registered before 1 August 2019."
+msgstr ""
+"Admin: {total_number_of_active_members_registered_in_the_last_week} aktive "
+"medlemmer registreret i den sidste uge. "
+"{total_number_of_active_members_registered_in_the_last_month} aktive "
+"medlemmer registreret i den sidste måned. "
+"{total_number_of_active_members_registered_in_the_last_four_months} aktive "
+"medlemmer registreret inden for de sidste fire måneder. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} aktive "
+"medlemmer registrerede sig for mere end fire måneder siden. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} aktive "
+"medlemmer registreret inden for de sidste otte måneder. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"aktive medlemmer registrerede sig for mere end otte måneder siden. "
+"{total_number_of_active_members_registered_in_the_last_two_years} aktive "
+"medlemmer registreret i de sidste to år. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} aktive "
+"medlemmer registrerede sig for mere end to år siden. "
+"{total_number_of_active_members_registered_before_2019_08_01} aktive "
+"medlemmer registreret før 1. august 2019."
+
+#: .\admin\views.py:304
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
+msgstr ""
+"Admin: {total_number_of_active_members_registered_in_year} aktive medlemmer "
+"registreret i {year}."
+
+#: .\admin\views.py:359
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} females, "
+"{total_number_of_male_active_members_in_age_range} males, "
+"{total_number_of_other_active_members_in_age_range} others) active members "
+"aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range} females, "
+"{total_percent_of_male_active_members_in_age_range} males, "
+"{total_percent_of_other_active_members_in_age_range} others)."
+msgstr ""
+"Administrator: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} kvinder, "
+"{total_number_of_male_active_members_in_age_range} mænd, "
+"{total_number_of_other_active_members_in_age_range} andre) aktive medlemmer "
+"i alderen {min_age} til {max_age} "
+"({total_percent_of_female_active_members_in_age_range} kvinder, "
+"{total_percent_of_male_active_members_in_age_range} mænd, "
+"{total_percent_of_other_active_members_in_age_range} andre)."
+
+#: .\admin\views.py:423
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"others) entered the site in the last eight months."
+msgstr ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"kvinder, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"mænd, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"andre) aktive medlemmer i alderen {min_age} til {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
+"kvinder, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"mænd, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
+"andre) er kommet ind på siden inden for de sidste otte måneder."
+
+#: .\admin\views.py:487
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
+"females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) entered the site in the last four months."
+msgstr ""
+"Administrator: "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
+"kvinder, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"mænd, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"andre) aktive medlemmer i alderen {min_age} til {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
+"kvinder, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"mænd, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
+"andre) er kommet ind på siden inden for de sidste fire måneder."
+
+#: .\likes\managers.py:14 .\likes\models.py:48
+msgid "Users cannot like themselves."
+msgstr "Brugere kan ikke lide sig selv."
+
+#: .\likes\managers.py:17
+msgid "User already likes other user."
+msgstr "Brugeren kan allerede lide en anden bruger."
+
+#: .\likes\managers.py:20
+msgid "User cannot like a blocked user."
+msgstr "Brugeren kan ikke lide en blokeret bruger."
+
+#: .\likes\models.py:21
+msgid "from user"
+msgstr "fra bruger"
+
+#: .\likes\models.py:22
+msgid "to user"
+msgstr "til bruger"
+
+#: .\likes\models.py:28
+msgid "user like"
+msgstr "bruger kan lide"
+
+#: .\likes\models.py:29
+msgid "user likes"
+msgstr "bruger kan lide"
+
+#: .\likes\views.py:28
+msgid "Girls You Like"
+msgstr "Piger du kan lide"
+
+#: .\likes\views.py:29
+msgid "Boys You Like"
+msgstr "Drenge du kan lide"
+
+#: .\likes\views.py:30
+msgid "People You Like"
+msgstr "Folk du kan lide"
+
+#: .\likes\views.py:33
+msgid "Girls Who Like You"
+msgstr "Piger der kan lide dig"
+
+#: .\likes\views.py:34
+msgid "Boys Who Like You"
+msgstr "Drenge der kan lide dig"
+
+#: .\likes\views.py:35
+msgid "People Who Like You"
+msgstr "Mennesker, der kan lide dig"
+
+#: .\likes\views.py:37
+msgid "Mutual Likes"
+msgstr "Gensidige likes"
+
+#: .\matches\apps.py:8
+msgid "Speedy Match Matches"
+msgstr "Speedy Match Matches"
+
+#: .\matches\views.py:84 .\matches\views.py:98
+msgid "Your match settings were saved."
+msgstr "Dine kampindstillinger blev gemt."
+
+#: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: .\profiles\widgets.py:64
+msgid "None"
+msgstr "Ingen"
+
+#: .\settings\base_site.py:12
+msgid "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Match"
+msgstr "Om Speedy Match"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. With Speedy Match you can "
+"find matching people for dating and chat with them online. You can add "
+"people as friends on Speedy Net, like people and send them messages. Speedy "
+"Match is open to free registration for people from all countries and ages "
+"(no age limit!). The site is vegan and vegetarian friendly. It is currently "
+"available in %(languages_num)s languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> er en ny dating/matchende webapp til romantiske "
+"formål for singler, der er medlemmer af <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Med Speedy Match kan du "
+"finde matchende personer til dating og chatte med dem online. Du kan tilføje "
+"folk som venner på Speedy Net, like folk og sende dem beskeder. Match er "
+"åben for gratis registrering for folk fra alle lande og aldre (ingen "
+"aldersgrænse!). Siden er vegansk og vegetarvenlig. Den er i øjeblikket "
+"tilgængelig på %(languages_num)s sprog. Speedy Match"
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Match are vegan, support animal rights and object to "
+"experiments on animals. Speedy Match is a dating app friendly for vegan and "
+"vegetarian people and animals."
+msgstr ""
+"Grundlæggerne af Speedy Match er veganere, støtter dyrs rettigheder og er "
+"imod forsøg på dyr. Speedy Match er en dating-app, der er venlig for "
+"veganske og vegetariske mennesker og dyr."
+
+#: .\templates\about\about.html:21
+msgid ""
+"Only people who match your requirements will be able to see your profile and "
+"contact you. We don't allow anonymous searches and Speedy Match profiles are "
+"visible to matching partners only. You can select who will be able to see "
+"your profile and which details will appear on your profile as public, which "
+"details only to friends and which details will be private. Private details "
+"will appear only to you."
+msgstr ""
+"Kun personer, der matcher dine krav, vil kunne se din profil og kontakte "
+"dig. Vi tillader ikke anonyme søgninger, og Speedy Match-profiler er kun "
+"synlige for matchende partnere. Du kan vælge, hvem der skal kunne se din "
+"profil, og hvilke detaljer der skal vises på din profil som offentlige, "
+"hvilke detaljer kun til venner, og hvilke detaljer der vil være private. "
+"Private detaljer vises kun for dig."
+
+#: .\templates\about\about.html:23
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes. "
+"<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
+msgstr ""
+"Alle funktionerne på Speedy Net og Speedy Match er gratis. Tilmeld dig i "
+"Speedy Match dag for at finde matchende partnere, det tager kun et par "
+"minutter. <a href=\"/\" title=\"Join Speedy Match\">Klik her</a> for at "
+"deltage."
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Match is a free software & open source project. If you want to help "
+"developing and improving Speedy Match, please contact me by email."
+msgstr ""
+"Speedy Match er et gratis software- og open source-projekt. Hvis du vil være "
+"med til at udvikle og forbedre Speedy Match, så kontakt mig venligst på e-"
+"mail."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Match er opkaldt efter <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, en hunhund, der var hos os i mange "
+"år og døde i 2003. fødte 7 hvalpe i 1988."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
+msgstr ""
+"Speedy Match er i øjeblikket i alfa. Den blev lanceret i august 2019. Den "
+"engelske version af Speedy Match er under produktion."
+
+#: .\templates\about\about.html:31
+msgid "Thank you and good luck,"
+msgstr "Tak og held og lykke,"
+
+#: .\templates\about\about.html:32
+msgid "Uri Rodberg"
+msgstr "Uri Rodberg"
+
+#: .\templates\about\about.html:33
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Grundlægger og direktør Speedy Net for Speedy Match og,"
+
+#: .\templates\about\about.html:34
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Registration Step"
+msgstr "Registreringstrin"
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Welcome"
+msgstr "Velkomst"
+
+#: .\templates\accounts\edit_profile\activate.html:25
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "Velkommen til %(site_name)s"
+
+#: .\templates\accounts\edit_profile\activate.html:46
+#: .\templates\accounts\edit_profile\base.html:10
+#: .\templates\matches\settings\base.html:41
+#: .\templates\profiles\user_extra_info_widget.html:18
+msgid "About me"
+msgstr "Om mig"
+
+#: .\templates\accounts\edit_profile\activate.html:48
+#: .\templates\accounts\edit_profile\base.html:15
+#: .\templates\matches\settings\base.html:36
+msgid "About my match"
+msgstr "Om mit match"
+
+#: .\templates\accounts\edit_profile\activate.html:76
+msgid "Back"
+msgstr "Tilbage"
+
+#: .\templates\accounts\edit_profile\activate.html:79
+msgid "Next step"
+msgstr "Næste skridt"
+
+#: .\templates\accounts\edit_profile\activate.html:85
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Din Speedy Net-konto er ikke aktiv. Gå ind på denne side for at aktivere den."
+
+#: .\templates\admin\matches\match_list.html:5
+msgid "Admin - All Matches"
+msgstr "Admin - Alle kampe"
+
+#: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "Dine kampe"
+
+#: .\templates\base_site.html:29
+#: .\templates\menu\user_menu_profile_is_active.html:11
+msgid "Matches"
+msgstr "Matcher"
+
+#: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:22
+#: .\templates\menu\user_menu_profile_is_active.html:20
+msgid "Likes"
+msgstr "Synes godt om"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:48
+msgid "Your Match Settings"
+msgstr "Dine matchindstillinger"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:50
+#: .\templates\matches\settings\base.html:10
+#: .\templates\matches\settings\base.html:30
+msgid "Match Settings"
+msgstr "Matchindstillinger"
+
+#: .\templates\base_site.html:105 .\templates\base_site.html:106
+#: .\templates\base_site.html:114 .\templates\base_site.html:115
+msgid "A vegan friendly website"
+msgstr "En vegansk venlig hjemmeside"
+
+#: .\templates\email\likes\like_body.txt:1
+msgid "likes you."
+msgstr "kan lide dig."
+
+#: .\templates\email\likes\like_body.txt:6
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s. "
+"Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Du abonnerer på at modtage denne type meddelelser fra %(site_name)s. Gå ind "
+"på denne side for at ændre dine notifikationsindstillinger eller fravælge:"
+
+#: .\templates\email\likes\like_subject.txt:1
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "Nogen kan lide dig på %(site_name)s"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "Du har ingen venner endnu."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "Dine venner"
+
+#: .\templates\likes\like_list.html:51
+msgid "You have no likes here."
+msgstr "Du har ingen likes her."
+
+#: .\templates\main\main_page.html:7
+msgid "Free online dating"
+msgstr "Gratis online dating"
+
+#: .\templates\main\main_page.html:10
+msgid ""
+"Speedy Match is a new dating/matching web app for romantic purposes for "
+"singles who are members of Speedy Net. With Speedy Match you can find "
+"matching people for dating and chat with them online. The site is vegan and "
+"vegetarian friendly."
+msgstr ""
+"Speedy Match er en ny dating/matchende webapp til romantiske formål for "
+"singler, der er medlemmer Speedy Net af Speedy Match. Med kan du finde "
+"matchende personer til dating og chatte med dem online. Siden er vegansk og "
+"vegetarvenlig."
+
+#: .\templates\main\main_page.html:14
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr ""
+"Leder du efter en kæreste? Leder du efter en kæreste? Kom og mød Speedy!"
+
+#: .\templates\main\main_page.html:16
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes."
+msgstr ""
+"Alle funktionerne på Speedy Net og Speedy Match er gratis. Tilmeld dig "
+"Speedy Match i dag for at finde matchende partnere, det tager kun et par "
+"minutter."
+
+#: .\templates\matches\match_list.html:41
+msgid "Update matches"
+msgstr "Opdater kampe"
+
+#: .\templates\matches\match_list.html:49
+#: .\templates\profiles\user_extra_info_widget.html:38
+msgid "Diet"
+msgstr "Kost"
+
+#: .\templates\matches\match_list.html:60
+msgid "Age:"
+msgstr "Alder:"
+
+#: .\templates\matches\match_list.html:74
+msgid "Refresh"
+msgstr "Opfriske"
+
+#: .\templates\matches\match_list.html:81
+msgid "Add more options"
+msgstr "Tilføj flere muligheder"
+
+#: .\templates\matches\match_list.html:110
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check "
+"again later."
+msgstr ""
+"Du har ingen match endnu. Prøv at udvide dine søgeindstillinger, eller tjek "
+"igen senere."
+
+#: .\templates\matches\settings\base.html:27
+msgid "Back to Matches"
+msgstr "Tilbage til Kampe"
+
+#: .\templates\matches\settings\base.html:46
+msgid "Profile Info"
+msgstr "Profil info"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "Venner"
+
+#: .\templates\profiles\tools\like.html:11
+#: .\templates\profiles\tools\like.html:13
+msgid "Like"
+msgstr "Ligesom"
+
+#: .\templates\profiles\tools\like.html:19
+#: .\templates\profiles\tools\like.html:21
+msgid "Unlike"
+msgstr "I modsætning til"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "Din ven"
+
+#: .\templates\profiles\user_base_site.html:10
+#: .\templates\profiles\user_base_site.html:16
+msgid "likes you"
+msgstr "kan lide dig"
+
+#: .\templates\profiles\user_base_site.html:12
+#: .\templates\profiles\user_base_site.html:18
+msgid "You like"
+msgstr "Du kan lide"
+
+#: .\templates\profiles\user_base_site.html:14
+msgid "Friendship request sent"
+msgstr "Venskabsanmodning sendt"
+
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "Mere information"
+
+#: .\templates\profiles\user_extra_info_widget.html:22
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
+
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
+msgstr "Rygestatus"
+
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
+msgstr "Relationsstatus"
+
+#: .\templates\profiles\user_extra_info_widget.html:58
+msgid "Last visited Speedy Match"
+msgstr "Sidst besøgte Speedy Match"
+
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "Match rang"
+
+#: .\templates\profiles\user_rank_widget.html:28
+msgid "There is no match."
+msgstr "Der er ingen match."

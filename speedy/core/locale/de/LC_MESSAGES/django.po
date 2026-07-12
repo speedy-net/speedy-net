@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-05 14:19+0300\n"
+"POT-Creation-Date: 2026-07-12 18:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2712,41 +2712,145 @@ msgstr "Englisch"
 msgid "Hebrew"
 msgstr "Hebräisch"
 
-#: .\settings\base_with_login.py:63
+#: .\settings\base_with_login.py:65
 msgid "French"
 msgstr "Französisch"
 
-#: .\settings\base_with_login.py:64
+#: .\settings\base_with_login.py:66
 msgid "German"
 msgstr "Deutsch"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:67
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:68
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:69
 msgid "Italian"
 msgstr "Italienisch"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:70
 msgid "Dutch"
 msgstr "Niederländisch"
 
-#: .\settings\base_with_login.py:69
-msgid "Swedish"
-msgstr "Schwedisch"
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "japanisch"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "Russisch"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "chinesisch"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Polieren"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "persisch"
+
+#: .\settings\base_with_login.py:79
 msgid "Korean"
 msgstr "Koreanisch"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "Arabisch"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "Indonesisch"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "ukrainisch"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "Türkisch"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "Vietnamesisch"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "tschechisch"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "Schwedisch"
+
+#: .\settings\base_with_login.py:87
 msgid "Finnish"
 msgstr "Finnisch"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "ungarisch"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "Thailändisch"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "griechisch"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "malaiisch"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "serbisch"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "rumänisch"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "Bengali"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "katalanisch"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "Norwegisch (Bokmål)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "bulgarisch"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "dänisch"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "slowakisch"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "Hindi"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "estnisch"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "kroatisch"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2776,7 +2880,7 @@ msgstr "Speedy tut es leid, aber die Seite kann nicht gefunden werden."
 msgid "Internal server error"
 msgstr "Interner Server-Fehler"
 
-#: .\templates\about\about_base.html:5 .\templates\base_with_login.html:230
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
@@ -2999,7 +3103,7 @@ msgstr "Speedy Match Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-Logo Shop"
+msgstr "Speedy S-logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3400,7 +3504,7 @@ msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"Die Website ist im Alpha-Status, es können Fehler auftreten.Die Website-"
+"Die Website ist im alpha-Status, es können Fehler auftreten.Die Website-"
 "Management ist nicht für Fehler auf der Website verantwortlich."
 
 #: .\templates\terms\terms_of_service.html:21
