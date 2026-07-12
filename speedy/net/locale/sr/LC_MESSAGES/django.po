@@ -152,7 +152,7 @@ msgstr "Да. Избриши мој налог."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net Корисник"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -253,7 +253,8 @@ msgid ""
 msgstr ""
 "Све функције Спееди Нет- Speedy Net а и Спееди Матцх-а Speedy Match су "
 "бесплатне. Придружите Speedy Net се Спееди Нет-у данас да бисте пронашли "
-"пријатеље, потребно је само неколико минута. Kliknite <a href=\"/\" title=\"Join Speedy Net\">ovde da se pridružite</a>."
+"пријатеље, потребно је само неколико минута. Kliknite <a href=\"/\" "
+"title=\"Join Speedy Net\">ovde da se pridružite</a>."
 
 #: .\templates\about\about.html:27
 msgid ""

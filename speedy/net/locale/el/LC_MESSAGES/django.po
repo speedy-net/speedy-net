@@ -152,7 +152,7 @@ msgstr "Ναί. Διαγραφή του λογαριασμού μου."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Χρήστης Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -201,12 +201,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"Το <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> είναι ένα νέο κοινωνικό δίκτυο. Με το Speedy Net μπορείτε να "
-"επικοινωνείτε με τους φίλους σας. Το Net Speedy Net είναι ανοιχτό σε δωρεάν "
-"εγγραφή για άτομα από όλες τις χώρες και ηλικίες (χωρίς όριο ηλικίας!). Ο "
-"ιστότοπος είναι vegan και φιλικός προς τους χορτοφάγους. Προς το παρόν είναι"
-" διαθέσιμο σε %(languages_num)s γλώσσες."
+"Το <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> είναι ένα νέο κοινωνικό δίκτυο. Με το Speedy Net "
+"μπορείτε να επικοινωνείτε με τους φίλους σας. Το Net Speedy Net είναι "
+"ανοιχτό σε δωρεάν εγγραφή για άτομα από όλες τις χώρες και ηλικίες (χωρίς "
+"όριο ηλικίας!). Ο ιστότοπος είναι vegan και φιλικός προς τους χορτοφάγους. "
+"Προς το παρόν είναι διαθέσιμο σε %(languages_num)s γλώσσες."
 
 #: .\templates\about\about.html:19
 msgid ""

@@ -148,7 +148,7 @@ msgstr "نعم. حذف حسابي."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "مستخدم Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -197,11 +197,11 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> هي شبكة اجتماعية جديدة Speedy Net. مع سبيدي نت يمكنك التواصل مع "
-"Speedy Net أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من جميع البلدان "
-"والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو متوفر حاليًا "
-"بلغات %(languages_num)s. Net"
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> هي شبكة اجتماعية جديدة Speedy Net. مع سبيدي نت يمكنك "
+"التواصل مع Speedy Net أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من "
+"جميع البلدان والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو "
+"متوفر حاليًا بلغات %(languages_num)s. Net"
 
 #: .\templates\about\about.html:19
 msgid ""
