@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "Fiók törlése lehetőségre"
+msgstr "Fiók törlése"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "Fiók törlése lehetőségre"
+msgstr "Fiók törlése"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "Fiók törlése lehetőségre"
+msgstr "Fiók törlése"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -201,10 +201,10 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"A <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> egy új közösségi hálózat. A Speedy Net segítségével kommunikálhat "
-"barátaival Speedy Net. A Net ingyenes regisztrációra nyitva áll minden "
-"országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
+"A <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> egy új közösségi hálózat. A Speedy Net segítségével "
+"kommunikálhat barátaival Speedy Net. A Net ingyenes regisztrációra nyitva "
+"áll minden országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
 "vegetáriánusbarát. Jelenleg %(languages_num)s nyelven érhető el."
 
 #: .\templates\about\about.html:19
@@ -320,7 +320,7 @@ msgstr "Letiltott felhasználók"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "Fiók törlése lehetőségre"
+msgstr "Fiók törlése"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."

@@ -49,7 +49,7 @@ if (django_settings.TESTS):
                     **{gender: 'アカウントの削除' for gender in User.ALL_GENDERS},
                 },
                 'ru': {
-                    **{gender: 'Удалить аккаунт' for gender in User.ALL_GENDERS},
+                    **{gender: 'Удалить учетную запись' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
                     **{gender: '刪除帳戶' for gender in User.ALL_GENDERS},
@@ -75,7 +75,7 @@ if (django_settings.TESTS):
                     **{gender: 'Hapus Akun' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Видалити акаунт' for gender in User.ALL_GENDERS},
+                    **{gender: 'Видалити обліковий запис' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
                     **{gender: 'Hesabı Sil' for gender in User.ALL_GENDERS},
@@ -93,7 +93,7 @@ if (django_settings.TESTS):
                     **{gender: 'Poista tili' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Fiók törlése lehetőségre' for gender in User.ALL_GENDERS},
+                    **{gender: 'Fiók törlése' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'ลบบัญชี' for gender in User.ALL_GENDERS},
@@ -108,7 +108,7 @@ if (django_settings.TESTS):
                     **{gender: 'Избриши налог' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Șterge contul' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ștergeți contul' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
                     **{gender: 'অ্যাকাউন্ট মুছুন' for gender in User.ALL_GENDERS},
@@ -129,7 +129,7 @@ if (django_settings.TESTS):
                     **{gender: 'Odstrániť účet' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'खाता हटा दो' for gender in User.ALL_GENDERS},
+                    **{gender: 'खाता हटाएं' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Kustuta konto' for gender in User.ALL_GENDERS},
