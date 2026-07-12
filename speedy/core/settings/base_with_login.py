@@ -70,7 +70,7 @@ _LANGUAGES_TO_ADD_1 = [
     ('nl', _('Dutch')),
     ('ja', _('Japanese')),
     ('ru', _('Russian')),
-    ('zh', _('Chinese')),  # ~~~~ TODO: about page not working because of Chinese. enable Chinese.
+    ('zh', _('Chinese')),
     ('pl', _('Polish')),
     ('fa', _('Persian')),
 ]
