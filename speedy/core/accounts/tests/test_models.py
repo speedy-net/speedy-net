@@ -1774,11 +1774,51 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='sv')
-        class UserAllLanguagesSwedishTestCase(UserTestCaseMixin, SiteTestCase):
+        @override_settings(LANGUAGE_CODE='ja')
+        class UserAllLanguagesJapaneseTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class UserAllLanguagesRussianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class UserAllLanguagesChineseTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class UserAllLanguagesPolishTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class UserAllLanguagesPersianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='he')
+        class UserAllLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
@@ -1790,6 +1830,62 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserAllLanguagesArabicTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserAllLanguagesIndonesianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserAllLanguagesUkrainianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserAllLanguagesTurkishTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserAllLanguagesVietnameseTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserAllLanguagesCzechTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserAllLanguagesSwedishTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fi')
         class UserAllLanguagesFinnishTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -1798,11 +1894,123 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='he')
-        class UserAllLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+        @override_settings(LANGUAGE_CODE='hu')
+        class UserAllLanguagesHungarianTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='he')
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class UserAllLanguagesThaiTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class UserAllLanguagesGreekTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class UserAllLanguagesMalayTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class UserAllLanguagesSerbianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class UserAllLanguagesRomanianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class UserAllLanguagesBengaliTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class UserAllLanguagesCatalanTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class UserAllLanguagesNorwegianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class UserAllLanguagesBulgarianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class UserAllLanguagesDanishTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class UserAllLanguagesSlovakTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class UserAllLanguagesHindiTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class UserAllLanguagesEstonianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class UserAllLanguagesCroatianTestCase(UserTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
 
 
         class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
