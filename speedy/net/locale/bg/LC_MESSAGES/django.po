@@ -202,7 +202,7 @@ msgstr ""
 "да общувате с приятелите си. е Speedy Net отворен за безплатна регистрация "
 "за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е "
 "подходящ за вегани и вегетарианци. В момента се предлага на "
-"%(languages_num)s езика. Net"
+"%(languages_num)s езика."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -288,7 +288,7 @@ msgstr "Ури Родберг"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Основател и директор на Speedy Net Speedy Speedy Match Net и,"
+msgstr "Основател и директор на Speedy Net Speedy Match и,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

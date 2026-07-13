@@ -199,7 +199,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> er et nyt socialt netværk. Med Speedy Net kan du "
-"kommunikere med dine venner. Speedy Net Net er åben for gratis registrering "
+"kommunikere med dine venner. Speedy Net er åben for gratis registrering "
 "for folk fra alle lande og aldre (ingen aldersgrænse!). Siden er vegansk og "
 "vegetarvenlig. Den er i øjeblikket tilgængelig på %(languages_num)s sprog."
 

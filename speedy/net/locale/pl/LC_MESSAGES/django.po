@@ -199,7 +199,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> to nowa sieć społecznościowa. Dzięki Speedy Net możesz "
-"komunikować się ze znajomymi. Net jest Speedy Net otwarty na bezpłatną "
+"komunikować się ze znajomymi. Speedy Net jest Speedy Net otwarty na bezpłatną "
 "rejestrację dla osób ze wszystkich krajów i grup wiekowych (bez ograniczeń "
 "wiekowych!). Strona jest przyjazna weganom i wegetarianom. Jest obecnie "
 "dostępny w %(languages_num)s językach."
@@ -288,7 +288,7 @@ msgstr "Uriego Rodberga"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Założyciel i dyrektor Speedy Net Speedy Speedy Match Net i,"
+msgstr "Założyciel i dyrektor Speedy Net Speedy Match i,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

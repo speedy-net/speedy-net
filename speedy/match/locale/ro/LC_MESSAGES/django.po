@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 23:56+0300\n"
+"POT-Creation-Date: 2026-07-13 08:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1096,10 +1096,10 @@ msgstr ""
 "%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Cu "
 "Speedy Match puteți găsi persoane potrivite pentru întâlniri și puteți "
 "discuta cu ei online. Puteți să adăugați persoane ca prieteni pe Speedy Net, "
-"să le apreciați și să le trimiteți mesaje. Match este deschis pentru "
+"să le apreciați și să le trimiteți mesaje. Speedy Match este deschis pentru "
 "înregistrarea gratuită pentru persoane din toate țările și vârstele (fără "
 "limită de vârstă!). Site-ul este vegan și vegetarian. În prezent este "
-"disponibil în %(languages_num)s limbi. Speedy Match"
+"disponibil în %(languages_num)s limbi."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1175,7 +1175,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net Speedy Speedy Match Net și,"
+msgstr "Fondator și director al Speedy Net Speedy Match și,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

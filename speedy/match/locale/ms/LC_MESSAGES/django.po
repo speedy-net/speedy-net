@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 23:56+0300\n"
+"POT-Creation-Date: 2026-07-13 08:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1092,10 +1092,10 @@ msgstr ""
 "%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a>. Dengan "
 "Speedy Match anda boleh mencari orang yang sepadan untuk dating dan "
 "bersembang dengan mereka dalam talian. Anda boleh menambah orang sebagai "
-"rakan di Speedy Net, seperti orang dan menghantar mesej kepada mereka. Match "
-"terbuka kepada pendaftaran percuma untuk orang dari semua negara dan umur "
-"(tiada had umur!). Tapak ini mesra vegan dan vegetarian. Ia kini tersedia "
-"dalam %(languages_num)s bahasa. Speedy Match"
+"rakan di Speedy Net, seperti orang dan menghantar mesej kepada mereka. "
+"Speedy Match terbuka kepada pendaftaran percuma untuk orang dari semua "
+"negara dan umur (tiada had umur!). Tapak ini mesra vegan dan vegetarian. Ia "
+"kini tersedia dalam %(languages_num)s bahasa."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1173,8 +1173,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"Pengasas dan pengarah Speedy Speedy Net Speedy Speedy Match Net Net dan,"
+msgstr "Pengasas dan pengarah Speedy Net Speedy Match dan,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

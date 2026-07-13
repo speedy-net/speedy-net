@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 23:56+0300\n"
+"POT-Creation-Date: 2026-07-13 08:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1086,7 +1086,7 @@ msgstr ""
 "الإنترنت. يمكنك Speedy Net إضافة أشخاص كأصدقاء على سبيدي Speedy Match نت، "
 "والإعجاب بالأشخاص وإرسال الرسائل إليهم. مفتوح للتسجيل المجاني للأشخاص من "
 "جميع البلدان والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو "
-"متوفر حاليًا بلغات %(languages_num)s. Net"
+"متوفر حاليًا بلغات %(languages_num)s."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1159,7 +1159,7 @@ msgstr "أوري رودبيرج"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Speedy Match Net ماتش،"
+msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Match ماتش،"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

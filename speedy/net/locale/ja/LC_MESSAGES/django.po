@@ -191,7 +191,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a Speedy Net > は新しいソーシャル ネットワークです。 Speedy Net "
-"を使用すると、友達とコミュニケーションをとることができます。 Net は、あらゆる国と年齢の人々が無料で登録できます "
+"を使用すると、友達とコミュニケーションをとることができます。 Speedy Net は、あらゆる国と年齢の人々が無料で登録できます "
 "(年齢制限はありません!)。このサイトはビーガンとベジタリアンに優しいサイトです。現在、%(languages_num)s 言語で利用できます。"
 
 #: .\templates\about\about.html:19
@@ -269,7 +269,7 @@ msgstr "ウリ・ロドベリ"
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
 msgstr ""
-"および の創設者兼ディレクター Speedy Speedy Speedy Net Speedy Speedy Match Net Net Net 、"
+"および の創設者兼ディレクター Speedy Net Speedy Match 、"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

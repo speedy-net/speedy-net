@@ -203,7 +203,7 @@ msgid ""
 msgstr ""
 "Το <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> είναι ένα νέο κοινωνικό δίκτυο. Με το Speedy Net "
-"μπορείτε να επικοινωνείτε με τους φίλους σας. Το Net Speedy Net είναι "
+"μπορείτε να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι "
 "ανοιχτό σε δωρεάν εγγραφή για άτομα από όλες τις χώρες και ηλικίες (χωρίς "
 "όριο ηλικίας!). Ο ιστότοπος είναι vegan και φιλικός προς τους χορτοφάγους. "
 "Προς το παρόν είναι διαθέσιμο σε %(languages_num)s γλώσσες."
@@ -293,7 +293,7 @@ msgstr "Ούρι Ρόντμπεργκ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Ιδρυτής και διευθυντής των Speedy Net Speedy Speedy Match Net και,"
+msgstr "Ιδρυτής και διευθυντής των Speedy Net Speedy Match και,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

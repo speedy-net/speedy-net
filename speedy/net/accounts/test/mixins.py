@@ -209,7 +209,7 @@ if (django_settings.TESTS):
                     **{gender: 'Haluatko varmasti poistaa Speedy Net -tilisi? Tämä on pysyvää ja peruuttamatonta. Speedy Net -tilisi poistaminen poistaa myös Speedy Match -tilisi. Jos olet varma, kirjoita ”Kyllä. Poista tilini.” tässä kentässä, täsmälleen ja isot kirjaimet huomioon.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Biztos benne, hogy törölni szeretné Speedy Net fiókját? Ez állandó és visszafordíthatatlan. A fiók törlésével a Speedy Speedy Net Match fiók is törlődik. Ha biztos Speedy Match benne, írja be az "Igen. Fiókom törlése." kifejezést. ezen a területen pontosan és a kis- és nagybetűk megkülönböztetésével.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Biztosan törölni szeretné Speedy Net fiókját? Ez állandó és visszafordíthatatlan. A Speedy Net-fiók törlése a Speedy Match fiókját is törli. Ha biztos benne, írja be az "Igen. Fiókom törlése." ebben a mezőben pontosan és a kis- és kis- és nagybetűkkel bír.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย ถ้าคุณแน่ใจ พิมพ์ "ใช่. ลบบัญชีของฉัน" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},

@@ -201,7 +201,7 @@ msgstr ""
 "Net\">Speedy Net</a> هي شبكة اجتماعية جديدة Speedy Net. مع سبيدي نت يمكنك "
 "التواصل مع Speedy Net أصدقائك. سبيدي نت مفتوح للتسجيل المجاني للأشخاص من "
 "جميع البلدان والأعمار (بدون حد عمري!). الموقع نباتي وصديق للنباتيين. وهو "
-"متوفر حاليًا بلغات %(languages_num)s. Net"
+"متوفر حاليًا بلغات %(languages_num)s."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -284,7 +284,7 @@ msgstr "أوري رودبيرج"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Speedy Match Net ماتش،"
+msgstr "مؤسس ومدير سبيدي نت وسبيدي Speedy Net Speedy Match ماتش،"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

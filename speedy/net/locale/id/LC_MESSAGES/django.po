@@ -199,7 +199,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> adalah jejaring sosial baru. Dengan Speedy Net Anda "
-"dapat berkomunikasi dengan teman Anda Speedy Net. Net terbuka untuk "
+"dapat berkomunikasi dengan teman Anda Speedy Net. Speedy Net terbuka untuk "
 "pendaftaran gratis bagi orang-orang dari semua negara dan usia (tidak ada "
 "batasan usia!). Situs ini ramah vegan dan vegetarian. Saat ini tersedia "
 "dalam bahasa %(languages_num)s."
@@ -291,7 +291,7 @@ msgstr "Uri Rodberg"
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
 msgstr ""
-"Pendiri dan direktur Speedy Speedy Net Speedy Speedy Match Net Net dan,"
+"Pendiri dan direktur Speedy Net Speedy Match dan,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

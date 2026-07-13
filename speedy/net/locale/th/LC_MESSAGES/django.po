@@ -196,7 +196,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> คือเครือข่ายโซเชียลใหม่ ด้วย Speedy Net "
-"คุณสามารถสื่อสารกับเพื่อนของค Speedy Net ุณได้ Net "
+"คุณสามารถสื่อสารกับเพื่อนของค Speedy Net ุณได้ Speedy Net "
 "เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
 "เว็บไซต์นี้เป็นมิตรกับมังสวิรัติและมังสวิรัติ ขณะนี้มีให้บริการในภาษา "
 "%(languages_num)s"
@@ -283,7 +283,7 @@ msgstr "อูรี ร็อดเบิร์ก"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Speedy Match Net และ"
+msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Match และ"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

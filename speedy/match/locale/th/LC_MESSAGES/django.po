@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 23:56+0300\n"
+"POT-Creation-Date: 2026-07-13 08:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1075,8 +1075,8 @@ msgstr ""
 "จับคู่ใหม่เพื่อจุดประสงค์โรแมนติกสำหรับคนโสดที่เป็นสมาชิกของ <a href=\"https://"
 "%(language_code)s. Speedy Net.net Speedy Net /\" title= Speedy Match \"\"></"
 "a> ด้วย คุณสามารถค้นหาผู้คนที่ตรงกันเพื่อออกเดทและแชทกับพวกเขาทางออนไลน์ คุณสามารถเพิ ่มผ "
-"Speedy Net ู้คนเป็นเพื่อนบน กดไลค์ผู้คนและส Speedy Match ่งข ้อความถึงพวกเขาได้ Match "
-"เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
+"Speedy Net ู้คนเป็นเพื่อนบน กดไลค์ผู้คนและส Speedy Match ่งข ้อความถึงพวกเขาได้ Speedy "
+"Match เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
 "เว็บไซต์นี้เป็นมิตรกับมังสวิรัติและมังสวิรัติ ขณะนี้มีให้บริการในภาษา %(languages_num)s"
 
 #: .\templates\about\about.html:19
@@ -1149,7 +1149,7 @@ msgstr "อูรี ร็อดเบิร์ก"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Speedy Match Net และ"
+msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Match และ"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."

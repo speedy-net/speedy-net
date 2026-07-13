@@ -203,10 +203,10 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Net "
 "</a> là mạng xã hội mới. Với Speedy Net bạn có thể Speedy Net liên lạc với "
-"bạn bè của mình. Net mở cửa Speedy Net đăng ký miễn phí cho mọi người từ mọi"
+"bạn bè của mình. Speedy Net mở cửa Speedy Net đăng ký miễn phí cho mọi người từ mọi"
 " quốc gia và lứa tuổi (không giới hạn độ tuổi!). Trang web này là người ăn "
 "chay và thân thiện với người ăn chay. Nó hiện có sẵn bằng %(languages_num)s "
-"ngôn ngữ. Net"
+"ngôn ngữ."
 
 #: .\templates\about\about.html:19
 msgid ""
