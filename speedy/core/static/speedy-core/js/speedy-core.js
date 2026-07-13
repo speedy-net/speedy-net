@@ -83,8 +83,32 @@ $.datepicker.regional.nl = {
     firstDay: 0
 };
 
-$.datepicker.regional.sv = {
-    monthNames: ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"],
+$.datepicker.regional.ja = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.ru = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.zh = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.pl = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.fa = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     dateFormat: "d MM yy",
     firstDay: 0
 };
@@ -95,8 +119,140 @@ $.datepicker.regional.ko = {
     firstDay: 0
 };
 
+$.datepicker.regional.ar = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.id = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.uk = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.tr = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.vi = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.cs = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.sv = {
+    monthNames: ["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
 $.datepicker.regional.fi = {
     monthNames: ["tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinäkuu", "elokuu", "syyskuu", "lokakuu", "marraskuu", "joulukuu"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.hu = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.th = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.el = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.ms = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.sr = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.ro = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.bn = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.ca = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.no = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.bg = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.da = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.sk = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.hi = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.et = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dateFormat: "d MM yy",
+    firstDay: 0
+};
+
+$.datepicker.regional.hr = {
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     dateFormat: "d MM yy",
     firstDay: 0
 };
