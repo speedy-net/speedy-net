@@ -191,7 +191,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a Speedy Net > は新しいソーシャル ネットワークです。 Speedy Net "
-"を使用すると、友達とコミュニケーションをとることができます。 Net は、あらゆる国と年齢の人々が無料で登録できます "
+"を使用すると、友達とコミュニケーションをとることができます。 Speedy Net は、あらゆる国と年齢の人々が無料で登録できます "
 "(年齢制限はありません!)。このサイトはビーガンとベジタリアンに優しいサイトです。現在、%(languages_num)s 言語で利用できます。"
 
 #: .\templates\about\about.html:19

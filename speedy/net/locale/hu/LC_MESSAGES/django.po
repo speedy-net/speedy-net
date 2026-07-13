@@ -203,7 +203,7 @@ msgid ""
 msgstr ""
 "A <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> egy új közösségi hálózat. A Speedy Net segítségével "
-"kommunikálhat barátaival Speedy Net. A Net ingyenes regisztrációra nyitva "
+"kommunikálhat barátaival Speedy Net. A Speedy Net ingyenes regisztrációra nyitva "
 "áll minden országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
 "vegetáriánusbarát. Jelenleg %(languages_num)s nyelven érhető el."
 
