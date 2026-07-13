@@ -71,11 +71,14 @@ jobs:
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
-      - run: |
+      - name: Remove PostgreSQL versions
+        run: |
           for version in 14 15 16 17 18 19 20
           do
             sudo apt-get -y --purge remove postgresql-$version postgresql-client-$version || true
           done
+      - name: Setup PostgreSQL ${{ matrix.postgresql-version }}
+        run: |
           sudo apt-get -y install postgresql-common
           echo | sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
           sudo apt-get update
