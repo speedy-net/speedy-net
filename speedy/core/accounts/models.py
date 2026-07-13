@@ -476,6 +476,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     )
     GENDER_VALID_VALUES = [choice[0] for choice in GENDER_CHOICES]
     GENDERS_DICT = {GENDER_FEMALE: GENDER_FEMALE_STRING, GENDER_MALE: GENDER_MALE_STRING, GENDER_OTHER: GENDER_OTHER_STRING}
+    ALL_GENDERS = list(GENDERS_DICT.values())  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
     DIET_UNKNOWN = 0
     DIET_VEGAN = 1
@@ -1244,9 +1245,6 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         if ((timezone_now - self.date_created).days >= 30):
             _display_ads = True
         return _display_ads
-
-
-User.ALL_GENDERS = [User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES]  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
 
 class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
