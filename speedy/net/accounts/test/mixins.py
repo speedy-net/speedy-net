@@ -18,6 +18,9 @@ if (django_settings.TESTS):
         def _invalid_delete_my_account_text_errors_dict_by_gender(self, gender):
             return {'delete_my_account_text': [self._invalid_delete_my_account_text_error_message_dict_by_gender[gender]]}
 
+        def _invalid_password_and_delete_my_account_text_errors_dict_by_gender(self, gender):
+            return {'password': [self._invalid_password_error_message], 'delete_my_account_text': [self._invalid_delete_my_account_text_error_message_dict_by_gender[gender]]}
+
         def set_up(self):
             super().set_up()
 

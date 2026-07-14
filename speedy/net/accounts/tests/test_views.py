@@ -329,6 +329,20 @@ if (django_settings.TESTS):
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
                 self.assert_user_is_logged_in(user=self.user, user_is_active=False)
 
+            def test_inactive_user_cannot_delete_his_account_using_incorrect_password_and_delete_my_account_text(self):
+                self.user.speedy_net_profile.deactivate()
+                self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
+                data = {
+                    'password': 'wrong password!!',
+                    'delete_my_account_text': 'wrong text!!',
+                }
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._invalid_password_and_delete_my_account_text_errors_dict_by_gender(gender=self.user.get_gender()))
+                self.user = User.objects.get(pk=self.user.pk)
+                self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
+                self.assert_user_is_logged_in(user=self.user, user_is_active=False)
+
             def test_inactive_user_cannot_delete_his_account_without_password(self):
                 self.user.speedy_net_profile.deactivate()
                 self.assert_user_is_not_deleted(user=self.user, user_is_active=False)
