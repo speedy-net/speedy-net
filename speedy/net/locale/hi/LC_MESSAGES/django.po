@@ -251,7 +251,7 @@ msgstr ""
 "स्पीडी नेट और स्पीडी मैच Speedy Net पर सभी सुविधाएँ Speedy Match निःशुल्क "
 "हैं। दोस्तों Speedy Net को ढूंढने के लिए आज ही स्पीडी नेट से जुड़ें, इसमें "
 "केवल कुछ मिनट लगेंगे। <a href=\"/\" title=\"Join \">शामिल होने के लिए यहां "
-"क्लिक करें</a>। Speedy Net"
+"क्लिक करें</a>।"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -260,7 +260,7 @@ msgid ""
 msgstr ""
 "Speedy Net स्पीडी नेट एक निःशुल्क सॉफ्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि "
 "आप स्पीडी नेट के विकास और सुधार में सहायता करना चाहते हैं, तो कृपया मुझसे "
-"ईमेल द्वारा संपर्क करें। Speedy Net"
+"ईमेल द्वारा संपर्क करें।"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -273,7 +273,7 @@ msgstr ""
 "href=\"https://www.facebook.com/speedy.the.female.dog\" "
 "title=\"Speedy\">स्पीडी</a> के नाम पर रखा गया है, एक मादा कुत्ता जो कई "
 "वर्षों तक हमारे साथ थी और 2003 में उसकी मृत्यु हो गई। स्पीडी ने 1988 में 7 "
-"पिल्लों को जन्म दिया। Speedy"
+"पिल्लों को जन्म दिया।"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
