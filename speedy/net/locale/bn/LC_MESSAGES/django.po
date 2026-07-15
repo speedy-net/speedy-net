@@ -365,7 +365,7 @@ msgstr "Speedy Match দ্রুত ম্যাচ – ডেটিং দ্�
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "প্রেমিক খুঁজছেন? গার্লফ্রেন্ড খুঁজছেন? আসুন এবং দ্রুত দেখা! Speedy"
+msgstr "প্রেমিক খুঁজছেন? গার্লফ্রেন্ড খুঁজছেন? আসুন এবং দ্রুত দেখা!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
