@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-19 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -862,7 +862,7 @@ msgstr "একটি বৈধ ইমেল ঠিকানা লিখুন."
 msgid "Email address"
 msgstr "ইমেইল ঠিকানা"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1295
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
 msgid "email address"
 msgstr "ইমেইল ঠিকানা"
 
@@ -904,7 +904,7 @@ msgstr "বন্ধুত্বের অনুরোধ"
 msgid "Friend"
 msgstr "বন্ধু"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:797
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
 msgstr "বন্ধুরা"
 
@@ -2043,193 +2043,193 @@ msgstr "পুরুষ"
 msgid "Other"
 msgstr "অন্যান্য"
 
-#: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "অজানা"
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
 msgstr "ভেগান (শুধু উদ্ভিদ এবং ছত্রাক খায়)"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "নিরামিষাশী (মাছ এবং মাংস খায় না)"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
 msgstr "কার্নিস্ট (প্রাণী খায়)"
 
-#: .\accounts\models.py:503
+#: .\accounts\models.py:504
 msgid "Not smoking"
 msgstr "ধূমপান নয়"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:505
 msgid "Smoking occasionally"
 msgstr "মাঝে মাঝে ধূমপান"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:506
 msgid "Smoking"
 msgstr "ধূমপান"
 
-#: .\accounts\models.py:524
+#: .\accounts\models.py:525
 msgid "Single"
 msgstr "একক"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:526
 msgid "Divorced"
 msgstr "তালাকপ্রাপ্ত"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:527
 msgid "Widowed"
 msgstr "বিধবা"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:528
 msgid "In a relationship"
 msgstr "একটি সম্পর্কে"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:529
 msgid "In an open relationship"
 msgstr "খোলামেলা সম্পর্কে"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:530
 msgid "It's complicated"
 msgstr "এটা জটিল"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:531
 msgid "Separated"
 msgstr "বিচ্ছিন্ন"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:532
 msgid "Engaged"
 msgstr "নিযুক্ত"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:533
 msgid "Married"
 msgstr "বিবাহিত"
 
-#: .\accounts\models.py:541
+#: .\accounts\models.py:542
 msgid "Notify me"
 msgstr "আমাকে অবহিত করুন"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:543
 msgid "Don't notify me"
 msgstr "আমাকে অবহিত করবেন না"
 
-#: .\accounts\models.py:589
+#: .\accounts\models.py:590
 msgid "first name"
 msgstr "প্রথম নাম"
 
-#: .\accounts\models.py:592
+#: .\accounts\models.py:593
 msgid "last name"
 msgstr "শেষ নাম"
 
-#: .\accounts\models.py:594
+#: .\accounts\models.py:595
 msgid "I am"
 msgstr "আমি"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:596
 msgid "date of birth"
 msgstr "জন্ম তারিখ"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:597
 msgid "diet"
 msgstr "খাদ্য"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:598
 msgid "smoking status"
 msgstr "ধূমপানের অবস্থা"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:599
 msgid "relationship status"
 msgstr "সম্পর্কের অবস্থা"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:601
 msgid "Where do I live?"
 msgstr "আমি কোথায় থাকি?"
 
-#: .\accounts\models.py:607
+#: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
 msgstr "কে আমার জন্ম মাস এবং দিন দেখতে পারে"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:609
 msgid "Who can view my birth year"
 msgstr "কে আমার জন্ম সাল দেখতে পারে"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:610
 msgid "On new messages"
 msgstr "নতুন বার্তাগুলিতে"
 
-#: .\accounts\models.py:615
+#: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "শেষ আইপি ঠিকানা https://ipapi.com/ সময় ব্যবহার করা হয়েছে"
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "শেষ IP ঠিকানা কাঁচা https://ipapi.com/ ফলাফল ব্যবহার করা হয়েছে"
 
-#: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
 msgstr "ব্যবহারকারী"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:824
 msgid "users"
 msgstr "ব্যবহারকারীদের"
 
-#: .\accounts\models.py:869
+#: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
 msgstr "সুপার ইউজার অবশ্যই কর্মীদের সমান হতে হবে।"
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1278
 msgid "email"
 msgstr "ইমেইল"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1279
 msgid "is confirmed"
 msgstr "নিশ্চিত করা হয়"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1280
 msgid "is primary"
 msgstr "প্রাথমিক"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1281
 msgid "confirmation token"
 msgstr "নিশ্চিতকরণ টোকেন"
 
-#: .\accounts\models.py:1284
+#: .\accounts\models.py:1282
 msgid "confirmation sent"
 msgstr "নিশ্চিতকরণ পাঠানো হয়েছে"
 
-#: .\accounts\models.py:1285
+#: .\accounts\models.py:1283
 msgid "Who can see this email"
 msgstr "যারা এই ইমেল দেখতে পারেন"
 
-#: .\accounts\models.py:1296
+#: .\accounts\models.py:1294
 msgid "email addresses"
 msgstr "ইমেইল ঠিকানা"
 
-#: .\accounts\models.py:1379
+#: .\accounts\models.py:1377
 msgid "User"
 msgstr "ব্যবহারকারী"
 
-#: .\accounts\models.py:1380
+#: .\accounts\models.py:1378
 msgid "last visit"
 msgstr "শেষ পরিদর্শন"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1390
 msgid "Today"
 msgstr "আজ"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1392
 msgid "Yesterday"
 msgstr "গতকাল"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) এ"
 
-#: .\accounts\models.py:1398
+#: .\accounts\models.py:1396
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} আগে"

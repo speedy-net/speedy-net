@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-19 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -874,7 +874,7 @@ msgstr "Введите действительный адрес электрон�
 msgid "Email address"
 msgstr "Адрес электронной почты"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1295
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
 msgid "email address"
 msgstr "Адрес электронной почты"
 
@@ -916,7 +916,7 @@ msgstr "Запросы на дружбу"
 msgid "Friend"
 msgstr "Друг"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:797
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
 msgstr "Друзья"
 
@@ -2069,194 +2069,194 @@ msgstr "Мужской"
 msgid "Other"
 msgstr "Другой"
 
-#: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "Неизвестный"
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Веган (ест только растения и грибы)"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Вегетарианец (не ест рыбу и мясо)"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
 msgstr "Карнист (ест животных)"
 
-#: .\accounts\models.py:503
+#: .\accounts\models.py:504
 msgid "Not smoking"
 msgstr "Не курить"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:505
 msgid "Smoking occasionally"
 msgstr "Курю иногда"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:506
 msgid "Smoking"
 msgstr "Курение"
 
-#: .\accounts\models.py:524
+#: .\accounts\models.py:525
 msgid "Single"
 msgstr "Одинокий"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:526
 msgid "Divorced"
 msgstr "В разводе"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:527
 msgid "Widowed"
 msgstr "Вдовец"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:528
 msgid "In a relationship"
 msgstr "В отношениях"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:529
 msgid "In an open relationship"
 msgstr "Свободные отношения"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:530
 msgid "It's complicated"
 msgstr "Все сложно"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:531
 msgid "Separated"
 msgstr "Отдельный"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:532
 msgid "Engaged"
 msgstr "Помолвлен"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:533
 msgid "Married"
 msgstr "Женатый"
 
-#: .\accounts\models.py:541
+#: .\accounts\models.py:542
 msgid "Notify me"
 msgstr "Сообщите мне"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:543
 msgid "Don't notify me"
 msgstr "Не уведомляйте меня"
 
-#: .\accounts\models.py:589
+#: .\accounts\models.py:590
 msgid "first name"
 msgstr "имя"
 
-#: .\accounts\models.py:592
+#: .\accounts\models.py:593
 msgid "last name"
 msgstr "фамилия"
 
-#: .\accounts\models.py:594
+#: .\accounts\models.py:595
 msgid "I am"
 msgstr "Я"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:596
 msgid "date of birth"
 msgstr "Дата рождения"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:597
 msgid "diet"
 msgstr "диета"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:598
 msgid "smoking status"
 msgstr "статус курения"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:599
 msgid "relationship status"
 msgstr "статус отношений"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:601
 msgid "Where do I live?"
 msgstr "Где я живу?"
 
-#: .\accounts\models.py:607
+#: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
 msgstr "Кто может просматривать месяц и день моего рождения"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:609
 msgid "Who can view my birth year"
 msgstr "Кто может просмотреть год моего рождения"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:610
 msgid "On new messages"
 msgstr "О новых сообщениях"
 
-#: .\accounts\models.py:615
+#: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Последний IP-адрес использовался https://ipapi.com/ раз."
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Последний IP-адрес использовал необработанные результаты https://ipapi.com/"
 
-#: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
 msgstr "пользователь"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:824
 msgid "users"
 msgstr "пользователи"
 
-#: .\accounts\models.py:869
+#: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
 msgstr "Суперпользователь должен быть равен персоналу."
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1278
 msgid "email"
 msgstr "электронная почта"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1279
 msgid "is confirmed"
 msgstr "подтверждено"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1280
 msgid "is primary"
 msgstr "является первичным"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1281
 msgid "confirmation token"
 msgstr "токен подтверждения"
 
-#: .\accounts\models.py:1284
+#: .\accounts\models.py:1282
 msgid "confirmation sent"
 msgstr "подтверждение отправлено"
 
-#: .\accounts\models.py:1285
+#: .\accounts\models.py:1283
 msgid "Who can see this email"
 msgstr "Кто может видеть это письмо"
 
-#: .\accounts\models.py:1296
+#: .\accounts\models.py:1294
 msgid "email addresses"
 msgstr "адреса электронной почты"
 
-#: .\accounts\models.py:1379
+#: .\accounts\models.py:1377
 msgid "User"
 msgstr "Пользователь"
 
-#: .\accounts\models.py:1380
+#: .\accounts\models.py:1378
 msgid "last visit"
 msgstr "последний визит"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1390
 msgid "Today"
 msgstr "Сегодня"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1392
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})"
 
-#: .\accounts\models.py:1398
+#: .\accounts\models.py:1396
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} назад"

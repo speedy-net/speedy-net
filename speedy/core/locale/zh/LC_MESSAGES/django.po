@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-19 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -850,7 +850,7 @@ msgstr "輸入有效的電子郵件地址。"
 msgid "Email address"
 msgstr "電子郵件"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1295
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
 msgid "email address"
 msgstr "電子郵件"
 
@@ -890,7 +890,7 @@ msgstr "友情請求"
 msgid "Friend"
 msgstr "朋友"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:797
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
 msgstr "朋友們"
 
@@ -2018,193 +2018,193 @@ msgstr "男性"
 msgid "Other"
 msgstr "其他"
 
-#: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "未知"
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
 msgstr "素食主義者（只吃植物和真菌）"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "素食（不吃魚和肉）"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
 msgstr "肉食主義者（吃動物）"
 
-#: .\accounts\models.py:503
+#: .\accounts\models.py:504
 msgid "Not smoking"
 msgstr "不吸煙"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:505
 msgid "Smoking occasionally"
 msgstr "偶爾吸煙"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:506
 msgid "Smoking"
 msgstr "吸煙"
 
-#: .\accounts\models.py:524
+#: .\accounts\models.py:525
 msgid "Single"
 msgstr "單身的"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:526
 msgid "Divorced"
 msgstr "離婚"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:527
 msgid "Widowed"
 msgstr "寡"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:528
 msgid "In a relationship"
 msgstr "在（戀愛）關係中"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:529
 msgid "In an open relationship"
 msgstr "在一個開放的關係中"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:530
 msgid "It's complicated"
 msgstr "情況很複雜"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:531
 msgid "Separated"
 msgstr "分開"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:532
 msgid "Engaged"
 msgstr "已訂婚的"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:533
 msgid "Married"
 msgstr "已婚"
 
-#: .\accounts\models.py:541
+#: .\accounts\models.py:542
 msgid "Notify me"
 msgstr "通知我"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:543
 msgid "Don't notify me"
 msgstr "不要通知我"
 
-#: .\accounts\models.py:589
+#: .\accounts\models.py:590
 msgid "first name"
 msgstr "名"
 
-#: .\accounts\models.py:592
+#: .\accounts\models.py:593
 msgid "last name"
 msgstr "姓"
 
-#: .\accounts\models.py:594
+#: .\accounts\models.py:595
 msgid "I am"
 msgstr "我是"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:596
 msgid "date of birth"
 msgstr "出生日期"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:597
 msgid "diet"
 msgstr "飲食"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:598
 msgid "smoking status"
 msgstr "吸菸狀況"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:599
 msgid "relationship status"
 msgstr "關係狀態"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:601
 msgid "Where do I live?"
 msgstr "我住哪裡？"
 
-#: .\accounts\models.py:607
+#: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
 msgstr "誰可以查看我的出生月份和日期"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:609
 msgid "Who can view my birth year"
 msgstr "誰可以查看我的出生年份"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:610
 msgid "On new messages"
 msgstr "關於新消息"
 
-#: .\accounts\models.py:615
+#: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "上次使用 IP 位址 https://ipapi.com/ 時間"
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "最後使用原始 https://ipapi.com/ 結果的 IP 位址"
 
-#: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
 msgstr "使用者"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:824
 msgid "users"
 msgstr "使用者"
 
-#: .\accounts\models.py:869
+#: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
 msgstr "超級用戶必須等於員工。"
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1278
 msgid "email"
 msgstr "電子郵件"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1279
 msgid "is confirmed"
 msgstr "已確認"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1280
 msgid "is primary"
 msgstr "是主要的"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1281
 msgid "confirmation token"
 msgstr "確認令牌"
 
-#: .\accounts\models.py:1284
+#: .\accounts\models.py:1282
 msgid "confirmation sent"
 msgstr "確認已發送"
 
-#: .\accounts\models.py:1285
+#: .\accounts\models.py:1283
 msgid "Who can see this email"
 msgstr "誰可以看到這封電子郵件"
 
-#: .\accounts\models.py:1296
+#: .\accounts\models.py:1294
 msgid "email addresses"
 msgstr "電子郵件地址"
 
-#: .\accounts\models.py:1379
+#: .\accounts\models.py:1377
 msgid "User"
 msgstr "使用者"
 
-#: .\accounts\models.py:1380
+#: .\accounts\models.py:1378
 msgid "last visit"
 msgstr "上次訪問"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1390
 msgid "Today"
 msgstr "今天"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1392
 msgid "Yesterday"
 msgstr "昨天"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "在 {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1398
+#: .\accounts\models.py:1396
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 前"

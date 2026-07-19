@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-19 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -865,7 +865,7 @@ msgstr "Zadejte platnou e-mailovou adresu."
 msgid "Email address"
 msgstr "E-mailová adresa"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1295
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
 msgid "email address"
 msgstr "e-mailová adresa"
 
@@ -907,7 +907,7 @@ msgstr "Žádosti o přátelství"
 msgid "Friend"
 msgstr "příteli"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:797
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
 msgstr "Přátelé"
 
@@ -2057,193 +2057,193 @@ msgstr "Samec"
 msgid "Other"
 msgstr "Ostatní"
 
-#: .\accounts\models.py:487 .\accounts\models.py:502 .\accounts\models.py:523
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: .\accounts\models.py:488
+#: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (jí pouze rostliny a houby)"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarián (nejí ryby a maso)"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
 msgstr "Carnist (jí zvířata)"
 
-#: .\accounts\models.py:503
+#: .\accounts\models.py:504
 msgid "Not smoking"
 msgstr "Nekouřit"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:505
 msgid "Smoking occasionally"
 msgstr "Občasné kouření"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:506
 msgid "Smoking"
 msgstr "Kouření"
 
-#: .\accounts\models.py:524
+#: .\accounts\models.py:525
 msgid "Single"
 msgstr "Singl"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:526
 msgid "Divorced"
 msgstr "Rozvedený"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:527
 msgid "Widowed"
 msgstr "Ovdovělý"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:528
 msgid "In a relationship"
 msgstr "Ve vztahu"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:529
 msgid "In an open relationship"
 msgstr "V otevřeném vztahu"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:530
 msgid "It's complicated"
 msgstr "Je to složité"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:531
 msgid "Separated"
 msgstr "Oddělené"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:532
 msgid "Engaged"
 msgstr "Zasnoubený"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:533
 msgid "Married"
 msgstr "Ženatý"
 
-#: .\accounts\models.py:541
+#: .\accounts\models.py:542
 msgid "Notify me"
 msgstr "Informujte mě"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:543
 msgid "Don't notify me"
 msgstr "Neupozorňujte mě"
 
-#: .\accounts\models.py:589
+#: .\accounts\models.py:590
 msgid "first name"
 msgstr "křestní jméno"
 
-#: .\accounts\models.py:592
+#: .\accounts\models.py:593
 msgid "last name"
 msgstr "příjmení"
 
-#: .\accounts\models.py:594
+#: .\accounts\models.py:595
 msgid "I am"
 msgstr "jsem"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:596
 msgid "date of birth"
 msgstr "datum narození"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:597
 msgid "diet"
 msgstr "strava"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:598
 msgid "smoking status"
 msgstr "kuřácký stav"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:599
 msgid "relationship status"
 msgstr "stav vztahu"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:601
 msgid "Where do I live?"
 msgstr "kde bydlím?"
 
-#: .\accounts\models.py:607
+#: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
 msgstr "Kdo může zobrazit měsíc a den mého narození"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:609
 msgid "Who can view my birth year"
 msgstr "Kdo může zobrazit rok mého narození"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:610
 msgid "On new messages"
 msgstr "U nových zpráv"
 
-#: .\accounts\models.py:615
+#: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Poslední IP adresa použitá https://ipapi.com/ čas"
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Poslední IP adresa použila nezpracované výsledky https://ipapi.com/"
 
-#: .\accounts\models.py:822 .\accounts\models.py:1279 .\blocks\models.py:22
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
 msgstr "uživatel"
 
-#: .\accounts\models.py:823
+#: .\accounts\models.py:824
 msgid "users"
 msgstr "uživatelů"
 
-#: .\accounts\models.py:869
+#: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
 msgstr "Superuživatel se musí rovnat personálu."
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1278
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1279
 msgid "is confirmed"
 msgstr "je potvrzeno"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1280
 msgid "is primary"
 msgstr "je primární"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1281
 msgid "confirmation token"
 msgstr "potvrzovací token"
 
-#: .\accounts\models.py:1284
+#: .\accounts\models.py:1282
 msgid "confirmation sent"
 msgstr "potvrzení odesláno"
 
-#: .\accounts\models.py:1285
+#: .\accounts\models.py:1283
 msgid "Who can see this email"
 msgstr "Kdo může vidět tento e-mail"
 
-#: .\accounts\models.py:1296
+#: .\accounts\models.py:1294
 msgid "email addresses"
 msgstr "e-mailové adresy"
 
-#: .\accounts\models.py:1379
+#: .\accounts\models.py:1377
 msgid "User"
 msgstr "Uživatel"
 
-#: .\accounts\models.py:1380
+#: .\accounts\models.py:1378
 msgid "last visit"
 msgstr "poslední návštěva"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1390
 msgid "Today"
 msgstr "Dnes"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1392
 msgid "Yesterday"
 msgstr "Včera"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Dne {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1398
+#: .\accounts\models.py:1396
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "před {timesince}"
