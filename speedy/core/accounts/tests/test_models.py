@@ -795,6 +795,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=User.GENDER_FEMALE_STRING, second='female')
                 self.assertEqual(first=User.GENDER_MALE_STRING, second='male')
                 self.assertEqual(first=User.GENDER_OTHER_STRING, second='other')
+                self.assertListEqual(list1=User.ALL_GENDERS, list2=list(User.GENDERS_DICT.values()))
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES])
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDER_FEMALE_STRING, User.GENDER_MALE_STRING, User.GENDER_OTHER_STRING])
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=['female', 'male', 'other'])
@@ -2098,7 +2099,6 @@ if (django_settings.TESTS):
         #     def validate_all_values(self):
         #         super().validate_all_values()
         #         self.assertEqual(first=self.language_code, second='hr')
-
 
         class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
