@@ -799,7 +799,10 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDERS_DICT[gender] for gender in User.GENDER_VALID_VALUES])
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=[User.GENDER_FEMALE_STRING, User.GENDER_MALE_STRING, User.GENDER_OTHER_STRING])
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=['female', 'male', 'other'])
+
+            def test_genders_dict(self):
                 self.assertListEqual(list1=list(User.GENDERS_DICT.keys()), list2=User.GENDER_VALID_VALUES)
+                self.assertDictEqual(d1=User.GENDERS_DICT, d2={1: 'female', 2: 'male', 3: 'other'})
 
             def test_diet_valid_values(self):
                 self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))
