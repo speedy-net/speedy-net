@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -39,7 +39,7 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "您確定要刪除您的 Speedy Net 帳戶嗎？此操作不可逆且永久。刪除 Speedy Net 帳戶也會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此輸入“是的，刪除我的帳戶。”，注意區分大小寫。"
+"帳戶。如果您確定要刪除，請在此輸入“是的，請刪除我的帳號。”，注意區分大小寫。"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -50,7 +50,7 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "您確定要刪除您的 Speedy Net 帳戶嗎？此操作不可逆且永久。刪除 Speedy Net 帳戶也會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此輸入“是的，刪除我的帳戶。”，注意區分大小寫。"
+"帳戶。如果您確定要刪除，請在此輸入“是的，請刪除我的帳號。”，注意區分大小寫。"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -61,7 +61,7 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "您確定要刪除您的 Speedy Net 帳戶嗎？此操作不可逆且永久。刪除 Speedy Net 帳戶也會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此輸入“是的，刪除我的帳戶。”，注意區分大小寫。"
+"帳戶。如果您確定要刪除，請在此輸入“是的，請刪除我的帳號。”，注意區分大小寫。"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -121,7 +121,7 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "您確定要刪除您的 Speedy Net 帳戶嗎？此操作不可逆且永久。刪除 Speedy Net 帳戶也會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此輸入“是的，刪除我的帳戶。”，注意區分大小寫。"
+"帳戶。如果您確定要刪除，請在此輸入“是的，請刪除我的帳號。”，注意區分大小寫。"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."

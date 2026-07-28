@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -41,7 +41,7 @@ msgstr ""
 "আপনি কি আপনার Speedy Net অ্যাকাউন্টটি মুছে ফেলতে নিশ্চিত? এটি স্থায়ী এবং "
 "অপরিবর্তনীয়। আপনার Speedy Net অ্যাকাউন্ট মুছে ফেললে আপনার Speedy Match "
 "অ্যাকাউন্টটিও মুছে যাবে। আপনি যদি নিশ্চিত হন, তবে এই ফিল্ডে হুবহু এবং বড় "
-"হাতের অক্ষরে \"Yes. Delete my account.\" টাইপ করুন।"
+"হাতের অক্ষরে \"হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।\" টাইপ করুন।"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -54,7 +54,7 @@ msgstr ""
 "আপনি কি আপনার Speedy Net অ্যাকাউন্টটি মুছে ফেলতে নিশ্চিত? এটি স্থায়ী এবং "
 "অপরিবর্তনীয়। আপনার Speedy Net অ্যাকাউন্ট মুছে ফেললে আপনার Speedy Match "
 "অ্যাকাউন্টটিও মুছে যাবে। আপনি যদি নিশ্চিত হন, তবে এই ফিল্ডে হুবহু এবং বড় "
-"হাতের অক্ষরে \"Yes. Delete my account.\" টাইপ করুন।"
+"হাতের অক্ষরে \"হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।\" টাইপ করুন।"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -67,7 +67,7 @@ msgstr ""
 "আপনি কি আপনার Speedy Net অ্যাকাউন্টটি মুছে ফেলতে নিশ্চিত? এটি স্থায়ী এবং "
 "অপরিবর্তনীয়। আপনার Speedy Net অ্যাকাউন্ট মুছে ফেললে আপনার Speedy Match "
 "অ্যাকাউন্টটিও মুছে যাবে। আপনি যদি নিশ্চিত হন, তবে এই ফিল্ডে হুবহু এবং বড় "
-"হাতের অক্ষরে \"Yes. Delete my account.\" টাইপ করুন।"
+"হাতের অক্ষরে \"হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।\" টাইপ করুন।"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -95,7 +95,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো মুছে ফেলা হয়েছে। ব্যবহার "
-"করার জন্য ধন্যবাদ। {site_name}. "
+"করার জন্য ধন্যবাদ। {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -105,7 +105,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো মুছে ফেলা হয়েছে। ব্যবহার "
-"করার জন্য ধন্যবাদ। {site_name}. "
+"করার জন্য ধন্যবাদ। {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -115,7 +115,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো মুছে ফেলা হয়েছে। ব্যবহার "
-"করার জন্য ধন্যবাদ। {site_name}. "
+"করার জন্য ধন্যবাদ। {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -135,7 +135,7 @@ msgstr ""
 "আপনি কি আপনার Speedy Net অ্যাকাউন্টটি মুছে ফেলতে নিশ্চিত? এটি স্থায়ী এবং "
 "অপরিবর্তনীয়। আপনার Speedy Net অ্যাকাউন্ট মুছে ফেললে আপনার Speedy Match "
 "অ্যাকাউন্টটিও মুছে যাবে। আপনি যদি নিশ্চিত হন, তবে এই ফিল্ডে হুবহু এবং বড় "
-"হাতের অক্ষরে \"Yes. Delete my account.\" টাইপ করুন।"
+"হাতের অক্ষরে \"হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।\" টাইপ করুন।"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."

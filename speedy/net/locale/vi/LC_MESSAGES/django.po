@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -40,8 +40,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Thao tác này "
 "là vĩnh viễn và không thể đảo ngược. Việc xóa tài khoản Speedy Net cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Vâng. Hãy xóa tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -53,8 +52,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Thao tác này "
 "là vĩnh viễn và không thể đảo ngược. Việc xóa tài khoản Speedy Net cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Vâng. Hãy xóa tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -66,8 +64,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Thao tác này "
 "là vĩnh viễn và không thể đảo ngược. Việc xóa tài khoản Speedy Net cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Vâng. Hãy xóa tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -95,7 +92,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng dịch vụ. {site_name}. "
+"dụng dịch vụ. {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -105,7 +102,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng dịch vụ. {site_name}. "
+"dụng dịch vụ. {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -115,7 +112,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử "
-"dụng dịch vụ. {site_name}. "
+"dụng dịch vụ. {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -134,8 +131,7 @@ msgid ""
 msgstr ""
 "Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Thao tác này "
 "là vĩnh viễn và không thể đảo ngược. Việc xóa tài khoản Speedy Net cũng sẽ "
-"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Có. Xóa "
-"tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
+"xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập \"Vâng. Hãy xóa tài khoản của tôi.\" vào ô này, chính xác và phân biệt chữ hoa chữ thường."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."

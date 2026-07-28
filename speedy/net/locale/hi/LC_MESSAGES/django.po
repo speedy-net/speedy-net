@@ -1,6 +1,6 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
 "है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
-"निश्चित हैं, तो इस फ़ील्ड में \"Yes. Delete my account.\" लिखें, बिल्कुल सही"
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
 " और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:7
@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
 "है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
-"निश्चित हैं, तो इस फ़ील्ड में \"Yes. Delete my account.\" लिखें, बिल्कुल सही"
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
 " और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:8
@@ -66,7 +66,7 @@ msgid ""
 msgstr ""
 "क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
 "है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
-"निश्चित हैं, तो इस फ़ील्ड में \"Yes. Delete my account.\" लिखें, बिल्कुल सही"
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
 " और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:10
@@ -95,7 +95,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
-"धन्यवाद। {site_name}. "
+"धन्यवाद। {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -105,7 +105,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
-"धन्यवाद। {site_name}. "
+"धन्यवाद। {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -115,7 +115,7 @@ msgid ""
 "using {site_name}."
 msgstr ""
 "आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
-"धन्यवाद। {site_name}. "
+"धन्यवाद। {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 "क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
 "है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
-"निश्चित हैं, तो इस फ़ील्ड में \"Yes. Delete my account.\" लिखें, बिल्कुल सही"
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
 " और केस सेंसिटिव तरीके से।"
 
 #: .\accounts\forms.py:33
