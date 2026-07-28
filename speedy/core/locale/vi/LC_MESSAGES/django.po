@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 18:07+0300\n"
+"POT-Creation-Date: 2026-07-28 18:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,28 +21,25 @@ msgstr "Bạn của bạn"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Đã gửi yêu cầu kết bạn"
+msgstr "Đã gửi lời mời kết bạn"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến của "
-"bạn."
+"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến của "
-"bạn."
+"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến của "
-"bạn."
+"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -66,8 +63,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Xin chào <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"chào mừng bạn quay trở lại %(site_name)s!"
+"CHÀO <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a> Chào "
+"mừng bạn trở lại! %(site_name)s! "
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -76,8 +73,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Xin chào <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"chào mừng bạn quay trở lại %(site_name)s!"
+"CHÀO <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a> Chào "
+"mừng bạn trở lại! %(site_name)s! "
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -86,8 +83,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Xin chào <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"chào mừng bạn quay trở lại %(site_name)s!"
+"CHÀO <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a> Chào "
+"mừng bạn trở lại! %(site_name)s! "
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -137,17 +134,17 @@ msgstr "Gửi lại email xác nhận"
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "Đặt địa chỉ email này làm địa chỉ chính"
+msgstr "Đặt địa chỉ email này làm địa chỉ email chính."
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "Đặt địa chỉ email này làm địa chỉ chính"
+msgstr "Đặt địa chỉ email này làm địa chỉ email chính."
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "Đặt địa chỉ email này làm địa chỉ chính"
+msgstr "Đặt địa chỉ email này làm địa chỉ email chính."
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
@@ -182,17 +179,17 @@ msgstr "Xóa địa chỉ email này"
 #: .\__translations\__translations.html:44
 msgctxt "female"
 msgid "Add Another"
-msgstr "Thêm cái khác"
+msgstr "Thêm một cái nữa"
 
 #: .\__translations\__translations.html:45
 msgctxt "male"
 msgid "Add Another"
-msgstr "Thêm cái khác"
+msgstr "Thêm một cái nữa"
 
 #: .\__translations\__translations.html:46
 msgctxt "other"
 msgid "Add Another"
-msgstr "Thêm cái khác"
+msgstr "Thêm một cái nữa"
 
 #: .\__translations\__translations.html:48
 msgctxt "female"
@@ -227,17 +224,17 @@ msgstr "Thay đổi cài đặt quyền riêng tư của địa chỉ email trê
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "Bạn không chặn bất kỳ ai."
+msgstr "Bạn không chặn ai cả."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "Bạn không chặn bất kỳ ai."
+msgstr "Bạn không chặn ai cả."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "Bạn không chặn bất kỳ ai."
+msgstr "Bạn không chặn ai cả."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
@@ -257,17 +254,17 @@ msgstr "Báo cáo người dùng"
 #: .\__translations\__translations.html:72
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr "Phản hồi của bạn đã được gửi đến quản trị viên."
+msgstr "Phản hồi của bạn đã được gửi đến ban quản trị."
 
 #: .\__translations\__translations.html:73
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr "Phản hồi của bạn đã được gửi đến quản trị viên."
+msgstr "Phản hồi của bạn đã được gửi đến ban quản trị."
 
 #: .\__translations\__translations.html:74
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr "Phản hồi của bạn đã được gửi đến quản trị viên."
+msgstr "Phản hồi của bạn đã được gửi đến ban quản trị."
 
 #: .\__translations\__translations.html:76
 #, python-format
@@ -335,32 +332,32 @@ msgstr "Bạn chưa có tin nhắn nào."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Bạn đã chặn "
+msgstr "Bạn đã bị chặn "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Bạn đã chặn "
+msgstr "Bạn đã bị chặn "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Bạn đã chặn "
+msgstr "Bạn đã bị chặn "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " đã chặn bạn."
+msgstr " Đã chặn bạn."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " đã chặn bạn."
+msgstr " Đã chặn bạn."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " đã chặn bạn."
+msgstr " Đã chặn bạn."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -369,8 +366,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
-"%(user_name)s trên Trận đấu nhanh. Speedy Match"
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Match. Xem %(user_name)sThông tin "
+"cá nhân của anh ấy trên Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -379,8 +376,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
-"%(user_name)s trên Trận đấu nhanh. Speedy Match"
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Match. Xem %(user_name)sThông tin "
+"cá nhân của anh ấy trên Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -389,8 +386,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
-"%(user_name)s trên Trận đấu nhanh. Speedy Match"
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Match. Xem %(user_name)sThông tin "
+"cá nhân của anh ấy trên Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -399,8 +396,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
-"Speedy Net."
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Net. Xem %(user_name)sThông tin "
+"cá nhân của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -409,8 +406,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
-"Speedy Net."
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Net. Xem %(user_name)sThông tin "
+"cá nhân của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -419,53 +416,56 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
-"Speedy Net."
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Net. Xem %(user_name)sThông tin "
+"cá nhân của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Bạn cũng có hồ sơ Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
+msgstr ""
+"Bạn cũng có một hồ sơ trên Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Bạn cũng có hồ sơ Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
+msgstr ""
+"Bạn cũng có một hồ sơ trên Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Bạn cũng có hồ sơ Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
+msgstr ""
+"Bạn cũng có một hồ sơ trên Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
-msgstr "Thêm vào bạn bè"
+msgstr "Thêm vào danh sách bạn bè"
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
-msgstr "Thêm vào bạn bè"
+msgstr "Thêm vào danh sách bạn bè"
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
-msgstr "Thêm vào bạn bè"
+msgstr "Thêm vào danh sách bạn bè"
 
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Bạn có chắc chắn muốn chặn "
+msgstr "Bạn có chắc chắn muốn chặn không? "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Bạn có chắc chắn muốn chặn "
+msgstr "Bạn có chắc chắn muốn chặn không? "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Bạn có chắc chắn muốn chặn "
+msgstr "Bạn có chắc chắn muốn chặn không? "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -485,17 +485,17 @@ msgstr "Khối "
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Bỏ chặn "
+msgstr "Mở khóa "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Bỏ chặn "
+msgstr "Mở khóa "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Bỏ chặn "
+msgstr "Mở khóa "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
@@ -665,35 +665,38 @@ msgstr "Bạn của bạn"
 #: .\__translations\__translations.html:172
 msgctxt "female"
 msgid "See All"
-msgstr "Xem Tất Cả"
+msgstr "Xem tất cả"
 
 #: .\__translations\__translations.html:173
 msgctxt "male"
 msgid "See All"
-msgstr "Xem Tất Cả"
+msgstr "Xem tất cả"
 
 #: .\__translations\__translations.html:174
 msgctxt "other"
 msgid "See All"
-msgstr "Xem Tất Cả"
+msgstr "Xem tất cả"
 
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tài khoản Speedy Net của bạn không hoạt động. Vào trang này để kích hoạt nó."
+"Tài khoản Speedy Net của bạn chưa được kích hoạt. Vui lòng truy cập trang "
+"này để kích hoạt tài khoản."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tài khoản Speedy Net của bạn không hoạt động. Vào trang này để kích hoạt nó."
+"Tài khoản Speedy Net của bạn chưa được kích hoạt. Vui lòng truy cập trang "
+"này để kích hoạt tài khoản."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Tài khoản Speedy Net của bạn không hoạt động. Vào trang này để kích hoạt nó."
+"Tài khoản Speedy Net của bạn chưa được kích hoạt. Vui lòng truy cập trang "
+"này để kích hoạt tài khoản."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -731,35 +734,35 @@ msgstr "đã gửi cho bạn một tin nhắn."
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr "Đọc nó:"
+msgstr "Hãy đọc nó:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr "Đọc nó:"
+msgstr "Hãy đọc nó:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr "Đọc nó:"
+msgstr "Hãy đọc nó:"
 
 #: .\__translations\__translations.html:192
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -828,8 +831,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s. Vào trang này để "
-"thay đổi cài đặt thông báo của bạn hoặc chọn không tham gia:"
+"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s Truy cập trang này "
+"để thay đổi cài đặt thông báo hoặc hủy đăng ký:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -838,8 +841,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s. Vào trang này để "
-"thay đổi cài đặt thông báo của bạn hoặc chọn không tham gia:"
+"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s Truy cập trang này "
+"để thay đổi cài đặt thông báo hoặc hủy đăng ký:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -848,12 +851,12 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s. Vào trang này để "
-"thay đổi cài đặt thông báo của bạn hoặc chọn không tham gia:"
+"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s Truy cập trang này "
+"để thay đổi cài đặt thông báo hoặc hủy đăng ký:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Nhập địa chỉ email hợp lệ."
+msgstr "Vui lòng nhập địa chỉ email hợp lệ."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -882,8 +885,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Vui lòng nhập chính xác %(username)s và mật khẩu. Lưu ý rằng cả hai trường "
-"có thể phân biệt chữ hoa chữ thường."
+"Vui lòng nhập đúng %(username)s và mật khẩu. Lưu ý rằng cả hai trường này có "
+"thể phân biệt chữ hoa chữ thường."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -895,7 +898,7 @@ msgstr "Yêu cầu kết bạn"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr "Yêu cầu kết bạn"
+msgstr "Lời mời kết bạn"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
@@ -919,7 +922,7 @@ msgstr "Mối quan hệ chặn"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr "Mối quan hệ bị chặn"
+msgstr "Mối quan hệ bị tắc nghẽn"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -930,41 +933,41 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Danh sách chứa mục %(show_value)d, danh sách này không được chứa nhiều hơn "
-"%(limit_value)d."
+"Danh sách chứa %(show_value)d mục này không được chứa quá... "
+"%(limit_value)d. "
 msgstr[1] ""
-"Danh sách chứa %(show_value)d mục, danh sách không được chứa nhiều hơn "
-"%(limit_value)d."
+"Danh sách chứa %(show_value)d các mặt hàng, nó không được chứa nhiều hơn "
+"%(limit_value)d. "
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "username (slug)"
-msgstr "tên người dùng (sên)"
+msgstr "tên người dùng (slug)"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "username (slug)"
-msgstr "tên người dùng (sên)"
+msgstr "tên người dùng (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "username (slug)"
-msgstr "tên người dùng (sên)"
+msgstr "tên người dùng (slug)"
 
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "Cập nhật ảnh hồ sơ của bạn"
+msgstr "Cập nhật ảnh đại diện của bạn"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "Cập nhật ảnh hồ sơ của bạn"
+msgstr "Cập nhật ảnh đại diện của bạn"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "Cập nhật ảnh hồ sơ của bạn"
+msgstr "Cập nhật ảnh đại diện của bạn"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
@@ -984,53 +987,53 @@ msgstr "Lưu thay đổi"
 #: .\__translations\__translations.py:53
 msgctxt "female"
 msgid "You can't change your username."
-msgstr "Bạn không thể thay đổi tên người dùng của bạn."
+msgstr "Bạn không thể thay đổi tên người dùng của mình."
 
 #: .\__translations\__translations.py:54
 msgctxt "male"
 msgid "You can't change your username."
-msgstr "Bạn không thể thay đổi tên người dùng của bạn."
+msgstr "Bạn không thể thay đổi tên người dùng của mình."
 
 #: .\__translations\__translations.py:55
 msgctxt "other"
 msgid "You can't change your username."
-msgstr "Bạn không thể thay đổi tên người dùng của bạn."
+msgstr "Bạn không thể thay đổi tên người dùng của mình."
 
 #: .\__translations\__translations.py:57
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "Kích hoạt tài khoản {site_name} của bạn"
+msgstr "Kích hoạt của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "Kích hoạt tài khoản {site_name} của bạn"
+msgstr "Kích hoạt của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "Kích hoạt tài khoản {site_name} của bạn"
+msgstr "Kích hoạt của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Vô hiệu hóa tài khoản {site_name} của bạn"
+msgstr "Vô hiệu hóa của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Vô hiệu hóa tài khoản {site_name} của bạn"
+msgstr "Vô hiệu hóa của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Vô hiệu hóa tài khoản {site_name} của bạn"
+msgstr "Vô hiệu hóa của bạn {site_name} tài khoản"
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
@@ -1080,77 +1083,77 @@ msgstr "Bạn sống ở đâu?"
 #: .\__translations\__translations.py:77
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Hãy viết nơi bạn sống."
+msgstr "Vui lòng ghi rõ nơi bạn sống."
 
 #: .\__translations\__translations.py:78
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Hãy viết nơi bạn sống."
+msgstr "Vui lòng ghi rõ nơi bạn sống."
 
 #: .\__translations\__translations.py:79
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Hãy viết nơi bạn sống."
+msgstr "Vui lòng ghi rõ nơi bạn sống."
 
 #: .\__translations\__translations.py:81
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Ăn chay (chỉ ăn thực vật và nấm)"
+msgstr "Ăn chay trường (chỉ ăn thực vật và nấm)"
 
 #: .\__translations\__translations.py:82
 msgctxt "male"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Ăn chay (chỉ ăn thực vật và nấm)"
+msgstr "Ăn chay trường (chỉ ăn thực vật và nấm)"
 
 #: .\__translations\__translations.py:83
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Ăn chay (chỉ ăn thực vật và nấm)"
+msgstr "Ăn chay trường (chỉ ăn thực vật và nấm)"
 
 #: .\__translations\__translations.py:85
 msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Ăn chay (không ăn cá và thịt)"
+msgstr "Người ăn chay (không ăn cá và thịt)"
 
 #: .\__translations\__translations.py:86
 msgctxt "male"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Ăn chay (không ăn cá và thịt)"
+msgstr "Người ăn chay (không ăn cá và thịt)"
 
 #: .\__translations\__translations.py:87
 msgctxt "other"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Ăn chay (không ăn cá và thịt)"
+msgstr "Người ăn chay (không ăn cá và thịt)"
 
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (ăn động vật)"
+msgstr "Người ăn thịt (ăn động vật)"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (ăn động vật)"
+msgstr "Người ăn thịt (ăn động vật)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (ăn động vật)"
+msgstr "Người ăn thịt (ăn động vật)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
 msgid "Vegan"
-msgstr "ăn chay"
+msgstr "Thuần chay"
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
 msgid "Vegan"
-msgstr "ăn chay"
+msgstr "Thuần chay"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
 msgid "Vegan"
-msgstr "ăn chay"
+msgstr "Thuần chay"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
@@ -1170,17 +1173,17 @@ msgstr "Người ăn chay"
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Carnist"
-msgstr "người theo chủ nghĩa ăn thịt"
+msgstr "Người ăn thịt"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr "người theo chủ nghĩa ăn thịt"
+msgstr "Người ăn thịt"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr "người theo chủ nghĩa ăn thịt"
+msgstr "Người ăn thịt"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
@@ -1260,17 +1263,17 @@ msgstr "Đã ly hôn"
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "Widowed"
-msgstr "góa bụa"
+msgstr "Góa phụ"
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Widowed"
-msgstr "góa bụa"
+msgstr "Góa phụ"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Widowed"
-msgstr "góa bụa"
+msgstr "Góa phụ"
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
@@ -1305,32 +1308,32 @@ msgstr "Trong một mối quan hệ mở"
 #: .\__translations\__translations.py:137
 msgctxt "female"
 msgid "It's complicated"
-msgstr "Nó phức tạp"
+msgstr "Nó phức tạp lắm."
 
 #: .\__translations\__translations.py:138
 msgctxt "male"
 msgid "It's complicated"
-msgstr "Nó phức tạp"
+msgstr "Nó phức tạp lắm."
 
 #: .\__translations\__translations.py:139
 msgctxt "other"
 msgid "It's complicated"
-msgstr "Nó phức tạp"
+msgstr "Nó phức tạp lắm."
 
 #: .\__translations\__translations.py:141
 msgctxt "female"
 msgid "Separated"
-msgstr "Tách biệt"
+msgstr "Đã tách rời"
 
 #: .\__translations\__translations.py:142
 msgctxt "male"
 msgid "Separated"
-msgstr "Tách biệt"
+msgstr "Đã tách rời"
 
 #: .\__translations\__translations.py:143
 msgctxt "other"
 msgid "Separated"
-msgstr "Tách biệt"
+msgstr "Đã tách rời"
 
 #: .\__translations\__translations.py:145
 msgctxt "female"
@@ -1411,7 +1414,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Tài khoản {site_name} của bạn đã bị vô hiệu hóa. Bạn có thể kích hoạt lại nó "
+"Của bạn {site_name} Tài khoản đã bị vô hiệu hóa. Bạn có thể kích hoạt lại "
 "bất cứ lúc nào. Tài khoản Speedy Net của bạn vẫn hoạt động."
 
 #: .\__translations\__translations.py:162
@@ -1421,7 +1424,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Tài khoản {site_name} của bạn đã bị vô hiệu hóa. Bạn có thể kích hoạt lại nó "
+"Của bạn {site_name} Tài khoản đã bị vô hiệu hóa. Bạn có thể kích hoạt lại "
 "bất cứ lúc nào. Tài khoản Speedy Net của bạn vẫn hoạt động."
 
 #: .\__translations\__translations.py:163
@@ -1431,23 +1434,23 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Tài khoản {site_name} của bạn đã bị vô hiệu hóa. Bạn có thể kích hoạt lại nó "
+"Của bạn {site_name} Tài khoản đã bị vô hiệu hóa. Bạn có thể kích hoạt lại "
 "bất cứ lúc nào. Tài khoản Speedy Net của bạn vẫn hoạt động."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "Bạn đã xác nhận địa chỉ email này."
+msgstr "Bạn đã xác nhận địa chỉ email này rồi."
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "Bạn đã xác nhận địa chỉ email này."
+msgstr "Bạn đã xác nhận địa chỉ email này rồi."
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "Bạn đã xác nhận địa chỉ email này."
+msgstr "Bạn đã xác nhận địa chỉ email này rồi."
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
@@ -1486,8 +1489,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} bạn bè trên Speedy Net. "
-"Vui lòng xóa bạn bè trước khi bạn tiếp tục."
+"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} Bạn bè trên Speedy Net. "
+"Vui lòng xóa bạn bè trước khi tiếp tục."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1496,8 +1499,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} bạn bè trên Speedy Net. "
-"Vui lòng xóa bạn bè trước khi bạn tiếp tục."
+"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} Bạn bè trên Speedy Net. "
+"Vui lòng xóa bạn bè trước khi tiếp tục."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1506,8 +1509,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} bạn bè trên Speedy Net. "
-"Vui lòng xóa bạn bè trước khi bạn tiếp tục."
+"Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} Bạn bè trên Speedy Net. "
+"Vui lòng xóa bạn bè trước khi tiếp tục."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1516,8 +1519,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1526,8 +1529,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1536,8 +1539,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1546,8 +1549,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1556,8 +1559,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1566,8 +1569,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1576,8 +1579,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1586,8 +1589,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1596,8 +1599,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên "
-"Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
+"Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên "
+"Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1617,143 +1620,143 @@ msgstr "Bạn không thể làm bạn với chính mình."
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Bạn đã yêu cầu kết bạn từ người dùng này."
+msgstr "Bạn đã gửi yêu cầu kết bạn đến người dùng này rồi."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Bạn đã yêu cầu kết bạn từ người dùng này."
+msgstr "Bạn đã gửi yêu cầu kết bạn đến người dùng này rồi."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Bạn đã yêu cầu kết bạn từ người dùng này."
+msgstr "Bạn đã gửi yêu cầu kết bạn đến người dùng này rồi."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Người dùng này đã yêu cầu kết bạn từ bạn."
+msgstr "Người dùng này đã gửi yêu cầu kết bạn với bạn."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "Người dùng này đã yêu cầu kết bạn từ bạn."
+msgstr "Người dùng này đã gửi yêu cầu kết bạn với bạn."
 
 #: .\__translations\__translations.py:201
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "Người dùng này đã yêu cầu kết bạn từ bạn."
+msgstr "Người dùng này đã gửi yêu cầu kết bạn với bạn."
 
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "Bạn đã là bạn bè với người dùng này."
+msgstr "Bạn đã là bạn bè với người dùng này rồi."
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "Bạn đã hủy yêu cầu kết bạn của mình."
+msgstr "Bạn đã hủy yêu cầu kết bạn."
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "Bạn đã hủy yêu cầu kết bạn của mình."
+msgstr "Bạn đã hủy yêu cầu kết bạn."
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "Bạn đã hủy yêu cầu kết bạn của mình."
+msgstr "Bạn đã hủy yêu cầu kết bạn."
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "Bạn đã xóa người dùng này khỏi bạn bè của bạn."
+msgstr "Bạn đã xóa người dùng này khỏi danh sách bạn bè."
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "Bạn đã xóa người dùng này khỏi bạn bè của bạn."
+msgstr "Bạn đã xóa người dùng này khỏi danh sách bạn bè."
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "Bạn đã xóa người dùng này khỏi bạn bè của bạn."
+msgstr "Bạn đã xóa người dùng này khỏi danh sách bạn bè."
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr "Chào mừng đến với {site_name}!"
+msgstr "Chào mừng đến với {site_name}! "
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr "Chào mừng đến với {site_name}!"
+msgstr "Chào mừng đến với {site_name}! "
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "Chào mừng đến với {site_name}!"
+msgstr "Chào mừng đến với {site_name}! "
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Chào mừng đến với {site_name}! Tài khoản của bạn hiện đang hoạt động."
+msgstr "Chào mừng đến với {site_name} Tài khoản của bạn đã được kích hoạt."
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Chào mừng đến với {site_name}! Tài khoản của bạn hiện đang hoạt động."
+msgstr "Chào mừng đến với {site_name} Tài khoản của bạn đã được kích hoạt."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Chào mừng đến với {site_name}! Tài khoản của bạn hiện đang hoạt động."
+msgstr "Chào mừng đến với {site_name} Tài khoản của bạn đã được kích hoạt."
 
 #: .\__translations\__translations.py:229
 msgctxt "female"
@@ -1779,11 +1782,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Do trang web lạm dụng để gửi tin nhắn rác nên chúng tôi đã phải giới hạn số "
-"lượng tin nhắn có thể gửi cho các thành viên khác của trang trong một ngày. "
-"Vui lòng thử lại vào ngày mai. Xin lưu ý bạn không được phép sử dụng Speedy "
-"Net để gửi tin nhắn rác, hoặc tin nhắn có nội dung giống nhau tới nhiều "
-"người."
+"Do việc lạm dụng trang web để gửi tin nhắn rác, chúng tôi buộc phải giới hạn "
+"số lượng tin nhắn có thể gửi cho các thành viên khác của trang web trong một "
+"ngày. Vui lòng thử lại vào ngày mai. Xin lưu ý rằng bạn không được phép sử "
+"dụng Speedy Net để gửi tin nhắn rác, hoặc tin nhắn có cùng nội dung đến một "
+"số lượng lớn người."
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1794,11 +1797,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Do trang web lạm dụng để gửi tin nhắn rác nên chúng tôi đã phải giới hạn số "
-"lượng tin nhắn có thể gửi cho các thành viên khác của trang trong một ngày. "
-"Vui lòng thử lại vào ngày mai. Xin lưu ý bạn không được phép sử dụng Speedy "
-"Net để gửi tin nhắn rác, hoặc tin nhắn có nội dung giống nhau tới nhiều "
-"người."
+"Do việc lạm dụng trang web để gửi tin nhắn rác, chúng tôi buộc phải giới hạn "
+"số lượng tin nhắn có thể gửi cho các thành viên khác của trang web trong một "
+"ngày. Vui lòng thử lại vào ngày mai. Xin lưu ý rằng bạn không được phép sử "
+"dụng Speedy Net để gửi tin nhắn rác, hoặc tin nhắn có cùng nội dung đến một "
+"số lượng lớn người."
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1809,11 +1812,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Do trang web lạm dụng để gửi tin nhắn rác nên chúng tôi đã phải giới hạn số "
-"lượng tin nhắn có thể gửi cho các thành viên khác của trang trong một ngày. "
-"Vui lòng thử lại vào ngày mai. Xin lưu ý bạn không được phép sử dụng Speedy "
-"Net để gửi tin nhắn rác, hoặc tin nhắn có nội dung giống nhau tới nhiều "
-"người."
+"Do việc lạm dụng trang web để gửi tin nhắn rác, chúng tôi buộc phải giới hạn "
+"số lượng tin nhắn có thể gửi cho các thành viên khác của trang web trong một "
+"ngày. Vui lòng thử lại vào ngày mai. Xin lưu ý rằng bạn không được phép sử "
+"dụng Speedy Net để gửi tin nhắn rác, hoặc tin nhắn có cùng nội dung đến một "
+"số lượng lớn người."
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1902,8 +1905,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Ảnh hồ sơ của bạn không được trong suốt. Vui lòng tải lên một hình ảnh không "
-"trong suốt."
+"Ảnh đại diện của bạn không được phép có nền trong suốt. Vui lòng tải lên ảnh "
+"không có nền trong suốt."
 
 #: .\__translations\__translations.py:252
 msgctxt "male"
@@ -1911,8 +1914,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Ảnh hồ sơ của bạn không được trong suốt. Vui lòng tải lên một hình ảnh không "
-"trong suốt."
+"Ảnh đại diện của bạn không được phép có nền trong suốt. Vui lòng tải lên ảnh "
+"không có nền trong suốt."
 
 #: .\__translations\__translations.py:253
 msgctxt "other"
@@ -1920,8 +1923,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Ảnh hồ sơ của bạn không được trong suốt. Vui lòng tải lên một hình ảnh không "
-"trong suốt."
+"Ảnh đại diện của bạn không được phép có nền trong suốt. Vui lòng tải lên ảnh "
+"không có nền trong suốt."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
@@ -1933,7 +1936,7 @@ msgstr "Chỉ có tôi"
 
 #: .\accounts\fields.py:13
 msgid "Me and my friends"
-msgstr "Tôi và những người bạn của tôi"
+msgstr "Tôi và bạn bè của tôi"
 
 #: .\accounts\fields.py:15
 msgid "Anyone"
@@ -1941,7 +1944,7 @@ msgstr "Bất cứ ai"
 
 #: .\accounts\forms.py:66
 msgid "Last name (optional)"
-msgstr "Họ (tùy chọn)"
+msgstr "Họ (không bắt buộc)"
 
 #: .\accounts\forms.py:130
 msgid "Your email"
@@ -1953,23 +1956,23 @@ msgstr "Mật khẩu mới"
 
 #: .\accounts\forms.py:139
 msgid "New username"
-msgstr "tên người dùng mới"
+msgstr "Tên người dùng mới"
 
 #: .\accounts\forms.py:142
 msgid "Create an account"
-msgstr "Tạo một tài khoản"
+msgstr "Tạo tài khoản"
 
 #: .\accounts\forms.py:167
 msgid "Update your profile picture"
-msgstr "Cập nhật ảnh hồ sơ của bạn"
+msgstr "Cập nhật ảnh đại diện của bạn"
 
 #: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
-msgstr "Một hình ảnh hồ sơ là cần thiết."
+msgstr "Cần có ảnh đại diện."
 
 #: .\accounts\forms.py:313 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "Email hoặc tên người dùng"
+msgstr "Email hoặc Tên người dùng"
 
 #: .\accounts\forms.py:319 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
@@ -2005,11 +2008,11 @@ msgstr "Tên người dùng này đã được sử dụng."
 
 #: .\accounts\models.py:179
 msgid "username (slug)"
-msgstr "tên người dùng (sên)"
+msgstr "tên người dùng (slug)"
 
 #: .\accounts\models.py:180
 msgid "photo"
-msgstr "bức ảnh"
+msgstr "ảnh"
 
 #: .\accounts\models.py:181
 msgid "Special username"
@@ -2025,7 +2028,7 @@ msgstr "thực thể"
 
 #: .\accounts\models.py:249
 msgid "Slug does not parse to username."
-msgstr "Slug không phân tích thành tên người dùng."
+msgstr "Slug không thể được phân tích thành tên người dùng."
 
 #: .\accounts\models.py:253
 msgid "Username is required."
@@ -2054,19 +2057,19 @@ msgstr "Khác"
 #: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
-msgstr "Không xác định"
+msgstr "Không rõ"
 
 #: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Ăn chay (chỉ ăn thực vật và nấm)"
+msgstr "Ăn chay trường (chỉ ăn thực vật và nấm)"
 
 #: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Ăn chay (không ăn cá và thịt)"
+msgstr "Người ăn chay (không ăn cá và thịt)"
 
 #: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
-msgstr "Carnist (ăn động vật)"
+msgstr "Người ăn thịt (ăn động vật)"
 
 #: .\accounts\models.py:504
 msgid "Not smoking"
@@ -2090,7 +2093,7 @@ msgstr "Đã ly hôn"
 
 #: .\accounts\models.py:527
 msgid "Widowed"
-msgstr "góa bụa"
+msgstr "Góa phụ"
 
 #: .\accounts\models.py:528
 msgid "In a relationship"
@@ -2102,11 +2105,11 @@ msgstr "Trong một mối quan hệ mở"
 
 #: .\accounts\models.py:530
 msgid "It's complicated"
-msgstr "Nó phức tạp"
+msgstr "Nó phức tạp lắm."
 
 #: .\accounts\models.py:531
 msgid "Separated"
-msgstr "Tách biệt"
+msgstr "Đã tách rời"
 
 #: .\accounts\models.py:532
 msgid "Engaged"
@@ -2150,7 +2153,7 @@ msgstr "tình trạng hút thuốc"
 
 #: .\accounts\models.py:599
 msgid "relationship status"
-msgstr "tình trạng mối quan hệ"
+msgstr "tình trạng quan hệ"
 
 #: .\accounts\models.py:601
 msgid "Where do I live?"
@@ -2158,23 +2161,23 @@ msgstr "Tôi sống ở đâu?"
 
 #: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
-msgstr "Ai có thể xem ngày và tháng sinh của tôi"
+msgstr "Ai có thể xem tháng và ngày sinh của tôi?"
 
 #: .\accounts\models.py:609
 msgid "Who can view my birth year"
-msgstr "Ai có thể xem năm sinh của tôi"
+msgstr "Ai có thể xem năm sinh của tôi?"
 
 #: .\accounts\models.py:610
 msgid "On new messages"
-msgstr "Trên tin nhắn mới"
+msgstr "Về các tin nhắn mới"
 
 #: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Địa chỉ IP được sử dụng lần cuối https://ipapi.com/ lần"
+msgstr "Địa chỉ IP cuối cùng được sử dụng: https://ipapi.com/time"
 
 #: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Địa chỉ IP cuối cùng được sử dụng thô https://ipapi.com/ kết quả"
+msgstr "Địa chỉ IP cuối cùng được sử dụng (kết quả thô từ https://ipapi.com/)"
 
 #: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
@@ -2186,7 +2189,7 @@ msgstr "người dùng"
 
 #: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
-msgstr "Superuser phải ngang bằng với nhân viên."
+msgstr "Người dùng quản trị phải có quyền tương đương với nhân viên."
 
 #: .\accounts\models.py:1278
 msgid "email"
@@ -2194,15 +2197,15 @@ msgstr "e-mail"
 
 #: .\accounts\models.py:1279
 msgid "is confirmed"
-msgstr "được xác nhận"
+msgstr "đã được xác nhận"
 
 #: .\accounts\models.py:1280
 msgid "is primary"
-msgstr "là chính"
+msgstr "là yếu tố chính"
 
 #: .\accounts\models.py:1281
 msgid "confirmation token"
-msgstr "mã thông báo xác nhận"
+msgstr "mã xác nhận"
 
 #: .\accounts\models.py:1282
 msgid "confirmation sent"
@@ -2210,7 +2213,7 @@ msgstr "đã gửi xác nhận"
 
 #: .\accounts\models.py:1283
 msgid "Who can see this email"
-msgstr "Ai có thể xem email này"
+msgstr "Ai có thể xem email này?"
 
 #: .\accounts\models.py:1294
 msgid "email addresses"
@@ -2218,7 +2221,7 @@ msgstr "địa chỉ email"
 
 #: .\accounts\models.py:1377
 msgid "User"
-msgstr "người dùng"
+msgstr "Người dùng"
 
 #: .\accounts\models.py:1378
 msgid "last visit"
@@ -2235,28 +2238,28 @@ msgstr "Hôm qua"
 #: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr "Trên {date} ({timesince_ago})"
+msgstr "TRÊN {date} ({timesince_ago} )"
 
 #: .\accounts\models.py:1396
 #, python-brace-format
 msgid "{timesince} ago"
-msgstr "{timesince} trước"
+msgstr "{timesince} trước kia"
 
 #: .\accounts\validators.py:39
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"Tên người dùng phải bắt đầu bằng 4 chữ cái trở lên và có thể chứa các chữ "
-"cái, chữ số hoặc dấu gạch ngang."
+"Tên người dùng phải bắt đầu bằng 4 chữ cái trở lên và có thể chứa chữ cái, "
+"chữ số hoặc dấu gạch ngang."
 
 #: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"Tên người dùng phải bắt đầu bằng 4 chữ cái trở lên, sau đó có thể là số chữ "
-"số bất kỳ. Bạn có thể thêm dấu gạch ngang giữa các từ."
+"Tên người dùng phải bắt đầu bằng 4 chữ cái trở lên, sau đó có thể là bất kỳ "
+"số lượng chữ số nào. Bạn có thể thêm dấu gạch ngang giữa các từ."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2267,10 +2270,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ và số (có "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có) "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ và số (có "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có) "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:58
@@ -2282,10 +2285,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ và số (có "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có) "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ và số (có "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có) "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:69
@@ -2297,10 +2300,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
+"Tên người dùng phải chứa ít nhất %(limit_value)d nhân vật (nó có) "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (có %(show_value)d)."
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có) "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2311,9 +2315,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
+"Tên người dùng phải chứa tối đa %(limit_value)d nhân vật (nó có) "
+"%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (có %(show_value)d)."
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có) "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2323,15 +2329,17 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
-msgstr[1] "Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
+msgstr[0] ""
+"Mật khẩu này quá ngắn. Nó phải chứa ít nhất... %(min_length)d tính cách."
+msgstr[1] ""
+"Mật khẩu này quá ngắn. Nó phải chứa ít nhất... %(min_length)d các nhân vật."
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
-msgstr[1] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
+msgstr[0] "Mật khẩu của bạn phải chứa ít nhất... %(min_length)d tính cách."
+msgstr[1] "Mật khẩu của bạn phải chứa ít nhất... %(min_length)d các nhân vật."
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2339,15 +2347,17 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
-msgstr[1] "Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
+msgstr[0] ""
+"Mật khẩu này quá dài. Nó phải chứa tối đa... %(max_length)d tính cách."
+msgstr[1] ""
+"Mật khẩu này quá dài. Nó phải chứa tối đa... %(max_length)d các nhân vật."
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
-msgstr[1] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
+msgstr[0] "Mật khẩu của bạn phải chứa tối đa... %(max_length)d tính cách."
+msgstr[1] "Mật khẩu của bạn phải chứa tối đa... %(max_length)d các nhân vật."
 
 #: .\accounts\validators.py:165 .\accounts\validators.py:170
 #, python-format
@@ -2355,37 +2365,38 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Mật khẩu của bạn phải chứa ít nhất %(min_unique_characters)d ký tự duy nhất."
+"Mật khẩu của bạn phải chứa ít nhất... %(min_unique_characters)d các nhân vật "
+"độc đáo."
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
-msgstr "Trường này không thể rỗng."
+msgstr "Trường này không được phép để trống."
 
 #: .\accounts\validators.py:214
 msgid "This field cannot be blank."
-msgstr "Trường này không thể để trống."
+msgstr "Ô này không được để trống."
 
 #: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
-msgstr "Nhập một ngày hợp lệ."
+msgstr "Nhập ngày tháng hợp lệ."
 
 #: .\accounts\validators.py:246
 msgid "This email is already in use."
-msgstr "Email này đã được sử dụng."
+msgstr "Địa chỉ email này hiện đang được sử dụng."
 
 #: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
-"Kích thước tệp của ảnh này quá lớn. Kích thước tệp tối đa được phép là 30 MB."
+"Kích thước tệp hình ảnh này quá lớn. Kích thước tệp tối đa cho phép là 30 MB."
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
-"Bạn không thể sử dụng định dạng này cho ảnh hồ sơ của mình. Chỉ các định "
-"dạng JPEG hoặc PNG được chấp nhận."
+"Bạn không thể sử dụng định dạng này cho ảnh đại diện. Chỉ chấp nhận định "
+"dạng JPEG hoặc PNG."
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
@@ -2394,7 +2405,7 @@ msgstr "Liên kết xác nhận không hợp lệ."
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "Một tin nhắn xác nhận đã được gửi tới {email_address}"
+msgstr "Một tin nhắn xác nhận đã được gửi đến {email_address}"
 
 #: .\accounts\views.py:355
 msgid "The email address was deleted."
@@ -2402,7 +2413,7 @@ msgstr "Địa chỉ email đã bị xóa."
 
 #: .\accounts\views.py:371
 msgid "You have made this email address primary."
-msgstr "Bạn đã đặt địa chỉ email này làm địa chỉ chính."
+msgstr "Bạn đã chọn địa chỉ email này làm địa chỉ email chính."
 
 #: .\admin\views.py:72
 #, python-brace-format
@@ -2418,15 +2429,16 @@ msgid ""
 "the last two years."
 msgstr ""
 "Quản trị viên: Tổng số thành viên trên trang web là "
-"{total_number_of_members}, trong đó "
-"{total_number_of_members_in_the_last_week} thành viên đã vào trang web trong "
-"tuần trước, {total_number_of_members_in_the_last_month} thành viên đã vào "
-"trang web trong tháng trước, "
-"{total_number_of_members_in_the_last_four_months} thành viên đã vào trang "
-"web trong bốn tháng qua, {total_number_of_members_in_the_last_eight_months} "
-"thành viên đã vào trang web trong tám tháng qua và "
-"{total_number_of_members_in_the_last_two_years} thành viên đã vào trang web "
-"trong hai năm qua."
+"{total_number_of_members} trong đó "
+"{total_number_of_members_in_the_last_week} Các thành viên đã truy cập trang "
+"web trong tuần vừa qua. {total_number_of_members_in_the_last_month} Các "
+"thành viên đã truy cập trang web trong tháng trước. "
+"{total_number_of_members_in_the_last_four_months} các thành viên đã truy cập "
+"trang web trong bốn tháng qua. "
+"{total_number_of_members_in_the_last_eight_months} các thành viên đã truy "
+"cập trang web trong tám tháng qua, và "
+"{total_number_of_members_in_the_last_two_years} Các thành viên đã tham gia "
+"trang web trong hai năm qua."
 
 #: .\admin\views.py:118
 #, python-brace-format
@@ -2449,24 +2461,24 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
-"Quản trị viên: {total_number_of_members_registered_in_the_last_week} thành "
-"viên đã đăng ký vào tuần trước. "
-"{total_number_of_members_registered_in_the_last_month} thành viên đã đăng ký "
-"vào tháng trước. "
-"{total_number_of_members_registered_in_the_last_four_months} thành viên đã "
-"đăng ký trong bốn tháng qua. "
-"{total_number_of_members_registered_more_than_four_months_ago} thành viên đã "
-"đăng ký hơn bốn tháng trước. "
-"{total_number_of_members_registered_in_the_last_eight_months} thành viên đã "
-"đăng ký trong tám tháng qua. "
-"{total_number_of_members_registered_more_than_eight_months_ago} thành viên "
-"đã đăng ký hơn tám tháng trước. "
-"{total_number_of_members_registered_in_the_last_two_years} thành viên đã "
+"Quản trị viên: {total_number_of_members_registered_in_the_last_week} Các "
+"thành viên đã đăng ký trong tuần vừa qua. "
+"{total_number_of_members_registered_in_the_last_month} Thành viên đã đăng ký "
+"trong tháng trước. "
+"{total_number_of_members_registered_in_the_last_four_months} Các thành viên "
+"đã đăng ký trong bốn tháng qua. "
+"{total_number_of_members_registered_more_than_four_months_ago} Các thành "
+"viên đã đăng ký hơn bốn tháng trước. "
+"{total_number_of_members_registered_in_the_last_eight_months} Các thành viên "
+"đã đăng ký trong tám tháng qua. "
+"{total_number_of_members_registered_more_than_eight_months_ago} Các thành "
+"viên đã đăng ký hơn tám tháng trước. "
+"{total_number_of_members_registered_in_the_last_two_years} Các thành viên đã "
 "đăng ký trong hai năm qua. "
-"{total_number_of_members_registered_more_than_two_years_ago} thành viên đã "
-"đăng ký hơn hai năm trước. "
-"{total_number_of_members_registered_before_2019_08_01} thành viên đã đăng ký "
-"trước ngày 1 tháng 8 năm 2019."
+"{total_number_of_members_registered_more_than_two_years_ago} Các thành viên "
+"đã đăng ký hơn hai năm trước. "
+"{total_number_of_members_registered_before_2019_08_01} Các thành viên đã "
+"đăng ký trước ngày 1 tháng 8 năm 2019."
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2475,7 +2487,7 @@ msgid ""
 "{year}."
 msgstr ""
 "Quản trị viên: {total_number_of_members_registered_in_year} thành viên đã "
-"đăng ký tại {year}."
+"đăng ký trong {year}. "
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
@@ -2488,15 +2500,15 @@ msgstr "NHẬN DẠNG"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
-msgstr "id chứa các ký tự không hợp lệ."
+msgstr "ID chứa các ký tự không hợp lệ."
 
 #: .\base\views.py:57
 msgid "Changes saved."
-msgstr "Đã lưu các thay đổi."
+msgstr "Các thay đổi đã được lưu."
 
 #: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
@@ -2516,15 +2528,15 @@ msgstr "khối người dùng"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
-msgstr "Bạn đã chặn {}."
+msgstr "Bạn đã bị chặn {}. "
 
 #: .\blocks\views.py:31
 msgid "You have unblocked {}."
-msgstr "Bạn đã bỏ chặn {}."
+msgstr "Bạn đã bỏ chặn {}. "
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
-msgstr "Liên hệ theo mẫu"
+msgstr "Liên hệ qua biểu mẫu"
 
 #: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
@@ -2580,7 +2592,7 @@ msgstr "thực thể được báo cáo"
 
 #: .\contact_by_form\models.py:45
 msgid "reported photo"
-msgstr "ảnh báo cáo"
+msgstr "ảnh được báo cáo"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
@@ -2592,19 +2604,19 @@ msgstr "phản hồi"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
-msgstr "Yêu cầu kết bạn đã được gửi."
+msgstr "Đã gửi lời mời kết bạn."
 
 #: .\friends\views.py:204
 msgid "No friendship request."
-msgstr "Không có yêu cầu kết bạn."
+msgstr "Không có lời mời kết bạn."
 
 #: .\friends\views.py:243
 msgid "Friendship request accepted."
-msgstr "Yêu cầu kết bạn được chấp nhận."
+msgstr "Lời mời kết bạn đã được chấp nhận."
 
 #: .\friends\views.py:261
 msgid "Friendship request rejected."
-msgstr "Yêu cầu kết bạn bị từ chối."
+msgstr "Lời mời kết bạn bị từ chối."
 
 #: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2632,7 +2644,7 @@ msgstr "người tham gia"
 
 #: .\messages\models.py:33
 msgid "is group chat"
-msgstr "là trò chuyện nhóm"
+msgstr "là cuộc trò chuyện nhóm"
 
 #: .\messages\models.py:34
 msgid "last message"
@@ -2644,7 +2656,7 @@ msgstr "trò chuyện"
 
 #: .\messages\models.py:68
 msgid "chats"
-msgstr "cuộc trò chuyện"
+msgstr "trò chuyện"
 
 #: .\messages\models.py:77
 msgid "None"
@@ -2660,23 +2672,23 @@ msgstr "tin nhắn"
 
 #: .\messages\models.py:191
 msgid "read mark"
-msgstr "dấu đọc"
+msgstr "đọc dấu"
 
 #: .\messages\models.py:192
 msgid "read marks"
-msgstr "dấu đọc"
+msgstr "đọc dấu"
 
-#: .\settings\base.py:193
+#: .\settings\base.py:194
 msgid "English"
 msgstr "Tiếng Anh"
 
-#: .\settings\base.py:194
+#: .\settings\base.py:195
 msgid "Hebrew"
 msgstr "tiếng Do Thái"
 
 #: .\settings\base_with_login.py:65
 msgid "French"
-msgstr "người Pháp"
+msgstr "tiếng Pháp"
 
 #: .\settings\base_with_login.py:66
 msgid "German"
@@ -2692,23 +2704,23 @@ msgstr "tiếng Bồ Đào Nha"
 
 #: .\settings\base_with_login.py:69
 msgid "Italian"
-msgstr "người Ý"
+msgstr "Ý"
 
 #: .\settings\base_with_login.py:70
 msgid "Dutch"
-msgstr "tiếng Hà Lan"
+msgstr "Tiếng Hà Lan"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr "tiếng Nhật"
+msgstr "Tiếng Nhật"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr "tiếng Nga"
+msgstr "Tiếng Nga"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "Tiếng Trung"
+msgstr "Trung Quốc"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
@@ -2716,11 +2728,11 @@ msgstr "Đánh bóng"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "tiếng Ba Tư"
+msgstr "Ba Tư"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
-msgstr "Tiếng Hàn"
+msgstr "tiếng Hàn"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
@@ -2728,7 +2740,7 @@ msgstr "tiếng Ả Rập"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr "tiếng Indonesia"
+msgstr "Tiếng Indonesia"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
@@ -2748,19 +2760,19 @@ msgstr "tiếng Séc"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
-msgstr "tiếng Thụy Điển"
+msgstr "Thụy Điển"
 
 #: .\settings\base_with_login.py:87
 msgid "Finnish"
-msgstr "tiếng Phần Lan"
+msgstr "Phần Lan"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "tiếng Hungary"
+msgstr "Tiếng Hungary"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr "tiếng Thái"
+msgstr "Thái Lan"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
@@ -2776,7 +2788,7 @@ msgstr "tiếng Serbia"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "người Rumani"
+msgstr "tiếng Romania"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
@@ -2792,7 +2804,7 @@ msgstr "Tiếng Na Uy (Bokmål)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr "tiếng Bungari"
+msgstr "tiếng Bulgaria"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
@@ -2800,7 +2812,7 @@ msgstr "tiếng Đan Mạch"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "Tiếng Slovak"
+msgstr "tiếng Slovak"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
@@ -2816,19 +2828,19 @@ msgstr "tiếng Croatia"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Yêu cầu xấu"
+msgstr "Yêu cầu không hợp lệ"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Speedy rất tiếc nhưng chúng tôi không thể xử lý yêu cầu của bạn."
+msgstr "Speedy rất tiếc, nhưng chúng tôi không thể đáp ứng yêu cầu của bạn."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "Quyền bị từ chối"
+msgstr "Quyền truy cập bị từ chối"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy rất tiếc, nhưng trang này là riêng tư."
+msgstr "Speedy rất tiếc, nhưng trang này là trang riêng tư."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2836,7 +2848,7 @@ msgstr "Không tìm thấy trang"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy xin lỗi nhưng trang này không được tìm thấy."
+msgstr "Rất tiếc, Speedy không tìm thấy trang này."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -2873,7 +2885,7 @@ msgstr "Thông báo"
 
 #: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
-msgstr "Email & Mật khẩu"
+msgstr "Email và mật khẩu"
 
 #: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
@@ -2897,7 +2909,7 @@ msgstr "Khả năng hiển thị"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr "hành động"
+msgstr "Hành động"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
@@ -2913,7 +2925,7 @@ msgstr "Gửi lại email xác nhận"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Đặt địa chỉ email này làm địa chỉ chính"
+msgstr "Đặt địa chỉ email này làm địa chỉ email chính."
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
@@ -2925,7 +2937,7 @@ msgstr "Xóa địa chỉ email này"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
-msgstr "Thêm cái khác"
+msgstr "Thêm một cái nữa"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
@@ -2934,8 +2946,7 @@ msgstr "Thay đổi mật khẩu"
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
 msgstr ""
-"Tuổi của bạn sẽ được hiển thị trong các trận đấu của bạn trên Trận đấu "
-"nhanh. Speedy Match"
+"Tuổi của bạn sẽ hiển thị cho những người bạn ghép đôi trên Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2976,7 +2987,7 @@ msgstr "Email hướng dẫn đặt lại mật khẩu đã được gửi."
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
 msgid "See All"
-msgstr "Xem Tất Cả"
+msgstr "Xem tất cả"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
@@ -2992,7 +3003,7 @@ msgstr "Chưa có bạn bè."
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
-msgstr "Thông tin quản trị"
+msgstr "Thông tin quản trị viên"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
@@ -3000,21 +3011,20 @@ msgstr "Quản trị viên - Tất cả người dùng"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr "Không có người dùng."
+msgstr "Không có người dùng nào."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "Trang web này đang được xây dựng"
+msgstr "Trang web này đang trong quá trình xây dựng."
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến của "
-"bạn."
+"Bạn chưa xác nhận địa chỉ email của mình. Vui lòng kiểm tra hộp thư đến."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3035,7 +3045,7 @@ msgstr "Một trang web thân thiện với người ăn chay"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Speedy"
+msgstr "Nhanh chóng"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3059,15 +3069,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "Cửa hàng Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Cửa hàng Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "Cửa hàng logo S nhanh chóng"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3107,7 +3117,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Cửa hàng Speedy Composer's"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3115,19 +3125,19 @@ msgstr "Người dùng bị chặn"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "Bạn không chặn bất kỳ ai."
+msgstr "Bạn không chặn ai cả."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
 msgstr ""
-"Nếu bạn có bất kỳ câu hỏi, đề xuất hoặc muốn tham gia nhóm - vui lòng liên "
-"hệ với chúng tôi qua email."
+"Nếu bạn có bất kỳ câu hỏi, đề xuất nào hoặc muốn tham gia nhóm, vui lòng "
+"liên hệ với chúng tôi qua email."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, người sáng lập và quản trị trang web:"
+msgstr "Uri Rodberg, người sáng lập và quản trị viên trang web:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
@@ -3137,7 +3147,7 @@ msgstr "Báo cáo người dùng"
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr "Báo cáo một bức ảnh"
+msgstr "Báo cáo ảnh"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
@@ -3145,7 +3155,7 @@ msgstr "Cảm ơn"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr "Phản hồi của bạn đã được gửi đến quản trị viên."
+msgstr "Phản hồi của bạn đã được gửi đến ban quản trị."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
@@ -3163,7 +3173,7 @@ msgstr "Sử dụng liên kết này để kích hoạt tài khoản của bạn
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3184,7 +3194,7 @@ msgstr "đã gửi cho bạn một tin nhắn."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "Đọc nó:"
+msgstr "Hãy đọc nó:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -3192,8 +3202,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s. Vào trang này để "
-"thay đổi cài đặt thông báo của bạn hoặc chọn không tham gia:"
+"Bạn đã đăng ký nhận loại thông báo này từ %(site_name)s Truy cập trang này "
+"để thay đổi cài đặt thông báo hoặc hủy đăng ký:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3211,26 +3221,26 @@ msgstr "Yêu cầu đã gửi"
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr "Không có yêu cầu kết bạn nào đang chờ xử lý."
+msgstr "Hiện không có yêu cầu kết bạn nào đang chờ xử lý."
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "Chào mừng đến với %(site_name)s!"
+msgstr "Chào mừng đến với %(site_name)s! "
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "Tham gia %(site_name)s!"
+msgstr "Tham gia %(site_name)s! "
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
-msgstr "Nó miễn phí và bất cứ ai cũng có thể tham gia!"
+msgstr "Hoàn toàn miễn phí và ai cũng có thể tham gia!"
 
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Trò chuyện với <a href=\"%(link)s\">%(user_name)s_</a>"
+msgstr "Trò chuyện với <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
@@ -3266,11 +3276,11 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"Chúng tôi tôn trọng sự riêng tư của bạn. Chúng tôi sẽ không bán hoặc chia sẻ "
-"thông tin cá nhân của bạn, bao gồm tên, ngày sinh, địa chỉ email và mật khẩu "
-"của bạn. Tin nhắn bạn gửi cho mọi người trên Speedy Net mang tính cá nhân và "
-"sẽ không được chia sẻ với người khác hoặc trang web khác. Mật khẩu của bạn "
-"được lưu mã hóa trên cơ sở dữ liệu của chúng tôi."
+"Chúng tôi tôn trọng quyền riêng tư của bạn. Chúng tôi sẽ không bán hoặc chia "
+"sẻ thông tin cá nhân của bạn, bao gồm tên, ngày sinh, địa chỉ email và mật "
+"khẩu của bạn. Các tin nhắn bạn gửi cho người khác trên Speedy Net là tin "
+"nhắn riêng tư và sẽ không được chia sẻ với người khác hoặc trang web nào "
+"khác. Mật khẩu của bạn được lưu trữ mã hóa trong cơ sở dữ liệu của chúng tôi."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3282,13 +3292,13 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Hồ sơ của bạn trên Speedy Net hiển thị với mọi người nhưng bạn có thể chọn "
-"người chia sẻ với địa chỉ email và ngày sinh của mình. Nếu bạn đã đăng ký "
-"Trận Speedy Match đấu Speedy Match nhanh, hồ sơ Trận đấu nhanh của bạn sẽ "
-"chỉ hiển thị với những người phù hợp với bạn theo cài đặt bạn đã thiết lập "
-"trên trang web và bạn kết hợp họ theo cài đặt của họ. Hồ sơ của bạn trên sẽ "
-"không xuất hiện trên Google và không hiển thị với những người chưa đăng ký "
-"trang web. Speedy Match"
+"Hồ sơ của bạn trên Speedy Net hiển thị cho tất cả mọi người, nhưng bạn có "
+"thể chọn người mà bạn muốn chia sẻ địa chỉ email và ngày sinh của mình. Nếu "
+"bạn đã đăng ký Speedy Match, hồ sơ Speedy Match của bạn sẽ chỉ hiển thị cho "
+"những người phù hợp với bạn theo cài đặt bạn đã thiết lập trên trang web, và "
+"bạn cũng phù hợp với họ theo cài đặt của họ. Hồ sơ của bạn trên Speedy Match "
+"sẽ không xuất hiện trên Google và không hiển thị cho những người không đăng "
+"ký trên trang web."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3301,13 +3311,13 @@ msgid ""
 "after you deactivate it whenever you like."
 msgstr ""
 "Nếu bạn đã vô hiệu hóa tài khoản của mình trên Speedy Net hoặc Speedy Match, "
-"hồ sơ của bạn trên trang web đó sẽ bị xóa khỏi trang web và bạn sẽ không "
-"xuất hiện trong kết quả tìm kiếm của người khác trên trang web. Lưu ý rằng "
-"việc vô hiệu hóa tài khoản của bạn trên Speedy Net cũng sẽ tự động vô hiệu "
-"hóa tài khoản của bạn tại Speedy Match. Bạn chỉ có thể hủy kích hoạt tài "
-"khoản của mình tại Speedy Match, trong trường hợp đó tài khoản Speedy Net "
-"của bạn sẽ vẫn hoạt động. Bạn có thể kích hoạt lại tài khoản của mình sau "
-"khi hủy kích hoạt bất cứ khi nào bạn muốn."
+"hồ sơ của bạn trên trang web đó sẽ bị xóa và bạn sẽ không xuất hiện trong "
+"kết quả tìm kiếm của người khác trên trang web đó. Lưu ý rằng việc vô hiệu "
+"hóa tài khoản của bạn trên Speedy Net cũng tự động vô hiệu hóa tài khoản của "
+"bạn trên Speedy Match. Bạn chỉ có thể vô hiệu hóa tài khoản của mình trên "
+"Speedy Match, trong trường hợp đó tài khoản Speedy Net của bạn sẽ vẫn hoạt "
+"động. Bạn có thể kích hoạt lại tài khoản của mình bất cứ lúc nào sau khi đã "
+"vô hiệu hóa."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3318,25 +3328,25 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Nếu muốn, bạn có thể xóa tài khoản của mình trên Speedy Net. Xóa tài khoản "
-"Speedy Net của bạn cũng sẽ tự động xóa tài khoản Speedy Match của bạn. Để "
-"xóa tài khoản Speedy Net của bạn, hãy đăng nhập vào Speedy Net, hủy kích "
-"hoạt tài khoản của bạn và sau đó nhấp vào “Xóa tài khoản” (trong menu “Chỉnh "
-"sửa hồ sơ”). Điền thông tin chi tiết vào mẫu và xác nhận. Xin lưu ý rằng tài "
-"khoản đã xóa không thể khôi phục được. Việc xóa tài khoản là vĩnh viễn và "
-"không thể thay đổi được."
+"Nếu muốn, bạn có thể xóa tài khoản của mình trên Speedy Net. Việc xóa tài "
+"khoản Speedy Net sẽ tự động xóa luôn tài khoản Speedy Match của bạn. Để xóa "
+"tài khoản Speedy Net, hãy đăng nhập vào Speedy Net, vô hiệu hóa tài khoản "
+"của bạn, sau đó nhấp vào “Xóa tài khoản” (trong menu “Chỉnh sửa hồ sơ”). "
+"Điền đầy đủ thông tin vào biểu mẫu và xác nhận. Xin lưu ý rằng tài khoản đã "
+"xóa không thể khôi phục. Việc xóa tài khoản là vĩnh viễn và không thể đảo "
+"ngược."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Bạn đã chặn "
+msgstr "Bạn đã bị chặn "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " đã chặn bạn."
+msgstr " Đã chặn bạn."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3361,20 +3371,20 @@ msgstr "Từ chối"
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr "Thêm vào bạn bè"
+msgstr "Thêm vào danh sách bạn bè"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Chuyển đổi thả xuống"
+msgstr "Chuyển đổi menu thả xuống"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Bạn có chắc chắn muốn chặn "
+msgstr "Bạn có chắc chắn muốn chặn không? "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
@@ -3384,7 +3394,7 @@ msgstr "Khối "
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Bỏ chặn "
+msgstr "Mở khóa "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
@@ -3441,12 +3451,13 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s cũng có hồ sơ Speedy Match Trận đấu nhanh. Xem hồ sơ của "
-"%(user_name)s trên Trận đấu nhanh. Speedy Match"
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Match. Xem %(user_name)sThông tin "
+"cá nhân của anh ấy trên Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Bạn cũng có hồ sơ Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
+msgstr ""
+"Bạn cũng có một hồ sơ trên Speedy Net. Xem hồ sơ của bạn trên Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3454,16 +3465,16 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s cũng có Speedy Net hồ sơ. Xem hồ sơ của %(user_name)s trên "
-"Speedy Net."
+"%(user_name)s Ngoài ra còn có hồ sơ Speedy Net. Xem %(user_name)sThông tin "
+"cá nhân của bạn trên Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"Trang web đang ở giai đoạn alpha, có thể có lỗi. Quản lý trang web không "
-"chịu trách nhiệm cho bất kỳ lỗi nào trên trang web."
+"Trang web hiện đang trong giai đoạn thử nghiệm (alpha), có thể có lỗi. Ban "
+"quản lý trang web không chịu trách nhiệm cho bất kỳ lỗi nào trên trang web."
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
@@ -3472,10 +3483,10 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Bạn chỉ có thể sử dụng Speedy Net cho mục đích hợp pháp. Bạn không được phép "
-"tải lên các nội dung liên quan đến thù hận, bạo lực, ngược đãi động vật, ảnh "
-"khoả thân hoặc nội dung khiêu dâm Speedy Net. Bạn không được phép sử dụng để "
-"gửi tin nhắn rác, hoặc tin nhắn có cùng nội dung đến nhiều người."
+"Bạn chỉ được phép sử dụng Speedy Net cho các mục đích hợp pháp. Bạn không "
+"được phép tải lên nội dung liên quan đến thù hận, bạo lực, ngược đãi động "
+"vật, ảnh khỏa thân hoặc khiêu dâm. Bạn không được phép sử dụng Speedy Net để "
+"gửi tin nhắn rác hoặc tin nhắn có cùng nội dung đến nhiều người."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3485,12 +3496,12 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"Quản lý trang web không thể xác minh thông tin cá nhân được cung cấp bởi "
-"người dùng trang web. Thông tin cá nhân của một số người dùng có thể không "
-"chính xác. Quản lý trang web không chịu trách nhiệm về hoạt động của người "
-"dùng bên ngoài trang web. Nếu bạn chọn gặp hoặc nói chuyện qua điện thoại "
-"với những người bạn gặp trên cơ sở, bạn phải chịu trách nhiệm về kết quả của "
-"cuộc gặp hoặc cuộc gọi điện thoại."
+"Ban quản lý trang web không thể xác minh thông tin cá nhân do người dùng "
+"cung cấp. Một số thông tin cá nhân của người dùng có thể không chính xác. "
+"Ban quản lý trang web không chịu trách nhiệm về hoạt động của người dùng bên "
+"ngoài trang web. Nếu bạn chọn gặp gỡ hoặc nói chuyện qua điện thoại với "
+"những người bạn quen biết trên trang web, bạn phải tự chịu trách nhiệm về "
+"kết quả của cuộc gặp gỡ hoặc cuộc gọi đó."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3498,9 +3509,9 @@ msgid ""
 "a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"Sau khi đăng ký trang web, bạn được yêu cầu xác minh địa chỉ email của mình "
-"thông qua liên kết được gửi cho bạn. Các tài khoản không có địa chỉ email "
-"được xác minh sẽ bị xóa khỏi trang web sau 10 ngày."
+"Sau khi đăng ký tài khoản trên trang web, bạn sẽ được yêu cầu xác minh địa "
+"chỉ email của mình thông qua một liên kết được gửi đến bạn. Các tài khoản "
+"không có địa chỉ email được xác minh sẽ bị xóa khỏi trang web sau 10 ngày."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3508,9 +3519,9 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
-"Nếu bạn đăng ký nhầm trang web bằng địa chỉ email không chính xác, hãy thêm "
-"địa chỉ email mới vào tài khoản của bạn và xác minh địa chỉ đó. Bạn có thể "
-"đính kèm một số địa chỉ email vào tài khoản của mình trên trang web."
+"Nếu bạn đăng ký tài khoản trên trang web bằng địa chỉ email không chính xác, "
+"hãy thêm địa chỉ email mới vào tài khoản và xác minh lại. Bạn có thể liên "
+"kết nhiều địa chỉ email với tài khoản của mình trên trang web."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
@@ -3519,10 +3530,10 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"Ảnh hồ sơ của bạn phải là ảnh của bạn, nơi chúng tôi có thể nhìn thấy khuôn "
-"mặt của bạn. Nó được phép tải lên một hình ảnh hồ sơ với người khác. Không "
-"đăng tải ảnh khỏa thân, ảnh khoe bộ phận sinh dục (của nam hoặc nữ) hoặc ảnh "
-"hở ngực (của nam hoặc nữ)."
+"Ảnh đại diện của bạn nên là ảnh chân dung của chính bạn, trong đó chúng tôi "
+"có thể nhìn thấy khuôn mặt của bạn. Bạn được phép tải ảnh đại diện có cả "
+"người khác lên. Không được tải ảnh khỏa thân, ảnh chụp bộ phận sinh dục (của "
+"nam hoặc nữ) hoặc ảnh cởi trần (của nam hoặc nữ)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3542,15 +3553,15 @@ msgstr "được lưu trữ"
 
 #: .\uploads\models.py:27
 msgid "file size"
-msgstr "kích thước tập tin"
+msgstr "kích thước tệp"
 
 #: .\uploads\models.py:36
 msgid "uploaded file"
-msgstr "tập tin đã tải lên"
+msgstr "tệp đã tải lên"
 
 #: .\uploads\models.py:37
 msgid "uploaded files"
-msgstr "tập tin đã tải lên"
+msgstr "các tệp đã tải lên"
 
 #: .\uploads\models.py:75
 msgid "visible on website"
@@ -3558,7 +3569,7 @@ msgstr "hiển thị trên trang web"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Thời gian kiểm duyệt hình ảnh nhanh chóng Speedy"
+msgstr "Thời gian kiểm duyệt hình ảnh nhanh chóng"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
@@ -3570,7 +3581,7 @@ msgstr "Thời gian phân tích khuôn mặt AWS"
 
 #: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
-msgstr "Kết quả kiểm duyệt hình ảnh thô AWS"
+msgstr "Kết quả kiểm duyệt hình ảnh thô của AWS"
 
 #: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"

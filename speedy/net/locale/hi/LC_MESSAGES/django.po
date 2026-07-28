@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "खाता हटाएं"
+msgstr "खाता हटा दो"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "खाता हटाएं"
+msgstr "खाता हटा दो"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "खाता हटाएं"
+msgstr "खाता हटा दो"
 
 #: .\__translations\__translations.py:6
 msgctxt "female"
@@ -38,10 +38,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं "
-"अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच "
-"खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो \"हाँ। मेरा "
-"एकाउंट हटा दो।\" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।"
+"क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
+"है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
+" और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -51,10 +51,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं "
-"अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच "
-"खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो \"हाँ। मेरा "
-"एकाउंट हटा दो।\" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।"
+"क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
+"है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
+" और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -64,28 +64,28 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं "
-"अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच "
-"खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो \"हाँ। मेरा "
-"एकाउंट हटा दो।\" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।"
+"क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
+"है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
+" और केस सेंसिटिव तरीके से।"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "अपना {site_name} खाता स्थायी रूप से हटाएं"
+msgstr "अपने को स्थायी रूप से हटा दें {site_name} खाता"
 
 #: .\__translations\__translations.py:11
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "अपना {site_name} खाता स्थायी रूप से हटाएं"
+msgstr "अपने को स्थायी रूप से हटा दें {site_name} खाता"
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "अपना {site_name} खाता स्थायी रूप से हटाएं"
+msgstr "अपने को स्थायी रूप से हटा दें {site_name} खाता"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -94,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"आपके Speedy Net स्पीडी नेट और स्प Speedy Match ीडी मैच खाते हटा दिए गए हैं। "
-"{site_name} का उपयोग करने के लिए धन्यवाद।"
+"आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
+"धन्यवाद। {site_name}."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -104,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"आपके Speedy Net स्पीडी नेट और स्प Speedy Match ीडी मैच खाते हटा दिए गए हैं। "
-"{site_name} का उपयोग करने के लिए धन्यवाद।"
+"आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
+"धन्यवाद। {site_name}."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -114,12 +114,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"आपके Speedy Net स्पीडी नेट और स्प Speedy Match ीडी मैच खाते हटा दिए गए हैं। "
-"{site_name} का उपयोग करने के लिए धन्यवाद।"
+"आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए "
+"धन्यवाद। {site_name}."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Speedy Net अकाउंट्स"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -132,10 +132,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं "
-"अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच "
-"खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो \"हाँ। मेरा "
-"एकाउंट हटा दो।\" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।"
+"क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय "
+"है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप "
+"निश्चित हैं, तो इस फ़ील्ड में \"हाँ। मेरा खाता हटा दें।\" लिखें, बिल्कुल सही"
+" और केस सेंसिटिव तरीके से।"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -144,7 +144,7 @@ msgstr "अवैध पासवर्ड।"
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
 msgid "Yes. Delete my account."
-msgstr "हाँ। मेरा एकाउंट हटा दो।"
+msgstr "हाँ। मेरा खाता हटा दें।"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
@@ -156,15 +156,15 @@ msgstr "उपयोगकर्ता"
 
 #: .\accounts\models.py:34
 msgid "Number of friends on last user's visit"
-msgstr "अंतिम उपयोगकर्ता की यात्रा पर मित्रों की संख्या"
+msgstr "पिछले उपयोगकर्ता के दौरे पर मित्रों की संख्या"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Speedy Net प्रोफ़ाइल"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Speedy Net प्रोफाइल"
 
 #: .\accounts\utils.py:23
 #, python-brace-format
@@ -174,10 +174,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"साइट पर सक्रिय सदस्यों की कुल संख्या "
-"{total_number_of_active_members_in_the_last_four_months} है, जिनमें से "
-"{total_number_of_active_members_in_the_last_week} सदस्यों ने पिछले सप्ताह "
-"साइट में प्रवेश किया है।"
+"साइट पर सक्रिय सदस्यों की कुल संख्या है "
+"{total_number_of_active_members_in_the_last_four_months}, जिसका कि "
+"{total_number_of_active_members_in_the_last_week} पिछले सप्ताह ही सदस्यों ने"
+" साइट पर प्रवेश किया।"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -185,7 +185,7 @@ msgstr "Speedy Net [अल्फा]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "स्पीडी न Speedy Net ेट के बारे में"
+msgstr "Speedy Net के बारे में"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -198,11 +198,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">स्पीडी न Speedy Net ेट</a> एक नया सोशल नेटवर्क है। स्पीड Speedy Net ी "
-"नेट से आप अपने दोस्तों से संवाद कर सकते Speedy Net हैं। स्पीडी नेट सभी देशों"
-" और उम्र के लोगों के लिए निःशुल्क पंजीकरण के लिए खुला है (कोई आयु सीमा "
-"नहीं!)। यह साइट शाकाहारी और शाकाहार के अनुकूल है। यह वर्तमान में "
-"%(languages_num)s भाषाओं में उपलब्ध है। Net"
+"Net\">स्पीडी नेट</a> Speedy Net एक नया सोशल नेटवर्क है। Speedy Net के ज़रिए "
+"आप अपने दोस्तों से बातचीत कर सकते हैं। Speedy Net पर सभी देशों और उम्र के "
+"लोग मुफ़्त में रजिस्टर कर सकते हैं (कोई उम्र सीमा नहीं!)। यह साइट शाकाहारी "
+"और वीगन लोगों के लिए भी उपयुक्त है। यह फिलहाल उपलब्ध है। %(languages_num)s "
+"भाषाएँ।"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -210,9 +210,9 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"स्पीडी नेट के संस् Speedy Net थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते"
-" हैं और जानवरों पर प्रयोगों पर आपत्त Speedy Net ि जताते हैं। स्पीडी नेट "
-"शाकाहारी और शाकाहारी लोगों और जानवरों के लिए अनुकूल एक सोशल नेटवर्क है।"
+"Speedy Net के संस्थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते हैं और "
+"जानवरों पर प्रयोगों का विरोध करते हैं। Speedy Net शाकाहारी लोगों और जानवरों "
+"के लिए एक अनुकूल सोशल नेटवर्क है।"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -222,12 +222,11 @@ msgid ""
 "friends and which details will be private. Private details will appear only "
 "to you."
 msgstr ""
-"हमने स्पीडी नेट पर मित्रों की संख्या 800 तक सीमित करने Speedy Net का निर्णय "
-"लिया है। हम आपको केवल उन्हीं लोगों को मित्र के रूप में जोड़ने के लिए "
-"प्रोत्साहित करते हैं जिन्हें आप व्यक्तिगत रूप से जानते हैं। आप यह चुन सकते "
-"हैं कि आपकी प्रोफ़ाइल पर कौन सा विवरण सार्वजनिक दिखाई देगा, कौन सा विवरण "
-"केवल मित्रों के लिए दिखाई देगा और कौन सा विवरण निजी होगा। निजी विवरण केवल "
-"आपको दिखाई देंगे."
+"हमने Speedy Net पर दोस्तों की संख्या 800 तक सीमित करने का निर्णय लिया है। हम"
+" आपको सलाह देते हैं कि आप केवल उन्हीं लोगों को मित्र बनाएं जिन्हें आप "
+"व्यक्तिगत रूप से जानते हैं। आप चुन सकते हैं कि आपकी प्रोफ़ाइल पर कौन सी "
+"जानकारी सार्वजनिक रूप से दिखाई देगी, कौन सी केवल मित्रों को और कौन सी निजी। "
+"निजी जानकारी केवल आपको ही दिखाई देगी।"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -237,10 +236,10 @@ msgid ""
 "Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
 "is open to singles of all ages."
 msgstr ""
-"डेटिंग के लिए मेल खाने वाले लोगों को ढूंढने के लिए आप हमारे नए ऐप, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" Speedy Match "
-"title=\"Speedy Match\">स्पीडी मैच</a> का उपयोग कर सकते हैं। स्पीडी मैच सभी "
-"उम्र के एकल लोगों के लिए खुला है। Speedy Match"
+"आप हमारे नए ऐप का उपयोग कर सकते हैं, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">त्वरित मैच</a> डेटिंग के लिए उपयुक्त लोगों को खोजने के लिए, Speedy "
+"Match सभी उम्र के सिंगल्स के लिए खुला है।"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -248,19 +247,18 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
 " title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"स्पीडी नेट और स्पीडी मैच Speedy Net पर सभी सुविधाएँ Speedy Match निःशुल्क "
-"हैं। दोस्तों Speedy Net को ढूंढने के लिए आज ही स्पीडी नेट से जुड़ें, इसमें "
-"केवल कुछ मिनट लगेंगे। <a href=\"/\" title=\"Join \">शामिल होने के लिए यहां "
-"क्लिक करें</a>।"
+"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Net से "
+"जुड़ें और दोस्त बनाएँ, इसमें बस कुछ ही मिनट लगते हैं। <a href=\"/\" "
+"title=\"Join Speedy Net\">यहाँ क्लिक करें</a> शामिल होना।"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net स्पीडी नेट एक निःशुल्क सॉफ्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि "
-"आप स्पीडी नेट के विकास और सुधार में सहायता करना चाहते हैं, तो कृपया मुझसे "
-"ईमेल द्वारा संपर्क करें।"
+"Speedy Net एक निःशुल्क सॉफ़्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि आप Speedy "
+"Net के विकास और सुधार में सहयोग करना चाहते हैं, तो कृपया मुझे ईमेल द्वारा "
+"संपर्क करें।"
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -269,17 +267,16 @@ msgid ""
 "title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
 "and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net स्पीडी नेट का नाम <a "
+"Speedy Net का नाम इसके बाद रखा गया है <a "
 "href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">स्पीडी</a> के नाम पर रखा गया है, एक मादा कुत्ता जो कई "
-"वर्षों तक हमारे साथ थी और 2003 में उसकी मृत्यु हो गई। स्पीडी ने 1988 में 7 "
-"पिल्लों को जन्म दिया।"
+"title=\"Speedy\">तीव्र</a> स्पीड़ी नाम की एक मादा कुतिया कई वर्षों तक हमारे "
+"साथ रही और 2003 में उसकी मृत्यु हो गई। स्पीड़ी ने 1988 में 7 पिल्लों को जन्म"
+" दिया था।"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
-"Speedy Net स्पीडी नेट फिलहाल अल्फा में है। इसे जून 2012 में लॉन्च किया गया "
-"था।"
+"Speedy Net फिलहाल अल्फा चरण में है। इसे जून 2012 में लॉन्च किया गया था।"
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -291,8 +288,7 @@ msgstr "उरी रोडबर्ग"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"स्पीडी नेट और स्पीडी मैच के Speedy Net संस्थापक और निदेशक, Speedy Match"
+msgstr "Speedy Net और Speedy Match के संस्थापक और निदेशक,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -305,7 +301,7 @@ msgstr "स्वागत"
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "%(site_name)s में आपका स्वागत है"
+msgstr "आपका स्वागत है %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
@@ -314,8 +310,8 @@ msgstr "अपने ईमेल पते की पुष्टि करे�
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस "
-"पृष्ठ को दर्ज करें."
+"आपका Speedy Net खाता सक्रिय नहीं है। इसे सक्रिय करने के लिए इस पृष्ठ पर "
+"जाएँ।"
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -323,15 +319,15 @@ msgstr "अवरुद्ध उपयोगकर्ता"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "खाता हटाएं"
+msgstr "खाता हटा दो"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "अभी तक आपका कोई मित्र नहीं है."
+msgstr "अभी तक आपके कोई दोस्त नहीं हैं।"
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "आपके मित्र"
+msgstr "आपके दोस्त"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -340,33 +336,33 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net स्पीडी नेट एक नया सोशल नेटवर्क है Speedy Net । स्पीडी नेट से आप "
-"अपने दोस्तों से संवाद कर Speedy Net सकते हैं। स्पीडी नेट सभी देशों और उम्र "
-"के लोगों के लिए निःशुल्क पंजीकरण के लिए खुला है (कोई आयु सीमा नहीं!)। यह "
-"साइट शाकाहारी और शाकाहार के अनुकूल है।"
+"Speedy Net एक नया सोशल नेटवर्क है। Speedy Net के ज़रिए आप अपने दोस्तों से "
+"बातचीत कर सकते हैं। Speedy Net पर सभी देशों और उम्र के लोग मुफ़्त में "
+"रजिस्टर कर सकते हैं (कोई उम्र सीमा नहीं!)। यह साइट शाकाहारी और वीगन लोगों के"
+" लिए भी उपयुक्त है।"
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"स्पीडी नेट और स्पीडी मै Speedy Net च पर सभी सुविधाएँ Speedy Match निःशुल्क "
-"हैं। दोस्तों Speedy Net को ढूंढने के लिए आज ही स्पीडी नेट से जुड़ें, इसमें "
-"केवल कुछ मिनट लगेंगे।"
+"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Net से "
+"जुड़ें और दोस्त बनाएँ, इसमें बस कुछ ही मिनट लगते हैं।"
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match स्पीडी मैच - डेटिंग स्पीडी Speedy"
+msgstr "Speedy Match – स्पीडी के साथ डेटिंग"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"एक प्रेमी की तलाश है? प्रेमिका ढूंढ रहा हूं? आओ और स्पीडी से मिलो! Speedy"
+"क्या आप बॉयफ्रेंड की तलाश में हैं? क्या आप गर्लफ्रेंड की तलाश में हैं? आइए "
+"और स्पीड़ी से मिलिए!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr "मुफ़्त ऑनलाइन डेटिंग"
+msgstr "मुफ्त ऑनलाइन डेटिंग"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
@@ -378,4 +374,4 @@ msgstr "आपके दोस्त"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "मित्रता अनुरोध भेजा गया"
+msgstr "मित्रता का अनुरोध भेजा गया"

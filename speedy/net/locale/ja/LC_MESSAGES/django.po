@@ -268,8 +268,7 @@ msgstr "ウリ・ロドベリ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"および の創設者兼ディレクター Speedy Net Speedy Match 、"
+msgstr "および の創設者兼ディレクター Speedy Net Speedy Match 、"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

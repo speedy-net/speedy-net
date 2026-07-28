@@ -199,9 +199,10 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> on uus suhtlusvõrgustik. Speedy Netiga saate suhelda "
-"oma sõpradega. Speedy Net on avatud Speedy Net tasuta registreerimiseks kõikides "
-"riikides ja vanuses inimestele (vanusepiiranguta!). Sait on vegan- ja "
-"taimetoitlastele sõbralik. See on praegu saadaval %(languages_num)s keeles."
+"oma sõpradega. Speedy Net on avatud Speedy Net tasuta registreerimiseks "
+"kõikides riikides ja vanuses inimestele (vanusepiiranguta!). Sait on vegan- "
+"ja taimetoitlastele sõbralik. See on praegu saadaval %(languages_num)s "
+"keeles."
 
 #: .\templates\about\about.html:19
 msgid ""

@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的。刪除我的帳戶。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Đúng. Xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναί. Διαγραφή του λογαριασμού μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।', 'ca': 'Sí. Suprimeix el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा एकाउंट हटा दो।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
+            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的，請刪除我的帳號。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Vâng. Hãy xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναι. Διαγράψτε τον λογαριασμό μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।', 'ca': 'Sí. Suprimeix el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा खाता हटा दें।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
 
             _delete_account_text_dict_by_gender = {
                 'en': {
@@ -114,7 +114,7 @@ if (django_settings.TESTS):
                     **{gender: 'Ștergeți contul' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'অ্যাকাউন্ট মুছুন' for gender in User.ALL_GENDERS},
+                    **{gender: 'অ্যাকাউন্ট মুছে ফেলুন' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: 'Suprimeix el compte' for gender in User.ALL_GENDERS},
@@ -132,7 +132,7 @@ if (django_settings.TESTS):
                     **{gender: 'Odstrániť účet' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'खाता हटाएं' for gender in User.ALL_GENDERS},
+                    **{gender: 'खाता हटा दो' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Kustuta konto' for gender in User.ALL_GENDERS},
@@ -171,7 +171,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы уверены, что хотите удалить свою учетную запись Speedy Net? Это навсегда и необратимо. Удаление вашей учетной записи Speedy Net также приведет к удалению вашей учетной записи Speedy Match. Если вы уверены, введите «Да. Удалить мою учетную запись.» в этом поле точно и с учетом регистра.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您確定要刪除您的 Speedy Net 帳戶嗎？這是永久且不可逆轉的。刪除您的 Speedy Net 帳戶也會刪除您的 Speedy Match 帳戶。如果您確定，請輸入「是的。刪除我的帳戶。」。在此欄位中，完全區分大小寫。' for gender in User.ALL_GENDERS},
+                    **{gender: '您確定要刪除您的 Speedy Net 帳戶嗎？此操作不可逆且永久。刪除 Speedy Net 帳戶也會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此輸入“是的，請刪除我的帳號。”，注意區分大小寫。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Czy na pewno chcesz usunąć swoje konto Speedy Net? Jest to trwałe i nieodwracalne. Usunięcie konta Speedy Net spowoduje również usunięcie konta Speedy Match. Jeśli jesteś pewien, wpisz „Tak. Usuń moje konto.” w tym polu, dokładnie i rozróżniana jest wielkość liter.' for gender in User.ALL_GENDERS},
@@ -200,7 +200,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Net hesabınızı silmek istediğinizden emin misiniz? Bu kalıcıdır ve geri döndürülemez. Speedy Net hesabınızı sildiğinizde Speedy Match hesabınız da silinir. Eminseniz "Evet. Hesabımı sil." yazın. bu alanda tam olarak ve büyük/küçük harfe duyarlıdır.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Điều này là vĩnh viễn và không thể đảo ngược. Xóa tài khoản Speedy Net của bạn cũng sẽ xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập "Đúng. Xóa tài khoản của tôi." trong lĩnh vực này, chính xác và phân biệt chữ hoa chữ thường.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn có chắc chắn muốn xóa tài khoản Speedy Net của mình không? Thao tác này là vĩnh viễn và không thể đảo ngược. Việc xóa tài khoản Speedy Net cũng sẽ xóa tài khoản Speedy Match của bạn. Nếu bạn chắc chắn, hãy nhập "Vâng. Hãy xóa tài khoản của tôi." vào ô này, chính xác và phân biệt chữ hoa chữ thường.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Opravdu chcete smazat svůj účet Speedy Net? To je trvalé a nevratné. Smazáním svého účtu Speedy Net smažete také svůj účet Speedy Match. Pokud jste si jisti, napište "Ano. Smazat můj účet." v této oblasti, přesně a velká a malá písmena.' for gender in User.ALL_GENDERS},
@@ -218,7 +218,7 @@ if (django_settings.TESTS):
                     **{gender: 'คุณแน่ใจหรือไม่ว่าต้องการลบบัญชี Speedy Net ของคุณ? นี่เป็นสิ่งที่ถาวรและไม่สามารถย้อนกลับได้ การลบบัญชี Speedy Net ของคุณจะเป็นการลบบัญชี Speedy Match ของคุณด้วย ถ้าคุณแน่ใจ พิมพ์ "ใช่. ลบบัญชีของฉัน" ในฟิลด์นี้ ทุกประการและคำนึงถึงตัวพิมพ์เล็กและตัวพิมพ์ใหญ่' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Είστε βέβαιοι ότι θέλετε να διαγράψετε τον λογαριασμό σας Speedy Net; Αυτό είναι μόνιμο και μη αναστρέψιμο. Η διαγραφή του λογαριασμού σας στο Speedy Net θα διαγράψει επίσης τον λογαριασμό σας στο Speedy Match. Εάν είστε σίγουροι, πληκτρολογήστε "Ναί. Διαγραφή του λογαριασμού μου.". σε αυτόν τον τομέα, ακριβώς και με διάκριση πεζών-κεφαλαίων.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα μικρά γράμματα.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun Speedy Match anda. Jika anda pasti, taip "Ya. Padam akaun saya." dalam bidang ini, tepat dan sensitif huruf besar.' for gender in User.ALL_GENDERS},
@@ -230,7 +230,7 @@ if (django_settings.TESTS):
                     **{gender: 'Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu.” în acest domeniu, exact și cu majuscule și minuscule.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি কি আপনার স্পিডি নেট অ্যাকাউন্ট মুছে Speedy Net ফেলার বিষয়ে নিশ্চিত? এটি স্থায়ী এবং অপরিবর্তনীয়। আপনার স্পিডি নেট Speedy Net অ্যাকাউন্ট মুছে দিলে আপনার স্পিডি ম্যাচ অ্যাকাউন্টও মুছে Speedy Match যাবে। আপনি যদি নিশ্চিত হন, টাইপ করুন "হ্যাঁ। আমার অ্যাকাউন্ট মুছে দিন।" এই ক্ষেত্রে, ঠিক এবং কেস সংবেদনশীল.' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি কি আপনার Speedy Net অ্যাকাউন্টটি মুছে ফেলতে নিশ্চিত? এটি স্থায়ী এবং অপরিবর্তনীয়। আপনার Speedy Net অ্যাকাউন্ট মুছে ফেললে আপনার Speedy Match অ্যাকাউন্টটিও মুছে যাবে। আপনি যদি নিশ্চিত হন, তবে এই ফিল্ডে হুবহু এবং বড় হাতের অক্ষরে "হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।" টাইপ করুন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el meu compte.” en aquest camp, exactament i sensible a les majúscules." for gender in User.ALL_GENDERS},
@@ -248,7 +248,7 @@ if (django_settings.TESTS):
                     **{gender: 'Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si istí, napíšte "Áno. Odstrániť môj účet." v tejto oblasti, presne a veľké a malé písmená.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'क्या आप वाकई अपना स्पीडी नेट खाता हटाना Speedy Net चाहते हैं? यह स्थायी एवं अपरिवर्तनीय है। आपके स्पीडी नेट खाते Speedy Net को हटाने से आपका स्पीडी मैच खाता भी नष्ट हो जाएगा। यद Speedy Match ि आप निश्चित हैं, तो "हाँ। मेरा एकाउंट हटा दो।" टाइप करें। इस क्षेत्र में, बिल्कुल और केस संवेदनशील।' for gender in User.ALL_GENDERS},
+                    **{gender: 'क्या आप वाकई अपना Speedy Net खाता हटाना चाहते हैं? यह स्थायी और अपरिवर्तनीय है। Speedy Net खाता हटाने से आपका Speedy Match खाता भी हट जाएगा। यदि आप निश्चित हैं, तो इस फ़ील्ड में "हाँ। मेरा खाता हटा दें।" लिखें, बिल्कुल सही और केस सेंसिटिव तरीके से।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy Matchi konto. Kui olete kindel, tippige "Jah. Kustuta minu konto." selles valdkonnas täpselt ja tõstutundlikult.' for gender in User.ALL_GENDERS},
@@ -287,7 +287,7 @@ if (django_settings.TESTS):
                     **{gender: 'Удалите навсегда свою учетную запись Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '永久刪除您的 Speedy Net 帳戶' for gender in User.ALL_GENDERS},
+                    **{gender: '永久刪除您的Speedy Net帳戶' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Usuń trwale swoje konto Speedy Net' for gender in User.ALL_GENDERS},
@@ -316,7 +316,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Net hesabınızı kalıcı olarak silin' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Xóa vĩnh viễn tài khoản Speedy Net của bạn' for gender in User.ALL_GENDERS},
+                    **{gender: 'Xóa vĩnh viễn của bạn Speedy Net tài khoản' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Trvale smažte svůj účet Speedy Net' for gender in User.ALL_GENDERS},
@@ -334,7 +334,7 @@ if (django_settings.TESTS):
                     **{gender: 'ลบบัญชี Speedy Net ของคุณอย่างถาวร' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Διαγράψτε οριστικά τον λογαριασμό Speedy Net σας' for gender in User.ALL_GENDERS},
+                    **{gender: 'Οριστική διαγραφή του λογαριασμού σας στο Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Padamkan akaun Speedy Net anda secara kekal' for gender in User.ALL_GENDERS},
@@ -346,7 +346,7 @@ if (django_settings.TESTS):
                     **{gender: 'Ștergeți definitiv contul dvs. Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'স্থায়ীভাবে আপনার Speedy Net অ্যাকাউন্ট মুছে দিন' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনার স্থায়ীভাবে মুছে ফেলুন Speedy Net অ্যাকাউন্ট' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: 'Suprimeix permanentment el teu compte Speedy Net' for gender in User.ALL_GENDERS},
@@ -364,7 +364,7 @@ if (django_settings.TESTS):
                     **{gender: 'Natrvalo odstráňte svoj účet Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'अपना Speedy Net खाता स्थायी रूप से हटाएं' for gender in User.ALL_GENDERS},
+                    **{gender: 'अपने को स्थायी रूप से हटा दें Speedy Net खाता' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Kustutage jäädavalt oma Speedy Net konto' for gender in User.ALL_GENDERS},
@@ -403,7 +403,7 @@ if (django_settings.TESTS):
                     **{gender: 'Ваши учетные записи Speedy Net и Speedy Match были удалены. Благодарим вас за использование Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您的 Speedy Net Speedy Match 和 帳戶已被刪除。感謝您使用 Speedy Net。' for gender in User.ALL_GENDERS},
+                    **{gender: '您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您的使用。Speedy Net。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Twoje Speedy Net konta Speedy Match i zostały usunięte. Dziękujemy za skorzystanie z Speedy Net.' for gender in User.ALL_GENDERS},
@@ -430,7 +430,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Net ve Speedy Match hesaplarınız silinmiştir. Speedy Net kullandığınız için teşekkür ederiz.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Tài Speedy Net khoản Speedy Match và của bạn đã bị xóa. Cảm ơn bạn đã sử dụng Speedy Net.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Tài khoản Speedy Net và Speedy Match của bạn đã bị xóa. Cảm ơn bạn đã sử dụng dịch vụ. Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Vaše Speedy Net účty Speedy Match a byly smazány. Děkujeme, že používáte Speedy Net.' for gender in User.ALL_GENDERS},
@@ -448,7 +448,7 @@ if (django_settings.TESTS):
                     **{gender: 'บัญช Speedy Net Speedy Match ี และ ของคุณถูกลบแล้ว ขอบคุณที่ใช้ Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν διαγραφεί. Σας ευχαριστούμε που χρησιμοποιείτε το Speedy Net.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας ευχαριστούμε που χρησιμοποιήσατε το Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Akaun Speedy Net dan Speedy Match anda telah dipadamkan. Terima kasih kerana menggunakan Speedy Net.' for gender in User.ALL_GENDERS},
@@ -460,7 +460,7 @@ if (django_settings.TESTS):
                     **{gender: 'Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că folosiți Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনার Speedy Net স্পিডি নেট এবং স্পি Speedy Match ডি ম্যাচ অ্যাকাউন্ট মুছে ফেলা হয়েছে। Speedy Net ব্যবহার করার জন্য আপনাকে ধন্যবাদ।' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো মুছে ফেলা হয়েছে। ব্যবহার করার জন্য ধন্যবাদ। Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: 'S\'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per utilitzar Speedy Net.' for gender in User.ALL_GENDERS},
@@ -478,7 +478,7 @@ if (django_settings.TESTS):
                     **{gender: 'Vaše Speedy Net účty Speedy Match a boli odstránené. Ďakujeme, že používate Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपके Speedy Net स्पीडी नेट और स्प Speedy Match ीडी मैच खाते हटा दिए गए हैं। Speedy Net का उपयोग करने के लिए धन्यवाद।' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपके Speedy Net और Speedy Match खाते हटा दिए गए हैं। उपयोग करने के लिए धन्यवाद। Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Teie Speedy Net ja Speedy Match kontod on kustutatud. Täname teid teenuse Speedy Net kasutamise eest.' for gender in User.ALL_GENDERS},
