@@ -114,7 +114,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Speedy Net 계정"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -142,7 +142,7 @@ msgstr "네. 내 계정을 삭제하세요."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net 사용자"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -154,11 +154,11 @@ msgstr "최근 사용자 방문에서 친구의 수"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Speedy Net 프로필"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Speedy Net 프로필"
 
 #: .\accounts\utils.py:23
 #, python-brace-format

@@ -607,7 +607,7 @@ msgstr "Jantina untuk dipadankan"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match User"
+msgstr "Pengguna Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"

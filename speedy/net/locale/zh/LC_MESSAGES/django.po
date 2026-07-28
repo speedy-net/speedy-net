@@ -107,7 +107,7 @@ msgstr "您的 Speedy Net 和 Speedy Match 帳戶已被刪除。感謝您的使�
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Speedy Net 帳戶"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -134,7 +134,7 @@ msgstr "是的，請刪除我的帳號。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net 用户"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -150,7 +150,7 @@ msgstr "Speedy Net Profile"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "快Speedy Net 路個人資料"
 
 #: .\accounts\utils.py:23
 #, python-brace-format

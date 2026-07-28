@@ -511,7 +511,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Speedy Match-konton"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -608,7 +608,7 @@ msgstr "Kön att matcha"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match User"
+msgstr "Speedy Match Användare"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -707,11 +707,11 @@ msgstr "Antal träffar på den senaste användarens sökning"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Speedy Match-profil"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Speedy Match-profiler"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1054,7 +1054,7 @@ msgstr "Ömsesidiga gillanden"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Speedy Match matchningar"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."

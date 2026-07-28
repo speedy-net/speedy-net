@@ -149,7 +149,7 @@ msgstr "Ja. Verwijder mijn account."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net Gebruiker"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -161,11 +161,11 @@ msgstr "Aantal vrienden tijdens laatste bezoek van de gebruiker"
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Speedy Net Profiel"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Speedy Net Profielen"
 
 #: .\accounts\utils.py:23
 #, python-brace-format

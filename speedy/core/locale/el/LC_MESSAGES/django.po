@@ -3092,7 +3092,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Blog του Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"

@@ -2935,7 +2935,7 @@ msgstr "이메일 주소를 확인하지 않았습니다. 받은 편지함을 �
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net 블로그"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"

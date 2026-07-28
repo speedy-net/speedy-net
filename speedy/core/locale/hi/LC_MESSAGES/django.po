@@ -3037,7 +3037,7 @@ msgstr "आपने अपना ईमेल पता सत्यापि�
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net ब्लॉग"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"

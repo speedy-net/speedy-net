@@ -141,7 +141,7 @@ msgstr "はい。アカウントを削除してください。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net ユーザー"
 
 #: .\accounts\models.py:32
 msgid "User"

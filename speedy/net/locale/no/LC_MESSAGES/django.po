@@ -148,7 +148,7 @@ msgstr "Ja. Slett kontoen min."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net Bruker"
 
 #: .\accounts\models.py:32
 msgid "User"

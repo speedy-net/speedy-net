@@ -508,7 +508,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Cuentas Speedy Match"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -605,7 +605,7 @@ msgstr "Género para coincidencia"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match User"
+msgstr "Usuario de Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -704,11 +704,11 @@ msgstr "Número de coincidencias en la última búsqueda del usuario"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Perfil de Speedy Match"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Perfiles de Speedy Match"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1054,7 +1054,7 @@ msgstr "Me gusta mutuos"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Coincidencias Speedy Match"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."

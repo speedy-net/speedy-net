@@ -496,7 +496,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Speedy Match 계정"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -593,7 +593,7 @@ msgstr "매치 성별"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match User"
+msgstr "Speedy Match 사용자"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -692,11 +692,11 @@ msgstr "최근 사용자 검색에서 매치의 수"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Speedy Match 프로필"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Speedy Match 프로필"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1035,7 +1035,7 @@ msgstr "상호 좋아요"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Speedy Match 의 매치"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."

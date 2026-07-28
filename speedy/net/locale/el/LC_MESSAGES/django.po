@@ -125,7 +125,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Λογαριασμοί Speedy Net"
 
 #: .\accounts\forms.py:18
 msgid "Your password"
@@ -156,7 +156,7 @@ msgstr "Ναι. Διαγράψτε τον λογαριασμό μου."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Χρήστης Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -168,11 +168,11 @@ msgstr "Αριθμός φίλων κατά την τελευταία επίσκ�
 
 #: .\accounts\models.py:50
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Προφίλ της Speedy Net"
 
 #: .\accounts\models.py:51
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Προφίλ Speedy Net"
 
 #: .\accounts\utils.py:23
 #, python-brace-format

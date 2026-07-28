@@ -148,7 +148,7 @@ msgstr "Да. Удалить мою учетную запись."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Speedy Net Пользователь"
 
 #: .\accounts\models.py:32
 msgid "User"

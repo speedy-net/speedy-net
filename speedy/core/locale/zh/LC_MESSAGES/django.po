@@ -2865,7 +2865,7 @@ msgstr "您尚未驗證您的電子郵件地址。請檢查您的收件匣。"
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net 博客"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"

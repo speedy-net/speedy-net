@@ -148,7 +148,7 @@ msgstr "Áno. Odstrániť môj účet."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net User"
+msgstr "Používateľ Speedy Net"
 
 #: .\accounts\models.py:32
 msgid "User"
