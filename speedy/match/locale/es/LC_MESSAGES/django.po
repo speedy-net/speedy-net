@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-28 15:16+0300\n"
+"PO-Revision-Date: 2026-07-28 13:59+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es_ES\n"
@@ -67,8 +67,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
-"búsqueda o vuelve a comprobar más tarde."
+"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -76,8 +75,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
-"búsqueda o vuelve a comprobar más tarde."
+"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -85,8 +83,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
-"búsqueda o vuelve a comprobar más tarde."
+"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -151,7 +148,7 @@ msgstr "Tus coincidencias"
 #: .\__translations\__translations.html:38
 msgctxt "female"
 msgid "Friends"
-msgstr "Amigas"
+msgstr "Amigos"
 
 #: .\__translations\__translations.html:39
 msgctxt "male"
@@ -166,7 +163,7 @@ msgstr "Amigos"
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr "Tus amigas"
+msgstr "Tus amigos"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
@@ -181,7 +178,7 @@ msgstr "Tus amigos"
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "Aún no tienes amigas."
+msgstr "Aún no tienes amigos."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
@@ -242,19 +239,19 @@ msgstr "Género para coincidencia"
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Le gustas a alguien %(site_name)s"
+msgstr "A alguien le gustas en %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Le gustas a alguien %(site_name)s"
+msgstr "A alguien le gustas en %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Le gustas a alguien %(site_name)s"
+msgstr "A alguien le gustas en %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -473,10 +470,10 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Lo sentimos, pero no estás autorizada a utilizar el sitio web {site_name}. "
-"Hemos descubierto que parte de la información que proporcionaste al "
-"registrarte en el sitio es incorrecta o que has violado las reglas de uso "
-"del sitio. Por lo tanto no estás autorizada a utilizar el sitio."
+"Lo sentimos, pero no estás autorizado a utilizar la página web {site_name}. "
+"Hemos detectado que parte de la información que facilitaste al registrarte "
+"en la página es incorrecta o que has incumplido las normas de uso de la "
+"misma. Por lo tanto, no estás autorizado a utilizar la página."
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
@@ -487,10 +484,10 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Lo sentimos, pero no estás autorizado a utilizar el sitio web {site_name}. "
-"Hemos descubierto que parte de la información que proporcionaste al "
-"registrarte en el sitio es incorrecta o que has violado las reglas de uso "
-"del sitio. Por lo tanto no estás autorizado a utilizar el sitio."
+"Lo sentimos, pero no estás autorizado a utilizar la página web {site_name}. "
+"Hemos detectado que parte de la información que facilitaste al registrarte "
+"en la página es incorrecta o que has incumplido las normas de uso de la "
+"misma. Por lo tanto, no estás autorizado a utilizar la página."
 
 #: .\__translations\__translations.py:47
 #, python-brace-format
@@ -501,10 +498,10 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Lo sentimos, pero no estás autorizado a utilizar el sitio web {site_name}. "
-"Hemos descubierto que parte de la información que proporcionaste al "
-"registrarte en el sitio es incorrecta o que has violado las reglas de uso "
-"del sitio. Por lo tanto no estás autorizado a utilizar el sitio."
+"Lo sentimos, pero no estás autorizado a utilizar la página web {site_name}. "
+"Hemos detectado que parte de la información que facilitaste al registrarte "
+"en la página es incorrecta o que has incumplido las normas de uso de la "
+"misma. Por lo tanto, no estás autorizado a utilizar la página."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
@@ -737,7 +734,7 @@ msgstr "La edad mínima para coincidir debe ser de 0 a 180 años."
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "La edad máxima para coincidir debe ser de 0 a 180 años."
+msgstr "La edad mínima para coincidir debe ser de 0 a 180 años."
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
@@ -813,7 +810,7 @@ msgid ""
 msgstr ""
 "Admin: el número total de miembros activos en el sitio es "
 "{total_number_of_active_members} ({total_number_of_female_active_members} "
-"mujeres, {total_number_of_male_active_members} hombres, "
+"mujeres,  {total_number_of_male_active_members} hombres, "
 "{total_number_of_other_active_members} otros; "
 "{total_percent_of_female_active_members} mujeres, "
 "{total_percent_of_male_active_members} hombres, "
@@ -845,7 +842,7 @@ msgstr ""
 "{total_number_of_active_members_in_the_last_eight_months} miembros activos "
 "({total_number_of_female_active_members_in_the_last_eight_months} mujeres, "
 "{total_number_of_male_active_members_in_the_last_eight_months} hombres, "
-"{total_number_of_other_active_members_in_the_last_eight_months} otros; "
+"{total_number_of_other_active_members_in_the_last_eight_months}otros; "
 "{total_percent_of_female_active_members_in_the_last_eight_months} mujeres, "
 "{total_percent_of_male_active_members_in_the_last_eight_months} hombres, "
 "{total_percent_of_other_active_members_in_the_last_eight_months} otros) "
@@ -947,7 +944,8 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "others) entered the site in the last eight months."
 msgstr ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"Administrador: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
 "mujeres, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
@@ -978,7 +976,8 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) entered the site in the last four months."
 msgstr ""
-"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"Administrador: "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
 "mujeres, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
@@ -1131,8 +1130,8 @@ msgid ""
 msgstr ""
 "Todas las funciones de Speedy Net y Speedy Match son gratuitas. Únete a "
 "Speedy Match hoy para encontrar parejas compatibles, solo te llevará unos "
-"minutos. <a href=\"/\" title=\"Unirse a Speedy Match\">Haz clic aquí</a> "
-"para unirte."
+"minutos. <a href=\"/\" title=\"Join Speedy Match\">Haz clic aquí</a> para "
+"unirte."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1159,8 +1158,8 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match se encuentra actualmente en alfa. Fue lanzado en agosto de "
-"2019. La versión en inglés de Speedy Match está en producción."
+"Speedy Match se encuentra actualmente en fase alfa. Se lanzó en agosto de "
+"2019. La versión en inglés de Speedy Match está en fase de desarrollo."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1268,7 +1267,7 @@ msgstr ""
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Le gustas a alguien %(site_name)s"
+msgstr "A alguien le gustas en %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -1339,8 +1338,7 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Todavía no tienes coincidencias. Intenta ampliar tu configuración de "
-"búsqueda o vuelve a comprobar más tarde."
+"Intenta ampliar tu configuración de búsqueda o vuelve a comprobar más tarde."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
@@ -1392,11 +1390,11 @@ msgstr "¿Donde vivo?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Condición de fumador"
+msgstr "Hábitos de tabaquismo"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "Estado de relación"
+msgstr "Estado civil"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 18:07+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-28 15:16+0300\n"
+"PO-Revision-Date: 2026-07-28 13:59+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de_DE\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "Ihr Freund/Ihre Freundin"
+msgstr "Ihr Freund"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
@@ -213,17 +213,17 @@ msgstr "Passwort ändern"
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
@@ -243,7 +243,7 @@ msgstr "Sie sperren niemanden."
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "Einen Benutzer melden"
+msgstr "Sie sperren niemanden."
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
@@ -757,19 +757,19 @@ msgstr "Lesen Sie sie:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse unter %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse unter %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse unter %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -866,7 +866,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Bitte gültige E-Mail-Adresse eingeben."
+msgstr "Geben Sie eine gültige E-Mail-Adresse ein."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -874,11 +874,11 @@ msgstr "E-Mail-Adresse"
 
 #: .\__translations\__translations.py:9 .\accounts\models.py:1293
 msgid "email address"
-msgstr "e-mail-adresse"
+msgstr "E-Mail-Adresse"
 
 #: .\__translations\__translations.py:10
 msgid "Email address:"
-msgstr "E-Mail-Adresse:"
+msgstr "E-Mail-Adresse"
 
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
@@ -887,7 +887,7 @@ msgstr "E-Mail"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Wert muss gültiges JSON sein."
+msgstr "Wert muss eine gültige JSON sein."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -895,8 +895,9 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Bitte %(username)s und Passwort eingeben. Beide Felder berücksichtigen die "
-"Groß-/Kleinschreibung."
+"Bitte geben Sie den korrekten %(username)s und das  korrekte Passwort ein. "
+"Beachten Sie, dass beide Felder zwischen Groß- und Kleinschreibung "
+"unterscheiden."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -912,11 +913,11 @@ msgstr "Freundschaftsanfragen gesendet"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr "Freund/Freundin"
+msgstr "Freund"
 
 #: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
-msgstr "Freunde/Freundinnen"
+msgstr "Freunde"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
@@ -943,10 +944,10 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Liste enthält %(show_value)d Element, es sollte aber nicht mehr als "
-"%(limit_value)d enthalten."
+"Die Liste enthält den Eintrag „ %(show_value)d “; sie sollte jedoch nicht "
+"mehr als „ %(limit_value)d “ enthalten."
 msgstr[1] ""
-"Liste enthält %(show_value)d Elemente, es sollte aber nicht mehr als "
+"Die Liste enthält %(show_value)d Elemente; sie sollte jedoch nicht mehr als "
 "%(limit_value)d enthalten."
 
 #: .\__translations\__translations.py:41
@@ -1113,12 +1114,12 @@ msgstr "Veganerin (isst nur Pflanzen und Pilze)"
 #: .\__translations\__translations.py:82
 msgctxt "male"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganer (isst nur Pflanzen und Pilze)"
+msgstr "Veganerin (isst nur Pflanzen und Pilze)"
 
 #: .\__translations\__translations.py:83
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganer (isst nur Pflanzen und Pilze)"
+msgstr "Veganerin (isst nur Pflanzen und Pilze)"
 
 #: .\__translations\__translations.py:85
 msgctxt "female"
@@ -1143,12 +1144,12 @@ msgstr "Carnistin (isst Tiere)"
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (isst Tiere)"
+msgstr "Carnistin (isst Tiere)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (isst Tiere)"
+msgstr "Carnistin (isst Tiere)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
@@ -1158,17 +1159,17 @@ msgstr "Veganerin"
 #: .\__translations\__translations.py:94
 msgctxt "male"
 msgid "Vegan"
-msgstr "Veganer"
+msgstr "Veganerin"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
 msgid "Vegan"
-msgstr "Veganer"
+msgstr "Veganerin"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
 msgid "Vegetarian"
-msgstr "Vegetarierin"
+msgstr "Vegetarier"
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
@@ -1183,22 +1184,22 @@ msgstr "Vegetarier"
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Carnist"
-msgstr "Carnistin"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr "Karnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr "Karnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Nichtraucherin"
+msgstr "Nichtraucher"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
@@ -1213,7 +1214,7 @@ msgstr "Nichtraucher"
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Gelegenheitsraucherin"
+msgstr "Gelegenheitsraucher"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
@@ -1228,7 +1229,7 @@ msgstr "Gelegenheitsraucher"
 #: .\__translations\__translations.py:113
 msgctxt "female"
 msgid "Smoking"
-msgstr "Raucherin"
+msgstr "Raucher"
 
 #: .\__translations\__translations.py:114
 msgctxt "male"
@@ -1243,17 +1244,17 @@ msgstr "Raucher"
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr "Ledig"
+msgstr "Single"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Ledig"
+msgstr "Single"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Ledig"
+msgstr "Single"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
@@ -1510,7 +1511,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Sie haben bereits {0} Freunde. Auf Speedy Net können Sie nicht mehr als {1} "
-"Freunde haben. Bitte entfernen Sie Freunde, bevor Sie weitermachen."
+"Freundinnen haben. Bitte entfernen Sie Freundinnen, bevor Sie weitermachen."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1669,7 +1670,7 @@ msgstr "Dieser Benutzer hat bereits um Ihre Freundschaft gebeten."
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Sie sind mit dieser Benutzerin bereits befreundet."
+msgstr "Sie sind mit diesem Benutzer bereits befreundet."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
@@ -1694,7 +1695,7 @@ msgstr "Sie sind mit diesem Benutzer bereits befreundet."
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Sie sind mit dieser Benutzerin bereits befreundet."
+msgstr "Sie sind mit diesem Benutzer bereits befreundet."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
@@ -1790,7 +1791,7 @@ msgstr "Freunde"
 #: .\__translations\__translations.py:231
 msgctxt "other"
 msgid "Friends"
-msgstr "Freunde/Freundinnen"
+msgstr "Freunde"
 
 #: .\__translations\__translations.py:233
 msgctxt "female"
@@ -1846,8 +1847,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Diese Benutzerin passt nicht zu Ihrem Profil, aber Sie können ihr Speedy Net-"
-"Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
+"Dieser Benutzer passt nicht zu Ihrem Profil, aber Sie können dessen Speedy "
+"Net-Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1873,8 +1874,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Diese Benutzerin passt nicht zu Ihrem Profil, aber Sie können ihr Speedy Net-"
-"Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
+"Dieser Benutzer passt nicht zu Ihrem Profil, aber Sie können dessen Speedy "
+"Net-Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1900,8 +1901,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Diese Benutzerin passt nicht zu Ihrem Profil, aber Sie können ihr Speedy Net-"
-"Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
+"Dieser Benutzer passt nicht zu Ihrem Profil, aber Sie können dessen Speedy "
+"Net-Profil besuchen. Siehe Benutzerprofil auf Speedy Net."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -2054,7 +2055,7 @@ msgstr "Slug wird nicht in Benutzername umgewandelt."
 
 #: .\accounts\models.py:253
 msgid "Username is required."
-msgstr "Benutzername ist erforderlich."
+msgstr "Benutzername ist erforderlich"
 
 #: .\accounts\models.py:298
 msgid "name"
@@ -2083,7 +2084,7 @@ msgstr "Unbekannt"
 
 #: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganer (isst nur Pflanzen und Pilze)"
+msgstr "Veganerin (isst nur Pflanzen und Pilze)"
 
 #: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
@@ -2091,7 +2092,7 @@ msgstr "Vegetarier (isst weder Fisch noch Fleisch)"
 
 #: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
-msgstr "Carnist (isst Tiere)"
+msgstr "Carnistin (isst Tiere)"
 
 #: .\accounts\models.py:504
 msgid "Not smoking"
@@ -2107,7 +2108,7 @@ msgstr "Raucher"
 
 #: .\accounts\models.py:525
 msgid "Single"
-msgstr "Ledig"
+msgstr "Single"
 
 #: .\accounts\models.py:526
 msgid "Divorced"
@@ -2215,7 +2216,7 @@ msgstr "Superbenutzer muss dem Personal entsprechen"
 
 #: .\accounts\models.py:1278
 msgid "email"
-msgstr "e-mail"
+msgstr "E-Mail"
 
 #: .\accounts\models.py:1279
 msgid "is confirmed"
@@ -2239,7 +2240,7 @@ msgstr "Wer kann diese E-Mail sehen"
 
 #: .\accounts\models.py:1294
 msgid "email addresses"
-msgstr "e-mail-adressen"
+msgstr "E-Mail-Adressen"
 
 #: .\accounts\models.py:1377
 msgid "User"
@@ -2293,10 +2294,10 @@ msgid_plural ""
 "has %(show_value)d)."
 msgstr[0] ""
 "Der Benutzername muss mindestens %(limit_value)d alphanumerisches Zeichen "
-"(er hat %(show_value)d) enthalten."
+"(it has %(show_value)d) enthalten."
 msgstr[1] ""
-"Der Benutzername muss mindestens %(limit_value)d alphanumerische Zeichen (er "
-"hat %(show_value)d) enthalten."
+"Der Benutzername muss mindestens %(limit_value)d alphanumerische Zeichen (it "
+"has %(show_value)d) enthalten."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2307,11 +2308,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Der Benutzername darf höchstens %(limit_value)d alphanumerisches Zeichen (er "
-"hat %(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d alphanumerisches Zeichen (it "
+"has %(show_value)d) enthalten."
 msgstr[1] ""
-"Der Benutzername darf höchstens %(limit_value)d alphanumerische Zeichen (er "
-"hat %(show_value)d) enthalten."
+"Der Benutzername darf höchstens %(limit_value)d alphanumerische Zeichen (it "
+"has %(show_value)d) enthalten."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2322,10 +2323,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Der Benutzername muss mindestens %(limit_value)d Zeichen (er hat "
+"Der Benutzername muss mindestens %(limit_value)d Zeichen (it has "
 "%(show_value)d) enthalten."
 msgstr[1] ""
-"Der Benutzername muss mindestens %(limit_value)d Zeichen (er hat "
+"Der Benutzername muss mindestens %(limit_value)d Zeichen (it has "
 "%(show_value)d) enthalten."
 
 #: .\accounts\validators.py:80
@@ -2337,7 +2338,7 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Der Benutzername darf höchstens %(limit_value)d Zeichen (er hat "
+"Der Benutzername darf höchstens %(limit_value)d Zeichen (it has "
 "%(show_value)d) enthalten."
 msgstr[1] ""
 "Der Benutzername darf höchstens %(limit_value)d Zeichen (er hat "
@@ -2362,8 +2363,8 @@ msgstr[1] ""
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Das Passwort muss mindestens %(min_length)d Zeichen enthalten."
-msgstr[1] "Das Passwort muss mindestens %(min_length)d Zeichen enthalten."
+msgstr[0] "Ihr Passwort muss mindestens %(min_length)d es Zeichen enthalten."
+msgstr[1] "Ihr Passwort muss mindestens %(min_length)d Zeichen enthalten."
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2396,15 +2397,15 @@ msgstr ""
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
-msgstr "Dieses Feld darf nicht null sein."
+msgstr "Dieses Feld kann nicht null sein."
 
 #: .\accounts\validators.py:214
 msgid "This field cannot be blank."
-msgstr "Dieses Feld darf nicht leer sein."
+msgstr "Dieses Feld kann nicht leer sein."
 
 #: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
-msgstr "Bitte ein gültiges Datum eingeben."
+msgstr "Geben Sie ein gültiges Datum ein."
 
 #: .\accounts\validators.py:246
 msgid "This email is already in use."
@@ -2426,7 +2427,7 @@ msgstr ""
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
-msgstr "Ungültiger Bestätigungslink."
+msgstr "Ungültiger Bestätigungslink"
 
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
@@ -2517,7 +2518,7 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Basis-App"
+msgstr "Speedy Core Base App"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2578,11 +2579,11 @@ msgstr "Bitte kontaktieren Sie uns per E-Mail."
 
 #: .\contact_by_form\forms.py:53
 msgid "Not 17."
-msgstr "Nicht 17."
+msgstr "Nicht 17"
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "Rückmeldung"
+msgstr "Feedback"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
@@ -2602,7 +2603,7 @@ msgstr "Ihr Name"
 
 #: .\contact_by_form\models.py:40
 msgid "your email"
-msgstr "Ihre E-Mail"
+msgstr "Ihre E-Mail-Adresse"
 
 #: .\contact_by_form\models.py:41
 msgid "type"
@@ -2622,11 +2623,11 @@ msgstr "gemeldetes Foto"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "Rückmeldung"
+msgstr "Feedback"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "Rückmeldungen"
+msgstr "Feedbacks"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
@@ -2704,11 +2705,11 @@ msgstr "Lesezeichen"
 msgid "read marks"
 msgstr "Lesezeichen"
 
-#: .\settings\base.py:193
+#: .\settings\base.py:194
 msgid "English"
 msgstr "Englisch"
 
-#: .\settings\base.py:194
+#: .\settings\base.py:195
 msgid "Hebrew"
 msgstr "Hebräisch"
 
@@ -2738,7 +2739,7 @@ msgstr "Niederländisch"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
-msgstr "japanisch"
+msgstr "Japanisch"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
@@ -2746,15 +2747,15 @@ msgstr "Russisch"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "chinesisch"
+msgstr "Chinesisch"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "Polieren"
+msgstr "Polnisch"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "persisch"
+msgstr "Persisch"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
@@ -2770,7 +2771,7 @@ msgstr "Indonesisch"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr "ukrainisch"
+msgstr "Ukrainisch"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
@@ -2782,7 +2783,7 @@ msgstr "Vietnamesisch"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr "tschechisch"
+msgstr "Tschechisch"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
@@ -2794,7 +2795,7 @@ msgstr "Finnisch"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "ungarisch"
+msgstr "Ungarisch"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
@@ -2802,27 +2803,27 @@ msgstr "Thailändisch"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr "griechisch"
+msgstr "Griechisch"
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr "malaiisch"
+msgstr "Malaiisch"
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr "serbisch"
+msgstr "Serbisch"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "rumänisch"
+msgstr "Rumänisch"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
-msgstr "Bengali"
+msgstr "Bengalisch"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr "katalanisch"
+msgstr "Katalanisch"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
@@ -2830,15 +2831,15 @@ msgstr "Norwegisch (Bokmål)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr "bulgarisch"
+msgstr "Bulgarisch"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr "dänisch"
+msgstr "Dänisch"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "slowakisch"
+msgstr "Slowakisch"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
@@ -2846,11 +2847,11 @@ msgstr "Hindi"
 
 #: .\settings\base_with_login.py:101
 msgid "Estonian"
-msgstr "estnisch"
+msgstr "Estnisch"
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr "kroatisch"
+msgstr "Kroatisch"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2975,7 +2976,7 @@ msgstr "Ihr Alter wird für Ihre Matches auf Speedy Match sichtbar sein"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern."
+msgstr "Datenschutzeinstellungen der E-Mail-Adressen auf Ihrem Profil ändern"
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
@@ -3020,7 +3021,7 @@ msgstr "Admin - Freunde"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
-msgstr "Freunde/Freundinnen"
+msgstr "Freunde"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
@@ -3040,7 +3041,7 @@ msgstr "Keine Benutzer"
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "Diese Seite befindet sich im Aufbau"
+msgstr "Diese Website befindet sich derzeit im Aufbau."
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3079,7 +3080,7 @@ msgstr "Abmelden"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Startseite"
+msgstr "Home"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3103,7 +3104,7 @@ msgstr "Speedy Match Shop"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "Speedy S-Logo Shop"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3163,7 +3164,7 @@ msgstr ""
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, Gründer und Webmaster:"
+msgstr "Uri Rodberg, Gründer und Webmaster"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
@@ -3199,7 +3200,7 @@ msgstr "Verwenden Sie diesen Link, um Ihr Konto zu aktivieren:"
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Bestätigen Sie Ihre E-Mail-Adresse auf %(site_name)s"
+msgstr "Bestätigen Sie Ihre E-Mail-Adresse unter %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3212,7 +3213,7 @@ msgstr "Verwenden Sie diesen Link, um Ihr Passwort zu ändern:"
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Passwort auf %(site_name)s zurücksetzen"
+msgstr "Passwort zurücksetzen auf %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3235,7 +3236,7 @@ msgstr ""
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "Sie haben eine neue Mitteilung erhalten auf %(site_name)s"
+msgstr "Sie haben eine neue Nachricht auf %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
@@ -3320,14 +3321,14 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Ihr Profil auf Speedy Net ist für jeden sichtbar, aber Sie können wählen, "
-"wem Sie Ihre E-Mail-Adresse und Ihr Geburtsdatum mitteilen möchten. Falls "
-"Sie sich bei Speedy Match angemeldet haben, ist Ihr Speedy Match-Profil nur "
-"für Menschen sichtbar, die mit Ihnen gemäß den Einstellungen, die Sie auf "
-"der Website vorgenommen haben, übereinstimmen, und mit denen Sie gemäß deren "
-"Einstellungen übereinstimmen. Ihr Profil bei Speedy Match wird nicht bei "
-"Google angezeigt und ist für Personen, die nicht auf der Website registriert "
-"sind, nicht sichtbar."
+"Ihr Profil auf Speedy Net ist für alle sichtbar, Sie können jedoch selbst "
+"entscheiden, wem Sie Ihre E-Mail-Adresse und Ihr Geburtsdatum mitteilen "
+"möchten. Wenn Sie sich bei Speedy Match angemeldet haben, ist Ihr Speedy-"
+"Match-Profil nur für Personen sichtbar, die gemäß den von Ihnen auf der "
+"Website festgelegten Einstellungen zu Ihnen passen und bei denen dies "
+"aufgrund ihrer Einstellungen ebenfalls der Fall ist. Ihr Profil auf Speedy "
+"Match erscheint nicht bei Google und ist für Personen, die nicht auf der "
+"Website registriert sind, nicht sichtbar."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3339,14 +3340,14 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Falls Sie Ihr Konto bei Speedy Net oder Speedy Match deaktiviert haben, wird "
-"ihr Profil auf dieser Website entfernt und Sie werden nicht mehr in den "
-"Suchergebnissen anderer Personen auf dieser Website erscheinen. Denken Sie "
-"daran, dass mit der Deaktivierung Ihres Kontos bei Speedy Net auch Ihr Konto "
-"bei Speedy Match automatisch deaktiviert wird. Sie können nur Ihr Konto bei "
-"Speedy Match deaktivieren, dann bleibt Ihr Speedy Net-Konto aktiv. Sie "
-"können Ihr Konto nach der Deaktivierung wann immer Sie wollen wieder "
-"aktivieren."
+"Wenn Sie Ihr Konto bei Speedy Net oder Speedy Match deaktiviert haben, wird "
+"Ihr Profil auf dieser Website entfernt, und Sie erscheinen nicht mehr in den "
+"Suchergebnissen anderer Nutzer auf der Website. Bitte beachten Sie, dass die "
+"Deaktivierung Ihres Kontos bei Speedy Net automatisch auch die Deaktivierung "
+"Ihres Kontos bei Speedy Match zur Folge hat. Sie können auch nur Ihr Konto "
+"bei Speedy Match deaktivieren; in diesem Fall bleibt Ihr Speedy-Net-Konto "
+"weiterhin aktiv. Sie können Ihr Konto nach der Deaktivierung jederzeit "
+"wieder reaktivieren."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3357,14 +3358,14 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Wenn Sie möchten, können Sie Ihr Konto bei Speedy Net löschen. Wenn Sie Ihr "
-"Speedy Net-Konto löschen, wird automatisch auch Ihr Speedy Match-Konto "
+"Wenn Sie möchten, können Sie Ihr Konto bei Speedy Net löschen. Durch das "
+"Löschen Ihres Speedy Net-Kontos wird automatisch auch Ihr Speedy Match-Konto "
 "gelöscht. Um Ihr Speedy Net-Konto zu löschen, melden Sie sich bei Speedy Net "
-"an, deaktivieren Sie Ihr Konto und klicken Sie dann auf „Konto löschen“ (im "
-"Menü „Profil bearbeiten“). Füllen Sie die Angaben im Formular aus und "
-"bestätigen Sie. Bitte beachten Sie, dass ein gelöschtes Konto nicht "
-"wiederhergestellt werden kann. Die Löschung des Kontos ist dauerhaft und "
-"irreversibel."
+"an, deaktivieren Sie Ihr Konto und klicken Sie anschließend auf „Konto "
+"löschen“ (im Menü „Profil bearbeiten“). Füllen Sie das Formular aus und "
+"bestätigen Sie die Löschung. Bitte beachten Sie, dass ein gelöschtes Konto "
+"nicht wiederhergestellt werden kann. Die Löschung des Kontos ist endgültig "
+"und unwiderruflich."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3504,7 +3505,7 @@ msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"Die Website ist im alpha-Status, es können Fehler auftreten.Die Website-"
+"Die Website ist im Alpha-Status, es können Fehler auftreten.Die Website-"
 "Management ist nicht für Fehler auf der Website verantwortlich."
 
 #: .\templates\terms\terms_of_service.html:21
@@ -3604,7 +3605,7 @@ msgstr "auf der Website sichtbar"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Dauer der Speedy-Bildmoderation"
+msgstr "Schnelle Bildprüfung"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"

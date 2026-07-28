@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-28 15:16+0300\n"
+"PO-Revision-Date: 2026-07-28 13:59+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
@@ -242,19 +242,19 @@ msgstr "Il genere della corrispondenza"
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Qualcuno ti ha messo Mi Piace su %(site_name)s"
+msgstr "Qualcuno ti ha messo \"Mi piace\" su %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Qualcuno ti ha messo Mi Piace su %(site_name)s"
+msgstr "Qualcuno ti ha messo \"Mi piace\" su %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Qualcuno ti ha messo Mi Piace su %(site_name)s"
+msgstr "Qualcuno ti ha messo \"Mi piace\" su %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -417,7 +417,7 @@ msgstr "Scrivi una breve descrizione di te stesso."
 #: .\__translations\__translations.py:31
 msgctxt "other"
 msgid "Please write a few words about yourself."
-msgstr "Scrivi una breve descrizione di te stesso/a."
+msgstr "Scrivi una breve descrizione di te stesso."
 
 #: .\__translations\__translations.py:33
 msgctxt "female"
@@ -555,7 +555,7 @@ msgstr "È richiesta l’altezza."
 
 #: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
-msgstr "Scrivi una breve descrizione di te stesso/a."
+msgstr "Scrivi una breve descrizione di te stesso."
 
 #: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
@@ -608,7 +608,7 @@ msgstr "Il genere della corrispondenza"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Utente Speedy Match"
+msgstr "Utente di Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -715,7 +715,7 @@ msgstr "Profili Speedy Match"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr "Non hai confermato il tuo indirizzo e-mail."
+msgstr "Non hai confermato il tuo indirizzo e-maill."
 
 #: .\accounts\utils.py:89
 #, python-brace-format
@@ -725,7 +725,7 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"Il numero totale di membri attivi sul sito è {total_number_of_active_members_in_the_last_four_months}, "
+"Il numero totale di membri del sito è {total_number_of_active_members_in_the_last_four_months}, "
 "di cui {total_number_of_active_members_in_the_last_week} sono entrati nel "
 "sito nell’ultima settimana."
 
@@ -842,9 +842,9 @@ msgstr ""
 "({total_number_of_female_active_members_in_the_last_four_months} donne, "
 "{total_number_of_male_active_members_in_the_last_four_months} uomini, "
 "{total_number_of_other_active_members_in_the_last_four_months} altro; "
-"{total_percent_of_female_active_members_in_the_last_four_months} donne, "
-"{total_percent_of_male_active_members_in_the_last_four_months} uomini, "
-"{total_percent_of_other_active_members_in_the_last_four_months} altro) sono "
+"{total_percent_of_female_active_members_in_the_last_four_months} femmine, "
+"{total_percent_of_male_active_members_in_the_last_four_months} maschi, "
+"{total_percent_of_other_active_members_in_the_last_four_months} altri) sono "
 "entrati nel sito negli ultimi quattro mesi, "
 "{total_number_of_active_members_in_the_last_eight_months} membri "
 "({total_number_of_female_active_members_in_the_last_eight_months} donne, "
@@ -1134,8 +1134,8 @@ msgid ""
 msgstr ""
 "Tutte le funzionalità di Speedy Net e Speedy Match sono gratuite. Iscriviti "
 "oggi stesso a Speedy Match per trovare partner corrispondenti, ci vogliono "
-"solo pochi minuti. <a href=\"/\" title=\"Unisciti a Speedy Match\">Clicca "
-"qui</a> per iscriverti."
+"solo pochi minuti. <a href=\"/\" title=\"Join Speedy Match\">Clicca qui</a> "
+"per iscriverti."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1162,8 +1162,8 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match è attualmente nella versione alfa. È stato lanciato nell’agosto "
-"2019. La versione inglese di Speedy Match è in produzione."
+"Speedy Match è attualmente in fase alpha. È stato lanciato nell'agosto 2019. "
+"La versione inglese di Speedy Match è in fase di sviluppo."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1271,7 +1271,7 @@ msgstr ""
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Qualcuno ti ha messo Mi Piace su %(site_name)s"
+msgstr "Qualcuno ti ha messo \"Mi piace\" su %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -1354,7 +1354,7 @@ msgstr "Informazioni sul profilo"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "Amici/Amiche"
+msgstr "Amici"
 
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
@@ -1394,11 +1394,11 @@ msgstr "Dove vivo?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Fumo"
+msgstr "Abitudini relative al fumo"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "Stato della relazione"
+msgstr "Stato sentimentale"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"

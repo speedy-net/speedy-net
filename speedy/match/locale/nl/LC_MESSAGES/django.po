@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-28 15:16+0300\n"
+"PO-Revision-Date: 2026-07-28 13:59+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nl\n"
@@ -29,7 +29,7 @@ msgstr "Je hebt hier geen likes."
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "Je hebt hier geen likes."
+msgstr "Jullie hebben hier geen likes."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
@@ -85,8 +85,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Je hebt nog geen matches. Verruim je zoekinstellingen of probeer het later "
-"opnieuw."
+"Jullie hebben nog geen matches. Verruim je zoekinstellingen of probeer het "
+"later opnieuw."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -146,7 +146,7 @@ msgstr "Je Matches"
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Je Matches"
+msgstr "Jullie Matches"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -176,7 +176,7 @@ msgstr "Je Vrienden"
 #: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
-msgstr "Je Vrienden"
+msgstr "Jullie Vrienden"
 
 #: .\__translations\__translations.html:46
 msgctxt "female"
@@ -191,7 +191,7 @@ msgstr "Je hebt nog geen vrienden."
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "Je hebt nog geen vrienden."
+msgstr "Jullie hebben nog geen vrienden."
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
@@ -206,7 +206,7 @@ msgstr "Over mij"
 #: .\__translations\__translations.html:52
 msgctxt "other"
 msgid "About me"
-msgstr "Over mij"
+msgstr "Over ons"
 
 #: .\__translations\__translations.html:54
 msgctxt "female"
@@ -269,7 +269,7 @@ msgstr "vindt je leuk."
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "vindt je leuk."
+msgstr "vindt jullie leuk."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
@@ -284,7 +284,7 @@ msgstr "vindt je leuk"
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "vindt je leuk"
+msgstr "vindt jullie leuk"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
@@ -299,7 +299,7 @@ msgstr "Je vindt leuk"
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "Je vindt leuk"
+msgstr "Jullie vinden leuk"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
@@ -314,7 +314,7 @@ msgstr "Heeft Speedy Match voor het laatst bezocht"
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Heeft Speedy Match voor het laatst bezocht"
+msgstr "Hebben Speedy Match voor het laatst bezocht"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
@@ -348,7 +348,7 @@ msgstr "Mijn lengte in centimeters"
 #: .\__translations\__translations.py:15
 msgctxt "other"
 msgid "My height in centimeters"
-msgstr "Mijn lengte in centimeters"
+msgstr "Onze lengte in centimeters"
 
 #: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:115
@@ -366,7 +366,7 @@ msgstr "Mijn ideale match"
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "Mijn ideale match"
+msgstr "Onze ideale match"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:116
@@ -432,7 +432,7 @@ msgstr "Heb je kinderen? Hoeveel?"
 #: .\__translations\__translations.py:35
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "Heb je kinderen? Hoeveel?"
+msgstr "Hebben jullie kinderen? Hoeveel?"
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
@@ -447,7 +447,7 @@ msgstr "Wil je (meer) kinderen?"
 #: .\__translations\__translations.py:39
 msgctxt "other"
 msgid "Do you want (more) children?"
-msgstr "Wil je (meer) kinderen?"
+msgstr "Willen jullie (meer) kinderen?"
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -462,7 +462,7 @@ msgstr "Wie is je ideale partner?"
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Wie is je ideale partner?"
+msgstr "Wie is jullie ideale partner?"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
@@ -503,15 +503,15 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Sorry, maar je hebt geen toestemming om de {site_name} website te gebruiken. "
-"We hebben vastgesteld dat een deel van de informatie die je bij de "
-"aanmelding hebt verstrekt onjuist is of dat je de gebruiksregels van de "
-"website hebt overtreden. Daarom ben je niet bevoegd om de website te "
-"gebruiken."
+"Sorry, maar jullie hebben geen toestemming om de {site_name} website te "
+"gebruiken. We hebben vastgesteld dat een deel van de informatie die jullie "
+"bij de aanmelding hebt verstrekt onjuist is of dat jullie de gebruiksregels "
+"van de website hebben overtreden. Daarom zijn jullie niet bevoegd om de "
+"website te gebruiken."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match-accounts"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -575,7 +575,7 @@ msgstr "Wil je (meer) kinderen?"
 
 #: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
-msgstr "Wie is je ideale partner?"
+msgstr "Wie is jouw ideale partner?"
 
 #: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
@@ -608,7 +608,7 @@ msgstr "Geslacht voor matchen"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match Gebruiker"
+msgstr "Gebruiker van Speedy Match"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -744,8 +744,7 @@ msgstr "De maximale leeftijd voor matchen moet tussen 0 en 180 jaar liggen."
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr ""
-"De maximale bijpassende leeftijd mag niet lager zijn dan de minimumleeftijd."
+msgstr "Ten minste één dieetmatchoptie moet vijf harten zijn."
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
@@ -851,7 +850,7 @@ msgstr ""
 "{total_number_of_active_members_in_the_last_two_years} leden "
 "({total_number_of_female_active_members_in_the_last_two_years} vrouwen, "
 "{total_number_of_male_active_members_in_the_last_two_years} mannen, "
-"{total_number_of_other_active_members_in_the_last_two_years} anderen; "
+"{total_number_of_other_active_members_in_the_last_two_years} anderen;  "
 "{total_percent_of_female_active_members_in_the_last_two_years} vrouwen, "
 "{total_percent_of_male_active_members_in_the_last_two_years} mannen, "
 "{total_percent_of_other_active_members_in_the_last_two_years} anderen) "
@@ -1066,7 +1065,7 @@ msgstr "Geen"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alfa]"
+msgstr "Speedy Match [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
@@ -1128,7 +1127,7 @@ msgid ""
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
 "Alle functies van Speedy Net en Speedy Match zijn gratis. Word nog vandaag "
-"lid van Speedy Match om geschikte partners te vinden. Het duurt maar een "
+"lid van Speedy Match om geschikte partners te vinden. Het duurt slechts een "
 "paar minuten! <a href=\"/\" title=\"Wordt nog lid van Speedy Match\">Klik "
 "hier</a> om lid te worden."
 
@@ -1156,8 +1155,9 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match bevindt zich momenteel in de alfa-fase. Het werd gelanceerd in "
-"augustus 2019. De Engelse versie van Speedy Match is in productie."
+"Speedy Match bevindt zich momenteel in de alfa-fase. Het werd in augustus "
+"2019 gelanceerd. Aan de Engelse versie van Speedy Match wordt momenteel "
+"gewerkt."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1221,7 +1221,7 @@ msgstr "Beheerder - Alle Matches"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Je Matches"
+msgstr "Je matches"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
@@ -1274,7 +1274,7 @@ msgstr "Je hebt nog geen vrienden."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Je Vrienden"
+msgstr "Je Vrienden."
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
@@ -1299,9 +1299,7 @@ msgstr ""
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
-"Op zoek naar een vriendje? Op zoek naar een vriendinnetje? Kom kennismaken "
-"met Speedy!"
+msgstr "Op zoek naar een vriendje of vriendinnetje? Maak kennis met Speedy!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
@@ -1391,7 +1389,7 @@ msgstr "Waar ik woon?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Rokerstatus"
+msgstr "Rookgedrag"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"

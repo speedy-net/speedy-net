@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-28 15:16+0300\n"
+"PO-Revision-Date: 2026-07-28 13:59+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de_DE\n"
@@ -161,7 +161,7 @@ msgstr "Freunde"
 #: .\__translations\__translations.html:40
 msgctxt "other"
 msgid "Friends"
-msgstr "Freunde/Freundinnen"
+msgstr "Freunde"
 
 #: .\__translations\__translations.html:42
 msgctxt "female"
@@ -242,19 +242,19 @@ msgstr "Geschlecht, das übereinstimmen muss"
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Jemand likt Sie am %(site_name)s"
+msgstr "Jemand mag dich auf %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Jemand likt Sie am %(site_name)s"
+msgstr "Jemand mag dich auf %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Jemand likt Sie am %(site_name)s"
+msgstr "Jemand mag dich auf %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -608,7 +608,7 @@ msgstr "Geschlecht, das übereinstimmen muss"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match Benutzer"
+msgstr "Speedy Match-Nutzer"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -727,8 +727,8 @@ msgid ""
 msgstr ""
 "Die Gesamtzahl der aktiven Mitglieder auf der Website beträgt "
 "{total_number_of_active_members_in_the_last_four_months}, von denen "
-"{total_number_of_active_members_in_the_last_week} Mitglieder die Website in "
-"der letzten Woche betreten haben."
+"{total_number_of_active_members_in_the_last_week} Mitglieder der Webseite "
+"letzte Woche beigetreten sind."
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
@@ -1133,8 +1133,8 @@ msgid ""
 msgstr ""
 "Alle Funktionen auf Speedy Net und Speedy Match sind kostenlos. Melden Sie "
 "sich bei Speedy Match noch heute an, um übereinstimmende Partner zu finden. "
-"Es dauert nur einige Minuten. <a href=\"/\" title=\"Treten Sie Speedy Match "
-"bei\">Klicken Sie hier</a>, um sich anzumelden."
+"Es dauert nur einige Minuten. <a href=\"/\" title=\"Join Speedy "
+"Match\">Klicken Sie hier</a>, um sich anzumelden."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1161,9 +1161,9 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match befindet sich derzeit in der alpha-Phase. Sie wurde im August "
-"2019 ins Leben gerufen. Die englische Version von Speedy Match ist in "
-"Produktion."
+"Speedy Match befindet sich derzeit in der Alpha-Phase. Es wurde im August "
+"2019 gestartet. Die englische Version von Speedy Match befindet sich derzeit "
+"in der Entwicklung."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1232,13 +1232,13 @@ msgstr "Ihre Matches"
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "Treffer"
+msgstr "Matches"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "Gefällt mir"
+msgstr "Likes"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1272,7 +1272,7 @@ msgstr ""
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Jemand likt Sie am %(site_name)s"
+msgstr "Jemand mag dich auf %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -1325,7 +1325,7 @@ msgstr "Matches aktualisieren"
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "Ernährungsweise"
+msgstr "Ernährung"
 
 #: .\templates\matches\match_list.html:60
 msgid "Age:"
@@ -1357,7 +1357,7 @@ msgstr "Profilinfo"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "Freunde/Freundinnen"
+msgstr "Freunde"
 
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
@@ -1371,7 +1371,7 @@ msgstr "Unliken"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Ihr Freund/Ihre Freundin"
+msgstr "Ihr Freund"
 
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
