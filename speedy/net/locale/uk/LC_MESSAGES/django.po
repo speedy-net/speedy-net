@@ -152,7 +152,7 @@ msgstr "Так. Видалити мій обліковий запис."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net Користувач"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"

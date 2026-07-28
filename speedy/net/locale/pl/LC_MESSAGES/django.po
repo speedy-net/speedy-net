@@ -148,7 +148,7 @@ msgstr "Tak. Usuń moje konto."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Użytkownik Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -199,10 +199,10 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> to nowa sieć społecznościowa. Dzięki Speedy Net możesz "
-"komunikować się ze znajomymi. Speedy Net jest Speedy Net otwarty na bezpłatną "
-"rejestrację dla osób ze wszystkich krajów i grup wiekowych (bez ograniczeń "
-"wiekowych!). Strona jest przyjazna weganom i wegetarianom. Jest obecnie "
-"dostępny w %(languages_num)s językach."
+"komunikować się ze znajomymi. Speedy Net jest Speedy Net otwarty na "
+"bezpłatną rejestrację dla osób ze wszystkich krajów i grup wiekowych (bez "
+"ograniczeń wiekowych!). Strona jest przyjazna weganom i wegetarianom. Jest "
+"obecnie dostępny w %(languages_num)s językach."
 
 #: .\templates\about\about.html:19
 msgid ""

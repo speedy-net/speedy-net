@@ -148,7 +148,7 @@ msgstr "Áno. Odstrániť môj účet."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Používateľ Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -199,10 +199,10 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> je nová sociálna sieť. So službou Speedy Net môžete "
-"komunikovať so svojimi priateľmi. Speedy Net je otvorený Speedy Net bezplatnej "
-"registrácii pre ľudí zo všetkých krajín a vekových kategórií (bez vekového "
-"obmedzenia!). Stránka je vhodná pre vegánov a vegetariánov. Momentálne je k "
-"dispozícii v %(languages_num)s jazykoch."
+"komunikovať so svojimi priateľmi. Speedy Net je otvorený Speedy Net "
+"bezplatnej registrácii pre ľudí zo všetkých krajín a vekových kategórií (bez"
+" vekového obmedzenia!). Stránka je vhodná pre vegánov a vegetariánov. "
+"Momentálne je k dispozícii v %(languages_num)s jazykoch."
 
 #: .\templates\about\about.html:19
 msgid ""

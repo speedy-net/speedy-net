@@ -507,7 +507,7 @@ msgstr ""
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Tài khoản ghép nối nhanh"
+msgstr "Speedy Match Accounts"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -604,7 +604,7 @@ msgstr "Giới tính phù hợp"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Người dùng ghép trận nhanh"
+msgstr "Speedy Match User"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
@@ -703,11 +703,11 @@ msgstr "Số lượng kết quả phù hợp với tìm kiếm gần đây nhấ
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Hồ sơ trận đấu nhanh"
+msgstr "Speedy Match Profile"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Hồ sơ ghép đôi nhanh"
+msgstr "Speedy Match Profiles"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -1052,7 +1052,7 @@ msgstr "Sở thích chung"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Trận đấu nhanh"
+msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1068,7 +1068,7 @@ msgstr "Không có"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Ghép nhanh [alpha]"
+msgstr "Speedy Match [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"

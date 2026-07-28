@@ -141,7 +141,7 @@ msgstr "はい。アカウントを削除してください。"
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Speedy Net ユーザー"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -268,8 +268,7 @@ msgstr "ウリ・ロドベリ"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"および の創設者兼ディレクター Speedy Net Speedy Match 、"
+msgstr "および の創設者兼ディレクター Speedy Net Speedy Match 、"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."

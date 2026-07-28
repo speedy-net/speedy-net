@@ -148,7 +148,7 @@ msgstr "Ya. Hapus akun saya."
 
 #: .\accounts\models.py:30
 msgid "Speedy Net User"
-msgstr "Pengguna Speedy Net"
+msgstr "Speedy Net User"
 
 #: .\accounts\models.py:32
 msgid "User"
@@ -290,8 +290,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr ""
-"Pendiri dan direktur Speedy Net Speedy Match dan,"
+msgstr "Pendiri dan direktur Speedy Net Speedy Match dan,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
