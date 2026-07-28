@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-28 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "यहां आपकी कोई पसंद नहीं है."
+msgstr "यहां आपको कोई लाइक नहीं मिलेगा।"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "यहां आपकी कोई पसंद नहीं है."
+msgstr "यहां आपको कोई लाइक नहीं मिलेगा।"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "यहां आपकी कोई पसंद नहीं है."
+msgstr "यहां आपको कोई लाइक नहीं मिलेगा।"
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr "मिलान अद्यतन करें"
+msgstr "मैचों को अपडेट करें"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr "मिलान अद्यतन करें"
+msgstr "मैचों को अपडेट करें"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr "मिलान अद्यतन करें"
+msgstr "मैचों को अपडेट करें"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
@@ -66,8 +66,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"आपके पास अभी तक कोई मैच नहीं है. अपनी खोज सेटिंग विस्तृत करने का प्रयास करें या बाद में "
-"दोबारा जांचें।"
+"अभी तक आपको कोई परिणाम नहीं मिला है। कृपया अपनी खोज सेटिंग्स को विस्तृत करें या बाद में "
+"पुनः जांच करें।"
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -75,8 +75,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"आपके पास अभी तक कोई मैच नहीं है. अपनी खोज सेटिंग विस्तृत करने का प्रयास करें या बाद में "
-"दोबारा जांचें।"
+"अभी तक आपको कोई परिणाम नहीं मिला है। कृपया अपनी खोज सेटिंग्स को विस्तृत करें या बाद में "
+"पुनः जांच करें।"
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -84,23 +84,23 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"आपके पास अभी तक कोई मैच नहीं है. अपनी खोज सेटिंग विस्तृत करने का प्रयास करें या बाद में "
-"दोबारा जांचें।"
+"अभी तक आपको कोई परिणाम नहीं मिला है। कृपया अपनी खोज सेटिंग्स को विस्तृत करें या बाद में "
+"पुनः जांच करें।"
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "मिलान सेटिंग्स"
+msgstr "मैच सेटिंग्स"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "मिलान सेटिंग्स"
+msgstr "मैच सेटिंग्स"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "मिलान सेटिंग्स"
+msgstr "मैच सेटिंग्स"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -135,17 +135,17 @@ msgstr "भिन्न"
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "आपके मिलान"
+msgstr "आपके मैच"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "आपके मिलान"
+msgstr "आपके मैच"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "आपके मिलान"
+msgstr "आपके मैच"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -165,32 +165,32 @@ msgstr "दोस्त"
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr "आपके मित्र"
+msgstr "आपके दोस्त"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
 msgid "Your Friends"
-msgstr "आपके मित्र"
+msgstr "आपके दोस्त"
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
-msgstr "आपके मित्र"
+msgstr "आपके दोस्त"
 
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "अभी तक आपका कोई मित्र नहीं है."
+msgstr "अभी तक आपके कोई दोस्त नहीं हैं।"
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr "अभी तक आपका कोई मित्र नहीं है."
+msgstr "अभी तक आपके कोई दोस्त नहीं हैं।"
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "अभी तक आपका कोई मित्र नहीं है."
+msgstr "अभी तक आपके कोई दोस्त नहीं हैं।"
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
@@ -225,35 +225,35 @@ msgstr "मेरे मैच के बारे में"
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "मिलान के लिए लिंग"
+msgstr "लिंग का मिलान करें"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "मिलान के लिए लिंग"
+msgstr "लिंग का मिलान करें"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "मिलान के लिए लिंग"
+msgstr "लिंग का मिलान करें"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "कोई आपको %(site_name)s पर पसंद करता है"
+msgstr "कोई आपको पसंद करता है %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "कोई आपको %(site_name)s पर पसंद करता है"
+msgstr "कोई आपको पसंद करता है %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "कोई आपको %(site_name)s पर पसंद करता है"
+msgstr "कोई आपको पसंद करता है %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -303,21 +303,21 @@ msgstr "आप चाहते हैं"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
+msgstr "पिछली बार Speedy Match पर गए थे"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
+msgstr "पिछली बार Speedy Match पर गए थे"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
+msgstr "पिछली बार Speedy Match पर गए थे"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
-msgstr "मेरी ऊंचाई सेंटीमीटर में"
+msgstr "मेरी लंबाई सेंटीमीटर में"
 
 #: .\__translations\__translations.py:9
 msgctxt "female"
@@ -337,35 +337,35 @@ msgstr "प्रोफ़ाइल चित्र जोड़ें"
 #: .\__translations\__translations.py:13
 msgctxt "female"
 msgid "My height in centimeters"
-msgstr "मेरी ऊंचाई सेंटीमीटर में"
+msgstr "मेरी लंबाई सेंटीमीटर में"
 
 #: .\__translations\__translations.py:14
 msgctxt "male"
 msgid "My height in centimeters"
-msgstr "मेरी ऊंचाई सेंटीमीटर में"
+msgstr "मेरी लंबाई सेंटीमीटर में"
 
 #: .\__translations\__translations.py:15
 msgctxt "other"
 msgid "My height in centimeters"
-msgstr "मेरी ऊंचाई सेंटीमीटर में"
+msgstr "मेरी लंबाई सेंटीमीटर में"
 
 #: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "मेरा आदर्श मैच"
+msgstr "मेरा आदर्श साथी"
 
 #: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "मेरा आदर्श मैच"
+msgstr "मेरा आदर्श साथी"
 
 #: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "मेरा आदर्श मैच"
+msgstr "मेरा आदर्श साथी"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:116
@@ -389,19 +389,19 @@ msgstr "मिलान के लिए न्यूनतम आयु"
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "मिलान के लिए अधिकतम आयु"
+msgstr "अधिकतम आयु सीमा का मिलान करें"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "मिलान के लिए अधिकतम आयु"
+msgstr "अधिकतम आयु सीमा का मिलान करें"
 
 #: .\__translations\__translations.py:27
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "मिलान के लिए अधिकतम आयु"
+msgstr "अधिकतम आयु सीमा का मिलान करें"
 
 #: .\__translations\__translations.py:29
 msgctxt "female"
@@ -421,17 +421,17 @@ msgstr "कृपया अपने बारे में कुछ शब्�
 #: .\__translations\__translations.py:33
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "आपके बच्चे है क्या? कितने?"
+msgstr "क्या आपके बच्चे हैं? कितने?"
 
 #: .\__translations\__translations.py:34
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "आपके बच्चे है क्या? कितने?"
+msgstr "क्या आपके बच्चे हैं? कितने?"
 
 #: .\__translations\__translations.py:35
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "आपके बच्चे है क्या? कितने?"
+msgstr "क्या आपके बच्चे हैं? कितने?"
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
@@ -451,17 +451,17 @@ msgstr "आप (और) बच्चे चाहते हैं?"
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "आपका आदर्श साथी कौन है?"
+msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "आपका आदर्श साथी कौन है?"
+msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "आपका आदर्श साथी कौन है?"
+msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
@@ -472,10 +472,9 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"हमें खेद है, लेकिन आप {site_name} वेबसाइट का उपयोग करने के लिए अधिकृत नहीं हैं। हमने पाया "
-"है कि साइट पर पंजीकरण करते समय आपके द्वारा प्रदान की गई कुछ जानकारी गलत है या आपने "
-"साइट के उपयोग के नियमों का उल्लंघन किया है। इसलिए आप साइट का उपयोग करने के लिए अधिकृत "
-"नहीं हैं।"
+"हमें खेद है, लेकिन आपको इसका उपयोग करने की अनुमति नहीं है। {site_name} वेबसाइट। हमें पता "
+"चला है कि साइट पर पंजीकरण करते समय आपके द्वारा दी गई कुछ जानकारी गलत है या आपने साइट "
+"के उपयोग के नियमों का उल्लंघन किया है। इसलिए आपको साइट का उपयोग करने की अनुमति नहीं है।"
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
@@ -486,10 +485,9 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"हमें खेद है, लेकिन आप {site_name} वेबसाइट का उपयोग करने के लिए अधिकृत नहीं हैं। हमने पाया "
-"है कि साइट पर पंजीकरण करते समय आपके द्वारा प्रदान की गई कुछ जानकारी गलत है या आपने "
-"साइट के उपयोग के नियमों का उल्लंघन किया है। इसलिए आप साइट का उपयोग करने के लिए अधिकृत "
-"नहीं हैं।"
+"हमें खेद है, लेकिन आपको इसका उपयोग करने की अनुमति नहीं है। {site_name} वेबसाइट। हमें पता "
+"चला है कि साइट पर पंजीकरण करते समय आपके द्वारा दी गई कुछ जानकारी गलत है या आपने साइट "
+"के उपयोग के नियमों का उल्लंघन किया है। इसलिए आपको साइट का उपयोग करने की अनुमति नहीं है।"
 
 #: .\__translations\__translations.py:47
 #, python-brace-format
@@ -500,14 +498,13 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"हमें खेद है, लेकिन आप {site_name} वेबसाइट का उपयोग करने के लिए अधिकृत नहीं हैं। हमने पाया "
-"है कि साइट पर पंजीकरण करते समय आपके द्वारा प्रदान की गई कुछ जानकारी गलत है या आपने "
-"साइट के उपयोग के नियमों का उल्लंघन किया है। इसलिए आप साइट का उपयोग करने के लिए अधिकृत "
-"नहीं हैं।"
+"हमें खेद है, लेकिन आपको इसका उपयोग करने की अनुमति नहीं है। {site_name} वेबसाइट। हमें पता "
+"चला है कि साइट पर पंजीकरण करते समय आपके द्वारा दी गई कुछ जानकारी गलत है या आपने साइट "
+"के उपयोग के नियमों का उल्लंघन किया है। इसलिए आपको साइट का उपयोग करने की अनुमति नहीं है।"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "स्पीडी मैच खाते"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -515,7 +512,7 @@ msgstr "प्रोफ़ाइल चित्र जोड़ें"
 
 #: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
-msgstr "एक प्रोफ़ाइल चित्र आवश्यक है."
+msgstr "प्रोफ़ाइल चित्र आवश्यक है।"
 
 #: .\accounts\forms.py:59
 msgid "My diet"
@@ -523,31 +520,31 @@ msgstr "मेरा आहार"
 
 #: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
 msgid "Your diet is required."
-msgstr "आपका आहार आवश्यक है."
+msgstr "आपका आहार आवश्यक है।"
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
-msgstr "मेरी धूम्रपान स्थिति"
+msgstr "मेरी धूम्रपान की स्थिति"
 
 #: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
 msgid "Your smoking status is required."
-msgstr "आपकी धूम्रपान स्थिति आवश्यक है."
+msgstr "आपकी धूम्रपान संबंधी स्थिति की जानकारी आवश्यक है।"
 
 #: .\accounts\forms.py:61
 msgid "My relationship status"
-msgstr "मेरे रिश्ते की स्थिति"
+msgstr "मेरी रिश्ते की स्थिति"
 
 #: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
 msgid "Your relationship status is required."
-msgstr "आपकी संबंध स्थिति आवश्यक है."
+msgstr "आपकी वैवाहिक स्थिति आवश्यक है।"
 
 #: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
 msgid "Gender to match is required."
-msgstr "लिंग का मिलान आवश्यक है."
+msgstr "लिंग का मिलान आवश्यक है।"
 
 #: .\accounts\forms.py:100
 msgid "Your height is required."
-msgstr "आपकी ऊंचाई आवश्यक है."
+msgstr "आपकी ऊंचाई आवश्यक है।"
 
 #: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
@@ -555,13 +552,13 @@ msgstr "कृपया अपने बारे में कुछ शब्�
 
 #: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
-msgstr "कृपया लिखें कि आप कहाँ रहते हैं।"
+msgstr "कृपया अपना निवास स्थान लिखें।"
 
 #: .\accounts\forms.py:118 .\accounts\models.py:221
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "आपके बच्चे है क्या? कितने?"
+msgstr "क्या आपके बच्चे हैं? कितने?"
 
 #: .\accounts\forms.py:121 .\accounts\models.py:224
 #: .\accounts\validators.py:58
@@ -571,27 +568,27 @@ msgstr "आप (और) बच्चे चाहते हैं?"
 
 #: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
-msgstr "आपका आदर्श साथी कौन है?"
+msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
 #: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
-msgstr "मिलान के लिए न्यूनतम आयु आवश्यक है."
+msgstr "मिलान के लिए न्यूनतम आयु सीमा आवश्यक है।"
 
 #: .\accounts\forms.py:133
 msgid "Maximal age to match is required."
-msgstr "मिलान के लिए अधिकतम आयु आवश्यक है."
+msgstr "अधिकतम आयु सीमा का मिलान करना आवश्यक है।"
 
 #: .\accounts\forms.py:136 .\accounts\validators.py:110
 msgid "Diet match is required."
-msgstr "आहार मिलान आवश्यक है."
+msgstr "आहार का सही मिलान आवश्यक है।"
 
 #: .\accounts\forms.py:139 .\accounts\validators.py:118
 msgid "Smoking status match is required."
-msgstr "धूम्रपान की स्थिति का मिलान आवश्यक है."
+msgstr "धूम्रपान की स्थिति का मिलान आवश्यक है।"
 
 #: .\accounts\forms.py:142 .\accounts\validators.py:126
 msgid "Relationship status match is required."
-msgstr "संबंध स्थिति मिलान आवश्यक है."
+msgstr "रिश्ते की स्थिति का मिलान आवश्यक है।"
 
 #: .\accounts\forms.py:150
 msgid "Where do you live?"
@@ -600,19 +597,19 @@ msgstr "आप कहाँ रहते हैं?"
 #: .\accounts\forms.py:186 .\accounts\models.py:231
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "मिलान के लिए लिंग"
+msgstr "लिंग का मिलान करें"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match उपयोगकर्ता"
+msgstr "स्पीडी मैच उपयोगकर्ता"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
-msgstr "कोई मेल नहीं"
+msgstr "कोई मिलान नहीं"
 
 #: .\accounts\models.py:75 .\accounts\models.py:198
 msgid "One heart"
-msgstr "एक दिल"
+msgstr "एक हृदय"
 
 #: .\accounts\models.py:76 .\accounts\models.py:199
 msgid "Two hearts"
@@ -636,7 +633,7 @@ msgstr "उपयोगकर्ता"
 
 #: .\accounts\models.py:207
 msgid "On new likes"
-msgstr "नये लाइक पर"
+msgstr "नए लाइक्स पर"
 
 #: .\accounts\models.py:210
 msgid "Active languages"
@@ -659,7 +656,7 @@ msgstr "मेरे बारे में कुछ शब्द"
 #: .\accounts\models.py:227
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "मेरा आदर्श मैच"
+msgstr "मेरा आदर्श साथी"
 
 #: .\accounts\models.py:237
 msgid "Minimal age to match"
@@ -667,7 +664,7 @@ msgstr "मिलान के लिए न्यूनतम आयु"
 
 #: .\accounts\models.py:238
 msgid "Maximal age to match"
-msgstr "मिलान के लिए अधिकतम आयु"
+msgstr "अधिकतम आयु सीमा का मिलान करें"
 
 #: .\accounts\models.py:239
 msgid "Diet match"
@@ -675,23 +672,23 @@ msgstr "आहार मिलान"
 
 #: .\accounts\models.py:240
 msgid "Smoking status match"
-msgstr "धूम्रपान स्थिति मिलान"
+msgstr "धूम्रपान की स्थिति का मिलान"
 
 #: .\accounts\models.py:241
 msgid "Relationship status match"
-msgstr "संबंध स्थिति मिलान"
+msgstr "रिश्ते की स्थिति का मिलान"
 
 #: .\accounts\models.py:244
 msgid "Diet to match"
-msgstr "मिलान के लिए आहार"
+msgstr "आहार भी उसी के अनुरूप होना चाहिए।"
 
 #: .\accounts\models.py:252
 msgid "Smoking status to match"
-msgstr "मिलान के लिए धूम्रपान की स्थिति"
+msgstr "धूम्रपान की स्थिति का मिलान करें"
 
 #: .\accounts\models.py:260
 msgid "Relationship status to match"
-msgstr "मिलान के लिए संबंध स्थिति"
+msgstr "रिश्ते की स्थिति का मिलान करें"
 
 #: .\accounts\models.py:267
 msgid "Activation step"
@@ -699,15 +696,15 @@ msgstr "सक्रियण चरण"
 
 #: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
-msgstr "अंतिम उपयोगकर्ता की खोज पर मिलानों की संख्या"
+msgstr "पिछले उपयोगकर्ता की खोज में मिले परिणामों की संख्या"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "स्पीडी मैच प्रोफ़ाइल"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "स्पीडी मैच प्रोफाइल"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -721,38 +718,38 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"साइट पर सक्रिय सदस्यों की कुल संख्या "
-"{total_number_of_active_members_in_the_last_four_months} है, जिनमें से "
-"{total_number_of_active_members_in_the_last_week} सदस्यों ने पिछले सप्ताह साइट में "
-"प्रवेश किया है।"
+"साइट पर सक्रिय सदस्यों की कुल संख्या है "
+"{total_number_of_active_members_in_the_last_four_months}, जिसका कि "
+"{total_number_of_active_members_in_the_last_week} पिछले सप्ताह ही सदस्यों ने साइट "
+"पर प्रवेश किया।"
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
-msgstr "ऊंचाई 1 से 450 सेमी तक होनी चाहिए।"
+msgstr "ऊंचाई 1 से 450 सेंटीमीटर के बीच होनी चाहिए।"
 
 #: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "मिलान के लिए न्यूनतम आयु 0 से 180 वर्ष होनी चाहिए।"
+msgstr "पात्रता के लिए न्यूनतम आयु 0 से 180 वर्ष के बीच होनी चाहिए।"
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "मिलान के लिए अधिकतम आयु 0 से 180 वर्ष तक होनी चाहिए।"
+msgstr "प्रतियोगिता में भाग लेने के लिए अधिकतम आयु 0 से 180 वर्ष के बीच होनी चाहिए।"
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr "मिलान के लिए अधिकतम आयु मिलान के लिए न्यूनतम आयु से कम नहीं हो सकती।"
+msgstr "अधिकतम आयु सीमा न्यूनतम आयु सीमा से कम नहीं हो सकती।"
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
-msgstr "कम से कम एक आहार मिलान विकल्प पांच दिल होना चाहिए."
+msgstr "कम से कम एक डाइट मैच विकल्प में पांच दिल होने चाहिए।"
 
 #: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be five hearts."
-msgstr "कम से कम एक धूम्रपान स्थिति मिलान विकल्प पांच दिल का होना चाहिए।"
+msgstr "धूम्रपान की स्थिति से मेल खाने वाले कम से कम एक विकल्प में पांच दिल होने चाहिए।"
 
 #: .\accounts\validators.py:128
 msgid "At least one relationship status match option should be five hearts."
-msgstr "कम से कम एक रिलेशनशिप स्टेटस मैच विकल्प पांच दिलों का होना चाहिए।"
+msgstr "रिश्ते की स्थिति के मिलान के लिए कम से कम एक विकल्प में पांच दिल होने चाहिए।"
 
 #: .\admin\views.py:202
 #, python-brace-format
@@ -804,52 +801,52 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
-"{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"व्यवस्थापक: साइट पर सक्रिय सदस्यों की कुल संख्या है {total_number_of_active_members} "
+"({total_number_of_female_active_members} महिलाओं, "
+"{total_number_of_male_active_members} पुरुषों, "
+"{total_number_of_other_active_members} अन्य; "
+"{total_percent_of_female_active_members} महिलाओं, "
+"{total_percent_of_male_active_members} पुरुषों, "
+"{total_percent_of_other_active_members} अन्य), जिनमें से "
+"{total_number_of_active_members_in_the_last_week} सदस्य "
+"({total_number_of_female_active_members_in_the_last_week} महिलाओं, "
+"{total_number_of_male_active_members_in_the_last_week} पुरुषों, "
+"{total_number_of_other_active_members_in_the_last_week} अन्य; "
+"{total_percent_of_female_active_members_in_the_last_week} महिलाओं, "
+"{total_percent_of_male_active_members_in_the_last_week} पुरुषों, "
+"{total_percent_of_other_active_members_in_the_last_week} अन्य लोगों ने पिछले "
+"सप्ताह साइट में प्रवेश किया। {total_number_of_active_members_in_the_last_month} "
+"सदस्य ({total_number_of_female_active_members_in_the_last_month} महिलाओं, "
+"{total_number_of_male_active_members_in_the_last_month} पुरुषों, "
+"{total_number_of_other_active_members_in_the_last_month} अन्य; "
+"{total_percent_of_female_active_members_in_the_last_month} महिलाओं, "
+"{total_percent_of_male_active_members_in_the_last_month} पुरुषों, "
+"{total_percent_of_other_active_members_in_the_last_month} अन्य लोगों ने पिछले "
+"महीने साइट में प्रवेश किया, "
+"{total_number_of_active_members_in_the_last_four_months} सदस्य "
+"({total_number_of_female_active_members_in_the_last_four_months} महिलाओं, "
+"{total_number_of_male_active_members_in_the_last_four_months} पुरुषों, "
+"{total_number_of_other_active_members_in_the_last_four_months} अन्य; "
+"{total_percent_of_female_active_members_in_the_last_four_months} महिलाओं, "
+"{total_percent_of_male_active_members_in_the_last_four_months} पुरुषों, "
+"{total_percent_of_other_active_members_in_the_last_four_months} अन्य लोगों ने "
+"पिछले चार महीनों में साइट पर प्रवेश किया है, "
+"{total_number_of_active_members_in_the_last_eight_months} सदस्य "
+"({total_number_of_female_active_members_in_the_last_eight_months} महिलाओं, "
+"{total_number_of_male_active_members_in_the_last_eight_months} पुरुषों, "
+"{total_number_of_other_active_members_in_the_last_eight_months} अन्य; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} महिलाओं, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} पुरुषों, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} अन्य लोगों ने "
+"पिछले आठ महीनों में साइट में प्रवेश किया, और "
+"{total_number_of_active_members_in_the_last_two_years} सदस्य "
+"({total_number_of_female_active_members_in_the_last_two_years} महिलाओं, "
+"{total_number_of_male_active_members_in_the_last_two_years} पुरुषों, "
+"{total_number_of_other_active_members_in_the_last_two_years} अन्य; "
+"{total_percent_of_female_active_members_in_the_last_two_years} महिलाओं, "
+"{total_percent_of_male_active_members_in_the_last_two_years} पुरुषों, "
+"{total_percent_of_other_active_members_in_the_last_two_years} अन्य लोगों ने "
+"पिछले दो वर्षों में साइट में प्रवेश किया।"
 
 #: .\admin\views.py:284
 #, python-brace-format
@@ -873,21 +870,24 @@ msgid ""
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
 msgstr ""
-"व्यवस्थापक: {total_number_of_active_members_registered_in_the_last_week} सक्रिय "
-"सदस्य पिछले सप्ताह पंजीकृत हुए। "
-"{total_number_of_active_members_registered_in_the_last_month} सक्रिय सदस्य "
-"पिछले महीने पंजीकृत हुए। पिछले चार महीनों में पंजीकृत "
-"{total_number_of_active_members_registered_in_the_last_four_months} सक्रिय "
-"सदस्य। {total_number_of_active_members_registered_more_than_four_months_ago} "
-"सक्रिय सदस्य चार महीने से अधिक समय पहले पंजीकृत हुए थे। पिछले आठ महीनों में पंजीकृत "
-"{total_number_of_active_members_registered_in_the_last_eight_months} सक्रिय "
-"सदस्य। {total_number_of_active_members_registered_more_than_eight_months_ago} "
-"सक्रिय सदस्य आठ महीने से अधिक समय पहले पंजीकृत हुए थे। पिछले दो वर्षों में पंजीकृत "
-"{total_number_of_active_members_registered_in_the_last_two_years} सक्रिय "
-"सदस्य। {total_number_of_active_members_registered_more_than_two_years_ago} "
-"सक्रिय सदस्य दो वर्ष से अधिक समय पहले पंजीकृत हुए थे। "
-"{total_number_of_active_members_registered_before_2019_08_01} सक्रिय सदस्य 1 "
-"अगस्त 2019 से पहले पंजीकृत।"
+"व्यवस्थापक: {total_number_of_active_members_registered_in_the_last_week} पिछले "
+"सप्ताह पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_in_the_last_month} पिछले महीने "
+"पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_in_the_last_four_months} पिछले चार "
+"महीनों में पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_more_than_four_months_ago} चार "
+"महीने से अधिक समय पहले पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_in_the_last_eight_months} पिछले आठ "
+"महीनों में पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} सक्रिय "
+"सदस्यों ने आठ महीने से अधिक समय पहले पंजीकरण कराया था। "
+"{total_number_of_active_members_registered_in_the_last_two_years} पिछले दो "
+"वर्षों में पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_more_than_two_years_ago} दो साल से "
+"अधिक समय पहले पंजीकृत सक्रिय सदस्य। "
+"{total_number_of_active_members_registered_before_2019_08_01} 1 अगस्त 2019 से "
+"पहले पंजीकृत सक्रिय सदस्य।"
 
 #: .\admin\views.py:304
 #, python-brace-format
@@ -896,7 +896,7 @@ msgid ""
 "registered in {year}."
 msgstr ""
 "व्यवस्थापक: {total_number_of_active_members_registered_in_year} सक्रिय सदस्य "
-"{year} में पंजीकृत हैं।"
+"पंजीकृत {year}. "
 
 #: .\admin\views.py:359
 #, python-brace-format
@@ -911,12 +911,12 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
 "व्यवस्थापक: {total_number_of_active_members_in_age_range} "
-"({total_number_of_female_active_members_in_age_range} महिलाएं, "
-"{total_number_of_male_active_members_in_age_range} पुरुष, "
-"{total_number_of_other_active_members_in_age_range} अन्य) {min_age} से "
-"{max_age} आयु वर्ग के सक्रिय सदस्य "
-"({total_percent_of_female_active_members_in_age_range} महिलाएं, "
-"{total_percent_of_male_active_members_in_age_range} पुरुष, "
+"({total_number_of_female_active_members_in_age_range} महिलाओं, "
+"{total_number_of_male_active_members_in_age_range} पुरुषों, "
+"{total_number_of_other_active_members_in_age_range} अन्य) सक्रिय सदस्य जिनकी आयु "
+"{min_age} को {max_age} "
+"({total_percent_of_female_active_members_in_age_range} महिलाओं, "
+"{total_percent_of_male_active_members_in_age_range} पुरुषों, "
 "{total_percent_of_other_active_members_in_age_range} अन्य)।"
 
 #: .\admin\views.py:423
@@ -939,17 +939,17 @@ msgstr ""
 "व्यवस्थापक: "
 "{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"महिलाएं, "
+"महिलाओं, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"पुरुष, "
+"पुरुषों, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"अन्य) {min_age} से {max_age} आयु वर्ग के सक्रिय सदस्य "
+"अन्य) सक्रिय सदस्य जिनकी आयु {min_age} को {max_age} "
 "({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"महिलाएं, "
+"महिलाओं, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"पुरुष, "
+"पुरुषों, "
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"अन्य) ने पिछले आठ महीनों में साइट में प्रवेश किया।"
+"अन्य लोगों ने पिछले आठ महीनों में साइट पर प्रवेश किया।"
 
 #: .\admin\views.py:487
 #, python-brace-format
@@ -971,29 +971,29 @@ msgstr ""
 "व्यवस्थापक: "
 "{total_number_of_active_members_in_age_range_in_the_last_four_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
-"महिलाएं, "
+"महिलाओं, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
-"पुरुष, "
+"पुरुषों, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
-"अन्य) {min_age} से {max_age} आयु वर्ग के सक्रिय सदस्य "
+"अन्य) सक्रिय सदस्य जिनकी आयु {min_age} को {max_age} "
 "({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
-"महिलाएं, "
+"महिलाओं, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
-"पुरुष, "
+"पुरुषों, "
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"अन्य) ने पिछले चार महीनों में साइट में प्रवेश किया।"
+"अन्य लोगों ने पिछले चार महीनों में साइट पर प्रवेश किया।"
 
 #: .\likes\managers.py:14 .\likes\models.py:48
 msgid "Users cannot like themselves."
-msgstr "उपयोगकर्ता स्वयं को पसंद नहीं कर सकते."
+msgstr "उपयोगकर्ता खुद को पसंद नहीं कर सकते।"
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr "उपयोगकर्ता पहले से ही दूसरे उपयोगकर्ता को पसंद करता है."
+msgstr "उपयोगकर्ता पहले से ही किसी अन्य उपयोगकर्ता को पसंद करता है।"
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
-msgstr "उपयोगकर्ता किसी अवरुद्ध उपयोगकर्ता को पसंद नहीं कर सकता."
+msgstr "उपयोगकर्ता किसी अवरुद्ध उपयोगकर्ता को लाइक नहीं कर सकता।"
 
 #: .\likes\models.py:21
 msgid "from user"
@@ -1005,7 +1005,7 @@ msgstr "प्रयोगकर्ता के लिए"
 
 #: .\likes\models.py:28
 msgid "user like"
-msgstr "उपयोगकर्ता को पसंद है"
+msgstr "उपयोगकर्ता पसंद"
 
 #: .\likes\models.py:29
 msgid "user likes"
@@ -1017,19 +1017,19 @@ msgstr "जिन लड़कियों को आप पसंद करत�
 
 #: .\likes\views.py:29
 msgid "Boys You Like"
-msgstr "लड़के तुम्हें पसंद हैं"
+msgstr "आपको पसंद आने वाले लड़के"
 
 #: .\likes\views.py:30
 msgid "People You Like"
-msgstr "वे लोग जिन्हें आप पसंद करते हैं"
+msgstr "जिन लोगों को आप पसंद करते हैं"
 
 #: .\likes\views.py:33
 msgid "Girls Who Like You"
-msgstr "जो लड़कियाँ तुम्हें पसंद करती हैं"
+msgstr "जो लड़कियां आपको पसंद करती हैं"
 
 #: .\likes\views.py:34
 msgid "Boys Who Like You"
-msgstr "लड़के जो तुम्हें पसंद करते हैं"
+msgstr "जो लड़के तुम्हें पसंद करते हैं"
 
 #: .\likes\views.py:35
 msgid "People Who Like You"
@@ -1041,11 +1041,11 @@ msgstr "आपसी पसंद"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "स्पीडी मैच मैच"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
-msgstr "आपकी मिलान सेटिंग सहेज ली गईं."
+msgstr "आपकी मैच सेटिंग्स सुरक्षित कर ली गई हैं।"
 
 #: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
 msgid "Unknown"
@@ -1057,11 +1057,11 @@ msgstr "कोई नहीं"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [अल्फा]"
+msgstr "स्पीडी मैच [अल्फा]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "स्पीडी मैच के बारे में Speedy Match"
+msgstr "स्पीडी मैच के बारे में"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1077,14 +1077,13 @@ msgid ""
 "available in %(languages_num)s languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">स्पीडी मैच</ Speedy Match a> एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक "
-"नया डेटिंग/मैचिंग वेब ऐप है जो <a href=\"https://%(language_code)s.speedy.net/\" "
-"title=\"\">स्पीडी नेट</a> के सदस्य हैं। स्पीडी मैच Speedy Net के Speedy Net साथ आप "
-"डेटिंग के लिए मे Speedy Match ल खाने वाले लोगों को ढूंढ सकते हैं और उनके साथ ऑनलाइन चैट कर "
-"सकते हैं। आप स्पीडी नेट पर लोगों को मित्र के रूप Speedy Net में जोड़ सकते हैं, लोगों को पसंद "
-"कर सकते हैं और उन्हें संदेश भेज सकते हैं। स्पीडी मैच सभी देशों और उम्र के लोगों के लिए निःशुल्क "
-"पंजीकरण के लिए खुला है (कोई आयु सीमा नहीं!)। यह साइट शाकाहारी और शाकाहार के अनुकूल है। "
-"यह वर्तमान में %(languages_num)s भाषाओं में उपलब्ध है।"
+"Match\">त्वरित मैच</a> यह एक नया डेटिंग/मैचिंग वेब ऐप है जो रोमांटिक उद्देश्यों के लिए उन "
+"सिंगल्स के लिए है जो इसके सदस्य हैं। <a href=\"https://%(language_code)s.speedy.net/"
+"\" title=\"Speedy Net\">स्पीडी नेट</a> Speedy Match के साथ आप डेटिंग के लिए उपयुक्त "
+"लोगों को ढूंढ सकते हैं और उनसे ऑनलाइन चैट कर सकते हैं। Speedy Match पर आप लोगों को दोस्त "
+"बना सकते हैं, उन्हें लाइक कर सकते हैं और उन्हें मैसेज भेज सकते हैं। Speedy Match पर सभी देशों और "
+"उम्र के लोग मुफ्त में रजिस्टर कर सकते हैं (कोई उम्र सीमा नहीं!)। यह साइट शाकाहारी और "
+"वीगन लोगों के लिए भी उपयुक्त है। यह साइट फिलहाल उपलब्ध है। %(languages_num)s भाषाएँ।"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1092,9 +1091,9 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"स्पीडी मैच के संस Speedy Match ्थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते हैं और "
-"जानवरों पर प्रयोगों पर आपत Speedy Match ्ति जताते हैं। स्पीडी मैच एक डेटिंग ऐप है जो "
-"शाकाहारी लोगों और जानवरों के लिए अनुकूल है।"
+"Speedy Match के संस्थापक शाकाहारी हैं, पशु अधिकारों का समर्थन करते हैं और जानवरों पर "
+"प्रयोगों का विरोध करते हैं। Speedy Match शाकाहारी लोगों और जानवरों के लिए एक उपयुक्त "
+"डेटिंग ऐप है।"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1105,12 +1104,11 @@ msgid ""
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
 msgstr ""
-"केवल आपकी आवश्यकताओं से मेल खाने वाले लोग ही आपकी प्रोफ़ाइल देख पाएंगे और आपसे संपर्क कर "
-"पाएंगे। हम गुमनाम खोजों की अनुमति नहीं देते है Speedy Match ं और स्पीडी मैच प्रोफ़ाइल केवल "
-"मेल खाने वाले भागीदारों को दिखाई देती हैं। आप यह चुन सकते हैं कि आपकी प्रोफ़ाइल कौन देख "
-"पाएगा और कौन सी जानकारी आपकी प्रोफ़ाइल पर सार्वजनिक दिखाई देगी, कौन सी जानकारी "
-"केवल दोस्तों के लिए दिखाई देगी और कौन सी जानकारी निजी होगी। निजी विवरण केवल आपको "
-"दिखाई देंगे."
+"केवल वही लोग आपकी प्रोफ़ाइल देख पाएंगे और आपसे संपर्क कर पाएंगे जो आपकी आवश्यकताओं से मेल "
+"खाते हों। हम गुमनाम खोजों की अनुमति नहीं देते हैं और Speedy Match प्रोफ़ाइल केवल मैचिंग "
+"पार्टनर को ही दिखाई देती हैं। आप चुन सकते हैं कि आपकी प्रोफ़ाइल कौन देख पाएगा और कौन सी "
+"जानकारी सार्वजनिक रूप से दिखाई देगी, कौन सी केवल मित्रों को और कौन सी निजी। निजी "
+"जानकारी केवल आपको ही दिखाई देगी।"
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1118,17 +1116,17 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"स्पीडी नेट और स्पीडी मै Speedy Net च पर सभी सुविधाएँ Speedy Match निःशुल्क हैं। मैचिंग "
-"पार्टनर ढ Speedy Match ूंढने के लिए आज ही स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे। <a "
-"href=\"/\" title=\"Join \">शामिल होने के लिए यहां क्लिक करें</a>।"
+"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Match से जुड़ें और अपने "
+"लिए उपयुक्त साथी खोजें, इसमें बस कुछ ही मिनट लगते हैं। <a href=\"/\" title=\"Join "
+"Speedy Match\">यहाँ क्लिक करें</a> शामिल होना।"
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"Speedy Match स्पीडी मैच एक निःशुल्क सॉफ्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि आप स्पीडी "
-"मैच के विकास और सुधार में मदद करना चाहते हैं, तो कृपया मुझे ईमेल से संपर्क करें।"
+"Speedy Match एक निःशुल्क सॉफ़्टवेयर और ओपन सोर्स प्रोजेक्ट है। यदि आप Speedy Match के "
+"विकास और सुधार में सहयोग करना चाहते हैं, तो कृपया मुझे ईमेल द्वारा संपर्क करें।"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1136,18 +1134,18 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match स्पीडी मैच का नाम <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">स्पीडी</a> के नाम पर रखा गया है, एक मादा कुत्ता जो "
-"कई वर्षों तक हमारे साथ थी और 2003 में उसकी मृत्यु हो गई। स्पीडी ने 1988 में 7 पिल्लों को "
-"जन्म दिया।"
+"स्पीडी मैच का नाम इसके बाद रखा गया है <a href=\"https://www.facebook.com/speedy."
+"the.female.dog\" title=\"Speedy\">तीव्र</a> स्पीड़ी नाम की एक मादा कुतिया कई "
+"वर्षों तक हमारे साथ रही और 2003 में उसकी मृत्यु हो गई। स्पीड़ी ने 1988 में 7 पिल्लों को जन्म "
+"दिया था।"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match स्पीडी मैच फिलहाल अल्फा में है। इसे अगस्त 2019 में लॉन्च किया गया था। "
-"स्पीडी मैच का अंग्रेजी संस्करण उत्पादन में है।"
+"Speedy Match फिलहाल अल्फा चरण में है। इसे अगस्त 2019 में लॉन्च किया गया था। Speedy "
+"Match का अंग्रेजी संस्करण अभी विकास के दौर में है।"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1159,11 +1157,11 @@ msgstr "उरी रोडबर्ग"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "स्पीडी नेट और स्पीडी मैच के Speedy Net संस्थापक और निदेशक, Speedy Match"
+msgstr "स्पीडी नेट और स्पीडी मैच के संस्थापक और निदेशक,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr "स्पीडी पाज़ टेक्नोलॉजीज लिमिटेड।"
 
 #: .\templates\accounts\edit_profile\activate.html:7
 msgid "Registration Step"
@@ -1176,7 +1174,7 @@ msgstr "स्वागत"
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "%(site_name)s में आपका स्वागत है"
+msgstr "आपका स्वागत है %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1201,17 +1199,15 @@ msgstr "अगला कदम"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज "
-"करें."
+msgstr "आपका Speedy Net खाता सक्रिय नहीं है। इसे सक्रिय करने के लिए इस पृष्ठ पर जाएँ।"
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "व्यवस्थापक - सभी मिलान"
+msgstr "व्यवस्थापक - सभी मैच"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "आपके मिलान"
+msgstr "आपके मैच"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
@@ -1226,18 +1222,18 @@ msgstr "पसंद है"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr "आपकी मिलान सेटिंग"
+msgstr "आपकी मैच सेटिंग्स"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "मिलान सेटिंग्स"
+msgstr "मैच सेटिंग्स"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "एक शाकाहारी अनुकूल वेबसाइट"
+msgstr "एक शाकाहारी वेबसाइट"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
@@ -1249,29 +1245,29 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"आपने %(site_name)s से इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। अपनी सूचना "
-"सेटिंग बदलने या ऑप्ट आउट करने के लिए यह पृष्ठ दर्ज करें:"
+"आपने इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। %(site_name)s नोटिफिकेशन "
+"सेटिंग बदलने या नोटिफिकेशन बंद करने के लिए इस पेज पर जाएं:"
 
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "कोई आपको %(site_name)s पर पसंद करता है"
+msgstr "कोई आपको पसंद करता है %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "अभी तक आपका कोई मित्र नहीं है."
+msgstr "अभी तक आपके कोई दोस्त नहीं हैं।"
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "आपके मित्र"
+msgstr "आपके दोस्त"
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "यहां आपकी कोई पसंद नहीं है."
+msgstr "यहां आपको कोई लाइक नहीं मिलेगा।"
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
-msgstr "मुफ़्त ऑनलाइन डेटिंग"
+msgstr "मुफ्त ऑनलाइन डेटिंग"
 
 #: .\templates\main\main_page.html:10
 msgid ""
@@ -1280,27 +1276,28 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Speedy Match स्पीडी मैच एकल लोगों के लिए रोमांटिक उद्देश्यों के लिए एक नया डेटिंग/मैचिंग "
-"वेब ऐप है जो स्पीडी नेट के सदस्य Speedy Net हैं। स्पीडी मैच क Speedy Match े साथ आप "
-"डेटिंग के लिए मेल खाने वाले लोगों को ढूंढ सकते हैं और उनके साथ ऑनलाइन चैट कर सकते हैं। यह "
-"साइट शाकाहारी और शाकाहार के अनुकूल है।"
+"Speedy Match, Speedy Net के सदस्यों के लिए एक नया डेटिंग/मैचिंग वेब ऐप है, जो रोमांटिक "
+"उद्देश्यों के लिए बनाया गया है। Speedy Match के ज़रिए आप डेटिंग के लिए उपयुक्त लोगों को ढूंढ "
+"सकते हैं और उनसे ऑनलाइन चैट कर सकते हैं। यह साइट शाकाहारी और वीगन लोगों के लिए भी "
+"उपयुक्त है।"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "एक प्रेमी की तलाश है? प्रेमिका ढूंढ रहा हूं? आओ और स्पीडी से मिलो! Speedy"
+msgstr ""
+"क्या आप बॉयफ्रेंड की तलाश में हैं? क्या आप गर्लफ्रेंड की तलाश में हैं? आइए और स्पीड़ी से मिलिए!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"स्पीडी नेट और स्पीडी म Speedy Net ैच पर सभी सुविधा Speedy Match एँ निःशुल्क हैं। मैचिंग "
-"पार्टनर Speedy Match ढूंढने के लिए आज ही स्पीडी मैच से जुड़ें, इसमें केवल कुछ मिनट लगेंगे।"
+"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Match से जुड़ें और अपने "
+"लिए उपयुक्त साथी खोजें, इसमें बस कुछ ही मिनट लगते हैं।"
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
-msgstr "मिलान अद्यतन करें"
+msgstr "मैचों को अपडेट करें"
 
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
@@ -1324,8 +1321,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"आपके पास अभी तक कोई मैच नहीं है. अपनी खोज सेटिंग विस्तृत करने का प्रयास करें या बाद में "
-"दोबारा जांचें।"
+"अभी तक आपको कोई परिणाम नहीं मिला है। कृपया अपनी खोज सेटिंग्स को विस्तृत करें या बाद में "
+"पुनः जांच करें।"
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
@@ -1365,7 +1362,7 @@ msgstr "आप चाहते हैं"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr "मित्रता अनुरोध भेजा गया"
+msgstr "मित्रता का अनुरोध भेजा गया"
 
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
@@ -1385,12 +1382,12 @@ msgstr "रिश्ते की स्थिति"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "अंतिम बार स्पीड Speedy Match ी मैच देखा गया"
+msgstr "पिछली बार Speedy Match पर गए थे"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "मिलान रैंक"
+msgstr "मैच रैंक"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr "कोई मेल नहीं है."
+msgstr "कोई मेल नहीं है।"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 18:07+0300\n"
+"POT-Creation-Date: 2026-07-28 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,22 +21,22 @@ msgstr "आपके दोस्त"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "मित्रता अनुरोध भेजा गया"
+msgstr "मित्रता का अनुरोध भेजा गया"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "आपने अपने ईमेल पते की पुष्टि नहीं की है. कृपया अपना इनबॉक्स जांचें."
+msgstr "आपने अपना ईमेल पता सत्यापित नहीं किया है। कृपया अपना इनबॉक्स देखें।"
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "आपने अपने ईमेल पते की पुष्टि नहीं की है. कृपया अपना इनबॉक्स जांचें."
+msgstr "आपने अपना ईमेल पता सत्यापित नहीं किया है। कृपया अपना इनबॉक्स देखें।"
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "आपने अपने ईमेल पते की पुष्टि नहीं की है. कृपया अपना इनबॉक्स जांचें."
+msgstr "आपने अपना ईमेल पता सत्यापित नहीं किया है। कृपया अपना इनबॉक्स देखें।"
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -61,7 +61,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "नमस्ते <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"%(site_name)s में आपका पुनः स्वागत है!"
+"वापसी पर स्वागत है %(site_name)s! "
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -71,7 +71,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "नमस्ते <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"%(site_name)s में आपका पुनः स्वागत है!"
+"वापसी पर स्वागत है %(site_name)s! "
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -81,7 +81,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "नमस्ते <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"%(site_name)s में आपका पुनः स्वागत है!"
+"वापसी पर स्वागत है %(site_name)s! "
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -116,47 +116,47 @@ msgstr "खाता निष्क्रिय करें"
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr "एक पुष्टिकरण ईमेल पुनः भेजें"
+msgstr "पुष्टिकरण ईमेल दोबारा भेजें"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr "एक पुष्टिकरण ईमेल पुनः भेजें"
+msgstr "पुष्टिकरण ईमेल दोबारा भेजें"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr "एक पुष्टिकरण ईमेल पुनः भेजें"
+msgstr "पुष्टिकरण ईमेल दोबारा भेजें"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "इस ईमेल पते को प्राथमिक बनाएं"
+msgstr "इस ईमेल पते को प्राथमिक ईमेल पता बनाएं"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "इस ईमेल पते को प्राथमिक बनाएं"
+msgstr "इस ईमेल पते को प्राथमिक ईमेल पता बनाएं"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "इस ईमेल पते को प्राथमिक बनाएं"
+msgstr "इस ईमेल पते को प्राथमिक ईमेल पता बनाएं"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "क्या आप वाकई यह ईमेल पता हटाना चाहते हैं?"
+msgstr "क्या आप वाकई इस ईमेल पते को हटाना चाहते हैं?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "क्या आप वाकई यह ईमेल पता हटाना चाहते हैं?"
+msgstr "क्या आप वाकई इस ईमेल पते को हटाना चाहते हैं?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "क्या आप वाकई यह ईमेल पता हटाना चाहते हैं?"
+msgstr "क्या आप वाकई इस ईमेल पते को हटाना चाहते हैं?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -206,32 +206,32 @@ msgstr "पासवर्ड बदलें"
 #: .\__translations\__translations.html:52
 msgctxt "female"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "अपनी प्रोफ़ाइल पर ईमेल पते की गोपनीयता सेटिंग बदलें।"
+msgstr "अपनी प्रोफ़ाइल पर ईमेल पतों की गोपनीयता सेटिंग बदलें।"
 
 #: .\__translations\__translations.html:53
 msgctxt "male"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "अपनी प्रोफ़ाइल पर ईमेल पते की गोपनीयता सेटिंग बदलें।"
+msgstr "अपनी प्रोफ़ाइल पर ईमेल पतों की गोपनीयता सेटिंग बदलें।"
 
 #: .\__translations\__translations.html:54
 msgctxt "other"
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "अपनी प्रोफ़ाइल पर ईमेल पते की गोपनीयता सेटिंग बदलें।"
+msgstr "अपनी प्रोफ़ाइल पर ईमेल पतों की गोपनीयता सेटिंग बदलें।"
 
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "आप किसी को रोक नहीं रहे हैं."
+msgstr "आप किसी को ब्लॉक नहीं कर रहे हैं।"
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "आप किसी को रोक नहीं रहे हैं."
+msgstr "आप किसी को ब्लॉक नहीं कर रहे हैं।"
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "आप किसी को रोक नहीं रहे हैं."
+msgstr "आप किसी को ब्लॉक नहीं कर रहे हैं।"
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
@@ -251,35 +251,35 @@ msgstr "किसी उपयोगकर्ता की रिपोर्ट
 #: .\__translations\__translations.html:72
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr "आपका फ़ीडबैक व्यवस्थापकों को भेज दिया गया था."
+msgstr "आपकी प्रतिक्रिया प्रशासकों को भेज दी गई है।"
 
 #: .\__translations\__translations.html:73
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr "आपका फ़ीडबैक व्यवस्थापकों को भेज दिया गया था."
+msgstr "आपकी प्रतिक्रिया प्रशासकों को भेज दी गई है।"
 
 #: .\__translations\__translations.html:74
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr "आपका फ़ीडबैक व्यवस्थापकों को भेज दिया गया था."
+msgstr "आपकी प्रतिक्रिया प्रशासकों को भेज दी गई है।"
 
 #: .\__translations\__translations.html:76
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "%(user_name)s पर एक संदेश भेजें"
+msgstr "संदेश भेजें %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "%(user_name)s पर एक संदेश भेजें"
+msgstr "संदेश भेजें %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "%(user_name)s पर एक संदेश भेजें"
+msgstr "संदेश भेजें %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
@@ -314,47 +314,47 @@ msgstr "आप:"
 #: .\__translations\__translations.html:88
 msgctxt "female"
 msgid "You have no messages yet."
-msgstr "आपके पास अभी तक कोई संदेश नहीं है."
+msgstr "आपके पास अभी तक कोई संदेश नहीं है।"
 
 #: .\__translations\__translations.html:89
 msgctxt "male"
 msgid "You have no messages yet."
-msgstr "आपके पास अभी तक कोई संदेश नहीं है."
+msgstr "आपके पास अभी तक कोई संदेश नहीं है।"
 
 #: .\__translations\__translations.html:90
 msgctxt "other"
 msgid "You have no messages yet."
-msgstr "आपके पास अभी तक कोई संदेश नहीं है."
+msgstr "आपके पास अभी तक कोई संदेश नहीं है।"
 
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "आपने ब्लॉक कर दिया "
+msgstr "आपने अवरुद्ध कर दिया "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "आपने ब्लॉक कर दिया "
+msgstr "आपने अवरुद्ध कर दिया "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "आपने ब्लॉक कर दिया "
+msgstr "आपने अवरुद्ध कर दिया "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " तुम्हें ब्लॉक कर दिया."
+msgstr " मैंने आपको ब्लॉक कर दिया है।"
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " तुम्हें ब्लॉक कर दिया."
+msgstr " मैंने आपको ब्लॉक कर दिया है।"
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " तुम्हें ब्लॉक कर दिया."
+msgstr " मैंने आपको ब्लॉक कर दिया है।"
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -363,8 +363,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s में एक स्पीडी म Speedy Match ैच प्रोफ़ाइल भी है। स्पीडी मैच पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Match"
+"%(user_name)s Speedy Match पर भी इसकी प्रोफाइल है। देखें %(user_name)sSpeedy "
+"Match पर 'की प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -373,8 +373,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s में एक स्पीडी म Speedy Match ैच प्रोफ़ाइल भी है। स्पीडी मैच पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Match"
+"%(user_name)s Speedy Match पर भी इसकी प्रोफाइल है। देखें %(user_name)sSpeedy "
+"Match पर 'की प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -383,8 +383,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s में एक स्पीडी म Speedy Match ैच प्रोफ़ाइल भी है। स्पीडी मैच पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Match"
+"%(user_name)s Speedy Match पर भी इसकी प्रोफाइल है। देखें %(user_name)sSpeedy "
+"Match पर 'की प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -393,8 +393,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s की एक स्पीडी नेट Speedy Net प्रोफ़ाइल भी है। स्पीडी नेट पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Net"
+"%(user_name)s Speedy Net पर भी एक प्रोफाइल है। देखें %(user_name)sSpeedy Net पर "
+"'s प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -403,8 +403,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s की एक स्पीडी नेट Speedy Net प्रोफ़ाइल भी है। स्पीडी नेट पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Net"
+"%(user_name)s Speedy Net पर भी एक प्रोफाइल है। देखें %(user_name)sSpeedy Net पर "
+"'s प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -413,29 +413,23 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s की एक स्पीडी नेट Speedy Net प्रोफ़ाइल भी है। स्पीडी नेट पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Net"
+"%(user_name)s Speedy Net पर भी एक प्रोफाइल है। देखें %(user_name)sSpeedy Net पर "
+"'s प्रोफ़ाइल।"
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"आपके पास एक स्पीडी न Speedy Net ेट प्रोफ़ाइल भी है. स्पीडी नेट पर अपनी प्रोफ़ाइल देखें। "
-"Speedy Net"
+msgstr "आपका Speedy Net पर भी प्रोफाइल है। Speedy Net पर अपना प्रोफाइल देखें।"
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"आपके पास एक स्पीडी न Speedy Net ेट प्रोफ़ाइल भी है. स्पीडी नेट पर अपनी प्रोफ़ाइल देखें। "
-"Speedy Net"
+msgstr "आपका Speedy Net पर भी प्रोफाइल है। Speedy Net पर अपना प्रोफाइल देखें।"
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"आपके पास एक स्पीडी न Speedy Net ेट प्रोफ़ाइल भी है. स्पीडी नेट पर अपनी प्रोफ़ाइल देखें। "
-"Speedy Net"
+msgstr "आपका Speedy Net पर भी प्रोफाइल है। Speedy Net पर अपना प्रोफाइल देखें।"
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -515,17 +509,17 @@ msgstr "प्रतिवेदन "
 #: .\__translations\__translations.html:132
 msgctxt "female"
 msgid "Report this photo"
-msgstr "इस फ़ोटो की रिपोर्ट करें"
+msgstr "इस फोटो की रिपोर्ट करें"
 
 #: .\__translations\__translations.html:133
 msgctxt "male"
 msgid "Report this photo"
-msgstr "इस फ़ोटो की रिपोर्ट करें"
+msgstr "इस फोटो की रिपोर्ट करें"
 
 #: .\__translations\__translations.html:134
 msgctxt "other"
 msgid "Report this photo"
-msgstr "इस फ़ोटो की रिपोर्ट करें"
+msgstr "इस फोटो की रिपोर्ट करें"
 
 #: .\__translations\__translations.html:136
 msgctxt "female"
@@ -680,56 +674,50 @@ msgstr "सभी देखें"
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज "
-"करें."
+msgstr "आपका Speedy Net खाता सक्रिय नहीं है। इसे सक्रिय करने के लिए इस पृष्ठ पर जाएँ।"
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज "
-"करें."
+msgstr "आपका Speedy Net खाता सक्रिय नहीं है। इसे सक्रिय करने के लिए इस पृष्ठ पर जाएँ।"
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"आपका Speedy Net स्पीडी नेट खाता सक्रिय नहीं है. इसे सक्रिय करने के लिए इस पृष्ठ को दर्ज "
-"करें."
+msgstr "आपका Speedy Net खाता सक्रिय नहीं है। इसे सक्रिय करने के लिए इस पृष्ठ पर जाएँ।"
 
 #: .\__translations\__translations.html:180
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr "%(site_name)s में आपका स्वागत है"
+msgstr "आपका स्वागत है %(site_name)s"
 
 #: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr "%(site_name)s में आपका स्वागत है"
+msgstr "आपका स्वागत है %(site_name)s"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr "%(site_name)s में आपका स्वागत है"
+msgstr "आपका स्वागत है %(site_name)s"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
 msgid "has sent you a message."
-msgstr "आपको एक संदेश भेजा है."
+msgstr "उसने आपको एक संदेश भेजा है।"
 
 #: .\__translations\__translations.html:185
 msgctxt "male"
 msgid "has sent you a message."
-msgstr "आपको एक संदेश भेजा है."
+msgstr "उसने आपको एक संदेश भेजा है।"
 
 #: .\__translations\__translations.html:186
 msgctxt "other"
 msgid "has sent you a message."
-msgstr "आपको एक संदेश भेजा है."
+msgstr "उसने आपको एक संदेश भेजा है।"
 
 #: .\__translations\__translations.html:188
 msgctxt "female"
@@ -750,19 +738,19 @@ msgstr "इसे पढ़ें:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s पर अपने ईमेल पते की पुष्टि करें"
+msgstr "अपना ईमेल पता सत्यापित करें %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s पर अपने ईमेल पते की पुष्टि करें"
+msgstr "अपना ईमेल पता सत्यापित करें %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s पर अपने ईमेल पते की पुष्टि करें"
+msgstr "अपना ईमेल पता सत्यापित करें %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -831,8 +819,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"आपने %(site_name)s से इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। अपनी सूचना "
-"सेटिंग बदलने या ऑप्ट आउट करने के लिए यह पृष्ठ दर्ज करें:"
+"आपने इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। %(site_name)s नोटिफिकेशन "
+"सेटिंग बदलने या नोटिफिकेशन बंद करने के लिए इस पेज पर जाएं:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -841,8 +829,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"आपने %(site_name)s से इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। अपनी सूचना "
-"सेटिंग बदलने या ऑप्ट आउट करने के लिए यह पृष्ठ दर्ज करें:"
+"आपने इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। %(site_name)s नोटिफिकेशन "
+"सेटिंग बदलने या नोटिफिकेशन बंद करने के लिए इस पेज पर जाएं:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -851,8 +839,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"आपने %(site_name)s से इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। अपनी सूचना "
-"सेटिंग बदलने या ऑप्ट आउट करने के लिए यह पृष्ठ दर्ज करें:"
+"आपने इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। %(site_name)s नोटिफिकेशन "
+"सेटिंग बदलने या नोटिफिकेशन बंद करने के लिए इस पेज पर जाएं:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
@@ -877,7 +865,7 @@ msgstr "ईमेल"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "मान मान्य JSON होना चाहिए."
+msgstr "मान वैध JSON होना चाहिए।"
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -885,7 +873,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"कृपया सही %(username)s और पासवर्ड दर्ज करें। ध्यान दें कि दोनों फ़ील्ड केस-संवेदी हो सकते हैं।"
+"कृपया सही मान दर्ज करें %(username)s और पासवर्ड। ध्यान दें कि दोनों फ़ील्ड केस-सेंसिटिव हो "
+"सकते हैं।"
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -893,11 +882,11 @@ msgstr "संदेश"
 
 #: .\__translations\__translations.py:19
 msgid "Friendship Request"
-msgstr "मित्रता निवेदन"
+msgstr "मित्रता का अनुरोध"
 
 #: .\__translations\__translations.py:20
 msgid "Friendship Requests"
-msgstr "मैत्री अनुरोध"
+msgstr "मित्रता अनुरोध"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
@@ -909,11 +898,11 @@ msgstr "दोस्त"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr "रिश्ते का पालन"
+msgstr "निम्नलिखित संबंध"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr "रिश्तों का पालन"
+msgstr "रिश्तों का अनुसरण करना"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
@@ -932,39 +921,41 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"सूची में %(show_value)d आइटम है, इसमें %(limit_value)d से अधिक नहीं होना चाहिए।"
+"सूची में शामिल है %(show_value)d वस्तु में इससे अधिक मात्रा नहीं होनी चाहिए "
+"%(limit_value)d. "
 msgstr[1] ""
-"सूची में %(show_value)d आइटम हैं, इसमें %(limit_value)d से अधिक नहीं होना चाहिए।"
+"सूची में शामिल है %(show_value)d इसमें इससे अधिक वस्तुएं नहीं होनी चाहिए। "
+"%(limit_value)d. "
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "username (slug)"
-msgstr "उपयोक्तानाम (स्लग)"
+msgstr "उपयोगकर्ता नाम (स्लग)"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "username (slug)"
-msgstr "उपयोक्तानाम (स्लग)"
+msgstr "उपयोगकर्ता नाम (स्लग)"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "username (slug)"
-msgstr "उपयोक्तानाम (स्लग)"
+msgstr "उपयोगकर्ता नाम (स्लग)"
 
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "अपना प्रोफ़ाइल चित्र अपडेट करें"
+msgstr "अपनी प्रोफ़ाइल तस्वीर अपडेट करें"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "अपना प्रोफ़ाइल चित्र अपडेट करें"
+msgstr "अपनी प्रोफ़ाइल तस्वीर अपडेट करें"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "अपना प्रोफ़ाइल चित्र अपडेट करें"
+msgstr "अपनी प्रोफ़ाइल तस्वीर अपडेट करें"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
@@ -984,53 +975,53 @@ msgstr "परिवर्तनों को सुरक्षित करे
 #: .\__translations\__translations.py:53
 msgctxt "female"
 msgid "You can't change your username."
-msgstr "आप अपना उपयोगकर्ता नाम नहीं बदल सकते."
+msgstr "आप अपना यूजरनेम नहीं बदल सकते।"
 
 #: .\__translations\__translations.py:54
 msgctxt "male"
 msgid "You can't change your username."
-msgstr "आप अपना उपयोगकर्ता नाम नहीं बदल सकते."
+msgstr "आप अपना यूजरनेम नहीं बदल सकते।"
 
 #: .\__translations\__translations.py:55
 msgctxt "other"
 msgid "You can't change your username."
-msgstr "आप अपना उपयोगकर्ता नाम नहीं बदल सकते."
+msgstr "आप अपना यूजरनेम नहीं बदल सकते।"
 
 #: .\__translations\__translations.py:57
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "अपना {site_name} खाता सक्रिय करें"
+msgstr "अपना सक्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "अपना {site_name} खाता सक्रिय करें"
+msgstr "अपना सक्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "अपना {site_name} खाता सक्रिय करें"
+msgstr "अपना सक्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "अपना {site_name} खाता निष्क्रिय करें"
+msgstr "अपने को निष्क्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "अपना {site_name} खाता निष्क्रिय करें"
+msgstr "अपने को निष्क्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "अपना {site_name} खाता निष्क्रिय करें"
+msgstr "अपने को निष्क्रिय करें {site_name} खाता"
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
@@ -1080,17 +1071,17 @@ msgstr "आप कहाँ रहते हैं?"
 #: .\__translations\__translations.py:77
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "कृपया लिखें कि आप कहाँ रहते हैं।"
+msgstr "कृपया अपना निवास स्थान लिखें।"
 
 #: .\__translations\__translations.py:78
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "कृपया लिखें कि आप कहाँ रहते हैं।"
+msgstr "कृपया अपना निवास स्थान लिखें।"
 
 #: .\__translations\__translations.py:79
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "कृपया लिखें कि आप कहाँ रहते हैं।"
+msgstr "कृपया अपना निवास स्थान लिखें।"
 
 #: .\__translations\__translations.py:81
 msgctxt "female"
@@ -1125,17 +1116,17 @@ msgstr "शाकाहारी (मछली और मांस नहीं 
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "कार्निस्ट (जानवरों को खाता है)"
+msgstr "मांसाहारी (जानवरों का मांस खाने वाला)"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "कार्निस्ट (जानवरों को खाता है)"
+msgstr "मांसाहारी (जानवरों का मांस खाने वाला)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "कार्निस्ट (जानवरों को खाता है)"
+msgstr "मांसाहारी (जानवरों का मांस खाने वाला)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
@@ -1170,47 +1161,47 @@ msgstr "शाकाहारी"
 #: .\__translations\__translations.py:101
 msgctxt "female"
 msgid "Carnist"
-msgstr "कार्निस्ट"
+msgstr "मांसाहारी"
 
 #: .\__translations\__translations.py:102
 msgctxt "male"
 msgid "Carnist"
-msgstr "कार्निस्ट"
+msgstr "मांसाहारी"
 
 #: .\__translations\__translations.py:103
 msgctxt "other"
 msgid "Carnist"
-msgstr "कार्निस्ट"
+msgstr "मांसाहारी"
 
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Not smoking"
-msgstr "धूम्रपान नहीं"
+msgstr "धूम्रपान नहीं करना"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
 msgid "Not smoking"
-msgstr "धूम्रपान नहीं"
+msgstr "धूम्रपान नहीं करना"
 
 #: .\__translations\__translations.py:107
 msgctxt "other"
 msgid "Not smoking"
-msgstr "धूम्रपान नहीं"
+msgstr "धूम्रपान नहीं करना"
 
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "कभी-कभी धूम्रपान करना"
+msgstr "कभी-कभार धूम्रपान करना"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "कभी-कभी धूम्रपान करना"
+msgstr "कभी-कभार धूम्रपान करना"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "कभी-कभी धूम्रपान करना"
+msgstr "कभी-कभार धूम्रपान करना"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
@@ -1275,17 +1266,17 @@ msgstr "विधवा"
 #: .\__translations\__translations.py:129
 msgctxt "female"
 msgid "In a relationship"
-msgstr "एक रिश्ते में"
+msgstr "रिश्ते में"
 
 #: .\__translations\__translations.py:130
 msgctxt "male"
 msgid "In a relationship"
-msgstr "एक रिश्ते में"
+msgstr "रिश्ते में"
 
 #: .\__translations\__translations.py:131
 msgctxt "other"
 msgid "In a relationship"
-msgstr "एक रिश्ते में"
+msgstr "रिश्ते में"
 
 #: .\__translations\__translations.py:133
 msgctxt "female"
@@ -1365,17 +1356,17 @@ msgstr "विवाहित"
 #: .\__translations\__translations.py:153
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "आपका नया पासवर्ड सहेज लिया गया है."
+msgstr "आपका नया पासवर्ड सहेज लिया गया है।"
 
 #: .\__translations\__translations.py:154
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "आपका नया पासवर्ड सहेज लिया गया है."
+msgstr "आपका नया पासवर्ड सहेज लिया गया है।"
 
 #: .\__translations\__translations.py:155
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "आपका नया पासवर्ड सहेज लिया गया है."
+msgstr "आपका नया पासवर्ड सहेज लिया गया है।"
 
 #: .\__translations\__translations.py:157
 msgctxt "female"
@@ -1383,8 +1374,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"आपके स Speedy Net ्पीडी नेट और स्पी Speedy Match डी मैच खाते निष्क्रिय कर दिए गए हैं। "
-"आप उन्हें किसी भी समय पुनः सक्रिय कर सकते हैं."
+"आपके Speedy Net और Speedy Match खाते निष्क्रिय कर दिए गए हैं। आप इन्हें कभी भी पुनः "
+"सक्रिय कर सकते हैं।"
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1392,8 +1383,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"आपके स Speedy Net ्पीडी नेट और स्पी Speedy Match डी मैच खाते निष्क्रिय कर दिए गए हैं। "
-"आप उन्हें किसी भी समय पुनः सक्रिय कर सकते हैं."
+"आपके Speedy Net और Speedy Match खाते निष्क्रिय कर दिए गए हैं। आप इन्हें कभी भी पुनः "
+"सक्रिय कर सकते हैं।"
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1401,8 +1392,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"आपके स Speedy Net ्पीडी नेट और स्पी Speedy Match डी मैच खाते निष्क्रिय कर दिए गए हैं। "
-"आप उन्हें किसी भी समय पुनः सक्रिय कर सकते हैं."
+"आपके Speedy Net और Speedy Match खाते निष्क्रिय कर दिए गए हैं। आप इन्हें कभी भी पुनः "
+"सक्रिय कर सकते हैं।"
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1411,8 +1402,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"आपका {site_name} खाता निष्क्रिय कर दिया गया है। आप इसे किसी भी समय पुनः सक्रिय कर "
-"सकते हैं. आपका स्पीडी नेट खाता सक्रिय रहता है। Speedy Net"
+"आपका {site_name} आपका खाता निष्क्रिय कर दिया गया है। आप इसे कभी भी पुनः सक्रिय कर "
+"सकते हैं। आपका Speedy Net खाता सक्रिय रहेगा।"
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1421,8 +1412,8 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"आपका {site_name} खाता निष्क्रिय कर दिया गया है। आप इसे किसी भी समय पुनः सक्रिय कर "
-"सकते हैं. आपका स्पीडी नेट खाता सक्रिय रहता है। Speedy Net"
+"आपका {site_name} आपका खाता निष्क्रिय कर दिया गया है। आप इसे कभी भी पुनः सक्रिय कर "
+"सकते हैं। आपका Speedy Net खाता सक्रिय रहेगा।"
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1431,38 +1422,38 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"आपका {site_name} खाता निष्क्रिय कर दिया गया है। आप इसे किसी भी समय पुनः सक्रिय कर "
-"सकते हैं. आपका स्पीडी नेट खाता सक्रिय रहता है। Speedy Net"
+"आपका {site_name} आपका खाता निष्क्रिय कर दिया गया है। आप इसे कभी भी पुनः सक्रिय कर "
+"सकते हैं। आपका Speedy Net खाता सक्रिय रहेगा।"
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "आप पहले ही इस ईमेल पते की पुष्टि कर चुके हैं."
+msgstr "आप इस ईमेल पते की पुष्टि पहले ही कर चुके हैं।"
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "आप पहले ही इस ईमेल पते की पुष्टि कर चुके हैं."
+msgstr "आप इस ईमेल पते की पुष्टि पहले ही कर चुके हैं।"
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "आप पहले ही इस ईमेल पते की पुष्टि कर चुके हैं."
+msgstr "आप इस ईमेल पते की पुष्टि पहले ही कर चुके हैं।"
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr "आपने अपने ईमेल पते की पुष्टि कर दी है."
+msgstr "आपने अपना ईमेल पता सत्यापित कर लिया है।"
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr "आपने अपने ईमेल पते की पुष्टि कर दी है."
+msgstr "आपने अपना ईमेल पता सत्यापित कर लिया है।"
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr "आपने अपने ईमेल पते की पुष्टि कर दी है."
+msgstr "आपने अपना ईमेल पता सत्यापित कर लिया है।"
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
@@ -1486,8 +1477,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"आपके पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर आपके {1} से अधिक मित्र नह Speedy Net ीं "
-"हो सकते। कृपया आगे बढ़ने से पहले मित्रों को हटा दें।"
+"आप पहले से ही {0} दोस्त। आपके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर "
+"मौजूद दोस्तों से अनुरोध है कि आगे बढ़ने से पहले उन्हें हटा दें।"
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1496,8 +1487,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"आपके पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर आपके {1} से अधिक मित्र नह Speedy Net ीं "
-"हो सकते। कृपया आगे बढ़ने से पहले मित्रों को हटा दें।"
+"आप पहले से ही {0} दोस्त। आपके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर "
+"मौजूद दोस्तों से अनुरोध है कि आगे बढ़ने से पहले उन्हें हटा दें।"
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1506,8 +1497,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"आपके पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर आपके {1} से अधिक मित्र नह Speedy Net ीं "
-"हो सकते। कृपया आगे बढ़ने से पहले मित्रों को हटा दें।"
+"आप पहले से ही {0} दोस्त। आपके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर "
+"मौजूद दोस्तों से अनुरोध है कि आगे बढ़ने से पहले उन्हें हटा दें।"
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1516,8 +1507,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1526,8 +1518,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1536,8 +1529,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1546,8 +1540,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1556,8 +1551,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1566,8 +1562,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1576,8 +1573,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1586,8 +1584,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1596,164 +1595,165 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र "
-"Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।"
+"इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। "
+"{1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए "
+"कहें।"
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "आप स्वयं से मित्र नहीं बन सकते."
+msgstr "आप खुद से दोस्ती नहीं कर सकते।"
 
 #: .\__translations\__translations.py:192
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "आप स्वयं से मित्र नहीं बन सकते."
+msgstr "आप खुद से दोस्ती नहीं कर सकते।"
 
 #: .\__translations\__translations.py:193
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "आप स्वयं से मित्र नहीं बन सकते."
+msgstr "आप खुद से दोस्ती नहीं कर सकते।"
 
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "आप पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध कर चुके हैं।"
+msgstr "आपने पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "आप पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध कर चुके हैं।"
+msgstr "आपने पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "आप पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध कर चुके हैं।"
+msgstr "आपने पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "यह उपयोगकर्ता पहले ही आपसे मित्रता का अनुरोध कर चुका है."
+msgstr "इस उपयोगकर्ता ने पहले ही आपसे मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "यह उपयोगकर्ता पहले ही आपसे मित्रता का अनुरोध कर चुका है."
+msgstr "इस उपयोगकर्ता ने पहले ही आपसे मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:201
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "यह उपयोगकर्ता पहले ही आपसे मित्रता का अनुरोध कर चुका है."
+msgstr "इस उपयोगकर्ता ने पहले ही आपसे मित्रता का अनुरोध किया है।"
 
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं."
+msgstr "आप पहले से ही इस उपयोगकर्ता के मित्र हैं।"
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "आपने अपना मित्रता अनुरोध रद्द कर दिया है."
+msgstr "आपने अपनी मित्रता का अनुरोध रद्द कर दिया है।"
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "आपने अपना मित्रता अनुरोध रद्द कर दिया है."
+msgstr "आपने अपनी मित्रता का अनुरोध रद्द कर दिया है।"
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "आपने अपना मित्रता अनुरोध रद्द कर दिया है."
+msgstr "आपने अपनी मित्रता का अनुरोध रद्द कर दिया है।"
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "आपने इस उपयोगकर्ता को अपने मित्रों से हटा दिया है."
+msgstr "आपने इस उपयोगकर्ता को अपने मित्रों की सूची से हटा दिया है।"
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "आपने इस उपयोगकर्ता को अपने मित्रों से हटा दिया है."
+msgstr "आपने इस उपयोगकर्ता को अपने मित्रों की सूची से हटा दिया है।"
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "आपने इस उपयोगकर्ता को अपने मित्रों से हटा दिया है."
+msgstr "आपने इस उपयोगकर्ता को अपने मित्रों की सूची से हटा दिया है।"
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr "{site_name} में आपका स्वागत है!"
+msgstr "आपका स्वागत है {site_name}! "
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr "{site_name} में आपका स्वागत है!"
+msgstr "आपका स्वागत है {site_name}! "
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "{site_name} में आपका स्वागत है!"
+msgstr "आपका स्वागत है {site_name}! "
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name} में आपका स्वागत है! आपका खाता अब सक्रिय है."
+msgstr "आपका स्वागत है {site_name} आपका खाता अब सक्रिय हो गया है।"
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name} में आपका स्वागत है! आपका खाता अब सक्रिय है."
+msgstr "आपका स्वागत है {site_name} आपका खाता अब सक्रिय हो गया है।"
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name} में आपका स्वागत है! आपका खाता अब सक्रिय है."
+msgstr "आपका स्वागत है {site_name} आपका खाता अब सक्रिय हो गया है।"
 
 #: .\__translations\__translations.py:229
 msgctxt "female"
@@ -1779,10 +1779,10 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"स्पैम संदेश भेजने के लिए साइट के दुरुपयोग के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे "
-"जा सकने वाले संदेशों की संख्या सीमित करनी पड़ी। कृपया कल पुनः प्रयास करें. कृपया ध्यान दें कि "
-"आपको बड़ी संख्या में लोगों को स्पैम संदेश या समान सामग्री वाले संदेश भेजने के लिए स्पीडी नेट का "
-"उपयोग करने की अनुमति नहीं है। Speedy Net"
+"साइट का दुरुपयोग करके स्पैम संदेश भेजने के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे जा "
+"सकने वाले संदेशों की संख्या सीमित करनी पड़ी है। कृपया कल फिर प्रयास करें। कृपया ध्यान दें कि "
+"Speedy Net का उपयोग स्पैम संदेश भेजने या एक ही विषयवस्तु वाले संदेश बड़ी संख्या में लोगों को "
+"भेजने के लिए करना प्रतिबंधित है।"
 
 #: .\__translations\__translations.py:234
 msgctxt "male"
@@ -1793,10 +1793,10 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"स्पैम संदेश भेजने के लिए साइट के दुरुपयोग के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे "
-"जा सकने वाले संदेशों की संख्या सीमित करनी पड़ी। कृपया कल पुनः प्रयास करें. कृपया ध्यान दें कि "
-"आपको बड़ी संख्या में लोगों को स्पैम संदेश या समान सामग्री वाले संदेश भेजने के लिए स्पीडी नेट का "
-"उपयोग करने की अनुमति नहीं है। Speedy Net"
+"साइट का दुरुपयोग करके स्पैम संदेश भेजने के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे जा "
+"सकने वाले संदेशों की संख्या सीमित करनी पड़ी है। कृपया कल फिर प्रयास करें। कृपया ध्यान दें कि "
+"Speedy Net का उपयोग स्पैम संदेश भेजने या एक ही विषयवस्तु वाले संदेश बड़ी संख्या में लोगों को "
+"भेजने के लिए करना प्रतिबंधित है।"
 
 #: .\__translations\__translations.py:235
 msgctxt "other"
@@ -1807,10 +1807,10 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"स्पैम संदेश भेजने के लिए साइट के दुरुपयोग के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे "
-"जा सकने वाले संदेशों की संख्या सीमित करनी पड़ी। कृपया कल पुनः प्रयास करें. कृपया ध्यान दें कि "
-"आपको बड़ी संख्या में लोगों को स्पैम संदेश या समान सामग्री वाले संदेश भेजने के लिए स्पीडी नेट का "
-"उपयोग करने की अनुमति नहीं है। Speedy Net"
+"साइट का दुरुपयोग करके स्पैम संदेश भेजने के कारण, हमें एक दिन में साइट के अन्य सदस्यों को भेजे जा "
+"सकने वाले संदेशों की संख्या सीमित करनी पड़ी है। कृपया कल फिर प्रयास करें। कृपया ध्यान दें कि "
+"Speedy Net का उपयोग स्पैम संदेश भेजने या एक ही विषयवस्तु वाले संदेश बड़ी संख्या में लोगों को "
+"भेजने के लिए करना प्रतिबंधित है।"
 
 #: .\__translations\__translations.py:241
 msgctxt "female_female"
@@ -1818,8 +1818,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1827,8 +1827,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1836,8 +1836,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1845,8 +1845,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1854,8 +1854,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1863,8 +1863,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1872,8 +1872,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1881,8 +1881,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1890,36 +1890,33 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता है, लेकिन आप उनकी स्पीडी नेट प्रोफ़ाइल "
-"Speedy Net पर जा सकते हैं। स्पीडी नेट पर उपयोगकर्ता की प्रोफ़ाइल देखें। Speedy Net"
+"यह उपयोगकर्ता आपकी प्रोफ़ाइल से मेल नहीं खाता, लेकिन आप उनकी Speedy Net प्रोफ़ाइल देख "
+"सकते हैं। Speedy Net पर उपयोगकर्ता की प्रोफ़ाइल देखें।"
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr ""
-"आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती. कृपया एक गैरपारदर्शी छवि अपलोड करें."
+msgstr "आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती। कृपया अपारदर्शी तस्वीर अपलोड करें।"
 
 #: .\__translations\__translations.py:252
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr ""
-"आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती. कृपया एक गैरपारदर्शी छवि अपलोड करें."
+msgstr "आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती। कृपया अपारदर्शी तस्वीर अपलोड करें।"
 
 #: .\__translations\__translations.py:253
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr ""
-"आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती. कृपया एक गैरपारदर्शी छवि अपलोड करें."
+msgstr "आपकी प्रोफ़ाइल तस्वीर पारदर्शी नहीं हो सकती। कृपया अपारदर्शी तस्वीर अपलोड करें।"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "स्पीडी कोर अकाउंट्स"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -1947,7 +1944,7 @@ msgstr "नया पासवर्ड"
 
 #: .\accounts\forms.py:139
 msgid "New username"
-msgstr "नया उपयोक्तानाम"
+msgstr "नया उपयोगकर्ता नाम"
 
 #: .\accounts\forms.py:142
 msgid "Create an account"
@@ -1955,11 +1952,11 @@ msgstr "खाता बनाएं"
 
 #: .\accounts\forms.py:167
 msgid "Update your profile picture"
-msgstr "अपना प्रोफ़ाइल चित्र अपडेट करें"
+msgstr "अपनी प्रोफ़ाइल तस्वीर अपडेट करें"
 
 #: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
-msgstr "एक प्रोफ़ाइल चित्र आवश्यक है."
+msgstr "प्रोफ़ाइल चित्र आवश्यक है।"
 
 #: .\accounts\forms.py:313 .\templates\base_with_login.html:127
 msgid "Email or Username"
@@ -1990,7 +1987,7 @@ msgstr "अवैध पासवर्ड।"
 
 #: .\accounts\models.py:178
 msgid "username"
-msgstr "उपयोक्तानाम"
+msgstr "उपयोगकर्ता नाम"
 
 #: .\accounts\models.py:178 .\accounts\models.py:179
 #: .\accounts\validators.py:21
@@ -1999,7 +1996,7 @@ msgstr "यह उपयोगकर्ता नाम पहले ही ल�
 
 #: .\accounts\models.py:179
 msgid "username (slug)"
-msgstr "उपयोक्तानाम (स्लग)"
+msgstr "उपयोगकर्ता नाम (स्लग)"
 
 #: .\accounts\models.py:180
 msgid "photo"
@@ -2007,7 +2004,7 @@ msgstr "तस्वीर"
 
 #: .\accounts\models.py:181
 msgid "Special username"
-msgstr "विशेष उपयोक्तानाम"
+msgstr "विशेष उपयोगकर्ता नाम"
 
 #: .\accounts\models.py:221 .\messages\models.py:185
 msgid "entity"
@@ -2019,11 +2016,11 @@ msgstr "इकाइयां,"
 
 #: .\accounts\models.py:249
 msgid "Slug does not parse to username."
-msgstr "स्लग उपयोगकर्ता नाम को पार्स नहीं करता है।"
+msgstr "स्लग को उपयोगकर्ता नाम में परिवर्तित नहीं किया जा सकता है।"
 
 #: .\accounts\models.py:253
 msgid "Username is required."
-msgstr "उपयोगकर्ता नाम आवश्यक है."
+msgstr "उपयोगकर्ता नाम आवश्यक है।"
 
 #: .\accounts\models.py:298
 msgid "name"
@@ -2060,15 +2057,15 @@ msgstr "शाकाहारी (मछली और मांस नहीं 
 
 #: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
-msgstr "कार्निस्ट (जानवरों को खाता है)"
+msgstr "मांसाहारी (जानवरों का मांस खाने वाला)"
 
 #: .\accounts\models.py:504
 msgid "Not smoking"
-msgstr "धूम्रपान नहीं"
+msgstr "धूम्रपान नहीं करना"
 
 #: .\accounts\models.py:505
 msgid "Smoking occasionally"
-msgstr "कभी-कभी धूम्रपान करना"
+msgstr "कभी-कभार धूम्रपान करना"
 
 #: .\accounts\models.py:506
 msgid "Smoking"
@@ -2088,7 +2085,7 @@ msgstr "विधवा"
 
 #: .\accounts\models.py:528
 msgid "In a relationship"
-msgstr "एक रिश्ते में"
+msgstr "रिश्ते में"
 
 #: .\accounts\models.py:529
 msgid "In an open relationship"
@@ -2116,7 +2113,7 @@ msgstr "मुझे सूचित करें"
 
 #: .\accounts\models.py:543
 msgid "Don't notify me"
-msgstr "मुझे सूचित मत करो"
+msgstr "मुझे सूचित न करें"
 
 #: .\accounts\models.py:590
 msgid "first name"
@@ -2152,11 +2149,11 @@ msgstr "मैं कहाँ रहता हूँ?"
 
 #: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
-msgstr "मेरे जन्म का महीना और दिन कौन देख सकता है?"
+msgstr "मेरी जन्मतिथि (जन्म का महीना और दिन) कौन देख सकता है?"
 
 #: .\accounts\models.py:609
 msgid "Who can view my birth year"
-msgstr "मेरा जन्म वर्ष कौन देख सकता है"
+msgstr "मेरा जन्म वर्ष कौन देख सकता है?"
 
 #: .\accounts\models.py:610
 msgid "On new messages"
@@ -2164,11 +2161,11 @@ msgstr "नए संदेशों पर"
 
 #: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "अंतिम IP पता https://ipapi.com/ बार उपयोग किया गया"
+msgstr "अंतिम बार उपयोग किया गया आईपी पता https://ipapi.com/"
 
 #: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "अंतिम आईपी पते में कच्चे https://ipapi.com/ परिणामों का उपयोग किया गया"
+msgstr "अंतिम बार उपयोग किए गए IP पते से https://ipapi.com/ के कच्चे परिणाम प्राप्त हुए"
 
 #: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
@@ -2180,7 +2177,7 @@ msgstr "उपयोगकर्ताओं"
 
 #: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
-msgstr "सुपरयूजर स्टाफ के बराबर होना चाहिए।"
+msgstr "सुपरयूजर का पद स्टाफ के बराबर होना चाहिए।"
 
 #: .\accounts\models.py:1278
 msgid "email"
@@ -2200,11 +2197,11 @@ msgstr "पुष्टिकरण टोकन"
 
 #: .\accounts\models.py:1282
 msgid "confirmation sent"
-msgstr "पुष्टिकरण भेजा गया"
+msgstr "पुष्टि भेज दी गई"
 
 #: .\accounts\models.py:1283
 msgid "Who can see this email"
-msgstr "इस ईमेल को कौन देख सकता है"
+msgstr "यह ईमेल कौन देख सकता है?"
 
 #: .\accounts\models.py:1294
 msgid "email addresses"
@@ -2229,7 +2226,7 @@ msgstr "कल"
 #: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr "{date} ({timesince_ago}) पर"
+msgstr "पर {date} ({timesince_ago} )"
 
 #: .\accounts\models.py:1396
 #, python-brace-format
@@ -2241,15 +2238,16 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"उपयोगकर्ता नाम 4 या अधिक अक्षरों से शुरू होना चाहिए और इसमें अक्षर, अंक या डैश हो सकते हैं।"
+"उपयोगकर्ता नाम 4 या अधिक अक्षरों से शुरू होना चाहिए, और इसमें अक्षर, अंक या डैश शामिल "
+"हो सकते हैं।"
 
 #: .\accounts\validators.py:41
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"उपयोगकर्ता नाम 4 या अधिक अक्षरों से शुरू होना चाहिए, उसके बाद अंकों की संख्या कोई भी हो "
-"सकती है। आप शब्दों के बीच डैश जोड़ सकते हैं."
+"उपयोगकर्ता नाम की शुरुआत 4 या उससे अधिक अक्षरों से होनी चाहिए, जिसके बाद कितने भी अंक "
+"हो सकते हैं। शब्दों के बीच डैश का उपयोग किया जा सकता है।"
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2260,11 +2258,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"उपयोगकर्ता नाम में कम से कम %(limit_value)d अल्फ़ान्यूमेरिक वर्ण होना चाहिए (इसमें "
-"%(show_value)d है)।"
+"उपयोगकर्ता नाम में कम से कम ये होना चाहिए %(limit_value)d अल्फ़ान्यूमेरिक कैरेक्टर (इसमें है "
+"%(show_value)d)."
 msgstr[1] ""
-"उपयोगकर्ता नाम में कम से कम %(limit_value)d अल्फ़ान्यूमेरिक वर्ण होने चाहिए (इसमें "
-"%(show_value)d है)।"
+"उपयोगकर्ता नाम में कम से कम ये होना चाहिए %(limit_value)d अल्फ़ान्यूमेरिक वर्ण (इसमें है "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2275,11 +2273,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"उपयोगकर्ता नाम में अधिकतम %(limit_value)d अल्फ़ान्यूमेरिक वर्ण होना चाहिए (इसमें "
-"%(show_value)d है)।"
+"उपयोगकर्ता नाम में अधिकतम कितनी लंबाई होनी चाहिए? %(limit_value)d अल्फ़ान्यूमेरिक "
+"कैरेक्टर (इसमें है %(show_value)d)."
 msgstr[1] ""
-"उपयोगकर्ता नाम में अधिकतम %(limit_value)d अल्फ़ान्यूमेरिक वर्ण होने चाहिए (इसमें "
-"%(show_value)d है)।"
+"उपयोगकर्ता नाम में अधिकतम कितनी लंबाई होनी चाहिए? %(limit_value)d अल्फ़ान्यूमेरिक वर्ण "
+"(इसमें है %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2290,11 +2288,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"उपयोगकर्ता नाम में कम से कम %(limit_value)d अक्षर होना चाहिए (इसमें %(show_value)d "
-"है)।"
+"उपयोगकर्ता नाम में कम से कम ये होना चाहिए %(limit_value)d चरित्र (इसमें है "
+"%(show_value)d)."
 msgstr[1] ""
-"उपयोगकर्ता नाम में कम से कम %(limit_value)d अक्षर होने चाहिए (इसमें %(show_value)d "
-"है)।"
+"उपयोगकर्ता नाम में कम से कम ये होना चाहिए %(limit_value)d अक्षर (इसमें है "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2305,9 +2303,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"उपयोगकर्ता नाम में अधिकतम %(limit_value)d वर्ण होना चाहिए (इसमें %(show_value)d है)।"
+"उपयोगकर्ता नाम में अधिकतम कितनी लंबाई होनी चाहिए? %(limit_value)d चरित्र (इसमें है "
+"%(show_value)d)."
 msgstr[1] ""
-"उपयोगकर्ता नाम में अधिकतम %(limit_value)d अक्षर होने चाहिए (इसमें %(show_value)d है)।"
+"उपयोगकर्ता नाम में अधिकतम कितनी लंबाई होनी चाहिए? %(limit_value)d अक्षर (इसमें है "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2317,15 +2317,17 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "यह पासवर्ड बहुत छोटा है. इसमें कम से कम %(min_length)d अक्षर होना चाहिए।"
-msgstr[1] "यह पासवर्ड बहुत छोटा है. इसमें कम से कम %(min_length)d अक्षर होने चाहिए।"
+msgstr[0] ""
+"यह पासवर्ड बहुत छोटा है। इसमें कम से कम ये शब्द होने चाहिए। %(min_length)d चरित्र।"
+msgstr[1] ""
+"यह पासवर्ड बहुत छोटा है। इसमें कम से कम ये शब्द होने चाहिए। %(min_length)d पात्र।"
 
 #: .\accounts\validators.py:114
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "आपके पासवर्ड में कम से कम %(min_length)d अक्षर होना चाहिए।"
-msgstr[1] "आपके पासवर्ड में कम से कम %(min_length)d अक्षर होने चाहिए।"
+msgstr[0] "आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_length)d चरित्र।"
+msgstr[1] "आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_length)d पात्र।"
 
 #: .\accounts\validators.py:135
 #, python-format
@@ -2333,26 +2335,29 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "यह पासवर्ड बहुत लंबा है. इसमें अधिकतम %(max_length)d वर्ण होना चाहिए."
-msgstr[1] "यह पासवर्ड बहुत लंबा है. इसमें अधिकतम %(max_length)d अक्षर होने चाहिए."
+msgstr[0] ""
+"यह पासवर्ड बहुत लंबा है। इसमें अधिकतम इतने शब्द होने चाहिए। %(max_length)d चरित्र।"
+msgstr[1] ""
+"यह पासवर्ड बहुत लंबा है। इसमें अधिकतम इतने शब्द होने चाहिए। %(max_length)d पात्र।"
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "आपके पासवर्ड में अधिकतम %(max_length)d अक्षर होना चाहिए।"
-msgstr[1] "आपके पासवर्ड में अधिकतम %(max_length)d अक्षर होने चाहिए।"
+msgstr[0] "आपके पासवर्ड में अधिकतम कितने अक्षर होने चाहिए? %(max_length)d चरित्र।"
+msgstr[1] "आपके पासवर्ड में अधिकतम कितने अक्षर होने चाहिए? %(max_length)d पात्र।"
 
 #: .\accounts\validators.py:165 .\accounts\validators.py:170
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr "आपके पासवर्ड में कम से कम %(min_unique_characters)d अद्वितीय अक्षर होने चाहिए।"
+msgstr ""
+"आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_unique_characters)d अनोखे पात्र।"
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
-msgstr "यह फ़ील्ड शून्य नहीं हो सकती."
+msgstr "यह फ़ील्ड खाली नहीं हो सकता।"
 
 #: .\accounts\validators.py:214
 msgid "This field cannot be blank."
@@ -2360,41 +2365,41 @@ msgstr "यह क्षेत्र रिक्त नहीं हो सक�
 
 #: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
-msgstr "एक वैध तिथि दर्ज करें."
+msgstr "एक मान्य तिथि दर्ज करें।"
 
 #: .\accounts\validators.py:246
 msgid "This email is already in use."
-msgstr "यह ईमेल पहले से ही उपयोग में है."
+msgstr "यह ईमेल पहले से ही उपयोग में है।"
 
 #: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
-msgstr "इस चित्र का फ़ाइल आकार बहुत बड़ा है. अधिकतम अनुमत फ़ाइल आकार 30 एमबी है।"
+msgstr "इस तस्वीर का फ़ाइल आकार बहुत बड़ा है। अधिकतम अनुमत फ़ाइल आकार 30 MB है।"
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
-"आप अपने प्रोफ़ाइल चित्र के लिए इस प्रारूप का उपयोग नहीं कर सकते. केवल JPEG या PNG "
-"प्रारूप ही स्वीकार किए जाते हैं।"
+"आप इस फॉर्मेट को अपनी प्रोफाइल पिक्चर के लिए इस्तेमाल नहीं कर सकते। केवल JPEG या PNG "
+"फॉर्मेट ही स्वीकार्य हैं।"
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
-msgstr "अमान्य पुष्टिकरण लिंक."
+msgstr "अमान्य पुष्टिकरण लिंक।"
 
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "एक पुष्टिकरण संदेश {email_address} पर भेजा गया था"
+msgstr "पुष्टिकरण संदेश भेजा गया {email_address}"
 
 #: .\accounts\views.py:355
 msgid "The email address was deleted."
-msgstr "ईमेल पता हटा दिया गया था."
+msgstr "ईमेल पता हटा दिया गया है।"
 
 #: .\accounts\views.py:371
 msgid "You have made this email address primary."
-msgstr "आपने इस ईमेल पते को प्राथमिक बना लिया है."
+msgstr "आपने इस ईमेल पते को प्राथमिक ईमेल पता बना दिया है।"
 
 #: .\admin\views.py:72
 #, python-brace-format
@@ -2409,14 +2414,14 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"व्यवस्थापक: साइट पर सदस्यों की कुल संख्या {total_number_of_members} है, जिनमें से "
-"{total_number_of_members_in_the_last_week} सदस्यों ने पिछले सप्ताह साइट में प्रवेश "
-"किया, {total_number_of_members_in_the_last_month} सदस्यों ने पिछले महीने साइट में "
-"प्रवेश किया, {total_number_of_members_in_the_last_four_months} सदस्यों ने पिछले "
-"चार महीनों में साइट में प्रवेश किया, "
-"{total_number_of_members_in_the_last_eight_months} सदस्यों ने पिछले आठ महीनों में "
-"साइट में प्रवेश किया, और {total_number_of_members_in_the_last_two_years} सदस्यों ने "
-"पिछले दो वर्षों में साइट में प्रवेश किया।"
+"व्यवस्थापक: साइट पर सदस्यों की कुल संख्या है {total_number_of_members}, जिसका कि "
+"{total_number_of_members_in_the_last_week} पिछले सप्ताह सदस्यों ने साइट पर प्रवेश "
+"किया। {total_number_of_members_in_the_last_month} पिछले महीने सदस्यों ने साइट पर "
+"प्रवेश किया। {total_number_of_members_in_the_last_four_months} पिछले चार महीनों "
+"में सदस्यों ने साइट पर प्रवेश किया। "
+"{total_number_of_members_in_the_last_eight_months} पिछले आठ महीनों में सदस्यों ने "
+"साइट पर प्रवेश किया, और {total_number_of_members_in_the_last_two_years} पिछले "
+"दो वर्षों में सदस्यों ने साइट में प्रवेश किया है।"
 
 #: .\admin\views.py:118
 #, python-brace-format
@@ -2439,22 +2444,21 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
-"व्यवस्थापक: {total_number_of_members_registered_in_the_last_week} सदस्य पिछले "
-"सप्ताह पंजीकृत हुए। {total_number_of_members_registered_in_the_last_month} सदस्य "
-"पिछले महीने पंजीकृत हुए। "
-"{total_number_of_members_registered_in_the_last_four_months} सदस्य पिछले चार "
-"महीनों में पंजीकृत हुए। "
-"{total_number_of_members_registered_more_than_four_months_ago} सदस्यों ने चार "
-"महीने से अधिक समय पहले पंजीकरण कराया था। "
-"{total_number_of_members_registered_in_the_last_eight_months} सदस्य पिछले आठ "
-"महीनों में पंजीकृत हुए। "
+"व्यवस्थापक: {total_number_of_members_registered_in_the_last_week} पिछले सप्ताह "
+"सदस्यों ने पंजीकरण कराया। {total_number_of_members_registered_in_the_last_month} "
+"पिछले महीने पंजीकृत सदस्य। "
+"{total_number_of_members_registered_in_the_last_four_months} पिछले चार महीनों "
+"में पंजीकृत सदस्य। {total_number_of_members_registered_more_than_four_months_ago} "
+"सदस्यों ने चार महीने से अधिक समय पहले पंजीकरण कराया था। "
+"{total_number_of_members_registered_in_the_last_eight_months} पिछले आठ महीनों "
+"में पंजीकृत सदस्य। "
 "{total_number_of_members_registered_more_than_eight_months_ago} सदस्यों ने आठ "
 "महीने से अधिक समय पहले पंजीकरण कराया था। "
-"{total_number_of_members_registered_in_the_last_two_years} सदस्य पिछले दो वर्षों "
-"में पंजीकृत हुए। {total_number_of_members_registered_more_than_two_years_ago} "
-"सदस्यों ने दो वर्ष से अधिक समय पहले पंजीकरण कराया था। "
-"{total_number_of_members_registered_before_2019_08_01} सदस्य 1 अगस्त 2019 से "
-"पहले पंजीकृत हुए।"
+"{total_number_of_members_registered_in_the_last_two_years} पिछले दो वर्षों में "
+"पंजीकृत सदस्य। {total_number_of_members_registered_more_than_two_years_ago} दो "
+"साल से अधिक समय पहले पंजीकृत सदस्य। "
+"{total_number_of_members_registered_before_2019_08_01} 1 अगस्त 2019 से पहले "
+"पंजीकृत सदस्य।"
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2462,11 +2466,11 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"व्यवस्थापक: {total_number_of_members_registered_in_year} सदस्य {year} में पंजीकृत हैं।"
+"व्यवस्थापक: {total_number_of_members_registered_in_year} पंजीकृत सदस्य {year}. "
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "स्पीडी कोर बेस ऐप"
 
 #: .\base\fields.py:17
 msgid "ID"
@@ -2475,19 +2479,19 @@ msgstr "पहचान"
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
-msgstr "आईडी में अवैध अक्षर हैं."
+msgstr "आईडी में अवैध वर्ण हैं।"
 
 #: .\base\views.py:57
 msgid "Changes saved."
-msgstr "परिवर्तन सहेजे गए."
+msgstr "परिवर्तन सहेज लिए गए।"
 
 #: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
-msgstr "उपयोगकर्ता स्वयं को ब्लॉक नहीं कर सकते."
+msgstr "उपयोगकर्ता स्वयं को ब्लॉक नहीं कर सकते।"
 
 #: .\blocks\models.py:23
 msgid "blocked user"
@@ -2503,15 +2507,15 @@ msgstr "उपयोगकर्ता ब्लॉक"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
-msgstr "आपने {} को ब्लॉक कर दिया है."
+msgstr "आपने ब्लॉक कर दिया है {}. "
 
 #: .\blocks\views.py:31
 msgid "You have unblocked {}."
-msgstr "आपने {} को अनब्लॉक कर दिया है."
+msgstr "आपने अनब्लॉक कर दिया है {}. "
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
-msgstr "प्रपत्र द्वारा संपर्क करें"
+msgstr "फॉर्म के माध्यम से संपर्क करें"
 
 #: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
@@ -2527,7 +2531,7 @@ msgstr "हमसे ईमेल द्वारा संपर्क कर�
 
 #: .\contact_by_form\forms.py:53
 msgid "Not 17."
-msgstr "17 नहीं."
+msgstr "17 नहीं।"
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
@@ -2567,7 +2571,7 @@ msgstr "रिपोर्ट की गई इकाई"
 
 #: .\contact_by_form\models.py:45
 msgid "reported photo"
-msgstr "रिपोर्ट की गई फोटो"
+msgstr "रिपोर्ट की गई तस्वीर"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
@@ -2579,19 +2583,19 @@ msgstr "फीडबैक"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
-msgstr "मित्रता अनुरोध भेजा गया."
+msgstr "मित्रता का अनुरोध भेजा गया।"
 
 #: .\friends\views.py:204
 msgid "No friendship request."
-msgstr "कोई मित्रता अनुरोध नहीं."
+msgstr "कोई मैत्री अनुरोध नहीं।"
 
 #: .\friends\views.py:243
 msgid "Friendship request accepted."
-msgstr "मित्रता अनुरोध स्वीकार किया गया."
+msgstr "मित्रता का अनुरोध स्वीकार कर लिया गया है।"
 
 #: .\friends\views.py:261
 msgid "Friendship request rejected."
-msgstr "मित्रता अनुरोध अस्वीकृत."
+msgstr "मित्रता का अनुरोध अस्वीकृत कर दिया गया।"
 
 #: .\messages\apps.py:8 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2619,7 +2623,7 @@ msgstr "प्रतिभागियों"
 
 #: .\messages\models.py:33
 msgid "is group chat"
-msgstr "समूह चैट है"
+msgstr "यह ग्रुप चैट है"
 
 #: .\messages\models.py:34
 msgid "last message"
@@ -2647,23 +2651,23 @@ msgstr "संदेशों"
 
 #: .\messages\models.py:191
 msgid "read mark"
-msgstr "चिह्न पढ़ें"
+msgstr "रीड मार्क"
 
 #: .\messages\models.py:192
 msgid "read marks"
-msgstr "अंक पढ़ें"
+msgstr "पढ़े हुए निशान"
 
-#: .\settings\base.py:193
+#: .\settings\base.py:194
 msgid "English"
 msgstr "अंग्रेज़ी"
 
-#: .\settings\base.py:194
+#: .\settings\base.py:195
 msgid "Hebrew"
 msgstr "यहूदी"
 
 #: .\settings\base_with_login.py:65
 msgid "French"
-msgstr "फ़्रेंच"
+msgstr "फ्रेंच"
 
 #: .\settings\base_with_login.py:66
 msgid "German"
@@ -2775,7 +2779,7 @@ msgstr "कातालान"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
-msgstr "नॉर्वेजियन (बोकमाल)"
+msgstr "नॉर्वेजियन (बोकमल)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
@@ -2807,7 +2811,7 @@ msgstr "खराब अनुरोध"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "स्पीडी को खेद है, लेकिन हम आपके अनुरोध को संभाल नहीं सकते। Speedy"
+msgstr "स्पीड़ी को खेद है, लेकिन हम आपके अनुरोध को पूरा नहीं कर सकते।"
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2815,7 +2819,7 @@ msgstr "अनुमति नहीं मिली"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "स्पीडी को खेद है, लेकिन यह पेज निजी है। Speedy"
+msgstr "स्पीडी को खेद है, लेकिन यह पेज निजी है।"
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2823,7 +2827,7 @@ msgstr "पृष्ठ नहीं मिला"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "स्पीडी को खेद है, लेकिन पेज नहीं मिला। Speedy"
+msgstr "स्पीडी को खेद है, लेकिन यह पेज नहीं मिला।"
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -2896,15 +2900,15 @@ msgstr "प्राथमिक"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "एक पुष्टिकरण ईमेल पुनः भेजें"
+msgstr "पुष्टिकरण ईमेल दोबारा भेजें"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "इस ईमेल पते को प्राथमिक बनाएं"
+msgstr "इस ईमेल पते को प्राथमिक ईमेल पता बनाएं"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "क्या आप वाकई यह ईमेल पता हटाना चाहते हैं?"
+msgstr "क्या आप वाकई इस ईमेल पते को हटाना चाहते हैं?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
@@ -2920,11 +2924,11 @@ msgstr "पासवर्ड बदलें"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "आपकी उम्र स्पीडी मैच पर आपके मैचों में दिखाई देगी। Speedy Match"
+msgstr "Speedy Match पर आपके मैचों में आपकी उम्र दिखाई देगी।"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
-msgstr "अपनी प्रोफ़ाइल पर ईमेल पते की गोपनीयता सेटिंग बदलें।"
+msgstr "अपनी प्रोफ़ाइल पर ईमेल पतों की गोपनीयता सेटिंग बदलें।"
 
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
@@ -2948,15 +2952,15 @@ msgstr "पासवर्ड रीसेट"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr "पासवर्ड सफलतापूर्वक रीसेट हो गया."
+msgstr "पासवर्ड सफलतापूर्वक रीसेट हो गया।"
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr "पासवर्ड रीसेट विफल रहा. अमान्य लिंक."
+msgstr "पासवर्ड रीसेट करने में विफल। अमान्य लिंक।"
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
-msgstr "पासवर्ड रीसेट निर्देशों वाला ईमेल भेज दिया गया है."
+msgstr "पासवर्ड रीसेट करने के निर्देशों वाला ईमेल भेज दिया गया है।"
 
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
@@ -2965,7 +2969,7 @@ msgstr "सभी देखें"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "एडमिन - मित्रो"
+msgstr "व्यवस्थापक - मित्र"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
@@ -2973,11 +2977,11 @@ msgstr "दोस्त"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
-msgstr "अभी तक कोई दोस्त नहीं."
+msgstr "अभी तक कोई दोस्त नहीं बना।"
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
-msgstr "व्यवस्थापक सूचना"
+msgstr "प्रशासनिक जानकारी"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
@@ -2985,7 +2989,7 @@ msgstr "व्यवस्थापक - सभी उपयोगकर्त�
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr "कोई उपयोगकर्ता नहीं."
+msgstr "कोई उपयोगकर्ता नहीं।"
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
@@ -2993,32 +2997,32 @@ msgstr "इस साइट का निर्माण चल रहा है
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
-msgstr "आपने अपने ईमेल पते की पुष्टि नहीं की है. कृपया अपना इनबॉक्स जांचें."
+msgstr "आपने अपना ईमेल पता सत्यापित नहीं किया है। कृपया अपना इनबॉक्स देखें।"
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "स्पीडी नेट ब्लॉग"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
-msgstr "Speedy Paz"
+msgstr "स्पीडी पाज़"
 
 #: .\templates\base.html:167
 msgid "Speedy Software"
-msgstr "Speedy Software"
+msgstr "स्पीडी सॉफ्टवेयर"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Speedy Sale"
+msgstr "त्वरित बिक्री"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "एक शाकाहारी अनुकूल वेबसाइट"
+msgstr "एक शाकाहारी वेबसाइट"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Speedy"
+msgstr "तीव्र"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3034,23 +3038,23 @@ msgstr "पासवर्ड"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
-msgstr "Speedy Net"
+msgstr "स्पीडी नेट"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Speedy Match"
+msgstr "त्वरित मैच"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "स्पीडी नेट की दुकान"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "स्पीडी मैच की दुकान"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "स्पीडी एस-लोगो शॉप"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3082,15 +3086,15 @@ msgstr "हमसे संपर्क करें"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
-msgstr "Speedy Composer"
+msgstr "तेज़ संगीतकार"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail Software"
+msgstr "स्पीडी मेल सॉफ़्टवेयर"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "स्पीडी कंपोजर की दुकान"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3098,15 +3102,15 @@ msgstr "अवरुद्ध उपयोगकर्ता"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "आप किसी को रोक नहीं रहे हैं."
+msgstr "आप किसी को ब्लॉक नहीं कर रहे हैं।"
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
 msgstr ""
-"यदि आपके कोई प्रश्न, सुझाव हैं या आप टीम में शामिल होने में रुचि रखते हैं - तो कृपया हमें ईमेल "
-"से संपर्क करें।"
+"यदि आपके कोई प्रश्न, सुझाव हैं या आप टीम में शामिल होने में रुचि रखते हैं, तो कृपया हमें ईमेल के "
+"माध्यम से संपर्क करें।"
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3120,7 +3124,7 @@ msgstr "किसी उपयोगकर्ता की रिपोर्ट
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr "एक फोटो की रिपोर्ट करें"
+msgstr "किसी फ़ोटो की रिपोर्ट करें"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
@@ -3128,7 +3132,7 @@ msgstr "धन्यवाद"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr "आपका फ़ीडबैक व्यवस्थापकों को भेज दिया गया था."
+msgstr "आपकी प्रतिक्रिया प्रशासकों को भेज दी गई है।"
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
@@ -3146,7 +3150,7 @@ msgstr "अपना खाता सक्रिय करने के लि�
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s पर अपने ईमेल पते की पुष्टि करें"
+msgstr "अपना ईमेल पता सत्यापित करें %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3159,11 +3163,11 @@ msgstr "अपना पासवर्ड बदलने के लिए इ�
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "%(site_name)s पर पासवर्ड रीसेट करें"
+msgstr "पासवर्ड रीसेट चालू %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
-msgstr "आपको एक संदेश भेजा है."
+msgstr "उसने आपको एक संदेश भेजा है।"
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
@@ -3175,17 +3179,17 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"आपने %(site_name)s से इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। अपनी सूचना "
-"सेटिंग बदलने या ऑप्ट आउट करने के लिए यह पृष्ठ दर्ज करें:"
+"आपने इस प्रकार की सूचनाएं प्राप्त करने के लिए सदस्यता ली है। %(site_name)s नोटिफिकेशन "
+"सेटिंग बदलने या नोटिफिकेशन बंद करने के लिए इस पेज पर जाएं:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "आपके पास %(site_name)s पर एक नया संदेश है"
+msgstr "आपको एक नया संदेश मिला है %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
-msgstr "अनुरोध प्राप्त हुए"
+msgstr "प्राप्त अनुरोध"
 
 #: .\templates\friends\base.html:41
 msgid "Sent Requests"
@@ -3194,32 +3198,32 @@ msgstr "अनुरोध भेजे गए"
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr "कोई भी मित्रता अनुरोध लंबित नहीं है."
+msgstr "कोई भी फ्रेंडशिप रिक्वेस्ट पेंडिंग नहीं है।"
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "%(site_name)s में आपका स्वागत है!"
+msgstr "आपका स्वागत है %(site_name)s! "
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "%(site_name)s से जुड़ें!"
+msgstr "जोड़ना %(site_name)s! "
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
-msgstr "यह मुफ़्त है और कोई भी इसमें शामिल हो सकता है!"
+msgstr "यह बिल्कुल मुफ्त है और कोई भी इसमें शामिल हो सकता है!"
 
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "<a href=\"%(link)s\">%(user_name)s</a> के साथ चैट करें"
+msgstr "साथ बात <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr "%(user_name)s पर एक संदेश भेजें"
+msgstr "संदेश भेजें %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
@@ -3235,7 +3239,7 @@ msgstr "आप:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
-msgstr "आपके पास अभी तक कोई संदेश नहीं है."
+msgstr "आपके पास अभी तक कोई संदेश नहीं है।"
 
 #: .\templates\messages\message.html:20
 msgid "New"
@@ -3249,10 +3253,10 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"हम आपकी निजता का सम्मान करते हैं. हम आपका नाम, आपकी जन्म तिथि, आपका ईमेल पता और "
-"आपका पासवर्ड सहित आपके व्यक्तिगत विवरण को बेचेंगे या साझा नहीं करेंगे। स्पीडी नेट पर आपके "
-"द्वारा लोगों को भेजे गए संदेश व् Speedy Net यक्तिगत हैं और उन्हें अन्य लोगों या वेबसाइटों के "
-"साथ साझा नहीं किया जाएगा। आपका पासवर्ड हमारे डेटाबेस पर एन्क्रिप्टेड रूप में सहेजा गया है।"
+"हम आपकी निजता का सम्मान करते हैं। हम आपकी व्यक्तिगत जानकारी, जैसे आपका नाम, जन्मतिथि, "
+"ईमेल पता और पासवर्ड, न तो बेचेंगे और न ही साझा करेंगे। Speedy Net पर आप लोगों को जो "
+"संदेश भेजते हैं, वे निजी होते हैं और उन्हें किसी अन्य व्यक्ति या वेबसाइट के साथ साझा नहीं किया "
+"जाएगा। आपका पासवर्ड हमारे डेटाबेस में एन्क्रिप्टेड रूप में सुरक्षित है।"
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3264,13 +3268,12 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"स्पीडी नेट पर आपक Speedy Net ी प्रोफ़ाइल सभी को दिखाई देती है, लेकिन आप चुन सकते हैं कि "
-"अपने ईमेल पते और अपनी जन्मतिथि के साथ किसे साझा करना है। यदि आपने स्पीडी मैच Speedy "
-"Match के लिए साइन अप किया Speedy Match है, तो आपकी स्पीडी मैच प्रोफ़ाइल केवल उन "
-"लोगों को दिखाई देगी जो साइट पर आपके द्वारा सेट की गई सेटिंग्स के अनुसार आपसे मेल खाते हैं, "
-"और आप उनकी सेटिंग्स के अनुसार उनसे मेल खाते हैं। स्पीडी मैच पर आपकी प्रोफ़ाइल Google पर "
-"दिखाई नहीं देगी और उन लोगों को दिखाई नहीं देगी जो साइट पर पंजीकृत नहीं हैं। Speedy "
-"Match"
+"Speedy Net पर आपकी प्रोफ़ाइल सभी को दिखाई देती है, लेकिन आप चुन सकते हैं कि आप अपना "
+"ईमेल पता और जन्मतिथि किसके साथ साझा करना चाहते हैं। यदि आपने Speedy Match के लिए "
+"साइन अप किया है, तो आपकी Speedy Match प्रोफ़ाइल केवल उन लोगों को दिखाई देगी जो "
+"साइट पर आपके द्वारा निर्धारित सेटिंग्स के अनुसार आपसे मेल खाते हैं, और जो अपनी सेटिंग्स के "
+"अनुसार आपसे मेल खाते हैं। Speedy Match पर आपकी प्रोफ़ाइल Google पर दिखाई नहीं देगी और "
+"यह उन लोगों को भी दिखाई नहीं देगी जिन्होंने साइट पर पंजीकरण नहीं कराया है।"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3282,13 +3285,12 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"यदि आपने स्पीडी नेट या स्पीडी मैच पर अपना ख Speedy Net ाता निष्क्रिय कर Speedy "
-"Match दिया है, तो उस साइट पर आपकी प्रोफ़ाइल साइट से हटा दी जाएगी और आप साइट पर "
-"अन्य लोगों के खोज परिणामों में दिखाई नहीं देंगे। ध्यान दें कि स्पीडी नेट पर अपना खाता "
-"निष्क्रिय करन Speedy Net े से आपका खाता स्पीडी मैच पर भी स्वचालित रूप से निष्क्रिय हो "
-"जाता है। आप Speedy Match स्पीडी मैच पर केवल अपना खाता निष्क्रिय कर सकते हैं, ऐसी "
-"स्थिति में आपका स्पीडी नेट खाता सक्रिय रहेगा। आप जब चाहें अपने खाते को निष्क्रिय करने के "
-"बाद पुनः सक्रिय कर सकते हैं। Speedy Match Speedy Net"
+"अगर आपने Speedy Net या Speedy Match पर अपना अकाउंट निष्क्रिय कर दिया है, तो उस "
+"साइट से आपकी प्रोफ़ाइल हटा दी जाएगी और आप साइट पर अन्य लोगों के खोज परिणामों में "
+"दिखाई नहीं देंगे। ध्यान दें कि Speedy Net पर अपना अकाउंट निष्क्रिय करने से Speedy Match "
+"पर भी आपका अकाउंट स्वतः निष्क्रिय हो जाएगा। आप केवल Speedy Match पर अपना अकाउंट "
+"निष्क्रिय कर सकते हैं, इस स्थिति में आपका Speedy Net अकाउंट सक्रिय रहेगा। आप जब चाहें "
+"अपना अकाउंट निष्क्रिय करने के बाद उसे पुनः सक्रिय कर सकते हैं।"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3299,24 +3301,23 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"आप चाहें तो स्पीडी नेट पर अपना अकाउंट डिलीट कर सकत Speedy Net े हैं। अपना स् Speedy "
-"Net पीडी नेट खाता हटाने से आपका स्पीडी मैच खाता भी स्वतः ही हट जाएगा। Speedy Match "
-"अपने स्पीडी ने Speedy Net ट खाते को हटाने के लिए Speedy Net, स्पीडी नेट में लॉग इन करें, "
-"अपने खाते को निष्क्रिय करें, और फिर \"खाता हटाएं\" (\"प्रोफ़ाइल संपादित करें\" मेनू में) पर "
-"क्लिक करें। फॉर्म में विवरण भरें और पुष्टि करें। कृपया ध्यान दें कि हटाए गए खाते को पुनर्प्राप्त "
-"नहीं किया जा सकता है। खाता हटाना स्थायी और अपरिवर्तनीय है।"
+"यदि आप चाहें, तो Speedy Net पर अपना खाता हटा सकते हैं। Speedy Net खाता हटाने से "
+"आपका Speedy Match खाता भी स्वतः हट जाएगा। Speedy Net खाता हटाने के लिए, Speedy "
+"Net में लॉग इन करें, अपना खाता निष्क्रिय करें और फिर (\"प्रोफ़ाइल संपादित करें\" मेनू में "
+"\"खाता हटाएं\" पर क्लिक करें। फ़ॉर्म में विवरण भरें और पुष्टि करें। कृपया ध्यान दें कि हटाए गए "
+"खाते को पुनः प्राप्त नहीं किया जा सकता है। खाता हटाना स्थायी और अपरिवर्तनीय है।"
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "आपने ब्लॉक कर दिया "
+msgstr "आपने अवरुद्ध कर दिया "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " तुम्हें ब्लॉक कर दिया."
+msgstr " मैंने आपको ब्लॉक कर दिया है।"
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3354,7 +3355,7 @@ msgstr "क्या आप वाकई ब्लॉक करना चाह�
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
@@ -3372,7 +3373,7 @@ msgstr "प्रतिवेदन "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
-msgstr "इस फ़ोटो की रिपोर्ट करें"
+msgstr "इस फोटो की रिपोर्ट करें"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
@@ -3421,14 +3422,12 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s में एक स्पीडी म Speedy Match ैच प्रोफ़ाइल भी है। स्पीडी मैच पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Match"
+"%(user_name)s Speedy Match पर भी इसकी प्रोफाइल है। देखें %(user_name)sSpeedy "
+"Match पर 'की प्रोफ़ाइल।"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"आपके पास एक स्पीडी न Speedy Net ेट प्रोफ़ाइल भी है. स्पीडी नेट पर अपनी प्रोफ़ाइल देखें। "
-"Speedy Net"
+msgstr "आपका Speedy Net पर भी प्रोफाइल है। Speedy Net पर अपना प्रोफाइल देखें।"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3436,16 +3435,16 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s की एक स्पीडी नेट Speedy Net प्रोफ़ाइल भी है। स्पीडी नेट पर "
-"%(user_name)s की प्रोफ़ाइल देखें। Speedy Net"
+"%(user_name)s Speedy Net पर भी एक प्रोफाइल है। देखें %(user_name)sSpeedy Net पर "
+"'s प्रोफ़ाइल।"
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"साइट अल्फ़ा में है, त्रुटियाँ हो सकती हैं। साइट पर किसी भी खराबी के लिए साइट प्रबंधन "
-"जिम्मेदार नहीं है।"
+"यह वेबसाइट अभी अल्फा चरण में है, इसमें त्रुटियां हो सकती हैं। वेबसाइट प्रबंधन वेबसाइट पर "
+"किसी भी प्रकार की त्रुटि के लिए जिम्मेदार नहीं है।"
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
@@ -3454,10 +3453,10 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"आप स्पीडी नेट Speedy Net का उपयोग केवल कानूनी उद्देश्यों के लिए कर सकते हैं। आपको घृणा, "
-"हिंसा, पशु दुर्व्यवहार, नग्नता या अश्लील साहित्य से संबंधित सामग्री अपलोड करने की अनुमति "
-"नहीं है। आपको बड़ी संख्या Speedy Net में लोगों को स्पैम संदेश या समान सामग्री वाले संदेश भेजने "
-"के लिए स्पीडी नेट का उपयोग करने की अनुमति नहीं है।"
+"Speedy Net का उपयोग केवल कानूनी उद्देश्यों के लिए ही किया जा सकता है। आपको घृणास्पद "
+"सामग्री, हिंसा, पशु क्रूरता, नग्नता या अश्लील सामग्री अपलोड करने की अनुमति नहीं है। "
+"Speedy Net का उपयोग स्पैम संदेश भेजने या एक ही प्रकार की सामग्री वाले संदेश बड़ी संख्या में "
+"लोगों को भेजने के लिए भी नहीं किया जा सकता है।"
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3467,11 +3466,11 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"साइट प्रबंधन साइट के उपयोगकर्ताओं द्वारा प्रदान की गई व्यक्तिगत जानकारी को सत्यापित "
-"नहीं कर सकता है। कुछ उपयोगकर्ताओं की व्यक्तिगत जानकारी सही नहीं हो सकती है. साइट "
-"प्रबंधन साइट के बाहर उपयोगकर्ता गतिविधि के लिए ज़िम्मेदार नहीं है। यदि आप साइट पर मिले "
-"लोगों से मिलना या फोन पर बात करना चुनते हैं, तो मीटिंग या फोन कॉल के परिणामों की "
-"जिम्मेदारी आपकी है।"
+"साइट प्रबंधन साइट के उपयोगकर्ताओं द्वारा दी गई व्यक्तिगत जानकारी की पुष्टि नहीं कर "
+"सकता। कुछ उपयोगकर्ताओं की व्यक्तिगत जानकारी गलत हो सकती है। साइट प्रबंधन साइट के बाहर "
+"उपयोगकर्ता की गतिविधियों के लिए ज़िम्मेदार नहीं है। यदि आप साइट पर मिले लोगों से मिलने "
+"या फ़ोन पर बात करने का विकल्प चुनते हैं, तो मुलाकात या फ़ोन कॉल के परिणामों की ज़िम्मेदारी "
+"आपकी होगी।"
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3479,9 +3478,8 @@ msgid ""
 "a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"साइट के लिए साइन अप करने के बाद आपको भेजे गए लिंक के माध्यम से अपना ईमेल पता सत्यापित "
-"करने के लिए कहा जाता है। बिना सत्यापित ईमेल पते वाले खाते 10 दिनों के बाद साइट से हटा "
-"दिए जाएंगे।"
+"साइट पर साइन अप करने के बाद, आपको भेजे गए लिंक के माध्यम से अपना ईमेल पता सत्यापित करने "
+"के लिए कहा जाएगा। सत्यापित ईमेल पते के बिना खाते 10 दिनों के बाद साइट से हटा दिए जाएंगे।"
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3489,9 +3487,8 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
-"यदि आपने गलती से गलत ईमेल पते के साथ साइट के लिए साइन अप कर लिया है, तो अपने खाते में "
-"एक नया ईमेल पता जोड़ें और इसे सत्यापित करें। आप साइट पर अपने खाते में कई ईमेल पते संलग्न कर "
-"सकते हैं।"
+"यदि आपने गलती से गलत ईमेल पते से साइट पर पंजीकरण कर लिया है, तो अपने खाते में एक नया "
+"ईमेल पता जोड़ें और उसे सत्यापित करें। आप साइट पर अपने खाते में कई ईमेल पते जोड़ सकते हैं।"
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
@@ -3500,10 +3497,9 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"आपकी प्रोफ़ाइल तस्वीर आपकी तस्वीर होनी चाहिए, जहां हम आपका चेहरा देख सकें। इसे अन्य "
-"लोगों के साथ प्रोफ़ाइल चित्र अपलोड करने की अनुमति है। नग्न तस्वीरें, जननांग दिखाने वाली "
-"तस्वीरें (पुरुषों या महिलाओं की) या नग्न छाती वाली तस्वीरें (पुरुषों या महिलाओं की) अपलोड न "
-"करें।"
+"आपकी प्रोफ़ाइल तस्वीर में आपका चेहरा साफ़ दिखाई देना चाहिए। आप अन्य लोगों के साथ भी "
+"प्रोफ़ाइल तस्वीर अपलोड कर सकते हैं। नग्न तस्वीरें, जननांगों को दर्शाने वाली तस्वीरें (पुरुषों या "
+"महिलाओं की) या बिना कपड़ों के तस्वीरें (पुरुषों या महिलाओं की) अपलोड न करें।"
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3519,7 +3515,7 @@ msgstr "फ़ाइल"
 
 #: .\uploads\models.py:26
 msgid "is stored"
-msgstr "संग्रहित है"
+msgstr "संग्रहीत है"
 
 #: .\uploads\models.py:27
 msgid "file size"
@@ -3539,23 +3535,23 @@ msgstr "वेबसाइट पर दिखाई दे रहा है"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "त्वरित छवि मॉडरेशन समय Speedy"
+msgstr "तेज़ छवि मॉडरेशन समय"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
-msgstr "AWS छवि मॉडरेशन समय"
+msgstr "AWS इमेज मॉडरेशन समय"
 
 #: .\uploads\models.py:78
 msgid "AWS facial analysis time"
-msgstr "AWS चेहरे का विश्लेषण समय"
+msgstr "AWS चेहरे के विश्लेषण का समय"
 
 #: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
-msgstr "AWS कच्ची छवि मॉडरेशन परिणाम"
+msgstr "AWS रॉ इमेज मॉडरेशन परिणाम"
 
 #: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
-msgstr "AWS कच्चे चेहरे का विश्लेषण परिणाम"
+msgstr "AWS के चेहरे के कच्चे विश्लेषण के परिणाम"
 
 #: .\uploads\models.py:81
 msgid "number of faces"

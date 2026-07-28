@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 07:08+0300\n"
+"POT-Creation-Date: 2026-07-28 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "這裡沒有你喜歡的人。"
+msgstr "你在這裡沒有按讚。"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "這裡沒有你喜歡的人。"
+msgstr "你在這裡沒有按讚。"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "這裡沒有你喜歡的人。"
+msgstr "你在這裡沒有按讚。"
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
@@ -65,21 +65,21 @@ msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "您還沒有任何匹配項。嘗試擴大您的搜尋設定或稍後再檢查。"
+msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "您還沒有任何匹配項。嘗試擴大您的搜尋設定或稍後再檢查。"
+msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "您還沒有任何匹配項。嘗試擴大您的搜尋設定或稍後再檢查。"
+msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -114,32 +114,32 @@ msgstr "喜歡"
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "不像"
+msgstr "與……不同"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "不像"
+msgstr "與……不同"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "不像"
+msgstr "與……不同"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "你的比賽"
+msgstr "你的配對結果"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "你的比賽"
+msgstr "你的配對結果"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "你的比賽"
+msgstr "你的配對結果"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -174,17 +174,17 @@ msgstr "你的朋友"
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "你還沒有任何朋友。"
+msgstr "你現在還沒有任何朋友。"
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr "你還沒有任何朋友。"
+msgstr "你現在還沒有任何朋友。"
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "你還沒有任何朋友。"
+msgstr "你現在還沒有任何朋友。"
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
@@ -219,35 +219,35 @@ msgstr "關於我的比賽"
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "性別要匹配"
+msgstr "性別匹配"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "性別要匹配"
+msgstr "性別匹配"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "性別要匹配"
+msgstr "性別匹配"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "有人在 %(site_name)s 喜歡你"
+msgstr "有人喜歡你%(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "有人在 %(site_name)s 喜歡你"
+msgstr "有人喜歡你%(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "有人在 %(site_name)s 喜歡你"
+msgstr "有人喜歡你%(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
@@ -297,21 +297,21 @@ msgstr "你喜歡"
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽 Speedy Match"
+msgstr "上次造訪的是 Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽 Speedy Match"
+msgstr "上次造訪的是 Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽 Speedy Match"
+msgstr "上次造訪的是 Speedy Match"
 
 #: .\__translations\__translations.py:6
 msgid "My height in centimeters"
-msgstr "我的身高以公分為單位"
+msgstr "我的身高（公分）"
 
 #: .\__translations\__translations.py:9
 msgctxt "female"
@@ -331,53 +331,53 @@ msgstr "新增個人資料圖片"
 #: .\__translations\__translations.py:13
 msgctxt "female"
 msgid "My height in centimeters"
-msgstr "我的身高以公分為單位"
+msgstr "我的身高（公分）"
 
 #: .\__translations\__translations.py:14
 msgctxt "male"
 msgid "My height in centimeters"
-msgstr "我的身高以公分為單位"
+msgstr "我的身高（公分）"
 
 #: .\__translations\__translations.py:15
 msgctxt "other"
 msgid "My height in centimeters"
-msgstr "我的身高以公分為單位"
+msgstr "我的身高（公分）"
 
 #: .\__translations\__translations.py:17
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "我的理想搭配"
+msgstr "我的理想伴侶"
 
 #: .\__translations\__translations.py:18
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "我的理想搭配"
+msgstr "我的理想伴侶"
 
 #: .\__translations\__translations.py:19
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "我的理想搭配"
+msgstr "我的理想伴侶"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "匹配的最低年齡"
+msgstr "最低年齡要求"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "匹配的最低年齡"
+msgstr "最低年齡要求"
 
 #: .\__translations\__translations.py:23
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "匹配的最低年齡"
+msgstr "最低年齡要求"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:117
@@ -400,32 +400,32 @@ msgstr "匹配的最大年齡"
 #: .\__translations\__translations.py:29
 msgctxt "female"
 msgid "Please write a few words about yourself."
-msgstr "請寫幾句話介紹一下自己。"
+msgstr "請簡單介紹一下自己。"
 
 #: .\__translations\__translations.py:30
 msgctxt "male"
 msgid "Please write a few words about yourself."
-msgstr "請寫幾句話介紹一下自己。"
+msgstr "請簡單介紹一下自己。"
 
 #: .\__translations\__translations.py:31
 msgctxt "other"
 msgid "Please write a few words about yourself."
-msgstr "請寫幾句話介紹一下自己。"
+msgstr "請簡單介紹一下自己。"
 
 #: .\__translations\__translations.py:33
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "你有小孩嗎？多少？"
+msgstr "你有孩子嗎？有幾個？"
 
 #: .\__translations\__translations.py:34
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "你有小孩嗎？多少？"
+msgstr "你有孩子嗎？有幾個？"
 
 #: .\__translations\__translations.py:35
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "你有小孩嗎？多少？"
+msgstr "你有孩子嗎？有幾個？"
 
 #: .\__translations\__translations.py:37
 msgctxt "female"
@@ -445,17 +445,17 @@ msgstr "你想要（更多）孩子嗎？"
 #: .\__translations\__translations.py:41
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "誰是你理想的伴侶？"
+msgstr "你的理想伴侶是什麼樣的？"
 
 #: .\__translations\__translations.py:42
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "誰是你理想的伴侶？"
+msgstr "你的理想伴侶是什麼樣的？"
 
 #: .\__translations\__translations.py:43
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "誰是你理想的伴侶？"
+msgstr "你的理想伴侶是什麼樣的？"
 
 #: .\__translations\__translations.py:45
 #, python-brace-format
@@ -466,8 +466,8 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"很抱歉，您無權使用 {site_name} 網站。我們發現您在網站註冊時提供的某些資訊不正"
-"確或您違反了網站的使用規則。因此，您無權使用該網站。"
+"抱歉，您無權使用{site_name}網站。我們發現您在網站註冊時提供的部分資訊不正確，"
+"或者您違反了網站的使用規則。因此，您無權使用本網站。"
 
 #: .\__translations\__translations.py:46
 #, python-brace-format
@@ -478,8 +478,8 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"很抱歉，您無權使用 {site_name} 網站。我們發現您在網站註冊時提供的某些資訊不正"
-"確或您違反了網站的使用規則。因此，您無權使用該網站。"
+"抱歉，您無權使用{site_name}網站。我們發現您在網站註冊時提供的部分資訊不正確，"
+"或者您違反了網站的使用規則。因此，您無權使用本網站。"
 
 #: .\__translations\__translations.py:47
 #, python-brace-format
@@ -490,12 +490,12 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"很抱歉，您無權使用 {site_name} 網站。我們發現您在網站註冊時提供的某些資訊不正"
-"確或您違反了網站的使用規則。因此，您無權使用該網站。"
+"抱歉，您無權使用{site_name}網站。我們發現您在網站註冊時提供的部分資訊不正確，"
+"或者您違反了網站的使用規則。因此，您無權使用本網站。"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "快速匹配帳戶"
 
 #: .\accounts\forms.py:58
 msgid "Add profile picture"
@@ -503,7 +503,7 @@ msgstr "新增個人資料圖片"
 
 #: .\accounts\forms.py:58 .\accounts\forms.py:97
 msgid "A profile picture is required."
-msgstr "需提供個人資料照片。"
+msgstr "必須上傳個人照片。"
 
 #: .\accounts\forms.py:59
 msgid "My diet"
@@ -511,7 +511,7 @@ msgstr "我的飲食"
 
 #: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
 msgid "Your diet is required."
-msgstr "你的飲食是需要的。"
+msgstr "你的飲食是必需的。"
 
 #: .\accounts\forms.py:60
 msgid "My smoking status"
@@ -519,37 +519,37 @@ msgstr "我的吸煙狀況"
 
 #: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
 msgid "Your smoking status is required."
-msgstr "需要您的吸煙狀況。"
+msgstr "您必須填寫吸煙狀況。"
 
 #: .\accounts\forms.py:61
 msgid "My relationship status"
-msgstr "我的感情狀況"
+msgstr "我的感情狀態"
 
 #: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
 msgid "Your relationship status is required."
-msgstr "您的關係狀況是必要的。"
+msgstr "您的婚姻狀況為必填。"
 
 #: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
 msgid "Gender to match is required."
-msgstr "需要性別匹配。"
+msgstr "性別必須匹配。"
 
 #: .\accounts\forms.py:100
 msgid "Your height is required."
-msgstr "您的身高是必要的。"
+msgstr "需要填寫您的身高。"
 
 #: .\accounts\forms.py:112 .\accounts\validators.py:43
 msgid "Please write a few words about yourself."
-msgstr "請寫幾句話介紹一下自己。"
+msgstr "請簡單介紹一下自己。"
 
 #: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
 msgid "Please write where you live."
-msgstr "請寫出你住的地方。"
+msgstr "請寫下您的居住地。"
 
 #: .\accounts\forms.py:118 .\accounts\models.py:221
 #: .\accounts\validators.py:53
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "你有小孩嗎？多少？"
+msgstr "你有孩子嗎？有幾個？"
 
 #: .\accounts\forms.py:121 .\accounts\models.py:224
 #: .\accounts\validators.py:58
@@ -559,27 +559,27 @@ msgstr "你想要（更多）孩子嗎？"
 
 #: .\accounts\forms.py:124 .\accounts\validators.py:63
 msgid "Who is your ideal partner?"
-msgstr "誰是你理想的伴侶？"
+msgstr "你的理想伴侶是什麼樣的？"
 
 #: .\accounts\forms.py:130
 msgid "Minimal age to match is required."
-msgstr "需要配對的最低年齡。"
+msgstr "需滿足最低年齡要求。"
 
 #: .\accounts\forms.py:133
 msgid "Maximal age to match is required."
-msgstr "需要匹配的最大年齡。"
+msgstr "參賽者必須達到最高年齡要求。"
 
 #: .\accounts\forms.py:136 .\accounts\validators.py:110
 msgid "Diet match is required."
-msgstr "需要飲食搭配。"
+msgstr "飲食必須匹配。"
 
 #: .\accounts\forms.py:139 .\accounts\validators.py:118
 msgid "Smoking status match is required."
-msgstr "需配對吸煙狀況。"
+msgstr "吸煙狀況必須相符。"
 
 #: .\accounts\forms.py:142 .\accounts\validators.py:126
 msgid "Relationship status match is required."
-msgstr "需要關係狀態匹配。"
+msgstr "關係狀態必須匹配。"
 
 #: .\accounts\forms.py:150
 msgid "Where do you live?"
@@ -588,15 +588,15 @@ msgstr "你住在哪裡？"
 #: .\accounts\forms.py:186 .\accounts\models.py:231
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "性別要匹配"
+msgstr "性別匹配"
 
 #: .\accounts\models.py:64
 msgid "Speedy Match User"
-msgstr "Speedy Match 用户"
+msgstr "快速匹配用戶"
 
 #: .\accounts\models.py:74 .\accounts\models.py:197
 msgid "No match"
-msgstr "沒有匹配"
+msgstr "沒有匹配項"
 
 #: .\accounts\models.py:75 .\accounts\models.py:198
 msgid "One heart"
@@ -624,7 +624,7 @@ msgstr "使用者"
 
 #: .\accounts\models.py:207
 msgid "On new likes"
-msgstr "關於新的喜歡"
+msgstr "關於新的按讚"
 
 #: .\accounts\models.py:210
 msgid "Active languages"
@@ -642,16 +642,16 @@ msgstr "公分"
 
 #: .\accounts\models.py:218
 msgid "Few words about me"
-msgstr "關於我的幾句話"
+msgstr "關於我，簡單說幾句。"
 
 #: .\accounts\models.py:227
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "我的理想搭配"
+msgstr "我的理想伴侶"
 
 #: .\accounts\models.py:237
 msgid "Minimal age to match"
-msgstr "匹配的最低年齡"
+msgstr "最低年齡要求"
 
 #: .\accounts\models.py:238
 msgid "Maximal age to match"
@@ -659,7 +659,7 @@ msgstr "匹配的最大年齡"
 
 #: .\accounts\models.py:239
 msgid "Diet match"
-msgstr "飲食搭配"
+msgstr "飲食匹配"
 
 #: .\accounts\models.py:240
 msgid "Smoking status match"
@@ -675,11 +675,11 @@ msgstr "飲食搭配"
 
 #: .\accounts\models.py:252
 msgid "Smoking status to match"
-msgstr "吸菸狀況相符"
+msgstr "吸煙狀況匹配"
 
 #: .\accounts\models.py:260
 msgid "Relationship status to match"
-msgstr "關係狀態要匹配"
+msgstr "關係狀態匹配"
 
 #: .\accounts\models.py:267
 msgid "Activation step"
@@ -687,15 +687,15 @@ msgstr "啟動步驟"
 
 #: .\accounts\models.py:270
 msgid "Number of matches on last user's search"
-msgstr "上次用戶搜尋的匹配數"
+msgstr "上次用戶搜尋的匹配結果數量"
 
 #: .\accounts\models.py:346
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "快速匹配個人資料"
 
 #: .\accounts\models.py:347 .\profiles\apps.py:8
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "快速匹配個人資料"
 
 #: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -709,37 +709,36 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"該網站的活躍會員總數為 {total_number_of_active_members_in_the_last_four_months}，"
-"其中 {total_number_of_active_members_in_the_last_week} 名會員於上週進入該網"
-"站。"
+"網站上的活躍會員總數為{total_number_of_active_members_in_the_last_four_months}"
+"其中{total_number_of_active_members_in_the_last_week}會員在上週進入了該網站。"
 
 #: .\accounts\validators.py:68
 msgid "Height must be from 1 to 450 cm."
-msgstr "高度必須為 1 至 450 公分。"
+msgstr "身高必須在 1 至 450 公分之間。"
 
 #: .\accounts\validators.py:93
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "配對的最小年齡必須在 0 到 180 歲之間。"
+msgstr "參賽者的最低年齡必須在0歲至180歲之間。"
 
 #: .\accounts\validators.py:98
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "匹配的最大年齡必須在 0 到 180 歲之間。"
+msgstr "參賽者年齡上限為0至180歲。"
 
 #: .\accounts\validators.py:104
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr "最大匹配年齡不能小於最小匹配年齡。"
+msgstr "參賽年齡上限不能低於參賽年齡下限。"
 
 #: .\accounts\validators.py:112
 msgid "At least one diet match option should be five hearts."
-msgstr "至少一種飲食搭配選項應該是五顆心。"
+msgstr "至少有一種飲食方案應該達到五顆心的水平。"
 
 #: .\accounts\validators.py:120
 msgid "At least one smoking status match option should be five hearts."
-msgstr "至少一項吸煙狀況匹配選項應為五顆心。"
+msgstr "至少應該有一個吸煙狀態匹配選項是五顆心。"
 
 #: .\accounts\validators.py:128
 msgid "At least one relationship status match option should be five hearts."
-msgstr "至少一個關係狀態匹配選項應該是五顆心。"
+msgstr "至少應該有一個關係狀態匹配選項顯示為五顆心。"
 
 #: .\admin\views.py:202
 #, python-brace-format
@@ -791,52 +790,51 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
-"{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"管理者：網站活躍會員總數為{total_number_of_active_members}"
+"（{total_number_of_female_active_members}女性，"
+"{total_number_of_male_active_members}男性，"
+"{total_number_of_other_active_members}其他的; "
+"{total_percent_of_female_active_members}女性，"
+"{total_percent_of_male_active_members}男性，"
+"{total_percent_of_other_active_members}其他），其中"
+"{total_number_of_active_members_in_the_last_week}成員"
+"（{total_number_of_female_active_members_in_the_last_week}女性，"
+"{total_number_of_male_active_members_in_the_last_week}男性，"
+"{total_number_of_other_active_members_in_the_last_week}其他的; "
+"{total_percent_of_female_active_members_in_the_last_week}女性，"
+"{total_percent_of_male_active_members_in_the_last_week}男性，"
+"{total_percent_of_other_active_members_in_the_last_week}其他用戶）在上週進入"
+"了該網站，{total_number_of_active_members_in_the_last_month}成員"
+"（{total_number_of_female_active_members_in_the_last_month}女性，"
+"{total_number_of_male_active_members_in_the_last_month}男性，"
+"{total_number_of_other_active_members_in_the_last_month}其他的; "
+"{total_percent_of_female_active_members_in_the_last_month}女性，"
+"{total_percent_of_male_active_members_in_the_last_month}男性，"
+"{total_percent_of_other_active_members_in_the_last_month}其他用戶）在上個月也"
+"進入了該網站，{total_number_of_active_members_in_the_last_four_months}成員"
+"（{total_number_of_female_active_members_in_the_last_four_months}女性，"
+"{total_number_of_male_active_members_in_the_last_four_months}男性，"
+"{total_number_of_other_active_members_in_the_last_four_months}其他的; "
+"{total_percent_of_female_active_members_in_the_last_four_months}女性，"
+"{total_percent_of_male_active_members_in_the_last_four_months}男性，"
+"{total_percent_of_other_active_members_in_the_last_four_months}其他用戶）在過"
+"去四個月內也造訪了該網站，"
+"{total_number_of_active_members_in_the_last_eight_months}成員"
+"（{total_number_of_female_active_members_in_the_last_eight_months}女性，"
+"{total_number_of_male_active_members_in_the_last_eight_months}男性，"
+"{total_number_of_other_active_members_in_the_last_eight_months}其他的; "
+"{total_percent_of_female_active_members_in_the_last_eight_months}女性，"
+"{total_percent_of_male_active_members_in_the_last_eight_months}男性，"
+"{total_percent_of_other_active_members_in_the_last_eight_months}其他用戶）在"
+"過去八個月內也進入了該網站，並且"
+"{total_number_of_active_members_in_the_last_two_years}成員"
+"（{total_number_of_female_active_members_in_the_last_two_years}女性，"
+"{total_number_of_male_active_members_in_the_last_two_years}男性，"
+"{total_number_of_other_active_members_in_the_last_two_years}其他的; "
+"{total_percent_of_female_active_members_in_the_last_two_years}女性，"
+"{total_percent_of_male_active_members_in_the_last_two_years}男性，"
+"{total_percent_of_other_active_members_in_the_last_two_years}其他）在過去兩年"
+"內進入了該網站。"
 
 #: .\admin\views.py:284
 #, python-brace-format
@@ -860,20 +858,23 @@ msgid ""
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
 msgstr ""
-"管理員：{total_number_of_active_members_registered_in_the_last_week} 上週註冊"
-"的活躍會員。 {total_number_of_active_members_registered_in_the_last_month} 上"
-"個月註冊的活躍會員。過去四個月內註冊的 "
-"{total_number_of_active_members_registered_in_the_last_four_months} 活躍會"
-"員。 {total_number_of_active_members_registered_more_than_four_months_ago} 活"
-"躍會員在四個多月前註冊。過去八個月內註冊的 "
-"{total_number_of_active_members_registered_in_the_last_eight_months} 活躍會"
-"員。 {total_number_of_active_members_registered_more_than_eight_months_ago} "
-"活躍會員在八個多月前註冊。過去兩年註冊的 "
-"{total_number_of_active_members_registered_in_the_last_two_years} 活躍會員。 "
-"{total_number_of_active_members_registered_more_than_two_years_ago} 活躍會員"
-"在兩年多前註冊。 "
-"{total_number_of_active_members_registered_before_2019_08_01} 2019 年 8 月 1 "
-"日前註冊的活躍會員。"
+"行政：{total_number_of_active_members_registered_in_the_last_week}上週註冊的"
+"活躍會員。{total_number_of_active_members_registered_in_the_last_month}上個月"
+"註冊的活躍會員人數。"
+"{total_number_of_active_members_registered_in_the_last_four_months}過去四個月"
+"內註冊的活躍會員。"
+"{total_number_of_active_members_registered_more_than_four_months_ago}活躍會員"
+"報名時間已超過四個月。"
+"{total_number_of_active_members_registered_in_the_last_eight_months}過去八個"
+"月內註冊的活躍會員。"
+"{total_number_of_active_members_registered_more_than_eight_months_ago}活躍會"
+"員報名時間已超過八個月。"
+"{total_number_of_active_members_registered_in_the_last_two_years}近兩年內註冊"
+"的活躍會員。"
+"{total_number_of_active_members_registered_more_than_two_years_ago}活躍會員報"
+"名時間已超過兩年。"
+"{total_number_of_active_members_registered_before_2019_08_01} 2019年8月1日前"
+"註冊的活躍會員。"
 
 #: .\admin\views.py:304
 #, python-brace-format
@@ -881,8 +882,8 @@ msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
-"管理員：在 {year} 註冊的 {total_number_of_active_members_registered_in_year} "
-"活躍會員。"
+"行政：{total_number_of_active_members_registered_in_year}活躍會員已註冊"
+"{year}。"
 
 #: .\admin\views.py:359
 #, python-brace-format
@@ -896,13 +897,13 @@ msgid ""
 "{total_percent_of_male_active_members_in_age_range} males, "
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
-"管理者：{total_number_of_active_members_in_age_range}"
-"（{total_number_of_female_active_members_in_age_range} 女性、"
-"{total_number_of_male_active_members_in_age_range} 男性、"
-"{total_number_of_other_active_members_in_age_range} 其他）年齡 {min_age} 至 "
-"{max_age} 的活躍會員（{total_percent_of_female_active_members_in_age_range} "
-"女性、{total_percent_of_male_active_members_in_age_range} 男性、"
-"{total_percent_of_other_active_members_in_age_range} 其他）。"
+"行政：{total_number_of_active_members_in_age_range}"
+"（{total_number_of_female_active_members_in_age_range}女性，"
+"{total_number_of_male_active_members_in_age_range}男性，"
+"{total_number_of_other_active_members_in_age_range}其他）活躍成員年齡"
+"{min_age}到{max_age}（{total_percent_of_female_active_members_in_age_range}女"
+"性，{total_percent_of_male_active_members_in_age_range}男性，"
+"{total_percent_of_other_active_members_in_age_range}其他的）。"
 
 #: .\admin\views.py:423
 #, python-brace-format
@@ -921,20 +922,19 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "others) entered the site in the last eight months."
 msgstr ""
-"管理員："
-"{total_number_of_active_members_in_age_range_in_the_last_eight_months}"
-"（{total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"女性、"
-"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"男性、"
-"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"其他）年齡 {min_age} 至 {max_age} 的活躍會員"
-"（{total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"女性、"
-"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"男性、"
-"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"其他）在過去八個月內進入該網站。"
+"行政：{total_number_of_active_members_in_age_range_in_the_last_eight_months}"
+"（{total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+"女性，"
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months}男"
+"性，"
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+"其他）活躍成員年齡{min_age}到{max_age}"
+"（{total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+"女性，"
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+"男性，"
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+"其他用戶）在過去八個月內造訪了該網站。"
 
 #: .\admin\views.py:487
 #, python-brace-format
@@ -953,19 +953,19 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) entered the site in the last four months."
 msgstr ""
-"管理員：{total_number_of_active_members_in_age_range_in_the_last_four_months}"
-"（{total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
-"女性、"
-"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} 男"
-"性、"
-"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
-"其他）年齡 {min_age} 至 {max_age} 的活躍會員"
-"（{total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
-"女性、"
-"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
-"男性、"
-"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"其他）在過去四個月內進入該網站。"
+"行政：{total_number_of_active_members_in_age_range_in_the_last_four_months}"
+"（{total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+"女性，"
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months}男"
+"性，"
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months}其"
+"他）活躍成員年齡{min_age}到{max_age}"
+"（{total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+"女性，"
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months}男"
+"性，"
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+"其他用戶）在過去四個月內進入了該網站。"
 
 #: .\likes\managers.py:14 .\likes\models.py:48
 msgid "Users cannot like themselves."
@@ -973,11 +973,11 @@ msgstr "用戶無法喜歡自己。"
 
 #: .\likes\managers.py:17
 msgid "User already likes other user."
-msgstr "用戶已經喜歡其他用戶。"
+msgstr "用戶已經喜歡了其他用戶。"
 
 #: .\likes\managers.py:20
 msgid "User cannot like a blocked user."
-msgstr "用戶不能喜歡被封鎖的用戶。"
+msgstr "用戶無法按讚被封鎖的用戶。"
 
 #: .\likes\models.py:21
 msgid "from user"
@@ -985,15 +985,15 @@ msgstr "來自使用者"
 
 #: .\likes\models.py:22
 msgid "to user"
-msgstr "給用戶"
+msgstr "致用戶"
 
 #: .\likes\models.py:28
 msgid "user like"
-msgstr "用戶喜歡"
+msgstr "用戶按讚"
 
 #: .\likes\models.py:29
 msgid "user likes"
-msgstr "用戶喜歡"
+msgstr "用戶按讚"
 
 #: .\likes\views.py:28
 msgid "Girls You Like"
@@ -1025,7 +1025,7 @@ msgstr "互相喜歡"
 
 #: .\matches\apps.py:8
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "快速比賽"
 
 #: .\matches\views.py:84 .\matches\views.py:98
 msgid "Your match settings were saved."
@@ -1041,11 +1041,11 @@ msgstr "沒有任何"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [阿爾法]"
+msgstr "快速匹配 [alpha]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "關於極速匹配 Speedy Match"
+msgstr "關於 Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1061,12 +1061,12 @@ msgid ""
 "available in %(languages_num)s languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a> 是一款新的約會/匹配網絡應用程序，適用於 <a "
-"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
-"Net</a> 會員的單身人士。透過 Speedy Match，您可以找到匹配的人進行約會並與他們"
-"在線聊天。您可以在 Speedy Net 上添加他人為好友、喜歡他人並向他們發送訊息。 "
-"Speedy Match 向所有國家和年齡的人開放免費註冊（沒有年齡限制！）。該網站是素食"
-"主義者和素食主義者友好的。目前提供 %(languages_num)s 語言版本。"
+"Match\">快速比賽</a>是一款面向單身人士的全新約會/配對網路應用程序，旨在為他們"
+"提供浪漫邂逅。<a href=\"https://%(language_code)s.speedy.net/\" "
+"title=\"Speedy Net\">速網</a>透過 Speedy Match，您可以找到合適的約會對象並在"
+"線上聊天。您可以在 Speedy Net 上新增好友、按讚並傳送訊息。 Speedy Match 為所"
+"有國家和地區的用戶免費開放註冊（無年齡限制！）。該網站對素食主義者和純素食主"
+"義者友好。目前可在以下地區使用：%(languages_num)s語言。"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1074,8 +1074,8 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"Speedy Match 的創始人是素食主義者，支持動物權利並反對動物實驗。 Speedy Match "
-"是一款適合純素食者和素食者及動物的約會應用程式。"
+"Speedy Match 的創始人是素食主義者，支持動物權利，反對動物實驗。 Speedy Match "
+"是一款對素食主義者和動物友好的約會應用程式。"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1086,10 +1086,9 @@ msgid ""
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
 msgstr ""
-"只有符合您要求的人才能查看您的個人資料並與您聯繫。我們不允許匿名搜索，並且快"
-"速匹配個人資料僅對匹配合作夥伴可見 Speedy Match 。您可以選擇誰能夠查看您的個"
-"人資料，以及哪些詳細資訊將在您的個人資料中顯示為公開、哪些詳細資訊僅供朋友查"
-"看以及哪些詳細資訊將是私人的。私人詳細資訊只會顯示給您。"
+"只有符合您條件的人才能看到您的個人資料並與您聯繫。我們不允許匿名搜索，Speedy "
+"Match 的個人資料僅對匹配對象可見。您可以選擇誰可以查看您的個人資料，以及哪些"
+"資訊會公開顯示，哪些資訊僅對好友可見，哪些資訊設為私密。私密資訊僅對您可見。"
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1097,17 +1096,17 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Speedy Net 和 Speedy Match 上的所有功能都是免費的。立即加入 Speedy Match 尋找"
-"配對夥伴，只需幾分鐘。 <a href=\"/\" title=\"Join Speedy Match\">點此</a>加"
-"入。"
+"Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Match，尋找"
+"合適的伴侶，只需幾分鐘。<a href=\"/\" title=\"Join Speedy Match\">點這裡</a>"
+"加入。"
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"Speedy Match 是一個免費軟體和開源專案。如果您想幫助開發和改進 Speedy Match ，"
-"請透過電子郵件與我聯繫。"
+"Speedy Match 是一個免費開源軟體專案。如果您想幫助開發和改進 Speedy Match，請"
+"透過電子郵件與我聯繫。"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1115,29 +1114,29 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match以<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>命名，這是一隻陪伴我們多年的母狗，於2003年去世。 "
-"1988年，生下了7隻小狗。"
+"快速比賽的名字來自<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">迅速</a>一隻名叫 Speedy 的母狗，陪伴我們多年，於 2003 年去"
+"世。 Speedy 於 1988 年生下了 7 隻小狗。"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"Speedy Match 目前處於 阿爾法 階段。於2019年8月上線 Speedy Match ，《》英文版"
-"正在製作中。"
+"Speedy Match目前處於alpha測試階段，於2019年8月發布。 Speedy Match的英文版正在"
+"開發中。"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
-msgstr "謝謝你，祝你好運，"
+msgstr "謝謝，祝你好運！"
 
 #: .\templates\about\about.html:32
 msgid "Uri Rodberg"
-msgstr "乌里·罗德贝格"
+msgstr "烏裡·羅德伯格"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Speedy Net 和 Speedy Match 的創始人兼董事，"
+msgstr "Speedy Net 和 Speedy Match 的創辦人兼董事"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1179,7 +1178,7 @@ msgstr "下一步"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "您的 Speedy Net 帳戶未啟用。進入此頁面將其啟動。"
+msgstr "您的 Speedy Net 帳戶尚未啟動。請進入此頁面啟動帳戶。"
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
@@ -1187,18 +1186,18 @@ msgstr "管理員 - 所有比賽"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "你的比賽"
+msgstr "你的配對結果"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "火柴"
+msgstr "比賽"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "喜歡"
+msgstr "讚"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1213,7 +1212,7 @@ msgstr "比賽設定"
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "素食友善網站"
+msgstr "一個對素食主義者友好的網站"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
@@ -1225,17 +1224,16 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"您已訂閱接收來自 %(site_name)s 的此類通知。進入此頁面更改您的通知設定或選擇退"
-"出："
+"您已訂閱接收此類通知%(site_name)s進入此頁面可變更您的通知設定或選擇退出："
 
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "有人在 %(site_name)s 喜歡你"
+msgstr "有人喜歡你%(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "你還沒有任何朋友。"
+msgstr "你現在還沒有任何朋友。"
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
@@ -1243,7 +1241,7 @@ msgstr "你的朋友"
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "這裡沒有你喜歡的人。"
+msgstr "你在這裡沒有按讚。"
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
@@ -1256,22 +1254,22 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Speedy Match 是一款新的約會/匹配網絡應用程序，專為 會員的單身人士提供浪漫目"
-"的 Speedy Net Speedy Match 。透過 ，您可以找到匹配的人進行約會並與他們在線聊"
-"天。該網站是素食主義者和素食主義者友好的。"
+"Speedy Match是一款全新的約會/配對網路應用，專為Speedy Net的單身會員打造，旨在"
+"幫助他們找到心儀的約會對象並進行線上聊天。該網站對素食主義者和純素食主義者友"
+"好。"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "找男友嗎？找女朋友？快來認識Speedy吧！"
+msgstr "想找男友？想找女朋友？快來認識Speedy吧！"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Speedy Net 和 Speedy Match 上的所有功能都是免費的。立即加入 Speedy Match 尋找"
-"配對夥伴，只需幾分鐘。"
+"Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Match，尋找"
+"合適的伴侶，只需幾分鐘。"
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1298,15 +1296,15 @@ msgstr "新增更多選項"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "您還沒有任何匹配項。嘗試擴大您的搜尋設定或稍後再檢查。"
+msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "返回比賽"
+msgstr "返回比賽列表"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
-msgstr "簡介資訊"
+msgstr "個人資料"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
@@ -1320,7 +1318,7 @@ msgstr "喜歡"
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "不像"
+msgstr "與……不同"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
@@ -1354,11 +1352,11 @@ msgstr "吸菸狀況"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
-msgstr "關係狀況"
+msgstr "關係狀態"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "最後一次造訪的快速比賽 Speedy Match"
+msgstr "上次造訪的是 Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
