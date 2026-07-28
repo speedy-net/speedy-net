@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 18:07+0300\n"
+"POT-Creation-Date: 2026-07-28 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,25 +21,28 @@ msgstr "Ο φίλος σου"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Το αίτημα φιλίας εστάλη"
+msgstr "Αποστάληκε αίτημα φιλίας"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Δεν έχετε επιβεβαιώσει τη διεύθυνση email σας. Ελέγξτε τα εισερχόμενά σας."
+"Δεν έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Παρακαλώ, "
+"ελέγξτε τα εισερχόμενά σας."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Δεν έχετε επιβεβαιώσει τη διεύθυνση email σας. Ελέγξτε τα εισερχόμενά σας."
+"Δεν έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Παρακαλώ, "
+"ελέγξτε τα εισερχόμενά σας."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Δεν έχετε επιβεβαιώσει τη διεύθυνση email σας. Ελέγξτε τα εισερχόμενά σας."
+"Δεν έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Παρακαλώ, "
+"ελέγξτε τα εισερχόμενά σας."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -64,7 +67,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Γεια <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"καλώς ήρθατε πίσω στο %(site_name)s!"
+"καλώς ήρθατε ξανά στο %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -74,7 +77,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Γεια <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"καλώς ήρθατε πίσω στο %(site_name)s!"
+"καλώς ήρθατε ξανά στο %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -84,22 +87,22 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Γεια <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"καλώς ήρθατε πίσω στο %(site_name)s!"
+"καλώς ήρθατε και πάλι στο %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "Επιβεβαιώστε τη διεύθυνση email σας."
+msgstr "Παρακαλώ επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "Επιβεβαιώστε τη διεύθυνση email σας."
+msgstr "Παρακαλώ επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "Επιβεβαιώστε τη διεύθυνση email σας."
+msgstr "Παρακαλώ επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
@@ -119,68 +122,68 @@ msgstr "Απενεργοποίηση λογαριασμού"
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr "Στείλτε ξανά ένα email επιβεβαίωσης"
+msgstr "Επανάληψη αποστολής του email επιβεβαίωσης"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr "Στείλτε ξανά ένα email επιβεβαίωσης"
+msgstr "Επανάληψη αποστολής του email επιβεβαίωσης"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr "Στείλτε ξανά ένα email επιβεβαίωσης"
+msgstr "Επανάληψη αποστολής του email επιβεβαίωσης"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "Κάντε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
+msgstr "Ορίστε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "Κάντε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
+msgstr "Ορίστε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "Κάντε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
+msgstr "Ορίστε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
-"Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη διεύθυνση ηλεκτρονικού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση ηλεκτρονικού "
 "ταχυδρομείου;"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
-"Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη διεύθυνση ηλεκτρονικού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση ηλεκτρονικού "
 "ταχυδρομείου;"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
-"Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη διεύθυνση ηλεκτρονικού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση ηλεκτρονικού "
 "ταχυδρομείου;"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr "Διαγράψτε αυτήν τη διεύθυνση email"
+msgstr "Διαγραφή αυτής της διεύθυνσης ηλεκτρονικού ταχυδρομείου"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr "Διαγράψτε αυτήν τη διεύθυνση email"
+msgstr "Διαγραφή αυτής της διεύθυνσης ηλεκτρονικού ταχυδρομείου"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr "Διαγράψτε αυτήν τη διεύθυνση email"
+msgstr "Διαγραφή αυτής της διεύθυνσης ηλεκτρονικού ταχυδρομείου"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
@@ -230,17 +233,17 @@ msgstr "Αλλάξτε τις ρυθμίσεις απορρήτου των δι�
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "Δεν μπλοκάρεις κανέναν."
+msgstr "Δεν εμποδίζεις κανέναν."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "Δεν μπλοκάρεις κανέναν."
+msgstr "Δεν εμποδίζεις κανέναν."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "Δεν μπλοκάρεις κανέναν."
+msgstr "Δεν εμποδίζεις κανέναν."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
@@ -260,65 +263,65 @@ msgstr "Αναφορά χρήστη"
 #: .\__translations\__translations.html:72
 msgctxt "female"
 msgid "Your feedback was sent to administrators."
-msgstr "Τα σχόλιά σας στάλθηκαν στους διαχειριστές."
+msgstr "Τα σχόλιά σας έχουν σταλεί στους διαχειριστές."
 
 #: .\__translations\__translations.html:73
 msgctxt "male"
 msgid "Your feedback was sent to administrators."
-msgstr "Τα σχόλιά σας στάλθηκαν στους διαχειριστές."
+msgstr "Τα σχόλιά σας έχουν σταλεί στους διαχειριστές."
 
 #: .\__translations\__translations.html:74
 msgctxt "other"
 msgid "Your feedback was sent to administrators."
-msgstr "Τα σχόλιά σας στάλθηκαν στους διαχειριστές."
+msgstr "Τα σχόλιά σας έχουν σταλεί στους διαχειριστές."
 
 #: .\__translations\__translations.html:76
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "Στείλτε ένα μήνυμα σε %(user_name)s"
+msgstr "Στείλε ένα μήνυμα στον/στην %(user_name)s"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "Στείλτε ένα μήνυμα σε %(user_name)s"
+msgstr "Στείλε ένα μήνυμα στον/στην %(user_name)s"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "Στείλτε ένα μήνυμα σε %(user_name)s"
+msgstr "Στείλε ένα μήνυμα στον/στην %(user_name)s"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
 msgid "Mark All as Read"
-msgstr "Επισήμανση όλων ως αναγνωσμένων"
+msgstr "Επιλογή «Όλα ως αναγνωσμένα»"
 
 #: .\__translations\__translations.html:81
 msgctxt "male"
 msgid "Mark All as Read"
-msgstr "Επισήμανση όλων ως αναγνωσμένων"
+msgstr "Επιλογή «Όλα ως αναγνωσμένα»"
 
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr "Επισήμανση όλων ως αναγνωσμένων"
+msgstr "Επιλογή «Όλα ως αναγνωσμένα»"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "Εσείς:"
+msgstr "Εσύ:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "Εσείς:"
+msgstr "Εσύ:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "Εσείς:"
+msgstr "Εσύ:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -338,32 +341,32 @@ msgstr "Δεν έχετε ακόμα μηνύματα."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Αποκλείσατε "
+msgstr "Μπλοκάρατε "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Αποκλείσατε "
+msgstr "Μπλοκάρατε "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Αποκλείσατε "
+msgstr "Μπλοκάρατε "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " σε μπλόκαρε."
+msgstr " Σε έχω αποκλείσει."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " σε μπλόκαρε."
+msgstr " Σε έχω αποκλείσει."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " σε μπλόκαρε."
+msgstr " Σε έχω αποκλείσει."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -372,8 +375,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Match."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -382,8 +385,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Match."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -392,8 +395,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Match."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -402,8 +405,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Net."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -412,8 +415,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Net."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -422,26 +425,26 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Net."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
+"Διαθέτετε επίσης προφίλ στο Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
+"Διαθέτετε επίσης προφίλ στο Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
+"Διαθέτετε επίσης προφίλ στο Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -461,62 +464,62 @@ msgstr "Προσθήκη στους φίλους"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
+msgstr "Είσαι σίγουρος ότι θέλεις να αποκλείσεις "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
+msgstr "Είσαι σίγουρος ότι θέλεις να αποκλείσεις "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
+msgstr "Είσαι σίγουρος ότι θέλεις να αποκλείσεις "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Φραγμός "
+msgstr "Μπλοκ "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Φραγμός "
+msgstr "Μπλοκ "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Φραγμός "
+msgstr "Μπλοκ "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Ξεβουλώνω "
+msgstr "Ξεκλείδωμα "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Ξεβουλώνω "
+msgstr "Ξεκλείδωμα "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Ξεβουλώνω "
+msgstr "Ξεκλείδωμα "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Εκθεση "
+msgstr "Έκθεση "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Εκθεση "
+msgstr "Έκθεση "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Εκθεση "
+msgstr "Έκθεση "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -536,92 +539,92 @@ msgstr "Αναφορά αυτής της φωτογραφίας"
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "Κατάργηση φίλου"
+msgstr "Διαγραφή φίλου"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
-msgstr "Κατάργηση φίλου"
+msgstr "Διαγραφή φίλου"
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
-msgstr "Κατάργηση φίλου"
+msgstr "Διαγραφή φίλου"
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Ακύρωση αιτήματος φιλίας"
+msgstr "Ακύρωση αίτησης φιλίας"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Ακύρωση αιτήματος φιλίας"
+msgstr "Ακύρωση αίτησης φιλίας"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Ακύρωση αιτήματος φιλίας"
+msgstr "Ακύρωση αίτησης φιλίας"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr "Αποδέχομαι"
+msgstr "Αποδοχή"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr "Αποδέχομαι"
+msgstr "Αποδοχή"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr "Αποδέχομαι"
+msgstr "Αποδοχή"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr "Απορρίπτω"
+msgstr "Απόρριψη"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr "Απορρίπτω"
+msgstr "Απόρριψη"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr "Απορρίπτω"
+msgstr "Απόρριψη"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Αποδεχτείτε το αίτημα φιλίας"
+msgstr "Αποδοχή αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Αποδεχτείτε το αίτημα φιλίας"
+msgstr "Αποδοχή αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Αποδεχτείτε το αίτημα φιλίας"
+msgstr "Αποδοχή αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Απόρριψη Αίτησης Φιλίας"
+msgstr "Απόρριψη αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Απόρριψη Αίτησης Φιλίας"
+msgstr "Απόρριψη αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Απόρριψη Αίτησης Φιλίας"
+msgstr "Απόρριψη αιτήματος φιλίας"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
@@ -641,17 +644,17 @@ msgstr "Αποστολή μηνύματος"
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr "Καλωσόρισμα"
+msgstr "Καλώς ήρθατε"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr "Καλωσόρισμα"
+msgstr "Καλώς ήρθατε"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr "Καλωσόρισμα"
+msgstr "Καλώς ήρθατε"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
@@ -687,22 +690,22 @@ msgstr "Δείτε όλα"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ο λογαριασμός σας Speedy Net δεν είναι ενεργός. Μπείτε σε αυτή τη σελίδα για "
-"να την ενεργοποιήσετε."
+"Ο λογαριασμός σας στο Speedy Net δεν είναι ενεργός. Μεταβείτε σε αυτή τη "
+"σελίδα για να τον ενεργοποιήσετε."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ο λογαριασμός σας Speedy Net δεν είναι ενεργός. Μπείτε σε αυτή τη σελίδα για "
-"να την ενεργοποιήσετε."
+"Ο λογαριασμός σας στο Speedy Net δεν είναι ενεργός. Μεταβείτε σε αυτή τη "
+"σελίδα για να τον ενεργοποιήσετε."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ο λογαριασμός σας Speedy Net δεν είναι ενεργός. Μπείτε σε αυτή τη σελίδα για "
-"να την ενεργοποιήσετε."
+"Ο λογαριασμός σας στο Speedy Net δεν είναι ενεργός. Μεταβείτε σε αυτή τη "
+"σελίδα για να τον ενεργοποιήσετε."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -725,17 +728,17 @@ msgstr "Καλώς ήρθατε στο %(site_name)s"
 #: .\__translations\__translations.html:184
 msgctxt "female"
 msgid "has sent you a message."
-msgstr "σας έστειλε μήνυμα."
+msgstr "Σας έστειλε ένα μήνυμα."
 
 #: .\__translations\__translations.html:185
 msgctxt "male"
 msgid "has sent you a message."
-msgstr "σας έστειλε μήνυμα."
+msgstr "Σας έστειλε ένα μήνυμα."
 
 #: .\__translations\__translations.html:186
 msgctxt "other"
 msgid "has sent you a message."
-msgstr "σας έστειλε μήνυμα."
+msgstr "Σας έστειλε ένα μήνυμα."
 
 #: .\__translations\__translations.html:188
 msgctxt "female"
@@ -792,19 +795,22 @@ msgstr ""
 msgctxt "female"
 msgid "Use this link to verify your email address:"
 msgstr ""
-"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση email σας:"
+"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου σας:"
 
 #: .\__translations\__translations.html:201
 msgctxt "male"
 msgid "Use this link to verify your email address:"
 msgstr ""
-"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση email σας:"
+"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου σας:"
 
 #: .\__translations\__translations.html:202
 msgctxt "other"
 msgid "Use this link to verify your email address:"
 msgstr ""
-"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση email σας:"
+"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου σας:"
 
 #: .\__translations\__translations.html:204
 msgctxt "female"
@@ -846,9 +852,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Έχετε εγγραφεί για να λαμβάνετε αυτού του τύπου ειδοποιήσεις από "
-"%(site_name)s. Μπείτε σε αυτήν τη σελίδα για να αλλάξετε τις ρυθμίσεις "
-"ειδοποιήσεων ή να εξαιρεθείτε:"
+"Έχετε εγγραφεί για να λαμβάνετε αυτού του είδους τις ειδοποιήσεις από το "
+"%(site_name)s. Επισκεφθείτε αυτή τη σελίδα για να αλλάξετε τις ρυθμίσεις "
+"ειδοποιήσεών σας ή να διαγραφείτε:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -857,9 +863,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Έχετε εγγραφεί για να λαμβάνετε αυτού του τύπου ειδοποιήσεις από "
-"%(site_name)s. Μπείτε σε αυτήν τη σελίδα για να αλλάξετε τις ρυθμίσεις "
-"ειδοποιήσεων ή να εξαιρεθείτε:"
+"Έχετε εγγραφεί για να λαμβάνετε αυτού του είδους τις ειδοποιήσεις από το "
+"%(site_name)s. Επισκεφθείτε αυτή τη σελίδα για να αλλάξετε τις ρυθμίσεις "
+"ειδοποιήσεών σας ή να διαγραφείτε:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -868,13 +874,13 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Έχετε εγγραφεί για να λαμβάνετε αυτού του τύπου ειδοποιήσεις από "
-"%(site_name)s. Μπείτε σε αυτήν τη σελίδα για να αλλάξετε τις ρυθμίσεις "
-"ειδοποιήσεων ή να εξαιρεθείτε:"
+"Έχετε εγγραφεί για να λαμβάνετε αυτού του είδους τις ειδοποιήσεις από το "
+"%(site_name)s. Επισκεφθείτε αυτή τη σελίδα για να αλλάξετε τις ρυθμίσεις "
+"ειδοποιήσεών σας ή να διαγραφείτε:"
 
 #: .\__translations\__translations.py:7
 msgid "Enter a valid email address."
-msgstr "Εισαγάγετε μια έγκυρη διεύθυνση email."
+msgstr "Εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου."
 
 #: .\__translations\__translations.py:8
 msgid "Email address"
@@ -891,11 +897,11 @@ msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου:"
 #: .\__translations\__translations.py:11
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr "E-mail"
+msgstr "Ηλεκτρονικό ταχυδρομείο"
 
 #: .\__translations\__translations.py:12
 msgid "Value must be valid JSON."
-msgstr "Η τιμή πρέπει να είναι έγκυρη JSON."
+msgstr "Η τιμή πρέπει να είναι έγκυρο JSON."
 
 #: .\__translations\__translations.py:13
 #, python-format
@@ -903,8 +909,9 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Εισαγάγετε ένα σωστό %(username)s και κωδικό πρόσβασης. Σημειώστε ότι και τα "
-"δύο πεδία ενδέχεται να κάνουν διάκριση πεζών-κεφαλαίων."
+"Παρακαλώ εισάγετε ένα σωστό %(username)s και κωδικό πρόσβασης. Σημειώστε ότι "
+"και στα δύο πεδία μπορεί να γίνεται διάκριση μεταξύ κεφαλαίων και μικρών "
+"γραμμάτων."
 
 #: .\__translations\__translations.py:17
 msgid "Message"
@@ -920,7 +927,7 @@ msgstr "Αιτήματα φιλίας"
 
 #: .\__translations\__translations.py:22
 msgid "Friend"
-msgstr "Φίλε"
+msgstr "Φίλος"
 
 #: .\__translations\__translations.py:23 .\accounts\models.py:798
 msgid "Friends"
@@ -928,11 +935,11 @@ msgstr "Φίλοι"
 
 #: .\__translations\__translations.py:25
 msgid "Following Relationship"
-msgstr "Ακολουθώντας τη Σχέση"
+msgstr "Επόμενη σχέση"
 
 #: .\__translations\__translations.py:26
 msgid "Following Relationships"
-msgstr "Ακολουθώντας τις Σχέσεις"
+msgstr "Παρακολούθηση σχέσεων"
 
 #: .\__translations\__translations.py:28
 msgid "Blocker Relationship"
@@ -940,7 +947,7 @@ msgstr "Σχέση αποκλεισμού"
 
 #: .\__translations\__translations.py:29
 msgid "Blocked Relationships"
-msgstr "Μπλοκαρισμένες σχέσεις"
+msgstr "Αποκλεισμένες σχέσεις"
 
 #: .\__translations\__translations.py:34
 #, python-format
@@ -951,11 +958,11 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Η λίστα περιέχει %(show_value)d στοιχείο, δεν πρέπει να περιέχει περισσότερο "
-"από %(limit_value)d."
+"Η λίστα περιέχει το στοιχείο « %(show_value)d », ενώ δεν θα έπρεπε να "
+"περιέχει τίποτα περισσότερο από το « %(limit_value)d »."
 msgstr[1] ""
-"Η λίστα περιέχει %(show_value)d στοιχεία, δεν πρέπει να περιέχει περισσότερα "
-"από %(limit_value)d."
+"Η λίστα περιέχει %(show_value)d στοιχεία, ενώ δεν θα έπρεπε να περιέχει "
+"περισσότερα από %(limit_value)d."
 
 #: .\__translations\__translations.py:41
 msgctxt "female"
@@ -975,17 +982,17 @@ msgstr "όνομα χρήστη (slug)"
 #: .\__translations\__translations.py:45
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "Ενημερώστε την εικόνα του προφίλ σας"
+msgstr "Ενημέρωσε τη φωτογραφία προφίλ σου"
 
 #: .\__translations\__translations.py:46
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "Ενημερώστε την εικόνα του προφίλ σας"
+msgstr "Ενημέρωσε τη φωτογραφία προφίλ σου"
 
 #: .\__translations\__translations.py:47
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "Ενημερώστε την εικόνα του προφίλ σας"
+msgstr "Ενημέρωσε τη φωτογραφία προφίλ σου"
 
 #: .\__translations\__translations.py:49
 msgctxt "female"
@@ -1005,68 +1012,68 @@ msgstr "Αποθήκευση αλλαγών"
 #: .\__translations\__translations.py:53
 msgctxt "female"
 msgid "You can't change your username."
-msgstr "Δεν μπορείτε να αλλάξετε το όνομα χρήστη σας."
+msgstr "Δεν μπορείς να αλλάξεις το όνομα χρήστη σου."
 
 #: .\__translations\__translations.py:54
 msgctxt "male"
 msgid "You can't change your username."
-msgstr "Δεν μπορείτε να αλλάξετε το όνομα χρήστη σας."
+msgstr "Δεν μπορείς να αλλάξεις το όνομα χρήστη σου."
 
 #: .\__translations\__translations.py:55
 msgctxt "other"
 msgid "You can't change your username."
-msgstr "Δεν μπορείτε να αλλάξετε το όνομα χρήστη σας."
+msgstr "Δεν μπορείς να αλλάξεις το όνομα χρήστη σου."
 
 #: .\__translations\__translations.py:57
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "Ενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Ενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "Ενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Ενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "Ενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Ενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Απενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Απενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Απενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Απενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Απενεργοποιήστε τον λογαριασμό {site_name} σας"
+msgstr "Απενεργοποιήστε τον λογαριασμό σας στο {site_name} "
 
 #: .\__translations\__translations.py:65
 msgctxt "female"
 msgid "Add"
-msgstr "Προσθέτω"
+msgstr "Προσθήκη"
 
 #: .\__translations\__translations.py:66
 msgctxt "male"
 msgid "Add"
-msgstr "Προσθέτω"
+msgstr "Προσθήκη"
 
 #: .\__translations\__translations.py:67
 msgctxt "other"
 msgid "Add"
-msgstr "Προσθέτω"
+msgstr "Προσθήκη"
 
 #: .\__translations\__translations.py:69
 msgctxt "female"
@@ -1086,47 +1093,47 @@ msgstr "Πού μένω;"
 #: .\__translations\__translations.py:73
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "Που μένετε;"
+msgstr "Πού μένεις;"
 
 #: .\__translations\__translations.py:74
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "Που μένετε;"
+msgstr "Πού μένεις;"
 
 #: .\__translations\__translations.py:75
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "Που μένετε;"
+msgstr "Πού μένεις;"
 
 #: .\__translations\__translations.py:77
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Παρακαλώ γράψτε πού μένετε."
+msgstr "Παρακαλώ, γράψτε πού μένετε."
 
 #: .\__translations\__translations.py:78
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Παρακαλώ γράψτε πού μένετε."
+msgstr "Παρακαλώ, γράψτε πού μένετε."
 
 #: .\__translations\__translations.py:79
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Παρακαλώ γράψτε πού μένετε."
+msgstr "Παρακαλώ, γράψτε πού μένετε."
 
 #: .\__translations\__translations.py:81
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (τρώει μόνο φυτά και μύκητες)"
+msgstr "Βίγκαν (τρώει μόνο φυτά και μύκητες)"
 
 #: .\__translations\__translations.py:82
 msgctxt "male"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (τρώει μόνο φυτά και μύκητες)"
+msgstr "Βίγκαν (τρώει μόνο φυτά και μύκητες)"
 
 #: .\__translations\__translations.py:83
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (τρώει μόνο φυτά και μύκητες)"
+msgstr "Βίγκαν (τρώει μόνο φυτά και μύκητες)"
 
 #: .\__translations\__translations.py:85
 msgctxt "female"
@@ -1146,47 +1153,47 @@ msgstr "Χορτοφάγος (δεν τρώει ψάρι και κρέας)"
 #: .\__translations\__translations.py:89
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (τρώει ζώα)"
+msgstr "Καρνιστής (τρώει ζώα)"
 
 #: .\__translations\__translations.py:90
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (τρώει ζώα)"
+msgstr "Καρνιστής (τρώει ζώα)"
 
 #: .\__translations\__translations.py:91
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (τρώει ζώα)"
+msgstr "Καρνιστής (τρώει ζώα)"
 
 #: .\__translations\__translations.py:93
 msgctxt "female"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Βίγκαν"
 
 #: .\__translations\__translations.py:94
 msgctxt "male"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Βίγκαν"
 
 #: .\__translations\__translations.py:95
 msgctxt "other"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Βίγκαν"
 
 #: .\__translations\__translations.py:97
 msgctxt "female"
 msgid "Vegetarian"
-msgstr "Χορτοφάγος"
+msgstr "Χορτοφαγική"
 
 #: .\__translations\__translations.py:98
 msgctxt "male"
 msgid "Vegetarian"
-msgstr "Χορτοφάγος"
+msgstr "Χορτοφαγική"
 
 #: .\__translations\__translations.py:99
 msgctxt "other"
 msgid "Vegetarian"
-msgstr "Χορτοφάγος"
+msgstr "Χορτοφαγική"
 
 #: .\__translations\__translations.py:101
 msgctxt "female"
@@ -1206,32 +1213,32 @@ msgstr "Καρνιστής"
 #: .\__translations\__translations.py:105
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Όχι κάπνισμα"
+msgstr "Μη καπνιστής"
 
 #: .\__translations\__translations.py:106
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Όχι κάπνισμα"
+msgstr "Μη καπνιστής"
 
 #: .\__translations\__translations.py:107
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Όχι κάπνισμα"
+msgstr "Μη καπνιστής"
 
 #: .\__translations\__translations.py:109
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Κάπνισμα περιστασιακά"
+msgstr "Περιστασιακό κάπνισμα"
 
 #: .\__translations\__translations.py:110
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Κάπνισμα περιστασιακά"
+msgstr "Περιστασιακό κάπνισμα"
 
 #: .\__translations\__translations.py:111
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Κάπνισμα περιστασιακά"
+msgstr "Περιστασιακό κάπνισμα"
 
 #: .\__translations\__translations.py:113
 msgctxt "female"
@@ -1251,17 +1258,17 @@ msgstr "Κάπνισμα"
 #: .\__translations\__translations.py:117
 msgctxt "female"
 msgid "Single"
-msgstr "Μονόκλινο"
+msgstr "Μονό"
 
 #: .\__translations\__translations.py:118
 msgctxt "male"
 msgid "Single"
-msgstr "Μονόκλινο"
+msgstr "Μονό"
 
 #: .\__translations\__translations.py:119
 msgctxt "other"
 msgid "Single"
-msgstr "Μονόκλινο"
+msgstr "Μονό"
 
 #: .\__translations\__translations.py:121
 msgctxt "female"
@@ -1281,17 +1288,17 @@ msgstr "Διαζευγμένος"
 #: .\__translations\__translations.py:125
 msgctxt "female"
 msgid "Widowed"
-msgstr "Χήρος"
+msgstr "Χήρος/Χήρα"
 
 #: .\__translations\__translations.py:126
 msgctxt "male"
 msgid "Widowed"
-msgstr "Χήρος"
+msgstr "Χήρος/Χήρα"
 
 #: .\__translations\__translations.py:127
 msgctxt "other"
 msgid "Widowed"
-msgstr "Χήρος"
+msgstr "Χήρος/Χήρα"
 
 #: .\__translations\__translations.py:129
 msgctxt "female"
@@ -1386,17 +1393,17 @@ msgstr "Παντρεμένος"
 #: .\__translations\__translations.py:153
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "Ο νέος σας κωδικός έχει αποθηκευτεί."
+msgstr "Ο νέος σας κωδικός πρόσβασης έχει αποθηκευτεί."
 
 #: .\__translations\__translations.py:154
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "Ο νέος σας κωδικός έχει αποθηκευτεί."
+msgstr "Ο νέος σας κωδικός πρόσβασης έχει αποθηκευτεί."
 
 #: .\__translations\__translations.py:155
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "Ο νέος σας κωδικός έχει αποθηκευτεί."
+msgstr "Ο νέος σας κωδικός πρόσβασης έχει αποθηκευτεί."
 
 #: .\__translations\__translations.py:157
 msgctxt "female"
@@ -1404,8 +1411,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
-"Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν "
+"απενεργοποιηθεί. Μπορείτε να τους ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:158
 msgctxt "male"
@@ -1413,8 +1420,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
-"Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν "
+"απενεργοποιηθεί. Μπορείτε να τους ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:159
 msgctxt "other"
@@ -1422,8 +1429,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Οι λογαριασμοί Speedy Net Speedy Match σας και έχουν απενεργοποιηθεί. "
-"Μπορείτε να τα ενεργοποιήσετε ξανά ανά πάσα στιγμή."
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν "
+"απενεργοποιηθεί. Μπορείτε να τους ενεργοποιήσετε ξανά ανά πάσα στιγμή."
 
 #: .\__translations\__translations.py:161
 #, python-brace-format
@@ -1432,9 +1439,9 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Ο λογαριασμός {site_name} σας έχει απενεργοποιηθεί. Μπορείτε να το "
-"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας Speedy Net παραμένει "
-"ενεργός."
+"Ο λογαριασμός σας στο {site_name} έχει απενεργοποιηθεί. Μπορείτε να τον "
+"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας στο Speedy Net "
+"παραμένει ενεργός."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1443,9 +1450,9 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Ο λογαριασμός {site_name} σας έχει απενεργοποιηθεί. Μπορείτε να το "
-"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας Speedy Net παραμένει "
-"ενεργός."
+"Ο λογαριασμός σας στο {site_name} έχει απενεργοποιηθεί. Μπορείτε να τον "
+"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας στο Speedy Net "
+"παραμένει ενεργός."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1454,54 +1461,54 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"Ο λογαριασμός {site_name} σας έχει απενεργοποιηθεί. Μπορείτε να το "
-"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας Speedy Net παραμένει "
-"ενεργός."
+"Ο λογαριασμός σας στο {site_name} έχει απενεργοποιηθεί. Μπορείτε να τον "
+"ενεργοποιήσετε ξανά ανά πάσα στιγμή. Ο λογαριασμός σας στο Speedy Net "
+"παραμένει ενεργός."
 
 #: .\__translations\__translations.py:165
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "Έχετε ήδη επιβεβαιώσει αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+msgstr "Έχετε ήδη επιβεβαιώσει αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
 
 #: .\__translations\__translations.py:166
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "Έχετε ήδη επιβεβαιώσει αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+msgstr "Έχετε ήδη επιβεβαιώσει αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
 
 #: .\__translations\__translations.py:167
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "Έχετε ήδη επιβεβαιώσει αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+msgstr "Έχετε ήδη επιβεβαιώσει αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
 
 #: .\__translations\__translations.py:169
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr "Επιβεβαιώσατε τη διεύθυνση email σας."
+msgstr "Έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.py:170
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr "Επιβεβαιώσατε τη διεύθυνση email σας."
+msgstr "Έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.py:171
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr "Επιβεβαιώσατε τη διεύθυνση email σας."
+msgstr "Έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\__translations\__translations.py:173
 msgctxt "female"
 msgid "Send"
-msgstr "Στέλνω"
+msgstr "Αποστολή"
 
 #: .\__translations\__translations.py:174
 msgctxt "male"
 msgid "Send"
-msgstr "Στέλνω"
+msgstr "Αποστολή"
 
 #: .\__translations\__translations.py:175
 msgctxt "other"
 msgid "Send"
-msgstr "Στέλνω"
+msgstr "Αποστολή"
 
 #: .\__translations\__translations.py:177
 #, python-brace-format
@@ -1511,7 +1518,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
+"Speedy Net. Παρακαλούμε διαγράψτε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1521,7 +1528,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
+"Speedy Net. Παρακαλούμε διαγράψτε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1531,7 +1538,7 @@ msgid ""
 "Net. Please remove friends before you proceed."
 msgstr ""
 "Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
-"Speedy Net. Καταργήστε φίλους πριν προχωρήσετε."
+"Speedy Net. Παρακαλούμε διαγράψτε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
@@ -1540,9 +1547,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1551,9 +1558,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1562,9 +1569,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1573,9 +1580,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1584,9 +1591,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1595,9 +1602,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1606,9 +1613,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1617,9 +1624,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1628,9 +1635,9 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από "
-"{1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν "
-"προχωρήσετε."
+"Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να διαγράψει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:191
 msgctxt "female"
@@ -1650,107 +1657,107 @@ msgstr "Δεν μπορείς να είσαι φίλος με τον εαυτό 
 #: .\__translations\__translations.py:195
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Έχετε ήδη ζητήσει φιλία από αυτόν τον χρήστη."
+msgstr "Έχεις ήδη στείλει αίτημα φιλίας σε αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:196
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Έχετε ήδη ζητήσει φιλία από αυτόν τον χρήστη."
+msgstr "Έχεις ήδη στείλει αίτημα φιλίας σε αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:197
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Έχετε ήδη ζητήσει φιλία από αυτόν τον χρήστη."
+msgstr "Έχεις ήδη στείλει αίτημα φιλίας σε αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:199
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Αυτός ο χρήστης έχει ήδη ζητήσει φιλία από εσάς."
+msgstr "Αυτός ο χρήστης σου έχει ήδη στείλει αίτημα φιλίας."
 
 #: .\__translations\__translations.py:200
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "Αυτός ο χρήστης έχει ήδη ζητήσει φιλία από εσάς."
+msgstr "Αυτός ο χρήστης σου έχει ήδη στείλει αίτημα φιλίας."
 
 #: .\__translations\__translations.py:201
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "Αυτός ο χρήστης έχει ήδη ζητήσει φιλία από εσάς."
+msgstr "Αυτός ο χρήστης σου έχει ήδη στείλει αίτημα φιλίας."
 
 #: .\__translations\__translations.py:203
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:206
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:209
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
+msgstr "Είσαι ήδη φίλος με αυτόν τον χρήστη."
 
 #: .\__translations\__translations.py:213
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "Ακυρώσατε το αίτημα φιλίας σας."
+msgstr "Ακύρωσες το αίτημα φιλίας σου."
 
 #: .\__translations\__translations.py:214
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "Ακυρώσατε το αίτημα φιλίας σας."
+msgstr "Ακύρωσες το αίτημα φιλίας σου."
 
 #: .\__translations\__translations.py:215
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "Ακυρώσατε το αίτημα φιλίας σας."
+msgstr "Ακύρωσες το αίτημα φιλίας σου."
 
 #: .\__translations\__translations.py:217
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "Έχετε αφαιρέσει αυτόν τον χρήστη από τους φίλους σας."
+msgstr "Έχεις διαγράψει αυτόν τον χρήστη από τους φίλους σου."
 
 #: .\__translations\__translations.py:218
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "Έχετε αφαιρέσει αυτόν τον χρήστη από τους φίλους σας."
+msgstr "Έχεις διαγράψει αυτόν τον χρήστη από τους φίλους σου."
 
 #: .\__translations\__translations.py:219
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "Έχετε αφαιρέσει αυτόν τον χρήστη από τους φίλους σας."
+msgstr "Έχεις διαγράψει αυτόν τον χρήστη από τους φίλους σου."
 
 #: .\__translations\__translations.py:221
 #, python-brace-format
@@ -1812,11 +1819,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Λόγω της κατάχρησης του ιστότοπου για την αποστολή ανεπιθύμητων μηνυμάτων, "
-"έπρεπε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να σταλούν σε "
-"άλλα μέλη του ιστότοπου σε μία ημέρα. Δοκιμάστε ξανά αύριο. Λάβετε υπόψη ότι "
-"δεν επιτρέπεται να χρησιμοποιείτε το Speedy Net για την αποστολή "
-"ανεπιθύμητων μηνυμάτων ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
+"Λόγω της κατάχρησης του ιστότοπου για την αποστολή μηνυμάτων spam, "
+"αναγκαστήκαμε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να "
+"αποσταλούν σε άλλα μέλη του ιστότοπου σε μία ημέρα. Παρακαλούμε δοκιμάστε "
+"ξανά αύριο. Σημειώστε ότι δεν επιτρέπεται η χρήση του Speedy Net για την "
+"αποστολή μηνυμάτων spam ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
 "ατόμων."
 
 #: .\__translations\__translations.py:234
@@ -1828,11 +1835,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Λόγω της κατάχρησης του ιστότοπου για την αποστολή ανεπιθύμητων μηνυμάτων, "
-"έπρεπε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να σταλούν σε "
-"άλλα μέλη του ιστότοπου σε μία ημέρα. Δοκιμάστε ξανά αύριο. Λάβετε υπόψη ότι "
-"δεν επιτρέπεται να χρησιμοποιείτε το Speedy Net για την αποστολή "
-"ανεπιθύμητων μηνυμάτων ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
+"Λόγω της κατάχρησης του ιστότοπου για την αποστολή μηνυμάτων spam, "
+"αναγκαστήκαμε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να "
+"αποσταλούν σε άλλα μέλη του ιστότοπου σε μία ημέρα. Παρακαλούμε δοκιμάστε "
+"ξανά αύριο. Σημειώστε ότι δεν επιτρέπεται η χρήση του Speedy Net για την "
+"αποστολή μηνυμάτων spam ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
 "ατόμων."
 
 #: .\__translations\__translations.py:235
@@ -1844,11 +1851,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Λόγω της κατάχρησης του ιστότοπου για την αποστολή ανεπιθύμητων μηνυμάτων, "
-"έπρεπε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να σταλούν σε "
-"άλλα μέλη του ιστότοπου σε μία ημέρα. Δοκιμάστε ξανά αύριο. Λάβετε υπόψη ότι "
-"δεν επιτρέπεται να χρησιμοποιείτε το Speedy Net για την αποστολή "
-"ανεπιθύμητων μηνυμάτων ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
+"Λόγω της κατάχρησης του ιστότοπου για την αποστολή μηνυμάτων spam, "
+"αναγκαστήκαμε να περιορίσουμε τον αριθμό των μηνυμάτων που μπορούν να "
+"αποσταλούν σε άλλα μέλη του ιστότοπου σε μία ημέρα. Παρακαλούμε δοκιμάστε "
+"ξανά αύριο. Σημειώστε ότι δεν επιτρέπεται η χρήση του Speedy Net για την "
+"αποστολή μηνυμάτων spam ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο αριθμό "
 "ατόμων."
 
 #: .\__translations\__translations.py:241
@@ -1858,8 +1865,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_male"
@@ -1868,8 +1875,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_other"
@@ -1878,8 +1885,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:244
 msgctxt "male_female"
@@ -1888,8 +1895,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_male"
@@ -1898,8 +1905,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_other"
@@ -1908,8 +1915,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:247
 msgctxt "other_female"
@@ -1918,8 +1925,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_male"
@@ -1928,8 +1935,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_other"
@@ -1938,8 +1945,8 @@ msgid ""
 "profile. View user's profile on Speedy Net."
 msgstr ""
 "Αυτός ο χρήστης δεν ταιριάζει με το προφίλ σας, αλλά μπορείτε να "
-"επισκεφτείτε το προφίλ του Speedy Net. Δείτε το προφίλ του χρήστη στο Speedy "
-"Net."
+"επισκεφθείτε το προφίλ του στο Speedy Net. Δείτε το προφίλ του χρήστη στο "
+"Speedy Net."
 
 #: .\__translations\__translations.py:251
 msgctxt "female"
@@ -1947,8 +1954,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η εικόνα του προφίλ σας δεν μπορεί να είναι διαφανής. Ανεβάστε μια αδιαφανή "
-"εικόνα."
+"Η φωτογραφία προφίλ σου δεν μπορεί να είναι διαφανής. Παρακαλώ, ανέβασε μια "
+"εικόνα που δεν είναι διαφανής."
 
 #: .\__translations\__translations.py:252
 msgctxt "male"
@@ -1956,8 +1963,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η εικόνα του προφίλ σας δεν μπορεί να είναι διαφανής. Ανεβάστε μια αδιαφανή "
-"εικόνα."
+"Η φωτογραφία προφίλ σου δεν μπορεί να είναι διαφανής. Παρακαλώ, ανέβασε μια "
+"εικόνα που δεν είναι διαφανής."
 
 #: .\__translations\__translations.py:253
 msgctxt "other"
@@ -1965,12 +1972,12 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η εικόνα του προφίλ σας δεν μπορεί να είναι διαφανής. Ανεβάστε μια αδιαφανή "
-"εικόνα."
+"Η φωτογραφία προφίλ σου δεν μπορεί να είναι διαφανής. Παρακαλώ, ανέβασε μια "
+"εικόνα που δεν είναι διαφανής."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Λογαριασμοί Speedy Core"
 
 #: .\accounts\fields.py:12
 msgid "Only me"
@@ -1982,7 +1989,7 @@ msgstr "Εγώ και οι φίλοι μου"
 
 #: .\accounts\fields.py:15
 msgid "Anyone"
-msgstr "Κάποιος"
+msgstr "Οποιοσδήποτε"
 
 #: .\accounts\forms.py:66
 msgid "Last name (optional)"
@@ -2006,7 +2013,7 @@ msgstr "Δημιουργία λογαριασμού"
 
 #: .\accounts\forms.py:167
 msgid "Update your profile picture"
-msgstr "Ενημερώστε την εικόνα του προφίλ σας"
+msgstr "Ενημερώστε τη φωτογραφία προφίλ σας"
 
 #: .\accounts\forms.py:167 .\accounts\validators.py:255
 msgid "A profile picture is required."
@@ -2014,7 +2021,7 @@ msgstr "Απαιτείται φωτογραφία προφίλ."
 
 #: .\accounts\forms.py:313 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "email ή όνομα χρήστη"
+msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου ή όνομα χρήστη"
 
 #: .\accounts\forms.py:319 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
@@ -2029,7 +2036,7 @@ msgstr "Ξεχάσατε τον κωδικό πρόσβασής σας;"
 
 #: .\accounts\forms.py:335
 msgid "Submit"
-msgstr "Υποτάσσομαι"
+msgstr "Υποβολή"
 
 #: .\accounts\forms.py:437
 msgid "Your password"
@@ -2037,7 +2044,7 @@ msgstr "Ο κωδικός πρόσβασής σας"
 
 #: .\accounts\forms.py:449
 msgid "Invalid password."
-msgstr "Μη έγκυρος κωδικός πρόσβασης."
+msgstr "Ο κωδικός πρόσβασης είναι λανθασμένος."
 
 #: .\accounts\models.py:178
 msgid "username"
@@ -2046,7 +2053,7 @@ msgstr "όνομα χρήστη"
 #: .\accounts\models.py:178 .\accounts\models.py:179
 #: .\accounts\validators.py:21
 msgid "This username is already taken."
-msgstr "Αυτό το όνομα χρήστη έχει ήδη ληφθεί."
+msgstr "Αυτό το όνομα χρήστη χρησιμοποιείται ήδη."
 
 #: .\accounts\models.py:179
 msgid "username (slug)"
@@ -2070,11 +2077,11 @@ msgstr "οντότητες"
 
 #: .\accounts\models.py:249
 msgid "Slug does not parse to username."
-msgstr "Το Slug δεν αναλύει το όνομα χρήστη."
+msgstr "Το «Slug» δεν μετατρέπεται σε όνομα χρήστη."
 
 #: .\accounts\models.py:253
 msgid "Username is required."
-msgstr "Απαιτείται όνομα χρήστη."
+msgstr "Το όνομα χρήστη είναι υποχρεωτικό."
 
 #: .\accounts\models.py:298
 msgid "name"
@@ -2086,24 +2093,24 @@ msgstr "περιγραφή"
 
 #: .\accounts\models.py:473
 msgid "Female"
-msgstr "Θηλυκός"
+msgstr "Γυναίκα"
 
 #: .\accounts\models.py:474
 msgid "Male"
-msgstr "Αρσενικός"
+msgstr "Άνδρας"
 
 #: .\accounts\models.py:475
 msgid "Other"
-msgstr "Αλλος"
+msgstr "Άλλα"
 
 #: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
 #: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
 msgid "Unknown"
-msgstr "Αγνωστος"
+msgstr "Άγνωστο"
 
 #: .\accounts\models.py:489
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (τρώει μόνο φυτά και μύκητες)"
+msgstr "Βίγκαν (τρώει μόνο φυτά και μύκητες)"
 
 #: .\accounts\models.py:490
 msgid "Vegetarian (doesn't eat fish and meat)"
@@ -2111,15 +2118,15 @@ msgstr "Χορτοφάγος (δεν τρώει ψάρι και κρέας)"
 
 #: .\accounts\models.py:491
 msgid "Carnist (eats animals)"
-msgstr "Carnist (τρώει ζώα)"
+msgstr "Καρνιστής (τρώει ζώα)"
 
 #: .\accounts\models.py:504
 msgid "Not smoking"
-msgstr "Όχι κάπνισμα"
+msgstr "Μη καπνιστής"
 
 #: .\accounts\models.py:505
 msgid "Smoking occasionally"
-msgstr "Κάπνισμα περιστασιακά"
+msgstr "Περιστασιακό κάπνισμα"
 
 #: .\accounts\models.py:506
 msgid "Smoking"
@@ -2127,7 +2134,7 @@ msgstr "Κάπνισμα"
 
 #: .\accounts\models.py:525
 msgid "Single"
-msgstr "Μονόκλινο"
+msgstr "Μονό"
 
 #: .\accounts\models.py:526
 msgid "Divorced"
@@ -2135,7 +2142,7 @@ msgstr "Διαζευγμένος"
 
 #: .\accounts\models.py:527
 msgid "Widowed"
-msgstr "Χήρος"
+msgstr "Χήρος/Χήρα"
 
 #: .\accounts\models.py:528
 msgid "In a relationship"
@@ -2163,11 +2170,11 @@ msgstr "Παντρεμένος"
 
 #: .\accounts\models.py:542
 msgid "Notify me"
-msgstr "Ενημερώστε με"
+msgstr "Ειδοποίησέ με"
 
 #: .\accounts\models.py:543
 msgid "Don't notify me"
-msgstr "Μη με ειδοποιήσεις"
+msgstr "Μην με ειδοποιείτε"
 
 #: .\accounts\models.py:590
 msgid "first name"
@@ -2179,11 +2186,11 @@ msgstr "επώνυμο"
 
 #: .\accounts\models.py:595
 msgid "I am"
-msgstr "είμαι"
+msgstr "Είμαι"
 
 #: .\accounts\models.py:596
 msgid "date of birth"
-msgstr "ημερομηνία γεννήσεως"
+msgstr "ημερομηνία γέννησης"
 
 #: .\accounts\models.py:597
 msgid "diet"
@@ -2191,11 +2198,11 @@ msgstr "διατροφή"
 
 #: .\accounts\models.py:598
 msgid "smoking status"
-msgstr "κατάσταση καπνίσματος"
+msgstr "καπνιστική συνήθεια"
 
 #: .\accounts\models.py:599
 msgid "relationship status"
-msgstr "κατάσταση σχέσης"
+msgstr "οικογενειακή κατάσταση"
 
 #: .\accounts\models.py:601
 msgid "Where do I live?"
@@ -2203,29 +2210,29 @@ msgstr "Πού μένω;"
 
 #: .\accounts\models.py:608
 msgid "Who can view my birth month and day"
-msgstr "Ποιος μπορεί να δει τον μήνα και την ημέρα γέννησής μου"
+msgstr "Ποιος μπορεί να δει τον μήνα και την ημέρα γέννησής μου;"
 
 #: .\accounts\models.py:609
 msgid "Who can view my birth year"
-msgstr "Ποιος μπορεί να δει το έτος γέννησής μου"
+msgstr "Ποιος μπορεί να δει το έτος γέννησής μου;"
 
 #: .\accounts\models.py:610
 msgid "On new messages"
-msgstr "Σε νέα μηνύματα"
+msgstr "Όταν υπάρχουν νέα μηνύματα"
 
 #: .\accounts\models.py:616
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Τελευταία διεύθυνση IP που χρησιμοποιήθηκε https://ipapi.com/ ώρα"
+msgstr "Τελευταία διεύθυνση IP που χρησιμοποιήθηκεhttps://ipapi.com/"
 
 #: .\accounts\models.py:617
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
-"Τελευταία διεύθυνση IP που χρησιμοποιήθηκε ακατέργαστα https://ipapi.com/ "
-"αποτελέσματα"
+"Τελευταία διεύθυνση IP που χρησιμοποιήθηκε – Ακατέργαστα αποτελέσματα από το "
+"https://ipapi.com/"
 
 #: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
 msgid "user"
-msgstr "μεταχειριζόμενος"
+msgstr "χρήστης"
 
 #: .\accounts\models.py:824
 msgid "users"
@@ -2233,11 +2240,11 @@ msgstr "χρήστες"
 
 #: .\accounts\models.py:870
 msgid "Superuser must be equal to staff."
-msgstr "Ο υπερχρήστης πρέπει να είναι ίσος με το προσωπικό."
+msgstr "Ο «Superuser» πρέπει να είναι ίσος με το «staff»."
 
 #: .\accounts\models.py:1278
 msgid "email"
-msgstr "e-mail"
+msgstr "email"
 
 #: .\accounts\models.py:1279
 msgid "is confirmed"
@@ -2245,7 +2252,7 @@ msgstr "επιβεβαιώνεται"
 
 #: .\accounts\models.py:1280
 msgid "is primary"
-msgstr "είναι πρωτογενής"
+msgstr "είναι πρωταρχικός"
 
 #: .\accounts\models.py:1281
 msgid "confirmation token"
@@ -2253,19 +2260,19 @@ msgstr "διακριτικό επιβεβαίωσης"
 
 #: .\accounts\models.py:1282
 msgid "confirmation sent"
-msgstr "εστάλη επιβεβαίωση"
+msgstr "αποστολή επιβεβαίωσης"
 
 #: .\accounts\models.py:1283
 msgid "Who can see this email"
-msgstr "Ποιος μπορεί να δει αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου"
+msgstr "Ποιος μπορεί να δει αυτό το email"
 
 #: .\accounts\models.py:1294
 msgid "email addresses"
-msgstr "διευθύνσεις email"
+msgstr "διευθύνσεις ηλεκτρονικού ταχυδρομείου"
 
 #: .\accounts\models.py:1377
 msgid "User"
-msgstr "Μεταχειριζόμενος"
+msgstr "Χρήστης"
 
 #: .\accounts\models.py:1378
 msgid "last visit"
@@ -2277,12 +2284,12 @@ msgstr "Σήμερα"
 
 #: .\accounts\models.py:1392
 msgid "Yesterday"
-msgstr "Εχθές"
+msgstr "Χθες"
 
 #: .\accounts\models.py:1394
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
-msgstr "Στις {date} ({timesince_ago})"
+msgstr "Στο {date} ({timesince_ago})"
 
 #: .\accounts\models.py:1396
 #, python-brace-format
@@ -2303,8 +2310,8 @@ msgid ""
 "digits. You can add dashes between words."
 msgstr ""
 "Το όνομα χρήστη πρέπει να ξεκινά με 4 ή περισσότερα γράμματα, μετά τα οποία "
-"μπορεί να είναι οποιοσδήποτε αριθμός ψηφίων. Μπορείτε να προσθέσετε παύλες "
-"μεταξύ των λέξεων."
+"μπορεί να ακολουθεί οποιοσδήποτε αριθμός ψηφίων. Μπορείτε να προσθέσετε "
+"παύλες μεταξύ των λέξεων."
 
 #: .\accounts\validators.py:47
 #, python-format
@@ -2316,10 +2323,10 @@ msgid_plural ""
 "has %(show_value)d)."
 msgstr[0] ""
 "Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d αλφαριθμητικό "
-"χαρακτήρα (έχει %(show_value)d)."
+"χαρακτήρα (περιέχει %(show_value)d)."
 msgstr[1] ""
 "Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d "
-"αλφαριθμητικούς χαρακτήρες (έχει %(show_value)d)."
+"αλφαριθμητικούς χαρακτήρες (περιέχει %(show_value)d)."
 
 #: .\accounts\validators.py:58
 #, python-format
@@ -2330,11 +2337,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικό "
-"χαρακτήρα (έχει %(show_value)d)."
+"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικούς "
+"χαρακτήρες (περιέχει %(show_value)d)."
 msgstr[1] ""
 "Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικούς "
-"χαρακτήρες (έχει %(show_value)d)."
+"χαρακτήρες (περιέχει %(show_value)d)."
 
 #: .\accounts\validators.py:69
 #, python-format
@@ -2346,10 +2353,10 @@ msgid_plural ""
 "%(show_value)d)."
 msgstr[0] ""
 "Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d χαρακτήρα "
-"(έχει %(show_value)d)."
+"(περιέχει %(show_value)d)."
 msgstr[1] ""
 "Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d χαρακτήρες "
-"(έχει %(show_value)d)."
+"(περιέχει %(show_value)d)."
 
 #: .\accounts\validators.py:80
 #, python-format
@@ -2360,11 +2367,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d χαρακτήρα (έχει "
-"%(show_value)d)."
+"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d χαρακτήρες "
+"(περιέχει %(show_value)d)."
 msgstr[1] ""
-"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d χαρακτήρες (έχει "
-"%(show_value)d)."
+"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d χαρακτήρες "
+"(περιέχει %(show_value)d)."
 
 #: .\accounts\validators.py:104
 #, python-format
@@ -2375,11 +2382,11 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Αυτός ο κωδικός πρόσβασης είναι πολύ μικρός. Πρέπει να περιέχει τουλάχιστον "
-"%(min_length)d χαρακτήρα."
+"Αυτός ο κωδικός πρόσβασης είναι πολύ σύντομος. Πρέπει να περιέχει "
+"τουλάχιστον %(min_length)d."
 msgstr[1] ""
-"Αυτός ο κωδικός πρόσβασης είναι πολύ μικρός. Πρέπει να περιέχει τουλάχιστον "
-"%(min_length)d χαρακτήρες."
+"Αυτός ο κωδικός πρόσβασης είναι πολύ σύντομος. Πρέπει να περιέχει "
+"τουλάχιστον %(min_length)d χαρακτήρες."
 
 #: .\accounts\validators.py:114
 #, python-format
@@ -2399,18 +2406,17 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Αυτός ο κωδικός πρόσβασης είναι πολύ μεγάλος. Πρέπει να περιέχει το πολύ "
-"%(max_length)d χαρακτήρα."
+"Αυτός ο κωδικός πρόσβασης είναι πολύ μακρύς. Πρέπει να περιέχει το πολύ "
+"%(max_length)d."
 msgstr[1] ""
-"Αυτός ο κωδικός πρόσβασης είναι πολύ μεγάλος. Πρέπει να περιέχει το πολύ "
+"Αυτός ο κωδικός πρόσβασης είναι πολύ μακρύς. Πρέπει να περιέχει το πολύ "
 "%(max_length)d χαρακτήρες."
 
 #: .\accounts\validators.py:145
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d χαρακτήρα."
+msgstr[0] "Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d."
 msgstr[1] ""
 "Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d χαρακτήρες."
 
@@ -2425,25 +2431,25 @@ msgstr ""
 
 #: .\accounts\validators.py:212 .\accounts\validators.py:219
 msgid "This field cannot be null."
-msgstr "Αυτό το πεδίο δεν μπορεί να είναι μηδενικό."
+msgstr "Αυτό το πεδίο δεν μπορεί να είναι κενό."
 
 #: .\accounts\validators.py:214
 msgid "This field cannot be blank."
-msgstr "Αυτό το πεδίο δεν μπορεί να είναι κενό."
+msgstr "Αυτό το πεδίο δεν μπορεί να μείνει κενό."
 
 #: .\accounts\validators.py:226 .\accounts\validators.py:233
 msgid "Enter a valid date."
-msgstr "Εισαγάγετε μια έγκυρη ημερομηνία."
+msgstr "Εισάγετε μια έγκυρη ημερομηνία."
 
 #: .\accounts\validators.py:246
 msgid "This email is already in use."
-msgstr "Αυτό το email χρησιμοποιείται ήδη."
+msgstr "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου χρησιμοποιείται ήδη."
 
 #: .\accounts\validators.py:257
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
-"Το μέγεθος αρχείου αυτής της εικόνας είναι πολύ μεγάλο. Το μέγιστο "
+"Το μέγεθος του αρχείου αυτής της εικόνας είναι πολύ μεγάλο. Το μέγιστο "
 "επιτρεπόμενο μέγεθος αρχείου είναι 30 MB."
 
 #: .\accounts\validators.py:279 .\accounts\validators.py:298
@@ -2451,25 +2457,25 @@ msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
 msgstr ""
-"Δεν μπορείτε να χρησιμοποιήσετε αυτήν τη μορφή για την εικόνα του προφίλ "
-"σας. Γίνονται αποδεκτές μόνο μορφές JPEG ή PNG."
+"Δεν μπορείς να χρησιμοποιήσεις αυτή τη μορφή για τη φωτογραφία προφίλ σου. "
+"Γίνονται δεκτές μόνο οι μορφές JPEG ή PNG."
 
 #: .\accounts\views.py:299
 msgid "Invalid confirmation link."
-msgstr "Μη έγκυρος σύνδεσμος επιβεβαίωσης."
+msgstr "Ο σύνδεσμος επιβεβαίωσης δεν είναι έγκυρος."
 
 #: .\accounts\views.py:324 .\accounts\views.py:340
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
-msgstr "Ένα μήνυμα επιβεβαίωσης στάλθηκε στο {email_address}"
+msgstr "Αποστάληκε ένα μήνυμα επιβεβαίωσης στον {email_address}"
 
 #: .\accounts\views.py:355
 msgid "The email address was deleted."
-msgstr "Η διεύθυνση email διαγράφηκε."
+msgstr "Η διεύθυνση ηλεκτρονικού ταχυδρομείου διαγράφηκε."
 
 #: .\accounts\views.py:371
 msgid "You have made this email address primary."
-msgstr "Έχετε ορίσει αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια."
+msgstr "Έχετε ορίσει αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια."
 
 #: .\admin\views.py:72
 #, python-brace-format
@@ -2484,17 +2490,17 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Διαχειριστής: Ο συνολικός αριθμός μελών στον ιστότοπο είναι "
+"Διαχειριστής: Ο συνολικός αριθμός μελών του ιστότοπου είναι "
 "{total_number_of_members}, εκ των οποίων "
-"{total_number_of_members_in_the_last_week} μέλη εισήλθαν στον ιστότοπο την "
-"τελευταία εβδομάδα, {total_number_of_members_in_the_last_month} μέλη μπήκαν "
-"στον ιστότοπο τον τελευταίο μήνα, "
-"{total_number_of_members_in_the_last_four_months} μέλη εισήλθαν στον "
+"{total_number_of_members_in_the_last_week} μέλη επισκέφθηκαν τον ιστότοπο "
+"την τελευταία εβδομάδα, {total_number_of_members_in_the_last_month} μέλη "
+"επισκέφθηκαν τον ιστότοπο τον τελευταίο μήνα, "
+"{total_number_of_members_in_the_last_four_months} μέλη επισκέφθηκαν τον "
 "ιστότοπο τους τελευταίους τέσσερις μήνες, "
-"{total_number_of_members_in_the_last_eight_months} μέλη μπήκαν στον ιστότοπο "
-"τους τελευταίους οκτώ μήνες και "
-"{total_number_of_members_in_the_last_two_years} μέλη εισήλθαν στον ιστότοπο "
-"τα τελευταία δύο χρόνια."
+"{total_number_of_members_in_the_last_eight_months} μέλη επισκέφθηκαν τον "
+"ιστότοπο τους τελευταίους οκτώ μήνες και "
+"{total_number_of_members_in_the_last_two_years} μέλη επισκέφθηκαν τον "
+"ιστότοπο τα τελευταία δύο χρόνια."
 
 #: .\admin\views.py:118
 #, python-brace-format
@@ -2517,23 +2523,24 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
-"Διαχειριστής: {total_number_of_members_registered_in_the_last_week} μέλη "
+"Διαχειριστής: {total_number_of_members_registered_in_the_last_week} μέλη που "
 "εγγράφηκαν την τελευταία εβδομάδα. "
-"{total_number_of_members_registered_in_the_last_month} μέλη εγγράφηκαν τον "
-"τελευταίο μήνα. {total_number_of_members_registered_in_the_last_four_months} "
-"μέλη εγγράφηκαν τους τελευταίους τέσσερις μήνες. Τα "
-"{total_number_of_members_registered_more_than_four_months_ago} μέλη "
-"εγγράφηκαν πριν από περισσότερους από τέσσερις μήνες. "
-"{total_number_of_members_registered_in_the_last_eight_months} μέλη "
+"{total_number_of_members_registered_in_the_last_month} μέλη που εγγράφηκαν "
+"τον τελευταίο μήνα. "
+"{total_number_of_members_registered_in_the_last_four_months} μέλη που "
+"εγγράφηκαν τους τελευταίους τέσσερις μήνες. "
+"{total_number_of_members_registered_more_than_four_months_ago} μέλη που "
+"εγγράφηκαν πριν από περισσότερο από τέσσερις μήνες. "
+"{total_number_of_members_registered_in_the_last_eight_months} μέλη που "
 "εγγράφηκαν τους τελευταίους οκτώ μήνες. "
-"{total_number_of_members_registered_more_than_eight_months_ago} μέλη "
-"εγγράφηκαν πριν από περισσότερους από οκτώ μήνες. "
-"{total_number_of_members_registered_in_the_last_two_years} μέλη εγγράφηκαν "
-"τα τελευταία δύο χρόνια. Τα "
-"{total_number_of_members_registered_more_than_two_years_ago} μέλη εγγράφηκαν "
-"πριν από περισσότερα από δύο χρόνια. "
-"{total_number_of_members_registered_before_2019_08_01} μέλη εγγράφηκαν πριν "
-"από την 1η Αυγούστου 2019."
+"{total_number_of_members_registered_more_than_eight_months_ago} μέλη που "
+"εγγράφηκαν πριν από περισσότερο από οκτώ μήνες. "
+"{total_number_of_members_registered_in_the_last_two_years} μέλη που "
+"εγγράφηκαν τα τελευταία δύο χρόνια. "
+"{total_number_of_members_registered_more_than_two_years_ago} μέλη που "
+"εγγράφηκαν πριν από περισσότερο από δύο χρόνια. "
+"{total_number_of_members_registered_before_2019_08_01} μέλη που εγγράφηκαν "
+"πριν από την 1η Αυγούστου 2019."
 
 #: .\admin\views.py:138
 #, python-brace-format
@@ -2546,20 +2553,20 @@ msgstr ""
 
 #: .\base\apps.py:13
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Εφαρμογή Speedy Core Base"
 
 #: .\base\fields.py:17
 msgid "ID"
-msgstr "ταυτότητα"
+msgstr "Αριθμός ταυτότητας"
 
 #: .\base\utils.py:417
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:5 .\base\validators.py:6
 msgid "id contains illegal characters."
-msgstr "Το αναγνωριστικό περιέχει παράνομους χαρακτήρες."
+msgstr "Το αναγνωριστικό περιέχει μη επιτρεπόμενους χαρακτήρες."
 
 #: .\base\views.py:57
 msgid "Changes saved."
@@ -2567,7 +2574,7 @@ msgstr "Οι αλλαγές αποθηκεύτηκαν."
 
 #: .\blocks\managers.py:30 .\blocks\models.py:43
 msgid "Users cannot block themselves."
-msgstr "Οι χρήστες δεν μπορούν να αποκλειστούν."
+msgstr "Οι χρήστες δεν μπορούν να αποκλείσουν τους εαυτούς τους."
 
 #: .\blocks\models.py:23
 msgid "blocked user"
@@ -2575,7 +2582,7 @@ msgstr "αποκλεισμένος χρήστης"
 
 #: .\blocks\models.py:28
 msgid "block"
-msgstr "φραγμός"
+msgstr "μπλοκ"
 
 #: .\blocks\models.py:29
 msgid "user blocks"
@@ -2583,11 +2590,11 @@ msgstr "μπλοκ χρηστών"
 
 #: .\blocks\views.py:19
 msgid "You have blocked {}."
-msgstr "Έχετε αποκλείσει το {}."
+msgstr "Έχετε αποκλείσει τη διεύθυνση {}."
 
 #: .\blocks\views.py:31
 msgid "You have unblocked {}."
-msgstr "Έχετε ξεμπλοκάρει το {}."
+msgstr "Έχετε ξεμπλοκάρει τη διεύθυνση {}."
 
 #: .\contact_by_form\apps.py:8
 msgid "Contact By Form"
@@ -2595,15 +2602,15 @@ msgstr "Επικοινωνία μέσω φόρμας"
 
 #: .\contact_by_form\forms.py:14
 msgid "Type the number \"17\""
-msgstr "Πληκτρολογήστε τον αριθμό \"17\""
+msgstr "Πληκτρολογήστε τον αριθμό «17»"
 
 #: .\contact_by_form\forms.py:41
 msgid "Send"
-msgstr "Στέλνω"
+msgstr "Αποστολή"
 
 #: .\contact_by_form\forms.py:47
 msgid "Please contact us by email."
-msgstr "Επικοινωνήστε μαζί μας μέσω email."
+msgstr "Παρακαλούμε επικοινωνήστε μαζί μας μέσω email."
 
 #: .\contact_by_form\forms.py:53
 msgid "Not 17."
@@ -2611,7 +2618,7 @@ msgstr "Όχι 17."
 
 #: .\contact_by_form\models.py:33
 msgid "Feedback"
-msgstr "Ανατροφοδότηση"
+msgstr "Σχόλια"
 
 #: .\contact_by_form\models.py:34
 msgid "Abuse (User)"
@@ -2619,7 +2626,7 @@ msgstr "Κατάχρηση (Χρήστης)"
 
 #: .\contact_by_form\models.py:35
 msgid "Abuse (Photo)"
-msgstr "Κατάχρηση (Φωτογραφία)"
+msgstr "Κακοποίηση (Φωτογραφία)"
 
 #: .\contact_by_form\models.py:38 .\messages\models.py:156
 msgid "sender"
@@ -2631,7 +2638,7 @@ msgstr "το όνομά σου"
 
 #: .\contact_by_form\models.py:40
 msgid "your email"
-msgstr "το email σας"
+msgstr "το email σου"
 
 #: .\contact_by_form\models.py:41
 msgid "type"
@@ -2647,27 +2654,27 @@ msgstr "αναφερόμενη οντότητα"
 
 #: .\contact_by_form\models.py:45
 msgid "reported photo"
-msgstr "αναφερόμενη φωτογραφία"
+msgstr "φωτογραφία που δημοσιεύτηκε"
 
 #: .\contact_by_form\models.py:48
 msgid "feedback"
-msgstr "ανατροφοδότηση"
+msgstr "σχόλια"
 
 #: .\contact_by_form\models.py:49
 msgid "feedbacks"
-msgstr "ανατροφοδοτήσεις"
+msgstr "σχόλια"
 
 #: .\friends\views.py:189
 msgid "Friendship request sent."
-msgstr "Το αίτημα φιλίας εστάλη."
+msgstr "Αποστάλθηκε αίτημα φιλίας."
 
 #: .\friends\views.py:204
 msgid "No friendship request."
-msgstr "Κανένα αίτημα φιλίας."
+msgstr "Δεν υπάρχει αίτημα φιλίας."
 
 #: .\friends\views.py:243
 msgid "Friendship request accepted."
-msgstr "Αίτημα φιλίας δεκτό."
+msgstr "Το αίτημα φιλίας έγινε αποδεκτό."
 
 #: .\friends\views.py:261
 msgid "Friendship request rejected."
@@ -2683,7 +2690,7 @@ msgstr "Μηνύματα"
 
 #: .\messages\models.py:29
 msgid "site"
-msgstr "τοποθεσία"
+msgstr "ιστότοπος"
 
 #: .\messages\models.py:30
 msgid "participant 1"
@@ -2707,7 +2714,7 @@ msgstr "τελευταίο μήνυμα"
 
 #: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
 msgid "chat"
-msgstr "κουβέντα"
+msgstr "συνομιλία"
 
 #: .\messages\models.py:68
 msgid "chats"
@@ -2715,7 +2722,7 @@ msgstr "συνομιλίες"
 
 #: .\messages\models.py:77
 msgid "None"
-msgstr "Κανένας"
+msgstr "Κανένα"
 
 #: .\messages\models.py:157 .\messages\models.py:162
 msgid "message"
@@ -2727,43 +2734,43 @@ msgstr "μηνύματα"
 
 #: .\messages\models.py:191
 msgid "read mark"
-msgstr "σημάδι ανάγνωσης"
+msgstr "σημείο ανάγνωσης"
 
 #: .\messages\models.py:192
 msgid "read marks"
-msgstr "διαβάστε τα σημάδια"
-
-#: .\settings\base.py:193
-msgid "English"
-msgstr "αγγλικός"
+msgstr "σημάδια ανάγνωσης"
 
 #: .\settings\base.py:194
+msgid "English"
+msgstr "Αγγλικά"
+
+#: .\settings\base.py:195
 msgid "Hebrew"
 msgstr "Εβραϊκά"
 
 #: .\settings\base_with_login.py:65
 msgid "French"
-msgstr "Γάλλος"
+msgstr "Γαλλικά"
 
 #: .\settings\base_with_login.py:66
 msgid "German"
-msgstr "Γερμανός"
+msgstr "Γερμανικά"
 
 #: .\settings\base_with_login.py:67
 msgid "Spanish"
-msgstr "ισπανικά"
+msgstr "Ισπανικά"
 
 #: .\settings\base_with_login.py:68
 msgid "Portuguese"
-msgstr "Πορτογάλος"
+msgstr "Πορτογαλικά"
 
 #: .\settings\base_with_login.py:69
 msgid "Italian"
-msgstr "ιταλικά"
+msgstr "Ιταλικά"
 
 #: .\settings\base_with_login.py:70
 msgid "Dutch"
-msgstr "Ολλανδός"
+msgstr "Ολλανδικά"
 
 #: .\settings\base_with_login.py:71
 msgid "Japanese"
@@ -2771,27 +2778,27 @@ msgstr "Ιαπωνικά"
 
 #: .\settings\base_with_login.py:72
 msgid "Russian"
-msgstr "ρωσικός"
+msgstr "Ρωσικά"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "κινέζικα"
+msgstr "Κινέζικα"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "Στίλβωση"
+msgstr "Πολωνικά"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"
-msgstr "περσικός"
+msgstr "Περσικά"
 
 #: .\settings\base_with_login.py:79
 msgid "Korean"
-msgstr "κορεάτης"
+msgstr "Κορεατικά"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr "αραβικός"
+msgstr "Αραβικά"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
@@ -2799,51 +2806,51 @@ msgstr "Ινδονησιακά"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr "Ουκρανός"
+msgstr "Ουκρανικά"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"
-msgstr "τούρκικος"
+msgstr "Τουρκικά"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr "Βιετναμέζικο"
+msgstr "Βιετναμέζικα"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr "Τσέχος"
+msgstr "Τσεχικά"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
-msgstr "σουηδικά"
+msgstr "Σουηδικά"
 
 #: .\settings\base_with_login.py:87
 msgid "Finnish"
-msgstr "φινλανδικός"
+msgstr "Φινλανδικά"
 
 #: .\settings\base_with_login.py:88
 msgid "Hungarian"
-msgstr "ουγγρικός"
+msgstr "Ουγγρικά"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr "Ταϊλανδός"
+msgstr "Ταϊλανδικά"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"
-msgstr "ελληνικά"
+msgstr "Ελληνικά"
 
 #: .\settings\base_with_login.py:91
 msgid "Malay"
-msgstr "Μαλαισίας"
+msgstr "Μαλαισιανά"
 
 #: .\settings\base_with_login.py:92
 msgid "Serbian"
-msgstr "Σέρβος"
+msgstr "Σερβικά"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "ρουμανικός"
+msgstr "Ρουμανικά"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"
@@ -2851,7 +2858,7 @@ msgstr "Μπενγκάλι"
 
 #: .\settings\base_with_login.py:95
 msgid "Catalan"
-msgstr "καταλανικά"
+msgstr "Καταλανικά"
 
 #: .\settings\base_with_login.py:96
 msgid "Norwegian (Bokmål)"
@@ -2859,15 +2866,15 @@ msgstr "Νορβηγικά (Bokmål)"
 
 #: .\settings\base_with_login.py:97
 msgid "Bulgarian"
-msgstr "Βούλγαρος"
+msgstr "Βουλγαρικά"
 
 #: .\settings\base_with_login.py:98
 msgid "Danish"
-msgstr "δανικός"
+msgstr "Δανική"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "Σλοβάκος"
+msgstr "Σλοβακικά"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"
@@ -2879,23 +2886,23 @@ msgstr "Εσθονικά"
 
 #: .\settings\base_with_login.py:102
 msgid "Croatian"
-msgstr "Κροατία"
+msgstr "Κροατικά"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Κακό αίτημα"
+msgstr "Λανθασμένο αίτημα"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Ο Speedy συγγνώμη, αλλά δεν μπορούμε να χειριστούμε το αίτημά σας."
+msgstr "Ο Speedy λυπάται, αλλά δεν μπορούμε να ικανοποιήσουμε το αίτημά σας."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "Η άδεια απορρίφθηκε"
+msgstr "Η πρόσβαση δεν επιτρέπεται"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy συγγνώμη, αλλά αυτή η σελίδα είναι ιδιωτική."
+msgstr "Ο Speedy λυπάται, αλλά αυτή η σελίδα είναι ιδιωτική."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2903,17 +2910,17 @@ msgstr "Η σελίδα δεν βρέθηκε"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy συγγνώμη, αλλά η σελίδα δεν βρέθηκε."
+msgstr "Ο Speedy λυπάται, αλλά η σελίδα δεν βρέθηκε."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
-msgstr "Σφάλμα εσωτερικού διακομιστή"
+msgstr "Εσωτερικό σφάλμα διακομιστή"
 
 #: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
-msgstr "Για"
+msgstr "Σχετικά με"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
@@ -2932,7 +2939,7 @@ msgstr "Πληροφορίες προφίλ"
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
-msgstr "Μυστικότητα"
+msgstr "Προστασία προσωπικών δεδομένων"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
@@ -2940,7 +2947,7 @@ msgstr "Ειδοποιήσεις"
 
 #: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
-msgstr "Email & Κωδικός πρόσβασης"
+msgstr "Διευθύνσεις ηλεκτρονικού ταχυδρομείου & Κωδικός πρόσβασης"
 
 #: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
@@ -2948,7 +2955,7 @@ msgstr "Απενεργοποίηση λογαριασμού"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "Διευθύνσεις email"
+msgstr "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
@@ -2964,33 +2971,33 @@ msgstr "Ορατότητα"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr "Δράσεις"
+msgstr "Ενέργειες"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
-msgstr "Αβεβαίωτος"
+msgstr "Μη επιβεβαιωμένο"
 
 #: .\templates\accounts\edit_profile\credentials.html:25
 msgid "Primary"
-msgstr "Πρωταρχικός"
+msgstr "Πρωτοβάθμια"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "Στείλτε ξανά ένα email επιβεβαίωσης"
+msgstr "Επανάληψη αποστολής του email επιβεβαίωσης"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Κάντε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
+msgstr "Ορίστε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου ως κύρια"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
 msgstr ""
-"Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν τη διεύθυνση ηλεκτρονικού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη διεύθυνση ηλεκτρονικού "
 "ταχυδρομείου;"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr "Διαγράψτε αυτήν τη διεύθυνση email"
+msgstr "Διαγραφή αυτής της διεύθυνσης ηλεκτρονικού ταχυδρομείου"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
@@ -3002,7 +3009,7 @@ msgstr "Αλλαγή κωδικού πρόσβασης"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Η ηλικία σας θα είναι ορατή στους αγώνες σας στο Speedy Match."
+msgstr "Η ηλικία σου θα είναι ορατή στα ταίρια σου στο Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3011,11 +3018,11 @@ msgstr "Αλλάξτε τις ρυθμίσεις απορρήτου των δι�
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr "Προσθήκη email"
+msgstr "Προσθήκη διεύθυνσης email"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
-msgstr "Αποσυνδεθείτε"
+msgstr "Αποσύνδεση"
 
 #: .\templates\accounts\password_reset\complete.html:5
 #: .\templates\accounts\password_reset\complete.html:11
@@ -3030,15 +3037,16 @@ msgstr "Επαναφορά κωδικού πρόσβασης"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr "Επιτυχής επαναφορά του κωδικού πρόσβασης."
+msgstr "Η επαναφορά του κωδικού πρόσβασης ολοκληρώθηκε με επιτυχία."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr "Η επαναφορά του κωδικού πρόσβασης απέτυχε. Μη έγκυρος σύνδεσμος."
+msgstr ""
+"Η επαναφορά του κωδικού πρόσβασης απέτυχε. Ο σύνδεσμος δεν είναι έγκυρος."
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
-msgstr "Έχει σταλεί email με οδηγίες επαναφοράς κωδικού πρόσβασης."
+msgstr "Έχει σταλεί email με οδηγίες για την επαναφορά του κωδικού πρόσβασης."
 
 #: .\templates\admin\friends\user_friends_widget.html:10
 #: .\templates\friends\user_friends_widget.html:10
@@ -3055,11 +3063,11 @@ msgstr "φίλοι"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
-msgstr "Δεν υπάρχουν φίλοι ακόμα."
+msgstr "Δεν έχεις ακόμα φίλους."
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
-msgstr "Πληροφορίες Διαχειριστή"
+msgstr "Πληροφορίες διαχειριστή"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
@@ -3071,16 +3079,17 @@ msgstr "Δεν υπάρχουν χρήστες."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "Αυτή η τοποθεσία είναι υπό κατασκευή"
+msgstr "Αυτός ο ιστότοπος βρίσκεται υπό κατασκευή"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Δεν έχετε επιβεβαιώσει τη διεύθυνση email σας. Ελέγξτε τα εισερχόμενά σας."
+"Δεν έχετε επιβεβαιώσει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Παρακαλώ, "
+"ελέγξτε τα εισερχόμενά σας."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Blog του Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3092,16 +3101,16 @@ msgstr "Speedy Software"
 
 #: .\templates\base.html:169
 msgid "Speedy Sale"
-msgstr "Speedy Sale"
+msgstr "Γρήγορη πώληση"
 
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "Μια ιστοσελίδα φιλική προς τους vegan"
+msgstr "Ένας ιστότοπος κατάλληλος για βέγκαν"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
-msgstr "Speedy"
+msgstr "Γρήγορος"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
@@ -3109,11 +3118,11 @@ msgstr "Αποσύνδεση"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Σπίτι"
+msgstr "Αρχική σελίδα"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
-msgstr "Σύνθημα"
+msgstr "Κωδικός πρόσβασης"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
@@ -3121,15 +3130,15 @@ msgstr "Speedy Net"
 
 #: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
 msgid "Speedy Match"
-msgstr "Speedy Match"
+msgstr "Γρήγορη αντιστοίχιση"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "Το κατάστημα της Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Το κατάστημα της Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
@@ -3140,19 +3149,19 @@ msgstr "Speedy S-logo Shop"
 #: .\templates\privacy\privacy_policy.html:8
 #: .\templates\privacy\privacy_policy.html:15
 msgid "Privacy Policy"
-msgstr "Πολιτική Απορρήτου"
+msgstr "Πολιτική απορρήτου"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 #: .\templates\terms\terms_of_service.html:8
 #: .\templates\terms\terms_of_service.html:15
 msgid "Terms of Service"
-msgstr "Όροι Παροχής Υπηρεσιών"
+msgstr "Όροι χρήσης"
 
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
-msgstr "Οροι"
+msgstr "Όροι"
 
 #: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
 #: .\templates\contact_by_email\contact_us.html:8
@@ -3169,11 +3178,11 @@ msgstr "Speedy Composer"
 
 #: .\templates\base_without_login.html:20
 msgid "Speedy Mail Software"
-msgstr "Speedy Mail Software"
+msgstr "Λογισμικό Speedy Mail"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Το κατάστημα του Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3181,19 +3190,19 @@ msgstr "Αποκλεισμένοι χρήστες"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "Δεν μπλοκάρεις κανέναν."
+msgstr "Δεν εμποδίζεις κανέναν."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
 msgstr ""
-"Εάν έχετε οποιεσδήποτε ερωτήσεις, προτάσεις ή ενδιαφέρεστε να γίνετε μέλος "
-"της ομάδας - επικοινωνήστε μαζί μας μέσω email."
+"Αν έχετε ερωτήσεις, προτάσεις ή ενδιαφέρεστε να γίνετε μέλος της ομάδας μας, "
+"παρακαλούμε επικοινωνήστε μαζί μας μέσω email."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, ιδρυτής και webmaster:"
+msgstr "Uri Rodberg, ιδρυτής και διαχειριστής του ιστότοπου:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
@@ -3207,19 +3216,19 @@ msgstr "Αναφορά φωτογραφίας"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr "Σας ευχαριστώ"
+msgstr "Ευχαριστώ"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
-msgstr "Τα σχόλιά σας στάλθηκαν στους διαχειριστές."
+msgstr "Τα σχόλιά σας έχουν σταλεί στους διαχειριστές."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
-msgstr "Προηγούμενος"
+msgstr "Προηγούμενο"
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
-msgstr "Επόμενος"
+msgstr "Επόμενο"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
@@ -3235,7 +3244,8 @@ msgstr "Επιβεβαιώστε τη διεύθυνση email σας στο %(s
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
 msgstr ""
-"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση email σας:"
+"Χρησιμοποιήστε αυτόν τον σύνδεσμο για να επαληθεύσετε τη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου σας:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
@@ -3245,11 +3255,11 @@ msgstr ""
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Επαναφορά κωδικού πρόσβασης στις %(site_name)s"
+msgstr "Επαναφορά κωδικού πρόσβασης στο %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
-msgstr "σας έστειλε μήνυμα."
+msgstr "Σας έστειλε ένα μήνυμα."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
@@ -3261,9 +3271,9 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Έχετε εγγραφεί για να λαμβάνετε αυτού του τύπου ειδοποιήσεις από "
-"%(site_name)s. Μπείτε σε αυτήν τη σελίδα για να αλλάξετε τις ρυθμίσεις "
-"ειδοποιήσεων ή να εξαιρεθείτε:"
+"Έχετε εγγραφεί για να λαμβάνετε αυτού του είδους τις ειδοποιήσεις από το "
+"%(site_name)s. Επισκεφθείτε αυτή τη σελίδα για να αλλάξετε τις ρυθμίσεις "
+"ειδοποιήσεών σας ή να διαγραφείτε:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3272,11 +3282,11 @@ msgstr "Έχετε ένα νέο μήνυμα στο %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
-msgstr "Ληφθείσες αιτήσεις"
+msgstr "Ληφθέντα αιτήματα"
 
 #: .\templates\friends\base.html:41
 msgid "Sent Requests"
-msgstr "Απεσταλμένα Αιτήματα"
+msgstr "Αποσταλμένα αιτήματα"
 
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
@@ -3291,7 +3301,7 @@ msgstr "Καλώς ήρθατε στο %(site_name)s!"
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "Εγγραφείτε %(site_name)s!"
+msgstr "Γίνετε μέλος του %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
@@ -3300,25 +3310,25 @@ msgstr "Είναι δωρεάν και ο καθένας μπορεί να συ�
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Συζήτηση με <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Συνομιλία με <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr "Στείλτε ένα μήνυμα σε %(user_name)s"
+msgstr "Στείλε ένα μήνυμα στον/στην %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
-msgstr "Επισήμανση όλων ως αναγνωσμένων"
+msgstr "Επιλογή «Όλα ως αναγνωσμένα»"
 
 #: .\templates\messages\chat_list.html:56
 msgid "Unread"
-msgstr "Αδιάβαστος"
+msgstr "Μη αναγνωσμένα"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "Εσείς:"
+msgstr "Εσύ:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3326,7 +3336,7 @@ msgstr "Δεν έχετε ακόμα μηνύματα."
 
 #: .\templates\messages\message.html:20
 msgid "New"
-msgstr "Νέος"
+msgstr "Νέο"
 
 #: .\templates\privacy\privacy_policy.html:19
 msgid ""
@@ -3338,10 +3348,10 @@ msgid ""
 msgstr ""
 "Σεβόμαστε το απόρρητό σας. Δεν θα πουλήσουμε ούτε θα κοινοποιήσουμε τα "
 "προσωπικά σας στοιχεία, όπως το όνομά σας, την ημερομηνία γέννησής σας, τη "
-"διεύθυνση email και τον κωδικό πρόσβασής σας. Τα μηνύματα που στέλνετε σε "
-"άτομα στο Speedy Net είναι προσωπικά και δεν θα κοινοποιούνται με άλλα άτομα "
-"ή ιστότοπους. Ο κωδικός πρόσβασής σας αποθηκεύεται κρυπτογραφημένος στη βάση "
-"δεδομένων μας."
+"διεύθυνση ηλεκτρονικού ταχυδρομείου και τον κωδικό πρόσβασής σας. Τα "
+"μηνύματα που στέλνετε σε χρήστες του Speedy Net είναι προσωπικά και δεν θα "
+"κοινοποιηθούν σε άλλα άτομα ή ιστότοπους. Ο κωδικός πρόσβασής σας "
+"αποθηκεύεται κρυπτογραφημένος στη βάση δεδομένων μας."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3354,12 +3364,13 @@ msgid ""
 "registered to the site."
 msgstr ""
 "Το προφίλ σας στο Speedy Net είναι ορατό σε όλους, αλλά μπορείτε να "
-"επιλέξετε ποιον θα μοιραστείτε με τη διεύθυνση email σας και την ημερομηνία "
-"γέννησής σας. Εάν έχετε Speedy Match εγγραφεί στο, το προφίλ σας στο Speedy "
-"Match θα είναι ορατό μόνο σε άτομα που ταιριάζουν με εσάς σύμφωνα με τις "
-"ρυθμίσεις που έχετε ορίσει στον ιστότοπο και ότι τα ταιριάζετε σύμφωνα με "
-"τις ρυθμίσεις τους. Το προφίλ σας στο Speedy Match δεν θα εμφανίζεται στο "
-"Google και δεν είναι ορατό σε άτομα που δεν είναι εγγεγραμμένα στον ιστότοπο."
+"επιλέξετε με ποιον θα μοιραστείτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου και "
+"την ημερομηνία γέννησής σας. Εάν έχετε εγγραφεί στο Speedy Match, το προφίλ "
+"σας στο Speedy Match θα είναι ορατό μόνο σε άτομα που ταιριάζουν μαζί σας "
+"σύμφωνα με τις ρυθμίσεις που έχετε ορίσει στον ιστότοπο και με τα οποία "
+"ταιριάζετε κι εσείς σύμφωνα με τις δικές τους ρυθμίσεις. Το προφίλ σας στο "
+"Speedy Match δεν θα εμφανίζεται στο Google και δεν είναι ορατό σε άτομα που "
+"δεν είναι εγγεγραμμένα στον ιστότοπο."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3372,13 +3383,13 @@ msgid ""
 "after you deactivate it whenever you like."
 msgstr ""
 "Εάν έχετε απενεργοποιήσει τον λογαριασμό σας στο Speedy Net ή στο Speedy "
-"Match, το προφίλ σας σε αυτόν τον ιστότοπο θα αφαιρεθεί από τον ιστότοπο και "
-"δεν θα εμφανίζεστε στα αποτελέσματα αναζήτησης άλλων ατόμων στον ιστότοπο. "
-"Λάβετε υπόψη ότι η απενεργοποίηση του λογαριασμού σας στο Speedy Net "
-"απενεργοποιεί αυτόματα τον λογαριασμό σας στο Speedy Match. Μπορείτε να "
+"Match, το προφίλ σας σε αυτόν τον ιστότοπο θα διαγραφεί και δεν θα "
+"εμφανίζεστε στα αποτελέσματα αναζήτησης άλλων χρηστών στον ιστότοπο. "
+"Σημειώστε ότι η απενεργοποίηση του λογαριασμού σας στο Speedy Net "
+"απενεργοποιεί αυτόματα και τον λογαριασμό σας στο Speedy Match. Μπορείτε να "
 "απενεργοποιήσετε μόνο τον λογαριασμό σας στο Speedy Match, οπότε ο "
 "λογαριασμός σας στο Speedy Net θα παραμείνει ενεργός. Μπορείτε να "
-"ενεργοποιήσετε ξανά τον λογαριασμό σας αφού τον απενεργοποιήσετε όποτε "
+"επανενεργοποιήσετε τον λογαριασμό σας μετά την απενεργοποίησή του όποτε "
 "θέλετε."
 
 #: .\templates\privacy\privacy_policy.html:25
@@ -3390,46 +3401,47 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Εάν θέλετε, μπορείτε να διαγράψετε τον λογαριασμό σας στο Speedy Net. Η "
-"διαγραφή του λογαριασμού σας στο Speedy Net θα διαγράψει αυτόματα και τον "
-"λογαριασμό σας στο Speedy Match. Για να διαγράψετε τον λογαριασμό σας στο "
-"Speedy Net, συνδεθείτε στο Speedy Net, απενεργοποιήστε τον λογαριασμό σας "
-"και, στη συνέχεια, κάντε κλικ στο «Διαγραφή λογαριασμού» (στο μενού "
-"«Επεξεργασία προφίλ»). Συμπληρώστε τα στοιχεία στη φόρμα και επιβεβαιώστε. "
-"Λάβετε υπόψη ότι δεν είναι δυνατή η ανάκτηση ενός διαγραμμένου λογαριασμού. "
-"Η διαγραφή λογαριασμού είναι μόνιμη και μη αναστρέψιμη."
+"Αν θέλετε, μπορείτε να διαγράψετε τον λογαριασμό σας στο Speedy Net. Η "
+"διαγραφή του λογαριασμού σας στο Speedy Net θα οδηγήσει αυτόματα και στη "
+"διαγραφή του λογαριασμού σας στο Speedy Match. Για να διαγράψετε τον "
+"λογαριασμό σας στο Speedy Net, συνδεθείτε στο Speedy Net, απενεργοποιήστε "
+"τον λογαριασμό σας και, στη συνέχεια, κάντε κλικ στην επιλογή «Διαγραφή "
+"λογαριασμού» (στο μενού «Επεξεργασία προφίλ»). Συμπληρώστε τα στοιχεία στη "
+"φόρμα και επιβεβαιώστε. Λάβετε υπόψη ότι ένας διαγραμμένος λογαριασμός δεν "
+"μπορεί να ανακτηθεί. Η διαγραφή του λογαριασμού είναι μόνιμη και μη "
+"αναστρέψιμη."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Αποκλείσατε "
+msgstr "Μπλοκάρατε "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " σε μπλόκαρε."
+msgstr " Σε έχω αποκλείσει."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Αποδεχτείτε το αίτημα φιλίας"
+msgstr "Αποδοχή αιτήματος φιλίας"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Αποδέχομαι"
+msgstr "Αποδοχή"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Απόρριψη Αίτησης Φιλίας"
+msgstr "Απόρριψη αιτήματος φιλίας"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr "Απορρίπτω"
+msgstr "Απόρριψη"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
@@ -3443,25 +3455,25 @@ msgstr "Εναλλαγή αναπτυσσόμενου μενού"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Είστε βέβαιοι ότι θέλετε να αποκλείσετε "
+msgstr "Είσαι σίγουρος ότι θέλεις να αποκλείσεις "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr ";"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Φραγμός "
+msgstr "Μπλοκ "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Ξεβουλώνω "
+msgstr "Ξεκλείδωμα "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Εκθεση "
+msgstr "Έκθεση "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3469,11 +3481,11 @@ msgstr "Αναφορά αυτής της φωτογραφίας"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Ακύρωση αιτήματος φιλίας"
+msgstr "Ακύρωση αίτησης φιλίας"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr "Κατάργηση φίλου"
+msgstr "Διαγραφή φίλου"
 
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
@@ -3486,7 +3498,7 @@ msgstr "Πληροφορίες"
 
 #: .\templates\profiles\user_info_widget.html:19
 msgid "Name"
-msgstr "Ονομα"
+msgstr "Όνομα"
 
 #: .\templates\profiles\user_info_widget.html:25
 msgid "Username"
@@ -3494,11 +3506,11 @@ msgstr "Όνομα χρήστη"
 
 #: .\templates\profiles\user_info_widget.html:35
 msgid "Gender"
-msgstr "Γένος"
+msgstr "Φύλο"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Date"
-msgstr "Ημερομηνία Γέννησης"
+msgstr "Ημερομηνία γέννησης"
 
 #: .\templates\profiles\user_info_widget.html:44
 msgid "Birth Year"
@@ -3514,13 +3526,13 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Match προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Match."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Έχετε επίσης ένα Speedy Net προφίλ. Δείτε το προφίλ σας στο Speedy Net."
+"Διαθέτετε επίσης προφίλ στο Speedy Net. Δείτε το προφίλ σας στο Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3528,16 +3540,17 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Το %(user_name)s έχει επίσης Speedy Net προφίλ. Δείτε το προφίλ του "
-"%(user_name)s στο Speedy Net."
+"%(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του "
+"%(user_name)sστο Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"Ο ιστότοπος είναι σε αλφα, μπορεί να υπάρχουν σφάλματα. Η διαχείριση του "
-"ιστότοπου δεν ευθύνεται για τυχόν σφάλματα στον ιστότοπο."
+"Ο ιστότοπος βρίσκεται σε φάση άλφα, οπότε ενδέχεται να υπάρχουν σφάλματα. Η "
+"διοίκηση του ιστότοπου δεν φέρει καμία ευθύνη για τυχόν προβλήματα που "
+"ενδέχεται να προκύψουν στον ιστότοπο."
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
@@ -3546,11 +3559,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Μπορείτε να χρησιμοποιήσετε το Speedy Net μόνο για νομικούς σκοπούς. Δεν "
-"επιτρέπεται να ανεβάσετε περιεχόμενο που σχετίζεται με μίσος, βία, "
-"κακοποίηση ζώων, γυμνό ή πορνογραφία. Δεν επιτρέπεται να χρησιμοποιείτε το "
-"Speedy Net για την αποστολή ανεπιθύμητων μηνυμάτων ή μηνυμάτων με το ίδιο "
-"περιεχόμενο σε μεγάλο αριθμό ατόμων."
+"Μπορείτε να χρησιμοποιείτε το Speedy Net αποκλειστικά για νόμιμους σκοπούς. "
+"Απαγορεύεται η ανάρτηση περιεχομένου που σχετίζεται με μίσος, βία, "
+"κακοποίηση ζώων, γυμνό ή πορνογραφία. Απαγορεύεται η χρήση του Speedy Net "
+"για την αποστολή μηνυμάτων spam ή μηνυμάτων με το ίδιο περιεχόμενο σε μεγάλο "
+"αριθμό ατόμων."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3560,13 +3573,13 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"Η διαχείριση του ιστότοπου δεν μπορεί να επαληθεύσει τις προσωπικές "
-"πληροφορίες που παρέχονται από τους χρήστες του ιστότοπου. Τα προσωπικά "
-"στοιχεία ορισμένων χρηστών ενδέχεται να μην είναι σωστά. Η διαχείριση του "
-"ιστότοπου δεν είναι υπεύθυνη για τη δραστηριότητα των χρηστών εκτός του "
-"ιστότοπου. Εάν επιλέξετε να συναντήσετε ή να μιλήσετε στο τηλέφωνο με άτομα "
-"που γνωρίσατε στον ιστότοπο, η ευθύνη για τα αποτελέσματα της συνάντησης ή "
-"της τηλεφωνικής κλήσης είναι δική σας."
+"Η διοίκηση του ιστότοπου δεν μπορεί να επαληθεύσει τα προσωπικά στοιχεία που "
+"παρέχουν οι χρήστες του ιστότοπου. Είναι πιθανό ορισμένα προσωπικά στοιχεία "
+"των χρηστών να μην είναι σωστά. Η διοίκηση του ιστότοπου δεν φέρει καμία "
+"ευθύνη για τις δραστηριότητες των χρηστών εκτός του ιστότοπου. Εάν "
+"αποφασίσετε να συναντηθείτε ή να μιλήσετε τηλεφωνικά με άτομα που γνωρίσατε "
+"μέσω του ιστότοπου, η ευθύνη για τις συνέπειες της συνάντησης ή της "
+"τηλεφωνικής συνομιλίας βαρύνει αποκλειστικά εσάς."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3575,9 +3588,9 @@ msgid ""
 "deleted from the site after 10 days."
 msgstr ""
 "Αφού εγγραφείτε στον ιστότοπο, θα σας ζητηθεί να επαληθεύσετε τη διεύθυνση "
-"email σας μέσω ενός συνδέσμου που σας αποστέλλεται. Οι λογαριασμοί χωρίς "
-"επαληθευμένη διεύθυνση email θα διαγραφούν από τον ιστότοπο μετά από 10 "
-"ημέρες."
+"ηλεκτρονικού ταχυδρομείου σας μέσω ενός συνδέσμου που θα σας αποσταλεί. Οι "
+"λογαριασμοί χωρίς επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου θα "
+"διαγραφούν από τον ιστότοπο μετά από 10 ημέρες."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3585,10 +3598,11 @@ msgid ""
 "add a new email address to your account and verify it. You can attach "
 "several email addresses to your account on the site."
 msgstr ""
-"Εάν εγγραφήκατε κατά λάθος στον ιστότοπο με λανθασμένη διεύθυνση email, "
-"προσθέστε μια νέα διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας "
-"και επαληθεύστε την. Μπορείτε να επισυνάψετε πολλές διευθύνσεις email στον "
-"λογαριασμό σας στον ιστότοπο."
+"Εάν κατά λάθος εγγραφήκατε στον ιστότοπο με λανθασμένη διεύθυνση "
+"ηλεκτρονικού ταχυδρομείου, προσθέστε μια νέα διεύθυνση ηλεκτρονικού "
+"ταχυδρομείου στον λογαριασμό σας και επαληθεύστε την. Μπορείτε να συνδέσετε "
+"περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου με τον λογαριασμό "
+"σας στον ιστότοπο."
 
 #: .\templates\terms\terms_of_service.html:29
 msgid ""
@@ -3597,15 +3611,15 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"Η φωτογραφία του προφίλ σας θα πρέπει να είναι μια φωτογραφία σας, όπου "
-"μπορούμε να δούμε το πρόσωπό σας. Επιτρέπεται η μεταφόρτωση φωτογραφίας "
-"προφίλ με άλλα άτομα. Μην ανεβάζετε γυμνές φωτογραφίες, φωτογραφίες που "
-"δείχνουν γεννητικά όργανα (ανδρών ή γυναικών) ή εικόνες με γυμνό στήθος "
-"(ανδρών ή γυναικών)."
+"Η φωτογραφία προφίλ σου πρέπει να είναι μια φωτογραφία σου, στην οποία να "
+"φαίνεται το πρόσωπό σου. Επιτρέπεται η ανάρτηση φωτογραφίας προφίλ στην "
+"οποία εμφανίζονται και άλλα άτομα. Μην αναρτάς γυμνές φωτογραφίες, "
+"φωτογραφίες που δείχνουν τα γεννητικά όργανα (ανδρών ή γυναικών) ή "
+"φωτογραφίες με γυμνό στήθος (ανδρών ή γυναικών)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr "Ξεφυλλίζω..."
+msgstr "Περιήγηση..."
 
 #: .\uploads\models.py:24
 msgid "owner"
@@ -3625,44 +3639,44 @@ msgstr "μέγεθος αρχείου"
 
 #: .\uploads\models.py:36
 msgid "uploaded file"
-msgstr "μεταφορτωμένο αρχείο"
+msgstr "αρχείο που έχει μεταφορτωθεί"
 
 #: .\uploads\models.py:37
 msgid "uploaded files"
-msgstr "μεταφορτωμένα αρχεία"
+msgstr "αρχεία που έχουν μεταφορτωθεί"
 
 #: .\uploads\models.py:75
 msgid "visible on website"
-msgstr "ορατό στον ιστότοπο"
+msgstr "εμφανίζεται στον ιστότοπο"
 
 #: .\uploads\models.py:76
 msgid "Speedy image moderation time"
-msgstr "Γρήγορος χρόνος μετριασμού εικόνας Speedy"
+msgstr "Γρήγορος χρόνος ελέγχου εικόνων"
 
 #: .\uploads\models.py:77
 msgid "AWS image moderation time"
-msgstr "Χρόνος ελέγχου εικόνας AWS"
+msgstr "Χρόνος ελέγχου εικόνων στο AWS"
 
 #: .\uploads\models.py:78
 msgid "AWS facial analysis time"
-msgstr "Χρόνος ανάλυσης προσώπου AWS"
+msgstr "Χρόνος ανάλυσης προσώπου στο AWS"
 
 #: .\uploads\models.py:79
 msgid "AWS raw image moderation results"
-msgstr "Αποτελέσματα εποπτείας ακατέργαστης εικόνας AWS"
+msgstr "Αποτελέσματα ελέγχου των ακατέργαστων εικόνων του AWS"
 
 #: .\uploads\models.py:80
 msgid "AWS raw facial analysis results"
-msgstr "Ακατέργαστα αποτελέσματα ανάλυσης προσώπου AWS"
+msgstr "Ακατέργαστα αποτελέσματα ανάλυσης προσώπου από το AWS"
 
 #: .\uploads\models.py:81
 msgid "number of faces"
-msgstr "αριθμός προσώπων"
+msgstr "αριθμός όψεων"
 
 #: .\uploads\models.py:86
 msgid "uploaded image"
-msgstr "ανέβασε εικόνα"
+msgstr "ανεβασμένη εικόνα"
 
 #: .\uploads\models.py:87
 msgid "uploaded images"
-msgstr "ανέβασε εικόνες"
+msgstr "ανεβασμένες εικόνες"
