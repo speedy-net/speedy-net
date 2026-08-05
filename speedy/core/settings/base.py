@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 DISALLOWED_USER_AGENTS = [
     re.compile(pattern=r'Edg/114.0.1823.43'),
     re.compile(pattern=r'Amzn-SearchBot'),
+    re.compile(pattern=r'OAI-SearchBot'),
 ]
 
 DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
