@@ -1,3 +1,11 @@
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+        "OPTIONS": {
+        },
+    },
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -62,7 +70,7 @@ LOGGING = {
 
 def activate_development(settings):
     settings.update({
-        'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'MAILERS': MAILERS,
         'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],
         'INSTALLED_APPS': settings['INSTALLED_APPS'] + ['debug_toolbar'],
         'LOGGING': LOGGING,
