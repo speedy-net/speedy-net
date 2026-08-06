@@ -30,6 +30,7 @@ THIS_SITE_IS_UNDER_CONSTRUCTION = False
 
 ALLOWED_HOSTS = ['*']
 
+# Robots which don't respect robots.txt:
 DISALLOWED_USER_AGENTS = [
     re.compile(pattern=r'Edg/114.0.1823.43'),
     re.compile(pattern=r'Amzn-SearchBot'),
