@@ -276,7 +276,7 @@ if (django_settings.TESTS):
                     # Always run these tests.
                     run_this_test = True
                 else:
-                    # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (10% of the time chosen randomly), because these tests take a lot of time.
+                    # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (14% of the time chosen randomly), because these tests take a lot of time.
                     if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
                         run_this_test = True
             elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):

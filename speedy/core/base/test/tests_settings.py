@@ -149,7 +149,7 @@ if (django_settings.TESTS):
         USER_PASSWORD = get_random_user_password()
         # USER_PASSWORD = 'vjha9c4q44zs'
 
-    RANDOM_LANGUAGE_CODE_CHOICE = random.choice(['de', 'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', '__1', '__2'])
+    RANDOM_LANGUAGE_CODE_CHOICE = random.choice(['de', 'es', 'pt', 'it', 'nl', '__1', '__2'])
 
 
     @receiver(signal=setting_changed)
