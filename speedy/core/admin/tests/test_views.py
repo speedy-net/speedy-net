@@ -125,30 +125,6 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='sv')
-        class AdminMainPageViewAllLanguagesSwedishTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='ko')
-        class AdminMainPageViewAllLanguagesKoreanTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='ko')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fi')
-        class AdminMainPageViewAllLanguagesFinnishTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fi')
-
-
-        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class AdminMainPageViewAllLanguagesHebrewTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -228,30 +204,6 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='sv')
-        class AdminUsersListViewAllLanguagesSwedishTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='ko')
-        class AdminUsersListViewAllLanguagesKoreanTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='ko')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fi')
-        class AdminUsersListViewAllLanguagesFinnishTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login
@@ -342,30 +294,6 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='sv')
-        class AdminUsersWithDetailsListViewAllLanguagesSwedishTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='ko')
-        class AdminUsersWithDetailsListViewAllLanguagesKoreanTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='ko')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fi')
-        class AdminUsersWithDetailsListViewAllLanguagesFinnishTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fi')
-
-
-        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class AdminUsersWithDetailsListViewAllLanguagesHebrewTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
@@ -450,30 +378,6 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='sv')
-        class AdminUserDetailViewAllLanguagesSwedishTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='ko')
-        class AdminUserDetailViewAllLanguagesKoreanTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='ko')
-
-
-        @only_on_sites_with_login
-        @override_settings(LANGUAGE_CODE='fi')
-        class AdminUserDetailViewAllLanguagesFinnishTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login

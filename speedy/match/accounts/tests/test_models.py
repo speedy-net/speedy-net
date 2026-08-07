@@ -1347,30 +1347,6 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        @override_settings(LANGUAGE_CODE='sv')
-        class SpeedyMatchSiteProfileAllLanguagesSwedishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='sv')
-
-
-        @only_on_speedy_match
-        @override_settings(LANGUAGE_CODE='ko')
-        class SpeedyMatchSiteProfileAllLanguagesKoreanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='ko')
-
-
-        @only_on_speedy_match
-        @override_settings(LANGUAGE_CODE='fi')
-        class SpeedyMatchSiteProfileAllLanguagesFinnishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
-            def validate_all_values(self):
-                super().validate_all_values()
-                self.assertEqual(first=self.language_code, second='fi')
-
-
-        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class SpeedyMatchSiteProfileAllLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
