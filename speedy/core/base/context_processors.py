@@ -29,10 +29,12 @@ def settings(request):
 
 def sites(request):
     site = Site.objects.get_current()
+    # Speedy Net and Speedy Match are in alpha (except Speedy Match in English).
     if (hasattr(django_settings, 'SITE_TITLE')):
         site_title = django_settings.SITE_TITLE
     else:
         site_title = _(site.name)
+    # Speedy Match in English is not in alpha.
     if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
         if (get_language() == 'en'):
             site_title = _(site.name)
