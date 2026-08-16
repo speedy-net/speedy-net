@@ -28,12 +28,12 @@ Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
 
-User-agent: barkrowler
-Disallow: /
-
 User-agent: Applebot
 Disallow: /
 
 User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: barkrowler
 Disallow: /
 
