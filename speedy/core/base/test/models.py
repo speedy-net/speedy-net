@@ -46,7 +46,7 @@ if (django_settings.TESTS):
             self.test_languages = kwargs.get('test_languages', None)
             self.test_only = kwargs.get('test_only', None)
             self.count_tests = kwargs.get('count_tests', None)
-            assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'})
+            assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'})
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
             if (self.count_tests is not None):
@@ -209,7 +209,7 @@ if (django_settings.TESTS):
                 django_settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
                 django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
             }
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
                 c = 'en'
             else:
                 c = self.language_code
@@ -224,21 +224,21 @@ if (django_settings.TESTS):
             self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
             self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
             self.assertEqual(first=self.site.name, second=tests_settings.SITE_NAME_EN_DICT[django_settings.SITE_ID])
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
                 self.assertEqual(first=self.site_name, second=self.site.name)
             else:
                 self.assertNotEqual(first=self.site_name, second=self.site.name)
-            self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 37, django_settings.SPEEDY_MATCH_SITE_ID: 37, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
-            self.assertEqual(first=len(self.all_other_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 36, django_settings.SPEEDY_MATCH_SITE_ID: 36, django_settings.SPEEDY_COMPOSER_SITE_ID: 1, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 1}[self.site.id])
+            self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 38, django_settings.SPEEDY_MATCH_SITE_ID: 38, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
+            self.assertEqual(first=len(self.all_other_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 37, django_settings.SPEEDY_MATCH_SITE_ID: 37, django_settings.SPEEDY_COMPOSER_SITE_ID: 1, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 1}[self.site.id])
             self.assertEqual(first=len(self.all_language_codes), second=len(set(self.all_language_codes)))
             self.assertEqual(first=len(self.all_other_language_codes), second=len(set(self.all_other_language_codes)))
-            self.assertListEqual(list1=self.all_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
+            self.assertListEqual(list1=self.all_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
             if (self.language_code == 'en'):
-                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_MATCH_SITE_ID: ['fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['he']}[self.site.id])
+                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_MATCH_SITE_ID: ['fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_COMPOSER_SITE_ID: ['he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['he']}[self.site.id])
             elif (self.language_code == 'fr'):
-                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr']}[self.site.id])
+                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az']}[self.site.id])
             elif (self.language_code == 'de'):
-                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr']}[self.site.id])
+                self.assertListEqual(list1=self.all_other_language_codes, list2={django_settings.SPEEDY_NET_SITE_ID: ['en', 'fr', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'], django_settings.SPEEDY_MATCH_SITE_ID: ['en', 'fr', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az']}[self.site.id])
             self.assertIn(member=self.language_code, container=self.all_language_codes)
             self.assertNotIn(member=self.language_code, container=self.all_other_language_codes)
             self.assertSetEqual(set1=set(self.all_language_codes) - {self.language_code}, set2=set(self.all_other_language_codes))
@@ -262,7 +262,7 @@ if (django_settings.TESTS):
 
             :return: None
             """
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
                 pass
             else:
                 raise NotImplementedError("Unsupported language_code.")
@@ -279,7 +279,7 @@ if (django_settings.TESTS):
                     # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (14% of the time chosen randomly), because these tests take a lot of time.
                     if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
                         run_this_test = True
-            elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):
+            elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
                 # Test only one language (the given language code).
                 if (self.language_code == django_settings.TEST_LANGUAGES):
                     run_this_test = True
