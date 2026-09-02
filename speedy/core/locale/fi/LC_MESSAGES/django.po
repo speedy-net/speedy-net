@@ -2823,7 +2823,7 @@ msgstr "kroatialainen"
 
 #: .\settings\base_with_login.py:103
 msgid "Azerbaijani"
-msgstr ""
+msgstr "azerbaidžanilainen"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"

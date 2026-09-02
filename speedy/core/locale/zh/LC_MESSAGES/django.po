@@ -2764,7 +2764,7 @@ msgstr "克羅埃西亞語"
 
 #: .\settings\base_with_login.py:103
 msgid "Azerbaijani"
-msgstr ""
+msgstr "亞塞拜然語"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
