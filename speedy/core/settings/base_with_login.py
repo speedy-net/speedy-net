@@ -78,6 +78,7 @@ _LANGUAGES_TO_ADD_1 = [
 _LANGUAGES_TO_ADD_2 = [
     ('ko', _('Korean')),
     ('ar', _('Arabic')),
+    ('az', _('Azerbaijani')),
     ('id', _('Indonesian')),
     ('uk', _('Ukrainian')),
     ('tr', _('Turkish')),
