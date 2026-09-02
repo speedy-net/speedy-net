@@ -36,9 +36,12 @@ if (django_settings.TESTS):
             else:
                 raise NotImplementedError("Python version must be at least 3.12.")
 
+            _this_field_is_required_error_message_dict['az'] = 'Bu sahə vacibdir.'
+            _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict['az'] = 'Ensure this value has at most {max_length} characters (it has {value_length}).'
+            _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format_dict['az'] = 'Exceeds the limit (4300 digits) for integer string conversion: value has {digits} digits; use sys.set_int_max_str_digits() to increase the limit'
+
             self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code]
             # self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]
             self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format = _ensure_this_value_has_at_most_max_length_characters_error_message_to_format_dict[self.language_code]
             self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format = _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format_dict[self.language_code]
-
 

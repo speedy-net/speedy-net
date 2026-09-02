@@ -67,6 +67,7 @@ if (django_settings.TESTS):
             self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message = _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
             self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message = _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
 
-            self._item_in_the_array_did_not_validate_error_message_to_format = _item_in_the_array_did_not_validate_error_message_to_format_dict[self.language_code]
+            _item_in_the_array_did_not_validate_error_message_to_format_dict['az'] = 'Item {index} in the array did not validate: '
 
+            self._item_in_the_array_did_not_validate_error_message_to_format = _item_in_the_array_did_not_validate_error_message_to_format_dict[self.language_code]
 

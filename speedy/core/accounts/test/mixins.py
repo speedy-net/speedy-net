@@ -857,6 +857,24 @@ if (django_settings.TESTS):
                 },
             }
 
+            _password_too_short_error_message_dict['az'] = 'This password is too short. It must contain at least 8 characters.'
+            _password_too_long_error_message_dict['az'] = 'This password is too long. It must contain at most 120 characters.'
+            _your_password_must_contain_at_least_6_unique_characters_error_message_dict['az'] = 'Your password must contain at least 6 unique characters.'
+            _please_enter_a_correct_username_and_password_error_message_dict['az'] = 'Please enter a correct username and password. Note that both fields may be case-sensitive.'
+            _your_old_password_was_entered_incorrectly_error_message_dict['az'] = 'Your old password was entered incorrectly. Please enter it again.'
+            _the_two_password_fields_didnt_match_error_message_dict['az'] = 'The two password fields didn’t match.'
+            _ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message_dict['az'] = 'Ensure this value is greater than or equal to -32768.'
+            _ensure_this_value_is_less_than_or_equal_to_32767_error_message_dict['az'] = 'Ensure this value is less than or equal to 32767.'
+            _value_too_long_for_type_character_varying_255_error_message_dict['az'] = 'value too long for type character varying(255)'
+            _password_reset_on_speedy_net_subject_dict['az'] = 'Password reset on Speedy Net'
+            _password_reset_on_speedy_match_subject_dict['az'] = 'Password reset on Speedy Match'
+            _value_is_not_a_valid_choice_error_message_to_format_dict['az'] = 'Value {value} is not a valid choice.'
+            _value_must_be_an_integer_error_message_to_format_dict['az'] = '“{value}” value must be an integer.'
+            _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format_dict['az'] = 'Username must contain at least {min_length} alphanumeric characters (it has {value_length}).'
+            _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format_dict['az'] = 'Username must contain at most {max_length} alphanumeric characters (it has {value_length}).'
+            _username_must_contain_at_least_min_length_characters_error_message_to_format_dict['az'] = 'Username must contain at least {min_length} characters (it has {value_length}).'
+            _username_must_contain_at_most_max_length_characters_error_message_to_format_dict['az'] = 'Username must contain at most {max_length} characters (it has {value_length}).'
+
             self._this_field_cannot_be_null_error_message = _this_field_cannot_be_null_error_message_dict[self.language_code]
             self._this_field_cannot_be_blank_error_message = _this_field_cannot_be_blank_error_message_dict[self.language_code]
             self._id_contains_illegal_characters_error_message = _id_contains_illegal_characters_error_message_dict[self.language_code]
@@ -942,5 +960,4 @@ if (django_settings.TESTS):
 
         def assert_profile_form_required_fields(self, required_fields):
             self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
-
 
