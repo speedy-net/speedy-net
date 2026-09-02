@@ -406,7 +406,7 @@ if (django_settings.TESTS):
                         n_range, i_range = 6, 200
                     else:
                         n_range, i_range = 3, 5
-                elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr'}):
+                elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
                     # Test only one language should be fast. Don't run the full test.
                     n_range, i_range = 3, 5
                 else:

@@ -100,6 +100,7 @@ _LANGUAGES_TO_ADD_2 = [
     ('hi', _('Hindi')),
     ('et', _('Estonian')),
     ('hr', _('Croatian')),
+    ('az', _('Azerbaijani')),
 ]
 
 LANGUAGES = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1 + _LANGUAGES[1:] + _LANGUAGES_TO_ADD_2

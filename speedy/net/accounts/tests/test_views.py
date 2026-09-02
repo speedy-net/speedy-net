@@ -675,4 +675,10 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hr')
 
+        @only_on_speedy_net
+        @override_settings(LANGUAGE_CODE='az')
+        class DeleteAccountViewAllLanguagesAzerbaijaniTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
 
