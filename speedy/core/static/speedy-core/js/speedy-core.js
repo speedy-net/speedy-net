@@ -688,6 +688,24 @@ $.datepicker.regional.hr = {
     yearSuffix: ""
 };
 
+$.datepicker.regional.az = {
+    closeText: "Bağla",
+    prevText: "Geri",
+    nextText: "İrəli",
+    currentText: "Bugün",
+    monthNames: ["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun", "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"],
+    monthNamesShort: ["Yan", "Fev", "Mar", "Apr", "May", "İyun", "İyul", "Avq", "Sen", "Okt", "Noy", "Dek"],
+    dayNames: ["Bazar", "Bazar ertəsi", "Çərşənbə axşamı", "Çərşənbə", "Cümə axşamı", "Cümə", "Şənbə"],
+    dayNamesShort: ["Baz", "B.e", "Ç.a", "Çər", "C.a", "Cüm", "Şən"],
+    dayNamesMin: ["Ba", "Be", "Ça", "Çə", "Ca", "Cü", "Şə"],
+    weekHeader: "Hf",
+    dateFormat: "d MM yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
 evil.block('@@RegistrationForm', {
