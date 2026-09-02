@@ -3397,3 +3397,75 @@ msgstr "yüklənmiş şəkil"
 #: .\uploads\models.py:87
 msgid "uploaded images"
 msgstr "yüklənmiş şəkillər"
+
+msgid "Item {index} in the array did not validate: "
+msgstr "Massivdəki {index} elementi təsdiqlənmədi: "
+
+msgid "This password is too short. It must contain at least 8 characters."
+msgstr "Bu şifrə çox qısadır. Ən azı 8 simvoldan ibarət olmalıdır."
+
+msgid "This password is too long. It must contain at most 120 characters."
+msgstr "Bu şifrə çox uzundur. Ən çox 120 simvoldan ibarət olmalıdır."
+
+msgid "Your password must contain at least 6 unique characters."
+msgstr "Şifrəniz ən azı 6 unikal simvoldan ibarət olmalıdır."
+
+msgid "Please enter a correct username and password. Note that both fields may be case-sensitive."
+msgstr "Düzgün istifadəci adı və şifrə daxil edin. Hər iki sahə böyük-kiçik hərflərə həssas ola bilər."
+
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Könə şifrəniz səhv daxil edildi. Onu yenidən daxil edin."
+
+msgid "The two password fields didn’t match."
+msgstr "İki şifrə sahəsi uyğun gəlmədi."
+
+msgid "Ensure this value is greater than or equal to -32768."
+msgstr "Bu dəyərin -32768-dən boyuk və ya ona bərabər olduğundan əmin olun."
+
+msgid "Ensure this value is less than or equal to 32767."
+msgstr "Bu dəyərin 32767-dən kiçik və ya ona bərabər oldugundan əmin olun."
+
+msgid "value too long for type character varying(255)"
+msgstr "dəyər character varying(255) tipi uçun çox uzundur."
+
+msgid "Password reset on Speedy Net"
+msgstr "Speedy Net-də şifrə sıfırlama"
+
+msgid "Password reset on Speedy Match"
+msgstr "Speedy Match-də şifrə sıfırlama"
+
+msgid "Value {value} is not a valid choice."
+msgstr "“{value}” dəyəri düzgün seçim deyil."
+
+msgid "“{value}” value must be an integer."
+msgstr "“{value}” dəyəri tam ədəd olmalıdır."
+
+msgid "Username must contain at least {min_length} alphanumeric characters (it has {value_length})."
+msgstr "İstifadəçi adı ən azı {min_length} hərf-rəqəm simvolundan ibarət olmalıdır (onda {value_length} simvol var)."
+
+msgid "Username must contain at most {max_length} alphanumeric characters (it has {value_length})."
+msgstr "İstifadəçi adı ən çox {max_length} hərf-rəqəm simvolundan ibarət olmalıdır (onda {value_length} simvol var)."
+
+msgid "Username must contain at least {min_length} characters (it has {value_length})."
+msgstr "İstifadəçi adı ən azı {min_length} simvoldan ibarət olmalıdır (onda {value_length} simvol var)."
+
+msgid "Username must contain at most {max_length} characters (it has {value_length})."
+msgstr "İstifadəçi adı ən çox {max_length} simvoldan ibarət olmalıdır (onda {value_length} simvol var)."
+
+msgid "Permission Denied"
+msgstr "İcazə rədd edildi"
+
+msgid "This field is required."
+msgstr "Bu sahə tələb olunur."
+
+msgid "Ensure this value has at most {max_length} characters (it has {value_length})."
+msgstr "Bu dəyərin ən çox {max_length} simvolu olduğundan əmin olun (onda {value_length} simvol var)."
+
+msgid "Exceeds the limit (4300 digits) for integer string conversion: value has {digits} digits; use sys.set_int_max_str_digits() to increase the limit"
+msgstr "Tam ədədə çevirmə üçun limit (4300 rəqəm) aşılıb: dəyərdə {digits} rəqəm var; limiti artırmaq üçun sys.set_int_max_str_digits() istifadə edin"
+
+msgid "You have a new message on Speedy Net"
+msgstr "Speedy Net-də yeni mesajınız var"
+
+msgid "You have a new message on Speedy Match"
+msgstr "Speedy Match-də yeni mesajınız var"
