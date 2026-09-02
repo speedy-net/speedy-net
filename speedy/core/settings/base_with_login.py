@@ -78,7 +78,6 @@ _LANGUAGES_TO_ADD_1 = [
 _LANGUAGES_TO_ADD_2 = [
     ('ko', _('Korean')),
     ('ar', _('Arabic')),
-    ('az', _('Azerbaijani')),
     ('id', _('Indonesian')),
     ('uk', _('Ukrainian')),
     ('tr', _('Turkish')),
@@ -111,5 +110,4 @@ LANGUAGES_IN_HTML = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1[:6] + _LANGUAGES[1:]
 # LANGUAGES_WITH_ADS = set()
 # LANGUAGES_WITH_ADS = {'en', 'fr', 'de', 'es', 'pt'}
 LANGUAGES_WITH_ADS = set()
-
 
