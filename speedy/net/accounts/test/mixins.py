@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的，請刪除我的帳號。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Vâng. Hãy xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναι. Διαγράψτε τον λογαριασμό μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।', 'ca': 'Sí. Suprimeix el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा खाता हटा दें।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
+            _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的，請刪除我的帳號。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'az': 'Bəli. Hesabımı sil.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Vâng. Hãy xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναι. Διαγράψτε τον λογαριασμό μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।', 'ca': 'Sí. Suprimeix el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा खाता हटा दें।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.'}
 
             _delete_account_text_dict_by_gender = {
                 'en': {
@@ -73,6 +73,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'حذف الحساب' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Hesabı sil' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Hapus Akun' for gender in User.ALL_GENDERS},
@@ -190,6 +193,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{gender: 'هل أنت متأكد أنك تريد حذف حساب سبيدي Speedy Net نت الخاص بك؟ وهذا أمر دائم ولا رجعة فيه. سيؤدي حذف حساب سبيدي Speedy Net نت الخاص بك إلى حذف حساب سبيدي ماتش الخاص بك أيض Speedy Match ًا. إذا كنت متأكدًا، فاكتب "نعم. حذف حسابي.". في هذا المجال، بدقة وحساسة لحالة الأحرف.' for gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{gender: 'Speedy Net hesabınızı silmək istədiyinizə əminsinizmi? Bu, daimi və geri dönməzdir. Speedy Net hesabınızı silmək Speedy Match hesabınızı da siləcək. Əminsinizsə, bu sahəyə böyük-kiçik hərflərə dəqiq əməl etməklə "Bəli. Hesabımı sil." yazın.' for gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{gender: 'Apakah Anda yakin ingin menghapus akun Speedy Net Anda? Ini bersifat permanen dan tidak dapat diubah. Menghapus akun Speedy Net Anda juga akan menghapus akun Speedy Match Anda. Jika Anda yakin, ketik "Ya. Hapus akun saya.". di bidang ini, persis dan peka huruf besar-kecil.' for gender in User.ALL_GENDERS},
                 },
@@ -306,6 +312,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{gender: 'احذف حسابك Speedy Net نهائيًا' for gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{gender: 'Speedy Net hesabınızı həmişəlik silin' for gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{gender: 'Hapus akun Speedy Net Anda secara permanen' for gender in User.ALL_GENDERS},
                 },
@@ -419,6 +428,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'لقد Speedy Net Speedy Match تم حذف حساباتك على و. شكرًا لك على استخدام Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Speedy Net və Speedy Match hesablarınız silindi. Speedy Net-də istifadə etdiyiniz üçun təşəkkür edirik.' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Akun Speedy Net dan Speedy Match Anda telah dihapus. Terima kasih telah menggunakan Speedy Net.' for gender in User.ALL_GENDERS},

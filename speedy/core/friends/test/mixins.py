@@ -16,10 +16,10 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': 'Freundschaftsanfrage gesendet.', 'es': 'Solicitud de amistad enviada.', 'pt': 'Pedido de amizade enviado.', 'it': 'Richiesta di amicizia inviata.', 'nl': 'Vriendschapsverzoek verzonden.', 'ja': 'フレンドシップリクエストが送信されました。', 'ru': 'Запрос на дружбу отправлен.', 'zh': '已發送好友請求。', 'pl': 'Wysłano prośbę o dodanie do znajomych.', 'fa': 'درخواست دوستی ارسال شد.', 'he': 'בקשת חברות נשלחה.', 'ko': '친구 요청 전송됨.', 'ar': 'تم إرسال طلب الصداقة.', 'id': 'Permintaan pertemanan terkirim.', 'uk': 'Запит на дружбу надіслано.', 'tr': 'Arkadaşlık isteği gönderildi.', 'vi': 'Yêu cầu kết bạn đã được gửi.', 'cs': 'Žádost o přátelství odeslána.', 'sv': 'Vänskapsförfrågan skickad.', 'fi': 'Ystävyyspyyntö lähetetty.', 'hu': 'Barátsági felkérés elküldve.', 'th': 'ส่งคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας εστάλη.', 'ms': 'Permintaan persahabatan dihantar.', 'sr': 'Захтев за пријатељство је послат.', 'ro': 'Solicitare de prietenie trimisă.', 'bn': 'বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।', 'ca': "S'ha enviat una sol·licitud d'amistat.", 'no': 'Venneforespørsel sendt.', 'bg': 'Молбата за приятелство е изпратена.', 'da': 'Venskabsanmodning sendt.', 'sk': 'Žiadosť o priateľstvo bola odoslaná.', 'hi': 'मित्रता अनुरोध भेजा गया.', 'et': 'Sõbrakutse saadetud.', 'hr': 'Zahtjev za prijateljstvo poslan.'}
+            _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': 'Freundschaftsanfrage gesendet.', 'es': 'Solicitud de amistad enviada.', 'pt': 'Pedido de amizade enviado.', 'it': 'Richiesta di amicizia inviata.', 'nl': 'Vriendschapsverzoek verzonden.', 'ja': 'フレンドシップリクエストが送信されました。', 'ru': 'Запрос на дружбу отправлен.', 'zh': '已發送好友請求。', 'pl': 'Wysłano prośbę o dodanie do znajomych.', 'fa': 'درخواست دوستی ارسال شد.', 'he': 'בקשת חברות נשלחה.', 'ko': '친구 요청 전송됨.', 'ar': 'تم إرسال طلب الصداقة.', 'az': 'Dostluq istəyi göndərildi.', 'id': 'Permintaan pertemanan terkirim.', 'uk': 'Запит на дружбу надіслано.', 'tr': 'Arkadaşlık isteği gönderildi.', 'vi': 'Yêu cầu kết bạn đã được gửi.', 'cs': 'Žádost o přátelství odeslána.', 'sv': 'Vänskapsförfrågan skickad.', 'fi': 'Ystävyyspyyntö lähetetty.', 'hu': 'Barátsági felkérés elküldve.', 'th': 'ส่งคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας εστάλη.', 'ms': 'Permintaan persahabatan dihantar.', 'sr': 'Захтев за пријатељство је послат.', 'ro': 'Solicitare de prietenie trimisă.', 'bn': 'বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।', 'ca': "S'ha enviat una sol·licitud d'amistat.", 'no': 'Venneforespørsel sendt.', 'bg': 'Молбата за приятелство е изпратена.', 'da': 'Venskabsanmodning sendt.', 'sk': 'Žiadosť o priateľstvo bola odoslaná.', 'hi': 'मित्रता अनुरोध भेजा गया.', 'et': 'Sõbrakutse saadetud.', 'hr': 'Zahtjev za prijateljstvo poslan.'}
 
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': 'Freundschaftsanfrage akzeptiert.', 'es': 'Solicitud de amistad aceptada.', 'pt': 'Pedido de amizade aceita.', 'it': 'Richiesta di amicizia accettata.', 'nl': 'Vriendschapsverzoek geaccepteerd.', 'ja': 'フレンド申請受け付けました。', 'ru': 'Запрос на дружбу принят.', 'zh': '已接受好友請求。', 'pl': 'Prośba o przyjaźń została zaakceptowana.', 'fa': 'درخواست دوستی پذیرفته شد', 'he': 'בקשת החברות התקבלה.', 'ko': '친구 요청 수락됨.', 'ar': 'تم قبول طلب الصداقة.', 'id': 'Permintaan pertemanan diterima.', 'uk': 'Запит на дружбу прийнято.', 'tr': 'Arkadaşlık isteği kabul edildi.', 'vi': 'Yêu cầu kết bạn được chấp nhận.', 'cs': 'Žádost o přátelství přijata.', 'sv': 'Vänskapsförfrågan accepterad.', 'fi': 'Ystävyyspyyntö hyväksytty.', 'hu': 'Baráti felkérés elfogadva.', 'th': 'ยอมรับคำขอเป็นเพื่อนแล้ว', 'el': 'Αίτημα φιλίας δεκτό.', 'ms': 'Permintaan persahabatan diterima.', 'sr': 'Захтев за пријатељство је прихваћен.', 'ro': 'Cerere de prietenie acceptată.', 'bn': 'বন্ধুত্বের অনুরোধ গৃহীত।', 'ca': "S'ha acceptat la sol·licitud d'amistat.", 'no': 'Venneforespørsel akseptert.', 'bg': 'Молбата за приятелство е приета.', 'da': 'Venskabsanmodning accepteret.', 'sk': 'Žiadosť o priateľstvo bola prijatá.', 'hi': 'मित्रता अनुरोध स्वीकार किया गया.', 'et': 'Sõbrakutse vastu võetud.', 'hr': 'Zahtjev za prijateljstvo prihvaćen.'}
-            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': 'Freundschaftsanfrage abgelehnt.', 'es': 'Solicitud de amistad rechazada.', 'pt': 'Pedido de amizade recusada.', 'it': 'Richiesta di amicizia rifiutata.', 'nl': 'Vriendschapsverzoek afgewezen.', 'ja': 'フレンド申請は拒否されました。', 'ru': 'Запрос на дружбу отклонен.', 'zh': '好友請求被拒絕。', 'pl': 'Prośba o przyjaźń została odrzucona.', 'fa': 'درخواست دوستی رد شد.', 'he': 'בקשת החברות נדחתה.', 'ko': '친구 요청 거부됨.', 'ar': 'تم رفض طلب الصداقة.', 'id': 'Permintaan pertemanan ditolak.', 'uk': 'Запит на дружбу відхилено.', 'tr': 'Arkadaşlık isteği reddedildi.', 'vi': 'Yêu cầu kết bạn bị từ chối.', 'cs': 'Žádost o přátelství zamítnuta.', 'sv': 'Vänskapsförfrågan avvisad.', 'fi': 'Ystävyyspyyntö hylätty.', 'hu': 'A barátkozási kérelmet elutasították.', 'th': 'คำขอเป็นเพื่อนถูกปฏิเสธ', 'el': 'Το αίτημα φιλίας απορρίφθηκε.', 'ms': 'Permintaan persahabatan ditolak.', 'sr': 'Захтев за пријатељство је одбијен.', 'ro': 'Solicitarea de prietenie a fost respinsă.', 'bn': 'বন্ধুত্বের অনুরোধ প্রত্যাখ্যান করা হয়েছে।', 'ca': "S'ha rebutjat la sol·licitud d'amistat.", 'no': 'Venneforespørsel avvist.', 'bg': 'Молбата за приятелство е отхвърлена.', 'da': 'Venskabsanmodning afvist.', 'sk': 'Žiadosť o priateľstvo bola zamietnutá.', 'hi': 'मित्रता अनुरोध अस्वीकृत.', 'et': 'Sõprustaotlus lükati tagasi.', 'hr': 'Zahtjev za prijateljstvo odbijen.'}
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': 'Freundschaftsanfrage akzeptiert.', 'es': 'Solicitud de amistad aceptada.', 'pt': 'Pedido de amizade aceita.', 'it': 'Richiesta di amicizia accettata.', 'nl': 'Vriendschapsverzoek geaccepteerd.', 'ja': 'フレンド申請受け付けました。', 'ru': 'Запрос на дружбу принят.', 'zh': '已接受好友請求。', 'pl': 'Prośba o przyjaźń została zaakceptowana.', 'fa': 'درخواست دوستی پذیرفته شد', 'he': 'בקשת החברות התקבלה.', 'ko': '친구 요청 수락됨.', 'ar': 'تم قبول طلب الصداقة.', 'az': 'Dostluq istəyi qəbul edildi.', 'id': 'Permintaan pertemanan diterima.', 'uk': 'Запит на дружбу прийнято.', 'tr': 'Arkadaşlık isteği kabul edildi.', 'vi': 'Yêu cầu kết bạn được chấp nhận.', 'cs': 'Žádost o přátelství přijata.', 'sv': 'Vänskapsförfrågan accepterad.', 'fi': 'Ystävyyspyyntö hyväksytty.', 'hu': 'Baráti felkérés elfogadva.', 'th': 'ยอมรับคำขอเป็นเพื่อนแล้ว', 'el': 'Αίτημα φιλίας δεκτό.', 'ms': 'Permintaan persahabatan diterima.', 'sr': 'Захтев за пријатељство је прихваћен.', 'ro': 'Cerere de prietenie acceptată.', 'bn': 'বন্ধুত্বের অনুরোধ গৃহীত।', 'ca': "S'ha acceptat la sol·licitud d'amistat.", 'no': 'Venneforespørsel akseptert.', 'bg': 'Молбата за приятелство е приета.', 'da': 'Venskabsanmodning accepteret.', 'sk': 'Žiadosť o priateľstvo bola prijatá.', 'hi': 'मित्रता अनुरोध स्वीकार किया गया.', 'et': 'Sõbrakutse vastu võetud.', 'hr': 'Zahtjev za prijateljstvo prihvaćen.'}
+            _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': 'Freundschaftsanfrage abgelehnt.', 'es': 'Solicitud de amistad rechazada.', 'pt': 'Pedido de amizade recusada.', 'it': 'Richiesta di amicizia rifiutata.', 'nl': 'Vriendschapsverzoek afgewezen.', 'ja': 'フレンド申請は拒否されました。', 'ru': 'Запрос на дружбу отклонен.', 'zh': '好友請求被拒絕。', 'pl': 'Prośba o przyjaźń została odrzucona.', 'fa': 'درخواست دوستی رد شد.', 'he': 'בקשת החברות נדחתה.', 'ko': '친구 요청 거부됨.', 'ar': 'تم رفض طلب الصداقة.', 'az': 'Dostluq istəyi rədd edildi.', 'id': 'Permintaan pertemanan ditolak.', 'uk': 'Запит на дружбу відхилено.', 'tr': 'Arkadaşlık isteği reddedildi.', 'vi': 'Yêu cầu kết bạn bị từ chối.', 'cs': 'Žádost o přátelství zamítnuta.', 'sv': 'Vänskapsförfrågan avvisad.', 'fi': 'Ystävyyspyyntö hylätty.', 'hu': 'A barátkozási kérelmet elutasították.', 'th': 'คำขอเป็นเพื่อนถูกปฏิเสธ', 'el': 'Το αίτημα φιλίας απορρίφθηκε.', 'ms': 'Permintaan persahabatan ditolak.', 'sr': 'Захтев за пријатељство је одбијен.', 'ro': 'Solicitarea de prietenie a fost respinsă.', 'bn': 'বন্ধুত্বের অনুরোধ প্রত্যাখ্যান করা হয়েছে।', 'ca': "S'ha rebutjat la sol·licitud d'amistat.", 'no': 'Venneforespørsel avvist.', 'bg': 'Молбата за приятелство е отхвърлена.', 'da': 'Venskabsanmodning afvist.', 'sk': 'Žiadosť o priateľstvo bola zamietnutá.', 'hi': 'मित्रता अनुरोध अस्वीकृत.', 'et': 'Sõprustaotlus lükati tagasi.', 'hr': 'Zahtjev za prijateljstvo odbijen.'}
 
             _youve_cancelled_your_friendship_request_success_message_dict_by_gender = {
                 'en': {
@@ -66,6 +66,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'لقد ألغيت طلب الصداقة الخاص بك.' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Dostluq istəyinizi ləğv etdiniz.' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Anda telah membatalkan permintaan pertemanan Anda.' for gender in User.ALL_GENDERS},
@@ -189,6 +192,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{gender: 'لقد قمت بإزالة هذا المستخدم من أصدقائك.' for gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{gender: 'Bu istifadəçini dostlarınızdan sildiniz.' for gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{gender: 'Anda telah menghapus pengguna ini dari teman Anda.' for gender in User.ALL_GENDERS},
                 },
@@ -309,6 +315,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{gender: 'لقد طلبت الصداقة بالفعل من هذا المستخدم.' for gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{gender: 'Siz artıq bu istifadəçiyə dostluq istəyi göndərmisiniz.' for gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{gender: 'Anda sudah meminta pertemanan dari pengguna ini.' for gender in User.ALL_GENDERS},
                 },
@@ -428,6 +437,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'هذا المستخدم طلب صداقتك بالفعل.' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Bu istifadəçi sizə artıq dostluq istəyi göndərib.' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Pengguna ini sudah meminta pertemanan dari Anda.' for gender in User.ALL_GENDERS},
@@ -591,6 +603,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'أنت بالفعل صديق لهذا المستخدم.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Siz artıq bu istifadəçi ilə dostsunuz.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Anda sudah berteman dengan pengguna ini.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
@@ -713,6 +728,9 @@ if (django_settings.TESTS):
                 'ar': {
                     **{gender: 'لا يمكنك أن تكون صديقًا لنفسك.' for gender in User.ALL_GENDERS},
                 },
+                'az': {
+                    **{gender: 'Özünüzlə dost ola bilməzsiniz.' for gender in User.ALL_GENDERS},
+                },
                 'id': {
                     **{gender: 'Anda tidak bisa berteman dengan diri sendiri.' for gender in User.ALL_GENDERS},
                 },
@@ -828,6 +846,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'لديك بالفعل {0} أصدقاء. لا يمكن أن يكون لديك أكثر من {1} من الأصدقاء Speedy Net على سبيدي نت. الرجاء إزالة الأصدقاء قبل المتابعة.' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Sizin artıq {0} dostunuz var. Speedy Net-də {1}-dən çox dostunuz ola bilməz. Davam etməzdən əvvəl dostlarınızı silin.' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Anda sudah memiliki {0} teman. Anda tidak boleh memiliki lebih dari {1} teman di Speedy Net. Harap hapus teman sebelum Anda melanjutkan.' for gender in User.ALL_GENDERS},
@@ -978,6 +999,11 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'لدى هذه المستخدمة بالفعل {0} من الأصدقاء. لا يمكنها امتلاك أكثر من {1} صديق على Speedy Net. يُرجى أن تطلب منها إزالة أصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'لدى هذا المستخدم بالفعل {0} من الأصدقاء. لا يمكنه امتلاك أكثر من {1} صديق على Speedy Net. يُرجى أن تطلب منه إزالة أصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onların Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl onlardan dostlarını silmələrini xahiş edin.' for user_gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Pengguna ini sudah memiliki {0} teman. Dia tidak boleh memiliki lebih dari {1} teman di Speedy Net. Harap minta dia menghapus beberapa teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},

@@ -9,7 +9,7 @@ if (django_settings.TESTS):
         def set_up(self):
             super().set_up()
 
-            _list_mutual_title_dict = {'en': 'Mutual Likes', 'fr': 'J’aimes mutuels', 'de': 'Gegenseitige Likes', 'es': 'Me gusta mutuos', 'pt': 'Curtidas recíproca', 'it': 'Mi Piace reciproci', 'nl': 'Wederzijdse likes', 'ja': '相互いいね', 'ru': 'Взаимные лайки', 'zh': '互相喜歡', 'pl': 'Wzajemne polubienia', 'fa': 'لایک های متقابل', 'he': 'לייקים הדדיים', 'ko': '상호 좋아요', 'ar': 'الإعجابات المتبادلة', 'id': 'Saling Suka', 'uk': 'Взаємні лайки', 'tr': 'Karşılıklı Beğeniler', 'vi': 'Lượt thích lẫn nhau', 'cs': 'Vzájemné lajky', 'sv': 'Ömsesidiga gillanden', 'fi': 'Yhteiset tykkäämiset', 'hu': 'Kölcsönös kedvelések', 'th': 'ความชอบร่วมกัน', 'el': 'Αμοιβαία Likes', 'ms': 'Saling Suka', 'sr': 'Мутуал Ликес', 'ro': 'Like-uri reciproce', 'bn': 'পারস্পরিক পছন্দ', 'ca': "M'agrada mutu", 'no': 'Gjensidige liker', 'bg': 'Взаимни харесвания', 'da': 'Gensidige likes', 'sk': 'Vzájomné lajky', 'hi': 'आपसी पसंद', 'et': 'Vastastikused meeldimised', 'hr': 'Međusobni lajkovi'}
+            _list_mutual_title_dict = {'en': 'Mutual Likes', 'fr': 'J’aimes mutuels', 'de': 'Gegenseitige Likes', 'es': 'Me gusta mutuos', 'pt': 'Curtidas recíproca', 'it': 'Mi Piace reciproci', 'nl': 'Wederzijdse likes', 'ja': '相互いいね', 'ru': 'Взаимные лайки', 'zh': '互相喜歡', 'pl': 'Wzajemne polubienia', 'fa': 'لایک های متقابل', 'he': 'לייקים הדדיים', 'ko': '상호 좋아요', 'ar': 'الإعجابات المتبادلة', 'az': 'Qarşılıqlı bəyənmələr', 'id': 'Saling Suka', 'uk': 'Взаємні лайки', 'tr': 'Karşılıklı Beğeniler', 'vi': 'Lượt thích lẫn nhau', 'cs': 'Vzájemné lajky', 'sv': 'Ömsesidiga gillanden', 'fi': 'Yhteiset tykkäämiset', 'hu': 'Kölcsönös kedvelések', 'th': 'ความชอบร่วมกัน', 'el': 'Αμοιβαία Likes', 'ms': 'Saling Suka', 'sr': 'Мутуал Ликес', 'ro': 'Like-uri reciproce', 'bn': 'পারস্পরিক পছন্দ', 'ca': "M'agrada mutu", 'no': 'Gjensidige liker', 'bg': 'Взаимни харесвания', 'da': 'Gensidige likes', 'sk': 'Vzájomné lajky', 'hi': 'आपसी पसंद', 'et': 'Vastastikused meeldimised', 'hr': 'Međusobni lajkovi'}
 
             _list_to_title_dict_by_gender = {
                 'en': {
@@ -86,6 +86,11 @@ if (django_settings.TESTS):
                     User.GENDER_FEMALE_STRING: 'الفتيات التي تحبها',
                     User.GENDER_MALE_STRING: 'الأولاد الذين تحبهم',
                     User.GENDER_OTHER_STRING: 'الأشخاص الذين تحبهم',
+                },
+                'az': {
+                    User.GENDER_FEMALE_STRING: 'Bəyəndiyiniz qızlar',
+                    User.GENDER_MALE_STRING: 'Bəyəndiyiniz oğlanlar',
+                    User.GENDER_OTHER_STRING: 'Bəyəndiyiniz insanlar',
                 },
                 'id': {
                     User.GENDER_FEMALE_STRING: 'Gadis yang Kamu Suka',
@@ -275,6 +280,11 @@ if (django_settings.TESTS):
                     User.GENDER_MALE_STRING: 'الأولاد الذين يحبونك',
                     User.GENDER_OTHER_STRING: 'الأشخاص الذين يحبونك',
                 },
+                'az': {
+                    User.GENDER_FEMALE_STRING: 'Sizi bəyənən qızlar',
+                    User.GENDER_MALE_STRING: 'Sizi bəyənən oğlanlar',
+                    User.GENDER_OTHER_STRING: 'Sizi bəyənən insanlar',
+                },
                 'id': {
                     User.GENDER_FEMALE_STRING: 'Gadis yang Menyukaimu',
                     User.GENDER_MALE_STRING: 'Laki-Laki yang Menyukaimu',
@@ -434,6 +444,9 @@ if (django_settings.TESTS):
                 },
                 'ar': {
                     **{gender: 'هناك شخص معجب بك على Speedy Match' for gender in User.ALL_GENDERS},
+                },
+                'az': {
+                    **{gender: 'Kimsə sizi Speedy Match-də bəyənir' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Seseorang menyukai Anda di Speedy Match' for gender in User.ALL_GENDERS},
