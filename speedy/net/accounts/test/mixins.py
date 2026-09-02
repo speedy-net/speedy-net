@@ -496,7 +496,7 @@ if (django_settings.TESTS):
                     **{gender: 'Vaši Speedy Net i Speedy Match računi su izbrisani. Hvala što koristite Speedy Net.' for gender in User.ALL_GENDERS},
                 },
                 'az': {
-                    **{gender: 'Speedy Net və Speedy Match hesablarınız silindi. Speedy Net-də istifadə etdiyiniz üçun təşəkkür edirik.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Net və Speedy Match hesablarınız silindi. Speedy Net-dən istifadə etdiyiniz üçün təşəkkür edirik.' for gender in User.ALL_GENDERS},
                 },
             }
 
