@@ -206,7 +206,7 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
     notify_on_like = models.SmallIntegerField(verbose_name=_('On new likes'), choices=User.NOTIFICATIONS_CHOICES, default=User.NOTIFICATIONS_ON)
     active_languages = ArrayField(
-        base_field=models.CharField(max_length=2, choices=django_settings.LANGUAGES),
+        base_field=models.CharField(max_length=10, choices=django_settings.LANGUAGES),
         verbose_name=_('Active languages'),
         size=len(django_settings.LANGUAGES),
         default=active_languages_default.__func__,

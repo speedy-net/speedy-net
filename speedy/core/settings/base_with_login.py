@@ -101,6 +101,14 @@ _LANGUAGES_TO_ADD_2 = [
     ('et', _('Estonian')),
     ('hr', _('Croatian')),
     ('az', _('Azerbaijani')),
+    ('zh-yue', _('Cantonese')),
+    ('lt', _('Lithuanian')),
+    ('sl', _('Slovenian')),
+    ('eu', _('Basque')),
+    ('hy', _('Armenian')),
+    ('uz', _('Uzbek')),
+    ('ta', _('Tamil')),
+    ('lv', _('Latvian')),
 ]
 
 LANGUAGES = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1 + _LANGUAGES[1:] + _LANGUAGES_TO_ADD_2
