@@ -102,13 +102,13 @@ if (django_settings.TESTS):
             return self._a_confirmation_message_was_sent_to_email_address_success_message_to_format.format(email_address=email_address)
 
         def _user_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=language_code) for field_name in ['first_name_{language_code}'.replace("-", "_")] for language_code, language_name in django_settings.LANGUAGES] + ['username', 'slug', 'password', 'gender', 'date_of_birth']
+            return [field_name.format(language_code=language_code).replace("-", "_") for field_name in ['first_name_{language_code}'] for language_code, language_name in django_settings.LANGUAGES] + ['username', 'slug', 'password', 'gender', 'date_of_birth']
 
         def _registration_form_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}'.replace("-", "_"), 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
+            return [field_name.format(language_code=self.language_code).replace("-", "_") for field_name in ['first_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
         def _profile_form_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}'.replace("-", "_"), 'slug', 'gender', 'date_of_birth']]
+            return [field_name.format(language_code=self.language_code).replace("-", "_") for field_name in ['first_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
 
         def _login_form_all_the_required_fields_keys(self):
             return [field_name.format(language_code=self.language_code) for field_name in ['username', 'password']]
