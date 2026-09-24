@@ -362,3 +362,67 @@ if (django_settings.TESTS):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='az')
 
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class PrivacyPolicyViewAllLanguagesCantoneseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class PrivacyPolicyViewAllLanguagesLithuanianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class PrivacyPolicyViewAllLanguagesSlovenianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class PrivacyPolicyViewAllLanguagesBasqueTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class PrivacyPolicyViewAllLanguagesArmenianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class PrivacyPolicyViewAllLanguagesUzbekTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class PrivacyPolicyViewAllLanguagesTamilTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class PrivacyPolicyViewAllLanguagesLatvianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
+            def validate_all_values(self):
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
+
