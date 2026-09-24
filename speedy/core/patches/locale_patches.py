@@ -30,10 +30,12 @@ def patch():
     # Django has no 'zh-yue' entry in LANG_INFO, so get_language_info('zh-yue') falls back to the generic 'zh' entry (Chinese).
     # This is used by the about page (about_base.html, which renders the full LANGUAGES list, unlike other pages which use LANGUAGES_IN_HTML).
     # Register 'zh-yue' as Cantonese, keeping code='zh-yue' so the zh-yue.speedy.net subdomain routing (LocaleDomainMiddleware) would match.
-    # Without this, the about page showed a "中文" link to zh.speedy.net instead of a "廣東話" link to zh-yue.speedy.net.
+    # Without this, the about page showed a "中文" link to zh.speedy.net instead of a "粵語" link to zh-yue.speedy.net.
     LANG_INFO['zh-yue'] = {
         'bidi': False,
         'code': 'zh-yue',
         'name': 'Cantonese',
-        'name_local': '廣東話',
+        'name_local': '粵語',
     }
+
+
