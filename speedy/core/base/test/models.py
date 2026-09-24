@@ -46,7 +46,7 @@ if (django_settings.TESTS):
             self.test_languages = kwargs.get('test_languages', None)
             self.test_only = kwargs.get('test_only', None)
             self.count_tests = kwargs.get('count_tests', None)
-            assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'})
+            assert (self.test_languages in {'test-all-languages', 'test-default-languages', 'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'})
             if (self.test_only is not None):
                 assert (self.test_only >= 0)
             if (self.count_tests is not None):
@@ -209,7 +209,7 @@ if (django_settings.TESTS):
                 django_settings.SPEEDY_COMPOSER_SITE_ID: "speedy.composer.localhost",
                 django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: "speedy.mail.software.localhost",
             }
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                 c = 'en'
             else:
                 c = self.language_code
@@ -224,7 +224,7 @@ if (django_settings.TESTS):
             self.assertEqual(first=self.site.domain, second=domain_dict[self.site.id])
             self.assertEqual(first=self.site_name, second=site_name_dict[self.site.id])
             self.assertEqual(first=self.site.name, second=tests_settings.SITE_NAME_EN_DICT[django_settings.SITE_ID])
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                 self.assertEqual(first=self.site_name, second=self.site.name)
             else:
                 self.assertNotEqual(first=self.site_name, second=self.site.name)
@@ -262,7 +262,7 @@ if (django_settings.TESTS):
 
             :return: None
             """
-            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
+            if (self.language_code in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                 pass
             else:
                 raise NotImplementedError("Unsupported language_code.")
@@ -279,7 +279,7 @@ if (django_settings.TESTS):
                     # Run these tests only if self.language_code is equal to tests_settings.RANDOM_LANGUAGE_CODE_CHOICE (14% of the time chosen randomly), because these tests take a lot of time.
                     if (self.language_code == tests_settings.RANDOM_LANGUAGE_CODE_CHOICE):
                         run_this_test = True
-            elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az'}):
+            elif (django_settings.TEST_LANGUAGES in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                 # Test only one language (the given language code).
                 if (self.language_code == django_settings.TEST_LANGUAGES):
                     run_this_test = True
