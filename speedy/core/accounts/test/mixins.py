@@ -102,13 +102,13 @@ if (django_settings.TESTS):
             return self._a_confirmation_message_was_sent_to_email_address_success_message_to_format.format(email_address=email_address)
 
         def _user_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=language_code) for field_name in ['first_name_{language_code}'] for language_code, language_name in django_settings.LANGUAGES] + ['username', 'slug', 'password', 'gender', 'date_of_birth']
+            return [field_name.format(language_code=language_code) for field_name in ['first_name_{language_code}'.replace("-", "_")] for language_code, language_name in django_settings.LANGUAGES] + ['username', 'slug', 'password', 'gender', 'date_of_birth']
 
         def _registration_form_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
+            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}'.replace("-", "_"), 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
         def _profile_form_all_the_required_fields_keys(self):
-            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
+            return [field_name.format(language_code=self.language_code) for field_name in ['first_name_{language_code}'.replace("-", "_"), 'slug', 'gender', 'date_of_birth']]
 
         def _login_form_all_the_required_fields_keys(self):
             return [field_name.format(language_code=self.language_code) for field_name in ['username', 'password']]
@@ -914,13 +914,13 @@ if (django_settings.TESTS):
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_net_subject_dict_by_gender.keys())), second=3)
             self.assertEqual(first=len(set(self._confirm_your_email_address_on_speedy_match_subject_dict_by_gender.keys())), second=3)
 
-            self.assertEqual(first=len(set(self._user_all_the_required_fields_keys())), second=43)
+            self.assertEqual(first=len(set(self._user_all_the_required_fields_keys())), second=51)
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys()))
-            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=43)
+            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys())), second=51)
             self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()) - set(self._user_all_the_required_fields_keys())), second=0)
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None).keys()), set2=set(self._user_all_the_required_fields_keys()) | {'first_name_en', 'first_name_he'})
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()), set2=set(self._user_all_the_required_fields_keys()))
-            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys())), second=43)
+            self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys())), second=51)
             self.assertEqual(first=len(set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()) - set(self._user_all_the_required_fields_keys())), second=0)
             self.assertSetEqual(set1=set(self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value='').keys()), set2=set(self._user_all_the_required_fields_keys()) | {'first_name_en', 'first_name_he'})
             self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys(), list2=[field_name for field_name in self._registration_form_all_the_required_fields_keys() if (not (field_name in ['email', 'new_password1']))])
