@@ -1000,13 +1000,13 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="")
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
+                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_first_name_is_none(self):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en=None, first_name_he=None)
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
+                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_last_name_is_optional(self):
                 user = DefaultUserFactory(last_name_en="")
