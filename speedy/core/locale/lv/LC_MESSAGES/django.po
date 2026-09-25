@@ -2004,6 +2004,9 @@ msgstr "Jūsu parole"
 msgid "Invalid password."
 msgstr "Nederīga parole."
 
+msgid "This field is required."
+msgstr "Šis lauks ir obligāts."
+
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "lietotājvārds"

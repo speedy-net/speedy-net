@@ -1954,6 +1954,9 @@ msgstr "您的密碼"
 msgid "Invalid password."
 msgstr "密碼無效。"
 
+msgid "This field is required."
+msgstr "呢個欄位係必填嘅。"
+
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "使用者名稱"

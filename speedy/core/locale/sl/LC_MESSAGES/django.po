@@ -1993,7 +1993,7 @@ msgstr "Vaša geslo"
 
 #: .\accounts\forms.py:449
 msgid "Invalid password."
-msgstr "Nevažeća geslo."
+msgstr "Neveljavno geslo."
 
 #: .\accounts\models.py:178
 msgid "username"

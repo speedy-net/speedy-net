@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaša računa Speedy Net in Speedy Match sta bila izbrisana. Hvala, ker "
+"Vaši računi Speedy Net in Speedy Match so bili izbrisani. Hvala, ker "
 "uporabljate {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaša računa Speedy Net in Speedy Match sta bila izbrisana. Hvala, ker "
+"Vaši računi Speedy Net in Speedy Match so bili izbrisani. Hvala, ker "
 "uporabljate {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,7 +114,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Vaša računa Speedy Net in Speedy Match sta bila izbrisana. Hvala, ker "
+"Vaši računi Speedy Net in Speedy Match so bili izbrisani. Hvala, ker "
 "uporabljate {site_name}."
 
 #: .\accounts\apps.py:8

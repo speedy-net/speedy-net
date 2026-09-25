@@ -2015,6 +2015,9 @@ msgstr "Ձեր գաղտնաբառը"
 msgid "Invalid password."
 msgstr "Անվավեր գաղտնաբառ."
 
+msgid "This field is required."
+msgstr "Այս դաշտը պարտադիր է։"
+
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "օգտագործողի անուն"

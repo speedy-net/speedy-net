@@ -2027,6 +2027,9 @@ msgstr "Parolingiz"
 msgid "Invalid password."
 msgstr "Noto'g'ri parol."
 
+msgid "This field is required."
+msgstr "Bu maydon to'ldirilishi shart."
+
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "Foydalanuvchi nomi"

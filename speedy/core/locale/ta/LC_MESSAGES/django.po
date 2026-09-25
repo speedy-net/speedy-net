@@ -2009,6 +2009,9 @@ msgstr "உங்கள் கடவுச்சொல்"
 msgid "Invalid password."
 msgstr "செல்லாத கடவுச்சொல்."
 
+msgid "This field is required."
+msgstr "இந்தப் புலம் தேவை."
+
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "பயனர் பெயர்"

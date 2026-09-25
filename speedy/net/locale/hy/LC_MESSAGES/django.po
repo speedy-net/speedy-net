@@ -94,8 +94,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են. Շնորհակալություն "
-"{site_name}-ից օգտվելու համար."
+"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են: Շնորհակալություն "
+"{site_name}-ից օգտվելու համար:"
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -104,8 +104,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են. Շնորհակալություն "
-"{site_name}-ից օգտվելու համար."
+"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են: Շնորհակալություն "
+"{site_name}-ից օգտվելու համար:"
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -114,8 +114,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են. Շնորհակալություն "
-"{site_name}-ից օգտվելու համար."
+"Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են: Շնորհակալություն "
+"{site_name}-ից օգտվելու համար:"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -140,6 +140,9 @@ msgstr ""
 #: .\accounts\forms.py:33
 msgid "Invalid password."
 msgstr "Անվավեր գաղտնաբառ."
+
+msgid "This field is required."
+msgstr "Այս դաշտը պարտադիր է։"
 
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82

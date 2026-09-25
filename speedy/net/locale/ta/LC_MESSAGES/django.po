@@ -97,8 +97,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
-"{site_name} பயன்படுத்தியதற்கு நன்றி."
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுள்ளன. "
+"{site_name} ஐப் பயன்படுத்தியதற்கு நன்றி."
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -107,8 +107,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
-"{site_name} பயன்படுத்தியதற்கு நன்றி."
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுள்ளன. "
+"{site_name} ஐப் பயன்படுத்தியதற்கு நன்றி."
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -117,8 +117,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
-"{site_name} பயன்படுத்தியதற்கு நன்றி."
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுள்ளன. "
+"{site_name} ஐப் பயன்படுத்தியதற்கு நன்றி."
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -144,6 +144,9 @@ msgstr ""
 #: .\accounts\forms.py:33
 msgid "Invalid password."
 msgstr "செல்லாத கடவுச்சொல்."
+
+msgid "This field is required."
+msgstr "இந்தப் புலம் தேவை."
 
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82

@@ -97,7 +97,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}'dan "
 "foydalanganingiz uchun rahmat."
 
 #: .\__translations\__translations.py:15
@@ -107,7 +107,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}'dan "
 "foydalanganingiz uchun rahmat."
 
 #: .\__translations\__translations.py:16
@@ -117,7 +117,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}'dan "
 "foydalanganingiz uchun rahmat."
 
 #: .\accounts\apps.py:8
@@ -144,6 +144,9 @@ msgstr ""
 #: .\accounts\forms.py:33
 msgid "Invalid password."
 msgstr "Noto'g'ri parol."
+
+msgid "This field is required."
+msgstr "Bu maydon to'ldirilishi shart."
 
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82

@@ -141,6 +141,9 @@ msgstr ""
 msgid "Invalid password."
 msgstr "Nederīga parole."
 
+msgid "This field is required."
+msgstr "Šis lauks ir obligāts."
+
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
 msgid "Yes. Delete my account."

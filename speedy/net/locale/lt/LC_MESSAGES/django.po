@@ -94,7 +94,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Ačiū, kad "
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
 "naudojotės {site_name}."
 
 #: .\__translations\__translations.py:15
@@ -104,7 +104,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Ačiū, kad "
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
 "naudojotės {site_name}."
 
 #: .\__translations\__translations.py:16
@@ -114,7 +114,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Ačiū, kad "
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
 "naudojotės {site_name}."
 
 #: .\accounts\apps.py:8
