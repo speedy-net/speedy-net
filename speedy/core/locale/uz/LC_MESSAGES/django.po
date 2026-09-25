@@ -1,0 +1,3665 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\__translations\__translations.html:5
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\__translations\__translations.html:6
+msgid "Friendship request sent"
+msgstr "Do'stlik so'rovi yuborildi"
+
+#: .\__translations\__translations.html:8
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Siz elektron pochta manzilingizni tasdiqlamagansiz. Iltimos, kiruvchi "
+"xatlaringizni tekshiring."
+
+#: .\__translations\__translations.html:9
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Siz elektron pochta manzilingizni tasdiqlamagansiz. Iltimos, kiruvchi "
+"xatlaringizni tekshiring."
+
+#: .\__translations\__translations.html:10
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Siz elektron pochta manzilingizni tasdiqlamagansiz. Iltimos, kiruvchi "
+"xatlaringizni tekshiring."
+
+#: .\__translations\__translations.html:12
+msgctxt "female"
+msgid "Logout"
+msgstr "Chiqish"
+
+#: .\__translations\__translations.html:13
+msgctxt "male"
+msgid "Logout"
+msgstr "Chiqish"
+
+#: .\__translations\__translations.html:14
+msgctxt "other"
+msgid "Logout"
+msgstr "Chiqish"
+
+#: .\__translations\__translations.html:16
+#, python-format
+msgctxt "female"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Salom <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s ga yana xush kelibsiz!"
+
+#: .\__translations\__translations.html:17
+#, python-format
+msgctxt "male"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Salom <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s ga yana xush kelibsiz!"
+
+#: .\__translations\__translations.html:18
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Salom <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s ga yana xush kelibsiz!"
+
+#: .\__translations\__translations.html:20
+msgctxt "female"
+msgid "Please confirm your email address."
+msgstr "Iltimos, elektron pochta manzilingizni tasdiqlang."
+
+#: .\__translations\__translations.html:21
+msgctxt "male"
+msgid "Please confirm your email address."
+msgstr "Iltimos, elektron pochta manzilingizni tasdiqlang."
+
+#: .\__translations\__translations.html:22
+msgctxt "other"
+msgid "Please confirm your email address."
+msgstr "Iltimos, elektron pochta manzilingizni tasdiqlang."
+
+#: .\__translations\__translations.html:24
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr "Akkauntni faolsizlantirish"
+
+#: .\__translations\__translations.html:25
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr "Akkauntni faolsizlantirish"
+
+#: .\__translations\__translations.html:26
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr "Akkauntni faolsizlantirish"
+
+#: .\__translations\__translations.html:28
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr "Tasdiqlash elektron pochtasini qayta yuboring"
+
+#: .\__translations\__translations.html:29
+msgctxt "male"
+msgid "Resend a confirmation email"
+msgstr "Tasdiqlash elektron pochtasini qayta yuboring"
+
+#: .\__translations\__translations.html:30
+msgctxt "other"
+msgid "Resend a confirmation email"
+msgstr "Tasdiqlash elektron pochtasini qayta yuboring"
+
+#: .\__translations\__translations.html:32
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
+
+#: .\__translations\__translations.html:33
+msgctxt "male"
+msgid "Make this email address primary"
+msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
+
+#: .\__translations\__translations.html:34
+msgctxt "other"
+msgid "Make this email address primary"
+msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
+
+#: .\__translations\__translations.html:36
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+
+#: .\__translations\__translations.html:37
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+
+#: .\__translations\__translations.html:38
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+
+#: .\__translations\__translations.html:40
+msgctxt "female"
+msgid "Delete this email address"
+msgstr "Ushbu elektron pochta manzilini o'chirish"
+
+#: .\__translations\__translations.html:41
+msgctxt "male"
+msgid "Delete this email address"
+msgstr "Ushbu elektron pochta manzilini o'chirish"
+
+#: .\__translations\__translations.html:42
+msgctxt "other"
+msgid "Delete this email address"
+msgstr "Ushbu elektron pochta manzilini o'chirish"
+
+#: .\__translations\__translations.html:44
+msgctxt "female"
+msgid "Add Another"
+msgstr "Yana qo'shish"
+
+#: .\__translations\__translations.html:45
+msgctxt "male"
+msgid "Add Another"
+msgstr "Yana qo'shish"
+
+#: .\__translations\__translations.html:46
+msgctxt "other"
+msgid "Add Another"
+msgstr "Yana qo'shish"
+
+#: .\__translations\__translations.html:48
+msgctxt "female"
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: .\__translations\__translations.html:49
+msgctxt "male"
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: .\__translations\__translations.html:50
+msgctxt "other"
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: .\__translations\__translations.html:52
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Profilingizdagi elektron pochta manzillarining maxfiylik sozlamalarini "
+"o'zgartiring."
+
+#: .\__translations\__translations.html:53
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Profilingizdagi elektron pochta manzillarining maxfiylik sozlamalarini "
+"o'zgartiring."
+
+#: .\__translations\__translations.html:54
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Profilingizdagi elektron pochta manzillarining maxfiylik sozlamalarini "
+"o'zgartiring."
+
+#: .\__translations\__translations.html:56
+msgctxt "female"
+msgid "You're not blocking anybody."
+msgstr "Siz hech kimni bloklamayapsiz."
+
+#: .\__translations\__translations.html:57
+msgctxt "male"
+msgid "You're not blocking anybody."
+msgstr "Siz hech kimni bloklamayapsiz."
+
+#: .\__translations\__translations.html:58
+msgctxt "other"
+msgid "You're not blocking anybody."
+msgstr "Siz hech kimni bloklamayapsiz."
+
+#: .\__translations\__translations.html:60
+msgctxt "female"
+msgid "Report a User"
+msgstr "Foydalanuvchi haqida xabar berish"
+
+#: .\__translations\__translations.html:61
+msgctxt "male"
+msgid "Report a User"
+msgstr "Foydalanuvchi haqida xabar berish"
+
+#: .\__translations\__translations.html:62
+msgctxt "other"
+msgid "Report a User"
+msgstr "Foydalanuvchi haqida xabar berish"
+
+#: .\__translations\__translations.html:72
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
+msgstr "Fikr-mulohazangiz administratorlarga yuborildi."
+
+#: .\__translations\__translations.html:73
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
+msgstr "Fikr-mulohazangiz administratorlarga yuborildi."
+
+#: .\__translations\__translations.html:74
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
+msgstr "Fikr-mulohazangiz administratorlarga yuborildi."
+
+#: .\__translations\__translations.html:76
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s ga xabar yuboring"
+
+#: .\__translations\__translations.html:77
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s ga xabar yuboring"
+
+#: .\__translations\__translations.html:78
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s ga xabar yuboring"
+
+#: .\__translations\__translations.html:80
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "Hammasini oʻqilgan deb belgilash"
+
+#: .\__translations\__translations.html:81
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "Hammasini oʻqilgan deb belgilash"
+
+#: .\__translations\__translations.html:82
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "Hammasini oʻqilgan deb belgilash"
+
+#: .\__translations\__translations.html:84
+msgctxt "female"
+msgid "You:"
+msgstr "Siz"
+
+#: .\__translations\__translations.html:85
+msgctxt "male"
+msgid "You:"
+msgstr "Siz"
+
+#: .\__translations\__translations.html:86
+msgctxt "other"
+msgid "You:"
+msgstr "Siz"
+
+#: .\__translations\__translations.html:88
+msgctxt "female"
+msgid "You have no messages yet."
+msgstr "Sizda hali xabar yo'q."
+
+#: .\__translations\__translations.html:89
+msgctxt "male"
+msgid "You have no messages yet."
+msgstr "Sizda hali xabar yo'q."
+
+#: .\__translations\__translations.html:90
+msgctxt "other"
+msgid "You have no messages yet."
+msgstr "Sizda hali xabar yo'q."
+
+#: .\__translations\__translations.html:92
+msgctxt "female"
+msgid "You blocked "
+msgstr "Siz blokladingiz "
+
+#: .\__translations\__translations.html:93
+msgctxt "male"
+msgid "You blocked "
+msgstr "Siz blokladingiz "
+
+#: .\__translations\__translations.html:94
+msgctxt "other"
+msgid "You blocked "
+msgstr "Siz blokladingiz "
+
+#: .\__translations\__translations.html:96
+msgctxt "female"
+msgid " blocked you."
+msgstr " sizni blokladi."
+
+#: .\__translations\__translations.html:97
+msgctxt "male"
+msgid " blocked you."
+msgstr " sizni blokladi."
+
+#: .\__translations\__translations.html:98
+msgctxt "other"
+msgid " blocked you."
+msgstr " sizni blokladi."
+
+#: .\__translations\__translations.html:100
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Match profiliga ega. %(user_name)s "
+"profilini Speedy Match da ko'ring."
+
+#: .\__translations\__translations.html:101
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Match profiliga ega. %(user_name)s "
+"profilini Speedy Match da ko'ring."
+
+#: .\__translations\__translations.html:102
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Match profiliga ega. %(user_name)s "
+"profilini Speedy Match da ko'ring."
+
+#: .\__translations\__translations.html:104
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Net profiliga ega. %(user_name)s profilini "
+"Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:105
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Net profiliga ega. %(user_name)s profilini "
+"Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:106
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Net profiliga ega. %(user_name)s profilini "
+"Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:108
+msgctxt "female"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Sizda Speedy Net profili ham bor. Profilingizni Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:109
+msgctxt "male"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Sizda Speedy Net profili ham bor. Profilingizni Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:110
+msgctxt "other"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Sizda Speedy Net profili ham bor. Profilingizni Speedy Net da ko'ring."
+
+#: .\__translations\__translations.html:112
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "Do'stlarga qo'shish"
+
+#: .\__translations\__translations.html:113
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "Do'stlarga qo'shish"
+
+#: .\__translations\__translations.html:114
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "Do'stlarga qo'shish"
+
+#: .\__translations\__translations.html:116
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+
+#: .\__translations\__translations.html:117
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+
+#: .\__translations\__translations.html:118
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+
+#: .\__translations\__translations.html:120
+msgctxt "female"
+msgid "Block "
+msgstr "Block "
+
+#: .\__translations\__translations.html:121
+msgctxt "male"
+msgid "Block "
+msgstr "Block "
+
+#: .\__translations\__translations.html:122
+msgctxt "other"
+msgid "Block "
+msgstr "Block "
+
+#: .\__translations\__translations.html:124
+msgctxt "female"
+msgid "Unblock "
+msgstr "Blokdan chiqarish "
+
+#: .\__translations\__translations.html:125
+msgctxt "male"
+msgid "Unblock "
+msgstr "Blokdan chiqarish "
+
+#: .\__translations\__translations.html:126
+msgctxt "other"
+msgid "Unblock "
+msgstr "Blokdan chiqarish "
+
+#: .\__translations\__translations.html:128
+msgctxt "female"
+msgid "Report "
+msgstr "Hisobot "
+
+#: .\__translations\__translations.html:129
+msgctxt "male"
+msgid "Report "
+msgstr "Hisobot "
+
+#: .\__translations\__translations.html:130
+msgctxt "other"
+msgid "Report "
+msgstr "Hisobot "
+
+#: .\__translations\__translations.html:132
+msgctxt "female"
+msgid "Report this photo"
+msgstr "Bu fotosurat haqida xabar bering"
+
+#: .\__translations\__translations.html:133
+msgctxt "male"
+msgid "Report this photo"
+msgstr "Bu fotosurat haqida xabar bering"
+
+#: .\__translations\__translations.html:134
+msgctxt "other"
+msgid "Report this photo"
+msgstr "Bu fotosurat haqida xabar bering"
+
+#: .\__translations\__translations.html:136
+msgctxt "female"
+msgid "Remove Friend"
+msgstr "Do'stni olib tashlash"
+
+#: .\__translations\__translations.html:137
+msgctxt "male"
+msgid "Remove Friend"
+msgstr "Do'stni olib tashlash"
+
+#: .\__translations\__translations.html:138
+msgctxt "other"
+msgid "Remove Friend"
+msgstr "Do'stni olib tashlash"
+
+#: .\__translations\__translations.html:140
+msgctxt "female"
+msgid "Cancel Friendship Request"
+msgstr "Do'stlik so'rovini bekor qilish"
+
+#: .\__translations\__translations.html:141
+msgctxt "male"
+msgid "Cancel Friendship Request"
+msgstr "Do'stlik so'rovini bekor qilish"
+
+#: .\__translations\__translations.html:142
+msgctxt "other"
+msgid "Cancel Friendship Request"
+msgstr "Do'stlik so'rovini bekor qilish"
+
+#: .\__translations\__translations.html:144
+msgctxt "female"
+msgid "Accept"
+msgstr "Qabul qilish"
+
+#: .\__translations\__translations.html:145
+msgctxt "male"
+msgid "Accept"
+msgstr "Qabul qilish"
+
+#: .\__translations\__translations.html:146
+msgctxt "other"
+msgid "Accept"
+msgstr "Qabul qilish"
+
+#: .\__translations\__translations.html:148
+msgctxt "female"
+msgid "Reject"
+msgstr "Rad etish"
+
+#: .\__translations\__translations.html:149
+msgctxt "male"
+msgid "Reject"
+msgstr "Rad etish"
+
+#: .\__translations\__translations.html:150
+msgctxt "other"
+msgid "Reject"
+msgstr "Rad etish"
+
+#: .\__translations\__translations.html:152
+msgctxt "female"
+msgid "Accept Friendship Request"
+msgstr "Do'stlik so'rovini qabul qiling"
+
+#: .\__translations\__translations.html:153
+msgctxt "male"
+msgid "Accept Friendship Request"
+msgstr "Do'stlik so'rovini qabul qiling"
+
+#: .\__translations\__translations.html:154
+msgctxt "other"
+msgid "Accept Friendship Request"
+msgstr "Do'stlik so'rovini qabul qiling"
+
+#: .\__translations\__translations.html:156
+msgctxt "female"
+msgid "Reject Friendship Request"
+msgstr "Do'stlik so'rovini rad etish"
+
+#: .\__translations\__translations.html:157
+msgctxt "male"
+msgid "Reject Friendship Request"
+msgstr "Do'stlik so'rovini rad etish"
+
+#: .\__translations\__translations.html:158
+msgctxt "other"
+msgid "Reject Friendship Request"
+msgstr "Do'stlik so'rovini rad etish"
+
+#: .\__translations\__translations.html:160
+msgctxt "female"
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: .\__translations\__translations.html:161
+msgctxt "male"
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: .\__translations\__translations.html:162
+msgctxt "other"
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: .\__translations\__translations.html:164
+msgctxt "female"
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: .\__translations\__translations.html:165
+msgctxt "male"
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: .\__translations\__translations.html:166
+msgctxt "other"
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: .\__translations\__translations.html:168
+msgctxt "female"
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\__translations\__translations.html:169
+msgctxt "male"
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\__translations\__translations.html:170
+msgctxt "other"
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\__translations\__translations.html:172
+msgctxt "female"
+msgid "See All"
+msgstr "Barchasini ko'rish"
+
+#: .\__translations\__translations.html:173
+msgctxt "male"
+msgid "See All"
+msgstr "Barchasini ko'rish"
+
+#: .\__translations\__translations.html:174
+msgctxt "other"
+msgid "See All"
+msgstr "Barchasini ko'rish"
+
+#: .\__translations\__translations.html:176
+msgctxt "female"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net hisobingiz faol emas. Uni faollashtirish uchun ushbu sahifaga "
+"kiring."
+
+#: .\__translations\__translations.html:177
+msgctxt "male"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net hisobingiz faol emas. Uni faollashtirish uchun ushbu sahifaga "
+"kiring."
+
+#: .\__translations\__translations.html:178
+msgctxt "other"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net hisobingiz faol emas. Uni faollashtirish uchun ushbu sahifaga "
+"kiring."
+
+#: .\__translations\__translations.html:180
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s ga xush kelibsiz"
+
+#: .\__translations\__translations.html:181
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s ga xush kelibsiz"
+
+#: .\__translations\__translations.html:182
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s ga xush kelibsiz"
+
+#: .\__translations\__translations.html:184
+msgctxt "female"
+msgid "has sent you a message."
+msgstr "sizga xabar yubordi."
+
+#: .\__translations\__translations.html:185
+msgctxt "male"
+msgid "has sent you a message."
+msgstr "sizga xabar yubordi."
+
+#: .\__translations\__translations.html:186
+msgctxt "other"
+msgid "has sent you a message."
+msgstr "sizga xabar yubordi."
+
+#: .\__translations\__translations.html:188
+msgctxt "female"
+msgid "Read it:"
+msgstr "Uni o'qing:"
+
+#: .\__translations\__translations.html:189
+msgctxt "male"
+msgid "Read it:"
+msgstr "Uni o'qing:"
+
+#: .\__translations\__translations.html:190
+msgctxt "other"
+msgid "Read it:"
+msgstr "Uni o'qing:"
+
+#: .\__translations\__translations.html:192
+#, python-format
+msgctxt "female"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "%(site_name)s da elektron pochta manzilingizni tasdiqlang"
+
+#: .\__translations\__translations.html:193
+#, python-format
+msgctxt "male"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "%(site_name)s da elektron pochta manzilingizni tasdiqlang"
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "other"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "%(site_name)s da elektron pochta manzilingizni tasdiqlang"
+
+#: .\__translations\__translations.html:196
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "Hisobingizni faollashtirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:197
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "Hisobingizni faollashtirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:198
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "Hisobingizni faollashtirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:200
+msgctxt "female"
+msgid "Use this link to verify your email address:"
+msgstr ""
+"Elektron pochta manzilingizni tasdiqlash uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:201
+msgctxt "male"
+msgid "Use this link to verify your email address:"
+msgstr ""
+"Elektron pochta manzilingizni tasdiqlash uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:202
+msgctxt "other"
+msgid "Use this link to verify your email address:"
+msgstr ""
+"Elektron pochta manzilingizni tasdiqlash uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:204
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "Parolingizni o'zgartirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:205
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "Parolingizni o'zgartirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:206
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "Parolingizni o'zgartirish uchun ushbu havoladan foydalaning:"
+
+#: .\__translations\__translations.html:208
+msgctxt "female"
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: .\__translations\__translations.html:209
+msgctxt "male"
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: .\__translations\__translations.html:210
+msgctxt "other"
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Siz %(site_name)s’dan ushbu turdagi bildirishnomalarni olish uchun obuna "
+"bo‘lgansiz. Bildirishnoma sozlamalarini o‘zgartirish yoki undan voz kechish "
+"uchun ushbu sahifaga kiring:"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Siz %(site_name)s’dan ushbu turdagi bildirishnomalarni olish uchun obuna "
+"bo‘lgansiz. Bildirishnoma sozlamalarini o‘zgartirish yoki undan voz kechish "
+"uchun ushbu sahifaga kiring:"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Siz %(site_name)s’dan ushbu turdagi bildirishnomalarni olish uchun obuna "
+"bo‘lgansiz. Bildirishnoma sozlamalarini o‘zgartirish yoki undan voz kechish "
+"uchun ushbu sahifaga kiring:"
+
+#: .\__translations\__translations.py:7
+msgid "Enter a valid email address."
+msgstr "Amaldagi email manzilingizni kiriting."
+
+#: .\__translations\__translations.py:8
+msgid "Email address"
+msgstr "Elektron pochta manzili"
+
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
+msgid "email address"
+msgstr "elektron pochta manzili"
+
+#: .\__translations\__translations.py:10
+msgid "Email address:"
+msgstr "Elektron pochta manzili:"
+
+#: .\__translations\__translations.py:11
+#: .\templates\profiles\user_info_widget.html:70
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: .\__translations\__translations.py:12
+msgid "Value must be valid JSON."
+msgstr "Qiymat haqiqiy JSON bo'lishi kerak."
+
+#: .\__translations\__translations.py:13
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Iltimos, to'g'ri %(username)s va parolni kiriting. Ikkala maydon ham katta-"
+"kichik harflarga sezgir bo'lishi mumkinligini unutmang."
+
+#: .\__translations\__translations.py:17
+msgid "Message"
+msgstr "Xabar"
+
+#: .\__translations\__translations.py:19
+msgid "Friendship Request"
+msgstr "Do'stlik so'rovi"
+
+#: .\__translations\__translations.py:20
+msgid "Friendship Requests"
+msgstr "Do'stlik so'rovlari"
+
+#: .\__translations\__translations.py:22
+msgid "Friend"
+msgstr "Do'st"
+
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.py:25
+msgid "Following Relationship"
+msgstr "Keyingi munosabatlar"
+
+#: .\__translations\__translations.py:26
+msgid "Following Relationships"
+msgstr "Munosabatlar"
+
+#: .\__translations\__translations.py:28
+msgid "Blocker Relationship"
+msgstr "Bloker munosabatlari"
+
+#: .\__translations\__translations.py:29
+msgid "Blocked Relationships"
+msgstr "Bloklangan munosabatlar"
+
+#: .\__translations\__translations.py:34
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+"Roʻyxatda %(show_value)d elementlari mavjud, ulardan koʻpi %(limit_value)d "
+"boʻlmasligi kerak."
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "username (slug)"
+msgstr "foydalanuvchi nomi (slug)"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "username (slug)"
+msgstr "foydalanuvchi nomi (slug)"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "username (slug)"
+msgstr "foydalanuvchi nomi (slug)"
+
+#: .\__translations\__translations.py:45
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Profilni yangilash"
+
+#: .\__translations\__translations.py:46
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Profilni yangilash"
+
+#: .\__translations\__translations.py:47
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Profilni yangilash"
+
+#: .\__translations\__translations.py:49
+msgctxt "female"
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: .\__translations\__translations.py:50
+msgctxt "male"
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: .\__translations\__translations.py:51
+msgctxt "other"
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: .\__translations\__translations.py:53
+msgctxt "female"
+msgid "You can't change your username."
+msgstr "Foydalanuvchi nomingizni o'zgartira olmaysiz."
+
+#: .\__translations\__translations.py:54
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Foydalanuvchi nomingizni o'zgartira olmaysiz."
+
+#: .\__translations\__translations.py:55
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "Foydalanuvchi nomingizni o'zgartira olmaysiz."
+
+#: .\__translations\__translations.py:57
+#, python-brace-format
+msgctxt "female"
+msgid "Activate your {site_name} account"
+msgstr "{site_name} hisobingizni faollashtiring"
+
+#: .\__translations\__translations.py:58
+#, python-brace-format
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "{site_name} hisobingizni faollashtiring"
+
+#: .\__translations\__translations.py:59
+#, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "{site_name} hisobingizni faollashtiring"
+
+#: .\__translations\__translations.py:61
+#, python-brace-format
+msgctxt "female"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} hisobingizni o'chiring"
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} hisobingizni o'chiring"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} hisobingizni o'chiring"
+
+#: .\__translations\__translations.py:65
+msgctxt "female"
+msgid "Add"
+msgstr "Qo'shish"
+
+#: .\__translations\__translations.py:66
+msgctxt "male"
+msgid "Add"
+msgstr "Qo'shish"
+
+#: .\__translations\__translations.py:67
+msgctxt "other"
+msgid "Add"
+msgstr "Qo'shish"
+
+#: .\__translations\__translations.py:69
+msgctxt "female"
+msgid "Where do I live?"
+msgstr "Men qayerda yashayman'"
+
+#: .\__translations\__translations.py:70
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Men qayerda yashayman'"
+
+#: .\__translations\__translations.py:71
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "Men qayerda yashayman'"
+
+#: .\__translations\__translations.py:73
+msgctxt "female"
+msgid "Where do you live?"
+msgstr "Qayerda yashaysiz'"
+
+#: .\__translations\__translations.py:74
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "Qayerda yashaysiz'"
+
+#: .\__translations\__translations.py:75
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "Qayerda yashaysiz'"
+
+#: .\__translations\__translations.py:77
+msgctxt "female"
+msgid "Please write where you live."
+msgstr "Iltimos, qayerda yashashingizni yozing."
+
+#: .\__translations\__translations.py:78
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Iltimos, qayerda yashashingizni yozing."
+
+#: .\__translations\__translations.py:79
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "Iltimos, qayerda yashashingizni yozing."
+
+#: .\__translations\__translations.py:81
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (faqat o'simliklar va zamburug'lar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:82
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (faqat o'simliklar va zamburug'lar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:83
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (faqat o'simliklar va zamburug'lar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:85
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (baliq va go'sht yemaydi)"
+
+#: .\__translations\__translations.py:86
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (baliq va go'sht yemaydi)"
+
+#: .\__translations\__translations.py:87
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (baliq va go'sht yemaydi)"
+
+#: .\__translations\__translations.py:89
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "Karnist (hayvonlar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:90
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Karnist (hayvonlar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:91
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Karnist (hayvonlar bilan oziqlanadi)"
+
+#: .\__translations\__translations.py:93
+msgctxt "female"
+msgid "Vegan"
+msgstr "Vegan"
+
+#: .\__translations\__translations.py:94
+msgctxt "male"
+msgid "Vegan"
+msgstr "Vegan"
+
+#: .\__translations\__translations.py:95
+msgctxt "other"
+msgid "Vegan"
+msgstr "Vegan"
+
+#: .\__translations\__translations.py:97
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "Vegetarian"
+
+#: .\__translations\__translations.py:98
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Vegetarian"
+
+#: .\__translations\__translations.py:99
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "Vegetarian"
+
+#: .\__translations\__translations.py:101
+msgctxt "female"
+msgid "Carnist"
+msgstr "Karnist"
+
+#: .\__translations\__translations.py:102
+msgctxt "male"
+msgid "Carnist"
+msgstr "Karnist"
+
+#: .\__translations\__translations.py:103
+msgctxt "other"
+msgid "Carnist"
+msgstr "Karnist"
+
+#: .\__translations\__translations.py:105
+msgctxt "female"
+msgid "Not smoking"
+msgstr "Chekish taqiqlangan"
+
+#: .\__translations\__translations.py:106
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Chekish taqiqlangan"
+
+#: .\__translations\__translations.py:107
+msgctxt "other"
+msgid "Not smoking"
+msgstr "Chekish taqiqlangan"
+
+#: .\__translations\__translations.py:109
+msgctxt "female"
+msgid "Smoking occasionally"
+msgstr "Vaqti-vaqti bilan chekish"
+
+#: .\__translations\__translations.py:110
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Vaqti-vaqti bilan chekish"
+
+#: .\__translations\__translations.py:111
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Vaqti-vaqti bilan chekish"
+
+#: .\__translations\__translations.py:113
+msgctxt "female"
+msgid "Smoking"
+msgstr "Chekish"
+
+#: .\__translations\__translations.py:114
+msgctxt "male"
+msgid "Smoking"
+msgstr "Chekish"
+
+#: .\__translations\__translations.py:115
+msgctxt "other"
+msgid "Smoking"
+msgstr "Chekish"
+
+#: .\__translations\__translations.py:117
+msgctxt "female"
+msgid "Single"
+msgstr "Yagona"
+
+#: .\__translations\__translations.py:118
+msgctxt "male"
+msgid "Single"
+msgstr "Yagona"
+
+#: .\__translations\__translations.py:119
+msgctxt "other"
+msgid "Single"
+msgstr "Yagona"
+
+#: .\__translations\__translations.py:121
+msgctxt "female"
+msgid "Divorced"
+msgstr "Ajrashgan"
+
+#: .\__translations\__translations.py:122
+msgctxt "male"
+msgid "Divorced"
+msgstr "Ajrashgan"
+
+#: .\__translations\__translations.py:123
+msgctxt "other"
+msgid "Divorced"
+msgstr "Ajrashgan"
+
+#: .\__translations\__translations.py:125
+msgctxt "female"
+msgid "Widowed"
+msgstr "Beva"
+
+#: .\__translations\__translations.py:126
+msgctxt "male"
+msgid "Widowed"
+msgstr "Beva"
+
+#: .\__translations\__translations.py:127
+msgctxt "other"
+msgid "Widowed"
+msgstr "Beva"
+
+#: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "In a relationship"
+msgstr "Ushrashmoqda"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "In a relationship"
+msgstr "Ushrashmoqda"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "In a relationship"
+msgstr "Ushrashmoqda"
+
+#: .\__translations\__translations.py:133
+msgctxt "female"
+msgid "In an open relationship"
+msgstr "Ochiq hikoh munosabatlari"
+
+#: .\__translations\__translations.py:134
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "Ochiq hikoh munosabatlari"
+
+#: .\__translations\__translations.py:135
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "Ochiq hikoh munosabatlari"
+
+#: .\__translations\__translations.py:137
+msgctxt "female"
+msgid "It's complicated"
+msgstr "Bu murakkab"
+
+#: .\__translations\__translations.py:138
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Bu murakkab"
+
+#: .\__translations\__translations.py:139
+msgctxt "other"
+msgid "It's complicated"
+msgstr "Bu murakkab"
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
+msgid "Separated"
+msgstr "Ajratilgan"
+
+#: .\__translations\__translations.py:142
+msgctxt "male"
+msgid "Separated"
+msgstr "Ajratilgan"
+
+#: .\__translations\__translations.py:143
+msgctxt "other"
+msgid "Separated"
+msgstr "Ajratilgan"
+
+#: .\__translations\__translations.py:145
+msgctxt "female"
+msgid "Engaged"
+msgstr "Ulashilgan"
+
+#: .\__translations\__translations.py:146
+msgctxt "male"
+msgid "Engaged"
+msgstr "Ulashilgan"
+
+#: .\__translations\__translations.py:147
+msgctxt "other"
+msgid "Engaged"
+msgstr "Ulashilgan"
+
+#: .\__translations\__translations.py:149
+msgctxt "female"
+msgid "Married"
+msgstr "Uylangan/turmushga chiqqan"
+
+#: .\__translations\__translations.py:150
+msgctxt "male"
+msgid "Married"
+msgstr "Uylangan/turmushga chiqqan"
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "Married"
+msgstr "Uylangan/turmushga chiqqan"
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
+msgid "Your new password has been saved."
+msgstr "Yangi parolingiz saqlandi."
+
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Yangi parolingiz saqlandi."
+
+#: .\__translations\__translations.py:155
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Yangi parolingiz saqlandi."
+
+#: .\__translations\__translations.py:157
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
+"istalgan vaqtda qayta faollashtirishingiz mumkin."
+
+#: .\__translations\__translations.py:158
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
+"istalgan vaqtda qayta faollashtirishingiz mumkin."
+
+#: .\__translations\__translations.py:159
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
+"istalgan vaqtda qayta faollashtirishingiz mumkin."
+
+#: .\__translations\__translations.py:161
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
+
+#: .\__translations\__translations.py:162
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
+
+#: .\__translations\__translations.py:165
+msgctxt "female"
+msgid "You've already confirmed this email address."
+msgstr "Siz allaqachon ushbu elektron pochta manzilini tasdiqlagansiz."
+
+#: .\__translations\__translations.py:166
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Siz allaqachon ushbu elektron pochta manzilini tasdiqlagansiz."
+
+#: .\__translations\__translations.py:167
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Siz allaqachon ushbu elektron pochta manzilini tasdiqlagansiz."
+
+#: .\__translations\__translations.py:169
+msgctxt "female"
+msgid "You've confirmed your email address."
+msgstr "Siz elektron pochta manzilingizni tasdiqladingiz."
+
+#: .\__translations\__translations.py:170
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Siz elektron pochta manzilingizni tasdiqladingiz."
+
+#: .\__translations\__translations.py:171
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Siz elektron pochta manzilingizni tasdiqladingiz."
+
+#: .\__translations\__translations.py:173
+msgctxt "female"
+msgid "Send"
+msgstr "Yuborish"
+
+#: .\__translations\__translations.py:174
+msgctxt "male"
+msgid "Send"
+msgstr "Yuborish"
+
+#: .\__translations\__translations.py:175
+msgctxt "other"
+msgid "Send"
+msgstr "Yuborish"
+
+#: .\__translations\__translations.py:177
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Sizda allaqachon {0} do'stlaringiz bor. Speedy Net’da {1}’dan ortiq "
+"do'stlaringiz bo'la olmaydi. Davom etishdan oldin do'stlaringizni olib "
+"tashlang."
+
+#: .\__translations\__translations.py:178
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Sizda allaqachon {0} do'stlaringiz bor. Speedy Net’da {1}’dan ortiq "
+"do'stlaringiz bo'la olmaydi. Davom etishdan oldin do'stlaringizni olib "
+"tashlang."
+
+#: .\__translations\__translations.py:179
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Sizda allaqachon {0} do'stlaringiz bor. Speedy Net’da {1}’dan ortiq "
+"do'stlaringiz bo'la olmaydi. Davom etishdan oldin do'stlaringizni olib "
+"tashlang."
+
+#: .\__translations\__translations.py:181
+#, python-brace-format
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:183
+#, python-brace-format
+msgctxt "female_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:184
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:186
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:187
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:188
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da "
+"{1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan "
+"do'stlarini olib tashlashlarini so'rang."
+
+#: .\__translations\__translations.py:191
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Siz o'zingiz bilan do'st bo'la olmaysiz."
+
+#: .\__translations\__translations.py:192
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Siz o'zingiz bilan do'st bo'la olmaysiz."
+
+#: .\__translations\__translations.py:193
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Siz o'zingiz bilan do'st bo'la olmaysiz."
+
+#: .\__translations\__translations.py:195
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr "Siz allaqachon ushbu foydalanuvchidan do'stlik so'ragansiz."
+
+#: .\__translations\__translations.py:196
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Siz allaqachon ushbu foydalanuvchidan do'stlik so'ragansiz."
+
+#: .\__translations\__translations.py:197
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Siz allaqachon ushbu foydalanuvchidan do'stlik so'ragansiz."
+
+#: .\__translations\__translations.py:199
+msgctxt "female"
+msgid "This user already requested friendship from you."
+msgstr "Bu foydalanuvchi sizdan allaqachon do'stlik so'ragan."
+
+#: .\__translations\__translations.py:200
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Bu foydalanuvchi sizdan allaqachon do'stlik so'ragan."
+
+#: .\__translations\__translations.py:201
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Bu foydalanuvchi sizdan allaqachon do'stlik so'ragan."
+
+#: .\__translations\__translations.py:203
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:204
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:205
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:206
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:207
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:208
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:209
+msgctxt "other_female"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:210
+msgctxt "other_male"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:211
+msgctxt "other_other"
+msgid "You already are friends with this user."
+msgstr "Siz allaqachon bu foydalanuvchi bilan do'stsiz."
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr "Siz do'stlik so'rovingizni bekor qildingiz."
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Siz do'stlik so'rovingizni bekor qildingiz."
+
+#: .\__translations\__translations.py:215
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Siz do'stlik so'rovingizni bekor qildingiz."
+
+#: .\__translations\__translations.py:217
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Siz bu foydalanuvchini do'stlaringiz ro'yxatidan olib tashladingiz."
+
+#: .\__translations\__translations.py:218
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Siz bu foydalanuvchini do'stlaringiz ro'yxatidan olib tashladingiz."
+
+#: .\__translations\__translations.py:219
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Siz bu foydalanuvchini do'stlaringiz ro'yxatidan olib tashladingiz."
+
+#: .\__translations\__translations.py:221
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name} ga xush kelibsiz!"
+
+#: .\__translations\__translations.py:222
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name} ga xush kelibsiz!"
+
+#: .\__translations\__translations.py:223
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name} ga xush kelibsiz!"
+
+#: .\__translations\__translations.py:225
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name} ga xush kelibsiz! Hisobingiz endi faollashtirildi."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name} ga xush kelibsiz! Hisobingiz endi faollashtirildi."
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name} ga xush kelibsiz! Hisobingiz endi faollashtirildi."
+
+#: .\__translations\__translations.py:229
+msgctxt "female"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.py:230
+msgctxt "male"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.py:231
+msgctxt "other"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Saytning spam xabarlarni yuborishda suiiste'mol qilinishi sababli, biz bir "
+"kunda saytning boshqa a'zolariga yuborilishi mumkin bo'lgan xabarlar sonini "
+"cheklashga majbur bo'ldik. Iltimos, ertaga qayta urinib ko'ring. Iltimos, "
+"Speedy Net dan foydalanib, spam xabarlarni yoki bir xil tarkibdagi "
+"xabarlarni ko'p sonli odamlarga yuborishingiz mumkin emasligini unutmang."
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Saytning spam xabarlarni yuborishda suiiste'mol qilinishi sababli, biz bir "
+"kunda saytning boshqa a'zolariga yuborilishi mumkin bo'lgan xabarlar sonini "
+"cheklashga majbur bo'ldik. Iltimos, ertaga qayta urinib ko'ring. Iltimos, "
+"Speedy Net dan foydalanib, spam xabarlarni yoki bir xil tarkibdagi "
+"xabarlarni ko'p sonli odamlarga yuborishingiz mumkin emasligini unutmang."
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Saytning spam xabarlarni yuborishda suiiste'mol qilinishi sababli, biz bir "
+"kunda saytning boshqa a'zolariga yuborilishi mumkin bo'lgan xabarlar sonini "
+"cheklashga majbur bo'ldik. Iltimos, ertaga qayta urinib ko'ring. Iltimos, "
+"Speedy Net dan foydalanib, spam xabarlarni yoki bir xil tarkibdagi "
+"xabarlarni ko'p sonli odamlarga yuborishingiz mumkin emasligini unutmang."
+
+#: .\__translations\__translations.py:241
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:242
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:243
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:244
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:246
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:247
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:248
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:249
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Bu foydalanuvchi sizning profilingizga mos kelmayapti, lekin siz uning "
+"Speedy Net profiliga tashrif buyurishingiz mumkin. Speedy Net saytida "
+"foydalanuvchi profilini ko'ring."
+
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profil rasmingiz shaffof bo'lmasligi kerak. Iltimos, shaffof bo'lmagan "
+"rasmni yuklang."
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profil rasmingiz shaffof bo'lmasligi kerak. Iltimos, shaffof bo'lmagan "
+"rasmni yuklang."
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Profil rasmingiz shaffof bo'lmasligi kerak. Iltimos, shaffof bo'lmagan "
+"rasmni yuklang."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core akkauntlari"
+
+#: .\accounts\fields.py:12
+msgid "Only me"
+msgstr "Faqat men"
+
+#: .\accounts\fields.py:13
+msgid "Me and my friends"
+msgstr "Men va do'stlarim"
+
+#: .\accounts\fields.py:15
+msgid "Anyone"
+msgstr "Har kim"
+
+#: .\accounts\forms.py:66
+msgid "Last name (optional)"
+msgstr "Familiya (ixtiyoriy)"
+
+#: .\accounts\forms.py:130
+msgid "Your email"
+msgstr "Email manzilingiz"
+
+#: .\accounts\forms.py:131
+msgid "New password"
+msgstr "Yangi parol"
+
+#: .\accounts\forms.py:139
+msgid "New username"
+msgstr "Yangi foydalanuvchi nomi"
+
+#: .\accounts\forms.py:142
+msgid "Create an account"
+msgstr "Roʻyxatdan oʻtish"
+
+#: .\accounts\forms.py:167
+msgid "Update your profile picture"
+msgstr "Profilni yangilash"
+
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
+msgid "A profile picture is required."
+msgstr "Profil rasmi talab qilinadi"
+
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+msgid "Email or Username"
+msgstr "Elektron pochta yoki foydalanuvchi nomi"
+
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
+msgid "Login"
+msgstr "Tizimga kirish"
+
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
+msgid "Forgot your password?"
+msgstr "Parolni unutdingizmi'"
+
+#: .\accounts\forms.py:335
+msgid "Submit"
+msgstr "Yuborish"
+
+#: .\accounts\forms.py:437
+msgid "Your password"
+msgstr "Parolingiz"
+
+#: .\accounts\forms.py:449
+msgid "Invalid password."
+msgstr "Noto'g'ri parol."
+
+#: .\accounts\models.py:178
+msgid "username"
+msgstr "Foydalanuvchi nomi"
+
+#: .\accounts\models.py:178 .\accounts\models.py:179
+#: .\accounts\validators.py:21
+msgid "This username is already taken."
+msgstr "Bu foydalanuvchi nomi allaqachon band."
+
+#: .\accounts\models.py:179
+msgid "username (slug)"
+msgstr "foydalanuvchi nomi (slug)"
+
+#: .\accounts\models.py:180
+msgid "photo"
+msgstr "SURAT"
+
+#: .\accounts\models.py:181
+msgid "Special username"
+msgstr "Maxsus foydalanuvchi nomi"
+
+#: .\accounts\models.py:221 .\messages\models.py:185
+msgid "entity"
+msgstr "OxiriStencils"
+
+#: .\accounts\models.py:222
+msgid "entities"
+msgstr "Korxonalar"
+
+#: .\accounts\models.py:249
+msgid "Slug does not parse to username."
+msgstr "Slug foydalanuvchi nomini tahlil qilmaydi."
+
+#: .\accounts\models.py:253
+msgid "Username is required."
+msgstr "Foydalanuvchi ismi talab qilinadi"
+
+#: .\accounts\models.py:298
+msgid "name"
+msgstr "nomi"
+
+#: .\accounts\models.py:329
+msgid "description"
+msgstr "Tavsif"
+
+#: .\accounts\models.py:473
+msgid "Female"
+msgstr "Ayol"
+
+#: .\accounts\models.py:474
+msgid "Male"
+msgstr "Erkak"
+
+#: .\accounts\models.py:475
+msgid "Other"
+msgstr "Boshqa"
+
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+msgid "Unknown"
+msgstr "Noma'lum"
+
+#: .\accounts\models.py:489
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (faqat o'simliklar va zamburug'lar bilan oziqlanadi)"
+
+#: .\accounts\models.py:490
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (baliq va go'sht yemaydi)"
+
+#: .\accounts\models.py:491
+msgid "Carnist (eats animals)"
+msgstr "Karnist (hayvonlar bilan oziqlanadi)"
+
+#: .\accounts\models.py:504
+msgid "Not smoking"
+msgstr "Chekish taqiqlangan"
+
+#: .\accounts\models.py:505
+msgid "Smoking occasionally"
+msgstr "Vaqti-vaqti bilan chekish"
+
+#: .\accounts\models.py:506
+msgid "Smoking"
+msgstr "Chekish"
+
+#: .\accounts\models.py:525
+msgid "Single"
+msgstr "Yagona"
+
+#: .\accounts\models.py:526
+msgid "Divorced"
+msgstr "Ajrashgan"
+
+#: .\accounts\models.py:527
+msgid "Widowed"
+msgstr "Beva"
+
+#: .\accounts\models.py:528
+msgid "In a relationship"
+msgstr "Ushrashmoqda"
+
+#: .\accounts\models.py:529
+msgid "In an open relationship"
+msgstr "Ochiq hikoh munosabatlari"
+
+#: .\accounts\models.py:530
+msgid "It's complicated"
+msgstr "Bu murakkab"
+
+#: .\accounts\models.py:531
+msgid "Separated"
+msgstr "Ajratilgan"
+
+#: .\accounts\models.py:532
+msgid "Engaged"
+msgstr "Ulashilgan"
+
+#: .\accounts\models.py:533
+msgid "Married"
+msgstr "Uylangan/turmushga chiqqan"
+
+#: .\accounts\models.py:542
+msgid "Notify me"
+msgstr "eslatib qo'yish"
+
+#: .\accounts\models.py:543
+msgid "Don't notify me"
+msgstr "Menga xabar bermang"
+
+#: .\accounts\models.py:590
+msgid "first name"
+msgstr "Ism"
+
+#: .\accounts\models.py:593
+msgid "last name"
+msgstr "familiycui"
+
+#: .\accounts\models.py:595
+msgid "I am"
+msgstr "Men"
+
+#: .\accounts\models.py:596
+msgid "date of birth"
+msgstr "Tug'ilgan sanasi"
+
+#: .\accounts\models.py:597
+msgid "diet"
+msgstr "Parhez"
+
+#: .\accounts\models.py:598
+msgid "smoking status"
+msgstr "chekish holati"
+
+#: .\accounts\models.py:599
+msgid "relationship status"
+msgstr "munosabatlar holati"
+
+#: .\accounts\models.py:601
+msgid "Where do I live?"
+msgstr "Men qayerda yashayman'"
+
+#: .\accounts\models.py:608
+msgid "Who can view my birth month and day"
+msgstr "Tug'ilgan oyim va kunimni kim ko'ra oladi"
+
+#: .\accounts\models.py:609
+msgid "Who can view my birth year"
+msgstr "Tug'ilgan yilimni kim ko'ra oladi"
+
+#: .\accounts\models.py:610
+msgid "On new messages"
+msgstr "Yangi xabarlar haqida"
+
+#: .\accounts\models.py:616
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "Oxirgi ishlatilgan IP-manzil https://ipapi.com/ vaqti"
+
+#: .\accounts\models.py:617
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "Oxirgi IP-manzil https://ipapi.com/ natijalari bo'yicha ishlatilgan"
+
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+msgid "user"
+msgstr "foydalanuvchi"
+
+#: .\accounts\models.py:824
+msgid "users"
+msgstr "foydalanuvchilar"
+
+#: .\accounts\models.py:870
+msgid "Superuser must be equal to staff."
+msgstr "Superuser xodimlarga teng bo'lishi kerak."
+
+#: .\accounts\models.py:1278
+msgid "email"
+msgstr "Elektron pochta"
+
+#: .\accounts\models.py:1279
+msgid "is confirmed"
+msgstr "tasdiqlangan"
+
+#: .\accounts\models.py:1280
+msgid "is primary"
+msgstr "Boshlang’ich"
+
+#: .\accounts\models.py:1281
+msgid "confirmation token"
+msgstr "tasdiqlash tokeni"
+
+#: .\accounts\models.py:1282
+msgid "confirmation sent"
+msgstr "Tasdiqlash yuborildi"
+
+#: .\accounts\models.py:1283
+msgid "Who can see this email"
+msgstr "Bu elektron pochtani kim ko'ra oladi"
+
+#: .\accounts\models.py:1294
+msgid "email addresses"
+msgstr "Elektron pochtalar:"
+
+#: .\accounts\models.py:1377
+msgid "User"
+msgstr "Foydalanuvchi"
+
+#: .\accounts\models.py:1378
+msgid "last visit"
+msgstr "Oxirgi Tashrif"
+
+#: .\accounts\models.py:1390
+msgid "Today"
+msgstr "Bugun"
+
+#: .\accounts\models.py:1392
+msgid "Yesterday"
+msgstr "Kecha"
+
+#: .\accounts\models.py:1394
+#, python-brace-format
+msgid "On {date} ({timesince_ago})"
+msgstr "{date} ({timesince_ago}) da"
+
+#: .\accounts\models.py:1396
+#, python-brace-format
+msgid "{timesince} ago"
+msgstr "{timesince} oldin"
+
+#: .\accounts\validators.py:39
+msgid ""
+"Username must start with 4 or more letters, and may contain letters, digits "
+"or dashes."
+msgstr ""
+"Foydalanuvchi nomi 4 yoki undan ortiq harf bilan boshlanishi kerak va "
+"harflar, raqamlar yoki tirelardan iborat bo'lishi mumkin."
+
+#: .\accounts\validators.py:41
+msgid ""
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
+msgstr ""
+"Foydalanuvchi nomi 4 yoki undan ortiq harf bilan boshlanishi kerak, undan "
+"keyin istalgan miqdordagi raqamlar bo'lishi mumkin. So'zlar orasiga tire "
+"qo'yishingiz mumkin."
+
+#: .\accounts\validators.py:47
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Foydalanuvchi nomida kamida %(limit_value)d harf-raqamli belgilar bo'lishi "
+"kerak (u %(show_value)d ga ega)."
+
+#: .\accounts\validators.py:58
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d harf-raqamli belgilar "
+"bo'lishi kerak (u %(show_value)d ga ega)."
+
+#: .\accounts\validators.py:69
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Foydalanuvchi nomi kamida %(limit_value)d belgilardan iborat bo'lishi kerak "
+"(u %(show_value)d ga ega)."
+
+#: .\accounts\validators.py:80
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d belgilar bo'lishi kerak (u "
+"%(show_value)d ga ega)."
+
+#: .\accounts\validators.py:104
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Bu parol juda qisqa. Unda kamida %(min_length)d belgilar bo'lishi kerak."
+
+#: .\accounts\validators.py:114
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] ""
+"Parolingiz kamida %(min_length)d belgilardan iborat bo'lishi kerak."
+
+#: .\accounts\validators.py:135
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
+msgstr[0] ""
+"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d belgi bo'lishi kerak."
+
+#: .\accounts\validators.py:145
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] ""
+"Parolingiz eng ko'pi bilan %(max_length)d belgidan iborat bo'lishi kerak."
+
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Parolingizda kamida %(min_unique_characters)d noyob belgilar bo'lishi kerak."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
+msgid "This field cannot be null."
+msgstr "Bu maydon nolga teng bo'lmasligi kerak."
+
+#: .\accounts\validators.py:214
+msgid "This field cannot be blank."
+msgstr "Bu maydon bo'sh bo'lishi mumkin emas."
+
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
+msgid "Enter a valid date."
+msgstr "Yaroqli sanani kiriting."
+
+#: .\accounts\validators.py:246
+msgid "This email is already in use."
+msgstr "Bu elektron pochta allaqachon ishlatilmoqda."
+
+#: .\accounts\validators.py:257
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
+msgstr ""
+"Bu rasm faylining hajmi juda katta. Ruxsat etilgan maksimal fayl hajmi 30 "
+"MB."
+
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
+msgstr ""
+"Profil rasmingiz uchun ushbu formatdan foydalana olmaysiz. Faqat JPEG yoki "
+"PNG formatlari qabul qilinadi."
+
+#: .\accounts\views.py:299
+msgid "Invalid confirmation link."
+msgstr "Tasdiqlash havolasi noto'g'ri."
+
+#: .\accounts\views.py:324 .\accounts\views.py:340
+#, python-brace-format
+msgid "A confirmation message was sent to {email_address}"
+msgstr "Tasdiqlash xabari {email_address} ga yuborildi"
+
+#: .\accounts\views.py:355
+msgid "The email address was deleted."
+msgstr "Elektron pochta manzili o'chirib tashlandi."
+
+#: .\accounts\views.py:371
+msgid "You have made this email address primary."
+msgstr "Siz ushbu elektron pochta manzilini asosiy qilib belgiladingiz."
+
+#: .\admin\views.py:72
+#, python-brace-format
+msgid ""
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
+"entered the site in the last month, "
+"{total_number_of_members_in_the_last_four_months} members entered the site "
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
+msgstr ""
+"Admin: Saytdagi a'zolarning umumiy soni {total_number_of_members} bo'lib, "
+"ulardan {total_number_of_members_in_the_last_week} a'zolari saytga so'nggi "
+"haftada, {total_number_of_members_in_the_last_month} a'zolari saytga so'nggi"
+" oyda, {total_number_of_members_in_the_last_four_months} a'zolari saytga "
+"so'nggi to'rt oyda, {total_number_of_members_in_the_last_eight_months} "
+"a'zolari saytga so'nggi sakkiz oyda va "
+"{total_number_of_members_in_the_last_two_years} a'zolari saytga so'nggi ikki"
+" yil ichida kirgan."
+
+#: .\admin\views.py:118
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_the_last_week} members "
+"registered in the last week. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
+"{total_number_of_members_registered_more_than_four_months_ago} members "
+"registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
+"{total_number_of_members_registered_before_2019_08_01} members registered "
+"before 1 August 2019."
+msgstr ""
+"Admin: {total_number_of_members_registered_in_the_last_week} a'zolari o'tgan"
+" haftada ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_in_the_last_month} a'zolari o'tgan oyda "
+"ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_in_the_last_four_months} a'zolari "
+"so'nggi to'rt oyda ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_more_than_four_months_ago} a'zolari "
+"to'rt oydan ko'proq vaqt oldin ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_in_the_last_eight_months} a'zolari "
+"so'nggi sakkiz oy ichida ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_more_than_eight_months_ago} a'zolari "
+"sakkiz oydan ko'proq vaqt oldin ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_in_the_last_two_years} a'zolari so'nggi "
+"ikki yil ichida ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_more_than_two_years_ago} a'zolari ikki "
+"yildan ko'proq vaqt oldin ro'yxatdan o'tgan. "
+"{total_number_of_members_registered_before_2019_08_01} a'zolari 2019-yil "
+"1-avgustdan oldin ro'yxatdan o'tgan."
+
+#: .\admin\views.py:138
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_year} members registered in "
+"{year}."
+msgstr ""
+"Admin: {year} da ro'yxatdan o'tgan "
+"{total_number_of_members_registered_in_year} a'zolari."
+
+#: .\base\apps.py:13
+msgid "Speedy Core Base App"
+msgstr "Speedy Core asosiy ilovasi"
+
+#: .\base\fields.py:17
+msgid "ID"
+msgstr "ID"
+
+#: .\base\utils.py:417
+msgctxt "timesince"
+msgid ", "
+msgstr ", "
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
+msgstr "idda noqonuniy belgilar mavjud."
+
+#: .\base\views.py:57
+msgid "Changes saved."
+msgstr "O'zgartirishlar saqlandi."
+
+#: .\blocks\managers.py:30 .\blocks\models.py:43
+msgid "Users cannot block themselves."
+msgstr "Foydalanuvchilar o'zlarini bloklay olmaydilar."
+
+#: .\blocks\models.py:23
+msgid "blocked user"
+msgstr "bloklangan foydalanuvchi"
+
+#: .\blocks\models.py:28
+msgid "block"
+msgstr "blok"
+
+#: .\blocks\models.py:29
+msgid "user blocks"
+msgstr "foydalanuvchi bloklari"
+
+#: .\blocks\views.py:19
+msgid "You have blocked {}."
+msgstr "Siz {} ni blokladingiz."
+
+#: .\blocks\views.py:31
+msgid "You have unblocked {}."
+msgstr "Siz {} ni blokdan chiqardingiz."
+
+#: .\contact_by_form\apps.py:8
+msgid "Contact By Form"
+msgstr "Forma orqali bog'lanish"
+
+#: .\contact_by_form\forms.py:14
+msgid "Type the number \"17\""
+msgstr "\"17\" raqamini tering"
+
+#: .\contact_by_form\forms.py:41
+msgid "Send"
+msgstr "Yuborish"
+
+#: .\contact_by_form\forms.py:47
+msgid "Please contact us by email."
+msgstr "Iltimos, biz bilan elektron pochta orqali bog'laning."
+
+#: .\contact_by_form\forms.py:53
+msgid "Not 17."
+msgstr "17 emas."
+
+#: .\contact_by_form\models.py:33
+msgid "Feedback"
+msgstr "Fikr-mulohaza"
+
+#: .\contact_by_form\models.py:34
+msgid "Abuse (User)"
+msgstr "Suiiste'mol (Foydalanuvchi)"
+
+#: .\contact_by_form\models.py:35
+msgid "Abuse (Photo)"
+msgstr "Zo'ravonlik (Surat)"
+
+#: .\contact_by_form\models.py:38 .\messages\models.py:156
+msgid "sender"
+msgstr "Joʻnatuvchi"
+
+#: .\contact_by_form\models.py:39
+msgid "your name"
+msgstr "Ismingiz"
+
+#: .\contact_by_form\models.py:40
+msgid "your email"
+msgstr "Email manzilingiz"
+
+#: .\contact_by_form\models.py:41
+msgid "type"
+msgstr "tur"
+
+#: .\contact_by_form\models.py:42
+msgid "your message"
+msgstr "sizning xabaringiz"
+
+#: .\contact_by_form\models.py:44
+msgid "reported entity"
+msgstr "xabar qilingan tashkilot"
+
+#: .\contact_by_form\models.py:45
+msgid "reported photo"
+msgstr "xabar qilingan fotosurat"
+
+#: .\contact_by_form\models.py:48
+msgid "feedback"
+msgstr "fikr-mulohaza"
+
+#: .\contact_by_form\models.py:49
+msgid "feedbacks"
+msgstr "Fikr-mulohazalar"
+
+#: .\friends\views.py:189
+msgid "Friendship request sent."
+msgstr "Do'stlik so'rovi yuborildi."
+
+#: .\friends\views.py:204
+msgid "No friendship request."
+msgstr "Do'stlik so'rovi yo'q."
+
+#: .\friends\views.py:243
+msgid "Friendship request accepted."
+msgstr "Do'stlik so'rovi qabul qilindi."
+
+#: .\friends\views.py:261
+msgid "Friendship request rejected."
+msgstr "Do'stlik so'rovi rad etildi."
+
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:13
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:29
+msgid "Messages"
+msgstr "Xabarlar"
+
+#: .\messages\models.py:29
+msgid "site"
+msgstr "Sayt"
+
+#: .\messages\models.py:30
+msgid "participant 1"
+msgstr "1-ishtirokchi"
+
+#: .\messages\models.py:31
+msgid "participant 2"
+msgstr "2-ishtirokchi"
+
+#: .\messages\models.py:32
+msgid "participants"
+msgstr "ishtirokchilar"
+
+#: .\messages\models.py:33
+msgid "is group chat"
+msgstr "guruh chati"
+
+#: .\messages\models.py:34
+msgid "last message"
+msgstr "oxirgi xabar"
+
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+msgid "chat"
+msgstr "Chat"
+
+#: .\messages\models.py:68
+msgid "chats"
+msgstr "Chatlar"
+
+#: .\messages\models.py:77
+msgid "None"
+msgstr "Hech qanday"
+
+#: .\messages\models.py:157 .\messages\models.py:162
+msgid "message"
+msgstr "Xabar"
+
+#: .\messages\models.py:163
+msgid "messages"
+msgstr "Xabarlar"
+
+#: .\messages\models.py:191
+msgid "read mark"
+msgstr "o'qish belgisi"
+
+#: .\messages\models.py:192
+msgid "read marks"
+msgstr "o'qish belgilari"
+
+#: .\settings\base.py:196
+msgid "English"
+msgstr "Ingliz"
+
+#: .\settings\base.py:197
+msgid "Hebrew"
+msgstr "Yahudiy tili"
+
+#: .\settings\base_with_login.py:65
+msgid "French"
+msgstr "Fransuz"
+
+#: .\settings\base_with_login.py:66
+msgid "German"
+msgstr "Nemis"
+
+#: .\settings\base_with_login.py:67
+msgid "Spanish"
+msgstr "Xitoycha"
+
+#: .\settings\base_with_login.py:68
+msgid "Portuguese"
+msgstr "Portugal tili"
+
+#: .\settings\base_with_login.py:69
+msgid "Italian"
+msgstr "Italyancha"
+
+#: .\settings\base_with_login.py:70
+msgid "Dutch"
+msgstr "Golland"
+
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "Yaponcha"
+
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "Rus tili"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "Xitoy tili"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Polyak tili"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "Fors tili"
+
+#: .\settings\base_with_login.py:79
+msgid "Korean"
+msgstr "Koreyscha"
+
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "Arabcha"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "IndonezchaName"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "Ukraincha"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "Turk tili"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "Vetnam tili"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "ChexchaName"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "Swedish"
+
+#: .\settings\base_with_login.py:87
+msgid "Finnish"
+msgstr "Finnish"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "Taycha"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "Tay tili"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "Grek tili"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "MalaychaName"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "Gujarati"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "Ruminiya tili"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "Bengal tili"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "Katalancha"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "Norvegcha (Bokmaal) Name"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "BolgarchaName"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "Danish"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "Litvacha querty \"dasturchilarga\""
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "Hind tili"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "EstonchaName"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "Xorvat tili"
+
+#: .\settings\base_with_login.py:103
+msgid "Azerbaijani"
+msgstr "Ozarbayjon tili"
+
+#: .\settings\base_with_login.py:104
+msgid "Cantonese"
+msgstr "Kanton tili"
+
+#: .\settings\base_with_login.py:105
+msgid "Lithuanian"
+msgstr "Litva tili"
+
+#: .\settings\base_with_login.py:106
+msgid "Slovenian"
+msgstr "Sloven tili"
+
+#: .\settings\base_with_login.py:107
+msgid "Basque"
+msgstr "Bask tili"
+
+#: .\settings\base_with_login.py:108
+msgid "Armenian"
+msgstr "Arman tili"
+
+#: .\settings\base_with_login.py:109
+msgid "Uzbek"
+msgstr "O'zbek tili"
+
+#: .\settings\base_with_login.py:110
+msgid "Tamil"
+msgstr "Tamil tili"
+
+#: .\settings\base_with_login.py:111
+msgid "Latvian"
+msgstr "Latish tili"
+
+#: .\templates\400.html:6 .\templates\400.html:10
+msgid "Bad request"
+msgstr "Notoʻgʻri soʻrov"
+
+#: .\templates\400.html:14 .\templates\500.html:14
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr "Speedy uzr so'raydi, lekin biz sizning so'rovingizni bajara olmaymiz."
+
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr "Ruxsat berilmagan"
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr "Speedy uzr so'raydi, lekin bu sahifa shaxsiy."
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr "Sahifa topilmadi"
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr "Speedy uzr so'raydi, lekin sahifa topilmadi."
+
+#: .\templates\500.html:6 .\templates\500.html:10
+msgid "Internal server error"
+msgstr "Serverdagi ichki xatolik"
+
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:36
+#: .\templates\menu\about_mobile_menu_links.html:11
+msgid "About"
+msgstr "Haqida"
+
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:12
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
+#: .\templates\profiles\tools\edit_profile.html:4
+#: .\templates\profiles\tools\edit_profile.html:6
+msgid "Edit Profile"
+msgstr "Profilni tahrirlash"
+
+#: .\templates\accounts\edit_profile\core_base.html:19
+msgid "Profile Info"
+msgstr "Profil ma'lumotlari"
+
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+msgid "Privacy"
+msgstr "Maxfiylik"
+
+#: .\templates\accounts\edit_profile\core_base.html:31
+msgid "Notifications"
+msgstr "Bildirishnomalar"
+
+#: .\templates\accounts\edit_profile\core_base.html:37
+msgid "Emails & Password"
+msgstr "Elektron pochta va parol"
+
+#: .\templates\accounts\edit_profile\core_base.html:45
+msgid "Deactivate Account"
+msgstr "Akkauntni faolsizlantirish"
+
+#: .\templates\accounts\edit_profile\credentials.html:7
+msgid "Email Addresses"
+msgstr "Elektron pochtalar:"
+
+#: .\templates\accounts\edit_profile\credentials.html:12
+msgid "Address"
+msgstr "Manzil"
+
+#: .\templates\accounts\edit_profile\credentials.html:13
+msgid "Added"
+msgstr "Qo'shildi"
+
+#: .\templates\accounts\edit_profile\credentials.html:14
+msgid "Visibility"
+msgstr "Ko’rinish darajasi"
+
+#: .\templates\accounts\edit_profile\credentials.html:15
+msgid "Actions"
+msgstr "Amallar"
+
+#: .\templates\accounts\edit_profile\credentials.html:23
+msgid "Unconfirmed"
+msgstr "Tasdiqlanmagan"
+
+#: .\templates\accounts\edit_profile\credentials.html:25
+msgid "Primary"
+msgstr "Asosiy"
+
+#: .\templates\accounts\edit_profile\credentials.html:45
+msgid "Resend a confirmation email"
+msgstr "Tasdiqlash elektron pochtasini qayta yuboring"
+
+#: .\templates\accounts\edit_profile\credentials.html:53
+msgid "Make this email address primary"
+msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
+
+#: .\templates\accounts\edit_profile\credentials.html:59
+msgid "Are you sure you want to delete this email address?"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+
+#: .\templates\accounts\edit_profile\credentials.html:61
+msgid "Delete this email address"
+msgstr "Ushbu elektron pochta manzilini o'chirish"
+
+#: .\templates\accounts\edit_profile\credentials.html:77
+msgid "Add Another"
+msgstr "Yana qo'shish"
+
+#: .\templates\accounts\edit_profile\credentials.html:84
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: .\templates\accounts\edit_profile\privacy.html:12
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "Yoshingiz Speedy Match’dagi mosliklaringizga ko‘rinadi."
+
+#: .\templates\accounts\edit_profile\privacy.html:16
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Profilingizdagi elektron pochta manzillarining maxfiylik sozlamalarini "
+"o'zgartiring."
+
+#: .\templates\accounts\email_address_form.html:6
+#: .\templates\accounts\email_address_form.html:12
+msgid "Add Email"
+msgstr "Elektron pochtani tahrirlash"
+
+#: .\templates\accounts\logged_out.html:5
+msgid "Logged Out"
+msgstr "Tizimdan chiqdi"
+
+#: .\templates\accounts\password_reset\complete.html:5
+#: .\templates\accounts\password_reset\complete.html:11
+#: .\templates\accounts\password_reset\confirm.html:6
+#: .\templates\accounts\password_reset\confirm.html:12
+#: .\templates\accounts\password_reset\done.html:5
+#: .\templates\accounts\password_reset\done.html:11
+#: .\templates\accounts\password_reset\form.html:6
+#: .\templates\accounts\password_reset\form.html:12
+msgid "Reset Password"
+msgstr "Parolni qayta tiklash"
+
+#: .\templates\accounts\password_reset\complete.html:14
+msgid "Password reset successfully."
+msgstr "Parol muvaffaqiyatli qayta tiklandi."
+
+#: .\templates\accounts\password_reset\confirm.html:18
+msgid "Password reset failed. Invalid link."
+msgstr "Parolni qayta tiklash amalga oshmadi. Havola noto'g'ri."
+
+#: .\templates\accounts\password_reset\done.html:14
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+"Parolni tiklash bo'yicha ko'rsatmalarga ega elektron pochta xabari "
+"yuborildi."
+
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "Barchasini ko'rish"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "Admin - Do'stlar"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
+msgstr "Do'stlar"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "Hali do'stlar yo'q."
+
+#: .\templates\admin\profiles\user_info_widget.html:11
+msgid "Admin Information"
+msgstr "Administrator haqida ma'lumot"
+
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr "Admin - Barcha foydalanuvchilar"
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr "Foydalanuvchilar yo‘q"
+
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "Ushbu sayt qurilish jarayonida"
+
+#: .\templates\base.html:110
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Siz elektron pochta manzilingizni tasdiqlamagansiz. Iltimos, kiruvchi "
+"xatlaringizni tekshiring."
+
+#: .\templates\base.html:163
+msgid "Speedy Net Blog"
+msgstr "Speedy Net Blog"
+
+#: .\templates\base.html:165
+msgid "Speedy Paz"
+msgstr "Speedy Paz"
+
+#: .\templates\base.html:167
+msgid "Speedy Software"
+msgstr "Speedy Software"
+
+#: .\templates\base.html:169
+msgid "Speedy Sale"
+msgstr "Speedy Sale"
+
+#: .\templates\base.html:195 .\templates\base.html:196
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
+msgid "A vegan friendly website"
+msgstr "Veganlarga mos veb-sayt"
+
+#: .\templates\base.html:212 .\templates\base.html:214
+msgid "Speedy"
+msgstr "Speedy"
+
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
+msgid "Logout"
+msgstr "Chiqish"
+
+#: .\templates\base_with_login.html:67
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: .\templates\base_with_login.html:133
+msgid "Password"
+msgstr "Parol"
+
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
+msgid "Speedy Net"
+msgstr "Speedy Net"
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
+msgid "Speedy Match"
+msgstr "Speedy Match"
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
+msgid "Speedy Net's Shop"
+msgstr "Speedy Net do'koni"
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
+msgid "Speedy Match's Shop"
+msgstr "Speedy Match do'koni"
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
+msgid "Speedy S-logo Shop"
+msgstr "Speedy S-logo do'koni"
+
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:15
+msgid "Privacy Policy"
+msgstr "Maxfiylik siyosati"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:15
+msgid "Terms of Service"
+msgstr "Xizmat ko'rsatish shartlari"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "Shartlar"
+
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
+#: .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:15
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
+#: .\templates\menu\about_mobile_menu_links.html:20
+msgid "Contact Us"
+msgstr "Biz bilan bog‘laning"
+
+#: .\templates\base_without_login.html:19
+msgid "Speedy Composer"
+msgstr "Speedy Composer"
+
+#: .\templates\base_without_login.html:20
+msgid "Speedy Mail Software"
+msgstr "Speedy Mail Software"
+
+#: .\templates\base_without_login.html:28
+msgid "Speedy Composer's Shop"
+msgstr "Speedy Composer do'koni"
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
+msgstr "Bloklangan foydalanuvchilar"
+
+#: .\templates\blocks\block_list.html:15
+msgid "You're not blocking anybody."
+msgstr "Siz hech kimni bloklamayapsiz."
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
+msgstr ""
+"Agar sizda biron bir savol, taklif bo'lsa yoki jamoaga qo'shilishga "
+"qiziqsangiz - iltimos, biz bilan elektron pochta orqali bog'laning."
+
+#: .\templates\contact_by_email\contact_us.html:21
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, asoschi va veb-master:"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr "Foydalanuvchi haqida xabar berish"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr "Surat haqida xabar berish"
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr "Rahmat!"
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr "Fikr-mulohazangiz administratorlarga yuborildi."
+
+#: .\templates\core\pagination.html:9
+msgid "Previous"
+msgstr "Avvalgisi"
+
+#: .\templates\core\pagination.html:32
+msgid "Next"
+msgstr "Keyingisi"
+
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "Hisobingizni faollashtirish uchun ushbu havoladan foydalaning:"
+
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "%(site_name)s da elektron pochta manzilingizni tasdiqlang"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to verify your email address:"
+msgstr ""
+"Elektron pochta manzilingizni tasdiqlash uchun ushbu havoladan foydalaning:"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "Parolingizni o'zgartirish uchun ushbu havoladan foydalaning:"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "%(site_name)s da parolni tiklash"
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr "sizga xabar yubordi."
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr "Uni o'qing:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Siz %(site_name)s’dan ushbu turdagi bildirishnomalarni olish uchun obuna "
+"bo‘lgansiz. Bildirishnoma sozlamalarini o‘zgartirish yoki undan voz kechish "
+"uchun ushbu sahifaga kiring:"
+
+#: .\templates\email\messages\new_message_subject.txt:1
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Sizda %(site_name)s da yangi xabar bor"
+
+#: .\templates\friends\base.html:35
+msgid "Received Requests"
+msgstr "Qabul qilingan so'rovlar"
+
+#: .\templates\friends\base.html:41
+msgid "Sent Requests"
+msgstr "Yuborilgan so'rovlar"
+
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
+msgid "There are no pending friendship requests."
+msgstr "Kutilayotgan do'stlik so'rovlari yo'q."
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr "%(site_name)s ga xush kelibsiz!"
+
+#: .\templates\main\main_page_base.html:21
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr "%(site_name)s ga qo'shiling!"
+
+#: .\templates\main\main_page_base.html:24
+msgid "It's free and anyone can join!"
+msgstr "Bu bepul va istalgan kishi qo'shilishi mumkin!"
+
+#: .\templates\messages\chat_detail.html:35
+#, python-format
+msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "<a href=\"%(link)s\">%(user_name)s</a> bilan suhbatlashing"
+
+#: .\templates\messages\chat_detail.html:41
+#: .\templates\messages\message_form.html:9
+#, python-format
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s ga xabar yuboring"
+
+#: .\templates\messages\chat_detail.html:55
+msgid "Mark All as Read"
+msgstr "Hammasini oʻqilgan deb belgilash"
+
+#: .\templates\messages\chat_list.html:56
+msgid "Unread"
+msgstr "& Xabar"
+
+#: .\templates\messages\chat_list.html:63
+msgid "You:"
+msgstr "Siz"
+
+#: .\templates\messages\chat_list.html:83
+msgid "You have no messages yet."
+msgstr "Sizda hali xabar yo'q."
+
+#: .\templates\messages\message.html:20
+msgid "New"
+msgstr "Yangi"
+
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"Biz sizning maxfiyligingizni hurmat qilamiz. Biz sizning shaxsiy "
+"ma'lumotlaringizni, jumladan, ismingiz, tug'ilgan sanangiz, elektron pochta "
+"manzilingiz va parolingizni sotmaymiz yoki ulashmaymiz. Speedy Net orqali "
+"odamlarga yuboradigan xabarlaringiz shaxsiy bo'lib, boshqa odamlar yoki veb-"
+"saytlar bilan ulashilmaydi. Parolingiz bizning ma'lumotlar bazamizda "
+"shifrlangan holda saqlanadi."
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
+msgstr ""
+"Speedy Net dagi profilingiz hammaga ko'rinadi, lekin elektron pochta "
+"manzilingiz va tug'ilgan sanangiz bilan kimni ulashishni tanlashingiz "
+"mumkin. Agar siz Speedy Match ga ro'yxatdan o'tgan bo'lsangiz, Speedy Match "
+"profilingiz faqat saytda o'rnatgan sozlamalaringizga muvofiq sizga mos "
+"keladigan va siz ularni ularning sozlamalariga muvofiq moslashtiradigan "
+"odamlarga ko'rinadi. Speedy Match dagi profilingiz Google'da ko'rinmaydi va "
+"saytda ro'yxatdan o'tmagan odamlarga ko'rinmaydi."
+
+#: .\templates\privacy\privacy_policy.html:23
+msgid ""
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+"Agar siz Speedy Net yoki Speedy Match saytlarida hisobingizni o'chirib "
+"qo'ygan bo'lsangiz, o'sha saytdagi profilingiz saytdan olib tashlanadi va "
+"siz saytdagi boshqa odamlarning qidiruv natijalarida ko'rinmaysiz. Shuni "
+"yodda tutingki, Speedy Net saytida hisobingizni o'chirish Speedy Match "
+"saytidagi hisobingizni ham avtomatik ravishda o'chirib qo'yadi. Siz faqat "
+"Speedy Match saytidagi hisobingizni o'chirib qo'yishingiz mumkin, bu holda "
+"sizning Speedy Net hisobingiz faol bo'lib qoladi. Hisobingizni o'chirib "
+"qo'ygandan so'ng, uni xohlagan vaqtda qayta faollashtirishingiz mumkin."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
+msgstr ""
+"Agar xohlasangiz, Speedy Net hisobingizni o'chirib tashlashingiz mumkin. "
+"Speedy Net hisobingizni o'chirish Speedy Match hisobingizni ham avtomatik "
+"ravishda o'chirib tashlaydi. Speedy Net hisobingizni o'chirish uchun Speedy "
+"Net ga kiring, hisobingizni o'chiring va keyin \"Hisobni o'chirish\" "
+"tugmasini bosing (\"Profilni tahrirlash\" menyusida). Shakldagi "
+"ma'lumotlarni to'ldiring va tasdiqlang. Iltimos, o'chirilgan hisobni tiklab "
+"bo'lmasligini unutmang. Hisobni o'chirish doimiy va qaytarib bo'lmaydigan "
+"holatdir."
+
+#: .\templates\profiles\block_warning.html:9
+msgid "You blocked "
+msgstr "Siz blokladingiz "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr "QARORI"
+
+#: .\templates\profiles\block_warning.html:11
+msgid " blocked you."
+msgstr " sizni blokladi."
+
+#: .\templates\profiles\tools\add_to_friends.html:10
+#: .\templates\profiles\user_list_item.html:30
+msgid "Accept Friendship Request"
+msgstr "Do'stlik so'rovini qabul qiling"
+
+#: .\templates\profiles\tools\add_to_friends.html:12
+#: .\templates\profiles\user_list_item.html:32
+msgid "Accept"
+msgstr "Qabul qilish"
+
+#: .\templates\profiles\tools\add_to_friends.html:17
+#: .\templates\profiles\user_list_item.html:37
+msgid "Reject Friendship Request"
+msgstr "Do'stlik so'rovini rad etish"
+
+#: .\templates\profiles\tools\add_to_friends.html:19
+#: .\templates\profiles\user_list_item.html:39
+msgid "Reject"
+msgstr "Rad etish"
+
+#: .\templates\profiles\tools\add_to_friends.html:25
+#: .\templates\profiles\tools\add_to_friends.html:27
+msgid "Add to Friends"
+msgstr "Do'stlarga qo'shish"
+
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
+msgid "Toggle Dropdown"
+msgstr "Ochiq menyuni yoqish/o'chirish"
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "Are you sure you want to block "
+msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "?"
+msgstr "'"
+
+#: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
+msgid "Block "
+msgstr "Block "
+
+#: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
+msgid "Unblock "
+msgstr "Блокдан очиш "
+
+#: .\templates\profiles\tools\block_user.html:30
+msgid "Report "
+msgstr "Hisobot "
+
+#: .\templates\profiles\tools\block_user.html:32
+msgid "Report this photo"
+msgstr "Bu fotosurat haqida xabar bering"
+
+#: .\templates\profiles\tools\friendship_request_sent.html:7
+msgid "Cancel Friendship Request"
+msgstr "Do'stlik so'rovini bekor qilish"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
+msgstr "Do'stni olib tashlash"
+
+#: .\templates\profiles\tools\send_message.html:9
+#: .\templates\profiles\tools\send_message.html:11
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: .\templates\profiles\user_info_widget.html:12
+msgid "Information"
+msgstr "Ma'lumot"
+
+#: .\templates\profiles\user_info_widget.html:19
+msgid "Name"
+msgstr "Nomi"
+
+#: .\templates\profiles\user_info_widget.html:25
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: .\templates\profiles\user_info_widget.html:35
+msgid "Gender"
+msgstr "Jins"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Date"
+msgstr "Tug'ilgan kun sanasi"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Year"
+msgstr "Tug'ilgan yili"
+
+#: .\templates\profiles\user_info_widget.html:61
+msgid "Age"
+msgstr "Yosh"
+
+#: .\templates\profiles\user_on_speedy_match_widget.html:6
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Match profiliga ega. %(user_name)s "
+"profilini Speedy Match da ko'ring."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Sizda Speedy Net profili ham bor. Profilingizni Speedy Net da ko'ring."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s shuningdek, Speedy Net profiliga ega. %(user_name)s profilini "
+"Speedy Net da ko'ring."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr ""
+"Sayt alfa rejimida, xatolar bo'lishi mumkin. Sayt ma'muriyati saytdagi biron"
+" bir nosozlik uchun javobgar emas."
+
+#: .\templates\terms\terms_of_service.html:21
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
+msgstr ""
+"Siz Speedy Net dan faqat qonuniy maqsadlarda foydalanishingiz mumkin. Sizga "
+"nafrat, zo'ravonlik, hayvonlarga nisbatan zo'ravonlik, yalang'ochlik yoki "
+"pornografiya bilan bog'liq kontentni yuklash ruxsat berilmaydi. Sizga Speedy"
+" Net dan spam xabarlarni yoki bir xil kontentga ega xabarlarni ko'p sonli "
+"odamlarga yuborish uchun foydalanishga ruxsat berilmaydi."
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
+msgstr ""
+"Sayt ma'muriyati sayt foydalanuvchilari tomonidan taqdim etilgan shaxsiy "
+"ma'lumotlarni tekshira olmaydi. Ba'zi foydalanuvchilarning shaxsiy "
+"ma'lumotlari to'g'ri bo'lmasligi mumkin. Sayt ma'muriyati saytdan "
+"tashqaridagi foydalanuvchi faoliyati uchun javobgar emas. Agar siz saytda "
+"tanishgan odamlar bilan uchrashishni yoki telefonda gaplashishni "
+"tanlasangiz, uchrashuv yoki telefon qo'ng'irog'i natijalari uchun "
+"javobgarlik siznikidir."
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+"Saytda ro'yxatdan o'tgandan so'ng, sizga yuborilgan havola orqali elektron "
+"pochta manzilingizni tasdiqlashingiz so'raladi. Tasdiqlangan elektron pochta"
+" manzili bo'lmagan akkauntlar 10 kundan keyin saytdan o'chiriladi."
+
+#: .\templates\terms\terms_of_service.html:27
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
+msgstr ""
+"Agar siz saytga noto'g'ri elektron pochta manzili bilan xatolik bilan "
+"ro'yxatdan o'tgan bo'lsangiz, hisobingizga yangi elektron pochta manzilini "
+"qo'shing va uni tasdiqlang. Saytdagi hisobingizga bir nechta elektron pochta"
+" manzillarini biriktirishingiz mumkin."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"Profil rasmingiz sizning yuzingizni ko'rishimiz mumkin bo'lgan rasm bo'lishi"
+" kerak. Boshqa odamlar bilan birga profil rasmini yuklashga ruxsat beriladi."
+" Yalang'och fotosuratlarni, jinsiy a'zolar (erkaklar yoki ayollar) aks etgan"
+" fotosuratlarni yoki ko'kraklari ochiq (erkaklar yoki ayollar) rasmlarni "
+"yuklamang."
+
+#: .\templates\uploads\file_input.html:6
+msgid "Browse..."
+msgstr "Tanlash..."
+
+#: .\uploads\models.py:24
+msgid "owner"
+msgstr "Egasi"
+
+#: .\uploads\models.py:25
+msgid "file"
+msgstr "fayl"
+
+#: .\uploads\models.py:26
+msgid "is stored"
+msgstr "saqlanadi"
+
+#: .\uploads\models.py:27
+msgid "file size"
+msgstr "Fayl o'lchovi"
+
+#: .\uploads\models.py:36
+msgid "uploaded file"
+msgstr "yuklangan fayl"
+
+#: .\uploads\models.py:37
+msgid "uploaded files"
+msgstr "Yuklangan fayllar"
+
+#: .\uploads\models.py:75
+msgid "visible on website"
+msgstr "veb-saytda ko'rinadi"
+
+#: .\uploads\models.py:76
+msgid "Speedy image moderation time"
+msgstr "Speedy tasvirni moderatsiya qilish vaqti"
+
+#: .\uploads\models.py:77
+msgid "AWS image moderation time"
+msgstr "AWS tasvirini moderatsiya qilish vaqti"
+
+#: .\uploads\models.py:78
+msgid "AWS facial analysis time"
+msgstr "AWS yuz tahlili vaqti"
+
+#: .\uploads\models.py:79
+msgid "AWS raw image moderation results"
+msgstr "AWS xom tasvirlarni moderatsiya qilish natijalari"
+
+#: .\uploads\models.py:80
+msgid "AWS raw facial analysis results"
+msgstr "AWS xom yuz tahlili natijalari"
+
+#: .\uploads\models.py:81
+msgid "number of faces"
+msgstr "yuzlar soni"
+
+#: .\uploads\models.py:86
+msgid "uploaded image"
+msgstr "yuklangan rasm"
+
+#: .\uploads\models.py:87
+msgid "uploaded images"
+msgstr "yuklangan rasmlar"

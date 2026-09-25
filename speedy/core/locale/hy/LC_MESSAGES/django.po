@@ -1,0 +1,3656 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\__translations\__translations.html:5
+msgid "Your friend"
+msgstr "Ձեր ընկերը"
+
+#: .\__translations\__translations.html:6
+msgid "Friendship request sent"
+msgstr "Ընկերության հարցումն ուղարկվել է"
+
+#: .\__translations\__translations.html:8
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Դուք դեռ չեք հաստատել ձեր էլփոստի հասցեն. խնդրում ենք ստուգել ձեր մուտքային "
+"նամակները."
+
+#: .\__translations\__translations.html:9
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Դուք դեռ չեք հաստատել ձեր էլփոստի հասցեն. խնդրում ենք ստուգել ձեր մուտքային "
+"նամակները."
+
+#: .\__translations\__translations.html:10
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Դուք դեռ չեք հաստատել ձեր էլփոստի հասցեն. խնդրում ենք ստուգել ձեր մուտքային "
+"նամակները."
+
+#: .\__translations\__translations.html:12
+msgctxt "female"
+msgid "Logout"
+msgstr "Դուրս գալ"
+
+#: .\__translations\__translations.html:13
+msgctxt "male"
+msgid "Logout"
+msgstr "Դուրս գալ"
+
+#: .\__translations\__translations.html:14
+msgctxt "other"
+msgid "Logout"
+msgstr "Դուրս գալ"
+
+#: .\__translations\__translations.html:16
+#, python-format
+msgctxt "female"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Ողջույն <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"կրկին բարի գալուստ %(site_name)s!"
+
+#: .\__translations\__translations.html:17
+#, python-format
+msgctxt "male"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Ողջույն <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"կրկին բարի գալուստ %(site_name)s!"
+
+#: .\__translations\__translations.html:18
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Ողջույն <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"կրկին բարի գալուստ %(site_name)s!"
+
+#: .\__translations\__translations.html:20
+msgctxt "female"
+msgid "Please confirm your email address."
+msgstr "Խնդրում ենք հաստատել ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.html:21
+msgctxt "male"
+msgid "Please confirm your email address."
+msgstr "Խնդրում ենք հաստատել ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.html:22
+msgctxt "other"
+msgid "Please confirm your email address."
+msgstr "Խնդրում ենք հաստատել ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.html:24
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr "Ապաակտիվացնել հաշիվը"
+
+#: .\__translations\__translations.html:25
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr "Ապաակտիվացնել հաշիվը"
+
+#: .\__translations\__translations.html:26
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr "Ապաակտիվացնել հաշիվը"
+
+#: .\__translations\__translations.html:28
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr "Կրկին ուղարկել հաստատման նամակը"
+
+#: .\__translations\__translations.html:29
+msgctxt "male"
+msgid "Resend a confirmation email"
+msgstr "Կրկին ուղարկել հաստատման նամակը"
+
+#: .\__translations\__translations.html:30
+msgctxt "other"
+msgid "Resend a confirmation email"
+msgstr "Կրկին ուղարկել հաստատման նամակը"
+
+#: .\__translations\__translations.html:32
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr "Այս էլփոստի հասցեն դարձնել հիմնական"
+
+#: .\__translations\__translations.html:33
+msgctxt "male"
+msgid "Make this email address primary"
+msgstr "Այս էլփոստի հասցեն դարձնել հիմնական"
+
+#: .\__translations\__translations.html:34
+msgctxt "other"
+msgid "Make this email address primary"
+msgstr "Այս էլփոստի հասցեն դարձնել հիմնական"
+
+#: .\__translations\__translations.html:36
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել այս էլփոստի հասցեն?"
+
+#: .\__translations\__translations.html:37
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել այս էլփոստի հասցեն?"
+
+#: .\__translations\__translations.html:38
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել այս էլփոստի հասցեն?"
+
+#: .\__translations\__translations.html:40
+msgctxt "female"
+msgid "Delete this email address"
+msgstr "Ջնջել այս էլփոստի հասցեն"
+
+#: .\__translations\__translations.html:41
+msgctxt "male"
+msgid "Delete this email address"
+msgstr "Ջնջել այս էլփոստի հասցեն"
+
+#: .\__translations\__translations.html:42
+msgctxt "other"
+msgid "Delete this email address"
+msgstr "Ջնջել այս էլփոստի հասցեն"
+
+#: .\__translations\__translations.html:44
+msgctxt "female"
+msgid "Add Another"
+msgstr "Ավելացնել ևս մեկը"
+
+#: .\__translations\__translations.html:45
+msgctxt "male"
+msgid "Add Another"
+msgstr "Ավելացնել ևս մեկը"
+
+#: .\__translations\__translations.html:46
+msgctxt "other"
+msgid "Add Another"
+msgstr "Ավելացնել ևս մեկը"
+
+#: .\__translations\__translations.html:48
+msgctxt "female"
+msgid "Change Password"
+msgstr "Փոխել գաղտնաբառը"
+
+#: .\__translations\__translations.html:49
+msgctxt "male"
+msgid "Change Password"
+msgstr "Փոխել գաղտնաբառը"
+
+#: .\__translations\__translations.html:50
+msgctxt "other"
+msgid "Change Password"
+msgstr "Փոխել գաղտնաբառը"
+
+#: .\__translations\__translations.html:52
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Փոխեք ձեր պրոֆիլում գտնվող էլփոստի հասցեների գաղտնիության կարգավորումները."
+
+#: .\__translations\__translations.html:53
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Փոխեք ձեր պրոֆիլում գտնվող էլփոստի հասցեների գաղտնիության կարգավորումները."
+
+#: .\__translations\__translations.html:54
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Փոխեք ձեր պրոֆիլում գտնվող էլփոստի հասցեների գաղտնիության կարգավորումները."
+
+#: .\__translations\__translations.html:56
+msgctxt "female"
+msgid "You're not blocking anybody."
+msgstr "Դուք ոչ ոքի չեք արգելափակում."
+
+#: .\__translations\__translations.html:57
+msgctxt "male"
+msgid "You're not blocking anybody."
+msgstr "Դուք ոչ ոքի չեք արգելափակում."
+
+#: .\__translations\__translations.html:58
+msgctxt "other"
+msgid "You're not blocking anybody."
+msgstr "Դուք ոչ ոքի չեք արգելափակում."
+
+#: .\__translations\__translations.html:60
+msgctxt "female"
+msgid "Report a User"
+msgstr "Բողոքել օգտատիրոջ մասին"
+
+#: .\__translations\__translations.html:61
+msgctxt "male"
+msgid "Report a User"
+msgstr "Բողոքել օգտատիրոջ մասին"
+
+#: .\__translations\__translations.html:62
+msgctxt "other"
+msgid "Report a User"
+msgstr "Բողոքել օգտատիրոջ մասին"
+
+#: .\__translations\__translations.html:72
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
+msgstr "Ձեր արձագանքը ուղարկվել է ադմինիստրատորներին."
+
+#: .\__translations\__translations.html:73
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
+msgstr "Ձեր արձագանքը ուղարկվել է ադմինիստրատորներին."
+
+#: .\__translations\__translations.html:74
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
+msgstr "Ձեր արձագանքը ուղարկվել է ադմինիստրատորներին."
+
+#: .\__translations\__translations.html:76
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(user_name)s"
+msgstr "Ուղարկել հաղորդագրություն %(user_name)s-ին"
+
+#: .\__translations\__translations.html:77
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(user_name)s"
+msgstr "Ուղարկել հաղորդագրություն %(user_name)s-ին"
+
+#: .\__translations\__translations.html:78
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(user_name)s"
+msgstr "Ուղարկել հաղորդագրություն %(user_name)s-ին"
+
+#: .\__translations\__translations.html:80
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "Նշել բոլորը որպես կարդացված"
+
+#: .\__translations\__translations.html:81
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "Նշել բոլորը որպես կարդացված"
+
+#: .\__translations\__translations.html:82
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "Նշել բոլորը որպես կարդացված"
+
+#: .\__translations\__translations.html:84
+msgctxt "female"
+msgid "You:"
+msgstr "Դուք:"
+
+#: .\__translations\__translations.html:85
+msgctxt "male"
+msgid "You:"
+msgstr "Դուք:"
+
+#: .\__translations\__translations.html:86
+msgctxt "other"
+msgid "You:"
+msgstr "Դուք:"
+
+#: .\__translations\__translations.html:88
+msgctxt "female"
+msgid "You have no messages yet."
+msgstr "Դուք դեռ հաղորդագրություններ չունեք."
+
+#: .\__translations\__translations.html:89
+msgctxt "male"
+msgid "You have no messages yet."
+msgstr "Դուք դեռ հաղորդագրություններ չունեք."
+
+#: .\__translations\__translations.html:90
+msgctxt "other"
+msgid "You have no messages yet."
+msgstr "Դուք դեռ հաղորդագրություններ չունեք."
+
+#: .\__translations\__translations.html:92
+msgctxt "female"
+msgid "You blocked "
+msgstr "Դուք արգելափակել եք "
+
+#: .\__translations\__translations.html:93
+msgctxt "male"
+msgid "You blocked "
+msgstr "Դուք արգելափակել եք "
+
+#: .\__translations\__translations.html:94
+msgctxt "other"
+msgid "You blocked "
+msgstr "Դուք արգելափակել եք "
+
+#: .\__translations\__translations.html:96
+msgctxt "female"
+msgid " blocked you."
+msgstr " արգելափակել է ձեզ."
+
+#: .\__translations\__translations.html:97
+msgctxt "male"
+msgid " blocked you."
+msgstr " արգելափակել է ձեզ."
+
+#: .\__translations\__translations.html:98
+msgctxt "other"
+msgid " blocked you."
+msgstr " արգելափակել է ձեզ."
+
+#: .\__translations\__translations.html:100
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Match պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Match-ում."
+
+#: .\__translations\__translations.html:101
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Match պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Match-ում."
+
+#: .\__translations\__translations.html:102
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Match պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Match-ում."
+
+#: .\__translations\__translations.html:104
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Net պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Net-ում."
+
+#: .\__translations\__translations.html:105
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Net պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Net-ում."
+
+#: .\__translations\__translations.html:106
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Net պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Net-ում."
+
+#: .\__translations\__translations.html:108
+msgctxt "female"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Դուք նույնպես ունեք Speedy Net պրոֆիլ. դիտեք ձեր պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.html:109
+msgctxt "male"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Դուք նույնպես ունեք Speedy Net պրոֆիլ. դիտեք ձեր պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.html:110
+msgctxt "other"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Դուք նույնպես ունեք Speedy Net պրոֆիլ. դիտեք ձեր պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.html:112
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "Ավելացնել ընկերների մեջ"
+
+#: .\__translations\__translations.html:113
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "Ավելացնել ընկերների մեջ"
+
+#: .\__translations\__translations.html:114
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "Ավելացնել ընկերների մեջ"
+
+#: .\__translations\__translations.html:116
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "Վստա՞հ եք, որ ցանկանում եք արգելափակել "
+
+#: .\__translations\__translations.html:117
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "Վստա՞հ եք, որ ցանկանում եք արգելափակել "
+
+#: .\__translations\__translations.html:118
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "Վստա՞հ եք, որ ցանկանում եք արգելափակել "
+
+#: .\__translations\__translations.html:120
+msgctxt "female"
+msgid "Block "
+msgstr "Արգելափակել "
+
+#: .\__translations\__translations.html:121
+msgctxt "male"
+msgid "Block "
+msgstr "Արգելափակել "
+
+#: .\__translations\__translations.html:122
+msgctxt "other"
+msgid "Block "
+msgstr "Արգելափակել "
+
+#: .\__translations\__translations.html:124
+msgctxt "female"
+msgid "Unblock "
+msgstr "Ապաարգելափակել "
+
+#: .\__translations\__translations.html:125
+msgctxt "male"
+msgid "Unblock "
+msgstr "Ապաարգելափակել "
+
+#: .\__translations\__translations.html:126
+msgctxt "other"
+msgid "Unblock "
+msgstr "Ապաարգելափակել "
+
+#: .\__translations\__translations.html:128
+msgctxt "female"
+msgid "Report "
+msgstr "Բողոքել "
+
+#: .\__translations\__translations.html:129
+msgctxt "male"
+msgid "Report "
+msgstr "Բողոքել "
+
+#: .\__translations\__translations.html:130
+msgctxt "other"
+msgid "Report "
+msgstr "Բողոքել "
+
+#: .\__translations\__translations.html:132
+msgctxt "female"
+msgid "Report this photo"
+msgstr "Բողոքել այս լուսանկարի մասին"
+
+#: .\__translations\__translations.html:133
+msgctxt "male"
+msgid "Report this photo"
+msgstr "Բողոքել այս լուսանկարի մասին"
+
+#: .\__translations\__translations.html:134
+msgctxt "other"
+msgid "Report this photo"
+msgstr "Բողոքել այս լուսանկարի մասին"
+
+#: .\__translations\__translations.html:136
+msgctxt "female"
+msgid "Remove Friend"
+msgstr "Հեռացնել ընկերներից"
+
+#: .\__translations\__translations.html:137
+msgctxt "male"
+msgid "Remove Friend"
+msgstr "Հեռացնել ընկերներից"
+
+#: .\__translations\__translations.html:138
+msgctxt "other"
+msgid "Remove Friend"
+msgstr "Հեռացնել ընկերներից"
+
+#: .\__translations\__translations.html:140
+msgctxt "female"
+msgid "Cancel Friendship Request"
+msgstr "Չեղարկել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:141
+msgctxt "male"
+msgid "Cancel Friendship Request"
+msgstr "Չեղարկել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:142
+msgctxt "other"
+msgid "Cancel Friendship Request"
+msgstr "Չեղարկել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:144
+msgctxt "female"
+msgid "Accept"
+msgstr "Ընդունել"
+
+#: .\__translations\__translations.html:145
+msgctxt "male"
+msgid "Accept"
+msgstr "Ընդունել"
+
+#: .\__translations\__translations.html:146
+msgctxt "other"
+msgid "Accept"
+msgstr "Ընդունել"
+
+#: .\__translations\__translations.html:148
+msgctxt "female"
+msgid "Reject"
+msgstr "Մերժել"
+
+#: .\__translations\__translations.html:149
+msgctxt "male"
+msgid "Reject"
+msgstr "Մերժել"
+
+#: .\__translations\__translations.html:150
+msgctxt "other"
+msgid "Reject"
+msgstr "Մերժել"
+
+#: .\__translations\__translations.html:152
+msgctxt "female"
+msgid "Accept Friendship Request"
+msgstr "Ընդունել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:153
+msgctxt "male"
+msgid "Accept Friendship Request"
+msgstr "Ընդունել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:154
+msgctxt "other"
+msgid "Accept Friendship Request"
+msgstr "Ընդունել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:156
+msgctxt "female"
+msgid "Reject Friendship Request"
+msgstr "Մերժել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:157
+msgctxt "male"
+msgid "Reject Friendship Request"
+msgstr "Մերժել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:158
+msgctxt "other"
+msgid "Reject Friendship Request"
+msgstr "Մերժել ընկերության հարցումը"
+
+#: .\__translations\__translations.html:160
+msgctxt "female"
+msgid "Send Message"
+msgstr "Ուղարկել հաղորդագրություն"
+
+#: .\__translations\__translations.html:161
+msgctxt "male"
+msgid "Send Message"
+msgstr "Ուղարկել հաղորդագրություն"
+
+#: .\__translations\__translations.html:162
+msgctxt "other"
+msgid "Send Message"
+msgstr "Ուղարկել հաղորդագրություն"
+
+#: .\__translations\__translations.html:164
+msgctxt "female"
+msgid "Welcome"
+msgstr "Բարի գալուստ"
+
+#: .\__translations\__translations.html:165
+msgctxt "male"
+msgid "Welcome"
+msgstr "Բարի գալուստ"
+
+#: .\__translations\__translations.html:166
+msgctxt "other"
+msgid "Welcome"
+msgstr "Բարի գալուստ"
+
+#: .\__translations\__translations.html:168
+msgctxt "female"
+msgid "Your friend"
+msgstr "Ձեր ընկերը"
+
+#: .\__translations\__translations.html:169
+msgctxt "male"
+msgid "Your friend"
+msgstr "Ձեր ընկերը"
+
+#: .\__translations\__translations.html:170
+msgctxt "other"
+msgid "Your friend"
+msgstr "Ձեր ընկերը"
+
+#: .\__translations\__translations.html:172
+msgctxt "female"
+msgid "See All"
+msgstr "Տեսնել բոլորը"
+
+#: .\__translations\__translations.html:173
+msgctxt "male"
+msgid "See All"
+msgstr "Տեսնել բոլորը"
+
+#: .\__translations\__translations.html:174
+msgctxt "other"
+msgid "See All"
+msgstr "Տեսնել բոլորը"
+
+#: .\__translations\__translations.html:176
+msgctxt "female"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Ձեր Speedy Net հաշիվը ակտիվ չէ. մուտք գործեք այս էջը այն ակտիվացնելու համար."
+
+#: .\__translations\__translations.html:177
+msgctxt "male"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Ձեր Speedy Net հաշիվը ակտիվ չէ. մուտք գործեք այս էջը այն ակտիվացնելու համար."
+
+#: .\__translations\__translations.html:178
+msgctxt "other"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Ձեր Speedy Net հաշիվը ակտիվ չէ. մուտք գործեք այս էջը այն ակտիվացնելու համար."
+
+#: .\__translations\__translations.html:180
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "Բարի գալուստ %(site_name)s"
+
+#: .\__translations\__translations.html:181
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "Բարի գալուստ %(site_name)s"
+
+#: .\__translations\__translations.html:182
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "Բարի գալուստ %(site_name)s"
+
+#: .\__translations\__translations.html:184
+msgctxt "female"
+msgid "has sent you a message."
+msgstr "ձեզ հաղորդագրություն է ուղարկել."
+
+#: .\__translations\__translations.html:185
+msgctxt "male"
+msgid "has sent you a message."
+msgstr "ձեզ հաղորդագրություն է ուղարկել."
+
+#: .\__translations\__translations.html:186
+msgctxt "other"
+msgid "has sent you a message."
+msgstr "ձեզ հաղորդագրություն է ուղարկել."
+
+#: .\__translations\__translations.html:188
+msgctxt "female"
+msgid "Read it:"
+msgstr "Կարդացեք այն:"
+
+#: .\__translations\__translations.html:189
+msgctxt "male"
+msgid "Read it:"
+msgstr "Կարդացեք այն:"
+
+#: .\__translations\__translations.html:190
+msgctxt "other"
+msgid "Read it:"
+msgstr "Կարդացեք այն:"
+
+#: .\__translations\__translations.html:192
+#, python-format
+msgctxt "female"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Հաստատեք ձեր էլփոստի հասցեն %(site_name)s-ում"
+
+#: .\__translations\__translations.html:193
+#, python-format
+msgctxt "male"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Հաստատեք ձեր էլփոստի հասցեն %(site_name)s-ում"
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "other"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Հաստատեք ձեր էլփոստի հասցեն %(site_name)s-ում"
+
+#: .\__translations\__translations.html:196
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "Օգտագործեք այս հղումը ձեր հաշիվն ակտիվացնելու համար:"
+
+#: .\__translations\__translations.html:197
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "Օգտագործեք այս հղումը ձեր հաշիվն ակտիվացնելու համար:"
+
+#: .\__translations\__translations.html:198
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "Օգտագործեք այս հղումը ձեր հաշիվն ակտիվացնելու համար:"
+
+#: .\__translations\__translations.html:200
+msgctxt "female"
+msgid "Use this link to verify your email address:"
+msgstr "Օգտագործեք այս հղումը ձեր էլփոստի հասցեն հաստատելու համար:"
+
+#: .\__translations\__translations.html:201
+msgctxt "male"
+msgid "Use this link to verify your email address:"
+msgstr "Օգտագործեք այս հղումը ձեր էլփոստի հասցեն հաստատելու համար:"
+
+#: .\__translations\__translations.html:202
+msgctxt "other"
+msgid "Use this link to verify your email address:"
+msgstr "Օգտագործեք այս հղումը ձեր էլփոստի հասցեն հաստատելու համար:"
+
+#: .\__translations\__translations.html:204
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "Օգտագործեք այս հղումը ձեր գաղտնաբառը փոխելու համար:"
+
+#: .\__translations\__translations.html:205
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "Օգտագործեք այս հղումը ձեր գաղտնաբառը փոխելու համար:"
+
+#: .\__translations\__translations.html:206
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "Օգտագործեք այս հղումը ձեր գաղտնաբառը փոխելու համար:"
+
+#: .\__translations\__translations.html:208
+msgctxt "female"
+msgid "Username"
+msgstr "Օգտանուն"
+
+#: .\__translations\__translations.html:209
+msgctxt "male"
+msgid "Username"
+msgstr "Օգտանուն"
+
+#: .\__translations\__translations.html:210
+msgctxt "other"
+msgid "Username"
+msgstr "Օգտանուն"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Դուք բաժանորդագրված եք %(site_name)s-ից այս տեսակի ծանուցումներ ստանալու "
+"համար. մուտք գործեք այս էջը ձեր ծանուցումների կարգավորումները փոխելու կամ "
+"բաժանորդագրությունից հրաժարվելու համար:"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Դուք բաժանորդագրված եք %(site_name)s-ից այս տեսակի ծանուցումներ ստանալու "
+"համար. մուտք գործեք այս էջը ձեր ծանուցումների կարգավորումները փոխելու կամ "
+"բաժանորդագրությունից հրաժարվելու համար:"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Դուք բաժանորդագրված եք %(site_name)s-ից այս տեսակի ծանուցումներ ստանալու "
+"համար. մուտք գործեք այս էջը ձեր ծանուցումների կարգավորումները փոխելու կամ "
+"բաժանորդագրությունից հրաժարվելու համար:"
+
+#: .\__translations\__translations.py:7
+msgid "Enter a valid email address."
+msgstr "Մուտքագրեք ճիշտ էլեկտրոնային փոստի հասցե"
+
+#: .\__translations\__translations.py:8
+msgid "Email address"
+msgstr "Email հասցե"
+
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
+msgid "email address"
+msgstr "email հասցե"
+
+#: .\__translations\__translations.py:10
+msgid "Email address:"
+msgstr "Email հասցե․"
+
+#: .\__translations\__translations.py:11
+#: .\templates\profiles\user_info_widget.html:70
+msgid "Email"
+msgstr "Email"
+
+#: .\__translations\__translations.py:12
+msgid "Value must be valid JSON."
+msgstr "Արժեքը պետք է լինի վավեր JSON."
+
+#: .\__translations\__translations.py:13
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Մուտքագրեք ճիշտ %(username)s և գաղտնաբառ։ Երկու դաշտերն էլ տառաշարազգայուն "
+"են։"
+
+#: .\__translations\__translations.py:17
+msgid "Message"
+msgstr "Հաղորդագրություն"
+
+#: .\__translations\__translations.py:19
+msgid "Friendship Request"
+msgstr "Ընկերության հարցում"
+
+#: .\__translations\__translations.py:20
+msgid "Friendship Requests"
+msgstr "Ընկերության հարցումներ"
+
+#: .\__translations\__translations.py:22
+msgid "Friend"
+msgstr "Ընկեր"
+
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
+msgid "Friends"
+msgstr "Ընկերներ"
+
+#: .\__translations\__translations.py:25
+msgid "Following Relationship"
+msgstr "Հետևելու կապ"
+
+#: .\__translations\__translations.py:26
+msgid "Following Relationships"
+msgstr "Հետևելու կապեր"
+
+#: .\__translations\__translations.py:28
+msgid "Blocker Relationship"
+msgstr "Արգելափակողի կապ"
+
+#: .\__translations\__translations.py:29
+msgid "Blocked Relationships"
+msgstr "Արգելափակման կապեր"
+
+#: .\__translations\__translations.py:34
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+"Ցուցակը պարունակում է %(show_value)d էլեմենտը, բայց այն պետք է պարունակի "
+"%(limit_value)d֊ից ոչ ավելի էլեմենտ"
+msgstr[1] ""
+"Ցուցակը պարունակում է %(show_value)d էլեմենտները, բայց այն պետք է պարունակի "
+"%(limit_value)d֊ից ոչ ավելի էլեմենտ"
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "username (slug)"
+msgstr "օգտանուն (slug)"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "username (slug)"
+msgstr "օգտանուն (slug)"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "username (slug)"
+msgstr "օգտանուն (slug)"
+
+#: .\__translations\__translations.py:45
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Թարմացրեք ձեր պրոֆիլի նկարը"
+
+#: .\__translations\__translations.py:46
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Թարմացրեք ձեր պրոֆիլի նկարը"
+
+#: .\__translations\__translations.py:47
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Թարմացրեք ձեր պրոֆիլի նկարը"
+
+#: .\__translations\__translations.py:49
+msgctxt "female"
+msgid "Save Changes"
+msgstr "Պահպանել փոփոխությունները"
+
+#: .\__translations\__translations.py:50
+msgctxt "male"
+msgid "Save Changes"
+msgstr "Պահպանել փոփոխությունները"
+
+#: .\__translations\__translations.py:51
+msgctxt "other"
+msgid "Save Changes"
+msgstr "Պահպանել փոփոխությունները"
+
+#: .\__translations\__translations.py:53
+msgctxt "female"
+msgid "You can't change your username."
+msgstr "Դուք չեք կարող փոխել ձեր օգտանունը."
+
+#: .\__translations\__translations.py:54
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Դուք չեք կարող փոխել ձեր օգտանունը."
+
+#: .\__translations\__translations.py:55
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "Դուք չեք կարող փոխել ձեր օգտանունը."
+
+#: .\__translations\__translations.py:57
+#, python-brace-format
+msgctxt "female"
+msgid "Activate your {site_name} account"
+msgstr "Ակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:58
+#, python-brace-format
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "Ակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:59
+#, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "Ակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:61
+#, python-brace-format
+msgctxt "female"
+msgid "Deactivate your {site_name} account"
+msgstr "Ապաակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "Ապաակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "Ապաակտիվացրեք ձեր {site_name} հաշիվը"
+
+#: .\__translations\__translations.py:65
+msgctxt "female"
+msgid "Add"
+msgstr "Ավելացնել"
+
+#: .\__translations\__translations.py:66
+msgctxt "male"
+msgid "Add"
+msgstr "Ավելացնել"
+
+#: .\__translations\__translations.py:67
+msgctxt "other"
+msgid "Add"
+msgstr "Ավելացնել"
+
+#: .\__translations\__translations.py:69
+msgctxt "female"
+msgid "Where do I live?"
+msgstr "Որտե՞ղ եմ ես ապրում:"
+
+#: .\__translations\__translations.py:70
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Որտե՞ղ եմ ես ապրում:"
+
+#: .\__translations\__translations.py:71
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "Որտե՞ղ եմ ես ապրում:"
+
+#: .\__translations\__translations.py:73
+msgctxt "female"
+msgid "Where do you live?"
+msgstr "Որտե՞ղ եք դուք ապրում:"
+
+#: .\__translations\__translations.py:74
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "Որտե՞ղ եք դուք ապրում:"
+
+#: .\__translations\__translations.py:75
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "Որտե՞ղ եք դուք ապրում:"
+
+#: .\__translations\__translations.py:77
+msgctxt "female"
+msgid "Please write where you live."
+msgstr "Խնդրում ենք գրել, թե որտեղ եք ապրում."
+
+#: .\__translations\__translations.py:78
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Խնդրում ենք գրել, թե որտեղ եք ապրում."
+
+#: .\__translations\__translations.py:79
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "Խնդրում ենք գրել, թե որտեղ եք ապրում."
+
+#: .\__translations\__translations.py:81
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Վեգան (ուտում է միայն բույսեր և սնկեր)"
+
+#: .\__translations\__translations.py:82
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Վեգան (ուտում է միայն բույսեր և սնկեր)"
+
+#: .\__translations\__translations.py:83
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Վեգան (ուտում է միայն բույսեր և սնկեր)"
+
+#: .\__translations\__translations.py:85
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Բուսակեր (չի ուտում ձուկ և միս)"
+
+#: .\__translations\__translations.py:86
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Բուսակեր (չի ուտում ձուկ և միս)"
+
+#: .\__translations\__translations.py:87
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Բուսակեր (չի ուտում ձուկ և միս)"
+
+#: .\__translations\__translations.py:89
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "Կենդանական սնունդ օգտագործող (ուտում է կենդանիներ)"
+
+#: .\__translations\__translations.py:90
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Կենդանական սնունդ օգտագործող (ուտում է կենդանիներ)"
+
+#: .\__translations\__translations.py:91
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Կենդանական սնունդ օգտագործող (ուտում է կենդանիներ)"
+
+#: .\__translations\__translations.py:93
+msgctxt "female"
+msgid "Vegan"
+msgstr "Վեգան"
+
+#: .\__translations\__translations.py:94
+msgctxt "male"
+msgid "Vegan"
+msgstr "Վեգան"
+
+#: .\__translations\__translations.py:95
+msgctxt "other"
+msgid "Vegan"
+msgstr "Վեգան"
+
+#: .\__translations\__translations.py:97
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "Բուսակեր"
+
+#: .\__translations\__translations.py:98
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Բուսակեր"
+
+#: .\__translations\__translations.py:99
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "Բուսակեր"
+
+#: .\__translations\__translations.py:101
+msgctxt "female"
+msgid "Carnist"
+msgstr "Կենդանական սնունդ օգտագործող"
+
+#: .\__translations\__translations.py:102
+msgctxt "male"
+msgid "Carnist"
+msgstr "Կենդանական սնունդ օգտագործող"
+
+#: .\__translations\__translations.py:103
+msgctxt "other"
+msgid "Carnist"
+msgstr "Կենդանական սնունդ օգտագործող"
+
+#: .\__translations\__translations.py:105
+msgctxt "female"
+msgid "Not smoking"
+msgstr "Չեմ ծխում"
+
+#: .\__translations\__translations.py:106
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Չեմ ծխում"
+
+#: .\__translations\__translations.py:107
+msgctxt "other"
+msgid "Not smoking"
+msgstr "Չեմ ծխում"
+
+#: .\__translations\__translations.py:109
+msgctxt "female"
+msgid "Smoking occasionally"
+msgstr "Երբեմն ծխում եմ"
+
+#: .\__translations\__translations.py:110
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Երբեմն ծխում եմ"
+
+#: .\__translations\__translations.py:111
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Երբեմն ծխում եմ"
+
+#: .\__translations\__translations.py:113
+msgctxt "female"
+msgid "Smoking"
+msgstr "Ծխում եմ"
+
+#: .\__translations\__translations.py:114
+msgctxt "male"
+msgid "Smoking"
+msgstr "Ծխում եմ"
+
+#: .\__translations\__translations.py:115
+msgctxt "other"
+msgid "Smoking"
+msgstr "Ծխում եմ"
+
+#: .\__translations\__translations.py:117
+msgctxt "female"
+msgid "Single"
+msgstr "Ազատ"
+
+#: .\__translations\__translations.py:118
+msgctxt "male"
+msgid "Single"
+msgstr "Ազատ"
+
+#: .\__translations\__translations.py:119
+msgctxt "other"
+msgid "Single"
+msgstr "Ազատ"
+
+#: .\__translations\__translations.py:121
+msgctxt "female"
+msgid "Divorced"
+msgstr "Ամուսնալուծված"
+
+#: .\__translations\__translations.py:122
+msgctxt "male"
+msgid "Divorced"
+msgstr "Ամուսնալուծված"
+
+#: .\__translations\__translations.py:123
+msgctxt "other"
+msgid "Divorced"
+msgstr "Ամուսնալուծված"
+
+#: .\__translations\__translations.py:125
+msgctxt "female"
+msgid "Widowed"
+msgstr "Այրի"
+
+#: .\__translations\__translations.py:126
+msgctxt "male"
+msgid "Widowed"
+msgstr "Այրի"
+
+#: .\__translations\__translations.py:127
+msgctxt "other"
+msgid "Widowed"
+msgstr "Այրի"
+
+#: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "In a relationship"
+msgstr "Հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "In a relationship"
+msgstr "Հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "In a relationship"
+msgstr "Հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:133
+msgctxt "female"
+msgid "In an open relationship"
+msgstr "Բաց հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:134
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "Բաց հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:135
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "Բաց հարաբերությունների մեջ"
+
+#: .\__translations\__translations.py:137
+msgctxt "female"
+msgid "It's complicated"
+msgstr "Ամեն ինչ բարդ է"
+
+#: .\__translations\__translations.py:138
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Ամեն ինչ բարդ է"
+
+#: .\__translations\__translations.py:139
+msgctxt "other"
+msgid "It's complicated"
+msgstr "Ամեն ինչ բարդ է"
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
+msgid "Separated"
+msgstr "Առանձին ենք ապրում"
+
+#: .\__translations\__translations.py:142
+msgctxt "male"
+msgid "Separated"
+msgstr "Առանձին ենք ապրում"
+
+#: .\__translations\__translations.py:143
+msgctxt "other"
+msgid "Separated"
+msgstr "Առանձին ենք ապրում"
+
+#: .\__translations\__translations.py:145
+msgctxt "female"
+msgid "Engaged"
+msgstr "Նշանված"
+
+#: .\__translations\__translations.py:146
+msgctxt "male"
+msgid "Engaged"
+msgstr "Նշանված"
+
+#: .\__translations\__translations.py:147
+msgctxt "other"
+msgid "Engaged"
+msgstr "Նշանված"
+
+#: .\__translations\__translations.py:149
+msgctxt "female"
+msgid "Married"
+msgstr "Ամուսնացած"
+
+#: .\__translations\__translations.py:150
+msgctxt "male"
+msgid "Married"
+msgstr "Ամուսնացած"
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "Married"
+msgstr "Ամուսնացած"
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
+msgid "Your new password has been saved."
+msgstr "Ձեր նոր գաղտնաբառը պահպանվել է."
+
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Ձեր նոր գաղտնաբառը պահպանվել է."
+
+#: .\__translations\__translations.py:155
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Ձեր նոր գաղտնաբառը պահպանվել է."
+
+#: .\__translations\__translations.py:157
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Ձեր Speedy Net և Speedy Match հաշիվները ապաակտիվացվել են. դուք կարող եք "
+"ցանկացած ժամանակ կրկին ակտիվացնել դրանք."
+
+#: .\__translations\__translations.py:158
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Ձեր Speedy Net և Speedy Match հաշիվները ապաակտիվացվել են. դուք կարող եք "
+"ցանկացած ժամանակ կրկին ակտիվացնել դրանք."
+
+#: .\__translations\__translations.py:159
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Ձեր Speedy Net և Speedy Match հաշիվները ապաակտիվացվել են. դուք կարող եք "
+"ցանկացած ժամանակ կրկին ակտիվացնել դրանք."
+
+#: .\__translations\__translations.py:161
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Ձեր {site_name} հաշիվը ապաակտիվացվել է. դուք կարող եք այն ցանկացած ժամանակ "
+"կրկին ակտիվացնել. ձեր Speedy Net հաշիվը մնում է ակտիվ."
+
+#: .\__translations\__translations.py:162
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Ձեր {site_name} հաշիվը ապաակտիվացվել է. դուք կարող եք այն ցանկացած ժամանակ "
+"կրկին ակտիվացնել. ձեր Speedy Net հաշիվը մնում է ակտիվ."
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Ձեր {site_name} հաշիվը ապաակտիվացվել է. դուք կարող եք այն ցանկացած ժամանակ "
+"կրկին ակտիվացնել. ձեր Speedy Net հաշիվը մնում է ակտիվ."
+
+#: .\__translations\__translations.py:165
+msgctxt "female"
+msgid "You've already confirmed this email address."
+msgstr "Դուք արդեն հաստատել եք այս էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:166
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Դուք արդեն հաստատել եք այս էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:167
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Դուք արդեն հաստատել եք այս էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:169
+msgctxt "female"
+msgid "You've confirmed your email address."
+msgstr "Դուք հաստատել եք ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:170
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Դուք հաստատել եք ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:171
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Դուք հաստատել եք ձեր էլփոստի հասցեն."
+
+#: .\__translations\__translations.py:173
+msgctxt "female"
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: .\__translations\__translations.py:174
+msgctxt "male"
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: .\__translations\__translations.py:175
+msgctxt "other"
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: .\__translations\__translations.py:177
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Դուք արդեն ունեք {0} ընկեր. դուք չեք կարող ունենալ {1}-ից ավելի ընկեր Speedy"
+" Net-ում. խնդրում ենք շարունակելուց առաջ հեռացնել ընկերներից մի քանիսին."
+
+#: .\__translations\__translations.py:178
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Դուք արդեն ունեք {0} ընկեր. դուք չեք կարող ունենալ {1}-ից ավելի ընկեր Speedy"
+" Net-ում. խնդրում ենք շարունակելուց առաջ հեռացնել ընկերներից մի քանիսին."
+
+#: .\__translations\__translations.py:179
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Դուք արդեն ունեք {0} ընկեր. դուք չեք կարող ունենալ {1}-ից ավելի ընկեր Speedy"
+" Net-ում. խնդրում ենք շարունակելուց առաջ հեռացնել ընկերներից մի քանիսին."
+
+#: .\__translations\__translations.py:181
+#, python-brace-format
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:183
+#, python-brace-format
+msgctxt "female_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:184
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:186
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:187
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:188
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր "
+"Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, "
+"նախքան շարունակելը."
+
+#: .\__translations\__translations.py:191
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ."
+
+#: .\__translations\__translations.py:192
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ."
+
+#: .\__translations\__translations.py:193
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ."
+
+#: .\__translations\__translations.py:195
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr "Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը."
+
+#: .\__translations\__translations.py:196
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը."
+
+#: .\__translations\__translations.py:197
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը."
+
+#: .\__translations\__translations.py:199
+msgctxt "female"
+msgid "This user already requested friendship from you."
+msgstr "Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ."
+
+#: .\__translations\__translations.py:200
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ."
+
+#: .\__translations\__translations.py:201
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ."
+
+#: .\__translations\__translations.py:203
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:204
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:205
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:206
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:207
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:208
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:209
+msgctxt "other_female"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:210
+msgctxt "other_male"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:211
+msgctxt "other_other"
+msgid "You already are friends with this user."
+msgstr "Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ."
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr "Դուք չեղարկել եք ձեր ընկերության հարցումը."
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Դուք չեղարկել եք ձեր ընկերության հարցումը."
+
+#: .\__translations\__translations.py:215
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Դուք չեղարկել եք ձեր ընկերության հարցումը."
+
+#: .\__translations\__translations.py:217
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից."
+
+#: .\__translations\__translations.py:218
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից."
+
+#: .\__translations\__translations.py:219
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից."
+
+#: .\__translations\__translations.py:221
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr "Բարի գալուստ {site_name}!"
+
+#: .\__translations\__translations.py:222
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "Բարի գալուստ {site_name}!"
+
+#: .\__translations\__translations.py:223
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "Բարի գալուստ {site_name}!"
+
+#: .\__translations\__translations.py:225
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Բարի գալուստ {site_name}! Ձեր հաշիվն այժմ ակտիվ է."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Բարի գալուստ {site_name}! Ձեր հաշիվն այժմ ակտիվ է."
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Բարի գալուստ {site_name}! Ձեր հաշիվն այժմ ակտիվ է."
+
+#: .\__translations\__translations.py:229
+msgctxt "female"
+msgid "Friends"
+msgstr "Ընկերներ"
+
+#: .\__translations\__translations.py:230
+msgctxt "male"
+msgid "Friends"
+msgstr "Ընկերներ"
+
+#: .\__translations\__translations.py:231
+msgctxt "other"
+msgid "Friends"
+msgstr "Ընկերներ"
+
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Կայքի չարաշահման պատճառով սպամ հաղորդագրություններ ուղարկելու համար մենք "
+"ստիպված եղանք սահմանափակել մեկ օրվա ընթացքում կայքի այլ անդամներին ուղարկվող"
+" հաղորդագրությունների քանակը. խնդրում ենք կրկին փորձել վաղը. խնդրում ենք "
+"նկատի ունենալ, որ ձեզ չի թույլատրվում օգտագործել Speedy Net-ը սպամ "
+"հաղորդագրություններ կամ նույն բովանդակությամբ հաղորդագրություններ մարդկանց "
+"մեծ թվի ուղարկելու համար."
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Կայքի չարաշահման պատճառով սպամ հաղորդագրություններ ուղարկելու համար մենք "
+"ստիպված եղանք սահմանափակել մեկ օրվա ընթացքում կայքի այլ անդամներին ուղարկվող"
+" հաղորդագրությունների քանակը. խնդրում ենք կրկին փորձել վաղը. խնդրում ենք "
+"նկատի ունենալ, որ ձեզ չի թույլատրվում օգտագործել Speedy Net-ը սպամ "
+"հաղորդագրություններ կամ նույն բովանդակությամբ հաղորդագրություններ մարդկանց "
+"մեծ թվի ուղարկելու համար."
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Կայքի չարաշահման պատճառով սպամ հաղորդագրություններ ուղարկելու համար մենք "
+"ստիպված եղանք սահմանափակել մեկ օրվա ընթացքում կայքի այլ անդամներին ուղարկվող"
+" հաղորդագրությունների քանակը. խնդրում ենք կրկին փորձել վաղը. խնդրում ենք "
+"նկատի ունենալ, որ ձեզ չի թույլատրվում օգտագործել Speedy Net-ը սպամ "
+"հաղորդագրություններ կամ նույն բովանդակությամբ հաղորդագրություններ մարդկանց "
+"մեծ թվի ուղարկելու համար."
+
+#: .\__translations\__translations.py:241
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:242
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:243
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:244
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:246
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:247
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:248
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:249
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Այս օգտատերը չի համապատասխանում ձեր պրոֆիլին, բայց դուք կարող եք այցելել նրա"
+" Speedy Net պրոֆիլը. դիտեք օգտատիրոջ պրոֆիլը Speedy Net-ում."
+
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Ձեր պրոֆիլի նկարը չի կարող լինել թափանցիկ. խնդրում ենք վերբեռնել ոչ թափանցիկ"
+" պատկեր."
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Ձեր պրոֆիլի նկարը չի կարող լինել թափանցիկ. խնդրում ենք վերբեռնել ոչ թափանցիկ"
+" պատկեր."
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Ձեր պրոֆիլի նկարը չի կարող լինել թափանցիկ. խնդրում ենք վերբեռնել ոչ թափանցիկ"
+" պատկեր."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core հաշիվներ"
+
+#: .\accounts\fields.py:12
+msgid "Only me"
+msgstr "Միայն ես"
+
+#: .\accounts\fields.py:13
+msgid "Me and my friends"
+msgstr "Ես և իմ ընկերները"
+
+#: .\accounts\fields.py:15
+msgid "Anyone"
+msgstr "Բոլորը"
+
+#: .\accounts\forms.py:66
+msgid "Last name (optional)"
+msgstr "Ազգանուն (ոչ պարտադիր)"
+
+#: .\accounts\forms.py:130
+msgid "Your email"
+msgstr "Ձեր էլփոստը"
+
+#: .\accounts\forms.py:131
+msgid "New password"
+msgstr "Նոր գաղտնաբառ"
+
+#: .\accounts\forms.py:139
+msgid "New username"
+msgstr "Նոր օգտանուն"
+
+#: .\accounts\forms.py:142
+msgid "Create an account"
+msgstr "Ստեղծել հաշիվ"
+
+#: .\accounts\forms.py:167
+msgid "Update your profile picture"
+msgstr "Թարմացրեք ձեր պրոֆիլի նկարը"
+
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
+msgid "A profile picture is required."
+msgstr "Պրոֆիլի նկարը պարտադիր է."
+
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+msgid "Email or Username"
+msgstr "Էլփոստ կամ օգտանուն"
+
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
+msgid "Login"
+msgstr "Մուտք"
+
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
+msgid "Forgot your password?"
+msgstr "Մոռացե՞լ եք ձեր գաղտնաբառը?"
+
+#: .\accounts\forms.py:335
+msgid "Submit"
+msgstr "Ուղարկել"
+
+#: .\accounts\forms.py:437
+msgid "Your password"
+msgstr "Ձեր գաղտնաբառը"
+
+#: .\accounts\forms.py:449
+msgid "Invalid password."
+msgstr "Անվավեր գաղտնաբառ."
+
+#: .\accounts\models.py:178
+msgid "username"
+msgstr "օգտագործողի անուն"
+
+#: .\accounts\models.py:178 .\accounts\models.py:179
+#: .\accounts\validators.py:21
+msgid "This username is already taken."
+msgstr "Այս օգտանունն արդեն օգտագործվում է."
+
+#: .\accounts\models.py:179
+msgid "username (slug)"
+msgstr "օգտանուն (slug)"
+
+#: .\accounts\models.py:180
+msgid "photo"
+msgstr "լուսանկար"
+
+#: .\accounts\models.py:181
+msgid "Special username"
+msgstr "Հատուկ օգտանուն"
+
+#: .\accounts\models.py:221 .\messages\models.py:185
+msgid "entity"
+msgstr "միավոր"
+
+#: .\accounts\models.py:222
+msgid "entities"
+msgstr "միավորներ"
+
+#: .\accounts\models.py:249
+msgid "Slug does not parse to username."
+msgstr "Slug-ը չի վերածվում օգտանվան."
+
+#: .\accounts\models.py:253
+msgid "Username is required."
+msgstr "Օգտանունը պարտադիր է."
+
+#: .\accounts\models.py:298
+msgid "name"
+msgstr "անուն"
+
+#: .\accounts\models.py:329
+msgid "description"
+msgstr "նկարագրություն"
+
+#: .\accounts\models.py:473
+msgid "Female"
+msgstr "Իգական"
+
+#: .\accounts\models.py:474
+msgid "Male"
+msgstr "Արական"
+
+#: .\accounts\models.py:475
+msgid "Other"
+msgstr "Այլ"
+
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+msgid "Unknown"
+msgstr "Անհայտ"
+
+#: .\accounts\models.py:489
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Վեգան (ուտում է միայն բույսեր և սնկեր)"
+
+#: .\accounts\models.py:490
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Բուսակեր (չի ուտում ձուկ և միս)"
+
+#: .\accounts\models.py:491
+msgid "Carnist (eats animals)"
+msgstr "Կենդանական սնունդ օգտագործող (ուտում է կենդանիներ)"
+
+#: .\accounts\models.py:504
+msgid "Not smoking"
+msgstr "Չեմ ծխում"
+
+#: .\accounts\models.py:505
+msgid "Smoking occasionally"
+msgstr "Երբեմն ծխում եմ"
+
+#: .\accounts\models.py:506
+msgid "Smoking"
+msgstr "Ծխում եմ"
+
+#: .\accounts\models.py:525
+msgid "Single"
+msgstr "Ազատ"
+
+#: .\accounts\models.py:526
+msgid "Divorced"
+msgstr "Ամուսնալուծված"
+
+#: .\accounts\models.py:527
+msgid "Widowed"
+msgstr "Այրի"
+
+#: .\accounts\models.py:528
+msgid "In a relationship"
+msgstr "Հարաբերությունների մեջ"
+
+#: .\accounts\models.py:529
+msgid "In an open relationship"
+msgstr "Բաց հարաբերությունների մեջ"
+
+#: .\accounts\models.py:530
+msgid "It's complicated"
+msgstr "Ամեն ինչ բարդ է"
+
+#: .\accounts\models.py:531
+msgid "Separated"
+msgstr "Առանձին ենք ապրում"
+
+#: .\accounts\models.py:532
+msgid "Engaged"
+msgstr "Նշանված"
+
+#: .\accounts\models.py:533
+msgid "Married"
+msgstr "Ամուսնացած"
+
+#: .\accounts\models.py:542
+msgid "Notify me"
+msgstr "Ծանուցել ինձ"
+
+#: .\accounts\models.py:543
+msgid "Don't notify me"
+msgstr "Չծանուցել ինձ"
+
+#: .\accounts\models.py:590
+msgid "first name"
+msgstr "անուն"
+
+#: .\accounts\models.py:593
+msgid "last name"
+msgstr "ազգանուն"
+
+#: .\accounts\models.py:595
+msgid "I am"
+msgstr "Ես"
+
+#: .\accounts\models.py:596
+msgid "date of birth"
+msgstr "ծննդյան ամսաթիվ"
+
+#: .\accounts\models.py:597
+msgid "diet"
+msgstr "սննդակարգ"
+
+#: .\accounts\models.py:598
+msgid "smoking status"
+msgstr "ծխելու կարգավիճակ"
+
+#: .\accounts\models.py:599
+msgid "relationship status"
+msgstr "հարաբերությունների կարգավիճակ"
+
+#: .\accounts\models.py:601
+msgid "Where do I live?"
+msgstr "Որտե՞ղ եմ ես ապրում:"
+
+#: .\accounts\models.py:608
+msgid "Who can view my birth month and day"
+msgstr "Ով կարող է տեսնել իմ ծննդյան ամիսն ու օրը"
+
+#: .\accounts\models.py:609
+msgid "Who can view my birth year"
+msgstr "Ով կարող է տեսնել իմ ծննդյան տարին"
+
+#: .\accounts\models.py:610
+msgid "On new messages"
+msgstr "Նոր հաղորդագրությունների դեպքում"
+
+#: .\accounts\models.py:616
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "Վերջին օգտագործված IP հասցեի https://ipapi.com/ ժամանակը"
+
+#: .\accounts\models.py:617
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "Վերջին օգտագործված IP հասցեի հում https://ipapi.com/ արդյունքները"
+
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+msgid "user"
+msgstr "օգտագործող"
+
+#: .\accounts\models.py:824
+msgid "users"
+msgstr "օգտագործողներ"
+
+#: .\accounts\models.py:870
+msgid "Superuser must be equal to staff."
+msgstr "Սուպերօգտատերը պետք է համարժեք լինի staff-ին."
+
+#: .\accounts\models.py:1278
+msgid "email"
+msgstr "էլփոստ"
+
+#: .\accounts\models.py:1279
+msgid "is confirmed"
+msgstr "հաստատված է"
+
+#: .\accounts\models.py:1280
+msgid "is primary"
+msgstr "հիմնական է"
+
+#: .\accounts\models.py:1281
+msgid "confirmation token"
+msgstr "հաստատման նշան"
+
+#: .\accounts\models.py:1282
+msgid "confirmation sent"
+msgstr "հաստատումն ուղարկվել է"
+
+#: .\accounts\models.py:1283
+msgid "Who can see this email"
+msgstr "Ով կարող է տեսնել այս էլփոստը"
+
+#: .\accounts\models.py:1294
+msgid "email addresses"
+msgstr "էլփոստի հասցեներ"
+
+#: .\accounts\models.py:1377
+msgid "User"
+msgstr "Օգտագործող"
+
+#: .\accounts\models.py:1378
+msgid "last visit"
+msgstr "վերջին այց"
+
+#: .\accounts\models.py:1390
+msgid "Today"
+msgstr "Այսօր"
+
+#: .\accounts\models.py:1392
+msgid "Yesterday"
+msgstr "Երեկ"
+
+#: .\accounts\models.py:1394
+#, python-brace-format
+msgid "On {date} ({timesince_ago})"
+msgstr "{date}-ին ({timesince_ago})"
+
+#: .\accounts\models.py:1396
+#, python-brace-format
+msgid "{timesince} ago"
+msgstr "{timesince} առաջ"
+
+#: .\accounts\validators.py:39
+msgid ""
+"Username must start with 4 or more letters, and may contain letters, digits "
+"or dashes."
+msgstr ""
+"Օգտանունը պետք է սկսվի 4 կամ ավելի տառով և կարող է պարունակել տառեր, "
+"թվանշաններ կամ գծիկներ."
+
+#: .\accounts\validators.py:41
+msgid ""
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
+msgstr ""
+"Օգտանունը պետք է սկսվի 4 կամ ավելի տառով, որից հետո կարող է լինել ցանկացած "
+"քանակի թվանշան. կարող եք բառերի միջև գծիկներ ավելացնել."
+
+#: .\accounts\validators.py:47
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Օգտանունը պետք է պարունակի առնվազն %(limit_value)d տառաթվային նիշ (այն ունի "
+"%(show_value)d)."
+msgstr[1] ""
+"Օգտանունը պետք է պարունակի առնվազն %(limit_value)d տառաթվային նիշ (այն ունի "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:58
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Օգտանունը պետք է պարունակի առավելագույնը %(limit_value)d տառաթվային նիշ (այն"
+" ունի %(show_value)d)."
+msgstr[1] ""
+"Օգտանունը պետք է պարունակի առավելագույնը %(limit_value)d տառաթվային նիշ (այն"
+" ունի %(show_value)d)."
+
+#: .\accounts\validators.py:69
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Օգտանունը պետք է պարունակի առնվազն %(limit_value)d նիշ (այն ունի "
+"%(show_value)d)."
+msgstr[1] ""
+"Օգտանունը պետք է պարունակի առնվազն %(limit_value)d նիշ (այն ունի "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:80
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Օգտանունը պետք է պարունակի առավելագույնը %(limit_value)d նիշ (այն ունի "
+"%(show_value)d)."
+msgstr[1] ""
+"Օգտանունը պետք է պարունակի առավելագույնը %(limit_value)d նիշ (այն ունի "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:104
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Գաղտնաբառը շատ կարճ է։ Այն պետք է պարունակի ամենաքիչը %(min_length)d նիշ։"
+msgstr[1] ""
+"Գաղտնաբառը շատ կարճ է։ Այն պետք է պարունակի ամենաքիչը %(min_length)d նիշ։"
+
+#: .\accounts\validators.py:114
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Գաղտնաբառը պետք է պարունակի ամենաքիչը %(min_length)d նիշ։"
+msgstr[1] "Գաղտնաբառը  պետք է պարունակի ամենաքիչը %(min_length)d նիշ։"
+
+#: .\accounts\validators.py:135
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
+msgstr[0] ""
+"Այս գաղտնաբառը չափազանց երկար է. այն պետք է պարունակի առավելագույնը "
+"%(max_length)d նիշ."
+msgstr[1] ""
+"Այս գաղտնաբառը չափազանց երկար է. այն պետք է պարունակի առավելագույնը "
+"%(max_length)d նիշ."
+
+#: .\accounts\validators.py:145
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] "Ձեր գաղտնաբառը պետք է պարունակի առավելագույնը %(max_length)d նիշ."
+msgstr[1] "Ձեր գաղտնաբառը պետք է պարունակի առավելագույնը %(max_length)d նիշ."
+
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Ձեր գաղտնաբառը պետք է պարունակի առնվազն %(min_unique_characters)d եզակի նիշ."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
+msgid "This field cannot be null."
+msgstr "Այս դաշտը չի կարող ունենալ NULL արժեք "
+
+#: .\accounts\validators.py:214
+msgid "This field cannot be blank."
+msgstr "Այս դաշտը չի կարող լինել դատարկ"
+
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
+msgid "Enter a valid date."
+msgstr "Մուտքագրեք ճիշտ ամսաթիվ"
+
+#: .\accounts\validators.py:246
+msgid "This email is already in use."
+msgstr "Այս էլփոստն արդեն օգտագործվում է."
+
+#: .\accounts\validators.py:257
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
+msgstr ""
+"Այս նկարի ֆայլի չափը չափազանց մեծ է. առավելագույն թույլատրելի ֆայլի չափը 30 "
+"ՄԲ է."
+
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
+msgstr ""
+"Դուք չեք կարող օգտագործել այս ձևաչափը ձեր պրոֆիլի նկարի համար. ընդունվում են"
+" միայն JPEG կամ PNG ձևաչափերը."
+
+#: .\accounts\views.py:299
+msgid "Invalid confirmation link."
+msgstr "Անվավեր հաստատման հղում."
+
+#: .\accounts\views.py:324 .\accounts\views.py:340
+#, python-brace-format
+msgid "A confirmation message was sent to {email_address}"
+msgstr "Հաստատման հաղորդագրություն է ուղարկվել {email_address} հասցեին"
+
+#: .\accounts\views.py:355
+msgid "The email address was deleted."
+msgstr "Էլփոստի հասցեն ջնջվել է."
+
+#: .\accounts\views.py:371
+msgid "You have made this email address primary."
+msgstr "Դուք այս էլփոստի հասցեն դարձրել եք հիմնականը."
+
+#: .\admin\views.py:72
+#, python-brace-format
+msgid ""
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
+"entered the site in the last month, "
+"{total_number_of_members_in_the_last_four_months} members entered the site "
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
+msgstr ""
+"Ադմին. կայքի անդամների ընդհանուր թիվը {total_number_of_members} է, որոնցից "
+"{total_number_of_members_in_the_last_week} անդամ մուտք է գործել կայք վերջին "
+"շաբաթվա ընթացքում, {total_number_of_members_in_the_last_month} անդամ` վերջին"
+" ամսվա ընթացքում, {total_number_of_members_in_the_last_four_months} անդամ` "
+"վերջին չորս ամսվա ընթացքում, "
+"{total_number_of_members_in_the_last_eight_months} անդամ` վերջին ութ ամսվա "
+"ընթացքում, և {total_number_of_members_in_the_last_two_years} անդամ` վերջին "
+"երկու տարվա ընթացքում."
+
+#: .\admin\views.py:118
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_the_last_week} members "
+"registered in the last week. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
+"{total_number_of_members_registered_more_than_four_months_ago} members "
+"registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
+"{total_number_of_members_registered_before_2019_08_01} members registered "
+"before 1 August 2019."
+msgstr ""
+"Ադմին. վերջին շաբաթվա ընթացքում գրանցվել է "
+"{total_number_of_members_registered_in_the_last_week} անդամ. վերջին ամսվա "
+"ընթացքում գրանցվել է {total_number_of_members_registered_in_the_last_month} "
+"անդամ. վերջին չորս ամսվա ընթացքում գրանցվել է "
+"{total_number_of_members_registered_in_the_last_four_months} անդամ. ավելի "
+"քան չորս ամիս առաջ գրանցվել է "
+"{total_number_of_members_registered_more_than_four_months_ago} անդամ. վերջին"
+" ութ ամսվա ընթացքում գրանցվել է "
+"{total_number_of_members_registered_in_the_last_eight_months} անդամ. ավելի "
+"քան ութ ամիս առաջ գրանցվել է "
+"{total_number_of_members_registered_more_than_eight_months_ago} անդամ. "
+"վերջին երկու տարվա ընթացքում գրանցվել է "
+"{total_number_of_members_registered_in_the_last_two_years} անդամ. ավելի քան "
+"երկու տարի առաջ գրանցվել է "
+"{total_number_of_members_registered_more_than_two_years_ago} անդամ. 2019 "
+"թվականի օգոստոսի 1-ից առաջ գրանցվել է "
+"{total_number_of_members_registered_before_2019_08_01} անդամ."
+
+#: .\admin\views.py:138
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_year} members registered in "
+"{year}."
+msgstr ""
+"Ադմին. {year} թվականին գրանցվել է "
+"{total_number_of_members_registered_in_year} անդամ."
+
+#: .\base\apps.py:13
+msgid "Speedy Core Base App"
+msgstr "Speedy Core հիմնական հավելված"
+
+#: .\base\fields.py:17
+msgid "ID"
+msgstr "ID"
+
+#: .\base\utils.py:417
+msgctxt "timesince"
+msgid ", "
+msgstr ", "
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
+msgstr "id-ն պարունակում է անթույլատրելի նիշեր."
+
+#: .\base\views.py:57
+msgid "Changes saved."
+msgstr "Փոփոխությունները պահպանվել են."
+
+#: .\blocks\managers.py:30 .\blocks\models.py:43
+msgid "Users cannot block themselves."
+msgstr "Օգտատերերը չեն կարող արգելափակել իրենք իրենց."
+
+#: .\blocks\models.py:23
+msgid "blocked user"
+msgstr "արգելափակված օգտատեր"
+
+#: .\blocks\models.py:28
+msgid "block"
+msgstr "արգելափակում"
+
+#: .\blocks\models.py:29
+msgid "user blocks"
+msgstr "օգտատիրոջ արգելափակումներ"
+
+#: .\blocks\views.py:19
+msgid "You have blocked {}."
+msgstr "Դուք արգելափակել եք {}."
+
+#: .\blocks\views.py:31
+msgid "You have unblocked {}."
+msgstr "Դուք ապաարգելափակել եք {}."
+
+#: .\contact_by_form\apps.py:8
+msgid "Contact By Form"
+msgstr "Կապ հաստատել ձևաթղթով"
+
+#: .\contact_by_form\forms.py:14
+msgid "Type the number \"17\""
+msgstr "Մուտքագրեք \"17\" թիվը"
+
+#: .\contact_by_form\forms.py:41
+msgid "Send"
+msgstr "Ուղարկել"
+
+#: .\contact_by_form\forms.py:47
+msgid "Please contact us by email."
+msgstr "Խնդրում ենք կապվել մեզ հետ էլփոստով."
+
+#: .\contact_by_form\forms.py:53
+msgid "Not 17."
+msgstr "17 չէ."
+
+#: .\contact_by_form\models.py:33
+msgid "Feedback"
+msgstr "Արձագանք"
+
+#: .\contact_by_form\models.py:34
+msgid "Abuse (User)"
+msgstr "Չարաշահում (օգտատեր)"
+
+#: .\contact_by_form\models.py:35
+msgid "Abuse (Photo)"
+msgstr "Չարաշահում (լուսանկար)"
+
+#: .\contact_by_form\models.py:38 .\messages\models.py:156
+msgid "sender"
+msgstr "ուղարկող"
+
+#: .\contact_by_form\models.py:39
+msgid "your name"
+msgstr "ձեր անունը"
+
+#: .\contact_by_form\models.py:40
+msgid "your email"
+msgstr "ձեր էլփոստը"
+
+#: .\contact_by_form\models.py:41
+msgid "type"
+msgstr "տեսակ"
+
+#: .\contact_by_form\models.py:42
+msgid "your message"
+msgstr "ձեր հաղորդագրությունը"
+
+#: .\contact_by_form\models.py:44
+msgid "reported entity"
+msgstr "բողոքարկված միավոր"
+
+#: .\contact_by_form\models.py:45
+msgid "reported photo"
+msgstr "բողոքարկված լուսանկար"
+
+#: .\contact_by_form\models.py:48
+msgid "feedback"
+msgstr "արձագանք"
+
+#: .\contact_by_form\models.py:49
+msgid "feedbacks"
+msgstr "արձագանքներ"
+
+#: .\friends\views.py:189
+msgid "Friendship request sent."
+msgstr "Ընկերության հարցումն ուղարկվել է."
+
+#: .\friends\views.py:204
+msgid "No friendship request."
+msgstr "Ընկերության հարցում չկա."
+
+#: .\friends\views.py:243
+msgid "Friendship request accepted."
+msgstr "Ընկերության հարցումն ընդունվել է."
+
+#: .\friends\views.py:261
+msgid "Friendship request rejected."
+msgstr "Ընկերության հարցումը մերժվել է."
+
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:13
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:29
+msgid "Messages"
+msgstr "Հաղորդագրություններ"
+
+#: .\messages\models.py:29
+msgid "site"
+msgstr "կայք"
+
+#: .\messages\models.py:30
+msgid "participant 1"
+msgstr "մասնակից 1"
+
+#: .\messages\models.py:31
+msgid "participant 2"
+msgstr "մասնակից 2"
+
+#: .\messages\models.py:32
+msgid "participants"
+msgstr "մասնակիցներ"
+
+#: .\messages\models.py:33
+msgid "is group chat"
+msgstr "խմբային զրույց է"
+
+#: .\messages\models.py:34
+msgid "last message"
+msgstr "վերջին հաղորդագրություն"
+
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+msgid "chat"
+msgstr "զրույց"
+
+#: .\messages\models.py:68
+msgid "chats"
+msgstr "զրույցներ"
+
+#: .\messages\models.py:77
+msgid "None"
+msgstr "Ոչինչ"
+
+#: .\messages\models.py:157 .\messages\models.py:162
+msgid "message"
+msgstr "հաղորդագրություն"
+
+#: .\messages\models.py:163
+msgid "messages"
+msgstr "հաղորդագրություններ"
+
+#: .\messages\models.py:191
+msgid "read mark"
+msgstr "կարդացվածի նշում"
+
+#: .\messages\models.py:192
+msgid "read marks"
+msgstr "կարդացվածի նշումներ"
+
+#: .\settings\base.py:196
+msgid "English"
+msgstr "Անգլերեն"
+
+#: .\settings\base.py:197
+msgid "Hebrew"
+msgstr "Եբրայերեն"
+
+#: .\settings\base_with_login.py:65
+msgid "French"
+msgstr "Ֆրանսերեն"
+
+#: .\settings\base_with_login.py:66
+msgid "German"
+msgstr "Գերմաներեն"
+
+#: .\settings\base_with_login.py:67
+msgid "Spanish"
+msgstr "Իսպաներեն"
+
+#: .\settings\base_with_login.py:68
+msgid "Portuguese"
+msgstr "Պորտուգալերեն"
+
+#: .\settings\base_with_login.py:69
+msgid "Italian"
+msgstr "Իտալերեն"
+
+#: .\settings\base_with_login.py:70
+msgid "Dutch"
+msgstr "Հոլանդերեն"
+
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "Ճապոներեն"
+
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "Ռուսերեն"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "Չինարեն"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Լեհերեն"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "Պարսկերեն"
+
+#: .\settings\base_with_login.py:79
+msgid "Korean"
+msgstr "Կորեերեն"
+
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "Արաբերեն"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "Ինդոնեզերեն"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "Ուկրաիներեն"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "Թուրքերեն"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "Վիետնամերեն"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "Չեխերեն"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "Շվեդերեն"
+
+#: .\settings\base_with_login.py:87
+msgid "Finnish"
+msgstr "Ֆիներեն"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "Հունգարերեն"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "Թայերեն"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "Հունարեն"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "Մալայերեն"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "Սերբերեն"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "Ռումիներեն"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "Բենգալերեն"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "Կատալաներեն"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "Նորվեգերեն (Բուկմոլ)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "Բուլղարերեն"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "Դանիերեն"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "Սլովակերեն"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "Հինդի"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "Էստոներեն"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "Խորվաթերեն"
+
+#: .\settings\base_with_login.py:103
+msgid "Azerbaijani"
+msgstr "Ադրբեջաներեն"
+
+#: .\settings\base_with_login.py:104
+msgid "Cantonese"
+msgstr "Կանտոներեն"
+
+#: .\settings\base_with_login.py:105
+msgid "Lithuanian"
+msgstr "Լիտվերեն"
+
+#: .\settings\base_with_login.py:106
+msgid "Slovenian"
+msgstr "Սլովեներեն"
+
+#: .\settings\base_with_login.py:107
+msgid "Basque"
+msgstr "Բասկերեն"
+
+#: .\settings\base_with_login.py:108
+msgid "Armenian"
+msgstr "Հայերեն"
+
+#: .\settings\base_with_login.py:109
+msgid "Uzbek"
+msgstr "Ուզբեկերեն"
+
+#: .\settings\base_with_login.py:110
+msgid "Tamil"
+msgstr "Թամիլերեն"
+
+#: .\settings\base_with_login.py:111
+msgid "Latvian"
+msgstr "Լատվիերեն"
+
+#: .\templates\400.html:6 .\templates\400.html:10
+msgid "Bad request"
+msgstr "Սխալ հարցում"
+
+#: .\templates\400.html:14 .\templates\500.html:14
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr "Speedy-ն ցավում է, բայց մենք չենք կարող մշակել ձեր հարցումը."
+
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr "Մուտքն արգելված է"
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr "Speedy-ն ցավում է, բայց այս էջը մասնավոր է."
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr "Էջը գտնված չէ"
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr "Speedy-ն ցավում է, բայց էջը չի գտնվել."
+
+#: .\templates\500.html:6 .\templates\500.html:10
+msgid "Internal server error"
+msgstr "Սերվերի ներքին սխալ"
+
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:36
+#: .\templates\menu\about_mobile_menu_links.html:11
+msgid "About"
+msgstr "Մեր մասին"
+
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:12
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
+#: .\templates\profiles\tools\edit_profile.html:4
+#: .\templates\profiles\tools\edit_profile.html:6
+msgid "Edit Profile"
+msgstr "Խմբագրել պրոֆիլը"
+
+#: .\templates\accounts\edit_profile\core_base.html:19
+msgid "Profile Info"
+msgstr "Պրոֆիլի տվյալներ"
+
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+msgid "Privacy"
+msgstr "Գաղտնիություն"
+
+#: .\templates\accounts\edit_profile\core_base.html:31
+msgid "Notifications"
+msgstr "Ծանուցումներ"
+
+#: .\templates\accounts\edit_profile\core_base.html:37
+msgid "Emails & Password"
+msgstr "Էլփոստեր և գաղտնաբառ"
+
+#: .\templates\accounts\edit_profile\core_base.html:45
+msgid "Deactivate Account"
+msgstr "Ապաակտիվացնել հաշիվը"
+
+#: .\templates\accounts\edit_profile\credentials.html:7
+msgid "Email Addresses"
+msgstr "Էլփոստի հասցեներ"
+
+#: .\templates\accounts\edit_profile\credentials.html:12
+msgid "Address"
+msgstr "Հասցե"
+
+#: .\templates\accounts\edit_profile\credentials.html:13
+msgid "Added"
+msgstr "Ավելացված"
+
+#: .\templates\accounts\edit_profile\credentials.html:14
+msgid "Visibility"
+msgstr "Տեսանելիություն"
+
+#: .\templates\accounts\edit_profile\credentials.html:15
+msgid "Actions"
+msgstr "Գործողություններ"
+
+#: .\templates\accounts\edit_profile\credentials.html:23
+msgid "Unconfirmed"
+msgstr "Չհաստատված"
+
+#: .\templates\accounts\edit_profile\credentials.html:25
+msgid "Primary"
+msgstr "Հիմնական"
+
+#: .\templates\accounts\edit_profile\credentials.html:45
+msgid "Resend a confirmation email"
+msgstr "Կրկին ուղարկել հաստատման նամակը"
+
+#: .\templates\accounts\edit_profile\credentials.html:53
+msgid "Make this email address primary"
+msgstr "Այս էլփոստի հասցեն դարձնել հիմնական"
+
+#: .\templates\accounts\edit_profile\credentials.html:59
+msgid "Are you sure you want to delete this email address?"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել այս էլփոստի հասցեն?"
+
+#: .\templates\accounts\edit_profile\credentials.html:61
+msgid "Delete this email address"
+msgstr "Ջնջել այս էլփոստի հասցեն"
+
+#: .\templates\accounts\edit_profile\credentials.html:77
+msgid "Add Another"
+msgstr "Ավելացնել ևս մեկը"
+
+#: .\templates\accounts\edit_profile\credentials.html:84
+msgid "Change Password"
+msgstr "Փոխել գաղտնաբառը"
+
+#: .\templates\accounts\edit_profile\privacy.html:12
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "Ձեր տարիքը տեսանելի կլինի ձեր համընկնումներին Speedy Match-ում."
+
+#: .\templates\accounts\edit_profile\privacy.html:16
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Փոխեք ձեր պրոֆիլում գտնվող էլփոստի հասցեների գաղտնիության կարգավորումները."
+
+#: .\templates\accounts\email_address_form.html:6
+#: .\templates\accounts\email_address_form.html:12
+msgid "Add Email"
+msgstr "Ավելացնել էլփոստ"
+
+#: .\templates\accounts\logged_out.html:5
+msgid "Logged Out"
+msgstr "Դուրս եք եկել"
+
+#: .\templates\accounts\password_reset\complete.html:5
+#: .\templates\accounts\password_reset\complete.html:11
+#: .\templates\accounts\password_reset\confirm.html:6
+#: .\templates\accounts\password_reset\confirm.html:12
+#: .\templates\accounts\password_reset\done.html:5
+#: .\templates\accounts\password_reset\done.html:11
+#: .\templates\accounts\password_reset\form.html:6
+#: .\templates\accounts\password_reset\form.html:12
+msgid "Reset Password"
+msgstr "Վերակայել գաղտնաբառը"
+
+#: .\templates\accounts\password_reset\complete.html:14
+msgid "Password reset successfully."
+msgstr "Գաղտնաբառը հաջողությամբ վերակայվել է."
+
+#: .\templates\accounts\password_reset\confirm.html:18
+msgid "Password reset failed. Invalid link."
+msgstr "Գաղտնաբառի վերակայումը ձախողվել է. անվավեր հղում."
+
+#: .\templates\accounts\password_reset\done.html:14
+msgid "Email with password reset instructions has been sent."
+msgstr "Գաղտնաբառը վերակայելու ցուցումներով նամակն ուղարկվել է."
+
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "Տեսնել բոլորը"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "Ադմին - Ընկերներ"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
+msgstr "ընկերներ"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "Ընկերներ դեռ չկան."
+
+#: .\templates\admin\profiles\user_info_widget.html:11
+msgid "Admin Information"
+msgstr "Ադմին տեղեկություններ"
+
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr "Ադմին - Բոլոր օգտատերերը"
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr "Օգտատերեր չկան."
+
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "Այս կայքը կառուցման փուլում է"
+
+#: .\templates\base.html:110
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"Դուք դեռ չեք հաստատել ձեր էլփոստի հասցեն. խնդրում ենք ստուգել ձեր մուտքային "
+"նամակները."
+
+#: .\templates\base.html:163
+msgid "Speedy Net Blog"
+msgstr "Speedy Net բլոգ"
+
+#: .\templates\base.html:165
+msgid "Speedy Paz"
+msgstr "Speedy Paz"
+
+#: .\templates\base.html:167
+msgid "Speedy Software"
+msgstr "Speedy Software"
+
+#: .\templates\base.html:169
+msgid "Speedy Sale"
+msgstr "Speedy Sale"
+
+#: .\templates\base.html:195 .\templates\base.html:196
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
+msgid "A vegan friendly website"
+msgstr "Վեգանների համար բարեկամական կայք"
+
+#: .\templates\base.html:212 .\templates\base.html:214
+msgid "Speedy"
+msgstr "Speedy"
+
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
+msgid "Logout"
+msgstr "Դուրս գալ"
+
+#: .\templates\base_with_login.html:67
+msgid "Home"
+msgstr "Գլխավոր"
+
+#: .\templates\base_with_login.html:133
+msgid "Password"
+msgstr "Գաղտնաբառ"
+
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
+msgid "Speedy Net"
+msgstr "Speedy Net"
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
+msgid "Speedy Match"
+msgstr "Speedy Match"
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
+msgid "Speedy Net's Shop"
+msgstr "Speedy Net-ի խանութ"
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
+msgid "Speedy Match's Shop"
+msgstr "Speedy Match-ի խանութ"
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
+msgid "Speedy S-logo Shop"
+msgstr "Speedy S-logo խանութ"
+
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:15
+msgid "Privacy Policy"
+msgstr "Գաղտնիության քաղաքականություն"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:15
+msgid "Terms of Service"
+msgstr "Ծառայության պայմաններ"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "Պայմաններ"
+
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
+#: .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:15
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
+#: .\templates\menu\about_mobile_menu_links.html:20
+msgid "Contact Us"
+msgstr "Կապվեք մեզ հետ"
+
+#: .\templates\base_without_login.html:19
+msgid "Speedy Composer"
+msgstr "Speedy Composer"
+
+#: .\templates\base_without_login.html:20
+msgid "Speedy Mail Software"
+msgstr "Speedy Mail Software"
+
+#: .\templates\base_without_login.html:28
+msgid "Speedy Composer's Shop"
+msgstr "Speedy Composer-ի խանութ"
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
+msgstr "Արգելափակված օգտատերեր"
+
+#: .\templates\blocks\block_list.html:15
+msgid "You're not blocking anybody."
+msgstr "Դուք ոչ ոքի չեք արգելափակում."
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
+msgstr ""
+"Եթե ունեք հարցեր, առաջարկներ կամ հետաքրքրված եք միանալ թիմին, խնդրում ենք "
+"կապվել մեզ հետ էլփոստով."
+
+#: .\templates\contact_by_email\contact_us.html:21
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, հիմնադիր և վեբմաստեր:"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr "Բողոքել օգտատիրոջ մասին"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr "Բողոքել լուսանկարի մասին"
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr "Շնորհակալություն"
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr "Ձեր արձագանքը ուղարկվել է ադմինիստրատորներին."
+
+#: .\templates\core\pagination.html:9
+msgid "Previous"
+msgstr "Նախորդ"
+
+#: .\templates\core\pagination.html:32
+msgid "Next"
+msgstr "Հաջորդ"
+
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "Օգտագործեք այս հղումը ձեր հաշիվն ակտիվացնելու համար:"
+
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Հաստատեք ձեր էլփոստի հասցեն %(site_name)s-ում"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to verify your email address:"
+msgstr "Օգտագործեք այս հղումը ձեր էլփոստի հասցեն հաստատելու համար:"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "Օգտագործեք այս հղումը ձեր գաղտնաբառը փոխելու համար:"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "Գաղտնաբառի փոփոխում %(site_name)s կայքում։"
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr "ձեզ հաղորդագրություն է ուղարկել."
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr "Կարդացեք այն:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Դուք բաժանորդագրված եք %(site_name)s-ից այս տեսակի ծանուցումներ ստանալու "
+"համար. մուտք գործեք այս էջը ձեր ծանուցումների կարգավորումները փոխելու կամ "
+"բաժանորդագրությունից հրաժարվելու համար:"
+
+#: .\templates\email\messages\new_message_subject.txt:1
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Դուք ունեք նոր հաղորդագրություն %(site_name)s-ում"
+
+#: .\templates\friends\base.html:35
+msgid "Received Requests"
+msgstr "Ստացված հարցումներ"
+
+#: .\templates\friends\base.html:41
+msgid "Sent Requests"
+msgstr "Ուղարկված հարցումներ"
+
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
+msgid "There are no pending friendship requests."
+msgstr "Սպասող ընկերության հարցումներ չկան."
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr "Բարի գալուստ %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:21
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr "Միացեք %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:24
+msgid "It's free and anyone can join!"
+msgstr "Դա անվճար է, և յուրաքանչյուրը կարող է միանալ!"
+
+#: .\templates\messages\chat_detail.html:35
+#, python-format
+msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Զրուցել <a href=\"%(link)s\">%(user_name)s</a>-ի հետ"
+
+#: .\templates\messages\chat_detail.html:41
+#: .\templates\messages\message_form.html:9
+#, python-format
+msgid "Send a message to %(user_name)s"
+msgstr "Ուղարկել հաղորդագրություն %(user_name)s-ին"
+
+#: .\templates\messages\chat_detail.html:55
+msgid "Mark All as Read"
+msgstr "Նշել բոլորը որպես կարդացված"
+
+#: .\templates\messages\chat_list.html:56
+msgid "Unread"
+msgstr "Չկարդացված"
+
+#: .\templates\messages\chat_list.html:63
+msgid "You:"
+msgstr "Դուք:"
+
+#: .\templates\messages\chat_list.html:83
+msgid "You have no messages yet."
+msgstr "Դուք դեռ հաղորդագրություններ չունեք."
+
+#: .\templates\messages\message.html:20
+msgid "New"
+msgstr "Նոր"
+
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"Մենք հարգում ենք ձեր գաղտնիությունը. մենք չենք վաճառի կամ կիսվի ձեր անձնական"
+" տվյալներով, ներառյալ ձեր անունը, ծննդյան ամսաթիվը, էլփոստի հասցեն և "
+"գաղտնաբառը. Speedy Net-ում մարդկանց ուղարկած ձեր հաղորդագրությունները "
+"անձնական են և չեն փոխանցվի այլ մարդկանց կամ կայքերի. ձեր գաղտնաբառը մեր "
+"տվյալների բազայում պահպանվում է կոդավորված."
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
+msgstr ""
+"Ձեր պրոֆիլը Speedy Net-ում տեսանելի է բոլորին, բայց դուք կարող եք ընտրել, թե"
+" ում հետ կկիսվեք ձեր էլփոստի հասցեով և ծննդյան ամսաթվով. եթե գրանցվել եք "
+"Speedy Match-ում, ձեր Speedy Match պրոֆիլը տեսանելի կլինի միայն այն "
+"մարդկանց, ովքեր համապատասխանում են ձեզ ըստ կայքում ձեր սահմանած "
+"կարգավորումների, և որոնց դուք համապատասխանում եք ըստ նրանց կարգավորումների. "
+"ձեր պրոֆիլը Speedy Match-ում չի հայտնվի Google-ում և տեսանելի չէ այն "
+"մարդկանց, ովքեր գրանցված չեն կայքում."
+
+#: .\templates\privacy\privacy_policy.html:23
+msgid ""
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+"Եթե ապաակտիվացրել եք ձեր հաշիվը Speedy Net-ում կամ Speedy Match-ում, այդ "
+"կայքում ձեր պրոֆիլը կհեռացվի կայքից, և դուք չեք հայտնվի կայքի մյուս մարդկանց"
+" որոնման արդյունքներում. նկատի ունեցեք, որ ձեր հաշիվը Speedy Net-ում "
+"ապաակտիվացնելը նաև ավտոմատ կերպով ապաակտիվացնում է ձեր հաշիվը Speedy Match-"
+"ում. դուք կարող եք ապաակտիվացնել միայն ձեր հաշիվը Speedy Match-ում, որի "
+"դեպքում ձեր Speedy Net հաշիվը կմնա ակտիվ. դուք կարող եք կրկին ակտիվացնել ձեր"
+" հաշիվը այն ապաակտիվացնելուց հետո ցանկացած պահի, երբ ցանկանաք."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
+msgstr ""
+"Եթե ցանկանում եք, կարող եք ջնջել ձեր հաշիվը Speedy Net-ում. ձեր Speedy Net "
+"հաշիվը ջնջելը ավտոմատ կերպով կջնջի նաև ձեր Speedy Match հաշիվը. ձեր Speedy "
+"Net հաշիվը ջնջելու համար մուտք գործեք Speedy Net, ապաակտիվացրեք ձեր հաշիվը, "
+"ապա սեղմեք “Ջնջել հաշիվը” (“Խմբագրել պրոֆիլը” ընտրացանկում). լրացրեք ձևաթղթի"
+" տվյալները և հաստատեք. խնդրում ենք նկատի ունենալ, որ ջնջված հաշիվը հնարավոր "
+"չէ վերականգնել. հաշվի ջնջումը մշտական է և անշրջելի."
+
+#: .\templates\profiles\block_warning.html:9
+msgid "You blocked "
+msgstr "Դուք արգելափակել եք "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr "."
+
+#: .\templates\profiles\block_warning.html:11
+msgid " blocked you."
+msgstr " արգելափակել է ձեզ."
+
+#: .\templates\profiles\tools\add_to_friends.html:10
+#: .\templates\profiles\user_list_item.html:30
+msgid "Accept Friendship Request"
+msgstr "Ընդունել ընկերության հարցումը"
+
+#: .\templates\profiles\tools\add_to_friends.html:12
+#: .\templates\profiles\user_list_item.html:32
+msgid "Accept"
+msgstr "Ընդունել"
+
+#: .\templates\profiles\tools\add_to_friends.html:17
+#: .\templates\profiles\user_list_item.html:37
+msgid "Reject Friendship Request"
+msgstr "Մերժել ընկերության հարցումը"
+
+#: .\templates\profiles\tools\add_to_friends.html:19
+#: .\templates\profiles\user_list_item.html:39
+msgid "Reject"
+msgstr "Մերժել"
+
+#: .\templates\profiles\tools\add_to_friends.html:25
+#: .\templates\profiles\tools\add_to_friends.html:27
+msgid "Add to Friends"
+msgstr "Ավելացնել ընկերների մեջ"
+
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
+msgid "Toggle Dropdown"
+msgstr "Բացել/փակել բացվող ցանկը"
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "Are you sure you want to block "
+msgstr "Վստա՞հ եք, որ ցանկանում եք արգելափակել "
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "?"
+msgstr "?"
+
+#: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
+msgid "Block "
+msgstr "Արգելափակել "
+
+#: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
+msgid "Unblock "
+msgstr "Ապաարգելափակել "
+
+#: .\templates\profiles\tools\block_user.html:30
+msgid "Report "
+msgstr "Բողոքել "
+
+#: .\templates\profiles\tools\block_user.html:32
+msgid "Report this photo"
+msgstr "Բողոքել այս լուսանկարի մասին"
+
+#: .\templates\profiles\tools\friendship_request_sent.html:7
+msgid "Cancel Friendship Request"
+msgstr "Չեղարկել ընկերության հարցումը"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
+msgstr "Հեռացնել ընկերներից"
+
+#: .\templates\profiles\tools\send_message.html:9
+#: .\templates\profiles\tools\send_message.html:11
+msgid "Send Message"
+msgstr "Ուղարկել հաղորդագրություն"
+
+#: .\templates\profiles\user_info_widget.html:12
+msgid "Information"
+msgstr "Տեղեկություն"
+
+#: .\templates\profiles\user_info_widget.html:19
+msgid "Name"
+msgstr "Անուն"
+
+#: .\templates\profiles\user_info_widget.html:25
+msgid "Username"
+msgstr "Օգտանուն"
+
+#: .\templates\profiles\user_info_widget.html:35
+msgid "Gender"
+msgstr "Սեռ"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Date"
+msgstr "Ծննդյան ամսաթիվ"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Year"
+msgstr "Ծննդյան տարեթիվ"
+
+#: .\templates\profiles\user_info_widget.html:61
+msgid "Age"
+msgstr "Տարիք"
+
+#: .\templates\profiles\user_on_speedy_match_widget.html:6
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Match պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Match-ում."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Դուք նույնպես ունեք Speedy Net պրոֆիլ. դիտեք ձեր պրոֆիլը Speedy Net-ում."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-ը նաև ունի Speedy Net պրոֆիլ. դիտեք %(user_name)s-ի պրոֆիլը "
+"Speedy Net-ում."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr ""
+"Կայքը alpha փուլում է, հնարավոր են սխալներ. կայքի կառավարումը "
+"պատասխանատվություն չի կրում կայքում առկա որևէ խափանման համար."
+
+#: .\templates\terms\terms_of_service.html:21
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
+msgstr ""
+"Դուք կարող եք օգտագործել Speedy Net-ը միայն օրինական նպատակներով. ձեզ չի "
+"թույլատրվում վերբեռնել ատելության, բռնության, կենդանիների նկատմամբ "
+"դաժանության, մերկության կամ պոռնոգրաֆիայի հետ կապված բովանդակություն. ձեզ չի"
+" թույլատրվում օգտագործել Speedy Net-ը սպամ հաղորդագրություններ կամ նույն "
+"բովանդակությամբ հաղորդագրություններ մարդկանց մեծ թվի ուղարկելու համար."
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
+msgstr ""
+"Կայքի կառավարումը չի կարող ստուգել կայքի օգտատերերի տրամադրած անձնական "
+"տվյալները. որոշ օգտատերերի անձնական տվյալները կարող են ճիշտ չլինել. կայքի "
+"կառավարումը պատասխանատվություն չի կրում կայքից դուրս օգտատերերի "
+"գործունեության համար. եթե ընտրեք հանդիպել կամ հեռախոսով խոսել այն մարդկանց "
+"հետ, որոնց ծանոթացել եք կայքում, հանդիպման կամ հեռախոսազրույցի արդյունքների "
+"պատասխանատվությունը ձերն է."
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+"Կայքում գրանցվելուց հետո ձեզ խնդրվում է հաստատել ձեր էլփոստի հասցեն ձեզ "
+"ուղարկված հղմամբ. հաստատված էլփոստի հասցե չունեցող հաշիվները 10 օր հետո "
+"կհեռացվեն կայքից."
+
+#: .\templates\terms\terms_of_service.html:27
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
+msgstr ""
+"Եթե սխալմամբ գրանցվել եք կայքում ոչ ճիշտ էլփոստի հասցեով, ավելացրեք ձեր "
+"հաշվին նոր էլփոստի հասցե և հաստատեք այն. դուք կարող եք ձեր հաշվին կցել մի "
+"քանի էլփոստի հասցե կայքում."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"Ձեր պրոֆիլի նկարը պետք է լինի ձեր լուսանկարը, որտեղ մենք կարող ենք տեսնել "
+"ձեր դեմքը. թույլատրվում է վերբեռնել նաև այլ մարդկանց հետ պրոֆիլի նկար. մի "
+"վերբեռնեք մերկ լուսանկարներ, սեռական օրգաններ ցուցադրող լուսանկարներ "
+"(տղամարդկանց կամ կանանց) կամ կրծքավանդակ բաց պատկերներ (տղամարդկանց կամ "
+"կանանց)."
+
+#: .\templates\uploads\file_input.html:6
+msgid "Browse..."
+msgstr "Թերթել..."
+
+#: .\uploads\models.py:24
+msgid "owner"
+msgstr "սեփականատեր"
+
+#: .\uploads\models.py:25
+msgid "file"
+msgstr "ֆայլ"
+
+#: .\uploads\models.py:26
+msgid "is stored"
+msgstr "պահված է"
+
+#: .\uploads\models.py:27
+msgid "file size"
+msgstr "ֆայլի չափ"
+
+#: .\uploads\models.py:36
+msgid "uploaded file"
+msgstr "վերբեռնված ֆայլ"
+
+#: .\uploads\models.py:37
+msgid "uploaded files"
+msgstr "վերբեռնված ֆայլեր"
+
+#: .\uploads\models.py:75
+msgid "visible on website"
+msgstr "տեսանելի է կայքում"
+
+#: .\uploads\models.py:76
+msgid "Speedy image moderation time"
+msgstr "Speedy պատկերի մոդերացման ժամանակը"
+
+#: .\uploads\models.py:77
+msgid "AWS image moderation time"
+msgstr "AWS պատկերի մոդերացման ժամանակը"
+
+#: .\uploads\models.py:78
+msgid "AWS facial analysis time"
+msgstr "AWS դեմքի վերլուծության ժամանակը"
+
+#: .\uploads\models.py:79
+msgid "AWS raw image moderation results"
+msgstr "AWS պատկերի մոդերացման հում արդյունքներ"
+
+#: .\uploads\models.py:80
+msgid "AWS raw facial analysis results"
+msgstr "AWS դեմքի վերլուծության հում արդյունքներ"
+
+#: .\uploads\models.py:81
+msgid "number of faces"
+msgstr "դեմքերի քանակ"
+
+#: .\uploads\models.py:86
+msgid "uploaded image"
+msgstr "վերբեռնված պատկեր"
+
+#: .\uploads\models.py:87
+msgid "uploaded images"
+msgstr "վերբեռնված պատկերներ"

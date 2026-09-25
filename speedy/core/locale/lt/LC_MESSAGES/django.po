@@ -1,0 +1,3659 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\__translations\__translations.html:5
+msgid "Your friend"
+msgstr "Jūsų draugas(-ė)"
+
+#: .\__translations\__translations.html:6
+msgid "Friendship request sent"
+msgstr "Kvietimas draugauti išsiųstas"
+
+#: .\__translations\__translations.html:8
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr "Nepatvirtinote savo el. pašto adreso. Patikrinkite gautuosius."
+
+#: .\__translations\__translations.html:9
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr "Nepatvirtinote savo el. pašto adreso. Patikrinkite gautuosius."
+
+#: .\__translations\__translations.html:10
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr "Nepatvirtinote savo el. pašto adreso. Patikrinkite gautuosius."
+
+#: .\__translations\__translations.html:12
+msgctxt "female"
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: .\__translations\__translations.html:13
+msgctxt "male"
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: .\__translations\__translations.html:14
+msgctxt "other"
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: .\__translations\__translations.html:16
+#, python-format
+msgctxt "female"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Sveiki <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"sveiki sugrįžę į %(site_name)s!"
+
+#: .\__translations\__translations.html:17
+#, python-format
+msgctxt "male"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Sveiki <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"sveiki sugrįžę į %(site_name)s!"
+
+#: .\__translations\__translations.html:18
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"Sveiki <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"sveiki sugrįžę į %(site_name)s!"
+
+#: .\__translations\__translations.html:20
+msgctxt "female"
+msgid "Please confirm your email address."
+msgstr "Patvirtinkite savo el. pašto adresą."
+
+#: .\__translations\__translations.html:21
+msgctxt "male"
+msgid "Please confirm your email address."
+msgstr "Patvirtinkite savo el. pašto adresą."
+
+#: .\__translations\__translations.html:22
+msgctxt "other"
+msgid "Please confirm your email address."
+msgstr "Patvirtinkite savo el. pašto adresą."
+
+#: .\__translations\__translations.html:24
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr "Deaktyvuoti paskyrą"
+
+#: .\__translations\__translations.html:25
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr "Deaktyvuoti paskyrą"
+
+#: .\__translations\__translations.html:26
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr "Deaktyvuoti paskyrą"
+
+#: .\__translations\__translations.html:28
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr "Siųsti patvirtinimo laišką dar kartą"
+
+#: .\__translations\__translations.html:29
+msgctxt "male"
+msgid "Resend a confirmation email"
+msgstr "Siųsti patvirtinimo laišką dar kartą"
+
+#: .\__translations\__translations.html:30
+msgctxt "other"
+msgid "Resend a confirmation email"
+msgstr "Siųsti patvirtinimo laišką dar kartą"
+
+#: .\__translations\__translations.html:32
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr "Nustatyti šį el. pašto adresą kaip pagrindinį"
+
+#: .\__translations\__translations.html:33
+msgctxt "male"
+msgid "Make this email address primary"
+msgstr "Nustatyti šį el. pašto adresą kaip pagrindinį"
+
+#: .\__translations\__translations.html:34
+msgctxt "other"
+msgid "Make this email address primary"
+msgstr "Nustatyti šį el. pašto adresą kaip pagrindinį"
+
+#: .\__translations\__translations.html:36
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Ar tikrai norite ištrinti šį el. pašto adresą?"
+
+#: .\__translations\__translations.html:37
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Ar tikrai norite ištrinti šį el. pašto adresą?"
+
+#: .\__translations\__translations.html:38
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
+msgstr "Ar tikrai norite ištrinti šį el. pašto adresą?"
+
+#: .\__translations\__translations.html:40
+msgctxt "female"
+msgid "Delete this email address"
+msgstr "Ištrinti šį el. pašto adresą"
+
+#: .\__translations\__translations.html:41
+msgctxt "male"
+msgid "Delete this email address"
+msgstr "Ištrinti šį el. pašto adresą"
+
+#: .\__translations\__translations.html:42
+msgctxt "other"
+msgid "Delete this email address"
+msgstr "Ištrinti šį el. pašto adresą"
+
+#: .\__translations\__translations.html:44
+msgctxt "female"
+msgid "Add Another"
+msgstr "Pridėti dar vieną"
+
+#: .\__translations\__translations.html:45
+msgctxt "male"
+msgid "Add Another"
+msgstr "Pridėti dar vieną"
+
+#: .\__translations\__translations.html:46
+msgctxt "other"
+msgid "Add Another"
+msgstr "Pridėti dar vieną"
+
+#: .\__translations\__translations.html:48
+msgctxt "female"
+msgid "Change Password"
+msgstr "Keisti slaptažodį"
+
+#: .\__translations\__translations.html:49
+msgctxt "male"
+msgid "Change Password"
+msgstr "Keisti slaptažodį"
+
+#: .\__translations\__translations.html:50
+msgctxt "other"
+msgid "Change Password"
+msgstr "Keisti slaptažodį"
+
+#: .\__translations\__translations.html:52
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Keiskite savo profilyje esančių el. pašto adresų privatumo nustatymus."
+
+#: .\__translations\__translations.html:53
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Keiskite savo profilyje esančių el. pašto adresų privatumo nustatymus."
+
+#: .\__translations\__translations.html:54
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Keiskite savo profilyje esančių el. pašto adresų privatumo nustatymus."
+
+#: .\__translations\__translations.html:56
+msgctxt "female"
+msgid "You're not blocking anybody."
+msgstr "Jūs nieko neblokuojate."
+
+#: .\__translations\__translations.html:57
+msgctxt "male"
+msgid "You're not blocking anybody."
+msgstr "Jūs nieko neblokuojate."
+
+#: .\__translations\__translations.html:58
+msgctxt "other"
+msgid "You're not blocking anybody."
+msgstr "Jūs nieko neblokuojate."
+
+#: .\__translations\__translations.html:60
+msgctxt "female"
+msgid "Report a User"
+msgstr "Pranešti apie naudotoją"
+
+#: .\__translations\__translations.html:61
+msgctxt "male"
+msgid "Report a User"
+msgstr "Pranešti apie naudotoją"
+
+#: .\__translations\__translations.html:62
+msgctxt "other"
+msgid "Report a User"
+msgstr "Pranešti apie naudotoją"
+
+#: .\__translations\__translations.html:72
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
+msgstr "Jūsų atsiliepimas išsiųstas administratoriams."
+
+#: .\__translations\__translations.html:73
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
+msgstr "Jūsų atsiliepimas išsiųstas administratoriams."
+
+#: .\__translations\__translations.html:74
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
+msgstr "Jūsų atsiliepimas išsiųstas administratoriams."
+
+#: .\__translations\__translations.html:76
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(user_name)s"
+msgstr "Siųsti žinutę naudotojui %(user_name)s"
+
+#: .\__translations\__translations.html:77
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(user_name)s"
+msgstr "Siųsti žinutę naudotojui %(user_name)s"
+
+#: .\__translations\__translations.html:78
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(user_name)s"
+msgstr "Siųsti žinutę naudotojui %(user_name)s"
+
+#: .\__translations\__translations.html:80
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "Pažymėti viską kaip skaityta"
+
+#: .\__translations\__translations.html:81
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "Pažymėti viską kaip skaityta"
+
+#: .\__translations\__translations.html:82
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "Pažymėti viską kaip skaityta"
+
+#: .\__translations\__translations.html:84
+msgctxt "female"
+msgid "You:"
+msgstr "Jūs:"
+
+#: .\__translations\__translations.html:85
+msgctxt "male"
+msgid "You:"
+msgstr "Jūs:"
+
+#: .\__translations\__translations.html:86
+msgctxt "other"
+msgid "You:"
+msgstr "Jūs:"
+
+#: .\__translations\__translations.html:88
+msgctxt "female"
+msgid "You have no messages yet."
+msgstr "Kol kas neturite žinučių."
+
+#: .\__translations\__translations.html:89
+msgctxt "male"
+msgid "You have no messages yet."
+msgstr "Kol kas neturite žinučių."
+
+#: .\__translations\__translations.html:90
+msgctxt "other"
+msgid "You have no messages yet."
+msgstr "Kol kas neturite žinučių."
+
+#: .\__translations\__translations.html:92
+msgctxt "female"
+msgid "You blocked "
+msgstr "Jūs užblokavote "
+
+#: .\__translations\__translations.html:93
+msgctxt "male"
+msgid "You blocked "
+msgstr "Jūs užblokavote "
+
+#: .\__translations\__translations.html:94
+msgctxt "other"
+msgid "You blocked "
+msgstr "Jūs užblokavote "
+
+#: .\__translations\__translations.html:96
+msgctxt "female"
+msgid " blocked you."
+msgstr " jus užblokavo."
+
+#: .\__translations\__translations.html:97
+msgctxt "male"
+msgid " blocked you."
+msgstr " jus užblokavo."
+
+#: .\__translations\__translations.html:98
+msgctxt "other"
+msgid " blocked you."
+msgstr " jus užblokavo."
+
+#: .\__translations\__translations.html:100
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Match. Peržiūrėkite %(user_name)s"
+" profilį Speedy Match."
+
+#: .\__translations\__translations.html:101
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Match. Peržiūrėkite %(user_name)s"
+" profilį Speedy Match."
+
+#: .\__translations\__translations.html:102
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Match. Peržiūrėkite %(user_name)s"
+" profilį Speedy Match."
+
+#: .\__translations\__translations.html:104
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Net. Peržiūrėkite %(user_name)s "
+"profilį Speedy Net."
+
+#: .\__translations\__translations.html:105
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Net. Peržiūrėkite %(user_name)s "
+"profilį Speedy Net."
+
+#: .\__translations\__translations.html:106
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Net. Peržiūrėkite %(user_name)s "
+"profilį Speedy Net."
+
+#: .\__translations\__translations.html:108
+msgctxt "female"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Jūs taip pat turite profilį Speedy Net. Peržiūrėkite savo profilį Speedy "
+"Net."
+
+#: .\__translations\__translations.html:109
+msgctxt "male"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Jūs taip pat turite profilį Speedy Net. Peržiūrėkite savo profilį Speedy "
+"Net."
+
+#: .\__translations\__translations.html:110
+msgctxt "other"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Jūs taip pat turite profilį Speedy Net. Peržiūrėkite savo profilį Speedy "
+"Net."
+
+#: .\__translations\__translations.html:112
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "Pridėti prie draugų"
+
+#: .\__translations\__translations.html:113
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "Pridėti prie draugų"
+
+#: .\__translations\__translations.html:114
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "Pridėti prie draugų"
+
+#: .\__translations\__translations.html:116
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "Ar tikrai norite užblokuoti "
+
+#: .\__translations\__translations.html:117
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "Ar tikrai norite užblokuoti "
+
+#: .\__translations\__translations.html:118
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "Ar tikrai norite užblokuoti "
+
+#: .\__translations\__translations.html:120
+msgctxt "female"
+msgid "Block "
+msgstr "Užblokuoti "
+
+#: .\__translations\__translations.html:121
+msgctxt "male"
+msgid "Block "
+msgstr "Užblokuoti "
+
+#: .\__translations\__translations.html:122
+msgctxt "other"
+msgid "Block "
+msgstr "Užblokuoti "
+
+#: .\__translations\__translations.html:124
+msgctxt "female"
+msgid "Unblock "
+msgstr "Atblokuoti "
+
+#: .\__translations\__translations.html:125
+msgctxt "male"
+msgid "Unblock "
+msgstr "Atblokuoti "
+
+#: .\__translations\__translations.html:126
+msgctxt "other"
+msgid "Unblock "
+msgstr "Atblokuoti "
+
+#: .\__translations\__translations.html:128
+msgctxt "female"
+msgid "Report "
+msgstr "Pranešti apie "
+
+#: .\__translations\__translations.html:129
+msgctxt "male"
+msgid "Report "
+msgstr "Pranešti apie "
+
+#: .\__translations\__translations.html:130
+msgctxt "other"
+msgid "Report "
+msgstr "Pranešti apie "
+
+#: .\__translations\__translations.html:132
+msgctxt "female"
+msgid "Report this photo"
+msgstr "Pranešti apie šią nuotrauką"
+
+#: .\__translations\__translations.html:133
+msgctxt "male"
+msgid "Report this photo"
+msgstr "Pranešti apie šią nuotrauką"
+
+#: .\__translations\__translations.html:134
+msgctxt "other"
+msgid "Report this photo"
+msgstr "Pranešti apie šią nuotrauką"
+
+#: .\__translations\__translations.html:136
+msgctxt "female"
+msgid "Remove Friend"
+msgstr "Pašalinti iš draugų"
+
+#: .\__translations\__translations.html:137
+msgctxt "male"
+msgid "Remove Friend"
+msgstr "Pašalinti iš draugų"
+
+#: .\__translations\__translations.html:138
+msgctxt "other"
+msgid "Remove Friend"
+msgstr "Pašalinti iš draugų"
+
+#: .\__translations\__translations.html:140
+msgctxt "female"
+msgid "Cancel Friendship Request"
+msgstr "Atšaukti kvietimą draugauti"
+
+#: .\__translations\__translations.html:141
+msgctxt "male"
+msgid "Cancel Friendship Request"
+msgstr "Atšaukti kvietimą draugauti"
+
+#: .\__translations\__translations.html:142
+msgctxt "other"
+msgid "Cancel Friendship Request"
+msgstr "Atšaukti kvietimą draugauti"
+
+#: .\__translations\__translations.html:144
+msgctxt "female"
+msgid "Accept"
+msgstr "Priimti"
+
+#: .\__translations\__translations.html:145
+msgctxt "male"
+msgid "Accept"
+msgstr "Priimti"
+
+#: .\__translations\__translations.html:146
+msgctxt "other"
+msgid "Accept"
+msgstr "Priimti"
+
+#: .\__translations\__translations.html:148
+msgctxt "female"
+msgid "Reject"
+msgstr "Atmesti"
+
+#: .\__translations\__translations.html:149
+msgctxt "male"
+msgid "Reject"
+msgstr "Atmesti"
+
+#: .\__translations\__translations.html:150
+msgctxt "other"
+msgid "Reject"
+msgstr "Atmesti"
+
+#: .\__translations\__translations.html:152
+msgctxt "female"
+msgid "Accept Friendship Request"
+msgstr "Priimti kvietimą draugauti"
+
+#: .\__translations\__translations.html:153
+msgctxt "male"
+msgid "Accept Friendship Request"
+msgstr "Priimti kvietimą draugauti"
+
+#: .\__translations\__translations.html:154
+msgctxt "other"
+msgid "Accept Friendship Request"
+msgstr "Priimti kvietimą draugauti"
+
+#: .\__translations\__translations.html:156
+msgctxt "female"
+msgid "Reject Friendship Request"
+msgstr "Atmesti kvietimą draugauti"
+
+#: .\__translations\__translations.html:157
+msgctxt "male"
+msgid "Reject Friendship Request"
+msgstr "Atmesti kvietimą draugauti"
+
+#: .\__translations\__translations.html:158
+msgctxt "other"
+msgid "Reject Friendship Request"
+msgstr "Atmesti kvietimą draugauti"
+
+#: .\__translations\__translations.html:160
+msgctxt "female"
+msgid "Send Message"
+msgstr "Siųsti žinutę"
+
+#: .\__translations\__translations.html:161
+msgctxt "male"
+msgid "Send Message"
+msgstr "Siųsti žinutę"
+
+#: .\__translations\__translations.html:162
+msgctxt "other"
+msgid "Send Message"
+msgstr "Siųsti žinutę"
+
+#: .\__translations\__translations.html:164
+msgctxt "female"
+msgid "Welcome"
+msgstr "Sveiki"
+
+#: .\__translations\__translations.html:165
+msgctxt "male"
+msgid "Welcome"
+msgstr "Sveiki"
+
+#: .\__translations\__translations.html:166
+msgctxt "other"
+msgid "Welcome"
+msgstr "Sveiki"
+
+#: .\__translations\__translations.html:168
+msgctxt "female"
+msgid "Your friend"
+msgstr "Jūsų draugė"
+
+#: .\__translations\__translations.html:169
+msgctxt "male"
+msgid "Your friend"
+msgstr "Jūsų draugas"
+
+#: .\__translations\__translations.html:170
+msgctxt "other"
+msgid "Your friend"
+msgstr "Jūsų draugas(-ė)"
+
+#: .\__translations\__translations.html:172
+msgctxt "female"
+msgid "See All"
+msgstr "Rodyti viską"
+
+#: .\__translations\__translations.html:173
+msgctxt "male"
+msgid "See All"
+msgstr "Rodyti viską"
+
+#: .\__translations\__translations.html:174
+msgctxt "other"
+msgid "See All"
+msgstr "Rodyti viską"
+
+#: .\__translations\__translations.html:176
+msgctxt "female"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Jūsų Speedy Net paskyra neaktyvi. Atidarykite šį puslapį, kad ją "
+"aktyvuotumėte."
+
+#: .\__translations\__translations.html:177
+msgctxt "male"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Jūsų Speedy Net paskyra neaktyvi. Atidarykite šį puslapį, kad ją "
+"aktyvuotumėte."
+
+#: .\__translations\__translations.html:178
+msgctxt "other"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Jūsų Speedy Net paskyra neaktyvi. Atidarykite šį puslapį, kad ją "
+"aktyvuotumėte."
+
+#: .\__translations\__translations.html:180
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "Sveiki atvykę į %(site_name)s"
+
+#: .\__translations\__translations.html:181
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "Sveiki atvykę į %(site_name)s"
+
+#: .\__translations\__translations.html:182
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "Sveiki atvykę į %(site_name)s"
+
+#: .\__translations\__translations.html:184
+msgctxt "female"
+msgid "has sent you a message."
+msgstr " atsiuntė jums žinutę."
+
+#: .\__translations\__translations.html:185
+msgctxt "male"
+msgid "has sent you a message."
+msgstr " atsiuntė jums žinutę."
+
+#: .\__translations\__translations.html:186
+msgctxt "other"
+msgid "has sent you a message."
+msgstr " atsiuntė jums žinutę."
+
+#: .\__translations\__translations.html:188
+msgctxt "female"
+msgid "Read it:"
+msgstr "Skaitykite čia:"
+
+#: .\__translations\__translations.html:189
+msgctxt "male"
+msgid "Read it:"
+msgstr "Skaitykite čia:"
+
+#: .\__translations\__translations.html:190
+msgctxt "other"
+msgid "Read it:"
+msgstr "Skaitykite čia:"
+
+#: .\__translations\__translations.html:192
+#, python-format
+msgctxt "female"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Patvirtinkite savo el. pašto adresą svetainėje %(site_name)s"
+
+#: .\__translations\__translations.html:193
+#, python-format
+msgctxt "male"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Patvirtinkite savo el. pašto adresą svetainėje %(site_name)s"
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "other"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Patvirtinkite savo el. pašto adresą svetainėje %(site_name)s"
+
+#: .\__translations\__translations.html:196
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "Naudokite šią nuorodą savo paskyrai aktyvuoti:"
+
+#: .\__translations\__translations.html:197
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "Naudokite šią nuorodą savo paskyrai aktyvuoti:"
+
+#: .\__translations\__translations.html:198
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "Naudokite šią nuorodą savo paskyrai aktyvuoti:"
+
+#: .\__translations\__translations.html:200
+msgctxt "female"
+msgid "Use this link to verify your email address:"
+msgstr "Naudokite šią nuorodą savo el. pašto adresui patvirtinti:"
+
+#: .\__translations\__translations.html:201
+msgctxt "male"
+msgid "Use this link to verify your email address:"
+msgstr "Naudokite šią nuorodą savo el. pašto adresui patvirtinti:"
+
+#: .\__translations\__translations.html:202
+msgctxt "other"
+msgid "Use this link to verify your email address:"
+msgstr "Naudokite šią nuorodą savo el. pašto adresui patvirtinti:"
+
+#: .\__translations\__translations.html:204
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "Naudokite šią nuorodą savo slaptažodžiui pakeisti:"
+
+#: .\__translations\__translations.html:205
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "Naudokite šią nuorodą savo slaptažodžiui pakeisti:"
+
+#: .\__translations\__translations.html:206
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "Naudokite šią nuorodą savo slaptažodžiui pakeisti:"
+
+#: .\__translations\__translations.html:208
+msgctxt "female"
+msgid "Username"
+msgstr "Naudotojo vardas"
+
+#: .\__translations\__translations.html:209
+msgctxt "male"
+msgid "Username"
+msgstr "Naudotojo vardas"
+
+#: .\__translations\__translations.html:210
+msgctxt "other"
+msgid "Username"
+msgstr "Naudotojo vardas"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Esate užsiprenumeravę gauti tokio tipo pranešimus iš %(site_name)s. "
+"Atidarykite šį puslapį, kad pakeistumėte savo pranešimų nustatymus arba jų "
+"atsisakytumėte:"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Esate užsiprenumeravę gauti tokio tipo pranešimus iš %(site_name)s. "
+"Atidarykite šį puslapį, kad pakeistumėte savo pranešimų nustatymus arba jų "
+"atsisakytumėte:"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Esate užsiprenumeravę gauti tokio tipo pranešimus iš %(site_name)s. "
+"Atidarykite šį puslapį, kad pakeistumėte savo pranešimų nustatymus arba jų "
+"atsisakytumėte:"
+
+#: .\__translations\__translations.py:7
+msgid "Enter a valid email address."
+msgstr "Įveskite teisingą el. pašto adresą."
+
+#: .\__translations\__translations.py:8
+msgid "Email address"
+msgstr "El. pašto adresas"
+
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
+msgid "email address"
+msgstr "el. pašto adresas"
+
+#: .\__translations\__translations.py:10
+msgid "Email address:"
+msgstr "El. pašto adresas:"
+
+#: .\__translations\__translations.py:11
+#: .\templates\profiles\user_info_widget.html:70
+msgid "Email"
+msgstr "El. paštas"
+
+#: .\__translations\__translations.py:12
+msgid "Value must be valid JSON."
+msgstr "Reikšmė turi būti tinkamas JSON."
+
+#: .\__translations\__translations.py:13
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"Įveskite teisingą %(username)s ir slaptažodį. Atkreipkite dėmesį, kad "
+"abiejuose laukuose gali būti skiriamos didžiosios ir mažosios raidės."
+
+#: .\__translations\__translations.py:17
+msgid "Message"
+msgstr "Žinutė"
+
+#: .\__translations\__translations.py:19
+msgid "Friendship Request"
+msgstr "Kvietimas draugauti"
+
+#: .\__translations\__translations.py:20
+msgid "Friendship Requests"
+msgstr "Kvietimai draugauti"
+
+#: .\__translations\__translations.py:22
+msgid "Friend"
+msgstr "Draugas"
+
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
+msgid "Friends"
+msgstr "Draugai"
+
+#: .\__translations\__translations.py:25
+msgid "Following Relationship"
+msgstr "Sekimo ryšys"
+
+#: .\__translations\__translations.py:26
+msgid "Following Relationships"
+msgstr "Sekimo ryšiai"
+
+#: .\__translations\__translations.py:28
+msgid "Blocker Relationship"
+msgstr "Blokavimo ryšys"
+
+#: .\__translations\__translations.py:29
+msgid "Blocked Relationships"
+msgstr "Blokavimo ryšiai"
+
+#: .\__translations\__translations.py:34
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+"Sąraše yra %(show_value)d elementas, jų turi būti ne daugiau kaip "
+"%(limit_value)d."
+msgstr[1] ""
+"Sąraše yra %(show_value)d elementai, jų turi būti ne daugiau kaip "
+"%(limit_value)d."
+msgstr[2] ""
+"Sąraše yra %(show_value)d elementų, jų turi būti ne daugiau kaip "
+"%(limit_value)d."
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "username (slug)"
+msgstr "naudotojo vardas (slug)"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "username (slug)"
+msgstr "naudotojo vardas (slug)"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "username (slug)"
+msgstr "naudotojo vardas (slug)"
+
+#: .\__translations\__translations.py:45
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Atnaujinkite savo profilio nuotrauką"
+
+#: .\__translations\__translations.py:46
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Atnaujinkite savo profilio nuotrauką"
+
+#: .\__translations\__translations.py:47
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Atnaujinkite savo profilio nuotrauką"
+
+#: .\__translations\__translations.py:49
+msgctxt "female"
+msgid "Save Changes"
+msgstr "Išsaugoti pakeitimus"
+
+#: .\__translations\__translations.py:50
+msgctxt "male"
+msgid "Save Changes"
+msgstr "Išsaugoti pakeitimus"
+
+#: .\__translations\__translations.py:51
+msgctxt "other"
+msgid "Save Changes"
+msgstr "Išsaugoti pakeitimus"
+
+#: .\__translations\__translations.py:53
+msgctxt "female"
+msgid "You can't change your username."
+msgstr "Negalite pakeisti savo naudotojo vardo."
+
+#: .\__translations\__translations.py:54
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Negalite pakeisti savo naudotojo vardo."
+
+#: .\__translations\__translations.py:55
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "Negalite pakeisti savo naudotojo vardo."
+
+#: .\__translations\__translations.py:57
+#, python-brace-format
+msgctxt "female"
+msgid "Activate your {site_name} account"
+msgstr "Aktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:58
+#, python-brace-format
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "Aktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:59
+#, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "Aktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:61
+#, python-brace-format
+msgctxt "female"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktyvuokite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:65
+msgctxt "female"
+msgid "Add"
+msgstr "Pridėti"
+
+#: .\__translations\__translations.py:66
+msgctxt "male"
+msgid "Add"
+msgstr "Pridėti"
+
+#: .\__translations\__translations.py:67
+msgctxt "other"
+msgid "Add"
+msgstr "Pridėti"
+
+#: .\__translations\__translations.py:69
+msgctxt "female"
+msgid "Where do I live?"
+msgstr "Kur aš gyvenu?"
+
+#: .\__translations\__translations.py:70
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Kur aš gyvenu?"
+
+#: .\__translations\__translations.py:71
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "Kur aš gyvenu?"
+
+#: .\__translations\__translations.py:73
+msgctxt "female"
+msgid "Where do you live?"
+msgstr "Kur jūs gyvenate?"
+
+#: .\__translations\__translations.py:74
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "Kur jūs gyvenate?"
+
+#: .\__translations\__translations.py:75
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "Kur jūs gyvenate?"
+
+#: .\__translations\__translations.py:77
+msgctxt "female"
+msgid "Please write where you live."
+msgstr "Parašykite, kur gyvenate."
+
+#: .\__translations\__translations.py:78
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Parašykite, kur gyvenate."
+
+#: .\__translations\__translations.py:79
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "Parašykite, kur gyvenate."
+
+#: .\__translations\__translations.py:81
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganinis maitinimasis (valgomi tik augalai ir grybai)"
+
+#: .\__translations\__translations.py:82
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganinis maitinimasis (valgomi tik augalai ir grybai)"
+
+#: .\__translations\__translations.py:83
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganinis maitinimasis (valgomi tik augalai ir grybai)"
+
+#: .\__translations\__translations.py:85
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariškas maitinimasis (nevalgoma žuvis ir mėsa)"
+
+#: .\__translations\__translations.py:86
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariškas maitinimasis (nevalgoma žuvis ir mėsa)"
+
+#: .\__translations\__translations.py:87
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariškas maitinimasis (nevalgoma žuvis ir mėsa)"
+
+#: .\__translations\__translations.py:89
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "Visaėdis (valgomi gyvūnai)"
+
+#: .\__translations\__translations.py:90
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Visaėdis (valgomi gyvūnai)"
+
+#: .\__translations\__translations.py:91
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Visaėdis (valgomi gyvūnai)"
+
+#: .\__translations\__translations.py:93
+msgctxt "female"
+msgid "Vegan"
+msgstr "Veganas"
+
+#: .\__translations\__translations.py:94
+msgctxt "male"
+msgid "Vegan"
+msgstr "Veganas"
+
+#: .\__translations\__translations.py:95
+msgctxt "other"
+msgid "Vegan"
+msgstr "Veganas"
+
+#: .\__translations\__translations.py:97
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "Vegetaras"
+
+#: .\__translations\__translations.py:98
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Vegetaras"
+
+#: .\__translations\__translations.py:99
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "Vegetaras"
+
+#: .\__translations\__translations.py:101
+msgctxt "female"
+msgid "Carnist"
+msgstr "Visaėdis"
+
+#: .\__translations\__translations.py:102
+msgctxt "male"
+msgid "Carnist"
+msgstr "Visaėdis"
+
+#: .\__translations\__translations.py:103
+msgctxt "other"
+msgid "Carnist"
+msgstr "Visaėdis"
+
+#: .\__translations\__translations.py:105
+msgctxt "female"
+msgid "Not smoking"
+msgstr "Nerūko"
+
+#: .\__translations\__translations.py:106
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Nerūko"
+
+#: .\__translations\__translations.py:107
+msgctxt "other"
+msgid "Not smoking"
+msgstr "Nerūko"
+
+#: .\__translations\__translations.py:109
+msgctxt "female"
+msgid "Smoking occasionally"
+msgstr "Rūko kartais"
+
+#: .\__translations\__translations.py:110
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Rūko kartais"
+
+#: .\__translations\__translations.py:111
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Rūko kartais"
+
+#: .\__translations\__translations.py:113
+msgctxt "female"
+msgid "Smoking"
+msgstr "Rūko"
+
+#: .\__translations\__translations.py:114
+msgctxt "male"
+msgid "Smoking"
+msgstr "Rūko"
+
+#: .\__translations\__translations.py:115
+msgctxt "other"
+msgid "Smoking"
+msgstr "Rūko"
+
+#: .\__translations\__translations.py:117
+msgctxt "female"
+msgid "Single"
+msgstr "Vieniša"
+
+#: .\__translations\__translations.py:118
+msgctxt "male"
+msgid "Single"
+msgstr "Vienišas"
+
+#: .\__translations\__translations.py:119
+msgctxt "other"
+msgid "Single"
+msgstr "Be partnerio"
+
+#: .\__translations\__translations.py:121
+msgctxt "female"
+msgid "Divorced"
+msgstr "Išsiskyrusi"
+
+#: .\__translations\__translations.py:122
+msgctxt "male"
+msgid "Divorced"
+msgstr "Išsiskyręs"
+
+#: .\__translations\__translations.py:123
+msgctxt "other"
+msgid "Divorced"
+msgstr "Išsiskyręs(-usi)"
+
+#: .\__translations\__translations.py:125
+msgctxt "female"
+msgid "Widowed"
+msgstr "Našlė"
+
+#: .\__translations\__translations.py:126
+msgctxt "male"
+msgid "Widowed"
+msgstr "Našlys"
+
+#: .\__translations\__translations.py:127
+msgctxt "other"
+msgid "Widowed"
+msgstr "Našlys(-ė)"
+
+#: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "In a relationship"
+msgstr "Santykiuose"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "In a relationship"
+msgstr "Santykiuose"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "In a relationship"
+msgstr "Santykiuose"
+
+#: .\__translations\__translations.py:133
+msgctxt "female"
+msgid "In an open relationship"
+msgstr "Atviruose santykiuose"
+
+#: .\__translations\__translations.py:134
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "Atviruose santykiuose"
+
+#: .\__translations\__translations.py:135
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "Atviruose santykiuose"
+
+#: .\__translations\__translations.py:137
+msgctxt "female"
+msgid "It's complicated"
+msgstr "Viskas sudėtinga"
+
+#: .\__translations\__translations.py:138
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Viskas sudėtinga"
+
+#: .\__translations\__translations.py:139
+msgctxt "other"
+msgid "It's complicated"
+msgstr "Viskas sudėtinga"
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
+msgid "Separated"
+msgstr "Gyvena atskirai"
+
+#: .\__translations\__translations.py:142
+msgctxt "male"
+msgid "Separated"
+msgstr "Gyvena atskirai"
+
+#: .\__translations\__translations.py:143
+msgctxt "other"
+msgid "Separated"
+msgstr "Gyvena atskirai"
+
+#: .\__translations\__translations.py:145
+msgctxt "female"
+msgid "Engaged"
+msgstr "Susižadėjusi"
+
+#: .\__translations\__translations.py:146
+msgctxt "male"
+msgid "Engaged"
+msgstr "Susižadėjęs"
+
+#: .\__translations\__translations.py:147
+msgctxt "other"
+msgid "Engaged"
+msgstr "Susižadėjęs(-usi)"
+
+#: .\__translations\__translations.py:149
+msgctxt "female"
+msgid "Married"
+msgstr "Ištekėjusi"
+
+#: .\__translations\__translations.py:150
+msgctxt "male"
+msgid "Married"
+msgstr "Vedęs"
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "Married"
+msgstr "Susituokęs(-usi)"
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
+msgid "Your new password has been saved."
+msgstr "Jūsų naujasis slaptažodis išsaugotas."
+
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Jūsų naujasis slaptažodis išsaugotas."
+
+#: .\__translations\__translations.py:155
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Jūsų naujasis slaptažodis išsaugotas."
+
+#: .\__translations\__translations.py:157
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo deaktyvuotos. Jas galite bet "
+"kada vėl aktyvuoti."
+
+#: .\__translations\__translations.py:158
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo deaktyvuotos. Jas galite bet "
+"kada vėl aktyvuoti."
+
+#: .\__translations\__translations.py:159
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo deaktyvuotos. Jas galite bet "
+"kada vėl aktyvuoti."
+
+#: .\__translations\__translations.py:161
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Jūsų {site_name} paskyra buvo deaktyvuota. Galite ją bet kada vėl aktyvuoti."
+" Jūsų Speedy Net paskyra lieka aktyvi."
+
+#: .\__translations\__translations.py:162
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Jūsų {site_name} paskyra buvo deaktyvuota. Galite ją bet kada vėl aktyvuoti."
+" Jūsų Speedy Net paskyra lieka aktyvi."
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Jūsų {site_name} paskyra buvo deaktyvuota. Galite ją bet kada vėl aktyvuoti."
+" Jūsų Speedy Net paskyra lieka aktyvi."
+
+#: .\__translations\__translations.py:165
+msgctxt "female"
+msgid "You've already confirmed this email address."
+msgstr "Jūs jau patvirtinote šį el. pašto adresą."
+
+#: .\__translations\__translations.py:166
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Jūs jau patvirtinote šį el. pašto adresą."
+
+#: .\__translations\__translations.py:167
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Jūs jau patvirtinote šį el. pašto adresą."
+
+#: .\__translations\__translations.py:169
+msgctxt "female"
+msgid "You've confirmed your email address."
+msgstr "Patvirtinote savo el. pašto adresą."
+
+#: .\__translations\__translations.py:170
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Patvirtinote savo el. pašto adresą."
+
+#: .\__translations\__translations.py:171
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Patvirtinote savo el. pašto adresą."
+
+#: .\__translations\__translations.py:173
+msgctxt "female"
+msgid "Send"
+msgstr "Siųsti"
+
+#: .\__translations\__translations.py:174
+msgctxt "male"
+msgid "Send"
+msgstr "Siųsti"
+
+#: .\__translations\__translations.py:175
+msgctxt "other"
+msgid "Send"
+msgstr "Siųsti"
+
+#: .\__translations\__translations.py:177
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Jau turite {0} draugų. Speedy Net negalite turėti daugiau nei {1} draugų. "
+"Prieš tęsdami pašalinkite kai kuriuos draugus."
+
+#: .\__translations\__translations.py:178
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Jau turite {0} draugų. Speedy Net negalite turėti daugiau nei {1} draugų. "
+"Prieš tęsdami pašalinkite kai kuriuos draugus."
+
+#: .\__translations\__translations.py:179
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"Jau turite {0} draugų. Speedy Net negalite turėti daugiau nei {1} draugų. "
+"Prieš tęsdami pašalinkite kai kuriuos draugus."
+
+#: .\__translations\__translations.py:181
+#, python-brace-format
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:183
+#, python-brace-format
+msgctxt "female_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:184
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:186
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:187
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:188
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1}"
+" draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus."
+
+#: .\__translations\__translations.py:191
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Negalite draugauti su savimi."
+
+#: .\__translations\__translations.py:192
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Negalite draugauti su savimi."
+
+#: .\__translations\__translations.py:193
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Negalite draugauti su savimi."
+
+#: .\__translations\__translations.py:195
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr "Jūs jau išsiuntėte šiam naudotojui kvietimą draugauti."
+
+#: .\__translations\__translations.py:196
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Jūs jau išsiuntėte šiam naudotojui kvietimą draugauti."
+
+#: .\__translations\__translations.py:197
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Jūs jau išsiuntėte šiam naudotojui kvietimą draugauti."
+
+#: .\__translations\__translations.py:199
+msgctxt "female"
+msgid "This user already requested friendship from you."
+msgstr "Šis naudotojas jau pakvietė jus draugauti."
+
+#: .\__translations\__translations.py:200
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Šis naudotojas jau pakvietė jus draugauti."
+
+#: .\__translations\__translations.py:201
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Šis naudotojas jau pakvietė jus draugauti."
+
+#: .\__translations\__translations.py:203
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:204
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:205
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:206
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:207
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:208
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:209
+msgctxt "other_female"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:210
+msgctxt "other_male"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:211
+msgctxt "other_other"
+msgid "You already are friends with this user."
+msgstr "Jūs jau draugaujate su šiuo naudotoju."
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr "Atšaukėte savo kvietimą draugauti."
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Atšaukėte savo kvietimą draugauti."
+
+#: .\__translations\__translations.py:215
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Atšaukėte savo kvietimą draugauti."
+
+#: .\__translations\__translations.py:217
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Pašalinote šį naudotoją iš savo draugų."
+
+#: .\__translations\__translations.py:218
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Pašalinote šį naudotoją iš savo draugų."
+
+#: .\__translations\__translations.py:219
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Pašalinote šį naudotoją iš savo draugų."
+
+#: .\__translations\__translations.py:221
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr "Sveiki atvykę į {site_name}!"
+
+#: .\__translations\__translations.py:222
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "Sveiki atvykę į {site_name}!"
+
+#: .\__translations\__translations.py:223
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "Sveiki atvykę į {site_name}!"
+
+#: .\__translations\__translations.py:225
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Sveiki atvykę į {site_name}! Jūsų paskyra dabar aktyvi."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Sveiki atvykę į {site_name}! Jūsų paskyra dabar aktyvi."
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Sveiki atvykę į {site_name}! Jūsų paskyra dabar aktyvi."
+
+#: .\__translations\__translations.py:229
+msgctxt "female"
+msgid "Friends"
+msgstr "Draugai"
+
+#: .\__translations\__translations.py:230
+msgctxt "male"
+msgid "Friends"
+msgstr "Draugai"
+
+#: .\__translations\__translations.py:231
+msgctxt "other"
+msgid "Friends"
+msgstr "Draugai"
+
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Dėl piktnaudžiavimo svetaine siunčiant brukalą buvome priversti apriboti "
+"žinučių, kurias per vieną dieną galima išsiųsti kitiems svetainės nariams, "
+"skaičių. Bandykite dar kartą rytoj. Atkreipkite dėmesį, kad Speedy Net "
+"draudžiama siųsti brukalą arba to paties turinio žinutes daugeliui žmonių."
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Dėl piktnaudžiavimo svetaine siunčiant brukalą buvome priversti apriboti "
+"žinučių, kurias per vieną dieną galima išsiųsti kitiems svetainės nariams, "
+"skaičių. Bandykite dar kartą rytoj. Atkreipkite dėmesį, kad Speedy Net "
+"draudžiama siųsti brukalą arba to paties turinio žinutes daugeliui žmonių."
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Dėl piktnaudžiavimo svetaine siunčiant brukalą buvome priversti apriboti "
+"žinučių, kurias per vieną dieną galima išsiųsti kitiems svetainės nariams, "
+"skaičių. Bandykite dar kartą rytoj. Atkreipkite dėmesį, kad Speedy Net "
+"draudžiama siųsti brukalą arba to paties turinio žinutes daugeliui žmonių."
+
+#: .\__translations\__translations.py:241
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:242
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:243
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:244
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:246
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:247
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:248
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:249
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Šis naudotojas neatitinka jūsų profilio, tačiau galite aplankyti jo Speedy "
+"Net profilį. Peržiūrėkite naudotojo profilį Speedy Net."
+
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Jūsų profilio nuotrauka negali būti skaidri. Įkelkite neskaidrų vaizdą."
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Jūsų profilio nuotrauka negali būti skaidri. Įkelkite neskaidrų vaizdą."
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"Jūsų profilio nuotrauka negali būti skaidri. Įkelkite neskaidrų vaizdą."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core paskyros"
+
+#: .\accounts\fields.py:12
+msgid "Only me"
+msgstr "Tik aš"
+
+#: .\accounts\fields.py:13
+msgid "Me and my friends"
+msgstr "Aš ir mano draugai"
+
+#: .\accounts\fields.py:15
+msgid "Anyone"
+msgstr "Visi"
+
+#: .\accounts\forms.py:66
+msgid "Last name (optional)"
+msgstr "Pavardė (nebūtina)"
+
+#: .\accounts\forms.py:130
+msgid "Your email"
+msgstr "Jūsų el. paštas"
+
+#: .\accounts\forms.py:131
+msgid "New password"
+msgstr "Naujas slaptažodis"
+
+#: .\accounts\forms.py:139
+msgid "New username"
+msgstr "Naujas naudotojo vardas"
+
+#: .\accounts\forms.py:142
+msgid "Create an account"
+msgstr "Sukurti paskyrą"
+
+#: .\accounts\forms.py:167
+msgid "Update your profile picture"
+msgstr "Atnaujinkite savo profilio nuotrauką"
+
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
+msgid "A profile picture is required."
+msgstr "Profilio nuotrauka yra privaloma."
+
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+msgid "Email or Username"
+msgstr "El. paštas arba naudotojo vardas"
+
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
+msgid "Login"
+msgstr "Prisijungti"
+
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
+msgid "Forgot your password?"
+msgstr "Pamiršote slaptažodį?"
+
+#: .\accounts\forms.py:335
+msgid "Submit"
+msgstr "Pateikti"
+
+#: .\accounts\forms.py:437
+msgid "Your password"
+msgstr "Jūsų slaptažodis"
+
+#: .\accounts\forms.py:449
+msgid "Invalid password."
+msgstr "Neteisingas slaptažodis."
+
+#: .\accounts\models.py:178
+msgid "username"
+msgstr "naudotojo vardas"
+
+#: .\accounts\models.py:178 .\accounts\models.py:179
+#: .\accounts\validators.py:21
+msgid "This username is already taken."
+msgstr "Šis naudotojo vardas jau užimtas."
+
+#: .\accounts\models.py:179
+msgid "username (slug)"
+msgstr "naudotojo vardas (slug)"
+
+#: .\accounts\models.py:180
+msgid "photo"
+msgstr "nuotrauka"
+
+#: .\accounts\models.py:181
+msgid "Special username"
+msgstr "Specialus naudotojo vardas"
+
+#: .\accounts\models.py:221 .\messages\models.py:185
+msgid "entity"
+msgstr "objektas"
+
+#: .\accounts\models.py:222
+msgid "entities"
+msgstr "objektai"
+
+#: .\accounts\models.py:249
+msgid "Slug does not parse to username."
+msgstr "Slug nepaverčiamas į naudotojo vardą."
+
+#: .\accounts\models.py:253
+msgid "Username is required."
+msgstr "Naudotojo vardas yra privalomas."
+
+#: .\accounts\models.py:298
+msgid "name"
+msgstr "pavadinimas"
+
+#: .\accounts\models.py:329
+msgid "description"
+msgstr "aprašymas"
+
+#: .\accounts\models.py:473
+msgid "Female"
+msgstr "Moteris"
+
+#: .\accounts\models.py:474
+msgid "Male"
+msgstr "Vyras"
+
+#: .\accounts\models.py:475
+msgid "Other"
+msgstr "Kita"
+
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+msgid "Unknown"
+msgstr "Nežinoma"
+
+#: .\accounts\models.py:489
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganinis maitinimasis (valgomi tik augalai ir grybai)"
+
+#: .\accounts\models.py:490
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariškas maitinimasis (nevalgoma žuvis ir mėsa)"
+
+#: .\accounts\models.py:491
+msgid "Carnist (eats animals)"
+msgstr "Visaėdis (valgomi gyvūnai)"
+
+#: .\accounts\models.py:504
+msgid "Not smoking"
+msgstr "Nerūko"
+
+#: .\accounts\models.py:505
+msgid "Smoking occasionally"
+msgstr "Rūko kartais"
+
+#: .\accounts\models.py:506
+msgid "Smoking"
+msgstr "Rūko"
+
+#: .\accounts\models.py:525
+msgid "Single"
+msgstr "Be partnerio"
+
+#: .\accounts\models.py:526
+msgid "Divorced"
+msgstr "Išsiskyręs(-usi)"
+
+#: .\accounts\models.py:527
+msgid "Widowed"
+msgstr "Našlys(-ė)"
+
+#: .\accounts\models.py:528
+msgid "In a relationship"
+msgstr "Santykiuose"
+
+#: .\accounts\models.py:529
+msgid "In an open relationship"
+msgstr "Atviruose santykiuose"
+
+#: .\accounts\models.py:530
+msgid "It's complicated"
+msgstr "Viskas sudėtinga"
+
+#: .\accounts\models.py:531
+msgid "Separated"
+msgstr "Gyvena atskirai"
+
+#: .\accounts\models.py:532
+msgid "Engaged"
+msgstr "Susižadėjęs(-usi)"
+
+#: .\accounts\models.py:533
+msgid "Married"
+msgstr "Susituokęs(-usi)"
+
+#: .\accounts\models.py:542
+msgid "Notify me"
+msgstr "Pranešti man"
+
+#: .\accounts\models.py:543
+msgid "Don't notify me"
+msgstr "Nepranešti man"
+
+#: .\accounts\models.py:590
+msgid "first name"
+msgstr "vardas"
+
+#: .\accounts\models.py:593
+msgid "last name"
+msgstr "pavardė"
+
+#: .\accounts\models.py:595
+msgid "I am"
+msgstr "Esu"
+
+#: .\accounts\models.py:596
+msgid "date of birth"
+msgstr "gimimo data"
+
+#: .\accounts\models.py:597
+msgid "diet"
+msgstr "mityba"
+
+#: .\accounts\models.py:598
+msgid "smoking status"
+msgstr "rūkymo statusas"
+
+#: .\accounts\models.py:599
+msgid "relationship status"
+msgstr "santykių statusas"
+
+#: .\accounts\models.py:601
+msgid "Where do I live?"
+msgstr "Kur aš gyvenu?"
+
+#: .\accounts\models.py:608
+msgid "Who can view my birth month and day"
+msgstr "Kas gali matyti mano gimimo mėnesį ir dieną"
+
+#: .\accounts\models.py:609
+msgid "Who can view my birth year"
+msgstr "Kas gali matyti mano gimimo metus"
+
+#: .\accounts\models.py:610
+msgid "On new messages"
+msgstr "Apie naujas žinutes"
+
+#: .\accounts\models.py:616
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "Paskutinio naudoto IP adreso https://ipapi.com/ laikas"
+
+#: .\accounts\models.py:617
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "Neapdoroti paskutinio naudoto IP adreso https://ipapi.com/ rezultatai"
+
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+msgid "user"
+msgstr "naudotojas"
+
+#: .\accounts\models.py:824
+msgid "users"
+msgstr "naudotojai"
+
+#: .\accounts\models.py:870
+msgid "Superuser must be equal to staff."
+msgstr "Supernaudotojas turi sutapti su personalu."
+
+#: .\accounts\models.py:1278
+msgid "email"
+msgstr "el. paštas"
+
+#: .\accounts\models.py:1279
+msgid "is confirmed"
+msgstr "patvirtintas"
+
+#: .\accounts\models.py:1280
+msgid "is primary"
+msgstr "pagrindinis"
+
+#: .\accounts\models.py:1281
+msgid "confirmation token"
+msgstr "patvirtinimo žetonas"
+
+#: .\accounts\models.py:1282
+msgid "confirmation sent"
+msgstr "patvirtinimas išsiųstas"
+
+#: .\accounts\models.py:1283
+msgid "Who can see this email"
+msgstr "Kas gali matyti šį el. pašto adresą"
+
+#: .\accounts\models.py:1294
+msgid "email addresses"
+msgstr "el. pašto adresai"
+
+#: .\accounts\models.py:1377
+msgid "User"
+msgstr "Naudotojas"
+
+#: .\accounts\models.py:1378
+msgid "last visit"
+msgstr "paskutinis apsilankymas"
+
+#: .\accounts\models.py:1390
+msgid "Today"
+msgstr "Šiandien"
+
+#: .\accounts\models.py:1392
+msgid "Yesterday"
+msgstr "Vakar"
+
+#: .\accounts\models.py:1394
+#, python-brace-format
+msgid "On {date} ({timesince_ago})"
+msgstr "{date} ({timesince_ago})"
+
+#: .\accounts\models.py:1396
+#, python-brace-format
+msgid "{timesince} ago"
+msgstr "prieš {timesince}"
+
+#: .\accounts\validators.py:39
+msgid ""
+"Username must start with 4 or more letters, and may contain letters, digits "
+"or dashes."
+msgstr ""
+"Naudotojo vardas turi prasidėti 4 ar daugiau raidžių ir gali turėti raidžių,"
+" skaitmenų arba brūkšnelių."
+
+#: .\accounts\validators.py:41
+msgid ""
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
+msgstr ""
+"Naudotojo vardas turi prasidėti 4 ar daugiau raidžių, po kurių gali eiti bet"
+" koks skaitmenų skaičius. Tarp žodžių galite įterpti brūkšnelius."
+
+#: .\accounts\validators.py:47
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Naudotojo varde turi būti bent %(limit_value)d raidinis ar skaitmeninis "
+"simbolis (jame yra %(show_value)d)."
+msgstr[1] ""
+"Naudotojo varde turi būti bent %(limit_value)d raidiniai ar skaitmeniniai "
+"simboliai (jame yra %(show_value)d)."
+msgstr[2] ""
+"Naudotojo varde turi būti bent %(limit_value)d raidinių ar skaitmeninių "
+"simbolių (jame yra %(show_value)d)."
+
+#: .\accounts\validators.py:58
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d raidinis ar "
+"skaitmeninis simbolis (jame yra %(show_value)d)."
+msgstr[1] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d raidiniai ar "
+"skaitmeniniai simboliai (jame yra %(show_value)d)."
+msgstr[2] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d raidinių ar "
+"skaitmeninių simbolių (jame yra %(show_value)d)."
+
+#: .\accounts\validators.py:69
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Naudotojo varde turi būti bent %(limit_value)d simbolis (jame yra "
+"%(show_value)d)."
+msgstr[1] ""
+"Naudotojo varde turi būti bent %(limit_value)d simboliai (jame yra "
+"%(show_value)d)."
+msgstr[2] ""
+"Naudotojo varde turi būti bent %(limit_value)d simbolių (jame yra "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:80
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d simbolis (jame yra "
+"%(show_value)d)."
+msgstr[1] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d simboliai (jame yra "
+"%(show_value)d)."
+msgstr[2] ""
+"Naudotojo varde gali būti daugiausia %(limit_value)d simbolių (jame yra "
+"%(show_value)d)."
+
+#: .\accounts\validators.py:104
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Šis slaptažodis per trumpas. Jame turi būti bent %(min_length)d simbolis."
+msgstr[1] ""
+"Šis slaptažodis per trumpas. Jame turi būti bent %(min_length)d simboliai."
+msgstr[2] ""
+"Šis slaptažodis per trumpas. Jame turi būti bent %(min_length)d simbolių."
+
+#: .\accounts\validators.py:114
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Jūsų slaptažodyje turi būti bent %(min_length)d simbolis."
+msgstr[1] "Jūsų slaptažodyje turi būti bent %(min_length)d simboliai."
+msgstr[2] "Jūsų slaptažodyje turi būti bent %(min_length)d simbolių."
+
+#: .\accounts\validators.py:135
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
+msgstr[0] ""
+"Šis slaptažodis per ilgas. Jame gali būti daugiausia %(max_length)d "
+"simbolis."
+msgstr[1] ""
+"Šis slaptažodis per ilgas. Jame gali būti daugiausia %(max_length)d "
+"simboliai."
+msgstr[2] ""
+"Šis slaptažodis per ilgas. Jame gali būti daugiausia %(max_length)d "
+"simbolių."
+
+#: .\accounts\validators.py:145
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] "Jūsų slaptažodyje gali būti daugiausia %(max_length)d simbolis."
+msgstr[1] "Jūsų slaptažodyje gali būti daugiausia %(max_length)d simboliai."
+msgstr[2] "Jūsų slaptažodyje gali būti daugiausia %(max_length)d simbolių."
+
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"Jūsų slaptažodyje turi būti bent %(min_unique_characters)d skirtingi "
+"simboliai."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
+msgid "This field cannot be null."
+msgstr "Šis laukas negali būti null."
+
+#: .\accounts\validators.py:214
+msgid "This field cannot be blank."
+msgstr "Šis laukas negali būti tuščias."
+
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
+msgid "Enter a valid date."
+msgstr "Įveskite tinkamą datą."
+
+#: .\accounts\validators.py:246
+msgid "This email is already in use."
+msgstr "Šis el. pašto adresas jau naudojamas."
+
+#: .\accounts\validators.py:257
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
+msgstr ""
+"Šio paveikslėlio failo dydis yra per didelis. Didžiausias leidžiamas failo "
+"dydis – 30 MB."
+
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
+msgstr ""
+"Negalite naudoti šio formato savo profilio nuotraukai. Priimami tik JPEG "
+"arba PNG formatai."
+
+#: .\accounts\views.py:299
+msgid "Invalid confirmation link."
+msgstr "Neteisinga patvirtinimo nuoroda."
+
+#: .\accounts\views.py:324 .\accounts\views.py:340
+#, python-brace-format
+msgid "A confirmation message was sent to {email_address}"
+msgstr "Patvirtinimo žinutė buvo išsiųsta adresu {email_address}"
+
+#: .\accounts\views.py:355
+msgid "The email address was deleted."
+msgstr "El. pašto adresas buvo ištrintas."
+
+#: .\accounts\views.py:371
+msgid "You have made this email address primary."
+msgstr "Nustatėte šį el. pašto adresą kaip pagrindinį."
+
+#: .\admin\views.py:72
+#, python-brace-format
+msgid ""
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
+"entered the site in the last month, "
+"{total_number_of_members_in_the_last_four_months} members entered the site "
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
+msgstr ""
+"Administratorius: bendras svetainės narių skaičius yra "
+"{total_number_of_members}; iš jų per paskutinę savaitę svetainėje apsilankė "
+"{total_number_of_members_in_the_last_week} nariai, per paskutinį mėnesį – "
+"{total_number_of_members_in_the_last_month} nariai, per paskutinius keturis "
+"mėnesius – {total_number_of_members_in_the_last_four_months} nariai, per "
+"paskutinius aštuonis mėnesius – "
+"{total_number_of_members_in_the_last_eight_months} nariai, o per paskutinius"
+" dvejus metus – {total_number_of_members_in_the_last_two_years} nariai."
+
+#: .\admin\views.py:118
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_the_last_week} members "
+"registered in the last week. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
+"{total_number_of_members_registered_more_than_four_months_ago} members "
+"registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
+"{total_number_of_members_registered_before_2019_08_01} members registered "
+"before 1 August 2019."
+msgstr ""
+"Administratorius: per paskutinę savaitę užsiregistravo "
+"{total_number_of_members_registered_in_the_last_week} nariai. Per paskutinį "
+"mėnesį užsiregistravo {total_number_of_members_registered_in_the_last_month}"
+" nariai. Per paskutinius keturis mėnesius užsiregistravo "
+"{total_number_of_members_registered_in_the_last_four_months} nariai. Daugiau"
+" nei prieš keturis mėnesius užsiregistravo "
+"{total_number_of_members_registered_more_than_four_months_ago} nariai. Per "
+"paskutinius aštuonis mėnesius užsiregistravo "
+"{total_number_of_members_registered_in_the_last_eight_months} nariai. "
+"Daugiau nei prieš aštuonis mėnesius užsiregistravo "
+"{total_number_of_members_registered_more_than_eight_months_ago} nariai. Per "
+"paskutinius dvejus metus užsiregistravo "
+"{total_number_of_members_registered_in_the_last_two_years} nariai. Daugiau "
+"nei prieš dvejus metus užsiregistravo "
+"{total_number_of_members_registered_more_than_two_years_ago} nariai. Iki "
+"2019 m. rugpjūčio 1 d. užsiregistravo "
+"{total_number_of_members_registered_before_2019_08_01} nariai."
+
+#: .\admin\views.py:138
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_year} members registered in "
+"{year}."
+msgstr ""
+"Administratorius: {year} m. užsiregistravo "
+"{total_number_of_members_registered_in_year} nariai."
+
+#: .\base\apps.py:13
+msgid "Speedy Core Base App"
+msgstr "Speedy Core bazinė programa"
+
+#: .\base\fields.py:17
+msgid "ID"
+msgstr "ID"
+
+#: .\base\utils.py:417
+msgctxt "timesince"
+msgid ", "
+msgstr ", "
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
+msgstr "id turi neleistinų simbolių."
+
+#: .\base\views.py:57
+msgid "Changes saved."
+msgstr "Pakeitimai išsaugoti."
+
+#: .\blocks\managers.py:30 .\blocks\models.py:43
+msgid "Users cannot block themselves."
+msgstr "Naudotojai negali blokuoti savęs."
+
+#: .\blocks\models.py:23
+msgid "blocked user"
+msgstr "užblokuotas naudotojas"
+
+#: .\blocks\models.py:28
+msgid "block"
+msgstr "blokavimas"
+
+#: .\blocks\models.py:29
+msgid "user blocks"
+msgstr "naudotojo blokavimai"
+
+#: .\blocks\views.py:19
+msgid "You have blocked {}."
+msgstr "Užblokavote {}."
+
+#: .\blocks\views.py:31
+msgid "You have unblocked {}."
+msgstr "Atblokavote {}."
+
+#: .\contact_by_form\apps.py:8
+msgid "Contact By Form"
+msgstr "Susisiekimas per formą"
+
+#: .\contact_by_form\forms.py:14
+msgid "Type the number \"17\""
+msgstr "Įveskite skaičių „17“"
+
+#: .\contact_by_form\forms.py:41
+msgid "Send"
+msgstr "Siųsti"
+
+#: .\contact_by_form\forms.py:47
+msgid "Please contact us by email."
+msgstr "Susisiekite su mumis el. paštu."
+
+#: .\contact_by_form\forms.py:53
+msgid "Not 17."
+msgstr "Ne 17."
+
+#: .\contact_by_form\models.py:33
+msgid "Feedback"
+msgstr "Atsiliepimas"
+
+#: .\contact_by_form\models.py:34
+msgid "Abuse (User)"
+msgstr "Piktnaudžiavimas (naudotojas)"
+
+#: .\contact_by_form\models.py:35
+msgid "Abuse (Photo)"
+msgstr "Piktnaudžiavimas (nuotrauka)"
+
+#: .\contact_by_form\models.py:38 .\messages\models.py:156
+msgid "sender"
+msgstr "siuntėjas"
+
+#: .\contact_by_form\models.py:39
+msgid "your name"
+msgstr "jūsų vardas"
+
+#: .\contact_by_form\models.py:40
+msgid "your email"
+msgstr "jūsų el. paštas"
+
+#: .\contact_by_form\models.py:41
+msgid "type"
+msgstr "tipas"
+
+#: .\contact_by_form\models.py:42
+msgid "your message"
+msgstr "jūsų žinutė"
+
+#: .\contact_by_form\models.py:44
+msgid "reported entity"
+msgstr "objektas, apie kurį pranešta"
+
+#: .\contact_by_form\models.py:45
+msgid "reported photo"
+msgstr "nuotrauka, apie kurią pranešta"
+
+#: .\contact_by_form\models.py:48
+msgid "feedback"
+msgstr "atsiliepimas"
+
+#: .\contact_by_form\models.py:49
+msgid "feedbacks"
+msgstr "atsiliepimai"
+
+#: .\friends\views.py:189
+msgid "Friendship request sent."
+msgstr "Kvietimas draugauti išsiųstas."
+
+#: .\friends\views.py:204
+msgid "No friendship request."
+msgstr "Nėra kvietimo draugauti."
+
+#: .\friends\views.py:243
+msgid "Friendship request accepted."
+msgstr "Kvietimas draugauti priimtas."
+
+#: .\friends\views.py:261
+msgid "Friendship request rejected."
+msgstr "Kvietimas draugauti atmestas."
+
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:13
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:29
+msgid "Messages"
+msgstr "Žinutės"
+
+#: .\messages\models.py:29
+msgid "site"
+msgstr "svetainė"
+
+#: .\messages\models.py:30
+msgid "participant 1"
+msgstr "1 dalyvis"
+
+#: .\messages\models.py:31
+msgid "participant 2"
+msgstr "2 dalyvis"
+
+#: .\messages\models.py:32
+msgid "participants"
+msgstr "dalyviai"
+
+#: .\messages\models.py:33
+msgid "is group chat"
+msgstr "yra grupinis pokalbis"
+
+#: .\messages\models.py:34
+msgid "last message"
+msgstr "paskutinė žinutė"
+
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+msgid "chat"
+msgstr "pokalbis"
+
+#: .\messages\models.py:68
+msgid "chats"
+msgstr "pokalbiai"
+
+#: .\messages\models.py:77
+msgid "None"
+msgstr "Nėra"
+
+#: .\messages\models.py:157 .\messages\models.py:162
+msgid "message"
+msgstr "žinutė"
+
+#: .\messages\models.py:163
+msgid "messages"
+msgstr "žinutės"
+
+#: .\messages\models.py:191
+msgid "read mark"
+msgstr "skaitymo žyma"
+
+#: .\messages\models.py:192
+msgid "read marks"
+msgstr "skaitymo žymos"
+
+#: .\settings\base.py:196
+msgid "English"
+msgstr "Anglų"
+
+#: .\settings\base.py:197
+msgid "Hebrew"
+msgstr "Hebrajų"
+
+#: .\settings\base_with_login.py:65
+msgid "French"
+msgstr "Prancūzų"
+
+#: .\settings\base_with_login.py:66
+msgid "German"
+msgstr "Vokiečių"
+
+#: .\settings\base_with_login.py:67
+msgid "Spanish"
+msgstr "Ispanų"
+
+#: .\settings\base_with_login.py:68
+msgid "Portuguese"
+msgstr "Portugalų"
+
+#: .\settings\base_with_login.py:69
+msgid "Italian"
+msgstr "Italų"
+
+#: .\settings\base_with_login.py:70
+msgid "Dutch"
+msgstr "Olandų"
+
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "Japonų"
+
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "Rusų"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "Kinų"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "Lenkų"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "Persų"
+
+#: .\settings\base_with_login.py:79
+msgid "Korean"
+msgstr "Korėjiečių"
+
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "Arabų"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "Indoneziečių"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "Ukrainiečių"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "Turkų"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "Vietnamiečių"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "Čekų"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "Švedų"
+
+#: .\settings\base_with_login.py:87
+msgid "Finnish"
+msgstr "Suomių"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "Vengrų"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "Tajų"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "Graikų"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "Malajų"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "Serbų"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "Rumunų"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "Bengalų"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "Katalonų"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "Norvegų (Bokmål)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "Bulgarų"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "Danų"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "Slovakų"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "Hindi"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "Estų"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "Kroatų"
+
+#: .\settings\base_with_login.py:103
+msgid "Azerbaijani"
+msgstr "Azerbaidžaniečių"
+
+#: .\settings\base_with_login.py:104
+msgid "Cantonese"
+msgstr "Kantoniečių"
+
+#: .\settings\base_with_login.py:105
+msgid "Lithuanian"
+msgstr "Lietuvių"
+
+#: .\settings\base_with_login.py:106
+msgid "Slovenian"
+msgstr "Slovėnų"
+
+#: .\settings\base_with_login.py:107
+msgid "Basque"
+msgstr "Baskų"
+
+#: .\settings\base_with_login.py:108
+msgid "Armenian"
+msgstr "Armėnų"
+
+#: .\settings\base_with_login.py:109
+msgid "Uzbek"
+msgstr "Uzbekų"
+
+#: .\settings\base_with_login.py:110
+msgid "Tamil"
+msgstr "Tamilų"
+
+#: .\settings\base_with_login.py:111
+msgid "Latvian"
+msgstr "Latvių"
+
+#: .\templates\400.html:6 .\templates\400.html:10
+msgid "Bad request"
+msgstr "Netinkama užklausa"
+
+#: .\templates\400.html:14 .\templates\500.html:14
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr "Speedy atsiprašo, bet negalime apdoroti jūsų užklausos."
+
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr "Prieiga uždrausta"
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr "Speedy atsiprašo, bet šis puslapis yra privatus."
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr "Puslapis nerastas"
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr "Speedy atsiprašo, bet puslapis nerastas."
+
+#: .\templates\500.html:6 .\templates\500.html:10
+msgid "Internal server error"
+msgstr "Vidinė serverio klaida"
+
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:36
+#: .\templates\menu\about_mobile_menu_links.html:11
+msgid "About"
+msgstr "Apie"
+
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:12
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
+#: .\templates\profiles\tools\edit_profile.html:4
+#: .\templates\profiles\tools\edit_profile.html:6
+msgid "Edit Profile"
+msgstr "Redaguoti profilį"
+
+#: .\templates\accounts\edit_profile\core_base.html:19
+msgid "Profile Info"
+msgstr "Profilio informacija"
+
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+msgid "Privacy"
+msgstr "Privatumas"
+
+#: .\templates\accounts\edit_profile\core_base.html:31
+msgid "Notifications"
+msgstr "Pranešimai"
+
+#: .\templates\accounts\edit_profile\core_base.html:37
+msgid "Emails & Password"
+msgstr "El. paštas ir slaptažodis"
+
+#: .\templates\accounts\edit_profile\core_base.html:45
+msgid "Deactivate Account"
+msgstr "Deaktyvuoti paskyrą"
+
+#: .\templates\accounts\edit_profile\credentials.html:7
+msgid "Email Addresses"
+msgstr "El. pašto adresai"
+
+#: .\templates\accounts\edit_profile\credentials.html:12
+msgid "Address"
+msgstr "Adresas"
+
+#: .\templates\accounts\edit_profile\credentials.html:13
+msgid "Added"
+msgstr "Pridėta"
+
+#: .\templates\accounts\edit_profile\credentials.html:14
+msgid "Visibility"
+msgstr "Matomumas"
+
+#: .\templates\accounts\edit_profile\credentials.html:15
+msgid "Actions"
+msgstr "Veiksmai"
+
+#: .\templates\accounts\edit_profile\credentials.html:23
+msgid "Unconfirmed"
+msgstr "Nepatvirtinta"
+
+#: .\templates\accounts\edit_profile\credentials.html:25
+msgid "Primary"
+msgstr "Pagrindinis"
+
+#: .\templates\accounts\edit_profile\credentials.html:45
+msgid "Resend a confirmation email"
+msgstr "Siųsti patvirtinimo laišką dar kartą"
+
+#: .\templates\accounts\edit_profile\credentials.html:53
+msgid "Make this email address primary"
+msgstr "Nustatyti šį el. pašto adresą kaip pagrindinį"
+
+#: .\templates\accounts\edit_profile\credentials.html:59
+msgid "Are you sure you want to delete this email address?"
+msgstr "Ar tikrai norite ištrinti šį el. pašto adresą?"
+
+#: .\templates\accounts\edit_profile\credentials.html:61
+msgid "Delete this email address"
+msgstr "Ištrinti šį el. pašto adresą"
+
+#: .\templates\accounts\edit_profile\credentials.html:77
+msgid "Add Another"
+msgstr "Pridėti dar vieną"
+
+#: .\templates\accounts\edit_profile\credentials.html:84
+msgid "Change Password"
+msgstr "Keisti slaptažodį"
+
+#: .\templates\accounts\edit_profile\privacy.html:12
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "Jūsų amžius bus matomas jūsų atitikmenims Speedy Match."
+
+#: .\templates\accounts\edit_profile\privacy.html:16
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"Keiskite savo profilyje esančių el. pašto adresų privatumo nustatymus."
+
+#: .\templates\accounts\email_address_form.html:6
+#: .\templates\accounts\email_address_form.html:12
+msgid "Add Email"
+msgstr "Pridėti el. paštą"
+
+#: .\templates\accounts\logged_out.html:5
+msgid "Logged Out"
+msgstr "Atsijungta"
+
+#: .\templates\accounts\password_reset\complete.html:5
+#: .\templates\accounts\password_reset\complete.html:11
+#: .\templates\accounts\password_reset\confirm.html:6
+#: .\templates\accounts\password_reset\confirm.html:12
+#: .\templates\accounts\password_reset\done.html:5
+#: .\templates\accounts\password_reset\done.html:11
+#: .\templates\accounts\password_reset\form.html:6
+#: .\templates\accounts\password_reset\form.html:12
+msgid "Reset Password"
+msgstr "Atstatyti slaptažodį"
+
+#: .\templates\accounts\password_reset\complete.html:14
+msgid "Password reset successfully."
+msgstr "Slaptažodis sėkmingai atstatytas."
+
+#: .\templates\accounts\password_reset\confirm.html:18
+msgid "Password reset failed. Invalid link."
+msgstr "Nepavyko atstatyti slaptažodžio. Neteisinga nuoroda."
+
+#: .\templates\accounts\password_reset\done.html:14
+msgid "Email with password reset instructions has been sent."
+msgstr "Laiškas su slaptažodžio atstatymo instrukcijomis išsiųstas."
+
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "Rodyti viską"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "Administratorius – draugai"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
+msgstr "draugai"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "Dar nėra draugų."
+
+#: .\templates\admin\profiles\user_info_widget.html:11
+msgid "Admin Information"
+msgstr "Administratoriaus informacija"
+
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr "Administratorius – visi naudotojai"
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr "Naudotojų nėra."
+
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "Ši svetainė kuriama"
+
+#: .\templates\base.html:110
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr "Nepatvirtinote savo el. pašto adreso. Patikrinkite gautuosius."
+
+#: .\templates\base.html:163
+msgid "Speedy Net Blog"
+msgstr "Speedy Net tinklaraštis"
+
+#: .\templates\base.html:165
+msgid "Speedy Paz"
+msgstr "Speedy Paz"
+
+#: .\templates\base.html:167
+msgid "Speedy Software"
+msgstr "Speedy Software"
+
+#: .\templates\base.html:169
+msgid "Speedy Sale"
+msgstr "Speedy Sale"
+
+#: .\templates\base.html:195 .\templates\base.html:196
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
+msgid "A vegan friendly website"
+msgstr "Veganams draugiška svetainė"
+
+#: .\templates\base.html:212 .\templates\base.html:214
+msgid "Speedy"
+msgstr "Speedy"
+
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: .\templates\base_with_login.html:67
+msgid "Home"
+msgstr "Pradžia"
+
+#: .\templates\base_with_login.html:133
+msgid "Password"
+msgstr "Slaptažodis"
+
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
+msgid "Speedy Net"
+msgstr "Speedy Net"
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
+msgid "Speedy Match"
+msgstr "Speedy Match"
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
+msgid "Speedy Net's Shop"
+msgstr "Speedy Net parduotuvė"
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
+msgid "Speedy Match's Shop"
+msgstr "Speedy Match parduotuvė"
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
+msgid "Speedy S-logo Shop"
+msgstr "Speedy S logotipo parduotuvė"
+
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:15
+msgid "Privacy Policy"
+msgstr "Privatumo politika"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:15
+msgid "Terms of Service"
+msgstr "Naudojimo sąlygos"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "Sąlygos"
+
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
+#: .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:15
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
+#: .\templates\menu\about_mobile_menu_links.html:20
+msgid "Contact Us"
+msgstr "Susisiekite su mumis"
+
+#: .\templates\base_without_login.html:19
+msgid "Speedy Composer"
+msgstr "Speedy Composer"
+
+#: .\templates\base_without_login.html:20
+msgid "Speedy Mail Software"
+msgstr "Speedy Mail Software"
+
+#: .\templates\base_without_login.html:28
+msgid "Speedy Composer's Shop"
+msgstr "Speedy Composer parduotuvė"
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
+msgstr "Užblokuoti naudotojai"
+
+#: .\templates\blocks\block_list.html:15
+msgid "You're not blocking anybody."
+msgstr "Jūs nieko neblokuojate."
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
+msgstr ""
+"Jei turite klausimų, pasiūlymų ar norite prisijungti prie komandos, "
+"susisiekite su mumis el. paštu."
+
+#: .\templates\contact_by_email\contact_us.html:21
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, įkūrėjas ir svetainės administratorius:"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr "Pranešti apie naudotoją"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr "Pranešti apie nuotrauką"
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr "Ačiū"
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr "Jūsų atsiliepimas išsiųstas administratoriams."
+
+#: .\templates\core\pagination.html:9
+msgid "Previous"
+msgstr "Ankstesnis"
+
+#: .\templates\core\pagination.html:32
+msgid "Next"
+msgstr "Kitas"
+
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "Naudokite šią nuorodą savo paskyrai aktyvuoti:"
+
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "Patvirtinkite savo el. pašto adresą svetainėje %(site_name)s"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to verify your email address:"
+msgstr "Naudokite šią nuorodą savo el. pašto adresui patvirtinti:"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "Naudokite šią nuorodą savo slaptažodžiui pakeisti:"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "%(site_name)s slaptažodžio atstatymas"
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr " atsiuntė jums žinutę."
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr "Skaitykite čia:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Esate užsiprenumeravę gauti tokio tipo pranešimus iš %(site_name)s. "
+"Atidarykite šį puslapį, kad pakeistumėte savo pranešimų nustatymus arba jų "
+"atsisakytumėte:"
+
+#: .\templates\email\messages\new_message_subject.txt:1
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "Turite naują žinutę svetainėje %(site_name)s"
+
+#: .\templates\friends\base.html:35
+msgid "Received Requests"
+msgstr "Gauti kvietimai"
+
+#: .\templates\friends\base.html:41
+msgid "Sent Requests"
+msgstr "Išsiųsti kvietimai"
+
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
+msgid "There are no pending friendship requests."
+msgstr "Nėra laukiančių kvietimų draugauti."
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr "Sveiki atvykę į %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:21
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr "Prisijunkite prie %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:24
+msgid "It's free and anyone can join!"
+msgstr "Tai nemokama ir prisijungti gali kiekvienas!"
+
+#: .\templates\messages\chat_detail.html:35
+#, python-format
+msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Pokalbis su <a href=\"%(link)s\">%(user_name)s</a>"
+
+#: .\templates\messages\chat_detail.html:41
+#: .\templates\messages\message_form.html:9
+#, python-format
+msgid "Send a message to %(user_name)s"
+msgstr "Siųsti žinutę naudotojui %(user_name)s"
+
+#: .\templates\messages\chat_detail.html:55
+msgid "Mark All as Read"
+msgstr "Pažymėti viską kaip skaityta"
+
+#: .\templates\messages\chat_list.html:56
+msgid "Unread"
+msgstr "Neskaityta"
+
+#: .\templates\messages\chat_list.html:63
+msgid "You:"
+msgstr "Jūs:"
+
+#: .\templates\messages\chat_list.html:83
+msgid "You have no messages yet."
+msgstr "Kol kas neturite žinučių."
+
+#: .\templates\messages\message.html:20
+msgid "New"
+msgstr "Nauja"
+
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"Mes gerbiame jūsų privatumą. Neparduosime ir nesidalysime jūsų asmens "
+"duomenimis, įskaitant jūsų vardą, gimimo datą, el. pašto adresą ir "
+"slaptažodį. Žinutės, kurias siunčiate žmonėms Speedy Net, yra asmeninės ir "
+"nebus dalijamasi su kitais žmonėmis ar svetainėmis. Jūsų slaptažodis mūsų "
+"duomenų bazėje saugomas užšifruotas."
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
+msgstr ""
+"Jūsų profilis Speedy Net yra matomas visiems, tačiau galite pasirinkti, kam "
+"rodyti savo el. pašto adresą ir gimimo datą. Jei užsiregistravote Speedy "
+"Match, jūsų Speedy Match profilis bus matomas tik žmonėms, kurie jums tinka "
+"pagal svetainėje nustatytus kriterijus ir kuriems jūs taip pat tinkate pagal"
+" jų nustatymus. Jūsų Speedy Match profilis nebus rodomas Google ir jo "
+"nematys žmonės, kurie nėra užsiregistravę svetainėje."
+
+#: .\templates\privacy\privacy_policy.html:23
+msgid ""
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+"Jei deaktyvavote savo paskyrą Speedy Net arba Speedy Match, jūsų profilis "
+"toje svetainėje bus pašalintas ir nebebūsite rodomi kitų žmonių paieškos "
+"rezultatuose. Atkreipkite dėmesį, kad deaktyvavus paskyrą Speedy Net "
+"automatiškai deaktyvuojama ir jūsų paskyra Speedy Match. Galite deaktyvuoti "
+"tik savo paskyrą Speedy Match; tokiu atveju jūsų Speedy Net paskyra liks "
+"aktyvi. Paskyrą po deaktyvavimo galite bet kada vėl aktyvuoti."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
+msgstr ""
+"Jei norite, galite ištrinti savo paskyrą Speedy Net. Ištrynus Speedy Net "
+"paskyrą, automatiškai bus ištrinta ir jūsų Speedy Match paskyra. Norėdami "
+"ištrinti savo Speedy Net paskyrą, prisijunkite prie Speedy Net, "
+"deaktyvuokite paskyrą ir tada spustelėkite „Delete Account“ (meniu „Edit "
+"Profile“). Užpildykite formoje pateiktą informaciją ir patvirtinkite. "
+"Atkreipkite dėmesį, kad ištrintos paskyros atkurti negalima. Paskyros "
+"ištrynimas yra nuolatinis ir negrįžtamas."
+
+#: .\templates\profiles\block_warning.html:9
+msgid "You blocked "
+msgstr "Jūs užblokavote "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr "."
+
+#: .\templates\profiles\block_warning.html:11
+msgid " blocked you."
+msgstr " jus užblokavo."
+
+#: .\templates\profiles\tools\add_to_friends.html:10
+#: .\templates\profiles\user_list_item.html:30
+msgid "Accept Friendship Request"
+msgstr "Priimti kvietimą draugauti"
+
+#: .\templates\profiles\tools\add_to_friends.html:12
+#: .\templates\profiles\user_list_item.html:32
+msgid "Accept"
+msgstr "Priimti"
+
+#: .\templates\profiles\tools\add_to_friends.html:17
+#: .\templates\profiles\user_list_item.html:37
+msgid "Reject Friendship Request"
+msgstr "Atmesti kvietimą draugauti"
+
+#: .\templates\profiles\tools\add_to_friends.html:19
+#: .\templates\profiles\user_list_item.html:39
+msgid "Reject"
+msgstr "Atmesti"
+
+#: .\templates\profiles\tools\add_to_friends.html:25
+#: .\templates\profiles\tools\add_to_friends.html:27
+msgid "Add to Friends"
+msgstr "Pridėti prie draugų"
+
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
+msgid "Toggle Dropdown"
+msgstr "Perjungti išskleidžiamąjį meniu"
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "Are you sure you want to block "
+msgstr "Ar tikrai norite užblokuoti "
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "?"
+msgstr "?"
+
+#: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
+msgid "Block "
+msgstr "Užblokuoti "
+
+#: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
+msgid "Unblock "
+msgstr "Atblokuoti "
+
+#: .\templates\profiles\tools\block_user.html:30
+msgid "Report "
+msgstr "Pranešti apie "
+
+#: .\templates\profiles\tools\block_user.html:32
+msgid "Report this photo"
+msgstr "Pranešti apie šią nuotrauką"
+
+#: .\templates\profiles\tools\friendship_request_sent.html:7
+msgid "Cancel Friendship Request"
+msgstr "Atšaukti kvietimą draugauti"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
+msgstr "Pašalinti iš draugų"
+
+#: .\templates\profiles\tools\send_message.html:9
+#: .\templates\profiles\tools\send_message.html:11
+msgid "Send Message"
+msgstr "Siųsti žinutę"
+
+#: .\templates\profiles\user_info_widget.html:12
+msgid "Information"
+msgstr "Informacija"
+
+#: .\templates\profiles\user_info_widget.html:19
+msgid "Name"
+msgstr "Vardas"
+
+#: .\templates\profiles\user_info_widget.html:25
+msgid "Username"
+msgstr "Naudotojo vardas"
+
+#: .\templates\profiles\user_info_widget.html:35
+msgid "Gender"
+msgstr "Lytis"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Date"
+msgstr "Gimimo data"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Year"
+msgstr "Gimimo metai"
+
+#: .\templates\profiles\user_info_widget.html:61
+msgid "Age"
+msgstr "Amžius"
+
+#: .\templates\profiles\user_on_speedy_match_widget.html:6
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Match. Peržiūrėkite %(user_name)s"
+" profilį Speedy Match."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"Jūs taip pat turite profilį Speedy Net. Peržiūrėkite savo profilį Speedy "
+"Net."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s taip pat turi profilį Speedy Net. Peržiūrėkite %(user_name)s "
+"profilį Speedy Net."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr ""
+"Svetainė yra alpha stadijoje, todėl joje gali būti klaidų. Svetainės "
+"administracija neatsako už jokius svetainės veikimo sutrikimus."
+
+#: .\templates\terms\terms_of_service.html:21
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
+msgstr ""
+"Speedy Net galite naudoti tik teisėtais tikslais. Draudžiama įkelti turinį, "
+"susijusį su neapykanta, smurtu, žiauriu elgesiu su gyvūnais, nuogumu ar "
+"pornografija. Taip pat draudžiama naudoti Speedy Net brukalui siųsti arba "
+"siųsti to paties turinio žinutes daugeliui žmonių."
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
+msgstr ""
+"Svetainės administracija negali patikrinti svetainės naudotojų pateiktos "
+"asmeninės informacijos. Kai kurių naudotojų asmens duomenys gali būti "
+"neteisingi. Svetainės administracija neatsako už naudotojų veiklą už "
+"svetainės ribų. Jei nuspręsite susitikti ar kalbėti telefonu su žmonėmis, "
+"kuriuos sutikote svetainėje, atsakomybė už tokio susitikimo ar pokalbio "
+"pasekmes tenka jums."
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+"Užsiregistravę svetainėje būsite paprašyti patvirtinti savo el. pašto adresą"
+" per jums atsiųstą nuorodą. Paskyros be patvirtinto el. pašto adreso po 10 "
+"dienų bus pašalintos iš svetainės."
+
+#: .\templates\terms\terms_of_service.html:27
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
+msgstr ""
+"Jei per klaidą užsiregistravote svetainėje nurodydami neteisingą el. pašto "
+"adresą, pridėkite prie savo paskyros naują el. pašto adresą ir jį "
+"patvirtinkite. Prie savo paskyros svetainėje galite pridėti kelis el. pašto "
+"adresus."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"Jūsų profilio nuotrauka turėtų būti jūsų nuotrauka, kurioje matomas jūsų "
+"veidas. Leidžiama įkelti profilio nuotrauką, kurioje yra ir kitų žmonių. "
+"Nekelkite nuogų nuotraukų, nuotraukų, kuriose matomi lytiniai organai (vyrų "
+"ar moterų), arba nuotraukų, kuriose žmonės (vyrai ar moterys) yra apnuoginta"
+" krūtine."
+
+#: .\templates\uploads\file_input.html:6
+msgid "Browse..."
+msgstr "Naršyti..."
+
+#: .\uploads\models.py:24
+msgid "owner"
+msgstr "savininkas"
+
+#: .\uploads\models.py:25
+msgid "file"
+msgstr "failas"
+
+#: .\uploads\models.py:26
+msgid "is stored"
+msgstr "yra saugomas"
+
+#: .\uploads\models.py:27
+msgid "file size"
+msgstr "failo dydis"
+
+#: .\uploads\models.py:36
+msgid "uploaded file"
+msgstr "įkeltas failas"
+
+#: .\uploads\models.py:37
+msgid "uploaded files"
+msgstr "įkelti failai"
+
+#: .\uploads\models.py:75
+msgid "visible on website"
+msgstr "matoma svetainėje"
+
+#: .\uploads\models.py:76
+msgid "Speedy image moderation time"
+msgstr "Speedy vaizdų moderavimo laikas"
+
+#: .\uploads\models.py:77
+msgid "AWS image moderation time"
+msgstr "AWS vaizdų moderavimo laikas"
+
+#: .\uploads\models.py:78
+msgid "AWS facial analysis time"
+msgstr "AWS veidų analizės laikas"
+
+#: .\uploads\models.py:79
+msgid "AWS raw image moderation results"
+msgstr "Neapdoroti AWS vaizdų moderavimo rezultatai"
+
+#: .\uploads\models.py:80
+msgid "AWS raw facial analysis results"
+msgstr "Neapdoroti AWS veidų analizės rezultatai"
+
+#: .\uploads\models.py:81
+msgid "number of faces"
+msgstr "veidų skaičius"
+
+#: .\uploads\models.py:86
+msgid "uploaded image"
+msgstr "įkeltas vaizdas"
+
+#: .\uploads\models.py:87
+msgid "uploaded images"
+msgstr "įkelti vaizdai"

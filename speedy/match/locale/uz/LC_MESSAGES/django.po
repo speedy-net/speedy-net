@@ -1,0 +1,1418 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "You have no likes here."
+msgstr "Bu yerda sizni yoqtirganlar yo'q."
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "You have no likes here."
+msgstr "Bu yerda sizni yoqtirganlar yo'q."
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "You have no likes here."
+msgstr "Bu yerda sizni yoqtirganlar yo'q."
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "Update matches"
+msgstr "Mosliklarni yangilash"
+
+#: .\__translations\__translations.html:11
+msgctxt "male"
+msgid "Update matches"
+msgstr "Mosliklarni yangilash"
+
+#: .\__translations\__translations.html:12
+msgctxt "other"
+msgid "Update matches"
+msgstr "Mosliklarni yangilash"
+
+#: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "Add more options"
+msgstr "Yana variantlar qo'shish"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "Add more options"
+msgstr "Yana variantlar qo'shish"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "Add more options"
+msgstr "Yana variantlar qo'shish"
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"Sizda hali mosliklar yo'q. Qidiruv sozlamalaringizni kengaytirib ko'ring "
+"yoki keyinroq yana tekshiring."
+
+#: .\__translations\__translations.html:19
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"Sizda hali mosliklar yo'q. Qidiruv sozlamalaringizni kengaytirib ko'ring "
+"yoki keyinroq yana tekshiring."
+
+#: .\__translations\__translations.html:20
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"Sizda hali mosliklar yo'q. Qidiruv sozlamalaringizni kengaytirib ko'ring "
+"yoki keyinroq yana tekshiring."
+
+#: .\__translations\__translations.html:22
+msgctxt "female"
+msgid "Match Settings"
+msgstr "Moslik sozlamalari"
+
+#: .\__translations\__translations.html:23
+msgctxt "male"
+msgid "Match Settings"
+msgstr "Moslik sozlamalari"
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Match Settings"
+msgstr "Moslik sozlamalari"
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
+msgid "Like"
+msgstr "Yoqtirish"
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Like"
+msgstr "Yoqtirish"
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid "Like"
+msgstr "Yoqtirish"
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Unlike"
+msgstr "Yoqtirmaslik"
+
+#: .\__translations\__translations.html:31
+msgctxt "male"
+msgid "Unlike"
+msgstr "Yoqtirmaslik"
+
+#: .\__translations\__translations.html:32
+msgctxt "other"
+msgid "Unlike"
+msgstr "Yoqtirmaslik"
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Your Matches"
+msgstr "Sizning mosliklaringiz"
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Your Matches"
+msgstr "Sizning mosliklaringiz"
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Your Matches"
+msgstr "Sizning mosliklaringiz"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\__translations\__translations.html:42
+msgctxt "female"
+msgid "Your Friends"
+msgstr "Do'stlaringiz"
+
+#: .\__translations\__translations.html:43
+msgctxt "male"
+msgid "Your Friends"
+msgstr "Do'stlaringiz"
+
+#: .\__translations\__translations.html:44
+msgctxt "other"
+msgid "Your Friends"
+msgstr "Do'stlaringiz"
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
+msgid "You don't have any friends yet."
+msgstr "Sizda hali hech qanday do'stlar yo'q."
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr "Sizda hali hech qanday do'stlar yo'q."
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr "Sizda hali hech qanday do'stlar yo'q."
+
+#: .\__translations\__translations.html:50
+msgctxt "female"
+msgid "About me"
+msgstr "Men haqimda"
+
+#: .\__translations\__translations.html:51
+msgctxt "male"
+msgid "About me"
+msgstr "Men haqimda"
+
+#: .\__translations\__translations.html:52
+msgctxt "other"
+msgid "About me"
+msgstr "Men haqimda"
+
+#: .\__translations\__translations.html:54
+msgctxt "female"
+msgid "About my match"
+msgstr "Mos keladigan odam haqida"
+
+#: .\__translations\__translations.html:55
+msgctxt "male"
+msgid "About my match"
+msgstr "Mos keladigan odam haqida"
+
+#: .\__translations\__translations.html:56
+msgctxt "other"
+msgid "About my match"
+msgstr "Mos keladigan odam haqida"
+
+#: .\__translations\__translations.html:58
+msgctxt "female"
+msgid "Gender to match"
+msgstr "Mos keladigan jins"
+
+#: .\__translations\__translations.html:59
+msgctxt "male"
+msgid "Gender to match"
+msgstr "Mos keladigan jins"
+
+#: .\__translations\__translations.html:60
+msgctxt "other"
+msgid "Gender to match"
+msgstr "Mos keladigan jins"
+
+#: .\__translations\__translations.html:62
+#, python-format
+msgctxt "female"
+msgid "Someone likes you on %(site_name)s"
+msgstr "%(site_name)s da kimdir sizni yoqtirdi"
+
+#: .\__translations\__translations.html:63
+#, python-format
+msgctxt "male"
+msgid "Someone likes you on %(site_name)s"
+msgstr "%(site_name)s da kimdir sizni yoqtirdi"
+
+#: .\__translations\__translations.html:64
+#, python-format
+msgctxt "other"
+msgid "Someone likes you on %(site_name)s"
+msgstr "%(site_name)s da kimdir sizni yoqtirdi"
+
+#: .\__translations\__translations.html:66
+msgctxt "female"
+msgid "likes you."
+msgstr "sizni yoqtirdi."
+
+#: .\__translations\__translations.html:67
+msgctxt "male"
+msgid "likes you."
+msgstr "sizni yoqtirdi."
+
+#: .\__translations\__translations.html:68
+msgctxt "other"
+msgid "likes you."
+msgstr "sizni yoqtirdi."
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr "sizni yoqtirdi"
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr "sizni yoqtirdi"
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr "sizni yoqtirdi"
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr "Siz yoqtirgan"
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr "Siz yoqtirgan"
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
+msgstr "Siz yoqtirgan"
+
+#: .\__translations\__translations.html:78
+msgctxt "female"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match ga oxirgi kirish"
+
+#: .\__translations\__translations.html:79
+msgctxt "male"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match ga oxirgi kirish"
+
+#: .\__translations\__translations.html:80
+msgctxt "other"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match ga oxirgi kirish"
+
+#: .\__translations\__translations.py:6
+msgid "My height in centimeters"
+msgstr "Mening bo'yim santimetrda"
+
+#: .\__translations\__translations.py:9
+msgctxt "female"
+msgid "Add profile picture"
+msgstr "Profil rasmini qo'shish"
+
+#: .\__translations\__translations.py:10
+msgctxt "male"
+msgid "Add profile picture"
+msgstr "Profil rasmini qo'shish"
+
+#: .\__translations\__translations.py:11
+msgctxt "other"
+msgid "Add profile picture"
+msgstr "Profil rasmini qo'shish"
+
+#: .\__translations\__translations.py:13
+msgctxt "female"
+msgid "My height in centimeters"
+msgstr "Mening bo'yim santimetrda"
+
+#: .\__translations\__translations.py:14
+msgctxt "male"
+msgid "My height in centimeters"
+msgstr "Mening bo'yim santimetrda"
+
+#: .\__translations\__translations.py:15
+msgctxt "other"
+msgid "My height in centimeters"
+msgstr "Mening bo'yim santimetrda"
+
+#: .\__translations\__translations.py:17
+#: .\templates\accounts\edit_profile\activate.html:115
+msgctxt "female"
+msgid "My ideal match"
+msgstr "Mening ideal juftim"
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:121
+msgctxt "male"
+msgid "My ideal match"
+msgstr "Mening ideal juftim"
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:128
+msgctxt "other"
+msgid "My ideal match"
+msgstr "Mening ideal juftim"
+
+#: .\__translations\__translations.py:21
+#: .\templates\accounts\edit_profile\activate.html:116
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr "Mos keladigan eng kichik yosh"
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:122
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr "Mos keladigan eng kichik yosh"
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:129
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr "Mos keladigan eng kichik yosh"
+
+#: .\__translations\__translations.py:25
+#: .\templates\accounts\edit_profile\activate.html:117
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr "Mos keladigan eng katta yosh"
+
+#: .\__translations\__translations.py:26
+#: .\templates\accounts\edit_profile\activate.html:123
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr "Mos keladigan eng katta yosh"
+
+#: .\__translations\__translations.py:27
+#: .\templates\accounts\edit_profile\activate.html:130
+msgctxt "other"
+msgid "Maximal age to match"
+msgstr "Mos keladigan eng katta yosh"
+
+#: .\__translations\__translations.py:29
+msgctxt "female"
+msgid "Please write a few words about yourself."
+msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
+
+#: .\__translations\__translations.py:30
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
+
+#: .\__translations\__translations.py:31
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
+
+#: .\__translations\__translations.py:33
+msgctxt "female"
+msgid "Do you have children? How many?"
+msgstr "Farzandlaringiz bormi? Nechta?"
+
+#: .\__translations\__translations.py:34
+msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "Farzandlaringiz bormi? Nechta?"
+
+#: .\__translations\__translations.py:35
+msgctxt "other"
+msgid "Do you have children? How many?"
+msgstr "Farzandlaringiz bormi? Nechta?"
+
+#: .\__translations\__translations.py:37
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr "(Yana) farzand ko'rishni xohlaysizmi?"
+
+#: .\__translations\__translations.py:38
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "(Yana) farzand ko'rishni xohlaysizmi?"
+
+#: .\__translations\__translations.py:39
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr "(Yana) farzand ko'rishni xohlaysizmi?"
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "Who is your ideal partner?"
+msgstr "Sizning ideal juftingiz kim?"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "Sizning ideal juftingiz kim?"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "Who is your ideal partner?"
+msgstr "Sizning ideal juftingiz kim?"
+
+#: .\__translations\__translations.py:45
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Kechirasiz, lekin sizga {site_name} saytidan foydalanishga ruxsat "
+"berilmagan. Biz saytga ro'yxatdan o'tishda bergan ayrim ma'lumotlaringiz "
+"noto'g'ri ekanini yoki siz sayt qoidalarini buzganingizni aniqladik. Shu "
+"sababli sizga saytdan foydalanishga ruxsat berilmagan."
+
+#: .\__translations\__translations.py:46
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Kechirasiz, lekin sizga {site_name} saytidan foydalanishga ruxsat "
+"berilmagan. Biz saytga ro'yxatdan o'tishda bergan ayrim ma'lumotlaringiz "
+"noto'g'ri ekanini yoki siz sayt qoidalarini buzganingizni aniqladik. Shu "
+"sababli sizga saytdan foydalanishga ruxsat berilmagan."
+
+#: .\__translations\__translations.py:47
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"Kechirasiz, lekin sizga {site_name} saytidan foydalanishga ruxsat "
+"berilmagan. Biz saytga ro'yxatdan o'tishda bergan ayrim ma'lumotlaringiz "
+"noto'g'ri ekanini yoki siz sayt qoidalarini buzganingizni aniqladik. Shu "
+"sababli sizga saytdan foydalanishga ruxsat berilmagan."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Match Accounts"
+msgstr "Speedy Match akkauntlari"
+
+#: .\accounts\forms.py:58
+msgid "Add profile picture"
+msgstr "Profil rasmini qo'shish"
+
+#: .\accounts\forms.py:58 .\accounts\forms.py:97
+msgid "A profile picture is required."
+msgstr "Profil rasmi majburiy."
+
+#: .\accounts\forms.py:59
+msgid "My diet"
+msgstr "Mening ovqatlanishim"
+
+#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
+msgid "Your diet is required."
+msgstr "Ovqatlanish turini ko'rsatish majburiy."
+
+#: .\accounts\forms.py:60
+msgid "My smoking status"
+msgstr "Mening chekish holatim"
+
+#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
+msgid "Your smoking status is required."
+msgstr "Chekish holatini ko'rsatish majburiy."
+
+#: .\accounts\forms.py:61
+msgid "My relationship status"
+msgstr "Mening munosabat holatim"
+
+#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
+msgid "Your relationship status is required."
+msgstr "Munosabat holatini ko'rsatish majburiy."
+
+#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
+msgid "Gender to match is required."
+msgstr "Mos keladigan jinsni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:100
+msgid "Your height is required."
+msgstr "Bo'yingizni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:112 .\accounts\validators.py:43
+msgid "Please write a few words about yourself."
+msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
+
+#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
+msgid "Please write where you live."
+msgstr "Iltimos, qaerda yashayotganingizni yozing."
+
+#: .\accounts\forms.py:118 .\accounts\models.py:221
+#: .\accounts\validators.py:53
+#: .\templates\profiles\user_extra_info_widget.html:30
+msgid "Do you have children? How many?"
+msgstr "Farzandlaringiz bormi? Nechta?"
+
+#: .\accounts\forms.py:121 .\accounts\models.py:224
+#: .\accounts\validators.py:58
+#: .\templates\profiles\user_extra_info_widget.html:34
+msgid "Do you want (more) children?"
+msgstr "(Yana) farzand ko'rishni xohlaysizmi?"
+
+#: .\accounts\forms.py:124 .\accounts\validators.py:63
+msgid "Who is your ideal partner?"
+msgstr "Sizning ideal juftingiz kim?"
+
+#: .\accounts\forms.py:130
+msgid "Minimal age to match is required."
+msgstr "Mos keladigan eng kichik yoshni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:133
+msgid "Maximal age to match is required."
+msgstr "Mos keladigan eng katta yoshni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:136 .\accounts\validators.py:110
+msgid "Diet match is required."
+msgstr "Ovqatlanish bo'yicha moslikni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:139 .\accounts\validators.py:118
+msgid "Smoking status match is required."
+msgstr "Chekish holati bo'yicha moslikni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:142 .\accounts\validators.py:126
+msgid "Relationship status match is required."
+msgstr "Munosabat holati bo'yicha moslikni ko'rsatish majburiy."
+
+#: .\accounts\forms.py:150
+msgid "Where do you live?"
+msgstr "Qayerda yashaysiz?"
+
+#: .\accounts\forms.py:186 .\accounts\models.py:231
+#: .\templates\profiles\user_extra_info_widget.html:50
+msgid "Gender to match"
+msgstr "Mos keladigan jins"
+
+#: .\accounts\models.py:64
+msgid "Speedy Match User"
+msgstr "Speedy Match foydalanuvchisi"
+
+#: .\accounts\models.py:74 .\accounts\models.py:197
+msgid "No match"
+msgstr "Moslik yo'q"
+
+#: .\accounts\models.py:75 .\accounts\models.py:198
+msgid "One heart"
+msgstr "Bir yurak"
+
+#: .\accounts\models.py:76 .\accounts\models.py:199
+msgid "Two hearts"
+msgstr "Ikki yurak"
+
+#: .\accounts\models.py:77 .\accounts\models.py:200
+msgid "Three hearts"
+msgstr "Uch yurak"
+
+#: .\accounts\models.py:78 .\accounts\models.py:201
+msgid "Four hearts"
+msgstr "To'rt yurak"
+
+#: .\accounts\models.py:79 .\accounts\models.py:202
+msgid "Five hearts"
+msgstr "Besh yurak"
+
+#: .\accounts\models.py:206
+msgid "User"
+msgstr "Foydalanuvchi"
+
+#: .\accounts\models.py:207
+msgid "On new likes"
+msgstr "Yangi yoqtirishlar haqida"
+
+#: .\accounts\models.py:210
+msgid "Active languages"
+msgstr "Faol tillar"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:26
+msgid "Height"
+msgstr "Bo'y"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:27
+msgid "cm"
+msgstr "sm"
+
+#: .\accounts\models.py:218
+msgid "Few words about me"
+msgstr "Men haqimda bir necha so'z"
+
+#: .\accounts\models.py:227
+#: .\templates\profiles\user_extra_info_widget.html:54
+msgid "My ideal match"
+msgstr "Mening ideal juftim"
+
+#: .\accounts\models.py:237
+msgid "Minimal age to match"
+msgstr "Mos keladigan eng kichik yosh"
+
+#: .\accounts\models.py:238
+msgid "Maximal age to match"
+msgstr "Mos keladigan eng katta yosh"
+
+#: .\accounts\models.py:239
+msgid "Diet match"
+msgstr "Ovqatlanish bo'yicha moslik"
+
+#: .\accounts\models.py:240
+msgid "Smoking status match"
+msgstr "Chekish holati bo'yicha moslik"
+
+#: .\accounts\models.py:241
+msgid "Relationship status match"
+msgstr "Munosabat holati bo'yicha moslik"
+
+#: .\accounts\models.py:244
+msgid "Diet to match"
+msgstr "Mos keladigan ovqatlanish turi"
+
+#: .\accounts\models.py:252
+msgid "Smoking status to match"
+msgstr "Mos keladigan chekish holati"
+
+#: .\accounts\models.py:260
+msgid "Relationship status to match"
+msgstr "Mos keladigan munosabat holati"
+
+#: .\accounts\models.py:267
+msgid "Activation step"
+msgstr "Faollashtirish bosqichi"
+
+#: .\accounts\models.py:270
+msgid "Number of matches on last user's search"
+msgstr "Foydalanuvchining oxirgi qidiruvidagi mosliklar soni"
+
+#: .\accounts\models.py:346
+msgid "Speedy Match Profile"
+msgstr "Speedy Match profili"
+
+#: .\accounts\models.py:347 .\profiles\apps.py:8
+msgid "Speedy Match Profiles"
+msgstr "Speedy Match profillari"
+
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
+msgid "Please confirm your email address."
+msgstr "Iltimos, elektron pochta manzilingizni tasdiqlang."
+
+#: .\accounts\utils.py:89
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"Saytda faol ishtirokchilarning umumiy soni "
+"{total_number_of_active_members_in_the_last_four_months} hisoblanadi, "
+"ulardan {total_number_of_active_members_in_the_last_week} a'zolari so'nggi "
+"hafta saytga kirishdi."
+
+#: .\accounts\validators.py:68
+msgid "Height must be from 1 to 450 cm."
+msgstr "Bo'y 1 sm dan 450 sm gacha bo'lishi kerak."
+
+#: .\accounts\validators.py:93
+msgid "Minimal age to match must be from 0 to 180 years."
+msgstr "Mos keladigan eng kichik yosh 0 dan 180 yoshgacha bo'lishi kerak."
+
+#: .\accounts\validators.py:98
+msgid "Maximal age to match must be from 0 to 180 years."
+msgstr "Mos keladigan eng katta yosh 0 dan 180 yoshgacha bo'lishi kerak."
+
+#: .\accounts\validators.py:104
+msgid "Maximal age to match can't be less than minimal age to match."
+msgstr ""
+"Mos keladigan eng katta yosh eng kichik yoshdan kichik bo'lishi mumkin emas."
+
+#: .\accounts\validators.py:112
+msgid "At least one diet match option should be five hearts."
+msgstr ""
+"Ovqatlanish bo'yicha moslik variantlaridan kamida bittasi besh yurak "
+"bo'lishi kerak."
+
+#: .\accounts\validators.py:120
+msgid "At least one smoking status match option should be five hearts."
+msgstr ""
+"Chekish holati bo'yicha moslik variantlaridan kamida bittasi besh yurak "
+"bo'lishi kerak."
+
+#: .\accounts\validators.py:128
+msgid "At least one relationship status match option should be five hearts."
+msgstr ""
+"Munosabat holati bo'yicha moslik variantlaridan kamida bittasi besh yurak "
+"bo'lishi kerak."
+
+#: .\admin\views.py:202
+#, python-brace-format
+msgid ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the"
+" site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+msgstr ""
+"Admin: Saytdagi faol a'zolarning umumiy soni "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"ayol, {total_number_of_male_active_members} erkak, "
+"{total_number_of_other_active_members} boshqa; "
+"{total_percent_of_female_active_members} ayol, "
+"{total_percent_of_male_active_members} erkak, "
+"{total_percent_of_other_active_members} boshqa), shundan "
+"{total_number_of_active_members_in_the_last_week} a'zo "
+"({total_number_of_female_active_members_in_the_last_week} ayol, "
+"{total_number_of_male_active_members_in_the_last_week} erkak, "
+"{total_number_of_other_active_members_in_the_last_week} boshqa; "
+"{total_percent_of_female_active_members_in_the_last_week} ayol, "
+"{total_percent_of_male_active_members_in_the_last_week} erkak, "
+"{total_percent_of_other_active_members_in_the_last_week} boshqa) o'tgan "
+"hafta, {total_number_of_active_members_in_the_last_month} a'zo "
+"({total_number_of_female_active_members_in_the_last_month} ayol, "
+"{total_number_of_male_active_members_in_the_last_month} erkak, "
+"{total_number_of_other_active_members_in_the_last_month} boshqa; "
+"{total_percent_of_female_active_members_in_the_last_month} ayol, "
+"{total_percent_of_male_active_members_in_the_last_month} erkak, "
+"{total_percent_of_other_active_members_in_the_last_month} boshqa) o'tgan oy,"
+" {total_number_of_active_members_in_the_last_four_months} a'zo "
+"({total_number_of_female_active_members_in_the_last_four_months} ayol, "
+"{total_number_of_male_active_members_in_the_last_four_months} erkak, "
+"{total_number_of_other_active_members_in_the_last_four_months} boshqa; "
+"{total_percent_of_female_active_members_in_the_last_four_months} ayol, "
+"{total_percent_of_male_active_members_in_the_last_four_months} erkak, "
+"{total_percent_of_other_active_members_in_the_last_four_months} boshqa) "
+"so'nggi to'rt oy, {total_number_of_active_members_in_the_last_eight_months} "
+"a'zo ({total_number_of_female_active_members_in_the_last_eight_months} ayol,"
+" {total_number_of_male_active_members_in_the_last_eight_months} erkak, "
+"{total_number_of_other_active_members_in_the_last_eight_months} boshqa; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} ayol, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} erkak, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} boshqa) "
+"so'nggi sakkiz oy va {total_number_of_active_members_in_the_last_two_years} "
+"a'zo ({total_number_of_female_active_members_in_the_last_two_years} ayol, "
+"{total_number_of_male_active_members_in_the_last_two_years} erkak, "
+"{total_number_of_other_active_members_in_the_last_two_years} boshqa; "
+"{total_percent_of_female_active_members_in_the_last_two_years} ayol, "
+"{total_percent_of_male_active_members_in_the_last_two_years} erkak, "
+"{total_percent_of_other_active_members_in_the_last_two_years} boshqa) "
+"so'nggi ikki yil ichida saytga kirgan."
+
+#: .\admin\views.py:284
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_the_last_week} active "
+"members registered in the last week. "
+"{total_number_of_active_members_registered_in_the_last_month} active members"
+" registered in the last month. "
+"{total_number_of_active_members_registered_in_the_last_four_months} active "
+"members registered in the last four months. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} active"
+" members registered more than four months ago. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} active "
+"members registered in the last eight months. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"active members registered more than eight months ago. "
+"{total_number_of_active_members_registered_in_the_last_two_years} active "
+"members registered in the last two years. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} active "
+"members registered more than two years ago. "
+"{total_number_of_active_members_registered_before_2019_08_01} active members"
+" registered before 1 August 2019."
+msgstr ""
+"Admin: O'tgan haftada "
+"{total_number_of_active_members_registered_in_the_last_week} faol a'zo "
+"ro'yxatdan o'tgan. O'tgan oyda "
+"{total_number_of_active_members_registered_in_the_last_month} faol a'zo "
+"ro'yxatdan o'tgan. So'nggi to'rt oyda "
+"{total_number_of_active_members_registered_in_the_last_four_months} faol "
+"a'zo ro'yxatdan o'tgan. To'rt oydan ko'proq vaqt oldin "
+"{total_number_of_active_members_registered_more_than_four_months_ago} faol "
+"a'zo ro'yxatdan o'tgan. So'nggi sakkiz oyda "
+"{total_number_of_active_members_registered_in_the_last_eight_months} faol "
+"a'zo ro'yxatdan o'tgan. Sakkiz oydan ko'proq vaqt oldin "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} faol "
+"a'zo ro'yxatdan o'tgan. So'nggi ikki yilda "
+"{total_number_of_active_members_registered_in_the_last_two_years} faol a'zo "
+"ro'yxatdan o'tgan. Ikki yildan ko'proq vaqt oldin "
+"{total_number_of_active_members_registered_more_than_two_years_ago} faol "
+"a'zo ro'yxatdan o'tgan. "
+"{total_number_of_active_members_registered_before_2019_08_01} faol a'zo "
+"2019-yil 1-avgustdan oldin ro'yxatdan o'tgan."
+
+#: .\admin\views.py:304
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
+msgstr ""
+"Admin: {year} yilda {total_number_of_active_members_registered_in_year} faol"
+" a'zo ro'yxatdan o'tgan."
+
+#: .\admin\views.py:359
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} females, "
+"{total_number_of_male_active_members_in_age_range} males, "
+"{total_number_of_other_active_members_in_age_range} others) active members "
+"aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range} females, "
+"{total_percent_of_male_active_members_in_age_range} males, "
+"{total_percent_of_other_active_members_in_age_range} others)."
+msgstr ""
+"Admin: {min_age} dan {max_age} yoshgacha bo'lgan "
+"{total_number_of_active_members_in_age_range} nafar faol a'zo "
+"({total_number_of_female_active_members_in_age_range} ayol, "
+"{total_number_of_male_active_members_in_age_range} erkak, "
+"{total_number_of_other_active_members_in_age_range} boshqa; "
+"{total_percent_of_female_active_members_in_age_range} ayol, "
+"{total_percent_of_male_active_members_in_age_range} erkak, "
+"{total_percent_of_other_active_members_in_age_range} boshqa)."
+
+#: .\admin\views.py:423
+#, python-brace-format
+msgid ""
+"Admin: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) entered the site in the last eight months."
+msgstr ""
+"Admin: So'nggi sakkiz oy ichida {min_age} dan {max_age} yoshgacha bo'lgan "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} nafar"
+" faol a'zo "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" ayol, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"erkak, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" boshqa; "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" ayol, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" erkak, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" boshqa) saytga kirgan."
+
+#: .\admin\views.py:487
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months}"
+" "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" others) entered the site in the last four months."
+msgstr ""
+"Admin: So'nggi to'rt oy ichida {min_age} dan {max_age} yoshgacha bo'lgan "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} nafar "
+"faol a'zo "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" ayol, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"erkak, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"boshqa; "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" ayol, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"erkak, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" boshqa) saytga kirgan."
+
+#: .\likes\managers.py:14 .\likes\models.py:48
+msgid "Users cannot like themselves."
+msgstr "Foydalanuvchilar o'zlarini yoqtira olmaydi."
+
+#: .\likes\managers.py:17
+msgid "User already likes other user."
+msgstr "Foydalanuvchi boshqa foydalanuvchini allaqachon yoqtirgan."
+
+#: .\likes\managers.py:20
+msgid "User cannot like a blocked user."
+msgstr "Foydalanuvchi bloklangan foydalanuvchini yoqtira olmaydi."
+
+#: .\likes\models.py:21
+msgid "from user"
+msgstr "kimdan"
+
+#: .\likes\models.py:22
+msgid "to user"
+msgstr "kimga"
+
+#: .\likes\models.py:28
+msgid "user like"
+msgstr "foydalanuvchi yoqtirishi"
+
+#: .\likes\models.py:29
+msgid "user likes"
+msgstr "foydalanuvchi yoqtirishlari"
+
+#: .\likes\views.py:28
+msgid "Girls You Like"
+msgstr "Siz yoqtirgan qizlar"
+
+#: .\likes\views.py:29
+msgid "Boys You Like"
+msgstr "Siz yoqtirgan yigitlar"
+
+#: .\likes\views.py:30
+msgid "People You Like"
+msgstr "Siz yoqtirgan odamlar"
+
+#: .\likes\views.py:33
+msgid "Girls Who Like You"
+msgstr "Sizni yoqtirgan qizlar"
+
+#: .\likes\views.py:34
+msgid "Boys Who Like You"
+msgstr "Sizni yoqtirgan yigitlar"
+
+#: .\likes\views.py:35
+msgid "People Who Like You"
+msgstr "Sizni yoqtirgan odamlar"
+
+#: .\likes\views.py:37
+msgid "Mutual Likes"
+msgstr "O'zaro yoqtirishlar"
+
+#: .\matches\apps.py:8
+msgid "Speedy Match Matches"
+msgstr "Speedy Match mosliklari"
+
+#: .\matches\views.py:84 .\matches\views.py:98
+msgid "Your match settings were saved."
+msgstr "Moslik sozlamalaringiz saqlandi."
+
+#: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
+msgid "Unknown"
+msgstr "Noma'lum"
+
+#: .\profiles\widgets.py:64
+msgid "None"
+msgstr "Yo'q"
+
+#: .\settings\base_site.py:12
+msgid "Speedy Match [alpha]"
+msgstr "Speedy Match [alpha]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Match"
+msgstr "Speedy Match haqida"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a>. With Speedy Match you can find matching people for dating and chat "
+"with them online. You can add people as friends on Speedy Net, like people "
+"and send them messages. Speedy Match is open to free registration for people"
+" from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> - <a href=\"https://%(language_code)s.speedy.net/\""
+" title=\"Speedy Net\">Speedy Net</a> a'zosi bo'lgan yolg'izlar uchun "
+"romantik maqsadlarga mo'ljallangan yangi tanishuv/moslashtirish veb-ilovasi."
+" Speedy Match orqali siz uchrashuv uchun mos odamlarni topishingiz va ular "
+"bilan onlayn suhbatlashishingiz mumkin. Siz Speedy Net da odamlarni do'st "
+"sifatida qo'shishingiz, ularni yoqtirishingiz va ularga xabar yuborishingiz "
+"mumkin. Speedy Match barcha mamlakatlar va barcha yoshdagi odamlar uchun "
+"bepul ro'yxatdan o'tishga ochiq (yosh cheklovi yo'q!). Sayt vegan va "
+"vegetarianlar uchun qulay. Hozirda u %(languages_num)s tilda mavjud."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Match are vegan, support animal rights and object to "
+"experiments on animals. Speedy Match is a dating app friendly for vegan and "
+"vegetarian people and animals."
+msgstr ""
+"Speedy Match asoschilari vegan, hayvonlar huquqlarini qo'llab-quvvatlaydi va"
+" hayvonlar ustida tajribalar o'tkazilishiga qarshi. Speedy Match vegan va "
+"vegetarian odamlar hamda hayvonlar uchun qulay tanishuv ilovasidir."
+
+#: .\templates\about\about.html:21
+msgid ""
+"Only people who match your requirements will be able to see your profile and"
+" contact you. We don't allow anonymous searches and Speedy Match profiles "
+"are visible to matching partners only. You can select who will be able to "
+"see your profile and which details will appear on your profile as public, "
+"which details only to friends and which details will be private. Private "
+"details will appear only to you."
+msgstr ""
+"Faqat sizning talablaringizga mos keladigan odamlar profilingizni ko'ra "
+"oladi va siz bilan bog'lana oladi. Biz anonim qidiruvlarga ruxsat bermaymiz "
+"va Speedy Match profillari faqat o'zaro mos keladigan odamlargagina "
+"ko'rinadi. Siz profilingizni kimlar ko'rishini, qaysi ma'lumotlar hammaga "
+"ochiq bo'lishini, qaysilari faqat do'stlarga ko'rinishini va qaysilari "
+"maxfiy bo'lishini tanlashingiz mumkin. Maxfiy ma'lumotlar faqat sizga "
+"ko'rinadi."
+
+#: .\templates\about\about.html:23
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes. "
+"<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
+msgstr ""
+"Speedy Net va Speedy Match dagi barcha imkoniyatlar bepul. Mos juftlarni "
+"topish uchun Speedy Match ga bugunoq qo'shiling - bu atigi bir necha daqiqa "
+"oladi. Qo'shilish uchun <a href=\"/\" title=\"Join Speedy Match\">shu yerni "
+"bosing</a>."
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Match is a free software & open source project. If you want to help "
+"developing and improving Speedy Match, please contact me by email."
+msgstr ""
+"Speedy Match - bepul dasturiy ta'minot va ochiq kodli loyiha. Agar Speedy "
+"Match ni rivojlantirish va yaxshilashga yordam bermoqchi bo'lsangiz, "
+"iltimos, menga elektron pochta orqali murojaat qiling."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Match is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Match ko'p yillar davomida biz bilan bo'lgan va 2003 yilda vafot "
+"etgan <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> ismli urg'ochi it sharafiga nomlangan. Speedy "
+"1988 yilda 7 ta kuchuk tug'gan."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
+msgstr ""
+"Speedy Match hozircha alpha bosqichida. U 2019-yil avgust oyida ishga "
+"tushirilgan. Speedy Match ning inglizcha versiyasi ishlatishda."
+
+#: .\templates\about\about.html:31
+msgid "Thank you and good luck,"
+msgstr "Rahmat va omad tilayman,"
+
+#: .\templates\about\about.html:32
+msgid "Uri Rodberg"
+msgstr "Uri Rodberg"
+
+#: .\templates\about\about.html:33
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Speedy Net va Speedy Match asoschisi va direktori,"
+
+#: .\templates\about\about.html:34
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Registration Step"
+msgstr "Ro'yxatdan o'tish bosqichi"
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: .\templates\accounts\edit_profile\activate.html:25
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s ga xush kelibsiz"
+
+#: .\templates\accounts\edit_profile\activate.html:46
+#: .\templates\accounts\edit_profile\base.html:10
+#: .\templates\matches\settings\base.html:41
+#: .\templates\profiles\user_extra_info_widget.html:18
+msgid "About me"
+msgstr "Men haqimda"
+
+#: .\templates\accounts\edit_profile\activate.html:48
+#: .\templates\accounts\edit_profile\base.html:15
+#: .\templates\matches\settings\base.html:36
+msgid "About my match"
+msgstr "Mos keladigan odam haqida"
+
+#: .\templates\accounts\edit_profile\activate.html:76
+msgid "Back"
+msgstr "Orqaga"
+
+#: .\templates\accounts\edit_profile\activate.html:79
+msgid "Next step"
+msgstr "Keyingi bosqich"
+
+#: .\templates\accounts\edit_profile\activate.html:85
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net akkauntingiz faol emas. Uni faollashtirish uchun ushbu sahifaga "
+"kiring."
+
+#: .\templates\admin\matches\match_list.html:5
+msgid "Admin - All Matches"
+msgstr "Admin - Barcha mosliklar"
+
+#: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "Sizning mosliklaringiz"
+
+#: .\templates\base_site.html:29
+#: .\templates\menu\user_menu_profile_is_active.html:11
+msgid "Matches"
+msgstr "Mosliklar"
+
+#: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:22
+#: .\templates\menu\user_menu_profile_is_active.html:20
+msgid "Likes"
+msgstr "Yoqtirishlar"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:48
+msgid "Your Match Settings"
+msgstr "Moslik sozlamalaringiz"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:50
+#: .\templates\matches\settings\base.html:10
+#: .\templates\matches\settings\base.html:30
+msgid "Match Settings"
+msgstr "Moslik sozlamalari"
+
+#: .\templates\base_site.html:105 .\templates\base_site.html:106
+#: .\templates\base_site.html:114 .\templates\base_site.html:115
+msgid "A vegan friendly website"
+msgstr "Veganlar uchun qulay veb-sayt"
+
+#: .\templates\email\likes\like_body.txt:1
+msgid "likes you."
+msgstr "sizni yoqtirdi."
+
+#: .\templates\email\likes\like_body.txt:6
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"Siz %(site_name)s dan bunday turdagi bildirishnomalarni olishga obuna "
+"bo'lgansiz. Bildirishnoma sozlamalarini o'zgartirish yoki obunani bekor "
+"qilish uchun ushbu sahifaga kiring:"
+
+#: .\templates\email\likes\like_subject.txt:1
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "%(site_name)s da kimdir sizni yoqtirdi"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "Sizda hali hech qanday do'stlar yo'q."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "Do'stlaringiz"
+
+#: .\templates\likes\like_list.html:51
+msgid "You have no likes here."
+msgstr "Bu yerda sizni yoqtirganlar yo'q."
+
+#: .\templates\main\main_page.html:7
+msgid "Free online dating"
+msgstr "Bepul onlayn tanishuv"
+
+#: .\templates\main\main_page.html:10
+msgid ""
+"Speedy Match is a new dating/matching web app for romantic purposes for "
+"singles who are members of Speedy Net. With Speedy Match you can find "
+"matching people for dating and chat with them online. The site is vegan and "
+"vegetarian friendly."
+msgstr ""
+"Speedy Match - Speedy Net a'zosi bo'lgan yolg'izlar uchun romantik "
+"maqsadlarga mo'ljallangan yangi tanishuv va moslashtirish veb-ilovasi. "
+"Speedy Match orqali siz uchrashuv uchun mos odamlarni topishingiz va ular "
+"bilan onlayn suhbatlashishingiz mumkin. Sayt vegan va vegetarianlar uchun "
+"qulay."
+
+#: .\templates\main\main_page.html:14
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr ""
+"Yigit izlayapsizmi? Qiz izlayapsizmi? Keling va Speedy bilan tanishing!"
+
+#: .\templates\main\main_page.html:16
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes."
+msgstr ""
+"Speedy Net va Speedy Match dagi barcha imkoniyatlar bepul. Mos juftlarni "
+"topish uchun Speedy Match ga bugunoq qo'shiling - bu atigi bir necha daqiqa "
+"oladi."
+
+#: .\templates\matches\match_list.html:41
+msgid "Update matches"
+msgstr "Mosliklarni yangilash"
+
+#: .\templates\matches\match_list.html:49
+#: .\templates\profiles\user_extra_info_widget.html:38
+msgid "Diet"
+msgstr "Ovqatlanish"
+
+#: .\templates\matches\match_list.html:60
+msgid "Age:"
+msgstr "Yosh:"
+
+#: .\templates\matches\match_list.html:74
+msgid "Refresh"
+msgstr "Yangilash"
+
+#: .\templates\matches\match_list.html:81
+msgid "Add more options"
+msgstr "Yana variantlar qo'shish"
+
+#: .\templates\matches\match_list.html:110
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"Sizda hali mosliklar yo'q. Qidiruv sozlamalaringizni kengaytirib ko'ring "
+"yoki keyinroq yana tekshiring."
+
+#: .\templates\matches\settings\base.html:27
+msgid "Back to Matches"
+msgstr "Mosliklarga qaytish"
+
+#: .\templates\matches\settings\base.html:46
+msgid "Profile Info"
+msgstr "Profil ma'lumotlari"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\templates\profiles\tools\like.html:11
+#: .\templates\profiles\tools\like.html:13
+msgid "Like"
+msgstr "Yoqtirish"
+
+#: .\templates\profiles\tools\like.html:19
+#: .\templates\profiles\tools\like.html:21
+msgid "Unlike"
+msgstr "Yoqtirmaslik"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\templates\profiles\user_base_site.html:10
+#: .\templates\profiles\user_base_site.html:16
+msgid "likes you"
+msgstr "sizni yoqtirdi"
+
+#: .\templates\profiles\user_base_site.html:12
+#: .\templates\profiles\user_base_site.html:18
+msgid "You like"
+msgstr "Siz yoqtirgan"
+
+#: .\templates\profiles\user_base_site.html:14
+msgid "Friendship request sent"
+msgstr "Do'stlik so'rovi yuborildi"
+
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "Ko'proq ma'lumot"
+
+#: .\templates\profiles\user_extra_info_widget.html:22
+msgid "Where do I live?"
+msgstr "Men qayerda yashayman?"
+
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
+msgstr "Chekish holati"
+
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
+msgstr "Munosabat holati"
+
+#: .\templates\profiles\user_extra_info_widget.html:58
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match ga oxirgi kirish"
+
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "Moslik darajasi"
+
+#: .\templates\profiles\user_rank_widget.html:28
+msgid "There is no match."
+msgstr "Moslik yo'q."

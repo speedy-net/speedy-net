@@ -1,0 +1,1429 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "You have no likes here."
+msgstr "உங்களுக்கு இங்கு விருப்பம் இல்லை."
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "You have no likes here."
+msgstr "உங்களுக்கு இங்கு விருப்பம் இல்லை."
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "You have no likes here."
+msgstr "உங்களுக்கு இங்கு விருப்பம் இல்லை."
+
+#: .\__translations\__translations.html:10
+msgctxt "female"
+msgid "Update matches"
+msgstr "பொருந்தக்கூடியவை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.html:11
+msgctxt "male"
+msgid "Update matches"
+msgstr "பொருந்தக்கூடியவை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.html:12
+msgctxt "other"
+msgid "Update matches"
+msgstr "பொருந்தக்கூடியவை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.html:14
+msgctxt "female"
+msgid "Add more options"
+msgstr "கூடுதல் விருப்பங்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:15
+msgctxt "male"
+msgid "Add more options"
+msgstr "கூடுதல் விருப்பங்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:16
+msgctxt "other"
+msgid "Add more options"
+msgstr "கூடுதல் விருப்பங்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:18
+msgctxt "female"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"உங்களிடம் இன்னும் எந்த பொருந்தும் இல்லை. உங்கள் தேடல் அமைப்புகளை விரிவாக்க "
+"முயற்சிக்கவும் அல்லது பின்னர் மீண்டும் சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:19
+msgctxt "male"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"உங்களிடம் இன்னும் எந்த பொருந்தும் இல்லை. உங்கள் தேடல் அமைப்புகளை விரிவாக்க "
+"முயற்சிக்கவும் அல்லது பின்னர் மீண்டும் சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:20
+msgctxt "other"
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"உங்களிடம் இன்னும் எந்த பொருந்தும் இல்லை. உங்கள் தேடல் அமைப்புகளை விரிவாக்க "
+"முயற்சிக்கவும் அல்லது பின்னர் மீண்டும் சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:22
+msgctxt "female"
+msgid "Match Settings"
+msgstr "பொருந்தக்கூடிய அமைப்புகள்"
+
+#: .\__translations\__translations.html:23
+msgctxt "male"
+msgid "Match Settings"
+msgstr "பொருந்தக்கூடிய அமைப்புகள்"
+
+#: .\__translations\__translations.html:24
+msgctxt "other"
+msgid "Match Settings"
+msgstr "பொருந்தக்கூடிய அமைப்புகள்"
+
+#: .\__translations\__translations.html:26
+msgctxt "female"
+msgid "Like"
+msgstr "போன்ற"
+
+#: .\__translations\__translations.html:27
+msgctxt "male"
+msgid "Like"
+msgstr "போன்ற"
+
+#: .\__translations\__translations.html:28
+msgctxt "other"
+msgid "Like"
+msgstr "போன்ற"
+
+#: .\__translations\__translations.html:30
+msgctxt "female"
+msgid "Unlike"
+msgstr "வேறுபட்ட"
+
+#: .\__translations\__translations.html:31
+msgctxt "male"
+msgid "Unlike"
+msgstr "வேறுபட்ட"
+
+#: .\__translations\__translations.html:32
+msgctxt "other"
+msgid "Unlike"
+msgstr "வேறுபட்ட"
+
+#: .\__translations\__translations.html:34
+msgctxt "female"
+msgid "Your Matches"
+msgstr "உங்கள் போட்டிகள்"
+
+#: .\__translations\__translations.html:35
+msgctxt "male"
+msgid "Your Matches"
+msgstr "உங்கள் போட்டிகள்"
+
+#: .\__translations\__translations.html:36
+msgctxt "other"
+msgid "Your Matches"
+msgstr "உங்கள் போட்டிகள்"
+
+#: .\__translations\__translations.html:38
+msgctxt "female"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.html:39
+msgctxt "male"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.html:40
+msgctxt "other"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.html:42
+msgctxt "female"
+msgid "Your Friends"
+msgstr "உங்கள் நண்பர்கள்"
+
+#: .\__translations\__translations.html:43
+msgctxt "male"
+msgid "Your Friends"
+msgstr "உங்கள் நண்பர்கள்"
+
+#: .\__translations\__translations.html:44
+msgctxt "other"
+msgid "Your Friends"
+msgstr "உங்கள் நண்பர்கள்"
+
+#: .\__translations\__translations.html:46
+msgctxt "female"
+msgid "You don't have any friends yet."
+msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+
+#: .\__translations\__translations.html:47
+msgctxt "male"
+msgid "You don't have any friends yet."
+msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+
+#: .\__translations\__translations.html:48
+msgctxt "other"
+msgid "You don't have any friends yet."
+msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+
+#: .\__translations\__translations.html:50
+msgctxt "female"
+msgid "About me"
+msgstr "என்னை பற்றி"
+
+#: .\__translations\__translations.html:51
+msgctxt "male"
+msgid "About me"
+msgstr "என்னை பற்றி"
+
+#: .\__translations\__translations.html:52
+msgctxt "other"
+msgid "About me"
+msgstr "என்னை பற்றி"
+
+#: .\__translations\__translations.html:54
+msgctxt "female"
+msgid "About my match"
+msgstr "என் போட்டியை பற்றி"
+
+#: .\__translations\__translations.html:55
+msgctxt "male"
+msgid "About my match"
+msgstr "என் போட்டியை பற்றி"
+
+#: .\__translations\__translations.html:56
+msgctxt "other"
+msgid "About my match"
+msgstr "என் போட்டியை பற்றி"
+
+#: .\__translations\__translations.html:58
+msgctxt "female"
+msgid "Gender to match"
+msgstr "பாலினம் பொருந்தும்"
+
+#: .\__translations\__translations.html:59
+msgctxt "male"
+msgid "Gender to match"
+msgstr "பாலினம் பொருந்தும்"
+
+#: .\__translations\__translations.html:60
+msgctxt "other"
+msgid "Gender to match"
+msgstr "பாலினம் பொருந்தும்"
+
+#: .\__translations\__translations.html:62
+#, python-format
+msgctxt "female"
+msgid "Someone likes you on %(site_name)s"
+msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+
+#: .\__translations\__translations.html:63
+#, python-format
+msgctxt "male"
+msgid "Someone likes you on %(site_name)s"
+msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+
+#: .\__translations\__translations.html:64
+#, python-format
+msgctxt "other"
+msgid "Someone likes you on %(site_name)s"
+msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+
+#: .\__translations\__translations.html:66
+msgctxt "female"
+msgid "likes you."
+msgstr "உன்னை விரும்புகிறார்."
+
+#: .\__translations\__translations.html:67
+msgctxt "male"
+msgid "likes you."
+msgstr "உன்னை விரும்புகிறார்."
+
+#: .\__translations\__translations.html:68
+msgctxt "other"
+msgid "likes you."
+msgstr "உன்னை விரும்புகிறார்."
+
+#: .\__translations\__translations.html:70
+msgctxt "female"
+msgid "likes you"
+msgstr "உன்னை விரும்புகிறது"
+
+#: .\__translations\__translations.html:71
+msgctxt "male"
+msgid "likes you"
+msgstr "உன்னை விரும்புகிறது"
+
+#: .\__translations\__translations.html:72
+msgctxt "other"
+msgid "likes you"
+msgstr "உன்னை விரும்புகிறது"
+
+#: .\__translations\__translations.html:74
+msgctxt "female"
+msgid "You like"
+msgstr "உனக்கு பிடிக்கும்"
+
+#: .\__translations\__translations.html:75
+msgctxt "male"
+msgid "You like"
+msgstr "உனக்கு பிடிக்கும்"
+
+#: .\__translations\__translations.html:76
+msgctxt "other"
+msgid "You like"
+msgstr "உனக்கு பிடிக்கும்"
+
+#: .\__translations\__translations.html:78
+msgctxt "female"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match-ஐ கடைசியாகப் பார்வையிட்டது"
+
+#: .\__translations\__translations.html:79
+msgctxt "male"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match-ஐ கடைசியாகப் பார்வையிட்டது"
+
+#: .\__translations\__translations.html:80
+msgctxt "other"
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match-ஐ கடைசியாகப் பார்வையிட்டது"
+
+#: .\__translations\__translations.py:6
+msgid "My height in centimeters"
+msgstr "என் உயரம் சென்டிமீட்டர்"
+
+#: .\__translations\__translations.py:9
+msgctxt "female"
+msgid "Add profile picture"
+msgstr "சுயவிவர படத்தை சேர்க்கவும்"
+
+#: .\__translations\__translations.py:10
+msgctxt "male"
+msgid "Add profile picture"
+msgstr "சுயவிவர படத்தை சேர்க்கவும்"
+
+#: .\__translations\__translations.py:11
+msgctxt "other"
+msgid "Add profile picture"
+msgstr "சுயவிவர படத்தை சேர்க்கவும்"
+
+#: .\__translations\__translations.py:13
+msgctxt "female"
+msgid "My height in centimeters"
+msgstr "என் உயரம் சென்டிமீட்டர்"
+
+#: .\__translations\__translations.py:14
+msgctxt "male"
+msgid "My height in centimeters"
+msgstr "என் உயரம் சென்டிமீட்டர்"
+
+#: .\__translations\__translations.py:15
+msgctxt "other"
+msgid "My height in centimeters"
+msgstr "என் உயரம் சென்டிமீட்டர்"
+
+#: .\__translations\__translations.py:17
+#: .\templates\accounts\edit_profile\activate.html:115
+msgctxt "female"
+msgid "My ideal match"
+msgstr "என் சிறந்த போட்டியாக"
+
+#: .\__translations\__translations.py:18
+#: .\templates\accounts\edit_profile\activate.html:121
+msgctxt "male"
+msgid "My ideal match"
+msgstr "என் சிறந்த போட்டியாக"
+
+#: .\__translations\__translations.py:19
+#: .\templates\accounts\edit_profile\activate.html:128
+msgctxt "other"
+msgid "My ideal match"
+msgstr "என் சிறந்த போட்டியாக"
+
+#: .\__translations\__translations.py:21
+#: .\templates\accounts\edit_profile\activate.html:116
+msgctxt "female"
+msgid "Minimal age to match"
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது"
+
+#: .\__translations\__translations.py:22
+#: .\templates\accounts\edit_profile\activate.html:122
+msgctxt "male"
+msgid "Minimal age to match"
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது"
+
+#: .\__translations\__translations.py:23
+#: .\templates\accounts\edit_profile\activate.html:129
+msgctxt "other"
+msgid "Minimal age to match"
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது"
+
+#: .\__translations\__translations.py:25
+#: .\templates\accounts\edit_profile\activate.html:117
+msgctxt "female"
+msgid "Maximal age to match"
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது"
+
+#: .\__translations\__translations.py:26
+#: .\templates\accounts\edit_profile\activate.html:123
+msgctxt "male"
+msgid "Maximal age to match"
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது"
+
+#: .\__translations\__translations.py:27
+#: .\templates\accounts\edit_profile\activate.html:130
+msgctxt "other"
+msgid "Maximal age to match"
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது"
+
+#: .\__translations\__translations.py:29
+msgctxt "female"
+msgid "Please write a few words about yourself."
+msgstr "தயவு செய்து உங்களை பற்றி சில வார்த்தைகள் எழுதுங்கள்."
+
+#: .\__translations\__translations.py:30
+msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "தயவு செய்து உங்களை பற்றி சில வார்த்தைகள் எழுதுங்கள்."
+
+#: .\__translations\__translations.py:31
+msgctxt "other"
+msgid "Please write a few words about yourself."
+msgstr "தயவு செய்து உங்களை பற்றி சில வார்த்தைகள் எழுதுங்கள்."
+
+#: .\__translations\__translations.py:33
+msgctxt "female"
+msgid "Do you have children? How many?"
+msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+
+#: .\__translations\__translations.py:34
+msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+
+#: .\__translations\__translations.py:35
+msgctxt "other"
+msgid "Do you have children? How many?"
+msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+
+#: .\__translations\__translations.py:37
+msgctxt "female"
+msgid "Do you want (more) children?"
+msgstr "(இன்னும்) பிள்ளைகள் வேண்டுமா?"
+
+#: .\__translations\__translations.py:38
+msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "(இன்னும்) பிள்ளைகள் வேண்டுமா?"
+
+#: .\__translations\__translations.py:39
+msgctxt "other"
+msgid "Do you want (more) children?"
+msgstr "(இன்னும்) பிள்ளைகள் வேண்டுமா?"
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "Who is your ideal partner?"
+msgstr "யார் உங்கள் சிறந்த பங்குதாரர்?"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "யார் உங்கள் சிறந்த பங்குதாரர்?"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "Who is your ideal partner?"
+msgstr "யார் உங்கள் சிறந்த பங்குதாரர்?"
+
+#: .\__translations\__translations.py:45
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"மன்னிக்கவும், ஆனால் நீங்கள் {site_name} வலைத்தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை. தளத்தில் பதிவு செய்யும் போது நீங்கள் வழங்கிய சில "
+"தகவல்கள் தவறானவை அல்லது தளத்தின் பயன்பாட்டு விதிகளை மீறியுள்ளீர்கள் என்பதை "
+"நாங்கள் கண்டறிந்துள்ளோம். எனவே நீங்கள் தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை."
+
+#: .\__translations\__translations.py:46
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"மன்னிக்கவும், ஆனால் நீங்கள் {site_name} வலைத்தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை. தளத்தில் பதிவு செய்யும் போது நீங்கள் வழங்கிய சில "
+"தகவல்கள் தவறானவை அல்லது தளத்தின் பயன்பாட்டு விதிகளை மீறியுள்ளீர்கள் என்பதை "
+"நாங்கள் கண்டறிந்துள்ளோம். எனவே நீங்கள் தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை."
+
+#: .\__translations\__translations.py:47
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"We're sorry, but you are not authorized to use the {site_name} website. We "
+"have found that some of the information you provided when registering on the"
+" site is incorrect or that you have violated the rules of use of the site. "
+"Therefore you are not authorized to use the site."
+msgstr ""
+"மன்னிக்கவும், ஆனால் நீங்கள் {site_name} வலைத்தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை. தளத்தில் பதிவு செய்யும் போது நீங்கள் வழங்கிய சில "
+"தகவல்கள் தவறானவை அல்லது தளத்தின் பயன்பாட்டு விதிகளை மீறியுள்ளீர்கள் என்பதை "
+"நாங்கள் கண்டறிந்துள்ளோம். எனவே நீங்கள் தளத்தைப் பயன்படுத்த "
+"அனுமதிக்கப்படவில்லை."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Match Accounts"
+msgstr "Speedy Match கணக்குகள்"
+
+#: .\accounts\forms.py:58
+msgid "Add profile picture"
+msgstr "சுயவிவர படத்தை சேர்க்கவும்"
+
+#: .\accounts\forms.py:58 .\accounts\forms.py:97
+msgid "A profile picture is required."
+msgstr "ஒரு சுயவிவரப் படம் தேவை."
+
+#: .\accounts\forms.py:59
+msgid "My diet"
+msgstr "என் உணவு"
+
+#: .\accounts\forms.py:59 .\accounts\forms.py:103 .\accounts\validators.py:73
+msgid "Your diet is required."
+msgstr "உங்கள் உணவு தேவை."
+
+#: .\accounts\forms.py:60
+msgid "My smoking status"
+msgstr "எனது புகைபிடிப்பு நிலை"
+
+#: .\accounts\forms.py:60 .\accounts\forms.py:106 .\accounts\validators.py:78
+msgid "Your smoking status is required."
+msgstr "உங்கள் புகைபிடிப்பு நிலை தேவைப்படுகிறது."
+
+#: .\accounts\forms.py:61
+msgid "My relationship status"
+msgstr "என் உறவு நிலையை"
+
+#: .\accounts\forms.py:61 .\accounts\forms.py:109 .\accounts\validators.py:83
+msgid "Your relationship status is required."
+msgstr "உங்கள் உறவு நிலை அவசியம்."
+
+#: .\accounts\forms.py:62 .\accounts\forms.py:127 .\accounts\validators.py:88
+msgid "Gender to match is required."
+msgstr "பாலினம் பொருந்த வேண்டும்."
+
+#: .\accounts\forms.py:100
+msgid "Your height is required."
+msgstr "உங்கள் உயரம் தேவைப்படுகிறது."
+
+#: .\accounts\forms.py:112 .\accounts\validators.py:43
+msgid "Please write a few words about yourself."
+msgstr "தயவு செய்து உங்களை பற்றி சில வார்த்தைகள் எழுதுங்கள்."
+
+#: .\accounts\forms.py:115 .\accounts\forms.py:150 .\accounts\validators.py:48
+msgid "Please write where you live."
+msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
+
+#: .\accounts\forms.py:118 .\accounts\models.py:221
+#: .\accounts\validators.py:53
+#: .\templates\profiles\user_extra_info_widget.html:30
+msgid "Do you have children? How many?"
+msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+
+#: .\accounts\forms.py:121 .\accounts\models.py:224
+#: .\accounts\validators.py:58
+#: .\templates\profiles\user_extra_info_widget.html:34
+msgid "Do you want (more) children?"
+msgstr "(இன்னும்) பிள்ளைகள் வேண்டுமா?"
+
+#: .\accounts\forms.py:124 .\accounts\validators.py:63
+msgid "Who is your ideal partner?"
+msgstr "யார் உங்கள் சிறந்த பங்குதாரர்?"
+
+#: .\accounts\forms.py:130
+msgid "Minimal age to match is required."
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது தேவை."
+
+#: .\accounts\forms.py:133
+msgid "Maximal age to match is required."
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது தேவை."
+
+#: .\accounts\forms.py:136 .\accounts\validators.py:110
+msgid "Diet match is required."
+msgstr "உணவு முறைக்கு ஏற்ப ஏற்ப ஏற்பாடு செய்ய வேண்டும்."
+
+#: .\accounts\forms.py:139 .\accounts\validators.py:118
+msgid "Smoking status match is required."
+msgstr "புகைபிடித்தல் நிலை பொருந்தும்."
+
+#: .\accounts\forms.py:142 .\accounts\validators.py:126
+msgid "Relationship status match is required."
+msgstr "உறவு நிலை பொருந்தும்."
+
+#: .\accounts\forms.py:150
+msgid "Where do you live?"
+msgstr "நீ எங்கே வசிக்கிறாய்?"
+
+#: .\accounts\forms.py:186 .\accounts\models.py:231
+#: .\templates\profiles\user_extra_info_widget.html:50
+msgid "Gender to match"
+msgstr "பாலினம் பொருந்தும்"
+
+#: .\accounts\models.py:64
+msgid "Speedy Match User"
+msgstr "Speedy Match பயனர்"
+
+#: .\accounts\models.py:74 .\accounts\models.py:197
+msgid "No match"
+msgstr "எந்த பொருத்தமும் இல்லை"
+
+#: .\accounts\models.py:75 .\accounts\models.py:198
+msgid "One heart"
+msgstr "ஒரு இதயம்"
+
+#: .\accounts\models.py:76 .\accounts\models.py:199
+msgid "Two hearts"
+msgstr "இரு இதயங்கள்"
+
+#: .\accounts\models.py:77 .\accounts\models.py:200
+msgid "Three hearts"
+msgstr "மூன்று இதயங்கள்"
+
+#: .\accounts\models.py:78 .\accounts\models.py:201
+msgid "Four hearts"
+msgstr "நான்கு இதயங்கள்"
+
+#: .\accounts\models.py:79 .\accounts\models.py:202
+msgid "Five hearts"
+msgstr "ஐந்து இதயங்கள்"
+
+#: .\accounts\models.py:206
+msgid "User"
+msgstr "பயனர்"
+
+#: .\accounts\models.py:207
+msgid "On new likes"
+msgstr "புதிய விருப்பங்கள்"
+
+#: .\accounts\models.py:210
+msgid "Active languages"
+msgstr "செயலில் உள்ள மொழிகள்"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:26
+msgid "Height"
+msgstr "உயரம்"
+
+#: .\accounts\models.py:216
+#: .\templates\profiles\user_extra_info_widget.html:27
+msgid "cm"
+msgstr "செ. மீ."
+
+#: .\accounts\models.py:218
+msgid "Few words about me"
+msgstr "என்னை பற்றி சில வார்த்தைகள்"
+
+#: .\accounts\models.py:227
+#: .\templates\profiles\user_extra_info_widget.html:54
+msgid "My ideal match"
+msgstr "என் சிறந்த போட்டியாக"
+
+#: .\accounts\models.py:237
+msgid "Minimal age to match"
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது"
+
+#: .\accounts\models.py:238
+msgid "Maximal age to match"
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது"
+
+#: .\accounts\models.py:239
+msgid "Diet match"
+msgstr "உணவு போட்டி"
+
+#: .\accounts\models.py:240
+msgid "Smoking status match"
+msgstr "புகைத்தல் நிலை பொருந்தும்"
+
+#: .\accounts\models.py:241
+msgid "Relationship status match"
+msgstr "உறவு நிலை பொருந்தும்"
+
+#: .\accounts\models.py:244
+msgid "Diet to match"
+msgstr "பொருத்தமான உணவு"
+
+#: .\accounts\models.py:252
+msgid "Smoking status to match"
+msgstr "புகைபிடிக்கும் நிலை பொருந்தும்"
+
+#: .\accounts\models.py:260
+msgid "Relationship status to match"
+msgstr "பொருந்தக்கூடிய உறவு நிலை"
+
+#: .\accounts\models.py:267
+msgid "Activation step"
+msgstr "செயல்பாட்டு படி"
+
+#: .\accounts\models.py:270
+msgid "Number of matches on last user's search"
+msgstr "கடைசி பயனரின் தேடலில் பொருந்தும் எண்ணிக்கை"
+
+#: .\accounts\models.py:346
+msgid "Speedy Match Profile"
+msgstr "Speedy Match சுயவிவரம்"
+
+#: .\accounts\models.py:347 .\profiles\apps.py:8
+msgid "Speedy Match Profiles"
+msgstr "Speedy Match சுயவிவரங்கள்"
+
+#: .\accounts\models.py:545 .\templates\accounts\edit_profile\activate.html:29
+msgid "Please confirm your email address."
+msgstr "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்."
+
+#: .\accounts\utils.py:89
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"தளத்தில் செயலில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை "
+"{total_number_of_active_members_in_the_last_four_months} ஆகும்; அதில் "
+"{total_number_of_active_members_in_the_last_week} உறுப்பினர்கள் கடந்த "
+"வாரத்தில் தளத்திற்குள் நுழைந்தனர்."
+
+#: .\accounts\validators.py:68
+msgid "Height must be from 1 to 450 cm."
+msgstr "உயரம் 1 முதல் 450 செ. மீ. வரை இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:93
+msgid "Minimal age to match must be from 0 to 180 years."
+msgstr "பொருந்தக்கூடிய குறைந்தபட்ச வயது 0 முதல் 180 வயது வரை இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:98
+msgid "Maximal age to match must be from 0 to 180 years."
+msgstr "பொருந்தக்கூடிய அதிகபட்ச வயது 0 முதல் 180 வயது வரை இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:104
+msgid "Maximal age to match can't be less than minimal age to match."
+msgstr ""
+"பொருந்தக்கூடிய அதிகபட்ச வயது குறைந்தபட்ச வயதுக்குக் குறைவாக இருக்க முடியாது."
+
+#: .\accounts\validators.py:112
+msgid "At least one diet match option should be five hearts."
+msgstr "குறைந்தபட்சம் ஒரு உணவு போட்டியில் ஐந்து இதயங்கள் இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:120
+msgid "At least one smoking status match option should be five hearts."
+msgstr ""
+"குறைந்தபட்சம் ஒரு புகைபிடிப்பு நிலை பொருந்தும் விருப்பம் ஐந்து இதயங்கள் "
+"இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:128
+msgid "At least one relationship status match option should be five hearts."
+msgstr ""
+"குறைந்தபட்சம் ஒரு உறவு நிலை பொருத்த விருப்பம் ஐந்து இதயங்கள் இருக்க "
+"வேண்டும்."
+
+#: .\admin\views.py:202
+#, python-brace-format
+msgid ""
+"Admin: The total number of active members on the site is "
+"{total_number_of_active_members} ({total_number_of_female_active_members} "
+"females, {total_number_of_male_active_members} males, "
+"{total_number_of_other_active_members} others; "
+"{total_percent_of_female_active_members} females, "
+"{total_percent_of_male_active_members} males, "
+"{total_percent_of_other_active_members} others), of which "
+"{total_number_of_active_members_in_the_last_week} members "
+"({total_number_of_female_active_members_in_the_last_week} females, "
+"{total_number_of_male_active_members_in_the_last_week} males, "
+"{total_number_of_other_active_members_in_the_last_week} others; "
+"{total_percent_of_female_active_members_in_the_last_week} females, "
+"{total_percent_of_male_active_members_in_the_last_week} males, "
+"{total_percent_of_other_active_members_in_the_last_week} others) entered the"
+" site in the last week, {total_number_of_active_members_in_the_last_month} "
+"members ({total_number_of_female_active_members_in_the_last_month} females, "
+"{total_number_of_male_active_members_in_the_last_month} males, "
+"{total_number_of_other_active_members_in_the_last_month} others; "
+"{total_percent_of_female_active_members_in_the_last_month} females, "
+"{total_percent_of_male_active_members_in_the_last_month} males, "
+"{total_percent_of_other_active_members_in_the_last_month} others) entered "
+"the site in the last month, "
+"{total_number_of_active_members_in_the_last_four_months} members "
+"({total_number_of_female_active_members_in_the_last_four_months} females, "
+"{total_number_of_male_active_members_in_the_last_four_months} males, "
+"{total_number_of_other_active_members_in_the_last_four_months} others; "
+"{total_percent_of_female_active_members_in_the_last_four_months} females, "
+"{total_percent_of_male_active_members_in_the_last_four_months} males, "
+"{total_percent_of_other_active_members_in_the_last_four_months} others) "
+"entered the site in the last four months, "
+"{total_number_of_active_members_in_the_last_eight_months} members "
+"({total_number_of_female_active_members_in_the_last_eight_months} females, "
+"{total_number_of_male_active_members_in_the_last_eight_months} males, "
+"{total_number_of_other_active_members_in_the_last_eight_months} others; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
+"entered the site in the last eight months, and "
+"{total_number_of_active_members_in_the_last_two_years} members "
+"({total_number_of_female_active_members_in_the_last_two_years} females, "
+"{total_number_of_male_active_members_in_the_last_two_years} males, "
+"{total_number_of_other_active_members_in_the_last_two_years} others; "
+"{total_percent_of_female_active_members_in_the_last_two_years} females, "
+"{total_percent_of_male_active_members_in_the_last_two_years} males, "
+"{total_percent_of_other_active_members_in_the_last_two_years} others) "
+"entered the site in the last two years."
+msgstr ""
+"நிர்வாகி: தளத்தில் செயலில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை "
+"{total_number_of_active_members} ஆகும் "
+"({total_number_of_female_active_members} பெண்கள், "
+"{total_number_of_male_active_members} ஆண்கள், "
+"{total_number_of_other_active_members} பிறர்; "
+"{total_percent_of_female_active_members} பெண்கள், "
+"{total_percent_of_male_active_members} ஆண்கள், "
+"{total_percent_of_other_active_members} பிறர்). இதில் கடந்த வாரத்தில் "
+"{total_number_of_active_members_in_the_last_week} உறுப்பினர்கள் "
+"({total_number_of_female_active_members_in_the_last_week} பெண்கள், "
+"{total_number_of_male_active_members_in_the_last_week} ஆண்கள், "
+"{total_number_of_other_active_members_in_the_last_week} பிறர்; "
+"{total_percent_of_female_active_members_in_the_last_week} பெண்கள், "
+"{total_percent_of_male_active_members_in_the_last_week} ஆண்கள், "
+"{total_percent_of_other_active_members_in_the_last_week} பிறர்) தளத்திற்குள்"
+" நுழைந்தனர்; கடந்த மாதத்தில் "
+"{total_number_of_active_members_in_the_last_month} உறுப்பினர்கள் "
+"({total_number_of_female_active_members_in_the_last_month} பெண்கள், "
+"{total_number_of_male_active_members_in_the_last_month} ஆண்கள், "
+"{total_number_of_other_active_members_in_the_last_month} பிறர்; "
+"{total_percent_of_female_active_members_in_the_last_month} பெண்கள், "
+"{total_percent_of_male_active_members_in_the_last_month} ஆண்கள், "
+"{total_percent_of_other_active_members_in_the_last_month} பிறர்) "
+"தளத்திற்குள் நுழைந்தனர்; கடந்த நான்கு மாதங்களில் "
+"{total_number_of_active_members_in_the_last_four_months} உறுப்பினர்கள் "
+"({total_number_of_female_active_members_in_the_last_four_months} பெண்கள், "
+"{total_number_of_male_active_members_in_the_last_four_months} ஆண்கள், "
+"{total_number_of_other_active_members_in_the_last_four_months} பிறர்; "
+"{total_percent_of_female_active_members_in_the_last_four_months} பெண்கள், "
+"{total_percent_of_male_active_members_in_the_last_four_months} ஆண்கள், "
+"{total_percent_of_other_active_members_in_the_last_four_months} பிறர்) "
+"தளத்திற்குள் நுழைந்தனர்; கடந்த எட்டு மாதங்களில் "
+"{total_number_of_active_members_in_the_last_eight_months} உறுப்பினர்கள் "
+"({total_number_of_female_active_members_in_the_last_eight_months} பெண்கள், "
+"{total_number_of_male_active_members_in_the_last_eight_months} ஆண்கள், "
+"{total_number_of_other_active_members_in_the_last_eight_months} பிறர்; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} பெண்கள், "
+"{total_percent_of_male_active_members_in_the_last_eight_months} ஆண்கள், "
+"{total_percent_of_other_active_members_in_the_last_eight_months} பிறர்) "
+"தளத்திற்குள் நுழைந்தனர்; மேலும் கடந்த இரண்டு ஆண்டுகளில் "
+"{total_number_of_active_members_in_the_last_two_years} உறுப்பினர்கள் "
+"({total_number_of_female_active_members_in_the_last_two_years} பெண்கள், "
+"{total_number_of_male_active_members_in_the_last_two_years} ஆண்கள், "
+"{total_number_of_other_active_members_in_the_last_two_years} பிறர்; "
+"{total_percent_of_female_active_members_in_the_last_two_years} பெண்கள், "
+"{total_percent_of_male_active_members_in_the_last_two_years} ஆண்கள், "
+"{total_percent_of_other_active_members_in_the_last_two_years} பிறர்) "
+"தளத்திற்குள் நுழைந்தனர்."
+
+#: .\admin\views.py:284
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_the_last_week} active "
+"members registered in the last week. "
+"{total_number_of_active_members_registered_in_the_last_month} active members"
+" registered in the last month. "
+"{total_number_of_active_members_registered_in_the_last_four_months} active "
+"members registered in the last four months. "
+"{total_number_of_active_members_registered_more_than_four_months_ago} active"
+" members registered more than four months ago. "
+"{total_number_of_active_members_registered_in_the_last_eight_months} active "
+"members registered in the last eight months. "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"active members registered more than eight months ago. "
+"{total_number_of_active_members_registered_in_the_last_two_years} active "
+"members registered in the last two years. "
+"{total_number_of_active_members_registered_more_than_two_years_ago} active "
+"members registered more than two years ago. "
+"{total_number_of_active_members_registered_before_2019_08_01} active members"
+" registered before 1 August 2019."
+msgstr ""
+"நிர்வாகி: கடந்த வாரத்தில் "
+"{total_number_of_active_members_registered_in_the_last_week} செயலில் உள்ள "
+"உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். கடந்த மாதத்தில் "
+"{total_number_of_active_members_registered_in_the_last_month} செயலில் உள்ள "
+"உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். கடந்த நான்கு மாதங்களில் "
+"{total_number_of_active_members_registered_in_the_last_four_months} செயலில் "
+"உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். நான்கு மாதங்களுக்கு முன்பாக "
+"{total_number_of_active_members_registered_more_than_four_months_ago} "
+"செயலில் உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். கடந்த எட்டு மாதங்களில் "
+"{total_number_of_active_members_registered_in_the_last_eight_months} செயலில்"
+" உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். எட்டு மாதங்களுக்கு முன்பாக "
+"{total_number_of_active_members_registered_more_than_eight_months_ago} "
+"செயலில் உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். கடந்த இரண்டு ஆண்டுகளில் "
+"{total_number_of_active_members_registered_in_the_last_two_years} செயலில் "
+"உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். இரண்டு ஆண்டுகளுக்கு முன்பாக "
+"{total_number_of_active_members_registered_more_than_two_years_ago} செயலில் "
+"உள்ள உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். 2019 ஆகஸ்ட் 1 க்கு முன்பு "
+"{total_number_of_active_members_registered_before_2019_08_01} செயலில் உள்ள "
+"உறுப்பினர்கள் பதிவு செய்யப்பட்டனர்."
+
+#: .\admin\views.py:304
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_registered_in_year} active members "
+"registered in {year}."
+msgstr ""
+"நிர்வாகி: {total_number_of_active_members_registered_in_year}@{year} இல் "
+"பதிவு செய்யப்பட்ட செயலில் உள்ள உறுப்பினர்கள்."
+
+#: .\admin\views.py:359
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} females, "
+"{total_number_of_male_active_members_in_age_range} males, "
+"{total_number_of_other_active_members_in_age_range} others) active members "
+"aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range} females, "
+"{total_percent_of_male_active_members_in_age_range} males, "
+"{total_percent_of_other_active_members_in_age_range} others)."
+msgstr ""
+"நிர்வாகி: {total_number_of_active_members_in_age_range} "
+"({total_number_of_female_active_members_in_age_range} females, "
+"{total_number_of_male_active_members_in_age_range} males, "
+"{total_number_of_other_active_members_in_age_range} others) active members "
+"age {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range} females, "
+"{total_percent_of_male_active_members_in_age_range} males, "
+"{total_percent_of_other_active_members_in_age_range} others)."
+
+#: .\admin\views.py:423
+#, python-brace-format
+msgid ""
+"Admin: "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" others) entered the site in the last eight months."
+msgstr ""
+"நிர்வாகி: கடந்த எட்டு மாதங்களில் தளத்திற்குள் நுழைந்த {min_age} முதல் "
+"{max_age} வயதுடைய செயலில் உள்ள உறுப்பினர்கள் "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} பேர் "
+"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" பெண்கள், "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
+"ஆண்கள், "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" பிறர்; "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" பெண்கள், "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" ஆண்கள், "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
+" பிறர்)."
+
+#: .\admin\views.py:487
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months}"
+" "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"others) active members aged {min_age} to {max_age} "
+"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" females, "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"males, "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" others) entered the site in the last four months."
+msgstr ""
+"நிர்வாகி: கடந்த நான்கு மாதங்களில் தளத்திற்குள் நுழைந்த {min_age} முதல் "
+"{max_age} வயதுடைய செயலில் உள்ள உறுப்பினர்கள் "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} பேர் "
+"({total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" பெண்கள், "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
+"ஆண்கள், "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
+"பிறர்; "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" பெண்கள், "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
+"ஆண்கள், "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
+" பிறர்)."
+
+#: .\likes\managers.py:14 .\likes\models.py:48
+msgid "Users cannot like themselves."
+msgstr "பயனர்கள் தங்களை விரும்ப முடியாது."
+
+#: .\likes\managers.py:17
+msgid "User already likes other user."
+msgstr "பயனர் ஏற்கனவே மற்ற பயனரை விரும்புகிறார்."
+
+#: .\likes\managers.py:20
+msgid "User cannot like a blocked user."
+msgstr "பயனர் தடுக்கப்பட்ட பயனரை விரும்ப முடியாது."
+
+#: .\likes\models.py:21
+msgid "from user"
+msgstr "பயனரிடமிருந்து"
+
+#: .\likes\models.py:22
+msgid "to user"
+msgstr "பயனருக்கு"
+
+#: .\likes\models.py:28
+msgid "user like"
+msgstr "பயனர் போன்ற"
+
+#: .\likes\models.py:29
+msgid "user likes"
+msgstr "பயனர் விரும்புகிறார்"
+
+#: .\likes\views.py:28
+msgid "Girls You Like"
+msgstr "உனக்கு பிடித்த பெண்கள்"
+
+#: .\likes\views.py:29
+msgid "Boys You Like"
+msgstr "உங்களுக்கு பிடித்த சிறுவர்கள்"
+
+#: .\likes\views.py:30
+msgid "People You Like"
+msgstr "உங்களுக்கு பிடித்தவர்கள்"
+
+#: .\likes\views.py:33
+msgid "Girls Who Like You"
+msgstr "உன்னைப் பிடித்த பெண்கள்"
+
+#: .\likes\views.py:34
+msgid "Boys Who Like You"
+msgstr "உங்களைப் போன்ற சிறுவர்கள்"
+
+#: .\likes\views.py:35
+msgid "People Who Like You"
+msgstr "உங்களைப் போன்றவர்கள்"
+
+#: .\likes\views.py:37
+msgid "Mutual Likes"
+msgstr "பரஸ்பர விருப்பம்"
+
+#: .\matches\apps.py:8
+msgid "Speedy Match Matches"
+msgstr "Speedy Match பொருத்தங்கள்"
+
+#: .\matches\views.py:84 .\matches\views.py:98
+msgid "Your match settings were saved."
+msgstr "உங்கள் போட்டி அமைப்புகள் சேமிக்கப்பட்டன."
+
+#: .\profiles\widgets.py:53 .\profiles\widgets.py:56 .\profiles\widgets.py:59
+msgid "Unknown"
+msgstr "தெரியாத"
+
+#: .\profiles\widgets.py:64
+msgid "None"
+msgstr "ஒன்றும் இல்லை"
+
+#: .\settings\base_site.py:12
+msgid "Speedy Match [alpha]"
+msgstr "Speedy Match [ஆல்பா]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Match"
+msgstr "Speedy Match பற்றி"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:14
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> is a new dating/matching web app for romantic "
+"purposes for singles who are members of <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a>. With Speedy Match you can find matching people for dating and chat "
+"with them online. You can add people as friends on Speedy Net, like people "
+"and send them messages. Speedy Match is open to free registration for people"
+" from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> என்பது <a "
+"href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy "
+"Net</a> உறுப்பினர்களாக இருக்கும் ஒற்றையர் காதல் நோக்கங்களுக்காக "
+"பயன்படுத்தும் புதிய டேட்டிங்/பொருத்தம் காணும் வலைப் பயன்பாடு ஆகும். Speedy "
+"Match மூலம் நீங்கள் டேட்டிங்கிற்கான பொருத்தமான நபர்களைக் கண்டுபிடித்து "
+"அவர்களுடன் ஆன்லைனில் உரையாடலாம். Speedy Net இல் மக்களை நண்பர்களாகச் "
+"சேர்க்கலாம், அவர்களை விரும்பலாம் மற்றும் அவர்களுக்கு செய்திகள் அனுப்பலாம். "
+"Speedy Match அனைத்து நாடுகளிலும் அனைத்து வயதினருக்கும் (வயது வரம்பில்லை!) "
+"இலவசப் பதிவுக்காக திறந்துள்ளது. இந்தத் தளம் சைவ மற்றும் சுத்தச் சைவ "
+"மக்களுக்கும் விலங்குகளுக்கும் நட்பானது. இது தற்போது %(languages_num)s "
+"மொழிகளில் கிடைக்கிறது."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Match are vegan, support animal rights and object to "
+"experiments on animals. Speedy Match is a dating app friendly for vegan and "
+"vegetarian people and animals."
+msgstr ""
+"Speedy Match இன் நிறுவுநர்கள் சுத்தச் சைவவாதிகள்; விலங்கு உரிமைகளை "
+"ஆதரிக்கிறார்கள் மற்றும் விலங்குகள் மீது செய்யப்படும் பரிசோதனைகளுக்கு எதிராக "
+"உள்ளனர். Speedy Match என்பது சைவ மற்றும் சுத்தச் சைவ மனிதர்களுக்கும் "
+"விலங்குகளுக்கும் நட்பான ஒரு டேட்டிங் பயன்பாடு ஆகும்."
+
+#: .\templates\about\about.html:21
+msgid ""
+"Only people who match your requirements will be able to see your profile and"
+" contact you. We don't allow anonymous searches and Speedy Match profiles "
+"are visible to matching partners only. You can select who will be able to "
+"see your profile and which details will appear on your profile as public, "
+"which details only to friends and which details will be private. Private "
+"details will appear only to you."
+msgstr ""
+"உங்கள் தேவைகளுடன் பொருந்தும் நபர்களுக்கே உங்கள் சுயவிவரத்தைப் பார்க்கவும் "
+"உங்களைத் தொடர்புகொள்ளவும் முடியும். பெயரில்லா தேடல்களை நாங்கள் "
+"அனுமதிப்பதில்லை; Speedy Match சுயவிவரங்கள் பொருத்தமான துணைகளுக்கே தெரியும். "
+"உங்கள் சுயவிவரத்தை யார் பார்க்கலாம், மேலும் எந்த விவரங்கள் பொதுவாகவும், எந்த"
+" விவரங்கள் நண்பர்களுக்கே மட்டும் தெரியும் வகையிலும், எந்த விவரங்கள் "
+"தனிப்பட்டதாகவும் இருக்க வேண்டும் என்பதை நீங்கள் தேர்வு செய்யலாம். தனிப்பட்ட "
+"விவரங்கள் உங்களுக்கே மட்டும் தெரியும்."
+
+#: .\templates\about\about.html:23
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes. "
+"<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
+msgstr ""
+"Speedy Net மற்றும் Speedy Match இல் உள்ள அனைத்து அம்சங்களும் இலவசம். "
+"பொருத்தமான துணையை கண்டுபிடிக்க இன்று Speedy Match இல் சேருங்கள்; இதற்கு சில "
+"நிமிடங்களே ஆகும். சேர்வதற்கு <a href=\"/\" title=\"Join Speedy Match\">இங்கே"
+" கிளிக் செய்யவும்</a>."
+
+#: .\templates\about\about.html:25
+msgid ""
+"Speedy Match is a free software & open source project. If you want to help "
+"developing and improving Speedy Match, please contact me by email."
+msgstr ""
+"Speedy Match என்பது இலவச மென்பொருள் மற்றும் திறந்த மூலத் திட்டமாகும். Speedy"
+" Match-ஐ உருவாக்கவும் மேம்படுத்தவும் உதவ விரும்பினால், தயவுசெய்து எனக்கு "
+"மின்னஞ்சல் மூலம் தொடர்பு கொள்ளுங்கள்."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Match is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Match இற்கு பல ஆண்டுகள் எங்களுடன் இருந்தும் 2003-ல் இறந்தும் போன <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> என்ற பெண் நாயின் பெயர் சூட்டப்பட்டுள்ளது. Speedy"
+" 1988-ல் 7 குட்டிகளைப் பெற்றது."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Match is currently in alpha. It was launched in August 2019. The "
+"English version of Speedy Match is in production."
+msgstr ""
+"Speedy Match தற்போது ஆல்பா நிலையில் உள்ளது. அது ஆகஸ்ட் 2019-ல் "
+"தொடங்கப்பட்டது. Speedy Match இன் ஆங்கிலப் பதிப்பு தற்போது செயல்பாட்டில் "
+"உள்ளது."
+
+#: .\templates\about\about.html:31
+msgid "Thank you and good luck,"
+msgstr "நன்றி மற்றும் நல்ல அதிர்ஷ்டம்,"
+
+#: .\templates\about\about.html:32
+msgid "Uri Rodberg"
+msgstr "உரி ரோட்பெர்க்"
+
+#: .\templates\about\about.html:33
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Speedy Net மற்றும் Speedy Match இன் நிறுவனர் மற்றும் இயக்குநர்,"
+
+#: .\templates\about\about.html:34
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Registration Step"
+msgstr "பதிவு படி"
+
+#: .\templates\accounts\edit_profile\activate.html:7
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+#: .\templates\accounts\edit_profile\activate.html:25
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்"
+
+#: .\templates\accounts\edit_profile\activate.html:46
+#: .\templates\accounts\edit_profile\base.html:10
+#: .\templates\matches\settings\base.html:41
+#: .\templates\profiles\user_extra_info_widget.html:18
+msgid "About me"
+msgstr "என்னை பற்றி"
+
+#: .\templates\accounts\edit_profile\activate.html:48
+#: .\templates\accounts\edit_profile\base.html:15
+#: .\templates\matches\settings\base.html:36
+msgid "About my match"
+msgstr "என் போட்டியை பற்றி"
+
+#: .\templates\accounts\edit_profile\activate.html:76
+msgid "Back"
+msgstr "திரும்பி"
+
+#: .\templates\accounts\edit_profile\activate.html:79
+msgid "Next step"
+msgstr "அடுத்த படி"
+
+#: .\templates\accounts\edit_profile\activate.html:85
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"உங்கள் Speedy Net கணக்கு செயலில் இல்லை. அதைச் செயல்படுத்த இந்தப் "
+"பக்கத்திற்குச் செல்லுங்கள்."
+
+#: .\templates\admin\matches\match_list.html:5
+msgid "Admin - All Matches"
+msgstr "நிர்வாகி - அனைத்து பொருந்தும்"
+
+#: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
+msgid "Your Matches"
+msgstr "உங்கள் போட்டிகள்"
+
+#: .\templates\base_site.html:29
+#: .\templates\menu\user_menu_profile_is_active.html:11
+msgid "Matches"
+msgstr "பொருத்தங்கள்"
+
+#: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
+#: .\templates\likes\like_list.html:22
+#: .\templates\menu\user_menu_profile_is_active.html:20
+msgid "Likes"
+msgstr "பிடிக்கும்"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:48
+msgid "Your Match Settings"
+msgstr "உங்கள் பொருத்த அமைப்பு"
+
+#: .\templates\base_site.html:42 .\templates\base_site.html:50
+#: .\templates\matches\settings\base.html:10
+#: .\templates\matches\settings\base.html:30
+msgid "Match Settings"
+msgstr "பொருந்தக்கூடிய அமைப்புகள்"
+
+#: .\templates\base_site.html:105 .\templates\base_site.html:106
+#: .\templates\base_site.html:114 .\templates\base_site.html:115
+msgid "A vegan friendly website"
+msgstr "ஒரு வேகன் நட்பு வலைத்தளம்"
+
+#: .\templates\email\likes\like_body.txt:1
+msgid "likes you."
+msgstr "உன்னை விரும்புகிறார்."
+
+#: .\templates\email\likes\like_body.txt:6
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் "
+"%(site_name)s. உங்கள் அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் "
+"அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+
+#: .\templates\email\likes\like_subject.txt:1
+#, python-format
+msgid "Someone likes you on %(site_name)s"
+msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "உங்கள் நண்பர்கள்"
+
+#: .\templates\likes\like_list.html:51
+msgid "You have no likes here."
+msgstr "உங்களுக்கு இங்கு விருப்பம் இல்லை."
+
+#: .\templates\main\main_page.html:7
+msgid "Free online dating"
+msgstr "இலவச ஆன்லைன் டேட்டிங்"
+
+#: .\templates\main\main_page.html:10
+msgid ""
+"Speedy Match is a new dating/matching web app for romantic purposes for "
+"singles who are members of Speedy Net. With Speedy Match you can find "
+"matching people for dating and chat with them online. The site is vegan and "
+"vegetarian friendly."
+msgstr ""
+"Speedy Match என்பது Speedy Net உறுப்பினர்களாக இருக்கும் ஒற்றையர் காதல் "
+"நோக்கங்களுக்காக பயன்படுத்தும் புதிய டேட்டிங்/பொருத்தம் காணும் வலைப் பயன்பாடு"
+" ஆகும். Speedy Match மூலம் நீங்கள் டேட்டிங்கிற்கான பொருத்தமான நபர்களைக் "
+"கண்டுபிடித்து அவர்களுடன் ஆன்லைனில் உரையாடலாம். இந்தத் தளம் சைவ மற்றும் "
+"சுத்தச் சைவ மக்களுக்கும் விலங்குகளுக்கும் நட்பானது."
+
+#: .\templates\main\main_page.html:14
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr ""
+"காதலனைத் தேடுகிறீர்களா? காதலியைத் தேடுகிறீர்களா? வாருங்கள், Speedy-யை "
+"சந்தியுங்கள்!"
+
+#: .\templates\main\main_page.html:16
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Match today to find matching partners, it only takes a few minutes."
+msgstr ""
+"Speedy Net மற்றும் Speedy Match இல் உள்ள அனைத்து அம்சங்களும் இலவசம். "
+"பொருத்தமான துணையை கண்டுபிடிக்க இன்று Speedy Match இல் சேருங்கள்; இதற்கு சில "
+"நிமிடங்களே ஆகும்."
+
+#: .\templates\matches\match_list.html:41
+msgid "Update matches"
+msgstr "பொருந்தக்கூடியவை புதுப்பிக்கவும்"
+
+#: .\templates\matches\match_list.html:49
+#: .\templates\profiles\user_extra_info_widget.html:38
+msgid "Diet"
+msgstr "உணவு"
+
+#: .\templates\matches\match_list.html:60
+msgid "Age:"
+msgstr "வயதுஃ"
+
+#: .\templates\matches\match_list.html:74
+msgid "Refresh"
+msgstr "புதுப்பித்தல்"
+
+#: .\templates\matches\match_list.html:81
+msgid "Add more options"
+msgstr "கூடுதல் விருப்பங்களை சேர்க்கவும்"
+
+#: .\templates\matches\match_list.html:110
+msgid ""
+"You don't have any matches yet. Try to broaden your search settings or check"
+" again later."
+msgstr ""
+"உங்களிடம் இன்னும் எந்த பொருந்தும் இல்லை. உங்கள் தேடல் அமைப்புகளை விரிவாக்க "
+"முயற்சிக்கவும் அல்லது பின்னர் மீண்டும் சரிபார்க்கவும்."
+
+#: .\templates\matches\settings\base.html:27
+msgid "Back to Matches"
+msgstr "போட்டிகளுக்குத் திரும்பு"
+
+#: .\templates\matches\settings\base.html:46
+msgid "Profile Info"
+msgstr "சுயவிவர தகவல்"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\templates\profiles\tools\like.html:11
+#: .\templates\profiles\tools\like.html:13
+msgid "Like"
+msgstr "போன்ற"
+
+#: .\templates\profiles\tools\like.html:19
+#: .\templates\profiles\tools\like.html:21
+msgid "Unlike"
+msgstr "வேறுபட்ட"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\templates\profiles\user_base_site.html:10
+#: .\templates\profiles\user_base_site.html:16
+msgid "likes you"
+msgstr "உன்னை விரும்புகிறது"
+
+#: .\templates\profiles\user_base_site.html:12
+#: .\templates\profiles\user_base_site.html:18
+msgid "You like"
+msgstr "உனக்கு பிடிக்கும்"
+
+#: .\templates\profiles\user_base_site.html:14
+msgid "Friendship request sent"
+msgstr "நட்பு கோரிக்கை அனுப்பி வைக்கப்பட்டிருக்கிறது"
+
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "மேலும் தகவல்"
+
+#: .\templates\profiles\user_extra_info_widget.html:22
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\templates\profiles\user_extra_info_widget.html:42
+msgid "Smoking status"
+msgstr "புகைபிடித்தல் நிலை"
+
+#: .\templates\profiles\user_extra_info_widget.html:46
+msgid "Relationship status"
+msgstr "உறவு நிலை"
+
+#: .\templates\profiles\user_extra_info_widget.html:58
+msgid "Last visited Speedy Match"
+msgstr "Speedy Match-ஐ கடைசியாகப் பார்வையிட்டது"
+
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "பொருந்தும் தரவரிசை"
+
+#: .\templates\profiles\user_rank_widget.html:28
+msgid "There is no match."
+msgstr "ஒத்திருக்கவில்லை."

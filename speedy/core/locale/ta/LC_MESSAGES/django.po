@@ -1,0 +1,3704 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:5
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\__translations\__translations.html:6
+msgid "Friendship request sent"
+msgstr "நட்பு கோரிக்கை அனுப்பி வைக்கப்பட்டிருக்கிறது"
+
+#: .\__translations\__translations.html:8
+msgctxt "female"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவில்லை. தயவுசெய்து உங்கள் அஞ்சல் "
+"பெட்டியை சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:9
+msgctxt "male"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவில்லை. தயவுசெய்து உங்கள் அஞ்சல் "
+"பெட்டியை சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:10
+msgctxt "other"
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவில்லை. தயவுசெய்து உங்கள் அஞ்சல் "
+"பெட்டியை சரிபார்க்கவும்."
+
+#: .\__translations\__translations.html:12
+msgctxt "female"
+msgid "Logout"
+msgstr "பதிவு"
+
+#: .\__translations\__translations.html:13
+msgctxt "male"
+msgid "Logout"
+msgstr "பதிவு"
+
+#: .\__translations\__translations.html:14
+msgctxt "other"
+msgid "Logout"
+msgstr "பதிவு"
+
+#: .\__translations\__translations.html:16
+#, python-format
+msgctxt "female"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"வணக்கம் <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s-க்கு மீண்டும் வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.html:17
+#, python-format
+msgctxt "male"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"வணக்கம் <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s-க்கு மீண்டும் வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.html:18
+#, python-format
+msgctxt "other"
+msgid ""
+"Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"welcome back to %(site_name)s!"
+msgstr ""
+"வணக்கம் <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"%(site_name)s-க்கு மீண்டும் வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.html:20
+msgctxt "female"
+msgid "Please confirm your email address."
+msgstr "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்."
+
+#: .\__translations\__translations.html:21
+msgctxt "male"
+msgid "Please confirm your email address."
+msgstr "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்."
+
+#: .\__translations\__translations.html:22
+msgctxt "other"
+msgid "Please confirm your email address."
+msgstr "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்."
+
+#: .\__translations\__translations.html:24
+msgctxt "female"
+msgid "Deactivate Account"
+msgstr "கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.html:25
+msgctxt "male"
+msgid "Deactivate Account"
+msgstr "கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.html:26
+msgctxt "other"
+msgid "Deactivate Account"
+msgstr "கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.html:28
+msgctxt "female"
+msgid "Resend a confirmation email"
+msgstr "உறுதிப்படுத்தல் மின்னஞ்சலை மீண்டும் அனுப்பவும்"
+
+#: .\__translations\__translations.html:29
+msgctxt "male"
+msgid "Resend a confirmation email"
+msgstr "உறுதிப்படுத்தல் மின்னஞ்சலை மீண்டும் அனுப்பவும்"
+
+#: .\__translations\__translations.html:30
+msgctxt "other"
+msgid "Resend a confirmation email"
+msgstr "உறுதிப்படுத்தல் மின்னஞ்சலை மீண்டும் அனுப்பவும்"
+
+#: .\__translations\__translations.html:32
+msgctxt "female"
+msgid "Make this email address primary"
+msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மை செய்யவும்"
+
+#: .\__translations\__translations.html:33
+msgctxt "male"
+msgid "Make this email address primary"
+msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மை செய்யவும்"
+
+#: .\__translations\__translations.html:34
+msgctxt "other"
+msgid "Make this email address primary"
+msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மை செய்யவும்"
+
+#: .\__translations\__translations.html:36
+msgctxt "female"
+msgid "Are you sure you want to delete this email address?"
+msgstr ""
+"நீங்கள் இந்த மின்னஞ்சல் முகவரியை நீக்க வேண்டும் என்று உறுதியாக "
+"இருக்கிறீர்களா?"
+
+#: .\__translations\__translations.html:37
+msgctxt "male"
+msgid "Are you sure you want to delete this email address?"
+msgstr ""
+"நீங்கள் இந்த மின்னஞ்சல் முகவரியை நீக்க வேண்டும் என்று உறுதியாக "
+"இருக்கிறீர்களா?"
+
+#: .\__translations\__translations.html:38
+msgctxt "other"
+msgid "Are you sure you want to delete this email address?"
+msgstr ""
+"நீங்கள் இந்த மின்னஞ்சல் முகவரியை நீக்க வேண்டும் என்று உறுதியாக "
+"இருக்கிறீர்களா?"
+
+#: .\__translations\__translations.html:40
+msgctxt "female"
+msgid "Delete this email address"
+msgstr "இந்த மின்னஞ்சல் முகவரியை நீக்கவும்"
+
+#: .\__translations\__translations.html:41
+msgctxt "male"
+msgid "Delete this email address"
+msgstr "இந்த மின்னஞ்சல் முகவரியை நீக்கவும்"
+
+#: .\__translations\__translations.html:42
+msgctxt "other"
+msgid "Delete this email address"
+msgstr "இந்த மின்னஞ்சல் முகவரியை நீக்கவும்"
+
+#: .\__translations\__translations.html:44
+msgctxt "female"
+msgid "Add Another"
+msgstr "மேலும் ஒரு பிட்"
+
+#: .\__translations\__translations.html:45
+msgctxt "male"
+msgid "Add Another"
+msgstr "மேலும் ஒரு பிட்"
+
+#: .\__translations\__translations.html:46
+msgctxt "other"
+msgid "Add Another"
+msgstr "மேலும் ஒரு பிட்"
+
+#: .\__translations\__translations.html:48
+msgctxt "female"
+msgid "Change Password"
+msgstr "கடவுச்சொல்லை மாற்றுதல்"
+
+#: .\__translations\__translations.html:49
+msgctxt "male"
+msgid "Change Password"
+msgstr "கடவுச்சொல்லை மாற்றுதல்"
+
+#: .\__translations\__translations.html:50
+msgctxt "other"
+msgid "Change Password"
+msgstr "கடவுச்சொல்லை மாற்றுதல்"
+
+#: .\__translations\__translations.html:52
+msgctxt "female"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"உங்கள் சுயவிவரத்தில் உள்ள மின்னஞ்சல் முகவரிகளின் தனியுரிமை அமைப்புகளை "
+"மாற்றவும்."
+
+#: .\__translations\__translations.html:53
+msgctxt "male"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"உங்கள் சுயவிவரத்தில் உள்ள மின்னஞ்சல் முகவரிகளின் தனியுரிமை அமைப்புகளை "
+"மாற்றவும்."
+
+#: .\__translations\__translations.html:54
+msgctxt "other"
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"உங்கள் சுயவிவரத்தில் உள்ள மின்னஞ்சல் முகவரிகளின் தனியுரிமை அமைப்புகளை "
+"மாற்றவும்."
+
+#: .\__translations\__translations.html:56
+msgctxt "female"
+msgid "You're not blocking anybody."
+msgstr "நீங்கள் யாரையும் தடுக்கவில்லை."
+
+#: .\__translations\__translations.html:57
+msgctxt "male"
+msgid "You're not blocking anybody."
+msgstr "நீங்கள் யாரையும் தடுக்கவில்லை."
+
+#: .\__translations\__translations.html:58
+msgctxt "other"
+msgid "You're not blocking anybody."
+msgstr "நீங்கள் யாரையும் தடுக்கவில்லை."
+
+#: .\__translations\__translations.html:60
+msgctxt "female"
+msgid "Report a User"
+msgstr "ஒரு பயனரை அறிக்கை செய்யவும்"
+
+#: .\__translations\__translations.html:61
+msgctxt "male"
+msgid "Report a User"
+msgstr "ஒரு பயனரை அறிக்கை செய்யவும்"
+
+#: .\__translations\__translations.html:62
+msgctxt "other"
+msgid "Report a User"
+msgstr "ஒரு பயனரை அறிக்கை செய்யவும்"
+
+#: .\__translations\__translations.html:72
+msgctxt "female"
+msgid "Your feedback was sent to administrators."
+msgstr "உங்கள் கருத்து நிர்வாகிகளுக்கு அனுப்பப்பட்டது."
+
+#: .\__translations\__translations.html:73
+msgctxt "male"
+msgid "Your feedback was sent to administrators."
+msgstr "உங்கள் கருத்து நிர்வாகிகளுக்கு அனுப்பப்பட்டது."
+
+#: .\__translations\__translations.html:74
+msgctxt "other"
+msgid "Your feedback was sent to administrators."
+msgstr "உங்கள் கருத்து நிர்வாகிகளுக்கு அனுப்பப்பட்டது."
+
+#: .\__translations\__translations.html:76
+#, python-format
+msgctxt "female"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s-க்கு ஒரு செய்தியை அனுப்பவும்"
+
+#: .\__translations\__translations.html:77
+#, python-format
+msgctxt "male"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s-க்கு ஒரு செய்தியை அனுப்பவும்"
+
+#: .\__translations\__translations.html:78
+#, python-format
+msgctxt "other"
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s-க்கு ஒரு செய்தியை அனுப்பவும்"
+
+#: .\__translations\__translations.html:80
+msgctxt "female"
+msgid "Mark All as Read"
+msgstr "எல்லாவற்றையும் வாசிக்கவும்"
+
+#: .\__translations\__translations.html:81
+msgctxt "male"
+msgid "Mark All as Read"
+msgstr "எல்லாவற்றையும் வாசிக்கவும்"
+
+#: .\__translations\__translations.html:82
+msgctxt "other"
+msgid "Mark All as Read"
+msgstr "எல்லாவற்றையும் வாசிக்கவும்"
+
+#: .\__translations\__translations.html:84
+msgctxt "female"
+msgid "You:"
+msgstr "நீ:"
+
+#: .\__translations\__translations.html:85
+msgctxt "male"
+msgid "You:"
+msgstr "நீ:"
+
+#: .\__translations\__translations.html:86
+msgctxt "other"
+msgid "You:"
+msgstr "நீ:"
+
+#: .\__translations\__translations.html:88
+msgctxt "female"
+msgid "You have no messages yet."
+msgstr "உங்களுக்கு இன்னும் செய்திகள் இல்லை."
+
+#: .\__translations\__translations.html:89
+msgctxt "male"
+msgid "You have no messages yet."
+msgstr "உங்களுக்கு இன்னும் செய்திகள் இல்லை."
+
+#: .\__translations\__translations.html:90
+msgctxt "other"
+msgid "You have no messages yet."
+msgstr "உங்களுக்கு இன்னும் செய்திகள் இல்லை."
+
+#: .\__translations\__translations.html:92
+msgctxt "female"
+msgid "You blocked "
+msgstr "நீ தடுக்கப்பட்டது . "
+
+#: .\__translations\__translations.html:93
+msgctxt "male"
+msgid "You blocked "
+msgstr "நீ தடுக்கப்பட்டது . "
+
+#: .\__translations\__translations.html:94
+msgctxt "other"
+msgid "You blocked "
+msgstr "நீ தடுக்கப்பட்டது . "
+
+#: .\__translations\__translations.html:96
+msgctxt "female"
+msgid " blocked you."
+msgstr " உங்களை தடுத்தது."
+
+#: .\__translations\__translations.html:97
+msgctxt "male"
+msgid " blocked you."
+msgstr " உங்களை தடுத்தது."
+
+#: .\__translations\__translations.html:98
+msgctxt "other"
+msgid " blocked you."
+msgstr " உங்களை தடுத்தது."
+
+#: .\__translations\__translations.html:100
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Match சுயவிவரம் உள்ளது. Speedy Match இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:101
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Match சுயவிவரம் உள்ளது. Speedy Match இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:102
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Match சுயவிவரம் உள்ளது. Speedy Match இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:104
+#, python-format
+msgctxt "female"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:105
+#, python-format
+msgctxt "male"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:106
+#, python-format
+msgctxt "other"
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:108
+msgctxt "female"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"உங்களுக்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் உங்கள் "
+"சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:109
+msgctxt "male"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"உங்களுக்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் உங்கள் "
+"சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:110
+msgctxt "other"
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"உங்களுக்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் உங்கள் "
+"சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.html:112
+msgctxt "female"
+msgid "Add to Friends"
+msgstr "நண்பர்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:113
+msgctxt "male"
+msgid "Add to Friends"
+msgstr "நண்பர்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:114
+msgctxt "other"
+msgid "Add to Friends"
+msgstr "நண்பர்களை சேர்க்கவும்"
+
+#: .\__translations\__translations.html:116
+msgctxt "female"
+msgid "Are you sure you want to block "
+msgstr "நீங்கள் தடுக்க வேண்டும் என்று உறுதியாக இருக்கிறீர்களா "
+
+#: .\__translations\__translations.html:117
+msgctxt "male"
+msgid "Are you sure you want to block "
+msgstr "நீங்கள் தடுக்க வேண்டும் என்று உறுதியாக இருக்கிறீர்களா "
+
+#: .\__translations\__translations.html:118
+msgctxt "other"
+msgid "Are you sure you want to block "
+msgstr "நீங்கள் தடுக்க வேண்டும் என்று உறுதியாக இருக்கிறீர்களா "
+
+#: .\__translations\__translations.html:120
+msgctxt "female"
+msgid "Block "
+msgstr "தொகுதி "
+
+#: .\__translations\__translations.html:121
+msgctxt "male"
+msgid "Block "
+msgstr "தொகுதி "
+
+#: .\__translations\__translations.html:122
+msgctxt "other"
+msgid "Block "
+msgstr "தொகுதி "
+
+#: .\__translations\__translations.html:124
+msgctxt "female"
+msgid "Unblock "
+msgstr "திறக்கவும் "
+
+#: .\__translations\__translations.html:125
+msgctxt "male"
+msgid "Unblock "
+msgstr "திறக்கவும் "
+
+#: .\__translations\__translations.html:126
+msgctxt "other"
+msgid "Unblock "
+msgstr "திறக்கவும் "
+
+#: .\__translations\__translations.html:128
+msgctxt "female"
+msgid "Report "
+msgstr "அறிக்கை "
+
+#: .\__translations\__translations.html:129
+msgctxt "male"
+msgid "Report "
+msgstr "அறிக்கை "
+
+#: .\__translations\__translations.html:130
+msgctxt "other"
+msgid "Report "
+msgstr "அறிக்கை "
+
+#: .\__translations\__translations.html:132
+msgctxt "female"
+msgid "Report this photo"
+msgstr "இந்த புகைப்படத்தை அறிக்கை செய்யுங்கள்"
+
+#: .\__translations\__translations.html:133
+msgctxt "male"
+msgid "Report this photo"
+msgstr "இந்த புகைப்படத்தை அறிக்கை செய்யுங்கள்"
+
+#: .\__translations\__translations.html:134
+msgctxt "other"
+msgid "Report this photo"
+msgstr "இந்த புகைப்படத்தை அறிக்கை செய்யுங்கள்"
+
+#: .\__translations\__translations.html:136
+msgctxt "female"
+msgid "Remove Friend"
+msgstr "நண்பரை நீக்கவும்"
+
+#: .\__translations\__translations.html:137
+msgctxt "male"
+msgid "Remove Friend"
+msgstr "நண்பரை நீக்கவும்"
+
+#: .\__translations\__translations.html:138
+msgctxt "other"
+msgid "Remove Friend"
+msgstr "நண்பரை நீக்கவும்"
+
+#: .\__translations\__translations.html:140
+msgctxt "female"
+msgid "Cancel Friendship Request"
+msgstr "நட்பு கோரிக்கையை ரத்து செய்யவும்"
+
+#: .\__translations\__translations.html:141
+msgctxt "male"
+msgid "Cancel Friendship Request"
+msgstr "நட்பு கோரிக்கையை ரத்து செய்யவும்"
+
+#: .\__translations\__translations.html:142
+msgctxt "other"
+msgid "Cancel Friendship Request"
+msgstr "நட்பு கோரிக்கையை ரத்து செய்யவும்"
+
+#: .\__translations\__translations.html:144
+msgctxt "female"
+msgid "Accept"
+msgstr "ஏற்றுக்கொள்ளுங்கள்"
+
+#: .\__translations\__translations.html:145
+msgctxt "male"
+msgid "Accept"
+msgstr "ஏற்றுக்கொள்ளுங்கள்"
+
+#: .\__translations\__translations.html:146
+msgctxt "other"
+msgid "Accept"
+msgstr "ஏற்றுக்கொள்ளுங்கள்"
+
+#: .\__translations\__translations.html:148
+msgctxt "female"
+msgid "Reject"
+msgstr "நிராகரிப்பு"
+
+#: .\__translations\__translations.html:149
+msgctxt "male"
+msgid "Reject"
+msgstr "நிராகரிப்பு"
+
+#: .\__translations\__translations.html:150
+msgctxt "other"
+msgid "Reject"
+msgstr "நிராகரிப்பு"
+
+#: .\__translations\__translations.html:152
+msgctxt "female"
+msgid "Accept Friendship Request"
+msgstr "நட்பை கோருவதை ஏற்றுக்கொள்"
+
+#: .\__translations\__translations.html:153
+msgctxt "male"
+msgid "Accept Friendship Request"
+msgstr "நட்பை கோருவதை ஏற்றுக்கொள்"
+
+#: .\__translations\__translations.html:154
+msgctxt "other"
+msgid "Accept Friendship Request"
+msgstr "நட்பை கோருவதை ஏற்றுக்கொள்"
+
+#: .\__translations\__translations.html:156
+msgctxt "female"
+msgid "Reject Friendship Request"
+msgstr "நட்பை கோருவதை நிராகரிக்கவும்"
+
+#: .\__translations\__translations.html:157
+msgctxt "male"
+msgid "Reject Friendship Request"
+msgstr "நட்பை கோருவதை நிராகரிக்கவும்"
+
+#: .\__translations\__translations.html:158
+msgctxt "other"
+msgid "Reject Friendship Request"
+msgstr "நட்பை கோருவதை நிராகரிக்கவும்"
+
+#: .\__translations\__translations.html:160
+msgctxt "female"
+msgid "Send Message"
+msgstr "செய்தி அனுப்புங்கள்"
+
+#: .\__translations\__translations.html:161
+msgctxt "male"
+msgid "Send Message"
+msgstr "செய்தி அனுப்புங்கள்"
+
+#: .\__translations\__translations.html:162
+msgctxt "other"
+msgid "Send Message"
+msgstr "செய்தி அனுப்புங்கள்"
+
+#: .\__translations\__translations.html:164
+msgctxt "female"
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:165
+msgctxt "male"
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:166
+msgctxt "other"
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:168
+msgctxt "female"
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\__translations\__translations.html:169
+msgctxt "male"
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\__translations\__translations.html:170
+msgctxt "other"
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\__translations\__translations.html:172
+msgctxt "female"
+msgid "See All"
+msgstr "அனைத்தையும் காண்க"
+
+#: .\__translations\__translations.html:173
+msgctxt "male"
+msgid "See All"
+msgstr "அனைத்தையும் காண்க"
+
+#: .\__translations\__translations.html:174
+msgctxt "other"
+msgid "See All"
+msgstr "அனைத்தையும் காண்க"
+
+#: .\__translations\__translations.html:176
+msgctxt "female"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"உங்கள் Speedy Net கணக்கு செயலில் இல்லை. அதைச் செயல்படுத்த இந்தப் "
+"பக்கத்திற்குச் செல்லுங்கள்."
+
+#: .\__translations\__translations.html:177
+msgctxt "male"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"உங்கள் Speedy Net கணக்கு செயலில் இல்லை. அதைச் செயல்படுத்த இந்தப் "
+"பக்கத்திற்குச் செல்லுங்கள்."
+
+#: .\__translations\__translations.html:178
+msgctxt "other"
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"உங்கள் Speedy Net கணக்கு செயலில் இல்லை. அதைச் செயல்படுத்த இந்தப் "
+"பக்கத்திற்குச் செல்லுங்கள்."
+
+#: .\__translations\__translations.html:180
+#, python-format
+msgctxt "female"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:181
+#, python-format
+msgctxt "male"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:182
+#, python-format
+msgctxt "other"
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்"
+
+#: .\__translations\__translations.html:184
+msgctxt "female"
+msgid "has sent you a message."
+msgstr "உங்களுக்கு ஒரு செய்தியை அனுப்பியுள்ளார்."
+
+#: .\__translations\__translations.html:185
+msgctxt "male"
+msgid "has sent you a message."
+msgstr "உங்களுக்கு ஒரு செய்தியை அனுப்பியுள்ளார்."
+
+#: .\__translations\__translations.html:186
+msgctxt "other"
+msgid "has sent you a message."
+msgstr "உங்களுக்கு ஒரு செய்தியை அனுப்பியுள்ளார்."
+
+#: .\__translations\__translations.html:188
+msgctxt "female"
+msgid "Read it:"
+msgstr "அதை வாசிக்கவும்:"
+
+#: .\__translations\__translations.html:189
+msgctxt "male"
+msgid "Read it:"
+msgstr "அதை வாசிக்கவும்:"
+
+#: .\__translations\__translations.html:190
+msgctxt "other"
+msgid "Read it:"
+msgstr "அதை வாசிக்கவும்:"
+
+#: .\__translations\__translations.html:192
+#, python-format
+msgctxt "female"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் %(site_name)s"
+
+#: .\__translations\__translations.html:193
+#, python-format
+msgctxt "male"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் %(site_name)s"
+
+#: .\__translations\__translations.html:194
+#, python-format
+msgctxt "other"
+msgid "Confirm your email address on %(site_name)s"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் %(site_name)s"
+
+#: .\__translations\__translations.html:196
+msgctxt "female"
+msgid "Use this link to activate your account:"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:197
+msgctxt "male"
+msgid "Use this link to activate your account:"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:198
+msgctxt "other"
+msgid "Use this link to activate your account:"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:200
+msgctxt "female"
+msgid "Use this link to verify your email address:"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:201
+msgctxt "male"
+msgid "Use this link to verify your email address:"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:202
+msgctxt "other"
+msgid "Use this link to verify your email address:"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:204
+msgctxt "female"
+msgid "Use this link to change your password:"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:205
+msgctxt "male"
+msgid "Use this link to change your password:"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:206
+msgctxt "other"
+msgid "Use this link to change your password:"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\__translations\__translations.html:208
+msgctxt "female"
+msgid "Username"
+msgstr "பயனர் பெயர்"
+
+#: .\__translations\__translations.html:209
+msgctxt "male"
+msgid "Username"
+msgstr "பயனர் பெயர்"
+
+#: .\__translations\__translations.html:210
+msgctxt "other"
+msgid "Username"
+msgstr "பயனர் பெயர்"
+
+#: .\__translations\__translations.html:212
+#, python-format
+msgctxt "female"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் "
+"%(site_name)s. உங்கள் அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் "
+"அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+
+#: .\__translations\__translations.html:213
+#, python-format
+msgctxt "male"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் "
+"%(site_name)s. உங்கள் அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் "
+"அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+
+#: .\__translations\__translations.html:214
+#, python-format
+msgctxt "other"
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் "
+"%(site_name)s. உங்கள் அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் "
+"அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+
+#: .\__translations\__translations.py:7
+msgid "Enter a valid email address."
+msgstr "செல்லுபடியாகும் மின்னஞ்சல் முகவரியை உள்ளிடவும்."
+
+#: .\__translations\__translations.py:8
+msgid "Email address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+#: .\__translations\__translations.py:9 .\accounts\models.py:1293
+msgid "email address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+#: .\__translations\__translations.py:10
+msgid "Email address:"
+msgstr "மின்னஞ்சல் முகவரிஃ"
+
+#: .\__translations\__translations.py:11
+#: .\templates\profiles\user_info_widget.html:70
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: .\__translations\__translations.py:12
+msgid "Value must be valid JSON."
+msgstr "மதிப்பு JSON ஆக இருக்க வேண்டும்."
+
+#: .\__translations\__translations.py:13
+#, python-format
+msgid ""
+"Please enter a correct %(username)s and password. Note that both fields may "
+"be case-sensitive."
+msgstr ""
+"தயவுசெய்து சரியான %(username)s மற்றும் கடவுச்சொல்லை உள்ளிடவும். இரு "
+"புலங்களும் வழக்கு உணர்திறன் கொண்டதாக இருக்கலாம் என்பதை நினைவில் கொள்க."
+
+#: .\__translations\__translations.py:17
+msgid "Message"
+msgstr "செய்தி"
+
+#: .\__translations\__translations.py:19
+msgid "Friendship Request"
+msgstr "நட்பு கோரிக்கை"
+
+#: .\__translations\__translations.py:20
+msgid "Friendship Requests"
+msgstr "நட்பு கோரிக்கைகள்"
+
+#: .\__translations\__translations.py:22
+msgid "Friend"
+msgstr "நண்பர்"
+
+#: .\__translations\__translations.py:23 .\accounts\models.py:798
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.py:25
+msgid "Following Relationship"
+msgstr "உறவுகளைத் தொடர்ந்து"
+
+#: .\__translations\__translations.py:26
+msgid "Following Relationships"
+msgstr "உறவுகளைத் தொடர்ந்து"
+
+#: .\__translations\__translations.py:28
+msgid "Blocker Relationship"
+msgstr "தடுப்பு உறவு"
+
+#: .\__translations\__translations.py:29
+msgid "Blocked Relationships"
+msgstr "தடைசெய்யப்பட்ட உறவுகள்"
+
+#: .\__translations\__translations.py:34
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+"பட்டியலில் %(show_value)d உருப்படி உள்ளது, அது %(limit_value)d-ஐ விட அதிகமாக"
+" இருக்கக்கூடாது."
+msgstr[1] ""
+"பட்டியலில் %(show_value)d உருப்படிகள் உள்ளன, அது %(limit_value)d-ஐ விட "
+"அதிகமாக இருக்கக்கூடாது."
+
+#: .\__translations\__translations.py:41
+msgctxt "female"
+msgid "username (slug)"
+msgstr "பயனர் பெயர் (slug)"
+
+#: .\__translations\__translations.py:42
+msgctxt "male"
+msgid "username (slug)"
+msgstr "பயனர் பெயர் (slug)"
+
+#: .\__translations\__translations.py:43
+msgctxt "other"
+msgid "username (slug)"
+msgstr "பயனர் பெயர் (slug)"
+
+#: .\__translations\__translations.py:45
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.py:46
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.py:47
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.py:49
+msgctxt "female"
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமி"
+
+#: .\__translations\__translations.py:50
+msgctxt "male"
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமி"
+
+#: .\__translations\__translations.py:51
+msgctxt "other"
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமி"
+
+#: .\__translations\__translations.py:53
+msgctxt "female"
+msgid "You can't change your username."
+msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
+
+#: .\__translations\__translations.py:54
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
+
+#: .\__translations\__translations.py:55
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
+
+#: .\__translations\__translations.py:57
+#, python-brace-format
+msgctxt "female"
+msgid "Activate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
+
+#: .\__translations\__translations.py:58
+#, python-brace-format
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
+
+#: .\__translations\__translations.py:59
+#, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
+
+#: .\__translations\__translations.py:61
+#, python-brace-format
+msgctxt "female"
+msgid "Deactivate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.py:65
+msgctxt "female"
+msgid "Add"
+msgstr "சேர்க்க"
+
+#: .\__translations\__translations.py:66
+msgctxt "male"
+msgid "Add"
+msgstr "சேர்க்க"
+
+#: .\__translations\__translations.py:67
+msgctxt "other"
+msgid "Add"
+msgstr "சேர்க்க"
+
+#: .\__translations\__translations.py:69
+msgctxt "female"
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\__translations\__translations.py:70
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\__translations\__translations.py:71
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\__translations\__translations.py:73
+msgctxt "female"
+msgid "Where do you live?"
+msgstr "நீ எங்கே வசிக்கிறாய்?"
+
+#: .\__translations\__translations.py:74
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "நீ எங்கே வசிக்கிறாய்?"
+
+#: .\__translations\__translations.py:75
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "நீ எங்கே வசிக்கிறாய்?"
+
+#: .\__translations\__translations.py:77
+msgctxt "female"
+msgid "Please write where you live."
+msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
+
+#: .\__translations\__translations.py:78
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
+
+#: .\__translations\__translations.py:79
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
+
+#: .\__translations\__translations.py:81
+msgctxt "female"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:82
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:83
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:85
+msgctxt "female"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
+
+#: .\__translations\__translations.py:86
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
+
+#: .\__translations\__translations.py:87
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
+
+#: .\__translations\__translations.py:89
+msgctxt "female"
+msgid "Carnist (eats animals)"
+msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:90
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:91
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:93
+msgctxt "female"
+msgid "Vegan"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:94
+msgctxt "male"
+msgid "Vegan"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:95
+msgctxt "other"
+msgid "Vegan"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:97
+msgctxt "female"
+msgid "Vegetarian"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:98
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:99
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:101
+msgctxt "female"
+msgid "Carnist"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:102
+msgctxt "male"
+msgid "Carnist"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:103
+msgctxt "other"
+msgid "Carnist"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:105
+msgctxt "female"
+msgid "Not smoking"
+msgstr "புகைபிடிப்பதில்லை"
+
+#: .\__translations\__translations.py:106
+msgctxt "male"
+msgid "Not smoking"
+msgstr "புகைபிடிப்பதில்லை"
+
+#: .\__translations\__translations.py:107
+msgctxt "other"
+msgid "Not smoking"
+msgstr "புகைபிடிப்பதில்லை"
+
+#: .\__translations\__translations.py:109
+msgctxt "female"
+msgid "Smoking occasionally"
+msgstr "அவ்வப்போது புகைத்தல்"
+
+#: .\__translations\__translations.py:110
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "அவ்வப்போது புகைத்தல்"
+
+#: .\__translations\__translations.py:111
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "அவ்வப்போது புகைத்தல்"
+
+#: .\__translations\__translations.py:113
+msgctxt "female"
+msgid "Smoking"
+msgstr "புகைத்தல்"
+
+#: .\__translations\__translations.py:114
+msgctxt "male"
+msgid "Smoking"
+msgstr "புகைத்தல்"
+
+#: .\__translations\__translations.py:115
+msgctxt "other"
+msgid "Smoking"
+msgstr "புகைத்தல்"
+
+#: .\__translations\__translations.py:117
+msgctxt "female"
+msgid "Single"
+msgstr "ஒற்றை"
+
+#: .\__translations\__translations.py:118
+msgctxt "male"
+msgid "Single"
+msgstr "ஒற்றை"
+
+#: .\__translations\__translations.py:119
+msgctxt "other"
+msgid "Single"
+msgstr "ஒற்றை"
+
+#: .\__translations\__translations.py:121
+msgctxt "female"
+msgid "Divorced"
+msgstr "விவாகரத்து"
+
+#: .\__translations\__translations.py:122
+msgctxt "male"
+msgid "Divorced"
+msgstr "விவாகரத்து"
+
+#: .\__translations\__translations.py:123
+msgctxt "other"
+msgid "Divorced"
+msgstr "விவாகரத்து"
+
+#: .\__translations\__translations.py:125
+msgctxt "female"
+msgid "Widowed"
+msgstr "விதவை"
+
+#: .\__translations\__translations.py:126
+msgctxt "male"
+msgid "Widowed"
+msgstr "விதவை"
+
+#: .\__translations\__translations.py:127
+msgctxt "other"
+msgid "Widowed"
+msgstr "விதவை"
+
+#: .\__translations\__translations.py:129
+msgctxt "female"
+msgid "In a relationship"
+msgstr "ஒரு உறவில்"
+
+#: .\__translations\__translations.py:130
+msgctxt "male"
+msgid "In a relationship"
+msgstr "ஒரு உறவில்"
+
+#: .\__translations\__translations.py:131
+msgctxt "other"
+msgid "In a relationship"
+msgstr "ஒரு உறவில்"
+
+#: .\__translations\__translations.py:133
+msgctxt "female"
+msgid "In an open relationship"
+msgstr "ஒரு திறந்த உறவில்"
+
+#: .\__translations\__translations.py:134
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "ஒரு திறந்த உறவில்"
+
+#: .\__translations\__translations.py:135
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "ஒரு திறந்த உறவில்"
+
+#: .\__translations\__translations.py:137
+msgctxt "female"
+msgid "It's complicated"
+msgstr "அது சிக்கலானது"
+
+#: .\__translations\__translations.py:138
+msgctxt "male"
+msgid "It's complicated"
+msgstr "அது சிக்கலானது"
+
+#: .\__translations\__translations.py:139
+msgctxt "other"
+msgid "It's complicated"
+msgstr "அது சிக்கலானது"
+
+#: .\__translations\__translations.py:141
+msgctxt "female"
+msgid "Separated"
+msgstr "பிரித்தல்"
+
+#: .\__translations\__translations.py:142
+msgctxt "male"
+msgid "Separated"
+msgstr "பிரித்தல்"
+
+#: .\__translations\__translations.py:143
+msgctxt "other"
+msgid "Separated"
+msgstr "பிரித்தல்"
+
+#: .\__translations\__translations.py:145
+msgctxt "female"
+msgid "Engaged"
+msgstr "நிச்சயதார்த்தம்"
+
+#: .\__translations\__translations.py:146
+msgctxt "male"
+msgid "Engaged"
+msgstr "நிச்சயதார்த்தம்"
+
+#: .\__translations\__translations.py:147
+msgctxt "other"
+msgid "Engaged"
+msgstr "நிச்சயதார்த்தம்"
+
+#: .\__translations\__translations.py:149
+msgctxt "female"
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+#: .\__translations\__translations.py:150
+msgctxt "male"
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+#: .\__translations\__translations.py:151
+msgctxt "other"
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+#: .\__translations\__translations.py:153
+msgctxt "female"
+msgid "Your new password has been saved."
+msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
+
+#: .\__translations\__translations.py:154
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
+
+#: .\__translations\__translations.py:155
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
+
+#: .\__translations\__translations.py:157
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் "
+"செய்யப்பட்டுள்ளன. அவற்றை எந்த நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
+
+#: .\__translations\__translations.py:158
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் "
+"செய்யப்பட்டுள்ளன. அவற்றை எந்த நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
+
+#: .\__translations\__translations.py:159
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் "
+"செய்யப்பட்டுள்ளன. அவற்றை எந்த நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
+
+#: .\__translations\__translations.py:161
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த "
+"நேரத்திலும் மீண்டும் செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து "
+"செயலில் இருக்கும்."
+
+#: .\__translations\__translations.py:162
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த "
+"நேரத்திலும் மீண்டும் செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து "
+"செயலில் இருக்கும்."
+
+#: .\__translations\__translations.py:163
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த "
+"நேரத்திலும் மீண்டும் செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து "
+"செயலில் இருக்கும்."
+
+#: .\__translations\__translations.py:165
+msgctxt "female"
+msgid "You've already confirmed this email address."
+msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:166
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:167
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:169
+msgctxt "female"
+msgid "You've confirmed your email address."
+msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:170
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:171
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:173
+msgctxt "female"
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: .\__translations\__translations.py:174
+msgctxt "male"
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: .\__translations\__translations.py:175
+msgctxt "other"
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: .\__translations\__translations.py:177
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு "
+"மேல் இருக்க முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
+
+#: .\__translations\__translations.py:178
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு "
+"மேல் இருக்க முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
+
+#: .\__translations\__translations.py:179
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy"
+" Net. Please remove friends before you proceed."
+msgstr ""
+"உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு "
+"மேல் இருக்க முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
+
+#: .\__translations\__translations.py:181
+#, python-brace-format
+msgctxt "female_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:183
+#, python-brace-format
+msgctxt "female_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:184
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:186
+#, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:187
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:188
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:189
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு "
+"{1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில "
+"நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:191
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
+
+#: .\__translations\__translations.py:192
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
+
+#: .\__translations\__translations.py:193
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
+
+#: .\__translations\__translations.py:195
+msgctxt "female"
+msgid "You already requested friendship from this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:196
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:197
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:199
+msgctxt "female"
+msgid "This user already requested friendship from you."
+msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
+
+#: .\__translations\__translations.py:200
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
+
+#: .\__translations\__translations.py:201
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
+
+#: .\__translations\__translations.py:203
+msgctxt "female_female"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:204
+msgctxt "female_male"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:205
+msgctxt "female_other"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:206
+msgctxt "male_female"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:207
+msgctxt "male_male"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:208
+msgctxt "male_other"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:209
+msgctxt "other_female"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:210
+msgctxt "other_male"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:211
+msgctxt "other_other"
+msgid "You already are friends with this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
+
+#: .\__translations\__translations.py:213
+msgctxt "female"
+msgid "You've cancelled your friendship request."
+msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
+
+#: .\__translations\__translations.py:214
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
+
+#: .\__translations\__translations.py:215
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
+
+#: .\__translations\__translations.py:217
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:218
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:219
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:221
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.py:222
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.py:223
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.py:225
+#, python-brace-format
+msgctxt "female"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
+
+#: .\__translations\__translations.py:229
+msgctxt "female"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.py:230
+msgctxt "male"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.py:231
+msgctxt "other"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.py:233
+msgctxt "female"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"ஸ்பாம் செய்திகள் அனுப்ப தளத்தை தவறாக பயன்படுத்தியதால், ஒரு நாளில் தளத்தின் "
+"மற்ற உறுப்பினர்களுக்கு அனுப்பக்கூடிய செய்திகளின் எண்ணிக்கையை நாம் "
+"கட்டுப்படுத்த வேண்டியதாகிவிட்டது. தயவுசெய்து நாளை மீண்டும் முயற்சிக்கவும். "
+"Speedy Net-ஐ ஸ்பாம் செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை "
+"ஏராளமான மக்களுக்கு அனுப்புவதற்கோ பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் "
+"கொள்ளவும்."
+
+#: .\__translations\__translations.py:234
+msgctxt "male"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"ஸ்பாம் செய்திகள் அனுப்ப தளத்தை தவறாக பயன்படுத்தியதால், ஒரு நாளில் தளத்தின் "
+"மற்ற உறுப்பினர்களுக்கு அனுப்பக்கூடிய செய்திகளின் எண்ணிக்கையை நாம் "
+"கட்டுப்படுத்த வேண்டியதாகிவிட்டது. தயவுசெய்து நாளை மீண்டும் முயற்சிக்கவும். "
+"Speedy Net-ஐ ஸ்பாம் செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை "
+"ஏராளமான மக்களுக்கு அனுப்புவதற்கோ பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் "
+"கொள்ளவும்."
+
+#: .\__translations\__translations.py:235
+msgctxt "other"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day."
+" Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"ஸ்பாம் செய்திகள் அனுப்ப தளத்தை தவறாக பயன்படுத்தியதால், ஒரு நாளில் தளத்தின் "
+"மற்ற உறுப்பினர்களுக்கு அனுப்பக்கூடிய செய்திகளின் எண்ணிக்கையை நாம் "
+"கட்டுப்படுத்த வேண்டியதாகிவிட்டது. தயவுசெய்து நாளை மீண்டும் முயற்சிக்கவும். "
+"Speedy Net-ஐ ஸ்பாம் செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை "
+"ஏராளமான மக்களுக்கு அனுப்புவதற்கோ பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் "
+"கொள்ளவும்."
+
+#: .\__translations\__translations.py:241
+msgctxt "female_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:242
+msgctxt "female_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:243
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:244
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:246
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:247
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:248
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:249
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net"
+" சுயவிவரத்தை நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் "
+"பாருங்கள்."
+
+#: .\__translations\__translations.py:251
+msgctxt "female"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"உங்கள் சுயவிவரப் படம் வெளிப்படையாக இருக்க முடியாது. தயவுசெய்து வெளிப்படையான "
+"படத்தை பதிவேற்றவும்."
+
+#: .\__translations\__translations.py:252
+msgctxt "male"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"உங்கள் சுயவிவரப் படம் வெளிப்படையாக இருக்க முடியாது. தயவுசெய்து வெளிப்படையான "
+"படத்தை பதிவேற்றவும்."
+
+#: .\__translations\__translations.py:253
+msgctxt "other"
+msgid ""
+"Your profile picture can't be transparent. Please upload a nontransparent "
+"image."
+msgstr ""
+"உங்கள் சுயவிவரப் படம் வெளிப்படையாக இருக்க முடியாது. தயவுசெய்து வெளிப்படையான "
+"படத்தை பதிவேற்றவும்."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Core Accounts"
+msgstr "Speedy Core கணக்குகள்"
+
+#: .\accounts\fields.py:12
+msgid "Only me"
+msgstr "நான் மட்டும்"
+
+#: .\accounts\fields.py:13
+msgid "Me and my friends"
+msgstr "நானும் என் நண்பர்களும்"
+
+#: .\accounts\fields.py:15
+msgid "Anyone"
+msgstr "எவரும்"
+
+#: .\accounts\forms.py:66
+msgid "Last name (optional)"
+msgstr "குடும்பப் பெயர் (விருப்பம்)"
+
+#: .\accounts\forms.py:130
+msgid "Your email"
+msgstr "உங்கள் மின்னஞ்சல்"
+
+#: .\accounts\forms.py:131
+msgid "New password"
+msgstr "புதிய கடவுச்சொல்"
+
+#: .\accounts\forms.py:139
+msgid "New username"
+msgstr "புதிய பயனர் பெயர்"
+
+#: .\accounts\forms.py:142
+msgid "Create an account"
+msgstr "ஒரு கணக்கை உருவாக்கவும்"
+
+#: .\accounts\forms.py:167
+msgid "Update your profile picture"
+msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
+
+#: .\accounts\forms.py:167 .\accounts\validators.py:255
+msgid "A profile picture is required."
+msgstr "ஒரு சுயவிவரப் படம் தேவை."
+
+#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+msgid "Email or Username"
+msgstr "மின்னஞ்சல் அல்லது பயனர் பெயர்"
+
+#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
+#: .\templates\base_with_login.html:140
+msgid "Login"
+msgstr "உள்நுழைவு"
+
+#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\templates\base_with_login.html:137
+msgid "Forgot your password?"
+msgstr "உங்கள் கடவுச்சொல்லை மறந்துவிட்டீர்களா?"
+
+#: .\accounts\forms.py:335
+msgid "Submit"
+msgstr "சமர்ப்பிக்கவும்"
+
+#: .\accounts\forms.py:437
+msgid "Your password"
+msgstr "உங்கள் கடவுச்சொல்"
+
+#: .\accounts\forms.py:449
+msgid "Invalid password."
+msgstr "செல்லாத கடவுச்சொல்."
+
+#: .\accounts\models.py:178
+msgid "username"
+msgstr "பயனர் பெயர்"
+
+#: .\accounts\models.py:178 .\accounts\models.py:179
+#: .\accounts\validators.py:21
+msgid "This username is already taken."
+msgstr "இந்த பயனர் பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது."
+
+#: .\accounts\models.py:179
+msgid "username (slug)"
+msgstr "பயனர் பெயர் (slug)"
+
+#: .\accounts\models.py:180
+msgid "photo"
+msgstr "புகைப்படம்"
+
+#: .\accounts\models.py:181
+msgid "Special username"
+msgstr "சிறப்பு பயனர் பெயர்"
+
+#: .\accounts\models.py:221 .\messages\models.py:185
+msgid "entity"
+msgstr "நிறுவனம்"
+
+#: .\accounts\models.py:222
+msgid "entities"
+msgstr "நிறுவனங்கள்"
+
+#: .\accounts\models.py:249
+msgid "Slug does not parse to username."
+msgstr "ஸ்லக் பயனர்பெயரைப் பார்க்கவில்லை."
+
+#: .\accounts\models.py:253
+msgid "Username is required."
+msgstr "பயனர் பெயர் தேவை."
+
+#: .\accounts\models.py:298
+msgid "name"
+msgstr "பெயர்"
+
+#: .\accounts\models.py:329
+msgid "description"
+msgstr "விவரம்"
+
+#: .\accounts\models.py:473
+msgid "Female"
+msgstr "பெண்"
+
+#: .\accounts\models.py:474
+msgid "Male"
+msgstr "ஆண்"
+
+#: .\accounts\models.py:475
+msgid "Other"
+msgstr "மற்றவை"
+
+#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
+#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+msgid "Unknown"
+msgstr "தெரியாத"
+
+#: .\accounts\models.py:489
+msgid "Vegan (eats only plants and fungi)"
+msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
+
+#: .\accounts\models.py:490
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
+
+#: .\accounts\models.py:491
+msgid "Carnist (eats animals)"
+msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
+
+#: .\accounts\models.py:504
+msgid "Not smoking"
+msgstr "புகைபிடிப்பதில்லை"
+
+#: .\accounts\models.py:505
+msgid "Smoking occasionally"
+msgstr "அவ்வப்போது புகைத்தல்"
+
+#: .\accounts\models.py:506
+msgid "Smoking"
+msgstr "புகைத்தல்"
+
+#: .\accounts\models.py:525
+msgid "Single"
+msgstr "ஒற்றை"
+
+#: .\accounts\models.py:526
+msgid "Divorced"
+msgstr "விவாகரத்து"
+
+#: .\accounts\models.py:527
+msgid "Widowed"
+msgstr "விதவை"
+
+#: .\accounts\models.py:528
+msgid "In a relationship"
+msgstr "ஒரு உறவில்"
+
+#: .\accounts\models.py:529
+msgid "In an open relationship"
+msgstr "ஒரு திறந்த உறவில்"
+
+#: .\accounts\models.py:530
+msgid "It's complicated"
+msgstr "அது சிக்கலானது"
+
+#: .\accounts\models.py:531
+msgid "Separated"
+msgstr "பிரித்தல்"
+
+#: .\accounts\models.py:532
+msgid "Engaged"
+msgstr "நிச்சயதார்த்தம்"
+
+#: .\accounts\models.py:533
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+#: .\accounts\models.py:542
+msgid "Notify me"
+msgstr "எனக்கு அறிவிக்கவும்"
+
+#: .\accounts\models.py:543
+msgid "Don't notify me"
+msgstr "எனக்கு அறிவிக்க வேண்டாம்"
+
+#: .\accounts\models.py:590
+msgid "first name"
+msgstr "முதல் பெயர்"
+
+#: .\accounts\models.py:593
+msgid "last name"
+msgstr "கடைசி பெயர்"
+
+#: .\accounts\models.py:595
+msgid "I am"
+msgstr "நான்"
+
+#: .\accounts\models.py:596
+msgid "date of birth"
+msgstr "பிறந்த தேதி"
+
+#: .\accounts\models.py:597
+msgid "diet"
+msgstr "உணவு"
+
+#: .\accounts\models.py:598
+msgid "smoking status"
+msgstr "புகைபிடித்தல் நிலை"
+
+#: .\accounts\models.py:599
+msgid "relationship status"
+msgstr "உறவு நிலை"
+
+#: .\accounts\models.py:601
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\accounts\models.py:608
+msgid "Who can view my birth month and day"
+msgstr "யார் என் பிறந்த மாதம் மற்றும் நாள் பார்க்க முடியும்"
+
+#: .\accounts\models.py:609
+msgid "Who can view my birth year"
+msgstr "யார் என் பிறந்த ஆண்டு பார்க்க முடியும்"
+
+#: .\accounts\models.py:610
+msgid "On new messages"
+msgstr "புதிய செய்திகள்"
+
+#: .\accounts\models.py:616
+msgid "Last IP address used https://ipapi.com/ time"
+msgstr "கடைசியாக பயன்படுத்தப்பட்ட IP முகவரி https://ipapi. com/ நேரம்"
+
+#: .\accounts\models.py:617
+msgid "Last IP address used raw https://ipapi.com/ results"
+msgstr "கடைசி ஐபி முகவரி மூல https://ipapi. com/ முடிவுகள்"
+
+#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+msgid "user"
+msgstr "பயனர்"
+
+#: .\accounts\models.py:824
+msgid "users"
+msgstr "பயனர்கள்"
+
+#: .\accounts\models.py:870
+msgid "Superuser must be equal to staff."
+msgstr "சூப்பர் பயனர் ஊழியர்களுக்கு சமமாக இருக்க வேண்டும்."
+
+#: .\accounts\models.py:1278
+msgid "email"
+msgstr "மின்னஞ்சல்"
+
+#: .\accounts\models.py:1279
+msgid "is confirmed"
+msgstr "உறுதிப்படுத்தப்பட்டுள்ளது"
+
+#: .\accounts\models.py:1280
+msgid "is primary"
+msgstr "முதன்மை"
+
+#: .\accounts\models.py:1281
+msgid "confirmation token"
+msgstr "உறுதிப்படுத்தல் குறி"
+
+#: .\accounts\models.py:1282
+msgid "confirmation sent"
+msgstr "அனுப்பிய உறுதிப்படுத்தல்"
+
+#: .\accounts\models.py:1283
+msgid "Who can see this email"
+msgstr "யார் இந்த மின்னஞ்சல் பார்க்க முடியும்"
+
+#: .\accounts\models.py:1294
+msgid "email addresses"
+msgstr "மின்னஞ்சல் முகவரிகள்"
+
+#: .\accounts\models.py:1377
+msgid "User"
+msgstr "பயனர்"
+
+#: .\accounts\models.py:1378
+msgid "last visit"
+msgstr "கடைசி வருகை"
+
+#: .\accounts\models.py:1390
+msgid "Today"
+msgstr "இன்று"
+
+#: .\accounts\models.py:1392
+msgid "Yesterday"
+msgstr "நேற்று"
+
+#: .\accounts\models.py:1394
+#, python-brace-format
+msgid "On {date} ({timesince_ago})"
+msgstr "{date} அன்று ({timesince_ago})"
+
+#: .\accounts\models.py:1396
+#, python-brace-format
+msgid "{timesince} ago"
+msgstr "{timesince} முன்பு"
+
+#: .\accounts\validators.py:39
+msgid ""
+"Username must start with 4 or more letters, and may contain letters, digits "
+"or dashes."
+msgstr ""
+"பயனர்பெயர் 4 அல்லது அதற்கு மேற்பட்ட எழுத்துக்களுடன் தொடங்க வேண்டும், மேலும் "
+"எழுத்துக்கள், இலக்கங்கள் அல்லது துண்டுகளைக் கொண்டிருக்கலாம்."
+
+#: .\accounts\validators.py:41
+msgid ""
+"Username must start with 4 or more letters, after which can be any number of"
+" digits. You can add dashes between words."
+msgstr ""
+"பயனர்பெயர் 4 அல்லது அதற்கு மேற்பட்ட எழுத்துக்களுடன் தொடங்க வேண்டும், அதன் "
+"பிறகு எந்த எண்ணிக்கையிலான இலக்கங்களும் இருக்கலாம். நீங்கள் வார்த்தைகளுக்கு "
+"இடையில் துண்டுகளைச் சேர்க்கலாம்."
+
+#: .\accounts\validators.py:47
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d alphanumeric character (it "
+"has %(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"பயனர்பெயர் குறைந்தது %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் "
+"கொண்டிருக்க வேண்டும் (அதில் %(show_value)d உள்ளது)."
+msgstr[1] ""
+"பயனர்பெயர் குறைந்தது %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் "
+"கொண்டிருக்க வேண்டும் (அதில் %(show_value)d உள்ளது)."
+
+#: .\accounts\validators.py:58
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d alphanumeric character (it has"
+" %(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d alphanumeric characters (it "
+"has %(show_value)d)."
+msgstr[0] ""
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d அல்பான்யூமரிக் எழுத்தை கொண்டிருக்க "
+"வேண்டும் (அதில் %(show_value)d உள்ளது)."
+msgstr[1] ""
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் "
+"கொண்டிருக்க வேண்டும் (அதில் %(show_value)d உள்ளது)."
+
+#: .\accounts\validators.py:69
+#, python-format
+msgid ""
+"Username must contain at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"பயனர்பெயர் குறைந்தது %(limit_value)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"(அதில் %(show_value)d உள்ளது)."
+msgstr[1] ""
+"பயனர்பெயர் குறைந்தது %(limit_value)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"(அதில் %(show_value)d உள்ளது)."
+
+#: .\accounts\validators.py:80
+#, python-format
+msgid ""
+"Username must contain at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Username must contain at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"(அதில் %(show_value)d உள்ளது)."
+msgstr[1] ""
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"(அதில் %(show_value)d உள்ளது)."
+
+#: .\accounts\validators.py:104
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"இந்த கடவுச்சொல் மிகக் குறுகியதாகும். அதில் குறைந்தது %(min_length)d எழுத்து "
+"இருக்க வேண்டும்."
+msgstr[1] ""
+"இந்த கடவுச்சொல் மிகக் குறுகியதாகும். இதில் குறைந்தது %(min_length)d "
+"எழுத்துக்கள் இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:114
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] ""
+"உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_length)d எழுத்து இருக்க வேண்டும்."
+msgstr[1] ""
+"உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_length)d எழுத்துக்கள் இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:135
+#, python-format
+msgid ""
+"This password is too long. It must contain at most %(max_length)d character."
+msgid_plural ""
+"This password is too long. It must contain at most %(max_length)d "
+"characters."
+msgstr[0] ""
+"இந்த கடவுச்சொல் மிக நீளமானது. இதில் அதிகபட்சம் %(max_length)d எழுத்து இருக்க"
+" வேண்டும்."
+msgstr[1] ""
+"இந்த கடவுச்சொல் மிக நீளமானது. இதில் அதிகபட்சம் %(max_length)d எழுத்துக்கள் "
+"இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:145
+#, python-format
+msgid "Your password must contain at most %(max_length)d character."
+msgid_plural "Your password must contain at most %(max_length)d characters."
+msgstr[0] ""
+"உங்கள் கடவுச்சொல் அதிகபட்சம் %(max_length)d எழுத்துக்களைக் கொண்டிருக்க "
+"வேண்டும்."
+msgstr[1] ""
+"உங்கள் கடவுச்சொல் அதிகபட்சம் %(max_length)d எழுத்துக்களைக் கொண்டிருக்க "
+"வேண்டும்."
+
+#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#, python-format
+msgid ""
+"Your password must contain at least %(min_unique_characters)d unique "
+"characters."
+msgstr ""
+"உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_unique_characters)d தனித்துவமான "
+"எழுத்துக்கள் இருக்க வேண்டும்."
+
+#: .\accounts\validators.py:212 .\accounts\validators.py:219
+msgid "This field cannot be null."
+msgstr "இந்த புலம் காலியாக இருக்கக் கூடாது"
+
+#: .\accounts\validators.py:214
+msgid "This field cannot be blank."
+msgstr "இந்த புலம் வெற்று இருக்க முடியாது."
+
+#: .\accounts\validators.py:226 .\accounts\validators.py:233
+msgid "Enter a valid date."
+msgstr "செல்லுபடியாகும் தேதியை உள்ளிடவும்."
+
+#: .\accounts\validators.py:246
+msgid "This email is already in use."
+msgstr "இந்த மின்னஞ்சல் ஏற்கனவே பயன்படுத்தப்படுகிறது."
+
+#: .\accounts\validators.py:257
+msgid ""
+"This picture's file size is too big. The maximal file size allowed is 30 MB."
+msgstr ""
+"இந்த படத்தின் கோப்பு அளவு மிகப்பெரியது. அதிகபட்ச கோப்பு அளவு 30 MB ஆகும்."
+
+#: .\accounts\validators.py:279 .\accounts\validators.py:298
+msgid ""
+"You can't use this format for your profile picture. Only JPEG or PNG formats"
+" are accepted."
+msgstr ""
+"உங்கள் சுயவிவரப் படத்திற்கு இந்த வடிவத்தை நீங்கள் பயன்படுத்த முடியாது. JPEG "
+"அல்லது PNG வடிவங்கள் மட்டுமே ஏற்றுக்கொள்ளப்படுகின்றன."
+
+#: .\accounts\views.py:299
+msgid "Invalid confirmation link."
+msgstr "செல்லாத உறுதிப்படுத்தல் இணைப்பு."
+
+#: .\accounts\views.py:324 .\accounts\views.py:340
+#, python-brace-format
+msgid "A confirmation message was sent to {email_address}"
+msgstr "ஒரு உறுதிப்படுத்தல் செய்தி அனுப்பப்பட்டது {email_address}"
+
+#: .\accounts\views.py:355
+msgid "The email address was deleted."
+msgstr "மின்னஞ்சல் முகவரி நீக்கப்பட்டது."
+
+#: .\accounts\views.py:371
+msgid "You have made this email address primary."
+msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மைப்படுத்தியுள்ளீர்கள்."
+
+#: .\admin\views.py:72
+#, python-brace-format
+msgid ""
+"Admin: The total number of members on the site is {total_number_of_members},"
+" of which {total_number_of_members_in_the_last_week} members entered the "
+"site in the last week, {total_number_of_members_in_the_last_month} members "
+"entered the site in the last month, "
+"{total_number_of_members_in_the_last_four_months} members entered the site "
+"in the last four months, {total_number_of_members_in_the_last_eight_months} "
+"members entered the site in the last eight months, and "
+"{total_number_of_members_in_the_last_two_years} members entered the site in "
+"the last two years."
+msgstr ""
+"நிர்வாகிஃ தளத்தில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை "
+"{total_number_of_members}, இதில் {total_number_of_members_in_the_last_week} "
+"உறுப்பினர்கள் கடந்த வாரம் தளத்திற்குள் நுழைந்தனர், "
+"{total_number_of_members_in_the_last_month} உறுப்பினர்கள் கடந்த மாதத்தில் "
+"தளத்திற்குள் நுழைந்தனர், {total_number_of_members_in_the_last_four_months} "
+"உறுப்பினர்கள் கடந்த நான்கு மாதங்களில் தளத்திற்குள் நுழைந்தனர், "
+"{total_number_of_members_in_the_last_eight_months} உறுப்பினர்கள் கடந்த எட்டு"
+" மாதங்களில் தளத்திற்குள் நுழைந்தனர், "
+"{total_number_of_members_in_the_last_two_years} உறுப்பினர்கள் கடந்த இரண்டு "
+"ஆண்டுகளில் தளத்திற்குள் நுழைந்தனர்."
+
+#: .\admin\views.py:118
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_the_last_week} members "
+"registered in the last week. "
+"{total_number_of_members_registered_in_the_last_month} members registered in"
+" the last month. "
+"{total_number_of_members_registered_in_the_last_four_months} members "
+"registered in the last four months. "
+"{total_number_of_members_registered_more_than_four_months_ago} members "
+"registered more than four months ago. "
+"{total_number_of_members_registered_in_the_last_eight_months} members "
+"registered in the last eight months. "
+"{total_number_of_members_registered_more_than_eight_months_ago} members "
+"registered more than eight months ago. "
+"{total_number_of_members_registered_in_the_last_two_years} members "
+"registered in the last two years. "
+"{total_number_of_members_registered_more_than_two_years_ago} members "
+"registered more than two years ago. "
+"{total_number_of_members_registered_before_2019_08_01} members registered "
+"before 1 August 2019."
+msgstr ""
+"நிர்வாகி: கடந்த வாரத்தில் "
+"{total_number_of_members_registered_in_the_last_week} உறுப்பினர்கள் பதிவு "
+"செய்யப்பட்டனர். கடந்த மாதத்தில் "
+"{total_number_of_members_registered_in_the_last_month} உறுப்பினர்கள் பதிவு "
+"செய்யப்பட்டனர். கடந்த நான்கு மாதங்களில் "
+"{total_number_of_members_registered_in_the_last_four_months} உறுப்பினர்கள் "
+"பதிவு செய்யப்பட்டனர். நான்கு மாதங்களுக்கு முன்பாக "
+"{total_number_of_members_registered_more_than_four_months_ago} உறுப்பினர்கள்"
+" பதிவு செய்யப்பட்டனர். கடந்த எட்டு மாதங்களில் "
+"{total_number_of_members_registered_in_the_last_eight_months} உறுப்பினர்கள் "
+"பதிவு செய்யப்பட்டனர். எட்டு மாதங்களுக்கு முன்பாக "
+"{total_number_of_members_registered_more_than_eight_months_ago} "
+"உறுப்பினர்கள் பதிவு செய்யப்பட்டனர். கடந்த இரண்டு ஆண்டுகளில் "
+"{total_number_of_members_registered_in_the_last_two_years} உறுப்பினர்கள் "
+"பதிவு செய்யப்பட்டனர். இரண்டு ஆண்டுகளுக்கு முன்பாக "
+"{total_number_of_members_registered_more_than_two_years_ago} உறுப்பினர்கள் "
+"பதிவு செய்யப்பட்டனர். 2019 ஆகஸ்ட் 1 க்கு முன்பு "
+"{total_number_of_members_registered_before_2019_08_01} உறுப்பினர்கள் பதிவு "
+"செய்யப்பட்டனர்."
+
+#: .\admin\views.py:138
+#, python-brace-format
+msgid ""
+"Admin: {total_number_of_members_registered_in_year} members registered in "
+"{year}."
+msgstr ""
+"நிர்வாகி: {year} இல் {total_number_of_members_registered_in_year} "
+"உறுப்பினர்கள் பதிவு செய்யப்பட்டனர்."
+
+#: .\base\apps.py:13
+msgid "Speedy Core Base App"
+msgstr "Speedy Core அடிப்படை பயன்பாடு"
+
+#: .\base\fields.py:17
+msgid "ID"
+msgstr "அடையாள அட்டை"
+
+#: .\base\utils.py:417
+msgctxt "timesince"
+msgid ", "
+msgstr ", "
+
+#: .\base\validators.py:5 .\base\validators.py:6
+msgid "id contains illegal characters."
+msgstr "ஐடி சட்டவிரோத எழுத்துக்களைக் கொண்டுள்ளது."
+
+#: .\base\views.py:57
+msgid "Changes saved."
+msgstr "மாற்றங்கள் சேமிக்கப்பட்டன."
+
+#: .\blocks\managers.py:30 .\blocks\models.py:43
+msgid "Users cannot block themselves."
+msgstr "பயனர்கள் தங்களைத் தடுக்க முடியாது."
+
+#: .\blocks\models.py:23
+msgid "blocked user"
+msgstr "தடுக்கப்பட்ட பயனர்"
+
+#: .\blocks\models.py:28
+msgid "block"
+msgstr "தொகுதி"
+
+#: .\blocks\models.py:29
+msgid "user blocks"
+msgstr "பயனர் தொகுதிகள்"
+
+#: .\blocks\views.py:19
+msgid "You have blocked {}."
+msgstr "{ \\ pos (192,220) } நீங்கள் தடுக்கப்பட்டீர்கள்."
+
+#: .\blocks\views.py:31
+msgid "You have unblocked {}."
+msgstr "நீங்கள் திறந்து {}."
+
+#: .\contact_by_form\apps.py:8
+msgid "Contact By Form"
+msgstr "படிவத்தின் மூலம் தொடர்பு"
+
+#: .\contact_by_form\forms.py:14
+msgid "Type the number \"17\""
+msgstr "\"17\" என்ற எண்ணை தட்டச்சு செய்யவும்"
+
+#: .\contact_by_form\forms.py:41
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: .\contact_by_form\forms.py:47
+msgid "Please contact us by email."
+msgstr "தயவுசெய்து மின்னஞ்சல் மூலம் எங்களை தொடர்பு கொள்ளவும்."
+
+#: .\contact_by_form\forms.py:53
+msgid "Not 17."
+msgstr "17 இல்லை."
+
+#: .\contact_by_form\models.py:33
+msgid "Feedback"
+msgstr "கருத்து"
+
+#: .\contact_by_form\models.py:34
+msgid "Abuse (User)"
+msgstr "துஷ்பிரயோகம் (பயனர்)"
+
+#: .\contact_by_form\models.py:35
+msgid "Abuse (Photo)"
+msgstr "துஷ்பிரயோகம் (புகைப்படம்)"
+
+#: .\contact_by_form\models.py:38 .\messages\models.py:156
+msgid "sender"
+msgstr "அனுப்புபவர்"
+
+#: .\contact_by_form\models.py:39
+msgid "your name"
+msgstr "உங்கள் பெயர்"
+
+#: .\contact_by_form\models.py:40
+msgid "your email"
+msgstr "உங்கள் மின்னஞ்சல்"
+
+#: .\contact_by_form\models.py:41
+msgid "type"
+msgstr "வகை"
+
+#: .\contact_by_form\models.py:42
+msgid "your message"
+msgstr "உங்கள் செய்தி"
+
+#: .\contact_by_form\models.py:44
+msgid "reported entity"
+msgstr "அறிக்கை செய்யப்பட்ட நிறுவனம்"
+
+#: .\contact_by_form\models.py:45
+msgid "reported photo"
+msgstr "அறிவிக்கப்பட்ட புகைப்படம்"
+
+#: .\contact_by_form\models.py:48
+msgid "feedback"
+msgstr "பின்னூட்டம்"
+
+#: .\contact_by_form\models.py:49
+msgid "feedbacks"
+msgstr "பின்னூட்டங்கள்"
+
+#: .\friends\views.py:189
+msgid "Friendship request sent."
+msgstr "நட்பு கோரிக்கை அனுப்பிய."
+
+#: .\friends\views.py:204
+msgid "No friendship request."
+msgstr "நட்பு கோரிக்கை இல்லை."
+
+#: .\friends\views.py:243
+msgid "Friendship request accepted."
+msgstr "நட்பு கோரிக்கை ஏற்றுக்கொள்ளப்பட்டது."
+
+#: .\friends\views.py:261
+msgid "Friendship request rejected."
+msgstr "நட்பு கோரிக்கை நிராகரிக்கப்பட்டது."
+
+#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\templates\menu\user_menu_profile_is_active_base.html:16
+#: .\templates\messages\chat_detail.html:13
+#: .\templates\messages\chat_list.html:8
+#: .\templates\messages\chat_list.html:29
+msgid "Messages"
+msgstr "செய்திகள்"
+
+#: .\messages\models.py:29
+msgid "site"
+msgstr "வலைத்தளம்"
+
+#: .\messages\models.py:30
+msgid "participant 1"
+msgstr "பங்கேற்பாளர் 1"
+
+#: .\messages\models.py:31
+msgid "participant 2"
+msgstr "பங்கேற்பாளர் 2"
+
+#: .\messages\models.py:32
+msgid "participants"
+msgstr "பங்கேற்பாளர்கள்"
+
+#: .\messages\models.py:33
+msgid "is group chat"
+msgstr "குழு அரட்டை"
+
+#: .\messages\models.py:34
+msgid "last message"
+msgstr "கடைசி செய்தி"
+
+#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+msgid "chat"
+msgstr "அரட்டை"
+
+#: .\messages\models.py:68
+msgid "chats"
+msgstr "அரட்டைகள்"
+
+#: .\messages\models.py:77
+msgid "None"
+msgstr "ஒன்றும் இல்லை"
+
+#: .\messages\models.py:157 .\messages\models.py:162
+msgid "message"
+msgstr "செய்தி"
+
+#: .\messages\models.py:163
+msgid "messages"
+msgstr "செய்திகள்"
+
+#: .\messages\models.py:191
+msgid "read mark"
+msgstr "வாசிப்பு குறி"
+
+#: .\messages\models.py:192
+msgid "read marks"
+msgstr "படிப்பு குறிகள்"
+
+#: .\settings\base.py:196
+msgid "English"
+msgstr "ஆங்கிலம்"
+
+#: .\settings\base.py:197
+msgid "Hebrew"
+msgstr "ஹீப்ரு"
+
+#: .\settings\base_with_login.py:65
+msgid "French"
+msgstr "ப்ரென்சு"
+
+#: .\settings\base_with_login.py:66
+msgid "German"
+msgstr "ஜெர்மன்"
+
+#: .\settings\base_with_login.py:67
+msgid "Spanish"
+msgstr "ஸ்பானிஷ்"
+
+#: .\settings\base_with_login.py:68
+msgid "Portuguese"
+msgstr "போர்த்துகீசியம்"
+
+#: .\settings\base_with_login.py:69
+msgid "Italian"
+msgstr "இத்தாலியன்"
+
+#: .\settings\base_with_login.py:70
+msgid "Dutch"
+msgstr "டச்சு"
+
+#: .\settings\base_with_login.py:71
+msgid "Japanese"
+msgstr "ஜப்பானிய"
+
+#: .\settings\base_with_login.py:72
+msgid "Russian"
+msgstr "ரஷ்யன்"
+
+#: .\settings\base_with_login.py:73
+msgid "Chinese"
+msgstr "சீனர்கள்"
+
+#: .\settings\base_with_login.py:74
+msgid "Polish"
+msgstr "போலந்து"
+
+#: .\settings\base_with_login.py:75
+msgid "Persian"
+msgstr "பாரசீக மொழி"
+
+#: .\settings\base_with_login.py:79
+msgid "Korean"
+msgstr "கொரிய"
+
+#: .\settings\base_with_login.py:80
+msgid "Arabic"
+msgstr "அரபிக்"
+
+#: .\settings\base_with_login.py:81
+msgid "Indonesian"
+msgstr "இந்தோனேசியம்"
+
+#: .\settings\base_with_login.py:82
+msgid "Ukrainian"
+msgstr "உக்ரேனியன்"
+
+#: .\settings\base_with_login.py:83
+msgid "Turkish"
+msgstr "துருக்கிஷ்"
+
+#: .\settings\base_with_login.py:84
+msgid "Vietnamese"
+msgstr "வியட்நாமியர்"
+
+#: .\settings\base_with_login.py:85
+msgid "Czech"
+msgstr "செக்"
+
+#: .\settings\base_with_login.py:86
+msgid "Swedish"
+msgstr "சுவிடிஷ்"
+
+#: .\settings\base_with_login.py:87
+msgid "Finnish"
+msgstr "பீனீஷ்"
+
+#: .\settings\base_with_login.py:88
+msgid "Hungarian"
+msgstr "ஹங்கேரியன்"
+
+#: .\settings\base_with_login.py:89
+msgid "Thai"
+msgstr "தாய்லாந்து"
+
+#: .\settings\base_with_login.py:90
+msgid "Greek"
+msgstr "கிரேக்கம்"
+
+#: .\settings\base_with_login.py:91
+msgid "Malay"
+msgstr "மலேசியம்"
+
+#: .\settings\base_with_login.py:92
+msgid "Serbian"
+msgstr "செர்பியன்"
+
+#: .\settings\base_with_login.py:93
+msgid "Romanian"
+msgstr "ரோமானியன்"
+
+#: .\settings\base_with_login.py:94
+msgid "Bengali"
+msgstr "பெங்காலி"
+
+#: .\settings\base_with_login.py:95
+msgid "Catalan"
+msgstr "கத்தாலன்"
+
+#: .\settings\base_with_login.py:96
+msgid "Norwegian (Bokmål)"
+msgstr "நோர்வே மொழி (Bokmål)"
+
+#: .\settings\base_with_login.py:97
+msgid "Bulgarian"
+msgstr "பல்கரிய மொழி"
+
+#: .\settings\base_with_login.py:98
+msgid "Danish"
+msgstr "டேனிஷ்"
+
+#: .\settings\base_with_login.py:99
+msgid "Slovak"
+msgstr "சுலோவாக்"
+
+#: .\settings\base_with_login.py:100
+msgid "Hindi"
+msgstr "ஹிந்தி"
+
+#: .\settings\base_with_login.py:101
+msgid "Estonian"
+msgstr "எஸ்டோனியன்"
+
+#: .\settings\base_with_login.py:102
+msgid "Croatian"
+msgstr "குரோஷியன்"
+
+#: .\settings\base_with_login.py:103
+msgid "Azerbaijani"
+msgstr "அஜர்பைஜானிய மொழி"
+
+#: .\settings\base_with_login.py:104
+msgid "Cantonese"
+msgstr "காண்டோனீஸ் மொழி"
+
+#: .\settings\base_with_login.py:105
+msgid "Lithuanian"
+msgstr "லிதுவேனிய மொழி"
+
+#: .\settings\base_with_login.py:106
+msgid "Slovenian"
+msgstr "ஸ்லோவேனிய மொழி"
+
+#: .\settings\base_with_login.py:107
+msgid "Basque"
+msgstr "பாஸ்க் மொழி"
+
+#: .\settings\base_with_login.py:108
+msgid "Armenian"
+msgstr "ஆர்மேனிய மொழி"
+
+#: .\settings\base_with_login.py:109
+msgid "Uzbek"
+msgstr "உஸ்பெக் மொழி"
+
+#: .\settings\base_with_login.py:110
+msgid "Tamil"
+msgstr "தமிழ் மொழி"
+
+#: .\settings\base_with_login.py:111
+msgid "Latvian"
+msgstr "லாட்வியன் மொழி"
+
+#: .\templates\400.html:6 .\templates\400.html:10
+msgid "Bad request"
+msgstr "தவறான கோரிக்கை"
+
+#: .\templates\400.html:14 .\templates\500.html:14
+msgid "Speedy is sorry, but we can't handle your request."
+msgstr ""
+"Speedy வருந்துகிறது, ஆனால் உங்கள் கோரிக்கையை எங்களால் கையாள முடியவில்லை."
+
+#: .\templates\403.html:6 .\templates\403.html:10
+msgid "Permission denied"
+msgstr "அனுமதி மறுப்பு"
+
+#: .\templates\403.html:14
+msgid "Speedy is sorry, but this page is private."
+msgstr "Speedy வருந்துகிறது, ஆனால் இந்தப் பக்கம் தனிப்பட்டது."
+
+#: .\templates\404.html:6 .\templates\404.html:10
+msgid "Page not found"
+msgstr "பக்கத்தைக் காணவில்லை"
+
+#: .\templates\404.html:14
+msgid "Speedy is sorry, but the page is not found."
+msgstr "Speedy வருந்துகிறது, ஆனால் அந்தப் பக்கம் கிடைக்கவில்லை."
+
+#: .\templates\500.html:6 .\templates\500.html:10
+msgid "Internal server error"
+msgstr "உள் சேவையக பிழை"
+
+#: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
+#: .\templates\base_without_login.html:36
+#: .\templates\menu\about_mobile_menu_links.html:11
+msgid "About"
+msgstr "பற்றி"
+
+#: .\templates\accounts\edit_profile\core_base.html:6
+#: .\templates\accounts\edit_profile\core_base.html:12
+#: .\templates\base_with_login.html:50 .\templates\base_with_login.html:107
+#: .\templates\base_with_login.html:109 .\templates\base_with_login.html:158
+#: .\templates\profiles\tools\edit_profile.html:4
+#: .\templates\profiles\tools\edit_profile.html:6
+msgid "Edit Profile"
+msgstr "சுயவிவரத்தை திருத்தவும்"
+
+#: .\templates\accounts\edit_profile\core_base.html:19
+msgid "Profile Info"
+msgstr "சுயவிவர தகவல்"
+
+#: .\templates\accounts\edit_profile\core_base.html:25
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+msgid "Privacy"
+msgstr "தனியுரிமை"
+
+#: .\templates\accounts\edit_profile\core_base.html:31
+msgid "Notifications"
+msgstr "அறிவிப்புகள்"
+
+#: .\templates\accounts\edit_profile\core_base.html:37
+msgid "Emails & Password"
+msgstr "மின்னஞ்சல் & கடவுச்சொல்"
+
+#: .\templates\accounts\edit_profile\core_base.html:45
+msgid "Deactivate Account"
+msgstr "கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\templates\accounts\edit_profile\credentials.html:7
+msgid "Email Addresses"
+msgstr "மின்னஞ்சல் முகவரிகள்"
+
+#: .\templates\accounts\edit_profile\credentials.html:12
+msgid "Address"
+msgstr "முகவரி"
+
+#: .\templates\accounts\edit_profile\credentials.html:13
+msgid "Added"
+msgstr "சேர்க்கப்பட்டது"
+
+#: .\templates\accounts\edit_profile\credentials.html:14
+msgid "Visibility"
+msgstr "தெரிவுநிலை"
+
+#: .\templates\accounts\edit_profile\credentials.html:15
+msgid "Actions"
+msgstr "நடவடிக்கைகள்"
+
+#: .\templates\accounts\edit_profile\credentials.html:23
+msgid "Unconfirmed"
+msgstr "உறுதிப்படுத்தப்படாதது"
+
+#: .\templates\accounts\edit_profile\credentials.html:25
+msgid "Primary"
+msgstr "முதன்மை"
+
+#: .\templates\accounts\edit_profile\credentials.html:45
+msgid "Resend a confirmation email"
+msgstr "உறுதிப்படுத்தல் மின்னஞ்சலை மீண்டும் அனுப்பவும்"
+
+#: .\templates\accounts\edit_profile\credentials.html:53
+msgid "Make this email address primary"
+msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மை செய்யவும்"
+
+#: .\templates\accounts\edit_profile\credentials.html:59
+msgid "Are you sure you want to delete this email address?"
+msgstr ""
+"நீங்கள் இந்த மின்னஞ்சல் முகவரியை நீக்க வேண்டும் என்று உறுதியாக "
+"இருக்கிறீர்களா?"
+
+#: .\templates\accounts\edit_profile\credentials.html:61
+msgid "Delete this email address"
+msgstr "இந்த மின்னஞ்சல் முகவரியை நீக்கவும்"
+
+#: .\templates\accounts\edit_profile\credentials.html:77
+msgid "Add Another"
+msgstr "மேலும் ஒரு பிட்"
+
+#: .\templates\accounts\edit_profile\credentials.html:84
+msgid "Change Password"
+msgstr "கடவுச்சொல்லை மாற்றுதல்"
+
+#: .\templates\accounts\edit_profile\privacy.html:12
+msgid "Your age will be visible to your matches on Speedy Match."
+msgstr "Speedy Match இல் உங்கள் பொருத்தங்களுக்கு உங்கள் வயது தெரியும்."
+
+#: .\templates\accounts\edit_profile\privacy.html:16
+msgid "Change privacy settings of email addresses on your profile."
+msgstr ""
+"உங்கள் சுயவிவரத்தில் உள்ள மின்னஞ்சல் முகவரிகளின் தனியுரிமை அமைப்புகளை "
+"மாற்றவும்."
+
+#: .\templates\accounts\email_address_form.html:6
+#: .\templates\accounts\email_address_form.html:12
+msgid "Add Email"
+msgstr "மின்னஞ்சல் சேர்க்கவும்"
+
+#: .\templates\accounts\logged_out.html:5
+msgid "Logged Out"
+msgstr "வெளியேற்றப்பட்டது"
+
+#: .\templates\accounts\password_reset\complete.html:5
+#: .\templates\accounts\password_reset\complete.html:11
+#: .\templates\accounts\password_reset\confirm.html:6
+#: .\templates\accounts\password_reset\confirm.html:12
+#: .\templates\accounts\password_reset\done.html:5
+#: .\templates\accounts\password_reset\done.html:11
+#: .\templates\accounts\password_reset\form.html:6
+#: .\templates\accounts\password_reset\form.html:12
+msgid "Reset Password"
+msgstr "கடவுச்சொல் மீட்டமை"
+
+#: .\templates\accounts\password_reset\complete.html:14
+msgid "Password reset successfully."
+msgstr "கடவுச்சொல் மீட்டமை வெற்றிகரமாக."
+
+#: .\templates\accounts\password_reset\confirm.html:18
+msgid "Password reset failed. Invalid link."
+msgstr "கடவுச்சொல் மீட்டமை தோல்வியடைந்தது. செல்லாத இணைப்பு."
+
+#: .\templates\accounts\password_reset\done.html:14
+msgid "Email with password reset instructions has been sent."
+msgstr "கடவுச்சொல் மீட்டமைக்க வழிமுறைகள் கொண்ட மின்னஞ்சல் அனுப்பப்பட்டது."
+
+#: .\templates\admin\friends\user_friends_widget.html:10
+#: .\templates\friends\user_friends_widget.html:10
+msgid "See All"
+msgstr "அனைத்தையும் காண்க"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "Admin - Friends"
+msgstr "நிர்வாகி - நண்பர்கள்"
+
+#: .\templates\admin\friends\user_friends_widget.html:13
+msgid "friends"
+msgstr "நண்பர்கள்"
+
+#: .\templates\admin\friends\user_friends_widget.html:25
+msgid "No friends yet."
+msgstr "இன்னும் நண்பர்கள் இல்லை."
+
+#: .\templates\admin\profiles\user_info_widget.html:11
+msgid "Admin Information"
+msgstr "நிர்வாக தகவல்"
+
+#: .\templates\admin\users_list.html:7
+msgid "Admin - All Users"
+msgstr "நிர்வாகி - அனைத்து பயனர்களும்"
+
+#: .\templates\admin\users_list.html:19
+msgid "No users."
+msgstr "பயனர்கள் இல்லை."
+
+#: .\templates\base.html:98
+msgid "This site is under construction"
+msgstr "இந்த தளம் கட்டுமானத்தில் உள்ளது"
+
+#: .\templates\base.html:110
+msgid "You haven't confirmed your email address. Please check your inbox."
+msgstr ""
+"உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவில்லை. தயவுசெய்து உங்கள் அஞ்சல் "
+"பெட்டியை சரிபார்க்கவும்."
+
+#: .\templates\base.html:163
+msgid "Speedy Net Blog"
+msgstr "Speedy Net வலைப்பதிவு"
+
+#: .\templates\base.html:165
+msgid "Speedy Paz"
+msgstr "Speedy Paz"
+
+#: .\templates\base.html:167
+msgid "Speedy Software"
+msgstr "Speedy Software"
+
+#: .\templates\base.html:169
+msgid "Speedy Sale"
+msgstr "Speedy Sale"
+
+#: .\templates\base.html:195 .\templates\base.html:196
+#: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
+msgid "A vegan friendly website"
+msgstr "ஒரு வேகன் நட்பு வலைத்தளம்"
+
+#: .\templates\base.html:212 .\templates\base.html:214
+msgid "Speedy"
+msgstr "Speedy"
+
+#: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
+msgid "Logout"
+msgstr "பதிவு"
+
+#: .\templates\base_with_login.html:67
+msgid "Home"
+msgstr "வீடு"
+
+#: .\templates\base_with_login.html:133
+msgid "Password"
+msgstr "கடவுச்சொல்"
+
+#: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
+msgid "Speedy Net"
+msgstr "Speedy Net"
+
+#: .\templates\base_with_login.html:201 .\templates\base_without_login.html:18
+msgid "Speedy Match"
+msgstr "Speedy Match"
+
+#: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
+msgid "Speedy Net's Shop"
+msgstr "Speedy Net-இன் கடை"
+
+#: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
+msgid "Speedy Match's Shop"
+msgstr "Speedy Match-இன் கடை"
+
+#: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
+msgid "Speedy S-logo Shop"
+msgstr "Speedy S-logo கடை"
+
+#: .\templates\base_with_login.html:231
+#: .\templates\menu\about_mobile_menu_links.html:14
+#: .\templates\privacy\privacy_policy.html:8
+#: .\templates\privacy\privacy_policy.html:15
+msgid "Privacy Policy"
+msgstr "தனியுரிமைக் கொள்கை"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+#: .\templates\terms\terms_of_service.html:8
+#: .\templates\terms\terms_of_service.html:15
+msgid "Terms of Service"
+msgstr "சேவை விதிமுறைகள்"
+
+#: .\templates\base_with_login.html:232
+#: .\templates\menu\about_mobile_menu_links.html:17
+msgid "Terms"
+msgstr "விதிமுறைகள்"
+
+#: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
+#: .\templates\contact_by_email\contact_us.html:8
+#: .\templates\contact_by_email\contact_us.html:15
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:14
+#: .\templates\menu\about_mobile_menu_links.html:20
+msgid "Contact Us"
+msgstr "எங்களை தொடர்பு கொள்ளவும்"
+
+#: .\templates\base_without_login.html:19
+msgid "Speedy Composer"
+msgstr "Speedy Composer"
+
+#: .\templates\base_without_login.html:20
+msgid "Speedy Mail Software"
+msgstr "Speedy Mail Software"
+
+#: .\templates\base_without_login.html:28
+msgid "Speedy Composer's Shop"
+msgstr "Speedy Composer-இன் கடை"
+
+#: .\templates\blocks\block_list.html:6
+msgid "Blocked Users"
+msgstr "தடைசெய்யப்பட்ட பயனர்கள்"
+
+#: .\templates\blocks\block_list.html:15
+msgid "You're not blocking anybody."
+msgstr "நீங்கள் யாரையும் தடுக்கவில்லை."
+
+#: .\templates\contact_by_email\contact_us.html:19
+msgid ""
+"If you have any questions, suggestions or are interested in joining the team"
+" - please contact us by email."
+msgstr ""
+"உங்களிடம் ஏதேனும் கேள்விகள், பரிந்துரைகள் இருந்தால் அல்லது குழுவில் சேர "
+"ஆர்வமாக இருந்தால் - மின்னஞ்சல் மூலம் எங்களை தொடர்பு கொள்ளவும்."
+
+#: .\templates\contact_by_email\contact_us.html:21
+msgid "Uri Rodberg, founder and webmaster:"
+msgstr "Uri Rodberg, நிறுவனர் மற்றும் வலை மேலாளர்ஃ"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:10
+msgid "Report a User"
+msgstr "ஒரு பயனரை அறிக்கை செய்யவும்"
+
+#: .\templates\contact_by_form\feedback_base.html:6
+#: .\templates\contact_by_form\feedback_form.html:12
+msgid "Report a Photo"
+msgstr "புகைப்படத்தை அறிக்கை செய்யுங்கள்"
+
+#: .\templates\contact_by_form\feedback_success.html:8
+msgid "Thank You"
+msgstr "நன்றி"
+
+#: .\templates\contact_by_form\feedback_success.html:11
+msgid "Your feedback was sent to administrators."
+msgstr "உங்கள் கருத்து நிர்வாகிகளுக்கு அனுப்பப்பட்டது."
+
+#: .\templates\core\pagination.html:9
+msgid "Previous"
+msgstr "முந்தைய"
+
+#: .\templates\core\pagination.html:32
+msgid "Next"
+msgstr "அடுத்தது"
+
+#: .\templates\email\accounts\confirm_first_email_body.txt:5
+msgid "Use this link to activate your account:"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\templates\email\accounts\confirm_first_email_subject.txt:1
+#: .\templates\email\accounts\confirm_second_email_subject.txt:1
+#, python-format
+msgid "Confirm your email address on %(site_name)s"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் %(site_name)s"
+
+#: .\templates\email\accounts\confirm_second_email_body.txt:5
+msgid "Use this link to verify your email address:"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\templates\email\accounts\password_reset_body.txt:5
+msgid "Use this link to change your password:"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+
+#: .\templates\email\accounts\password_reset_subject.txt:1
+#, python-format
+msgid "Password reset on %(site_name)s"
+msgstr "%(site_name)s இல் கடவுச்சொல் மீட்டமை"
+
+#: .\templates\email\messages\new_message_body.txt:1
+msgid "has sent you a message."
+msgstr "உங்களுக்கு ஒரு செய்தியை அனுப்பியுள்ளார்."
+
+#: .\templates\email\messages\new_message_body.txt:3
+msgid "Read it:"
+msgstr "அதை வாசிக்கவும்:"
+
+#: .\templates\email\messages\new_message_body.txt:7
+#, python-format
+msgid ""
+"You are subscribed to receive this type of notifications from %(site_name)s."
+" Enter this page to change your notifications settings or opt out:"
+msgstr ""
+"நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் "
+"%(site_name)s. உங்கள் அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் "
+"அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+
+#: .\templates\email\messages\new_message_subject.txt:1
+#, python-format
+msgid "You have a new message on %(site_name)s"
+msgstr "நீங்கள் ஒரு புதிய செய்தியை உள்ள %(site_name)s"
+
+#: .\templates\friends\base.html:35
+msgid "Received Requests"
+msgstr "கோரிக்கைகள்"
+
+#: .\templates\friends\base.html:41
+msgid "Sent Requests"
+msgstr "அனுப்பிய கோரிக்கைகள்"
+
+#: .\templates\friends\received_requests.html:19
+#: .\templates\friends\sent_requests.html:13
+msgid "There are no pending friendship requests."
+msgstr "நட்பு கோரிக்கைகள் எதுவும் இல்லை."
+
+#: .\templates\main\main_page_base.html:12
+#, python-format
+msgid "Welcome to %(site_name)s!"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்!"
+
+#: .\templates\main\main_page_base.html:21
+#, python-format
+msgid "Join %(site_name)s!"
+msgstr "சேர %(site_name)s!"
+
+#: .\templates\main\main_page_base.html:24
+msgid "It's free and anyone can join!"
+msgstr "அது இலவசம், யார் வேண்டுமானாலும் சேரலாம்!"
+
+#: .\templates\messages\chat_detail.html:35
+#, python-format
+msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "<a href=\"%(link)s\">%(user_name)s</a> உடன் உரையாடுங்கள்"
+
+#: .\templates\messages\chat_detail.html:41
+#: .\templates\messages\message_form.html:9
+#, python-format
+msgid "Send a message to %(user_name)s"
+msgstr "%(user_name)s-க்கு ஒரு செய்தியை அனுப்பவும்"
+
+#: .\templates\messages\chat_detail.html:55
+msgid "Mark All as Read"
+msgstr "எல்லாவற்றையும் வாசிக்கவும்"
+
+#: .\templates\messages\chat_list.html:56
+msgid "Unread"
+msgstr "படிக்காதது"
+
+#: .\templates\messages\chat_list.html:63
+msgid "You:"
+msgstr "நீ:"
+
+#: .\templates\messages\chat_list.html:83
+msgid "You have no messages yet."
+msgstr "உங்களுக்கு இன்னும் செய்திகள் இல்லை."
+
+#: .\templates\messages\message.html:20
+msgid "New"
+msgstr "புதியது"
+
+#: .\templates\privacy\privacy_policy.html:19
+msgid ""
+"We respect your privacy. We will not sell or share your personal details, "
+"including your name, your date of birth, your email address and your "
+"password. Messages you send to people on Speedy Net are personal and will "
+"not be shared with other people or websites. Your password is saved "
+"encrypted on our database."
+msgstr ""
+"உங்கள் தனியுரிமையை நாங்கள் மதிக்கிறோம். உங்கள் பெயர், பிறந்த தேதி, "
+"மின்னஞ்சல் முகவரி மற்றும் கடவுச்சொல் உள்ளிட்ட உங்கள் தனிப்பட்ட விவரங்களை "
+"நாம் விற்கவோ பகிரவோ மாட்டோம். Speedy Net இல் நீங்கள் மக்களுக்கு அனுப்பும் "
+"செய்திகள் தனிப்பட்டவை; அவை பிறருடனோ இணையதளங்களுடனோ பகிரப்படமாட்டா. உங்கள் "
+"கடவுச்சொல் எங்கள் தரவுத்தளத்தில் குறியாக்கம் செய்யப்பட்ட நிலையில் "
+"சேமிக்கப்படுகிறது."
+
+#: .\templates\privacy\privacy_policy.html:21
+msgid ""
+"Your profile on Speedy Net is visible to everyone, but you can choose who to"
+" share with your email address and your date of birth. If you signed up for "
+"Speedy Match, your Speedy Match profile will only be visible to people who "
+"match you according to the settings you have set up on the site, and that "
+"you match them according to their settings. Your profile on Speedy Match "
+"will not appear on Google and is not visible to people who are not "
+"registered to the site."
+msgstr ""
+"Speedy Net இல் உங்கள் சுயவிவரம் அனைவருக்கும் தெரியும்; ஆனால் உங்கள் "
+"மின்னஞ்சல் முகவரியையும் பிறந்த தேதியையும் யாருடன் பகிர வேண்டும் என்பதை "
+"நீங்கள் தேர்வு செய்யலாம். நீங்கள் Speedy Match-க்கு பதிவு செய்திருந்தால், "
+"தளத்தில் நீங்கள் அமைத்துள்ள அமைப்புகளின்படியும் அவர்கள் அமைப்புகளின்படியும் "
+"நீங்கள் ஒருவருக்கொருவர் பொருந்தும் நபர்களுக்கே உங்கள் Speedy Match சுயவிவரம்"
+" தெரியும். உங்கள் Speedy Match சுயவிவரம் Google-இல் தோன்றாது; தளத்தில் பதிவு"
+" செய்யாதவர்களுக்கும் அது தெரியாது."
+
+#: .\templates\privacy\privacy_policy.html:23
+msgid ""
+"If you have deactivated your account on Speedy Net or Speedy Match, your "
+"profile on that site will be removed from the site and you will not appear "
+"in other people's search results on the site. Note that deactivating your "
+"account on Speedy Net also automatically deactivates your account at Speedy "
+"Match. You can deactivate only your account at Speedy Match, in which case "
+"your Speedy Net account will remain active. You can reactivate your account "
+"after you deactivate it whenever you like."
+msgstr ""
+"Speedy Net அல்லது Speedy Match இல் உங்கள் கணக்கை நீங்கள் செயலிழக்கச் "
+"செய்திருந்தால், அந்தத் தளத்தில் உள்ள உங்கள் சுயவிவரம் தளத்திலிருந்து "
+"நீக்கப்படும்; மேலும் தளத்தில் பிறரின் தேடல் முடிவுகளில் நீங்கள் "
+"தோன்றமாட்டீர்கள். Speedy Net இல் உங்கள் கணக்கை செயலிழக்கச் செய்வது Speedy "
+"Match இல் உள்ள உங்கள் கணக்கையும் தானாகவே செயலிழக்கச் செய்கிறது என்பதை "
+"நினைவில் கொள்ளவும். நீங்கள் Speedy Match இல் உள்ள உங்கள் கணக்கை மட்டும் "
+"செயலிழக்கச் செய்யலாம்; அப்படியானால் உங்கள் Speedy Net கணக்கு செயலில் "
+"இருக்கும். நீங்கள் விரும்பும் எந்த நேரத்திலும் உங்கள் கணக்கை மீண்டும் "
+"செயல்படுத்தலாம்."
+
+#: .\templates\privacy\privacy_policy.html:25
+msgid ""
+"If you want, you can delete your account on Speedy Net. Deleting your Speedy"
+" Net account will automatically delete your Speedy Match account as well. To"
+" delete your Speedy Net account, log in to Speedy Net, deactivate your "
+"account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
+"out the details in the form and confirm. Please note that a deleted account "
+"cannot be recovered. Account deletion is permanent and irreversible."
+msgstr ""
+"நீங்கள் விரும்பினால் உங்கள் Speedy Net கணக்கை நீக்கலாம். உங்கள் Speedy Net "
+"கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் தானாகவே நீக்கப்படும். உங்கள்"
+" Speedy Net கணக்கை நீக்குவதற்கு Speedy Net இல் உள்நுழைந்து, உங்கள் கணக்கை "
+"செயலிழக்கச் செய்து, பின்னர் “Delete Account” என்பதை (“Edit Profile” "
+"மெனுவில்) கிளிக் செய்யுங்கள். படிவத்தில் விவரங்களை நிரப்பி "
+"உறுதிப்படுத்துங்கள். நீக்கப்பட்ட கணக்கை மீட்டெடுக்க முடியாது என்பதை நினைவில்"
+" கொள்ளவும். கணக்கை நீக்குவது நிரந்தரமானதும் மாற்றமுடியாததுமாகும்."
+
+#: .\templates\profiles\block_warning.html:9
+msgid "You blocked "
+msgstr "நீ தடுக்கப்பட்டது . "
+
+#: .\templates\profiles\block_warning.html:9
+msgid "."
+msgstr ". ."
+
+#: .\templates\profiles\block_warning.html:11
+msgid " blocked you."
+msgstr " உங்களை தடுத்தது."
+
+#: .\templates\profiles\tools\add_to_friends.html:10
+#: .\templates\profiles\user_list_item.html:30
+msgid "Accept Friendship Request"
+msgstr "நட்பை கோருவதை ஏற்றுக்கொள்"
+
+#: .\templates\profiles\tools\add_to_friends.html:12
+#: .\templates\profiles\user_list_item.html:32
+msgid "Accept"
+msgstr "ஏற்றுக்கொள்ளுங்கள்"
+
+#: .\templates\profiles\tools\add_to_friends.html:17
+#: .\templates\profiles\user_list_item.html:37
+msgid "Reject Friendship Request"
+msgstr "நட்பை கோருவதை நிராகரிக்கவும்"
+
+#: .\templates\profiles\tools\add_to_friends.html:19
+#: .\templates\profiles\user_list_item.html:39
+msgid "Reject"
+msgstr "நிராகரிப்பு"
+
+#: .\templates\profiles\tools\add_to_friends.html:25
+#: .\templates\profiles\tools\add_to_friends.html:27
+msgid "Add to Friends"
+msgstr "நண்பர்களை சேர்க்கவும்"
+
+#: .\templates\profiles\tools\block_user.html:10
+#: .\templates\profiles\tools\block_user.html:12
+msgid "Toggle Dropdown"
+msgstr "கீழிறங்கும் இடத்தை மாற்றவும்"
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "Are you sure you want to block "
+msgstr "நீங்கள் தடுக்க வேண்டும் என்று உறுதியாக இருக்கிறீர்களா "
+
+#: .\templates\profiles\tools\block_user.html:16
+msgid "?"
+msgstr "?"
+
+#: .\templates\profiles\tools\block_user.html:18
+#: .\templates\profiles\tools\block_user.html:19
+msgid "Block "
+msgstr "தொகுதி "
+
+#: .\templates\profiles\tools\block_user.html:25
+#: .\templates\profiles\tools\block_user.html:26
+msgid "Unblock "
+msgstr "திறக்கவும் "
+
+#: .\templates\profiles\tools\block_user.html:30
+msgid "Report "
+msgstr "அறிக்கை "
+
+#: .\templates\profiles\tools\block_user.html:32
+msgid "Report this photo"
+msgstr "இந்த புகைப்படத்தை அறிக்கை செய்யுங்கள்"
+
+#: .\templates\profiles\tools\friendship_request_sent.html:7
+msgid "Cancel Friendship Request"
+msgstr "நட்பு கோரிக்கையை ரத்து செய்யவும்"
+
+#: .\templates\profiles\tools\remove_from_friends.html:7
+msgid "Remove Friend"
+msgstr "நண்பரை நீக்கவும்"
+
+#: .\templates\profiles\tools\send_message.html:9
+#: .\templates\profiles\tools\send_message.html:11
+msgid "Send Message"
+msgstr "செய்தி அனுப்புங்கள்"
+
+#: .\templates\profiles\user_info_widget.html:12
+msgid "Information"
+msgstr "தகவல்"
+
+#: .\templates\profiles\user_info_widget.html:19
+msgid "Name"
+msgstr "பெயர்"
+
+#: .\templates\profiles\user_info_widget.html:25
+msgid "Username"
+msgstr "பயனர் பெயர்"
+
+#: .\templates\profiles\user_info_widget.html:35
+msgid "Gender"
+msgstr "பாலினம்"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Date"
+msgstr "பிறந்த தேதி"
+
+#: .\templates\profiles\user_info_widget.html:44
+msgid "Birth Year"
+msgstr "பிறந்த ஆண்டு"
+
+#: .\templates\profiles\user_info_widget.html:61
+msgid "Age"
+msgstr "வயது"
+
+#: .\templates\profiles\user_on_speedy_match_widget.html:6
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
+"on Speedy Match."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Match சுயவிவரம் உள்ளது. Speedy Match இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:7
+msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
+msgstr ""
+"உங்களுக்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் உங்கள் "
+"சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\templates\profiles\user_on_speedy_net_widget.html:9
+#, python-format
+msgid ""
+"%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on"
+" Speedy Net."
+msgstr ""
+"%(user_name)s-க்கும் ஒரு Speedy Net சுயவிவரம் உள்ளது. Speedy Net இல் "
+"%(user_name)s-இன் சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\templates\terms\terms_of_service.html:19
+msgid ""
+"The site is in alpha, there may be errors. Site management is not "
+"responsible for any faults on the site."
+msgstr "தளத்தில் எந்த தவறுகளும் இல்லை. தள நிர்வாகம் பொறுப்பல்ல."
+
+#: .\templates\terms\terms_of_service.html:21
+msgid ""
+"You can use Speedy Net for legal purposes only. You are not allowed to "
+"upload contents related to hate, violence, animal abuse, nudity or "
+"pornography. You are not allowed to use Speedy Net to send spam messages, or"
+" messages with the same content to a large number of people."
+msgstr ""
+"Speedy Net-ஐ சட்டபூர்வமான நோக்கங்களுக்காக மட்டுமே பயன்படுத்தலாம். வெறுப்பு, "
+"வன்முறை, விலங்கு துஷ்பிரயோகம், நிர்வாணம் அல்லது அச்லீலப் பொருள் தொடர்பான "
+"உள்ளடக்கங்களை பதிவேற்ற அனுமதி இல்லை. Speedy Net-ஐ ஸ்பாம் செய்திகள் "
+"அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை ஏராளமான மக்களுக்கு அனுப்புவதற்கோ "
+"பயன்படுத்த அனுமதி இல்லை."
+
+#: .\templates\terms\terms_of_service.html:23
+msgid ""
+"Site management cannot verify personal information provided by users of the "
+"site. Some users' personal information may not be correct. Site management "
+"is not responsible for user activity outside the site. If you choose to meet"
+" or talk on the phone with people you met on the site, the responsibility "
+"for the results of the meeting or phone call is yours."
+msgstr ""
+"தள நிர்வாகம் தளத்தின் பயனர்களால் வழங்கப்பட்ட தனிப்பட்ட தகவல்களை சரிபார்க்க "
+"முடியாது. சில பயனர்களின் தனிப்பட்ட தகவல்கள் சரியாக இருக்காது. தளத்திற்கு "
+"வெளியே பயனர் செயல்பாட்டிற்கு தள நிர்வாகம் பொறுப்பல்ல. நீங்கள் தளத்தில் "
+"சந்தித்த நபர்களுடன் தொலைபேசியில் சந்திப்பதை அல்லது பேச தேர்வு செய்தால், "
+"சந்திப்பு அல்லது தொலைபேசி அழைப்பின் முடிவுகளுக்கு பொறுப்பு உங்களுக்கு "
+"சொந்தமானது."
+
+#: .\templates\terms\terms_of_service.html:25
+msgid ""
+"After signing up for the site you are asked to verify your email address via"
+" a link sent to you. Accounts without a verified email address will be "
+"deleted from the site after 10 days."
+msgstr ""
+"நீங்கள் தளத்தில் பதிவுசெய்த பிறகு, உங்களுக்கு அனுப்பப்பட்ட இணைப்பு மூலம் "
+"உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க கேட்கப்படுவீர்கள். சரிபார்க்கப்பட்ட "
+"மின்னஞ்சல் முகவரி இல்லாத கணக்குகள் 10 நாட்களுக்குப் பிறகு தளத்திலிருந்து "
+"நீக்கப்படும்."
+
+#: .\templates\terms\terms_of_service.html:27
+msgid ""
+"If you mistakenly signed up for the site with an incorrect email address, "
+"add a new email address to your account and verify it. You can attach "
+"several email addresses to your account on the site."
+msgstr ""
+"தவறான மின்னஞ்சல் முகவரியுடன் நீங்கள் தவறாக பதிவு செய்தால், உங்கள் கணக்கில் "
+"ஒரு புதிய மின்னஞ்சல் முகவரியைச் சேர்த்து அதை சரிபார்க்கவும். நீங்கள் "
+"தளத்தில் உங்கள் கணக்கில் பல மின்னஞ்சல் முகவரிகளை இணைக்கலாம்."
+
+#: .\templates\terms\terms_of_service.html:29
+msgid ""
+"Your profile picture should be a picture of you, where we can see your face."
+" It is allowed to upload a profile picture with other people. Do not upload "
+"nude photos, photos showing genitals (of men or women) or bare-chested "
+"images (of men or women)."
+msgstr ""
+"உங்கள் சுயவிவரப் படம் உங்களுடையது, உங்கள் முகத்தை நாம் காணக்கூடியது. "
+"மற்றவர்களுடன் சுயவிவரப் படத்தை பதிவேற்ற அனுமதிக்கப்படுகிறது. நிர்வாண "
+"புகைப்படங்கள், ஆண்கள் அல்லது பெண்களின் பாலியல் உறுப்புகளைக் காட்டும் "
+"புகைப்படங்கள் அல்லது நிர்வாண மார்பு புகைப்படங்கள் (ஆண்கள் அல்லது பெண்கள்) "
+"பதிவேற்ற வேண்டாம்."
+
+#: .\templates\uploads\file_input.html:6
+msgid "Browse..."
+msgstr "ப்ராஃப்ஸ்..."
+
+#: .\uploads\models.py:24
+msgid "owner"
+msgstr "உரிமையாளர்"
+
+#: .\uploads\models.py:25
+msgid "file"
+msgstr "கோப்பு"
+
+#: .\uploads\models.py:26
+msgid "is stored"
+msgstr "சேமிக்கப்படுகிறது"
+
+#: .\uploads\models.py:27
+msgid "file size"
+msgstr "கோப்பு அளவு"
+
+#: .\uploads\models.py:36
+msgid "uploaded file"
+msgstr "பதிவேற்றப்பட்ட கோப்பு"
+
+#: .\uploads\models.py:37
+msgid "uploaded files"
+msgstr "பதிவேற்றப்பட்ட கோப்புகள்"
+
+#: .\uploads\models.py:75
+msgid "visible on website"
+msgstr "இணையதளத்தில் காணக்கூடியது"
+
+#: .\uploads\models.py:76
+msgid "Speedy image moderation time"
+msgstr "Speedy பட மேற்பார்வை நேரம்"
+
+#: .\uploads\models.py:77
+msgid "AWS image moderation time"
+msgstr "AWS படங்களை நடுநிலைப்படுத்தும் நேரம்"
+
+#: .\uploads\models.py:78
+msgid "AWS facial analysis time"
+msgstr "AWS முக பகுப்பாய்வு நேரம்"
+
+#: .\uploads\models.py:79
+msgid "AWS raw image moderation results"
+msgstr "AWS மூல பட நடுநிலை முடிவுகள்"
+
+#: .\uploads\models.py:80
+msgid "AWS raw facial analysis results"
+msgstr "AWS மூல முக பகுப்பாய்வு முடிவுகள்"
+
+#: .\uploads\models.py:81
+msgid "number of faces"
+msgstr "முகங்களின் எண்ணிக்கை"
+
+#: .\uploads\models.py:86
+msgid "uploaded image"
+msgstr "பதிவேற்றப்பட்ட படம்"
+
+#: .\uploads\models.py:87
+msgid "uploaded images"
+msgstr "பதிவேற்றப்பட்ட படங்கள்"

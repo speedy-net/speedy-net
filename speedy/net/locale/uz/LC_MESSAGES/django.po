@@ -1,0 +1,381 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 06:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "Delete Account"
+msgstr "Akkauntni o'chirish"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "Delete Account"
+msgstr "Akkauntni o'chirish"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "Delete Account"
+msgstr "Akkauntni o'chirish"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
+"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
+"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil"
+" bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
+"Akkauntimni o'chiring.\" deb yozing."
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
+"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
+"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil"
+" bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
+"Akkauntimni o'chiring.\" deb yozing."
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
+"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
+"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil"
+" bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
+"Akkauntimni o'chiring.\" deb yozing."
+
+#: .\__translations\__translations.py:10
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
+
+#: .\__translations\__translations.py:11
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
+
+#: .\__translations\__translations.py:12
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
+
+#: .\__translations\__translations.py:14
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"foydalanganingiz uchun rahmat."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"foydalanganingiz uchun rahmat."
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}dan "
+"foydalanganingiz uchun rahmat."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Net Accounts"
+msgstr "Speedy Net akkauntlari"
+
+#: .\accounts\forms.py:18
+msgid "Your password"
+msgstr "Parolingiz"
+
+#: .\accounts\forms.py:19
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
+"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
+"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil"
+" bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
+"Akkauntimni o'chiring.\" deb yozing."
+
+#: .\accounts\forms.py:33
+msgid "Invalid password."
+msgstr "Noto'g'ri parol."
+
+#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
+#: .\accounts\views.py:82
+msgid "Yes. Delete my account."
+msgstr "Ha. Akkauntimni o'chiring."
+
+#: .\accounts\models.py:30
+msgid "Speedy Net User"
+msgstr "Speedy Net foydalanuvchisi"
+
+#: .\accounts\models.py:32
+msgid "User"
+msgstr "Foydalanuvchi"
+
+#: .\accounts\models.py:34
+msgid "Number of friends on last user's visit"
+msgstr "Foydalanuvchining oxirgi tashrifidagi do'stlar soni"
+
+#: .\accounts\models.py:50
+msgid "Speedy Net Profile"
+msgstr "Speedy Net profili"
+
+#: .\accounts\models.py:51
+msgid "Speedy Net Profiles"
+msgstr "Speedy Net profillari"
+
+#: .\accounts\utils.py:23
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"Saytdagi faol a'zolarning umumiy soni "
+"{total_number_of_active_members_in_the_last_four_months}, shundan "
+"{total_number_of_active_members_in_the_last_week} a'zo so'nggi hafta ichida "
+"saytga kirgan."
+
+#: .\settings\base_site.py:12
+msgid "Speedy Net [alpha]"
+msgstr "Speedy Net [alpha]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Net"
+msgstr "Speedy Net haqida"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:13
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> yangi ijtimoiy tarmoqdir. Speedy Net orqali siz "
+"do'stlaringiz bilan muloqot qilishingiz mumkin. Speedy Net barcha "
+"mamlakatlar va barcha yoshdagi odamlar uchun bepul ro'yxatdan o'tishga ochiq"
+" (yosh cheklovi yo'q!). Sayt vegan va vegetarianlar uchun qulay. Hozirda u "
+"%(languages_num)s tilda mavjud."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
+msgstr ""
+"Speedy Net asoschilari vegan, hayvonlar huquqlarini qo'llab-quvvatlaydi va "
+"hayvonlar ustida tajribalar o'tkazilishiga qarshi. Speedy Net vegan va "
+"vegetarian odamlar hamda hayvonlar uchun qulay ijtimoiy tarmoqdir."
+
+#: .\templates\about\about.html:21
+msgid ""
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
+msgstr ""
+"Biz Speedy Net dagi do'stlar sonini 800 taga cheklashga qaror qildik. Sizni "
+"faqat shaxsan tanigan odamlaringizni do'st sifatida qo'shishga undaymiz. "
+"Profilingizdagi qaysi ma'lumotlar hammaga ochiq bo'lishini, qaysilari faqat "
+"do'stlarga ko'rinishini va qaysilari maxfiy bo'lishini o'zingiz tanlashingiz"
+" mumkin. Maxfiy ma'lumotlar faqat sizga ko'rinadi."
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, python-format
+msgid ""
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
+msgstr ""
+"Tanishuv uchun mos odamlarni topish uchun yangi ilovamiz - <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> dan foydalanishingiz mumkin. Speedy Match barcha "
+"yoshdagi yolg'izlar uchun ochiq."
+
+#: .\templates\about\about.html:25
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"Speedy Net va Speedy Match dagi barcha imkoniyatlar bepul. Do'st topish "
+"uchun Speedy Net ga bugunoq qo'shiling - bu atigi bir necha daqiqa oladi. "
+"Qo'shilish uchun <a href=\"/\" title=\"Join Speedy Net\">shu yerni "
+"bosing</a>."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
+msgstr ""
+"Speedy Net - bepul dasturiy ta'minot va ochiq kodli loyiha. Agar Speedy Net "
+"ni rivojlantirish va yaxshilashga yordam bermoqchi bo'lsangiz, iltimos, "
+"menga elektron pochta orqali murojaat qiling."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Net ko'p yillar davomida biz bilan bo'lgan va 2003 yilda vafot etgan "
+"<a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> ismli urg'ochi it sharafiga nomlangan. Speedy "
+"1988 yilda 7 ta kuchuk tug'gan."
+
+#: .\templates\about\about.html:31
+msgid "Speedy Net is currently in alpha. It was launched in June 2012."
+msgstr ""
+"Speedy Net hozircha alpha bosqichida. U 2012-yil iyun oyida ishga "
+"tushirilgan."
+
+#: .\templates\about\about.html:33
+msgid "Thank you and good luck,"
+msgstr "Rahmat va omad tilayman,"
+
+#: .\templates\about\about.html:34
+msgid "Uri Rodberg"
+msgstr "Uri Rodberg"
+
+#: .\templates\about\about.html:35
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Speedy Net va Speedy Match asoschisi va direktori,"
+
+#: .\templates\about\about.html:36
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:6
+msgid "Welcome"
+msgstr "Xush kelibsiz"
+
+#: .\templates\accounts\edit_profile\activate.html:12
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s ga xush kelibsiz"
+
+#: .\templates\accounts\edit_profile\activate.html:16
+msgid "Please confirm your email address."
+msgstr "Iltimos, elektron pochta manzilingizni tasdiqlang."
+
+#: .\templates\accounts\edit_profile\activate.html:22
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"Speedy Net akkauntingiz faol emas. Uni faollashtirish uchun ushbu sahifaga "
+"kiring."
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
+msgstr "Bloklangan foydalanuvchilar"
+
+#: .\templates\accounts\edit_profile\base.html:17
+msgid "Delete Account"
+msgstr "Akkauntni o'chirish"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "Sizda hali hech qanday do'stlar yo'q."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "Do'stlaringiz"
+
+#: .\templates\main\main_page.html:9
+msgid ""
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
+msgstr ""
+"Speedy Net yangi ijtimoiy tarmoqdir. Speedy Net orqali siz do'stlaringiz "
+"bilan muloqot qilishingiz mumkin. Speedy Net barcha mamlakatlar va barcha "
+"yoshdagi odamlar uchun bepul ro'yxatdan o'tishga ochiq (yosh cheklovi "
+"yo'q!). Sayt vegan va vegetarianlar uchun qulay."
+
+#: .\templates\main\main_page.html:17
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
+msgstr ""
+"Speedy Net va Speedy Match dagi barcha imkoniyatlar bepul. Do'st topish "
+"uchun Speedy Net ga bugunoq qo'shiling - bu atigi bir necha daqiqa oladi."
+
+#: .\templates\main\main_page.html:49
+msgid "Speedy Match – dating Speedy"
+msgstr "Speedy Match - Speedy bilan tanishuv"
+
+#: .\templates\main\main_page.html:49
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr ""
+"Yigit izlayapsizmi? Qiz izlayapsizmi? Keling va Speedy bilan tanishing!"
+
+#: .\templates\main\main_page.html:78
+msgid "Free Online Dating"
+msgstr "Bepul onlayn tanishuv"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "Do'stlar"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "Do'stingiz"
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr "Do'stlik so'rovi yuborildi"

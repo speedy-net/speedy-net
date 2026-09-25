@@ -1,0 +1,384 @@
+# Translation files for Speedy Net
+# This file is distributed under the same license as the Speedy Net package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 06:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\__translations\__translations.html:6
+msgctxt "female"
+msgid "Delete Account"
+msgstr "கணக்கை நீக்கு"
+
+#: .\__translations\__translations.html:7
+msgctxt "male"
+msgid "Delete Account"
+msgstr "கணக்கை நீக்கு"
+
+#: .\__translations\__translations.html:8
+msgctxt "other"
+msgid "Delete Account"
+msgstr "கணக்கை நீக்கு"
+
+#: .\__translations\__translations.py:6
+msgctxt "female"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"உங்கள் Speedy Net கணக்கை நீக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக "
+"உள்ளீர்களா? இது நிரந்தரமானதும் மாற்றமுடியாததுமாகும். உங்கள் Speedy Net "
+"கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் நீக்கப்படும். நீங்கள் "
+"உறுதியாக இருந்தால், இந்தப் புலத்தில் \"ஆம். என் கணக்கை நீக்கு.\" என்பதை "
+"அப்படியே, பெரிய/சிறிய எழுத்து வேறுபாட்டுடன் தட்டச்சு செய்யுங்கள்."
+
+#: .\__translations\__translations.py:7
+msgctxt "male"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"உங்கள் Speedy Net கணக்கை நீக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக "
+"உள்ளீர்களா? இது நிரந்தரமானதும் மாற்றமுடியாததுமாகும். உங்கள் Speedy Net "
+"கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் நீக்கப்படும். நீங்கள் "
+"உறுதியாக இருந்தால், இந்தப் புலத்தில் \"ஆம். என் கணக்கை நீக்கு.\" என்பதை "
+"அப்படியே, பெரிய/சிறிய எழுத்து வேறுபாட்டுடன் தட்டச்சு செய்யுங்கள்."
+
+#: .\__translations\__translations.py:8
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"உங்கள் Speedy Net கணக்கை நீக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக "
+"உள்ளீர்களா? இது நிரந்தரமானதும் மாற்றமுடியாததுமாகும். உங்கள் Speedy Net "
+"கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் நீக்கப்படும். நீங்கள் "
+"உறுதியாக இருந்தால், இந்தப் புலத்தில் \"ஆம். என் கணக்கை நீக்கு.\" என்பதை "
+"அப்படியே, பெரிய/சிறிய எழுத்து வேறுபாட்டுடன் தட்டச்சு செய்யுங்கள்."
+
+#: .\__translations\__translations.py:10
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை நிரந்தரமாக நீக்கவும்"
+
+#: .\__translations\__translations.py:11
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை நிரந்தரமாக நீக்கவும்"
+
+#: .\__translations\__translations.py:12
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை நிரந்தரமாக நீக்கவும்"
+
+#: .\__translations\__translations.py:14
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
+"{site_name} பயன்படுத்தியதற்கு நன்றி."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
+"{site_name} பயன்படுத்தியதற்கு நன்றி."
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுவிட்டன. "
+"{site_name} பயன்படுத்தியதற்கு நன்றி."
+
+#: .\accounts\apps.py:8
+msgid "Speedy Net Accounts"
+msgstr "Speedy Net கணக்குகள்"
+
+#: .\accounts\forms.py:18
+msgid "Your password"
+msgstr "உங்கள் கடவுச்சொல்"
+
+#: .\accounts\forms.py:19
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"உங்கள் Speedy Net கணக்கை நீக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக "
+"உள்ளீர்களா? இது நிரந்தரமானதும் மாற்றமுடியாததுமாகும். உங்கள் Speedy Net "
+"கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் நீக்கப்படும். நீங்கள் "
+"உறுதியாக இருந்தால், இந்தப் புலத்தில் \"ஆம். என் கணக்கை நீக்கு.\" என்பதை "
+"அப்படியே, பெரிய/சிறிய எழுத்து வேறுபாட்டுடன் தட்டச்சு செய்யுங்கள்."
+
+#: .\accounts\forms.py:33
+msgid "Invalid password."
+msgstr "செல்லாத கடவுச்சொல்."
+
+#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
+#: .\accounts\views.py:82
+msgid "Yes. Delete my account."
+msgstr "ஆம். என் கணக்கை நீக்கு."
+
+#: .\accounts\models.py:30
+msgid "Speedy Net User"
+msgstr "Speedy Net பயனர்"
+
+#: .\accounts\models.py:32
+msgid "User"
+msgstr "பயனர்"
+
+#: .\accounts\models.py:34
+msgid "Number of friends on last user's visit"
+msgstr "கடைசி பயனரின் வருகைக்கு நண்பர்களின் எண்ணிக்கை"
+
+#: .\accounts\models.py:50
+msgid "Speedy Net Profile"
+msgstr "Speedy Net சுயவிவரம்"
+
+#: .\accounts\models.py:51
+msgid "Speedy Net Profiles"
+msgstr "Speedy Net சுயவிவரங்கள்"
+
+#: .\accounts\utils.py:23
+#, python-brace-format
+msgid ""
+"The total number of active members on the site is "
+"{total_number_of_active_members_in_the_last_four_months}, of which "
+"{total_number_of_active_members_in_the_last_week} members entered the site "
+"in the last week."
+msgstr ""
+"தளத்தில் செயலில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை "
+"{total_number_of_active_members_in_the_last_four_months} ஆகும்; அதில் "
+"{total_number_of_active_members_in_the_last_week} உறுப்பினர்கள் கடந்த "
+"வாரத்தில் தளத்திற்குள் நுழைந்தனர்."
+
+#: .\settings\base_site.py:12
+msgid "Speedy Net [alpha]"
+msgstr "Speedy Net [ஆல்பா]"
+
+#: .\templates\about\about.html:13
+msgid "About Speedy Net"
+msgstr "Speedy Net பற்றி"
+
+#: .\templates\about\about.html:17 .\templates\main\main_page.html:13
+#, python-format
+msgid ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> is a new social network. With Speedy Net you can "
+"communicate with your friends. Speedy Net is open to free registration for "
+"people from all countries and ages (no age limit!). The site is vegan and "
+"vegetarian friendly. It is currently available in %(languages_num)s "
+"languages."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> என்பது ஒரு புதிய சமூக வலைத்தளம். Speedy Net மூலம் "
+"உங்கள் நண்பர்களுடன் தொடர்பில் இருக்கலாம். Speedy Net அனைத்து நாடுகளிலும் "
+"அனைத்து வயதினருக்கும் (வயது வரம்பில்லை!) இலவசப் பதிவுக்காக திறந்துள்ளது. "
+"இந்தத் தளம் சைவ மற்றும் சுத்தச் சைவ மக்களுக்கும் விலங்குகளுக்கும் நட்பானது. "
+"இது தற்போது %(languages_num)s மொழிகளில் கிடைக்கிறது."
+
+#: .\templates\about\about.html:19
+msgid ""
+"The founders of Speedy Net are vegan, support animal rights and object to "
+"experiments on animals. Speedy Net is a social network friendly for vegan "
+"and vegetarian people and animals."
+msgstr ""
+"Speedy Net இன் நிறுவுநர்கள் சுத்தச் சைவவாதிகள்; விலங்கு உரிமைகளை "
+"ஆதரிக்கிறார்கள் மற்றும் விலங்குகள் மீது செய்யப்படும் பரிசோதனைகளுக்கு எதிராக "
+"உள்ளனர். Speedy Net என்பது சைவ மற்றும் சுத்தச் சைவ மனிதர்களுக்கும் "
+"விலங்குகளுக்கும் நட்பான ஒரு சமூக வலைத்தளம் ஆகும்."
+
+#: .\templates\about\about.html:21
+msgid ""
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
+msgstr ""
+"Speedy Net இல் நண்பர்களின் எண்ணிக்கையை 800 ஆக வரையறுக்க முடிவு செய்துள்ளோம்."
+" நீங்கள் நேரில் அறிந்தவர்களையே நண்பர்களாகச் சேர்க்குமாறு உங்களை "
+"ஊக்குவிக்கிறோம். உங்கள் சுயவிவரத்தில் எந்த விவரங்கள் பொதுவாகத் தோன்ற "
+"வேண்டும், எந்த விவரங்கள் நண்பர்களுக்கே மட்டும் தெரியும் வகையில் இருக்க "
+"வேண்டும், எந்த விவரங்கள் தனிப்பட்டதாக இருக்க வேண்டும் என்பதை நீங்கள் தேர்வு "
+"செய்யலாம். தனிப்பட்ட விவரங்கள் உங்களுக்கே மட்டும் தெரியும்."
+
+#: .\templates\about\about.html:23 .\templates\main\main_page.html:15
+#, python-format
+msgid ""
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
+msgstr ""
+"டேட்டிங்கிற்கான பொருத்தமான நபர்களைக் கண்டுபிடிக்க, எங்கள் புதிய பயன்பாடான <a"
+" href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>-ஐ நீங்கள் பயன்படுத்தலாம். Speedy Match அனைத்து "
+"வயதினருமான ஒற்றையருக்கும் திறந்துள்ளது."
+
+#: .\templates\about\about.html:25
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
+msgstr ""
+"Speedy Net மற்றும் Speedy Match இல் உள்ள அனைத்து அம்சங்களும் இலவசம். "
+"நண்பர்களைக் கண்டுபிடிக்க இன்று Speedy Net இல் சேருங்கள்; இதற்கு சில "
+"நிமிடங்களே ஆகும். சேர்வதற்கு <a href=\"/\" title=\"Join Speedy Net\">இங்கே "
+"கிளிக் செய்யவும்</a>."
+
+#: .\templates\about\about.html:27
+msgid ""
+"Speedy Net is a free software & open source project. If you want to help "
+"developing and improving Speedy Net, please contact me by email."
+msgstr ""
+"Speedy Net என்பது இலவச மென்பொருள் மற்றும் திறந்த மூலத் திட்டமாகும். Speedy "
+"Net-ஐ உருவாக்கவும் மேம்படுத்தவும் உதவ விரும்பினால், தயவுசெய்து எனக்கு "
+"மின்னஞ்சல் மூலம் தொடர்பு கொள்ளுங்கள்."
+
+#: .\templates\about\about.html:29
+msgid ""
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+msgstr ""
+"Speedy Net இற்கு பல ஆண்டுகள் எங்களுடன் இருந்தும் 2003-ல் இறந்தும் போன <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> என்ற பெண் நாயின் பெயர் சூட்டப்பட்டுள்ளது. Speedy"
+" 1988-ல் 7 குட்டிகளைப் பெற்றது."
+
+#: .\templates\about\about.html:31
+msgid "Speedy Net is currently in alpha. It was launched in June 2012."
+msgstr ""
+"Speedy Net தற்போது ஆல்பா நிலையில் உள்ளது. அது ஜூன் 2012-ல் தொடங்கப்பட்டது."
+
+#: .\templates\about\about.html:33
+msgid "Thank you and good luck,"
+msgstr "நன்றி மற்றும் நல்ல அதிர்ஷ்டம்,"
+
+#: .\templates\about\about.html:34
+msgid "Uri Rodberg"
+msgstr "உரி ரோட்பெர்க்"
+
+#: .\templates\about\about.html:35
+msgid "Founder and director of Speedy Net and Speedy Match,"
+msgstr "Speedy Net மற்றும் Speedy Match இன் நிறுவனர் மற்றும் இயக்குநர்,"
+
+#: .\templates\about\about.html:36
+msgid "Speedy Paz Technologies Ltd."
+msgstr "Speedy Paz Technologies Ltd."
+
+#: .\templates\accounts\edit_profile\activate.html:6
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+#: .\templates\accounts\edit_profile\activate.html:12
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "%(site_name)s-க்கு வரவேற்கிறோம்"
+
+#: .\templates\accounts\edit_profile\activate.html:16
+msgid "Please confirm your email address."
+msgstr "தயவுசெய்து உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும்."
+
+#: .\templates\accounts\edit_profile\activate.html:22
+msgid "Your Speedy Net account is not active. Enter this page to activate it."
+msgstr ""
+"உங்கள் Speedy Net கணக்கு செயலில் இல்லை. அதைச் செயல்படுத்த இந்தப் "
+"பக்கத்திற்குச் செல்லுங்கள்."
+
+#: .\templates\accounts\edit_profile\base.html:9
+msgid "Blocked Users"
+msgstr "தடைசெய்யப்பட்ட பயனர்கள்"
+
+#: .\templates\accounts\edit_profile\base.html:17
+msgid "Delete Account"
+msgstr "கணக்கை நீக்கு"
+
+#: .\templates\friends\you_dont_have_any_friends_trans.html:3
+msgid "You don't have any friends yet."
+msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+
+#: .\templates\friends\your_friends_trans.html:3
+msgid "Your Friends"
+msgstr "உங்கள் நண்பர்கள்"
+
+#: .\templates\main\main_page.html:9
+msgid ""
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
+"countries and ages (no age limit!). The site is vegan and vegetarian "
+"friendly."
+msgstr ""
+"Speedy Net என்பது ஒரு புதிய சமூக வலைத்தளம். Speedy Net மூலம் உங்கள் "
+"நண்பர்களுடன் தொடர்பில் இருக்கலாம். Speedy Net அனைத்து நாடுகளிலும் அனைத்து "
+"வயதினருக்கும் (வயது வரம்பில்லை!) இலவசப் பதிவுக்காக திறந்துள்ளது. இந்தத் தளம்"
+" சைவ மற்றும் சுத்தச் சைவ மக்களுக்கும் விலங்குகளுக்கும் நட்பானது."
+
+#: .\templates\main\main_page.html:17
+msgid ""
+"All the features on Speedy Net and Speedy Match are free of charge. Join "
+"Speedy Net today to find friends, it only takes a few minutes."
+msgstr ""
+"Speedy Net மற்றும் Speedy Match இல் உள்ள அனைத்து அம்சங்களும் இலவசம். "
+"நண்பர்களைக் கண்டுபிடிக்க இன்று Speedy Net இல் சேருங்கள்; இதற்கு சில "
+"நிமிடங்களே ஆகும்."
+
+#: .\templates\main\main_page.html:49
+msgid "Speedy Match – dating Speedy"
+msgstr "Speedy Match – Speedy உடன் டேட்டிங்"
+
+#: .\templates\main\main_page.html:49
+msgid ""
+"Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
+msgstr ""
+"காதலனைத் தேடுகிறீர்களா? காதலியைத் தேடுகிறீர்களா? வாருங்கள், Speedy-யை "
+"சந்தியுங்கள்!"
+
+#: .\templates\main\main_page.html:78
+msgid "Free Online Dating"
+msgstr "இலவச ஆன்லைன் டேட்டிங்"
+
+#: .\templates\menu\friends_trans.html:3
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\templates\profiles\user_base_site.html:7
+msgid "Your friend"
+msgstr "உங்கள் நண்பர்"
+
+#: .\templates\profiles\user_base_site.html:9
+msgid "Friendship request sent"
+msgstr "நட்பு கோரிக்கை அனுப்பி வைக்கப்பட்டிருக்கிறது"
