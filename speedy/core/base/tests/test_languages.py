@@ -383,3 +383,5 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='lv')
+
+
