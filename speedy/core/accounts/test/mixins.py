@@ -1040,3 +1040,4 @@ if (django_settings.TESTS):
         def assert_profile_form_required_fields(self, required_fields):
             self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
 
+

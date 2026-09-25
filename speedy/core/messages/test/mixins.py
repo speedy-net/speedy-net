@@ -18,3 +18,4 @@ if (django_settings.TESTS):
             self._you_have_a_new_message_on_speedy_net_subject = _you_have_a_new_message_on_speedy_net_subject_dict[self.language_code]
             self._you_have_a_new_message_on_speedy_match_subject = _you_have_a_new_message_on_speedy_match_subject_dict[self.language_code]
 
+

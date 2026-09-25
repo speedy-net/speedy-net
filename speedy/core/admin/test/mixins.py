@@ -18,3 +18,4 @@ if (django_settings.TESTS):
             self._speedy_net_profiles = _speedy_net_profiles_dict[self.language_code]
             self._speedy_match_profiles = _speedy_match_profiles_dict[self.language_code]
 
+
