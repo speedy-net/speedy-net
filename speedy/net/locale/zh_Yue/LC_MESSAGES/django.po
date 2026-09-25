@@ -348,4 +348,3 @@ msgstr "您的朋友"
 msgid "Friendship request sent"
 msgstr "已傳送好友請求"
 
-

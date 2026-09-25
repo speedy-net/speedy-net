@@ -375,4 +375,3 @@ msgstr "Do'stingiz"
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
 msgstr "Do'stlik so'rovi yuborildi"
-

@@ -369,4 +369,3 @@ msgstr "Ձեր ընկերը"
 msgid "Friendship request sent"
 msgstr "Ընկերության հարցումն ուղարկվել է"
 
-

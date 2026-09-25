@@ -369,4 +369,3 @@ msgstr "Jūsu draugs"
 msgid "Friendship request sent"
 msgstr "Draudzības pieprasījums nosūtīts"
 
-
