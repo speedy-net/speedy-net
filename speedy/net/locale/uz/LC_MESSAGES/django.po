@@ -376,5 +376,3 @@ msgstr "Do'stingiz"
 msgid "Friendship request sent"
 msgstr "Do'stlik so'rovi yuborildi"
 
-#~ msgid "This field is required."
-#~ msgstr "Bu maydon to'ldirilishi shart."

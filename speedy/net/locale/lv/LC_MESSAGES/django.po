@@ -369,5 +369,4 @@ msgstr "Jūsu draugs"
 msgid "Friendship request sent"
 msgstr "Draudzības pieprasījums nosūtīts"
 
-#~ msgid "This field is required."
-#~ msgstr "Šis lauks ir obligāts."
+

@@ -369,5 +369,4 @@ msgstr "உங்கள் நண்பர்"
 msgid "Friendship request sent"
 msgstr "நட்பு கோரிக்கை அனுப்பி வைக்கப்பட்டிருக்கிறது"
 
-#~ msgid "This field is required."
-#~ msgstr "இந்தப் புலம் தேவை."
+

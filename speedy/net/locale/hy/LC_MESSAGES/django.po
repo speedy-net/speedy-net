@@ -369,5 +369,4 @@ msgstr "Ձեր ընկերը"
 msgid "Friendship request sent"
 msgstr "Ընկերության հարցումն ուղարկվել է"
 
-#~ msgid "This field is required."
-#~ msgstr "Այս դաշտը պարտադիր է։"
+

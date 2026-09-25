@@ -348,5 +348,4 @@ msgstr "您的朋友"
 msgid "Friendship request sent"
 msgstr "已傳送好友請求"
 
-#~ msgid "This field is required."
-#~ msgstr "呢個欄位係必填嘅。"
+
