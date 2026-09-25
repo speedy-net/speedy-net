@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 05:28+0300\n"
+"POT-Creation-Date: 2026-09-25 06:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1041,7 +1041,7 @@ msgstr "沒有任何"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [阿爾法]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"

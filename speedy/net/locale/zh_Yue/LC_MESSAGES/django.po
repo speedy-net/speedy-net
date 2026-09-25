@@ -164,7 +164,7 @@ msgstr ""
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [阿爾法]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
