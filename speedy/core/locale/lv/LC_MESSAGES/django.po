@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 08:37+0300\n"
+"POT-Creation-Date: 2026-09-25 08:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2004,9 +2004,6 @@ msgstr "Jūsu parole"
 msgid "Invalid password."
 msgstr "Nederīga parole."
 
-msgid "This field is required."
-msgstr "Šis lauks ir obligāts."
-
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "lietotājvārds"
@@ -3662,3 +3659,6 @@ msgstr "augšupielādēts attēls"
 #: .\uploads\models.py:87
 msgid "uploaded images"
 msgstr "augšupielādēti attēli"
+
+#~ msgid "This field is required."
+#~ msgstr "Šis lauks ir obligāts."

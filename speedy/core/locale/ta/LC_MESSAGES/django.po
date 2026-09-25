@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 08:37+0300\n"
+"POT-Creation-Date: 2026-09-25 08:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2009,9 +2009,6 @@ msgstr "உங்கள் கடவுச்சொல்"
 msgid "Invalid password."
 msgstr "செல்லாத கடவுச்சொல்."
 
-msgid "This field is required."
-msgstr "இந்தப் புலம் தேவை."
-
 #: .\accounts\models.py:178
 msgid "username"
 msgstr "பயனர் பெயர்"
@@ -3644,3 +3641,6 @@ msgstr "பதிவேற்றப்பட்ட படம்"
 #: .\uploads\models.py:87
 msgid "uploaded images"
 msgstr "பதிவேற்றப்பட்ட படங்கள்"
+
+#~ msgid "This field is required."
+#~ msgstr "இந்தப் புலம் தேவை."

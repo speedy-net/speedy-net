@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 06:54+0200\n"
+"POT-Creation-Date: 2026-09-25 08:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy Net 帳戶亦會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此欄位準確輸入 \"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
+"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy "
+"Net 帳戶亦會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此欄位準確輸入 "
+"\"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
 
 #: .\__translations\__translations.py:7
 msgctxt "male"
@@ -49,8 +50,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy Net 帳戶亦會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此欄位準確輸入 \"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
+"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy "
+"Net 帳戶亦會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此欄位準確輸入 "
+"\"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
 
 #: .\__translations\__translations.py:8
 msgctxt "other"
@@ -60,8 +62,9 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy Net 帳戶亦會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此欄位準確輸入 \"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
+"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy "
+"Net 帳戶亦會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此欄位準確輸入 "
+"\"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
 
 #: .\__translations\__translations.py:10
 #, python-brace-format
@@ -87,7 +90,8 @@ msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+msgstr ""
+"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
@@ -95,7 +99,8 @@ msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+msgstr ""
+"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
@@ -103,7 +108,8 @@ msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
-msgstr "你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+msgstr ""
+"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\accounts\apps.py:8
 msgid "Speedy Net Accounts"
@@ -120,15 +126,13 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy Net 帳戶亦會刪除您的 Speedy Match "
-"帳戶。如果您確定要刪除，請在此欄位準確輸入 \"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
+"您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy "
+"Net 帳戶亦會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此欄位準確輸入 "
+"\"Yes. Delete my account.\"，並注意大小寫必須完全一致。"
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
 msgstr "密碼無效。"
-
-msgid "This field is required."
-msgstr "呢個欄位係必填嘅。"
 
 #: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
 #: .\accounts\views.py:82
@@ -163,7 +167,8 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"網站上的活躍會員總數為{total_number_of_active_members_in_the_last_four_months}其中{total_number_of_active_members_in_the_last_week}會員在上週進入了該網站。"
+"網站上的活躍會員總數為{total_number_of_active_members_in_the_last_four_months}"
+"其中{total_number_of_active_members_in_the_last_week}會員在上週進入了該網站。"
 
 #: .\settings\base_site.py:12
 msgid "Speedy Net [alpha]"
@@ -184,8 +189,9 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> 是一個全新的社交網絡。透過 Speedy Net，您可以與朋友聯絡。Speedy Net "
-"歡迎來自所有國家、所有年齡人士免費註冊（不設年齡上限！）。本網站對純素及素食人士友善。目前提供 %(languages_num)s 種語言。"
+"Net\">Speedy Net</a> 是一個全新的社交網絡。透過 Speedy Net，您可以與朋友聯"
+"絡。Speedy Net 歡迎來自所有國家、所有年齡人士免費註冊（不設年齡上限！）。本網"
+"站對純素及素食人士友善。目前提供 %(languages_num)s 種語言。"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -193,55 +199,57 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Speedy Net 的創辦人是純素食主義者，支持動物權利，反對動物實驗。 Speedy Net 是一個對純素食主義者、素食者和動物友好的社交網絡。"
+"Speedy Net 的創辦人是純素食主義者，支持動物權利，反對動物實驗。 Speedy Net 是"
+"一個對純素食主義者、素食者和動物友好的社交網絡。"
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
-"我們決定將 Speedy Net 的好友數量限制為 800 "
-"人。我們鼓勵您只加入您認識的人為好友。您可以選擇個人資料中哪些資訊公開顯示，哪些資訊僅對好友可見，哪些資訊設為私密。私密資訊僅對您可見。"
+"我們決定將 Speedy Net 的好友數量限制為 800 人。我們鼓勵您只加入您認識的人為好"
+"友。您可以選擇個人資料中哪些資訊公開顯示，哪些資訊僅對好友可見，哪些資訊設為"
+"私密。私密資訊僅對您可見。"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"您可以使用我們的新應用程式 <a href=\"https://%(language_code)s.speedymatch.com/\" "
-"title=\"Speedy Match\">Speedy Match</a>，尋找合適的約會對象。Speedy Match 歡迎所有年齡的單身人士。"
+"您可以使用我們的新應用程式 <a href=\"https://%(language_code)s.speedymatch."
+"com/\" title=\"Speedy Match\">Speedy Match</a>，尋找合適的約會對象。Speedy "
+"Match 歡迎所有年齡的單身人士。"
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Net 結交朋友，只需幾分鐘。<a "
-"href=\"/\" title=\"Join Speedy Net\">按此</a>加入。"
+"Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Net 結交朋"
+"友，只需幾分鐘。<a href=\"/\" title=\"Join Speedy Net\">按此</a>加入。"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
-msgstr "Speedy Net 是一個免費開源軟體專案。如果您想協助開發和改進 Speedy Net，請透過電郵與我聯繫。"
+msgstr ""
+"Speedy Net 是一個免費開源軟體專案。如果您想協助開發和改進 Speedy Net，請透過"
+"電郵與我聯繫。"
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
 "Speedy Net 以 <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> 命名；牠是一隻陪伴我們多年的母狗，於 2003 年離世。Speedy 在 1988 年誕下了 7"
-" 隻小狗。"
+"title=\"Speedy\">Speedy</a> 命名；牠是一隻陪伴我們多年的母狗，於 2003 年離"
+"世。Speedy 在 1988 年誕下了 7 隻小狗。"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -298,19 +306,22 @@ msgstr "您的朋友"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net 是一個全新的社交網絡。透過 Speedy Net，您可以與朋友聯絡。Speedy Net "
-"歡迎來自所有國家、所有年齡人士免費註冊（不設年齡上限！）。本網站對純素及素食人士友善。"
+"Speedy Net 是一個全新的社交網絡。透過 Speedy Net，您可以與朋友聯絡。Speedy "
+"Net 歡迎來自所有國家、所有年齡人士免費註冊（不設年齡上限！）。本網站對純素及"
+"素食人士友善。"
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
-msgstr "Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Net 結交朋友，只需幾分鐘。"
+msgstr ""
+"Speedy Net 和 Speedy Match 的所有功能都是免費的。立即加入 Speedy Net 結交朋"
+"友，只需幾分鐘。"
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
@@ -336,3 +347,6 @@ msgstr "您的朋友"
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
 msgstr "已傳送好友請求"
+
+#~ msgid "This field is required."
+#~ msgstr "呢個欄位係必填嘅。"
