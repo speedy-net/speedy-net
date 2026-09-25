@@ -143,6 +143,30 @@ if (django_settings.TESTS):
                 'az': {
                     **{gender: 'Hesabı sil' for gender in User.ALL_GENDERS},
                 },
+                'zh-yue': {
+                    **{gender: '刪除帳戶' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Ištrinti paskyrą' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Izbriši račun' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Ezabatu kontua' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Ջնջել հաշիվը' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: "Akkauntni o'chirish" for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'கணக்கை நீக்கு' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Dzēst kontu' for gender in User.ALL_GENDERS},
+                },
             }
 
             _are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender = {
@@ -261,6 +285,30 @@ if (django_settings.TESTS):
                 },
                 'az': {
                     **{gender: 'Speedy Net hesabınızı silmək istədiyinizə əminsinizmi? Bu, daimi və geri dönməzdir. Speedy Net hesabınızı silmək Speedy Match hesabınızı da siləcək. Əminsinizsə, bu sahəyə böyük-kiçik hərflərə dəqiq əməl etməklə "Bəli. Hesabımı sil." yazın.' for gender in User.ALL_GENDERS},
+                },
+                'zh-yue': {
+                    **{gender: '您確定要刪除您的 Speedy Net 帳戶嗎？此操作屬永久且不可逆。刪除您的 Speedy Net 帳戶亦會刪除您的 Speedy Match 帳戶。如果您確定要刪除，請在此欄位準確輸入 "Yes. Delete my account."，並注意大小寫必須完全一致。' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“.' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Ali ste prepričani, da želite izbrisati svoj račun Speedy Net? To je trajno in nepovratno. Z izbrisom svojega računa Speedy Net boste izbrisali tudi svoj račun Speedy Match. Če ste prepričani, v to polje vpišite "Da. Izbriši moj račun." natančno tako in z razlikovanjem velikih in malih črk.' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Ziur zaude zure Speedy Net kontua ezabatu nahi duzula? Hau iraunkorra eta atzeraezina da. Zure Speedy Net kontua ezabatzeak zure Speedy Match kontua ere ezabatuko du. Ziur bazaude, idatzi "Bai. Ezabatu nire kontua." eremu honetan, zehazki eta maiuskulak/minuskulak errespetatuz.' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը? Սա մշտական է և անշրջելի. Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը. Եթե վստահ եք, այս դաշտում գրեք "Yes. Delete my account." ճիշտ նույնությամբ և մեծատառերի տարբերությունը պահպանելով.' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: 'Speedy Net akkauntingizni o\'chirishni xohlayotganingizga ishonchingiz komilmi? Bu doimiy va qaytarib bo\'lmaydigan amal. Speedy Net akkauntingizni o\'chirish Speedy Match akkauntingizni ham o\'chiradi. Agar ishonchingiz komil bo\'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda "Ha. Akkauntimni o\'chiring." deb yozing.' for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'உங்கள் Speedy Net கணக்கை நீக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக உள்ளீர்களா? இது நிரந்தரமானதும் மாற்றமுடியாததுமாகும். உங்கள் Speedy Net கணக்கை நீக்கினால், உங்கள் Speedy Match கணக்கும் நீக்கப்படும். நீங்கள் உறுதியாக இருந்தால், இந்தப் புலத்தில் "ஆம். என் கணக்கை நீக்கு." என்பதை அப்படியே, பெரிய/சிறிய எழுத்து வேறுபாட்டுடன் தட்டச்சு செய்யுங்கள்.' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Vai tiešām vēlaties dzēst savu Speedy Net kontu? Tas ir neatgriezeniski un galīgi. Dzēšot savu Speedy Net kontu, tiks dzēsts arī jūsu Speedy Match konts. Ja esat pārliecināts, ierakstiet šajā laukā tieši šādi, ievērojot lielos un mazos burtus: "Yes. Delete my account.".' for gender in User.ALL_GENDERS},
                 },
             }
 
@@ -381,6 +429,30 @@ if (django_settings.TESTS):
                 'az': {
                     **{gender: 'Speedy Net hesabınızı həmişəlik silin' for gender in User.ALL_GENDERS},
                 },
+                'zh-yue': {
+                    **{gender: '永久刪除你嘅 Speedy Net 帳戶' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Visam laikui ištrinkite savo Speedy Net paskyrą' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Trajno izbrišite svoj račun Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Ezabatu behin betiko zure Speedy Net kontua' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Մշտապես ջնջել ձեր Speedy Net հաշիվը' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: "Speedy Net akkauntingizni doimiy ravishda o'chirish" for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'உங்கள் Speedy Net கணக்கை நிரந்தரமாக நீக்கவும்' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Neatgriezeniski dzēst savu Speedy Net kontu' for gender in User.ALL_GENDERS},
+                },
             }
 
             _your_speedy_net_and_speedy_match_accounts_have_been_deleted_message_dict_by_gender = {
@@ -497,6 +569,30 @@ if (django_settings.TESTS):
                 },
                 'az': {
                     **{gender: 'Speedy Net və Speedy Match hesablarınız silindi. Speedy Net-dən istifadə etdiyiniz üçün təşəkkür edirik.' for gender in User.ALL_GENDERS},
+                },
+                'zh-yue': {
+                    **{gender: '你嘅 Speedy Net 同 Speedy Match 帳戶已經刪除咗。多謝你使用 Speedy Net。' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad naudojotės Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Vaši računi Speedy Net in Speedy Match so bili izbrisani. Hvala, ker uporabljate Speedy Net.' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Zure Speedy Net eta Speedy Match kontuak ezabatu dira. Eskerrik asko Speedy Net erabiltzeagatik.' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Ձեր Speedy Net և Speedy Match հաշիվները ջնջվել են: Շնորհակալություն Speedy Net-ից օգտվելու համար:' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: "Speedy Net va Speedy Match akkauntlaringiz o'chirildi. Speedy Net'dan foydalanganingiz uchun rahmat." for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் நீக்கப்பட்டுள்ளன. Speedy Net ஐப் பயன்படுத்தியதற்கு நன்றி.' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Jūsu Speedy Net un Speedy Match konti ir dzēsti. Paldies, ka izmantojat Speedy Net.' for gender in User.ALL_GENDERS},
                 },
             }
 

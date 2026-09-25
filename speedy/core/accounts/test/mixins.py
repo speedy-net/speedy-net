@@ -500,6 +500,30 @@ if (django_settings.TESTS):
                 'az': {
                     **{gender: 'İstifadəçi adınızı dəyişə bilməzsiniz.' for gender in User.ALL_GENDERS},
                 },
+                'zh-yue': {
+                    **{gender: '你無法更改使用者名稱。' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Negalite pakeisti savo naudotojo vardo.' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Svojega uporabniškega imena ne morete spremeniti.' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Ezin duzu zure erabiltzaile-izena aldatu.' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Դուք չեք կարող փոխել ձեր օգտանունը.' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: "Foydalanuvchi nomingizni o'zgartira olmaysiz." for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது.' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Jūs nevarat mainīt savu lietotājvārdu.' for gender in User.ALL_GENDERS},
+                },
             }
 
             _youve_confirmed_your_email_address_success_message_dict_by_gender = {
@@ -616,6 +640,30 @@ if (django_settings.TESTS):
                 },
                 'az': {
                     **{gender: 'E-poçt ünvanınızı təsdiqlədiniz.' for gender in User.ALL_GENDERS},
+                },
+                'zh-yue': {
+                    **{gender: '您已確認您的電郵地址。' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Patvirtinote savo el. pašto adresą.' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Potrdili ste svoj e-poštni naslov.' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Zure helbide elektronikoa baieztatu duzu.' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Դուք հաստատել եք ձեր էլփոստի հասցեն.' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: 'Siz elektron pochta manzilingizni tasdiqladingiz.' for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்.' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Jūsu e-pasta adrese ir apstiprināta.' for gender in User.ALL_GENDERS},
                 },
             }
 
@@ -736,6 +784,30 @@ if (django_settings.TESTS):
                 'az': {
                     **{gender: 'Speedy Net-də e-pocç ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
                 },
+                'zh-yue': {
+                    **{gender: '請喺 Speedy Net 度確認你嘅電郵地址' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Patvirtinkite savo el. pašto adresą svetainėje Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Potrdite svoj e-poštni naslov na Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Baieztatu zure helbide elektronikoa Speedy Net webgunean' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Հաստատեք ձեր էլփոստի հասցեն Speedy Net-ում' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: 'Speedy Net da elektron pochta manzilingizni tasdiqlang' for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் Speedy Net' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Apstipriniet savu e-pasta adresi vietnē Speedy Net' for gender in User.ALL_GENDERS},
+                },
             }
 
             _confirm_your_email_address_on_speedy_match_subject_dict_by_gender = {
@@ -854,6 +926,30 @@ if (django_settings.TESTS):
                 },
                 'az': {
                     **{gender: 'Speedy Match-də e-pocç ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
+                },
+                'zh-yue': {
+                    **{gender: '請喺 Speedy Match 度確認你嘅電郵地址' for gender in User.ALL_GENDERS},
+                },
+                'lt': {
+                    **{gender: 'Patvirtinkite savo el. pašto adresą svetainėje Speedy Match' for gender in User.ALL_GENDERS},
+                },
+                'sl': {
+                    **{gender: 'Potrdite svoj e-poštni naslov na Speedy Match' for gender in User.ALL_GENDERS},
+                },
+                'eu': {
+                    **{gender: 'Baieztatu zure helbide elektronikoa Speedy Match webgunean' for gender in User.ALL_GENDERS},
+                },
+                'hy': {
+                    **{gender: 'Հաստատեք ձեր էլփոստի հասցեն Speedy Match-ում' for gender in User.ALL_GENDERS},
+                },
+                'uz': {
+                    **{gender: 'Speedy Match da elektron pochta manzilingizni tasdiqlang' for gender in User.ALL_GENDERS},
+                },
+                'ta': {
+                    **{gender: 'உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தவும் Speedy Match' for gender in User.ALL_GENDERS},
+                },
+                'lv': {
+                    **{gender: 'Apstipriniet savu e-pasta adresi vietnē Speedy Match' for gender in User.ALL_GENDERS},
                 },
             }
 
