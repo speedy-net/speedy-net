@@ -2828,7 +2828,7 @@ msgstr "Xorvat dili"
 
 #: .\settings\base_with_login.py:103
 msgid "Azerbaijani"
-msgstr "Azərbaycan dili"
+msgstr "Azərbaycanca"
 
 #: .\settings\base_with_login.py:104
 msgid "Cantonese"

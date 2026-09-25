@@ -2862,7 +2862,7 @@ msgstr "litovščina"
 
 #: .\settings\base_with_login.py:106
 msgid "Slovenian"
-msgstr "slovenščina"
+msgstr "Slovenščina"
 
 #: .\settings\base_with_login.py:107
 msgid "Basque"

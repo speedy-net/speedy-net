@@ -2720,7 +2720,7 @@ msgstr "Portoghese"
 
 #: .\settings\base_with_login.py:69
 msgid "Italian"
-msgstr "Italiano"
+msgstr "italiano"
 
 #: .\settings\base_with_login.py:70
 msgid "Dutch"

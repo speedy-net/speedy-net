@@ -2708,7 +2708,7 @@ msgstr "Alemán"
 
 #: .\settings\base_with_login.py:67
 msgid "Spanish"
-msgstr "Español"
+msgstr "español"
 
 #: .\settings\base_with_login.py:68
 msgid "Portuguese"

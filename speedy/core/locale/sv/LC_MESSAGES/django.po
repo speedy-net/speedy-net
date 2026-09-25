@@ -2761,7 +2761,7 @@ msgstr "tjeckiska"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"
-msgstr "Svenska"
+msgstr "svenska"
 
 #: .\settings\base_with_login.py:87
 msgid "Finnish"

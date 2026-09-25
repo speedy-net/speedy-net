@@ -2819,7 +2819,7 @@ msgstr "dánčina"
 
 #: .\settings\base_with_login.py:99
 msgid "Slovak"
-msgstr "slovenský"
+msgstr "slovensky"
 
 #: .\settings\base_with_login.py:100
 msgid "Hindi"

@@ -2719,7 +2719,7 @@ msgstr "chiński"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"
-msgstr "Polski"
+msgstr "polski"
 
 #: .\settings\base_with_login.py:75
 msgid "Persian"

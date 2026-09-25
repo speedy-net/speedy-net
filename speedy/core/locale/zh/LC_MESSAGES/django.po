@@ -2656,7 +2656,7 @@ msgstr "俄文"
 
 #: .\settings\base_with_login.py:73
 msgid "Chinese"
-msgstr "中國人"
+msgstr "中文"
 
 #: .\settings\base_with_login.py:74
 msgid "Polish"

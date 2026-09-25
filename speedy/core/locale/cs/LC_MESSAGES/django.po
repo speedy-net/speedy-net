@@ -2757,7 +2757,7 @@ msgstr "vietnamština"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"
-msgstr "čeština"
+msgstr "česky"
 
 #: .\settings\base_with_login.py:86
 msgid "Swedish"

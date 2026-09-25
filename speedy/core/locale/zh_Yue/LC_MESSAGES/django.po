@@ -2749,7 +2749,7 @@ msgstr "阿塞拜疆文"
 
 #: .\settings\base_with_login.py:104
 msgid "Cantonese"
-msgstr "粵文"
+msgstr "粵語"
 
 #: .\settings\base_with_login.py:105
 msgid "Lithuanian"

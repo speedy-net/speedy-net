@@ -2814,7 +2814,7 @@ msgstr "sârb"
 
 #: .\settings\base_with_login.py:93
 msgid "Romanian"
-msgstr "română"
+msgstr "Română"
 
 #: .\settings\base_with_login.py:94
 msgid "Bengali"

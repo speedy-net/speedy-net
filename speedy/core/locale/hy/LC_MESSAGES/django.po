@@ -2864,7 +2864,7 @@ msgstr "Բասկերեն"
 
 #: .\settings\base_with_login.py:108
 msgid "Armenian"
-msgstr "Հայերեն"
+msgstr "հայերեն"
 
 #: .\settings\base_with_login.py:109
 msgid "Uzbek"

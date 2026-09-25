@@ -2752,7 +2752,7 @@ msgstr "індонезійська"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"
-msgstr "українська"
+msgstr "Українська"
 
 #: .\settings\base_with_login.py:83
 msgid "Turkish"

@@ -2751,7 +2751,7 @@ msgstr "Arab"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"
-msgstr "Indonesia"
+msgstr "Bahasa Indonesia"
 
 #: .\settings\base_with_login.py:82
 msgid "Ukrainian"

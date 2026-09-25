@@ -2752,7 +2752,7 @@ msgstr "tiếng Thổ Nhĩ Kỳ"
 
 #: .\settings\base_with_login.py:84
 msgid "Vietnamese"
-msgstr "Tiếng Việt"
+msgstr "Tiếng Việt"
 
 #: .\settings\base_with_login.py:85
 msgid "Czech"

@@ -2736,7 +2736,7 @@ msgstr "كوري"
 
 #: .\settings\base_with_login.py:80
 msgid "Arabic"
-msgstr "عربي"
+msgstr "العربيّة"
 
 #: .\settings\base_with_login.py:81
 msgid "Indonesian"

@@ -2888,7 +2888,7 @@ msgstr "Tamilu"
 
 #: .\settings\base_with_login.py:111
 msgid "Latvian"
-msgstr "Latviešu"
+msgstr "latviešu"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"

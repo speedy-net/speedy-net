@@ -2717,7 +2717,7 @@ msgstr "ภาษาฮังการี"
 
 #: .\settings\base_with_login.py:89
 msgid "Thai"
-msgstr "แบบไทย"
+msgstr "ภาษาไทย"
 
 #: .\settings\base_with_login.py:90
 msgid "Greek"

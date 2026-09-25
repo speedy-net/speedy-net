@@ -2714,7 +2714,7 @@ msgstr "Hébreu"
 
 #: .\settings\base_with_login.py:65
 msgid "French"
-msgstr "Français"
+msgstr "français"
 
 #: .\settings\base_with_login.py:66
 msgid "German"
