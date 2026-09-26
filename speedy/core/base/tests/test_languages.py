@@ -4,7 +4,7 @@ if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
 
 
-    class LanguageNamesInEnglishTestCase(SiteTestCase):
+    class LanguageNamesInEnglishOnlyEnglishTestCase(SiteTestCase):
         def test_language_names_in_english(self):
             language_names_in_english = [str(language_name) for language_code, language_name in django_settings.LANGUAGES]
             all_46_languages_in_english = ['English', 'French', 'German', 'Spanish', 'Portuguese', 'Italian', 'Dutch', 'Japanese', 'Russian', 'Chinese', 'Polish', 'Persian', 'Hebrew', 'Korean', 'Arabic', 'Indonesian', 'Ukrainian', 'Turkish', 'Vietnamese', 'Czech', 'Swedish', 'Finnish', 'Hungarian', 'Thai', 'Greek', 'Malay', 'Serbian', 'Romanian', 'Bengali', 'Catalan', 'Norwegian (Bokmål)', 'Bulgarian', 'Danish', 'Slovak', 'Hindi', 'Estonian', 'Croatian', 'Azerbaijani', 'Cantonese', 'Lithuanian', 'Slovenian', 'Basque', 'Armenian', 'Uzbek', 'Tamil', 'Latvian']
