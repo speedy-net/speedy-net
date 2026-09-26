@@ -328,7 +328,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserDetailViewAllLanguagesEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Birth Date"
@@ -387,7 +387,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserDetailViewAllLanguagesFrenchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesFrenchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Date de naissance"
@@ -446,7 +446,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserDetailViewAllLanguagesGermanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesGermanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Geburtsdatum"
@@ -505,7 +505,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserDetailViewAllLanguagesSpanishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesSpanishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Fecha de nacimiento"
@@ -564,7 +564,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserDetailViewAllLanguagesPortugueseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesPortugueseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Data de nascimento"
@@ -623,7 +623,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserDetailViewAllLanguagesItalianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesItalianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Data di nascita"
@@ -682,7 +682,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserDetailViewAllLanguagesDutchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesDutchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "Geboortedatum"
@@ -741,7 +741,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserDetailViewAllLanguagesHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+        class UserDetailViewAllMainLanguagesHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.birth_date = "תאריך לידה"

@@ -98,7 +98,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class TimeSinceAllLanguagesEnglishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesEnglishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -106,7 +106,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class TimeSinceAllLanguagesFrenchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesFrenchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -114,7 +114,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class TimeSinceAllLanguagesGermanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesGermanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -122,7 +122,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class TimeSinceAllLanguagesSpanishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesSpanishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -130,7 +130,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class TimeSinceAllLanguagesPortugueseTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesPortugueseTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -138,7 +138,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class TimeSinceAllLanguagesItalianTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesItalianTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -146,7 +146,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class TimeSinceAllLanguagesDutchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesDutchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -154,7 +154,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class TimeSinceAllLanguagesHebrewTestCase(TimeSinceTestCaseMixin, SiteTestCase):
+        class TimeSinceAllMainLanguagesHebrewTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')

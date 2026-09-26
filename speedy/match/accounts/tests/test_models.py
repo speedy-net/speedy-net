@@ -1292,7 +1292,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class SpeedyMatchSiteProfileAllLanguagesEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -1300,7 +1300,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
-        class SpeedyMatchSiteProfileAllLanguagesFrenchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesFrenchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -1308,7 +1308,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
-        class SpeedyMatchSiteProfileAllLanguagesGermanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesGermanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -1316,7 +1316,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
-        class SpeedyMatchSiteProfileAllLanguagesSpanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesSpanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -1324,7 +1324,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
-        class SpeedyMatchSiteProfileAllLanguagesPortugueseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesPortugueseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -1332,7 +1332,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
-        class SpeedyMatchSiteProfileAllLanguagesItalianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesItalianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -1340,7 +1340,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
-        class SpeedyMatchSiteProfileAllLanguagesDutchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesDutchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -1348,7 +1348,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
-        class SpeedyMatchSiteProfileAllLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+        class SpeedyMatchSiteProfileAllMainLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')

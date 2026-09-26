@@ -144,7 +144,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class LikeViewAllLanguagesEnglishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesEnglishTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -152,7 +152,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
-        class LikeViewAllLanguagesFrenchTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesFrenchTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -160,7 +160,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
-        class LikeViewAllLanguagesGermanTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesGermanTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -168,7 +168,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
-        class LikeViewAllLanguagesSpanishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesSpanishTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -176,7 +176,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
-        class LikeViewAllLanguagesPortugueseTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesPortugueseTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -184,7 +184,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
-        class LikeViewAllLanguagesItalianTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesItalianTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -192,7 +192,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
-        class LikeViewAllLanguagesDutchTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesDutchTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -200,7 +200,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
-        class LikeViewAllLanguagesHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
+        class LikeViewAllMainLanguagesHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -577,7 +577,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class LikeListViewsAllLanguagesEnglishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesEnglishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -585,7 +585,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
-        class LikeListViewsAllLanguagesFrenchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesFrenchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -593,7 +593,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
-        class LikeListViewsAllLanguagesGermanTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesGermanTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -601,7 +601,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
-        class LikeListViewsAllLanguagesSpanishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesSpanishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -609,7 +609,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
-        class LikeListViewsAllLanguagesPortugueseTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesPortugueseTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -617,7 +617,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
-        class LikeListViewsAllLanguagesItalianTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesItalianTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -625,7 +625,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
-        class LikeListViewsAllLanguagesDutchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesDutchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -633,7 +633,7 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
-        class LikeListViewsAllLanguagesHebrewTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+        class LikeListViewsAllMainLanguagesHebrewTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
