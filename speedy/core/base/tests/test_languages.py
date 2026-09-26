@@ -3,6 +3,13 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
 
+    if (django_settings.LOGIN_ENABLED):
+        from django.test import override_settings
+        from django.utils.translation import get_language_info
+
+        from speedy.core.base.test.mixins import TestCaseMixin
+        from speedy.core.base.test.decorators import only_on_sites_with_login
+
 
     class LanguageNamesInEnglishOnlyEnglishTestCase(SiteTestCase):
         def test_language_names_in_english(self):
@@ -12,14 +19,6 @@ if (django_settings.TESTS):
 
 
     if (django_settings.LOGIN_ENABLED):
-        from django.test import override_settings
-        from django.utils.translation import get_language_info
-
-        from speedy.core.base.test.mixins import TestCaseMixin
-        from speedy.core.base.test.models import SiteTestCase
-        from speedy.core.base.test.decorators import only_on_sites_with_login
-
-
         class LanguageNameTestCaseMixin(TestCaseMixin):
             def test_language_name_translated_equals_name_local(self):
                 language_name = dict(django_settings.LANGUAGES)[self.language_code]
