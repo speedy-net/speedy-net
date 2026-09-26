@@ -8,12 +8,7 @@ if (django_settings.TESTS):
         def test_language_names_in_english(self):
             language_names_in_english = [str(language_name) for language_code, language_name in django_settings.LANGUAGES]
             all_46_languages_in_english = ['English', 'French', 'German', 'Spanish', 'Portuguese', 'Italian', 'Dutch', 'Japanese', 'Russian', 'Chinese', 'Polish', 'Persian', 'Hebrew', 'Korean', 'Arabic', 'Indonesian', 'Ukrainian', 'Turkish', 'Vietnamese', 'Czech', 'Swedish', 'Finnish', 'Hungarian', 'Thai', 'Greek', 'Malay', 'Serbian', 'Romanian', 'Bengali', 'Catalan', 'Norwegian (Bokmål)', 'Bulgarian', 'Danish', 'Slovak', 'Hindi', 'Estonian', 'Croatian', 'Azerbaijani', 'Cantonese', 'Lithuanian', 'Slovenian', 'Basque', 'Armenian', 'Uzbek', 'Tamil', 'Latvian']
-            self.assertListEqual(list1=language_names_in_english, list2={
-                django_settings.SPEEDY_NET_SITE_ID: all_46_languages_in_english,
-                django_settings.SPEEDY_MATCH_SITE_ID: all_46_languages_in_english,
-                django_settings.SPEEDY_COMPOSER_SITE_ID: ['English', 'Hebrew'],
-                django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['English', 'Hebrew'],
-            }[self.site.id])
+            self.assertListEqual(list1=language_names_in_english, list2={django_settings.SPEEDY_NET_SITE_ID: all_46_languages_in_english, django_settings.SPEEDY_MATCH_SITE_ID: all_46_languages_in_english, django_settings.SPEEDY_COMPOSER_SITE_ID: ['English', 'Hebrew'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['English', 'Hebrew']}[self.site.id])
 
 
     if (django_settings.LOGIN_ENABLED):
