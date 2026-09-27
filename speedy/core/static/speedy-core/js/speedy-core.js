@@ -706,6 +706,150 @@ $.datepicker.regional.az = {
     yearSuffix: ""
 };
 
+$.datepicker.regional['zh-yue'] = {
+    closeText: "關閉",
+    prevText: "上月",
+    nextText: "下月",
+    currentText: "今天",
+    monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+    dayNamesMin: ["日", "一", "二", "三", "四", "五", "六"],
+    weekHeader: "周",
+    dateFormat: "dd-mm-yy",
+    firstDay: 0,
+    isRTL: false,
+    showMonthAfterYear: true,
+    yearSuffix: "年"
+};
+
+$.datepicker.regional.lt = {
+    closeText: "Uždaryti",
+    prevText: "Atgal",
+    nextText: "Pirmyn",
+    currentText: "Šiandien",
+    monthNames: ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis"],
+    monthNamesShort: ["Sau", "Vas", "Kov", "Bal", "Geg", "Bir", "Lie", "Rugp", "Rugs", "Spa", "Lap", "Gru"],
+    dayNames: ["Sekmadienis", "Pirmadienis", "Antradienis", "Trečiadienis", "Ketvirtadienis", "Penktadienis", "Šeštadienis"],
+    dayNamesShort: ["Sek", "Pir", "Ant", "Tre", "Ket", "Pen", "Šeš"],
+    dayNamesMin: ["Se", "Pr", "An", "Tr", "Ke", "Pe", "Še"],
+    weekHeader: "SAV",
+    dateFormat: "yy-mm-dd",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: true,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.sl = {
+    closeText: "Zapri",
+    prevText: "Prejšnji",
+    nextText: "Naslednji",
+    currentText: "Trenutni",
+    monthNames: ["Januar", "Februar", "Marec", "April", "Maj", "Junij", "Julij", "Avgust", "September", "Oktober", "November", "December"],
+    monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Avg", "Sep", "Okt", "Nov", "Dec"],
+    dayNames: ["Nedelja", "Ponedeljek", "Torek", "Sreda", "Četrtek", "Petek", "Sobota"],
+    dayNamesShort: ["Ned", "Pon", "Tor", "Sre", "Čet", "Pet", "Sob"],
+    dayNamesMin: ["Ne", "Po", "To", "Sr", "Če", "Pe", "So"],
+    weekHeader: "Teden",
+    dateFormat: "dd.mm.yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.eu = {
+    closeText: "Egina",
+    prevText: "Aur",
+    nextText: "Hur",
+    currentText: "Gaur",
+    monthNames: ["Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"],
+    monthNamesShort: ["Urt.", "Ots.", "Mar.", "Api.", "Mai.", "Eka.", "Uzt.", "Abu.", "Ira.", "Urr.", "Aza.", "Abe."],
+    dayNames: ["Igandea", "Astelehena", "Asteartea", "Asteazkena", "Osteguna", "Ostirala", "Larunbata"],
+    dayNamesShort: ["Ig.", "Al.", "Ar.", "Az.", "Og.", "Ol.", "Lr."],
+    dayNamesMin: ["Ig", "Al", "Ar", "Az", "Og", "Ol", "Lr"],
+    weekHeader: "As",
+    dateFormat: "yy-mm-dd",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.hy = {
+    closeText: "Փակել",
+    prevText: "Նախ.",
+    nextText: "Հաջ.",
+    currentText: "Այսօր",
+    monthNames: ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"],
+    monthNamesShort: ["Հունվ", "Փետր", "Մարտ", "Ապր", "Մայիս", "Հունիս", "Հուլ", "Օգս", "Սեպ", "Հոկ", "Նոյ", "Դեկ"],
+    dayNames: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"],
+    dayNamesShort: ["Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուրբ", "Շբթ"],
+    dayNamesMin: ["Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուրբ", "Շբթ"],
+    weekHeader: "ՇԲՏ",
+    dateFormat: "dd.mm.yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.uz = {
+    closeText: "Yopish",
+    prevText: "Oldingi",
+    nextText: "Keyingi",
+    currentText: "Bugun",
+    monthNames: ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul", "Avgust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"],
+    monthNamesShort: ["Yan", "Fev", "Mar", "Apr", "May", "Iyun", "Iyul", "Avg", "Sen", "Okt", "Noy", "Dek"],
+    dayNames: ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"],
+    dayNamesShort: ["Yak", "Du", "Se", "Cho", "Pay", "Ju", "Sha"],
+    dayNamesMin: ["Ya", "Du", "Se", "Cho", "Pa", "Ju", "Sha"],
+    weekHeader: "Hf",
+    dateFormat: "dd.mm.yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.ta = {
+    closeText: "மூடு",
+    prevText: "முன்னையது",
+    nextText: "அடுத்தது",
+    currentText: "இன்று",
+    monthNames: ["தை", "மாசி", "பங்குனி", "சித்திரை", "வைகாசி", "ஆனி", "ஆடி", "ஆவணி", "புரட்டாசி", "ஐப்பசி", "கார்த்திகை", "மார்கழி"],
+    monthNamesShort: ["தை", "மாசி", "பங்", "சித்", "வைகா", "ஆனி", "ஆடி", "ஆவ", "புர", "ஐப்", "கார்", "மார்"],
+    dayNames: ["ஞாயிற்றுக்கிழமை", "திங்கட்கிழமை", "செவ்வாய்க்கிழமை", "புதன்கிழமை", "வியாழக்கிழமை", "வெள்ளிக்கிழமை", "சனிக்கிழமை"],
+    dayNamesShort: ["ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"],
+    dayNamesMin: ["ஞா", "தி", "செ", "பு", "வி", "வெ", "ச"],
+    weekHeader: "வா",
+    dateFormat: "dd/mm/yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
+$.datepicker.regional.lv = {
+    closeText: "Aizvērt",
+    prevText: "Iepr.",
+    nextText: "Nāk.",
+    currentText: "Šodien",
+    monthNames: ["Janvāris", "Februāris", "Marts", "Aprīlis", "Maijs", "Jūnijs", "Jūlijs", "Augusts", "Septembris", "Oktobris", "Novembris", "Decembris"],
+    monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jūn", "Jūl", "Aug", "Sep", "Okt", "Nov", "Dec"],
+    dayNames: ["Svētdiena", "Pirmdiena", "Otrdiena", "Trešdiena", "Ceturtdiena", "Piektdiena", "Sestdiena"],
+    dayNamesShort: ["Svt", "Prm", "Otr", "Tre", "Ctr", "Pkt", "Sst"],
+    dayNamesMin: ["Sv", "Pr", "Ot", "Tr", "Ct", "Pk", "Ss"],
+    weekHeader: "Ned.",
+    dateFormat: "dd.mm.yy",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ""
+};
+
 $.datepicker.setDefaults($.datepicker.regional[$('html').attr('lang')]);
 
 evil.block('@@RegistrationForm', {

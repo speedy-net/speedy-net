@@ -316,7 +316,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
-        class EntityAllLanguagesEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -324,7 +324,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='fr')
-        class EntityAllLanguagesFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -332,7 +332,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='de')
-        class EntityAllLanguagesGermanTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesGermanTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -340,7 +340,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='es')
-        class EntityAllLanguagesSpanishTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesSpanishTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -348,7 +348,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='pt')
-        class EntityAllLanguagesPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -356,7 +356,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='it')
-        class EntityAllLanguagesItalianTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesItalianTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -364,7 +364,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='nl')
-        class EntityAllLanguagesDutchTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesDutchTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -372,7 +372,7 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='he')
-        class EntityAllLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
+        class EntityAllMainLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -511,56 +511,56 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
 
 
-        class ReservedUsernameAllLanguagesEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
 
         @override_settings(LANGUAGE_CODE='fr')
-        class ReservedUsernameAllLanguagesFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
 
         @override_settings(LANGUAGE_CODE='de')
-        class ReservedUsernameAllLanguagesGermanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesGermanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
 
         @override_settings(LANGUAGE_CODE='es')
-        class ReservedUsernameAllLanguagesSpanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesSpanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
 
         @override_settings(LANGUAGE_CODE='pt')
-        class ReservedUsernameAllLanguagesPortugueseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesPortugueseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
 
         @override_settings(LANGUAGE_CODE='it')
-        class ReservedUsernameAllLanguagesItalianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesItalianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
 
         @override_settings(LANGUAGE_CODE='nl')
-        class ReservedUsernameAllLanguagesDutchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesDutchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
 
         @override_settings(LANGUAGE_CODE='he')
-        class ReservedUsernameAllLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+        class ReservedUsernameAllMainLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -1000,13 +1000,13 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="")
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
+                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_first_name_is_none(self):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en=None, first_name_he=None)
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
+                self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_last_name_is_optional(self):
                 user = DefaultUserFactory(last_name_en="")
@@ -1034,7 +1034,7 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="a" * 200, last_name_en="b" * 200)
                     user.save_user_and_profile()
-                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_ja', 'first_name_ru', 'first_name_zh', 'first_name_pl', 'first_name_fa', 'first_name_he', 'first_name_ko', 'first_name_ar', 'first_name_id', 'first_name_uk', 'first_name_tr', 'first_name_vi', 'first_name_cs', 'first_name_sv', 'first_name_fi', 'first_name_hu', 'first_name_th', 'first_name_el', 'first_name_ms', 'first_name_sr', 'first_name_ro', 'first_name_bn', 'first_name_ca', 'first_name_no', 'first_name_bg', 'first_name_da', 'first_name_sk', 'first_name_hi', 'first_name_et', 'first_name_hr', 'first_name_az', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_ja', 'last_name_ru', 'last_name_zh', 'last_name_pl', 'last_name_fa', 'last_name_he', 'last_name_ko', 'last_name_ar', 'last_name_id', 'last_name_uk', 'last_name_tr', 'last_name_vi', 'last_name_cs', 'last_name_sv', 'last_name_fi', 'last_name_hu', 'last_name_th', 'last_name_el', 'last_name_ms', 'last_name_sr', 'last_name_ro', 'last_name_bn', 'last_name_ca', 'last_name_no', 'last_name_bg', 'last_name_da', 'last_name_sk', 'last_name_hi', 'last_name_et', 'last_name_hr', 'last_name_az']})
+                self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_ja', 'first_name_ru', 'first_name_zh', 'first_name_pl', 'first_name_fa', 'first_name_he', 'first_name_ko', 'first_name_ar', 'first_name_id', 'first_name_uk', 'first_name_tr', 'first_name_vi', 'first_name_cs', 'first_name_sv', 'first_name_fi', 'first_name_hu', 'first_name_th', 'first_name_el', 'first_name_ms', 'first_name_sr', 'first_name_ro', 'first_name_bn', 'first_name_ca', 'first_name_no', 'first_name_bg', 'first_name_da', 'first_name_sk', 'first_name_hi', 'first_name_et', 'first_name_hr', 'first_name_az', 'first_name_zh_yue', 'first_name_lt', 'first_name_sl', 'first_name_eu', 'first_name_hy', 'first_name_uz', 'first_name_ta', 'first_name_lv', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_ja', 'last_name_ru', 'last_name_zh', 'last_name_pl', 'last_name_fa', 'last_name_he', 'last_name_ko', 'last_name_ar', 'last_name_id', 'last_name_uk', 'last_name_tr', 'last_name_vi', 'last_name_cs', 'last_name_sv', 'last_name_fi', 'last_name_hu', 'last_name_th', 'last_name_el', 'last_name_ms', 'last_name_sr', 'last_name_ro', 'last_name_bn', 'last_name_ca', 'last_name_no', 'last_name_bg', 'last_name_da', 'last_name_sk', 'last_name_hi', 'last_name_et', 'last_name_hr', 'last_name_az', 'last_name_zh_yue', 'last_name_lt', 'last_name_sl', 'last_name_eu', 'last_name_hy', 'last_name_uz', 'last_name_ta', 'last_name_lv']})
 
             def test_slug_and_username_min_length_ok_2(self):
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
@@ -1680,7 +1680,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserAllLanguagesEnglishTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesEnglishTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -1688,7 +1688,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserAllLanguagesFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesFrenchTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -1696,7 +1696,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserAllLanguagesGermanTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesGermanTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -1704,7 +1704,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserAllLanguagesSpanishTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesSpanishTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -1712,7 +1712,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserAllLanguagesPortugueseTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesPortugueseTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -1720,7 +1720,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserAllLanguagesItalianTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesItalianTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -1728,7 +1728,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserAllLanguagesDutchTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesDutchTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -1736,7 +1736,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserAllLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+        class UserAllMainLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -2043,6 +2043,62 @@ if (django_settings.TESTS):
         #         super().validate_all_values()
         #         self.assertEqual(first=self.language_code, second='az')
 
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='zh-yue')
+        # class UserAllLanguagesCantoneseTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='zh-yue')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='lt')
+        # class UserAllLanguagesLithuanianTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='lt')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='sl')
+        # class UserAllLanguagesSlovenianTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='sl')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='eu')
+        # class UserAllLanguagesBasqueTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='eu')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='hy')
+        # class UserAllLanguagesArmenianTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='hy')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='uz')
+        # class UserAllLanguagesUzbekTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='uz')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='ta')
+        # class UserAllLanguagesTamilTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='ta')
+
+        # @only_on_sites_with_login
+        # @override_settings(LANGUAGE_CODE='lv')
+        # class UserAllLanguagesLatvianTestCase(UserTestCaseMixin, SiteTestCase):
+        #     def validate_all_values(self):
+        #         super().validate_all_values()
+        #         self.assertEqual(first=self.language_code, second='lv')
+
         class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             def set_up(self):
                 super().set_up()
@@ -2095,7 +2151,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserWithDataWithLastNameAllLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in English alphabet.
                 super().set_up()
@@ -2113,7 +2169,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserWithDataWithLastNameAllLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in French alphabet.
                 super().set_up()
@@ -2131,7 +2187,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserWithDataWithLastNameAllLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in German alphabet.
                 super().set_up()
@@ -2149,7 +2205,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserWithDataWithLastNameAllLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Spanish alphabet.
                 super().set_up()
@@ -2167,7 +2223,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserWithDataWithLastNameAllLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Portuguese alphabet.
                 super().set_up()
@@ -2185,7 +2241,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserWithDataWithLastNameAllLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Italian alphabet.
                 super().set_up()
@@ -2203,7 +2259,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserWithDataWithLastNameAllLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Dutch alphabet.
                 super().set_up()
@@ -2221,7 +2277,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserWithDataWithLastNameAllLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Hebrew alphabet.
                 super().set_up()
@@ -2238,7 +2294,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserWithDataWithoutLastNameAllLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in English alphabet.
                 super().set_up()
@@ -2256,7 +2312,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserWithDataWithoutLastNameAllLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in French alphabet.
                 super().set_up()
@@ -2274,7 +2330,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserWithDataWithoutLastNameAllLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in German alphabet.
                 super().set_up()
@@ -2292,7 +2348,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserWithDataWithoutLastNameAllLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Spanish alphabet.
                 super().set_up()
@@ -2310,7 +2366,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserWithDataWithoutLastNameAllLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Portuguese alphabet.
                 super().set_up()
@@ -2328,7 +2384,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserWithDataWithoutLastNameAllLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Italian alphabet.
                 super().set_up()
@@ -2346,7 +2402,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserWithDataWithoutLastNameAllLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Dutch alphabet.
                 super().set_up()
@@ -2364,7 +2420,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserWithDataWithoutLastNameAllLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+        class UserWithDataWithoutLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             def set_up(self):
                 # Check names in Hebrew alphabet.
                 super().set_up()
@@ -3043,7 +3099,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class UserEmailAddressAllLanguagesEnglishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesEnglishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -3051,7 +3107,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class UserEmailAddressAllLanguagesFrenchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesFrenchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -3059,7 +3115,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class UserEmailAddressAllLanguagesGermanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesGermanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -3067,7 +3123,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class UserEmailAddressAllLanguagesSpanishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesSpanishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -3075,7 +3131,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class UserEmailAddressAllLanguagesPortugueseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesPortugueseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -3083,7 +3139,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class UserEmailAddressAllLanguagesItalianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesItalianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -3091,7 +3147,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class UserEmailAddressAllLanguagesDutchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesDutchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -3099,8 +3155,9 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class UserEmailAddressAllLanguagesHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+        class UserEmailAddressAllMainLanguagesHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
 
