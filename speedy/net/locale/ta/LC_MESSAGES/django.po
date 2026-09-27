@@ -368,4 +368,3 @@ msgstr "உங்கள் நண்பர்"
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
 msgstr "நட்பு கோரிக்கை அனுப்பி வைக்கப்பட்டிருக்கிறது"
-

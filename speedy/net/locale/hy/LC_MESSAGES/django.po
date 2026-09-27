@@ -368,4 +368,3 @@ msgstr "Ձեր ընկերը"
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
 msgstr "Ընկերության հարցումն ուղարկվել է"
-
