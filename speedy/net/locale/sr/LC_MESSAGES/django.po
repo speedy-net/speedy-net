@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 04:32+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +32,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Избриши налог"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -42,10 +43,10 @@ msgstr ""
 "Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
 "Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
 "такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
-"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
-" мала слова."
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и "
+"мала слова."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -56,10 +57,10 @@ msgstr ""
 "Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
 "Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
 "такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
-"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
-" мала слова."
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и "
+"мала слова."
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:10
 msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -70,29 +71,29 @@ msgstr ""
 "Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
 "Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
 "такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
-"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
-" мала слова."
-
-#: .\__translations\__translations.py:10
-#, python-brace-format
-msgctxt "female"
-msgid "Permanently delete your {site_name} account"
-msgstr "Trajno izbrišite svoj {site_name} nalog"
-
-#: .\__translations\__translations.py:11
-#, python-brace-format
-msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Trajno izbrišite svoj {site_name} nalog"
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и "
+"мала слова."
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
-msgctxt "other"
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Trajno izbrišite svoj {site_name} nalog"
+
+#: .\__translations\__translations.py:13
+#, python-brace-format
+msgctxt "male"
 msgid "Permanently delete your {site_name} account"
 msgstr "Trajno izbrišite svoj {site_name} nalog"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Trajno izbrišite svoj {site_name} nalog"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -101,7 +102,7 @@ msgstr ""
 "Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite "
 "{site_name}."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -111,7 +112,7 @@ msgstr ""
 "Vaši Speedy Net i Speedy Match nalozi su izbrisani. Hvala vam što koristite "
 "{site_name}."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -139,8 +140,8 @@ msgstr ""
 "Да ли сте сигурни да желите да избришете свој Speedy Net Спееди Нет налог? "
 "Ово је трајно и неповратно. Брисање вашег Спееди Speedy Net Нет налога ће "
 "такође избрисати ваш Спееди Матцх налог. Speedy Match Ако сте сигурни, "
-"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и"
-" мала слова."
+"откуцајте „Да. Избриши мој налог.“ у овом пољу, тачно и осетљиво на велика и "
+"мала слова."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -221,14 +222,13 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
-"Одлучили смо да ограничимо број пријатеља на Speedy Net Спееди Нет-у на 800."
-" Препоручујемо вам да као пријатеље додате само особе које познајете лично. "
+"Одлучили смо да ограничимо број пријатеља на Speedy Net Спееди Нет-у на 800. "
+"Препоручујемо вам да као пријатеље додате само особе које познајете лично. "
 "Можете одабрати који ће се детаљи појавити на вашем профилу као јавни, који "
 "само пријатељима, а који ће бити приватни. Приватни детаљи ће се појавити "
 "само вама."
@@ -236,21 +236,19 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Можете користити нашу нову апликацију, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, да пронађете одговарајуће особе за излазак. Speedy"
-" Match је отворен за самце свих узраста."
+"Можете користити нашу нову апликацију, <a href=\"https://%(language_code)s."
+"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, да пронађете "
+"одговарајуће особе за излазак. Speedy Match је отворен за самце свих узраста."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Све функције Спееди Нет- Speedy Net а и Спееди Матцх-а Speedy Match су "
 "бесплатне. Придружите Speedy Net се Спееди Нет-у данас да бисте пронашли "
@@ -268,15 +266,13 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net је добио назив по <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Спиди</a>, женском псу који је био са нама много година и "
-"умро 2003. Спиди је 1988. оштенио 7 штенаца."
+"Speedy Net је добио назив по <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Спиди</a>, женском псу који је био са нама "
+"много година и умро 2003. Спиди је 1988. оштенио 7 штенаца."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -336,8 +332,8 @@ msgstr "Ваши пријатељи"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""

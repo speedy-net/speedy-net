@@ -3,6 +3,8 @@
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
 
+_("")
+
 _('My height in centimeters')
 
 

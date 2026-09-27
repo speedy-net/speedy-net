@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\base\tests\test_translations.py:15
+#: .\__translations\__translations.py:6 .\base\tests\test_translations.py:15
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-27 22:28+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -859,32 +859,32 @@ msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
 "அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgid "Enter a valid email address."
 msgstr "செல்லுபடியாகும் மின்னஞ்சல் முகவரியை உள்ளிடவும்."
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:10
 msgid "Email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
-#: .\__translations\__translations.py:9 .\accounts\models.py:1293
+#: .\__translations\__translations.py:11 .\accounts\models.py:1293
 msgid "email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
-#: .\__translations\__translations.py:10
+#: .\__translations\__translations.py:12
 msgid "Email address:"
 msgstr "மின்னஞ்சல் முகவரிஃ"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:13
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "மின்னஞ்சல்"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:14
 msgid "Value must be valid JSON."
 msgstr "மதிப்பு JSON ஆக இருக்க வேண்டும்."
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:15
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -893,43 +893,43 @@ msgstr ""
 "தயவுசெய்து சரியான %(username)s மற்றும் கடவுச்சொல்லை உள்ளிடவும். இரு புலங்களும் வழக்கு "
 "உணர்திறன் கொண்டதாக இருக்கலாம் என்பதை நினைவில் கொள்க."
 
-#: .\__translations\__translations.py:17
+#: .\__translations\__translations.py:19
 msgid "Message"
 msgstr "செய்தி"
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:21
 msgid "Friendship Request"
 msgstr "நட்பு கோரிக்கை"
 
-#: .\__translations\__translations.py:20
+#: .\__translations\__translations.py:22
 msgid "Friendship Requests"
 msgstr "நட்பு கோரிக்கைகள்"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:24
 msgid "Friend"
 msgstr "நண்பர்"
 
-#: .\__translations\__translations.py:23 .\accounts\models.py:798
+#: .\__translations\__translations.py:25 .\accounts\models.py:798
 msgid "Friends"
 msgstr "நண்பர்கள்"
 
-#: .\__translations\__translations.py:25
+#: .\__translations\__translations.py:27
 msgid "Following Relationship"
 msgstr "உறவுகளைத் தொடர்ந்து"
 
-#: .\__translations\__translations.py:26
+#: .\__translations\__translations.py:28
 msgid "Following Relationships"
 msgstr "உறவுகளைத் தொடர்ந்து"
 
-#: .\__translations\__translations.py:28
+#: .\__translations\__translations.py:30
 msgid "Blocker Relationship"
 msgstr "தடுப்பு உறவு"
 
-#: .\__translations\__translations.py:29
+#: .\__translations\__translations.py:31
 msgid "Blocked Relationships"
 msgstr "தடைசெய்யப்பட்ட உறவுகள்"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:36
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -944,448 +944,448 @@ msgstr[1] ""
 "பட்டியலில் %(show_value)d உருப்படிகள் உள்ளன, அது %(limit_value)d-ஐ விட அதிகமாக "
 "இருக்கக்கூடாது."
 
-#: .\__translations\__translations.py:41
+#: .\__translations\__translations.py:43
 msgctxt "female"
 msgid "username (slug)"
 msgstr "பயனர் பெயர் (slug)"
 
-#: .\__translations\__translations.py:42
+#: .\__translations\__translations.py:44
 msgctxt "male"
-msgid "username (slug)"
-msgstr "பயனர் பெயர் (slug)"
-
-#: .\__translations\__translations.py:43
-msgctxt "other"
 msgid "username (slug)"
 msgstr "பயனர் பெயர் (slug)"
 
 #: .\__translations\__translations.py:45
+msgctxt "other"
+msgid "username (slug)"
+msgstr "பயனர் பெயர் (slug)"
+
+#: .\__translations\__translations.py:47
 msgctxt "female"
 msgid "Update your profile picture"
 msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:48
 msgctxt "male"
-msgid "Update your profile picture"
-msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
-
-#: .\__translations\__translations.py:47
-msgctxt "other"
 msgid "Update your profile picture"
 msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
 
 #: .\__translations\__translations.py:49
+msgctxt "other"
+msgid "Update your profile picture"
+msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
+
+#: .\__translations\__translations.py:51
 msgctxt "female"
 msgid "Save Changes"
 msgstr "மாற்றங்களை சேமி"
 
-#: .\__translations\__translations.py:50
+#: .\__translations\__translations.py:52
 msgctxt "male"
-msgid "Save Changes"
-msgstr "மாற்றங்களை சேமி"
-
-#: .\__translations\__translations.py:51
-msgctxt "other"
 msgid "Save Changes"
 msgstr "மாற்றங்களை சேமி"
 
 #: .\__translations\__translations.py:53
+msgctxt "other"
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமி"
+
+#: .\__translations\__translations.py:55
 msgctxt "female"
 msgid "You can't change your username."
 msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
 
-#: .\__translations\__translations.py:54
+#: .\__translations\__translations.py:56
 msgctxt "male"
-msgid "You can't change your username."
-msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
-
-#: .\__translations\__translations.py:55
-msgctxt "other"
 msgid "You can't change your username."
 msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
 
 #: .\__translations\__translations.py:57
+msgctxt "other"
+msgid "You can't change your username."
+msgstr "நீங்கள் உங்கள் பயனர்பெயரை மாற்ற முடியாது."
+
+#: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
 msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
 
-#: .\__translations\__translations.py:58
+#: .\__translations\__translations.py:60
 #, python-brace-format
 msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
-
-#: .\__translations\__translations.py:59
-#, python-brace-format
-msgctxt "other"
 msgid "Activate your {site_name} account"
 msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
 
 #: .\__translations\__translations.py:61
 #, python-brace-format
+msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயல்படுத்தவும்"
+
+#: .\__translations\__translations.py:63
+#, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
 msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
 
-#: .\__translations\__translations.py:62
+#: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
-
-#: .\__translations\__translations.py:63
-#, python-brace-format
-msgctxt "other"
 msgid "Deactivate your {site_name} account"
 msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
 
 #: .\__translations\__translations.py:65
+#, python-brace-format
+msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "உங்கள் {site_name} கணக்கை செயலிழக்கச் செய்யவும்"
+
+#: .\__translations\__translations.py:67
 msgctxt "female"
 msgid "Add"
 msgstr "சேர்க்க"
 
-#: .\__translations\__translations.py:66
+#: .\__translations\__translations.py:68
 msgctxt "male"
-msgid "Add"
-msgstr "சேர்க்க"
-
-#: .\__translations\__translations.py:67
-msgctxt "other"
 msgid "Add"
 msgstr "சேர்க்க"
 
 #: .\__translations\__translations.py:69
+msgctxt "other"
+msgid "Add"
+msgstr "சேர்க்க"
+
+#: .\__translations\__translations.py:71
 msgctxt "female"
 msgid "Where do I live?"
 msgstr "நான் எங்கே வசிக்கிறேன்?"
 
-#: .\__translations\__translations.py:70
+#: .\__translations\__translations.py:72
 msgctxt "male"
-msgid "Where do I live?"
-msgstr "நான் எங்கே வசிக்கிறேன்?"
-
-#: .\__translations\__translations.py:71
-msgctxt "other"
 msgid "Where do I live?"
 msgstr "நான் எங்கே வசிக்கிறேன்?"
 
 #: .\__translations\__translations.py:73
+msgctxt "other"
+msgid "Where do I live?"
+msgstr "நான் எங்கே வசிக்கிறேன்?"
+
+#: .\__translations\__translations.py:75
 msgctxt "female"
 msgid "Where do you live?"
 msgstr "நீ எங்கே வசிக்கிறாய்?"
 
-#: .\__translations\__translations.py:74
+#: .\__translations\__translations.py:76
 msgctxt "male"
-msgid "Where do you live?"
-msgstr "நீ எங்கே வசிக்கிறாய்?"
-
-#: .\__translations\__translations.py:75
-msgctxt "other"
 msgid "Where do you live?"
 msgstr "நீ எங்கே வசிக்கிறாய்?"
 
 #: .\__translations\__translations.py:77
+msgctxt "other"
+msgid "Where do you live?"
+msgstr "நீ எங்கே வசிக்கிறாய்?"
+
+#: .\__translations\__translations.py:79
 msgctxt "female"
 msgid "Please write where you live."
 msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
 
-#: .\__translations\__translations.py:78
+#: .\__translations\__translations.py:80
 msgctxt "male"
-msgid "Please write where you live."
-msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
-
-#: .\__translations\__translations.py:79
-msgctxt "other"
 msgid "Please write where you live."
 msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
 
 #: .\__translations\__translations.py:81
+msgctxt "other"
+msgid "Please write where you live."
+msgstr "தயவுசெய்து நீங்கள் எங்கு வசிக்கிறீர்கள் என்று எழுதுங்கள்."
+
+#: .\__translations\__translations.py:83
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
 msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
 
-#: .\__translations\__translations.py:82
+#: .\__translations\__translations.py:84
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
-
-#: .\__translations\__translations.py:83
-msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
 msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
 
 #: .\__translations\__translations.py:85
+msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:87
 msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
 
-#: .\__translations\__translations.py:86
+#: .\__translations\__translations.py:88
 msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
-
-#: .\__translations\__translations.py:87
-msgctxt "other"
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
 
 #: .\__translations\__translations.py:89
+msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
+
+#: .\__translations\__translations.py:91
 msgctxt "female"
 msgid "Carnist (eats animals)"
 msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
 
-#: .\__translations\__translations.py:90
+#: .\__translations\__translations.py:92
 msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
-
-#: .\__translations\__translations.py:91
-msgctxt "other"
 msgid "Carnist (eats animals)"
 msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
 
 #: .\__translations\__translations.py:93
+msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
+
+#: .\__translations\__translations.py:95
 msgctxt "female"
 msgid "Vegan"
 msgstr "சைவ உணவு"
 
-#: .\__translations\__translations.py:94
+#: .\__translations\__translations.py:96
 msgctxt "male"
-msgid "Vegan"
-msgstr "சைவ உணவு"
-
-#: .\__translations\__translations.py:95
-msgctxt "other"
 msgid "Vegan"
 msgstr "சைவ உணவு"
 
 #: .\__translations\__translations.py:97
+msgctxt "other"
+msgid "Vegan"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:99
 msgctxt "female"
 msgid "Vegetarian"
 msgstr "சைவ உணவு"
 
-#: .\__translations\__translations.py:98
+#: .\__translations\__translations.py:100
 msgctxt "male"
-msgid "Vegetarian"
-msgstr "சைவ உணவு"
-
-#: .\__translations\__translations.py:99
-msgctxt "other"
 msgid "Vegetarian"
 msgstr "சைவ உணவு"
 
 #: .\__translations\__translations.py:101
+msgctxt "other"
+msgid "Vegetarian"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:103
 msgctxt "female"
 msgid "Carnist"
 msgstr "சைவ உணவு"
 
-#: .\__translations\__translations.py:102
+#: .\__translations\__translations.py:104
 msgctxt "male"
-msgid "Carnist"
-msgstr "சைவ உணவு"
-
-#: .\__translations\__translations.py:103
-msgctxt "other"
 msgid "Carnist"
 msgstr "சைவ உணவு"
 
 #: .\__translations\__translations.py:105
+msgctxt "other"
+msgid "Carnist"
+msgstr "சைவ உணவு"
+
+#: .\__translations\__translations.py:107
 msgctxt "female"
 msgid "Not smoking"
 msgstr "புகைபிடிப்பதில்லை"
 
-#: .\__translations\__translations.py:106
+#: .\__translations\__translations.py:108
 msgctxt "male"
-msgid "Not smoking"
-msgstr "புகைபிடிப்பதில்லை"
-
-#: .\__translations\__translations.py:107
-msgctxt "other"
 msgid "Not smoking"
 msgstr "புகைபிடிப்பதில்லை"
 
 #: .\__translations\__translations.py:109
+msgctxt "other"
+msgid "Not smoking"
+msgstr "புகைபிடிப்பதில்லை"
+
+#: .\__translations\__translations.py:111
 msgctxt "female"
 msgid "Smoking occasionally"
 msgstr "அவ்வப்போது புகைத்தல்"
 
-#: .\__translations\__translations.py:110
+#: .\__translations\__translations.py:112
 msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "அவ்வப்போது புகைத்தல்"
-
-#: .\__translations\__translations.py:111
-msgctxt "other"
 msgid "Smoking occasionally"
 msgstr "அவ்வப்போது புகைத்தல்"
 
 #: .\__translations\__translations.py:113
+msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "அவ்வப்போது புகைத்தல்"
+
+#: .\__translations\__translations.py:115
 msgctxt "female"
 msgid "Smoking"
 msgstr "புகைத்தல்"
 
-#: .\__translations\__translations.py:114
+#: .\__translations\__translations.py:116
 msgctxt "male"
-msgid "Smoking"
-msgstr "புகைத்தல்"
-
-#: .\__translations\__translations.py:115
-msgctxt "other"
 msgid "Smoking"
 msgstr "புகைத்தல்"
 
 #: .\__translations\__translations.py:117
+msgctxt "other"
+msgid "Smoking"
+msgstr "புகைத்தல்"
+
+#: .\__translations\__translations.py:119
 msgctxt "female"
 msgid "Single"
 msgstr "ஒற்றை"
 
-#: .\__translations\__translations.py:118
+#: .\__translations\__translations.py:120
 msgctxt "male"
-msgid "Single"
-msgstr "ஒற்றை"
-
-#: .\__translations\__translations.py:119
-msgctxt "other"
 msgid "Single"
 msgstr "ஒற்றை"
 
 #: .\__translations\__translations.py:121
+msgctxt "other"
+msgid "Single"
+msgstr "ஒற்றை"
+
+#: .\__translations\__translations.py:123
 msgctxt "female"
 msgid "Divorced"
 msgstr "விவாகரத்து"
 
-#: .\__translations\__translations.py:122
+#: .\__translations\__translations.py:124
 msgctxt "male"
-msgid "Divorced"
-msgstr "விவாகரத்து"
-
-#: .\__translations\__translations.py:123
-msgctxt "other"
 msgid "Divorced"
 msgstr "விவாகரத்து"
 
 #: .\__translations\__translations.py:125
+msgctxt "other"
+msgid "Divorced"
+msgstr "விவாகரத்து"
+
+#: .\__translations\__translations.py:127
 msgctxt "female"
 msgid "Widowed"
 msgstr "விதவை"
 
-#: .\__translations\__translations.py:126
+#: .\__translations\__translations.py:128
 msgctxt "male"
-msgid "Widowed"
-msgstr "விதவை"
-
-#: .\__translations\__translations.py:127
-msgctxt "other"
 msgid "Widowed"
 msgstr "விதவை"
 
 #: .\__translations\__translations.py:129
+msgctxt "other"
+msgid "Widowed"
+msgstr "விதவை"
+
+#: .\__translations\__translations.py:131
 msgctxt "female"
 msgid "In a relationship"
 msgstr "ஒரு உறவில்"
 
-#: .\__translations\__translations.py:130
+#: .\__translations\__translations.py:132
 msgctxt "male"
-msgid "In a relationship"
-msgstr "ஒரு உறவில்"
-
-#: .\__translations\__translations.py:131
-msgctxt "other"
 msgid "In a relationship"
 msgstr "ஒரு உறவில்"
 
 #: .\__translations\__translations.py:133
+msgctxt "other"
+msgid "In a relationship"
+msgstr "ஒரு உறவில்"
+
+#: .\__translations\__translations.py:135
 msgctxt "female"
 msgid "In an open relationship"
 msgstr "ஒரு திறந்த உறவில்"
 
-#: .\__translations\__translations.py:134
+#: .\__translations\__translations.py:136
 msgctxt "male"
-msgid "In an open relationship"
-msgstr "ஒரு திறந்த உறவில்"
-
-#: .\__translations\__translations.py:135
-msgctxt "other"
 msgid "In an open relationship"
 msgstr "ஒரு திறந்த உறவில்"
 
 #: .\__translations\__translations.py:137
+msgctxt "other"
+msgid "In an open relationship"
+msgstr "ஒரு திறந்த உறவில்"
+
+#: .\__translations\__translations.py:139
 msgctxt "female"
 msgid "It's complicated"
 msgstr "அது சிக்கலானது"
 
-#: .\__translations\__translations.py:138
+#: .\__translations\__translations.py:140
 msgctxt "male"
-msgid "It's complicated"
-msgstr "அது சிக்கலானது"
-
-#: .\__translations\__translations.py:139
-msgctxt "other"
 msgid "It's complicated"
 msgstr "அது சிக்கலானது"
 
 #: .\__translations\__translations.py:141
+msgctxt "other"
+msgid "It's complicated"
+msgstr "அது சிக்கலானது"
+
+#: .\__translations\__translations.py:143
 msgctxt "female"
 msgid "Separated"
 msgstr "பிரித்தல்"
 
-#: .\__translations\__translations.py:142
+#: .\__translations\__translations.py:144
 msgctxt "male"
-msgid "Separated"
-msgstr "பிரித்தல்"
-
-#: .\__translations\__translations.py:143
-msgctxt "other"
 msgid "Separated"
 msgstr "பிரித்தல்"
 
 #: .\__translations\__translations.py:145
+msgctxt "other"
+msgid "Separated"
+msgstr "பிரித்தல்"
+
+#: .\__translations\__translations.py:147
 msgctxt "female"
 msgid "Engaged"
 msgstr "நிச்சயதார்த்தம்"
 
-#: .\__translations\__translations.py:146
+#: .\__translations\__translations.py:148
 msgctxt "male"
-msgid "Engaged"
-msgstr "நிச்சயதார்த்தம்"
-
-#: .\__translations\__translations.py:147
-msgctxt "other"
 msgid "Engaged"
 msgstr "நிச்சயதார்த்தம்"
 
 #: .\__translations\__translations.py:149
+msgctxt "other"
+msgid "Engaged"
+msgstr "நிச்சயதார்த்தம்"
+
+#: .\__translations\__translations.py:151
 msgctxt "female"
 msgid "Married"
 msgstr "திருமணமானவர்"
 
-#: .\__translations\__translations.py:150
+#: .\__translations\__translations.py:152
 msgctxt "male"
-msgid "Married"
-msgstr "திருமணமானவர்"
-
-#: .\__translations\__translations.py:151
-msgctxt "other"
 msgid "Married"
 msgstr "திருமணமானவர்"
 
 #: .\__translations\__translations.py:153
+msgctxt "other"
+msgid "Married"
+msgstr "திருமணமானவர்"
+
+#: .\__translations\__translations.py:155
 msgctxt "female"
 msgid "Your new password has been saved."
 msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
 
-#: .\__translations\__translations.py:154
+#: .\__translations\__translations.py:156
 msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
-
-#: .\__translations\__translations.py:155
-msgctxt "other"
 msgid "Your new password has been saved."
 msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
 
 #: .\__translations\__translations.py:157
+msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "உங்கள் புதிய கடவுச்சொல் சேமிக்கப்பட்டுள்ளது."
+
+#: .\__translations\__translations.py:159
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
@@ -1394,17 +1394,8 @@ msgstr ""
 "உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் செய்யப்பட்டுள்ளன. அவற்றை எந்த "
 "நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
 
-#: .\__translations\__translations.py:158
+#: .\__translations\__translations.py:160
 msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
-msgstr ""
-"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் செய்யப்பட்டுள்ளன. அவற்றை எந்த "
-"நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
-
-#: .\__translations\__translations.py:159
-msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
@@ -1413,6 +1404,15 @@ msgstr ""
 "நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
 
 #: .\__translations\__translations.py:161
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"உங்கள் Speedy Net மற்றும் Speedy Match கணக்குகள் செயலிழக்கச் செய்யப்பட்டுள்ளன. அவற்றை எந்த "
+"நேரத்திலும் மீண்டும் செயல்படுத்தலாம்."
+
+#: .\__translations\__translations.py:163
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -1422,19 +1422,9 @@ msgstr ""
 "உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த நேரத்திலும் மீண்டும் "
 "செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து செயலில் இருக்கும்."
 
-#: .\__translations\__translations.py:162
+#: .\__translations\__translations.py:164
 #, python-brace-format
 msgctxt "male"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த நேரத்திலும் மீண்டும் "
-"செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து செயலில் இருக்கும்."
-
-#: .\__translations\__translations.py:163
-#, python-brace-format
-msgctxt "other"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
@@ -1443,51 +1433,61 @@ msgstr ""
 "செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து செயலில் இருக்கும்."
 
 #: .\__translations\__translations.py:165
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"உங்கள் {site_name} கணக்கு செயலிழக்கச் செய்யப்பட்டுவிட்டது. அதை எந்த நேரத்திலும் மீண்டும் "
+"செயல்படுத்தலாம். உங்கள் Speedy Net கணக்கு தொடர்ந்து செயலில் இருக்கும்."
+
+#: .\__translations\__translations.py:167
 msgctxt "female"
 msgid "You've already confirmed this email address."
 msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
 
-#: .\__translations\__translations.py:166
+#: .\__translations\__translations.py:168
 msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
-
-#: .\__translations\__translations.py:167
-msgctxt "other"
 msgid "You've already confirmed this email address."
 msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
 
 #: .\__translations\__translations.py:169
+msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "நீங்கள் ஏற்கனவே இந்த மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:171
 msgctxt "female"
 msgid "You've confirmed your email address."
 msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
 
-#: .\__translations\__translations.py:170
+#: .\__translations\__translations.py:172
 msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
-
-#: .\__translations\__translations.py:171
-msgctxt "other"
 msgid "You've confirmed your email address."
 msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
 
 #: .\__translations\__translations.py:173
+msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "நீங்கள் உங்கள் மின்னஞ்சல் முகவரியை உறுதிப்படுத்தியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:175
 msgctxt "female"
 msgid "Send"
 msgstr "அனுப்பு"
 
-#: .\__translations\__translations.py:174
+#: .\__translations\__translations.py:176
 msgctxt "male"
-msgid "Send"
-msgstr "அனுப்பு"
-
-#: .\__translations\__translations.py:175
-msgctxt "other"
 msgid "Send"
 msgstr "அனுப்பு"
 
 #: .\__translations\__translations.py:177
+msgctxt "other"
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: .\__translations\__translations.py:179
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -1497,19 +1497,9 @@ msgstr ""
 "உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு மேல் இருக்க "
 "முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
 
-#: .\__translations\__translations.py:178
+#: .\__translations\__translations.py:180
 #, python-brace-format
 msgctxt "male"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-"உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு மேல் இருக்க "
-"முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
-
-#: .\__translations\__translations.py:179
-#, python-brace-format
-msgctxt "other"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
@@ -1519,29 +1509,17 @@ msgstr ""
 
 #: .\__translations\__translations.py:181
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "other"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
-"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} "
-"நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு "
-"அவர்களிடம் கேளுங்கள்."
-
-#: .\__translations\__translations.py:182
-#, python-brace-format
-msgctxt "female_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} "
-"நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு "
-"அவர்களிடம் கேளுங்கள்."
+"உங்களுக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் {1} நண்பர்களுக்கு மேல் இருக்க "
+"முடியாது. தொடர்வதற்கு முன் சில நண்பர்களை நீக்கவும்."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "female_other"
+msgctxt "female_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1552,7 +1530,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "female_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1563,7 +1541,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
-msgctxt "male_male"
+msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1574,7 +1552,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "male_other"
+msgctxt "male_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1585,7 +1563,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "other_female"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1596,7 +1574,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "other_male"
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1607,7 +1585,18 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "other_other"
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} "
+"நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு "
+"அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:190
+#, python-brace-format
+msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1617,177 +1606,188 @@ msgstr ""
 "அவர்களிடம் கேளுங்கள்."
 
 #: .\__translations\__translations.py:191
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} "
+"நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு "
+"அவர்களிடம் கேளுங்கள்."
+
+#: .\__translations\__translations.py:193
 msgctxt "female"
 msgid "You cannot be friends with yourself."
 msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
 
-#: .\__translations\__translations.py:192
+#: .\__translations\__translations.py:194
 msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
-
-#: .\__translations\__translations.py:193
-msgctxt "other"
 msgid "You cannot be friends with yourself."
 msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
 
 #: .\__translations\__translations.py:195
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "நீங்களே நண்பர்களாக இருக்க முடியாது."
+
+#: .\__translations\__translations.py:197
 msgctxt "female"
 msgid "You already requested friendship from this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
 
-#: .\__translations\__translations.py:196
+#: .\__translations\__translations.py:198
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
-
-#: .\__translations\__translations.py:197
-msgctxt "other"
 msgid "You already requested friendship from this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
 
 #: .\__translations\__translations.py:199
+msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "நீங்கள் ஏற்கனவே இந்த பயனரிடமிருந்து நட்பைக் கோரியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:201
 msgctxt "female"
 msgid "This user already requested friendship from you."
 msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
 
-#: .\__translations\__translations.py:200
+#: .\__translations\__translations.py:202
 msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
-
-#: .\__translations\__translations.py:201
-msgctxt "other"
 msgid "This user already requested friendship from you."
 msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
 
 #: .\__translations\__translations.py:203
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "இந்த பயனர் ஏற்கனவே உங்களிடமிருந்து நட்பைக் கோரியுள்ளார்."
+
+#: .\__translations\__translations.py:205
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:204
+#: .\__translations\__translations.py:206
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:205
+#: .\__translations\__translations.py:207
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:206
+#: .\__translations\__translations.py:208
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:207
+#: .\__translations\__translations.py:209
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:208
+#: .\__translations\__translations.py:210
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:211
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:212
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:213
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "நீங்கள் ஏற்கனவே இந்த பயனருடன் நண்பர்களாக இருக்கிறீர்கள்."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:215
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
 
-#: .\__translations\__translations.py:214
+#: .\__translations\__translations.py:216
 msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
-
-#: .\__translations\__translations.py:215
-msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
 
 #: .\__translations\__translations.py:217
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "நீங்கள் உங்கள் நட்பு கோரிக்கை ரத்து செய்துவிட்டீர்கள்."
+
+#: .\__translations\__translations.py:219
 msgctxt "female"
 msgid "You have removed this user from your friends."
 msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
 
-#: .\__translations\__translations.py:218
+#: .\__translations\__translations.py:220
 msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
-
-#: .\__translations\__translations.py:219
-msgctxt "other"
 msgid "You have removed this user from your friends."
 msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
 
 #: .\__translations\__translations.py:221
+msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "இந்த பயனரை உங்கள் நண்பர்களிடமிருந்து நீக்கியுள்ளீர்கள்."
+
+#: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
 
-#: .\__translations\__translations.py:222
+#: .\__translations\__translations.py:224
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
-
-#: .\__translations\__translations.py:223
-#, python-brace-format
-msgctxt "other"
 msgid "Welcome to {site_name}!"
 msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
 
 #: .\__translations\__translations.py:225
 #, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}-க்கு வரவேற்கிறோம்!"
+
+#: .\__translations\__translations.py:227
+#, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
 
-#: .\__translations\__translations.py:226
+#: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
-
-#: .\__translations\__translations.py:227
-#, python-brace-format
-msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
 
 #: .\__translations\__translations.py:229
+#, python-brace-format
+msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}-க்கு வரவேற்கிறோம்! உங்கள் கணக்கு இப்போது செயலில் உள்ளது."
+
+#: .\__translations\__translations.py:231
 msgctxt "female"
 msgid "Friends"
 msgstr "நண்பர்கள்"
 
-#: .\__translations\__translations.py:230
+#: .\__translations\__translations.py:232
 msgctxt "male"
-msgid "Friends"
-msgstr "நண்பர்கள்"
-
-#: .\__translations\__translations.py:231
-msgctxt "other"
 msgid "Friends"
 msgstr "நண்பர்கள்"
 
 #: .\__translations\__translations.py:233
+msgctxt "other"
+msgid "Friends"
+msgstr "நண்பர்கள்"
+
+#: .\__translations\__translations.py:235
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1802,7 +1802,7 @@ msgstr ""
 "செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை ஏராளமான மக்களுக்கு அனுப்புவதற்கோ "
 "பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் கொள்ளவும்."
 
-#: .\__translations\__translations.py:234
+#: .\__translations\__translations.py:236
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1817,7 +1817,7 @@ msgstr ""
 "செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை ஏராளமான மக்களுக்கு அனுப்புவதற்கோ "
 "பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் கொள்ளவும்."
 
-#: .\__translations\__translations.py:235
+#: .\__translations\__translations.py:237
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1832,26 +1832,8 @@ msgstr ""
 "செய்திகள் அனுப்புவதற்கோ, ஒரே உள்ளடக்கமுள்ள செய்திகளை ஏராளமான மக்களுக்கு அனுப்புவதற்கோ "
 "பயன்படுத்த அனுமதி இல்லை என்பதை நினைவில் கொள்ளவும்."
 
-#: .\__translations\__translations.py:241
-msgctxt "female_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net சுயவிவரத்தை "
-"நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
-
-#: .\__translations\__translations.py:242
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net சுயவிவரத்தை "
-"நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
-
 #: .\__translations\__translations.py:243
-msgctxt "female_other"
+msgctxt "female_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1860,7 +1842,7 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:244
-msgctxt "male_female"
+msgctxt "female_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1869,7 +1851,7 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:245
-msgctxt "male_male"
+msgctxt "female_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1878,7 +1860,7 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:246
-msgctxt "male_other"
+msgctxt "male_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1887,7 +1869,7 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:247
-msgctxt "other_female"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1896,7 +1878,7 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:248
-msgctxt "other_male"
+msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1905,7 +1887,16 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:249
-msgctxt "other_other"
+msgctxt "other_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net சுயவிவரத்தை "
+"நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.py:250
+msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1914,6 +1905,15 @@ msgstr ""
 "நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
 
 #: .\__translations\__translations.py:251
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"இந்தப் பயனர் உங்கள் சுயவிவரத்துடன் பொருந்தவில்லை, ஆனால் அவர்களின் Speedy Net சுயவிவரத்தை "
+"நீங்கள் பார்க்கலாம். பயனரின் Speedy Net சுயவிவரத்தைப் பாருங்கள்."
+
+#: .\__translations\__translations.py:253
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1922,7 +1922,7 @@ msgstr ""
 "உங்கள் சுயவிவரப் படம் வெளிப்படையாக இருக்க முடியாது. தயவுசெய்து வெளிப்படையான படத்தை "
 "பதிவேற்றவும்."
 
-#: .\__translations\__translations.py:252
+#: .\__translations\__translations.py:254
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1931,7 +1931,7 @@ msgstr ""
 "உங்கள் சுயவிவரப் படம் வெளிப்படையாக இருக்க முடியாது. தயவுசெய்து வெளிப்படையான படத்தை "
 "பதிவேற்றவும்."
 
-#: .\__translations\__translations.py:253
+#: .\__translations\__translations.py:255
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "

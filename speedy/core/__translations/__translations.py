@@ -3,6 +3,8 @@
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
 
+_("")
+
 # from django
 _('Enter a valid email address.')
 _("Email address")

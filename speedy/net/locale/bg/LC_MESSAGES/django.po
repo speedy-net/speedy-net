@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 06:58+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +32,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Изтриване на акаунт"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -40,11 +41,11 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Сигурни ли сте, че искате да изтриете акаунта си в Speedy Net? Това е "
-"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и"
-" вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта"
-" ми.\" в това поле, точно и малки и големи букви."
+"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и "
+"вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта "
+"ми.\" в това поле, точно и малки и големи букви."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -53,11 +54,11 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Сигурни ли сте, че искате да изтриете акаунта си в Speedy Net? Това е "
-"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и"
-" вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта"
-" ми.\" в това поле, точно и малки и големи букви."
+"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и "
+"вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта "
+"ми.\" в това поле, точно и малки и големи букви."
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:10
 msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -66,30 +67,30 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Сигурни ли сте, че искате да изтриете акаунта си в Speedy Net? Това е "
-"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и"
-" вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта"
-" ми.\" в това поле, точно и малки и големи букви."
-
-#: .\__translations\__translations.py:10
-#, python-brace-format
-msgctxt "female"
-msgid "Permanently delete your {site_name} account"
-msgstr "Изтрийте за постоянно вашия {site_name} акаунт"
-
-#: .\__translations\__translations.py:11
-#, python-brace-format
-msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Изтрийте за постоянно вашия {site_name} акаунт"
+"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и "
+"вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта "
+"ми.\" в това поле, точно и малки и големи букви."
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
-msgctxt "other"
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Изтрийте за постоянно вашия {site_name} акаунт"
+
+#: .\__translations\__translations.py:13
+#, python-brace-format
+msgctxt "male"
 msgid "Permanently delete your {site_name} account"
 msgstr "Изтрийте за постоянно вашия {site_name} акаунт"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Изтрийте за постоянно вашия {site_name} акаунт"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -98,7 +99,7 @@ msgstr ""
 "Вашите акаунти в Speedy Net и Speedy Match са изтрити. Благодарим ви, че "
 "използвате {site_name}."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -108,7 +109,7 @@ msgstr ""
 "Вашите акаунти в Speedy Net и Speedy Match са изтрити. Благодарим ви, че "
 "използвате {site_name}."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -134,9 +135,9 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Сигурни ли сте, че искате да изтриете акаунта си в Speedy Net? Това е "
-"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и"
-" вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта"
-" ми.\" в това поле, точно и малки и големи букви."
+"постоянно и необратимо. Изтриването на вашия акаунт в Speedy Net ще изтрие и "
+"вашия акаунт в Speedy Match. Ако сте сигурни, напишете \"Да. Изтрий акаунта "
+"ми.\" в това поле, точно и малки и големи букви."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -217,41 +218,38 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
 "Решихме да ограничим броя на приятелите в Спиди Speedy Net Нет до 800. "
 "Съветваме ви да добавяте като приятели само хора, които познавате лично. "
 "Можете да изберете кои подробности ще се показват в профила ви като "
-"публични, кои подробности само за приятели и кои подробности ще бъдат лични."
-" Личните данни ще се показват само на вас."
+"публични, кои подробности само за приятели и кои подробности ще бъдат лични. "
+"Личните данни ще се показват само на вас."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Можете да използвате нашето ново приложение, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, за да намерите подходящи хора за срещи. Speedy "
-"Match е отворен за необвързани от всички възрасти."
+"Можете да използвате нашето ново приложение, <a href=\"https://"
+"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</"
+"a>, за да намерите подходящи хора за срещи. Speedy Match е отворен за "
+"необвързани от всички възрасти."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Всички функции на Speedy Net и Speedy Match са безплатни. Присъединете се "
-"към Speedy Net днес, за да намерите приятели, отнема само няколко минути. <a"
-" href=\"/\" title=\"Join Speedy Net\">Щракнете тук</a>, за да се "
-"присъедините."
+"към Speedy Net днес, за да намерите приятели, отнема само няколко минути. <a "
+"href=\"/\" title=\"Join Speedy Net\">Щракнете тук</a>, за да се присъедините."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -264,15 +262,13 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net е кръстен на <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в продължение на "
-"много години и умря през 2003 г. роди 7 кученца през 1988 г."
+"Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female."
+"dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в "
+"продължение на много години и умря през 2003 г. роди 7 кученца през 1988 г."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -332,8 +328,8 @@ msgstr "Вашите приятели"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
@@ -358,8 +354,7 @@ msgstr "Speedy Match – запознанства със Speedy"
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди! "
-"Speedy"
+"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди! Speedy"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

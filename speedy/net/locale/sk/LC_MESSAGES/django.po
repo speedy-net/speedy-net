@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 06:58+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +32,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Odstrániť účet"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -41,10 +42,10 @@ msgid ""
 msgstr ""
 "Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. "
 "Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si "
-"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a"
-" malé písmená."
+"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a "
+"malé písmená."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -54,10 +55,10 @@ msgid ""
 msgstr ""
 "Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. "
 "Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si "
-"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a"
-" malé písmená."
+"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a "
+"malé písmená."
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:10
 msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -67,29 +68,29 @@ msgid ""
 msgstr ""
 "Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. "
 "Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si "
-"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a"
-" malé písmená."
-
-#: .\__translations\__translations.py:10
-#, python-brace-format
-msgctxt "female"
-msgid "Permanently delete your {site_name} account"
-msgstr "Natrvalo odstráňte svoj účet {site_name}"
-
-#: .\__translations\__translations.py:11
-#, python-brace-format
-msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Natrvalo odstráňte svoj účet {site_name}"
+"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a "
+"malé písmená."
 
 #: .\__translations\__translations.py:12
 #, python-brace-format
-msgctxt "other"
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Natrvalo odstráňte svoj účet {site_name}"
+
+#: .\__translations\__translations.py:13
+#, python-brace-format
+msgctxt "male"
 msgid "Permanently delete your {site_name} account"
 msgstr "Natrvalo odstráňte svoj účet {site_name}"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Natrvalo odstráňte svoj účet {site_name}"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -98,7 +99,7 @@ msgstr ""
 "Vaše Speedy Net účty Speedy Match a boli odstránené. Ďakujeme, že používate "
 "{site_name}."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -108,7 +109,7 @@ msgstr ""
 "Vaše Speedy Net účty Speedy Match a boli odstránené. Ďakujeme, že používate "
 "{site_name}."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -135,8 +136,8 @@ msgid ""
 msgstr ""
 "Naozaj chcete odstrániť svoj účet Speedy Net? Toto je trvalé a nezvratné. "
 "Odstránením účtu Speedy Net sa odstráni aj váš účet Speedy Match. Ak ste si "
-"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a"
-" malé písmená."
+"istí, napíšte \"Áno. Odstrániť môj účet.\" v tejto oblasti, presne a veľké a "
+"malé písmená."
 
 #: .\accounts\forms.py:33
 msgid "Invalid password."
@@ -201,8 +202,8 @@ msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> je nová sociálna sieť. So službou Speedy Net môžete "
 "komunikovať so svojimi priateľmi. Speedy Net je otvorený Speedy Net "
-"bezplatnej registrácii pre ľudí zo všetkých krajín a vekových kategórií (bez"
-" vekového obmedzenia!). Stránka je vhodná pre vegánov a vegetariánov. "
+"bezplatnej registrácii pre ľudí zo všetkých krajín a vekových kategórií (bez "
+"vekového obmedzenia!). Stránka je vhodná pre vegánov a vegetariánov. "
 "Momentálne je k dispozícii v %(languages_num)s jazykoch."
 
 #: .\templates\about\about.html:19
@@ -217,11 +218,10 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
 "Rozhodli sme sa obmedziť počet priateľov na Speedy Net na 800. Odporúčame "
 "vám pridať si medzi priateľov iba ľudí, ktorých osobne poznáte. Môžete si "
@@ -232,10 +232,9 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
 "Na nájdenie zhodných ľudí na zoznamovanie môžete použiť našu novú aplikáciu "
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
@@ -245,8 +244,8 @@ msgstr ""
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Všetky funkcie na Speedy Net a Speedy Match sú bezplatné. Pripojte sa k "
 "Speedy Net ešte dnes a nájdite si priateľov, zaberie to len pár minút. <a "
@@ -262,15 +261,13 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net je pomenovaný po <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, sučke, ktorá bola s nami mnoho rokov a zomrela "
-"v roku 2003. porodila v roku 1988 7 šteniatok."
+"Speedy Net je pomenovaný po <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, sučke, ktorá bola s nami mnoho "
+"rokov a zomrela v roku 2003. porodila v roku 1988 7 šteniatok."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -308,8 +305,8 @@ msgstr "Potvrďte svoju e-mailovú adresu."
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Váš účet Speedy Net nie je aktívny. Ak ju chcete aktivovať, prejdite na túto"
-" stránku."
+"Váš účet Speedy Net nie je aktívny. Ak ju chcete aktivovať, prejdite na túto "
+"stránku."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -329,15 +326,15 @@ msgstr "Vaši priatelia"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
 "Speedy Net je nová sociálna sieť. So službou Speedy Net môžete komunikovať "
-"so svojimi priateľmi. Speedy Net je otvorený bezplatnej registrácii pre ľudí"
-" zo všetkých krajín a vekových kategórií (bez vekového obmedzenia!). Stránka"
-" je vhodná pre vegánov a vegetariánov."
+"so svojimi priateľmi. Speedy Net je otvorený bezplatnej registrácii pre ľudí "
+"zo všetkých krajín a vekových kategórií (bez vekového obmedzenia!). Stránka "
+"je vhodná pre vegánov a vegetariánov."
 
 #: .\templates\main\main_page.html:17
 msgid ""

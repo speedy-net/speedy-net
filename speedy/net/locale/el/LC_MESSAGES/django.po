@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-06 06:58+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +32,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Διαγραφή λογαριασμού"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -39,14 +40,14 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η"
-" διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
 "σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
 "είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
 "το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
 "μικρά γράμματα."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -54,48 +55,48 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η"
-" διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
-"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
-"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
-"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
-"μικρά γράμματα."
-
-#: .\__translations\__translations.py:8
-msgctxt "other"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η"
-" διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
 "σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
 "είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
 "το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
 "μικρά γράμματα."
 
 #: .\__translations\__translations.py:10
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
+"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
+"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
+"μικρά γράμματα."
+
+#: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
 msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:13
 #, python-brace-format
 msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
-
-#: .\__translations\__translations.py:12
-#, python-brace-format
-msgctxt "other"
 msgid "Permanently delete your {site_name} account"
 msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -104,7 +105,7 @@ msgstr ""
 "Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
 "ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -114,7 +115,7 @@ msgstr ""
 "Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
 "ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -139,8 +140,8 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η"
-" διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
 "σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
 "είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
 "το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
@@ -225,11 +226,10 @@ msgstr ""
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
 "Αποφασίσαμε να περιορίσουμε τον αριθμό των φίλων στο Speedy Net σε 800. Σας "
 "συνιστούμε να προσθέτετε ως φίλους μόνο άτομα που γνωρίζετε προσωπικά. "
@@ -240,26 +240,25 @@ msgstr ""
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Μπορείτε να χρησιμοποιήσετε τη νέα μας εφαρμογή, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">το Speedy Match</a>, για να βρείτε άτομα που σας ταιριάζουν για "
-"ραντεβού. Το Speedy Match είναι ανοιχτό σε ελεύθερους όλων των ηλικιών."
+"Μπορείτε να χρησιμοποιήσετε τη νέα μας εφαρμογή, <a href=\"https://"
+"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">το Speedy Match</"
+"a>, για να βρείτε άτομα που σας ταιριάζουν για ραντεβού. Το Speedy Match "
+"είναι ανοιχτό σε ελεύθερους όλων των ηλικιών."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Όλες οι λειτουργίες του Speedy Net και του Speedy Match είναι δωρεάν. Γίνετε"
-" μέλος του Speedy Net σήμερα για να βρείτε φίλους· δεν θα σας πάρει παρά "
-"λίγα λεπτά. <a href=\"/\" title=\"Join Speedy Net\">Κάντε κλικ εδώ</a> για "
-"να εγγραφείτε."
+"Όλες οι λειτουργίες του Speedy Net και του Speedy Match είναι δωρεάν. Γίνετε "
+"μέλος του Speedy Net σήμερα για να βρείτε φίλους· δεν θα σας πάρει παρά λίγα "
+"λεπτά. <a href=\"/\" title=\"Join Speedy Net\">Κάντε κλικ εδώ</a> για να "
+"εγγραφείτε."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -272,15 +271,14 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Το Speedy Net πήρε το όνομά του από <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">τη "
-"Speedy</a>, μια σκυλίτσα που ήταν μαζί μας για πολλά χρόνια και πέθανε το "
-"2003. Η Speedy γέννησε 7 κουτάβια το 1988."
+"Το Speedy Net πήρε το όνομά του από <a href=\"https://www.facebook.com/"
+"speedy.the.female.dog\" title=\"Speedy\">τη Speedy</a>, μια σκυλίτσα που "
+"ήταν μαζί μας για πολλά χρόνια και πέθανε το 2003. Η Speedy γέννησε 7 "
+"κουτάβια το 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -341,8 +339,8 @@ msgstr "Οι φίλοι σου"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
@@ -357,8 +355,8 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
 "Όλες οι λειτουργίες του Speedy Net και του Speedy Match είναι δωρεάν. "
-"Εγγραφείτε σήμερα στο Speedy Net για να βρείτε φίλους· δεν θα σας πάρει παρά"
-" λίγα λεπτά."
+"Εγγραφείτε σήμερα στο Speedy Net για να βρείτε φίλους· δεν θα σας πάρει παρά "
+"λίγα λεπτά."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"

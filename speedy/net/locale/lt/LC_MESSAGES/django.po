@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 06:54+0200\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
@@ -31,7 +33,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Ištrinti paskyrą"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -40,11 +42,11 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų"
-" Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
 "laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -53,43 +55,43 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų"
-" Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
-
-#: .\__translations\__translations.py:8
-msgctxt "other"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų"
-" Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
 "laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
 
 #: .\__translations\__translations.py:10
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+
+#: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
 msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:13
 #, python-brace-format
 msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
-
-#: .\__translations\__translations.py:12
-#, python-brace-format
-msgctxt "other"
 msgid "Permanently delete your {site_name} account"
 msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -98,7 +100,7 @@ msgstr ""
 "Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
 "naudojotės {site_name}."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -108,7 +110,7 @@ msgstr ""
 "Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
 "naudojotės {site_name}."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -134,8 +136,8 @@ msgid ""
 "this field, exactly and case sensitive."
 msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų"
-" Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
 "laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
 
 #: .\accounts\forms.py:33
@@ -211,41 +213,39 @@ msgid ""
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
 msgstr ""
-"Speedy Net įkūrėjai yra veganai, remia gyvūnų teises ir nepritaria bandymams"
-" su gyvūnais. Speedy Net yra socialinis tinklas, draugiškas veganams, "
+"Speedy Net įkūrėjai yra veganai, remia gyvūnų teises ir nepritaria bandymams "
+"su gyvūnais. Speedy Net yra socialinis tinklas, draugiškas veganams, "
 "vegetarams ir gyvūnams."
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage"
-" you to add as friends only people you know personally. You can select which"
-" details will appear on your profile as public, which details only to "
-"friends and which details will be private. Private details will appear only "
-"to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage "
+"you to add as friends only people you know personally. You can select which "
+"details will appear on your profile as public, which details only to friends "
+"and which details will be private. Private details will appear only to you."
 msgstr ""
-"Nusprendėme apriboti draugų skaičių Speedy Net iki 800. Raginame prie draugų"
-" pridėti tik žmones, kuriuos pažįstate asmeniškai. Galite pasirinkti, kuri "
+"Nusprendėme apriboti draugų skaičių Speedy Net iki 800. Raginame prie draugų "
+"pridėti tik žmones, kuriuos pažįstate asmeniškai. Galite pasirinkti, kuri "
 "informacija jūsų profilyje bus vieša, kuri matoma tik draugams, o kuri liks "
 "privati. Privati informacija bus matoma tik jums."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
-"is open to singles of all ages."
+"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
+"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
+"dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Galite naudoti mūsų naują programėlę <a "
-"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a>, kad rastumėte jums tinkančių žmonių pasimatymams. "
-"Speedy Match atvira vienišiems visų amžių žmonėms."
+"Galite naudoti mūsų naują programėlę <a href=\"https://%(language_code)s."
+"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, kad rastumėte "
+"jums tinkančių žmonių pasimatymams. Speedy Match atvira vienišiems visų "
+"amžių žmonėms."
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
-" title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
+"title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
 "Visos Speedy Net ir Speedy Match funkcijos yra nemokamos. Prisijunkite prie "
 "Speedy Net jau šiandien, kad rastumėte draugų; tai užtruks tik kelias "
@@ -263,15 +263,13 @@ msgstr ""
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net pavadintas <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> vardu – tai kalytė, gyvenusi su mumis daugelį "
-"metų ir mirusi 2003 m. Speedy 1988 m. atsivedė 7 šuniukus."
+"Speedy Net pavadintas <a href=\"https://www.facebook.com/speedy.the.female."
+"dog\" title=\"Speedy\">Speedy</a> vardu – tai kalytė, gyvenusi su mumis "
+"daugelį metų ir mirusi 2003 m. Speedy 1988 m. atsivedė 7 šuniukus."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -331,8 +329,8 @@ msgstr "Jūsų draugai"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with"
-" your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with "
+"your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""

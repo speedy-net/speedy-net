@@ -1,12 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
+#: .\__translations\__translations.py:6
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 08:56+0300\n"
+"POT-Creation-Date: 2026-09-27 23:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +32,7 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Akkauntni o'chirish"
 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:8
 msgctxt "female"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
@@ -45,22 +46,8 @@ msgstr ""
 "bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
 "Akkauntimni o'chiring.\" deb yozing."
 
-#: .\__translations\__translations.py:7
+#: .\__translations\__translations.py:9
 msgctxt "male"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
-"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
-"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil "
-"bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
-"Akkauntimni o'chiring.\" deb yozing."
-
-#: .\__translations\__translations.py:8
-msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -74,25 +61,39 @@ msgstr ""
 "Akkauntimni o'chiring.\" deb yozing."
 
 #: .\__translations\__translations.py:10
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Speedy Net akkauntingizni o'chirishni xohlayotganingizga ishonchingiz "
+"komilmi? Bu doimiy va qaytarib bo'lmaydigan amal. Speedy Net akkauntingizni "
+"o'chirish Speedy Match akkauntingizni ham o'chiradi. Agar ishonchingiz komil "
+"bo'lsa, ushbu maydonga katta-kichik harflarga aynan mos holda \"Ha. "
+"Akkauntimni o'chiring.\" deb yozing."
+
+#: .\__translations\__translations.py:12
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
 msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:13
 #, python-brace-format
 msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
-
-#: .\__translations\__translations.py:12
-#, python-brace-format
-msgctxt "other"
 msgid "Permanently delete your {site_name} account"
 msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "{site_name} akkauntingizni doimiy ravishda o'chirish"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
 msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
@@ -101,7 +102,7 @@ msgstr ""
 "Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}'dan "
 "foydalanganingiz uchun rahmat."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:17
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -111,7 +112,7 @@ msgstr ""
 "Speedy Net va Speedy Match akkauntlaringiz o'chirildi. {site_name}'dan "
 "foydalanganingiz uchun rahmat."
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:18
 #, python-brace-format
 msgctxt "other"
 msgid ""
