@@ -6,3 +6,4 @@ activate_staging(settings=globals())
 DEFAULT_FROM_EMAIL = 'notifications@speedy.net.2.speedy-technologies.com'
 SERVER_EMAIL = 'webmaster+staging-server@speedy.net.2.speedy-technologies.com'
 
+
