@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 07:47+0200\n"
+"POT-Creation-Date: 2026-09-25 14:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2838,6 +2838,38 @@ msgstr "хрватски"
 #: .\settings\base_with_login.py:103
 msgid "Azerbaijani"
 msgstr "азербејџански"
+
+#: .\settings\base_with_login.py:104
+msgid "Cantonese"
+msgstr "кантонски"
+
+#: .\settings\base_with_login.py:105
+msgid "Lithuanian"
+msgstr "литвански"
+
+#: .\settings\base_with_login.py:106
+msgid "Slovenian"
+msgstr "словеначки"
+
+#: .\settings\base_with_login.py:107
+msgid "Basque"
+msgstr "баскијски"
+
+#: .\settings\base_with_login.py:108
+msgid "Armenian"
+msgstr "јерменски"
+
+#: .\settings\base_with_login.py:109
+msgid "Uzbek"
+msgstr "узбечки"
+
+#: .\settings\base_with_login.py:110
+msgid "Tamil"
+msgstr "тамилски"
+
+#: .\settings\base_with_login.py:111
+msgid "Latvian"
+msgstr "летонски"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
