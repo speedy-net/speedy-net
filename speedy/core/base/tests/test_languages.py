@@ -5,7 +5,7 @@ if (django_settings.TESTS):
 
     if (django_settings.LOGIN_ENABLED):
         from django.test import override_settings
-        from django.utils.translation import get_language_info
+        from django.utils.translation import get_language_info, gettext_lazy as _
 
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.decorators import only_on_sites_with_login
@@ -25,6 +25,9 @@ if (django_settings.TESTS):
                 language_name_translated = str(language_name)
                 language_name_local = get_language_info(self.language_code)['name_local']
                 self.assertEqual(first=language_name_translated, second=language_name_local)
+
+            def test_1(self):
+                self.assertEqual(first=str(_("")), second="")
 
 
         @only_on_sites_with_login
