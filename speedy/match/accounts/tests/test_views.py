@@ -167,12 +167,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
 
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWizardWithInvalidHeightOnlyEnglishTestCase(ActivateSiteProfileViewWizardTestCaseMixin, SiteTestCase):
-            # This height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
-            # outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy Match.
-            height = 50
-
+        class ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin(ActivateSiteProfileViewWizardTestCaseMixin):
+            """
+            self.height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
+            outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy Match.
+            """
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self):
                 self._complete_steps_2_to_8()
                 r = self._post_step_9(follow=True)
@@ -184,5 +183,25 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.activation_step, second=9)
                 self.assertEqual(first=user.speedy_match_profile.not_allowed_to_use_speedy_match, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+
+
+        @only_on_speedy_match
+        class ActivateSiteProfileViewWizardWithHeightTooSmallOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
+            height = 10
+
+
+        @only_on_speedy_match
+        class ActivateSiteProfileViewWizardWithInvalidHeightOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
+            height = 50
+
+
+        @only_on_speedy_match
+        class ActivateSiteProfileViewWizardWithHeightTooBigOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
+            height = 330
+
+
+        @only_on_speedy_match
+        class ActivateSiteProfileViewWizardWithHeightWayTooBigOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
+            height = 400
 
 
