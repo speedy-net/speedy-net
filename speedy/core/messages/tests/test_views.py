@@ -89,6 +89,55 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        class ChatPollMessagesViewOnlyEnglishTestCase(SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.user_1 = ActiveUserFactory()
+                self.user_2 = ActiveUserFactory()
+                self.chat_1_2 = ChatFactory(ent1=self.user_1, ent2=self.user_2)
+                self.message_1 = Message.objects.send_message(from_entity=self.user_1, chat=self.chat_1_2, text='First message')
+                sleep(0.01)
+                self.since = self.message_1.date_created.timestamp()
+                sleep(0.01)
+                self.message_2 = Message.objects.send_message(from_entity=self.user_2, chat=self.chat_1_2, text='Second message')
+                self.page_url = '/messages/{}/poll/'.format(self.chat_1_2.id)
+
+            def test_visitor_has_no_access(self):
+                self.client.logout()
+                r = self.client.get(path=self.page_url, data={'since': self.since})
+                self.assertEqual(first=r.status_code, second=403)
+
+            def test_user_gets_only_messages_newer_than_since(self):
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                r = self.client.get(path=self.page_url, data={'since': self.since})
+                self.assertEqual(first=r.status_code, second=200)
+                messages = list(r.context['message_list'])
+                self.assertListEqual(list1=messages, list2=[self.message_2])
+                self.assertTrue(expr=r.context['ajax_view'])
+
+            def test_user_gets_no_messages_when_since_is_after_all_messages(self):
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                since = self.message_2.date_created.timestamp()
+                r = self.client.get(path=self.page_url, data={'since': since})
+                self.assertEqual(first=r.status_code, second=200)
+                messages = list(r.context['message_list'])
+                self.assertListEqual(list1=messages, list2=[])
+
+            def test_user_gets_all_messages_when_since_is_0(self):
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                r = self.client.get(path=self.page_url, data={'since': 0})
+                self.assertEqual(first=r.status_code, second=200)
+                messages = list(r.context['message_list'])
+                self.assertListEqual(list1=messages, list2=[self.message_2, self.message_1])
+
+            def test_user_cannot_poll_a_chat_they_have_no_access_to(self):
+                self.user_3 = ActiveUserFactory()
+                self.client.login(username=self.user_3.slug, password=tests_settings.USER_PASSWORD)
+                r = self.client.get(path=self.page_url, data={'since': self.since})
+                self.assertEqual(first=r.status_code, second=403)
+
+
+        @only_on_sites_with_login
         class SendMessageToChatViewOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
