@@ -75,9 +75,8 @@ if (django_settings.TESTS):
                     'smoking_status_match': json.dumps(obj={str(smoking_status): SpeedyMatchSiteProfile.RANK_5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES}),
                     'relationship_status_match': json.dumps(obj={str(relationship_status): SpeedyMatchSiteProfile.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}),
                 }
-                r = self.client.post(path=self.page_url, data=data)
+                r = self.client.post(path=self.page_url, data=data, follow=True)
                 self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
-                r = self.client.get(path='/matches/')
                 messages_list = list(r.context['messages'])
                 self.assertEqual(first=len(messages_list), second=1)
                 self.assertEqual(first=str(messages_list[0]), second="Your match settings were saved.")
@@ -124,9 +123,8 @@ if (django_settings.TESTS):
                     'smoking_status': User.SMOKING_STATUS_NOT_SMOKING,
                     'relationship_status': User.RELATIONSHIP_STATUS_SINGLE,
                 }
-                r = self.client.post(path=self.page_url, data=data)
+                r = self.client.post(path=self.page_url, data=data, follow=True)
                 self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
-                r = self.client.get(path='/matches/')
                 messages_list = list(r.context['messages'])
                 self.assertEqual(first=len(messages_list), second=1)
                 self.assertEqual(first=str(messages_list[0]), second="Your match settings were saved.")
