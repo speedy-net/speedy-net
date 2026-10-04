@@ -58,7 +58,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class EditMatchSettingsViewSaveTestCase(SiteTestCase):
+        class EditMatchSettingsViewSaveOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
@@ -105,7 +105,7 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class EditAboutMeViewSaveTestCase(SiteTestCase):
+        class EditAboutMeViewSaveOnlyEnglishTestCase(SiteTestCase):
             def set_up(self):
                 super().set_up()
                 self.user = ActiveUserFactory()
