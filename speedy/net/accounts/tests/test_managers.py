@@ -37,10 +37,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.email_addresses.all()), second=1)
 
             def test_cannot_mark_a_staff_user_as_deleted(self):
-                user = InactiveUserFactory(is_staff=True)
+                # Note: User.save() requires is_superuser == is_staff, so a staff user must also be a superuser.
+                user = InactiveUserFactory(is_staff=True, is_superuser=True)
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.is_staff, second=True)
-                self.assertEqual(first=user.is_superuser, second=False)
+                self.assertEqual(first=user.is_superuser, second=True)
                 with self.assertRaises(ValueError) as cm:
                     User.objects.mark_a_user_as_deleted(user=user, delete_password="Mark this user as deleted in Speedy Net.")
                 self.assertEqual(first=str(cm.exception), second="Staff and superusers cannot be marked as deleted.")
@@ -49,12 +50,13 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.email_addresses.all()), second=0)
 
             def test_cannot_mark_a_superuser_as_deleted(self):
-                user = InactiveUserFactory(is_superuser=True)
+                # Note: User.save() requires is_superuser == is_staff, so a superuser must also be staff.
+                user = InactiveUserFactory(is_superuser=True, is_staff=True)
                 # Superusers are not deactivated by SiteProfile.deactivate(), so deactivate is_active explicitly to isolate the staff/superuser guard from the is_active guard.
                 user.is_active = False
                 user.save_user_and_profile()
                 self.assertEqual(first=user.is_active, second=False)
-                self.assertEqual(first=user.is_staff, second=False)
+                self.assertEqual(first=user.is_staff, second=True)
                 self.assertEqual(first=user.is_superuser, second=True)
                 with self.assertRaises(ValueError) as cm:
                     User.objects.mark_a_user_as_deleted(user=user, delete_password="Mark this user as deleted in Speedy Net.")
