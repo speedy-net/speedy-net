@@ -23,7 +23,7 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
     page_size = 24
     paginate_by = page_size
     form_class = SpeedyMatchSettingsMiniForm
-    success_url = reverse_lazy('matches:list')
+    success_url = reverse_lazy(viewname='matches:list')
 
     def dispatch(self, request, *args, **kwargs):
         if (request.method == 'POST'):
@@ -68,13 +68,13 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
 
 class MatchSettingsDefaultRedirectView(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('matches:edit_match_settings')
+        return reverse(viewname='matches:edit_match_settings')
 
 
 class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/settings/about_my_match.html'
     form_class = SpeedyMatchProfileFullMatchForm
-    success_url = reverse_lazy('matches:list')
+    success_url = reverse_lazy(viewname='matches:list')
 
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile
@@ -88,7 +88,7 @@ class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
 class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'matches/settings/about_me.html'
     form_class = SpeedyMatchProfileFullAboutMeForm
-    success_url = reverse_lazy('matches:list')
+    success_url = reverse_lazy(viewname='matches:list')
 
     def get_object(self, queryset=None):
         return self.request.user.speedy_match_profile

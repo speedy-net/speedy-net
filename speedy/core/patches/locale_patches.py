@@ -31,13 +31,13 @@ def patch():
     # Change translation('pt')._fallback[='en'] to translation('pt')._fallback[='pt-br'].
     # https://forum.djangoproject.com/t/missing-translations-in-pt-portuguese/23993
     # Note: translation('pt').add_fallback(translation('pt-br')) will set translation('pt')._fallback[='en']._fallback[='pt-br']
-    translation('pt')._fallback = translation('pt-br')
+    translation(language='pt')._fallback = translation(language='pt-br')
 
-    translation('no')._fallback = translation('nb')
+    translation(language='no')._fallback = translation(language='nb')
 
-    translation('zh')._fallback = translation('zh-hant')
+    translation(language='zh')._fallback = translation(language='zh-hant')
     # translation('zh-hant')._fallback = translation('zh-tw')
 
-    translation('zh-yue')._fallback = translation('zh')
+    translation(language='zh-yue')._fallback = translation(language='zh')
 
 

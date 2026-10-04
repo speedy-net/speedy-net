@@ -30,7 +30,7 @@ class Widget(object):
     def render(self):
         if (not (self.viewer.has_perm(perm=self.get_permission_required(), obj=self.user))):
             return ''
-        return mark_safe(render_to_string(template_name=self.get_template_name(), context=self.get_context_data(), request=self.request))
+        return mark_safe(s=render_to_string(template_name=self.get_template_name(), context=self.get_context_data(), request=self.request))
 
 
 class UserPhotoWidget(Widget):

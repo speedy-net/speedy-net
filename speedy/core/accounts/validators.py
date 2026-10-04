@@ -207,7 +207,7 @@ def age_is_valid_in_forms(age):
 
 
 def validate_first_name_in_model(first_name):
-    if (not (string_is_not_empty(first_name))):
+    if (not (string_is_not_empty(s=first_name))):
         if (first_name is None):
             raise ValidationError(_('This field cannot be null.'))
         else:
@@ -215,7 +215,7 @@ def validate_first_name_in_model(first_name):
 
 
 def validate_last_name_in_model(last_name):
-    if (not (string_is_not_none(last_name))):
+    if (not (string_is_not_none(s=last_name))):
         raise ValidationError(_('This field cannot be null.'))
 
 

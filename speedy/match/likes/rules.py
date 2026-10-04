@@ -21,8 +21,8 @@ def both_are_users(user, other_user):
     return ((isinstance(user, User)) and (isinstance(other_user, User)))
 
 
-add_perm('likes.like', is_authenticated & ~is_self & ~there_is_block & ~you_like_user & both_are_users)
-add_perm('likes.unlike', is_authenticated & ~is_self & ~there_is_block & you_like_user & both_are_users)
-add_perm('likes.view_likes', is_authenticated & is_self)
+add_perm(name='likes.like', pred=is_authenticated & ~is_self & ~there_is_block & ~you_like_user & both_are_users)
+add_perm(name='likes.unlike', pred=is_authenticated & ~is_self & ~there_is_block & you_like_user & both_are_users)
+add_perm(name='likes.view_likes', pred=is_authenticated & is_self)
 
 

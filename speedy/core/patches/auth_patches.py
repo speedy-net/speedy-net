@@ -11,13 +11,13 @@ def patch():
         if username is None or password is None:
             return
         try:
-            user = UserModel._default_manager.get_by_natural_key(username)
+            user = UserModel._default_manager.get_by_natural_key(username=username)
         except UserModel.DoesNotExist:
             # Patch: Replace call to User.set_password with make_password.
             # https://code.djangoproject.com/ticket/35492
-            make_password(password)
+            make_password(password=password)
         else:
-            if user.check_password(password) and self.user_can_authenticate(user):
+            if user.check_password(raw_password=password) and self.user_can_authenticate(user):
                 return user
 
     ModelBackend.authenticate = authenticate

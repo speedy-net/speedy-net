@@ -100,7 +100,7 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
         visited_user_slug = self.kwargs['chat_slug']
         visited_user = self.get_user_queryset().filter(Q(username=normalize_username(username=visited_user_slug)) | Q(id=visited_user_slug)).first()
         if ((visited_user) and (visited_user.slug != visited_user_slug)):
-            return redirect(to=reverse('messages:chat', kwargs={'chat_slug': visited_user.slug}))
+            return redirect(to=reverse(viewname='messages:chat', kwargs={'chat_slug': visited_user.slug}))
         if ((visited_user) and (visited_user != request.user) and (not (Chat.objects.chat_with(ent1=self.request.user, ent2=visited_user, create=False)))):
             self.permission_required = 'messages.send_message'
             self.user = visited_user
@@ -177,7 +177,7 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+        return reverse(viewname='messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
     def has_permission(self):
         if (self.chat.participants_count != 2):
@@ -205,7 +205,7 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
         return kwargs
 
     def get_success_url(self):
-        return reverse('messages:chat', kwargs={'chat_slug': self.object.chat.get_slug(current_user=self.request.user)})
+        return reverse(viewname='messages:chat', kwargs={'chat_slug': self.object.chat.get_slug(current_user=self.request.user)})
 
 
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
@@ -217,6 +217,6 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         return redirect(to=self.get_success_url())
 
     def get_success_url(self):
-        return reverse('messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
+        return reverse(viewname='messages:chat', kwargs={'chat_slug': self.chat.get_slug(current_user=self.user)})
 
 

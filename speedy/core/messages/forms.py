@@ -22,9 +22,9 @@ class MessageForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
         if (self.chat):
-            self.helper.form_action = reverse('messages:chat_send', kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
+            self.helper.form_action = reverse(viewname='messages:chat_send', kwargs={'chat_slug': self.chat.get_slug(current_user=self.from_entity)})
         else:
-            self.helper.form_action = reverse('messages_entity:user_send', kwargs={'slug': self.to_entity.slug})
+            self.helper.form_action = reverse(viewname='messages_entity:user_send', kwargs={'slug': self.to_entity.slug})
         self.helper.form_class = 'form-vertical'
         self.helper.layout = Layout(
             InlineField('text', style="height: 55px", onblur='this.value = this.value.trim();'),

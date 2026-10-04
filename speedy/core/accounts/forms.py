@@ -318,7 +318,7 @@ class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm
                 'password',
                 Submit('submit', _('Login')),
                 HTML('<a class="btn btn-link" href="{link}">{text}</a>'.format(
-                    link=reverse('accounts:password_reset'),
+                    link=reverse(viewname='accounts:password_reset'),
                     text=_('Forgot your password?'),
                 )),
             ),
@@ -354,7 +354,7 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
         """
         email = self.cleaned_data["email"]
         site = Site.objects.get_current()
-        users_list = self.get_users(email)
+        users_list = self.get_users(email=email)
         language_code = get_language()
         logger.info("PasswordResetForm::User submitted form, site_name={site_name}, email={email}, matching_users={matching_users}, language_code={language_code}.".format(
             site_name=_(site.name),
@@ -364,7 +364,7 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
         ))
         for user in users_list:
             if (not (domain_override)):
-                current_site = get_current_site(request)
+                current_site = get_current_site(request=request)
                 site_name = current_site.name
                 domain = current_site.domain
             else:
@@ -383,13 +383,13 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
                     'email': user_email,
                     'domain': domain,  # Taken from Django; not used.
                     'site_name': site_name,  # Taken from Django; not used.
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                    'uid': urlsafe_base64_encode(s=force_bytes(s=user.pk)),
                     'user': user,
                     'token': token_generator.make_token(user),
                     'protocol': 'https' if use_https else 'http',  # Taken from Django; not used.
                     **(extra_email_context or {}),
                 }
-                self.send_mail(subject_template_name, email_template_name, context, from_email, user_email, html_email_template_name=html_email_template_name)
+                self.send_mail(subject_template_name=subject_template_name, email_template_name=email_template_name, context=context, from_email=from_email, to_email=user_email, html_email_template_name=html_email_template_name)
             else:
                 logger.error("PasswordResetForm::User doesn't have a matching email address, site_name={site_name}, user={user}, email={email} (registered {registered_days_ago} days ago), language_code={language_code}.".format(
                     site_name=_(site_name),
@@ -467,7 +467,7 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
     def helper(self):
         helper = FormHelperWithDefaults()
         helper.form_class = 'form-inline'
-        helper.form_action = reverse('accounts:change_email_privacy', kwargs={'pk': self.instance.id})
+        helper.form_action = reverse(viewname='accounts:change_email_privacy', kwargs={'pk': self.instance.id})
         helper.field_template = 'bootstrap3/layout/inline_field.html'
         helper.layout = Layout(
             InlineField('access', css_class='input-sm'),

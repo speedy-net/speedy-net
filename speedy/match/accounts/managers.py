@@ -304,28 +304,28 @@ class SiteProfileManager(BaseManager):
                 if (other_user.speedy_match_profile._user_last_visit_days_offset < 0):
                     other_user.speedy_match_profile._user_last_visit_days_offset = 0
                 profile_description = other_user.speedy_match_profile.profile_description
-                if (string_is_not_empty(profile_description)):
+                if (string_is_not_empty(s=profile_description)):
                     profile_description_split = profile_description.split()
                 else:
                     profile_description_split = "".split()
                 match_description = other_user.speedy_match_profile.match_description
-                if (string_is_not_empty(match_description)):
+                if (string_is_not_empty(s=match_description)):
                     match_description_split = match_description.split()
                 else:
                     match_description_split = "".split()
-                if ((string_is_not_empty(profile_description)) and (len(profile_description) >= 20) and (len(profile_description_split) >= 10)):
+                if ((string_is_not_empty(s=profile_description)) and (len(profile_description) >= 20) and (len(profile_description_split) >= 10)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 3 * 30
-                if ((string_is_not_empty(match_description)) and (len(match_description) >= 20) and (len(match_description_split) >= 8)):
+                if ((string_is_not_empty(s=match_description)) and (len(match_description) >= 20) and (len(match_description_split) >= 8)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 1 * 30
-                if ((string_is_not_empty(profile_description)) and (len(profile_description_split) > 0) and (len(profile_description_split) / len(set(profile_description_split)) < 2.5)):
+                if ((string_is_not_empty(s=profile_description)) and (len(profile_description_split) > 0) and (len(profile_description_split) / len(set(profile_description_split)) < 2.5)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 20 * 30
-                if ((string_is_not_empty(match_description)) and (len(match_description_split) > 0) and (len(match_description_split) / len(set(match_description_split)) < 2.5)):
+                if ((string_is_not_empty(s=match_description)) and (len(match_description_split) > 0) and (len(match_description_split) / len(set(match_description_split)) < 2.5)):
                     other_user.speedy_match_profile._user_last_visit_days_offset += 0 * 30
                 else:
                     other_user.speedy_match_profile._user_last_visit_days_offset += 20 * 30

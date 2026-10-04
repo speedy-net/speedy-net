@@ -79,7 +79,7 @@ class Command(BaseCommand):
                             ))
                         if (photo_is_valid):
                             client = boto3.client('rekognition')
-                            thumbnail = get_thumbnail(image.file, '640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
+                            thumbnail = get_thumbnail(file_=image.file, geometry_string='640', crop='center 20%')  # Open the image of width 640px from profile_picture_test_640.html
                             image.aws_raw_facial_analysis_results = client.detect_faces(Image={'Bytes': thumbnail.read()}, Attributes=['ALL'])
                             for detected_face in image.aws_raw_facial_analysis_results['FaceDetails']:
                                 if (detected_face["Confidence"] >= 99.0):

@@ -26,12 +26,12 @@ def is_match_profile(user, other_user):
 
 
 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-    add_perm('accounts.view_profile', has_access_perm & ~there_is_block & is_match_profile)
-    add_perm('accounts.view_profile_header', has_access_perm & ~is_blocked & is_match_profile)
-    add_perm('accounts.view_profile_info', has_access_perm & ~is_blocked & is_match_profile)
-    add_perm('accounts.view_profile_age', always_allow)
-    add_perm('accounts.view_profile_rank', has_access_perm & ~there_is_block & is_match_profile & ~is_self)
-    add_perm('accounts.view_user_on_speedy_net_widget', has_access_perm & ~there_is_block & is_match_profile)
-    add_perm('accounts.view_user_on_speedy_match_widget', always_deny)
+    add_perm(name='accounts.view_profile', pred=has_access_perm & ~there_is_block & is_match_profile)
+    add_perm(name='accounts.view_profile_header', pred=has_access_perm & ~is_blocked & is_match_profile)
+    add_perm(name='accounts.view_profile_info', pred=has_access_perm & ~is_blocked & is_match_profile)
+    add_perm(name='accounts.view_profile_age', pred=always_allow)
+    add_perm(name='accounts.view_profile_rank', pred=has_access_perm & ~there_is_block & is_match_profile & ~is_self)
+    add_perm(name='accounts.view_user_on_speedy_net_widget', pred=has_access_perm & ~there_is_block & is_match_profile)
+    add_perm(name='accounts.view_user_on_speedy_match_widget', pred=always_deny)
 
 

@@ -12,7 +12,7 @@ from .models import UserLike
 
 class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('likes:list_to', kwargs={'slug': self.user.slug})
+        return reverse(viewname='likes:list_to', kwargs={'slug': self.user.slug})
 
 
 class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):

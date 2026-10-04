@@ -53,16 +53,16 @@ if (django_settings.TESTS):
             def test_admin_has_access(self):
                 r = super().test_admin_has_access()
                 for user in [self.user_1, self.user_2, self.user_3]:
-                    self.assertIn(member=escape(user.first_name), container=r.content.decode())
-                    self.assertIn(member=escape(user.name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.id), container=r.content.decode())
+                    self.assertIn(member=escape(text=user.first_name), container=r.content.decode())
+                    self.assertIn(member=escape(text=user.name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.full_name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.id), container=r.content.decode())
                 for user in [self.user_4, self.user_5]:
-                    self.assertNotIn(member=escape(user.first_name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.id), container=r.content.decode())
-                self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=0)
+                    self.assertNotIn(member=escape(text=user.first_name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.full_name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.id), container=r.content.decode())
+                self.assertEqual(first=r.content.decode().count(escape(text="['{}']".format(self.language_code))), second=0)
 
 
         @only_on_speedy_match
@@ -135,11 +135,11 @@ if (django_settings.TESTS):
             def test_admin_has_access(self):
                 r = super().test_admin_has_access()
                 for user in [self.user_1, self.user_2, self.user_3, self.user_4, self.user_5]:
-                    self.assertIn(member=escape(user.first_name), container=r.content.decode())
-                    self.assertIn(member=escape(user.name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.full_name), container=r.content.decode())
-                    self.assertNotIn(member=escape(user.id), container=r.content.decode())
-                self.assertEqual(first=r.content.decode().count(escape("['{}']".format(self.language_code))), second=0)
+                    self.assertIn(member=escape(text=user.first_name), container=r.content.decode())
+                    self.assertIn(member=escape(text=user.name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.full_name), container=r.content.decode())
+                    self.assertNotIn(member=escape(text=user.id), container=r.content.decode())
+                self.assertEqual(first=r.content.decode().count(escape(text="['{}']".format(self.language_code))), second=0)
 
 
         @only_on_speedy_match

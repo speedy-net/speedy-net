@@ -23,7 +23,7 @@ if (django_settings.TESTS):
             def test_language_name_translated_equals_name_local(self):
                 language_name = dict(django_settings.LANGUAGES)[self.language_code]
                 language_name_translated = str(language_name)
-                language_name_local = get_language_info(self.language_code)['name_local']
+                language_name_local = get_language_info(lang_code=self.language_code)['name_local']
                 self.assertEqual(first=language_name_translated, second=language_name_local)
 
 

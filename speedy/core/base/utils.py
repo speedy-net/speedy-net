@@ -394,7 +394,7 @@ def timesince(d, now):
     :return: The timesince string.
     :rtype: str
     """
-    delta = -relativedelta(d, now)
+    delta = -relativedelta(dt1=d, dt2=now)
 
     result = []
     if ((delta.years >= 0) and (delta.months >= 0) and (delta.days >= 0)):

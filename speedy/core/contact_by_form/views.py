@@ -14,7 +14,7 @@ from .models import Feedback
 class FeedbackView(generic.CreateView):
     form_class = FeedbackForm
     template_name = 'contact_by_form/feedback_form.html'
-    success_url = reverse_lazy('contact:success')
+    success_url = reverse_lazy(viewname='contact:success')
 
     def get_type(self):
         return self.kwargs.get('type', Feedback.TYPE_FEEDBACK)

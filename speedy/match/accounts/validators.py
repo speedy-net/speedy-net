@@ -39,27 +39,27 @@ def rank_is_valid(rank):
 
 
 def validate_profile_description(profile_description):
-    if (not (string_is_not_empty(profile_description))):
+    if (not (string_is_not_empty(s=profile_description))):
         raise ValidationError(_("Please write a few words about yourself."))
 
 
 def validate_city(city):
-    if (not (string_is_not_empty(city))):
+    if (not (string_is_not_empty(s=city))):
         raise ValidationError(_("Please write where you live."))
 
 
 def validate_children(children):
-    if (not (string_is_not_empty(children))):
+    if (not (string_is_not_empty(s=children))):
         raise ValidationError(_("Do you have children? How many?"))
 
 
 def validate_more_children(more_children):
-    if (not (string_is_not_empty(more_children))):
+    if (not (string_is_not_empty(s=more_children))):
         raise ValidationError(_("Do you want (more) children?"))
 
 
 def validate_match_description(match_description):
-    if (not (string_is_not_empty(match_description))):
+    if (not (string_is_not_empty(s=match_description))):
         raise ValidationError(_("Who is your ideal partner?"))
 
 

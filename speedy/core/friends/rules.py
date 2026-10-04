@@ -31,10 +31,10 @@ def view_friend_list(user, other_user):
         return (is_self(user=user, other_user=other_user))
 
 
-add_perm('friends.request', is_authenticated & ~is_self & ~friendship_request_sent & ~are_friends & ~there_is_block)
-add_perm('friends.cancel_request', is_authenticated & friendship_request_sent)
-add_perm('friends.view_requests', is_self)
-add_perm('friends.view_friend_list', view_friend_list)
-add_perm('friends.remove', is_authenticated & are_friends)
+add_perm(name='friends.request', pred=is_authenticated & ~is_self & ~friendship_request_sent & ~are_friends & ~there_is_block)
+add_perm(name='friends.cancel_request', pred=is_authenticated & friendship_request_sent)
+add_perm(name='friends.view_requests', pred=is_self)
+add_perm(name='friends.view_friend_list', pred=view_friend_list)
+add_perm(name='friends.remove', pred=is_authenticated & are_friends)
 
 

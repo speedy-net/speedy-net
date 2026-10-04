@@ -33,7 +33,7 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
         now = time.time()
         ttl = wrapped_value['expire_time'] - now
         if (ttl < sliding_timeout):
-            cache_set(key, wrapped_value['value'], timeout=sliding_timeout, version=version)
+            cache_set(key=key, value=wrapped_value['value'], timeout=sliding_timeout, version=version)
 
     return wrapped_value['value']
 

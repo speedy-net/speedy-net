@@ -64,7 +64,7 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
             except (ValueError):
                 return redirect(to='accounts:activate', step=self.request.user.speedy_match_profile.activation_step)
         else:
-            if (('step' in kwargs) or (not (request.path == reverse('accounts:activate')))):
+            if (('step' in kwargs) or (not (request.path == reverse(viewname='accounts:activate')))):
                 return redirect(to='accounts:activate')
         return super().dispatch(request=request, *args, **kwargs)
 
@@ -86,7 +86,7 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         return super().get(request=self.request, *args, **kwargs)
 
     def get_account_activation_url(self):
-        return reverse_lazy('accounts:activate', kwargs={'step': self.step})
+        return reverse_lazy(viewname='accounts:activate', kwargs={'step': self.step})
 
     def display_welcome_message(self):
         site = Site.objects.get_current()
@@ -101,13 +101,13 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
             if (self.request.user.has_confirmed_email):
                 self.request.user.speedy_match_profile.validate_profile_and_activate()
                 if (self.request.user.speedy_match_profile.is_active):
-                    return reverse_lazy('matches:list')
+                    return reverse_lazy(viewname='matches:list')
                 else:
-                    return reverse_lazy('accounts:activate', kwargs={'step': self.request.user.speedy_match_profile.activation_step})
+                    return reverse_lazy(viewname='accounts:activate', kwargs={'step': self.request.user.speedy_match_profile.activation_step})
             else:
-                return reverse_lazy('accounts:edit_profile_emails')
+                return reverse_lazy(viewname='accounts:edit_profile_emails')
         else:
-            return reverse_lazy('accounts:activate', kwargs={'step': self.step + 1})
+            return reverse_lazy(viewname='accounts:activate', kwargs={'step': self.step + 1})
 
     def form_valid(self, form):
         super().form_valid(form=form)

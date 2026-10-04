@@ -159,9 +159,9 @@ def can_send_message(user, other_user):
         return can_send_new_message(user=user)
 
 
-add_perm('messages.view_send_message_button', is_authenticated & ~is_self & ~there_is_block)
-add_perm('messages.send_message', is_authenticated & ~is_self & ~there_is_block & can_send_message)
-add_perm('messages.view_chats', is_authenticated & is_self)
-add_perm('messages.read_chat', is_authenticated & is_participant)
+add_perm(name='messages.view_send_message_button', pred=is_authenticated & ~is_self & ~there_is_block)
+add_perm(name='messages.send_message', pred=is_authenticated & ~is_self & ~there_is_block & can_send_message)
+add_perm(name='messages.view_chats', pred=is_authenticated & is_self)
+add_perm(name='messages.read_chat', pred=is_authenticated & is_participant)
 
 

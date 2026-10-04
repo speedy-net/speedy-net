@@ -11,7 +11,7 @@ from .forms import ImageUploadForm
 class UploadView(LoginRequiredMixin, generic.CreateView):
     form_class = ImageUploadForm
 
-    @method_decorator(csrf_exempt)
+    @method_decorator(decorator=csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request=request, *args, **kwargs)
 

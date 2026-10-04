@@ -36,7 +36,7 @@ class IndexView(speedy_core_accounts_views.IndexView):
 
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
     def get_account_activation_url(self):
-        return reverse_lazy('accounts:activate')
+        return reverse_lazy(viewname='accounts:activate')
 
     def display_welcome_message(self):
         site = Site.objects.get_current()

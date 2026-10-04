@@ -56,7 +56,7 @@ class LocaleDomainMiddleware(object):
                     return redirect(to=url, permanent=(not (django_settings.DEBUG)))
 
         try:
-            if (request.path == reverse('accounts:set_session')):
+            if (request.path == reverse(viewname='accounts:set_session')):
                 return self.get_response(request=request)
         except NoReverseMatch:
             pass

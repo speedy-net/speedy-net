@@ -76,21 +76,21 @@ def has_access_perm_for_email_address(user, email_address):
 
 
 if (not (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID)):
-    add_perm('accounts.view_profile', has_access_perm & ~there_is_block)
-    add_perm('accounts.view_profile_header', has_access_perm)
-    add_perm('accounts.view_profile_info', has_access_perm)
-    add_perm('accounts.view_profile_age', has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
-    add_perm('accounts.view_user_on_speedy_net_widget', always_deny)
-    add_perm('accounts.view_user_on_speedy_match_widget', has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
+    add_perm(name='accounts.view_profile', pred=has_access_perm & ~there_is_block)
+    add_perm(name='accounts.view_profile_header', pred=has_access_perm)
+    add_perm(name='accounts.view_profile_info', pred=has_access_perm)
+    add_perm(name='accounts.view_profile_age', pred=has_access_perm & has_access_perm_for_dob_day_month & has_access_perm_for_dob_year)
+    add_perm(name='accounts.view_user_on_speedy_net_widget', pred=always_deny)
+    add_perm(name='accounts.view_user_on_speedy_match_widget', pred=has_access_perm & ~is_self & ~there_is_block & view_user_on_speedy_match_widget)  # Widget doesn't display anything if there is no match; Users will not see a link to their own Speedy Match profile on Speedy Net.
 
-add_perm('accounts.view_profile_username', has_access_perm & is_self)
-add_perm('accounts.view_profile_dob_day_month', has_access_perm & has_access_perm_for_dob_day_month)
-add_perm('accounts.view_profile_dob_year', has_access_perm & has_access_perm_for_dob_year)
-add_perm('accounts.edit_profile', is_self)
-add_perm('accounts.confirm_useremailaddress', is_email_address_owner & ~email_address_is_confirmed)
-add_perm('accounts.delete_useremailaddress', is_email_address_owner & ~email_address_is_primary & ~email_address_is_only_confirmed_email)
-add_perm('accounts.setprimary_useremailaddress', is_email_address_owner & email_address_is_confirmed)
-add_perm('accounts.change_useremailaddress', is_email_address_owner)
-add_perm('accounts.view_useremailaddress', email_address_is_confirmed & has_access_perm_for_email_address)
+add_perm(name='accounts.view_profile_username', pred=has_access_perm & is_self)
+add_perm(name='accounts.view_profile_dob_day_month', pred=has_access_perm & has_access_perm_for_dob_day_month)
+add_perm(name='accounts.view_profile_dob_year', pred=has_access_perm & has_access_perm_for_dob_year)
+add_perm(name='accounts.edit_profile', pred=is_self)
+add_perm(name='accounts.confirm_useremailaddress', pred=is_email_address_owner & ~email_address_is_confirmed)
+add_perm(name='accounts.delete_useremailaddress', pred=is_email_address_owner & ~email_address_is_primary & ~email_address_is_only_confirmed_email)
+add_perm(name='accounts.setprimary_useremailaddress', pred=is_email_address_owner & email_address_is_confirmed)
+add_perm(name='accounts.change_useremailaddress', pred=is_email_address_owner)
+add_perm(name='accounts.view_useremailaddress', pred=email_address_is_confirmed & has_access_perm_for_email_address)
 
 

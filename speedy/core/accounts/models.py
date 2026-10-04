@@ -944,15 +944,15 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     def clean_localizable_field(self, base_field_name):
         field_names = get_all_field_names(base_field_name=base_field_name)
         for field_name in field_names:
-            if (not (string_is_not_none(getattr(self, field_name)))):
+            if (not (string_is_not_none(s=getattr(self, field_name)))):
                 for _field_name in field_names:
                     # Check again because maybe this field changed.
-                    if (not (string_is_not_none(getattr(self, field_name)))):
-                        if (string_is_not_none(getattr(self, _field_name))):
+                    if (not (string_is_not_none(s=getattr(self, field_name)))):
+                        if (string_is_not_none(s=getattr(self, _field_name))):
                             setattr(self, field_name, getattr(self, _field_name))
 
     def get_absolute_url(self):
-        return reverse('profiles:user', kwargs={'slug': self.slug})
+        return reverse(viewname='profiles:user', kwargs={'slug': self.slug})
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
         site = Site.objects.get_current()

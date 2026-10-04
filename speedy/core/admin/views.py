@@ -172,7 +172,7 @@ class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
     def get_widgets(self):
         widgets = []
         for widget_path in django_settings.ADMIN_USER_PROFILE_WIDGETS:
-            widget_class = import_string(widget_path)
+            widget_class = import_string(dotted_path=widget_path)
             widgets.append(widget_class(**self.get_widget_kwargs()))
         return widgets
 

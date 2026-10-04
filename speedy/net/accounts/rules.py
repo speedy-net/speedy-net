@@ -7,7 +7,7 @@ from speedy.core.accounts.rules import has_access_perm
 
 
 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-    add_perm('accounts.view_blocked_users_list', has_access_perm & is_self)
-    add_perm('accounts.delete_account', is_authenticated & ~has_access_perm & ~is_active & is_self)
+    add_perm(name='accounts.view_blocked_users_list', pred=has_access_perm & is_self)
+    add_perm(name='accounts.delete_account', pred=is_authenticated & ~has_access_perm & ~is_active & is_self)
 
 
