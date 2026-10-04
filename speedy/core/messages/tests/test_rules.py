@@ -170,6 +170,36 @@ if (django_settings.TESTS):
                     self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
                     self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
 
+            def test_can_send_message_to_other_user_if_didnt_send_too_many_discord_messages(self):
+                self._create_users(users_count=11)
+                chats = dict()
+                for i in range(9):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Join our discord server!')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
+            def test_cannot_send_message_to_other_user_if_sent_too_many_discord_messages(self):
+                self._create_users(users_count=11)
+                chats = dict()
+                for i in range(9):
+                    chats[str(i)] = ChatFactory(ent1=self.user_1, ent2=getattr(self, "user_{}".format(3 + i)))
+                    Message.objects.send_message(from_entity=self.user_1, chat=chats[str(i)], text='Join our discord server!')
+                    sleep(0.01)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                    self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+                chats[str(9)] = ChatFactory(ent1=self.user_1, ent2=self.user_12)
+                Message.objects.send_message(from_entity=self.user_1, chat=chats[str(9)], text='Join our discord server!')
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_2), expr2=False)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.send_message', obj=self.user_3), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_2), expr2=True)
+                self.assertIs(expr1=self.user_1.has_perm(perm='messages.view_send_message_button', obj=self.user_3), expr2=True)
+
             def test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_1(self):
                 self._create_users(users_count=24)
                 chats = dict()

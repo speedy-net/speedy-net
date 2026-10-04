@@ -21,6 +21,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
         from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
+        from speedy.core.accounts.fields import UserAccessField
         from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
@@ -3629,6 +3630,113 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        class ChangeUserEmailAddressPrivacyViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+                self.email_address_url = '/edit-profile/emails/{}/privacy/'.format(self.email_address.id)
+                self.other_user_address = UserEmailAddressFactory()
+                self.other_user_address_url = '/edit-profile/emails/{}/privacy/'.format(self.other_user_address.id)
+                self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_visitor_has_no_access(self):
+                self.client.logout()
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertEqual(first=r.status_code, second=403)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_user_has_no_access_to_other_users_address(self):
+                r = self.client.post(path=self.other_user_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertEqual(first=r.status_code, second=403)
+                self.other_user_address.refresh_from_db()
+                self.assertEqual(first=self.other_user_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_get_redirects_to_edit_profile_emails_page(self):
+                r = self.client.get(path=self.email_address_url)
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_user_can_change_email_address_privacy_to_friends(self):
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_FRIENDS})
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_FRIENDS)
+
+            def test_user_can_change_email_address_privacy_to_anyone(self):
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ANYONE)
+
+
+        @only_on_sites_with_login
+        class ResendConfirmationEmailViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
+                self.unconfirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.unconfirmed_email_address.id)
+                self.confirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
+                self.confirmed_email_address_url = '/edit-profile/emails/{}/confirm/'.format(self.confirmed_email_address.id)
+                self.other_user_address = UserEmailAddressFactory(is_confirmed=False)
+                self.other_user_address_url = '/edit-profile/emails/{}/confirm/'.format(self.other_user_address.id)
+                self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+
+            def test_visitor_has_no_access(self):
+                self.client.logout()
+                r = self.client.post(path=self.unconfirmed_email_address_url)
+                self.assertEqual(first=r.status_code, second=403)
+                self.assertEqual(first=len(mail.outbox), second=0)
+
+            def test_user_has_no_access_to_other_users_address(self):
+                r = self.client.post(path=self.other_user_address_url)
+                self.assertEqual(first=r.status_code, second=403)
+                self.assertEqual(first=len(mail.outbox), second=0)
+
+            def test_user_cannot_resend_confirmation_for_already_confirmed_address(self):
+                r = self.client.post(path=self.confirmed_email_address_url)
+                self.assertEqual(first=r.status_code, second=403)
+                self.assertEqual(first=len(mail.outbox), second=0)
+
+            def test_get_redirects_to_edit_profile_emails_page_without_sending_email(self):
+                r = self.client.get(path=self.unconfirmed_email_address_url)
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.assertEqual(first=len(mail.outbox), second=0)
+
+            def test_user_can_resend_confirmation_email(self):
+                self.assertEqual(first=len(mail.outbox), second=0)
+                r = self.client.post(path=self.unconfirmed_email_address_url)
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                r = self.client.get(path='/edit-profile/emails/')
+                self.assertRedirects(response=r, expected_url='/edit-profile/credentials/', status_code=302, target_status_code=200, fetch_redirect_response=False)
+                r = self.client.get(path='/edit-profile/credentials/')
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(email_address=self.unconfirmed_email_address.email)])
+                self.assertEqual(first=len(mail.outbox), second=1)
+                self.assertIn(member=self.unconfirmed_email_address.confirmation_token, container=mail.outbox[0].body)
 
 
         @only_on_sites_with_login
