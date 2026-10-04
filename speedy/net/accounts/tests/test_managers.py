@@ -39,6 +39,9 @@ if (django_settings.TESTS):
             def test_cannot_mark_a_staff_user_as_deleted(self):
                 # Note: User.save() requires is_superuser == is_staff, so a staff user must also be a superuser.
                 user = InactiveUserFactory(is_staff=True, is_superuser=True)
+                # Superusers are not deactivated by SiteProfile.deactivate(), so deactivate is_active explicitly to isolate the staff/superuser guard from the is_active guard.
+                user.is_active = False
+                user.save_user_and_profile()
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.is_staff, second=True)
                 self.assertEqual(first=user.is_superuser, second=True)
