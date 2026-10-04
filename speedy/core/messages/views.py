@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from django.core.exceptions import PermissionDenied
 from django.urls import reverse
@@ -149,7 +149,7 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
     def get_queryset(self):
         since = float(self.request.GET.get('since', 0))
         since += 0.0001
-        return self.get_messages_queryset().filter(date_created__gt=datetime.fromtimestamp(since))
+        return self.get_messages_queryset().filter(date_created__gt=datetime.fromtimestamp(since, tz=timezone.utc))
 
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)

@@ -134,7 +134,7 @@ if (django_settings.TESTS):
                 self.user_3 = ActiveUserFactory()
                 self.client.login(username=self.user_3.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path=self.page_url, data={'since': self.since})
-                self.assertEqual(first=r.status_code, second=403)
+                self.assertEqual(first=r.status_code, second=404)
 
 
         @only_on_sites_with_login
