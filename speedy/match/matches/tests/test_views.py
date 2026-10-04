@@ -129,12 +129,13 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(messages_list), second=1)
                 self.assertEqual(first=str(messages_list[0]), second="Your match settings were saved.")
                 site_profile = SpeedyMatchSiteProfile.objects.get(pk=self.user.speedy_match_profile.pk)
+                user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=site_profile.profile_description, second="One two three four five six seven eight nine ten eleven twelve.")
-                self.assertEqual(first=site_profile.city, second="Tel Aviv.")
+                self.assertEqual(first=user.city, second="Tel Aviv.")
                 self.assertEqual(first=site_profile.height, second=180)
-                self.assertEqual(first=site_profile.diet, second=User.DIET_VEGAN)
-                self.assertEqual(first=site_profile.smoking_status, second=User.SMOKING_STATUS_NOT_SMOKING)
-                self.assertEqual(first=site_profile.relationship_status, second=User.RELATIONSHIP_STATUS_SINGLE)
+                self.assertEqual(first=user.diet, second=User.DIET_VEGAN)
+                self.assertEqual(first=user.smoking_status, second=User.SMOKING_STATUS_NOT_SMOKING)
+                self.assertEqual(first=user.relationship_status, second=User.RELATIONSHIP_STATUS_SINGLE)
 
 
         @only_on_speedy_match
