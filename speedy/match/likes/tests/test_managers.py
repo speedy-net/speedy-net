@@ -76,3 +76,5 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=1)
                 self.assertEqual(first=UserLike.objects.filter(to_user=self.user_1).count(), second=0)
                 self.assertEqual(first=UserLike.objects.filter(from_user=self.user_1, to_user=third_user).count(), second=1)
+
+

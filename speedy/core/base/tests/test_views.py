@@ -25,3 +25,5 @@ if (django_settings.TESTS):
             def test_non_canonical_path_redirects_permanently_to_canonical_path(self):
                 r = self.client.get(path=self.page_url + '?utm_source=test')
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
+
+

@@ -33,3 +33,5 @@ if (django_settings.TESTS):
                 with self.assertRaises(ValidationError) as cm:
                     validate_profile_picture(profile_picture=profile_picture)
                 self.assertEqual(first=cm.exception.messages, second=["This picture's file size is too big. The maximal file size allowed is 30 MB."])
+
+

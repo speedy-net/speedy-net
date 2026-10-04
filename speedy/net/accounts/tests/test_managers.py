@@ -62,3 +62,5 @@ if (django_settings.TESTS):
                 user = User.objects.get(pk=user.pk)
                 self.assertEqual(first=user.is_deleted, second=False)
                 self.assertEqual(first=len(user.email_addresses.all()), second=0)
+
+
