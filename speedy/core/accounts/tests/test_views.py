@@ -21,6 +21,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
         from speedy.core.base.utils import normalize_slug, normalize_username, to_attribute
+        from speedy.core.accounts.fields import UserAccessField
         from speedy.core.accounts.models import Entity, User, UserEmailAddress
 
 
@@ -3629,6 +3630,58 @@ if (django_settings.TESTS):
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        class ChangeUserEmailAddressPrivacyViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            def set_up(self):
+                super().set_up()
+                self.random_choice = random.choice([1, 2, 3])
+                if (self.random_choice == 1):
+                    self.user = ActiveUserFactory()
+                elif (self.random_choice == 2):
+                    self.user = InactiveUserFactory()
+                elif (self.random_choice == 3):
+                    self.user = SpeedyNetInactiveUserFactory()
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.email_address = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+                self.email_address_url = '/edit-profile/emails/{}/privacy/'.format(self.email_address.id)
+                self.other_user_address = UserEmailAddressFactory()
+                self.other_user_address_url = '/edit-profile/emails/{}/privacy/'.format(self.other_user_address.id)
+                self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_visitor_has_no_access(self):
+                self.client.logout()
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertEqual(first=r.status_code, second=403)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_user_has_no_access_to_other_users_address(self):
+                r = self.client.post(path=self.other_user_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertEqual(first=r.status_code, second=403)
+                self.other_user_address.refresh_from_db()
+                self.assertEqual(first=self.other_user_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_get_redirects_to_edit_profile_emails_page(self):
+                r = self.client.get(path=self.email_address_url)
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
+
+            def test_user_can_change_email_address_privacy_to_friends(self):
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_FRIENDS})
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_FRIENDS)
+
+            def test_user_can_change_email_address_privacy_to_anyone(self):
+                r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
+                self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
+                self.email_address.refresh_from_db()
+                self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ANYONE)
 
 
         @only_on_sites_with_login
