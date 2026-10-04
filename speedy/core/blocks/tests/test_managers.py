@@ -48,6 +48,44 @@ if (django_settings.TESTS):
             def test_has_blocked_false(self):
                 self.assertIs(expr1=Block.objects.has_blocked(blocker=self.user, blocked=self.other_user), expr2=False)
 
+            def test_there_is_block_false(self):
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.user, entity_2=self.other_user), expr2=False)
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.other_user, entity_2=self.user), expr2=False)
+
+            def test_there_is_block_true_when_blocker_blocked_the_other(self):
+                Block.objects.block(blocker=self.user, blocked=self.other_user)
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.user, entity_2=self.other_user), expr2=True)
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.other_user, entity_2=self.user), expr2=True)
+
+            def test_there_is_block_true_when_blocked_blocked_the_blocker(self):
+                Block.objects.block(blocker=self.other_user, blocked=self.user)
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.user, entity_2=self.other_user), expr2=True)
+                self.assertIs(expr1=Block.objects.there_is_block(entity_1=self.other_user, entity_2=self.user), expr2=True)
+
+            def test_remove_all_blocks_by_entity(self):
+                third_user = ActiveUserFactory()
+                Block.objects.block(blocker=self.user, blocked=self.other_user)
+                Block.objects.block(blocker=self.user, blocked=third_user)
+                Block.objects.block(blocker=third_user, blocked=self.user)
+                self.assertEqual(first=Block.objects.count(), second=3)
+                Block.objects.remove_all_blocks_by_entity(blocker=self.user)
+                self.assertEqual(first=Block.objects.count(), second=1)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=self.user, blocked=self.other_user), expr2=False)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=self.user, blocked=third_user), expr2=False)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=third_user, blocked=self.user), expr2=True)
+
+            def test_remove_all_blocks_of_entity(self):
+                third_user = ActiveUserFactory()
+                Block.objects.block(blocker=self.other_user, blocked=self.user)
+                Block.objects.block(blocker=third_user, blocked=self.user)
+                Block.objects.block(blocker=self.user, blocked=third_user)
+                self.assertEqual(first=Block.objects.count(), second=3)
+                Block.objects.remove_all_blocks_of_entity(blocked=self.user)
+                self.assertEqual(first=Block.objects.count(), second=1)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=self.other_user, blocked=self.user), expr2=False)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=third_user, blocked=self.user), expr2=False)
+                self.assertIs(expr1=Block.objects.has_blocked(blocker=self.user, blocked=third_user), expr2=True)
+
             def test_user_blocks_himself_raises_an_exception(self):
                 with self.assertRaises(ValidationError) as cm:
                     Block.objects.block(blocker=self.user, blocked=self.user)
