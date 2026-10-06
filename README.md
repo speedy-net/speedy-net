@@ -139,12 +139,13 @@ Will compile static files.
     docker-compose run --rm net load_data speedy/core/fixtures/default_sites_local.json
 
 
-## How to setup a server (Ubuntu 22.04)
+## How to setup a server (Ubuntu 26.04)
 
 Install all dependencies using **apt-get**:
 
     sudo add-apt-repository -y ppa:deadsnakes/ppa
-    sudo add-apt-repository -y "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main"
+    sudo apt-get install -y postgresql-common
+    sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
     sudo apt update
     sudo apt-get install python3.13 python3-pip python3.13-venv python3.13-dev  # common python stuff
     sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev  # pillow dependencies
