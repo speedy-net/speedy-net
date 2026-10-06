@@ -137,6 +137,28 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.smoking_status, second=User.SMOKING_STATUS_NOT_SMOKING)
                 self.assertEqual(first=user.relationship_status, second=User.RELATIONSHIP_STATUS_SINGLE)
 
+            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self):
+                data = {
+                    'profile_description_en': "One two three four five six seven eight nine ten eleven twelve.",
+                    'city_en': "Tel Aviv.",
+                    'height': 10,
+                    'children_en': "One boy.",
+                    'more_children_en': "Yes.",
+                    'diet': User.DIET_VEGAN,
+                    'smoking_status': User.SMOKING_STATUS_NOT_SMOKING,
+                    'relationship_status': User.RELATIONSHIP_STATUS_SINGLE,
+                }
+                r = self.client.post(path=self.page_url, data=data, follow=True)
+                self.assertRedirects(response=r, expected_url='/registration-step-9/', status_code=302, target_status_code=200)
+                messages_list = list(r.context['messages'])
+                self.assertEqual(first=len(messages_list), second=1)
+                self.assertEqual(first=str(messages_list[0]), second="Your match settings were saved.")
+                site_profile = SpeedyMatchSiteProfile.objects.get(pk=self.user.speedy_match_profile.pk)
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=site_profile.not_allowed_to_use_speedy_match, second=True)
+                self.assertEqual(first=site_profile.activation_step, second=9)
+                self.assertEqual(first=site_profile.is_active, second=False)
+
 
         @only_on_speedy_match
         class MatchesListViewOnlyEnglishTestCase(SiteTestCase):
