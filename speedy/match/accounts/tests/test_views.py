@@ -6,6 +6,7 @@ if (django_settings.TESTS):
         import unittest
 
         from speedy.core.base.test import tests_settings
+        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
 
@@ -79,12 +80,11 @@ if (django_settings.TESTS):
                 raise NotImplementedError("This test is not implemented in this class.")
 
 
-        class ActivateSiteProfileViewWizardTestCaseMixin(object):
+        class ActivateSiteProfileViewWizardTestCaseMixin(TestCaseMixin):
             """
             Submits real form data through the registration wizard (steps 2-9), instead of bypassing it as
-            ActiveUserFactory does. height is the only value which differs between the two test cases below.
+            ActiveUserFactory does.
             """
-            height = 180
 
             def set_up(self):
                 super().set_up()
@@ -101,14 +101,14 @@ if (django_settings.TESTS):
             def _post_step(self, step, data, **kwargs):
                 return self.client.post(path='/registration-step-{step}/'.format(step=step), data=data, **kwargs)
 
-            def _complete_steps_2_to_8(self):
+            def _complete_steps_2_to_8(self, height):
                 r = self._post_step(step=2, data={})
                 self.assertRedirects(response=r, expected_url='/registration-step-3/', status_code=302, target_status_code=200)
 
                 r = self._post_step(step=3, data={
                     'profile_description_en': "One two three four five six seven eight nine ten eleven twelve.",
                     'city_en': "Tel Aviv.",
-                    'height': self.height,
+                    'height': height,
                 })
                 self.assertRedirects(response=r, expected_url='/registration-step-4/', status_code=302, target_status_code=200)
 
@@ -148,32 +148,13 @@ if (django_settings.TESTS):
                     'relationship_status_match': json.dumps(obj={str(relationship_status): SpeedyMatchSiteProfile.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}),
                 }, **kwargs)
 
-
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWizardOnlyEnglishTestCase(ActivateSiteProfileViewWizardTestCaseMixin, SiteTestCase):
-            height = 180
-
-            def test_user_can_complete_the_registration_wizard(self):
-                self._complete_steps_2_to_8()
-                r = self._post_step_9(follow=True)
-                self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
-                messages_list = list(r.context['messages'])
-                self.assertEqual(first=len(messages_list), second=1)
-                self.assertIn(member="Welcome to", container=str(messages_list[0]))
-                user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.speedy_match_profile.activation_step, second=10)
-                self.assertEqual(first=user.speedy_match_profile.not_allowed_to_use_speedy_match, second=False)
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
-
-
-        class ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin(ActivateSiteProfileViewWizardTestCaseMixin):
-            """
-            self.height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
-            outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy Match.
-            """
-            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self):
-                self._complete_steps_2_to_8()
+            def run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self, height):
+                """
+                height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
+                outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy
+                Match.
+                """
+                self._complete_steps_2_to_8(height=height)
                 r = self._post_step_9(follow=True)
                 self.assertRedirects(response=r, expected_url='/registration-step-9/', status_code=302, target_status_code=200)
                 messages_list = list(r.context['messages'])
@@ -186,22 +167,35 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
-        class ActivateSiteProfileViewWizardWithHeightTooSmallOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
-            height = 10
+        class ActivateSiteProfileViewWizardOnlyEnglishTestCase(ActivateSiteProfileViewWizardTestCaseMixin, SiteTestCase):
+            def test_user_can_complete_the_registration_wizard(self):
+                height = 180
+                self._complete_steps_2_to_8(height=height)
+                r = self._post_step_9(follow=True)
+                self.assertRedirects(response=r, expected_url='/matches/', status_code=302, target_status_code=200)
+                messages_list = list(r.context['messages'])
+                self.assertEqual(first=len(messages_list), second=1)
+                self.assertIn(member="Welcome to", container=str(messages_list[0]))
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.speedy_match_profile.activation_step, second=10)
+                self.assertEqual(first=user.speedy_match_profile.not_allowed_to_use_speedy_match, second=False)
+                self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
+            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_1(self):
+                height = 10
+                self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWizardWithInvalidHeightOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
-            height = 50
+            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_2(self):
+                height = 50
+                self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
+            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_3(self):
+                height = 330
+                self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWizardWithHeightTooBigOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
-            height = 330
-
-
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWizardWithHeightWayTooBigOnlyEnglishTestCase(ActivateSiteProfileViewWizardWithUnmatchableHeightTestCaseMixin, SiteTestCase):
-            height = 400
+            def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_4(self):
+                height = 400
+                self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
 
