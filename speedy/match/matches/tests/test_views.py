@@ -85,6 +85,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=site_profile.match_description, second="One two three four five six seven eight.")
                 self.assertEqual(first=site_profile.min_age_to_match, second=20)
                 self.assertEqual(first=site_profile.max_age_to_match, second=80)
+                self.assertEqual(first=site_profile.not_allowed_to_use_speedy_match, second=False)
+                self.assertEqual(first=site_profile.activation_step, second=10)
+                self.assertEqual(first=site_profile.is_active, second=True)
 
             def test_user_cannot_save_invalid_match_settings(self):
                 data = {
@@ -136,6 +139,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.diet, second=User.DIET_VEGAN)
                 self.assertEqual(first=user.smoking_status, second=User.SMOKING_STATUS_NOT_SMOKING)
                 self.assertEqual(first=user.relationship_status, second=User.RELATIONSHIP_STATUS_SINGLE)
+                self.assertEqual(first=site_profile.not_allowed_to_use_speedy_match, second=False)
+                self.assertEqual(first=site_profile.activation_step, second=10)
+                self.assertEqual(first=site_profile.is_active, second=True)
 
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self):
                 data = {
