@@ -5,6 +5,14 @@ if (django_settings.TESTS):
 
 
     class AboutViewOnlyEnglishTestCase(SiteTestCase):
+        """
+        Test the about page view (English only, since the about page doesn't depend on the language).
+
+        Methods:
+            test_visitor_can_access_about_page(self): Verify a visitor can access the about page.
+            test_non_canonical_path_redirects_permanently_to_canonical_path(self): Verify a non-canonical path (with a query string) redirects permanently to the canonical path.
+        """
+
         def set_up(self):
             super().set_up()
             self.page_url = '/about/'
