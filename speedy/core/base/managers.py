@@ -12,6 +12,7 @@ class QuerySet(models.query.QuerySet):
     Methods:
         delete: Always raises NotImplementedError.
     """
+
     def delete(self):
         """
         Disables bulk deletion of querysets.
@@ -30,6 +31,7 @@ class ManagerMixin(object):
         delete: Always raises NotImplementedError.
         get_queryset: Returns our own QuerySet without method .delete().
     """
+
     def bulk_create(self, *args, **kwargs):
         """
         Disables bulk creation of objects.

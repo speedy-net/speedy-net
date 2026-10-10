@@ -5,11 +5,9 @@ Translation strings of Speedy Match (including gender-specific variants), used o
 
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
-
 _("")
 
 _('My height in centimeters')
-
 
 pgettext_lazy(context="female", message='Add profile picture')
 pgettext_lazy(context="male", message='Add profile picture')

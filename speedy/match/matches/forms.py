@@ -18,6 +18,7 @@ class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
         get_fields(self): Returns the field names included in this form.
         get_visible_fields(self): Returns the field names visible on this form.
     """
+
     def get_fields(self):
         """
         Returns the field names included in this form.
@@ -45,6 +46,7 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
         __init__(self, *args, **kwargs): Builds the form and its crispy-forms layout.
         get_field_pairs(self): Not implemented in this abstract base form; must be implemented by subclasses.
     """
+
     def __init__(self, *args, **kwargs):
         """
         Builds the form, then constructs its two-column crispy-forms layout and appends a save button.
@@ -94,6 +96,7 @@ class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
         get_field_pairs(self): Returns the field pairs used to lay out this form.
         get_visible_fields(self): Returns the field names visible on this form.
     """
+
     def get_fields(self):
         """
         Returns the field names included in this form.
@@ -131,6 +134,7 @@ class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
         get_field_pairs(self): Returns the field pairs used to lay out this form.
         get_visible_fields(self): Returns the field names visible on this form.
     """
+
     def get_fields(self):
         """
         Returns the field names included in this form.

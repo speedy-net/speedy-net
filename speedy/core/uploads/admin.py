@@ -10,6 +10,7 @@ class FileOwnerAdminMixin(object):
     """
     Mixin for File/Image admin classes that prefetches the owner relation for the admin changelist queryset.
     """
+
     def get_queryset(self, request):
         """
         Get the queryset for the admin changelist, with the owner relation prefetched.

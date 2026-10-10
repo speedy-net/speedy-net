@@ -13,6 +13,7 @@ class ChordsTemplate(SpeedyComposerNode):
     """
     A chords template that can be used in a composition.
     """
+
     class Meta:
         verbose_name = _('chords template')
         verbose_name_plural = _('chords templates')
@@ -22,6 +23,7 @@ class Accompaniment(SpeedyComposerNode):
     """
     An accompaniment that can be used in a composition.
     """
+
     class Meta:
         verbose_name = _('accompaniment')
         verbose_name_plural = _('accompaniments')

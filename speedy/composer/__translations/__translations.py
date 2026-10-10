@@ -5,7 +5,6 @@ Placeholder file used only by the make_all_messages script of Speedy Composer to
 
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
-
 _("")
 
 

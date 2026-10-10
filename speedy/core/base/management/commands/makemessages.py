@@ -20,6 +20,7 @@ class Command(makemessages.Command):
     Methods:
         write_po_file: Writes the .po file, preserving the original file (and its mtime) when only the "POT-Creation-Date" header changed.
     """
+
     def write_po_file(self, potfile, locale):
         """
         Writes the .po file for the given locale, but avoids rewriting it (and bumping its mtime) when the only difference from the existing file is the "POT-Creation-Date" header line, so that `compilemessages` does not needlessly recompile unchanged files.

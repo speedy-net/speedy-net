@@ -16,6 +16,7 @@ class MessageForm(forms.ModelForm):
     """
     Form for composing and sending a message, either to an existing chat or to start a new chat with another entity.
     """
+
     class Meta:
         model = Message
         fields = ('text',)

@@ -31,6 +31,7 @@ class BlockManager(BaseManager):
         get_blocking_entities_ids(self, blocked): Get the (cached) ids of entities blocking blocked.
         get_blocked_list_to_queryset(self, blocker): Get a queryset of Block instances for the entities blocker has blocked (including inactive users).
     """
+
     def _update_caches(self, blocker, blocked):
         """
         Update caches after block or unblock.

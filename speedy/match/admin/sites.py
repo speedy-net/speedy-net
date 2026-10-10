@@ -14,6 +14,7 @@ class AdminSite(speedy_core_admin_sites.AdminSite):
     Methods:
         get_urls(self): Returns the admin URL patterns, including the Speedy Match matches list views.
     """
+
     def get_urls(self):
         """
         Returns the admin URL patterns, extending the parent site's patterns with the Speedy Match matches-list admin views.

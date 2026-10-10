@@ -10,6 +10,7 @@ if (django_settings.TESTS):
     TestCaseTypeHintMixin = object
     if (TYPE_CHECKING):
         from speedy.core.base.test.models import SiteTestCase
+
         TestCaseTypeHintMixin = SiteTestCase
 
 
@@ -30,6 +31,7 @@ if (django_settings.TESTS):
             _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits: Builds the "exceeds the limit ... digits" error message.
             set_up: Sets up the translated error messages for the current test's language.
         """
+
         def _all_the_required_fields_are_required_errors_dict_by_required_fields(self, required_fields):
             """
             Builds a dict mapping each required field name to a list containing the "this field is required" error message, in the current test's language.
@@ -81,7 +83,6 @@ if (django_settings.TESTS):
                 pass
             else:
                 raise NotImplementedError("Python version must be at least 3.12.")
-
 
             self._this_field_is_required_error_message = _this_field_is_required_error_message_dict[self.language_code]
             # self._ensure_this_value_has_at_least_min_length_characters_error_message_to_format = _ensure_this_value_has_at_least_min_length_characters_error_message_to_format_dict[self.language_code]

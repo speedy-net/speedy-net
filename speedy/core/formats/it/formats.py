@@ -7,10 +7,9 @@ Django date and time format settings for the Italian language (it) in Speedy Cor
 DATE_FORMAT = "d F Y"
 MONTH_DAY_FORMAT = "j F"
 
-
 # Formats accepted as input for dates in the language 'it' (strptime format strings); only the ISO format YYYY-MM-DD is accepted.
 DATE_INPUT_FORMATS = [
-    "%Y-%m-%d",                           # '2006-10-25',
+    "%Y-%m-%d",  # '2006-10-25',
 ]
 
 

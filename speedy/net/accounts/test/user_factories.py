@@ -15,6 +15,7 @@ if (django_settings.TESTS):
             """
             This factory is used to create users who are inactive on Speedy Net and Speedy Match.
             """
+
             @factory.post_generation
             def deactivate_profile(self, created, extracted, **kwargs):
                 """
@@ -32,6 +33,7 @@ if (django_settings.TESTS):
             """
             This factory is used to create users who are active on Speedy Net, but inactive on Speedy Match.
             """
+
             @factory.post_generation
             def activate_profile(self, created, extracted, **kwargs):
                 """

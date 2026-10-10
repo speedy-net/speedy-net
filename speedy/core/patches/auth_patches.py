@@ -1,6 +1,8 @@
 """
 Monkey patch of Django's ModelBackend.authenticate for Speedy Core, which avoids an unnecessary database save when hashing the password of a non-existing user.
 """
+
+
 def patch():
     """
     Monkey patch ModelBackend.authenticate to replace the call to User.set_password with make_password, avoiding an unnecessary database save.

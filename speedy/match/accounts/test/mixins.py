@@ -15,6 +15,7 @@ if (django_settings.TESTS):
         Methods:
             assert_step_and_error_messages_ok(self, step, error_messages): Asserts the activation step reached the final step with no error messages.
         """
+
         def assert_step_and_error_messages_ok(self, step, error_messages):
             """
             Asserts that the activation step reached the final step (10) with no error messages.
@@ -39,6 +40,7 @@ if (django_settings.TESTS):
             _item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(self, field_name, index, value): Builds an errors dict for an invalid choice value at a given array index.
             set_up(self): Sets up all the localized error message attributes used by the test cases.
         """
+
         def _item_in_the_array_did_not_validate_error_message_by_index(self, index):
             """
             Returns the formatted "item did not validate" message for a given array index.
@@ -113,7 +115,6 @@ if (django_settings.TESTS):
             self._at_least_one_diet_match_option_should_be_5_hearts_error_message = _at_least_one_diet_match_option_should_be_5_hearts_error_message_dict[self.language_code]
             self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message = _at_least_one_smoking_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
             self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message = _at_least_one_relationship_status_match_option_should_be_5_hearts_error_message_dict[self.language_code]
-
 
             self._item_in_the_array_did_not_validate_error_message_to_format = _item_in_the_array_did_not_validate_error_message_to_format_dict[self.language_code]
 

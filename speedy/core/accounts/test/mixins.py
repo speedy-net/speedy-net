@@ -19,6 +19,7 @@ if (django_settings.TESTS):
             assert_user_email_addresses_count(self, user, user_email_addresses_count, user_primary_email_addresses_count, user_confirmed_email_addresses_count, user_unconfirmed_email_addresses_count): Asserts the counts of a user's email addresses (primary/confirmed/unconfirmed) and the user's has_confirmed_email flag.
             assert_user_first_and_last_name_in_all_languages(self, user): Asserts that a user's first and last name are set identically in all the localized per-language name fields.
         """
+
         def assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count):
             """
             Asserts that the database contains the expected number of entities, users and user email addresses (confirmed and unconfirmed).
@@ -265,7 +266,6 @@ if (django_settings.TESTS):
             :rtype: str
             """
             return self._username_must_contain_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
-
 
         def _a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(self, email_address):
             """
@@ -1509,7 +1509,6 @@ if (django_settings.TESTS):
                     **{gender: 'Apstipriniet savu e-pasta adresi vietnē Speedy Match' for gender in User.ALL_GENDERS},
                 },
             }
-
 
             self._this_field_cannot_be_null_error_message = _this_field_cannot_be_null_error_message_dict[self.language_code]
             self._this_field_cannot_be_blank_error_message = _this_field_cannot_be_blank_error_message_dict[self.language_code]

@@ -26,6 +26,7 @@ class ChatManager(BaseManager):
         count_identical_messages_in_chats_with_only_one_sender(self, entity): Returns the count and text of the most repeated long message sent by the entity in chats where it is the only sender.
         count_unread_chats(self, entity): Returns the number of unread chats for the given entity, using a cache.
     """
+
     def get_queryset(self):
         """
         Returns the queryset of chats restricted to the current site, with messages and their senders prefetched.
@@ -159,6 +160,7 @@ class MessageManager(BaseManager):
     Methods:
         send_message(self, from_entity, to_entity, chat, text): Creates a message from one entity to another entity or an existing chat, and updates the chat accordingly.
     """
+
     def send_message(self, from_entity, to_entity=None, chat=None, text=None):
         """
         Creates a new message from an entity, either to another entity (creating or reusing their private chat) or to an existing chat, and updates the chat's last message and marks it as read for the sender.
@@ -194,6 +196,7 @@ class ReadMarkManager(BaseManager):
         annotate_chats_with_read_marks(self, chat_list, entity): Sets the is_unread attribute on each chat in chat_list based on the entity's read marks.
         mark(self, chat, entity): Creates or updates the read mark for the given chat and entity.
     """
+
     def annotate_chats_with_read_marks(self, chat_list, entity):
         """
         Sets the is_unread attribute on each chat in chat_list, based on whether the entity has a read mark for that chat newer than its last message.

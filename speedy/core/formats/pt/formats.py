@@ -7,10 +7,9 @@ Django date and time format settings for the Portuguese language (pt) in Speedy 
 DATE_FORMAT = r"j \d\e F \d\e Y"
 MONTH_DAY_FORMAT = r"j \d\e F"
 
-
 # Formats accepted as input for dates in the language 'pt' (strptime format strings); only the ISO format YYYY-MM-DD is accepted.
 DATE_INPUT_FORMATS = [
-    "%Y-%m-%d",                           # '2006-10-25',
+    "%Y-%m-%d",  # '2006-10-25',
 ]
 
 

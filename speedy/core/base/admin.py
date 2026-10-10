@@ -151,6 +151,7 @@ class _Friend(object):
     """
     A helper class used only to provide a `__str__` method to monkey-patch onto `friendship.models.Friend`.
     """
+
     def __str__(self):
         """
         Returns a human-readable string representation of the friendship.
@@ -165,6 +166,7 @@ class _FriendshipRequest(object):
     """
     A helper class used only to provide a `__str__` method to monkey-patch onto `friendship.models.FriendshipRequest`.
     """
+
     def __str__(self):
         """
         Returns a human-readable string representation of the friendship request.

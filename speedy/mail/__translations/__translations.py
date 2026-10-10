@@ -5,7 +5,6 @@ Translation strings of Speedy Mail Software which are not used in the code, only
 
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
-
 _("")
 
 
