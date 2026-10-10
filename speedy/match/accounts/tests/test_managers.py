@@ -22,7 +22,18 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class ManagerBlocksOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests that blocking/unblocking users affects the Speedy Match matches list, run only once (in English) since it is language-independent.
+
+            Methods:
+                set_up(self): Creates 5 active users for use by the tests.
+                test_set_up(self): Asserts the 5 users were created correctly.
+                test_blocked_users_dont_appear_in_matches_list(self): Test that blocked and blocking users don't appear in matches list.
+            """
             def set_up(self):
+                """
+                Creates 5 active users for use by the tests.
+                """
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
@@ -31,6 +42,9 @@ if (django_settings.TESTS):
                 self.user_5 = ActiveUserFactory(gender=User.GENDER_OTHER)
 
             def test_set_up(self):
+                """
+                Asserts the 5 users were created correctly.
+                """
                 self.assertEqual(first=User.objects.count(), second=5)
 
             def test_blocked_users_dont_appear_in_matches_list(self):
@@ -80,7 +94,21 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class ManagerMatchesOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the Speedy Match matches list computation (gender/length/photo visibility rules), run only once (in English) since it is language-independent.
+
+            Methods:
+                set_up(self): Creates 5 active users of various genders for use by the tests.
+                test_set_up(self): Asserts the 5 users were created correctly.
+                test_gender_doesnt_match_profile_in_matches_list(self): Test that users with non-matching genders don't appear in matches list.
+                test_length_of_matches_list(self): Test that the matches list has the expected length as more users are added, and that it's capped.
+                test_photo_not_visible_doesnt_match_profile_in_matches_list(self): Test that users with invisible photos don't appear in matches list, but their matches are not affected.
+                test_cannot_delete_site_profiles_with_queryset_delete(self): Test that bulk-deleting site profiles via the queryset always raises NotImplementedError.
+            """
             def set_up(self):
+                """
+                Creates 5 active users of various genders for use by the tests.
+                """
                 super().set_up()
                 self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)
                 self.user_2 = ActiveUserFactory(gender=User.GENDER_MALE)
@@ -89,6 +117,9 @@ if (django_settings.TESTS):
                 self.user_5 = ActiveUserFactory(gender=User.GENDER_OTHER)
 
             def test_set_up(self):
+                """
+                Asserts the 5 users were created correctly.
+                """
                 self.assertEqual(first=User.objects.count(), second=5)
 
             def test_gender_doesnt_match_profile_in_matches_list(self):
@@ -400,6 +431,9 @@ if (django_settings.TESTS):
             #     # self.assertListEqual(list1=[u.speedy_match_profile.rank for u in matches_list], list2=[5, 1, 1])
             #
             def test_length_of_matches_list(self):
+                """
+                Test that the matches list has the expected length as more users are added, and that it's capped at 720 matches.
+                """
                 # This test takes a long time. Run the full test only on random 5% of the times.
                 if (django_settings.TEST_LANGUAGES in {'test-all-languages', 'test-default-languages'}):
                     if (random.randint(0, 19) == 0):
@@ -479,6 +513,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=self.user_5 in matches_list, expr2=True)
 
             def test_cannot_delete_site_profiles_with_queryset_delete(self):
+                """
+                Test that bulk-deleting site profiles via the queryset (direct, filtered or excluded) always raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     SpeedyMatchSiteProfile.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
