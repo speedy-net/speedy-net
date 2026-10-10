@@ -1,6 +1,9 @@
 # Used also by Speedy Net.
 
 class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
+    """
+    Namespace class holding Speedy Match site profile configuration constants - height/age limits, the step-by-step activation form field groups, and other related settings. Also used by Speedy Net.
+    """
     MIN_HEIGHT_ALLOWED = 1  # In cm.
     MAX_HEIGHT_ALLOWED = 450  # In cm.
 
