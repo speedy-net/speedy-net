@@ -17,6 +17,12 @@ logger = logging.getLogger(__name__)
 
 
 class RegistrationView(speedy_core_accounts_views.RegistrationView):
+    """
+    Registration view for Speedy Match, adding the total number of active members text to the template context.
+
+    Methods:
+        get_context_data(self, **kwargs): Adds the active members count text to the context.
+    """
     def get_context_data(self, **kwargs):
         cd = super().get_context_data(**kwargs)
         cd.update({
@@ -26,11 +32,28 @@ class RegistrationView(speedy_core_accounts_views.RegistrationView):
 
 
 class IndexView(speedy_core_accounts_views.IndexView):
+    """
+    Speedy Match home page view, redirecting authenticated users to their matches list.
+    """
     redirect_authenticated_users_to = 'matches:list'
     registration_view = RegistrationView
 
 
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
+    """
+    Multi-step activation view for the Speedy Match site profile, guiding the user through the profile activation wizard steps.
+
+    Methods:
+        get_context_data(self, **kwargs): Adds step and conversion-tracking info to the context.
+        get_form_kwargs(self): Adds the current step to the form's keyword arguments.
+        dispatch(self, request, *args, **kwargs): Validates and redirects based on the requested step and the user's state.
+        get(self, request, *args, **kwargs): Handles GET requests, redirecting when the step is invalid or already completed.
+        get_account_activation_url(self): Returns the URL for the current activation step.
+        display_welcome_message(self): Displays a welcome message after successful activation.
+        display_not_allowed_to_use_speedy_match_message(self): Displays a message informing the user they are not authorized to use the site.
+        get_success_url(self): Returns the URL to redirect to after a successful form submission.
+        form_valid(self, form): Handles a valid form submission, activating the account and displaying relevant messages.
+    """
     def get_context_data(self, **kwargs):
         if (self.request.user.is_authenticated):
             if ((now() - self.request.user.date_created).days < 7):
@@ -136,6 +159,9 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
 
 
 class EditProfileNotificationsView(speedy_core_accounts_views.EditProfileNotificationsView):
+    """
+    View for editing Speedy Match notification preferences, using the Speedy Match specific notifications form.
+    """
     form_class = ProfileNotificationsForm
 
 

@@ -21,6 +21,13 @@ logger = logging.getLogger(__name__)
 
 
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
+    """
+    Custom checkbox-select-multiple widget that renders and parses its value as JSON, used for the diet/smoking/relationship match rank fields.
+
+    Methods:
+        render(self, name, value, attrs=None, renderer=None): Renders the widget using the json_widget.html template.
+        value_from_datadict(self, data, files, name): Extracts the raw value for this field from the submitted form data.
+    """
     def render(self, name, value, attrs=None, renderer=None):
         return render_to_string(template_name='accounts/edit_profile/widgets/json_widget.html', context={'choices': self.choices, 'name': name, 'value': json.loads(value)})
 
@@ -29,6 +36,24 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
 
 
 class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
+    """
+    Base form for editing a Speedy Match site profile, shared by the step-by-step activation form. Defines all profile fields, their validators, widgets and error messages, and handles saving changes back to both the User and SiteProfile models.
+
+    Attributes:
+        user_fields: Field names that belong to the User model rather than the SiteProfile model.
+        validators: A mapping of field name to the list of validator functions to apply.
+        profile_picture, diet, smoking_status, relationship_status, gender_to_match: Extra form fields not directly defined on the SiteProfile model.
+
+    Methods:
+        __init__(self, *args, **kwargs): Builds the form, creates dynamic fields, updates labels/choices/validators and rearranges fields.
+        clean_profile_picture(self): Validates and processes an uploaded profile picture.
+        clean_gender_to_match(self): Converts the submitted gender-to-match values to integers.
+        clean(self): Performs cross-field validation of the minimal/maximal age to match.
+        save(self, commit=True): Saves the form data to both the User and SiteProfile models, and advances the activation step.
+        get_fields(self): Not implemented in this abstract base form; must be implemented by subclasses.
+        get_visible_fields(self): Not implemented in this abstract base form; must be implemented by subclasses.
+        get_hidden_fields(self): Returns the field names that are present but not visible.
+    """
     # Fields from the User model.
     user_fields = (
         'diet',
@@ -294,6 +319,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
 
 
 class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
+    """
+    Form used for the step-by-step Speedy Match profile activation wizard, restricting fields to those relevant to the current step.
+
+    Methods:
+        get_fields(self): Returns the field names for the current activation step.
+        get_visible_fields(self): Returns the visible field names, same as get_fields for this form.
+    """
     def get_fields(self):
         return utils.get_step_form_fields(step=self.step)
 
@@ -302,6 +334,9 @@ class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
 
 
 class ProfileNotificationsForm(speedy_core_accounts_forms.ProfileNotificationsForm):
+    """
+    Speedy Match notifications preferences form, restricted to the "notify on like" profile field.
+    """
     _profile_fields = ("notify_on_like",)
 
 
