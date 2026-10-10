@@ -1,3 +1,6 @@
+"""
+Base URL configuration of Speedy Core, shared by all the Speedy Core based sites.
+"""
 from django.conf import settings as django_settings
 from django.urls import path, include
 from django.conf.urls.static import static

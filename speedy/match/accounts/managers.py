@@ -1,3 +1,6 @@
+"""
+Managers of the Speedy Match accounts app: the SiteProfile manager which calculates the matches of a user and a signal handler which invalidates matches after a user update.
+"""
 import logging
 import hashlib
 import random
@@ -22,11 +25,31 @@ logger = logging.getLogger(__name__)
 
 @receiver(signal=models.signals.post_save, sender=User)
 def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
+    """
+    Signal receiver that busts the cached matches list for a user after their User instance is saved, unless the save was triggered only by a last-visit update.
+
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The user instance that was saved.
+    :type instance: speedy.core.accounts.models.User
+    :param kwargs: Additional keyword arguments from the signal.
+    """
     if (not (getattr(instance.profile, '_in_update_last_visit', None))):
         bust_cache(cache_type='matches', entities_pks=[instance.pk])
 
 
 class SiteProfileManager(BaseManager):
+    """
+    Manager for the Speedy Match SiteProfile model, providing the matching algorithm and cached matches list retrieval.
+
+    Methods:
+        _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids): Computes the matching rank between two users.
+        _get_distance_offset(self, index): Returns the distance offset used while scanning candidate matches by index.
+        _get_matching_users_queryset(self, user, from_list=None): Returns the queryset of candidate users to match against.
+        _get_matches(self, user): Computes and returns the list of matches for a user.
+        get_matches_from_list(self, user, from_list): Returns the cached or computed list of matches for a user, restricted to from_list.
+        get_matches(self, user): Returns the cached or computed list of matches for a user.
+    """
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
         """
         Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.

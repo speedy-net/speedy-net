@@ -1,3 +1,6 @@
+"""
+Forms for the messages app of Speedy Core, which define the message form.
+"""
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Layout, Submit
 
@@ -10,11 +13,21 @@ from .models import Message
 
 
 class MessageForm(forms.ModelForm):
+    """
+    Form for composing and sending a message, either to an existing chat or to start a new chat with another entity.
+    """
     class Meta:
         model = Message
         fields = ('text',)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initializes the form, extracting the from_entity and either a to_entity or a chat keyword argument (exactly one of them must be given), and sets up the form helper with the correct submit action.
+
+        :param args: Positional arguments passed to the parent form.
+        :param kwargs: Keyword arguments, including from_entity, and either to_entity or chat.
+        :raises AssertionError: If both or neither of to_entity/chat are provided together with from_entity.
+        """
         self.from_entity = kwargs.pop('from_entity', None)
         self.to_entity = kwargs.pop('to_entity', None)
         self.chat = kwargs.pop('chat', None)
@@ -32,6 +45,14 @@ class MessageForm(forms.ModelForm):
         )
 
     def save(self, commit=True):
+        """
+        Saves the form by sending the message to the target chat or entity. Only supports commit=True.
+
+        :param commit: Must be True; this form does not support deferred saving.
+        :type commit: bool
+        :return: The newly created message.
+        :rtype: speedy.core.messages.models.Message
+        """
         assert commit
         return Message.objects.send_message(from_entity=self.from_entity, to_entity=self.to_entity, chat=self.chat, text=self.cleaned_data['text'])
 

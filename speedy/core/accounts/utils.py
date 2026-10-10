@@ -1,3 +1,6 @@
+"""
+Utility functions of the Speedy Core accounts app, such as getting the site profile model and normalizing email addresses.
+"""
 from django.apps import apps
 from django.conf import settings as django_settings
 

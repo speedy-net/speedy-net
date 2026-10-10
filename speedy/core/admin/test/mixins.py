@@ -1,10 +1,22 @@
+"""
+Test mixins of the Speedy Core admin app, with language specific translations used by the admin tests.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     from speedy.core.base.test.mixins import TestCaseMixin
 
     class SpeedyCoreAdminLanguageMixin(TestCaseMixin):
+        """
+        Provides language-specific translations (permission-denied heading/alert, and profile-list link labels) used by admin view tests.
+
+        Methods:
+            set_up(self): Sets the translated permission-denied heading, private-page alert, and Speedy Net/Match profile-list labels for the current test's language.
+        """
         def set_up(self):
+            """
+            Sets translated text attributes (permission-denied heading, private-page alert, and Speedy Net/Match profile-list labels) for the current test's language, used by assertions in admin view tests.
+            """
             super().set_up()
 
             _permission_denied_h1_dict = {'en': 'Permission Denied', 'fr': 'Permission Refusée', 'de': 'Erlaubnisse Abgelehnt', 'es': 'Permiso Denegado', 'pt': 'Permissão Recusada', 'it': 'Autorizzazione Negata', 'nl': 'Geen Toestemming', 'ja': 'アクセスが拒否されました', 'ru': 'Доступ запрещен', 'zh': '权限被拒绝', 'pl': 'Brak uprawnień', 'fa': 'دسترسی رد شد', 'he': 'ההרשאה נדחתה', 'ko': '권한 거부됨', 'ar': 'تم رفض الإذن', 'id': 'Izin ditolak', 'uk': 'Доступ заборонено', 'tr': 'İzin reddedildi', 'vi': 'Quyền truy cập bị từ chối', 'cs': 'Přístup odepřen', 'sv': 'Tillträde Nekat', 'fi': 'Lupa Kielletty', 'hu': 'Hozzáférés megtagadva', 'th': 'ปฏิเสธการเข้าถึง', 'el': 'Δεν επιτρέπεται η πρόσβαση', 'ms': 'Kebenaran ditolak', 'sr': 'Приступ одбијен', 'ro': 'Permisiune refuzată', 'bn': 'অনুমতি প্রত্যাখ্যাত', 'ca': 'Permís denegat', 'no': 'Tilgang nektet', 'bg': 'Достъпът е отказан', 'da': 'Adgang nægtet', 'sk': 'Prístup odmietnutý', 'hi': 'अनुमति अस्वीकृत', 'et': 'Juurdepääs keelatud', 'hr': 'Pristup odbijen', 'az': 'İcazə rədd edildi', 'zh-yue': '沒有權限', 'lt': 'Prieiga uždrausta', 'sl': 'Dostop zavrnjen', 'eu': 'Baimena ukatuta', 'hy': 'Մուտքն արգելված է', 'uz': 'Ruxsat berilmagan', 'ta': 'அனுமதி மறுக்கப்பட்டது', 'lv': 'Piekļuve liegta'}

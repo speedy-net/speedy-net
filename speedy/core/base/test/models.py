@@ -1,3 +1,6 @@
+"""
+Test infrastructure of Speedy Core: the site-aware test runners (SiteDiscoverRunner and SpeedyCoreDiscoverRunner) and the SiteTestCase base class.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -37,10 +40,17 @@ if (django_settings.TESTS):
             teardown_test_environment(self, **kwargs): Tear down the test environment.
             suite_result(self, suite, result, **kwargs): Get the suite result.
         """
+        # The number of fastest and slowest tests to report after running the tests.
         NUM_FAST_TESTS = 3
         NUM_SLOW_TESTS = 3
 
         def __init__(self, *args, **kwargs):
+            """
+            Initializes the test runner, reading the custom `test_languages`, `test_only` and `count_tests` options.
+
+            :param args: Additional positional arguments, passed to the parent constructor.
+            :param kwargs: Additional keyword arguments, passed to the parent constructor. May include 'test_languages', 'test_only' and 'count_tests'.
+            """
             assert (django_settings.TESTS is True)
             super().__init__(*args, **kwargs)
             self.test_languages = kwargs.get('test_languages', None)
@@ -54,11 +64,26 @@ if (django_settings.TESTS):
             self.test_times = []
 
         def _save_test_time(self, test_name, duration_func):
+            """
+            Records the elapsed time of a test, if available, for later reporting of the slowest/fastest tests.
+
+            :param test_name: Required. The name (id) of the test.
+            :type test_name: str
+            :param duration_func: Required. A callable with no arguments returning the test's elapsed time (or None).
+            :type duration_func: callable
+            """
             duration = duration_func()
             if (duration is not None):
                 self.test_times.append((test_name, duration))
 
         def _print_test_times(self, slowest_or_fastest):
+            """
+            Prints the slowest or fastest recorded test times.
+
+            :param slowest_or_fastest: Required. Either "slowest" or "fastest".
+            :type slowest_or_fastest: str
+            :raises NotImplementedError: If `slowest_or_fastest` is neither "slowest" nor "fastest".
+            """
             assert (slowest_or_fastest in {"slowest", "fastest"})
             if (slowest_or_fastest == "slowest"):
                 num_tests = self.NUM_SLOW_TESTS
@@ -88,6 +113,14 @@ if (django_settings.TESTS):
                 ))
 
         def build_suite(self, test_labels=None, **kwargs):
+            """
+            Builds the test suite, defaulting `test_labels` to the relevant "speedy.*" app labels for the current site, when not explicitly given.
+
+            :param test_labels: Optional. The test labels to run. If not given, computed automatically based on the current site.
+            :type test_labels: list[str]
+            :param kwargs: Additional keyword arguments, passed to the parent's `build_suite` method.
+            :return: The built test suite.
+            """
             if (not (test_labels)):
                 # Default test_labels are all the relevant directories under "speedy". For example ["speedy.core", "speedy.net"].
                 # Due to problems with templates, "speedy.match" label is not added to speedy.net tests, and "speedy.net" label is not added to speedy.match tests.  # ~~~~ TODO: fix this bug and enable these labels, although the tests there are skipped.
@@ -112,6 +145,12 @@ if (django_settings.TESTS):
             return super().build_suite(test_labels=test_labels, **kwargs)
 
         def test_suite(self, tests=()):
+            """
+            Builds the test suite, optionally limiting it to `self.test_only` tests, optionally printing test counts grouped by `self.count_tests` dotted name components (and running no tests in that case), and registering each test to record its elapsed time.
+
+            :param tests: Optional. The tests to include in the suite.
+            :return: The built test suite.
+            """
             if (self.test_only is not None):
                 tests = tests[:self.test_only]
             if (self.count_tests is not None):
@@ -133,10 +172,20 @@ if (django_settings.TESTS):
             return super().test_suite(tests=tests)
 
         def setup_test_environment(self, **kwargs):
+            """
+            Sets up the test environment, also storing the `test_languages` option on `django_settings.TEST_LANGUAGES`.
+
+            :param kwargs: Additional keyword arguments, passed to the parent's `setup_test_environment` method.
+            """
             super().setup_test_environment(**kwargs)
             django_settings.TEST_LANGUAGES = self.test_languages
 
         def teardown_test_environment(self, **kwargs):
+            """
+            Tears down the test environment, also removing `django_settings.TEST_LANGUAGES` and deleting temporary media files.
+
+            :param kwargs: Additional keyword arguments, passed to the parent's `teardown_test_environment` method.
+            """
             super().teardown_test_environment(**kwargs)
             del django_settings.TEST_LANGUAGES
             print("Deleting temporary files...")
@@ -146,6 +195,14 @@ if (django_settings.TESTS):
                 pass
 
         def suite_result(self, suite, result, **kwargs):
+            """
+            Computes the suite result, also printing the fastest and slowest recorded test times.
+
+            :param suite: Required. The test suite that was run.
+            :param result: Required. The test result.
+            :param kwargs: Additional keyword arguments, passed to the parent's `suite_result` method.
+            :return: The return value from the parent's `suite_result` method (an exit code, 0 on success).
+            """
             return_value = super().suite_result(suite=suite, result=result, **kwargs)
             self._print_test_times(slowest_or_fastest="fastest")
             self._print_test_times(slowest_or_fastest="slowest")
@@ -162,6 +219,12 @@ if (django_settings.TESTS):
         """
 
         def run_tests(self, *args, **kwargs):
+            """
+            Overridden to prevent running tests on speedy.core; does nothing.
+
+            :param args: Additional positional arguments (ignored).
+            :param kwargs: Additional keyword arguments (ignored).
+            """
             # We don't run tests on speedy.core
             pass
 
@@ -189,6 +252,11 @@ if (django_settings.TESTS):
         maxDiff = None
 
         def _pre_setup(self):
+            """
+            Runs the parent's pre-setup, then loads the sites fixture and stores the current site and its translated name.
+
+            :return: The return value from the parent's `_pre_setup` method.
+            """
             assert (django_settings.TESTS is True)
             return_value = super()._pre_setup()
             call_command('load_data', tests_settings.SITES_FIXTURE, verbosity=0)
@@ -197,6 +265,11 @@ if (django_settings.TESTS):
             return return_value
 
         def validate_all_values(self):
+            """
+            Validates that the current site's id, domain, name and translated title, as well as the test language codes and hosts, and the dynamically computed date-of-birth test lists, all have the expected values.
+
+            :raises AssertionError: If any of the validated values doesn't match its expected value.
+            """
             site_id_dict = {
                 django_settings.SPEEDY_NET_SITE_ID: 1,
                 django_settings.SPEEDY_MATCH_SITE_ID: 2,
@@ -294,6 +367,9 @@ if (django_settings.TESTS):
                 self.skipTest(reason="Skipped test - language code skipped.")
 
         def set_up(self):
+            """
+            Sets up the test case: determines the current language code, skips the test if needed, and computes the language codes and HTTP hosts to use.
+            """
             self.language_code = django_settings.LANGUAGE_CODE
             self.run_or_skip_this_test()
             self.all_language_codes = [language_code for language_code, language_name in django_settings.LANGUAGES]
@@ -304,13 +380,27 @@ if (django_settings.TESTS):
             self.client = self.client_class(HTTP_HOST=self.http_host)
 
         def start_time(self):
+            """
+            Records the start time of the test.
+            """
             self._start_time = time.perf_counter()
 
         def stop_time(self):
+            """
+            Records the stop time of the test, if not already recorded.
+            """
             if (not (hasattr(self, '_stop_time'))):
                 self._stop_time = time.perf_counter()
 
         def get_elapsed_time(self, stop=False):
+            """
+            Returns the elapsed time of the test, in seconds.
+
+            :param stop: Optional. Whether to stop the timer first, if not already stopped. Default False.
+            :type stop: bool
+            :return: The elapsed time in seconds, or None if the timer was never started.
+            :rtype: float
+            """
             if (not (hasattr(self, '_start_time'))):
                 return None
             if (stop):
@@ -321,6 +411,9 @@ if (django_settings.TESTS):
             return stop_time - self._start_time
 
         def tear_down(self):
+            """
+            Tears down the test case. Does nothing by default; may be overridden by subclasses.
+            """
             pass
 
         def skipTest(self, *args, **kwargs):
@@ -336,6 +429,11 @@ if (django_settings.TESTS):
             return super().skipTest(*args, **kwargs)
 
         def setUp(self):
+            """
+            Starts the timer, runs the parent's setUp, then runs `self.set_up()` and `self.validate_all_values()`.
+
+            :return: The return value from the parent's `setUp` method.
+            """
             self.start_time()
             return_value = super().setUp()
             self.set_up()
@@ -343,6 +441,11 @@ if (django_settings.TESTS):
             return return_value
 
         def tearDown(self):
+            """
+            Runs the parent's tearDown, then runs `self.tear_down()` and stops the timer.
+
+            :return: The return value from the parent's `tearDown` method.
+            """
             return_value = super().tearDown()
             self.tear_down()
             self.stop_time()

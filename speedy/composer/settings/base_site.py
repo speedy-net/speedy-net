@@ -1,3 +1,6 @@
+"""
+Django settings specific to Speedy Composer, shared by all the Speedy Composer environments.
+"""
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_without_login import *
 from speedy.core.settings.utils import update_site_paths
@@ -7,8 +10,10 @@ from .utils import APP_DIR
 
 update_site_paths(settings=globals())
 
+# The Django site ID of Speedy Composer (the same value as SPEEDY_COMPOSER_SITE_ID).
 SITE_ID = SPEEDY_COMPOSER_SITE_ID
 
+# The root URL configuration module of Speedy Composer.
 ROOT_URLCONF = 'speedy.composer.urls'
 
 # if (LOGIN_ENABLED):

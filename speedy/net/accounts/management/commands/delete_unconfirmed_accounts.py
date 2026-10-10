@@ -1,3 +1,6 @@
+"""
+Management command to delete unconfirmed email addresses and the unconfirmed user accounts of Speedy Net.
+"""
 import logging
 from datetime import timedelta
 
@@ -32,9 +35,8 @@ class Command(BaseCommand):
         This method retrieves unconfirmed email addresses and user accounts from the database,
         checks their confirmation status and creation date, and deletes them if they meet the criteria.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         emails = UserEmailAddress.objects.filter(
             is_confirmed=False,

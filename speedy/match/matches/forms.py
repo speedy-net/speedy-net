@@ -1,3 +1,6 @@
+"""
+Forms for the Speedy Match matches app - the mini matching settings form, and the full match settings and about me forms.
+"""
 from crispy_forms.layout import Div, Row, HTML, Field
 
 from django.utils.translation import pgettext_lazy
@@ -8,15 +11,47 @@ from speedy.match.accounts.forms import SpeedyMatchProfileBaseForm
 
 
 class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
+    """
+    Compact matching-preferences form shown inline (e.g. in the sidebar), exposing only the most important match fields.
+
+    Methods:
+        get_fields(self): Returns the field names included in this form.
+        get_visible_fields(self): Returns the field names visible on this form.
+    """
     def get_fields(self):
+        """
+        Returns the field names included in this form.
+
+        :return: A tuple of field names.
+        :rtype: tuple
+        """
         return ('gender_to_match', to_attribute(name='match_description'), 'min_age_to_match', 'max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
 
     def get_visible_fields(self):
+        """
+        Returns the field names visible on this form.
+
+        :return: A tuple of visible field names.
+        :rtype: tuple
+        """
         return ('diet_match', 'min_age_to_match', 'max_age_to_match')
 
 
 class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
+    """
+    Base form for the full-page Speedy Match settings forms, laying out fields in two-column rows and adding a save button.
+
+    Methods:
+        __init__(self, *args, **kwargs): Builds the form and its crispy-forms layout.
+        get_field_pairs(self): Not implemented in this abstract base form; must be implemented by subclasses.
+    """
     def __init__(self, *args, **kwargs):
+        """
+        Builds the form, then constructs its two-column crispy-forms layout and appends a save button.
+
+        :param args: Positional arguments passed to the parent form.
+        :param kwargs: Keyword arguments passed to the parent form.
+        """
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
         self.helper.error_text_inline = False
@@ -39,29 +74,88 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
         )
 
     def get_field_pairs(self):
+        """
+        Returns the field pairs used to lay out this form in two-column rows.
+
+        :return: A tuple of field-name pairs/tuples.
+        :rtype: tuple
+        :raises NotImplementedError: Always, as this is an abstract base form.
+        """
         # This method is not defined in this base (abstract) form.
         raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
 
 class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
+    """
+    Full-page form for editing a user's matching preferences (gender to match, age range, match description, diet/smoking/relationship match ranks).
+
+    Methods:
+        get_fields(self): Returns the field names included in this form.
+        get_field_pairs(self): Returns the field pairs used to lay out this form.
+        get_visible_fields(self): Returns the field names visible on this form.
+    """
     def get_fields(self):
+        """
+        Returns the field names included in this form.
+
+        :return: A tuple of field names.
+        :rtype: tuple
+        """
         return ('gender_to_match', to_attribute(name='match_description'), 'min_age_to_match', 'max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match')
 
     def get_field_pairs(self):
+        """
+        Returns the field pairs used to lay out this form in two-column rows.
+
+        :return: A tuple of field-name pairs/tuples.
+        :rtype: tuple
+        """
         return (('gender_to_match', to_attribute(name='match_description')), ('min_age_to_match', 'max_age_to_match'), ('diet_match', 'smoking_status_match'), ('relationship_status_match',))
 
     def get_visible_fields(self):
+        """
+        Returns the field names visible on this form.
+
+        :return: The field names included in this form.
+        :rtype: tuple
+        """
         return self.get_fields()
 
 
 class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
+    """
+    Full-page form for editing a user's "about me" profile fields (description, city, height, children, lifestyle choices).
+
+    Methods:
+        get_fields(self): Returns the field names included in this form.
+        get_field_pairs(self): Returns the field pairs used to lay out this form.
+        get_visible_fields(self): Returns the field names visible on this form.
+    """
     def get_fields(self):
+        """
+        Returns the field names included in this form.
+
+        :return: A tuple of field names.
+        :rtype: tuple
+        """
         return (to_attribute(name='profile_description'), to_attribute(name='city'), 'height', to_attribute(name='children'), to_attribute(name='more_children'), 'diet', 'smoking_status', 'relationship_status')
 
     def get_field_pairs(self):
+        """
+        Returns the field pairs used to lay out this form in two-column rows.
+
+        :return: A tuple of field-name pairs/tuples.
+        :rtype: tuple
+        """
         return ((to_attribute(name='profile_description'),), (to_attribute(name='city'), 'height'), (to_attribute(name='children'), to_attribute(name='more_children')), ('diet', 'smoking_status'), ('relationship_status',))
 
     def get_visible_fields(self):
+        """
+        Returns the field names visible on this form.
+
+        :return: The field names included in this form.
+        :rtype: tuple
+        """
         return self.get_fields()
 
 

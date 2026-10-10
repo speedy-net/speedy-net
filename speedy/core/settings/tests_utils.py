@@ -1,7 +1,12 @@
+"""
+Utilities for the Speedy Core tests environment settings: the tests media root, the logging configuration and the function which updates a settings dict for tests.
+"""
 from .utils import ROOT_DIR
 
+# Directory where media files are stored while running tests.
 TESTS_MEDIA_ROOT = str(ROOT_DIR / 'tests' / 'media')
 
+# Logging configuration for tests: console logging at DEBUG level.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -65,6 +70,12 @@ LOGGING = {
 
 
 def activate_tests(settings):
+    """
+    Update the given settings dict in place for the test environment (locmem email backend, tests media root, verbose logging, TESTS flag enabled, DEBUG disabled).
+
+    :param settings: The settings dict to update.
+    :type settings: dict
+    """
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.locmem.EmailBackend',  # Django sets it to locmem.EmailBackend anyway.
         'TESTS_MEDIA_ROOT': TESTS_MEDIA_ROOT,

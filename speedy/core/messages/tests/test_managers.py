@@ -1,3 +1,6 @@
+"""
+Test cases for the managers of the messages app of Speedy Core: chats, messages and read marks.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -15,7 +18,21 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class ChatManagerOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the ChatManager's chats, chat_with, group_chat_with and count_unread_chats methods, and Chat.mark_read, run only once (in English) since it is language-independent.
+
+            Methods:
+                set_up(self): Creates seven active users and five chats (two private, two group, one private) among them.
+                test_chats(self): Asserts chats() returns the correct chats, ordered most-recently-updated first, for several users.
+                test_chat_with_two_users_returns_existing_one(self): Asserts chat_with returns the existing private chat between two users who already have one.
+                test_chat_with_two_users_creates_new_one(self): Asserts chat_with creates a new private chat between two users who don't have one yet.
+                test_chat_with_multiple_users_creates_new_one(self): Asserts group_chat_with creates a new group chat for three users.
+                test_mark_read(self): Asserts chat.mark_read creates a ReadMark for the given entity on the given chat.
+            """
             def set_up(self):
+                """
+                Creates seven active users and five chats (chat_1_2, chat_1_2_3, chat_4_5, chat_4_5_6, chat_4_7) among them, in a fixed creation order.
+                """
                 super().set_up()
                 ChatFactory()
                 self.user_1 = ActiveUserFactory()
@@ -38,6 +55,9 @@ if (django_settings.TESTS):
                 sleep(0.001)
 
             def test_chats(self):
+                """
+                Asserts chats() returns, for each of several users, exactly the chats they participate in, ordered most-recently-updated first.
+                """
                 chats = list(Chat.objects.chats(entity=self.user_1))
                 self.assertListEqual(list1=chats, list2=[self.chat_1_2_3, self.chat_1_2])
                 chats = list(Chat.objects.chats(entity=self.user_3))
@@ -50,10 +70,16 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=chats, list2=[self.chat_4_7])
 
             def test_chat_with_two_users_returns_existing_one(self):
+                """
+                Asserts chat_with returns the existing private chat between two users who already have one, instead of creating a new one.
+                """
                 chat = Chat.objects.chat_with(ent1=self.user_1, ent2=self.user_2)
                 self.assertEqual(first=chat, second=self.chat_1_2)
 
             def test_chat_with_two_users_creates_new_one(self):
+                """
+                Asserts chat_with creates a new private chat with the correct two participants when none exists yet between the given users.
+                """
                 initial_chat_count = Chat.objects.count()
                 user_8 = ActiveUserFactory()
                 chat = Chat.objects.chat_with(ent1=self.user_1, ent2=user_8)
@@ -64,9 +90,15 @@ if (django_settings.TESTS):
                 self.assertSetEqual(set1=entities_ids, set2={self.user_1.id, user_8.id})
 
             def test_chat_with_multiple_users_creates_new_one(self):
+                """
+                Asserts group_chat_with successfully creates a new group chat for three users, without raising an error.
+                """
                 Chat.objects.group_chat_with(self.user_1, self.user_2, self.user_3)
 
             def test_mark_read(self):
+                """
+                Asserts chat.mark_read creates a single ReadMark for the given entity on the given chat.
+                """
                 chat = Chat.objects.chat_with(ent1=self.user_1, ent2=self.user_2)
                 self.assertEqual(first=ReadMark.objects.count(), second=0)
                 read_mark = chat.mark_read(entity=self.user_2)
@@ -77,7 +109,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class MessageManagerOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the MessageManager.send_message method, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_sending_message_creates_new_chat(self): Asserts send_message with to_entity creates a new chat, a message and a read mark for the sender.
+                test_sending_message_to_existing_chat(self): Asserts send_message with an existing chat adds the message to it without creating a new chat.
+            """
             def test_sending_message_creates_new_chat(self):
+                """
+                Asserts that sending a message to another user with no existing chat creates a new private chat, the message, and a read mark for the sender.
+                """
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
                 self.assertEqual(first=Chat.objects.count(), second=0)
@@ -100,6 +142,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=read_mark.entity_id, second=user_1.id)
 
             def test_sending_message_to_existing_chat(self):
+                """
+                Asserts that sending a message to an existing chat adds the message to that chat, without creating a new one, and creates a read mark for the sender.
+                """
                 user_1 = ActiveUserFactory()
                 chat = ChatFactory(ent1=user_1)
                 self.assertEqual(first=Chat.objects.count(), second=1)
@@ -117,7 +162,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class ReadMarkManagerOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the ReadMarkManager.mark method, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_mark(self): Asserts mark creates a new read mark on first call and updates the existing one's timestamp on a subsequent call.
+            """
             def test_mark(self):
+                """
+                Asserts that marking a chat as read for an entity creates a new read mark the first time, and updates (without recreating) the existing read mark's timestamp on a later call.
+                """
                 user = ActiveUserFactory()
                 chat = ChatFactory(ent1=user)
                 self.assertEqual(first=ReadMark.objects.count(), second=0)

@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+Django's command-line utility for administrative tasks of Speedy Match, using the settings of the environment defined by ENVIRONMENT.
+"""
 import os
 import sys
 from pathlib import Path

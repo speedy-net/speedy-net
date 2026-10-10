@@ -1,3 +1,6 @@
+"""
+Test factories for Speedy Net users - inactive and active user factories.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -14,6 +17,14 @@ if (django_settings.TESTS):
             """
             @factory.post_generation
             def deactivate_profile(self, created, extracted, **kwargs):
+                """
+                Deactivates the user's Speedy Net profile after the user is generated.
+
+                :param created: Whether the instance was created (as opposed to fetched).
+                :type created: bool
+                :param extracted: The value passed in for this post-generation hook, if any.
+                :param kwargs: Additional keyword arguments.
+                """
                 self.speedy_net_profile.deactivate()
 
 
@@ -23,6 +34,14 @@ if (django_settings.TESTS):
             """
             @factory.post_generation
             def activate_profile(self, created, extracted, **kwargs):
+                """
+                Activates the user's Speedy Net profile, with a confirmed primary email address, after the user is generated.
+
+                :param created: Whether the instance was created (as opposed to fetched).
+                :type created: bool
+                :param extracted: The value passed in for this post-generation hook, if any.
+                :param kwargs: Additional keyword arguments.
+                """
                 email = UserEmailAddressFactory(user=self, is_confirmed=True)
                 email.save()
                 email.make_primary()

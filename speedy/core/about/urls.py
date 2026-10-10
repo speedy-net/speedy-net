@@ -1,3 +1,6 @@
+"""
+URL patterns for the about app, mapping the about page to its view.
+"""
 from django.urls import re_path
 
 from . import views

@@ -1,3 +1,6 @@
+"""
+Settings used by the tests of Speedy Core: dynamic test settings, helpers which create lists of valid and invalid dates of birth, and classes of settings overrides for entities, users, Speedy Match site profiles and logging.
+"""
 import random
 
 from django.conf import settings as django_settings
@@ -17,8 +20,23 @@ if (django_settings.TESTS):
 
 
     class TestsDynamicSettings(object):
+        """
+        Provides test settings computed dynamically at test run time, such as lists of valid/invalid dates of birth relative to the current date.
+
+        Methods:
+            valid_date_of_birth_list: Builds a list of valid dates of birth for a given maximum allowed age.
+            invalid_date_of_birth_list: Builds a list of invalid dates of birth for a given maximum allowed age.
+        """
         @staticmethod
         def valid_date_of_birth_list(max_age_allowed):
+            """
+            Builds a sorted list of valid date-of-birth strings (ISO format), for a given maximum allowed age in years.
+
+            :param max_age_allowed: Required. The maximum age allowed, in years.
+            :type max_age_allowed: int
+            :return: A sorted list of valid date-of-birth strings.
+            :rtype: list[str]
+            """
             today = date.today()
             end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             valid_date_of_birth_list = [
@@ -50,6 +68,14 @@ if (django_settings.TESTS):
 
         @staticmethod
         def invalid_date_of_birth_list(max_age_allowed):
+            """
+            Builds a sorted list of invalid date-of-birth strings, for a given maximum allowed age in years.
+
+            :param max_age_allowed: Required. The maximum age allowed, in years.
+            :type max_age_allowed: int
+            :return: A sorted list of invalid date-of-birth strings.
+            :rtype: list[str]
+            """
             today = date.today()
             end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             invalid_date_of_birth_list = [
@@ -110,29 +136,48 @@ if (django_settings.TESTS):
 
 
     class OVERRIDE_ENTITY_SETTINGS(object):
+        """
+        Overridden settings for the Entity model, used in tests.
+        """
+        # Minimum length of a slug in tests (overrides the production value).
         MIN_SLUG_LENGTH = 60
 
 
     class OVERRIDE_USER_SETTINGS(object):
+        """
+        Overridden settings for the User model, used in tests.
+        """
+        # Minimum length of a user slug and maximum number of friends a user is allowed to have in tests (override the production values).
         MIN_SLUG_LENGTH = 60
         MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
+        # Minimum and maximum age (in years) allowed for the date of birth in the User model in tests.
         MIN_AGE_ALLOWED_IN_MODEL = 2  # In years.
         MAX_AGE_ALLOWED_IN_MODEL = 240  # In years.
 
+        # Minimum and maximum age (in years) allowed for the date of birth in forms in tests.
         MIN_AGE_ALLOWED_IN_FORMS = 2  # In years.
         MAX_AGE_ALLOWED_IN_FORMS = 178  # In years.
 
 
     class OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
+        """
+        Overridden settings for the Speedy Match site profile model, used in tests.
+        """
+        # Minimum and maximum age (in years) a user can set for matches in tests.
         MIN_AGE_TO_MATCH_ALLOWED = 2  # In years.
         MAX_AGE_TO_MATCH_ALLOWED = 178  # In years.
 
+        # Minimum and maximum height (in cm) a user can set for matches in tests.
         MIN_HEIGHT_TO_MATCH = 120  # In cm.
         MAX_HEIGHT_TO_MATCH = 220  # In cm.
 
 
     class OVERRIDE_LOGGING_SETTINGS(object):
+        """
+        Overridden logging settings, used in tests, logging to the console instead of by email.
+        """
+        # Logging configuration for tests, based on the production configuration but with the speedy logger writing to the console.
         LOGGING = copy.deepcopy(django_settings.LOGGING)
         LOGGING['loggers']['speedy']['handlers'] = ['console']
 
@@ -154,6 +199,11 @@ if (django_settings.TESTS):
 
     @receiver(signal=setting_changed)
     def logging_changed(**kwargs):
+        """
+        Reconfigures Python's logging when the LOGGING setting changes during tests (e.g. via `override_settings`).
+
+        :param kwargs: Required. The signal's keyword arguments, including 'setting' and 'value'.
+        """
         if kwargs['setting'] == 'LOGGING':
             logging.config.dictConfig(config=kwargs['value'])
 

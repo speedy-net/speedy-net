@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Core uploads app.
+"""
 from django.urls import path
 
 from . import views

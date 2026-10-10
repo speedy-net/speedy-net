@@ -1,7 +1,11 @@
+"""
+Django settings for sites with login (Speedy Net and Speedy Match), extending the Speedy Core base settings with login URLs, profile widgets, redirect rules and the available languages.
+"""
 from django.utils.translation import gettext_lazy as _
 
 from .base import *
 
+# Login is enabled on sites which use these settings (Speedy Net and Speedy Match).
 LOGIN_ENABLED = True
 
 INSTALLED_APPS += [
@@ -12,21 +16,26 @@ MIDDLEWARE += [
     'speedy.core.accounts.middleware.SiteProfileMiddleware',
 ]
 
+# Widgets displayed on a user's profile page.
 USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.widgets.UserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
 ]
 
+# Widgets displayed on a user's profile page when viewed by an admin.
 ADMIN_USER_PROFILE_WIDGETS = [
     'speedy.core.profiles.admin.widgets.AdminUserPhotoWidget',
     'speedy.core.profiles.widgets.UserInfoWidget',
     'speedy.core.profiles.admin.widgets.AdminUserInfoWidget',
 ]
 
+# URL of the login page.
 LOGIN_URL = '/login/'
 
+# URL to which users are redirected after login.
 LOGIN_REDIRECT_URL = '/me/'
 
+# URL prefixes which inactive users can access without being redirected to complete registration.
 DONT_REDIRECT_INACTIVE_USER = [
     '/logout/',
     '/welcome/',
@@ -42,6 +51,7 @@ DONT_REDIRECT_INACTIVE_USER = [
     '/set-session/',
 ]
 
+# URL prefixes which admins can access without being redirected.
 DONT_REDIRECT_ADMIN = [
     '/admin/',
     '/logout/',
@@ -50,6 +60,7 @@ DONT_REDIRECT_ADMIN = [
     '/set-session/',
 ]
 
+# URL prefixes which don't update the user's last visit time.
 IGNORE_LAST_VISIT = [
     '/set-session/',
 ]
@@ -111,8 +122,10 @@ _LANGUAGES_TO_ADD_2 = [
     ('lv', _('Latvian')),
 ]
 
+# Available languages: the base languages combined with additional languages, ordered with English first and Hebrew after the first group.
 LANGUAGES = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1 + _LANGUAGES[1:] + _LANGUAGES_TO_ADD_2
 
+# Languages shown in the HTML language selector: English, the first six additional languages and Hebrew.
 LANGUAGES_IN_HTML = _LANGUAGES[:1] + _LANGUAGES_TO_ADD_1[:6] + _LANGUAGES[1:]
 
 # LANGUAGES_WITH_ADS = {'en'}

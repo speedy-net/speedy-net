@@ -1,3 +1,6 @@
+"""
+Management command to remove images with no owner and delete their files.
+"""
 import logging
 import os
 
@@ -27,9 +30,8 @@ class Command(BaseCommand):
         deletes the image files from the filesystem, and removes the image records
         from the database.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         images = Image.objects.filter(
             owner__isnull=True,

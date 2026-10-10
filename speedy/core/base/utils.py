@@ -1,3 +1,6 @@
+"""
+Utility functions of Speedy Core, such as generating UDIDs, normalizing usernames and slugs, calculating ages and handling images.
+"""
 import logging
 import operator
 import re
@@ -20,6 +23,7 @@ import translated_fields
 
 logger = logging.getLogger(__name__)
 
+# Thresholds used to decide whether an image is of one color: the RGB threshold, the delta E (color difference) threshold, and the minimum fraction of pixels which have to be of that color.
 ONE_COLOR_RGB_THRESHOLD = 31.05
 ONE_COLOR_DELTA_E_THRESHOLD = 25.92
 ONE_COLOR_PERCENT_THRESHOLD = 0.9999  # 99.99%
@@ -359,11 +363,31 @@ def update_form_field_choices(field, choices):
 
 
 def get_both_genders_context_from_genders(user_gender, other_user_gender):
+    """
+    Builds a combined genders context string from two gender values, used to select gender-aware translations.
+
+    :param user_gender: The gender of the user.
+    :type user_gender: str
+    :param other_user_gender: The gender of the other user.
+    :type other_user_gender: str
+    :return: A string combining both genders, separated by an underscore.
+    :rtype: str
+    """
     both_genders_context = "{}_{}".format(user_gender, other_user_gender)
     return both_genders_context
 
 
 def get_both_genders_context_from_users(user, other_user):
+    """
+    Builds a combined genders context string from two users, used to select gender-aware translations.
+
+    :param user: The user.
+    :type user: speedy.core.accounts.models.User
+    :param other_user: The other user.
+    :type other_user: speedy.core.accounts.models.User
+    :return: A string combining both users' genders, separated by an underscore.
+    :rtype: str
+    """
     return get_both_genders_context_from_genders(user_gender=user.get_gender(), other_user_gender=other_user.get_gender())
 
 

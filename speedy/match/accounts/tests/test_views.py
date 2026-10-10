@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Match accounts app (index, profile notifications and the profile activation wizard).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -21,7 +24,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class IndexViewOnlyEnglishTestCase(IndexViewTestCaseMixin, SiteTestCase):
+            """
+            Tests that the index view redirects users based on their account/profile activation state, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_user_gets_redirected_to_his_matches(self): Asserts the index view redirects to matches, registration step 2, or welcome, depending on the user's random activation state.
+            """
             def test_user_gets_redirected_to_his_matches(self):
+                """
+                Asserts the index view redirects to the matches list, registration step 2, or the welcome page, depending on the user's random activation state.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path='/')
                 if (self.random_choice == 1):
@@ -48,7 +60,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class EditProfileNotificationsViewOnlyEnglishTestCase(EditProfileNotificationsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests saving the Speedy Match profile notification settings, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_user_can_save_his_settings(self): Asserts the user can turn off message and like notifications via the settings form.
+            """
             def test_user_can_save_his_settings(self):
+                """
+                Asserts the user can turn off message and like notifications via the settings form, and the changes persist.
+                """
                 self.assertEqual(first=self.user.notify_on_message, second=User.NOTIFICATIONS_ON)
                 self.assertEqual(first=self.user.speedy_match_profile.notify_on_like, second=User.NOTIFICATIONS_ON)
                 data = {
@@ -64,19 +85,37 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithInactiveUserTestCaseMixin, SiteTestCase):
+            """
+            Tests the activation view with an inactive user; this test is irrelevant in Speedy Match and is skipped.
+
+            Methods:
+                test_inactive_user_can_request_activation(self): Skipped - not implemented in this class.
+            """
             redirect_url = '/registration-step-2/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
+                """
+                Skipped. This test is irrelevant in Speedy Match.
+                """
                 raise NotImplementedError("This test is not implemented in this class.")
 
 
         @only_on_speedy_match
         class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin, SiteTestCase):
+            """
+            Tests the activation view with a Speedy Net inactive user; this test is irrelevant in Speedy Match and is skipped.
+
+            Methods:
+                test_inactive_user_can_request_activation(self): Skipped - not implemented in this class.
+            """
             redirect_url = '/welcome/'
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_inactive_user_can_request_activation(self):
+                """
+                Skipped. This test is irrelevant in Speedy Match.
+                """
                 raise NotImplementedError("This test is not implemented in this class.")
 
 
@@ -87,6 +126,9 @@ if (django_settings.TESTS):
             """
 
             def set_up(self):
+                """
+                Creates an inactive user with a visible photo and a confirmed primary email address, ready to start the registration wizard at step 2.
+                """
                 super().set_up()
                 self.user = InactiveUserFactory()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -99,9 +141,26 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.user.speedy_match_profile.activation_step, second=2)
 
             def _post_step(self, step, data, **kwargs):
+                """
+                Posts data to a given registration wizard step.
+
+                :param step: The registration step number to post to.
+                :type step: int
+                :param data: The form data to post for this step.
+                :type data: dict
+                :param kwargs: Additional keyword arguments passed to the test client's post method.
+                :return: The HTTP response.
+                :rtype: django.http.HttpResponse
+                """
                 return self.client.post(path='/registration-step-{step}/'.format(step=step), data=data, **kwargs)
 
             def _complete_steps_2_to_8(self, height):
+                """
+                Submits valid form data for registration wizard steps 2 through 8 (profile, children, diet/smoking, relationship status, matching preferences, diet/smoking match ranks), asserting each redirects to the next step.
+
+                :param height: The height value to submit at step 3.
+                :type height: int
+                """
                 r = self._post_step(step=2, data={})
                 self.assertRedirects(response=r, expected_url='/registration-step-3/', status_code=302, target_status_code=200)
 
@@ -144,6 +203,13 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/registration-step-9/', status_code=302, target_status_code=200)
 
             def _post_step_9(self, **kwargs):
+                """
+                Posts valid relationship-status matching ranks to complete registration wizard step 9.
+
+                :param kwargs: Additional keyword arguments passed to the test client's post method.
+                :return: The HTTP response.
+                :rtype: django.http.HttpResponse
+                """
                 return self._post_step(step=9, data={
                     'relationship_status_match': json.dumps(obj={str(relationship_status): SpeedyMatchSiteProfile.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}),
                 }, **kwargs)
@@ -153,6 +219,9 @@ if (django_settings.TESTS):
                 height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
                 outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy
                 Match.
+
+                :param height: The height to submit in the registration wizard.
+                :type height: int
                 """
                 self._complete_steps_2_to_8(height=height)
                 r = self._post_step_9(follow=True)
@@ -168,7 +237,20 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class ActivateSiteProfileViewWizardOnlyEnglishTestCase(ActivateSiteProfileViewWizardTestCaseMixin, SiteTestCase):
+            """
+            Tests completing the Speedy Match registration wizard, including the unmatchable-height edge cases, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_user_can_complete_the_registration_wizard(self): Asserts a user with a matchable height completes the wizard and is redirected to the matches list.
+                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_1(self): Tests an unmatchable height just above the minimum allowed height.
+                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_2(self): Tests an unmatchable height below the minimum height to match.
+                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_3(self): Tests an unmatchable height above the maximum height to match.
+                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_4(self): Tests an unmatchable height just below the maximum allowed height.
+            """
             def test_user_can_complete_the_registration_wizard(self):
+                """
+                Asserts a user with a matchable height completes the registration wizard and is redirected to the matches list, with the profile active and valid.
+                """
                 height = 180
                 self._complete_steps_2_to_8(height=height)
                 r = self._post_step_9(follow=True)
@@ -183,18 +265,30 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_1(self):
+                """
+                Tests that a height of 10 (valid but not matchable) is not allowed to use Speedy Match.
+                """
                 height = 10
                 self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_2(self):
+                """
+                Tests that a height of 50 (valid but not matchable) is not allowed to use Speedy Match.
+                """
                 height = 50
                 self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_3(self):
+                """
+                Tests that a height of 330 (valid but not matchable) is not allowed to use Speedy Match.
+                """
                 height = 330
                 self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 
             def test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_4(self):
+                """
+                Tests that a height of 400 (valid but not matchable) is not allowed to use Speedy Match.
+                """
                 height = 400
                 self.run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(height=height)
 

@@ -1,3 +1,6 @@
+"""
+Validators of Speedy Core for the small and regular UDIDs.
+"""
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
 

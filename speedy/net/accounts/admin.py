@@ -1,3 +1,6 @@
+"""
+Admin configuration for the accounts app of Speedy Net. Registers the Speedy Net site profile admin.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.LOGIN_ENABLED):
@@ -7,6 +10,9 @@ if (django_settings.LOGIN_ENABLED):
 
 
     class SpeedyNetSiteProfileAdmin(SiteProfileBaseAdmin):
+        """
+        Admin configuration for the Speedy Net site profile model. Uses the default admin configuration defined by the base site profile admin class.
+        """
         pass
 
 

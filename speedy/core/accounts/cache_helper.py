@@ -1,7 +1,11 @@
+"""
+Helper functions of Speedy Core for generating cache keys and busting the cached values of the accounts app.
+"""
 from django.conf import settings as django_settings
 
 from speedy.core.base import cache_manager
 
+# Cache key templates for each type of cached value; {entity_pk} is replaced by the primary key of the entity.
 CACHE_TYPES = {
     'blocked': 'speedy-core-blocks-blocked-{entity_pk}',
     'blocking': 'speedy-core-blocks-blocking-{entity_pk}',
@@ -10,6 +14,7 @@ CACHE_TYPES = {
     'matches': 'speedy-match-accounts-matches-{entity_pk}',
 }
 
+# For each cache type, the list of cache types which should be deleted (busted) when it is invalidated.
 BUST_CACHES = {
     'all': list(CACHE_TYPES.keys()),
     'blocked': ['blocked', 'matches', 'received_friendship_requests_count'],

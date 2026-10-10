@@ -1,3 +1,6 @@
+"""
+Utility functions for the Speedy Net accounts app, such as the text with the total number of active members.
+"""
 from datetime import timedelta
 
 from django.utils import formats
@@ -8,6 +11,14 @@ from speedy.core.accounts.models import User
 
 
 def get_total_number_of_active_members_text():
+    """
+    Get a human-readable text describing the total number of active members on the site, and how many of them visited in the last week.
+
+    The text is only generated (non-empty) if at least 300 members were active in the last four months and at least 50 members were active in the last week; otherwise an empty string is returned.
+
+    :return: The text describing the total number of active members, or an empty string if the thresholds are not met.
+    :rtype: str
+    """
     total_number_of_active_members_in_the_last_four_months = User.objects.active(
         speedy_net_site_profile__is_active=True,
         has_confirmed_email=True,

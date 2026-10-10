@@ -1,3 +1,6 @@
+"""
+Management command to convert existing file names in the database to the new file name format.
+"""
 import logging
 import os
 
@@ -27,9 +30,8 @@ class Command(BaseCommand):
         and renames the files on the filesystem. If the renaming is successful, the
         file record is updated in the database.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         files = File.objects.all().order_by('date_created')
         for file in files:

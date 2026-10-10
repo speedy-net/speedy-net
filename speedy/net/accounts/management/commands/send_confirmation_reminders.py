@@ -1,3 +1,6 @@
+"""
+Management command to send reminders to users with unconfirmed email addresses.
+"""
 import logging
 from datetime import timedelta
 
@@ -28,9 +31,8 @@ class Command(BaseCommand):
         This method filters unconfirmed email addresses that were created more than 5 days ago,
         logs the reminder process, and sends confirmation emails to the users.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         emails = UserEmailAddress.objects.filter(is_confirmed=False, date_created__lte=(now() - timedelta(days=5)), confirmation_sent__lte=1).exclude(confirmation_token='')
         for e in emails:

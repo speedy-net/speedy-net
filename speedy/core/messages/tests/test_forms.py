@@ -1,3 +1,6 @@
+"""
+Test cases for the message form of the messages app of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -13,7 +16,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class MessageFormOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the MessageForm, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_form_to_chat_save(self): Asserts a valid form bound to an existing chat saves a new message and updates the chat's last message.
+            """
             def test_form_to_chat_save(self):
+                """
+                Asserts that a valid MessageForm bound to an existing chat is valid, and saving it creates a message with the given text, sender and chat, and sets it as the chat's last message.
+                """
                 data = {
                     'text': 'Hi!',
                 }

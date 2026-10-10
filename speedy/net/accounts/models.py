@@ -1,3 +1,6 @@
+"""
+Models for the Speedy Net accounts app. Defines the Speedy Net SiteProfile model.
+"""
 import logging
 
 from django.db import models
@@ -25,8 +28,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         all_friends_count (PositiveSmallIntegerField): The total number of friends.
         _optimistic_locking_fields (tuple): Fields used for optimistic locking.
     """
+    # Name of the reverse one-to-one accessor from User to this site profile (User.speedy_net_site_profile).
     RELATED_NAME = 'speedy_net_site_profile'
 
+    # Name displayed instead of the user's name after the user is deleted.
     DELETED_NAME = _('Speedy Net User')
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)
@@ -139,9 +144,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Saves the profile.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
+        :return: The result of the parent save method.
+        :rtype: None
         """
         self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)

@@ -1,3 +1,6 @@
+"""
+Test cases for the Speedy Match SiteProfile model.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -26,6 +29,40 @@ if (django_settings.TESTS):
 
 
         class SpeedyMatchSiteProfileTestCaseMixin(SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
+            """
+            Mixin providing shared fixtures and assertion helpers for testing the Speedy Match site profile model's fields and validation behavior.
+
+            Attributes:
+                _none_list: A single-element list containing None, used as a test value.
+                _empty_string_list: A single-element list containing an empty string, used as a test value.
+                _empty_values_to_test: The combination of _none_list and _empty_string_list.
+                _non_int_string_values_to_test: Sample non-integer string values used as test values.
+                _int_big_values_to_test: Sample very large (positive and negative) integer values used as test values.
+                _valid_string_values_to_test: Sample valid string values used as test values.
+                _valid_string_values_to_test_max_length_120: Sample valid string values for fields with a max length of 120.
+                _too_long_string_values_to_test_max_length_120: Sample string values exceeding a max length of 120.
+                _valid_string_values_to_test_max_length_50000: Sample valid string values for fields with a max length of 50000.
+                _too_long_string_values_to_test_max_length_50000: Sample string values exceeding a max length of 50000.
+
+            Methods:
+                get_default_user_doron(self): Returns a default (non-active-on-Speedy-Match) user fixture named Doron Matalon.
+                get_active_user_jennifer(self): Returns an active-on-Speedy-Match user fixture named Jennifer Connelly.
+                get_min_max_age_to_match_default_test_settings(self): Returns the default test settings dict for the min/max age to match fields.
+                get_diet_match_default_test_settings(self): Returns the default test settings dict for the diet_match field.
+                get_smoking_status_match_default_test_settings(self): Returns the default test settings dict for the smoking_status_match field.
+                get_relationship_status_match_default_test_settings(self): Returns the default test settings dict for the relationship_status_match field.
+                get_field_default_value(self, field_name): Returns the model's default value for a given rank-dict field name.
+                validate_all_user_values(self, user): Validates all step fields of the user's Speedy Match profile against the steps/fields utilities.
+                assert_list_2_contains_all_elements_in_list_1(self, list_1, list_2): Asserts every element of list_1 is contained in list_2.
+                assert_list_2_doesnt_contain_elements_in_list_1(self, list_1, list_2): Asserts no element of list_1 is contained in list_2.
+                assert_valid_values_ok(self, values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values): Asserts consistency between the valid/invalid value subsets of a full set of test values.
+                save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only): Saves the user/profile and asserts the expected exception for an invalid integer field value.
+                save_user_and_profile_and_assert_exceptions_for_string(self, user, field_name, value_to_test, max_length): Saves the user/profile and asserts the expected exception for a too-long string field value.
+                save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test): Saves the user/profile and asserts the expected exception for an invalid gender_to_match field value.
+                save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null): Saves the user/profile and asserts the expected exception for an invalid JSON field value.
+                save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name_list, value_to_test, null): Saves the user/profile and asserts the expected exception for an invalid list of integer field values.
+                run_test_validate_profile_and_activate_exception(self, test_settings): Runs a parametrized set of invalid-value scenarios against validate_profile_and_activate and asserts the expected failures.
+            """
             _none_list = [None]
             _empty_string_list = [""]
             _empty_values_to_test = _none_list + _empty_string_list
@@ -38,18 +75,36 @@ if (django_settings.TESTS):
             _too_long_string_values_to_test_max_length_50000 = ["a" * 50001, "a" * 100000, "b" * 1000000]
 
             def get_default_user_doron(self):
+                """
+                Returns a default (non-active-on-Speedy-Match) user fixture named Doron Matalon, with a vegan diet.
+
+                :return: The created user.
+                :rtype: User
+                """
                 user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 user.diet = User.DIET_VEGAN
                 user.save_user_and_profile()
                 return user
 
             def get_active_user_jennifer(self):
+                """
+                Returns an active-on-Speedy-Match user fixture named Jennifer Connelly, with a vegetarian diet.
+
+                :return: The created user.
+                :rtype: User
+                """
                 user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 user.diet = User.DIET_VEGETARIAN
                 user.save_user_and_profile()
                 return user
 
             def get_min_max_age_to_match_default_test_settings(self):
+                """
+                Returns the default test settings dict for the min/max age to match fields, including expected step and localized error messages.
+
+                :return: The test settings dict.
+                :rtype: dict
+                """
                 test_settings = {
                     "field_name": 'min_max_age_to_match',
                     "expected_step": 7,
@@ -62,6 +117,12 @@ if (django_settings.TESTS):
                 return test_settings
 
             def get_diet_match_default_test_settings(self):
+                """
+                Returns the default test settings dict for the diet_match field, including expected step and localized error messages.
+
+                :return: The test settings dict.
+                :rtype: dict
+                """
                 test_settings = {
                     "field_name": 'diet_match',
                     "expected_step": 8,
@@ -73,6 +134,12 @@ if (django_settings.TESTS):
                 return test_settings
 
             def get_smoking_status_match_default_test_settings(self):
+                """
+                Returns the default test settings dict for the smoking_status_match field, including expected step and localized error messages.
+
+                :return: The test settings dict.
+                :rtype: dict
+                """
                 test_settings = {
                     "field_name": 'smoking_status_match',
                     "expected_step": 8,
@@ -84,6 +151,12 @@ if (django_settings.TESTS):
                 return test_settings
 
             def get_relationship_status_match_default_test_settings(self):
+                """
+                Returns the default test settings dict for the relationship_status_match field, including expected step and localized error messages.
+
+                :return: The test settings dict.
+                :rtype: dict
+                """
                 test_settings = {
                     "field_name": 'relationship_status_match',
                     "expected_step": 9,
@@ -95,6 +168,14 @@ if (django_settings.TESTS):
                 return test_settings
 
             def get_field_default_value(self, field_name):
+                """
+                Returns the model's default rank-dict value for a given field name.
+
+                :param field_name: The field name ('diet_match', 'smoking_status_match' or 'relationship_status_match').
+                :type field_name: str
+                :return: The default value for the field.
+                :raises Exception: If field_name is not one of the supported fields.
+                """
                 if (field_name in ['diet_match']):
                     default_value = SpeedyMatchSiteProfile.diet_match_default()
                 elif (field_name in ['smoking_status_match']):
@@ -106,6 +187,12 @@ if (django_settings.TESTS):
                 return default_value
 
             def validate_all_user_values(self, user):
+                """
+                Validates all step fields of the user's Speedy Match profile, asserting the field list matches the steps/fields utilities.
+
+                :param user: The user whose profile fields are validated.
+                :type user: User
+                """
                 all_fields = [field_name.format(language_code=self.language_code) for field_name in ['profile_picture', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
                 _all_fields = []
                 for step in utils.get_steps_range():
@@ -117,14 +204,35 @@ if (django_settings.TESTS):
                     utils.validate_field(field_name=field_name, user=user)
 
             def assert_list_2_contains_all_elements_in_list_1(self, list_1, list_2):
+                """
+                Asserts that every element of list_1 is contained in list_2.
+
+                :param list_1: The list of expected-to-be-contained elements.
+                :param list_2: The list expected to contain all elements of list_1.
+                """
                 for value in list_1:
                     self.assertIn(member=value, container=list_2)
 
             def assert_list_2_doesnt_contain_elements_in_list_1(self, list_1, list_2):
+                """
+                Asserts that no element of list_1 is contained in list_2.
+
+                :param list_1: The list of elements expected to be absent.
+                :param list_2: The list expected not to contain any element of list_1.
+                """
                 for value in list_1:
                     self.assertNotIn(member=value, container=list_2)
 
             def assert_valid_values_ok(self, values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values):
+                """
+                Asserts consistency between the full set of test values and its valid/invalid, assignable and savable subsets.
+
+                :param values_to_test: The full set of values to test.
+                :param valid_values_to_assign: The subset of values that are valid to assign on the model instance.
+                :param valid_values_to_save: The subset of values that are valid to persist on save.
+                :param valid_values: The subset of values considered fully valid.
+                :param invalid_values: The subset of values considered invalid.
+                """
                 self.assertIsNotNone(obj=values_to_test)
                 self.assertIsNotNone(obj=valid_values_to_assign)
                 self.assertIsNotNone(obj=valid_values_to_save)
@@ -162,6 +270,19 @@ if (django_settings.TESTS):
                 self.assert_list_2_doesnt_contain_elements_in_list_1(list_1=invalid_values, list_2=valid_values)
 
             def save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only):
+                """
+                Saves the user/profile and asserts the expected exception for an invalid integer field value.
+
+                :param user: The user whose profile is being saved.
+                :type user: User
+                :param field_name: The name of the field under test.
+                :type field_name: str
+                :param value_to_test: The invalid value assigned to the field.
+                :param null: Whether the field allows null values.
+                :type null: bool
+                :param choices_only: Whether the field only accepts a limited set of choices (no min/max range checks).
+                :type choices_only: bool
+                """
                 if ((null is True) and (value_to_test in self._empty_string_list)):
                     with self.assertRaises(ValueError) as cm:
                         user.save_user_and_profile()
@@ -182,11 +303,32 @@ if (django_settings.TESTS):
                         self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_and_value(field_name=field_name, value=value_to_test))
 
             def save_user_and_profile_and_assert_exceptions_for_string(self, user, field_name, value_to_test, max_length):
+                """
+                Saves the user/profile and asserts the expected "value too long" exception for an invalid string field value.
+
+                :param user: The user whose profile is being saved.
+                :type user: User
+                :param field_name: The name of the field under test.
+                :type field_name: str
+                :param value_to_test: The too-long value assigned to the field.
+                :type value_to_test: str
+                :param max_length: The field's maximum allowed length.
+                :type max_length: int
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(field_name=field_name, max_length=max_length, value_length=len(value_to_test)))
 
             def save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test):
+                """
+                Saves the user/profile and asserts the expected exception for an invalid gender_to_match field value.
+
+                :param user: The user whose profile is being saved.
+                :type user: User
+                :param field_name: The name of the field under test (expected to be 'gender_to_match').
+                :type field_name: str
+                :param value_to_test: The invalid value assigned to the field (None or an iterable containing an invalid gender).
+                """
                 if (value_to_test is None):
                     with self.assertRaises(TypeError) as cm:
                         user.save_user_and_profile()
@@ -205,6 +347,19 @@ if (django_settings.TESTS):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name=field_name, index=index, value=value))
 
             def save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null):
+                """
+                Saves the user/profile and asserts the expected exception for an invalid JSON field value.
+
+                :param user: The user whose profile is being saved.
+                :type user: User
+                :param field_name: The name of the field under test.
+                :type field_name: str
+                :param value_to_test: The invalid value assigned to the field.
+                :param blank: Whether the field allows blank values.
+                :type blank: bool
+                :param null: Whether the field allows null values.
+                :type null: bool
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
                 if ((null is False) and (value_to_test in self._none_list)):
@@ -215,6 +370,18 @@ if (django_settings.TESTS):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_valid_json_errors_dict_by_field_name(field_name=field_name))
 
             def save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name_list, value_to_test, null):
+                """
+                Saves the user/profile and asserts the expected exception for an invalid list of integer field values.
+
+                :param user: The user whose profile is being saved.
+                :type user: User
+                :param field_name_list: The list of field names under test.
+                :type field_name_list: list or tuple
+                :param value_to_test: The list of invalid values assigned to the fields (same length as field_name_list).
+                :type value_to_test: list or tuple
+                :param null: Whether the fields allow null values.
+                :type null: bool
+                """
                 self.assertIs(expr1=(isinstance(field_name_list, (list, tuple))), expr2=True)
                 self.assertIs(expr1=(isinstance(value_to_test, (list, tuple))), expr2=True)
                 self.assertEqual(first=len(field_name_list), second=len(value_to_test))
@@ -226,6 +393,12 @@ if (django_settings.TESTS):
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list=field_name_list, value_list=value_to_test))
 
             def run_test_validate_profile_and_activate_exception(self, test_settings):
+                """
+                Runs a parametrized set of invalid-value scenarios for a given field against validate_profile_and_activate, asserting the expected step and error-message failures.
+
+                :param test_settings: The test settings dict describing the field under test and the expected outcomes.
+                :type test_settings: dict
+                """
                 user = ActiveUserFactory()
                 self.assertIn(member="field_name", container=test_settings.keys())
                 field_name = test_settings["field_name"]
@@ -637,6 +810,9 @@ if (django_settings.TESTS):
                     self.assertTupleEqual(tuple1=keys_and_ranks_error_messages_counts_tuple, tuple2=(0, 0))
 
             def test_profile_property_and_class(self):
+                """
+                Tests that the user.profile property resolves to the Speedy Match site profile and its class.
+                """
                 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
 
                 user = self.get_default_user_doron()
@@ -653,15 +829,24 @@ if (django_settings.TESTS):
                 self.assertNotEqual(first=user.speedy_net_profile.__class__, second=SpeedyMatchSiteProfile)
 
             def test_localizable_fields(self):
+                """
+                Tests that LOCALIZABLE_FIELDS lists the expected localizable profile fields.
+                """
                 self.assertTupleEqual(tuple1=SpeedyMatchSiteProfile.LOCALIZABLE_FIELDS, tuple2=('profile_description', 'children', 'more_children', 'match_description'))
 
             def test_height_valid_values(self):
+                """
+                Tests that HEIGHT_VALID_VALUES is the range between the min and max allowed height settings.
+                """
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, second=1)
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED, second=450)
                 self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_ALLOWED + 1))
                 self.assertEqual(first=SpeedyMatchSiteProfile.HEIGHT_VALID_VALUES, second=range(1, 450 + 1))
 
             def test_age_valid_values(self):
+                """
+                Tests that AGE_TO_MATCH_VALID_VALUES is the range between the min and max allowed age-to-match settings.
+                """
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=0)
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=180)
                 self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
@@ -669,16 +854,25 @@ if (django_settings.TESTS):
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
             def test_age_valid_values_with_override_settings(self):
+                """
+                Tests that AGE_TO_MATCH_VALID_VALUES reflects overridden min/max age-to-match settings.
+                """
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, second=2)
                 self.assertEqual(first=SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED, second=178)
                 self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(SpeedyMatchSiteProfile.settings.MIN_AGE_TO_MATCH_ALLOWED, SpeedyMatchSiteProfile.settings.MAX_AGE_TO_MATCH_ALLOWED + 1))
                 self.assertEqual(first=SpeedyMatchSiteProfile.AGE_TO_MATCH_VALID_VALUES, second=range(2, 178 + 1))
 
             def test_rank_valid_values(self):
+                """
+                Tests that RANK_VALID_VALUES is the list of ranks from RANK_0 to RANK_5.
+                """
                 self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(SpeedyMatchSiteProfile.RANK_0, SpeedyMatchSiteProfile.RANK_5 + 1)))
                 self.assertListEqual(list1=SpeedyMatchSiteProfile.RANK_VALID_VALUES, list2=list(range(0, 5 + 1)))
 
             def test_diet_match_default(self):
+                """
+                Tests that diet_match_default() returns a dict mapping every valid diet value to RANK_5.
+                """
                 diet_match = SpeedyMatchSiteProfile.diet_match_default()
                 self.assertSetEqual(set1=set(diet_match.keys()), set2={str(diet) for diet in User.DIET_VALID_VALUES})
                 self.assertSetEqual(set1={diet_match[key] for key in diet_match}, set2={SpeedyMatchSiteProfile.RANK_5})
@@ -686,6 +880,9 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=[diet_match[str(diet)] for diet in User.DIET_VALID_VALUES], list2=[5 for diet in User.DIET_VALID_VALUES])
 
             def test_smoking_status_match_default(self):
+                """
+                Tests that smoking_status_match_default() returns a dict mapping every valid smoking status value to RANK_5.
+                """
                 smoking_status_match = SpeedyMatchSiteProfile.smoking_status_match_default()
                 self.assertSetEqual(set1=set(smoking_status_match.keys()), set2={str(smoking_status) for smoking_status in User.SMOKING_STATUS_VALID_VALUES})
                 self.assertSetEqual(set1={smoking_status_match[key] for key in smoking_status_match}, set2={SpeedyMatchSiteProfile.RANK_5})
@@ -693,6 +890,9 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=[smoking_status_match[str(smoking_status)] for smoking_status in User.SMOKING_STATUS_VALID_VALUES], list2=[5 for smoking_status in User.SMOKING_STATUS_VALID_VALUES])
 
             def test_relationship_status_match_default(self):
+                """
+                Tests that relationship_status_match_default() returns a dict mapping every valid relationship status value to RANK_5.
+                """
                 relationship_status_match = SpeedyMatchSiteProfile.relationship_status_match_default()
                 self.assertSetEqual(set1=set(relationship_status_match.keys()), set2={str(relationship_status) for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES})
                 self.assertSetEqual(set1={relationship_status_match[key] for key in relationship_status_match}, set2={SpeedyMatchSiteProfile.RANK_5})
@@ -700,11 +900,17 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=[relationship_status_match[str(relationship_status)] for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES], list2=[5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES])
 
             def test_get_steps_range(self):
+                """
+                Tests that utils.get_steps_range() returns a range matching the number of activation form steps.
+                """
                 self.assertEqual(first=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS), second=10)
                 self.assertEqual(first=utils.get_steps_range(), second=range(1, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS)))
                 self.assertEqual(first=utils.get_steps_range(), second=range(1, 10))
 
             def test_active_languages(self):
+                """
+                Tests that a profile's active_languages list reflects the value it was constructed with.
+                """
                 p = SpeedyMatchSiteProfile(active_languages=['en', 'he', 'de'])
                 self.assertListEqual(list1=p.active_languages, list2=['en', 'he', 'de'])
                 self.assertEqual(first=len(p.active_languages), second=3)
@@ -713,6 +919,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(p.active_languages), second=0)
 
             def test_set_active_languages_1(self):
+                """
+                Tests that _set_active_languages() sets the active_languages list on a new, unsaved profile.
+                """
                 p = SpeedyMatchSiteProfile()
                 self.assertListEqual(list1=p.active_languages, list2=[])
                 p._set_active_languages(languages=['en', 'he'])
@@ -720,6 +929,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(p.active_languages), second=2)
 
             def test_set_active_languages_2(self):
+                """
+                Tests that a saved profile's is_active/is_active_and_valid status depends on whether the current language code is among its active_languages.
+                """
                 user = self.get_active_user_jennifer()
                 user.speedy_match_profile._set_active_languages(languages=['en', 'fr', 'he'])
                 user.save_user_and_profile()
@@ -752,6 +964,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_set_active_languages_3(self):
+                """
+                Tests that the cached is_active and is_active_and_valid properties are refreshed after calling _set_active_languages().
+                """
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile._set_active_languages().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
@@ -768,6 +983,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_set_active_languages_with_duplicates(self):
+                """
+                Tests that _set_active_languages() de-duplicates repeated language codes.
+                """
                 p = SpeedyMatchSiteProfile()
                 self.assertListEqual(list1=p.active_languages, list2=[])
                 p._set_active_languages(languages=['en', 'he', 'en', 'he'])
@@ -775,12 +993,18 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(p.active_languages), second=2)
 
             def test_set_active_languages_with_typo(self):
+                """
+                Tests that _set_active_languages() stores a misspelled language code as-is without validating it (validation occurs on save).
+                """
                 p = SpeedyMatchSiteProfile()
                 p._set_active_languages(languages=['en', 'he', 'en', 'he1'])
                 self.assertNotEqual(first=set(p.active_languages), second={'en', 'he'})
                 self.assertNotEqual(first=len(p.active_languages), second=2)
 
             def test_set_active_languages_with_an_unsupported_language_1(self):
+                """
+                Tests that saving a profile with an unsupported active language raises a ValidationError referencing its index.
+                """
                 user = self.get_active_user_jennifer()
                 user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'ab'])
                 with self.assertRaises(ValidationError) as cm:
@@ -788,6 +1012,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=1, value="'ab'"))
 
             def test_set_active_languages_with_an_unsupported_language_2(self):
+                """
+                Tests that saving a profile with a duplicated misspelled active language raises a ValidationError referencing the last occurrence's index.
+                """
                 user = self.get_active_user_jennifer()
                 user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'en', 'he1'])
                 with self.assertRaises(ValidationError) as cm:
@@ -795,6 +1022,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=3, value="'he1'"))
 
             def test_set_active_languages_with_an_unsupported_language_3(self):
+                """
+                Tests that saving a profile with multiple unsupported active languages raises a ValidationError referencing the first invalid index.
+                """
                 user = self.get_active_user_jennifer()
                 user.speedy_match_profile._set_active_languages(languages=['en', 'he', 'en1', 'he2'])
                 with self.assertRaises(ValidationError) as cm:
@@ -802,6 +1032,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(field_name='active_languages', index=2, value="'en1'"))
 
             def test_call_activate_directly_and_assert_exception(self):
+                """
+                Tests that calling activate() directly on the Speedy Match profile raises a NotImplementedError, leaving the profile's active state unchanged.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
@@ -816,6 +1049,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_call_deactivate_and_activate_directly_and_assert_no_exception(self):
+                """
+                Tests that calling deactivate() and then validate_profile_and_activate() directly on the Speedy Match profile toggles its active state correctly, with cached properties refreshed.
+                """
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_match_profile.deactivate() and user.speedy_match_profile.validate_profile_and_activate().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
@@ -842,6 +1078,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
             def test_call_deactivate_race_condition_profile_should_not_become_active_with_not_allowed_to_use_speedy_match(self):
+                """
+                Tests that saving a stale in-memory profile after it was deactivated/flagged by another instance raises a ConcurrencyError, preventing the race condition from reactivating it.
+                """
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
@@ -887,6 +1126,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=(user.speedy_match_profile.not_allowed_to_use_speedy_match is False), expr2=True)
 
             def test_call_speedy_net_deactivate_and_activate_directly_and_assert_no_exception(self):
+                """
+                Tests that deactivating/activating the Speedy Net profile cascades to the Speedy Match profile's active state, with cached properties refreshed.
+                """
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user.speedy_net_profile.deactivate() and user.speedy_net_profile.activate().
                 user = self.get_active_user_jennifer()
                 self.assertEqual(first=user.is_active, second=True)
@@ -905,6 +1147,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=True)
 
             def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
+                """
+                Tests that calling call_after_verify_email_address() directly on the Speedy Match profile doesn't raise or change its (still invalid) active state.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
@@ -917,14 +1162,23 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
 
             def test_call_get_name_directly_and_assert_no_exception(self):
+                """
+                Tests that calling get_name() directly on the Speedy Match profile returns the user's first name.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.speedy_match_profile.get_name(), second="Doron")
 
             def test_call_user_name_directly_and_assert_no_exception(self):
+                """
+                Tests that the user's name property returns the user's first name.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.name, second="Doron")
 
             def test_user_name_is_the_same_as_get_name_and_get_first_name(self):
+                """
+                Tests that user.name is consistent with speedy_match_profile.get_name() and user.get_first_name(), and differs from the full name, across several user fixture types.
+                """
                 for user in [self.get_default_user_doron(), self.get_active_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.name, second=user.speedy_match_profile.get_name())
                     self.assertEqual(first=user.name, second=user.get_first_name())
@@ -934,6 +1188,9 @@ if (django_settings.TESTS):
                     self.assertNotEqual(first=str(user), second=user.name)
 
             def test_validate_profile_and_activate_ok(self):
+                """
+                Tests that validate_profile_and_activate() succeeds for a fully valid active user, with all fields within their valid ranges.
+                """
                 user = ActiveUserFactory()
                 step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
                 self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
@@ -949,6 +1206,9 @@ if (django_settings.TESTS):
                 self.validate_all_user_values(user=user)
 
             def test_default_user_factory_doesnt_have_confirmed_email(self):
+                """
+                Tests that a DefaultUserFactory user has no confirmed email and an inactive, empty-active-languages Speedy Match profile.
+                """
                 user = DefaultUserFactory()
                 self.assertEqual(first=user.has_confirmed_email, second=False)
                 self.assertEqual(first=user.is_active, second=True)
@@ -958,6 +1218,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_deleting_email_addresses_deactivates_user(self):
+                """
+                Tests that deleting a user's only (primary) confirmed email address deactivates their Speedy Match profile, with cached properties refreshed.
+                """
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after calling user_email_address.delete().
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.has_confirmed_email, second=True)
@@ -980,6 +1243,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_unconfirming_email_addresses_deactivates_user(self):
+                """
+                Tests that unconfirming a user's email address deactivates their Speedy Match profile, and that reconfirming it does not automatically reactivate the profile.
+                """
                 # Check that @cached_property user.speedy_match_profile.is_active and user.speedy_match_profile.is_active_and_valid are changed after changing email.is_confirmed to False.
                 # After changing email.is_confirmed to True, user.speedy_match_profile.is_active doesn't change to True automatically. The user has to activate himself.
                 user = ActiveUserFactory()
@@ -1015,6 +1281,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
             def test_validate_profile_and_activate_exception_on_profile_picture(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid profile picture values.
+                """
                 test_settings = {
                     "field_name": 'profile_picture',
                     "test_invalid_values_to_assign": True,
@@ -1027,6 +1296,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_profile_description(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid profile description values.
+                """
                 test_settings = {
                     "field_name": 'profile_description',
                     "test_invalid_values_to_assign": False,
@@ -1039,6 +1311,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_city(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid city values.
+                """
                 test_settings = {
                     "field_name": 'city',
                     "test_invalid_values_to_assign": False,
@@ -1051,6 +1326,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_children(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid children values.
+                """
                 test_settings = {
                     "field_name": 'children',
                     "test_invalid_values_to_assign": False,
@@ -1063,6 +1341,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_more_children(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid more children values.
+                """
                 test_settings = {
                     "field_name": 'more_children',
                     "test_invalid_values_to_assign": False,
@@ -1075,6 +1356,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_match_description(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid match description values.
+                """
                 test_settings = {
                     "field_name": 'match_description',
                     "test_invalid_values_to_assign": False,
@@ -1087,6 +1371,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_height(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid height values.
+                """
                 test_settings = {
                     "field_name": 'height',
                     "test_invalid_values_to_assign": False,
@@ -1099,6 +1386,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_diet(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet values.
+                """
                 test_settings = {
                     "field_name": 'diet',
                     "test_invalid_values_to_assign": False,
@@ -1111,6 +1401,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_smoking_status(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status values.
+                """
                 test_settings = {
                     "field_name": 'smoking_status',
                     "test_invalid_values_to_assign": False,
@@ -1123,6 +1416,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_relationship_status(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status values.
+                """
                 test_settings = {
                     "field_name": 'relationship_status',
                     "test_invalid_values_to_assign": False,
@@ -1135,6 +1431,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_gender_to_match(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid gender to match values.
+                """
                 test_settings = {
                     "field_name": 'gender_to_match',
                     "test_invalid_values_to_assign": False,
@@ -1147,6 +1446,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min age to match values.
+                """
                 test_settings = {
                     "field_name": 'min_age_to_match',
                     "test_invalid_values_to_assign": False,
@@ -1160,6 +1462,9 @@ if (django_settings.TESTS):
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
             def test_validate_profile_and_activate_exception_on_min_age_to_match_with_override_settings(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min age to match with override settings values.
+                """
                 test_settings = {
                     "field_name": 'min_age_to_match',
                     "test_invalid_values_to_assign": False,
@@ -1172,6 +1477,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid max age to match values.
+                """
                 test_settings = {
                     "field_name": 'max_age_to_match',
                     "test_invalid_values_to_assign": False,
@@ -1185,6 +1493,9 @@ if (django_settings.TESTS):
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
             def test_validate_profile_and_activate_exception_on_max_age_to_match_with_override_settings(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid max age to match with override settings values.
+                """
                 test_settings = {
                     "field_name": 'max_age_to_match',
                     "test_invalid_values_to_assign": False,
@@ -1197,6 +1508,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min max age to match without invalid ages and invalid values to save values.
+                """
                 test_settings = self.get_min_max_age_to_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1208,6 +1522,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min max age to match with invalid ages and invalid values to save values.
+                """
                 test_settings = self.get_min_max_age_to_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1219,6 +1536,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet match with invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_diet_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1231,6 +1551,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet match without invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_diet_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1243,6 +1566,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status match with invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_smoking_status_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1255,6 +1581,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status match without invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_smoking_status_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1267,6 +1596,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status match with invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_relationship_status_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1279,6 +1611,9 @@ if (django_settings.TESTS):
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+                """
+                Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status match without invalid keys and ranks and invalid values to save values.
+                """
                 test_settings = self.get_relationship_status_match_default_test_settings()
                 test_settings.update({
                     "test_invalid_values_to_assign": False,
@@ -1293,7 +1628,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class SpeedyMatchSiteProfileAllMainLanguagesEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -1301,7 +1645,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
         class SpeedyMatchSiteProfileAllMainLanguagesFrenchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -1309,7 +1662,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
         class SpeedyMatchSiteProfileAllMainLanguagesGermanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -1317,7 +1679,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
         class SpeedyMatchSiteProfileAllMainLanguagesSpanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -1325,7 +1696,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
         class SpeedyMatchSiteProfileAllMainLanguagesPortugueseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -1333,7 +1713,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
         class SpeedyMatchSiteProfileAllMainLanguagesItalianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -1341,7 +1730,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
         class SpeedyMatchSiteProfileAllMainLanguagesDutchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -1349,14 +1747,51 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class SpeedyMatchSiteProfileAllMainLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_speedy_match
         class SpeedyMatchSiteProfileMatchOnlyEnglishTestCase(SpeedyMatchAccountsModelsMixin, SiteTestCase):
+            """
+            Tests the matching rank computation between two Speedy Match profiles, run only once (in English) since it is language-independent.
+
+            Methods:
+                get_active_user_doron(self): Returns an active male user fixture (Doron) configured for matching tests.
+                get_active_user_jennifer(self): Returns an active female user fixture (Jennifer) configured for matching tests.
+                test_user_doesnt_match_self(self): Tests that a user's matching rank with themselves is always 0.
+                test_gender_doesnt_match_profile(self): Tests that two users seeking the same (non-matching) gender get a rank of 0.
+                test_gender_match_profile_different_gender(self): Tests that two users of different genders, matching each other's gender_to_match, get the maximal rank.
+                test_gender_match_profile_same_gender(self): Tests that two users of the same gender, matching each other's gender_to_match, get the maximal rank.
+                test_age_doesnt_match_profile(self): Tests that a user outside the other's age-to-match range gets a rank of 0.
+                run_test_height_doesnt_match_profile(self, with_override_settings): Runs the height-matching-rank scenarios, optionally with overridden height-to-match settings.
+                test_height_doesnt_match_profile(self): Tests the height-matching rank with default settings.
+                test_height_doesnt_match_profile_with_override_settings(self): Tests the height-matching rank with overridden min/max height-to-match settings.
+                test_not_allowed_to_use_speedy_match(self): Tests that a profile flagged not_allowed_to_use_speedy_match always gets a rank of 0, until the flag is cleared and the profile is reactivated.
+                test_smoking_status_doesnt_match_profile(self): Tests that a non-matching smoking status rank of 0 results in a rank of 0.
+                test_relationship_status_match_profile(self): Tests that a matching relationship status keeps the maximal rank even when other statuses are set to 0.
+                test_relationship_status_doesnt_match_profile(self): Tests that a non-matching relationship status rank of 0 results in a rank of 0.
+                test_match_profile_rank_3(self): Tests that the lowest of several partial-match ranks (here 3) determines the overall matching rank.
+                test_match_profile_rank_4(self): Tests that a partial diet match rank (here 4) determines the overall matching rank.
+                test_match_profile_rank_1(self): Tests that the lowest of several partial-match ranks (here 1) determines the overall matching rank, in either direction.
+            """
             def get_active_user_doron(self):
+                """
+                Returns an active male user fixture (Doron) configured to match females aged 20-180.
+
+                :return: The created user.
+                :rtype: User
+                """
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1958, month=10, day=22), gender=User.GENDER_MALE)
                 user.diet = User.DIET_VEGETARIAN
                 user.smoking_status = User.SMOKING_STATUS_NOT_SMOKING
@@ -1368,6 +1803,12 @@ if (django_settings.TESTS):
                 return user
 
             def get_active_user_jennifer(self):
+                """
+                Returns an active female user fixture (Jennifer) configured to match males.
+
+                :return: The created user.
+                :rtype: User
+                """
                 user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 user.diet = User.DIET_VEGAN
                 user.smoking_status = User.SMOKING_STATUS_SMOKING
@@ -1377,6 +1818,9 @@ if (django_settings.TESTS):
                 return user
 
             def test_user_doesnt_match_self(self):
+                """
+                Tests that a user's matching rank with themselves is always 0, for every gender.
+                """
                 user = ActiveUserFactory()
                 for gender in User.GENDER_VALID_VALUES:
                     user.gender = gender
@@ -1386,6 +1830,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=rank, second=0)
 
             def test_gender_doesnt_match_profile(self):
+                """
+                Tests that two users both seeking a gender neither of them has get a matching rank of 0, in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
@@ -1398,6 +1845,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=0)
 
             def test_gender_match_profile_different_gender(self):
+                """
+                Tests that two users of different genders, each matching the other's gender_to_match, get the maximal matching rank in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.save_user_and_profile()
@@ -1408,6 +1858,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_gender_match_profile_same_gender(self):
+                """
+                Tests that two users of the same gender, each matching the other's gender_to_match, get the maximal matching rank in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.gender_to_match = [User.GENDER_MALE]
@@ -1421,6 +1874,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_age_doesnt_match_profile(self):
+                """
+                Tests that a user outside the other's min/max age-to-match range gets a matching rank of 0, in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.min_age_to_match = 20
@@ -1433,6 +1889,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=0)
 
             def run_test_height_doesnt_match_profile(self, with_override_settings):
+                """
+                Runs the height-matching-rank scenarios across a range of heights, asserting a maximal rank within the height-to-match range and 0 outside it.
+
+                :param with_override_settings: Whether to test against the overridden min/max height-to-match settings instead of the defaults.
+                :type with_override_settings: bool
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.height = 176
@@ -1476,13 +1938,22 @@ if (django_settings.TESTS):
                     self.assertEqual(first=rank_2, second=expected_rank)
 
             def test_height_doesnt_match_profile(self):
+                """
+                Tests the height-matching rank with default min/max height-to-match settings.
+                """
                 self.run_test_height_doesnt_match_profile(with_override_settings=False)
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_HEIGHT_TO_MATCH=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_HEIGHT_TO_MATCH, MAX_HEIGHT_TO_MATCH=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_HEIGHT_TO_MATCH))
             def test_height_doesnt_match_profile_with_override_settings(self):
+                """
+                Tests the height-matching rank with overridden min/max height-to-match settings.
+                """
                 self.run_test_height_doesnt_match_profile(with_override_settings=True)
 
             def test_not_allowed_to_use_speedy_match(self):
+                """
+                Tests that a profile flagged not_allowed_to_use_speedy_match always gets a matching rank of 0, and regains the maximal rank once the flag is cleared and the profile is reactivated.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.save_user_and_profile()
@@ -1518,6 +1989,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_smoking_status_doesnt_match_profile(self):
+                """
+                Tests that a smoking status rank of 0 for the other user's smoking status results in a matching rank of 0, in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 0, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 0}
@@ -1530,6 +2004,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=0)
 
             def test_relationship_status_match_profile(self):
+                """
+                Tests that other relationship status ranks set to 0 don't affect the matching rank when the actual relationship status still matches, in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_2.speedy_match_profile.relationship_status_match[str(User.RELATIONSHIP_STATUS_MARRIED)] = SpeedyMatchSiteProfile.RANK_0
@@ -1541,6 +2018,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_relationship_status_doesnt_match_profile(self):
+                """
+                Tests that a relationship status rank of 0 for the other user's relationship status results in a matching rank of 0, in both directions.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.relationship_status = User.RELATIONSHIP_STATUS_MARRIED
@@ -1553,6 +2033,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=0)
 
             def test_match_profile_rank_3(self):
+                """
+                Tests that the lowest of several partial-match ranks (here a smoking status rank of 3) determines the overall matching rank from user_1 to user_2.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 4}
@@ -1565,6 +2048,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_match_profile_rank_4(self):
+                """
+                Tests that a partial diet-match rank (here 4) determines the overall matching rank from user_1 to user_2.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_1.speedy_match_profile.diet_match = {str(User.DIET_VEGAN): 4, str(User.DIET_VEGETARIAN): 5, str(User.DIET_CARNIST): 0}
@@ -1576,6 +2062,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=rank_2, second=5)
 
             def test_match_profile_rank_1(self):
+                """
+                Tests that the lowest of several partial-match ranks (here a relationship-status rank of 1) determines the overall matching rank from user_1 to user_2.
+                """
                 user_1 = self.get_active_user_jennifer()
                 user_2 = self.get_active_user_doron()
                 user_1.speedy_match_profile.smoking_status_match = {str(User.SMOKING_STATUS_SMOKING): 3, str(User.SMOKING_STATUS_NOT_SMOKING): 5, str(User.SMOKING_STATUS_SMOKING_OCCASIONALLY): 4}

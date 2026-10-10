@@ -1,3 +1,6 @@
+"""
+Test cases for the models of the messages app of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -13,21 +16,55 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class ChatOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the Chat and Message models, run only once (in English) since it is language-independent.
+
+            Methods:
+                get_active_user_doron(self): Creates and returns an active user named Doron Matalon.
+                get_active_user_jennifer(self): Creates and returns an active user named Jennifer Connelly.
+                test_id_length(self): Asserts a chat's id has a length of 20 characters.
+                test_str_private_chat(self): Asserts the string representation of a private chat reflects its participants, message count and senders as messages are sent.
+                test_get_slug_private_chat(self): Asserts get_slug returns the other participant's slug for each side of a private chat.
+                test_str_group_chat(self): Asserts the string representation of a group chat reflects its participants, message count and senders as messages are sent.
+                test_get_slug_group_chat(self): Asserts get_slug returns the chat's own id for a group chat.
+                test_cannot_delete_chats_with_queryset_delete_1(self): Asserts calling delete() on the Chat manager/queryset always raises NotImplementedError.
+                test_cannot_delete_chats_with_queryset_delete_2(self): Asserts calling delete() on Chat.all_sites_objects/queryset always raises NotImplementedError.
+                test_cannot_delete_messages_with_queryset_delete(self): Asserts calling delete() on the Message manager/queryset always raises NotImplementedError.
+                test_cannot_delete_readmarks_with_queryset_delete(self): Asserts calling delete() on the ReadMark manager/queryset always raises NotImplementedError.
+            """
             def get_active_user_doron(self):
+                """
+                Creates, saves and returns an active user named Doron Matalon with the slug 'doron-matalon'.
+
+                :return: The created user.
+                :rtype: speedy.core.accounts.models.User
+                """
                 user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon")
                 user.save_user_and_profile()
                 return user
 
             def get_active_user_jennifer(self):
+                """
+                Creates, saves and returns an active user named Jennifer Connelly with the slug 'jennifer-connelly'.
+
+                :return: The created user.
+                :rtype: speedy.core.accounts.models.User
+                """
                 user = ActiveUserFactory(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly")
                 user.save_user_and_profile()
                 return user
 
             def test_id_length(self):
+                """
+                Asserts a newly created chat's id has a length of 20 characters.
+                """
                 chat = ChatFactory()
                 self.assertEqual(first=len(chat.id), second=20)
 
             def test_str_private_chat(self):
+                """
+                Asserts the string representation of a private chat lists both participants' names and the message count/senders, updating correctly as messages are sent by each participant.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 chat = ChatFactory(ent1=user_1, ent2=user_2)
@@ -52,6 +89,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly (3 messages, senders: Doron Matalon, Jennifer Connelly)>".format(chat.id))
 
             def test_get_slug_private_chat(self):
+                """
+                Asserts get_slug returns the other participant's slug, from the perspective of either participant of a private chat.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 chat = ChatFactory(ent1=user_1, ent2=user_2)
@@ -63,6 +103,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=chat.get_slug(current_user=user_2), second="doron-matalon")
 
             def test_str_group_chat(self):
+                """
+                Asserts the string representation of a group chat lists all participants' names (via both .name and .profile.get_name()) and the message count/senders, updating correctly as messages are sent by each participant.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_3 = ActiveUserFactory()
@@ -91,6 +134,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=str(chat), second="<Chat {}: Doron Matalon, Jennifer Connelly, {}, {} (3 messages, senders: Doron Matalon, Jennifer Connelly)>".format(chat.id, user_3.name, user_4.name))
 
             def test_get_slug_group_chat(self):
+                """
+                Asserts get_slug returns the chat's own id (rather than a participant's slug) for a group chat.
+                """
                 user_1 = self.get_active_user_doron()
                 user_2 = self.get_active_user_jennifer()
                 user_3 = ActiveUserFactory()
@@ -99,6 +145,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=chat.get_slug(current_user=user_1), second=chat.id)
 
             def test_cannot_delete_chats_with_queryset_delete_1(self):
+                """
+                Asserts that calling delete() on the Chat manager, on Chat.objects.all(), on a filtered queryset, or on an excluded queryset all raise NotImplementedError with the message "delete is not implemented.".
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     Chat.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -113,6 +162,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_delete_chats_with_queryset_delete_2(self):
+                """
+                Asserts that calling delete() on the Chat.all_sites_objects manager, on its .all(), on a filtered queryset, or on an excluded queryset all raise NotImplementedError with the message "delete is not implemented.".
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     Chat.all_sites_objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -127,6 +179,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_delete_messages_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on the Message manager, on Message.objects.all(), on a filtered queryset, or on an excluded queryset all raise NotImplementedError with the message "delete is not implemented.".
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     Message.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -141,6 +196,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_delete_readmarks_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on the ReadMark manager, on ReadMark.objects.all(), on a filtered queryset, or on an excluded queryset all raise NotImplementedError with the message "delete is not implemented.".
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     ReadMark.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")

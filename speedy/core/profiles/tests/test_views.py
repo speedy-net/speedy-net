@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Core profiles app (the UserMixin, the redirect to the current user's profile and the user detail view).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -28,18 +31,43 @@ if (django_settings.TESTS):
 
 
         class UserMixinTestView(UserMixin, generic.View):
+            """
+            Minimal view combining UserMixin with generic.View, used to test UserMixin's user-resolution logic in isolation.
+            """
             def get(self, request, *args, **kwargs):
+                """
+                Return the view instance itself (instead of an HTTP response), so tests can inspect it directly.
+
+                :param request: The current HTTP request.
+                :type request: django.http.HttpRequest
+                :param args: Additional positional arguments.
+                :param kwargs: Additional keyword arguments.
+                :return: The view instance.
+                :rtype: UserMixinTestView
+                """
                 return self
 
 
         class UserMixinTestCaseMixin(TestCaseMixin):
+            """
+            Tests UserMixin's ability to resolve a user by an exact slug match.
+
+            Methods:
+                test_find_user_by_exact_slug(self): Asserts UserMixin.get_user resolves the user whose slug exactly matches the URL.
+            """
             def set_up(self):
+                """
+                Creates a request factory and two active users, one with a known slug and username.
+                """
                 super().set_up()
                 self.factory = RequestFactory()
                 self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
                 self.other_user = ActiveUserFactory()
 
             def test_find_user_by_exact_slug(self):
+                """
+                Asserts UserMixin.get_user resolves the user whose slug exactly matches the 'slug' URL keyword argument.
+                """
                 request = self.factory.get('/look-at-me/some-page/')
                 request.user = AnonymousUser()
                 view = UserMixinTestView.as_view()(request=request, slug='look-at-me')
@@ -48,15 +76,31 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class LoggedInUserOnlyEnglishTestCase(RedirectMeMixin, SiteTestCase):
+            """
+            Tests that anonymous visitors requesting the /me/ URL are redirected to login (English only, since the behaviour doesn't depend on the language).
+
+            Methods:
+                test_redirect_to_login_me(self): Asserts an anonymous visitor requesting /me/ is redirected to the login page.
+                test_redirect_to_login_me_add_trailing_slash(self): Asserts an anonymous visitor requesting /me (without a trailing slash) is redirected to /me/ and then to the login page.
+            """
             def set_up(self):
+                """
+                Creates two active users, one with a known slug and username.
+                """
                 super().set_up()
                 self.user = ActiveUserFactory(slug='look-at-me', username='lookatme')
                 self.other_user = ActiveUserFactory()
 
             def test_redirect_to_login_me(self):
+                """
+                Asserts an anonymous visitor requesting /me/ is redirected to the login page.
+                """
                 self.assert_me_url_redirects_to_login_url()
 
             def test_redirect_to_login_me_add_trailing_slash(self):
+                """
+                Asserts an anonymous visitor requesting /me (without a trailing slash) is redirected to /me/, and then to the login page.
+                """
                 r = self.client.get(path='/me')
                 self.assertRedirects(response=r, expected_url='/me/', status_code=301, target_status_code=302)
                 self.assert_me_url_redirects_to_login_url()
@@ -65,7 +109,20 @@ if (django_settings.TESTS):
 
 
         class UserDetailViewTestCaseMixin(TestCaseMixin):
+            """
+            Tests the user detail view's visibility rules for the profile owner's name, date of birth and 404 behaviour, across active/deactivated users, friends/non-friends, and (on Speedy Match) match eligibility.
+
+            Methods:
+                deactivate_user(self): Deactivate the profile's user.
+                test_user_profile_not_logged_in(self): Asserts an anonymous visitor sees the profile (on Speedy Net, with date of birth visibility controlled by access settings) or is redirected to login (on Speedy Match), and gets a 404 if the user is deactivated.
+                test_user_own_profile_logged_in(self): Asserts the profile owner, logged in, sees their own full profile including date of birth, and gets a 404 (Speedy Net) or is redirected to /welcome/ (Speedy Match) once deactivated.
+                test_user_profile_month_day_format_from_friend(self): Asserts a friend viewing the profile sees the date of birth formatted according to the owner's day/month and year access settings.
+                test_user_profile_deactivated_user_from_friend(self): Asserts a friend of a deactivated user gets a 404 when viewing that user's profile.
+            """
             def set_up(self):
+                """
+                Creates a user with a fixed name, slug, date of birth and gender (chosen at random from a small set of profiles, in a language-specific alphabet when applicable), builds the user's profile URL, and creates another active user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2])
                 if (self.random_choice == 1):
@@ -109,10 +166,16 @@ if (django_settings.TESTS):
                 self.other_user = ActiveUserFactory()
 
             def deactivate_user(self):
+                """
+                Deactivate the profile's user.
+                """
                 self.user.is_active = False
                 self.user.save()
 
             def test_user_profile_not_logged_in(self):
+                """
+                Asserts an anonymous visitor sees the profile (on Speedy Net, with date of birth visibility controlled by access settings) or is redirected to login (on Speedy Match), and gets a 404 once the user is deactivated (redirected to login on Speedy Match).
+                """
                 r = self.client.get(path=self.user_profile_url)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     # First, check if the date of birth is not visible.
@@ -152,6 +215,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_own_profile_logged_in(self):
+                """
+                Asserts the profile owner, logged in, sees their own full profile including name and date of birth, and gets a 404 (Speedy Net) or is redirected to /welcome/ (Speedy Match) once deactivated.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
@@ -182,6 +248,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_profile_month_day_format_from_friend(self):
+                """
+                Asserts a friend viewing the profile sees the date of birth formatted according to the owner's day/month and year access settings (day/month only, full date, year only, or nothing), and that it's hidden again when logged out, and that match eligibility (on Speedy Match) further gates visibility of the profile.
+                """
                 # First, check if only the day and month are visible.
                 self.user.access_dob_day_month = UserAccessField.ACCESS_FRIENDS
                 self.user.save()
@@ -317,6 +386,9 @@ if (django_settings.TESTS):
                 self.assertIn(member=escape(text=self.expected_404_speedy_is_sorry), container=r.content.decode())
 
             def test_user_profile_deactivated_user_from_friend(self):
+                """
+                Asserts a friend of a deactivated user gets a 404 (with the expected title and message) when viewing that user's profile.
+                """
                 Friend.objects.add_friend(from_user=self.user, to_user=self.other_user).accept()
                 self.assertIs(expr1=Friend.objects.are_friends(user1=self.user, user2=self.other_user), expr2=True)
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
@@ -329,7 +401,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UserDetailViewAllMainLanguagesEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (English).
+
+            Methods:
+                set_up(self): Sets up the English date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for English.
+            """
             def set_up(self):
+                """
+                Sets up the English date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Birth Date"
                 self.birth_year = "Birth Year"
@@ -374,6 +456,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Speedy is sorry, but the page is not found.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en' and the expected titles use the English format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -388,7 +473,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class UserDetailViewAllMainLanguagesFrenchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (French).
+
+            Methods:
+                set_up(self): Sets up the French date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for French.
+            """
             def set_up(self):
+                """
+                Sets up the French date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Date de naissance"
                 self.birth_year = "Année de naissance"
@@ -433,6 +528,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Speedy est désolée, mais la page n’a pas été trouvée.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr' and the expected titles use the French format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -447,7 +545,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class UserDetailViewAllMainLanguagesGermanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (German).
+
+            Methods:
+                set_up(self): Sets up the German date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for German.
+            """
             def set_up(self):
+                """
+                Sets up the German date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Geburtsdatum"
                 self.birth_year = "Geburtsjahr"
@@ -492,6 +600,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Speedy tut es leid, aber die Seite kann nicht gefunden werden.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de' and the expected titles use the German format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -506,7 +617,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class UserDetailViewAllMainLanguagesSpanishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets up the Spanish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Spanish.
+            """
             def set_up(self):
+                """
+                Sets up the Spanish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Fecha de nacimiento"
                 self.birth_year = "Año de nacimiento"
@@ -551,6 +672,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Speedy lo siente, pero no se encuentra la página.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es' and the expected titles use the Spanish format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -565,7 +689,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class UserDetailViewAllMainLanguagesPortugueseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets up the Portuguese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Portuguese.
+            """
             def set_up(self):
+                """
+                Sets up the Portuguese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Data de nascimento"
                 self.birth_year = "Ano de nascimento"
@@ -610,6 +744,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'A Speedy lamenta, mas a página não foi encontrada.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt' and the expected titles use the Portuguese format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -624,7 +761,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class UserDetailViewAllMainLanguagesItalianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets up the Italian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Italian.
+            """
             def set_up(self):
+                """
+                Sets up the Italian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Data di nascita"
                 self.birth_year = "Anno di nascita"
@@ -669,6 +816,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Speedy è spiacente, ma la pagina non è stata trovata.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it' and the expected titles use the Italian format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -683,7 +833,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class UserDetailViewAllMainLanguagesDutchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets up the Dutch date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Dutch.
+            """
             def set_up(self):
+                """
+                Sets up the Dutch date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "Geboortedatum"
                 self.birth_year = "Geboortejaar"
@@ -728,6 +888,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl' and the expected titles use the Dutch format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
                 self.assertDictEqual(d1=self.expected_title, d2={
@@ -742,7 +905,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserDetailViewAllMainLanguagesHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the user detail view for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets up the Hebrew date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Hebrew.
+            """
             def set_up(self):
+                """
+                Sets up the Hebrew date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
                 super().set_up()
                 self.birth_date = "תאריך לידה"
                 self.birth_year = "שנת לידה"
@@ -787,6 +960,9 @@ if (django_settings.TESTS):
                 self.expected_404_speedy_is_sorry = 'ספידי מצטערת, אבל הדף לא נמצא.'
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he' and the expected titles use the Hebrew format.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
                 self.assertDictEqual(d1=self.expected_title, d2={

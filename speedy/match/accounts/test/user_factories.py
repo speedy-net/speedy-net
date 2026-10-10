@@ -1,3 +1,6 @@
+"""
+Test factories of the Speedy Match accounts app for creating inactive, active and Speedy Net inactive users.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -30,6 +33,15 @@ if (django_settings.TESTS):
             """
             @factory.post_generation
             def activate_profile(self, created, extracted, **kwargs):
+                """
+                Post-generation hook that fully activates the user's Speedy Match profile - setting all required fields, a profile picture and a confirmed primary email, then validating and activating the profile.
+
+                :param created: Whether the instance was newly created.
+                :type created: bool
+                :param extracted: The value passed in for this post-generation hook, if any.
+                :param kwargs: Additional keyword arguments.
+                :raises Exception: If the profile fails to validate with the expected step and no error messages.
+                """
                 from speedy.core.uploads.test.factories import UserImageFactory
                 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -68,6 +80,14 @@ if (django_settings.TESTS):
             """
             @factory.post_generation
             def deactivate_profile(self, created, extracted, **kwargs):
+                """
+                Post-generation hook that deactivates the user's Speedy Net profile.
+
+                :param created: Whether the instance was newly created.
+                :type created: bool
+                :param extracted: The value passed in for this post-generation hook, if any.
+                :param kwargs: Additional keyword arguments.
+                """
                 self.speedy_net_profile.deactivate()
 
 

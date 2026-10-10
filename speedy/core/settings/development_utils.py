@@ -1,3 +1,7 @@
+"""
+Utilities for the Speedy Core development environment settings: the logging configuration and the function which updates a settings dict for development.
+"""
+# Logging configuration for the development environment: verbose console logging at DEBUG level.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -61,6 +65,12 @@ LOGGING = {
 
 
 def activate_development(settings):
+    """
+    Update the given settings dict in place for the development environment (console email backend, debug toolbar, verbose logging, insecure cookies, DEBUG enabled).
+
+    :param settings: The settings dict to update.
+    :type settings: dict
+    """
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
         'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],

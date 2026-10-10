@@ -1,3 +1,6 @@
+"""
+Base factories of Speedy Core for creating users in tests, including default, inactive and active users.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -23,7 +26,9 @@ if (django_settings.TESTS):
 
 
         class DjangoTestCaseWithMixin(SpeedyCoreAccountsModelsMixin, django_test.TestCase):
-            pass
+            """
+            A minimal Django test case combining SpeedyCoreAccountsModelsMixin's assertion helpers with django.test.TestCase, instantiated below so its assertion methods can be reused outside an actual test run (e.g. from factory post-generation hooks).
+            """
 
 
         _test_case_with_mixin = DjangoTestCaseWithMixin()
@@ -51,6 +56,13 @@ if (django_settings.TESTS):
 
             @factory.post_generation
             def validate_first_and_last_name_in_all_languages(self, created, extracted, **kwargs):
+                """
+                Post-generation hook which asserts that the generated user has a first and last name set in all the site's languages.
+
+                :param created: Whether the instance was created (unused).
+                :param extracted: The value passed to the factory for this post-generation hook, if any (unused).
+                :param kwargs: Additional keyword arguments (unused).
+                """
                 _test_case_with_mixin.assert_user_first_and_last_name_in_all_languages(user=self)
 
 

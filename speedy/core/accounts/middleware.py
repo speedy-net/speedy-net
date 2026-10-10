@@ -1,3 +1,6 @@
+"""
+Middleware of the Speedy Core accounts app, which applies site profile related redirects, last visit updates and user deactivation checks to each request.
+"""
 import logging
 
 from django.conf import settings as django_settings
@@ -12,7 +15,25 @@ logger = logging.getLogger(__name__)
 
 
 class SiteProfileMiddleware(MiddlewareMixin):
+    """
+    Middleware that enforces site-profile related redirects for every request: it redirects staff/superusers to
+    the admin site, logs out and redirects deleted users, keeps the user's last visit and IP address up to date,
+    deactivates users on Speedy Net who have not confirmed their email, and redirects users whose profile is not
+    active and valid to the account activation flow.
+
+    Methods:
+        process_request(self, request): Process an incoming request and apply the site-profile redirects.
+    """
+
     def process_request(self, request):
+        """
+        Apply site-profile related checks and redirects to the current request.
+
+        :param request: The current HTTP request.
+        :type request: django.http.HttpRequest
+        :return: A redirect response if the user should be redirected, otherwise None.
+        :rtype: django.http.HttpResponseRedirect or None
+        """
         if (request.user.is_authenticated):
             if ((request.user.is_superuser) or (request.user.is_staff)):
                 redirect_this_user = True

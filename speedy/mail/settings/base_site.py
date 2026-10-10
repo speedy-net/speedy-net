@@ -1,3 +1,6 @@
+"""
+Django settings shared by all the Speedy Mail Software environments (site ID, URL configuration and site specific settings).
+"""
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_without_login import *
 from speedy.core.settings.utils import update_site_paths
@@ -7,8 +10,10 @@ from .utils import APP_DIR
 
 update_site_paths(settings=globals())
 
+# The Django site ID of Speedy Mail Software (the same value as SPEEDY_MAIL_SOFTWARE_SITE_ID).
 SITE_ID = SPEEDY_MAIL_SOFTWARE_SITE_ID
 
+# The root URL configuration module of Speedy Mail Software.
 ROOT_URLCONF = 'speedy.mail.urls'
 
 # if (LOGIN_ENABLED):

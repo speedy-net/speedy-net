@@ -1,3 +1,6 @@
+"""
+Test mixins of the Speedy Core accounts app, with model helper methods and language specific translations used by the accounts tests.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -8,7 +11,29 @@ if (django_settings.TESTS):
 
 
     class SpeedyCoreAccountsModelsMixin(TestCaseMixin):
+        """
+        Mixin providing assertions about entity/user/email-address counts and localized name fields for tests.
+
+        Methods:
+            assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count): Asserts the counts of entities, users and confirmed/unconfirmed user email addresses in the database.
+            assert_user_email_addresses_count(self, user, user_email_addresses_count, user_primary_email_addresses_count, user_confirmed_email_addresses_count, user_unconfirmed_email_addresses_count): Asserts the counts of a user's email addresses (primary/confirmed/unconfirmed) and the user's has_confirmed_email flag.
+            assert_user_first_and_last_name_in_all_languages(self, user): Asserts that a user's first and last name are set identically in all the localized per-language name fields.
+        """
         def assert_models_count(self, entity_count, user_count, user_email_address_count, confirmed_email_address_count, unconfirmed_email_address_count):
+            """
+            Asserts that the database contains the expected number of entities, users and user email addresses (confirmed and unconfirmed).
+
+            :param entity_count: The expected number of Entity objects.
+            :type entity_count: int
+            :param user_count: The expected number of User objects.
+            :type user_count: int
+            :param user_email_address_count: The expected total number of UserEmailAddress objects.
+            :type user_email_address_count: int
+            :param confirmed_email_address_count: The expected number of confirmed UserEmailAddress objects.
+            :type confirmed_email_address_count: int
+            :param unconfirmed_email_address_count: The expected number of unconfirmed UserEmailAddress objects.
+            :type unconfirmed_email_address_count: int
+            """
             self.assertEqual(first=Entity.objects.count(), second=entity_count)
             self.assertEqual(first=User.objects.count(), second=user_count)
             self.assertEqual(first=UserEmailAddress.objects.count(), second=user_email_address_count)
@@ -16,6 +41,20 @@ if (django_settings.TESTS):
             self.assertEqual(first=UserEmailAddress.objects.filter(is_confirmed=False).count(), second=unconfirmed_email_address_count)
 
         def assert_user_email_addresses_count(self, user, user_email_addresses_count, user_primary_email_addresses_count, user_confirmed_email_addresses_count, user_unconfirmed_email_addresses_count):
+            """
+            Asserts that a user's email addresses match the expected counts, and that the user's has_confirmed_email flag is consistent with the confirmed-email-addresses count.
+
+            :param user: The user whose email addresses are checked.
+            :type user: speedy.core.accounts.models.User
+            :param user_email_addresses_count: The expected total number of the user's email addresses.
+            :type user_email_addresses_count: int
+            :param user_primary_email_addresses_count: The expected number of the user's primary email addresses.
+            :type user_primary_email_addresses_count: int
+            :param user_confirmed_email_addresses_count: The expected number of the user's confirmed email addresses.
+            :type user_confirmed_email_addresses_count: int
+            :param user_unconfirmed_email_addresses_count: The expected number of the user's unconfirmed email addresses.
+            :type user_unconfirmed_email_addresses_count: int
+            """
             self.assertEqual(first=user.email_addresses.count(), second=user_email_addresses_count)
             self.assertEqual(first=user.email_addresses.filter(is_primary=True).count(), second=user_primary_email_addresses_count)
             self.assertEqual(first=user.email_addresses.filter(is_confirmed=True).count(), second=user_confirmed_email_addresses_count)
@@ -28,6 +67,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.email_addresses.filter(is_confirmed=True, is_primary=True).count(), second=0)
 
         def assert_user_first_and_last_name_in_all_languages(self, user):
+            """
+            Asserts that the user's first_name and last_name are identical to their localized per-language counterparts (e.g. first_name_en, first_name_fr, ...) for all the configured languages.
+
+            :param user: The user whose localized name fields are checked.
+            :type user: speedy.core.accounts.models.User
+            """
             self.assertTupleEqual(tuple1=User.NAME_LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
             self.assertEqual(first=user.first_name_en, second=user.first_name)
             self.assertEqual(first=user.first_name_fr, second=user.first_name)
@@ -68,10 +113,79 @@ if (django_settings.TESTS):
 
 
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
+        """
+        Mixin providing per-language speedy.core.accounts validation error messages and errors dicts for tests, localized according to self.language_code.
+
+        Methods:
+            _assert_model_is_entity_or_user(self, model): Asserts that model is either Entity or User.
+            _value_is_not_a_valid_choice_error_message_by_value(self, value): Returns the formatted "value is not a valid choice" message for a given value.
+            _value_must_be_an_integer_error_message_by_value(self, value): Returns the formatted "value must be an integer" message for a given value.
+            _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(self, min_length, value_length): Returns the formatted "must contain at least min_length alphanumeric characters" message.
+            _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(self, max_length, value_length): Returns the formatted "must contain at most max_length alphanumeric characters" message.
+            _username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length): Returns the formatted "must contain at least min_length characters" message.
+            _username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length): Returns the formatted "must contain at most max_length characters" message.
+            _a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(self, email_address): Returns the formatted "a confirmation message was sent to" success message for a given email address.
+            _user_all_the_required_fields_keys(self): Returns the list of all the required field names for creating a User, including a localized first_name field per configured language.
+            _registration_form_all_the_required_fields_keys(self): Returns the list of all the required field names of the registration form, localized to self.language_code.
+            _profile_form_all_the_required_fields_keys(self): Returns the list of all the required field names of the profile form, localized to self.language_code.
+            _login_form_all_the_required_fields_keys(self): Returns the list of all the required field names of the login form.
+            _registration_form_all_the_required_fields_are_required_errors_dict(self): Returns the errors dict for all the required fields of the registration form being missing.
+            _profile_form_all_the_required_fields_are_required_errors_dict(self): Returns the errors dict for all the required fields of the profile form being missing.
+            _login_form_all_the_required_fields_are_required_errors_dict(self): Returns the errors dict for all the required fields of the login form being missing.
+            _username_is_required_errors_dict(self): Returns the errors dict for a missing username.
+            _password_is_required_errors_dict(self): Returns the errors dict for a missing password.
+            _date_of_birth_is_required_errors_dict(self): Returns the errors dict for a missing date of birth.
+            _enter_a_valid_date_errors_dict(self): Returns the errors dict for an invalid date of birth.
+            _cannot_create_user_email_address_without_all_the_required_fields_errors_dict(self): Returns the errors dict for creating a UserEmailAddress without a user and without an email.
+            _id_contains_illegal_characters_errors_dict(self): Returns the errors dict for an id containing illegal characters.
+            _id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(self, max_length, value_length): Returns the errors dict for an id that contains illegal characters and is too long.
+            _please_enter_a_correct_username_and_password_errors_dict(self): Returns the errors dict for an incorrect username/password combination on login.
+            _invalid_password_errors_dict(self): Returns the errors dict for an invalid password.
+            _password_too_short_errors_dict(self, field_names): Returns the errors dict for a password that is too short, for the given password field names.
+            _password_too_long_errors_dict(self, field_names): Returns the errors dict for a password that is too long, for the given password field names.
+            _your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names): Returns the errors dict for a password that doesn't contain at least 6 unique characters, for the given password field names.
+            _password_too_short_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names): Returns the errors dict for a password that is both too short and doesn't contain at least 6 unique characters, for the given password field names.
+            _password_too_long_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names): Returns the errors dict for a password that is both too long and doesn't contain at least 6 unique characters, for the given password field names.
+            _your_old_password_was_entered_incorrectly_errors_dict(self): Returns the errors dict for an incorrect old_password on password change.
+            _the_two_password_fields_didnt_match_errors_dict(self): Returns the errors dict for new_password1/new_password2 not matching.
+            _enter_a_valid_email_address_errors_dict(self): Returns the errors dict for an invalid email address.
+            _this_email_is_already_in_use_errors_dict(self): Returns the errors dict for an email address that is already in use.
+            _this_username_is_already_taken_errors_dict(self, slug_fail=False, username_fail=False): Returns the errors dict for a username/slug that is already taken.
+            _username_must_start_with_4_or_more_letters_errors_dict(self, model, slug_fail=False, username_fail=False): Returns the errors dict for a username/slug of model (Entity or User) that doesn't start with 4 or more letters.
+            _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False): Returns the errors dict for a slug of model (Entity or User) that doesn't parse to a valid username.
+            _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth): Returns the errors dict for an empty or invalid date_of_birth value.
+            _you_cant_change_your_username_errors_dict_by_gender(self, gender): Returns the gender-specific errors dict for an attempt to change a username that is not allowed to change.
+            _cannot_create_user_without_all_the_required_fields_errors_dict_by_value(self, value, gender_is_valid=False): Returns the errors dict for creating a User with value (None, '' or an invalid value) used for all the required fields.
+            _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None): Returns the errors dict for a slug/username of model that doesn't contain at least the minimal number of alphanumeric characters.
+            _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None): Returns the errors dict for a slug/username of model that contains more than the maximal number of alphanumeric characters.
+            _model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None): Returns the errors dict for a slug/username of model that doesn't contain at least the minimal number of characters.
+            _model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None): Returns the errors dict for a slug/username of model that contains more than the maximal number of characters.
+            _this_field_cannot_be_null_errors_dict_by_field_name(self, field_name): Returns the errors dict for field_name being null.
+            _this_field_cannot_be_blank_errors_dict_by_field_name(self, field_name): Returns the errors dict for field_name being blank.
+            _value_must_be_valid_json_errors_dict_by_field_name(self, field_name): Returns the errors dict for field_name not containing valid JSON.
+            _ensure_this_value_is_greater_than_or_equal_to_minus_32768_errors_dict_by_field_name(self, field_name): Returns the errors dict for field_name being less than -32768.
+            _ensure_this_value_is_less_than_or_equal_to_32767_errors_dict_by_field_name(self, field_name): Returns the errors dict for field_name being greater than 32767.
+            _value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(self, field_name, value): Returns the errors dict for field_name having a value that is not a valid choice.
+            _value_must_be_an_integer_errors_dict_by_field_name_and_value(self, field_name, value): Returns the errors dict for field_name having a value that is not an integer.
+            _this_field_cannot_be_null_errors_dict_by_field_name_list(self, field_name_list): Returns the errors dict mapping each field name in field_name_list to the "this field cannot be null" error message.
+            _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list): Returns the errors dict mapping each field name in field_name_list to the "value must be an integer" error message for the corresponding value in value_list.
+            _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(self, field_name, max_length, value_length): Returns the errors dict for field_name's value being longer than max_length characters.
+            _not_null_constraint_error_message_by_column_and_relation(self, column, relation): Returns the PostgreSQL not-null constraint violation message for a given column and relation (table) name.
+            set_up(self): Sets up all the localized speedy.core.accounts validation error message and success message attributes used by the test cases, based on self.language_code.
+            assert_required_fields_and_errors_dict(self, required_fields, errors_dict): Asserts that errors_dict contains exactly one "this field is required" error per field name in required_fields.
+            assert_registration_form_required_fields(self, required_fields): Asserts that required_fields are exactly the registration form's required fields, each with a "this field is required" error.
+            assert_profile_form_required_fields(self, required_fields): Asserts that required_fields are exactly the profile form's required fields, each with a "this field is required" error.
+        """
         _first_password_field_names = ['new_password1']
         _both_password_field_names = ['new_password1', 'new_password2']
 
         def _assert_model_is_entity_or_user(self, model):
+            """
+            Asserts that model is either Entity or User.
+
+            :param model: The model class to check.
+            :type model: type
+            """
             self.assertIn(member=model, container=[Entity, User])
             if (model is Entity):
                 pass
@@ -81,105 +195,342 @@ if (django_settings.TESTS):
                 raise Exception("Unexpected: model={}".format(model))
 
         def _value_is_not_a_valid_choice_error_message_by_value(self, value):
+            """
+            Returns the formatted "value is not a valid choice" message for a given value.
+
+            :param value: The invalid value.
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._value_is_not_a_valid_choice_error_message_to_format.format(value=value)
 
         def _value_must_be_an_integer_error_message_by_value(self, value):
+            """
+            Returns the formatted "value must be an integer" message for a given value.
+
+            :param value: The non-integer value.
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._value_must_be_an_integer_error_message_to_format.format(value=value)
 
         def _username_must_contain_at_least_min_length_alphanumeric_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
+            """
+            Returns the formatted "username must contain at least min_length alphanumeric characters" message.
+
+            :param min_length: The minimal required number of alphanumeric characters.
+            :type min_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._username_must_contain_at_least_min_length_alphanumeric_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
 
         def _username_must_contain_at_most_max_length_alphanumeric_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+            """
+            Returns the formatted "username must contain at most max_length alphanumeric characters" message.
+
+            :param max_length: The maximal allowed number of alphanumeric characters.
+            :type max_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._username_must_contain_at_most_max_length_alphanumeric_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
         def _username_must_contain_at_least_min_length_characters_error_message_by_min_length_and_value_length(self, min_length, value_length):
+            """
+            Returns the formatted "username must contain at least min_length characters" message.
+
+            :param min_length: The minimal required number of characters.
+            :type min_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._username_must_contain_at_least_min_length_characters_error_message_to_format.format(min_length=min_length, value_length=value_length)
 
         def _username_must_contain_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+            """
+            Returns the formatted "username must contain at most max_length characters" message.
+
+            :param max_length: The maximal allowed number of characters.
+            :type max_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._username_must_contain_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
+
         def _a_confirmation_message_was_sent_to_email_address_success_message_by_email_address(self, email_address):
+            """
+            Returns the formatted "a confirmation message was sent to email_address" success message.
+
+            :param email_address: The email address the confirmation message was sent to.
+            :type email_address: str
+            :return: The formatted success message.
+            :rtype: str
+            """
             return self._a_confirmation_message_was_sent_to_email_address_success_message_to_format.format(email_address=email_address)
 
         def _user_all_the_required_fields_keys(self):
+            """
+            Returns the list of all the required field names for creating a User, including one localized first_name field per configured language, followed by username, slug, password, gender and date_of_birth.
+
+            :return: The list of required field names.
+            :rtype: list
+            """
             return [field_name.format(language_code=language_code).replace("-", "_") for field_name in ['first_name_{language_code}'] for language_code, language_name in django_settings.LANGUAGES] + ['username', 'slug', 'password', 'gender', 'date_of_birth']
 
         def _registration_form_all_the_required_fields_keys(self):
+            """
+            Returns the list of all the required field names of the registration form, with first_name localized to self.language_code.
+
+            :return: The list of required field names.
+            :rtype: list
+            """
             return [field_name.format(language_code=self.language_code).replace("-", "_") for field_name in ['first_name_{language_code}', 'email', 'slug', 'new_password1', 'gender', 'date_of_birth']]
 
         def _profile_form_all_the_required_fields_keys(self):
+            """
+            Returns the list of all the required field names of the profile form, with first_name localized to self.language_code.
+
+            :return: The list of required field names.
+            :rtype: list
+            """
             return [field_name.format(language_code=self.language_code).replace("-", "_") for field_name in ['first_name_{language_code}', 'slug', 'gender', 'date_of_birth']]
 
         def _login_form_all_the_required_fields_keys(self):
+            """
+            Returns the list of all the required field names of the login form (username, password).
+
+            :return: The list of required field names.
+            :rtype: list
+            """
             return [field_name.format(language_code=self.language_code) for field_name in ['username', 'password']]
 
         def _registration_form_all_the_required_fields_are_required_errors_dict(self):
+            """
+            Returns the errors dict mapping each required field of the registration form to the "this field is required" error message.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._registration_form_all_the_required_fields_keys())
 
         def _profile_form_all_the_required_fields_are_required_errors_dict(self):
+            """
+            Returns the errors dict mapping each required field of the profile form to the "this field is required" error message.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._profile_form_all_the_required_fields_keys())
 
         def _login_form_all_the_required_fields_are_required_errors_dict(self):
+            """
+            Returns the errors dict mapping each required field of the login form to the "this field is required" error message.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._login_form_all_the_required_fields_keys())
 
         def _username_is_required_errors_dict(self):
+            """
+            Returns the errors dict for a missing username field.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['username'])
 
         def _password_is_required_errors_dict(self):
+            """
+            Returns the errors dict for a missing password field.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['password'])
 
         def _date_of_birth_is_required_errors_dict(self):
+            """
+            Returns the errors dict for a missing date_of_birth field.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['date_of_birth'])
 
         def _enter_a_valid_date_errors_dict(self):
+            """
+            Returns the errors dict for an invalid date_of_birth value.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'date_of_birth': [self._enter_a_valid_date_error_message]}
 
         def _cannot_create_user_email_address_without_all_the_required_fields_errors_dict(self):
+            """
+            Returns the errors dict for creating a UserEmailAddress without a user (null) and without an email (blank).
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {
                 'user': [self._this_field_cannot_be_null_error_message],
                 'email': [self._this_field_cannot_be_blank_error_message],
             }
 
         def _id_contains_illegal_characters_errors_dict(self):
+            """
+            Returns the errors dict for an id field containing illegal characters.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'id': [self._id_contains_illegal_characters_error_message]}
 
         def _id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(self, max_length, value_length):
+            """
+            Returns the errors dict for an id field that both contains illegal characters and exceeds the maximal allowed length.
+
+            :param max_length: The maximal allowed number of characters.
+            :type max_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'id': [self._id_contains_illegal_characters_error_message, self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=max_length, value_length=value_length)]}
 
         def _please_enter_a_correct_username_and_password_errors_dict(self):
+            """
+            Returns the errors dict for an incorrect username/password combination at login.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'__all__': [self._please_enter_a_correct_username_and_password_error_message]}
 
         def _invalid_password_errors_dict(self):
+            """
+            Returns the errors dict for an invalid password field.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'password': [self._invalid_password_error_message]}
 
         def _password_too_short_errors_dict(self, field_names):
+            """
+            Returns the errors dict for a password that is too short, for each of the given password field names.
+
+            :param field_names: The password field names to map to the error message.
+            :type field_names: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._password_too_short_error_message] for field_name in field_names}
 
         def _password_too_long_errors_dict(self, field_names):
+            """
+            Returns the errors dict for a password that is too long, for each of the given password field names.
+
+            :param field_names: The password field names to map to the error message.
+            :type field_names: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._password_too_long_error_message] for field_name in field_names}
 
         def _your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names):
+            """
+            Returns the errors dict for a password that doesn't contain at least 6 unique characters, for each of the given password field names.
+
+            :param field_names: The password field names to map to the error message.
+            :type field_names: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._your_password_must_contain_at_least_6_unique_characters_error_message] for field_name in field_names}
 
         def _password_too_short_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names):
+            """
+            Returns the errors dict for a password that is both too short and doesn't contain at least 6 unique characters, for each of the given password field names.
+
+            :param field_names: The password field names to map to the error messages.
+            :type field_names: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._password_too_short_error_message, self._your_password_must_contain_at_least_6_unique_characters_error_message] for field_name in field_names}
 
         def _password_too_long_and_your_password_must_contain_at_least_6_unique_characters_errors_dict(self, field_names):
+            """
+            Returns the errors dict for a password that is both too long and doesn't contain at least 6 unique characters, for each of the given password field names.
+
+            :param field_names: The password field names to map to the error messages.
+            :type field_names: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._password_too_long_error_message, self._your_password_must_contain_at_least_6_unique_characters_error_message] for field_name in field_names}
 
         def _your_old_password_was_entered_incorrectly_errors_dict(self):
+            """
+            Returns the errors dict for an incorrect old_password on password change.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'old_password': [self._your_old_password_was_entered_incorrectly_error_message]}
 
         def _the_two_password_fields_didnt_match_errors_dict(self):
+            """
+            Returns the errors dict for new_password1 and new_password2 not matching.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'new_password2': [self._the_two_password_fields_didnt_match_error_message]}
 
         def _enter_a_valid_email_address_errors_dict(self):
+            """
+            Returns the errors dict for an invalid email address.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'email': [self._enter_a_valid_email_address_error_message]}
 
         def _this_email_is_already_in_use_errors_dict(self):
+            """
+            Returns the errors dict for an email address that is already in use.
+
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'email': [self._this_email_is_already_in_use_error_message]}
 
         def _this_username_is_already_taken_errors_dict(self, slug_fail=False, username_fail=False):
+            """
+            Returns the errors dict for a username/slug that is already taken. slug_fail is expected to always be True.
+
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :return: The errors dict.
+            :rtype: dict
+            """
             self.assertIs(expr1=slug_fail, expr2=True)
             errors_dict = {}
             if (slug_fail):
@@ -189,6 +540,18 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _username_must_start_with_4_or_more_letters_errors_dict(self, model, slug_fail=False, username_fail=False):
+            """
+            Returns the errors dict for a slug and/or username of model that doesn't start with 4 or more letters.
+
+            :param model: The model class (Entity or User) the error message is specific to.
+            :type model: type
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {}
             if (slug_fail):
@@ -208,6 +571,16 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _slug_does_not_parse_to_username_errors_dict(self, model, username_fail=False):
+            """
+            Returns the errors dict for a slug of model that doesn't parse to a valid username.
+
+            :param model: The model class (Entity or User) the error message is specific to.
+            :type model: type
+            :param username_fail: Whether the username field also has the "must start with 4 or more letters" error.
+            :type username_fail: bool
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {'slug': [self._slug_does_not_parse_to_username_error_message]}
             if (username_fail):
@@ -220,15 +593,38 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _date_of_birth_errors_dict_by_date_of_birth(self, date_of_birth):
+            """
+            Returns the errors dict for an empty or invalid date_of_birth value.
+
+            :param date_of_birth: The date of birth value being validated.
+            :return: The errors dict, either for a required field or for an invalid date.
+            :rtype: dict
+            """
             if (date_of_birth == ''):
                 return self._date_of_birth_is_required_errors_dict()
             else:
                 return self._enter_a_valid_date_errors_dict()
 
         def _you_cant_change_your_username_errors_dict_by_gender(self, gender):
+            """
+            Returns the errors dict for an attempt to change a username that is not allowed to change, with a gender-specific message.
+
+            :param gender: The gender used to select the localized error message.
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {'slug': [self._you_cant_change_your_username_error_message_dict_by_gender[gender]]}
 
         def _cannot_create_user_without_all_the_required_fields_errors_dict_by_value(self, value, gender_is_valid=False):
+            """
+            Returns the errors dict for creating a User with value (None, '' or an invalid value) used for all the required fields (gender, date_of_birth, username/slug, localized first names, password).
+
+            :param value: The value used for all the required fields (typically None, '' or an invalid gender value).
+            :param gender_is_valid: Whether value is a valid gender value.
+            :type gender_is_valid: bool
+            :return: The errors dict.
+            :rtype: dict
+            """
             self.assertEqual(first=gender_is_valid, second=(value in User.GENDER_VALID_VALUES))
             if (value is None):
                 str_value = ''
@@ -269,6 +665,20 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
+            """
+            Returns the errors dict for a slug and/or username of model that doesn't contain at least the model's minimal required number of alphanumeric characters.
+
+            :param model: The model class (Entity or User) whose MIN_USERNAME_LENGTH setting is used.
+            :type model: type
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :param username_value_length: The actual length of the username/slug value.
+            :type username_value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {}
             if (slug_fail):
@@ -278,6 +688,20 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, username_value_length=None):
+            """
+            Returns the errors dict for a slug and/or username of model that contains more than the model's maximal allowed number of alphanumeric characters.
+
+            :param model: The model class (Entity or User) whose MAX_USERNAME_LENGTH setting is used.
+            :type model: type
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :param username_value_length: The actual length of the username/slug value.
+            :type username_value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {}
             if (slug_fail):
@@ -287,6 +711,22 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _model_slug_or_username_username_must_contain_at_least_min_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+            """
+            Returns the errors dict for a slug and/or username of model that doesn't contain at least the model's minimal required number of characters.
+
+            :param model: The model class (Entity or User) whose MIN_SLUG_LENGTH/MIN_USERNAME_LENGTH settings are used.
+            :type model: type
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :param slug_value_length: The actual length of the slug value.
+            :type slug_value_length: int
+            :param username_value_length: The actual length of the username value.
+            :type username_value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {}
             if (slug_fail):
@@ -296,6 +736,22 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(self, model, slug_fail=False, username_fail=False, slug_value_length=None, username_value_length=None):
+            """
+            Returns the errors dict for a slug and/or username of model that contains more than the model's maximal allowed number of characters.
+
+            :param model: The model class (Entity or User) whose MAX_SLUG_LENGTH/MAX_USERNAME_LENGTH settings are used.
+            :type model: type
+            :param slug_fail: Whether the slug field has this error.
+            :type slug_fail: bool
+            :param username_fail: Whether the username field has this error.
+            :type username_fail: bool
+            :param slug_value_length: The actual length of the slug value.
+            :type slug_value_length: int
+            :param username_value_length: The actual length of the username value.
+            :type username_value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             self._assert_model_is_entity_or_user(model=model)
             errors_dict = {}
             if (slug_fail):
@@ -305,39 +761,140 @@ if (django_settings.TESTS):
             return errors_dict
 
         def _this_field_cannot_be_null_errors_dict_by_field_name(self, field_name):
+            """
+            Returns the errors dict for field_name being null.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._this_field_cannot_be_null_error_message]}
 
         def _this_field_cannot_be_blank_errors_dict_by_field_name(self, field_name):
+            """
+            Returns the errors dict for field_name being blank.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._this_field_cannot_be_blank_error_message]}
 
         def _value_must_be_valid_json_errors_dict_by_field_name(self, field_name):
+            """
+            Returns the errors dict for field_name not containing valid JSON.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._value_must_be_valid_json_error_message]}
 
         def _ensure_this_value_is_greater_than_or_equal_to_minus_32768_errors_dict_by_field_name(self, field_name):
+            """
+            Returns the errors dict for field_name's value being less than -32768.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._ensure_this_value_is_greater_than_or_equal_to_minus_32768_error_message]}
 
         def _ensure_this_value_is_less_than_or_equal_to_32767_errors_dict_by_field_name(self, field_name):
+            """
+            Returns the errors dict for field_name's value being greater than 32767.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._ensure_this_value_is_less_than_or_equal_to_32767_error_message]}
 
         def _value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(self, field_name, value):
+            """
+            Returns the errors dict for field_name's value not being a valid choice.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :param value: The invalid value.
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._value_is_not_a_valid_choice_error_message_by_value(value=value)]}
 
         def _value_must_be_an_integer_errors_dict_by_field_name_and_value(self, field_name, value):
+            """
+            Returns the errors dict for field_name's value not being an integer.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :param value: The non-integer value.
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._value_must_be_an_integer_error_message_by_value(value=value)]}
 
         def _this_field_cannot_be_null_errors_dict_by_field_name_list(self, field_name_list):
+            """
+            Returns the errors dict mapping each field name in field_name_list to the "this field cannot be null" error message.
+
+            :param field_name_list: The list of field names.
+            :type field_name_list: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name_list[i]: [self._this_field_cannot_be_null_error_message] for i in range(len(field_name_list))}
 
         def _value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(self, field_name_list, value_list):
+            """
+            Returns the errors dict mapping each field name in field_name_list to the "value must be an integer" error message for the corresponding value in value_list.
+
+            :param field_name_list: The list of field names.
+            :type field_name_list: list
+            :param value_list: The list of non-integer values, corresponding by index to field_name_list.
+            :type value_list: list
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name_list[i]: [self._value_must_be_an_integer_error_message_by_value(value=value_list[i])] for i in range(len(field_name_list))}
 
         def _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_field_name_and_max_length_and_value_length(self, field_name, max_length, value_length):
+            """
+            Returns the errors dict for field_name's value being longer than max_length characters.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :param max_length: The maximal allowed number of characters.
+            :type max_length: int
+            :param value_length: The actual length of the value.
+            :type value_length: int
+            :return: The errors dict.
+            :rtype: dict
+            """
             return {field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=max_length, value_length=value_length)]}
 
         def _not_null_constraint_error_message_by_column_and_relation(self, column, relation):
+            """
+            Returns the PostgreSQL not-null constraint violation message for a given column and relation (table) name.
+
+            :param column: The name of the column that violated the not-null constraint.
+            :type column: str
+            :param relation: The name of the relation (table).
+            :type relation: str
+            :return: The formatted PostgreSQL error message.
+            :rtype: str
+            """
             return 'null value in column "{}" of relation "{}" violates not-null constraint'.format(column, relation)
 
         def set_up(self):
+            """
+            Sets up all the localized speedy.core.accounts validation error message and success message attributes used by the test cases, based on self.language_code. Builds per-language dicts of error/success message texts and assigns the entry for self.language_code to the corresponding self._xxx_error_message/self._xxx_success_message attribute.
+            """
             super().set_up()
 
             _this_field_cannot_be_null_error_message_dict = {'en': 'This field cannot be null.', 'fr': 'Ce champ ne peut pas contenir la valeur nulle.', 'de': 'Dieses Feld darf nicht null sein.', 'es': 'Este campo no puede ser nulo.', 'pt': 'Este campo não pode ser nulo.', 'it': 'Questo campo non può essere nullo.', 'nl': 'Dit veld mag niet leeg zijn.', 'ja': 'このフィールドを null にすることはできません。', 'ru': 'Это поле не может быть нулевым.', 'zh': '該欄位不能為空。', 'pl': 'To pole nie może mieć wartości null.', 'fa': 'این فیلد نمی تواند null باشد.', 'he': 'שדה זה אינו יכול להיות ריק.', 'ko': '이 필드는 null 값을 사용할 수 없습니다.', 'ar': 'لا يمكن أن يكون هذا الحقل فارغًا.', 'id': 'Bidang ini tidak boleh nol.', 'uk': 'Це поле не може бути нульовим.', 'tr': 'Bu alan boş olamaz.', 'vi': 'Trường này không thể rỗng.', 'cs': 'Toto pole nemůže mít hodnotu null.', 'sv': 'Detta fält får inte vara null.', 'fi': 'Tämän kentän arvo ei voi olla "null".', 'hu': 'Ez a mező nem lehet null.', 'th': 'ฟิลด์นี้ไม่สามารถเป็นค่าว่างได้', 'el': 'Αυτό το πεδίο δεν μπορεί να είναι μηδενικό.', 'ms': 'Medan ini tidak boleh batal.', 'sr': 'Ово поље не може бити нулл.', 'ro': 'Acest câmp nu poate fi nul.', 'bn': 'এই ক্ষেত্রটি শূন্য হতে পারে না।', 'ca': 'Aquest camp no pot ser nul.', 'no': 'Dette feltet kan ikke være null.', 'bg': 'Това поле не може да бъде нула.', 'da': 'Dette felt kan ikke være null.', 'sk': 'Toto pole nemôže mať hodnotu null.', 'hi': 'यह फ़ील्ड शून्य नहीं हो सकती.', 'et': 'See väli ei saa olla tühi.', 'hr': 'Ovo polje ne može biti nula.', 'az': 'Bu sahə null ola bilməz.', 'zh-yue': '此欄位不能為空。', 'lt': 'Šis laukas negali būti null.', 'sl': 'To polje ne more biti null.', 'eu': 'Eremu hau ezin da null izan.', 'hy': 'Այս դաշտը չի կարող ունենալ NULL արժեք ', 'uz': "Bu maydon nolga teng bo'lmasligi kerak.", 'ta': 'இந்த புலம் காலியாக இருக்கக் கூடாது', 'lv': 'Šis lauks nevar būt null.'}
@@ -1031,13 +1588,33 @@ if (django_settings.TESTS):
             self.assertListEqual(list1=self._profile_form_all_the_required_fields_keys()[:1], list2=[to_attribute(name='first_name')])
 
         def assert_required_fields_and_errors_dict(self, required_fields, errors_dict):
+            """
+            Asserts that errors_dict's keys exactly match required_fields, and that errors_dict equals the "this field is required" errors dict built from required_fields.
+
+            :param required_fields: The expected required field names.
+            :type required_fields: list
+            :param errors_dict: The actual errors dict to check.
+            :type errors_dict: dict
+            """
             self.assertSetEqual(set1=set(errors_dict.keys()), set2=set(required_fields))
             self.assertDictEqual(d1=errors_dict, d2=self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=required_fields))
 
         def assert_registration_form_required_fields(self, required_fields):
+            """
+            Asserts that required_fields are exactly the registration form's required fields, each mapped to a "this field is required" error.
+
+            :param required_fields: The expected required field names.
+            :type required_fields: list
+            """
             self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._registration_form_all_the_required_fields_are_required_errors_dict())
 
         def assert_profile_form_required_fields(self, required_fields):
+            """
+            Asserts that required_fields are exactly the profile form's required fields, each mapped to a "this field is required" error.
+
+            :param required_fields: The expected required field names.
+            :type required_fields: list
+            """
             self.assert_required_fields_and_errors_dict(required_fields=required_fields, errors_dict=self._profile_form_all_the_required_fields_are_required_errors_dict())
 
 
