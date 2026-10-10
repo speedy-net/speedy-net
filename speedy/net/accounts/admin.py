@@ -7,6 +7,9 @@ if (django_settings.LOGIN_ENABLED):
 
 
     class SpeedyNetSiteProfileAdmin(SiteProfileBaseAdmin):
+        """
+        Admin configuration for the Speedy Net site profile model. Uses the default admin configuration defined by the base site profile admin class.
+        """
         pass
 
 

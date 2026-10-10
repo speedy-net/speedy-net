@@ -15,6 +15,18 @@ logger = logging.getLogger(__name__)
 
 
 class DeleteAccountForm(AddAttributesToFieldsMixin, forms.Form):
+    """
+    Form used to confirm and process the deletion of the user's Speedy Net (and Speedy Match) account.
+
+    Attributes:
+        password (CharField): The user's current password, required to confirm the deletion.
+        delete_my_account_text (CharField): A confirmation phrase the user must type exactly to confirm the deletion.
+
+    Methods:
+        __init__(self, *args, **kwargs): Pop the user from kwargs, localize the confirmation text by the user's gender, and set up the submit button.
+        clean_password(self): Validate that the entered password matches the user's current password.
+        clean_delete_my_account_text(self): Validate that the entered confirmation text matches the expected phrase.
+    """
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput, required=True)
     delete_my_account_text = forms.CharField(label=_('Are you sure you want to delete your Speedy Net account? This is permanent and irreversible. Deleting your Speedy Net account will also delete your Speedy Match account. If you are sure, type "Yes. Delete my account." in this field, exactly and case sensitive.'), required=True)
 
