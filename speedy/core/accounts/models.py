@@ -64,6 +64,11 @@ class CleanAndValidateAllFieldsMixin(object):
     def clean_fields(self, exclude=None):
         """
         Allows to have different slug and username validators for Entity and User.
+
+        :param exclude: Field names to exclude from cleaning and validation.
+        :type exclude: set or None
+        :return: None
+        :raises ValidationError: If one or more fields fail validation.
         """
         exclude = convert_to_set(exclude=exclude)
         self.clean_all_fields(exclude=exclude)
@@ -78,9 +83,26 @@ class CleanAndValidateAllFieldsMixin(object):
         self.validate_all_fields(errors=errors, exclude=exclude)
 
     def clean_all_fields(self, exclude=None):
+        """
+        Clean all fields of the model. Subclasses may override this to perform additional cleaning.
+
+        :param exclude: Field names to exclude from cleaning.
+        :type exclude: set or None
+        :return: None
+        """
         pass
 
     def validate_all_fields(self, errors, exclude=None):
+        """
+        Validate all fields of the model using the validators declared in `self.validators`, and raise a `ValidationError` if any field fails validation.
+
+        :param errors: A dictionary mapping field names to lists of error messages, to be updated in place.
+        :type errors: dict
+        :param exclude: Field names to exclude from validation.
+        :type exclude: set or None
+        :return: None
+        :raises ValidationError: If one or more fields fail validation.
+        """
         exclude = convert_to_set(exclude=exclude)
 
         for field_name, validators in self.validators.items():
@@ -119,16 +141,44 @@ class OptimisticLockingModelMixin:
     _optimistic_locking_fields = ()
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the instance, and set up the set of modified optimistic locking fields.
+
+        :param args: Positional arguments passed to the parent constructor.
+        :param kwargs: Keyword arguments passed to the parent constructor.
+        """
         super().__init__(*args, **kwargs)
         self._modified = set()
 
     def __setattr__(self, name, value):
+        """
+        Set an attribute on the instance, tracking changes to optimistic locking fields so that `_do_update` can detect which fields were actually modified.
+
+        :param name: The name of the attribute to set.
+        :type name: str
+        :param value: The value to assign to the attribute.
+        :return: None
+        """
         if name in self._optimistic_locking_fields and not self._state.adding:
             if getattr(self, name) != value:
                 self._modified.add(name)
         super().__setattr__(name, value)
 
     def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update, returning_fields):
+        """
+        Perform an update with optimistic locking, filtering on the optimistic locking fields' current values for fields that weren't modified, and raising a `ConcurrencyError` if the update affected no rows while the row still exists.
+
+        :param base_qs: The base queryset to use for the update.
+        :param using: The database alias to use.
+        :param pk_val: The primary key value of the row being updated.
+        :param values: The values to update.
+        :param update_fields: The fields to update, or None for all fields.
+        :param forced_update: Whether this is a forced update.
+        :param returning_fields: The fields to return from the update.
+        :return: Whether the update affected any rows.
+        :rtype: bool
+        :raises ConcurrencyError: If the update did not affect any rows, and the row still exists.
+        """
         updated = None
 
         # Patch: Include optimistic locking fields in filter of current model (may be parent table) if not modified.
@@ -187,10 +237,21 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     @classproperty
     def settings(cls):
+        """
+        Return the entity settings.
+
+        :return: The entity settings.
+        """
         return django_settings.ENTITY_SETTINGS
 
     @classproperty
     def validators(cls):
+        """
+        Return the validators for the entity's username and slug fields.
+
+        :return: A dictionary mapping field names to lists of validators.
+        :rtype: dict
+        """
         validators = {
             'username': speedy_core_accounts_validators.get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=True),
             'slug': speedy_core_accounts_validators.get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=True) + ["validate_slug"],
@@ -223,16 +284,34 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Return a string representation of the entity.
+
+        :return: A string representation of the entity.
+        :rtype: str
+        """
         return '<Entity {} - {}>'.format(self.id, self.slug)
         # return '<Entity {} - username={}, slug={}>'.format(self.id, self.username, self.slug)
 
     def clean_all_fields(self, exclude=None):
+        """
+        Clean all fields of the entity, and normalize the slug and username.
+
+        :param exclude: Field names to exclude from cleaning.
+        :type exclude: set or None
+        :return: None
+        """
         exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
         self.normalize_slug_and_username()
 
     def normalize_slug_and_username(self):
+        """
+        Normalize the slug and username. If the username is empty, derive it from the slug.
+
+        :return: None
+        """
         self.slug = normalize_slug(slug=self.slug)
         if (self.username):
             self.username = normalize_username(username=self.username)
@@ -240,19 +319,43 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
             self.username = normalize_username(username=self.slug)
 
     def validate_slug(self):
+        """
+        Validate the slug, by validating the username for the slug, that the username is required, and that the username is unique.
+
+        :return: None
+        :raises ValidationError: If the slug is invalid.
+        """
         self.validate_username_for_slug()
         self.validate_username_required()
         self.validate_username_unique()
 
     def validate_username_for_slug(self):
+        """
+        Validate that the username matches the normalized form of the slug.
+
+        :return: None
+        :raises ValidationError: If the slug does not parse to the username.
+        """
         if (not (normalize_username(username=self.slug) == self.username)):
             raise ValidationError(_('Slug does not parse to username.'))
 
     def validate_username_required(self):
+        """
+        Validate that the username is not empty.
+
+        :return: None
+        :raises ValidationError: If the username is empty.
+        """
         if (not (len(self.username) > 0)):
             raise ValidationError(_('Username is required.'))
 
     def validate_username_unique(self):
+        """
+        Validate that the username is unique among all entities.
+
+        :return: None
+        :raises ValidationError: If an entity with the same username already exists.
+        """
         username_exists = Entity.objects.filter(username=self.username).exclude(pk=self.pk).exists()
         if (username_exists):
             raise ValidationError(self._meta.get_field('slug').error_messages['unique'])
@@ -299,12 +402,23 @@ class NamedEntity(Entity):
 
     @classproperty
     def settings(cls):
+        """
+        Return the settings for the named entity.
+
+        :return: The named entity settings.
+        """
         return django_settings.NAMED_ENTITY_SETTINGS
 
     class Meta:
         abstract = True
 
     def __str__(self):
+        """
+        Return a string representation of the named entity.
+
+        :return: A string representation of the named entity.
+        :rtype: str
+        """
         return '<NamedEntity {} - {}/{}>'.format(self.id, self.name, self.slug)
         # return '<NamedEntity {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
@@ -321,10 +435,6 @@ class ReservedUsername(Entity):
         __init__(self, *args, **kwargs): Initialize the ReservedUsername instance.
         __str__(self): Return a string representation of the reserved username.
         clean_fields(self, exclude=None): Clean and validate fields of the model.
-        normalize_slug_and_username(self): Normalize the slug and username.
-        validate_username_for_slug(self): Validate the username for the slug.
-        validate_username_required(self): Validate that the username is required.
-        validate_username_unique(self): Validate that the username is unique.
     """
     description = models.TextField(verbose_name=_('description'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True)
     objects = BaseManager()
@@ -333,23 +443,33 @@ class ReservedUsername(Entity):
         ordering = ('-date_created',)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the ReservedUsername instance. If a username is given without a slug, use the username as the slug.
+
+        :param args: Positional arguments passed to the parent constructor.
+        :param kwargs: Keyword arguments passed to the parent constructor.
+        """
         if (('username' in kwargs) and (not ('slug' in kwargs))):
             kwargs['slug'] = kwargs['username']
         super().__init__(*args, **kwargs)
 
     def __str__(self):
+        """
+        Return a string representation of the reserved username.
+
+        :return: A string representation of the reserved username.
+        :rtype: str
+        """
         return '<Reserved username {} - {}>'.format(self.id, self.username)
         # return '<Reserved username {} - username={}>'.format(self.id, self.username)
 
     def clean_fields(self, exclude=None):
         """
-        Clean and validate fields of the model.
+        Clean and validate fields of the model. Reserved usernames can be shorter than normal usernames, and any alphanumeric sequence, so 'username' and 'slug' are excluded from the parent's field cleaning.
 
-        Args:
-            exclude (set): Fields to exclude from validation.
-
-        Returns:
-            None
+        :param exclude: Field names to exclude from cleaning.
+        :type exclude: set or None
+        :return: None
         """
         exclude = convert_to_set(exclude=exclude)
 
@@ -550,6 +670,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @staticmethod
     def diet_choices_with_description(gender):
+        """
+        Return diet choices (excluding "Unknown") with a description, translated with the given gender context.
+
+        :param gender: The gender context to use for translation.
+        :type gender: str
+        :return: A tuple of (value, translated description) pairs for the valid diet choices.
+        :rtype: tuple
+        """
         return (
             (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan (eats only plants and fungi)")),
             (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian (doesn't eat fish and meat)")),
@@ -558,6 +686,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @staticmethod
     def diet_choices(gender):
+        """
+        Return diet choices (excluding "Unknown"), translated with the given gender context.
+
+        :param gender: The gender context to use for translation.
+        :type gender: str
+        :return: A tuple of (value, translated name) pairs for the valid diet choices.
+        :rtype: tuple
+        """
         return (
             (__class__.DIET_VEGAN, pgettext_lazy(context=gender, message="Vegan")),
             (__class__.DIET_VEGETARIAN, pgettext_lazy(context=gender, message="Vegetarian")),
@@ -566,6 +702,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @staticmethod
     def smoking_status_choices(gender):
+        """
+        Return smoking status choices (excluding "Unknown"), translated with the given gender context.
+
+        :param gender: The gender context to use for translation.
+        :type gender: str
+        :return: A tuple of (value, translated name) pairs for the valid smoking status choices.
+        :rtype: tuple
+        """
         return (
             (__class__.SMOKING_STATUS_NOT_SMOKING, pgettext_lazy(context=gender, message="Not smoking")),
             (__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY, pgettext_lazy(context=gender, message="Smoking occasionally")),
@@ -574,6 +718,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @staticmethod
     def relationship_status_choices(gender):
+        """
+        Return relationship status choices (excluding "Unknown"), translated with the given gender context.
+
+        :param gender: The gender context to use for translation.
+        :type gender: str
+        :return: A tuple of (value, translated name) pairs for the valid relationship status choices.
+        :rtype: tuple
+        """
         return (
             (__class__.RELATIONSHIP_STATUS_SINGLE, pgettext_lazy(context=gender, message="Single")),
             (__class__.RELATIONSHIP_STATUS_DIVORCED, pgettext_lazy(context=gender, message="Divorced")),
@@ -626,18 +778,41 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @classproperty
     def settings(cls):
+        """
+        Return the user settings.
+
+        :return: The user settings.
+        """
         return django_settings.USER_SETTINGS
 
     @classproperty
     def AGE_VALID_VALUES_IN_MODEL(cls):
+        """
+        Return the valid age values for the model, which may be wider than the values allowed in forms.
+
+        :return: A range of valid age values in the model.
+        :rtype: range
+        """
         return range(cls.settings.MIN_AGE_ALLOWED_IN_MODEL, cls.settings.MAX_AGE_ALLOWED_IN_MODEL)
 
     @classproperty
     def AGE_VALID_VALUES_IN_FORMS(cls):
+        """
+        Return the valid age values for forms, which may be narrower than the values allowed in the model.
+
+        :return: A range of valid age values in forms.
+        :rtype: range
+        """
         return range(cls.settings.MIN_AGE_ALLOWED_IN_FORMS, cls.settings.MAX_AGE_ALLOWED_IN_FORMS)
 
     @classproperty
     def validators(cls):
+        """
+        Return the validators for the user's username, slug, date of birth, first name and last name fields.
+
+        :return: A dictionary mapping field names to lists of validators.
+        :rtype: dict
+        """
         validators = {
             'username': speedy_core_accounts_validators.get_username_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, allow_letters_after_digits=False),
             'slug': speedy_core_accounts_validators.get_slug_validators(min_username_length=cls.settings.MIN_USERNAME_LENGTH, max_username_length=cls.settings.MAX_USERNAME_LENGTH, min_slug_length=cls.settings.MIN_SLUG_LENGTH, max_slug_length=cls.settings.MAX_SLUG_LENGTH, allow_letters_after_digits=False) + ["validate_slug"],
@@ -649,22 +824,52 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def name(self):
+        """
+        Return the name of the user, as determined by their active site profile.
+
+        :return: The name of the user.
+        :rtype: str
+        """
         return self.profile.get_name()
 
     @cached_property
     def full_name(self):
+        """
+        Return the full name of the user.
+
+        :return: The full name of the user.
+        :rtype: str
+        """
         return self.get_full_name()
 
     @cached_property
     def first_name_property(self):
+        """
+        Return the first name of the user.
+
+        :return: The first name of the user.
+        :rtype: str
+        """
         return self.get_first_name()
 
     @cached_property
     def short_name(self):
+        """
+        Return the short name of the user.
+
+        :return: The short name of the user.
+        :rtype: str
+        """
         return self.get_short_name()
 
     @cached_property
     def email(self):
+        """
+        Return the user's primary email address, or None if the user doesn't have exactly one primary email address.
+
+        :return: The user's primary email address, or None.
+        :rtype: str or None
+        """
         emails = self.email_addresses.filter(is_primary=True)
         if (len(emails) == 1):
             return emails[0].email
@@ -673,12 +878,24 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def profile(self):
+        """
+        Return the user's profile on the current site, refreshing all profiles if not already cached.
+
+        :return: The user's profile on the current site.
+        :rtype: SiteProfileBase
+        """
         if (not (hasattr(self, '_profile'))):
             self.refresh_all_profiles()
         return self._profile
 
     @cached_property
     def speedy_net_profile(self):
+        """
+        Return the user's Speedy Net profile, refreshing all profiles if not already cached.
+
+        :return: The user's Speedy Net profile, or None if login is not enabled.
+        :rtype: SiteProfileBase or None
+        """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_net_profile'))):
                 self.refresh_all_profiles()
@@ -686,6 +903,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def speedy_match_profile(self):
+        """
+        Return the user's Speedy Match profile, refreshing all profiles if not already cached.
+
+        :return: The user's Speedy Match profile, or None if login is not enabled.
+        :rtype: SiteProfileBase or None
+        """
         if (django_settings.LOGIN_ENABLED):
             if (not (hasattr(self, '_speedy_match_profile'))):
                 self.refresh_all_profiles()
@@ -792,6 +1015,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def friends_trans(self):
+        """
+        Return the translated label for "Friends", with the current user's match gender as context in Speedy Match.
+
+        :return: The translated label for "Friends".
+        :rtype: str
+        """
         if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
             return pgettext_lazy(context=self.speedy_match_profile.get_match_gender(), message='Friends')
         else:
@@ -799,6 +1028,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     @cached_property
     def has_confirmed_email_or_registered_now(self):
+        """
+        Return True if the user has confirmed their email address, or registered less than 2 hours ago, False otherwise.
+
+        :return: True if the user has confirmed email or registered recently, False otherwise.
+        :rtype: bool
+        """
         return ((self.has_confirmed_email) or (self.date_created > now() - timedelta(hours=2)))
 
     @cached_property
@@ -809,6 +1044,9 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         Otherwise, if the user completed registration step 6 in Speedy Match, return that language.
         Otherwise, return 'en'.
         If the user has more than one language in Speedy Match, return the first one according to django_settings.LANGUAGES.
+
+        :return: The main language code of the user.
+        :rtype: str
         """
         if (self.is_active):
             for language_code, language_name in django_settings.LANGUAGES:
@@ -826,11 +1064,22 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
+        """
+        Return a string representation of the user. Depends on site: full name in Speedy Net, first name in Speedy Match.
+
+        :return: A string representation of the user.
+        :rtype: str
+        """
         # Depends on site: full name in Speedy Net, first name in Speedy Match.
         return '<User {} - {}/{}>'.format(self.id, self.name, self.slug)
         # return '<User {} - name={}, username={}, slug={}>'.format(self.id, self.name, self.username, self.slug)
 
     def _update_has_confirmed_email_field(self):
+        """
+        Update the `has_confirmed_email` field based on whether the user has any confirmed email addresses, save the user and profile, and log the change if it occurred.
+
+        :return: None
+        """
         previous_has_confirmed_email = self.has_confirmed_email
         self.has_confirmed_email = (self.email_addresses.filter(is_confirmed=True).count() > 0)
         self.save_user_and_profile()
@@ -879,11 +1128,34 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return return_value
 
     def set_password(self, raw_password):
+        """
+        Validate and set the password for the user.
+
+        :param raw_password: The raw (plain-text) password to validate and set.
+        :type raw_password: str
+        :return: None
+        :raises ValidationError: If the password doesn't pass the password validators.
+        """
         password_validation.validate_password(password=raw_password)
         return super().set_password(raw_password=raw_password)
 
     def check_password(self, raw_password):
+        """
+        Check the password for the user, and upgrade the password hash if needed and the new hash passes the password validators.
+
+        :param raw_password: The raw (plain-text) password to check.
+        :type raw_password: str
+        :return: True if the password is correct, False otherwise.
+        :rtype: bool
+        """
         def setter(raw_password):
+            """
+            Upgrade the stored password hash for the given raw password, skipping the upgrade if the password doesn't pass the password validators.
+
+            :param raw_password: The raw (plain-text) password to re-hash and save.
+            :type raw_password: str
+            :return: None
+            """
             try:
                 self.set_password(raw_password=raw_password)
             except ValidationError:
@@ -920,6 +1192,11 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     def clean_fields(self, exclude=None):
         """
         Allows to have different slug and username validators for Entity and User.
+
+        :param exclude: Field names to exclude from cleaning and validation.
+        :type exclude: set or None
+        :return: None
+        :raises ValidationError: If one or more fields fail validation.
         """
         exclude = convert_to_set(exclude=exclude)
 
@@ -935,6 +1212,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return super().clean_fields(exclude=exclude)
 
     def clean_all_fields(self, exclude=None):
+        """
+        Clean all fields of the user, including cleaning the name localizable fields.
+
+        :param exclude: Field names to exclude from cleaning.
+        :type exclude: set or None
+        :return: None
+        """
         exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
@@ -942,6 +1226,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             self.clean_localizable_field(base_field_name=base_field_name)
 
     def clean_localizable_field(self, base_field_name):
+        """
+        Clean a localizable field, by filling in any empty language-specific field with the value of another language-specific field of the same base field, if one is set.
+
+        :param base_field_name: The base name of the localizable field (e.g. 'first_name').
+        :type base_field_name: str
+        :return: None
+        """
         field_names = get_all_field_names(base_field_name=base_field_name)
         for field_name in field_names:
             if (not (string_is_not_none(s=getattr(self, field_name)))):
@@ -952,9 +1243,27 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
                             setattr(self, field_name, getattr(self, _field_name))
 
     def get_absolute_url(self):
+        """
+        Return the absolute URL of the user's profile page.
+
+        :return: The absolute URL of the user's profile page.
+        :rtype: str
+        """
         return reverse(viewname='profiles:user', kwargs={'slug': self.slug})
 
     def mail_user(self, template_name_prefix, context=None, send_to_unconfirmed=False):
+        """
+        Send an email to the user's primary email address, if confirmed (or if `send_to_unconfirmed` is True).
+
+        :param template_name_prefix: The template name prefix to use for the email.
+        :type template_name_prefix: str
+        :param context: The template context to use for the email.
+        :type context: dict or None
+        :param send_to_unconfirmed: Whether to send the email even if the primary email address isn't confirmed.
+        :type send_to_unconfirmed: bool
+        :return: The number of successfully delivered messages, or False if the user has no matching email address.
+        :rtype: int or bool
+        """
         site = Site.objects.get_current()
         context = context or {}
         addresses = self.email_addresses.filter(is_primary=True)
@@ -976,25 +1285,58 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return False
 
     def get_full_name(self):
+        """
+        Return the full name of the user, or a deleted-user placeholder name if the user is deleted.
+
+        :return: The full name of the user.
+        :rtype: str
+        """
         if (self.is_deleted):
             return self.profile._get_deleted_name()
         return '{} {}'.format(self.first_name, self.last_name).strip() or self.slug
 
     def get_first_name(self):
+        """
+        Return the first name of the user, or a deleted-user placeholder name if the user is deleted.
+
+        :return: The first name of the user.
+        :rtype: str
+        """
         if (self.is_deleted):
             return self.profile._get_deleted_name()
         return '{}'.format(self.first_name).strip() or self.slug
 
     def get_short_name(self):
+        """
+        Return the short name of the user, or a deleted-user placeholder name if the user is deleted.
+
+        :return: The short name of the user.
+        :rtype: str
+        """
         if (self.is_deleted):
             return self.profile._get_deleted_name()
         return self.get_first_name()
 
     def activate(self):
+        """
+        Activate the user and save the user and all profiles.
+
+        :return: None
+        """
         self.is_active = True
         self.save_user_and_profile()
 
     def get_profile(self, model=None, profile_model=None) -> 'SiteProfileBase':
+        """
+        Return the user's profile for the given site profile model, creating it if it doesn't exist yet.
+
+        :param model: The site profile model to use. If None, it's determined from `profile_model` or the current site.
+        :type model: type or None
+        :param profile_model: The name of the site profile model to use, if `model` is None.
+        :type profile_model: str or None
+        :return: The user's profile for the given site profile model.
+        :rtype: SiteProfileBase
+        """
         if (model is None):
             model = get_site_profile_model(profile_model=profile_model)
         profile = getattr(self, model.RELATED_NAME, None)
@@ -1175,9 +1517,21 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
                 self.speedy_match_profile.save()
 
     def get_gender(self):
+        """
+        Return the string representation of the user's gender.
+
+        :return: The string representation of the user's gender (e.g. 'female', 'male', 'other'), or None.
+        :rtype: str or None
+        """
         return self.__class__.GENDERS_DICT.get(self.gender)
 
     def get_diet(self):
+        """
+        Return the translated name of the user's diet.
+
+        :return: The translated name of the user's diet, or an empty string if unknown.
+        :rtype: str
+        """
         diets = {
             self.__class__.DIET_VEGAN: pgettext_lazy(context=self.get_gender(), message="Vegan"),
             self.__class__.DIET_VEGETARIAN: pgettext_lazy(context=self.get_gender(), message="Vegetarian"),
@@ -1186,6 +1540,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return diets.get(self.diet, "")
 
     def get_smoking_status(self):
+        """
+        Return the translated name of the user's smoking status.
+
+        :return: The translated name of the user's smoking status, or an empty string if unknown.
+        :rtype: str
+        """
         smoking_statuses = {
             self.__class__.SMOKING_STATUS_NOT_SMOKING: pgettext_lazy(context=self.get_gender(), message="Not smoking"),
             self.__class__.SMOKING_STATUS_SMOKING_OCCASIONALLY: pgettext_lazy(context=self.get_gender(), message="Smoking occasionally"),
@@ -1194,6 +1554,12 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return smoking_statuses.get(self.smoking_status, "")
 
     def get_relationship_status(self):
+        """
+        Return the translated name of the user's relationship status.
+
+        :return: The translated name of the user's relationship status, or an empty string if unknown.
+        :rtype: str
+        """
         relationship_statuses = {
             self.__class__.RELATIONSHIP_STATUS_SINGLE: pgettext_lazy(context=self.get_gender(), message="Single"),
             self.__class__.RELATIONSHIP_STATUS_DIVORCED: pgettext_lazy(context=self.get_gender(), message="Divorced"),
@@ -1208,18 +1574,49 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         return relationship_statuses.get(self.relationship_status, "")
 
     def get_age(self):
+        """
+        Return the user's age, computed from their date of birth.
+
+        :return: The user's age in years.
+        :rtype: int
+        """
         return get_age(date_of_birth=self.date_of_birth)
 
     def get_diet_choices_with_description(self):
+        """
+        Return diet choices with a description, translated for the user's gender.
+
+        :return: A tuple of (value, translated description) pairs for the valid diet choices.
+        :rtype: tuple
+        """
         return self.__class__.diet_choices_with_description(gender=self.get_gender())
 
     def get_smoking_status_choices(self):
+        """
+        Return smoking status choices, translated for the user's gender.
+
+        :return: A tuple of (value, translated name) pairs for the valid smoking status choices.
+        :rtype: tuple
+        """
         return self.__class__.smoking_status_choices(gender=self.get_gender())
 
     def get_relationship_status_choices(self):
+        """
+        Return relationship status choices, translated for the user's gender.
+
+        :return: A tuple of (value, translated name) pairs for the valid relationship status choices.
+        :rtype: tuple
+        """
         return self.__class__.relationship_status_choices(gender=self.get_gender())
 
     def update_last_ip_address_used(self, request):
+        """
+        Update the user's last IP address used, based on the request's remote address, if it changed.
+
+        :param request: The HTTP request to get the remote address from.
+        :type request: django.http.HttpRequest
+        :return: None
+        """
         ip_address_used = request.META.get('REMOTE_ADDR')
         if ip_address_used:
             if (not (self.last_ip_address_used == ip_address_used)):
@@ -1235,8 +1632,6 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         The user should see ads if:
         - The user registered more than 30 days ago.
 
-        :param self: The user.
-        :type self: User
         :return: True if the user should see ads, False otherwise.
         :rtype: bool
         """
@@ -1284,6 +1679,12 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
 
     @classproperty
     def validators(cls):
+        """
+        Return the validators for the email field.
+
+        :return: A dictionary mapping field names to lists of validators.
+        :rtype: dict
+        """
         validators = {
             'email': ["validate_email"],
         }
@@ -1295,32 +1696,85 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         ordering = ('date_created',)
 
     def __str__(self):
+        """
+        Return a string representation of the email address.
+
+        :return: The email address.
+        :rtype: str
+        """
         return self.email
 
     def _generate_confirmation_token(self):
+        """
+        Generate a confirmation token.
+
+        :return: A newly generated confirmation token.
+        :rtype: str
+        """
         return generate_confirmation_token()
 
     def save(self, *args, **kwargs):
+        """
+        Save the email address, generating a confirmation token first if it doesn't have one yet.
+
+        :param args: Positional arguments passed to the parent's `save` method.
+        :param kwargs: Keyword arguments passed to the parent's `save` method.
+        :return: The return value of the parent's `save` method.
+        """
         if (not (self.confirmation_token)):
             self.confirmation_token = self._generate_confirmation_token()
         return super().save(*args, **kwargs)
 
     def clean_all_fields(self, exclude=None):
+        """
+        Clean and validate all fields of the model, and normalize the email address.
+
+        :param exclude: Field names to exclude from cleaning.
+        :type exclude: set or None
+        :return: None
+        """
         exclude = convert_to_set(exclude=exclude)
         super().clean_all_fields(exclude=exclude)
 
         self.normalize_email()
 
     def normalize_email(self):
+        """
+        Normalize the email address.
+
+        :return: None
+        """
         self.email = normalize_email(email=self.email)
 
     def validate_email(self):
+        """
+        Validate the email address.
+
+        :return: None
+        :raises ValidationError: If the email address is invalid.
+        """
         self.validate_email_unique()
 
     def validate_email_unique(self):
+        """
+        Validate the uniqueness of the email address.
+
+        :return: None
+        :raises ValidationError: If an email address with the same value already exists.
+        """
         speedy_core_accounts_validators.validate_email_unique(email=self.email, user_email_address_pk=self.pk)
 
     def mail(self, template_name_prefix, context=None):
+        """
+        Send an email to this email address.
+
+        :param template_name_prefix: The template name prefix to use for the email.
+        :type template_name_prefix: str
+        :param context: The template context to use for the email.
+        :type context: dict or None
+        :return: The number of successfully delivered messages.
+        :rtype: int
+        """
         site = Site.objects.get_current()
         context = context or {}
         context.update({
@@ -1331,6 +1785,12 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return send_mail(to=[self.email], template_name_prefix=template_name_prefix, context=context)
 
     def send_confirmation_email(self):
+        """
+        Send a confirmation email to this email address, using a different template depending on whether this is the user's first confirmed email address.
+
+        :return: The number of successfully delivered messages.
+        :rtype: int
+        """
         if (self.user.has_confirmed_email):
             msg_count = self.mail(template_name_prefix='email/accounts/confirm_second_email')
         else:
@@ -1340,6 +1800,11 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         return msg_count
 
     def verify(self):
+        """
+        Verify the email address, marking it as confirmed, and make it primary if it's the user's only confirmed email address and the user has no confirmed primary email address yet.
+
+        :return: None
+        """
         self.is_confirmed = True
         self.save()
         if (UserEmailAddress.objects.filter(user=self.user, is_confirmed=True).count() == 1):
@@ -1349,6 +1814,11 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
             self.user.profile.call_after_verify_email_address()
 
     def make_primary(self):
+        """
+        Make this email address primary, and unset the primary flag on all of the user's other email addresses.
+
+        :return: None
+        """
         self.user.email_addresses.update(is_primary=False)
         self.is_primary = True
         self.save()
@@ -1366,6 +1836,8 @@ class SiteProfileBase(TimeStampedModel):
     Methods:
         is_active_and_valid(self): Check if the profile is active and valid.
         last_visit_str(self): Get the last visit time as a string.
+        __str__(self): Return a string representation of the profile.
+        _get_deleted_name(self): Get the placeholder name used for deleted users.
         save(self, *args, **kwargs): Save the profile.
         update_last_visit(self): Update the last visit time of the user.
         activate(self): Activate the profile.
@@ -1380,10 +1852,23 @@ class SiteProfileBase(TimeStampedModel):
 
     @cached_property
     def is_active_and_valid(self):
+        """
+        Return whether the profile is active and valid. Must be implemented in subclasses.
+
+        :return: True if the profile is active and valid, False otherwise.
+        :rtype: bool
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("is_active_and_valid is not implemented in this user's profile model class.")
 
     @cached_property
     def last_visit_str(self):
+        """
+        Return a human-readable string describing the user's last visit time.
+
+        :return: A human-readable string describing the last visit time.
+        :rtype: str
+        """
         today = date.today()
         last_visit_date = self.last_visit.date()
         if ((today - last_visit_date).days <= 0):
@@ -1402,10 +1887,23 @@ class SiteProfileBase(TimeStampedModel):
         abstract = True
 
     def __str__(self):
+        """
+        Return a string representation of the profile.
+
+        :return: A string representation of the profile.
+        :rtype: str
+        """
         return '<User Profile {} - {}/{}>'.format(self.user.id, self.user.name, self.user.slug)
         # return '<User Profile {} - name={}, username={}, slug={}>'.format(self.user.id, self.user.name, self.user.username, self.user.slug)
 
     def _get_deleted_name(self):
+        """
+        Return the placeholder name to use for a deleted user. Must be implemented in subclasses.
+
+        :return: The placeholder name for a deleted user.
+        :rtype: str
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("_get_deleted_name is not implemented in this user's profile model class.")
 
     def save(self, *args, **kwargs):
@@ -1421,6 +1919,11 @@ class SiteProfileBase(TimeStampedModel):
         return return_value
 
     def update_last_visit(self):
+        """
+        Update the user's last visit time to now, unless the user is deleted.
+
+        :return: None
+        """
         if (not (self.user.is_deleted)):
             self._in_update_last_visit = True
             self.last_visit = now()
@@ -1430,23 +1933,66 @@ class SiteProfileBase(TimeStampedModel):
             del self._in_update_last_visit
 
     def activate(self):
+        """
+        Activate the profile. Must be implemented in subclasses.
+
+        :return: None
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("activate is not implemented in this user's profile model class.")
 
     def deactivate(self):
+        """
+        Deactivate the profile. Must be implemented in subclasses.
+
+        :return: None
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("deactivate is not implemented in this user's profile model class.")
 
     def get_name(self):
+        """
+        Return the name to display for this profile. Must be implemented in subclasses.
+
+        :return: The name to display for this profile.
+        :rtype: str
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("get_name is not implemented in this user's profile model class.")
 
     def validate_profile_and_activate(self, commit=True):
+        """
+        Validate the profile and activate it if valid. Must be implemented in subclasses.
+
+        :param commit: Whether to save the profile after activating it.
+        :type commit: bool
+        :return: None
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("validate_profile_and_activate is not implemented in this user's profile model class.")
 
     def call_after_verify_email_address(self):
+        """
+        Perform any profile-specific actions needed after an email address is verified. Must be implemented in subclasses.
+
+        :return: None
+        :raises NotImplementedError: Always, unless implemented in a subclass.
+        """
         raise NotImplementedError("call_after_verify_email_address is not implemented in this user's profile model class.")
 
 
 @receiver(signal=models.signals.post_save, sender=UserEmailAddress)
 def update_user_has_confirmed_email_field_after_saving_email_address(sender, instance: UserEmailAddress, **kwargs):
+    """
+    Signal receiver that updates the user's `has_confirmed_email` field after a `UserEmailAddress` is saved, and makes the email address primary if it's the user's only one and the user has no primary email address yet.
+
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The `UserEmailAddress` instance that was saved.
+    :type instance: UserEmailAddress
+    :param kwargs: Additional keyword arguments passed by the signal.
+    :return: None
+    """
     instance.user._update_has_confirmed_email_field()
     # If the user doesn't have a primary email address, and this is the only email - make this email primary.
     if ((instance.user.email_addresses.filter(is_primary=True).count() == 0) and (instance.user.email_addresses.count() == 1)):
@@ -1455,6 +2001,16 @@ def update_user_has_confirmed_email_field_after_saving_email_address(sender, ins
 
 @receiver(signal=models.signals.post_delete, sender=UserEmailAddress)
 def update_user_has_confirmed_email_field_after_deleting_email_address(sender, instance: UserEmailAddress, **kwargs):
+    """
+    Signal receiver that updates the user's `has_confirmed_email` field after a `UserEmailAddress` is deleted.
+
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The `UserEmailAddress` instance that was deleted.
+    :type instance: UserEmailAddress
+    :param kwargs: Additional keyword arguments passed by the signal.
+    :return: None
+    """
     instance.user._update_has_confirmed_email_field()
 
 

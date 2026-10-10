@@ -8,20 +8,38 @@ if (django_settings.TESTS):
 
 
     class SettingsOnlyEnglishTestCase(SiteTestCase):
+        """
+        Tests various site-related Django settings values, in English.
+        """
         def test_sites_with_login(self):
+            """
+            Tests that SITES_WITH_LOGIN contains exactly the Speedy Net and Speedy Match site IDs.
+            """
             self.assertListEqual(list1=django_settings.SITES_WITH_LOGIN, list2=[django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID])
 
         def test_xd_auth_sites(self):
+            """
+            Tests that XD_AUTH_SITES equals SITES_WITH_LOGIN.
+            """
             self.assertListEqual(list1=django_settings.XD_AUTH_SITES, list2=django_settings.SITES_WITH_LOGIN)
 
         def test_templates_top_sites(self):
+            """
+            Tests that TEMPLATES_TOP_SITES equals SITES_WITH_LOGIN.
+            """
             self.assertListEqual(list1=django_settings.TEMPLATES_TOP_SITES, list2=django_settings.SITES_WITH_LOGIN)
 
         def test_login_enabled(self):
+            """
+            Tests that LOGIN_ENABLED equals whether the current site is in SITES_WITH_LOGIN, and matches the expected value for each of the four sites.
+            """
             self.assertEqual(first=django_settings.LOGIN_ENABLED, second=(django_settings.SITE_ID in django_settings.SITES_WITH_LOGIN))
             self.assertEqual(first=django_settings.LOGIN_ENABLED, second={django_settings.SPEEDY_NET_SITE_ID: True, django_settings.SPEEDY_MATCH_SITE_ID: True, django_settings.SPEEDY_COMPOSER_SITE_ID: False, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: False}[self.site.id])
 
         def test_languages(self):
+            """
+            Tests that django_settings.LANGUAGES contains the expected list of language codes, in the expected order and count, for each of the four sites.
+            """
             all_46_language_codes = ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'ja', 'ru', 'zh', 'pl', 'fa', 'he', 'ko', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'sv', 'fi', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv']
             self.assertListEqual(list1=[language_code for language_code, language_name in django_settings.LANGUAGES], list2={django_settings.SPEEDY_NET_SITE_ID: all_46_language_codes, django_settings.SPEEDY_MATCH_SITE_ID: all_46_language_codes, django_settings.SPEEDY_COMPOSER_SITE_ID: ['en', 'he'], django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: ['en', 'he']}[self.site.id])
             self.assertListEqual(list1=self.all_language_codes, list2=[language_code for language_code, language_name in django_settings.LANGUAGES])
@@ -30,11 +48,20 @@ if (django_settings.TESTS):
             self.assertEqual(first=len(self.all_language_codes), second={django_settings.SPEEDY_NET_SITE_ID: 46, django_settings.SPEEDY_MATCH_SITE_ID: 46, django_settings.SPEEDY_COMPOSER_SITE_ID: 2, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID: 2}[self.site.id])
 
         def test_languages_with_ads(self):
+            """
+            Tests that LANGUAGES_WITH_ADS is an empty set.
+            """
             self.assertSetEqual(set1=django_settings.LANGUAGES_WITH_ADS, set2=set())
 
 
     class TestsSettingsOnlyEnglishTestCase(SiteTestCase):
+        """
+        Tests speedy.core.base.test.tests_settings.SLUGS_TO_TEST_LIST, in English.
+        """
         def test_slugs_to_test_list(self):
+            """
+            Tests that each entry in SLUGS_TO_TEST_LIST normalizes to a username and slug of the expected lengths, and that there are 8 distinct entries covering 4 distinct username/slug lengths.
+            """
             self.assertEqual(first=len(tests_settings.SLUGS_TO_TEST_LIST), second=8)
             username_set, slug_set, username_length_set, slug_length_set = set(), set(), set(), set()
             for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:

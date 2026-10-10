@@ -7,13 +7,42 @@ if (django_settings.TESTS):
 
 
     class SpeedyCoreFriendsLanguageMixin(TestCaseMixin):
+        """
+        Mixin providing language-dependent, gender-aware success and error messages for friends tests, in all supported languages.
+
+        Methods:
+            _you_already_have_friends_error_message_by_user_number_of_friends_and_gender(self, user_number_of_friends, gender): Returns the formatted "you already have friends" error message for the given count and gender.
+            _this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(self, other_user_number_of_friends, both_genders): Returns the formatted "this user already has friends" error message for the given count and both genders.
+            set_up(self): Sets up the dictionaries of expected success messages used by the tests in all supported languages.
+        """
         def _you_already_have_friends_error_message_by_user_number_of_friends_and_gender(self, user_number_of_friends, gender):
+            """
+            Return the formatted "you already have friends" error message for the given number of friends and gender.
+
+            :param user_number_of_friends: The number of friends the user already has.
+            :type user_number_of_friends: int
+            :param gender: The gender of the user, used to select the correctly inflected message.
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._you_already_have_friends_error_message_to_format_dict_by_gender[gender].format(user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)
 
         def _this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(self, other_user_number_of_friends, both_genders):
+            """
+            Return the formatted "this user already has friends" error message for the given number of friends and both genders.
+
+            :param other_user_number_of_friends: The number of friends the other user already has.
+            :type other_user_number_of_friends: int
+            :param both_genders: The combination of both users' genders, used to select the correctly inflected message.
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._this_user_already_has_friends_error_message_to_format_dict_by_both_genders[both_genders].format(other_user_number_of_friends, User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED)
 
         def set_up(self):
+            """
+            Set up the dictionaries of expected success and error messages used by the friends tests, in all supported languages.
+            """
             super().set_up()
 
             _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': 'Freundschaftsanfrage gesendet.', 'es': 'Solicitud de amistad enviada.', 'pt': 'Pedido de amizade enviado.', 'it': 'Richiesta di amicizia inviata.', 'nl': 'Vriendschapsverzoek verzonden.', 'ja': 'フレンドシップリクエストが送信されました。', 'ru': 'Запрос на дружбу отправлен.', 'zh': '已發送好友請求。', 'pl': 'Wysłano prośbę o dodanie do znajomych.', 'fa': 'درخواست دوستی ارسال شد.', 'he': 'בקשת חברות נשלחה.', 'ko': '친구 요청 전송됨.', 'ar': 'تم إرسال طلب الصداقة.', 'id': 'Permintaan pertemanan terkirim.', 'uk': 'Запит на дружбу надіслано.', 'tr': 'Arkadaşlık isteği gönderildi.', 'vi': 'Yêu cầu kết bạn đã được gửi.', 'cs': 'Žádost o přátelství odeslána.', 'sv': 'Vänskapsförfrågan skickad.', 'fi': 'Ystävyyspyyntö lähetetty.', 'hu': 'Barátsági felkérés elküldve.', 'th': 'ส่งคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας εστάλη.', 'ms': 'Permintaan persahabatan dihantar.', 'sr': 'Захтев за пријатељство је послат.', 'ro': 'Solicitare de prietenie trimisă.', 'bn': 'বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।', 'ca': "S'ha enviat una sol·licitud d'amistat.", 'no': 'Venneforespørsel sendt.', 'bg': 'Молбата за приятелство е изпратена.', 'da': 'Venskabsanmodning sendt.', 'sk': 'Žiadosť o priateľstvo bola odoslaná.', 'hi': 'मित्रता अनुरोध भेजा गया.', 'et': 'Sõbrakutse saadetud.', 'hr': 'Zahtjev za prijateljstvo poslan.', 'az': 'Dostluq istəyi göndərildi.', 'zh-yue': '已傳送好友請求。', 'lt': 'Kvietimas draugauti išsiųstas.', 'sl': 'Zahteva za prijateljstvo je bila poslana.', 'eu': 'Laguntasun-eskaera bidali da.', 'hy': 'Ընկերության հարցումն ուղարկվել է.', 'uz': "Do'stlik so'rovi yuborildi.", 'ta': 'நட்பு கோரிக்கை அனுப்பிய.', 'lv': 'Draudzības pieprasījums nosūtīts.'}

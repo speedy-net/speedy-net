@@ -65,6 +65,12 @@ LOGGING = {
 
 
 def activate_tests(settings):
+    """
+    Update the given settings dict in place for the test environment (locmem email backend, tests media root, verbose logging, TESTS flag enabled, DEBUG disabled).
+
+    :param settings: The settings dict to update.
+    :type settings: dict
+    """
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.locmem.EmailBackend',  # Django sets it to locmem.EmailBackend anyway.
         'TESTS_MEDIA_ROOT': TESTS_MEDIA_ROOT,

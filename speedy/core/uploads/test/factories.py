@@ -18,6 +18,9 @@ if (django_settings.TESTS):
 
 
         class FileFactory(factory.django.DjangoModelFactory, FileTypeHintMixin):
+            """
+            Factory for creating File instances for tests, owned by a newly created active user.
+            """
             owner = factory.SubFactory(ActiveUserFactory)
             file = factory.django.FileField()
 
@@ -26,6 +29,9 @@ if (django_settings.TESTS):
 
 
         class UserImageFactory(factory.django.DjangoModelFactory, ImageTypeHintMixin):
+            """
+            Factory for creating Image instances for tests.
+            """
             file = factory.django.ImageField()
 
             class Meta:

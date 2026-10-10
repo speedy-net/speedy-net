@@ -6,6 +6,12 @@ from speedy.core.base import cache_manager
 
 
 class FriendManager:
+    """
+    Manager for Friend-related computations, such as counting friends with cache support.
+
+    Methods:
+        get_all_friends_count(cls, user): Returns the number of friends a user has in Speedy Net.
+    """
 
     @classmethod
     def get_all_friends_count(cls, user):
@@ -29,6 +35,12 @@ class FriendManager:
 
 
 class FriendshipRequestManager:
+    """
+    Manager for FriendshipRequest-related computations, such as counting received friendship requests with cache support.
+
+    Methods:
+        get_received_friendship_requests_count(cls, user): Returns the number of received friendship requests for a user in the current site.
+    """
 
     @classmethod
     def get_received_friendship_requests_count(cls, user):

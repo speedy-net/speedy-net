@@ -127,6 +127,14 @@ class BlockManager(BaseManager):
         return self.has_blocked(blocker=entity_1, blocked=entity_2) or self.has_blocked(blocker=entity_2, blocked=entity_1)
 
     def get_blocked_entities_ids(self, blocker):
+        """
+        Get the ids of entities blocked by blocker, using the cache when available.
+
+        :param blocker: The entity that blocks.
+        :type blocker: speedy.core.accounts.models.Entity
+        :return: A list of ids of the entities blocked by blocker.
+        :rtype: list
+        """
         blocked_key = cache_key(cache_type='blocked', entity_pk=blocker.pk)
         try:
             blocked_entities_ids = cache_manager.cache_get(key=blocked_key, sliding_timeout=django_settings.CACHE_GET_BLOCKED_ENTITIES_IDS_SLIDING_TIMEOUT)
@@ -148,6 +156,14 @@ class BlockManager(BaseManager):
         return blocked_entities_ids
 
     def get_blocking_entities_ids(self, blocked):
+        """
+        Get the ids of entities blocking blocked, using the cache when available.
+
+        :param blocked: The entity that is blocked.
+        :type blocked: speedy.core.accounts.models.Entity
+        :return: A list of ids of the entities blocking blocked.
+        :rtype: list
+        """
         blocking_key = cache_key(cache_type='blocking', entity_pk=blocked.pk)
         try:
             blocking_entities_ids = cache_manager.cache_get(key=blocking_key, sliding_timeout=django_settings.CACHE_GET_BLOCKING_ENTITIES_IDS_SLIDING_TIMEOUT)
@@ -169,6 +185,14 @@ class BlockManager(BaseManager):
         return blocking_entities_ids
 
     def get_blocked_list_to_queryset(self, blocker):
+        """
+        Get a queryset of Block instances for the entities blocker has blocked, including blocked inactive users, with related data prefetched.
+
+        :param blocker: The entity that blocks.
+        :type blocker: speedy.core.accounts.models.Entity
+        :return: A queryset of Block instances ordered by date_created descending.
+        :rtype: django.db.models.QuerySet
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 

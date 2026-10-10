@@ -7,7 +7,13 @@ if (django_settings.TESTS):
 
 
     class RemoveExtraSlashesMiddlewareOnlyEnglishTestCase(SiteTestCase):
+        """
+        Tests RemoveExtraSlashesMiddleware, in English.
+        """
         def test_normalize_path(self):
+            """
+            Tests that normalize_path() collapses multiple consecutive slashes anywhere in a path into a single slash, without otherwise changing an already-normalized path.
+            """
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/'), second='/zzz/')
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/yyy/'), second='/zzz/yyy/')
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='/zzz/yyy///'), second='/zzz/yyy/')
@@ -16,6 +22,9 @@ if (django_settings.TESTS):
             self.assertEqual(first=RemoveExtraSlashesMiddleware.normalize_path(path='////xxx////yyy////'), second='/xxx/yyy/')
 
         def test_redirect_to_url_without_extra_slashes(self):
+            """
+            Tests that requests with extra slashes in the path still return a 200 response, and a request with extra trailing slashes redirects (301) to the canonical path.
+            """
             # ~~~~ TODO: fix this test!
             r = self.client.get(path='/about/')
             self.assertEqual(first=r.status_code, second=200)

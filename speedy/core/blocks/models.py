@@ -30,6 +30,12 @@ class Block(TimeStampedModel):
         unique_together = ('blocker', 'blocked')
 
     def __str__(self):
+        """
+        Return a human-readable string representation of the block.
+
+        :return: A string describing which user blocked which user.
+        :rtype: str
+        """
         return "User {} blocked {}".format(self.blocker, self.blocked)
 
     def save(self, *args, **kwargs):

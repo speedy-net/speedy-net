@@ -1,4 +1,10 @@
 def activate_staging(settings):
+    """
+    Update the given settings dict in place for the staging environment (from/server email addresses, admins/managers, DEBUG enabled).
+
+    :param settings: The settings dict to update.
+    :type settings: dict
+    """
     admins = (
         # ('Uri Rodberg', 'webmaster@speedy.net'),
         ('Uri Rodberg', 'webmaster+staging-server@speedy.net'),

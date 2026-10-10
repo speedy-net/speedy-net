@@ -6,6 +6,13 @@ from django.contrib.sites.models import Site
 
 
 def active_url_name(request):
+    """
+    Returns the fully qualified name of the currently resolved URL (including its namespaces), for use in templates.
+
+    :param request: The current request.
+    :return: A dict with key 'active_url_name', containing the fully qualified URL name, or an empty string if it couldn't be resolved.
+    :rtype: dict
+    """
     components = []
     try:
         components.extend(request.resolver_match.namespaces)
@@ -18,6 +25,13 @@ def active_url_name(request):
 
 
 def settings(request):
+    """
+    Exposes a whitelist of Django settings to templates.
+
+    :param request: The current request.
+    :return: A dict with key 'settings', containing a dict of the whitelisted settings that are defined.
+    :rtype: dict
+    """
     settings_in_templates = {}
     for attr in ["SITE_ID", "SPEEDY_NET_SITE_ID", "SPEEDY_MATCH_SITE_ID", "SPEEDY_COMPOSER_SITE_ID", "SPEEDY_MAIL_SOFTWARE_SITE_ID", "XD_AUTH_SITES", "LANGUAGES_WITH_ADS", "THIS_SITE_IS_UNDER_CONSTRUCTION", "LANGUAGES_IN_HTML"]:
         if (hasattr(django_settings, attr)):
@@ -28,6 +42,13 @@ def settings(request):
 
 
 def sites(request):
+    """
+    Exposes the current site, its translated name and title, and the list of top sites, to templates.
+
+    :param request: The current request.
+    :return: A dict with keys 'site', 'site_name', 'site_title' and 'sites'.
+    :rtype: dict
+    """
     site = Site.objects.get_current()
     # Speedy Net and Speedy Match are in alpha (except Speedy Match in English).
     if (hasattr(django_settings, 'SITE_TITLE')):
@@ -47,6 +68,13 @@ def sites(request):
 
 
 def speedy_net_domain(request):
+    """
+    Exposes the domain of the Speedy Net site to templates.
+
+    :param request: The current request.
+    :return: A dict with key 'SPEEDY_NET_DOMAIN', containing the domain of the Speedy Net site.
+    :rtype: dict
+    """
     SPEEDY_NET_DOMAIN = Site.objects.get(pk=django_settings.SPEEDY_NET_SITE_ID).domain
     return {
         'SPEEDY_NET_DOMAIN': SPEEDY_NET_DOMAIN,
@@ -54,6 +82,13 @@ def speedy_net_domain(request):
 
 
 def speedy_match_domain(request):
+    """
+    Exposes the domain of the Speedy Match site to templates.
+
+    :param request: The current request.
+    :return: A dict with key 'SPEEDY_MATCH_DOMAIN', containing the domain of the Speedy Match site.
+    :rtype: dict
+    """
     SPEEDY_MATCH_DOMAIN = Site.objects.get(pk=django_settings.SPEEDY_MATCH_SITE_ID).domain
     return {
         'SPEEDY_MATCH_DOMAIN': SPEEDY_MATCH_DOMAIN,
@@ -61,6 +96,13 @@ def speedy_match_domain(request):
 
 
 def add_admin_user_prefix(request):
+    """
+    Exposes whether the current request is from a superuser/staff admin, and the URL prefix to use for admin-only links.
+
+    :param request: The current request.
+    :return: A dict with keys 'admin_user' (bool) and 'admin_user_prefix' (str).
+    :rtype: dict
+    """
     admin_user = False
     admin_user_prefix = ""
     if (hasattr(request, 'user')):
@@ -74,6 +116,13 @@ def add_admin_user_prefix(request):
 
 
 def display_ads_today_1(request):
+    """
+    Determines whether to display the first set of ads today, based on the day of the month.
+
+    :param request: The current request.
+    :return: A dict with key 'display_ads_today_1', containing a bool.
+    :rtype: dict
+    """
     today = date.today()
     display_ads_today_1 = ((today.day % 6) in {0, 1, 3})
     return {
@@ -82,6 +131,13 @@ def display_ads_today_1(request):
 
 
 def display_ads_today_2(request):
+    """
+    Determines whether to display the second set of ads today, based on the day of the month (the complement of `display_ads_today_1`).
+
+    :param request: The current request.
+    :return: A dict with key 'display_ads_today_2', containing a bool.
+    :rtype: dict
+    """
     today = date.today()
     display_ads_today_2 = (not ((today.day % 6) in {0, 1, 3}))
     return {

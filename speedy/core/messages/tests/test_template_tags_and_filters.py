@@ -16,7 +16,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class GetOtherParticipantOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the get_other_participant template tag, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_tag(self): Asserts get_other_participant returns each user's counterpart in a private chat.
+            """
             def test_tag(self):
+                """
+                Asserts get_other_participant returns the other user when called for either participant of a private chat.
+                """
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
                 chat = ChatFactory(ent1=user_1, ent2=user_2)
@@ -26,7 +35,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class AnnotateChatsWithReadMarksOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the annotate_chats_with_read_marks template tag, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_tag(self): Asserts annotate_chats_with_read_marks correctly sets is_unread on chats with and without messages and read marks.
+            """
             def test_tag(self):
+                """
+                Asserts annotate_chats_with_read_marks returns an empty string and sets is_unread correctly on five chats covering combinations of having messages and/or a read mark, including a chat with a new message sent after the read mark.
+                """
                 user_1 = ActiveUserFactory()
                 chats = [
                     ChatFactory(ent1=user_1),  # 0 - no messages, no read mark
@@ -37,10 +55,22 @@ if (django_settings.TESTS):
                 ]
 
                 def _message(index):
+                    """
+                    Sends a test message in the chat at the given index and pauses briefly to ensure distinct timestamps.
+
+                    :param index: The index of the chat in the chats list.
+                    :type index: int
+                    """
                     Message.objects.send_message(from_entity=chats[index].ent2, chat=chats[index], text='text')
                     sleep(0.1)
 
                 def _mark(index):
+                    """
+                    Marks the chat at the given index as read for user_1 and pauses briefly to ensure distinct timestamps.
+
+                    :param index: The index of the chat in the chats list.
+                    :type index: int
+                    """
                     chats[index].mark_read(entity=user_1)
                     sleep(0.1)
 
@@ -63,7 +93,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class AnnotateMessagesWithReadMarksOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the annotate_messages_with_read_marks template tag, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_tag(self): Asserts annotate_messages_with_read_marks sets is_unread correctly for each entity based on their read marks.
+            """
             def test_tag(self):
+                """
+                Asserts annotate_messages_with_read_marks returns an empty string and marks messages as unread only when they were sent after the entity's read mark on their chat, checking both participants of the chat.
+                """
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
                 chat = ChatFactory(ent1=user_1, ent2=user_2)
@@ -91,7 +130,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UnreadChatsCountOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the unread_chats_count template tag, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_tag(self): Asserts unread_chats_count returns the correct number of unread chats for each of three users across three chats.
+            """
             def test_tag(self):
+                """
+                Asserts unread_chats_count returns the correct count of unread chats for each of three users, given a set of messages sent across three chats between them.
+                """
                 user_1 = ActiveUserFactory()
                 user_2 = ActiveUserFactory()
                 user_3 = ActiveUserFactory()

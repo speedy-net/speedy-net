@@ -30,6 +30,12 @@ class File(TimeStampedModel):
 
     @property
     def basename(self):
+        """
+        Get the base name (file name without directories) of the uploaded file.
+
+        :return: The base name of the file.
+        :rtype: str
+        """
         return os.path.basename(self.file.name)
 
     class Meta:
@@ -38,6 +44,12 @@ class File(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Return a human-readable string representation of the file.
+
+        :return: A string containing the file's basename and owner.
+        :rtype: str
+        """
         return '{} (owner={})'.format(self.basename, self.owner)
 
     def save(self, *args, **kwargs):

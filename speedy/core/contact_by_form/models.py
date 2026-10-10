@@ -50,6 +50,12 @@ class Feedback(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Returns a human-readable description of the feedback, including its type, what it's about (if a report), and who sent it.
+
+        :return: The description string.
+        :rtype: str
+        """
         if (self.type == self.TYPE_REPORT_ENTITY):
             on = ' on {}'.format(self.report_entity.user)
         elif (self.type == self.TYPE_REPORT_FILE):

@@ -11,20 +11,63 @@ if (django_settings.TESTS):
 
 
     class TestCaseMixin(TestCaseTypeHintMixin):
+        """
+        A base mixin for test case mixins, providing type hints for `SiteTestCase` attributes/methods when type checking.
+        """
         pass
 
 
     class SpeedyCoreBaseLanguageMixin(TestCaseMixin):
+        """
+        A mixin providing translated error messages for the current test's language, used by language-aware tests.
+
+        Methods:
+            _all_the_required_fields_are_required_errors_dict_by_required_fields: Builds a dict mapping required field names to the "this field is required" error message.
+            _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length: Builds the "ensure this value has at most ... characters" error message.
+            _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits: Builds the "exceeds the limit ... digits" error message.
+            set_up: Sets up the translated error messages for the current test's language.
+        """
         def _all_the_required_fields_are_required_errors_dict_by_required_fields(self, required_fields):
+            """
+            Builds a dict mapping each required field name to a list containing the "this field is required" error message, in the current test's language.
+
+            :param required_fields: Required. The list of required field names.
+            :type required_fields: list[str]
+            :return: A dict mapping field names to their list of error messages.
+            :rtype: dict
+            """
             return {field_name: [self._this_field_is_required_error_message] for field_name in required_fields}
 
         def _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(self, max_length, value_length):
+            """
+            Builds the "ensure this value has at most {max_length} characters (it has {value_length})" error message, in the current test's language.
+
+            :param max_length: Required. The maximum allowed length.
+            :type max_length: int
+            :param value_length: Required. The actual length of the value.
+            :type value_length: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._ensure_this_value_has_at_most_max_length_characters_error_message_to_format.format(max_length=max_length, value_length=value_length)
 
         def _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(self, digits):
+            """
+            Builds the "exceeds the limit (4300 digits) for integer string conversion" error message, in the current test's language.
+
+            :param digits: Required. The number of digits in the value.
+            :type digits: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_to_format.format(digits=digits)
 
         def set_up(self):
+            """
+            Sets up the translated error messages (the "this field is required", "ensure this value has at most ... characters" and "exceeds the limit ... digits" messages) for the current test's language.
+
+            :raises NotImplementedError: If the Python version is lower than 3.12.
+            """
             super().set_up()
 
             _this_field_is_required_error_message_dict = {'en': 'This field is required.', 'fr': 'Ce champ est obligatoire.', 'de': 'Dieses Feld ist zwingend erforderlich.', 'es': 'Este campo es obligatorio.', 'pt': 'Este campo é obrigatório.', 'it': 'Questo campo è obbligatorio.', 'nl': 'Dit veld is verplicht.', 'ja': 'このフィールドは必須です。', 'ru': 'Обязательное поле.', 'zh': '這個欄位是必須的。', 'pl': 'To pole jest wymagane.', 'fa': 'این فیلد لازم است.', 'he': 'יש להזין תוכן בשדה זה.', 'ko': '필수 항목입니다.', 'ar': 'هذا الحقل مطلوب.', 'id': 'Bidang ini tidak boleh kosong.', 'uk': "Це поле обов'язкове.", 'tr': 'Bu alan zorunludur.', 'vi': 'Trường này là bắt buộc.', 'cs': 'Toto pole je třeba vyplnit.', 'sv': 'Detta fält måste fyllas i.', 'fi': 'Tämä kenttä vaaditaan.', 'hu': 'Ennek a mezőnek a megadása kötelező.', 'th': 'ฟิลด์นี้จำเป็น', 'el': 'Αυτό το πεδίο είναι απαραίτητο.', 'ms': 'Medan ini diperlukan.', 'sr': 'Ово поље се мора попунити.', 'ro': 'Acest câmp este obligatoriu.', 'bn': 'এটি আবশ্যক।', 'ca': 'Aquest camp és obligatori.', 'no': 'Feltet er påkrevet.', 'bg': 'Това поле е задължително.', 'da': 'Dette felt er påkrævet.', 'sk': 'Toto pole je povinné.', 'hi': 'यह क्षेत्र अपेक्षित हैं', 'et': 'See lahter on nõutav.', 'hr': 'Ovo je obavezno polje.', 'az': 'Bu sahə vacibdir.', 'zh-yue': '這個欄位是必須的。', 'lt': 'Šis laukas yra privalomas.', 'sl': 'To polje je obvezno.', 'eu': 'Eremu hau beharrezkoa da.', 'hy': 'Այս դաշտը պարտադիր է', 'uz': "Ushbu maydon to'ldirilishi shart.", 'ta': 'இந்த  புலத்தில் மதிப்பு தேவை', 'lv': 'Šis lauks ir nepieciešams.'}

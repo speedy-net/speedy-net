@@ -1,4 +1,7 @@
 def patch():
+    """
+    Monkey patch friendship's FriendshipManager to cache friends, incoming requests, and sent requests lists, capping cache usage by list size.
+    """
     import logging
 
     from friendship.models import BUST_CACHES, CACHE_TYPES, Friend, FriendshipManager, FriendshipRequest, cache, cache_key

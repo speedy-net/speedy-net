@@ -11,20 +11,72 @@ logger = logging.getLogger(__name__)
 
 
 class EntityManager(BaseManager):
+    """
+    Manager for the Entity model, providing lookup helpers by username (or the equivalent slug).
+    """
+
     def get_by_username(self, username):
+        """
+        Get the entity whose normalized username matches the given username.
+
+        :param username: The username to look up.
+        :type username: str
+        :return: The matching entity.
+        :rtype: speedy.core.accounts.models.Entity
+        :raises django.core.exceptions.ObjectDoesNotExist: If no entity has the given username.
+        """
         return self.get(username=normalize_username(username=username))
 
     def get_by_slug(self, slug):
+        """
+        Get the entity whose normalized username matches the given slug.
+
+        :param slug: The slug to look up (same as username).
+        :type slug: str
+        :return: The matching entity.
+        :rtype: speedy.core.accounts.models.Entity
+        :raises django.core.exceptions.ObjectDoesNotExist: If no entity has the given slug.
+        """
         return self.get_by_username(username=slug)
 
     def filter_by_username(self, username):
+        """
+        Filter entities whose normalized username matches the given username.
+
+        :param username: The username to filter by.
+        :type username: str
+        :return: A queryset of matching entities.
+        :rtype: django.db.models.QuerySet
+        """
         return self.filter(username=normalize_username(username=username))
 
     def filter_by_slug(self, slug):
+        """
+        Filter entities whose normalized username matches the given slug.
+
+        :param slug: The slug to filter by (same as username).
+        :type slug: str
+        :return: A queryset of matching entities.
+        :rtype: django.db.models.QuerySet
+        """
         return self.filter_by_username(username=slug)
 
 
 class UserManager(BaseUserManager):
+    """
+    Manager for the User model, handling user creation, lookup by username or email, and account deletion.
+
+    Methods:
+        normalize_email(cls, email): Normalize the email address by lowercasing it.
+        _create_user(self, slug, password, **extra_fields): Create and save a user with the given username and password.
+        get_queryset(self): Return the base queryset with related site profiles and photo prefetched.
+        get_by_natural_key(self, username): Look up a user by username or email address.
+        active(self, *args, **kwargs): Filter the queryset to only active, non-deleted users.
+        create_user(self, slug, password, **extra_fields): Create and save a regular (non-staff, non-superuser) user.
+        create_superuser(self, slug, password, **extra_fields): Create and save a staff superuser.
+        mark_a_user_as_deleted(self, user, delete_password): Permanently mark a user as deleted.
+    """
+
     @classmethod
     def normalize_email(cls, email):
         """
@@ -52,11 +104,27 @@ class UserManager(BaseUserManager):
         return user
 
     def get_queryset(self):
+        """
+        Return the base queryset, with the related site profiles and photo prefetched for efficiency.
+
+        :return: A distinct queryset of users with related data prefetched.
+        :rtype: django.db.models.QuerySet
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
         return super().get_queryset().prefetch_related(SpeedyNetSiteProfile.RELATED_NAME, SpeedyMatchSiteProfile.RELATED_NAME, 'photo').distinct()
 
     def get_by_natural_key(self, username):
+        """
+        Get the user matching the given username or email address.
+
+        :param username: The username or email address to look up.
+        :type username: str
+        :return: The matching user.
+        :rtype: speedy.core.accounts.models.User
+        :raises django.core.exceptions.ObjectDoesNotExist: If no user matches.
+        :raises django.core.exceptions.MultipleObjectsReturned: If more than one user matches by username and email combined and the email alone also matches more than one user.
+        """
         # If we try both the username and the email address, we can't use get() because we can have two users returned in the query.
         if (len(self.distinct().filter(Q(username=normalize_username(username=username)) | Q(email_addresses__email=normalize_email(email=username)))) > 1):
             # If there are more than one user returned in the query, use only the email address (because the username input contains "@").
@@ -66,14 +134,45 @@ class UserManager(BaseUserManager):
             return self.distinct().get(Q(username=normalize_username(username=username)) | Q(email_addresses__email=normalize_email(email=username)))
 
     def active(self, *args, **kwargs):
+        """
+        Filter the queryset to only active, non-deleted users, with any additional filters applied.
+
+        :param args: Additional positional filter arguments passed to ``filter()``.
+        :param kwargs: Additional keyword filter arguments passed to ``filter()``.
+        :return: A queryset of active, non-deleted users matching the additional filters.
+        :rtype: django.db.models.QuerySet
+        """
         return self.filter(is_active=True, is_deleted=False, *args, **kwargs)
 
     def create_user(self, slug, password=None, **extra_fields):
+        """
+        Create and save a regular user (not staff, not superuser) with the given username and password.
+
+        :param slug: The username (slug) for the new user.
+        :type slug: str
+        :param password: The password for the new user.
+        :type password: str
+        :param extra_fields: Additional fields to set on the new user.
+        :return: The newly created user.
+        :rtype: speedy.core.accounts.models.User
+        """
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
         return self._create_user(slug=slug, password=password, **extra_fields)
 
     def create_superuser(self, slug, password, **extra_fields):
+        """
+        Create and save a staff superuser with the given username and password.
+
+        :param slug: The username (slug) for the new superuser.
+        :type slug: str
+        :param password: The password for the new superuser.
+        :type password: str
+        :param extra_fields: Additional fields to set on the new superuser.
+        :return: The newly created superuser.
+        :rtype: speedy.core.accounts.models.User
+        :raises ValueError: If ``is_staff`` or ``is_superuser`` is explicitly set to a falsy value in ``extra_fields``.
+        """
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 

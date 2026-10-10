@@ -38,10 +38,18 @@ class Chat(TimeStampedModel):
 
     @property
     def is_private(self):
+        """
+        :return: True if this is a private (two-participant) chat, False if it's a group chat.
+        :rtype: bool
+        """
         return (not (self.is_group))
 
     @property
     def participants(self):
+        """
+        :return: The chat's participants - a tuple of (ent1, ent2) for a private chat, or the group members ordered by join date for a group chat.
+        :rtype: tuple or django.db.models.QuerySet
+        """
         if (self.is_private):
             return (self.ent1, self.ent2)
         else:
@@ -49,18 +57,34 @@ class Chat(TimeStampedModel):
 
     @property
     def participants_count(self):
+        """
+        :return: The number of participants in the chat.
+        :rtype: int
+        """
         return len(self.participants)
 
     @property
     def messages_queryset(self):
+        """
+        :return: The queryset of all messages in the chat.
+        :rtype: django.db.models.QuerySet
+        """
         return self.messages.all()
 
     @property
     def messages_count(self):
+        """
+        :return: The number of messages in the chat.
+        :rtype: int
+        """
         return len(self.messages_queryset)
 
     @property
     def senders_ids(self):
+        """
+        :return: The set of ids of the entities who have sent at least one message in the chat.
+        :rtype: set
+        """
         return {message.sender.id for message in self.messages_queryset if (message.sender)}
 
     class Meta:
@@ -69,6 +93,10 @@ class Chat(TimeStampedModel):
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
+        """
+        :return: A string representation of the chat, including its id, participants, and message/sender counts.
+        :rtype: str
+        """
         participants = ', '.join(str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants)
         senders_list = [str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants if (ent and (ent.id in self.senders_ids))]
         if (len(senders_list) > 0):
