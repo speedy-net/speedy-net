@@ -10,6 +10,9 @@ from speedy.core.accounts.models import SiteProfileBase, User
 # ~~~~ TODO: This node should be a base for each website's node. For example in Speedy Net nodes can be albums and photos. Each node will have a unique URL, albums will start with the user/page or an entity's slug and then the album's slug (which is unique only per entity) and a photo's URL will be the album's URL + the photo's slug (which will be unique per album). A photo must be linked to exactly one album.
 # ~~~~ TODO: https://trello.com/c/gaKvb9eG/4-fix-model-hierarchy-and-speedy-composer-tests
 class SpeedyComposerNode(TimeStampedModel):  # ~~~~ TODO: check which class we want to inherit from?
+    """
+    Abstract base class for a Speedy Composer node (e.g. a username, slug and name container).
+    """
     # ~~~~ TODO: move to django_settings.
     # MIN_USERNAME_LENGTH = 1
     # MAX_USERNAME_LENGTH = 200
@@ -26,6 +29,23 @@ class SpeedyComposerNode(TimeStampedModel):  # ~~~~ TODO: check which class we w
 
 
 class SiteProfile(SiteProfileBase):
+    """
+    Speedy Composer site-specific user profile.
+
+    Attributes:
+        RELATED_NAME (str): The related name used on the User model to access this profile.
+        DELETED_NAME (str): The name to display for a deleted user's profile.
+        user (User): The user associated with the profile.
+        is_active (bool): Whether the Speedy Composer profile is active.
+
+    Methods:
+        is_active_and_valid(self): Check if the profile is active and valid.
+        __str__(self): Get a string representation of the profile.
+        _get_deleted_name(self): Get the name to display for a deleted user's profile.
+        activate(self): Activate the profile.
+        deactivate(self): Deactivate the profile.
+        get_name(self): Get the name of the profile.
+    """
     RELATED_NAME = 'speedy_composer_site_profile'
 
     DELETED_NAME = _('Speedy Net User')

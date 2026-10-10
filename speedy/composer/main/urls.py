@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Composer main page.
+"""
 from django.urls import re_path
 
 from . import views

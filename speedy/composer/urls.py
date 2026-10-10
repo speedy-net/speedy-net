@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Composer site.
+"""
 from django.urls import path, include
 
 from speedy.core import admin
