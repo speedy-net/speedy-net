@@ -6,22 +6,70 @@ if (django_settings.TESTS):
 
 
     class SpeedyNetAccountsLanguageMixin(TestCaseMixin):
+        """
+        Test mixin providing per-language, per-gender delete-account text fixtures and error dicts for Speedy Net account tests.
+
+        Methods:
+            _delete_account_form_all_the_required_fields_keys(self): Returns the list of required field names on the delete account form.
+            _delete_account_form_all_the_required_fields_are_required_errors_dict(self): Returns the errors dict for all required fields being missing on the delete account form.
+            _delete_my_account_text_is_required_errors_dict(self): Returns the errors dict for a missing "delete my account" confirmation text.
+            _invalid_delete_my_account_text_errors_dict_by_gender(self, gender): Returns the errors dict for an invalid "delete my account" confirmation text, by gender.
+            _invalid_password_and_delete_my_account_text_errors_dict_by_gender(self, gender): Returns the errors dict for both an invalid password and an invalid "delete my account" confirmation text, by gender.
+            set_up(self): Sets up per-language, per-gender delete-account text fixtures used by the account deletion tests.
+        """
         def _delete_account_form_all_the_required_fields_keys(self):
+            """
+            Returns the list of required field names on the delete account form.
+
+            :return: A list of required field names.
+            :rtype: list
+            """
             return [field_name.format(language_code=self.language_code) for field_name in ['password', 'delete_my_account_text']]
 
         def _delete_account_form_all_the_required_fields_are_required_errors_dict(self):
+            """
+            Returns the errors dict for all required fields being missing on the delete account form.
+
+            :return: A dict mapping field names to lists of error messages.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=self._delete_account_form_all_the_required_fields_keys())
 
         def _delete_my_account_text_is_required_errors_dict(self):
+            """
+            Returns the errors dict for a missing "delete my account" confirmation text.
+
+            :return: A dict mapping the 'delete_my_account_text' field to its list of error messages.
+            :rtype: dict
+            """
             return self._all_the_required_fields_are_required_errors_dict_by_required_fields(required_fields=['delete_my_account_text'])
 
         def _invalid_delete_my_account_text_errors_dict_by_gender(self, gender):
+            """
+            Returns the errors dict for an invalid "delete my account" confirmation text, by gender.
+
+            :param gender: The gender to get the error message for.
+            :type gender: str
+            :return: A dict mapping the 'delete_my_account_text' field to its list of error messages.
+            :rtype: dict
+            """
             return {'delete_my_account_text': [self._invalid_delete_my_account_text_error_message_dict_by_gender[gender]]}
 
         def _invalid_password_and_delete_my_account_text_errors_dict_by_gender(self, gender):
+            """
+            Returns the errors dict for both an invalid password and an invalid "delete my account" confirmation text, by gender.
+
+            :param gender: The gender to get the error messages for.
+            :type gender: str
+            :return: A dict mapping the 'password' and 'delete_my_account_text' fields to their lists of error messages.
+            :rtype: dict
+            """
             return {'password': [self._invalid_password_error_message], 'delete_my_account_text': [self._invalid_delete_my_account_text_error_message_dict_by_gender[gender]]}
 
         def set_up(self):
+            """
+            Sets up per-language, per-gender delete-account text fixtures used by the account deletion tests.
+            """
             super().set_up()
 
             _yes_delete_my_account_text_dict = {'en': 'Yes. Delete my account.', 'fr': 'Oui. Supprimer mon compte.', 'de': 'Ja. Lösche mein Konto.', 'es': 'Sí. Elimina mi cuenta.', 'pt': 'Sim. Eliminar a minha conta.', 'it': 'Sì. Elimina il mio account.', 'nl': 'Ja. Verwijder mijn account.', 'ja': 'はい。アカウントを削除してください。', 'ru': 'Да. Удалить мою учетную запись.', 'zh': '是的，請刪除我的帳號。', 'pl': 'Tak. Usuń moje konto.', 'fa': 'بله. اکانت من رو پاک کن', 'he': 'כן. מחקו את החשבון שלי.', 'ko': '네. 내 계정을 삭제하세요.', 'ar': 'نعم. حذف حسابي.', 'id': 'Ya. Hapus akun saya.', 'uk': 'Так. Видалити мій обліковий запис.', 'tr': 'Evet. Hesabımı sil.', 'vi': 'Vâng. Hãy xóa tài khoản của tôi.', 'cs': 'Ano. Smazat můj účet.', 'sv': 'Ja. Ta bort mitt konto.', 'fi': 'Kyllä. Poista tilini.', 'hu': 'Igen. Fiókom törlése.', 'th': 'ใช่. ลบบัญชีของฉัน', 'el': 'Ναι. Διαγράψτε τον λογαριασμό μου.', 'ms': 'Ya. Padam akaun saya.', 'sr': 'Да. Избриши мој налог.', 'ro': 'Da. Ștergeți contul meu.', 'bn': 'হ্যাঁ। আমার অ্যাকাউন্টটি মুছে দিন।', 'ca': 'Sí. Suprimeix el meu compte.', 'no': 'Ja. Slett kontoen min.', 'bg': 'Да. Изтрий акаунта ми.', 'da': 'Ja. Slet min konto.', 'sk': 'Áno. Odstrániť môj účet.', 'hi': 'हाँ। मेरा खाता हटा दें।', 'et': 'Jah. Kustuta minu konto.', 'hr': 'Da. Izbriši moj račun.', 'az': 'Bəli. Hesabımı sil.', 'zh-yue': 'Yes. Delete my account.', 'lt': 'Yes. Delete my account.', 'sl': 'Da. Izbriši moj račun.', 'eu': 'Bai. Ezabatu nire kontua.', 'hy': 'Yes. Delete my account.', 'uz': "Ha. Akkauntimni o'chiring.", 'ta': 'ஆம். என் கணக்கை நீக்கு.', 'lv': 'Yes. Delete my account.'}

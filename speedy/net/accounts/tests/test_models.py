@@ -16,12 +16,41 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class SpeedyNetSiteProfileOnlyEnglishTestCase(SiteTestCase):
+            """
+            Test the Speedy Net SiteProfile model on Speedy Net (English only, the model logic doesn't depend on the language).
+
+            Methods:
+                get_default_user_doron(self): Returns an active, saved default test user ("Doron Matalon").
+                get_inactive_user_jennifer(self): Returns an inactive, saved test user ("Jennifer Connelly"), randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
+                test_profile_property_and_class(self): Verify the user.profile property returns the Speedy Net site profile and differs from the Speedy Match profile.
+                test_call_activate_directly_and_assert_no_exception(self): Verify calling activate() directly on the Speedy Net profile activates the user.
+                test_call_deactivate_directly_and_assert_no_exception(self): Verify calling deactivate() directly on the Speedy Net profile deactivates the user.
+                test_call_call_after_verify_email_address_directly_and_assert_no_exception(self): Verify calling call_after_verify_email_address() directly is a no-op on Speedy Net.
+                test_call_validate_profile_and_activate_directly_and_assert_exception(self): Verify calling validate_profile_and_activate() directly raises NotImplementedError on Speedy Net.
+                test_call_get_name_directly_and_assert_no_exception(self): Verify get_name() returns the user's full name.
+                test_call_user_name_directly_and_assert_no_exception(self): Verify user.name returns the user's full name.
+                test_user_name_is_the_same_as_get_name_and_get_full_name(self): Verify user.name matches get_name(), get_full_name() and the formatted first/last name across several user factories.
+                test_cannot_delete_site_profiles_with_queryset_delete(self): Verify deleting site profiles via queryset delete() raises NotImplementedError in all forms (manager, all(), filter(), exclude()).
+            """
             def get_default_user_doron(self):
+                """
+                Returns an active, saved default test user ("Doron Matalon").
+
+                :return: The created user.
+                :rtype: speedy.core.accounts.models.User
+                """
                 user = DefaultUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 user.save_user_and_profile()
                 return user
 
             def get_inactive_user_jennifer(self):
+                """
+                Returns an inactive, saved test user ("Jennifer Connelly"), randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
+
+                :return: The created user.
+                :rtype: speedy.core.accounts.models.User
+                :raises NotImplementedError: If the random choice is not 1 or 2 (should never happen).
+                """
                 user_factory_dict = dict(first_name_en="Jennifer", last_name_en="Connelly", slug="jennifer-connelly", date_of_birth=date(year=1978, month=9, day=12), gender=User.GENDER_FEMALE)
                 random_choice = random.choice([1, 2])
                 if (random_choice == 1):

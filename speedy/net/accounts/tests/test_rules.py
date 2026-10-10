@@ -14,6 +14,13 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class ViewProfileRulesOnlyEnglishTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
+            """
+            Test the view profile permission rule on Speedy Net (English only, the rule logic doesn't depend on the language).
+
+            Methods:
+                test_doron_and_jennifer_have_access(self): Verify both users can view each other's profile on Speedy Net.
+                test_doron_and_jennifer_have_no_access(self): Skipped; irrelevant on Speedy Net since profiles are always visible.
+            """
             def test_doron_and_jennifer_have_access(self):
                 self.assertIs(expr1=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer), expr2=True)
                 self.assertIs(expr1=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron), expr2=True)
@@ -25,7 +32,24 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class DeleteAccountRulesOnlyEnglishTestCase(SiteTestCase):
+            """
+            Test the delete account permission rule on Speedy Net (English only, the rule logic doesn't depend on the language).
+
+            Attributes:
+                user (speedy.core.accounts.models.User): An active test user created in set_up.
+
+            Methods:
+                set_up(self): Creates an active test user.
+                test_inactive_user_can_delete_his_account_1(self): Verify a user can delete their account only after deactivating their Speedy Net profile.
+                test_inactive_user_can_delete_his_account_2(self): Verify a user created inactive (InactiveUserFactory) can delete their own account.
+                test_inactive_user_can_delete_his_account_3(self): Verify a user created inactive on Speedy Net (SpeedyNetInactiveUserFactory) can delete their own account.
+                test_active_user_cannot_delete_his_account(self): Verify an active user cannot delete their account even after deactivating only their Speedy Match profile.
+                test_user_cannot_delete_other_user_account(self): Verify a user cannot delete another user's account regardless of either user's active/inactive state.
+            """
             def set_up(self):
+                """
+                Creates an active test user.
+                """
                 super().set_up()
                 self.user = ActiveUserFactory()
 

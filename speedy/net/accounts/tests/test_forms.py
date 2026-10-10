@@ -24,6 +24,12 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class ProfileNotificationsFormOnlyEnglishTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
+            """
+            Test the profile notifications form on Speedy Net (English only, the form fields don't depend on the language).
+
+            Methods:
+                test_has_correct_fields(self): Verify the form has only the 'notify_on_message' field on Speedy Net.
+            """
             def test_has_correct_fields(self):
                 form = ProfileNotificationsForm(instance=self.user)
                 self.assertListEqual(list1=list(form.fields.keys()), list2=[
@@ -32,7 +38,29 @@ if (django_settings.TESTS):
 
 
         class DeleteAccountFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
+            """
+            Test mixin for the delete account form, covering valid/invalid password and confirmation text combinations.
+
+            Attributes:
+                random_choice (int): A random choice (1 or 2) of which inactive user factory to use.
+                user (speedy.core.accounts.models.User): The inactive test user created in set_up.
+
+            Methods:
+                set_up(self): Creates an inactive test user, randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
+                test_correct_password_and_delete_my_account_text(self): Verify the form is valid with a correct password and confirmation text.
+                test_incorrect_password(self): Verify the form is invalid with an incorrect password.
+                test_incorrect_delete_my_account_text(self): Verify the form is invalid with an incorrect confirmation text.
+                test_no_password(self): Verify the form is invalid when the password is missing.
+                test_no_delete_my_account_text(self): Verify the form is invalid when the confirmation text is missing.
+                test_no_password_and_delete_my_account_text(self): Verify the form is invalid when both the password and confirmation text are missing.
+                test_yes_delete_my_account_text_is_contained_in_are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender_for_all_genders_with_and_without_quotes(self): Verify the "yes, delete my account" confirmation text appears (with or without surrounding quote characters) inside the "are you sure" message, for every gender.
+            """
             def set_up(self):
+                """
+                Creates an inactive test user, randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
+
+                :raises NotImplementedError: If the random choice is not 1 or 2 (should never happen).
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2])
                 if (self.random_choice == 1):
@@ -107,6 +135,12 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class DeleteAccountFormAllLanguagesEnglishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
@@ -115,6 +149,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='fr')
         class DeleteAccountFormAllLanguagesFrenchTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
@@ -123,6 +163,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='de')
         class DeleteAccountFormAllLanguagesGermanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
@@ -131,6 +177,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='es')
         class DeleteAccountFormAllLanguagesSpanishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
@@ -139,6 +191,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='pt')
         class DeleteAccountFormAllLanguagesPortugueseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
@@ -147,6 +205,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='it')
         class DeleteAccountFormAllLanguagesItalianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
@@ -155,6 +219,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='nl')
         class DeleteAccountFormAllLanguagesDutchTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
@@ -163,6 +233,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ja')
         class DeleteAccountFormAllLanguagesJapaneseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ja')
@@ -171,6 +247,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ru')
         class DeleteAccountFormAllLanguagesRussianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ru')
@@ -179,6 +261,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='zh')
         class DeleteAccountFormAllLanguagesChineseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='zh')
@@ -187,6 +275,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='pl')
         class DeleteAccountFormAllLanguagesPolishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pl')
@@ -195,6 +289,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='fa')
         class DeleteAccountFormAllLanguagesPersianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fa')
@@ -203,6 +303,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='he')
         class DeleteAccountFormAllLanguagesHebrewTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
@@ -211,6 +317,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ko')
         class DeleteAccountFormAllLanguagesKoreanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
@@ -219,6 +331,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ar')
         class DeleteAccountFormAllLanguagesArabicTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ar')
@@ -227,6 +345,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='id')
         class DeleteAccountFormAllLanguagesIndonesianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='id')
@@ -235,6 +359,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='uk')
         class DeleteAccountFormAllLanguagesUkrainianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='uk')
@@ -243,6 +373,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='tr')
         class DeleteAccountFormAllLanguagesTurkishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='tr')
@@ -251,6 +387,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='vi')
         class DeleteAccountFormAllLanguagesVietnameseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='vi')
@@ -259,6 +401,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='cs')
         class DeleteAccountFormAllLanguagesCzechTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='cs')
@@ -267,6 +415,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='sv')
         class DeleteAccountFormAllLanguagesSwedishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
@@ -275,6 +429,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='fi')
         class DeleteAccountFormAllLanguagesFinnishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
@@ -283,6 +443,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='hu')
         class DeleteAccountFormAllLanguagesHungarianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hu')
@@ -291,6 +457,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='th')
         class DeleteAccountFormAllLanguagesThaiTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='th')
@@ -299,6 +471,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='el')
         class DeleteAccountFormAllLanguagesGreekTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='el')
@@ -307,6 +485,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ms')
         class DeleteAccountFormAllLanguagesMalayTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ms')
@@ -315,6 +499,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='sr')
         class DeleteAccountFormAllLanguagesSerbianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sr')
@@ -323,6 +513,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ro')
         class DeleteAccountFormAllLanguagesRomanianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ro')
@@ -331,6 +527,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='bn')
         class DeleteAccountFormAllLanguagesBengaliTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='bn')
@@ -339,6 +541,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ca')
         class DeleteAccountFormAllLanguagesCatalanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ca')
@@ -347,6 +555,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='no')
         class DeleteAccountFormAllLanguagesNorwegianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='no')
@@ -355,6 +569,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='bg')
         class DeleteAccountFormAllLanguagesBulgarianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='bg')
@@ -363,6 +583,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='da')
         class DeleteAccountFormAllLanguagesDanishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='da')
@@ -371,6 +597,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='sk')
         class DeleteAccountFormAllLanguagesSlovakTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sk')
@@ -379,6 +611,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='hi')
         class DeleteAccountFormAllLanguagesHindiTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hi')
@@ -387,6 +625,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='et')
         class DeleteAccountFormAllLanguagesEstonianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='et')
@@ -395,6 +639,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='hr')
         class DeleteAccountFormAllLanguagesCroatianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hr')
@@ -402,6 +652,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='az')
         class DeleteAccountFormAllLanguagesAzerbaijaniTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='az')
@@ -410,6 +666,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='zh-yue')
         class DeleteAccountFormAllLanguagesCantoneseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='zh-yue')
@@ -418,6 +680,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='lt')
         class DeleteAccountFormAllLanguagesLithuanianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='lt')
@@ -426,6 +694,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='sl')
         class DeleteAccountFormAllLanguagesSlovenianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sl')
@@ -434,6 +708,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='eu')
         class DeleteAccountFormAllLanguagesBasqueTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='eu')
@@ -442,6 +722,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='hy')
         class DeleteAccountFormAllLanguagesArmenianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hy')
@@ -450,6 +736,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='uz')
         class DeleteAccountFormAllLanguagesUzbekTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='uz')
@@ -458,6 +750,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='ta')
         class DeleteAccountFormAllLanguagesTamilTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ta')
@@ -466,6 +764,12 @@ if (django_settings.TESTS):
         @only_on_speedy_net
         @override_settings(LANGUAGE_CODE='lv')
         class DeleteAccountFormAllLanguagesLatvianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
+            """
+            Test the delete account form validation errors and "are you sure" text for this language variant.
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='lv')

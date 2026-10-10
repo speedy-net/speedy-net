@@ -12,6 +12,15 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class UserFriendListViewOnlyEnglishTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
+            """
+            Test the user friend list view on Speedy Net (English only, the view doesn't depend on the language).
+
+            Methods:
+                test_visitor_can_open_the_page(self): Verify an anonymous visitor can open a user's friend list page.
+                test_visitor_cannot_open_the_page(self): Skipped; irrelevant on Speedy Net since the page is public.
+                test_user_can_open_other_users_friends_page(self): Verify a logged-in user can open another user's friend list page.
+                test_user_cannot_open_other_users_friends_page(self): Skipped; irrelevant on Speedy Net since the page is public.
+            """
             def test_visitor_can_open_the_page(self):
                 self.client.logout()
                 r = self.client.get(path=self.first_user_friends_list_url)

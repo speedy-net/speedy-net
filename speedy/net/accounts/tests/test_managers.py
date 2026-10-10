@@ -12,6 +12,15 @@ if (django_settings.TESTS):
 
         @only_on_speedy_net
         class UserManagerOnlyEnglishTestCase(SiteTestCase):
+            """
+            Test the User manager's mark_a_user_as_deleted method on Speedy Net (English only, the manager logic doesn't depend on the language).
+
+            Methods:
+                test_cannot_mark_a_user_as_deleted_with_wrong_delete_password(self): Verify an inactive user cannot be marked as deleted with an incorrect delete password.
+                test_cannot_mark_an_active_user_as_deleted(self): Verify an active user cannot be marked as deleted.
+                test_cannot_mark_a_staff_user_as_deleted(self): Verify a staff user cannot be marked as deleted.
+                test_cannot_mark_a_superuser_as_deleted(self): Verify a superuser cannot be marked as deleted.
+            """
             def test_cannot_mark_a_user_as_deleted_with_wrong_delete_password(self):
                 user = InactiveUserFactory()
                 self.assertEqual(first=user.is_active, second=False)
