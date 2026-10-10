@@ -1,3 +1,6 @@
+"""
+Admin views of Speedy Match (the lists of matches).
+"""
 from datetime import timedelta, datetime, timezone, date
 
 from django.utils import formats
@@ -15,6 +18,19 @@ from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
 class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
+    """
+    Admin view listing active Speedy Match members matching the current site's active language, with filtering and statistics.
+
+    Attributes:
+        only_current_language: Whether to filter members active in the current language only.
+        any_language: Whether to filter members active in any language.
+
+    Methods:
+        get_default_filter_dict(self): Returns the base filter dict for active, eligible members.
+        get_total_number_of_active_members_text(self): Returns an HTML breakdown of active member counts by gender, recency and age range.
+        get_queryset(self): Returns the filtered and ordered queryset of matching users.
+        get_context_data(self, **kwargs): Adds the matches list and statistics text to the context.
+    """
     template_name = 'admin/matches/match_list.html'
     # page_size = 96
     page_size = 250
@@ -23,6 +39,13 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     any_language = False
 
     def get_default_filter_dict(self):
+        """
+        Returns the base queryset filter dict for active, height-eligible Speedy Match members, restricted by language according to only_current_language/any_language.
+
+        :return: A dict of queryset filter keyword arguments.
+        :rtype: dict
+        :raises NotImplementedError: If neither only_current_language nor any_language is set appropriately.
+        """
         assert ((self.only_current_language and self.any_language) is False)
         assert ((self.only_current_language or self.any_language) is True)
 
@@ -40,6 +63,12 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         return filter_dict
 
     def get_total_number_of_active_members_text(self):
+        """
+        Builds an HTML-formatted breakdown of active member counts (total, by gender, and in the last week) plus an age-range table, for display on the admin matches list page.
+
+        :return: The HTML text with the statistics.
+        :rtype: str
+        """
         default_filter_dict = self.get_default_filter_dict()
         total_number_of_active_members = User.objects.active(
             **default_filter_dict,
@@ -499,6 +528,12 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         return total_number_of_active_members_text
 
     def get_queryset(self):
+        """
+        Returns the filtered and ordered queryset of active Speedy Match users, applying any request GET parameter filters (likes counts, age range, ordering).
+
+        :return: The filtered and ordered queryset of users.
+        :rtype: django.db.models.QuerySet
+        """
         SiteProfile = get_site_profile_model()
         filter_dict = self.get_default_filter_dict()
         annotate_list = list()
@@ -523,6 +558,13 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
         return qs
 
     def get_context_data(self, **kwargs):
+        """
+        Adds the matches list and the active-members statistics text to the template context.
+
+        :param kwargs: Additional keyword arguments.
+        :return: The context data.
+        :rtype: dict
+        """
         cd = super().get_context_data(**kwargs)
         cd.update({
             'matches_list': cd['object_list'],
@@ -532,6 +574,9 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
 
 
 class AdminMatchesAnyLanguageListView(AdminMatchesListView):
+    """
+    Variant of AdminMatchesListView that lists active members in any language, instead of restricting to the current site language.
+    """
     only_current_language = False
     any_language = True
 

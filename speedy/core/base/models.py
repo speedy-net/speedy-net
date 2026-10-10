@@ -1,3 +1,6 @@
+"""
+Base models and model mixins of Speedy Core, including the timestamped model.
+"""
 from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 

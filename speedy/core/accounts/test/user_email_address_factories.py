@@ -1,3 +1,6 @@
+"""
+Factories of Speedy Core for creating user email addresses in tests.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -17,6 +20,9 @@ if (django_settings.TESTS):
 
 
         class UserEmailAddressFactory(factory.django.DjangoModelFactory, UserEmailAddressTypeHintMixin):
+            """
+            This factory is used to create a UserEmailAddress with a randomly generated, lowercase email address, belonging to a user created via DefaultUserFactory.
+            """
             user = factory.SubFactory(DefaultUserFactory)
             email = factory.LazyAttribute(lambda o: '{id}@example.speedy.net'.format(id=generate_random_id()).lower())
 

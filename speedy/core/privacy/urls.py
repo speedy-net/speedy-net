@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Core privacy policy app.
+"""
 from django.urls import re_path
 
 from . import views

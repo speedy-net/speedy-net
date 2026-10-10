@@ -1,3 +1,6 @@
+"""
+Utilities of the Speedy Match accounts app for the profile activation steps (step fields, field validation) and the number of active members text.
+"""
 from datetime import timedelta
 
 from django.utils import formats
@@ -12,10 +15,24 @@ from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
 
 def get_steps_range():
+    """
+    Returns the range of step numbers for the Speedy Match profile activation wizard.
+
+    :return: A range object from 1 to the number of profile form field steps.
+    :rtype: range
+    """
     return range(1, len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
 
 
 def get_step_form_fields(step):
+    """
+    Returns the list of form field names for a given step of the profile activation wizard, localizing localizable field names.
+
+    :param step: The step number.
+    :type step: int
+    :return: A list of form field names for this step.
+    :rtype: list
+    """
     form_fields = []
     for field_name in list(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS[step]):
         if (not (field_name in (User.LOCALIZABLE_FIELDS + SpeedyMatchSiteProfile.LOCALIZABLE_FIELDS))):
@@ -26,6 +43,14 @@ def get_step_form_fields(step):
 
 
 def get_step_fields_to_validate(step):
+    """
+    Returns the list of field names to validate for a given wizard step, adding the combined min/max age validation when relevant.
+
+    :param step: The step number.
+    :type step: int
+    :return: A list of field names to validate for this step.
+    :rtype: list
+    """
     fields = get_step_form_fields(step=step)
     if (('min_age_to_match' in fields) or ('max_age_to_match' in fields)):
         fields.append('min_max_age_to_match')
@@ -33,6 +58,16 @@ def get_step_fields_to_validate(step):
 
 
 def validate_field(field_name, user):
+    """
+    Validates a single Speedy Match profile field for a user, dispatching to the matching validator function.
+
+    :param field_name: The name of the field to validate.
+    :type field_name: str
+    :param user: The user whose field is being validated.
+    :type user: speedy.core.accounts.models.User
+    :raises django.core.exceptions.ValidationError: If the field's value is invalid.
+    :raises Exception: If field_name doesn't match any known field.
+    """
     if (field_name in ['profile_picture']):
         speedy_core_accounts_validators.validate_profile_picture(profile_picture=user.photo)
     elif (field_name in ['profile_description', to_attribute(name='profile_description')]):
@@ -72,6 +107,12 @@ def validate_field(field_name, user):
 
 
 def get_total_number_of_active_members_text():
+    """
+    Returns a user-facing text describing the total number of active Speedy Match members, if both the 4-month and 1-week thresholds are met; otherwise an empty string.
+
+    :return: The formatted text, or an empty string if the activity thresholds are not met.
+    :rtype: str
+    """
     total_number_of_active_members_in_the_last_four_months = User.objects.active(
         speedy_match_site_profile__height__range=(SpeedyMatchSiteProfile.settings.MIN_HEIGHT_TO_MATCH, SpeedyMatchSiteProfile.settings.MAX_HEIGHT_TO_MATCH),
         speedy_match_site_profile__not_allowed_to_use_speedy_match=False,

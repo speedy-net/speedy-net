@@ -1,3 +1,6 @@
+"""
+Django settings of Speedy Mail Software for the production environment.
+"""
 from .base_site import *
 from speedy.core.settings.production_utils import activate_production
 

@@ -1,3 +1,6 @@
+"""
+Translation strings of Speedy Match (including gender-specific variants), used only by make_all_messages.sh to generate the message files.
+"""
 # This file is only for ./make_all_messages.sh, it is not used otherwise.
 
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy

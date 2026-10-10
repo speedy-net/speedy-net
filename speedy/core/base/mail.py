@@ -1,3 +1,6 @@
+"""
+Email utilities of Speedy Core for rendering mail templates and sending mail to users and managers.
+"""
 import logging
 from collections import namedtuple
 
@@ -15,6 +18,18 @@ RenderedMail = namedtuple('RenderedMail', 'subject body_plain body_html')
 
 
 def render_mail(template_name_prefix, context=None, base_template_name_prefix='email/base'):
+    """
+    Renders an email's subject, plain text body and HTML body from the given template prefixes.
+
+    :param template_name_prefix: Required. The template name prefix used to build the subject, plain text and HTML template names.
+    :type template_name_prefix: str
+    :param context: Optional. The context to render the templates with.
+    :type context: dict
+    :param base_template_name_prefix: Optional. The template name prefix used to build the base plain text and HTML template names. Default 'email/base'.
+    :type base_template_name_prefix: str
+    :return: A `RenderedMail` namedtuple with fields `subject`, `body_plain` and `body_html`.
+    :rtype: RenderedMail
+    """
     subject_template_name = '{}_subject.txt'.format(template_name_prefix)
     plain_template_name = '{}_body.txt'.format(template_name_prefix)
     html_template_name = '{}_body.html'.format(template_name_prefix)
@@ -62,6 +77,19 @@ def render_mail(template_name_prefix, context=None, base_template_name_prefix='e
 
 
 def send_mail(to, template_name_prefix, context=None, **kwargs):
+    """
+    Renders and sends an email, logging the attempt. If sending fails, logs the error and swallows the exception.
+
+    :param to: Required. A list of recipient email addresses.
+    :type to: list[str]
+    :param template_name_prefix: Required. The template name prefix used to build the subject, plain text and HTML template names.
+    :type template_name_prefix: str
+    :param context: Optional. The context to render the templates with.
+    :type context: dict
+    :param kwargs: Optional. Additional keyword arguments, passed to `EmailMultiAlternatives`.
+    :return: The number of successfully delivered messages, or None if sending failed.
+    :rtype: int
+    """
     # Sending mail may fail. If it fails, log the error and continue.
     try:
         site = Site.objects.get_current()
@@ -97,6 +125,17 @@ def send_mail(to, template_name_prefix, context=None, **kwargs):
 
 
 def mail_managers(template_name_prefix, context=None, **kwargs):
+    """
+    Renders and sends an email to the site's managers (as configured in the MANAGERS setting).
+
+    :param template_name_prefix: Required. The template name prefix used to build the subject, plain text and HTML template names.
+    :type template_name_prefix: str
+    :param context: Optional. The context to render the templates with.
+    :type context: dict
+    :param kwargs: Optional. Additional keyword arguments, passed to `send_mail`.
+    :return: The number of successfully delivered messages, or None if sending failed.
+    :rtype: int
+    """
     return send_mail(to=[a[1] for a in django_settings.MANAGERS], template_name_prefix=template_name_prefix, context=context, **kwargs)
 
 

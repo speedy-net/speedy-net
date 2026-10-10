@@ -1,3 +1,6 @@
+"""
+Management command to moderate unmoderated user photos using AWS Rekognition.
+"""
 import logging
 from typing import TYPE_CHECKING
 
@@ -41,9 +44,8 @@ class Command(BaseCommand):
         If the photo is valid, it uses AWS Rekognition to detect moderation labels.
         Based on the results, it updates the user's profile and photo visibility.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         users = User.objects.filter(
             photo__isnull=False,

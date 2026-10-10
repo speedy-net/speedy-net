@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:9
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04 19:33+0300\n"
+"POT-Creation-Date: 2026-10-10 12:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,34 +33,8 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Ištrinti paskyrą"
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:11
 msgctxt "female"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
-"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
-
-#: .\__translations\__translations.py:9
-msgctxt "male"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
-"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
-"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
-
-#: .\__translations\__translations.py:10
-msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -73,62 +47,7 @@ msgstr ""
 "laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
 
 #: .\__translations\__translations.py:12
-#, python-brace-format
-msgctxt "female"
-msgid "Permanently delete your {site_name} account"
-msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
-
-#: .\__translations\__translations.py:13
-#, python-brace-format
 msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
-
-#: .\__translations\__translations.py:14
-#, python-brace-format
-msgctxt "other"
-msgid "Permanently delete your {site_name} account"
-msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
-
-#: .\__translations\__translations.py:16
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
-"naudojotės {site_name}."
-
-#: .\__translations\__translations.py:17
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
-"naudojotės {site_name}."
-
-#: .\__translations\__translations.py:18
-#, python-brace-format
-msgctxt "other"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
-"naudojotės {site_name}."
-
-#: .\accounts\apps.py:8
-msgid "Speedy Net Accounts"
-msgstr "Speedy Net paskyros"
-
-#: .\accounts\forms.py:18
-msgid "Your password"
-msgstr "Jūsų slaptažodis"
-
-#: .\accounts\forms.py:19
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -140,36 +59,117 @@ msgstr ""
 "Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
 "laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
 
+#: .\__translations\__translations.py:13
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:17
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Visam laikui ištrinkite savo {site_name} paskyrą"
+
+#: .\__translations\__translations.py:19
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
+"naudojotės {site_name}."
+
+#: .\__translations\__translations.py:20
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
+"naudojotės {site_name}."
+
+#: .\__translations\__translations.py:21
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Jūsų Speedy Net ir Speedy Match paskyros buvo ištrintos. Dėkojame, kad "
+"naudojotės {site_name}."
+
+#: .\accounts\apps.py:14
+msgid "Speedy Net Accounts"
+msgstr "Speedy Net paskyros"
+
 #: .\accounts\forms.py:33
+msgid "Your password"
+msgstr "Jūsų slaptažodis"
+
+#: .\accounts\forms.py:34
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
+"negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
+"Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
+"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+
+#: .\accounts\forms.py:61
 msgid "Invalid password."
 msgstr "Neteisingas slaptažodis."
 
-#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
-#: .\accounts\views.py:82
+#: .\accounts\forms.py:73 .\accounts\tests\test_views.py:300
+#: .\accounts\views.py:160
 msgid "Yes. Delete my account."
 msgstr "Yes. Delete my account."
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:35
 msgid "Speedy Net User"
 msgstr "Speedy Net naudotojas"
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:37
 msgid "User"
 msgstr "Naudotojas"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"
 msgstr "Draugų skaičius per paskutinį naudotojo apsilankymą"
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:55
 msgid "Speedy Net Profile"
 msgstr "Speedy Net profilis"
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
 msgstr "Speedy Net profiliai"
 
-#: .\accounts\utils.py:23
+#: .\accounts\utils.py:34
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -182,7 +182,7 @@ msgstr ""
 "paskutinę savaitę svetainėje apsilankė "
 "{total_number_of_active_members_in_the_last_week} nariai."
 
-#: .\settings\base_site.py:12
+#: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
 msgstr "Speedy Net [alpha]"
 

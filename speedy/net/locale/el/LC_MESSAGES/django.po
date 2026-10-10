@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:6
+#: .\__translations\__translations.py:9
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04 19:33+0300\n"
+"POT-Creation-Date: 2026-10-10 12:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,38 +32,8 @@ msgctxt "other"
 msgid "Delete Account"
 msgstr "Διαγραφή λογαριασμού"
 
-#: .\__translations\__translations.py:8
+#: .\__translations\__translations.py:11
 msgctxt "female"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
-"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
-"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
-"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
-"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
-"μικρά γράμματα."
-
-#: .\__translations\__translations.py:9
-msgctxt "male"
-msgid ""
-"Are you sure you want to delete your Speedy Net account? This is permanent "
-"and irreversible. Deleting your Speedy Net account will also delete your "
-"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
-"this field, exactly and case sensitive."
-msgstr ""
-"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
-"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
-"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
-"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
-"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
-"μικρά γράμματα."
-
-#: .\__translations\__translations.py:10
-msgctxt "other"
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -78,62 +48,7 @@ msgstr ""
 "μικρά γράμματα."
 
 #: .\__translations\__translations.py:12
-#, python-brace-format
-msgctxt "female"
-msgid "Permanently delete your {site_name} account"
-msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
-
-#: .\__translations\__translations.py:13
-#, python-brace-format
 msgctxt "male"
-msgid "Permanently delete your {site_name} account"
-msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
-
-#: .\__translations\__translations.py:14
-#, python-brace-format
-msgctxt "other"
-msgid "Permanently delete your {site_name} account"
-msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
-
-#: .\__translations\__translations.py:16
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
-"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
-
-#: .\__translations\__translations.py:17
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
-"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
-
-#: .\__translations\__translations.py:18
-#, python-brace-format
-msgctxt "other"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
-"using {site_name}."
-msgstr ""
-"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
-"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
-
-#: .\accounts\apps.py:8
-msgid "Speedy Net Accounts"
-msgstr "Λογαριασμοί Speedy Net"
-
-#: .\accounts\forms.py:18
-msgid "Your password"
-msgstr "Ο κωδικός πρόσβασής σας"
-
-#: .\accounts\forms.py:19
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -147,36 +62,121 @@ msgstr ""
 "το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
 "μικρά γράμματα."
 
+#: .\__translations\__translations.py:13
+msgctxt "other"
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
+"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
+"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
+"μικρά γράμματα."
+
+#: .\__translations\__translations.py:15
+#, python-brace-format
+msgctxt "female"
+msgid "Permanently delete your {site_name} account"
+msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
+
+#: .\__translations\__translations.py:16
+#, python-brace-format
+msgctxt "male"
+msgid "Permanently delete your {site_name} account"
+msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
+
+#: .\__translations\__translations.py:17
+#, python-brace-format
+msgctxt "other"
+msgid "Permanently delete your {site_name} account"
+msgstr "Οριστική διαγραφή του λογαριασμού σας στο {site_name}"
+
+#: .\__translations\__translations.py:19
+#, python-brace-format
+msgctxt "female"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
+"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
+
+#: .\__translations\__translations.py:20
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
+"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
+
+#: .\__translations\__translations.py:21
+#, python-brace-format
+msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
+"using {site_name}."
+msgstr ""
+"Οι λογαριασμοί σας στο Speedy Net και στο Speedy Match έχουν διαγραφεί. Σας "
+"ευχαριστούμε που χρησιμοποιήσατε το {site_name}."
+
+#: .\accounts\apps.py:14
+msgid "Speedy Net Accounts"
+msgstr "Λογαριασμοί Speedy Net"
+
 #: .\accounts\forms.py:33
+msgid "Your password"
+msgstr "Ο κωδικός πρόσβασής σας"
+
+#: .\accounts\forms.py:34
+msgid ""
+"Are you sure you want to delete your Speedy Net account? This is permanent "
+"and irreversible. Deleting your Speedy Net account will also delete your "
+"Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
+"this field, exactly and case sensitive."
+msgstr ""
+"Είστε σίγουροι ότι θέλετε να διαγράψετε τον λογαριασμό σας στο Speedy Net; Η "
+"διαγραφή είναι οριστική και μη αναστρέψιμη. Με τη διαγραφή του λογαριασμού "
+"σας στο Speedy Net θα διαγραφεί και ο λογαριασμός σας στο Speedy Match. Αν "
+"είστε σίγουροι, πληκτρολογήστε «Ναι. Διαγράψτε τον λογαριασμό μου.» σε αυτό "
+"το πεδίο, ακριβώς όπως αναγράφεται, λαμβάνοντας υπόψη τα κεφαλαία και τα "
+"μικρά γράμματα."
+
+#: .\accounts\forms.py:61
 msgid "Invalid password."
 msgstr "Ο κωδικός πρόσβασης είναι λανθασμένος."
 
-#: .\accounts\forms.py:38 .\accounts\tests\test_views.py:201
-#: .\accounts\views.py:82
+#: .\accounts\forms.py:73 .\accounts\tests\test_views.py:300
+#: .\accounts\views.py:160
 msgid "Yes. Delete my account."
 msgstr "Ναι. Διαγράψτε τον λογαριασμό μου."
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:35
 msgid "Speedy Net User"
 msgstr "Χρήστης Speedy Net"
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:37
 msgid "User"
 msgstr "Χρήστης"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"
 msgstr "Αριθμός φίλων κατά την τελευταία επίσκεψη του χρήστη"
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:55
 msgid "Speedy Net Profile"
 msgstr "Προφίλ της Speedy Net"
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
 msgstr "Προφίλ Speedy Net"
 
-#: .\accounts\utils.py:23
+#: .\accounts\utils.py:34
 #, python-brace-format
 msgid ""
 "The total number of active members on the site is "
@@ -189,7 +189,7 @@ msgstr ""
 "{total_number_of_active_members_in_the_last_week} μέλη εγγράφηκαν στον "
 "ιστότοπο την τελευταία εβδομάδα."
 
-#: .\settings\base_site.py:12
+#: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
 msgstr "Speedy Net [άλφα]"
 

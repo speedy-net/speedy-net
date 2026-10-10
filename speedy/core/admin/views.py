@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core admin app: the admin main page, users list, users with details list and user detail views.
+"""
 from datetime import timedelta, datetime, timezone, date
 
 from django.conf import settings as django_settings
@@ -21,6 +24,21 @@ else:
 
 
 class AdminUsersListView(OnlyAdminMixin, generic.ListView):
+    """
+    Admin view that lists all users, with a summary of member registration/activity statistics.
+
+    Attributes:
+        template_name (str): The template used to render the users list page.
+        page_size (int): The number of users shown per page.
+        paginate_by (int): The number of users shown per page (used by Django's pagination).
+        show_details (bool): Whether to show extended details (e.g. user id) for each user.
+
+    Methods:
+        get_default_filter_dict(self): Returns the default filter used to select users (confirmed email only).
+        get_total_number_of_members_text(self): Builds a text summary of member counts by recent activity, registration period, and registration year.
+        get_queryset(self): Returns all users, ordered optionally by friends count and then by last visit.
+        get_context_data(self, **kwargs): Adds the users list, show_details flag, and member statistics text to the context.
+    """
     template_name = 'admin/users_list.html'
     # page_size = 96
     page_size = 250
@@ -28,12 +46,24 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
     show_details = False
 
     def get_default_filter_dict(self):
+        """
+        Returns the default filter used to select users, limited to those with a confirmed email address.
+
+        :return: A dict of filter keyword arguments.
+        :rtype: dict
+        """
         filter_dict = dict(
             has_confirmed_email=True,
         )
         return filter_dict
 
     def get_total_number_of_members_text(self):
+        """
+        Builds a text summary of the total number of members, recent site activity, registration recency, and yearly registration counts.
+
+        :return: The summary text.
+        :rtype: str
+        """
         SiteProfile = get_site_profile_model()
         default_filter_dict = self.get_default_filter_dict()
         total_number_of_members = User.objects.filter(
@@ -142,6 +172,12 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
         return total_number_of_members_text
 
     def get_queryset(self):
+        """
+        Returns all users, ordered optionally by Speedy Net friends count or all-friends count (descending), and then by last visit (descending).
+
+        :return: The ordered queryset of users.
+        :rtype: django.db.models.QuerySet
+        """
         SiteProfile = get_site_profile_model()
         order_by_list = list()
         if (self.request.GET.get('order_by') == 'speedy_net_friends_count'):
@@ -153,6 +189,14 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
         return qs
 
     def get_context_data(self, **kwargs):
+        """
+        Adds the users list, the show_details flag, and the total-number-of-members text to the template context.
+
+        :param kwargs: Additional keyword arguments passed to the parent implementation.
+        :type kwargs: dict
+        :return: The updated context dict.
+        :rtype: dict
+        """
         cd = super().get_context_data(**kwargs)
         cd.update({
             'users_list': cd['object_list'],
@@ -163,13 +207,34 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
 
 
 class AdminUsersWithDetailsListView(AdminUsersListView):
+    """
+    Admin view that lists all users with extended details (e.g. user id) shown for each user.
+
+    Attributes:
+        show_details (bool): Always True, so extended details are shown.
+    """
     show_details = True
 
 
 class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
+    """
+    Admin view that shows a single user's detail page.
+
+    Attributes:
+        template_name (str): The template used to render the user detail page.
+
+    Methods:
+        get_widgets(self): Returns the configured admin user-profile widgets, instantiated for this view.
+    """
     template_name = 'admin/profiles/user_detail.html'
 
     def get_widgets(self):
+        """
+        Instantiates and returns the admin user-profile widgets configured in settings.ADMIN_USER_PROFILE_WIDGETS.
+
+        :return: The list of instantiated widgets.
+        :rtype: list
+        """
         widgets = []
         for widget_path in django_settings.ADMIN_USER_PROFILE_WIDGETS:
             widget_class = import_string(dotted_path=widget_path)

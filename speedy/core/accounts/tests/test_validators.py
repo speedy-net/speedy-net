@@ -1,3 +1,6 @@
+"""
+Test cases for the validators of the Speedy Core accounts app.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -20,15 +23,24 @@ if (django_settings.TESTS):
             and the file size branch is not exercised anywhere).
             """
             def test_none_profile_picture_raises_required_error(self):
+                """
+                Asserts that validating a None profile picture raises a ValidationError requiring a profile picture.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     validate_profile_picture(profile_picture=None)
                 self.assertEqual(first=cm.exception.messages, second=["A profile picture is required."])
 
             def test_profile_picture_within_size_limit_is_valid(self):
+                """
+                Asserts that validating a profile picture whose size equals the maximal allowed photo size returns None (no error).
+                """
                 profile_picture = SimpleNamespace(size=django_settings.MAX_PHOTO_SIZE)
                 self.assertIsNone(obj=validate_profile_picture(profile_picture=profile_picture))
 
             def test_profile_picture_exceeding_size_limit_raises_error(self):
+                """
+                Asserts that validating a profile picture whose size exceeds the maximal allowed photo size raises a ValidationError about the file size.
+                """
                 profile_picture = SimpleNamespace(size=django_settings.MAX_PHOTO_SIZE + 1)
                 with self.assertRaises(ValidationError) as cm:
                     validate_profile_picture(profile_picture=profile_picture)

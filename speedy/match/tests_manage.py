@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+Django's command-line utility for running Speedy Match tests, using the settings of the environment defined by TESTS_ENVIRONMENT.
+"""
 import os
 import sys
 from pathlib import Path

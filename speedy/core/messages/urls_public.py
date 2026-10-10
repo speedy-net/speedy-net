@@ -1,3 +1,6 @@
+"""
+URL configuration for the public messages pages (sending a message to a user) of the messages app of Speedy Core.
+"""
 from django.urls import path
 
 from . import views

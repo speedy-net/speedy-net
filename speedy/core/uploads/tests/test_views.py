@@ -1,3 +1,6 @@
+"""
+Test cases for the upload view of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -19,9 +22,21 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UploadViewOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the AJAX image upload view and the restrictions on deleting File/Image querysets.
+
+            Methods:
+                test_visitor_has_no_access(self): Asserts an anonymous visitor is redirected to login when trying to upload a file.
+                test_upload_file(self): Asserts a logged-in user can upload a file, which creates an Image instance with the expected hashed name, size and owner, and returns the expected JSON response.
+                test_cannot_delete_files_with_queryset_delete(self): Asserts that calling delete() on the File queryset (in various forms) raises NotImplementedError.
+                test_cannot_delete_images_with_queryset_delete(self): Asserts that calling delete() on the Image queryset (in various forms) raises NotImplementedError.
+            """
             page_url = '/uploads/upload/'
 
             def set_up(self):
+                """
+                Creates two active users and a temporary file to be used as upload data.
+                """
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.other_user = ActiveUserFactory()
@@ -35,11 +50,17 @@ if (django_settings.TESTS):
                 self.upload_file.close()
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts an anonymous visitor is redirected to the login page when trying to upload a file.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.page_url, data=self.data)
                 self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
 
             def test_upload_file(self):
+                """
+                Asserts a logged-in user can upload a file, which creates an Image instance with the expected hashed name, size and owner, and returns a JSON response describing the created file.
+                """
                 initial_images_count = Image.objects.count()
                 initial_images_id = list(Image.objects.all().values_list('id', flat=True))
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -66,6 +87,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=image.owner_id, second=self.user.id)
 
             def test_cannot_delete_files_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on the File queryset, directly or via all()/filter()/exclude(), always raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     File.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -80,6 +104,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_delete_images_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on the Image queryset, directly or via all()/filter()/exclude(), always raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     Image.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")

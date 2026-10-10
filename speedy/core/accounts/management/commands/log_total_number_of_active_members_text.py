@@ -1,3 +1,6 @@
+"""
+Management command which logs the total number of active members as text.
+"""
 import logging
 
 from django.conf import settings as django_settings
@@ -34,9 +37,8 @@ class Command(BaseCommand):
         This method calls a utility function to retrieve the total number of active members
         and logs the result at the debug level.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         site = Site.objects.get_current()
         logger.debug("{site_name}::log_total_number_of_active_members_text::{total_number_of_active_members_text}".format(

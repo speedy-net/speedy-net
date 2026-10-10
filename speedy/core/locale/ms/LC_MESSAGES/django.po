@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:6 .\base\tests\test_translations.py:15
+#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04 19:33+0300\n"
+"POT-Creation-Date: 2026-10-10 12:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -856,32 +856,32 @@ msgstr ""
 "%(site_name)s. Masukkan halaman ini untuk menukar tetapan pemberitahuan anda "
 "atau menarik diri:"
 
-#: .\__translations\__translations.py:9
+#: .\__translations\__translations.py:12
 msgid "Enter a valid email address."
 msgstr "Masukkan alamat e-mel yang sah."
 
-#: .\__translations\__translations.py:10
+#: .\__translations\__translations.py:13
 msgid "Email address"
 msgstr "Alamat e-mel"
 
-#: .\__translations\__translations.py:11 .\accounts\models.py:1293
+#: .\__translations\__translations.py:14 .\accounts\models.py:1712
 msgid "email address"
 msgstr "alamat e-mel"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:15
 msgid "Email address:"
 msgstr "alamat e-mel:"
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:16
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "E-mel"
 
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:17
 msgid "Value must be valid JSON."
 msgstr "Nilai mestilah JSON yang sah."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:18
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -890,43 +890,43 @@ msgstr ""
 "Sila masukkan %(username)s dan kata laluan yang betul. Ambil perhatian "
 "bahawa kedua-dua medan mungkin sensitif huruf besar."
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:22
 msgid "Message"
 msgstr "Mesej"
 
-#: .\__translations\__translations.py:21
+#: .\__translations\__translations.py:24
 msgid "Friendship Request"
 msgstr "Permintaan Persahabatan"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:25
 msgid "Friendship Requests"
 msgstr "Permintaan Persahabatan"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:27
 msgid "Friend"
 msgstr "kawan"
 
-#: .\__translations\__translations.py:25 .\accounts\models.py:798
+#: .\__translations\__translations.py:28 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "Kawan-kawan"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:30
 msgid "Following Relationship"
 msgstr "Mengikuti Perhubungan"
 
-#: .\__translations\__translations.py:28
+#: .\__translations\__translations.py:31
 msgid "Following Relationships"
 msgstr "Mengikuti Perhubungan"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:33
 msgid "Blocker Relationship"
 msgstr "Hubungan Penghalang"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:34
 msgid "Blocked Relationships"
 msgstr "Hubungan Disekat"
 
-#: .\__translations\__translations.py:36
+#: .\__translations\__translations.py:39
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -941,467 +941,449 @@ msgstr[1] ""
 "Senarai mengandungi %(show_value)d item, ia hendaklah mengandungi tidak "
 "lebih daripada %(limit_value)d."
 
-#: .\__translations\__translations.py:43
+#: .\__translations\__translations.py:46
 msgctxt "female"
-msgid "username (slug)"
-msgstr "nama pengguna (slug)"
-
-#: .\__translations\__translations.py:44
-msgctxt "male"
-msgid "username (slug)"
-msgstr "nama pengguna (slug)"
-
-#: .\__translations\__translations.py:45
-msgctxt "other"
 msgid "username (slug)"
 msgstr "nama pengguna (slug)"
 
 #: .\__translations\__translations.py:47
-msgctxt "female"
-msgid "Update your profile picture"
-msgstr "Kemas kini gambar profil anda"
+msgctxt "male"
+msgid "username (slug)"
+msgstr "nama pengguna (slug)"
 
 #: .\__translations\__translations.py:48
-msgctxt "male"
-msgid "Update your profile picture"
-msgstr "Kemas kini gambar profil anda"
-
-#: .\__translations\__translations.py:49
 msgctxt "other"
+msgid "username (slug)"
+msgstr "nama pengguna (slug)"
+
+#: .\__translations\__translations.py:50
+msgctxt "female"
 msgid "Update your profile picture"
 msgstr "Kemas kini gambar profil anda"
 
 #: .\__translations\__translations.py:51
-msgctxt "female"
-msgid "Save Changes"
-msgstr "Simpan Perubahan"
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Kemas kini gambar profil anda"
 
 #: .\__translations\__translations.py:52
-msgctxt "male"
-msgid "Save Changes"
-msgstr "Simpan Perubahan"
-
-#: .\__translations\__translations.py:53
 msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Kemas kini gambar profil anda"
+
+#: .\__translations\__translations.py:54
+msgctxt "female"
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
 #: .\__translations\__translations.py:55
-msgctxt "female"
-msgid "You can't change your username."
-msgstr "Anda tidak boleh menukar nama pengguna anda."
+msgctxt "male"
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
 
 #: .\__translations\__translations.py:56
-msgctxt "male"
-msgid "You can't change your username."
-msgstr "Anda tidak boleh menukar nama pengguna anda."
-
-#: .\__translations\__translations.py:57
 msgctxt "other"
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: .\__translations\__translations.py:58
+msgctxt "female"
 msgid "You can't change your username."
 msgstr "Anda tidak boleh menukar nama pengguna anda."
 
 #: .\__translations\__translations.py:59
-#, python-brace-format
-msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "Aktifkan akaun {site_name} anda"
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Anda tidak boleh menukar nama pengguna anda."
 
 #: .\__translations\__translations.py:60
-#, python-brace-format
-msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "Aktifkan akaun {site_name} anda"
-
-#: .\__translations\__translations.py:61
-#, python-brace-format
 msgctxt "other"
+msgid "You can't change your username."
+msgstr "Anda tidak boleh menukar nama pengguna anda."
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "female"
 msgid "Activate your {site_name} account"
 msgstr "Aktifkan akaun {site_name} anda"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
-msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "Nyahaktifkan akaun {site_name} anda"
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "Aktifkan akaun {site_name} anda"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
-msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "Nyahaktifkan akaun {site_name} anda"
-
-#: .\__translations\__translations.py:65
-#, python-brace-format
 msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "Aktifkan akaun {site_name} anda"
+
+#: .\__translations\__translations.py:66
+#, python-brace-format
+msgctxt "female"
 msgid "Deactivate your {site_name} account"
 msgstr "Nyahaktifkan akaun {site_name} anda"
 
 #: .\__translations\__translations.py:67
-msgctxt "female"
-msgid "Add"
-msgstr "Tambah"
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "Nyahaktifkan akaun {site_name} anda"
 
 #: .\__translations\__translations.py:68
-msgctxt "male"
-msgid "Add"
-msgstr "Tambah"
-
-#: .\__translations\__translations.py:69
+#, python-brace-format
 msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "Nyahaktifkan akaun {site_name} anda"
+
+#: .\__translations\__translations.py:70
+msgctxt "female"
 msgid "Add"
 msgstr "Tambah"
 
 #: .\__translations\__translations.py:71
-msgctxt "female"
-msgid "Where do I live?"
-msgstr "Di mana saya tinggal?"
+msgctxt "male"
+msgid "Add"
+msgstr "Tambah"
 
 #: .\__translations\__translations.py:72
-msgctxt "male"
-msgid "Where do I live?"
-msgstr "Di mana saya tinggal?"
-
-#: .\__translations\__translations.py:73
 msgctxt "other"
+msgid "Add"
+msgstr "Tambah"
+
+#: .\__translations\__translations.py:74
+msgctxt "female"
 msgid "Where do I live?"
 msgstr "Di mana saya tinggal?"
 
 #: .\__translations\__translations.py:75
-msgctxt "female"
-msgid "Where do you live?"
-msgstr "awak tinggal kat mana?"
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Di mana saya tinggal?"
 
 #: .\__translations\__translations.py:76
-msgctxt "male"
-msgid "Where do you live?"
-msgstr "awak tinggal kat mana?"
-
-#: .\__translations\__translations.py:77
 msgctxt "other"
+msgid "Where do I live?"
+msgstr "Di mana saya tinggal?"
+
+#: .\__translations\__translations.py:78
+msgctxt "female"
 msgid "Where do you live?"
 msgstr "awak tinggal kat mana?"
 
 #: .\__translations\__translations.py:79
-msgctxt "female"
-msgid "Please write where you live."
-msgstr "Sila tulis di mana anda tinggal."
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "awak tinggal kat mana?"
 
 #: .\__translations\__translations.py:80
-msgctxt "male"
-msgid "Please write where you live."
-msgstr "Sila tulis di mana anda tinggal."
-
-#: .\__translations\__translations.py:81
 msgctxt "other"
+msgid "Where do you live?"
+msgstr "awak tinggal kat mana?"
+
+#: .\__translations\__translations.py:82
+msgctxt "female"
 msgid "Please write where you live."
 msgstr "Sila tulis di mana anda tinggal."
 
 #: .\__translations\__translations.py:83
-msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (hanya makan tumbuhan dan kulat)"
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Sila tulis di mana anda tinggal."
 
 #: .\__translations\__translations.py:84
-msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (hanya makan tumbuhan dan kulat)"
-
-#: .\__translations\__translations.py:85
 msgctxt "other"
+msgid "Please write where you live."
+msgstr "Sila tulis di mana anda tinggal."
+
+#: .\__translations\__translations.py:86
+msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (hanya makan tumbuhan dan kulat)"
 
 #: .\__translations\__translations.py:87
-msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (tidak makan ikan dan daging)"
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (hanya makan tumbuhan dan kulat)"
 
 #: .\__translations\__translations.py:88
-msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (tidak makan ikan dan daging)"
-
-#: .\__translations\__translations.py:89
 msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (hanya makan tumbuhan dan kulat)"
+
+#: .\__translations\__translations.py:90
+msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarian (tidak makan ikan dan daging)"
 
 #: .\__translations\__translations.py:91
-msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (makan haiwan)"
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (tidak makan ikan dan daging)"
 
 #: .\__translations\__translations.py:92
-msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (makan haiwan)"
-
-#: .\__translations\__translations.py:93
 msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarian (tidak makan ikan dan daging)"
+
+#: .\__translations\__translations.py:94
+msgctxt "female"
 msgid "Carnist (eats animals)"
 msgstr "Carnist (makan haiwan)"
 
 #: .\__translations\__translations.py:95
-msgctxt "female"
-msgid "Vegan"
-msgstr "Vegan"
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (makan haiwan)"
 
 #: .\__translations\__translations.py:96
-msgctxt "male"
-msgid "Vegan"
-msgstr "Vegan"
-
-#: .\__translations\__translations.py:97
 msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (makan haiwan)"
+
+#: .\__translations\__translations.py:98
+msgctxt "female"
 msgid "Vegan"
 msgstr "Vegan"
 
 #: .\__translations\__translations.py:99
-msgctxt "female"
-msgid "Vegetarian"
-msgstr "Vegetarian"
+msgctxt "male"
+msgid "Vegan"
+msgstr "Vegan"
 
 #: .\__translations\__translations.py:100
-msgctxt "male"
-msgid "Vegetarian"
-msgstr "Vegetarian"
-
-#: .\__translations\__translations.py:101
 msgctxt "other"
+msgid "Vegan"
+msgstr "Vegan"
+
+#: .\__translations\__translations.py:102
+msgctxt "female"
 msgid "Vegetarian"
 msgstr "Vegetarian"
 
 #: .\__translations\__translations.py:103
-msgctxt "female"
-msgid "Carnist"
-msgstr "Carnist"
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Vegetarian"
 
 #: .\__translations\__translations.py:104
-msgctxt "male"
-msgid "Carnist"
-msgstr "Carnist"
-
-#: .\__translations\__translations.py:105
 msgctxt "other"
+msgid "Vegetarian"
+msgstr "Vegetarian"
+
+#: .\__translations\__translations.py:106
+msgctxt "female"
 msgid "Carnist"
 msgstr "Carnist"
 
 #: .\__translations\__translations.py:107
-msgctxt "female"
-msgid "Not smoking"
-msgstr "Tidak merokok"
+msgctxt "male"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:108
-msgctxt "male"
-msgid "Not smoking"
-msgstr "Tidak merokok"
-
-#: .\__translations\__translations.py:109
 msgctxt "other"
+msgid "Carnist"
+msgstr "Carnist"
+
+#: .\__translations\__translations.py:110
+msgctxt "female"
 msgid "Not smoking"
 msgstr "Tidak merokok"
 
 #: .\__translations\__translations.py:111
-msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "Merokok sekali-sekala"
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Tidak merokok"
 
 #: .\__translations\__translations.py:112
-msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "Merokok sekali-sekala"
-
-#: .\__translations\__translations.py:113
 msgctxt "other"
+msgid "Not smoking"
+msgstr "Tidak merokok"
+
+#: .\__translations\__translations.py:114
+msgctxt "female"
 msgid "Smoking occasionally"
 msgstr "Merokok sekali-sekala"
 
 #: .\__translations\__translations.py:115
-msgctxt "female"
-msgid "Smoking"
-msgstr "Merokok"
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Merokok sekali-sekala"
 
 #: .\__translations\__translations.py:116
-msgctxt "male"
-msgid "Smoking"
-msgstr "Merokok"
-
-#: .\__translations\__translations.py:117
 msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Merokok sekali-sekala"
+
+#: .\__translations\__translations.py:118
+msgctxt "female"
 msgid "Smoking"
 msgstr "Merokok"
 
 #: .\__translations\__translations.py:119
-msgctxt "female"
-msgid "Single"
-msgstr "Bujang"
+msgctxt "male"
+msgid "Smoking"
+msgstr "Merokok"
 
 #: .\__translations\__translations.py:120
-msgctxt "male"
-msgid "Single"
-msgstr "Bujang"
-
-#: .\__translations\__translations.py:121
 msgctxt "other"
+msgid "Smoking"
+msgstr "Merokok"
+
+#: .\__translations\__translations.py:122
+msgctxt "female"
 msgid "Single"
 msgstr "Bujang"
 
 #: .\__translations\__translations.py:123
-msgctxt "female"
-msgid "Divorced"
-msgstr "Bercerai"
+msgctxt "male"
+msgid "Single"
+msgstr "Bujang"
 
 #: .\__translations\__translations.py:124
-msgctxt "male"
-msgid "Divorced"
-msgstr "Bercerai"
-
-#: .\__translations\__translations.py:125
 msgctxt "other"
+msgid "Single"
+msgstr "Bujang"
+
+#: .\__translations\__translations.py:126
+msgctxt "female"
 msgid "Divorced"
 msgstr "Bercerai"
 
 #: .\__translations\__translations.py:127
-msgctxt "female"
-msgid "Widowed"
-msgstr "Janda"
+msgctxt "male"
+msgid "Divorced"
+msgstr "Bercerai"
 
 #: .\__translations\__translations.py:128
-msgctxt "male"
-msgid "Widowed"
-msgstr "Janda"
-
-#: .\__translations\__translations.py:129
 msgctxt "other"
+msgid "Divorced"
+msgstr "Bercerai"
+
+#: .\__translations\__translations.py:130
+msgctxt "female"
 msgid "Widowed"
 msgstr "Janda"
 
 #: .\__translations\__translations.py:131
-msgctxt "female"
-msgid "In a relationship"
-msgstr "Dalam perhubungan"
+msgctxt "male"
+msgid "Widowed"
+msgstr "Janda"
 
 #: .\__translations\__translations.py:132
-msgctxt "male"
-msgid "In a relationship"
-msgstr "Dalam perhubungan"
-
-#: .\__translations\__translations.py:133
 msgctxt "other"
+msgid "Widowed"
+msgstr "Janda"
+
+#: .\__translations\__translations.py:134
+msgctxt "female"
 msgid "In a relationship"
 msgstr "Dalam perhubungan"
 
 #: .\__translations\__translations.py:135
-msgctxt "female"
-msgid "In an open relationship"
-msgstr "Dalam hubungan terbuka"
+msgctxt "male"
+msgid "In a relationship"
+msgstr "Dalam perhubungan"
 
 #: .\__translations\__translations.py:136
-msgctxt "male"
-msgid "In an open relationship"
-msgstr "Dalam hubungan terbuka"
-
-#: .\__translations\__translations.py:137
 msgctxt "other"
+msgid "In a relationship"
+msgstr "Dalam perhubungan"
+
+#: .\__translations\__translations.py:138
+msgctxt "female"
 msgid "In an open relationship"
 msgstr "Dalam hubungan terbuka"
 
 #: .\__translations\__translations.py:139
-msgctxt "female"
-msgid "It's complicated"
-msgstr "Ia rumit"
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "Dalam hubungan terbuka"
 
 #: .\__translations\__translations.py:140
-msgctxt "male"
-msgid "It's complicated"
-msgstr "Ia rumit"
-
-#: .\__translations\__translations.py:141
 msgctxt "other"
+msgid "In an open relationship"
+msgstr "Dalam hubungan terbuka"
+
+#: .\__translations\__translations.py:142
+msgctxt "female"
 msgid "It's complicated"
 msgstr "Ia rumit"
 
 #: .\__translations\__translations.py:143
-msgctxt "female"
-msgid "Separated"
-msgstr "Berpisah"
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Ia rumit"
 
 #: .\__translations\__translations.py:144
-msgctxt "male"
-msgid "Separated"
-msgstr "Berpisah"
-
-#: .\__translations\__translations.py:145
 msgctxt "other"
+msgid "It's complicated"
+msgstr "Ia rumit"
+
+#: .\__translations\__translations.py:146
+msgctxt "female"
 msgid "Separated"
 msgstr "Berpisah"
 
 #: .\__translations\__translations.py:147
-msgctxt "female"
-msgid "Engaged"
-msgstr "Bertunang"
+msgctxt "male"
+msgid "Separated"
+msgstr "Berpisah"
 
 #: .\__translations\__translations.py:148
-msgctxt "male"
-msgid "Engaged"
-msgstr "Bertunang"
-
-#: .\__translations\__translations.py:149
 msgctxt "other"
+msgid "Separated"
+msgstr "Berpisah"
+
+#: .\__translations\__translations.py:150
+msgctxt "female"
 msgid "Engaged"
 msgstr "Bertunang"
 
 #: .\__translations\__translations.py:151
-msgctxt "female"
-msgid "Married"
-msgstr "dah kahwin"
+msgctxt "male"
+msgid "Engaged"
+msgstr "Bertunang"
 
 #: .\__translations\__translations.py:152
-msgctxt "male"
-msgid "Married"
-msgstr "dah kahwin"
-
-#: .\__translations\__translations.py:153
 msgctxt "other"
+msgid "Engaged"
+msgstr "Bertunang"
+
+#: .\__translations\__translations.py:154
+msgctxt "female"
 msgid "Married"
 msgstr "dah kahwin"
 
 #: .\__translations\__translations.py:155
-msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "Kata laluan baharu anda telah disimpan."
+msgctxt "male"
+msgid "Married"
+msgstr "dah kahwin"
 
 #: .\__translations\__translations.py:156
-msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "Kata laluan baharu anda telah disimpan."
-
-#: .\__translations\__translations.py:157
 msgctxt "other"
+msgid "Married"
+msgstr "dah kahwin"
+
+#: .\__translations\__translations.py:158
+msgctxt "female"
 msgid "Your new password has been saved."
 msgstr "Kata laluan baharu anda telah disimpan."
 
 #: .\__translations\__translations.py:159
-msgctxt "female"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
-msgstr ""
-"Akaun Speedy Net dan Speedy Match anda telah dinyahaktifkan. Anda boleh "
-"mengaktifkannya semula pada bila-bila masa."
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Kata laluan baharu anda telah disimpan."
 
 #: .\__translations\__translations.py:160
-msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
-msgstr ""
-"Akaun Speedy Net dan Speedy Match anda telah dinyahaktifkan. Anda boleh "
-"mengaktifkannya semula pada bila-bila masa."
-
-#: .\__translations\__translations.py:161
 msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Kata laluan baharu anda telah disimpan."
+
+#: .\__translations\__translations.py:162
+msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
@@ -1410,28 +1392,26 @@ msgstr ""
 "mengaktifkannya semula pada bila-bila masa."
 
 #: .\__translations\__translations.py:163
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"Akaun {site_name} anda telah dinyahaktifkan. Anda boleh mengaktifkannya "
-"semula pada bila-bila masa. Akaun Speedy Net anda kekal aktif."
-
-#: .\__translations\__translations.py:164
-#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
 msgstr ""
-"Akaun {site_name} anda telah dinyahaktifkan. Anda boleh mengaktifkannya "
-"semula pada bila-bila masa. Akaun Speedy Net anda kekal aktif."
+"Akaun Speedy Net dan Speedy Match anda telah dinyahaktifkan. Anda boleh "
+"mengaktifkannya semula pada bila-bila masa."
 
-#: .\__translations\__translations.py:165
-#, python-brace-format
+#: .\__translations\__translations.py:164
 msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Akaun Speedy Net dan Speedy Match anda telah dinyahaktifkan. Anda boleh "
+"mengaktifkannya semula pada bila-bila masa."
+
+#: .\__translations\__translations.py:166
+#, python-brace-format
+msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
@@ -1440,73 +1420,73 @@ msgstr ""
 "semula pada bila-bila masa. Akaun Speedy Net anda kekal aktif."
 
 #: .\__translations\__translations.py:167
-msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "Anda telah pun mengesahkan alamat e-mel ini."
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Akaun {site_name} anda telah dinyahaktifkan. Anda boleh mengaktifkannya "
+"semula pada bila-bila masa. Akaun Speedy Net anda kekal aktif."
 
 #: .\__translations\__translations.py:168
-msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "Anda telah pun mengesahkan alamat e-mel ini."
-
-#: .\__translations\__translations.py:169
+#, python-brace-format
 msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Akaun {site_name} anda telah dinyahaktifkan. Anda boleh mengaktifkannya "
+"semula pada bila-bila masa. Akaun Speedy Net anda kekal aktif."
+
+#: .\__translations\__translations.py:170
+msgctxt "female"
 msgid "You've already confirmed this email address."
 msgstr "Anda telah pun mengesahkan alamat e-mel ini."
 
 #: .\__translations\__translations.py:171
-msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "Anda telah mengesahkan alamat e-mel anda."
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Anda telah pun mengesahkan alamat e-mel ini."
 
 #: .\__translations\__translations.py:172
-msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "Anda telah mengesahkan alamat e-mel anda."
-
-#: .\__translations\__translations.py:173
 msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Anda telah pun mengesahkan alamat e-mel ini."
+
+#: .\__translations\__translations.py:174
+msgctxt "female"
 msgid "You've confirmed your email address."
 msgstr "Anda telah mengesahkan alamat e-mel anda."
 
 #: .\__translations\__translations.py:175
-msgctxt "female"
-msgid "Send"
-msgstr "Hantar"
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Anda telah mengesahkan alamat e-mel anda."
 
 #: .\__translations\__translations.py:176
-msgctxt "male"
-msgid "Send"
-msgstr "Hantar"
-
-#: .\__translations\__translations.py:177
 msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Anda telah mengesahkan alamat e-mel anda."
+
+#: .\__translations\__translations.py:178
+msgctxt "female"
 msgid "Send"
 msgstr "Hantar"
 
 #: .\__translations\__translations.py:179
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-"Anda sudah mempunyai {0} rakan. Anda tidak boleh mempunyai lebih daripada "
-"{1} rakan di Speedy Net. Sila alih keluar rakan sebelum anda meneruskan."
+msgctxt "male"
+msgid "Send"
+msgstr "Hantar"
 
 #: .\__translations\__translations.py:180
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-"Anda sudah mempunyai {0} rakan. Anda tidak boleh mempunyai lebih daripada "
-"{1} rakan di Speedy Net. Sila alih keluar rakan sebelum anda meneruskan."
-
-#: .\__translations\__translations.py:181
-#, python-brace-format
 msgctxt "other"
+msgid "Send"
+msgstr "Hantar"
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
@@ -1516,40 +1496,27 @@ msgstr ""
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
-"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
-"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
-"sebelum anda meneruskan."
+"Anda sudah mempunyai {0} rakan. Anda tidak boleh mempunyai lebih daripada "
+"{1} rakan di Speedy Net. Sila alih keluar rakan sebelum anda meneruskan."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "other"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
-"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
-"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
-"sebelum anda meneruskan."
-
-#: .\__translations\__translations.py:185
-#, python-brace-format
-msgctxt "female_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
-"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
-"sebelum anda meneruskan."
+"Anda sudah mempunyai {0} rakan. Anda tidak boleh mempunyai lebih daripada "
+"{1} rakan di Speedy Net. Sila alih keluar rakan sebelum anda meneruskan."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "female_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1560,7 +1527,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "male_male"
+msgctxt "female_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1571,7 +1538,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "male_other"
+msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1582,7 +1549,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "other_female"
+msgctxt "male_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1593,7 +1560,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "other_male"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1604,7 +1571,18 @@ msgstr ""
 
 #: .\__translations\__translations.py:191
 #, python-brace-format
-msgctxt "other_other"
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
+"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
+"sebelum anda meneruskan."
+
+#: .\__translations\__translations.py:192
+#, python-brace-format
+msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1614,177 +1592,199 @@ msgstr ""
 "sebelum anda meneruskan."
 
 #: .\__translations\__translations.py:193
-msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
+"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
+"sebelum anda meneruskan."
 
 #: .\__translations\__translations.py:194
-msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+#, python-brace-format
+msgctxt "other_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih "
+"daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan "
+"sebelum anda meneruskan."
 
-#: .\__translations\__translations.py:195
-msgctxt "other"
+#: .\__translations\__translations.py:196
+msgctxt "female"
 msgid "You cannot be friends with yourself."
 msgstr "Anda tidak boleh berkawan dengan diri sendiri."
 
 #: .\__translations\__translations.py:197
-msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "Anda sudah meminta persahabatan daripada pengguna ini."
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Anda tidak boleh berkawan dengan diri sendiri."
 
 #: .\__translations\__translations.py:198
-msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "Anda sudah meminta persahabatan daripada pengguna ini."
-
-#: .\__translations\__translations.py:199
 msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+
+#: .\__translations\__translations.py:200
+msgctxt "female"
 msgid "You already requested friendship from this user."
 msgstr "Anda sudah meminta persahabatan daripada pengguna ini."
 
 #: .\__translations\__translations.py:201
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "Pengguna ini telah meminta persahabatan daripada anda."
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Anda sudah meminta persahabatan daripada pengguna ini."
 
 #: .\__translations\__translations.py:202
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "Pengguna ini telah meminta persahabatan daripada anda."
-
-#: .\__translations\__translations.py:203
 msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Anda sudah meminta persahabatan daripada pengguna ini."
+
+#: .\__translations\__translations.py:204
+msgctxt "female"
 msgid "This user already requested friendship from you."
 msgstr "Pengguna ini telah meminta persahabatan daripada anda."
 
 #: .\__translations\__translations.py:205
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Pengguna ini telah meminta persahabatan daripada anda."
+
+#: .\__translations\__translations.py:206
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Pengguna ini telah meminta persahabatan daripada anda."
+
+#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:206
+#: .\__translations\__translations.py:209
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:207
+#: .\__translations\__translations.py:210
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:208
+#: .\__translations\__translations.py:211
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:212
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:213
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:214
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:215
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:216
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "Anda sudah berkawan dengan pengguna ini."
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:218
 msgctxt "female"
-msgid "You've cancelled your friendship request."
-msgstr "Anda telah membatalkan permintaan persahabatan anda."
-
-#: .\__translations\__translations.py:216
-msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "Anda telah membatalkan permintaan persahabatan anda."
-
-#: .\__translations\__translations.py:217
-msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "Anda telah membatalkan permintaan persahabatan anda."
 
 #: .\__translations\__translations.py:219
-msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "Anda telah mengalih keluar pengguna ini daripada rakan anda."
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Anda telah membatalkan permintaan persahabatan anda."
 
 #: .\__translations\__translations.py:220
-msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "Anda telah mengalih keluar pengguna ini daripada rakan anda."
-
-#: .\__translations\__translations.py:221
 msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Anda telah membatalkan permintaan persahabatan anda."
+
+#: .\__translations\__translations.py:222
+msgctxt "female"
 msgid "You have removed this user from your friends."
 msgstr "Anda telah mengalih keluar pengguna ini daripada rakan anda."
 
 #: .\__translations\__translations.py:223
-#, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "Selamat datang ke {site_name}!"
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Anda telah mengalih keluar pengguna ini daripada rakan anda."
 
 #: .\__translations\__translations.py:224
-#, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "Selamat datang ke {site_name}!"
-
-#: .\__translations\__translations.py:225
-#, python-brace-format
 msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Anda telah mengalih keluar pengguna ini daripada rakan anda."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "Selamat datang ke {site_name}!"
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "Selamat datang ke {site_name}!"
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
-
-#: .\__translations\__translations.py:229
-#, python-brace-format
 msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "Selamat datang ke {site_name}!"
+
+#: .\__translations\__translations.py:230
+#, python-brace-format
+msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
 
 #: .\__translations\__translations.py:231
-msgctxt "female"
-msgid "Friends"
-msgstr "Kawan-kawan"
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
 
 #: .\__translations\__translations.py:232
-msgctxt "male"
-msgid "Friends"
-msgstr "Kawan-kawan"
-
-#: .\__translations\__translations.py:233
+#, python-brace-format
 msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
+
+#: .\__translations\__translations.py:234
+msgctxt "female"
 msgid "Friends"
 msgstr "Kawan-kawan"
 
 #: .\__translations\__translations.py:235
+msgctxt "male"
+msgid "Friends"
+msgstr "Kawan-kawan"
+
+#: .\__translations\__translations.py:236
+msgctxt "other"
+msgid "Friends"
+msgstr "Kawan-kawan"
+
+#: .\__translations\__translations.py:238
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1799,7 +1799,7 @@ msgstr ""
 "dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, atau mesej "
 "dengan kandungan yang sama kepada sebilangan besar orang."
 
-#: .\__translations\__translations.py:236
+#: .\__translations\__translations.py:239
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1814,7 +1814,7 @@ msgstr ""
 "dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, atau mesej "
 "dengan kandungan yang sama kepada sebilangan besar orang."
 
-#: .\__translations\__translations.py:237
+#: .\__translations\__translations.py:240
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1829,35 +1829,8 @@ msgstr ""
 "dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, atau mesej "
 "dengan kandungan yang sama kepada sebilangan besar orang."
 
-#: .\__translations\__translations.py:243
-msgctxt "female_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
-"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
-
-#: .\__translations\__translations.py:244
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
-"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
-
-#: .\__translations\__translations.py:245
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
-"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
-
 #: .\__translations\__translations.py:246
-msgctxt "male_female"
+msgctxt "female_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1866,7 +1839,7 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:247
-msgctxt "male_male"
+msgctxt "female_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1875,7 +1848,7 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:248
-msgctxt "male_other"
+msgctxt "female_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1884,7 +1857,7 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:249
-msgctxt "other_female"
+msgctxt "male_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1893,7 +1866,7 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:250
-msgctxt "other_male"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1902,7 +1875,16 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:251
-msgctxt "other_other"
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
+"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
+
+#: .\__translations\__translations.py:252
+msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1911,346 +1893,364 @@ msgstr ""
 "profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
 
 #: .\__translations\__translations.py:253
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
+"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
+
+#: .\__translations\__translations.py:254
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Pengguna ini tidak sepadan dengan profil anda, tetapi anda boleh melawati "
+"profil Speedy Net mereka. Lihat profil pengguna di Speedy Net."
+
+#: .\__translations\__translations.py:256
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:257
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
 
-#: .\__translations\__translations.py:255
+#: .\__translations\__translations.py:258
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
 
-#: .\accounts\apps.py:8
+#: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
-#: .\accounts\fields.py:12
+#: .\accounts\fields.py:27
 msgid "Only me"
 msgstr "Hanya saya"
 
-#: .\accounts\fields.py:13
+#: .\accounts\fields.py:28
 msgid "Me and my friends"
 msgstr "Saya dan kawan-kawan saya"
 
-#: .\accounts\fields.py:15
+#: .\accounts\fields.py:30
 msgid "Anyone"
 msgstr "Sesiapa sahaja"
 
-#: .\accounts\forms.py:66
+#: .\accounts\forms.py:124
 msgid "Last name (optional)"
 msgstr "Nama keluarga (pilihan)"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:279
 msgid "Your email"
 msgstr "e-mel anda"
 
-#: .\accounts\forms.py:131
+#: .\accounts\forms.py:280
 msgid "New password"
 msgstr "Kata laluan baharu"
 
-#: .\accounts\forms.py:139
+#: .\accounts\forms.py:294
 msgid "New username"
 msgstr "nama pengguna baharu"
 
-#: .\accounts\forms.py:142
+#: .\accounts\forms.py:297
 msgid "Create an account"
 msgstr "Buat akaun"
 
-#: .\accounts\forms.py:167
+#: .\accounts\forms.py:344
 msgid "Update your profile picture"
 msgstr "Kemas kini gambar profil anda"
 
-#: .\accounts\forms.py:167 .\accounts\validators.py:255
+#: .\accounts\forms.py:344 .\accounts\validators.py:507
 msgid "A profile picture is required."
 msgstr "Gambar profil diperlukan."
 
-#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-mel atau Nama Pengguna"
 
-#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Log masuk"
 
-#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Terlupa kata laluan anda?"
 
-#: .\accounts\forms.py:335
+#: .\accounts\forms.py:609
 msgid "Submit"
 msgstr "Hantar"
 
-#: .\accounts\forms.py:437
+#: .\accounts\forms.py:797
 msgid "Your password"
 msgstr "Kata laluan anda"
 
-#: .\accounts\forms.py:449
+#: .\accounts\forms.py:822
 msgid "Invalid password."
 msgstr "Kata laluan tidak sah."
 
-#: .\accounts\models.py:178
+#: .\accounts\models.py:231
 msgid "username"
 msgstr "nama pengguna"
 
-#: .\accounts\models.py:178 .\accounts\models.py:179
-#: .\accounts\validators.py:21
+#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "Nama pengguna ini telah pun diambil."
 
-#: .\accounts\models.py:179
+#: .\accounts\models.py:232
 msgid "username (slug)"
 msgstr "nama pengguna (slug)"
 
-#: .\accounts\models.py:180
+#: .\accounts\models.py:233
 msgid "photo"
 msgstr "foto"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:234
 msgid "Special username"
 msgstr "Nama pengguna khas"
 
-#: .\accounts\models.py:221 .\messages\models.py:185
+#: .\accounts\models.py:285 .\messages\models.py:215
 msgid "entity"
 msgstr "entiti"
 
-#: .\accounts\models.py:222
+#: .\accounts\models.py:286
 msgid "entities"
 msgstr "entiti"
 
-#: .\accounts\models.py:249
+#: .\accounts\models.py:343
 msgid "Slug does not parse to username."
 msgstr "Slug tidak menghuraikan kepada nama pengguna."
 
-#: .\accounts\models.py:253
+#: .\accounts\models.py:353
 msgid "Username is required."
 msgstr "Nama pengguna diperlukan."
 
-#: .\accounts\models.py:298
+#: .\accounts\models.py:404
 msgid "name"
 msgstr "nama"
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:442
 msgid "description"
 msgstr "penerangan"
 
-#: .\accounts\models.py:473
+#: .\accounts\models.py:600
 msgid "Female"
 msgstr "perempuan"
 
-#: .\accounts\models.py:474
+#: .\accounts\models.py:601
 msgid "Male"
 msgstr "jantan"
 
-#: .\accounts\models.py:475
+#: .\accounts\models.py:602
 msgid "Other"
 msgstr "Lain-lain"
 
-#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
-#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:618
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (hanya makan tumbuhan dan kulat)"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:619
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarian (tidak makan ikan dan daging)"
 
-#: .\accounts\models.py:491
+#: .\accounts\models.py:620
 msgid "Carnist (eats animals)"
 msgstr "Carnist (makan haiwan)"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:635
 msgid "Not smoking"
 msgstr "Tidak merokok"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:636
 msgid "Smoking occasionally"
 msgstr "Merokok sekali-sekala"
 
-#: .\accounts\models.py:506
+#: .\accounts\models.py:637
 msgid "Smoking"
 msgstr "Merokok"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:658
 msgid "Single"
 msgstr "Bujang"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:659
 msgid "Divorced"
 msgstr "Bercerai"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:660
 msgid "Widowed"
 msgstr "Janda"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:661
 msgid "In a relationship"
 msgstr "Dalam perhubungan"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:662
 msgid "In an open relationship"
 msgstr "Dalam hubungan terbuka"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:663
 msgid "It's complicated"
 msgstr "Ia rumit"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:664
 msgid "Separated"
 msgstr "Berpisah"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:665
 msgid "Engaged"
 msgstr "Bertunang"
 
-#: .\accounts\models.py:533
+#: .\accounts\models.py:666
 msgid "Married"
 msgstr "dah kahwin"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:677
 msgid "Notify me"
 msgstr "Beritahu saya"
 
-#: .\accounts\models.py:543
+#: .\accounts\models.py:678
 msgid "Don't notify me"
 msgstr "Jangan beritahu saya"
 
-#: .\accounts\models.py:590
+#: .\accounts\models.py:758
 msgid "first name"
 msgstr "nama pertama"
 
-#: .\accounts\models.py:593
+#: .\accounts\models.py:761
 msgid "last name"
 msgstr "nama keluarga"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:763
 msgid "I am"
 msgstr "saya"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:764
 msgid "date of birth"
 msgstr "tarikh lahir"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:765
 msgid "diet"
 msgstr "diet"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:766
 msgid "smoking status"
 msgstr "status merokok"
 
-#: .\accounts\models.py:599
+#: .\accounts\models.py:767
 msgid "relationship status"
 msgstr "status perhubungan"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:769
 msgid "Where do I live?"
 msgstr "Di mana saya tinggal?"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:776
 msgid "Who can view my birth month and day"
 msgstr "Siapa yang boleh melihat bulan dan hari kelahiran saya"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:777
 msgid "Who can view my birth year"
 msgstr "Siapa yang boleh melihat tahun lahir saya"
 
-#: .\accounts\models.py:610
+#: .\accounts\models.py:778
 msgid "On new messages"
 msgstr "Pada mesej baharu"
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:784
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Alamat IP terakhir digunakan https://ipapi.com/ masa"
 
-#: .\accounts\models.py:617
+#: .\accounts\models.py:785
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Alamat IP terakhir menggunakan hasil https://ipapi.com/ mentah"
 
-#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
 msgid "user"
 msgstr "pengguna"
 
-#: .\accounts\models.py:824
+#: .\accounts\models.py:1078
 msgid "users"
 msgstr "pengguna"
 
-#: .\accounts\models.py:870
+#: .\accounts\models.py:1137
 msgid "Superuser must be equal to staff."
 msgstr "Pengguna super mestilah sama dengan kakitangan."
 
-#: .\accounts\models.py:1278
+#: .\accounts\models.py:1691
 msgid "email"
 msgstr "emel"
 
-#: .\accounts\models.py:1279
+#: .\accounts\models.py:1692
 msgid "is confirmed"
 msgstr "disahkan"
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1693
 msgid "is primary"
 msgstr "adalah primer"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1694
 msgid "confirmation token"
 msgstr "token pengesahan"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1695
 msgid "confirmation sent"
 msgstr "pengesahan dihantar"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1696
 msgid "Who can see this email"
 msgstr "Siapa yang boleh melihat e-mel ini"
 
-#: .\accounts\models.py:1294
+#: .\accounts\models.py:1713
 msgid "email addresses"
 msgstr "alamat e-mel"
 
-#: .\accounts\models.py:1377
+#: .\accounts\models.py:1867
 msgid "User"
 msgstr "pengguna"
 
-#: .\accounts\models.py:1378
+#: .\accounts\models.py:1868
 msgid "last visit"
 msgstr "lawatan terakhir"
 
-#: .\accounts\models.py:1390
+#: .\accounts\models.py:1893
 msgid "Today"
 msgstr "Hari ini"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1895
 msgid "Yesterday"
 msgstr "Semalam"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1897
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Pada {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1899
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} lalu"
 
-#: .\accounts\validators.py:39
+#: .\accounts\validators.py:59
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -2258,7 +2258,7 @@ msgstr ""
 "Nama pengguna mesti bermula dengan 4 atau lebih huruf dan mungkin "
 "mengandungi huruf, angka atau sempang."
 
-#: .\accounts\validators.py:41
+#: .\accounts\validators.py:61
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -2266,7 +2266,7 @@ msgstr ""
 "Nama pengguna mesti bermula dengan 4 atau lebih huruf, selepas itu boleh "
 "menjadi sebarang nombor digit. Anda boleh menambah sempang antara perkataan."
 
-#: .\accounts\validators.py:47
+#: .\accounts\validators.py:71
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2281,7 +2281,7 @@ msgstr[1] ""
 "Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
 "abjad angka (ia mempunyai %(show_value)d)."
 
-#: .\accounts\validators.py:58
+#: .\accounts\validators.py:94
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2296,7 +2296,7 @@ msgstr[1] ""
 "Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara abjad "
 "angka (ia mempunyai %(show_value)d)."
 
-#: .\accounts\validators.py:69
+#: .\accounts\validators.py:117
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2311,7 +2311,7 @@ msgstr[1] ""
 "Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
 "(ia mempunyai %(show_value)d)."
 
-#: .\accounts\validators.py:80
+#: .\accounts\validators.py:140
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2326,7 +2326,7 @@ msgstr[1] ""
 "Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara (ia "
 "mempunyai %(show_value)d)."
 
-#: .\accounts\validators.py:104
+#: .\accounts\validators.py:195
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2341,7 +2341,7 @@ msgstr[1] ""
 "Kata laluan ini terlalu pendek. Ia mesti mengandungi sekurang-kurangnya "
 "%(min_length)d aksara."
 
-#: .\accounts\validators.py:114
+#: .\accounts\validators.py:211
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
@@ -2350,7 +2350,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d aksara."
 
-#: .\accounts\validators.py:135
+#: .\accounts\validators.py:255
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2363,7 +2363,7 @@ msgstr[1] ""
 "Kata laluan ini terlalu panjang. Ia mesti mengandungi paling banyak "
 "%(max_length)d aksara."
 
-#: .\accounts\validators.py:145
+#: .\accounts\validators.py:271
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
@@ -2372,7 +2372,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Kata laluan anda mesti mengandungi paling banyak %(max_length)d aksara."
 
-#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#: .\accounts\validators.py:314 .\accounts\validators.py:325
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2381,30 +2381,30 @@ msgstr ""
 "Kata laluan anda mesti mengandungi sekurang-kurangnya "
 "%(min_unique_characters)d aksara unik."
 
-#: .\accounts\validators.py:212 .\accounts\validators.py:219
+#: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
 msgstr "Medan ini tidak boleh batal."
 
-#: .\accounts\validators.py:214
+#: .\accounts\validators.py:420
 msgid "This field cannot be blank."
 msgstr "Medan ini tidak boleh kosong."
 
-#: .\accounts\validators.py:226 .\accounts\validators.py:233
+#: .\accounts\validators.py:446 .\accounts\validators.py:460
 msgid "Enter a valid date."
 msgstr "Masukkan tarikh yang sah."
 
-#: .\accounts\validators.py:246
+#: .\accounts\validators.py:482
 msgid "This email is already in use."
 msgstr "E-mel ini sudah digunakan."
 
-#: .\accounts\validators.py:257
+#: .\accounts\validators.py:509
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Saiz fail gambar ini terlalu besar. Saiz fail maksimum yang dibenarkan ialah "
 "30 MB."
 
-#: .\accounts\validators.py:279 .\accounts\validators.py:298
+#: .\accounts\validators.py:542 .\accounts\validators.py:561
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2412,24 +2412,24 @@ msgstr ""
 "Anda tidak boleh menggunakan format ini untuk gambar profil anda. Hanya "
 "format JPEG atau PNG diterima."
 
-#: .\accounts\views.py:299
+#: .\accounts\views.py:574
 msgid "Invalid confirmation link."
 msgstr "Pautan pengesahan tidak sah."
 
-#: .\accounts\views.py:324 .\accounts\views.py:340
+#: .\accounts\views.py:624 .\accounts\views.py:673
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Mesej pengesahan telah dihantar ke {email_address}"
 
-#: .\accounts\views.py:355
+#: .\accounts\views.py:721
 msgid "The email address was deleted."
 msgstr "Alamat e-mel telah dipadamkan."
 
-#: .\accounts\views.py:371
+#: .\accounts\views.py:770
 msgid "You have made this email address primary."
 msgstr "Anda telah menjadikan alamat e-mel ini utama."
 
-#: .\admin\views.py:72
+#: .\admin\views.py:102
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2451,7 +2451,7 @@ msgstr ""
 "lapan bulan terakhir dan {total_number_of_members_in_the_last_two_years} "
 "ahli memasuki tapak dalam dua tahun lepas."
 
-#: .\admin\views.py:118
+#: .\admin\views.py:148
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2490,7 +2490,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} ahli mendaftar "
 "sebelum 1 Ogos 2019."
 
-#: .\admin\views.py:138
+#: .\admin\views.py:168
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2499,136 +2499,136 @@ msgstr ""
 "Pentadbir: {total_number_of_members_registered_in_year} ahli berdaftar di "
 "{year}."
 
-#: .\base\apps.py:13
+#: .\base\apps.py:28
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:17
+#: .\base\fields.py:34
 msgid "ID"
 msgstr "ID"
 
-#: .\base\utils.py:417
+#: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
 msgstr "None "
 
-#: .\base\validators.py:5 .\base\validators.py:6
+#: .\base\validators.py:8 .\base\validators.py:9
 msgid "id contains illegal characters."
 msgstr "id mengandungi aksara haram."
 
-#: .\base\views.py:57
+#: .\base\views.py:102
 msgid "Changes saved."
 msgstr "Perubahan disimpan."
 
-#: .\blocks\managers.py:30 .\blocks\models.py:43
+#: .\blocks\managers.py:64 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Pengguna tidak boleh menyekat diri mereka sendiri."
 
-#: .\blocks\models.py:23
+#: .\blocks\models.py:26
 msgid "blocked user"
 msgstr "pengguna disekat"
 
-#: .\blocks\models.py:28
+#: .\blocks\models.py:31
 msgid "block"
 msgstr "blok"
 
-#: .\blocks\models.py:29
+#: .\blocks\models.py:32
 msgid "user blocks"
 msgstr "sekatan pengguna"
 
-#: .\blocks\views.py:19
+#: .\blocks\views.py:52
 msgid "You have blocked {}."
 msgstr "Anda telah menyekat {}."
 
-#: .\blocks\views.py:31
+#: .\blocks\views.py:94
 msgid "You have unblocked {}."
 msgstr "Anda telah menyahsekat {}."
 
-#: .\contact_by_form\apps.py:8
+#: .\contact_by_form\apps.py:19
 msgid "Contact By Form"
 msgstr "Hubungi Melalui Borang"
 
-#: .\contact_by_form\forms.py:14
+#: .\contact_by_form\forms.py:29
 msgid "Type the number \"17\""
 msgstr "Taip nombor \"17\""
 
-#: .\contact_by_form\forms.py:41
+#: .\contact_by_form\forms.py:62
 msgid "Send"
 msgstr "Hantar"
 
-#: .\contact_by_form\forms.py:47
+#: .\contact_by_form\forms.py:75
 msgid "Please contact us by email."
 msgstr "Sila hubungi kami melalui e-mel."
 
-#: .\contact_by_form\forms.py:53
+#: .\contact_by_form\forms.py:88
 msgid "Not 17."
 msgstr "Bukan 17."
 
-#: .\contact_by_form\models.py:33
+#: .\contact_by_form\models.py:37
 msgid "Feedback"
 msgstr "Maklum balas"
 
-#: .\contact_by_form\models.py:34
+#: .\contact_by_form\models.py:38
 msgid "Abuse (User)"
 msgstr "Penyalahgunaan (Pengguna)"
 
-#: .\contact_by_form\models.py:35
+#: .\contact_by_form\models.py:39
 msgid "Abuse (Photo)"
 msgstr "Penyalahgunaan (Foto)"
 
-#: .\contact_by_form\models.py:38 .\messages\models.py:156
+#: .\contact_by_form\models.py:42 .\messages\models.py:186
 msgid "sender"
 msgstr "penghantar"
 
-#: .\contact_by_form\models.py:39
+#: .\contact_by_form\models.py:43
 msgid "your name"
 msgstr "nama awak"
 
-#: .\contact_by_form\models.py:40
+#: .\contact_by_form\models.py:44
 msgid "your email"
 msgstr "e-mel anda"
 
-#: .\contact_by_form\models.py:41
+#: .\contact_by_form\models.py:45
 msgid "type"
 msgstr "taip"
 
-#: .\contact_by_form\models.py:42
+#: .\contact_by_form\models.py:46
 msgid "your message"
 msgstr "mesej anda"
 
-#: .\contact_by_form\models.py:44
+#: .\contact_by_form\models.py:48
 msgid "reported entity"
 msgstr "entiti yang dilaporkan"
 
-#: .\contact_by_form\models.py:45
+#: .\contact_by_form\models.py:49
 msgid "reported photo"
 msgstr "foto yang dilaporkan"
 
-#: .\contact_by_form\models.py:48
+#: .\contact_by_form\models.py:52
 msgid "feedback"
 msgstr "maklum balas"
 
-#: .\contact_by_form\models.py:49
+#: .\contact_by_form\models.py:53
 msgid "feedbacks"
 msgstr "maklum balas"
 
-#: .\friends\views.py:189
+#: .\friends\views.py:325
 msgid "Friendship request sent."
 msgstr "Permintaan persahabatan dihantar."
 
-#: .\friends\views.py:204
+#: .\friends\views.py:349
 msgid "No friendship request."
 msgstr "Tiada permintaan persahabatan."
 
-#: .\friends\views.py:243
+#: .\friends\views.py:419
 msgid "Friendship request accepted."
 msgstr "Permintaan persahabatan diterima."
 
-#: .\friends\views.py:261
+#: .\friends\views.py:446
 msgid "Friendship request rejected."
 msgstr "Permintaan persahabatan ditolak."
 
-#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\messages\apps.py:14 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
@@ -2636,239 +2636,239 @@ msgstr "Permintaan persahabatan ditolak."
 msgid "Messages"
 msgstr "Mesej"
 
-#: .\messages\models.py:29
+#: .\messages\models.py:32
 msgid "site"
 msgstr "tapak"
 
-#: .\messages\models.py:30
+#: .\messages\models.py:33
 msgid "participant 1"
 msgstr "peserta 1"
 
-#: .\messages\models.py:31
+#: .\messages\models.py:34
 msgid "participant 2"
 msgstr "peserta 2"
 
-#: .\messages\models.py:32
+#: .\messages\models.py:35
 msgid "participants"
 msgstr "peserta"
 
-#: .\messages\models.py:33
+#: .\messages\models.py:36
 msgid "is group chat"
 msgstr "ialah sembang kumpulan"
 
-#: .\messages\models.py:34
+#: .\messages\models.py:37
 msgid "last message"
 msgstr "mesej terakhir"
 
-#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+#: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
 msgstr "berbual"
 
-#: .\messages\models.py:68
+#: .\messages\models.py:95
 msgid "chats"
 msgstr "sembang"
 
-#: .\messages\models.py:77
+#: .\messages\models.py:108
 msgid "None"
 msgstr "tiada"
 
-#: .\messages\models.py:157 .\messages\models.py:162
+#: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
 msgstr "mesej"
 
-#: .\messages\models.py:163
+#: .\messages\models.py:193
 msgid "messages"
 msgstr "mesej"
 
-#: .\messages\models.py:191
+#: .\messages\models.py:221
 msgid "read mark"
 msgstr "tanda baca"
 
-#: .\messages\models.py:192
+#: .\messages\models.py:222
 msgid "read marks"
 msgstr "membaca markah"
 
-#: .\settings\base.py:196
+#: .\settings\base.py:226
 msgid "English"
 msgstr "Inggeris"
 
-#: .\settings\base.py:197
+#: .\settings\base.py:227
 msgid "Hebrew"
 msgstr "bahasa Ibrani"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:76
 msgid "French"
 msgstr "Perancis"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:77
 msgid "German"
 msgstr "Jerman"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:78
 msgid "Spanish"
 msgstr "bahasa Sepanyol"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:79
 msgid "Portuguese"
 msgstr "Portugis"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:80
 msgid "Italian"
 msgstr "Itali"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:81
 msgid "Dutch"
 msgstr "Belanda"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:82
 msgid "Japanese"
 msgstr "Jepun"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:83
 msgid "Russian"
 msgstr "bahasa Rusia"
 
-#: .\settings\base_with_login.py:73
+#: .\settings\base_with_login.py:84
 msgid "Chinese"
 msgstr "cina"
 
-#: .\settings\base_with_login.py:74
+#: .\settings\base_with_login.py:85
 msgid "Polish"
 msgstr "Poland"
 
-#: .\settings\base_with_login.py:75
+#: .\settings\base_with_login.py:86
 msgid "Persian"
 msgstr "Parsi"
 
-#: .\settings\base_with_login.py:79
+#: .\settings\base_with_login.py:90
 msgid "Korean"
 msgstr "Korea"
 
-#: .\settings\base_with_login.py:80
+#: .\settings\base_with_login.py:91
 msgid "Arabic"
 msgstr "bahasa arab"
 
-#: .\settings\base_with_login.py:81
+#: .\settings\base_with_login.py:92
 msgid "Indonesian"
 msgstr "Indonesia"
 
-#: .\settings\base_with_login.py:82
+#: .\settings\base_with_login.py:93
 msgid "Ukrainian"
 msgstr "Ukraine"
 
-#: .\settings\base_with_login.py:83
+#: .\settings\base_with_login.py:94
 msgid "Turkish"
 msgstr "bahasa Turki"
 
-#: .\settings\base_with_login.py:84
+#: .\settings\base_with_login.py:95
 msgid "Vietnamese"
 msgstr "bahasa Vietnam"
 
-#: .\settings\base_with_login.py:85
+#: .\settings\base_with_login.py:96
 msgid "Czech"
 msgstr "bahasa Czech"
 
-#: .\settings\base_with_login.py:86
+#: .\settings\base_with_login.py:97
 msgid "Swedish"
 msgstr "bahasa Sweden"
 
-#: .\settings\base_with_login.py:87
+#: .\settings\base_with_login.py:98
 msgid "Finnish"
 msgstr "bahasa Finland"
 
-#: .\settings\base_with_login.py:88
+#: .\settings\base_with_login.py:99
 msgid "Hungarian"
 msgstr "bahasa Hungary"
 
-#: .\settings\base_with_login.py:89
+#: .\settings\base_with_login.py:100
 msgid "Thai"
 msgstr "Thai"
 
-#: .\settings\base_with_login.py:90
+#: .\settings\base_with_login.py:101
 msgid "Greek"
 msgstr "bahasa Yunani"
 
-#: .\settings\base_with_login.py:91
+#: .\settings\base_with_login.py:102
 msgid "Malay"
 msgstr "Bahasa Melayu"
 
-#: .\settings\base_with_login.py:92
+#: .\settings\base_with_login.py:103
 msgid "Serbian"
 msgstr "bahasa Serbia"
 
-#: .\settings\base_with_login.py:93
+#: .\settings\base_with_login.py:104
 msgid "Romanian"
 msgstr "bahasa Romania"
 
-#: .\settings\base_with_login.py:94
+#: .\settings\base_with_login.py:105
 msgid "Bengali"
 msgstr "Benggali"
 
-#: .\settings\base_with_login.py:95
+#: .\settings\base_with_login.py:106
 msgid "Catalan"
 msgstr "Catalan"
 
-#: .\settings\base_with_login.py:96
+#: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
 msgstr "Norway (Bokmål)"
 
-#: .\settings\base_with_login.py:97
+#: .\settings\base_with_login.py:108
 msgid "Bulgarian"
 msgstr "bahasa Bulgaria"
 
-#: .\settings\base_with_login.py:98
+#: .\settings\base_with_login.py:109
 msgid "Danish"
 msgstr "Danish"
 
-#: .\settings\base_with_login.py:99
+#: .\settings\base_with_login.py:110
 msgid "Slovak"
 msgstr "Bahasa Slovak"
 
-#: .\settings\base_with_login.py:100
+#: .\settings\base_with_login.py:111
 msgid "Hindi"
 msgstr "Hindi"
 
-#: .\settings\base_with_login.py:101
+#: .\settings\base_with_login.py:112
 msgid "Estonian"
 msgstr "bahasa Estonia"
 
-#: .\settings\base_with_login.py:102
+#: .\settings\base_with_login.py:113
 msgid "Croatian"
 msgstr "bahasa Croatia"
 
-#: .\settings\base_with_login.py:103
+#: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
 msgstr "bahasa Azerbaijan"
 
-#: .\settings\base_with_login.py:104
+#: .\settings\base_with_login.py:115
 msgid "Cantonese"
 msgstr "bahasa Kantonis"
 
-#: .\settings\base_with_login.py:105
+#: .\settings\base_with_login.py:116
 msgid "Lithuanian"
 msgstr "bahasa Lithuania"
 
-#: .\settings\base_with_login.py:106
+#: .\settings\base_with_login.py:117
 msgid "Slovenian"
 msgstr "bahasa Slovenia"
 
-#: .\settings\base_with_login.py:107
+#: .\settings\base_with_login.py:118
 msgid "Basque"
 msgstr "bahasa Basque"
 
-#: .\settings\base_with_login.py:108
+#: .\settings\base_with_login.py:119
 msgid "Armenian"
 msgstr "bahasa Armenia"
 
-#: .\settings\base_with_login.py:109
+#: .\settings\base_with_login.py:120
 msgid "Uzbek"
 msgstr "bahasa Uzbek"
 
-#: .\settings\base_with_login.py:110
+#: .\settings\base_with_login.py:121
 msgid "Tamil"
 msgstr "bahasa Tamil"
 
-#: .\settings\base_with_login.py:111
+#: .\settings\base_with_login.py:122
 msgid "Latvian"
 msgstr "bahasa Latvia"
 
@@ -3585,62 +3585,62 @@ msgstr ""
 msgid "Browse..."
 msgstr "Semak imbas..."
 
-#: .\uploads\models.py:24
+#: .\uploads\models.py:27
 msgid "owner"
 msgstr "pemilik"
 
-#: .\uploads\models.py:25
+#: .\uploads\models.py:28
 msgid "file"
 msgstr "fail"
 
-#: .\uploads\models.py:26
+#: .\uploads\models.py:29
 msgid "is stored"
 msgstr "disimpan"
 
-#: .\uploads\models.py:27
+#: .\uploads\models.py:30
 msgid "file size"
 msgstr "saiz fail"
 
-#: .\uploads\models.py:36
+#: .\uploads\models.py:45
 msgid "uploaded file"
 msgstr "fail yang dimuat naik"
 
-#: .\uploads\models.py:37
+#: .\uploads\models.py:46
 msgid "uploaded files"
 msgstr "fail yang dimuat naik"
 
-#: .\uploads\models.py:75
+#: .\uploads\models.py:90
 msgid "visible on website"
 msgstr "kelihatan di laman web"
 
-#: .\uploads\models.py:76
+#: .\uploads\models.py:91
 msgid "Speedy image moderation time"
 msgstr "Masa penyederhanaan imej yang pantas Speedy"
 
-#: .\uploads\models.py:77
+#: .\uploads\models.py:92
 msgid "AWS image moderation time"
 msgstr "Masa penyederhanaan imej AWS"
 
-#: .\uploads\models.py:78
+#: .\uploads\models.py:93
 msgid "AWS facial analysis time"
 msgstr "Masa analisis muka AWS"
 
-#: .\uploads\models.py:79
+#: .\uploads\models.py:94
 msgid "AWS raw image moderation results"
 msgstr "Hasil penyederhanaan imej mentah AWS"
 
-#: .\uploads\models.py:80
+#: .\uploads\models.py:95
 msgid "AWS raw facial analysis results"
 msgstr "Hasil analisis muka mentah AWS"
 
-#: .\uploads\models.py:81
+#: .\uploads\models.py:96
 msgid "number of faces"
 msgstr "bilangan muka"
 
-#: .\uploads\models.py:86
+#: .\uploads\models.py:101
 msgid "uploaded image"
 msgstr "gambar yang dimuat naik"
 
-#: .\uploads\models.py:87
+#: .\uploads\models.py:102
 msgid "uploaded images"
 msgstr "gambar yang dimuat naik"

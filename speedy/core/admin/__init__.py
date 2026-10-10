@@ -1,3 +1,6 @@
+"""
+The Speedy Core admin package, which selects the admin site according to the current site (Speedy Net, Speedy Match or the default Speedy Core admin site).
+"""
 from django.conf import settings as django_settings
 
 

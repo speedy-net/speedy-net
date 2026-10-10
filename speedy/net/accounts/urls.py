@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Net accounts app.
+"""
 from django.urls import path
 
 from . import views

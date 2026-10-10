@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Core profiles app.
+"""
 from django.urls import path, re_path
 
 from . import views

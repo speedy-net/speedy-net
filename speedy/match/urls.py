@@ -1,3 +1,6 @@
+"""
+Root URL configuration for the Speedy Match site.
+"""
 from django.urls import path, include
 
 from speedy.match import admin

@@ -1,3 +1,6 @@
+"""
+URL configuration for the contact by email app of Speedy Core.
+"""
 from django.urls import path
 
 from . import views

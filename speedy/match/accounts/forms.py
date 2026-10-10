@@ -1,3 +1,6 @@
+"""
+Forms of the Speedy Match accounts app: the profile and activation forms (including the custom checkbox widget) and the notifications form.
+"""
 import logging
 import json
 
@@ -21,14 +24,62 @@ logger = logging.getLogger(__name__)
 
 
 class CustomJsonWidget(forms.CheckboxSelectMultiple):
+    """
+    Custom checkbox-select-multiple widget that renders and parses its value as JSON, used for the diet/smoking/relationship match rank fields.
+
+    Methods:
+        render(self, name, value, attrs=None, renderer=None): Renders the widget using the json_widget.html template.
+        value_from_datadict(self, data, files, name): Extracts the raw value for this field from the submitted form data.
+    """
     def render(self, name, value, attrs=None, renderer=None):
+        """
+        Renders the widget using the json_widget.html template, decoding the JSON-encoded value back into choice ranks.
+
+        :param name: The field name.
+        :type name: str
+        :param value: The JSON-encoded field value.
+        :type value: str
+        :param attrs: Extra HTML attributes for the widget (unused).
+        :param renderer: The form renderer (unused).
+        :return: The rendered HTML for the widget.
+        :rtype: str
+        """
         return render_to_string(template_name='accounts/edit_profile/widgets/json_widget.html', context={'choices': self.choices, 'name': name, 'value': json.loads(value)})
 
     def value_from_datadict(self, data, files, name):
+        """
+        Extracts the raw (JSON-encoded) value for this field from the submitted form data.
+
+        :param data: The submitted form data.
+        :type data: dict
+        :param files: The submitted files (unused).
+        :param name: The field name.
+        :type name: str
+        :return: The raw JSON string value for this field.
+        :rtype: str
+        """
         return data.get(name)
 
 
 class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
+    """
+    Base form for editing a Speedy Match site profile, shared by the step-by-step activation form. Defines all profile fields, their validators, widgets and error messages, and handles saving changes back to both the User and SiteProfile models.
+
+    Attributes:
+        user_fields: Field names that belong to the User model rather than the SiteProfile model.
+        validators: A mapping of field name to the list of validator functions to apply.
+        profile_picture, diet, smoking_status, relationship_status, gender_to_match: Extra form fields not directly defined on the SiteProfile model.
+
+    Methods:
+        __init__(self, *args, **kwargs): Builds the form, creates dynamic fields, updates labels/choices/validators and rearranges fields.
+        clean_profile_picture(self): Validates and processes an uploaded profile picture.
+        clean_gender_to_match(self): Converts the submitted gender-to-match values to integers.
+        clean(self): Performs cross-field validation of the minimal/maximal age to match.
+        save(self, commit=True): Saves the form data to both the User and SiteProfile models, and advances the activation step.
+        get_fields(self): Not implemented in this abstract base form; must be implemented by subclasses.
+        get_visible_fields(self): Not implemented in this abstract base form; must be implemented by subclasses.
+        get_hidden_fields(self): Returns the field names that are present but not visible.
+    """
     # Fields from the User model.
     user_fields = (
         'diet',
@@ -144,6 +195,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        """
+        Builds the form: pops the "step" kwarg, creates the dynamic localized city field, deletes unneeded fields, updates field labels/choices/error-messages/initial-values according to the user's gender and language, attaches validators, and rearranges the fields according to get_fields().
+
+        :param args: Positional arguments passed to the parent ModelForm.
+        :param kwargs: Keyword arguments passed to the parent ModelForm; may include "step".
+        """
         self.step = kwargs.pop('step', None)
         super().__init__(*args, **kwargs)
         # Create the localized city field dynamically.
@@ -201,6 +258,12 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         self.order_fields(field_order=self.get_fields())
 
     def clean_profile_picture(self):
+        """
+        Validates the uploaded profile picture (or, if none was uploaded, the user's existing photo), creating and validating a temporary Image for a new upload and deleting it again if validation fails.
+
+        :return: The cleaned profile_picture value.
+        :raises ValidationError: If the profile picture is invalid.
+        """
         profile_picture = self.files.get('profile_picture')
         if (profile_picture):
             user_image = Image(owner=self.instance.user, file=profile_picture)
@@ -219,9 +282,22 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return self.cleaned_data.get('profile_picture')
 
     def clean_gender_to_match(self):
+        """
+        Converts the submitted gender_to_match values (strings) to integers.
+
+        :return: The genders to match, as a list of integers.
+        :rtype: list of int
+        """
         return [int(value) for value in self.cleaned_data['gender_to_match']]
 
     def clean(self):
+        """
+        Performs cross-field validation of the minimal/maximal age to match, when both fields are present on the form.
+
+        :return: The cleaned data dictionary.
+        :rtype: dict
+        :raises ValidationError: If the minimal age to match is greater than the maximal age to match.
+        """
         if (('min_age_to_match' in self.fields) and ('max_age_to_match' in self.fields)):
             min_age_to_match = self.cleaned_data.get('min_age_to_match')
             max_age_to_match = self.cleaned_data.get('max_age_to_match')
@@ -229,6 +305,13 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return self.cleaned_data
 
     def save(self, commit=True):
+        """
+        Saves the form data to both the User and SiteProfile models, logs a height change if it occurred, applies a new profile picture if uploaded, enforces the minimal/maximal matchable height, and advances (or keeps) the profile's activation step, activating the profile once all steps are complete.
+
+        :param commit: Whether to save the changes to the database.
+        :type commit: bool
+        :return: The saved SiteProfile instance.
+        """
         if (commit):
             user_profile = SpeedyMatchSiteProfile.objects.get(pk=self.instance.pk)
             if (not (self.instance.height == user_profile.height)):
@@ -280,28 +363,66 @@ class SpeedyMatchProfileBaseForm(DeleteUnneededFieldsMixin, forms.ModelForm):
         return self.instance
 
     def get_fields(self):
+        """
+        Returns the field names for this form.
+
+        :raises NotImplementedError: Always, since this base (abstract) form doesn't define its fields.
+        """
         # This method is not defined in this base (abstract) form.
         raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
     def get_visible_fields(self):
+        """
+        Returns the visible field names for this form.
+
+        :raises NotImplementedError: Always, since this base (abstract) form doesn't define its visible fields.
+        """
         # This method is not defined in this base (abstract) form.
         raise NotImplementedError("This method is not defined in this base (abstract) form.")
 
     def get_hidden_fields(self):
+        """
+        Returns the field names that are present on the form but not visible (i.e. in get_fields() but not get_visible_fields()).
+
+        :return: A generator of hidden field names.
+        :rtype: generator of str
+        """
         fields = self.get_fields()
         visible_fields = self.get_visible_fields()
         return (field_name for field_name in fields if (not (field_name in visible_fields)))
 
 
 class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
+    """
+    Form used for the step-by-step Speedy Match profile activation wizard, restricting fields to those relevant to the current step.
+
+    Methods:
+        get_fields(self): Returns the field names for the current activation step.
+        get_visible_fields(self): Returns the visible field names, same as get_fields for this form.
+    """
     def get_fields(self):
+        """
+        Returns the field names for the current activation step.
+
+        :return: The field names relevant to the current step.
+        :rtype: list of str
+        """
         return utils.get_step_form_fields(step=self.step)
 
     def get_visible_fields(self):
+        """
+        Returns the visible field names, same as get_fields() for this form.
+
+        :return: The visible field names.
+        :rtype: list of str
+        """
         return self.get_fields()
 
 
 class ProfileNotificationsForm(speedy_core_accounts_forms.ProfileNotificationsForm):
+    """
+    Speedy Match notifications preferences form, restricted to the "notify on like" profile field.
+    """
     _profile_fields = ("notify_on_like",)
 
 

@@ -1,3 +1,6 @@
+"""
+Test cases for the haversine distance calculation of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -7,7 +10,13 @@ if (django_settings.TESTS):
 
 
     class HaversineOnlyEnglishTestCase(SiteTestCase):
+        """
+        Tests the haversine() function, which computes the great-circle distance between two (latitude, longitude) points, in English.
+        """
         def set_up(self):
+            """
+            Sets up a collection of real-world and synthetic (latitude, longitude) points used by the haversine distance tests.
+            """
             super().set_up()
             self.london = (51.5072, -0.1276)
             self.paris = (48.8566, 2.3522)
@@ -39,6 +48,9 @@ if (django_settings.TESTS):
             self.london_other_side_3 = (51.5072 + 180.0, -0.1276)  # Needs normalization.
 
         def test_distance_between_locations_to_themselves(self):
+            """
+            Tests that the distance between each location and itself is zero.
+            """
             self.assertIs(expr1=(0.0 == haversine(point1=self.london, point2=self.london, unit=Unit.KILOMETERS)), expr2=True)
             self.assertIs(expr1=(0.0 == haversine(point1=self.paris, point2=self.paris, unit=Unit.KILOMETERS)), expr2=True)
             self.assertIs(expr1=(0.0 == haversine(point1=self.frankfurt, point2=self.frankfurt, unit=Unit.KILOMETERS)), expr2=True)
@@ -52,6 +64,9 @@ if (django_settings.TESTS):
             self.assertIs(expr1=(0.0 == haversine(point1=self.herzliya, point2=self.herzliya, unit=Unit.KILOMETERS)), expr2=True)
 
         def test_known_distance_between_locations(self):
+            """
+            Tests that the distance between pairs of well-known locations matches known reference distances, within a small tolerance.
+            """
             self.assertIs(expr1=(343.530 < haversine(point1=self.london, point2=self.paris, unit=Unit.KILOMETERS) < 343.531), expr2=True)
             self.assertIs(expr1=(343.530 < haversine(point1=self.paris, point2=self.london, unit=Unit.KILOMETERS) < 343.531), expr2=True)
             self.assertIs(expr1=(477.892 < haversine(point1=self.paris, point2=self.frankfurt, unit=Unit.KILOMETERS) < 477.893), expr2=True)
@@ -74,6 +89,9 @@ if (django_settings.TESTS):
             self.assertIs(expr1=(10.420 < haversine(point1=self.tel_aviv, point2=self.herzliya, unit=Unit.KILOMETERS) < 10.421), expr2=True)
 
         def test_san_francisco_360_distances_raises_exception(self):
+            """
+            Tests that haversine() raises a ValueError when a point's longitude is out of the [-180, 180] range and normalize is not requested.
+            """
             with self.assertRaises(ValueError) as cm:
                 self.assertIs(expr1=(-0.000001 < haversine(point1=self.san_francisco, point2=self.san_francisco_360, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
             self.assertEqual(first=str(cm.exception), second="Longitude {longitude} is out of range [-180, 180]".format(longitude=self.san_francisco_360[1]))
@@ -82,16 +100,25 @@ if (django_settings.TESTS):
             self.assertEqual(first=str(cm.exception), second="Longitude {longitude} is out of range [-180, 180]".format(longitude=self.san_francisco_360[1]))
 
         def test_san_francisco_360_distances_ok(self):
+            """
+            Tests that haversine() correctly normalizes an out-of-range longitude and computes the expected distance when normalize=True.
+            """
             self.assertIs(expr1=(-0.000001 < haversine(point1=self.san_francisco, point2=self.san_francisco_360, unit=Unit.KILOMETERS, normalize=True) < 0.000001), expr2=True)
             self.assertIs(expr1=(8616.468 < haversine(point1=self.london, point2=self.san_francisco_360, unit=Unit.KILOMETERS, normalize=True) < 8616.469), expr2=True)
 
         def test_distance_between_points_on_the_equator(self):
+            """
+            Tests the distance between pairs of points on the equator, including the maximal and half-maximal distances on Earth.
+            """
             self.assertIs(expr1=(20015.114 < haversine(point1=self.equator_point_1, point2=self.equator_point_2, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
             self.assertIs(expr1=(20015.114 < haversine(point1=self.equator_point_3, point2=self.equator_point_4, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.
             self.assertIs(expr1=(6671.704 < haversine(point1=self.equator_point_1, point2=self.equator_point_5, unit=Unit.KILOMETERS) < 6671.705), expr2=True)  # One third of the maximal distance on Earth.
             self.assertIs(expr1=(10007.557 < haversine(point1=self.equator_point_1, point2=self.equator_point_4, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
 
         def test_distance_between_poles(self):
+            """
+            Tests that the distance between the north pole's representations with itself (and the south pole's with itself) is zero, the distance between any north pole and south pole representation is the maximal distance on Earth, and the distance between any pole and any equator point is half the maximal distance on Earth.
+            """
             for north_pole in (self.north_pole_1, self.north_pole_2, self.north_pole_3, self.north_pole_4):
                 self.assertIs(expr1=(-0.000001 < haversine(point1=self.north_pole_1, point2=north_pole, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
 
@@ -111,6 +138,9 @@ if (django_settings.TESTS):
                     self.assertIs(expr1=(10007.557 < haversine(point1=equator_point, point2=south_pole, unit=Unit.KILOMETERS) < 10007.558), expr2=True)  # Half of the maximal distance on Earth.
 
         def test_london_other_side_distance_raises_exception(self):
+            """
+            Tests that haversine() raises a ValueError when a point's latitude is out of the [-90, 90] range and normalize is not requested.
+            """
             for london_other_side in (self.london_other_side_2, self.london_other_side_3):
                 with self.assertRaises(ValueError) as cm:
                     self.assertIs(expr1=(-0.000001 < haversine(point1=self.london_other_side_1, point2=london_other_side, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
@@ -120,6 +150,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="Latitude {latitude} is out of range [-90, 90]".format(latitude=london_other_side[0]))
 
         def test_london_other_side_distance_ok(self):
+            """
+            Tests that haversine() correctly normalizes an out-of-range latitude and computes the expected distance when normalize=True.
+            """
             for london_other_side in (self.london_other_side_1,):
                 self.assertIs(expr1=(-0.000001 < haversine(point1=self.london_other_side_1, point2=london_other_side, unit=Unit.KILOMETERS) < 0.000001), expr2=True)
                 self.assertIs(expr1=(20015.114 < haversine(point1=self.london, point2=london_other_side, unit=Unit.KILOMETERS) < 20015.115), expr2=True)  # Maximal distance on Earth.

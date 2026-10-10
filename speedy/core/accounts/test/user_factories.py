@@ -1,3 +1,6 @@
+"""
+Imports the user factories of the current site (Speedy Net or Speedy Match), for use by tests of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

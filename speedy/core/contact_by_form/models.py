@@ -1,3 +1,6 @@
+"""
+Models for the contact by form app of Speedy Core: the Feedback model, and a signal receiver which emails new feedback.
+"""
 from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver
@@ -26,6 +29,7 @@ class Feedback(TimeStampedModel):
         report_entity (ForeignKey): The reported entity (if applicable).
         report_file (ForeignKey): The reported file (if applicable).
     """
+    # Feedback types: 0 is general feedback, 1 is a report about a user, 2 is a report about a file (photo), and the choices of the type field (value and translatable label).
     TYPE_FEEDBACK = 0
     TYPE_REPORT_ENTITY = 1
     TYPE_REPORT_FILE = 2
@@ -50,6 +54,12 @@ class Feedback(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Returns a human-readable description of the feedback, including its type, what it's about (if a report), and who sent it.
+
+        :return: The description string.
+        :rtype: str
+        """
         if (self.type == self.TYPE_REPORT_ENTITY):
             on = ' on {}'.format(self.report_entity.user)
         elif (self.type == self.TYPE_REPORT_FILE):
@@ -68,11 +78,13 @@ def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
     """
     Signal receiver that sends an email to managers when feedback is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Feedback): The instance of the Feedback model.
-        created (bool): Whether the instance was created.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Feedback instance that was saved.
+    :type instance: Feedback
+    :param created: Whether the instance was created.
+    :type created: bool
+    :param kwargs: Additional keyword arguments.
     """
     if (created):
         headers = {'Reply-To': instance.sender_email or instance.sender.email or "no-reply@{}".format(django_settings.DEFAULT_FROM_EMAIL.strip().rsplit("@", 1)[-1])}

@@ -1,3 +1,6 @@
+"""
+Monkey patch of Django's locale formats, language info and translation fallbacks for Speedy Core, to support the additional languages (such as Chinese and Cantonese).
+"""
 from django.conf import settings as django_settings
 from django.conf.locale import LANG_INFO
 from django.utils import formats
@@ -5,6 +8,9 @@ from django.utils.translation.trans_real import translation
 
 
 def patch():
+    """
+    Monkey patch Django's formats, language info, and translation fallbacks to support additional locale settings and Chinese/Cantonese fallback chains.
+    """
     formats.FORMAT_SETTINGS = formats.FORMAT_SETTINGS.union(django_settings.FORMAT_SETTINGS)
 
     # Django has no 'zh' entry in LANG_INFO (only 'zh-hans' / 'zh-hant'), so get_language_info('zh') raises KeyError: "Unknown language code zh."

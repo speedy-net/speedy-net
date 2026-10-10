@@ -1,3 +1,6 @@
+"""
+Models for the likes of Speedy Match. Defines the UserLike model and the signal receivers which send an email on a new like and update the likes counters of users.
+"""
 from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver
@@ -31,18 +34,22 @@ class UserLike(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Returns a human-readable string representation of the like.
+
+        :return: A string describing which user likes which other user.
+        :rtype: str
+        """
         return "User {} likes {}".format(self.from_user, self.to_user)
 
     def save(self, *args, **kwargs):
         """
         Saves the UserLike instance.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
-
-        Raises:
-            ValidationError: If a user tries to like themselves.
+        :param args: Positional arguments passed to the parent ``save``.
+        :param kwargs: Keyword arguments passed to the parent ``save``.
+        :return: The result of the parent ``save`` (normally ``None``).
+        :raises ValidationError: If a user tries to like themselves.
         """
         if (self.from_user == self.to_user):
             raise ValidationError(_("Users cannot like themselves."))
@@ -53,12 +60,12 @@ class UserLike(TimeStampedModel):
 def mail_user_on_new_like(sender, instance: UserLike, created, **kwargs):
     """
     Sends an email notification to the user when they receive a new like.
+    The email is sent only if the user is active and has like notifications turned on.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (UserLike): The instance of the UserLike model.
-        created (bool): Whether this is a new instance.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal (UserLike).
+    :param instance: The UserLike instance that was saved.
+    :param created: Whether this is a new instance.
+    :param kwargs: Additional keyword arguments from the signal.
     """
     if (created):
         user = instance.to_user
@@ -73,11 +80,10 @@ def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, 
     """
     Updates the count of likes received by the user when a new like is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (UserLike): The instance of the UserLike model.
-        created (bool): Whether this is a new instance.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal (UserLike).
+    :param instance: The UserLike instance that was saved.
+    :param created: Whether this is a new instance.
+    :param kwargs: Additional keyword arguments from the signal.
     """
     if (created):
         user = instance.to_user
@@ -89,11 +95,11 @@ def update_likes_to_user_count_on_new_like(sender, instance: UserLike, created, 
 def update_likes_to_user_count_on_unlike(sender, instance: UserLike, **kwargs):
     """
     Updates the count of likes received by the user when a like is deleted.
+    The update is skipped when the deletion is a cascade from deleting the user (``origin`` is the user).
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (UserLike): The instance of the UserLike model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal (UserLike).
+    :param instance: The UserLike instance that was deleted.
+    :param kwargs: Additional keyword arguments from the signal (may include ``origin``).
     """
     user = instance.to_user
     # Check origin because for cascade delete User -> UserLike, accessing user.speedy_match_profile will re-create deleted SpeedyMatchSiteProfile.

@@ -1,3 +1,6 @@
+"""
+Cache manager of Speedy Core, with wrappers around the Django cache that support sliding timeouts and disabling the cache.
+"""
 import time
 
 from django.conf import settings as django_settings
@@ -5,17 +8,27 @@ from django.core.cache import cache
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.utils.translation import get_language
 
+# Sentinel object returned by the cache when a key is not found, to distinguish it from a cached None.
 DEFAULT_VALUE = object()
 
+# Whether caching is enabled.
 USE_CACHE = True
 
 
 def cache_get(key, default=None, version=None, sliding_timeout=None):
     """
+    Gets a value from the cache, returning `default` if the key is not in the cache, if the cache is disabled, or if the cached value was set for a different site or language.
+
+    :param key: Required. The cache key.
     :type key: str
+    :param default: Optional. The value to return if the key is not found in the cache. Default None.
     :type default: object
+    :param version: Optional. The cache version.
     :type version: int
+    :param sliding_timeout: Optional. If set, and the cached value's remaining time to live is less than this, resets the value's timeout to this value.
     :type sliding_timeout: int
+    :return: The cached value, or `default` if not found.
+    :rtype: object
     """
     if (not (USE_CACHE)):
         return None
@@ -40,10 +53,18 @@ def cache_get(key, default=None, version=None, sliding_timeout=None):
 
 def cache_get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None):
     """
+    Gets a value from the cache, setting it to `default` first if the key is not already in the cache.
+
+    :param key: Required. The cache key.
     :type key: str
+    :param default: Required. The value to set and return if the key is not found in the cache.
     :type default: object
+    :param timeout: Optional. The number of seconds the value should be cached for. Default DEFAULT_TIMEOUT.
     :type timeout: int
+    :param version: Optional. The cache version.
     :type version: int
+    :return: The cached (or newly set) value.
+    :rtype: object
     """
     if (not (USE_CACHE)):
         return None
@@ -55,10 +76,17 @@ def cache_get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None):
 
 def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
     """
+    Sets a value in the cache, if the cache is enabled.
+
+    :param key: Required. The cache key.
     :type key: str
+    :param value: Required. The value to cache.
     :type value: object
+    :param timeout: Optional. The number of seconds the value should be cached for. Default DEFAULT_TIMEOUT.
     :type timeout: int
+    :param version: Optional. The cache version.
     :type version: int
+    :return: None, if the cache is disabled, otherwise the return value of the underlying cache backend's `set` method.
     """
     if (not (USE_CACHE)):
         return
@@ -69,13 +97,27 @@ def cache_set(key, value, timeout=DEFAULT_TIMEOUT, version=None):
 
 def cache_delete_many(keys, version=None):
     """
+    Deletes several keys from the cache at once.
+
+    :param keys: Required. A list of cache keys to delete.
     :type keys: list[str]
+    :param version: Optional. The cache version.
     :type version: int
     """
     cache.delete_many(keys=keys, version=version)
 
 
 def _wrap(value, timeout):
+    """
+    Wraps a value, along with its expiry time, the current site ID and the current language, for storage in the cache.
+
+    :param value: Required. The value to wrap.
+    :type value: object
+    :param timeout: Required. The number of seconds the value should be cached for, or None for no expiry.
+    :type timeout: int
+    :return: A dict with keys 'value', 'expire_time', 'site_id' and 'language'.
+    :rtype: dict
+    """
     expire_time = None
     if (timeout is not None):
         if (timeout == DEFAULT_TIMEOUT):

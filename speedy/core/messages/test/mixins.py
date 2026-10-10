@@ -1,3 +1,6 @@
+"""
+Mixins for the tests of the messages app of Speedy Core, for tests which run in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -5,10 +8,28 @@ if (django_settings.TESTS):
 
 
     class SpeedyCoreMessagesLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
+        """
+        Language-aware mixin for messages tests, providing error message helpers and localized "you have a new message" email subjects for Speedy Net and Speedy Match.
+
+        Methods:
+            _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length): Returns the expected form errors dict for a 'text' field value exceeding the maximum length.
+            set_up(self): Sets up the localized new-message email subjects for Speedy Net and Speedy Match in the current language.
+        """
         def _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length):
+            """
+            Returns the expected form errors dict for the 'text' field when its value has the given length, which must exceed the field's 50000-character maximum.
+
+            :param value_length: The length of the value that was entered in the 'text' field.
+            :type value_length: int
+            :return: The expected form errors dict, keyed by 'text'.
+            :rtype: dict
+            """
             return {'text': [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=50000, value_length=value_length)]}
 
         def set_up(self):
+            """
+            Sets up the localized "you have a new message" email subjects for Speedy Net and Speedy Match, in the current test's language, as self._you_have_a_new_message_on_speedy_net_subject and self._you_have_a_new_message_on_speedy_match_subject.
+            """
             super().set_up()
 
             _you_have_a_new_message_on_speedy_net_subject_dict = {'en': 'You have a new message on Speedy Net', 'fr': 'Vous avez un nouveau message sur Speedy Net', 'de': 'Sie haben eine neue Mitteilung erhalten auf Speedy Net', 'es': 'Tienes un nuevo mensaje en Speedy Net', 'pt': 'Tu tens uma nova mensagem em Speedy Net', 'it': 'Hai un nuovo messaggio su Speedy Net', 'nl': 'Je hebt een nieuw bericht ingeschakeld Speedy Net', 'ja': 'Speedy Net に新しいメッセージがあります', 'ru': 'У вас новое сообщение в Speedy Net', 'zh': '您在 Speedy Net 上有一条新消息', 'pl': 'Masz nową wiadomość w Speedy Net', 'fa': 'شما یک پیام جدید در Speedy Net دارید', 'he': 'יש לך הודעה חדשה בספידי נט', 'ko': 'Speedy Net에 새 메시지가 있습니다', 'ar': 'لديك رسالة جديدة على Speedy Net', 'id': 'Anda memiliki pesan baru di Speedy Net', 'uk': 'У вас нове повідомлення у Speedy Net', 'tr': 'Speedy Net üzerinde yeni bir mesajınız var', 'vi': 'Bạn có một tin nhắn mới trên Speedy Net', 'cs': 'Na platformě Speedy Net máte novou zprávu', 'sv': 'Du har ett nytt meddelande på Speedy Net', 'fi': 'Sinulla on uusi viesti Speedy Net', 'hu': 'Új üzeneted érkezett a Speedy Net oldalon', 'th': 'คุณมีข้อความใหม่บน Speedy Net', 'el': 'Έχετε νέο μήνυμα στο Speedy Net', 'ms': 'Anda mempunyai mesej baharu di Speedy Net', 'sr': 'Имате нову поруку на Speedy Net', 'ro': 'Ai un mesaj nou pe Speedy Net', 'bn': 'Speedy Net-এ আপনার একটি নতুন বার্তা আছে', 'ca': 'Tens un missatge nou a Speedy Net', 'no': 'Du har en ny melding på Speedy Net', 'bg': 'Имате ново съобщение в Speedy Net', 'da': 'Du har en ny besked på Speedy Net', 'sk': 'Máte novú správu na Speedy Net', 'hi': 'Speedy Net पर आपका एक नया संदेश है', 'et': 'Sul on Speedy Net platvormil uus sõnum', 'hr': 'Imate novu poruku na platformi Speedy Net', 'az': 'Speedy Net-də yeni mesajınız var', 'zh-yue': '您有一條新訊息Speedy Net', 'lt': 'Turite naują žinutę svetainėje Speedy Net', 'sl': 'Imate novo sporočilo na Speedy Net', 'eu': 'Mezu berri bat duzu Speedy Net webgunean', 'hy': 'Դուք ունեք նոր հաղորդագրություն Speedy Net-ում', 'uz': 'Sizda Speedy Net da yangi xabar bor', 'ta': 'நீங்கள் ஒரு புதிய செய்தியை உள்ள Speedy Net', 'lv': 'Jums ir jauna ziņa vietnē Speedy Net'}

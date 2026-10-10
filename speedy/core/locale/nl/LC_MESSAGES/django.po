@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:6 .\base\tests\test_translations.py:15
+#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04 19:33+0300\n"
+"POT-Creation-Date: 2026-10-10 12:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -853,32 +853,32 @@ msgstr ""
 "naar deze pagina om je meldingsinstellingen te wijzigen of om je af te "
 "melden:"
 
-#: .\__translations\__translations.py:9
+#: .\__translations\__translations.py:12
 msgid "Enter a valid email address."
 msgstr "Voer een geldig e-mailadres in."
 
-#: .\__translations\__translations.py:10
+#: .\__translations\__translations.py:13
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: .\__translations\__translations.py:11 .\accounts\models.py:1293
+#: .\__translations\__translations.py:14 .\accounts\models.py:1712
 msgid "email address"
 msgstr "e-mailadres"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:15
 msgid "Email address:"
 msgstr "E-mailadres:"
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:16
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "E-mail"
 
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:17
 msgid "Value must be valid JSON."
 msgstr "Waarde moet geldige JSON zijn."
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:18
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -887,43 +887,43 @@ msgstr ""
 "Voer een juiste %(username)s en wachtwoord in. Let op dat beide velden "
 "hoofdlettergevoelig zijn."
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:22
 msgid "Message"
 msgstr "Bericht"
 
-#: .\__translations\__translations.py:21
+#: .\__translations\__translations.py:24
 msgid "Friendship Request"
 msgstr "Vriendschapsverzoek"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:25
 msgid "Friendship Requests"
 msgstr "Vriendschapsverzoeken"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:27
 msgid "Friend"
 msgstr "Vriend"
 
-#: .\__translations\__translations.py:25 .\accounts\models.py:798
+#: .\__translations\__translations.py:28 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "Vrienden"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:30
 msgid "Following Relationship"
 msgstr "Relatie volgen"
 
-#: .\__translations\__translations.py:28
+#: .\__translations\__translations.py:31
 msgid "Following Relationships"
 msgstr "Relaties volgen"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:33
 msgid "Blocker Relationship"
 msgstr "Blokkeer relatie"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:34
 msgid "Blocked Relationships"
 msgstr "Geblokkeerde relaties"
 
-#: .\__translations\__translations.py:36
+#: .\__translations\__translations.py:39
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -938,467 +938,449 @@ msgstr[1] ""
 "Lijst bevat %(show_value)d elementen, maar mag niet meer dan %(limit_value)d "
 "elementen bevatten."
 
-#: .\__translations\__translations.py:43
+#: .\__translations\__translations.py:46
 msgctxt "female"
-msgid "username (slug)"
-msgstr "gebruikersnaam (slug)"
-
-#: .\__translations\__translations.py:44
-msgctxt "male"
-msgid "username (slug)"
-msgstr "gebruikersnaam (slug)"
-
-#: .\__translations\__translations.py:45
-msgctxt "other"
 msgid "username (slug)"
 msgstr "gebruikersnaam (slug)"
 
 #: .\__translations\__translations.py:47
-msgctxt "female"
-msgid "Update your profile picture"
-msgstr "Werk je profielfoto bij"
+msgctxt "male"
+msgid "username (slug)"
+msgstr "gebruikersnaam (slug)"
 
 #: .\__translations\__translations.py:48
-msgctxt "male"
-msgid "Update your profile picture"
-msgstr "Werk je profielfoto bij"
-
-#: .\__translations\__translations.py:49
 msgctxt "other"
+msgid "username (slug)"
+msgstr "gebruikersnaam (slug)"
+
+#: .\__translations\__translations.py:50
+msgctxt "female"
 msgid "Update your profile picture"
 msgstr "Werk je profielfoto bij"
 
 #: .\__translations\__translations.py:51
-msgctxt "female"
-msgid "Save Changes"
-msgstr "Sla Wijzigingen Op"
+msgctxt "male"
+msgid "Update your profile picture"
+msgstr "Werk je profielfoto bij"
 
 #: .\__translations\__translations.py:52
-msgctxt "male"
-msgid "Save Changes"
-msgstr "Sla Wijzigingen Op"
-
-#: .\__translations\__translations.py:53
 msgctxt "other"
+msgid "Update your profile picture"
+msgstr "Werk je profielfoto bij"
+
+#: .\__translations\__translations.py:54
+msgctxt "female"
 msgid "Save Changes"
 msgstr "Sla Wijzigingen Op"
 
 #: .\__translations\__translations.py:55
-msgctxt "female"
-msgid "You can't change your username."
-msgstr "Jullie kunnen je gebruikersnaam niet wijzigen."
+msgctxt "male"
+msgid "Save Changes"
+msgstr "Sla Wijzigingen Op"
 
 #: .\__translations\__translations.py:56
-msgctxt "male"
-msgid "You can't change your username."
-msgstr "Jullie kunnen je gebruikersnaam niet wijzigen."
-
-#: .\__translations\__translations.py:57
 msgctxt "other"
+msgid "Save Changes"
+msgstr "Sla Wijzigingen Op"
+
+#: .\__translations\__translations.py:58
+msgctxt "female"
 msgid "You can't change your username."
 msgstr "Jullie kunnen je gebruikersnaam niet wijzigen."
 
 #: .\__translations\__translations.py:59
-#, python-brace-format
-msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "Activeer je {site_name}-account"
+msgctxt "male"
+msgid "You can't change your username."
+msgstr "Jullie kunnen je gebruikersnaam niet wijzigen."
 
 #: .\__translations\__translations.py:60
-#, python-brace-format
-msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "Activeer je {site_name}-account"
-
-#: .\__translations\__translations.py:61
-#, python-brace-format
 msgctxt "other"
+msgid "You can't change your username."
+msgstr "Jullie kunnen je gebruikersnaam niet wijzigen."
+
+#: .\__translations\__translations.py:62
+#, python-brace-format
+msgctxt "female"
 msgid "Activate your {site_name} account"
 msgstr "Activeer je {site_name}-account"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
-msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "Deactiveer je {site_name}-account"
+msgctxt "male"
+msgid "Activate your {site_name} account"
+msgstr "Activeer je {site_name}-account"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
-msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "Deactiveer je {site_name}-account"
-
-#: .\__translations\__translations.py:65
-#, python-brace-format
 msgctxt "other"
+msgid "Activate your {site_name} account"
+msgstr "Activeer je {site_name}-account"
+
+#: .\__translations\__translations.py:66
+#, python-brace-format
+msgctxt "female"
 msgid "Deactivate your {site_name} account"
 msgstr "Deactiveer je {site_name}-account"
 
 #: .\__translations\__translations.py:67
-msgctxt "female"
-msgid "Add"
-msgstr "Toevoegen"
+#, python-brace-format
+msgctxt "male"
+msgid "Deactivate your {site_name} account"
+msgstr "Deactiveer je {site_name}-account"
 
 #: .\__translations\__translations.py:68
-msgctxt "male"
-msgid "Add"
-msgstr "Toevoegen"
-
-#: .\__translations\__translations.py:69
+#, python-brace-format
 msgctxt "other"
+msgid "Deactivate your {site_name} account"
+msgstr "Deactiveer je {site_name}-account"
+
+#: .\__translations\__translations.py:70
+msgctxt "female"
 msgid "Add"
 msgstr "Toevoegen"
 
 #: .\__translations\__translations.py:71
-msgctxt "female"
-msgid "Where do I live?"
-msgstr "Waar ik woon?"
+msgctxt "male"
+msgid "Add"
+msgstr "Toevoegen"
 
 #: .\__translations\__translations.py:72
-msgctxt "male"
-msgid "Where do I live?"
-msgstr "Waar ik woon?"
-
-#: .\__translations\__translations.py:73
 msgctxt "other"
+msgid "Add"
+msgstr "Toevoegen"
+
+#: .\__translations\__translations.py:74
+msgctxt "female"
 msgid "Where do I live?"
 msgstr "Waar ik woon?"
 
 #: .\__translations\__translations.py:75
-msgctxt "female"
-msgid "Where do you live?"
-msgstr "Waar woon je?"
+msgctxt "male"
+msgid "Where do I live?"
+msgstr "Waar ik woon?"
 
 #: .\__translations\__translations.py:76
-msgctxt "male"
-msgid "Where do you live?"
-msgstr "Waar woon je?"
-
-#: .\__translations\__translations.py:77
 msgctxt "other"
+msgid "Where do I live?"
+msgstr "Waar ik woon?"
+
+#: .\__translations\__translations.py:78
+msgctxt "female"
 msgid "Where do you live?"
 msgstr "Waar woon je?"
 
 #: .\__translations\__translations.py:79
-msgctxt "female"
-msgid "Please write where you live."
-msgstr "Schrijf alstublieft waar je woont."
+msgctxt "male"
+msgid "Where do you live?"
+msgstr "Waar woon je?"
 
 #: .\__translations\__translations.py:80
-msgctxt "male"
-msgid "Please write where you live."
-msgstr "Schrijf alstublieft waar je woont."
-
-#: .\__translations\__translations.py:81
 msgctxt "other"
+msgid "Where do you live?"
+msgstr "Waar woon je?"
+
+#: .\__translations\__translations.py:82
+msgctxt "female"
 msgid "Please write where you live."
 msgstr "Schrijf alstublieft waar je woont."
 
 #: .\__translations\__translations.py:83
-msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganiste (eet alleen planten en paddenstoelen)"
+msgctxt "male"
+msgid "Please write where you live."
+msgstr "Schrijf alstublieft waar je woont."
 
 #: .\__translations\__translations.py:84
-msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Veganiste (eet alleen planten en paddenstoelen)"
-
-#: .\__translations\__translations.py:85
 msgctxt "other"
+msgid "Please write where you live."
+msgstr "Schrijf alstublieft waar je woont."
+
+#: .\__translations\__translations.py:86
+msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Veganiste (eet alleen planten en paddenstoelen)"
 
 #: .\__translations\__translations.py:87
-msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetariër (eet geen vis en vlees)"
+msgctxt "male"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganiste (eet alleen planten en paddenstoelen)"
 
 #: .\__translations\__translations.py:88
-msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetariër (eet geen vis en vlees)"
-
-#: .\__translations\__translations.py:89
 msgctxt "other"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Veganiste (eet alleen planten en paddenstoelen)"
+
+#: .\__translations\__translations.py:90
+msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariër (eet geen vis en vlees)"
 
 #: .\__translations\__translations.py:91
-msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (eet vlees)"
+msgctxt "male"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariër (eet geen vis en vlees)"
 
 #: .\__translations\__translations.py:92
-msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (eet vlees)"
-
-#: .\__translations\__translations.py:93
 msgctxt "other"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetariër (eet geen vis en vlees)"
+
+#: .\__translations\__translations.py:94
+msgctxt "female"
 msgid "Carnist (eats animals)"
 msgstr "Carnist (eet vlees)"
 
 #: .\__translations\__translations.py:95
-msgctxt "female"
-msgid "Vegan"
-msgstr "Veganiste"
+msgctxt "male"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (eet vlees)"
 
 #: .\__translations\__translations.py:96
-msgctxt "male"
-msgid "Vegan"
-msgstr "Veganiste"
-
-#: .\__translations\__translations.py:97
 msgctxt "other"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (eet vlees)"
+
+#: .\__translations\__translations.py:98
+msgctxt "female"
 msgid "Vegan"
 msgstr "Veganiste"
 
 #: .\__translations\__translations.py:99
-msgctxt "female"
-msgid "Vegetarian"
-msgstr "Vegetariër"
+msgctxt "male"
+msgid "Vegan"
+msgstr "Veganiste"
 
 #: .\__translations\__translations.py:100
-msgctxt "male"
-msgid "Vegetarian"
-msgstr "Vegetariër"
-
-#: .\__translations\__translations.py:101
 msgctxt "other"
+msgid "Vegan"
+msgstr "Veganiste"
+
+#: .\__translations\__translations.py:102
+msgctxt "female"
 msgid "Vegetarian"
 msgstr "Vegetariër"
 
 #: .\__translations\__translations.py:103
-msgctxt "female"
-msgid "Carnist"
-msgstr "Carniste"
+msgctxt "male"
+msgid "Vegetarian"
+msgstr "Vegetariër"
 
 #: .\__translations\__translations.py:104
-msgctxt "male"
-msgid "Carnist"
-msgstr "Carniste"
-
-#: .\__translations\__translations.py:105
 msgctxt "other"
+msgid "Vegetarian"
+msgstr "Vegetariër"
+
+#: .\__translations\__translations.py:106
+msgctxt "female"
 msgid "Carnist"
 msgstr "Carniste"
 
 #: .\__translations\__translations.py:107
-msgctxt "female"
-msgid "Not smoking"
-msgstr "Niet roker"
+msgctxt "male"
+msgid "Carnist"
+msgstr "Carniste"
 
 #: .\__translations\__translations.py:108
-msgctxt "male"
-msgid "Not smoking"
-msgstr "Niet roker"
-
-#: .\__translations\__translations.py:109
 msgctxt "other"
+msgid "Carnist"
+msgstr "Carniste"
+
+#: .\__translations\__translations.py:110
+msgctxt "female"
 msgid "Not smoking"
 msgstr "Niet roker"
 
 #: .\__translations\__translations.py:111
-msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "Rookt af en toe"
+msgctxt "male"
+msgid "Not smoking"
+msgstr "Niet roker"
 
 #: .\__translations\__translations.py:112
-msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "Rookt af en toe"
-
-#: .\__translations\__translations.py:113
 msgctxt "other"
+msgid "Not smoking"
+msgstr "Niet roker"
+
+#: .\__translations\__translations.py:114
+msgctxt "female"
 msgid "Smoking occasionally"
 msgstr "Rookt af en toe"
 
 #: .\__translations\__translations.py:115
-msgctxt "female"
-msgid "Smoking"
-msgstr "Roker"
+msgctxt "male"
+msgid "Smoking occasionally"
+msgstr "Rookt af en toe"
 
 #: .\__translations\__translations.py:116
-msgctxt "male"
-msgid "Smoking"
-msgstr "Roker"
-
-#: .\__translations\__translations.py:117
 msgctxt "other"
+msgid "Smoking occasionally"
+msgstr "Rookt af en toe"
+
+#: .\__translations\__translations.py:118
+msgctxt "female"
 msgid "Smoking"
 msgstr "Roker"
 
 #: .\__translations\__translations.py:119
-msgctxt "female"
-msgid "Single"
-msgstr "Single"
+msgctxt "male"
+msgid "Smoking"
+msgstr "Roker"
 
 #: .\__translations\__translations.py:120
-msgctxt "male"
-msgid "Single"
-msgstr "Single"
-
-#: .\__translations\__translations.py:121
 msgctxt "other"
+msgid "Smoking"
+msgstr "Roker"
+
+#: .\__translations\__translations.py:122
+msgctxt "female"
 msgid "Single"
 msgstr "Single"
 
 #: .\__translations\__translations.py:123
-msgctxt "female"
-msgid "Divorced"
-msgstr "Gescheiden"
+msgctxt "male"
+msgid "Single"
+msgstr "Single"
 
 #: .\__translations\__translations.py:124
-msgctxt "male"
-msgid "Divorced"
-msgstr "Gescheiden"
-
-#: .\__translations\__translations.py:125
 msgctxt "other"
+msgid "Single"
+msgstr "Single"
+
+#: .\__translations\__translations.py:126
+msgctxt "female"
 msgid "Divorced"
 msgstr "Gescheiden"
 
 #: .\__translations\__translations.py:127
-msgctxt "female"
-msgid "Widowed"
-msgstr "Weduwnaar"
+msgctxt "male"
+msgid "Divorced"
+msgstr "Gescheiden"
 
 #: .\__translations\__translations.py:128
-msgctxt "male"
-msgid "Widowed"
-msgstr "Weduwnaar"
-
-#: .\__translations\__translations.py:129
 msgctxt "other"
+msgid "Divorced"
+msgstr "Gescheiden"
+
+#: .\__translations\__translations.py:130
+msgctxt "female"
 msgid "Widowed"
 msgstr "Weduwnaar"
 
 #: .\__translations\__translations.py:131
-msgctxt "female"
-msgid "In a relationship"
-msgstr "In een relatie"
+msgctxt "male"
+msgid "Widowed"
+msgstr "Weduwnaar"
 
 #: .\__translations\__translations.py:132
-msgctxt "male"
-msgid "In a relationship"
-msgstr "In een relatie"
-
-#: .\__translations\__translations.py:133
 msgctxt "other"
+msgid "Widowed"
+msgstr "Weduwnaar"
+
+#: .\__translations\__translations.py:134
+msgctxt "female"
 msgid "In a relationship"
 msgstr "In een relatie"
 
 #: .\__translations\__translations.py:135
-msgctxt "female"
-msgid "In an open relationship"
-msgstr "In een open relatie"
+msgctxt "male"
+msgid "In a relationship"
+msgstr "In een relatie"
 
 #: .\__translations\__translations.py:136
-msgctxt "male"
-msgid "In an open relationship"
-msgstr "In een open relatie"
-
-#: .\__translations\__translations.py:137
 msgctxt "other"
+msgid "In a relationship"
+msgstr "In een relatie"
+
+#: .\__translations\__translations.py:138
+msgctxt "female"
 msgid "In an open relationship"
 msgstr "In een open relatie"
 
 #: .\__translations\__translations.py:139
-msgctxt "female"
-msgid "It's complicated"
-msgstr "Het is gecompliceerd"
+msgctxt "male"
+msgid "In an open relationship"
+msgstr "In een open relatie"
 
 #: .\__translations\__translations.py:140
-msgctxt "male"
-msgid "It's complicated"
-msgstr "Het is gecompliceerd"
-
-#: .\__translations\__translations.py:141
 msgctxt "other"
+msgid "In an open relationship"
+msgstr "In een open relatie"
+
+#: .\__translations\__translations.py:142
+msgctxt "female"
 msgid "It's complicated"
 msgstr "Het is gecompliceerd"
 
 #: .\__translations\__translations.py:143
-msgctxt "female"
-msgid "Separated"
-msgstr "Uit elkaar"
+msgctxt "male"
+msgid "It's complicated"
+msgstr "Het is gecompliceerd"
 
 #: .\__translations\__translations.py:144
-msgctxt "male"
-msgid "Separated"
-msgstr "Uit elkaar"
-
-#: .\__translations\__translations.py:145
 msgctxt "other"
+msgid "It's complicated"
+msgstr "Het is gecompliceerd"
+
+#: .\__translations\__translations.py:146
+msgctxt "female"
 msgid "Separated"
 msgstr "Uit elkaar"
 
 #: .\__translations\__translations.py:147
-msgctxt "female"
-msgid "Engaged"
-msgstr "Verloofd"
+msgctxt "male"
+msgid "Separated"
+msgstr "Uit elkaar"
 
 #: .\__translations\__translations.py:148
-msgctxt "male"
-msgid "Engaged"
-msgstr "Verloofd"
-
-#: .\__translations\__translations.py:149
 msgctxt "other"
+msgid "Separated"
+msgstr "Uit elkaar"
+
+#: .\__translations\__translations.py:150
+msgctxt "female"
 msgid "Engaged"
 msgstr "Verloofd"
 
 #: .\__translations\__translations.py:151
-msgctxt "female"
-msgid "Married"
-msgstr "Getrouwd"
+msgctxt "male"
+msgid "Engaged"
+msgstr "Verloofd"
 
 #: .\__translations\__translations.py:152
-msgctxt "male"
-msgid "Married"
-msgstr "Getrouwd"
-
-#: .\__translations\__translations.py:153
 msgctxt "other"
+msgid "Engaged"
+msgstr "Verloofd"
+
+#: .\__translations\__translations.py:154
+msgctxt "female"
 msgid "Married"
 msgstr "Getrouwd"
 
 #: .\__translations\__translations.py:155
-msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "Je nieuwe wachtwoord is opgeslagen."
+msgctxt "male"
+msgid "Married"
+msgstr "Getrouwd"
 
 #: .\__translations\__translations.py:156
-msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "Je nieuwe wachtwoord is opgeslagen."
-
-#: .\__translations\__translations.py:157
 msgctxt "other"
+msgid "Married"
+msgstr "Getrouwd"
+
+#: .\__translations\__translations.py:158
+msgctxt "female"
 msgid "Your new password has been saved."
 msgstr "Je nieuwe wachtwoord is opgeslagen."
 
 #: .\__translations\__translations.py:159
-msgctxt "female"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
-msgstr ""
-"Uw Speedy Net- en Speedy Match-accounts zijn gedeactiveerd. Je kunt ze op "
-"elk gewenst moment opnieuw activeren."
+msgctxt "male"
+msgid "Your new password has been saved."
+msgstr "Je nieuwe wachtwoord is opgeslagen."
 
 #: .\__translations\__translations.py:160
-msgctxt "male"
-msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
-msgstr ""
-"Uw Speedy Net- en Speedy Match-accounts zijn gedeactiveerd. Je kunt ze op "
-"elk gewenst moment opnieuw activeren."
-
-#: .\__translations\__translations.py:161
 msgctxt "other"
+msgid "Your new password has been saved."
+msgstr "Je nieuwe wachtwoord is opgeslagen."
+
+#: .\__translations\__translations.py:162
+msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
@@ -1407,28 +1389,26 @@ msgstr ""
 "elk gewenst moment opnieuw activeren."
 
 #: .\__translations\__translations.py:163
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"Je {site_name}-account is gedeactiveerd. Je kunt het op elk gewenst moment "
-"opnieuw activeren. Je Speedy Net-account blijft actief."
-
-#: .\__translations\__translations.py:164
-#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
 msgstr ""
-"Je {site_name}-account is gedeactiveerd. Je kunt het op elk gewenst moment "
-"opnieuw activeren. Je Speedy Net-account blijft actief."
+"Uw Speedy Net- en Speedy Match-accounts zijn gedeactiveerd. Je kunt ze op "
+"elk gewenst moment opnieuw activeren."
 
-#: .\__translations\__translations.py:165
-#, python-brace-format
+#: .\__translations\__translations.py:164
 msgctxt "other"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Uw Speedy Net- en Speedy Match-accounts zijn gedeactiveerd. Je kunt ze op "
+"elk gewenst moment opnieuw activeren."
+
+#: .\__translations\__translations.py:166
+#, python-brace-format
+msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
@@ -1437,73 +1417,73 @@ msgstr ""
 "opnieuw activeren. Je Speedy Net-account blijft actief."
 
 #: .\__translations\__translations.py:167
-msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "Je hebt dit e-mailadres al bevestigd."
+#, python-brace-format
+msgctxt "male"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Je {site_name}-account is gedeactiveerd. Je kunt het op elk gewenst moment "
+"opnieuw activeren. Je Speedy Net-account blijft actief."
 
 #: .\__translations\__translations.py:168
-msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "Je hebt dit e-mailadres al bevestigd."
-
-#: .\__translations\__translations.py:169
+#, python-brace-format
 msgctxt "other"
+msgid ""
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
+msgstr ""
+"Je {site_name}-account is gedeactiveerd. Je kunt het op elk gewenst moment "
+"opnieuw activeren. Je Speedy Net-account blijft actief."
+
+#: .\__translations\__translations.py:170
+msgctxt "female"
 msgid "You've already confirmed this email address."
 msgstr "Je hebt dit e-mailadres al bevestigd."
 
 #: .\__translations\__translations.py:171
-msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "Je hebt je e-mailadres bevestigd."
+msgctxt "male"
+msgid "You've already confirmed this email address."
+msgstr "Je hebt dit e-mailadres al bevestigd."
 
 #: .\__translations\__translations.py:172
-msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "Je hebt je e-mailadres bevestigd."
-
-#: .\__translations\__translations.py:173
 msgctxt "other"
+msgid "You've already confirmed this email address."
+msgstr "Je hebt dit e-mailadres al bevestigd."
+
+#: .\__translations\__translations.py:174
+msgctxt "female"
 msgid "You've confirmed your email address."
 msgstr "Je hebt je e-mailadres bevestigd."
 
 #: .\__translations\__translations.py:175
-msgctxt "female"
-msgid "Send"
-msgstr "Verstuur"
+msgctxt "male"
+msgid "You've confirmed your email address."
+msgstr "Je hebt je e-mailadres bevestigd."
 
 #: .\__translations\__translations.py:176
-msgctxt "male"
-msgid "Send"
-msgstr "Verstuur"
-
-#: .\__translations\__translations.py:177
 msgctxt "other"
+msgid "You've confirmed your email address."
+msgstr "Je hebt je e-mailadres bevestigd."
+
+#: .\__translations\__translations.py:178
+msgctxt "female"
 msgid "Send"
 msgstr "Verstuur"
 
 #: .\__translations\__translations.py:179
-#, python-brace-format
-msgctxt "female"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
-"Net. Verwijder vrienden voordat je doorgaat."
+msgctxt "male"
+msgid "Send"
+msgstr "Verstuur"
 
 #: .\__translations\__translations.py:180
-#, python-brace-format
-msgctxt "male"
-msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
-msgstr ""
-"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
-"Net. Verwijder vrienden voordat je doorgaat."
-
-#: .\__translations\__translations.py:181
-#, python-brace-format
 msgctxt "other"
+msgid "Send"
+msgstr "Verstuur"
+
+#: .\__translations\__translations.py:182
+#, python-brace-format
+msgctxt "female"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
@@ -1513,40 +1493,27 @@ msgstr ""
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze mag niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat je "
-"verder gaat."
+"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
+"Net. Verwijder vrienden voordat je doorgaat."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "other"
 msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
 msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
-"gaat."
-
-#: .\__translations\__translations.py:185
-#, python-brace-format
-msgctxt "female_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
-"hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
-"voordat je verder gaat."
+"Je hebt al {0} vrienden. Je kunt niet meer dan {1} vrienden hebben op Speedy "
+"Net. Verwijder vrienden voordat je doorgaat."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "female_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1557,7 +1524,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "male_male"
+msgctxt "female_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1568,7 +1535,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "male_other"
+msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1579,7 +1546,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "other_female"
+msgctxt "male_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1590,7 +1557,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "other_male"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1601,6 +1568,39 @@ msgstr ""
 
 #: .\__translations\__translations.py:191
 #, python-brace-format
+msgctxt "male_other"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
+"voordat je verder gaat."
+
+#: .\__translations\__translations.py:192
+#, python-brace-format
+msgctxt "other_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Deze gebruiker heeft al {0} vrienden. Ze mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag haar om vrienden te verwijderen voordat je "
+"verder gaat."
+
+#: .\__translations\__translations.py:193
+#, python-brace-format
+msgctxt "other_male"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Deze gebruiker heeft al {0} vrienden. Hij mag niet meer dan {1} vrienden "
+"hebben op Speedy Net. Vraag hem om vrienden te verwijderen voordat je verder "
+"gaat."
+
+#: .\__translations\__translations.py:194
+#, python-brace-format
 msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
@@ -1610,178 +1610,178 @@ msgstr ""
 "hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen "
 "voordat je verder gaat."
 
-#: .\__translations\__translations.py:193
+#: .\__translations\__translations.py:196
 msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "Je kan geen vrienden zijn met jezelf."
-
-#: .\__translations\__translations.py:194
-msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "Je kan geen vrienden zijn met jezelf."
-
-#: .\__translations\__translations.py:195
-msgctxt "other"
 msgid "You cannot be friends with yourself."
 msgstr "Je kan geen vrienden zijn met jezelf."
 
 #: .\__translations\__translations.py:197
-msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "Je hebt al om vriendschap van deze gebruiker gevraagd."
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Je kan geen vrienden zijn met jezelf."
 
 #: .\__translations\__translations.py:198
-msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "Je hebt al om vriendschap van deze gebruiker gevraagd."
-
-#: .\__translations\__translations.py:199
 msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Je kan geen vrienden zijn met jezelf."
+
+#: .\__translations\__translations.py:200
+msgctxt "female"
 msgid "You already requested friendship from this user."
 msgstr "Je hebt al om vriendschap van deze gebruiker gevraagd."
 
 #: .\__translations\__translations.py:201
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "Deze gebruiker heeft je al om vriendschap gevraagd."
+msgctxt "male"
+msgid "You already requested friendship from this user."
+msgstr "Je hebt al om vriendschap van deze gebruiker gevraagd."
 
 #: .\__translations\__translations.py:202
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "Deze gebruiker heeft je al om vriendschap gevraagd."
-
-#: .\__translations\__translations.py:203
 msgctxt "other"
+msgid "You already requested friendship from this user."
+msgstr "Je hebt al om vriendschap van deze gebruiker gevraagd."
+
+#: .\__translations\__translations.py:204
+msgctxt "female"
 msgid "This user already requested friendship from you."
 msgstr "Deze gebruiker heeft je al om vriendschap gevraagd."
 
 #: .\__translations\__translations.py:205
+msgctxt "male"
+msgid "This user already requested friendship from you."
+msgstr "Deze gebruiker heeft je al om vriendschap gevraagd."
+
+#: .\__translations\__translations.py:206
+msgctxt "other"
+msgid "This user already requested friendship from you."
+msgstr "Deze gebruiker heeft je al om vriendschap gevraagd."
+
+#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:206
+#: .\__translations\__translations.py:209
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:207
+#: .\__translations\__translations.py:210
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:208
+#: .\__translations\__translations.py:211
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:212
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:213
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:214
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:215
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:216
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "Je bent al vrienden met deze gebruiker."
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:218
 msgctxt "female"
-msgid "You've cancelled your friendship request."
-msgstr "Je hebt je vriendschapsverzoek geannuleerd."
-
-#: .\__translations\__translations.py:216
-msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "Je hebt je vriendschapsverzoek geannuleerd."
-
-#: .\__translations\__translations.py:217
-msgctxt "other"
 msgid "You've cancelled your friendship request."
 msgstr "Je hebt je vriendschapsverzoek geannuleerd."
 
 #: .\__translations\__translations.py:219
-msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "Je hebt deze gebruiker uit je vrienden verwijderd."
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Je hebt je vriendschapsverzoek geannuleerd."
 
 #: .\__translations\__translations.py:220
-msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "Je hebt deze gebruiker uit je vrienden verwijderd."
-
-#: .\__translations\__translations.py:221
 msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Je hebt je vriendschapsverzoek geannuleerd."
+
+#: .\__translations\__translations.py:222
+msgctxt "female"
 msgid "You have removed this user from your friends."
 msgstr "Je hebt deze gebruiker uit je vrienden verwijderd."
 
 #: .\__translations\__translations.py:223
-#, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "Welkom bij {site_name}!"
+msgctxt "male"
+msgid "You have removed this user from your friends."
+msgstr "Je hebt deze gebruiker uit je vrienden verwijderd."
 
 #: .\__translations\__translations.py:224
-#, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "Welkom bij {site_name}!"
-
-#: .\__translations\__translations.py:225
-#, python-brace-format
 msgctxt "other"
+msgid "You have removed this user from your friends."
+msgstr "Je hebt deze gebruiker uit je vrienden verwijderd."
+
+#: .\__translations\__translations.py:226
+#, python-brace-format
+msgctxt "female"
 msgid "Welcome to {site_name}!"
 msgstr "Welkom bij {site_name}!"
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
-msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welkom bij {site_name}! Je account is nu actief."
+msgctxt "male"
+msgid "Welcome to {site_name}!"
+msgstr "Welkom bij {site_name}!"
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
-msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Welkom bij {site_name}! Je account is nu actief."
-
-#: .\__translations\__translations.py:229
-#, python-brace-format
 msgctxt "other"
+msgid "Welcome to {site_name}!"
+msgstr "Welkom bij {site_name}!"
+
+#: .\__translations\__translations.py:230
+#, python-brace-format
+msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
 msgstr "Welkom bij {site_name}! Je account is nu actief."
 
 #: .\__translations\__translations.py:231
-msgctxt "female"
-msgid "Friends"
-msgstr "Vrienden"
+#, python-brace-format
+msgctxt "male"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Welkom bij {site_name}! Je account is nu actief."
 
 #: .\__translations\__translations.py:232
-msgctxt "male"
-msgid "Friends"
-msgstr "Vrienden"
-
-#: .\__translations\__translations.py:233
+#, python-brace-format
 msgctxt "other"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Welkom bij {site_name}! Je account is nu actief."
+
+#: .\__translations\__translations.py:234
+msgctxt "female"
 msgid "Friends"
 msgstr "Vrienden"
 
 #: .\__translations\__translations.py:235
+msgctxt "male"
+msgid "Friends"
+msgstr "Vrienden"
+
+#: .\__translations\__translations.py:236
+msgctxt "other"
+msgid "Friends"
+msgstr "Vrienden"
+
+#: .\__translations\__translations.py:238
 msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1796,7 +1796,7 @@ msgstr ""
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
-#: .\__translations\__translations.py:236
+#: .\__translations\__translations.py:239
 msgctxt "male"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1811,7 +1811,7 @@ msgstr ""
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
-#: .\__translations\__translations.py:237
+#: .\__translations\__translations.py:240
 msgctxt "other"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
@@ -1826,35 +1826,8 @@ msgstr ""
 "rekening mee dat je Speedy Net niet mag gebruiken om spamberichten of "
 "berichten met dezelfde inhoud naar een groot aantal mensen te sturen."
 
-#: .\__translations\__translations.py:243
-msgctxt "female_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
-"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
-
-#: .\__translations\__translations.py:244
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
-"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
-
-#: .\__translations\__translations.py:245
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
-"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
-
 #: .\__translations\__translations.py:246
-msgctxt "male_female"
+msgctxt "female_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1863,7 +1836,7 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:247
-msgctxt "male_male"
+msgctxt "female_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1872,7 +1845,7 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:248
-msgctxt "male_other"
+msgctxt "female_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1881,7 +1854,7 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:249
-msgctxt "other_female"
+msgctxt "male_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1890,7 +1863,7 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:250
-msgctxt "other_male"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1899,7 +1872,16 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:251
-msgctxt "other_other"
+msgctxt "male_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
+"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
+
+#: .\__translations\__translations.py:252
+msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1908,6 +1890,24 @@ msgstr ""
 "bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
 
 #: .\__translations\__translations.py:253
+msgctxt "other_male"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
+"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
+
+#: .\__translations\__translations.py:254
+msgctxt "other_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Deze gebruiker matcht je profiel niet, maar je kunt haar Speedy Net-profiel "
+"bezoeken. Bekijk het gebruikersprofiel op Speedy Net."
+
+#: .\__translations\__translations.py:256
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1916,7 +1916,7 @@ msgstr ""
 "Je profielfoto mag niet transparant zijn. Upload een niet-transparante "
 "afbeelding."
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:257
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1925,7 +1925,7 @@ msgstr ""
 "Je profielfoto mag niet transparant zijn. Upload een niet-transparante "
 "afbeelding."
 
-#: .\__translations\__translations.py:255
+#: .\__translations\__translations.py:258
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1934,326 +1934,326 @@ msgstr ""
 "Je profielfoto mag niet transparant zijn. Upload een niet-transparante "
 "afbeelding."
 
-#: .\accounts\apps.py:8
+#: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
 msgstr "Speedy Core Accounts"
 
-#: .\accounts\fields.py:12
+#: .\accounts\fields.py:27
 msgid "Only me"
 msgstr "Alleen ik"
 
-#: .\accounts\fields.py:13
+#: .\accounts\fields.py:28
 msgid "Me and my friends"
 msgstr "Ik en mijn vrienden"
 
-#: .\accounts\fields.py:15
+#: .\accounts\fields.py:30
 msgid "Anyone"
 msgstr "Iedereen"
 
-#: .\accounts\forms.py:66
+#: .\accounts\forms.py:124
 msgid "Last name (optional)"
 msgstr "Achternaam (optioneel)"
 
-#: .\accounts\forms.py:130
+#: .\accounts\forms.py:279
 msgid "Your email"
 msgstr "Je e-mail"
 
-#: .\accounts\forms.py:131
+#: .\accounts\forms.py:280
 msgid "New password"
 msgstr "Nieuw paswoord"
 
-#: .\accounts\forms.py:139
+#: .\accounts\forms.py:294
 msgid "New username"
 msgstr "Nieuwe gebruikersnaam"
 
-#: .\accounts\forms.py:142
+#: .\accounts\forms.py:297
 msgid "Create an account"
 msgstr "Account aanmaken"
 
-#: .\accounts\forms.py:167
+#: .\accounts\forms.py:344
 msgid "Update your profile picture"
 msgstr "Werk je profielfoto bij"
 
-#: .\accounts\forms.py:167 .\accounts\validators.py:255
+#: .\accounts\forms.py:344 .\accounts\validators.py:507
 msgid "A profile picture is required."
 msgstr "Een profielfoto is verplicht."
 
-#: .\accounts\forms.py:313 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-mail of gebruikersnaam"
 
-#: .\accounts\forms.py:319 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Log in"
 
-#: .\accounts\forms.py:322 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Je wachtwoord vergeten?"
 
-#: .\accounts\forms.py:335
+#: .\accounts\forms.py:609
 msgid "Submit"
 msgstr "Indienen"
 
-#: .\accounts\forms.py:437
+#: .\accounts\forms.py:797
 msgid "Your password"
 msgstr "Je wachtwoord"
 
-#: .\accounts\forms.py:449
+#: .\accounts\forms.py:822
 msgid "Invalid password."
 msgstr "Ongeldig wachtwoord."
 
-#: .\accounts\models.py:178
+#: .\accounts\models.py:231
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: .\accounts\models.py:178 .\accounts\models.py:179
-#: .\accounts\validators.py:21
+#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "Deze gebruikersnaam is al in gebruik."
 
-#: .\accounts\models.py:179
+#: .\accounts\models.py:232
 msgid "username (slug)"
 msgstr "gebruikersnaam (slug)"
 
-#: .\accounts\models.py:180
+#: .\accounts\models.py:233
 msgid "photo"
 msgstr "foto"
 
-#: .\accounts\models.py:181
+#: .\accounts\models.py:234
 msgid "Special username"
 msgstr "Speciale gebruikersnaam"
 
-#: .\accounts\models.py:221 .\messages\models.py:185
+#: .\accounts\models.py:285 .\messages\models.py:215
 msgid "entity"
 msgstr "entiteit"
 
-#: .\accounts\models.py:222
+#: .\accounts\models.py:286
 msgid "entities"
 msgstr "entiteiten"
 
-#: .\accounts\models.py:249
+#: .\accounts\models.py:343
 msgid "Slug does not parse to username."
 msgstr "Slug parseert niet naar gebruikersnaam."
 
-#: .\accounts\models.py:253
+#: .\accounts\models.py:353
 msgid "Username is required."
 msgstr "Gebruikersnaam is vereist."
 
-#: .\accounts\models.py:298
+#: .\accounts\models.py:404
 msgid "name"
 msgstr "naam"
 
-#: .\accounts\models.py:329
+#: .\accounts\models.py:442
 msgid "description"
 msgstr "beschrijving"
 
-#: .\accounts\models.py:473
+#: .\accounts\models.py:600
 msgid "Female"
 msgstr "Vrouwelijk"
 
-#: .\accounts\models.py:474
+#: .\accounts\models.py:601
 msgid "Male"
 msgstr "Mannelijk"
 
-#: .\accounts\models.py:475
+#: .\accounts\models.py:602
 msgid "Other"
 msgstr "Ander"
 
-#: .\accounts\models.py:488 .\accounts\models.py:503 .\accounts\models.py:524
-#: .\messages\models.py:72 .\messages\models.py:73 .\messages\models.py:174
+#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: .\accounts\models.py:489
+#: .\accounts\models.py:618
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Veganiste (eet alleen planten en paddenstoelen)"
 
-#: .\accounts\models.py:490
+#: .\accounts\models.py:619
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetariër (eet geen vis en vlees)"
 
-#: .\accounts\models.py:491
+#: .\accounts\models.py:620
 msgid "Carnist (eats animals)"
 msgstr "Carnist (eet vlees)"
 
-#: .\accounts\models.py:504
+#: .\accounts\models.py:635
 msgid "Not smoking"
 msgstr "Niet roker"
 
-#: .\accounts\models.py:505
+#: .\accounts\models.py:636
 msgid "Smoking occasionally"
 msgstr "Rookt af en toe"
 
-#: .\accounts\models.py:506
+#: .\accounts\models.py:637
 msgid "Smoking"
 msgstr "Roker"
 
-#: .\accounts\models.py:525
+#: .\accounts\models.py:658
 msgid "Single"
 msgstr "Single"
 
-#: .\accounts\models.py:526
+#: .\accounts\models.py:659
 msgid "Divorced"
 msgstr "Gescheiden"
 
-#: .\accounts\models.py:527
+#: .\accounts\models.py:660
 msgid "Widowed"
 msgstr "Weduwnaar"
 
-#: .\accounts\models.py:528
+#: .\accounts\models.py:661
 msgid "In a relationship"
 msgstr "In een relatie"
 
-#: .\accounts\models.py:529
+#: .\accounts\models.py:662
 msgid "In an open relationship"
 msgstr "In een open relatie"
 
-#: .\accounts\models.py:530
+#: .\accounts\models.py:663
 msgid "It's complicated"
 msgstr "Het is gecompliceerd"
 
-#: .\accounts\models.py:531
+#: .\accounts\models.py:664
 msgid "Separated"
 msgstr "Uit elkaar"
 
-#: .\accounts\models.py:532
+#: .\accounts\models.py:665
 msgid "Engaged"
 msgstr "Verloofd"
 
-#: .\accounts\models.py:533
+#: .\accounts\models.py:666
 msgid "Married"
 msgstr "Getrouwd"
 
-#: .\accounts\models.py:542
+#: .\accounts\models.py:677
 msgid "Notify me"
 msgstr "Houd mij op de hoogte"
 
-#: .\accounts\models.py:543
+#: .\accounts\models.py:678
 msgid "Don't notify me"
 msgstr "Houd mij niet op de hoogte"
 
-#: .\accounts\models.py:590
+#: .\accounts\models.py:758
 msgid "first name"
 msgstr "Voornaam"
 
-#: .\accounts\models.py:593
+#: .\accounts\models.py:761
 msgid "last name"
 msgstr "Achternaam"
 
-#: .\accounts\models.py:595
+#: .\accounts\models.py:763
 msgid "I am"
 msgstr "Ik ben"
 
-#: .\accounts\models.py:596
+#: .\accounts\models.py:764
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: .\accounts\models.py:597
+#: .\accounts\models.py:765
 msgid "diet"
 msgstr "dieet"
 
-#: .\accounts\models.py:598
+#: .\accounts\models.py:766
 msgid "smoking status"
 msgstr "rokerstatus"
 
-#: .\accounts\models.py:599
+#: .\accounts\models.py:767
 msgid "relationship status"
 msgstr "relatiestatus"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:769
 msgid "Where do I live?"
 msgstr "Waar ik woon?"
 
-#: .\accounts\models.py:608
+#: .\accounts\models.py:776
 msgid "Who can view my birth month and day"
 msgstr "Wie kan mijn geboortemaand en -dag bekijken"
 
-#: .\accounts\models.py:609
+#: .\accounts\models.py:777
 msgid "Who can view my birth year"
 msgstr "Wie kan mijn geboortejaar bekijken"
 
-#: .\accounts\models.py:610
+#: .\accounts\models.py:778
 msgid "On new messages"
 msgstr "Bij nieuwe berichten"
 
-#: .\accounts\models.py:616
+#: .\accounts\models.py:784
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Laatst gebruikte IP-adres https://ipapi.com/time"
 
-#: .\accounts\models.py:617
+#: .\accounts\models.py:785
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Laatst gebruikte IP-adres onbewerkte https://ipapi.com/ resultaten"
 
-#: .\accounts\models.py:823 .\accounts\models.py:1277 .\blocks\models.py:22
+#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
 msgid "user"
 msgstr "gebruiker"
 
-#: .\accounts\models.py:824
+#: .\accounts\models.py:1078
 msgid "users"
 msgstr "gebruikers"
 
-#: .\accounts\models.py:870
+#: .\accounts\models.py:1137
 msgid "Superuser must be equal to staff."
 msgstr "Supergebruiker moet gelijk zijn aan personeel."
 
-#: .\accounts\models.py:1278
+#: .\accounts\models.py:1691
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1279
+#: .\accounts\models.py:1692
 msgid "is confirmed"
 msgstr "is bevestigd"
 
-#: .\accounts\models.py:1280
+#: .\accounts\models.py:1693
 msgid "is primary"
 msgstr "is primair"
 
-#: .\accounts\models.py:1281
+#: .\accounts\models.py:1694
 msgid "confirmation token"
 msgstr "bevestigingstoken"
 
-#: .\accounts\models.py:1282
+#: .\accounts\models.py:1695
 msgid "confirmation sent"
 msgstr "bevestiging verzonden"
 
-#: .\accounts\models.py:1283
+#: .\accounts\models.py:1696
 msgid "Who can see this email"
 msgstr "Wie kan deze e-mail zien"
 
-#: .\accounts\models.py:1294
+#: .\accounts\models.py:1713
 msgid "email addresses"
 msgstr "e-mailadressen"
 
-#: .\accounts\models.py:1377
+#: .\accounts\models.py:1867
 msgid "User"
 msgstr "Gebruiker"
 
-#: .\accounts\models.py:1378
+#: .\accounts\models.py:1868
 msgid "last visit"
 msgstr "laatste bezoek"
 
-#: .\accounts\models.py:1390
+#: .\accounts\models.py:1893
 msgid "Today"
 msgstr "Vandaag"
 
-#: .\accounts\models.py:1392
+#: .\accounts\models.py:1895
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: .\accounts\models.py:1394
+#: .\accounts\models.py:1897
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Op {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1396
+#: .\accounts\models.py:1899
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} geleden"
 
-#: .\accounts\validators.py:39
+#: .\accounts\validators.py:59
 msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
@@ -2261,7 +2261,7 @@ msgstr ""
 "De gebruikersnaam moet beginnen met 4 of meer letters en mag letters, "
 "cijfers of streepjes bevatten."
 
-#: .\accounts\validators.py:41
+#: .\accounts\validators.py:61
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
@@ -2269,7 +2269,7 @@ msgstr ""
 "De gebruikersnaam moet beginnen met 4 of meer letters, met daarna een "
 "willekeurig aantal cijfers. Je kunt ook streepjes tussen woorden gebruiken."
 
-#: .\accounts\validators.py:47
+#: .\accounts\validators.py:71
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d alphanumeric character (it "
@@ -2284,7 +2284,7 @@ msgstr[1] ""
 "De gebruikersnaam moet ten minste %(limit_value)d alfanumerieke tekens "
 "bevatten (het bevat %(show_value)d)."
 
-#: .\accounts\validators.py:58
+#: .\accounts\validators.py:94
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d alphanumeric character (it has "
@@ -2299,7 +2299,7 @@ msgstr[1] ""
 "De gebruikersnaam mag maximaal %(limit_value)d alfanumerieke tekens bevatten "
 "(het bevat %(show_value)d)."
 
-#: .\accounts\validators.py:69
+#: .\accounts\validators.py:117
 #, python-format
 msgid ""
 "Username must contain at least %(limit_value)d character (it has "
@@ -2314,7 +2314,7 @@ msgstr[1] ""
 "De gebruikersnaam moet ten minste %(limit_value)d karakter bevatten (het "
 "bevat %(show_value)d)."
 
-#: .\accounts\validators.py:80
+#: .\accounts\validators.py:140
 #, python-format
 msgid ""
 "Username must contain at most %(limit_value)d character (it has "
@@ -2329,7 +2329,7 @@ msgstr[1] ""
 "De gebruikersnaam mag maximaal %(limit_value)d tekens bevatten (het bevat "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:104
+#: .\accounts\validators.py:195
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2342,14 +2342,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Dit wachtwoord is te kort. De minimale lengte is %(min_length)d tekens."
 
-#: .\accounts\validators.py:114
+#: .\accounts\validators.py:211
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Uw wachtwoord moet minstens %(min_length)d teken lang zijn."
 msgstr[1] "Uw wachtwoord moet minstens %(min_length)d tekens lang zijn."
 
-#: .\accounts\validators.py:135
+#: .\accounts\validators.py:255
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2360,14 +2360,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Dit wachtwoord is te lang. Het mag maximaal %(max_length)d tekens bevatten."
 
-#: .\accounts\validators.py:145
+#: .\accounts\validators.py:271
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 msgstr[1] "Je wachtwoord mag maximaal %(max_length)d tekens bevatten."
 
-#: .\accounts\validators.py:165 .\accounts\validators.py:170
+#: .\accounts\validators.py:314 .\accounts\validators.py:325
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2375,30 +2375,30 @@ msgid ""
 msgstr ""
 "Je wachtwoord moet minstens %(min_unique_characters)d unieke tekens bevatten."
 
-#: .\accounts\validators.py:212 .\accounts\validators.py:219
+#: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
 msgstr "Dit veld mag niet leeg zijn."
 
-#: .\accounts\validators.py:214
+#: .\accounts\validators.py:420
 msgid "This field cannot be blank."
 msgstr "Dit veld kan niet leeg zijn."
 
-#: .\accounts\validators.py:226 .\accounts\validators.py:233
+#: .\accounts\validators.py:446 .\accounts\validators.py:460
 msgid "Enter a valid date."
 msgstr "Voer een geldige datum in."
 
-#: .\accounts\validators.py:246
+#: .\accounts\validators.py:482
 msgid "This email is already in use."
 msgstr "Deze email is al in gebruik."
 
-#: .\accounts\validators.py:257
+#: .\accounts\validators.py:509
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Het bestand van deze foto is te groot. De maximaal toegestane "
 "bestandsgrootte is 30 MB."
 
-#: .\accounts\validators.py:279 .\accounts\validators.py:298
+#: .\accounts\validators.py:542 .\accounts\validators.py:561
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2406,24 +2406,24 @@ msgstr ""
 "Je kunt dit formaat niet gebruiken voor je profielfoto. Alleen JPEG- of PNG-"
 "formaten worden geaccepteerd."
 
-#: .\accounts\views.py:299
+#: .\accounts\views.py:574
 msgid "Invalid confirmation link."
 msgstr "Ongeldige bevestigingslink."
 
-#: .\accounts\views.py:324 .\accounts\views.py:340
+#: .\accounts\views.py:624 .\accounts\views.py:673
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Er is een bevestigingsbericht verzonden naar {email_address}"
 
-#: .\accounts\views.py:355
+#: .\accounts\views.py:721
 msgid "The email address was deleted."
 msgstr "Het e-mailadres is verwijderd."
 
-#: .\accounts\views.py:371
+#: .\accounts\views.py:770
 msgid "You have made this email address primary."
 msgstr "Je heb die je primaire e-mailadres gemaakt."
 
-#: .\admin\views.py:72
+#: .\admin\views.py:102
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2448,7 +2448,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_two_years} leden die de website in de "
 "afgelopen twee jaar hebben bezocht."
 
-#: .\admin\views.py:118
+#: .\admin\views.py:148
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2488,7 +2488,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} zijn vóór 1 augustus "
 "2019 lid geworden."
 
-#: .\admin\views.py:138
+#: .\admin\views.py:168
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2497,136 +2497,136 @@ msgstr ""
 "Beheerder: {total_number_of_members_registered_in_year} zijn in {year} lid "
 "geworden."
 
-#: .\base\apps.py:13
+#: .\base\apps.py:28
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:17
+#: .\base\fields.py:34
 msgid "ID"
 msgstr "id"
 
-#: .\base\utils.py:417
+#: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
 msgstr ", "
 
-#: .\base\validators.py:5 .\base\validators.py:6
+#: .\base\validators.py:8 .\base\validators.py:9
 msgid "id contains illegal characters."
 msgstr "id bevat illegale tekens."
 
-#: .\base\views.py:57
+#: .\base\views.py:102
 msgid "Changes saved."
 msgstr "Wijzigingen opgeslagen."
 
-#: .\blocks\managers.py:30 .\blocks\models.py:43
+#: .\blocks\managers.py:64 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Gebruikers kunnen zichzelf niet blokkeren."
 
-#: .\blocks\models.py:23
+#: .\blocks\models.py:26
 msgid "blocked user"
 msgstr "geblokkeerde gebruiker"
 
-#: .\blocks\models.py:28
+#: .\blocks\models.py:31
 msgid "block"
 msgstr "blokkeren"
 
-#: .\blocks\models.py:29
+#: .\blocks\models.py:32
 msgid "user blocks"
 msgstr "gebruiker blokkeert"
 
-#: .\blocks\views.py:19
+#: .\blocks\views.py:52
 msgid "You have blocked {}."
 msgstr "Je hebt {} geblokkeerd."
 
-#: .\blocks\views.py:31
+#: .\blocks\views.py:94
 msgid "You have unblocked {}."
 msgstr "Je hebt {} gedeblokkeerd."
 
-#: .\contact_by_form\apps.py:8
+#: .\contact_by_form\apps.py:19
 msgid "Contact By Form"
 msgstr "Neem contact op via formulier"
 
-#: .\contact_by_form\forms.py:14
+#: .\contact_by_form\forms.py:29
 msgid "Type the number \"17\""
 msgstr "Voer het cijfer \"17\" in"
 
-#: .\contact_by_form\forms.py:41
+#: .\contact_by_form\forms.py:62
 msgid "Send"
 msgstr "Verstuur"
 
-#: .\contact_by_form\forms.py:47
+#: .\contact_by_form\forms.py:75
 msgid "Please contact us by email."
 msgstr "Neem contact met ons op via e-mail."
 
-#: .\contact_by_form\forms.py:53
+#: .\contact_by_form\forms.py:88
 msgid "Not 17."
 msgstr "Niet 17."
 
-#: .\contact_by_form\models.py:33
+#: .\contact_by_form\models.py:37
 msgid "Feedback"
 msgstr "Feedback"
 
-#: .\contact_by_form\models.py:34
+#: .\contact_by_form\models.py:38
 msgid "Abuse (User)"
 msgstr "Misbruik (gebruiker)"
 
-#: .\contact_by_form\models.py:35
+#: .\contact_by_form\models.py:39
 msgid "Abuse (Photo)"
 msgstr "Misbruik (foto)"
 
-#: .\contact_by_form\models.py:38 .\messages\models.py:156
+#: .\contact_by_form\models.py:42 .\messages\models.py:186
 msgid "sender"
 msgstr "afzender"
 
-#: .\contact_by_form\models.py:39
+#: .\contact_by_form\models.py:43
 msgid "your name"
 msgstr "je naam"
 
-#: .\contact_by_form\models.py:40
+#: .\contact_by_form\models.py:44
 msgid "your email"
 msgstr "je e-mail"
 
-#: .\contact_by_form\models.py:41
+#: .\contact_by_form\models.py:45
 msgid "type"
 msgstr "type"
 
-#: .\contact_by_form\models.py:42
+#: .\contact_by_form\models.py:46
 msgid "your message"
 msgstr "jouw bericht"
 
-#: .\contact_by_form\models.py:44
+#: .\contact_by_form\models.py:48
 msgid "reported entity"
 msgstr "gerapporteerde entiteit"
 
-#: .\contact_by_form\models.py:45
+#: .\contact_by_form\models.py:49
 msgid "reported photo"
 msgstr "gerapporteerde foto"
 
-#: .\contact_by_form\models.py:48
+#: .\contact_by_form\models.py:52
 msgid "feedback"
 msgstr "feedback"
 
-#: .\contact_by_form\models.py:49
+#: .\contact_by_form\models.py:53
 msgid "feedbacks"
 msgstr "feedback"
 
-#: .\friends\views.py:189
+#: .\friends\views.py:325
 msgid "Friendship request sent."
 msgstr "Vriendschapsverzoek verzonden."
 
-#: .\friends\views.py:204
+#: .\friends\views.py:349
 msgid "No friendship request."
 msgstr "Geen vriendschapsverzoek."
 
-#: .\friends\views.py:243
+#: .\friends\views.py:419
 msgid "Friendship request accepted."
 msgstr "Vriendschapsverzoek geaccepteerd."
 
-#: .\friends\views.py:261
+#: .\friends\views.py:446
 msgid "Friendship request rejected."
 msgstr "Vriendschapsverzoek afgewezen."
 
-#: .\messages\apps.py:8 .\templates\base_with_login.html:40
+#: .\messages\apps.py:14 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
 #: .\templates\messages\chat_detail.html:13
 #: .\templates\messages\chat_list.html:8
@@ -2634,239 +2634,239 @@ msgstr "Vriendschapsverzoek afgewezen."
 msgid "Messages"
 msgstr "Berichten"
 
-#: .\messages\models.py:29
+#: .\messages\models.py:32
 msgid "site"
 msgstr "site"
 
-#: .\messages\models.py:30
+#: .\messages\models.py:33
 msgid "participant 1"
 msgstr "deelnemer 1"
 
-#: .\messages\models.py:31
+#: .\messages\models.py:34
 msgid "participant 2"
 msgstr "deelnemer 2"
 
-#: .\messages\models.py:32
+#: .\messages\models.py:35
 msgid "participants"
 msgstr "deelnemers"
 
-#: .\messages\models.py:33
+#: .\messages\models.py:36
 msgid "is group chat"
 msgstr "is een groepsschat"
 
-#: .\messages\models.py:34
+#: .\messages\models.py:37
 msgid "last message"
 msgstr "Laatste bericht"
 
-#: .\messages\models.py:67 .\messages\models.py:155 .\messages\models.py:186
+#: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
 msgstr "chatten"
 
-#: .\messages\models.py:68
+#: .\messages\models.py:95
 msgid "chats"
 msgstr "chats"
 
-#: .\messages\models.py:77
+#: .\messages\models.py:108
 msgid "None"
 msgstr "Geen"
 
-#: .\messages\models.py:157 .\messages\models.py:162
+#: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
 msgstr "bericht"
 
-#: .\messages\models.py:163
+#: .\messages\models.py:193
 msgid "messages"
 msgstr "berichten"
 
-#: .\messages\models.py:191
+#: .\messages\models.py:221
 msgid "read mark"
 msgstr "zie markering"
 
-#: .\messages\models.py:192
+#: .\messages\models.py:222
 msgid "read marks"
 msgstr "zie markeringen"
 
-#: .\settings\base.py:196
+#: .\settings\base.py:226
 msgid "English"
 msgstr "Engels"
 
-#: .\settings\base.py:197
+#: .\settings\base.py:227
 msgid "Hebrew"
 msgstr "Hebreeuws"
 
-#: .\settings\base_with_login.py:65
+#: .\settings\base_with_login.py:76
 msgid "French"
 msgstr "Frans"
 
-#: .\settings\base_with_login.py:66
+#: .\settings\base_with_login.py:77
 msgid "German"
 msgstr "Duits"
 
-#: .\settings\base_with_login.py:67
+#: .\settings\base_with_login.py:78
 msgid "Spanish"
 msgstr "Spaans"
 
-#: .\settings\base_with_login.py:68
+#: .\settings\base_with_login.py:79
 msgid "Portuguese"
 msgstr "Portugees"
 
-#: .\settings\base_with_login.py:69
+#: .\settings\base_with_login.py:80
 msgid "Italian"
 msgstr "Italiaans"
 
-#: .\settings\base_with_login.py:70
+#: .\settings\base_with_login.py:81
 msgid "Dutch"
 msgstr "Nederlands"
 
-#: .\settings\base_with_login.py:71
+#: .\settings\base_with_login.py:82
 msgid "Japanese"
 msgstr "Japanse"
 
-#: .\settings\base_with_login.py:72
+#: .\settings\base_with_login.py:83
 msgid "Russian"
 msgstr "Russisch"
 
-#: .\settings\base_with_login.py:73
+#: .\settings\base_with_login.py:84
 msgid "Chinese"
 msgstr "Chinese"
 
-#: .\settings\base_with_login.py:74
+#: .\settings\base_with_login.py:85
 msgid "Polish"
 msgstr "Pools"
 
-#: .\settings\base_with_login.py:75
+#: .\settings\base_with_login.py:86
 msgid "Persian"
 msgstr "Perzisch"
 
-#: .\settings\base_with_login.py:79
+#: .\settings\base_with_login.py:90
 msgid "Korean"
 msgstr "Koreaans"
 
-#: .\settings\base_with_login.py:80
+#: .\settings\base_with_login.py:91
 msgid "Arabic"
 msgstr "Arabisch"
 
-#: .\settings\base_with_login.py:81
+#: .\settings\base_with_login.py:92
 msgid "Indonesian"
 msgstr "Indonesisch"
 
-#: .\settings\base_with_login.py:82
+#: .\settings\base_with_login.py:93
 msgid "Ukrainian"
 msgstr "Oekraïens"
 
-#: .\settings\base_with_login.py:83
+#: .\settings\base_with_login.py:94
 msgid "Turkish"
 msgstr "Turks"
 
-#: .\settings\base_with_login.py:84
+#: .\settings\base_with_login.py:95
 msgid "Vietnamese"
 msgstr "Vietnamees"
 
-#: .\settings\base_with_login.py:85
+#: .\settings\base_with_login.py:96
 msgid "Czech"
 msgstr "Tsjechisch"
 
-#: .\settings\base_with_login.py:86
+#: .\settings\base_with_login.py:97
 msgid "Swedish"
 msgstr "Zweeds"
 
-#: .\settings\base_with_login.py:87
+#: .\settings\base_with_login.py:98
 msgid "Finnish"
 msgstr "Fins"
 
-#: .\settings\base_with_login.py:88
+#: .\settings\base_with_login.py:99
 msgid "Hungarian"
 msgstr "Hongaars"
 
-#: .\settings\base_with_login.py:89
+#: .\settings\base_with_login.py:100
 msgid "Thai"
 msgstr "Thais"
 
-#: .\settings\base_with_login.py:90
+#: .\settings\base_with_login.py:101
 msgid "Greek"
 msgstr "Grieks"
 
-#: .\settings\base_with_login.py:91
+#: .\settings\base_with_login.py:102
 msgid "Malay"
 msgstr "Maleis"
 
-#: .\settings\base_with_login.py:92
+#: .\settings\base_with_login.py:103
 msgid "Serbian"
 msgstr "Servisch"
 
-#: .\settings\base_with_login.py:93
+#: .\settings\base_with_login.py:104
 msgid "Romanian"
 msgstr "Roemeense"
 
-#: .\settings\base_with_login.py:94
+#: .\settings\base_with_login.py:105
 msgid "Bengali"
 msgstr "Bengaals"
 
-#: .\settings\base_with_login.py:95
+#: .\settings\base_with_login.py:106
 msgid "Catalan"
 msgstr "Catalaans"
 
-#: .\settings\base_with_login.py:96
+#: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
 msgstr "Noors (Bokmål)"
 
-#: .\settings\base_with_login.py:97
+#: .\settings\base_with_login.py:108
 msgid "Bulgarian"
 msgstr "Bulgaars"
 
-#: .\settings\base_with_login.py:98
+#: .\settings\base_with_login.py:109
 msgid "Danish"
 msgstr "Deens"
 
-#: .\settings\base_with_login.py:99
+#: .\settings\base_with_login.py:110
 msgid "Slovak"
 msgstr "Slowaaks"
 
-#: .\settings\base_with_login.py:100
+#: .\settings\base_with_login.py:111
 msgid "Hindi"
 msgstr "Hindi"
 
-#: .\settings\base_with_login.py:101
+#: .\settings\base_with_login.py:112
 msgid "Estonian"
 msgstr "Ests"
 
-#: .\settings\base_with_login.py:102
+#: .\settings\base_with_login.py:113
 msgid "Croatian"
 msgstr "Kroatisch"
 
-#: .\settings\base_with_login.py:103
+#: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
 msgstr "Azerbeidzjaans"
 
-#: .\settings\base_with_login.py:104
+#: .\settings\base_with_login.py:115
 msgid "Cantonese"
 msgstr "Kantonees"
 
-#: .\settings\base_with_login.py:105
+#: .\settings\base_with_login.py:116
 msgid "Lithuanian"
 msgstr "Litouws"
 
-#: .\settings\base_with_login.py:106
+#: .\settings\base_with_login.py:117
 msgid "Slovenian"
 msgstr "Sloveens"
 
-#: .\settings\base_with_login.py:107
+#: .\settings\base_with_login.py:118
 msgid "Basque"
 msgstr "Baskisch"
 
-#: .\settings\base_with_login.py:108
+#: .\settings\base_with_login.py:119
 msgid "Armenian"
 msgstr "Armeens"
 
-#: .\settings\base_with_login.py:109
+#: .\settings\base_with_login.py:120
 msgid "Uzbek"
 msgstr "Oezbeeks"
 
-#: .\settings\base_with_login.py:110
+#: .\settings\base_with_login.py:121
 msgid "Tamil"
 msgstr "Tamil"
 
-#: .\settings\base_with_login.py:111
+#: .\settings\base_with_login.py:122
 msgid "Latvian"
 msgstr "Lets"
 
@@ -3583,62 +3583,62 @@ msgstr ""
 msgid "Browse..."
 msgstr "Browse..."
 
-#: .\uploads\models.py:24
+#: .\uploads\models.py:27
 msgid "owner"
 msgstr "eigenaar"
 
-#: .\uploads\models.py:25
+#: .\uploads\models.py:28
 msgid "file"
 msgstr "bestand"
 
-#: .\uploads\models.py:26
+#: .\uploads\models.py:29
 msgid "is stored"
 msgstr "is opgeslagen"
 
-#: .\uploads\models.py:27
+#: .\uploads\models.py:30
 msgid "file size"
 msgstr "bestandsgrootte"
 
-#: .\uploads\models.py:36
+#: .\uploads\models.py:45
 msgid "uploaded file"
 msgstr "geüpload bestand"
 
-#: .\uploads\models.py:37
+#: .\uploads\models.py:46
 msgid "uploaded files"
 msgstr "geüploade bestanden"
 
-#: .\uploads\models.py:75
+#: .\uploads\models.py:90
 msgid "visible on website"
 msgstr "zichtbaar op website"
 
-#: .\uploads\models.py:76
+#: .\uploads\models.py:91
 msgid "Speedy image moderation time"
 msgstr "Tijd voor Speedy-afbeeldingsmoderatie"
 
-#: .\uploads\models.py:77
+#: .\uploads\models.py:92
 msgid "AWS image moderation time"
 msgstr "AWS-beeldmoderatietijd"
 
-#: .\uploads\models.py:78
+#: .\uploads\models.py:93
 msgid "AWS facial analysis time"
 msgstr "AWS-gezichtsanalysetijd"
 
-#: .\uploads\models.py:79
+#: .\uploads\models.py:94
 msgid "AWS raw image moderation results"
 msgstr "AWS onbewerkte beeldmoderatieresultaten"
 
-#: .\uploads\models.py:80
+#: .\uploads\models.py:95
 msgid "AWS raw facial analysis results"
 msgstr "AWS onbewerkte gezichtsanalyseresultaten"
 
-#: .\uploads\models.py:81
+#: .\uploads\models.py:96
 msgid "number of faces"
 msgstr "aantal gezichten"
 
-#: .\uploads\models.py:86
+#: .\uploads\models.py:101
 msgid "uploaded image"
 msgstr "geüploade afbeelding"
 
-#: .\uploads\models.py:87
+#: .\uploads\models.py:102
 msgid "uploaded images"
 msgstr "geüploade afbeeldingen"

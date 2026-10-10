@@ -1,3 +1,6 @@
+"""
+Permission rules of the Speedy Match accounts app, defining who can view a user's profile, header, info, age and rank.
+"""
 from django.db.models import Q
 from django.conf import settings as django_settings
 
@@ -14,6 +17,16 @@ from speedy.match.likes.models import UserLike
 
 @predicate
 def is_match_profile(user, other_user):
+    """
+    Checks whether the user has a visible profile relation to another user on Speedy Match - either they are the same user, a match, have exchanged messages or likes, or one has blocked the other, and both are active (or the viewer is a staff superuser).
+
+    :param user: The user requesting access.
+    :type user: speedy.core.accounts.models.User
+    :param other_user: The user whose profile is being accessed.
+    :type other_user: speedy.core.accounts.models.User
+    :return: True if the profile relation grants access, False otherwise.
+    :rtype: bool
+    """
     if (user.is_authenticated):
         if ((user.is_staff) and (user.is_superuser)):
             return True

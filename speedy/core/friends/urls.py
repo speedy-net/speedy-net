@@ -1,3 +1,6 @@
+"""
+URL configuration for the friends app of Speedy Core.
+"""
 from django.urls import path
 
 from . import views

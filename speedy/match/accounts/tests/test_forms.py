@@ -1,3 +1,6 @@
+"""
+Test cases for the forms of the Speedy Match accounts app (the profile notifications form).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -12,7 +15,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class ProfileNotificationsFormOnlyEnglishTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
+            """
+            Tests the Speedy Match ProfileNotificationsForm field set, run only once (in English) since it is language-independent.
+
+            Methods:
+                test_has_correct_fields(self): Asserts the form exposes exactly the expected notification fields.
+            """
             def test_has_correct_fields(self):
+                """
+                Asserts the form exposes exactly the expected notification fields, in order.
+                """
                 form = ProfileNotificationsForm(instance=self.user)
                 self.assertListEqual(list1=list(form.fields.keys()), list2=[
                     'notify_on_message',

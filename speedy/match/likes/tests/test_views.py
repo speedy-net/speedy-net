@@ -1,3 +1,6 @@
+"""
+Test cases for the like, unlike and like list views of Speedy Match, in all main languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
@@ -23,13 +26,31 @@ if (django_settings.TESTS):
 
 
         class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin, TestCaseMixin):
+            """
+            Tests the like view, including permission checks and the notification email sent to the liked user.
+
+            Methods:
+                set_up(self): Creates two users (user_1, user_2) and the like page URL for user_2.
+                test_user_can_like_and_other_user_gets_notified_on_like(self): Asserts a user can like another user and an email notification is sent.
+                test_user_can_like_and_other_user_doesnt_get_notified_on_like(self): Asserts a user can like another user who has disabled like notifications, and no email is sent.
+                test_user_cannot_like_self(self): Asserts a user cannot like himself.
+                test_user_cannot_like_other_user_if_blocked(self): Asserts a user cannot like another user he has blocked.
+                test_user_cannot_like_other_user_if_blocking(self): Asserts a user cannot like another user who has blocked him.
+                test_user_cannot_like_twice(self): Asserts a user cannot like another user he already likes.
+            """
             def set_up(self):
+                """
+                Creates two users (user_1, user_2) and builds the like page URL for liking user_2.
+                """
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
                 self.page_url = '/{}/likes/like/'.format(self.user_2.slug)
 
             def test_user_can_like_and_other_user_gets_notified_on_like(self):
+                """
+                Asserts user_1 can like user_2 (who has like notifications enabled) and that an email is sent to user_2 with the expected subject for user_1's gender.
+                """
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
@@ -68,6 +89,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=mail.outbox[0].subject, second=self._someone_likes_you_on_speedy_match_subject_dict_by_gender[self.user_1.get_gender()])
 
             def test_user_can_like_and_other_user_doesnt_get_notified_on_like(self):
+                """
+                Asserts user_1 can like user_2, and when user_2 has disabled like notifications, no email is sent.
+                """
                 self.assert_models_count(
                     entity_count=2,
                     user_count=2,
@@ -107,6 +131,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_user_cannot_like_self(self):
+                """
+                Asserts a user cannot like himself; the view returns 403 and no like is created.
+                """
                 self.client.login(username=self.user_2.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 r = self.client.post(path=self.page_url)
@@ -114,6 +141,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
             def test_user_cannot_like_other_user_if_blocked(self):
+                """
+                Asserts a user cannot like another user he has blocked; the view returns 403 and no like is created.
+                """
                 Block.objects.block(blocker=self.user_1, blocked=self.user_2)
                 self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
@@ -122,6 +152,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
             def test_user_cannot_like_other_user_if_blocking(self):
+                """
+                Asserts a user cannot like another user who has blocked him; the view returns 403 and no like is created.
+                """
                 Block.objects.block(blocker=self.user_2, blocked=self.user_1)
                 self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
@@ -130,6 +163,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
             def test_user_cannot_like_twice(self):
+                """
+                Asserts a user cannot like another user he already likes; the second attempt returns 403 and no additional like is created.
+                """
                 self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 r = self.client.post(path=self.page_url)
@@ -145,7 +181,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class LikeViewAllMainLanguagesEnglishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -153,7 +198,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
         class LikeViewAllMainLanguagesFrenchTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -161,7 +215,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
         class LikeViewAllMainLanguagesGermanTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -169,7 +232,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
         class LikeViewAllMainLanguagesSpanishTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -177,7 +249,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
         class LikeViewAllMainLanguagesPortugueseTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -185,7 +266,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
         class LikeViewAllMainLanguagesItalianTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -193,7 +283,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
         class LikeViewAllMainLanguagesDutchTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -201,21 +300,45 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class LikeViewAllMainLanguagesHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the like view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_speedy_match
         class UnlikeViewOnlyEnglishTestCase(SiteTestCase):
+            """
+            Tests the unlike view, run only once (in English) since it is language-independent.
+
+            Methods:
+                set_up(self): Creates two users (user_1, user_2) and the unlike page URL for user_2.
+                test_user_can_unlike(self): Asserts a user can unlike a user he likes.
+                test_user_cannot_unlike_if_doesnt_like(self): Asserts a user cannot unlike a user he doesn't like.
+                test_user_cannot_unlike_twice(self): Asserts a user cannot unlike a user twice in a row.
+            """
             def set_up(self):
+                """
+                Creates two users (user_1, user_2) and builds the unlike page URL for unliking user_2.
+                """
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
                 self.page_url = '/{}/likes/unlike/'.format(self.user_2.slug)
 
             def test_user_can_unlike(self):
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                """
+                Asserts a user who likes another user can successfully unlike him, removing the UserLike record.
+                """
+                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
                 self.assertEqual(first=UserLike.objects.count(), second=1)
@@ -224,14 +347,20 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
             def test_user_cannot_unlike_if_doesnt_like(self):
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                """
+                Asserts a user cannot unlike a user he doesn't currently like; the view returns 403.
+                """
+                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 r = self.client.post(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
 
             def test_user_cannot_unlike_twice(self):
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                """
+                Asserts a user can unlike a user he likes once, but a second unlike attempt returns 403.
+                """
+                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
                 self.assertEqual(first=UserLike.objects.count(), second=1)
@@ -244,7 +373,26 @@ if (django_settings.TESTS):
 
 
         class LikeListViewsTestCaseMixin(SpeedyMatchLikesLanguageMixin, TestCaseMixin):
+            """
+            Tests the like-list views (people I like, people who like me, mutual likes), including ordering, blocking, gender-based titles, and deletion protections.
+
+            Methods:
+                set_up(self): Creates 5 users with a mix of likes between them and builds the like-list page URLs.
+                _test_all_like_list_views_contain_strings(self, strings): Asserts each like-list view returns 200, has the expected object count, and contains all the given strings.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected away from all like-list pages.
+                test_default_redirect(self): Asserts the default likes URL redirects to the "people I like" page.
+                test_user_can_see_who_they_like(self): Asserts the "people I like" view lists the correct users, in the correct (last-visit) order, excluding blocked users.
+                test_user_can_see_who_likes_them(self): Asserts the "people who like me" view lists the correct users, in the correct (last-visit) order, excluding blocked users.
+                test_user_can_see_mutual_likes(self): Asserts the "mutual likes" view lists only users with a mutual like, in the correct (last-visit) order, excluding blocked users.
+                test_like_list_views_titles(self): Asserts the like-list view titles reflect the correct gender-specific wording based on the current user's gender_to_match and the liked/liking users' genders.
+                test_like_list_views_titles_with_empty_lists(self): Asserts the like-list view titles reflect the correct gender-specific wording even when the like lists are empty.
+                test_cannot_delete_users_with_queryset_delete(self): Asserts deleting users or the current user via a queryset raises NotImplementedError.
+                test_cannot_delete_likes_with_queryset_delete(self): Asserts deleting likes via a queryset raises NotImplementedError.
+            """
             def set_up(self):
+                """
+                Creates 5 users (user_1 through user_5) plus several other users, with a mix of likes to and from user_1 (including mutual likes), builds the like-list page URLs, logs in as user_1, and staggers each user's last-visit time to establish a known ordering.
+                """
                 super().set_up()
                 self.user_1 = ActiveUserFactory()
                 self.user_2 = ActiveUserFactory()
@@ -293,6 +441,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=UserLike.objects.count(), second=9)
 
             def _test_all_like_list_views_contain_strings(self, strings):
+                """
+                Asserts each of the three like-list views (to, from, mutual) returns 200, has the expected object count for the current state, and contains every given string in its rendered content.
+
+                :param strings: The strings expected to appear in each view's rendered content (typically the page titles).
+                :type strings: list
+                """
                 r = self.client.get(path=self.to_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=len(self.to_likes))
@@ -310,16 +464,25 @@ if (django_settings.TESTS):
                     self.assertIn(member=string, container=r.content.decode())
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected away (302) from all three like-list pages.
+                """
                 self.client.logout()
                 self.assertEqual(first=self.client.get(path=self.to_url).status_code, second=302)
                 self.assertEqual(first=self.client.get(path=self.from_url).status_code, second=302)
                 self.assertEqual(first=self.client.get(path=self.mutual_url).status_code, second=302)
 
             def test_default_redirect(self):
+                """
+                Asserts the default likes URL redirects to the "people I like" page.
+                """
                 r = self.client.get(path=self.default_url)
                 self.assertRedirects(response=r, expected_url=self.to_url, status_code=302, target_status_code=200)
 
             def test_user_can_see_who_they_like(self):
+                """
+                Asserts the "people I like" view lists exactly the users user_1 likes, ordered by last visit, updates as new likes are added, and excludes a user who blocks or is blocked by user_1.
+                """
                 r = self.client.get(path=self.to_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=5)
@@ -363,6 +526,9 @@ if (django_settings.TESTS):
                 self.assertSetEqual(set1={like.to_user for like in r.context['object_list']}, set2=self.to_likes)
 
             def test_user_can_see_who_likes_them(self):
+                """
+                Asserts the "people who like me" view lists exactly the users who like user_1, ordered by last visit, updates as new likes are added, and excludes a user who blocks or is blocked by user_1.
+                """
                 r = self.client.get(path=self.from_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=4)
@@ -412,6 +578,9 @@ if (django_settings.TESTS):
                 self.assertSetEqual(set1={like.from_user for like in r.context['object_list']}, set2=self.from_likes)
 
             def test_user_can_see_mutual_likes(self):
+                """
+                Asserts the "mutual likes" view lists exactly the users who have a mutual like with user_1, ordered by last visit, updates as new mutual likes are added, and excludes a user who blocks or is blocked by user_1.
+                """
                 r = self.client.get(path=self.mutual_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=2)
@@ -450,6 +619,9 @@ if (django_settings.TESTS):
                 self.assertSetEqual(set1={like.to_user for like in r.context['object_list']}, set2=self.mutual_likes)
 
             def test_like_list_views_titles(self):
+                """
+                Asserts the like-list view titles use the correct gender-specific wording, varying the current user's gender_to_match and the liked/liking users' genders across all combinations.
+                """
                 self._test_all_like_list_views_contain_strings(strings=[
                     self._list_to_title_dict_by_gender[User.GENDER_OTHER_STRING],
                     self._list_from_title_dict_by_gender[User.GENDER_OTHER_STRING],
@@ -500,6 +672,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
 
             def test_like_list_views_titles_with_empty_lists(self):
+                """
+                Asserts the like-list view titles use the correct gender-specific wording even when all other users are deleted and the like lists are empty, across all gender_to_match combinations.
+                """
                 for user in User.objects.all().exclude(pk=self.user_1.pk):
                     user.delete()
                 self.user_2 = None
@@ -548,6 +723,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=gender_count_dict, d2=expected_gender_count_dict)
 
             def test_cannot_delete_users_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on a User queryset (filtered or not) always raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     User.objects.all().exclude(pk=self.user_1.pk).delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -562,6 +740,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_delete_likes_with_queryset_delete(self):
+                """
+                Asserts that calling delete() on a UserLike queryset (filtered or not) always raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     UserLike.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -578,7 +759,16 @@ if (django_settings.TESTS):
 
         @only_on_speedy_match
         class LikeListViewsAllMainLanguagesEnglishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -586,7 +776,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='fr')
         class LikeListViewsAllMainLanguagesFrenchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -594,7 +793,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='de')
         class LikeListViewsAllMainLanguagesGermanTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -602,7 +810,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='es')
         class LikeListViewsAllMainLanguagesSpanishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -610,7 +827,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='pt')
         class LikeListViewsAllMainLanguagesPortugueseTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -618,7 +844,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='it')
         class LikeListViewsAllMainLanguagesItalianTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -626,7 +861,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='nl')
         class LikeListViewsAllMainLanguagesDutchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -634,7 +878,16 @@ if (django_settings.TESTS):
         @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class LikeListViewsAllMainLanguagesHebrewTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
+            """
+            Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 

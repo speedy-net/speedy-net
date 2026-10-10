@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+Django's command-line utility for running tests on the Speedy Net site.
+"""
 import os
 import sys
 from pathlib import Path

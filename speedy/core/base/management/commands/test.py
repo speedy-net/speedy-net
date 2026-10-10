@@ -1,3 +1,6 @@
+"""
+Custom `test` management command of Speedy Core, which extends Django's test command.
+"""
 from django.core.management.commands import test
 
 
@@ -13,8 +16,8 @@ class Command(test.Command):
         """
         Adds custom arguments to the command parser.
 
-        Args:
-            parser (argparse.ArgumentParser): The argument parser instance.
+        :param parser: The argument parser instance.
+        :type parser: argparse.ArgumentParser
         """
         super().add_arguments(parser=parser)
 
