@@ -7,7 +7,28 @@ from speedy.core.accounts.models import User
 
 
 class UserLikeManager(BaseManager):
+    """
+    Manager for the UserLike model, providing methods for creating/removing likes and for querying like lists (sent, received, mutual).
+
+    Methods:
+        add_like(self, from_user, to_user): Creates a like from one user to another, validating it is allowed.
+        remove_like(self, from_user, to_user): Removes the like from one user to another, if it exists.
+        remove_all_likes_from_user(self, from_user): Removes all likes given by a user.
+        remove_all_likes_to_user(self, to_user): Removes all likes received by a user.
+        get_like_list_to_queryset(self, user): Returns the queryset of likes given by a user to other active users.
+        get_like_list_from_queryset(self, user): Returns the queryset of likes received by a user from other active, non-blocked users.
+        get_like_list_mutual_queryset(self, user): Returns the queryset of mutual likes (users who like the given user back).
+    """
     def add_like(self, from_user, to_user):
+        """
+        Creates a like from one user to another, after validating that the users are different, the like doesn't already exist, and there is no block between them.
+
+        :param from_user: The user giving the like.
+        :type from_user: speedy.core.accounts.models.User
+        :param to_user: The user receiving the like.
+        :type to_user: speedy.core.accounts.models.User
+        :raises django.core.exceptions.ValidationError: If the users are the same, the like already exists, or a block exists between them.
+        """
         from speedy.core.blocks.models import Block
 
         if (from_user == to_user):
@@ -22,18 +43,46 @@ class UserLikeManager(BaseManager):
         self.create(from_user=from_user, to_user=to_user)
 
     def remove_like(self, from_user, to_user):
+        """
+        Removes the like from one user to another, if it exists.
+
+        :param from_user: The user who gave the like.
+        :type from_user: speedy.core.accounts.models.User
+        :param to_user: The user who received the like.
+        :type to_user: speedy.core.accounts.models.User
+        """
         for like in self.filter(from_user=from_user, to_user=to_user):
             like.delete()
 
     def remove_all_likes_from_user(self, from_user):
+        """
+        Removes all likes given by a user.
+
+        :param from_user: The user whose given likes should be removed.
+        :type from_user: speedy.core.accounts.models.User
+        """
         for like in self.filter(from_user=from_user):
             like.delete()
 
     def remove_all_likes_to_user(self, to_user):
+        """
+        Removes all likes received by a user.
+
+        :param to_user: The user whose received likes should be removed.
+        :type to_user: speedy.core.accounts.models.User
+        """
         for like in self.filter(to_user=to_user):
             like.delete()
 
     def get_like_list_to_queryset(self, user):
+        """
+        Returns the queryset of likes given by the user to other users who are still active on Speedy Match.
+
+        :param user: The user whose given likes should be returned.
+        :type user: speedy.core.accounts.models.User
+        :return: The queryset of UserLike instances given by the user, ordered by the liked user's last visit.
+        :rtype: django.db.models.QuerySet
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -46,6 +95,14 @@ class UserLikeManager(BaseManager):
         return self.filter(from_user=user).filter(to_user__in=liked_users).prefetch_related("to_user", "to_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "to_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'to_user__photo').distinct().order_by('-to_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_from_queryset(self, user):
+        """
+        Returns the queryset of likes received by the user from other active, non-blocked users.
+
+        :param user: The user whose received likes should be returned.
+        :type user: speedy.core.accounts.models.User
+        :return: The queryset of UserLike instances received by the user, ordered by the liking user's last visit.
+        :rtype: django.db.models.QuerySet
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
@@ -62,6 +119,14 @@ class UserLikeManager(BaseManager):
         return self.filter(to_user=user).filter(from_user__in=who_likes_me).prefetch_related("from_user", "from_user__{}".format(SpeedyNetSiteProfile.RELATED_NAME), "from_user__{}".format(SpeedyMatchSiteProfile.RELATED_NAME), 'from_user__photo').distinct().order_by('-from_user__{}__last_visit'.format(SiteProfile.RELATED_NAME))
 
     def get_like_list_mutual_queryset(self, user):
+        """
+        Returns the queryset of mutual likes - users the given user likes who also like them back.
+
+        :param user: The user whose mutual likes should be returned.
+        :type user: speedy.core.accounts.models.User
+        :return: The queryset of UserLike instances representing mutual likes, ordered by the other user's last visit.
+        :rtype: django.db.models.QuerySet
+        """
         from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
         from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 

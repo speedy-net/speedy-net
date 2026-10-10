@@ -31,6 +31,12 @@ class UserLike(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Returns a human-readable string representation of the like.
+
+        :return: A string describing which user likes which other user.
+        :rtype: str
+        """
         return "User {} likes {}".format(self.from_user, self.to_user)
 
     def save(self, *args, **kwargs):
