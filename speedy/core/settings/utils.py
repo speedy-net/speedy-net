@@ -1,6 +1,7 @@
 import environ
 from pathlib import Path
 
+# Root directory of the project, the speedy.core app directory, and the environment variables reader (reads env.ini).
 ROOT_DIR = Path(__file__).parent.parent.parent.parent
 APP_DIR = ROOT_DIR / 'speedy' / 'core'
 env = environ.Env()

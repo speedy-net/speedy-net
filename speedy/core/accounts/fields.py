@@ -13,11 +13,13 @@ class UserAccessField(models.SmallIntegerField):
         ACCESS_ANYONE (int): Anyone can access.
         ACCESS_CHOICES (tuple): The available choices for this field.
     """
+    # Access levels: 1 is only the user, 2 is the user and their friends, 3 is the user, their friends and friends of friends (currently not offered as a choice), 4 is anyone.
     ACCESS_ME = 1
     ACCESS_FRIENDS = 2
     ACCESS_FRIENDS_AND_FRIENDS_OF_FRIENDS = 3
     ACCESS_ANYONE = 4
 
+    # The choices of the access field (value and translatable label); friends of friends is currently disabled.
     ACCESS_CHOICES = (
         (ACCESS_ME, _('Only me')),
         (ACCESS_FRIENDS, _('Me and my friends')),

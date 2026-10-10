@@ -20,6 +20,7 @@ import translated_fields
 
 logger = logging.getLogger(__name__)
 
+# Thresholds used to decide whether an image is of one color: the RGB threshold, the delta E (color difference) threshold, and the minimum fraction of pixels which have to be of that color.
 ONE_COLOR_RGB_THRESHOLD = 31.05
 ONE_COLOR_DELTA_E_THRESHOLD = 25.92
 ONE_COLOR_PERCENT_THRESHOLD = 0.9999  # 99.99%

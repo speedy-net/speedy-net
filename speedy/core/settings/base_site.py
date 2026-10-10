@@ -5,6 +5,7 @@ from speedy.net.settings.global_settings import *  # ~~~~ TODO: Maybe we don't n
 
 update_site_paths(settings=globals())
 
+# The current site ID is not set on speedy.core (it is set by each site's own settings).
 SITE_ID = None
 
 # We don't run tests on speedy.core

@@ -5,8 +5,10 @@ from django.core.cache import cache
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.utils.translation import get_language
 
+# Sentinel object returned by the cache when a key is not found, to distinguish it from a cached None.
 DEFAULT_VALUE = object()
 
+# Whether caching is enabled.
 USE_CACHE = True
 
 

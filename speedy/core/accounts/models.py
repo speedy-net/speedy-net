@@ -575,20 +575,24 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         update_last_ip_address_used: Update the last IP address used by the user.
         display_ads: Determine if the user should see ads.
     """
+    # Fields of the user which have a separate value for each language; the first two are the name fields and only the first one (first_name) is required.
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
     NAME_LOCALIZABLE_FIELDS = LOCALIZABLE_FIELDS[:2]
     NAME_REQUIRED_LOCALIZABLE_FIELDS = NAME_LOCALIZABLE_FIELDS[:1]
 
+    # Gender values stored in the database: 0 is unknown (not set), 1 is female, 2 is male, 3 is other. GENDER_MAX_VALUE_PLUS_ONE is one more than the highest valid gender value.
     GENDER_UNKNOWN = 0
     GENDER_FEMALE = 1
     GENDER_MALE = 2
     GENDER_OTHER = 3
     GENDER_MAX_VALUE_PLUS_ONE = 4
 
+    # String names of the genders (used for example in URLs, translations and templates).
     GENDER_FEMALE_STRING = 'female'
     GENDER_MALE_STRING = 'male'
     GENDER_OTHER_STRING = 'other'
 
+    # The gender choices (value and translatable label), the list of valid gender values (excluding unknown), a dict mapping each gender value to its string name, and the list of all gender string names.
     GENDER_CHOICES = (
         (GENDER_FEMALE, _("Female")),
         (GENDER_MALE, _("Male")),
@@ -598,12 +602,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     GENDERS_DICT = {GENDER_FEMALE: GENDER_FEMALE_STRING, GENDER_MALE: GENDER_MALE_STRING, GENDER_OTHER: GENDER_OTHER_STRING}
     ALL_GENDERS = list(GENDERS_DICT.values())  # ~~~~ TODO: maybe rename to ALL_GENDERS_STRINGS?
 
+    # Diet values stored in the database: 0 is unknown (not set), 1 is vegan, 2 is vegetarian, 3 is carnist. DIET_MAX_VALUE_PLUS_ONE is one more than the highest valid diet value.
     DIET_UNKNOWN = 0
     DIET_VEGAN = 1
     DIET_VEGETARIAN = 2
     DIET_CARNIST = 3
     DIET_MAX_VALUE_PLUS_ONE = 4
 
+    # The diet choices including the default (unknown), the valid choices (excluding unknown), and the list of valid diet values.
     DIET_CHOICES_WITH_DEFAULT = (
         (DIET_UNKNOWN, _("Unknown")),
         (DIET_VEGAN, _("Vegan (eats only plants and fungi)")),
@@ -613,12 +619,14 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     DIET_VALID_CHOICES = DIET_CHOICES_WITH_DEFAULT[1:]
     DIET_VALID_VALUES = [choice[0] for choice in DIET_VALID_CHOICES]
 
+    # Smoking status values stored in the database: 0 is unknown (not set), 1 is not smoking, 2 is smoking occasionally, 3 is smoking. SMOKING_STATUS_MAX_VALUE_PLUS_ONE is one more than the highest valid value.
     SMOKING_STATUS_UNKNOWN = 0
     SMOKING_STATUS_NOT_SMOKING = 1
     SMOKING_STATUS_SMOKING_OCCASIONALLY = 2
     SMOKING_STATUS_SMOKING = 3
     SMOKING_STATUS_MAX_VALUE_PLUS_ONE = 4
 
+    # The smoking status choices including the default (unknown), the valid choices (excluding unknown), and the list of valid smoking status values.
     SMOKING_STATUS_CHOICES_WITH_DEFAULT = (
         (SMOKING_STATUS_UNKNOWN, _("Unknown")),
         (SMOKING_STATUS_NOT_SMOKING, _("Not smoking")),
@@ -628,6 +636,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     SMOKING_STATUS_VALID_CHOICES = SMOKING_STATUS_CHOICES_WITH_DEFAULT[1:]
     SMOKING_STATUS_VALID_VALUES = [choice[0] for choice in SMOKING_STATUS_VALID_CHOICES]
 
+    # Relationship status values stored in the database: 0 is unknown (not set), 1 to 9 are single, divorced, widowed, in a relationship, in an open relationship, complicated, separated, engaged and married. RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE is one more than the highest valid value.
     RELATIONSHIP_STATUS_UNKNOWN = 0
     RELATIONSHIP_STATUS_SINGLE = 1
     RELATIONSHIP_STATUS_DIVORCED = 2
@@ -640,6 +649,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     RELATIONSHIP_STATUS_MARRIED = 9
     RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE = 10
 
+    # The relationship status choices including the default (unknown), the valid choices (excluding unknown), and the list of valid relationship status values.
     RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT = (
         (RELATIONSHIP_STATUS_UNKNOWN, _("Unknown")),
         (RELATIONSHIP_STATUS_SINGLE, _("Single")),
@@ -655,14 +665,17 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     RELATIONSHIP_STATUS_VALID_CHOICES = RELATIONSHIP_STATUS_CHOICES_WITH_DEFAULT[1:]
     RELATIONSHIP_STATUS_VALID_VALUES = [choice[0] for choice in RELATIONSHIP_STATUS_VALID_CHOICES]
 
+    # Values of the notifications setting: 0 is notifications off, 1 is notifications on.
     NOTIFICATIONS_OFF = 0
     NOTIFICATIONS_ON = 1
 
+    # The choices of the notifications setting (value and translatable label).
     NOTIFICATIONS_CHOICES = (
         (NOTIFICATIONS_ON, _("Notify me")),
         (NOTIFICATIONS_OFF, _("Don't notify me")),
     )
 
+    # Django authentication settings: the field used as the username to log in, and the fields required when creating a user with createsuperuser.
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'diet', 'slug']
 

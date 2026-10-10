@@ -26,6 +26,7 @@ class Feedback(TimeStampedModel):
         report_entity (ForeignKey): The reported entity (if applicable).
         report_file (ForeignKey): The reported file (if applicable).
     """
+    # Feedback types: 0 is general feedback, 1 is a report about a user, 2 is a report about a file (photo), and the choices of the type field (value and translatable label).
     TYPE_FEEDBACK = 0
     TYPE_REPORT_ENTITY = 1
     TYPE_REPORT_FILE = 2

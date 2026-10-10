@@ -23,8 +23,10 @@ class SiteProfile(SiteProfileBase):
         deactivate(self): Deactivate the profile.
         get_name(self): Get the name of the profile.
     """
+    # Name of the reverse one-to-one accessor from User to this site profile (User.speedy_mail_site_profile).
     RELATED_NAME = 'speedy_mail_site_profile'
 
+    # Name displayed instead of the user's name after the user is deleted.
     DELETED_NAME = _('Speedy Net User')
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)

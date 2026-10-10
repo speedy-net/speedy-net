@@ -1,3 +1,4 @@
+# Logging configuration for the development environment: verbose console logging at DEBUG level.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,

@@ -25,8 +25,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         all_friends_count (PositiveSmallIntegerField): The total number of friends.
         _optimistic_locking_fields (tuple): Fields used for optimistic locking.
     """
+    # Name of the reverse one-to-one accessor from User to this site profile (User.speedy_net_site_profile).
     RELATED_NAME = 'speedy_net_site_profile'
 
+    # Name displayed instead of the user's name after the user is deleted.
     DELETED_NAME = _('Speedy Net User')
 
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name=RELATED_NAME)

@@ -37,6 +37,7 @@ if (django_settings.TESTS):
             teardown_test_environment(self, **kwargs): Tear down the test environment.
             suite_result(self, suite, result, **kwargs): Get the suite result.
         """
+        # The number of fastest and slowest tests to report after running the tests.
         NUM_FAST_TESTS = 3
         NUM_SLOW_TESTS = 3
 

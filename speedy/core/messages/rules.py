@@ -10,6 +10,7 @@ from speedy.core.accounts.base_rules import is_self
 from speedy.core.blocks.rules import there_is_block
 from speedy.core.messages.models import Chat
 
+# Whether additional rules from the optional _rules module exist (set to False below if it can't be imported).
 ADDITIONAL_RULES = True
 
 try:

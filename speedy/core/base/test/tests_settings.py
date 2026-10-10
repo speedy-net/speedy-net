@@ -136,6 +136,7 @@ if (django_settings.TESTS):
         """
         Overridden settings for the Entity model, used in tests.
         """
+        # Minimum length of a slug in tests (overrides the production value).
         MIN_SLUG_LENGTH = 60
 
 
@@ -143,12 +144,15 @@ if (django_settings.TESTS):
         """
         Overridden settings for the User model, used in tests.
         """
+        # Minimum length of a user slug and maximum number of friends a user is allowed to have in tests (override the production values).
         MIN_SLUG_LENGTH = 60
         MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
+        # Minimum and maximum age (in years) allowed for the date of birth in the User model in tests.
         MIN_AGE_ALLOWED_IN_MODEL = 2  # In years.
         MAX_AGE_ALLOWED_IN_MODEL = 240  # In years.
 
+        # Minimum and maximum age (in years) allowed for the date of birth in forms in tests.
         MIN_AGE_ALLOWED_IN_FORMS = 2  # In years.
         MAX_AGE_ALLOWED_IN_FORMS = 178  # In years.
 
@@ -157,9 +161,11 @@ if (django_settings.TESTS):
         """
         Overridden settings for the Speedy Match site profile model, used in tests.
         """
+        # Minimum and maximum age (in years) a user can set for matches in tests.
         MIN_AGE_TO_MATCH_ALLOWED = 2  # In years.
         MAX_AGE_TO_MATCH_ALLOWED = 178  # In years.
 
+        # Minimum and maximum height (in cm) a user can set for matches in tests.
         MIN_HEIGHT_TO_MATCH = 120  # In cm.
         MAX_HEIGHT_TO_MATCH = 220  # In cm.
 
@@ -168,6 +174,7 @@ if (django_settings.TESTS):
         """
         Overridden logging settings, used in tests, logging to the console instead of by email.
         """
+        # Logging configuration for tests, based on the production configuration but with the speedy logger writing to the console.
         LOGGING = copy.deepcopy(django_settings.LOGGING)
         LOGGING['loggers']['speedy']['handlers'] = ['console']
 

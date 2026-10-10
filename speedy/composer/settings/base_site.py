@@ -7,8 +7,10 @@ from .utils import APP_DIR
 
 update_site_paths(settings=globals())
 
+# The Django site ID of Speedy Composer (the same value as SPEEDY_COMPOSER_SITE_ID).
 SITE_ID = SPEEDY_COMPOSER_SITE_ID
 
+# The root URL configuration module of Speedy Composer.
 ROOT_URLCONF = 'speedy.composer.urls'
 
 # if (LOGIN_ENABLED):

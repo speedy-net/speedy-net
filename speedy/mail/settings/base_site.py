@@ -7,8 +7,10 @@ from .utils import APP_DIR
 
 update_site_paths(settings=globals())
 
+# The Django site ID of Speedy Mail Software (the same value as SPEEDY_MAIL_SOFTWARE_SITE_ID).
 SITE_ID = SPEEDY_MAIL_SOFTWARE_SITE_ID
 
+# The root URL configuration module of Speedy Mail Software.
 ROOT_URLCONF = 'speedy.mail.urls'
 
 # if (LOGIN_ENABLED):

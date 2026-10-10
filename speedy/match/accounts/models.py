@@ -57,12 +57,16 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         not_allowed_to_use_speedy_match (BooleanField): Whether the user is allowed to use Speedy Match.
         likes_to_user_count (PositiveIntegerField): Count of likes to the user.
     """
+    # Fields of this site profile which have a separate value for each language.
     LOCALIZABLE_FIELDS = ('profile_description', 'children', 'more_children', 'match_description')
 
+    # Name of the reverse one-to-one accessor from User to this site profile (User.speedy_match_site_profile).
     RELATED_NAME = 'speedy_match_site_profile'
 
+    # Name displayed instead of the user's name after the user is deleted.
     DELETED_NAME = _('Speedy Match User')
 
+    # Match rank values between two users, from 0 (no match) to 5 (five hearts).
     RANK_0 = 0
     RANK_1 = 1
     RANK_2 = 2
@@ -70,6 +74,7 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
     RANK_4 = 4
     RANK_5 = 5
 
+    # The choices of the rank field (value and its translatable label), and the list of all valid rank values.
     RANK_CHOICES = (
         (RANK_0, _("No match")),
         (RANK_1, _("One heart")),

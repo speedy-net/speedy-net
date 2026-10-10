@@ -1,7 +1,9 @@
 from .utils import ROOT_DIR
 
+# Directory where media files are stored while running tests.
 TESTS_MEDIA_ROOT = str(ROOT_DIR / 'tests' / 'media')
 
+# Logging configuration for tests: console logging at DEBUG level.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,

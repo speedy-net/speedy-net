@@ -5,10 +5,12 @@ from django.utils import log
 
 from speedy.core.base import cache_manager
 
+# Cache key templates for each type of cached value; {subject} is replaced by a hash of the log message subject.
 CACHE_TYPES = {
     'mail_admins': 'speedy-core-base-log-mail-admins-{subject}',
 }
 
+# The time in seconds (1 hour) during which only one email is sent to the admins for each subject.
 MAIL_ADMINS_COOLDOWN_PERIOD = 3600  # 1 hour
 
 
@@ -34,6 +36,7 @@ class AdminEmailHandler(log.AdminEmailHandler):
     Methods:
         send_mail: Sends mail only once per hour for WARNING messages or specific ERROR messages.
     """
+    # Format strings (plain text and HTML) which describe the number of times a message was logged in the last hour.
     COUNT_FORMAT = 'Number in the last hour: {}'
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 
