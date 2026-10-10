@@ -6,7 +6,16 @@ if (django_settings.TESTS):
 
 
     class SpeedyMatchLikesLanguageMixin(TestCaseMixin):
+        """
+        Provides per-language and per-gender translated page title dictionaries for Speedy Match likes-related pages (mutual likes, likes-to, likes-by), used by likes test cases.
+
+        Methods:
+            set_up(self): Builds translated page title dictionaries (by language and by language+gender) and stores them as instance attributes.
+        """
         def set_up(self):
+            """
+            Builds the translated page title dictionaries used by likes view tests: a mutual-likes title by language, and gender-specific titles (likes-to, likes-by) by language and gender.
+            """
             super().set_up()
 
             _list_mutual_title_dict = {'en': 'Mutual Likes', 'fr': 'J’aimes mutuels', 'de': 'Gegenseitige Likes', 'es': 'Me gusta mutuos', 'pt': 'Curtidas recíproca', 'it': 'Mi Piace reciproci', 'nl': 'Wederzijdse likes', 'ja': '相互いいね', 'ru': 'Взаимные лайки', 'zh': '互相喜歡', 'pl': 'Wzajemne polubienia', 'fa': 'لایک های متقابل', 'he': 'לייקים הדדיים', 'ko': '상호 좋아요', 'ar': 'الإعجابات المتبادلة', 'id': 'Saling Suka', 'uk': 'Взаємні лайки', 'tr': 'Karşılıklı Beğeniler', 'vi': 'Lượt thích lẫn nhau', 'cs': 'Vzájemné lajky', 'sv': 'Ömsesidiga gillanden', 'fi': 'Yhteiset tykkäämiset', 'hu': 'Kölcsönös kedvelések', 'th': 'ความชอบร่วมกัน', 'el': 'Αμοιβαία Likes', 'ms': 'Saling Suka', 'sr': 'Мутуал Ликес', 'ro': 'Like-uri reciproce', 'bn': 'পারস্পরিক পছন্দ', 'ca': "M'agrada mutu", 'no': 'Gjensidige liker', 'bg': 'Взаимни харесвания', 'da': 'Gensidige likes', 'sk': 'Vzájomné lajky', 'hi': 'आपसी पसंद', 'et': 'Vastastikused meeldimised', 'hr': 'Međusobni lajkovi', 'az': 'Qarşılıqlı bəyənmələr', 'zh-yue': '互相喜歡', 'lt': 'Abipusės simpatijos', 'sl': 'Vzajemni všečki', 'eu': 'Elkarrekiko atseginak', 'hy': 'Փոխադարձ հավանումներ', 'uz': "O'zaro yoqtirishlar", 'ta': 'பரஸ்பர விருப்பம்', 'lv': 'Savstarpējas simpātijas'}
