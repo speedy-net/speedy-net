@@ -19,6 +19,7 @@ class UDIDField(models.CharField):
 
     Never use this class directly. Only use inherited classes below.
     """
+
     class Meta:
         abstract = True
 

@@ -16,6 +16,7 @@ if (django_settings.TESTS):
                 test_visitor_can_access_terms_of_service_page(self): Verify a visitor can access the terms of service page.
                 test_non_canonical_path_redirects_permanently_to_canonical_path(self): Verify a non-canonical path (with a query string) redirects permanently to the canonical path.
             """
+
             def set_up(self):
                 """
                 Sets up the terms of service page URL.

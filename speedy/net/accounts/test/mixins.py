@@ -20,6 +20,7 @@ if (django_settings.TESTS):
             _invalid_password_and_delete_my_account_text_errors_dict_by_gender(self, gender): Returns the errors dict for both an invalid password and an invalid "delete my account" confirmation text, by gender.
             set_up(self): Sets up per-language, per-gender delete-account text fixtures used by the account deletion tests.
         """
+
         def _delete_account_form_all_the_required_fields_keys(self):
             """
             Returns the list of required field names on the delete account form.

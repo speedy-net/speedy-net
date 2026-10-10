@@ -21,6 +21,7 @@ if (django_settings.TESTS):
             Methods:
                 test_has_correct_fields(self): Asserts the form exposes exactly the expected notification fields.
             """
+
             def test_has_correct_fields(self):
                 """
                 Asserts the form exposes exactly the expected notification fields, in order.

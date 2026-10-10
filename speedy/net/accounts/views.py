@@ -30,6 +30,7 @@ class RegistrationView(speedy_core_accounts_views.RegistrationView):
     Methods:
         get_context_data(self, **kwargs): Add the total number of active members text to the context.
     """
+
     def get_context_data(self, **kwargs):
         """
         Add the total number of active members text to the context.
@@ -62,6 +63,7 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         display_welcome_message(self): Display a welcome message to the user once their account is active.
         form_valid(self, form): Activate the profile, display the welcome message, log the activation, and redirect to the success URL.
     """
+
     def get_account_activation_url(self):
         """
         Get the URL of the account activation page.

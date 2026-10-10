@@ -20,6 +20,7 @@ class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
     Methods:
         get_redirect_url(self, *args, **kwargs): Returns the URL of the "likes to" list view for the user.
     """
+
     def get_redirect_url(self, *args, **kwargs):
         """
         Returns the URL of the "likes given" list view for the current user.

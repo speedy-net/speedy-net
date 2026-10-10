@@ -7,10 +7,9 @@ Django date and time format settings for the Hebrew language (he) in Speedy Core
 DATE_FORMAT = "j בF Y"
 MONTH_DAY_FORMAT = "j בF"
 
-
 # Formats accepted as input for dates in the language 'he' (strptime format strings); only the ISO format YYYY-MM-DD is accepted.
 DATE_INPUT_FORMATS = [
-    "%Y-%m-%d",                           # '2006-10-25',
+    "%Y-%m-%d",  # '2006-10-25',
 ]
 
 

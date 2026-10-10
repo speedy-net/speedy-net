@@ -24,6 +24,7 @@ if (django_settings.TESTS):
                 test_cannot_mark_a_staff_user_as_deleted(self): Verify a staff user cannot be marked as deleted.
                 test_cannot_mark_a_superuser_as_deleted(self): Verify a superuser cannot be marked as deleted.
             """
+
             def test_cannot_mark_a_user_as_deleted_with_wrong_delete_password(self):
                 """
                 Verify an inactive user cannot be marked as deleted with an incorrect delete password.

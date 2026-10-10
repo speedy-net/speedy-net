@@ -30,6 +30,7 @@ if (django_settings.TESTS):
                 test_user_2_has_no_access(self): Asserts another regular (non-admin) user is denied access to the page.
                 test_admin_has_access(self): Asserts the admin user can access the page (status code 200, without the permission-denied heading or alert), and returns the response.
             """
+
             def get_page_url(self):
                 """
                 Not implemented in this mixin - must be overridden by subclasses to return the page URL under test.
@@ -107,6 +108,7 @@ if (django_settings.TESTS):
                 assert_permission_denied(self, r): Asserts the given response redirects to the admin login page, without the profile-list links.
                 test_admin_has_access(self): Asserts the admin can access the page and it contains both the Speedy Net and Speedy Match profile-list links.
             """
+
             def get_page_url(self):
                 """
                 Returns the admin main page URL.
@@ -144,6 +146,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -161,6 +164,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -178,6 +182,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -195,6 +200,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -212,6 +218,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -229,6 +236,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -246,6 +254,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -263,6 +272,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.
@@ -279,6 +289,7 @@ if (django_settings.TESTS):
                 get_page_url(self): Returns the admin users list page URL.
                 test_admin_has_access(self): Asserts the admin can access the page and all three users appear by first name and name; full name appears only on Speedy Net, and ids never appear.
             """
+
             def get_page_url(self):
                 """
                 Returns the admin users list page URL.
@@ -314,6 +325,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -331,6 +343,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -348,6 +361,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -365,6 +379,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -382,6 +397,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -399,6 +415,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -416,6 +433,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -433,6 +451,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.
@@ -449,6 +468,7 @@ if (django_settings.TESTS):
                 get_page_url(self): Returns the admin users with-details list page URL.
                 test_admin_has_access(self): Asserts the admin can access the page and all three users appear by first name, name and id; full name appears only on Speedy Net; language markers appear only on Speedy Match (once per user).
             """
+
             def get_page_url(self):
                 """
                 Returns the admin users with-details list page URL.
@@ -489,6 +509,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -506,6 +527,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -523,6 +545,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -540,6 +563,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -557,6 +581,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -574,6 +599,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -591,6 +617,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -608,6 +635,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.
@@ -624,6 +652,7 @@ if (django_settings.TESTS):
                 get_page_url(self): Returns the admin user detail page URL for user_1.
                 test_admin_has_access(self): Asserts the admin can access the page and user_1's first name, name and id appear; full name appears only on Speedy Net; exactly one language marker appears on Speedy Match.
             """
+
             def get_page_url(self):
                 """
                 Returns the admin user detail page URL for user_1.
@@ -664,6 +693,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -681,6 +711,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -698,6 +729,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -715,6 +747,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -732,6 +765,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -749,6 +783,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -766,6 +801,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -783,6 +819,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.

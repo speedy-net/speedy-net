@@ -33,6 +33,7 @@ if (django_settings.TESTS):
                 test_set_up(self): Asserts the 5 users were created correctly.
                 test_blocked_users_dont_appear_in_matches_list(self): Test that blocked and blocking users don't appear in matches list.
             """
+
             def set_up(self):
                 """
                 Creates 5 active users for use by the tests.
@@ -108,6 +109,7 @@ if (django_settings.TESTS):
                 test_photo_not_visible_doesnt_match_profile_in_matches_list(self): Test that users with invisible photos don't appear in matches list, but their matches are not affected.
                 test_cannot_delete_site_profiles_with_queryset_delete(self): Test that bulk-deleting site profiles via the queryset always raises NotImplementedError.
             """
+
             def set_up(self):
                 """
                 Creates 5 active users of various genders for use by the tests.

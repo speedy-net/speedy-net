@@ -16,6 +16,7 @@ class SpeedyComposerNode(TimeStampedModel):  # ~~~~ TODO: check which class we w
     """
     Abstract base class for a Speedy Composer node (e.g. a username, slug and name container).
     """
+
     # ~~~~ TODO: move to django_settings.
     # MIN_USERNAME_LENGTH = 1
     # MAX_USERNAME_LENGTH = 200

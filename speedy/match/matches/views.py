@@ -126,6 +126,7 @@ class MatchSettingsDefaultRedirectView(LoginRequiredMixin, generic.RedirectView)
     Methods:
         get_redirect_url(self, *args, **kwargs): Returns the URL of the match settings edit view.
     """
+
     def get_redirect_url(self, *args, **kwargs):
         """
         Returns the URL of the match settings edit view.

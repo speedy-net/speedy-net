@@ -1634,6 +1634,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1651,6 +1652,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1668,6 +1670,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1685,6 +1688,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1702,6 +1706,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1719,6 +1724,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1736,6 +1742,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1753,6 +1760,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1785,6 +1793,7 @@ if (django_settings.TESTS):
                 test_match_profile_rank_4(self): Tests that a partial diet match rank (here 4) determines the overall matching rank.
                 test_match_profile_rank_1(self): Tests that the lowest of several partial-match ranks (here 1) determines the overall matching rank, in either direction.
             """
+
             def get_active_user_doron(self):
                 """
                 Returns an active male user fixture (Doron) configured to match females aged 20-180.

@@ -38,6 +38,7 @@ if (django_settings.TESTS):
                 test_user_cannot_like_other_user_if_blocking(self): Asserts a user cannot like another user who has blocked him.
                 test_user_cannot_like_twice(self): Asserts a user cannot like another user he already likes.
             """
+
             def set_up(self):
                 """
                 Creates two users (user_1, user_2) and builds the like page URL for liking user_2.
@@ -187,6 +188,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -204,6 +206,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -221,6 +224,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -238,6 +242,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -255,6 +260,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -272,6 +278,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -289,6 +296,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -306,6 +314,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.
@@ -325,6 +334,7 @@ if (django_settings.TESTS):
                 test_user_cannot_unlike_if_doesnt_like(self): Asserts a user cannot unlike a user he doesn't like.
                 test_user_cannot_unlike_twice(self): Asserts a user cannot unlike a user twice in a row.
             """
+
             def set_up(self):
                 """
                 Creates two users (user_1, user_2) and builds the unlike page URL for unliking user_2.
@@ -338,7 +348,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a user who likes another user can successfully unlike him, removing the UserLike record.
                 """
-                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
                 self.assertEqual(first=UserLike.objects.count(), second=1)
@@ -350,7 +360,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a user cannot unlike a user he doesn't currently like; the view returns 403.
                 """
-                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 r = self.client.post(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=403)
@@ -360,7 +370,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a user can unlike a user he likes once, but a second unlike attempt returns 403.
                 """
-                self.client.login(username=self.user_1.slug,  password=tests_settings.USER_PASSWORD)
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
                 UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
                 self.assertEqual(first=UserLike.objects.count(), second=1)
@@ -389,6 +399,7 @@ if (django_settings.TESTS):
                 test_cannot_delete_users_with_queryset_delete(self): Asserts deleting users or the current user via a queryset raises NotImplementedError.
                 test_cannot_delete_likes_with_queryset_delete(self): Asserts deleting likes via a queryset raises NotImplementedError.
             """
+
             def set_up(self):
                 """
                 Creates 5 users (user_1 through user_5) plus several other users, with a mix of likes to and from user_1 (including mutual likes), builds the like-list page URLs, logs in as user_1, and staggers each user's last-visit time to establish a known ordering.
@@ -765,6 +776,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -782,6 +794,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -799,6 +812,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -816,6 +830,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -833,6 +848,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -850,6 +866,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -867,6 +884,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -884,6 +902,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.

@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
+#: .\__translations\__translations.py:8 .\base\tests\test_translations.py:25
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -859,32 +859,32 @@ msgstr ""
 "Prihlásili ste sa na odber tohto typu upozornení z %(site_name)s. Ak chcete "
 "zmeniť nastavenia upozornení alebo sa odhlásiť, prejdite na túto stránku:"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
 msgstr "Zadajte platnú e-mailovú adresu."
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:12
 msgid "Email address"
 msgstr "E-mailová adresa"
 
-#: .\__translations\__translations.py:14 .\accounts\models.py:1712
+#: .\__translations\__translations.py:13 .\accounts\models.py:1713
 msgid "email address"
 msgstr "emailová adresa"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:14
 msgid "Email address:"
 msgstr "E-mailová adresa:"
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "Email"
 
-#: .\__translations\__translations.py:17
+#: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
 msgstr "Hodnota musí byť platný JSON."
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:17
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -893,43 +893,43 @@ msgstr ""
 "Zadajte správne %(username)s a heslo. Upozorňujeme, že obe polia môžu "
 "rozlišovať malé a veľké písmená."
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 msgid "Message"
 msgstr "Správa"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 msgid "Friendship Request"
 msgstr "Žiadosť o priateľstvo"
 
-#: .\__translations\__translations.py:25
+#: .\__translations\__translations.py:23
 msgid "Friendship Requests"
 msgstr "Žiadosti o priateľstvo"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 msgid "Friend"
 msgstr "Priateľ"
 
-#: .\__translations\__translations.py:28 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "Priatelia"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 msgid "Following Relationship"
 msgstr "Sledovanie vzťahu"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 msgid "Following Relationships"
 msgstr "Nasledujúce vzťahy"
 
-#: .\__translations\__translations.py:33
+#: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
 msgstr "Blokátorský vzťah"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
 msgstr "Blokované vzťahy"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:36
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -944,582 +944,626 @@ msgstr[1] ""
 "Zoznam obsahuje %(show_value)d položiek, nemal by obsahovať viac ako "
 "%(limit_value)d."
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
 msgstr "užívateľské meno (slimák)"
+
+#: .\__translations\__translations.py:43
+msgctxt "male"
+msgid "username (slug)"
+msgstr "užívateľské meno (slimák)"
+
+#: .\__translations\__translations.py:44
+msgctxt "other"
+msgid "username (slug)"
+msgstr "užívateľské meno (slimák)"
+
+#: .\__translations\__translations.py:46
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Aktualizujte svoj profilový obrázok"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
-msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgid "Update your profile picture"
+msgstr "Aktualizujte svoj profilový obrázok"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
-msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgid "Update your profile picture"
+msgstr "Aktualizujte svoj profilový obrázok"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
-msgid "Update your profile picture"
-msgstr "Aktualizujte svoj profilový obrázok"
+msgid "Save Changes"
+msgstr "Uložiť zmeny"
 
 #: .\__translations\__translations.py:51
 msgctxt "male"
-msgid "Update your profile picture"
-msgstr "Aktualizujte svoj profilový obrázok"
+msgid "Save Changes"
+msgstr "Uložiť zmeny"
 
 #: .\__translations\__translations.py:52
 msgctxt "other"
-msgid "Update your profile picture"
-msgstr "Aktualizujte svoj profilový obrázok"
+msgid "Save Changes"
+msgstr "Uložiť zmeny"
 
 #: .\__translations\__translations.py:54
 msgctxt "female"
-msgid "Save Changes"
-msgstr "Uložiť zmeny"
+msgid "You can't change your username."
+msgstr "Používateľské meno si nemôžete zmeniť."
 
 #: .\__translations\__translations.py:55
 msgctxt "male"
-msgid "Save Changes"
-msgstr "Uložiť zmeny"
+msgid "You can't change your username."
+msgstr "Používateľské meno si nemôžete zmeniť."
 
 #: .\__translations\__translations.py:56
 msgctxt "other"
-msgid "Save Changes"
-msgstr "Uložiť zmeny"
+msgid "You can't change your username."
+msgstr "Používateľské meno si nemôžete zmeniť."
 
 #: .\__translations\__translations.py:58
+#, python-brace-format
 msgctxt "female"
-msgid "You can't change your username."
-msgstr "Používateľské meno si nemôžete zmeniť."
+msgid "Activate your {site_name} account"
+msgstr "Aktivujte si účet {site_name}"
 
 #: .\__translations\__translations.py:59
+#, python-brace-format
 msgctxt "male"
-msgid "You can't change your username."
-msgstr "Používateľské meno si nemôžete zmeniť."
+msgid "Activate your {site_name} account"
+msgstr "Aktivujte si účet {site_name}"
 
 #: .\__translations\__translations.py:60
+#, python-brace-format
 msgctxt "other"
-msgid "You can't change your username."
-msgstr "Používateľské meno si nemôžete zmeniť."
+msgid "Activate your {site_name} account"
+msgstr "Aktivujte si účet {site_name}"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "Aktivujte si účet {site_name}"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktivujte svoj účet {site_name}"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "Aktivujte si účet {site_name}"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktivujte svoj účet {site_name}"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
-msgid "Activate your {site_name} account"
-msgstr "Aktivujte si účet {site_name}"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktivujte svoj účet {site_name}"
 
 #: .\__translations\__translations.py:66
-#, python-brace-format
 msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktivujte svoj účet {site_name}"
+msgid "Add"
+msgstr "Pridať"
 
 #: .\__translations\__translations.py:67
-#, python-brace-format
 msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktivujte svoj účet {site_name}"
+msgid "Add"
+msgstr "Pridať"
 
 #: .\__translations\__translations.py:68
-#, python-brace-format
 msgctxt "other"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktivujte svoj účet {site_name}"
+msgid "Add"
+msgstr "Pridať"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
-msgid "Add"
-msgstr "Pridať"
+msgid "Where do I live?"
+msgstr "kde to bývam?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
-msgid "Add"
-msgstr "Pridať"
+msgid "Where do I live?"
+msgstr "kde to bývam?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
-msgid "Add"
-msgstr "Pridať"
+msgid "Where do I live?"
+msgstr "kde to bývam?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
-msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgid "Where do you live?"
+msgstr "kde bývaš?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
-msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgid "Where do you live?"
+msgstr "kde bývaš?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
-msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgid "Where do you live?"
+msgstr "kde bývaš?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
-msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgid "Please write where you live."
+msgstr "Prosím napíšte kde bývate."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
-msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgid "Please write where you live."
+msgstr "Prosím napíšte kde bývate."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
-msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgid "Please write where you live."
+msgstr "Prosím napíšte kde bývate."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
-msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (je len rastliny a huby)"
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
-msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (je len rastliny a huby)"
 
 #: .\__translations\__translations.py:84
 msgctxt "other"
-msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegan (je len rastliny a huby)"
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (je len rastliny a huby)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarián (nejem ryby a mäso)"
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (je len rastliny a huby)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarián (nejem ryby a mäso)"
 
 #: .\__translations\__translations.py:88
 msgctxt "other"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (je len rastliny a huby)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarián (nejem ryby a mäso)"
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarián (nejem ryby a mäso)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (žerie zvieratá)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarián (nejem ryby a mäso)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (žerie zvieratá)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarián (nejem ryby a mäso)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (žerie zvieratá)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (žerie zvieratá)"
+msgid "Vegan"
+msgstr "Vegan"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (žerie zvieratá)"
+msgid "Vegan"
+msgstr "Vegan"
 
 #: .\__translations\__translations.py:96
 msgctxt "other"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (žerie zvieratá)"
+msgid "Vegan"
+msgstr "Vegan"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
-msgid "Vegan"
-msgstr "Vegan"
+msgid "Vegetarian"
+msgstr "Vegetariánska"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
-msgid "Vegan"
-msgstr "Vegan"
+msgid "Vegetarian"
+msgstr "Vegetariánska"
 
 #: .\__translations\__translations.py:100
 msgctxt "other"
-msgid "Vegan"
-msgstr "Vegan"
+msgid "Vegetarian"
+msgstr "Vegetariánska"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
-msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
-msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
-msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Nefajčiť"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Nefajčiť"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Nefajčiť"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
-msgid "Not smoking"
-msgstr "Nefajčiť"
+msgid "Smoking occasionally"
+msgstr "Príležitostne fajčiť"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
-msgid "Not smoking"
-msgstr "Nefajčiť"
+msgid "Smoking occasionally"
+msgstr "Príležitostne fajčiť"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
-msgid "Not smoking"
-msgstr "Nefajčiť"
+msgid "Smoking occasionally"
+msgstr "Príležitostne fajčiť"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgid "Smoking"
+msgstr "Fajčenie"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgid "Smoking"
+msgstr "Fajčenie"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
-msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgid "Smoking"
+msgstr "Fajčenie"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
-msgid "Smoking"
-msgstr "Fajčenie"
+msgid "Single"
+msgstr "Slobodný"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
-msgid "Smoking"
-msgstr "Fajčenie"
+msgid "Single"
+msgstr "Slobodný"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
-msgid "Smoking"
-msgstr "Fajčenie"
+msgid "Single"
+msgstr "Slobodný"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
-msgid "Single"
-msgstr "Slobodný"
+msgid "Divorced"
+msgstr "Rozvedený"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
-msgid "Single"
-msgstr "Slobodný"
+msgid "Divorced"
+msgstr "Rozvedený"
 
 #: .\__translations\__translations.py:124
 msgctxt "other"
-msgid "Single"
-msgstr "Slobodný"
+msgid "Divorced"
+msgstr "Rozvedený"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
-msgid "Divorced"
-msgstr "Rozvedený"
+msgid "Widowed"
+msgstr "Vdova"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
-msgid "Divorced"
-msgstr "Rozvedený"
+msgid "Widowed"
+msgstr "Vdova"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
-msgid "Divorced"
-msgstr "Rozvedený"
+msgid "Widowed"
+msgstr "Vdova"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
-msgid "Widowed"
-msgstr "Vdova"
+msgid "In a relationship"
+msgstr "Vo vzťahu"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
-msgid "Widowed"
-msgstr "Vdova"
+msgid "In a relationship"
+msgstr "Vo vzťahu"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
-msgid "Widowed"
-msgstr "Vdova"
+msgid "In a relationship"
+msgstr "Vo vzťahu"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
-msgid "In a relationship"
-msgstr "Vo vzťahu"
+msgid "In an open relationship"
+msgstr "V otvorenom vzťahu"
 
 #: .\__translations\__translations.py:135
 msgctxt "male"
-msgid "In a relationship"
-msgstr "Vo vzťahu"
+msgid "In an open relationship"
+msgstr "V otvorenom vzťahu"
 
 #: .\__translations\__translations.py:136
 msgctxt "other"
-msgid "In a relationship"
-msgstr "Vo vzťahu"
+msgid "In an open relationship"
+msgstr "V otvorenom vzťahu"
 
 #: .\__translations\__translations.py:138
 msgctxt "female"
-msgid "In an open relationship"
-msgstr "V otvorenom vzťahu"
+msgid "It's complicated"
+msgstr "Je to komplikované"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
-msgid "In an open relationship"
-msgstr "V otvorenom vzťahu"
+msgid "It's complicated"
+msgstr "Je to komplikované"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
-msgid "In an open relationship"
-msgstr "V otvorenom vzťahu"
+msgid "It's complicated"
+msgstr "Je to komplikované"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
-msgid "It's complicated"
-msgstr "Je to komplikované"
+msgid "Separated"
+msgstr "Oddelené"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
-msgid "It's complicated"
-msgstr "Je to komplikované"
+msgid "Separated"
+msgstr "Oddelené"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
-msgid "It's complicated"
-msgstr "Je to komplikované"
+msgid "Separated"
+msgstr "Oddelené"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
-msgid "Separated"
-msgstr "Oddelené"
+msgid "Engaged"
+msgstr "Zasnúbený"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
-msgid "Separated"
-msgstr "Oddelené"
+msgid "Engaged"
+msgstr "Zasnúbený"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
-msgid "Separated"
-msgstr "Oddelené"
+msgid "Engaged"
+msgstr "Zasnúbený"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
-msgid "Engaged"
-msgstr "Zasnúbený"
+msgid "Married"
+msgstr "Ženatý"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
-msgid "Engaged"
-msgstr "Zasnúbený"
+msgid "Married"
+msgstr "Ženatý"
 
 #: .\__translations\__translations.py:152
 msgctxt "other"
-msgid "Engaged"
-msgstr "Zasnúbený"
+msgid "Married"
+msgstr "Ženatý"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
-msgid "Married"
-msgstr "Ženatý"
+msgid "Your new password has been saved."
+msgstr "Vaše nové heslo bolo uložené."
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
-msgid "Married"
-msgstr "Ženatý"
+msgid "Your new password has been saved."
+msgstr "Vaše nové heslo bolo uložené."
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
-msgid "Married"
-msgstr "Ženatý"
+msgid "Your new password has been saved."
+msgstr "Vaše nové heslo bolo uložené."
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "Vaše nové heslo bolo uložené."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
+"znova aktivovať."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "Vaše nové heslo bolo uložené."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
+"znova aktivovať."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
-msgid "Your new password has been saved."
-msgstr "Vaše nové heslo bolo uložené."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
+"znova aktivovať."
 
 #: .\__translations\__translations.py:162
+#, python-brace-format
 msgctxt "female"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
+"Váš účet Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:163
+#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
+"Váš účet Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:164
+#, python-brace-format
 msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
+"Váš účet Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:166
-#, python-brace-format
 msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgid "You've already confirmed this email address."
+msgstr "Túto e-mailovú adresu ste už potvrdili."
 
 #: .\__translations\__translations.py:167
-#, python-brace-format
 msgctxt "male"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgid "You've already confirmed this email address."
+msgstr "Túto e-mailovú adresu ste už potvrdili."
 
 #: .\__translations\__translations.py:168
-#, python-brace-format
 msgctxt "other"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgid "You've already confirmed this email address."
+msgstr "Túto e-mailovú adresu ste už potvrdili."
 
 #: .\__translations\__translations.py:170
 msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "Túto e-mailovú adresu ste už potvrdili."
+msgid "You've confirmed your email address."
+msgstr "Potvrdili ste svoju e-mailovú adresu."
 
 #: .\__translations\__translations.py:171
 msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "Túto e-mailovú adresu ste už potvrdili."
+msgid "You've confirmed your email address."
+msgstr "Potvrdili ste svoju e-mailovú adresu."
 
 #: .\__translations\__translations.py:172
 msgctxt "other"
-msgid "You've already confirmed this email address."
-msgstr "Túto e-mailovú adresu ste už potvrdili."
+msgid "You've confirmed your email address."
+msgstr "Potvrdili ste svoju e-mailovú adresu."
 
 #: .\__translations\__translations.py:174
 msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "Potvrdili ste svoju e-mailovú adresu."
+msgid "Send"
+msgstr "Odoslať"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "Potvrdili ste svoju e-mailovú adresu."
+msgid "Send"
+msgstr "Odoslať"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
-msgid "You've confirmed your email address."
-msgstr "Potvrdili ste svoju e-mailovú adresu."
+msgid "Send"
+msgstr "Odoslať"
 
 #: .\__translations\__translations.py:178
+#, python-brace-format
 msgctxt "female"
-msgid "Send"
-msgstr "Odoslať"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
+"Net. Pred pokračovaním odstráňte priateľov."
 
 #: .\__translations\__translations.py:179
+#, python-brace-format
 msgctxt "male"
-msgid "Send"
-msgstr "Odoslať"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
+"Net. Pred pokračovaním odstráňte priateľov."
 
 #: .\__translations\__translations.py:180
+#, python-brace-format
 msgctxt "other"
-msgid "Send"
-msgstr "Odoslať"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
+"Net. Pred pokračovaním odstráňte priateľov."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
+"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
+"odstránili priateľov."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "male"
+msgctxt "female_male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
+"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
+"odstránili priateľov."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "other"
+msgctxt "female_other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
+"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
+"odstránili priateľov."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
+"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
+"odstránili priateľov."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1530,7 +1574,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1541,7 +1585,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "female_other"
+msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1552,7 +1596,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1563,18 +1607,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "male_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
-
-#: .\__translations\__translations.py:191
-#, python-brace-format
-msgctxt "male_other"
+msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1584,211 +1617,208 @@ msgstr ""
 "odstránili priateľov."
 
 #: .\__translations\__translations.py:192
-#, python-brace-format
-msgctxt "other_female"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Nemôžete byť sami so sebou priateľmi."
 
 #: .\__translations\__translations.py:193
-#, python-brace-format
-msgctxt "other_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Nemôžete byť sami so sebou priateľmi."
 
 #: .\__translations\__translations.py:194
-#, python-brace-format
-msgctxt "other_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Nemôžete byť sami so sebou priateľmi."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "Nemôžete byť sami so sebou priateľmi."
+msgid "You already requested friendship from this user."
+msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "Nemôžete byť sami so sebou priateľmi."
+msgid "You already requested friendship from this user."
+msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr "Nemôžete byť sami so sebou priateľmi."
+msgid "You already requested friendship from this user."
+msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
+msgid "This user already requested friendship from you."
+msgstr "Tento používateľ už od vás požiadal o priateľstvo."
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
+msgid "This user already requested friendship from you."
+msgstr "Tento používateľ už od vás požiadal o priateľstvo."
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
-msgid "You already requested friendship from this user."
-msgstr "Od tohto používateľa ste už požiadali o priateľstvo."
+msgid "This user already requested friendship from you."
+msgstr "Tento používateľ už od vás požiadal o priateľstvo."
 
 #: .\__translations\__translations.py:204
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "Tento používateľ už od vás požiadal o priateľstvo."
-
-#: .\__translations\__translations.py:205
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "Tento používateľ už od vás požiadal o priateľstvo."
-
-#: .\__translations\__translations.py:206
-msgctxt "other"
-msgid "This user already requested friendship from you."
-msgstr "Tento používateľ už od vás požiadal o priateľstvo."
-
-#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:214
+#: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:216
+#: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "S týmto používateľom ste už priatelia."
 
-#: .\__translations\__translations.py:218
+#: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "Zrušili ste svoju žiadosť o priateľstvo."
+
+#: .\__translations\__translations.py:215
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Zrušili ste svoju žiadosť o priateľstvo."
+
+#: .\__translations\__translations.py:216
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Zrušili ste svoju žiadosť o priateľstvo."
+
+#: .\__translations\__translations.py:218
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "Zrušili ste svoju žiadosť o priateľstvo."
+msgid "You have removed this user from your friends."
+msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
-msgid "You've cancelled your friendship request."
-msgstr "Zrušili ste svoju žiadosť o priateľstvo."
+msgid "You have removed this user from your friends."
+msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
 
 #: .\__translations\__translations.py:222
+#, python-brace-format
 msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
+msgid "Welcome to {site_name}!"
+msgstr "Vitajte v {site_name}!"
 
 #: .\__translations\__translations.py:223
+#, python-brace-format
 msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
+msgid "Welcome to {site_name}!"
+msgstr "Vitajte v {site_name}!"
 
 #: .\__translations\__translations.py:224
+#, python-brace-format
 msgctxt "other"
-msgid "You have removed this user from your friends."
-msgstr "Tohto používateľa ste odstránili zo svojich priateľov."
+msgid "Welcome to {site_name}!"
+msgstr "Vitajte v {site_name}!"
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "Vitajte v {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "Vitajte v {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}!"
-msgstr "Vitajte v {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
 
 #: .\__translations\__translations.py:230
-#, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
+msgid "Friends"
+msgstr "Priatelia"
 
 #: .\__translations\__translations.py:231
-#, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
+msgid "Friends"
+msgstr "Priatelia"
 
 #: .\__translations\__translations.py:232
-#, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Vitajte v {site_name}! Váš účet je teraz aktívny."
+msgid "Friends"
+msgstr "Priatelia"
 
 #: .\__translations\__translations.py:234
 msgctxt "female"
-msgid "Friends"
-msgstr "Priatelia"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Z dôvodu zneužívania stránky na rozosielanie spamových správ sme museli "
+"obmedziť počet správ, ktoré je možné poslať iným členom stránky za jeden "
+"deň. Skúste to znova zajtra. Upozorňujeme, že nie je dovolené používať "
+"službu Speedy Net na odosielanie spamových správ alebo správ s rovnakým "
+"obsahom veľkému počtu ľudí."
 
 #: .\__translations\__translations.py:235
 msgctxt "male"
-msgid "Friends"
-msgstr "Priatelia"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"Z dôvodu zneužívania stránky na rozosielanie spamových správ sme museli "
+"obmedziť počet správ, ktoré je možné poslať iným členom stránky za jeden "
+"deň. Skúste to znova zajtra. Upozorňujeme, že nie je dovolené používať "
+"službu Speedy Net na odosielanie spamových správ alebo správ s rovnakým "
+"obsahom veľkému počtu ľudí."
 
 #: .\__translations\__translations.py:236
 msgctxt "other"
-msgid "Friends"
-msgstr "Priatelia"
-
-#: .\__translations\__translations.py:238
-msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
 "number of messages that can be sent to other members of the site in one day. "
@@ -1802,38 +1832,44 @@ msgstr ""
 "službu Speedy Net na odosielanie spamových správ alebo správ s rovnakým "
 "obsahom veľkému počtu ľudí."
 
-#: .\__translations\__translations.py:239
-msgctxt "male"
+#: .\__translations\__translations.py:242
+msgctxt "female_female"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"Z dôvodu zneužívania stránky na rozosielanie spamových správ sme museli "
-"obmedziť počet správ, ktoré je možné poslať iným členom stránky za jeden "
-"deň. Skúste to znova zajtra. Upozorňujeme, že nie je dovolené používať "
-"službu Speedy Net na odosielanie spamových správ alebo správ s rovnakým "
-"obsahom veľkému počtu ľudí."
+"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
+"Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
-#: .\__translations\__translations.py:240
-msgctxt "other"
+#: .\__translations\__translations.py:243
+msgctxt "female_male"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"Z dôvodu zneužívania stránky na rozosielanie spamových správ sme museli "
-"obmedziť počet správ, ktoré je možné poslať iným členom stránky za jeden "
-"deň. Skúste to znova zajtra. Upozorňujeme, že nie je dovolené používať "
-"službu Speedy Net na odosielanie spamových správ alebo správ s rovnakým "
-"obsahom veľkému počtu ľudí."
+"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
+"Speedy Net. Zobraziť profil používateľa na Speedy Net."
+
+#: .\__translations\__translations.py:244
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
+"Speedy Net. Zobraziť profil používateľa na Speedy Net."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
+"Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
 #: .\__translations\__translations.py:246
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1842,42 +1878,6 @@ msgstr ""
 "Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
 #: .\__translations\__translations.py:247
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
-"Speedy Net. Zobraziť profil používateľa na Speedy Net."
-
-#: .\__translations\__translations.py:248
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
-"Speedy Net. Zobraziť profil používateľa na Speedy Net."
-
-#: .\__translations\__translations.py:249
-msgctxt "male_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
-"Speedy Net. Zobraziť profil používateľa na Speedy Net."
-
-#: .\__translations\__translations.py:250
-msgctxt "male_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
-"Speedy Net. Zobraziť profil používateľa na Speedy Net."
-
-#: .\__translations\__translations.py:251
 msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1886,7 +1886,7 @@ msgstr ""
 "Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
 "Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
-#: .\__translations\__translations.py:252
+#: .\__translations\__translations.py:248
 msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1895,7 +1895,7 @@ msgstr ""
 "Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
 "Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
-#: .\__translations\__translations.py:253
+#: .\__translations\__translations.py:249
 msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1904,7 +1904,7 @@ msgstr ""
 "Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
 "Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:250
 msgctxt "other_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1913,7 +1913,7 @@ msgstr ""
 "Tento používateľ nezodpovedá vášmu profilu, ale môžete navštíviť jeho profil "
 "Speedy Net. Zobraziť profil používateľa na Speedy Net."
 
-#: .\__translations\__translations.py:256
+#: .\__translations\__translations.py:252
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1921,7 +1921,7 @@ msgid ""
 msgstr ""
 "Váš profilový obrázok nemôže byť priehľadný. Nahrajte nepriehľadný obrázok."
 
-#: .\__translations\__translations.py:257
+#: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1929,7 +1929,7 @@ msgid ""
 msgstr ""
 "Váš profilový obrázok nemôže byť priehľadný. Nahrajte nepriehľadný obrázok."
 
-#: .\__translations\__translations.py:258
+#: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -2190,7 +2190,7 @@ msgstr "Posledná použitá adresa IP https://ipapi.com/ krát"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Posledná adresa IP použila nespracované výsledky https://ipapi.com/"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
+#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
 msgid "user"
 msgstr "užívateľ"
 
@@ -2202,56 +2202,56 @@ msgstr "používateľov"
 msgid "Superuser must be equal to staff."
 msgstr "Superuser sa musí rovnať personálu."
 
-#: .\accounts\models.py:1691
+#: .\accounts\models.py:1692
 msgid "email"
 msgstr "e-mailom"
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1693
 msgid "is confirmed"
 msgstr "je potvrdené"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1694
 msgid "is primary"
 msgstr "je primárny"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1695
 msgid "confirmation token"
 msgstr "potvrdzovací token"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1696
 msgid "confirmation sent"
 msgstr "potvrdenie odoslané"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1697
 msgid "Who can see this email"
 msgstr "Kto môže vidieť tento e-mail"
 
-#: .\accounts\models.py:1713
+#: .\accounts\models.py:1714
 msgid "email addresses"
 msgstr "e-mailové adresy"
 
-#: .\accounts\models.py:1867
+#: .\accounts\models.py:1868
 msgid "User"
 msgstr "Používateľ"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1869
 msgid "last visit"
 msgstr "posledná návšteva"
 
-#: .\accounts\models.py:1893
+#: .\accounts\models.py:1894
 msgid "Today"
 msgstr "Dnes"
 
-#: .\accounts\models.py:1895
+#: .\accounts\models.py:1896
 msgid "Yesterday"
 msgstr "včera"
 
-#: .\accounts\models.py:1897
+#: .\accounts\models.py:1898
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "Dňa {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1899
+#: .\accounts\models.py:1900
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "pred {timesince}"
@@ -2502,7 +2502,7 @@ msgstr ""
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:34
+#: .\base\fields.py:35
 msgid "ID"
 msgstr "ID"
 
@@ -2511,15 +2511,15 @@ msgctxt "timesince"
 msgid ", "
 msgstr "None "
 
-#: .\base\validators.py:8 .\base\validators.py:9
+#: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
 msgstr "id obsahuje nepovolené znaky."
 
-#: .\base\views.py:102
+#: .\base\views.py:103
 msgid "Changes saved."
 msgstr "Zmeny boli uložené."
 
-#: .\blocks\managers.py:64 .\blocks\models.py:54
+#: .\blocks\managers.py:65 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Používatelia sa nemôžu zablokovať."
 
@@ -2611,19 +2611,19 @@ msgstr "spätná väzba"
 msgid "feedbacks"
 msgstr "spätné väzby"
 
-#: .\friends\views.py:325
+#: .\friends\views.py:326
 msgid "Friendship request sent."
 msgstr "Žiadosť o priateľstvo bola odoslaná."
 
-#: .\friends\views.py:349
+#: .\friends\views.py:350
 msgid "No friendship request."
 msgstr "Žiadna žiadosť o priateľstvo."
 
-#: .\friends\views.py:419
+#: .\friends\views.py:420
 msgid "Friendship request accepted."
 msgstr "Žiadosť o priateľstvo bola prijatá."
 
-#: .\friends\views.py:446
+#: .\friends\views.py:447
 msgid "Friendship request rejected."
 msgstr "Žiadosť o priateľstvo bola zamietnutá."
 

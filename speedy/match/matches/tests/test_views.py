@@ -34,6 +34,7 @@ if (django_settings.TESTS):
                 test_anonymous_has_no_access(self): Asserts an anonymous visitor is redirected to login.
                 test_user_can_access(self): Asserts a logged-in user can access the page and it renders the expected template.
             """
+
             def get_page_url(self):
                 """
                 Returns the URL of the edit view under test.
@@ -85,6 +86,7 @@ if (django_settings.TESTS):
                 get_page_url(self): Returns the "about my match" settings edit page URL.
                 get_template_name(self): Returns the "about my match" settings template name.
             """
+
             def get_page_url(self):
                 """Returns the URL of the "about my match" settings edit page."""
                 return '/matches/settings/about-my-match/'
@@ -103,6 +105,7 @@ if (django_settings.TESTS):
                 get_page_url(self): Returns the "about me" settings edit page URL.
                 get_template_name(self): Returns the "about me" settings template name.
             """
+
             def get_page_url(self):
                 """Returns the URL of the "about me" settings edit page."""
                 return '/matches/settings/about-me/'
@@ -122,6 +125,7 @@ if (django_settings.TESTS):
                 test_user_can_save_his_match_settings(self): Asserts valid match settings are saved and the user is redirected with a success message.
                 test_user_cannot_save_invalid_match_settings(self): Asserts an invalid min/max age range is rejected and the settings are not saved.
             """
+
             def set_up(self):
                 """
                 Creates an active user, logs them in, and resolves the "about my match" settings page URL.
@@ -190,6 +194,7 @@ if (django_settings.TESTS):
                 test_user_can_save_his_about_me_settings(self): Asserts valid about-me settings are saved and the user is redirected with a success message.
                 test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self): Asserts an unmatchable height disables the user's Speedy Match profile and redirects to the registration step.
             """
+
             def set_up(self):
                 """
                 Creates an active user, logs them in, and resolves the "about me" settings page URL.
@@ -270,6 +275,7 @@ if (django_settings.TESTS):
                 test_anonymous_post_redirects_to_edit_match_settings_without_saving(self): Asserts an anonymous POST redirects to the edit match settings page without saving anything.
                 test_user_post_redirects_to_edit_match_settings_without_saving(self): Asserts a logged-in user's POST redirects to the edit match settings page without saving anything.
             """
+
             def set_up(self):
                 """
                 Creates an active user and resolves the matches list page URL.
@@ -335,6 +341,7 @@ if (django_settings.TESTS):
                 test_anonymous_has_no_access(self): Asserts an anonymous visitor is redirected to login.
                 test_user_is_redirected_to_edit_match_settings(self): Asserts a logged-in user is redirected to the "about my match" edit page.
             """
+
             def set_up(self):
                 """
                 Creates an active user and resolves the default match settings page URL.

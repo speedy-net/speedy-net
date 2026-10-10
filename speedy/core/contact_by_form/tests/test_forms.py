@@ -30,6 +30,7 @@ if (django_settings.TESTS):
                 test_user_cannot_submit_form_without_all_the_required_fields(self): Asserts an empty logged-in user submission is invalid, with a "required" error only for the text field.
                 test_form_save_for_abuse_report_as_user(self): Asserts a valid abuse report (reporting another user) saves a Feedback instance with the expected sender, type, reported entity, and text.
             """
+
             def assert_form_text_field(self, form):
                 """
                 Asserts the form's text field is marked as required.
@@ -128,6 +129,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'en'.
@@ -145,6 +147,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'fr'.
@@ -162,6 +165,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'de'.
@@ -179,6 +183,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'es'.
@@ -196,6 +201,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'pt'.
@@ -213,6 +219,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'it'.
@@ -230,6 +237,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'nl'.
@@ -247,6 +255,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code is 'he'.

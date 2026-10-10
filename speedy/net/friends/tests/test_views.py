@@ -24,6 +24,7 @@ if (django_settings.TESTS):
                 test_user_can_open_other_users_friends_page(self): Verify a logged-in user can open another user's friend list page.
                 test_user_cannot_open_other_users_friends_page(self): Skipped; irrelevant on Speedy Net since the page is public.
             """
+
             def test_visitor_can_open_the_page(self):
                 """
                 Verify an anonymous visitor can open a user's friend list page.

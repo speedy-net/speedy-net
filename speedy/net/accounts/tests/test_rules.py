@@ -24,6 +24,7 @@ if (django_settings.TESTS):
                 test_doron_and_jennifer_have_access(self): Verify both users can view each other's profile on Speedy Net.
                 test_doron_and_jennifer_have_no_access(self): Skipped; irrelevant on Speedy Net since profiles are always visible.
             """
+
             def test_doron_and_jennifer_have_access(self):
                 """
                 Verify both users can view each other's profile on Speedy Net.
@@ -55,6 +56,7 @@ if (django_settings.TESTS):
                 test_active_user_cannot_delete_his_account(self): Verify an active user cannot delete their account even after deactivating only their Speedy Match profile.
                 test_user_cannot_delete_other_user_account(self): Verify a user cannot delete another user's account regardless of either user's active/inactive state.
             """
+
             def set_up(self):
                 """
                 Creates an active test user.

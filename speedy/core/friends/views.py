@@ -160,6 +160,7 @@ class LimitMaxFriendsMixin(object):
     Mixin to limit max friends in Speedy Net.
     In Speedy Net, all users, active and not active.
     """
+
     def check_own_friends(self):
         """
         Raise a validation error if the current logged-in user already has the maximum number of friends allowed on Speedy Net.

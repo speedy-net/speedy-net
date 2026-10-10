@@ -27,6 +27,7 @@ if (django_settings.TESTS):
             valid_date_of_birth_list: Builds a list of valid dates of birth for a given maximum allowed age.
             invalid_date_of_birth_list: Builds a list of invalid dates of birth for a given maximum allowed age.
         """
+
         @staticmethod
         def valid_date_of_birth_list(max_age_allowed):
             """

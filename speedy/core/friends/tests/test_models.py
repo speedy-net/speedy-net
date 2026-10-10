@@ -36,6 +36,7 @@ if (django_settings.TESTS):
                 test_if_user1_blocked_user2_friendship_is_removed(self): Asserts blocking removes an accepted friendship between the two users, and unblocking does not restore it.
                 test_if_user2_blocked_user1_friendship_is_removed(self): Asserts blocking removes an accepted friendship between the two users regardless of who blocks whom, and unblocking does not restore it.
             """
+
             def set_up(self):
                 """
                 Create two users, one accepted friendship and one pending friendship request in each direction for user_1.
@@ -173,6 +174,7 @@ if (django_settings.TESTS):
                 test_site_received_friendship_requests_list(self): Asserts received_friendship_requests is ordered by last visit and filtered according to the current site.
                 test_site_sent_friendship_requests_list(self): Asserts sent_friendship_requests is ordered by last visit and filtered according to the current site.
             """
+
             def set_up(self):
                 """
                 Create six users with varying attributes (relationship status, diet match, relationship status match) and staggered last-visit times.

@@ -16,6 +16,7 @@ class ModelFormWithDefaults(forms.ModelForm):
     Methods:
         save: Saves the instance, applying the default field values.
     """
+
     def __init__(self, *args, **kwargs):
         """
         Initializes the form, extracting the `defaults` keyword argument (a mapping of field names to default values).
@@ -70,6 +71,7 @@ class DeleteUnneededFieldsMixin(object):
     Methods:
         delete_unneeded_fields: Deletes unneeded fields from the form.
     """
+
     def delete_unneeded_fields(self):
         """
         Delete unneeded fields from the form.

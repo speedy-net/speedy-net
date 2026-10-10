@@ -18,6 +18,7 @@ class StaticBaseView(generic.TemplateView):
     Methods:
         get: Serves the page if the request matches the canonical path, otherwise redirects to it.
     """
+
     # canonical_full_path must be defined in classes inherited from this class.
 
     def get(self, request, *args, **kwargs):
@@ -132,6 +133,7 @@ class PaginationMixin(object):
         dispatch: Paginates `self.get_object_list()` according to the requested page number before dispatching the request.
         get_context_data: Adds pagination data to the template context.
     """
+
     def redirect_on_exception(self):
         """
         Returns the response to use when the requested page number is invalid or out of range.

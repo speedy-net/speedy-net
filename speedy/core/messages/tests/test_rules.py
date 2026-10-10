@@ -49,6 +49,7 @@ if (django_settings.TESTS):
                 test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_5(self): Asserts a user with a confirmed email address from a common email provider sending messages alternating between only 2 distinct texts triggers the too-many-identical-messages restriction later than a user without such an email address, and the restriction is lifted once enough recipients reply.
                 test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_6(self): Asserts a user whose account is 60 days old sending messages alternating between only 2 distinct texts triggers the too-many-identical-messages restriction later than a newer account, and the restriction is lifted once enough recipients reply.
             """
+
             def set_up(self):
                 """
                 Creates two active users, user_1 and user_2, whose accounts are backdated by 10 minutes.
@@ -513,6 +514,7 @@ if (django_settings.TESTS):
                 test_can_see_his_chats(self): Asserts a user can view his own list of chats.
                 test_cannot_see_other_user_chats(self): Asserts a user cannot view another user's list of chats.
             """
+
             def set_up(self):
                 """
                 Creates two active users, user_1 and user_2.
@@ -544,6 +546,7 @@ if (django_settings.TESTS):
                 test_can_read_his_chat(self): Asserts a user can read a chat he participates in.
                 test_cannot_read_a_chat_user_is_not_participate_in(self): Asserts a user cannot read a chat he does not participate in.
             """
+
             def set_up(self):
                 """
                 Creates three active users and two chats, one between user_1 and user_2, and another between user_1 and user_3.

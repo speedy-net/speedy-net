@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9
+#: .\__translations\__translations.py:8
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,155 +317,155 @@ msgctxt "other"
 msgid "Last visited Speedy Match"
 msgstr "Zadnji put posjećeno Speedy Match"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:10
 msgid "My height in centimeters"
 msgstr "Moja visina u centimetrima"
 
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:12
 msgctxt "female"
 msgid "Add profile picture"
 msgstr "Dodaj profilnu sliku"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:13
 msgctxt "male"
+msgid "Add profile picture"
+msgstr "Dodaj profilnu sliku"
+
+#: .\__translations\__translations.py:14
+msgctxt "other"
 msgid "Add profile picture"
 msgstr "Dodaj profilnu sliku"
 
 #: .\__translations\__translations.py:16
-msgctxt "other"
-msgid "Add profile picture"
-msgstr "Dodaj profilnu sliku"
-
-#: .\__translations\__translations.py:18
 msgctxt "female"
 msgid "My height in centimeters"
 msgstr "Moja visina u centimetrima"
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:17
 msgctxt "male"
 msgid "My height in centimeters"
 msgstr "Moja visina u centimetrima"
 
-#: .\__translations\__translations.py:20
+#: .\__translations\__translations.py:18
 msgctxt "other"
 msgid "My height in centimeters"
 msgstr "Moja visina u centimetrima"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
 msgstr "Moj idealan spoj"
 
-#: .\__translations\__translations.py:23
+#: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
 msgstr "Moj idealan spoj"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
 msgstr "Moj idealan spoj"
 
-#: .\__translations\__translations.py:26
+#: .\__translations\__translations.py:24
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr "Minimalna dob za usklađivanje"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr "Minimalna dob za usklađivanje"
 
-#: .\__translations\__translations.py:28
+#: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr "Minimalna dob za usklađivanje"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr "Maksimalna dob za podudaranje"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr "Maksimalna dob za podudaranje"
 
-#: .\__translations\__translations.py:32
+#: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr "Maksimalna dob za podudaranje"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgctxt "female"
 msgid "Please write a few words about yourself."
 msgstr "Molimo napišite nekoliko riječi o sebi."
 
-#: .\__translations\__translations.py:35
+#: .\__translations\__translations.py:33
 msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "Molimo napišite nekoliko riječi o sebi."
+
+#: .\__translations\__translations.py:34
+msgctxt "other"
 msgid "Please write a few words about yourself."
 msgstr "Molimo napišite nekoliko riječi o sebi."
 
 #: .\__translations\__translations.py:36
-msgctxt "other"
-msgid "Please write a few words about yourself."
-msgstr "Molimo napišite nekoliko riječi o sebi."
-
-#: .\__translations\__translations.py:38
 msgctxt "female"
 msgid "Do you have children? How many?"
 msgstr "Imate li djece? Koliko?"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:37
 msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "Imate li djece? Koliko?"
+
+#: .\__translations\__translations.py:38
+msgctxt "other"
 msgid "Do you have children? How many?"
 msgstr "Imate li djece? Koliko?"
 
 #: .\__translations\__translations.py:40
-msgctxt "other"
-msgid "Do you have children? How many?"
-msgstr "Imate li djece? Koliko?"
-
-#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "Do you want (more) children?"
 msgstr "Želite li (još) djece?"
 
-#: .\__translations\__translations.py:43
+#: .\__translations\__translations.py:41
 msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "Želite li (još) djece?"
+
+#: .\__translations\__translations.py:42
+msgctxt "other"
 msgid "Do you want (more) children?"
 msgstr "Želite li (još) djece?"
 
 #: .\__translations\__translations.py:44
-msgctxt "other"
-msgid "Do you want (more) children?"
-msgstr "Želite li (još) djece?"
-
-#: .\__translations\__translations.py:46
 msgctxt "female"
 msgid "Who is your ideal partner?"
 msgstr "Tko je vaš idealan partner?"
 
-#: .\__translations\__translations.py:47
+#: .\__translations\__translations.py:45
 msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "Tko je vaš idealan partner?"
+
+#: .\__translations\__translations.py:46
+msgctxt "other"
 msgid "Who is your ideal partner?"
 msgstr "Tko je vaš idealan partner?"
 
 #: .\__translations\__translations.py:48
-msgctxt "other"
-msgid "Who is your ideal partner?"
-msgstr "Tko je vaš idealan partner?"
-
-#: .\__translations\__translations.py:50
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -479,7 +479,7 @@ msgstr ""
 "stranici netočni ili da ste prekršili pravila korištenja stranice. Stoga "
 "niste ovlašteni koristiti stranicu."
 
-#: .\__translations\__translations.py:51
+#: .\__translations\__translations.py:49
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -493,7 +493,7 @@ msgstr ""
 "stranici netočni ili da ste prekršili pravila korištenja stranice. Stoga "
 "niste ovlašteni koristiti stranicu."
 
-#: .\__translations\__translations.py:52
+#: .\__translations\__translations.py:50
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -511,100 +511,100 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr "Speedy Match Accounts"
 
-#: .\accounts\forms.py:109
+#: .\accounts\forms.py:110
 msgid "Add profile picture"
 msgstr "Dodaj profilnu sliku"
 
-#: .\accounts\forms.py:109 .\accounts\forms.py:148
+#: .\accounts\forms.py:110 .\accounts\forms.py:149
 msgid "A profile picture is required."
 msgstr "Potrebna je profilna slika."
 
-#: .\accounts\forms.py:110
+#: .\accounts\forms.py:111
 msgid "My diet"
 msgstr "Moja dijeta"
 
-#: .\accounts\forms.py:110 .\accounts\forms.py:154
+#: .\accounts\forms.py:111 .\accounts\forms.py:155
 #: .\accounts\validators.py:181
 msgid "Your diet is required."
 msgstr "Vaša dijeta je obavezna."
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:112
 msgid "My smoking status"
 msgstr "Moj pušački status"
 
-#: .\accounts\forms.py:111 .\accounts\forms.py:157
+#: .\accounts\forms.py:112 .\accounts\forms.py:158
 #: .\accounts\validators.py:193
 msgid "Your smoking status is required."
 msgstr "Potreban je vaš pušački status."
 
-#: .\accounts\forms.py:112
+#: .\accounts\forms.py:113
 msgid "My relationship status"
 msgstr "Status moje veze"
 
-#: .\accounts\forms.py:112 .\accounts\forms.py:160
+#: .\accounts\forms.py:113 .\accounts\forms.py:161
 #: .\accounts\validators.py:205
 msgid "Your relationship status is required."
 msgstr "Status vaše veze je obavezan."
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:178
+#: .\accounts\forms.py:114 .\accounts\forms.py:179
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
 msgstr "Potreban je spol za podudaranje."
 
-#: .\accounts\forms.py:151
+#: .\accounts\forms.py:152
 msgid "Your height is required."
 msgstr "Potrebna je vaša visina."
 
-#: .\accounts\forms.py:163 .\accounts\validators.py:109
+#: .\accounts\forms.py:164 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
 msgstr "Molimo napišite nekoliko riječi o sebi."
 
-#: .\accounts\forms.py:166 .\accounts\forms.py:207
+#: .\accounts\forms.py:167 .\accounts\forms.py:208
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
 msgstr "Napiši gdje živiš."
 
-#: .\accounts\forms.py:169 .\accounts\models.py:227
+#: .\accounts\forms.py:170 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "Imate li djece? Koliko?"
 
-#: .\accounts\forms.py:172 .\accounts\models.py:230
+#: .\accounts\forms.py:173 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "Želite li (još) djece?"
 
-#: .\accounts\forms.py:175 .\accounts\validators.py:157
+#: .\accounts\forms.py:176 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
 msgstr "Tko je vaš idealan partner?"
 
-#: .\accounts\forms.py:181
+#: .\accounts\forms.py:182
 msgid "Minimal age to match is required."
 msgstr "Potrebna je minimalna dob za podudaranje."
 
-#: .\accounts\forms.py:184
+#: .\accounts\forms.py:185
 msgid "Maximal age to match is required."
 msgstr "Potrebna je maksimalna dob za podudaranje."
 
-#: .\accounts\forms.py:187 .\accounts\validators.py:269
+#: .\accounts\forms.py:188 .\accounts\validators.py:269
 msgid "Diet match is required."
 msgstr "Potrebna je usklađenost prehrane."
 
-#: .\accounts\forms.py:190 .\accounts\validators.py:284
+#: .\accounts\forms.py:191 .\accounts\validators.py:284
 msgid "Smoking status match is required."
 msgstr "Potrebno je podudaranje statusa pušenja."
 
-#: .\accounts\forms.py:193 .\accounts\validators.py:299
+#: .\accounts\forms.py:194 .\accounts\validators.py:299
 msgid "Relationship status match is required."
 msgstr "Potrebno je podudaranje statusa veze."
 
-#: .\accounts\forms.py:207
+#: .\accounts\forms.py:208
 msgid "Where do you live?"
 msgstr "gdje živiš"
 
-#: .\accounts\forms.py:243 .\accounts\models.py:237
+#: .\accounts\forms.py:244 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Spol za slaganje"
@@ -997,15 +997,15 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "ostalih) ušli su na stranicu u posljednja četiri mjeseca."
 
-#: .\likes\managers.py:38 .\likes\models.py:55
+#: .\likes\managers.py:39 .\likes\models.py:55
 msgid "Users cannot like themselves."
 msgstr "Korisnici se ne mogu voljeti."
 
-#: .\likes\managers.py:41
+#: .\likes\managers.py:42
 msgid "User already likes other user."
 msgstr "Korisnik se već sviđa drugom korisniku."
 
-#: .\likes\managers.py:44
+#: .\likes\managers.py:45
 msgid "User cannot like a blocked user."
 msgstr "Korisnik ne može lajkati blokiranog korisnika."
 
@@ -1025,31 +1025,31 @@ msgstr "sviđanje korisnika"
 msgid "user likes"
 msgstr "sviđanja korisnika"
 
-#: .\likes\views.py:58
+#: .\likes\views.py:59
 msgid "Girls You Like"
 msgstr "Djevojke koje vam se sviđaju"
 
-#: .\likes\views.py:59
+#: .\likes\views.py:60
 msgid "Boys You Like"
 msgstr "Dečki koji vam se sviđaju"
 
-#: .\likes\views.py:60
+#: .\likes\views.py:61
 msgid "People You Like"
 msgstr "Ljudi koji vam se sviđaju"
 
-#: .\likes\views.py:63
+#: .\likes\views.py:64
 msgid "Girls Who Like You"
 msgstr "Djevojke kojima se sviđaš"
 
-#: .\likes\views.py:64
+#: .\likes\views.py:65
 msgid "Boys Who Like You"
 msgstr "Dečki kojima se sviđaš"
 
-#: .\likes\views.py:65
+#: .\likes\views.py:66
 msgid "People Who Like You"
 msgstr "Ljudi kojima se sviđaš"
 
-#: .\likes\views.py:67
+#: .\likes\views.py:68
 msgid "Mutual Likes"
 msgstr "Međusobni lajkovi"
 
@@ -1057,7 +1057,7 @@ msgstr "Međusobni lajkovi"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match Matches"
 
-#: .\matches\views.py:171 .\matches\views.py:205
+#: .\matches\views.py:172 .\matches\views.py:206
 msgid "Your match settings were saved."
 msgstr "Vaše postavke podudaranja su spremljene."
 

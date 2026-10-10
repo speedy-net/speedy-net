@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9
+#: .\__translations\__translations.py:8
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -317,155 +317,155 @@ msgctxt "other"
 msgid "Last visited Speedy Match"
 msgstr "पिछली बार Speedy Match पर गए थे"
 
-#: .\__translations\__translations.py:11
+#: .\__translations\__translations.py:10
 msgid "My height in centimeters"
 msgstr "मेरी लंबाई सेंटीमीटर में"
 
-#: .\__translations\__translations.py:14
+#: .\__translations\__translations.py:12
 msgctxt "female"
 msgid "Add profile picture"
 msgstr "प्रोफ़ाइल चित्र जोड़ें"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:13
 msgctxt "male"
+msgid "Add profile picture"
+msgstr "प्रोफ़ाइल चित्र जोड़ें"
+
+#: .\__translations\__translations.py:14
+msgctxt "other"
 msgid "Add profile picture"
 msgstr "प्रोफ़ाइल चित्र जोड़ें"
 
 #: .\__translations\__translations.py:16
-msgctxt "other"
-msgid "Add profile picture"
-msgstr "प्रोफ़ाइल चित्र जोड़ें"
-
-#: .\__translations\__translations.py:18
 msgctxt "female"
 msgid "My height in centimeters"
 msgstr "मेरी लंबाई सेंटीमीटर में"
 
-#: .\__translations\__translations.py:19
+#: .\__translations\__translations.py:17
 msgctxt "male"
 msgid "My height in centimeters"
 msgstr "मेरी लंबाई सेंटीमीटर में"
 
-#: .\__translations\__translations.py:20
+#: .\__translations\__translations.py:18
 msgctxt "other"
 msgid "My height in centimeters"
 msgstr "मेरी लंबाई सेंटीमीटर में"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
 msgstr "मेरा आदर्श साथी"
 
-#: .\__translations\__translations.py:23
+#: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
 msgstr "मेरा आदर्श साथी"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
 msgstr "मेरा आदर्श साथी"
 
-#: .\__translations\__translations.py:26
+#: .\__translations\__translations.py:24
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
 msgstr "मिलान के लिए न्यूनतम आयु"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
 msgstr "मिलान के लिए न्यूनतम आयु"
 
-#: .\__translations\__translations.py:28
+#: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
 msgstr "मिलान के लिए न्यूनतम आयु"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
 msgstr "अधिकतम आयु सीमा का मिलान करें"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
 msgstr "अधिकतम आयु सीमा का मिलान करें"
 
-#: .\__translations\__translations.py:32
+#: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
 msgstr "अधिकतम आयु सीमा का मिलान करें"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgctxt "female"
 msgid "Please write a few words about yourself."
 msgstr "कृपया अपने बारे में कुछ शब्द लिखें।"
 
-#: .\__translations\__translations.py:35
+#: .\__translations\__translations.py:33
 msgctxt "male"
+msgid "Please write a few words about yourself."
+msgstr "कृपया अपने बारे में कुछ शब्द लिखें।"
+
+#: .\__translations\__translations.py:34
+msgctxt "other"
 msgid "Please write a few words about yourself."
 msgstr "कृपया अपने बारे में कुछ शब्द लिखें।"
 
 #: .\__translations\__translations.py:36
-msgctxt "other"
-msgid "Please write a few words about yourself."
-msgstr "कृपया अपने बारे में कुछ शब्द लिखें।"
-
-#: .\__translations\__translations.py:38
 msgctxt "female"
 msgid "Do you have children? How many?"
 msgstr "क्या आपके बच्चे हैं? कितने?"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:37
 msgctxt "male"
+msgid "Do you have children? How many?"
+msgstr "क्या आपके बच्चे हैं? कितने?"
+
+#: .\__translations\__translations.py:38
+msgctxt "other"
 msgid "Do you have children? How many?"
 msgstr "क्या आपके बच्चे हैं? कितने?"
 
 #: .\__translations\__translations.py:40
-msgctxt "other"
-msgid "Do you have children? How many?"
-msgstr "क्या आपके बच्चे हैं? कितने?"
-
-#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "Do you want (more) children?"
 msgstr "आप (और) बच्चे चाहते हैं?"
 
-#: .\__translations\__translations.py:43
+#: .\__translations\__translations.py:41
 msgctxt "male"
+msgid "Do you want (more) children?"
+msgstr "आप (और) बच्चे चाहते हैं?"
+
+#: .\__translations\__translations.py:42
+msgctxt "other"
 msgid "Do you want (more) children?"
 msgstr "आप (और) बच्चे चाहते हैं?"
 
 #: .\__translations\__translations.py:44
-msgctxt "other"
-msgid "Do you want (more) children?"
-msgstr "आप (और) बच्चे चाहते हैं?"
-
-#: .\__translations\__translations.py:46
 msgctxt "female"
 msgid "Who is your ideal partner?"
 msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
-#: .\__translations\__translations.py:47
+#: .\__translations\__translations.py:45
 msgctxt "male"
+msgid "Who is your ideal partner?"
+msgstr "आपका आदर्श जीवनसाथी कौन है?"
+
+#: .\__translations\__translations.py:46
+msgctxt "other"
 msgid "Who is your ideal partner?"
 msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
 #: .\__translations\__translations.py:48
-msgctxt "other"
-msgid "Who is your ideal partner?"
-msgstr "आपका आदर्श जीवनसाथी कौन है?"
-
-#: .\__translations\__translations.py:50
 #, python-brace-format
 msgctxt "female"
 msgid ""
@@ -478,7 +478,7 @@ msgstr ""
 "चला है कि साइट पर पंजीकरण करते समय आपके द्वारा दी गई कुछ जानकारी गलत है या आपने साइट "
 "के उपयोग के नियमों का उल्लंघन किया है। इसलिए आपको साइट का उपयोग करने की अनुमति नहीं है।"
 
-#: .\__translations\__translations.py:51
+#: .\__translations\__translations.py:49
 #, python-brace-format
 msgctxt "male"
 msgid ""
@@ -491,7 +491,7 @@ msgstr ""
 "चला है कि साइट पर पंजीकरण करते समय आपके द्वारा दी गई कुछ जानकारी गलत है या आपने साइट "
 "के उपयोग के नियमों का उल्लंघन किया है। इसलिए आपको साइट का उपयोग करने की अनुमति नहीं है।"
 
-#: .\__translations\__translations.py:52
+#: .\__translations\__translations.py:50
 #, python-brace-format
 msgctxt "other"
 msgid ""
@@ -508,100 +508,100 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr "Speedy Match खाते"
 
-#: .\accounts\forms.py:109
+#: .\accounts\forms.py:110
 msgid "Add profile picture"
 msgstr "प्रोफ़ाइल चित्र जोड़ें"
 
-#: .\accounts\forms.py:109 .\accounts\forms.py:148
+#: .\accounts\forms.py:110 .\accounts\forms.py:149
 msgid "A profile picture is required."
 msgstr "प्रोफ़ाइल चित्र आवश्यक है।"
 
-#: .\accounts\forms.py:110
+#: .\accounts\forms.py:111
 msgid "My diet"
 msgstr "मेरा आहार"
 
-#: .\accounts\forms.py:110 .\accounts\forms.py:154
+#: .\accounts\forms.py:111 .\accounts\forms.py:155
 #: .\accounts\validators.py:181
 msgid "Your diet is required."
 msgstr "आपका आहार आवश्यक है।"
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:112
 msgid "My smoking status"
 msgstr "मेरी धूम्रपान की स्थिति"
 
-#: .\accounts\forms.py:111 .\accounts\forms.py:157
+#: .\accounts\forms.py:112 .\accounts\forms.py:158
 #: .\accounts\validators.py:193
 msgid "Your smoking status is required."
 msgstr "आपकी धूम्रपान संबंधी स्थिति की जानकारी आवश्यक है।"
 
-#: .\accounts\forms.py:112
+#: .\accounts\forms.py:113
 msgid "My relationship status"
 msgstr "मेरी रिश्ते की स्थिति"
 
-#: .\accounts\forms.py:112 .\accounts\forms.py:160
+#: .\accounts\forms.py:113 .\accounts\forms.py:161
 #: .\accounts\validators.py:205
 msgid "Your relationship status is required."
 msgstr "आपकी वैवाहिक स्थिति आवश्यक है।"
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:178
+#: .\accounts\forms.py:114 .\accounts\forms.py:179
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
 msgstr "लिंग का मिलान आवश्यक है।"
 
-#: .\accounts\forms.py:151
+#: .\accounts\forms.py:152
 msgid "Your height is required."
 msgstr "आपकी ऊंचाई आवश्यक है।"
 
-#: .\accounts\forms.py:163 .\accounts\validators.py:109
+#: .\accounts\forms.py:164 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
 msgstr "कृपया अपने बारे में कुछ शब्द लिखें।"
 
-#: .\accounts\forms.py:166 .\accounts\forms.py:207
+#: .\accounts\forms.py:167 .\accounts\forms.py:208
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
 msgstr "कृपया अपना निवास स्थान लिखें।"
 
-#: .\accounts\forms.py:169 .\accounts\models.py:227
+#: .\accounts\forms.py:170 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "क्या आपके बच्चे हैं? कितने?"
 
-#: .\accounts\forms.py:172 .\accounts\models.py:230
+#: .\accounts\forms.py:173 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "आप (और) बच्चे चाहते हैं?"
 
-#: .\accounts\forms.py:175 .\accounts\validators.py:157
+#: .\accounts\forms.py:176 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
 msgstr "आपका आदर्श जीवनसाथी कौन है?"
 
-#: .\accounts\forms.py:181
+#: .\accounts\forms.py:182
 msgid "Minimal age to match is required."
 msgstr "मिलान के लिए न्यूनतम आयु सीमा आवश्यक है।"
 
-#: .\accounts\forms.py:184
+#: .\accounts\forms.py:185
 msgid "Maximal age to match is required."
 msgstr "अधिकतम आयु सीमा का मिलान करना आवश्यक है।"
 
-#: .\accounts\forms.py:187 .\accounts\validators.py:269
+#: .\accounts\forms.py:188 .\accounts\validators.py:269
 msgid "Diet match is required."
 msgstr "आहार का सही मिलान आवश्यक है।"
 
-#: .\accounts\forms.py:190 .\accounts\validators.py:284
+#: .\accounts\forms.py:191 .\accounts\validators.py:284
 msgid "Smoking status match is required."
 msgstr "धूम्रपान की स्थिति का मिलान आवश्यक है।"
 
-#: .\accounts\forms.py:193 .\accounts\validators.py:299
+#: .\accounts\forms.py:194 .\accounts\validators.py:299
 msgid "Relationship status match is required."
 msgstr "रिश्ते की स्थिति का मिलान आवश्यक है।"
 
-#: .\accounts\forms.py:207
+#: .\accounts\forms.py:208
 msgid "Where do you live?"
 msgstr "आप कहाँ रहते हैं?"
 
-#: .\accounts\forms.py:243 .\accounts\models.py:237
+#: .\accounts\forms.py:244 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "लिंग का मिलान करें"
@@ -990,15 +990,15 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "अन्य लोगों ने पिछले चार महीनों में साइट पर प्रवेश किया।"
 
-#: .\likes\managers.py:38 .\likes\models.py:55
+#: .\likes\managers.py:39 .\likes\models.py:55
 msgid "Users cannot like themselves."
 msgstr "उपयोगकर्ता खुद को पसंद नहीं कर सकते।"
 
-#: .\likes\managers.py:41
+#: .\likes\managers.py:42
 msgid "User already likes other user."
 msgstr "उपयोगकर्ता पहले से ही किसी अन्य उपयोगकर्ता को पसंद करता है।"
 
-#: .\likes\managers.py:44
+#: .\likes\managers.py:45
 msgid "User cannot like a blocked user."
 msgstr "उपयोगकर्ता किसी अवरुद्ध उपयोगकर्ता को लाइक नहीं कर सकता।"
 
@@ -1018,31 +1018,31 @@ msgstr "उपयोगकर्ता पसंद"
 msgid "user likes"
 msgstr "उपयोगकर्ता को पसंद है"
 
-#: .\likes\views.py:58
+#: .\likes\views.py:59
 msgid "Girls You Like"
 msgstr "जिन लड़कियों को आप पसंद करते हैं"
 
-#: .\likes\views.py:59
+#: .\likes\views.py:60
 msgid "Boys You Like"
 msgstr "आपको पसंद आने वाले लड़के"
 
-#: .\likes\views.py:60
+#: .\likes\views.py:61
 msgid "People You Like"
 msgstr "जिन लोगों को आप पसंद करते हैं"
 
-#: .\likes\views.py:63
+#: .\likes\views.py:64
 msgid "Girls Who Like You"
 msgstr "जो लड़कियां आपको पसंद करती हैं"
 
-#: .\likes\views.py:64
+#: .\likes\views.py:65
 msgid "Boys Who Like You"
 msgstr "जो लड़के तुम्हें पसंद करते हैं"
 
-#: .\likes\views.py:65
+#: .\likes\views.py:66
 msgid "People Who Like You"
 msgstr "जो लोग आपको पसंद करते हैं"
 
-#: .\likes\views.py:67
+#: .\likes\views.py:68
 msgid "Mutual Likes"
 msgstr "आपसी पसंद"
 
@@ -1050,7 +1050,7 @@ msgstr "आपसी पसंद"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match मैच"
 
-#: .\matches\views.py:171 .\matches\views.py:205
+#: .\matches\views.py:172 .\matches\views.py:206
 msgid "Your match settings were saved."
 msgstr "आपकी मैच सेटिंग्स सुरक्षित कर ली गई हैं।"
 

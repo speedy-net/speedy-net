@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
+#: .\__translations\__translations.py:8 .\base\tests\test_translations.py:25
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -853,32 +853,32 @@ msgstr ""
 "Du abonnerer på å motta denne typen varsler fra %(site_name)s. Gå inn på "
 "denne siden for å endre varslingsinnstillingene eller velge bort:"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
 msgstr "Skriv inn en gyldig e-postadresse."
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:12
 msgid "Email address"
 msgstr "E-postadresse"
 
-#: .\__translations\__translations.py:14 .\accounts\models.py:1712
+#: .\__translations\__translations.py:13 .\accounts\models.py:1713
 msgid "email address"
 msgstr "e-postadresse"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:14
 msgid "Email address:"
 msgstr "E-postadresse:"
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "E-post"
 
-#: .\__translations\__translations.py:17
+#: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
 msgstr "Verdien må være gyldig JSON."
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:17
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -887,43 +887,43 @@ msgstr ""
 "Vennligst skriv inn riktig %(username)s og passord. Merk at begge feltene "
 "kan skille mellom store og små bokstaver."
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 msgid "Message"
 msgstr "Beskjed"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 msgid "Friendship Request"
 msgstr "Venneforespørsel"
 
-#: .\__translations\__translations.py:25
+#: .\__translations\__translations.py:23
 msgid "Friendship Requests"
 msgstr "Venneforespørsler"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 msgid "Friend"
 msgstr "Venn"
 
-#: .\__translations\__translations.py:28 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "Venner"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 msgid "Following Relationship"
 msgstr "Følger forholdet"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 msgid "Following Relationships"
 msgstr "Følger forhold"
 
-#: .\__translations\__translations.py:33
+#: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
 msgstr "Blocker forhold"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
 msgstr "Blokkerte forhold"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:36
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -938,582 +938,622 @@ msgstr[1] ""
 "Listen inneholder %(show_value)d elementer, den skal ikke inneholde mer enn "
 "%(limit_value)d."
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
 msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:43
+msgctxt "male"
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:44
+msgctxt "other"
+msgid "username (slug)"
+msgstr "brukernavn (snegl)"
+
+#: .\__translations\__translations.py:46
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
-msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
-msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgid "Update your profile picture"
+msgstr "Oppdater profilbildet ditt"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
-msgid "Update your profile picture"
-msgstr "Oppdater profilbildet ditt"
+msgid "Save Changes"
+msgstr "Lagre endringer"
 
 #: .\__translations\__translations.py:51
 msgctxt "male"
-msgid "Update your profile picture"
-msgstr "Oppdater profilbildet ditt"
+msgid "Save Changes"
+msgstr "Lagre endringer"
 
 #: .\__translations\__translations.py:52
 msgctxt "other"
-msgid "Update your profile picture"
-msgstr "Oppdater profilbildet ditt"
+msgid "Save Changes"
+msgstr "Lagre endringer"
 
 #: .\__translations\__translations.py:54
 msgctxt "female"
-msgid "Save Changes"
-msgstr "Lagre endringer"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
 
 #: .\__translations\__translations.py:55
 msgctxt "male"
-msgid "Save Changes"
-msgstr "Lagre endringer"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
 
 #: .\__translations\__translations.py:56
 msgctxt "other"
-msgid "Save Changes"
-msgstr "Lagre endringer"
+msgid "You can't change your username."
+msgstr "Du kan ikke endre brukernavnet ditt."
 
 #: .\__translations\__translations.py:58
+#, python-brace-format
 msgctxt "female"
-msgid "You can't change your username."
-msgstr "Du kan ikke endre brukernavnet ditt."
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:59
+#, python-brace-format
 msgctxt "male"
-msgid "You can't change your username."
-msgstr "Du kan ikke endre brukernavnet ditt."
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:60
+#, python-brace-format
 msgctxt "other"
-msgid "You can't change your username."
-msgstr "Du kan ikke endre brukernavnet ditt."
+msgid "Activate your {site_name} account"
+msgstr "Aktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "Aktiver {site_name}-kontoen din"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "Aktiver {site_name}-kontoen din"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
-msgid "Activate your {site_name} account"
-msgstr "Aktiver {site_name}-kontoen din"
+msgid "Deactivate your {site_name} account"
+msgstr "Deaktiver {site_name}-kontoen din"
 
 #: .\__translations\__translations.py:66
-#, python-brace-format
 msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver {site_name}-kontoen din"
+msgid "Add"
+msgstr "Legge til"
 
 #: .\__translations\__translations.py:67
-#, python-brace-format
 msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver {site_name}-kontoen din"
+msgid "Add"
+msgstr "Legge til"
 
 #: .\__translations\__translations.py:68
-#, python-brace-format
 msgctxt "other"
-msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver {site_name}-kontoen din"
+msgid "Add"
+msgstr "Legge til"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
-msgid "Add"
-msgstr "Legge til"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
-msgid "Add"
-msgstr "Legge til"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
-msgid "Add"
-msgstr "Legge til"
+msgid "Where do I live?"
+msgstr "Hvor bor jeg?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
-msgid "Where do I live?"
-msgstr "Hvor bor jeg?"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
-msgid "Where do I live?"
-msgstr "Hvor bor jeg?"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
-msgid "Where do I live?"
-msgstr "Hvor bor jeg?"
+msgid "Where do you live?"
+msgstr "Hvor bor du?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
-msgid "Where do you live?"
-msgstr "Hvor bor du?"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
-msgid "Where do you live?"
-msgstr "Hvor bor du?"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
-msgid "Where do you live?"
-msgstr "Hvor bor du?"
+msgid "Please write where you live."
+msgstr "Skriv gjerne hvor du bor."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
-msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
-msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
 
 #: .\__translations\__translations.py:84
 msgctxt "other"
-msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "Vegansk (spiser kun planter og sopp)"
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegansk (spiser kun planter og sopp)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegansk (spiser kun planter og sopp)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
 
 #: .\__translations\__translations.py:88
 msgctxt "other"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegansk (spiser kun planter og sopp)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarisk (spiser ikke fisk og kjøtt)"
+msgid "Carnist (eats animals)"
+msgstr "Carnist (spiser dyr)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (spiser dyr)"
+msgid "Vegan"
+msgstr "Vegansk"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (spiser dyr)"
+msgid "Vegan"
+msgstr "Vegansk"
 
 #: .\__translations\__translations.py:96
 msgctxt "other"
-msgid "Carnist (eats animals)"
-msgstr "Carnist (spiser dyr)"
+msgid "Vegan"
+msgstr "Vegansk"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
-msgid "Vegan"
-msgstr "Vegansk"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
-msgid "Vegan"
-msgstr "Vegansk"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
 
 #: .\__translations\__translations.py:100
 msgctxt "other"
-msgid "Vegan"
-msgstr "Vegansk"
+msgid "Vegetarian"
+msgstr "Vegetarisk"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
-msgid "Vegetarian"
-msgstr "Vegetarisk"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
-msgid "Vegetarian"
-msgstr "Vegetarisk"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
-msgid "Vegetarian"
-msgstr "Vegetarisk"
+msgid "Carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Ikke røyker"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Ikke røyker"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
-msgid "Carnist"
-msgstr "Carnist"
+msgid "Not smoking"
+msgstr "Ikke røyker"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
-msgid "Not smoking"
-msgstr "Ikke røyker"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
-msgid "Not smoking"
-msgstr "Ikke røyker"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
-msgid "Not smoking"
-msgstr "Ikke røyker"
+msgid "Smoking occasionally"
+msgstr "Røyker av og til"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "Røyker av og til"
+msgid "Smoking"
+msgstr "Røyking"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "Røyker av og til"
+msgid "Smoking"
+msgstr "Røyking"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
-msgid "Smoking occasionally"
-msgstr "Røyker av og til"
+msgid "Smoking"
+msgstr "Røyking"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
-msgid "Smoking"
-msgstr "Røyking"
+msgid "Single"
+msgstr "Enkelt"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
-msgid "Smoking"
-msgstr "Røyking"
+msgid "Single"
+msgstr "Enkelt"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
-msgid "Smoking"
-msgstr "Røyking"
+msgid "Single"
+msgstr "Enkelt"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
-msgid "Single"
-msgstr "Enkelt"
+msgid "Divorced"
+msgstr "Skilt"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
-msgid "Single"
-msgstr "Enkelt"
+msgid "Divorced"
+msgstr "Skilt"
 
 #: .\__translations\__translations.py:124
 msgctxt "other"
-msgid "Single"
-msgstr "Enkelt"
+msgid "Divorced"
+msgstr "Skilt"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
-msgid "Divorced"
-msgstr "Skilt"
+msgid "Widowed"
+msgstr "Enke"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
-msgid "Divorced"
-msgstr "Skilt"
+msgid "Widowed"
+msgstr "Enke"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
-msgid "Divorced"
-msgstr "Skilt"
+msgid "Widowed"
+msgstr "Enke"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
-msgid "Widowed"
-msgstr "Enke"
+msgid "In a relationship"
+msgstr "I et forhold"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
-msgid "Widowed"
-msgstr "Enke"
+msgid "In a relationship"
+msgstr "I et forhold"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
-msgid "Widowed"
-msgstr "Enke"
+msgid "In a relationship"
+msgstr "I et forhold"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
-msgid "In a relationship"
-msgstr "I et forhold"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
 
 #: .\__translations\__translations.py:135
 msgctxt "male"
-msgid "In a relationship"
-msgstr "I et forhold"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
 
 #: .\__translations\__translations.py:136
 msgctxt "other"
-msgid "In a relationship"
-msgstr "I et forhold"
+msgid "In an open relationship"
+msgstr "I et åpent forhold"
 
 #: .\__translations\__translations.py:138
 msgctxt "female"
-msgid "In an open relationship"
-msgstr "I et åpent forhold"
+msgid "It's complicated"
+msgstr "Det er komplisert"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
-msgid "In an open relationship"
-msgstr "I et åpent forhold"
+msgid "It's complicated"
+msgstr "Det er komplisert"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
-msgid "In an open relationship"
-msgstr "I et åpent forhold"
+msgid "It's complicated"
+msgstr "Det er komplisert"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
-msgid "It's complicated"
-msgstr "Det er komplisert"
+msgid "Separated"
+msgstr "Separert"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
-msgid "It's complicated"
-msgstr "Det er komplisert"
+msgid "Separated"
+msgstr "Separert"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
-msgid "It's complicated"
-msgstr "Det er komplisert"
+msgid "Separated"
+msgstr "Separert"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
-msgid "Separated"
-msgstr "Separert"
+msgid "Engaged"
+msgstr "Forlovet"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
-msgid "Separated"
-msgstr "Separert"
+msgid "Engaged"
+msgstr "Forlovet"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
-msgid "Separated"
-msgstr "Separert"
+msgid "Engaged"
+msgstr "Forlovet"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
-msgid "Engaged"
-msgstr "Forlovet"
+msgid "Married"
+msgstr "Gift"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
-msgid "Engaged"
-msgstr "Forlovet"
+msgid "Married"
+msgstr "Gift"
 
 #: .\__translations\__translations.py:152
 msgctxt "other"
-msgid "Engaged"
-msgstr "Forlovet"
+msgid "Married"
+msgstr "Gift"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
-msgid "Married"
-msgstr "Gift"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
-msgid "Married"
-msgstr "Gift"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
-msgid "Married"
-msgstr "Gift"
+msgid "Your new password has been saved."
+msgstr "Ditt nye passord er lagret."
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "Ditt nye passord er lagret."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "Ditt nye passord er lagret."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
-msgid "Your new password has been saved."
-msgstr "Ditt nye passord er lagret."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
+"på nytt når som helst."
 
 #: .\__translations\__translations.py:162
+#, python-brace-format
 msgctxt "female"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
-"på nytt når som helst."
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
 
 #: .\__translations\__translations.py:163
+#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
-"på nytt når som helst."
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
 
 #: .\__translations\__translations.py:164
+#, python-brace-format
 msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net- og Speedy Match-kontoene dine er deaktivert. Du kan aktivere dem "
-"på nytt når som helst."
+"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
+"helst. Speedy Net-kontoen din forblir aktiv."
 
 #: .\__translations\__translations.py:166
-#, python-brace-format
 msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
-"helst. Speedy Net-kontoen din forblir aktiv."
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
 
 #: .\__translations\__translations.py:167
-#, python-brace-format
 msgctxt "male"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
-"helst. Speedy Net-kontoen din forblir aktiv."
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
 
 #: .\__translations\__translations.py:168
-#, python-brace-format
 msgctxt "other"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name}-kontoen din er deaktivert. Du kan aktivere den på nytt når som "
-"helst. Speedy Net-kontoen din forblir aktiv."
+msgid "You've already confirmed this email address."
+msgstr "Du har allerede bekreftet denne e-postadressen."
 
 #: .\__translations\__translations.py:170
 msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "Du har allerede bekreftet denne e-postadressen."
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
 
 #: .\__translations\__translations.py:171
 msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "Du har allerede bekreftet denne e-postadressen."
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
 
 #: .\__translations\__translations.py:172
 msgctxt "other"
-msgid "You've already confirmed this email address."
-msgstr "Du har allerede bekreftet denne e-postadressen."
+msgid "You've confirmed your email address."
+msgstr "Du har bekreftet e-postadressen din."
 
 #: .\__translations\__translations.py:174
 msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "Du har bekreftet e-postadressen din."
+msgid "Send"
+msgstr "Sende"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "Du har bekreftet e-postadressen din."
+msgid "Send"
+msgstr "Sende"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
-msgid "You've confirmed your email address."
-msgstr "Du har bekreftet e-postadressen din."
+msgid "Send"
+msgstr "Sende"
 
 #: .\__translations\__translations.py:178
+#, python-brace-format
 msgctxt "female"
-msgid "Send"
-msgstr "Sende"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
 
 #: .\__translations\__translations.py:179
+#, python-brace-format
 msgctxt "male"
-msgid "Send"
-msgstr "Sende"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
 
 #: .\__translations\__translations.py:180
+#, python-brace-format
 msgctxt "other"
-msgid "Send"
-msgstr "Sende"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
+"Fjern venner før du fortsetter."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
-"Fjern venner før du fortsetter."
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "male"
+msgctxt "female_male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
-"Fjern venner før du fortsetter."
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "other"
+msgctxt "female_other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. "
-"Fjern venner før du fortsetter."
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
+"Speedy Net. Be dem om å fjerne venner før du fortsetter."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1523,7 +1563,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1533,7 +1573,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "female_other"
+msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1543,7 +1583,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1553,17 +1593,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "male_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
-"Speedy Net. Be dem om å fjerne venner før du fortsetter."
-
-#: .\__translations\__translations.py:191
-#, python-brace-format
-msgctxt "male_other"
+msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1572,208 +1602,208 @@ msgstr ""
 "Speedy Net. Be dem om å fjerne venner før du fortsetter."
 
 #: .\__translations\__translations.py:192
-#, python-brace-format
-msgctxt "other_female"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
-"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
 
 #: .\__translations\__translations.py:193
-#, python-brace-format
-msgctxt "other_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
-"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
 
 #: .\__translations\__translations.py:194
-#, python-brace-format
-msgctxt "other_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på "
-"Speedy Net. Be dem om å fjerne venner før du fortsetter."
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "Du kan ikke være venn med deg selv."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "Du kan ikke være venn med deg selv."
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "Du kan ikke være venn med deg selv."
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr "Du kan ikke være venn med deg selv."
+msgid "You already requested friendship from this user."
+msgstr "Du har allerede bedt om vennskap fra denne brukeren."
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
-msgid "You already requested friendship from this user."
-msgstr "Du har allerede bedt om vennskap fra denne brukeren."
+msgid "This user already requested friendship from you."
+msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
 
 #: .\__translations\__translations.py:204
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
-
-#: .\__translations\__translations.py:205
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
-
-#: .\__translations\__translations.py:206
-msgctxt "other"
-msgid "This user already requested friendship from you."
-msgstr "Denne brukeren har allerede bedt om vennskap fra deg."
-
-#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:214
+#: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:216
+#: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "Du er allerede venner med denne brukeren."
 
-#: .\__translations\__translations.py:218
+#: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:215
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:216
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "Du har kansellert venneforespørselen din."
+
+#: .\__translations\__translations.py:218
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "Du har kansellert venneforespørselen din."
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
-msgid "You've cancelled your friendship request."
-msgstr "Du har kansellert venneforespørselen din."
+msgid "You have removed this user from your friends."
+msgstr "Du har fjernet denne brukeren fra vennene dine."
 
 #: .\__translations\__translations.py:222
+#, python-brace-format
 msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "Du har fjernet denne brukeren fra vennene dine."
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
 
 #: .\__translations\__translations.py:223
+#, python-brace-format
 msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "Du har fjernet denne brukeren fra vennene dine."
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
 
 #: .\__translations\__translations.py:224
+#, python-brace-format
 msgctxt "other"
-msgid "You have removed this user from your friends."
-msgstr "Du har fjernet denne brukeren fra vennene dine."
+msgid "Welcome to {site_name}!"
+msgstr "Velkommen til {site_name}!"
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "Velkommen til {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "Velkommen til {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}!"
-msgstr "Velkommen til {site_name}!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
 
 #: .\__translations\__translations.py:230
-#, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+msgid "Friends"
+msgstr "Venner"
 
 #: .\__translations\__translations.py:231
-#, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+msgid "Friends"
+msgstr "Venner"
 
 #: .\__translations\__translations.py:232
-#, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Velkommen til {site_name}! Kontoen din er nå aktiv."
+msgid "Friends"
+msgstr "Venner"
 
 #: .\__translations\__translations.py:234
 msgctxt "female"
-msgid "Friends"
-msgstr "Venner"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
+"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
+"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
+"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
+"innhold til et stort antall personer."
 
 #: .\__translations\__translations.py:235
 msgctxt "male"
-msgid "Friends"
-msgstr "Venner"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
+"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
+"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
+"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
+"innhold til et stort antall personer."
 
 #: .\__translations\__translations.py:236
 msgctxt "other"
-msgid "Friends"
-msgstr "Venner"
-
-#: .\__translations\__translations.py:238
-msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
 "number of messages that can be sent to other members of the site in one day. "
@@ -1787,38 +1817,44 @@ msgstr ""
 "bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
 "innhold til et stort antall personer."
 
-#: .\__translations\__translations.py:239
-msgctxt "male"
+#: .\__translations\__translations.py:242
+msgctxt "female_female"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
-"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
-"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
-"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
-"innhold til et stort antall personer."
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
 
-#: .\__translations\__translations.py:240
-msgctxt "other"
+#: .\__translations\__translations.py:243
+msgctxt "female_male"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"På grunn av misbruk av nettstedet til å sende spam-meldinger, måtte vi "
-"begrense antallet meldinger som kan sendes til andre medlemmer av nettstedet "
-"på en dag. Prøv igjen i morgen. Vær oppmerksom på at du ikke har lov til å "
-"bruke Speedy Net til å sende spammeldinger, eller meldinger med samme "
-"innhold til et stort antall personer."
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:244
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
+"profilen deres. Se brukerens profil på Speedy Net."
 
 #: .\__translations\__translations.py:246
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1827,42 +1863,6 @@ msgstr ""
 "profilen deres. Se brukerens profil på Speedy Net."
 
 #: .\__translations\__translations.py:247
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
-"profilen deres. Se brukerens profil på Speedy Net."
-
-#: .\__translations\__translations.py:248
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
-"profilen deres. Se brukerens profil på Speedy Net."
-
-#: .\__translations\__translations.py:249
-msgctxt "male_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
-"profilen deres. Se brukerens profil på Speedy Net."
-
-#: .\__translations\__translations.py:250
-msgctxt "male_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
-"profilen deres. Se brukerens profil på Speedy Net."
-
-#: .\__translations\__translations.py:251
 msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1871,7 +1871,7 @@ msgstr ""
 "Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
 "profilen deres. Se brukerens profil på Speedy Net."
 
-#: .\__translations\__translations.py:252
+#: .\__translations\__translations.py:248
 msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1880,7 +1880,7 @@ msgstr ""
 "Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
 "profilen deres. Se brukerens profil på Speedy Net."
 
-#: .\__translations\__translations.py:253
+#: .\__translations\__translations.py:249
 msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1889,7 +1889,7 @@ msgstr ""
 "Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
 "profilen deres. Se brukerens profil på Speedy Net."
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:250
 msgctxt "other_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1898,7 +1898,7 @@ msgstr ""
 "Denne brukeren samsvarer ikke med profilen din, men du kan besøke Speedy Net-"
 "profilen deres. Se brukerens profil på Speedy Net."
 
-#: .\__translations\__translations.py:256
+#: .\__translations\__translations.py:252
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1907,7 +1907,7 @@ msgstr ""
 "Profilbildet ditt kan ikke være gjennomsiktig. Last opp et ugjennomsiktig "
 "bilde."
 
-#: .\__translations\__translations.py:257
+#: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1916,7 +1916,7 @@ msgstr ""
 "Profilbildet ditt kan ikke være gjennomsiktig. Last opp et ugjennomsiktig "
 "bilde."
 
-#: .\__translations\__translations.py:258
+#: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -2178,7 +2178,7 @@ msgstr "Siste IP-adresse ble brukt https://ipapi.com/ tid"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Siste IP-adresse brukte rå https://ipapi.com/ resultater"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
+#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
 msgid "user"
 msgstr "bruker"
 
@@ -2190,56 +2190,56 @@ msgstr "brukere"
 msgid "Superuser must be equal to staff."
 msgstr "Superbruker skal være lik personalet."
 
-#: .\accounts\models.py:1691
+#: .\accounts\models.py:1692
 msgid "email"
 msgstr "e-post"
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1693
 msgid "is confirmed"
 msgstr "er bekreftet"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1694
 msgid "is primary"
 msgstr "er primær"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1695
 msgid "confirmation token"
 msgstr "bekreftelsestoken"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1696
 msgid "confirmation sent"
 msgstr "bekreftelse sendt"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1697
 msgid "Who can see this email"
 msgstr "Hvem kan se denne e-posten"
 
-#: .\accounts\models.py:1713
+#: .\accounts\models.py:1714
 msgid "email addresses"
 msgstr "e-postadresser"
 
-#: .\accounts\models.py:1867
+#: .\accounts\models.py:1868
 msgid "User"
 msgstr "Bruker"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1869
 msgid "last visit"
 msgstr "siste besøk"
 
-#: .\accounts\models.py:1893
+#: .\accounts\models.py:1894
 msgid "Today"
 msgstr "I dag"
 
-#: .\accounts\models.py:1895
+#: .\accounts\models.py:1896
 msgid "Yesterday"
 msgstr "I går"
 
-#: .\accounts\models.py:1897
+#: .\accounts\models.py:1898
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "På {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1899
+#: .\accounts\models.py:1900
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} siden"
@@ -2492,7 +2492,7 @@ msgstr ""
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:34
+#: .\base\fields.py:35
 msgid "ID"
 msgstr "ID"
 
@@ -2501,15 +2501,15 @@ msgctxt "timesince"
 msgid ", "
 msgstr "None "
 
-#: .\base\validators.py:8 .\base\validators.py:9
+#: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
 msgstr "ID inneholder ulovlige tegn."
 
-#: .\base\views.py:102
+#: .\base\views.py:103
 msgid "Changes saved."
 msgstr "Endringer lagret."
 
-#: .\blocks\managers.py:64 .\blocks\models.py:54
+#: .\blocks\managers.py:65 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Brukere kan ikke blokkere seg selv."
 
@@ -2601,19 +2601,19 @@ msgstr "tilbakemelding"
 msgid "feedbacks"
 msgstr "tilbakemeldinger"
 
-#: .\friends\views.py:325
+#: .\friends\views.py:326
 msgid "Friendship request sent."
 msgstr "Venneforespørsel sendt."
 
-#: .\friends\views.py:349
+#: .\friends\views.py:350
 msgid "No friendship request."
 msgstr "Ingen vennskapsforespørsel."
 
-#: .\friends\views.py:419
+#: .\friends\views.py:420
 msgid "Friendship request accepted."
 msgstr "Venneforespørsel akseptert."
 
-#: .\friends\views.py:446
+#: .\friends\views.py:447
 msgid "Friendship request rejected."
 msgstr "Venneforespørsel avvist."
 

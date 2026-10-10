@@ -12,6 +12,7 @@ from .models import File
 ImageTypeHintMixin = object
 if (TYPE_CHECKING):
     from speedy.core.uploads.models import Image
+
     ImageTypeHintMixin = Image
 
 
@@ -19,6 +20,7 @@ class FileInput(forms.TextInput):
     """
     A text input widget for selecting an uploaded file, rendering a preview of the already-uploaded file (if any).
     """
+
     def render(self, name, value, attrs=None, renderer=None):
         """
         Render the widget, including a preview of the file currently referenced by value (if any).
@@ -53,6 +55,7 @@ class PhotoField(models.ForeignKey, ImageTypeHintMixin):
     """
     A ForeignKey field to an uploaded Image, rendered using FileInput.
     """
+
     def __init__(self, *args, **kwargs):
         """
         Initialize the field as a ForeignKey to uploads.Image, setting it to be nulled out on delete and with no reverse relation.

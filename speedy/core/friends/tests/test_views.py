@@ -39,6 +39,7 @@ if (django_settings.TESTS):
                 test_user_cannot_open_other_users_friends_page(self): Not implemented in this mixin.
                 test_user_can_open_his_friends_page(self): Asserts a logged-in user can open their own friends page.
             """
+
             def set_up(self):
                 """
                 Create two active users and log in as the first user.
@@ -93,6 +94,7 @@ if (django_settings.TESTS):
                 test_user_can_open_the_page(self): Asserts a logged-in user can open their own received friendship requests page.
                 test_user_cannot_open_other_users_requests_page(self): Asserts a logged-in user gets a 403 when trying to view another user's received friendship requests page.
             """
+
             def set_up(self):
                 """
                 Create two active users and log in as the first user.
@@ -138,6 +140,7 @@ if (django_settings.TESTS):
                 test_user_can_open_the_page(self): Asserts a logged-in user can open their own sent friendship requests page.
                 test_user_cannot_open_other_users_requests_page(self): Asserts a logged-in user gets a 403 when trying to view another user's sent friendship requests page.
             """
+
             def set_up(self):
                 """
                 Create two active users and log in as the first user.
@@ -187,6 +190,7 @@ if (django_settings.TESTS):
                 test_user_can_send_friendship_request_if_not_maximum(self): Asserts a user can send a friendship request when they have fewer than the maximum allowed friends.
                 test_user_cannot_send_friendship_request_if_maximum(self): Asserts a user cannot send a friendship request when they already have the maximum allowed friends.
             """
+
             def set_up(self):
                 """
                 Create two active users, log in as the first user, and build the friendship request page URLs.
@@ -363,6 +367,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -380,6 +385,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -397,6 +403,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -414,6 +421,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -431,6 +439,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -448,6 +457,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -465,6 +475,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -482,6 +493,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -499,6 +511,7 @@ if (django_settings.TESTS):
                 test_visitor_cannot_cancel_friendship_request(self): Asserts a logged-out visitor is redirected to the login page.
                 test_user_can_cancel_friendship_request(self): Asserts a logged-in user can cancel a friendship request they sent and sees a success message.
             """
+
             def set_up(self):
                 """
                 Create two active users, log in as the first user, and build the cancel friendship request page URL.
@@ -541,6 +554,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -558,6 +572,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -575,6 +590,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -592,6 +608,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -609,6 +626,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -626,6 +644,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -643,6 +662,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -660,6 +680,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -682,6 +703,7 @@ if (django_settings.TESTS):
                 test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self): Asserts the receiving user can accept the request when the sender has fewer than the maximum allowed friends.
                 test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self): Asserts the receiving user cannot accept the request when the sender already has the maximum allowed friends.
             """
+
             def set_up(self):
                 """
                 Create two active users, have the first user send the second a friendship request, and build the accept friendship request page URL.
@@ -815,6 +837,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -832,6 +855,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -849,6 +873,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -866,6 +891,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -883,6 +909,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -900,6 +927,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -917,6 +945,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -934,6 +963,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -952,6 +982,7 @@ if (django_settings.TESTS):
                 test_user_cannot_reject_friendship_request_they_sent_another_user(self): Asserts the user who sent the request gets a 403 when trying to reject it themselves.
                 test_user_that_has_received_request_can_reject_it(self): Asserts the user who received the request can reject it, removing the request and seeing a success message.
             """
+
             def set_up(self):
                 """
                 Create two active users, have the first user send the second a friendship request, and build the reject friendship request page URL.
@@ -1006,6 +1037,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1023,6 +1055,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1040,6 +1073,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1057,6 +1091,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1074,6 +1109,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1091,6 +1127,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1108,6 +1145,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1125,6 +1163,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1143,6 +1182,7 @@ if (django_settings.TESTS):
                 test_user_can_remove_other_user(self): Asserts the first user can remove the second user as a friend and sees a success message.
                 test_other_user_can_remove_first_user(self): Asserts the second user can remove the first user as a friend and sees a success message.
             """
+
             def set_up(self):
                 """
                 Create two active users and make them friends, without logging in as either.
@@ -1203,6 +1243,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1220,6 +1261,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1237,6 +1279,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1254,6 +1297,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1271,6 +1315,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1288,6 +1333,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1305,6 +1351,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1322,6 +1369,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
+
             def validate_all_values(self):
                 """
                 Assert the current language code is as expected, in addition to the base class's validations.
@@ -1338,6 +1386,7 @@ if (django_settings.TESTS):
                 set_up(self): Creates eight users with several friendships and friendship requests, and staggered last-visit times (some users long inactive).
                 update_users_gender_to_match_to_gender_other(self): Updates some users to only match users of gender "other", to test filtering by match on Speedy Match.
             """
+
             def set_up(self):
                 """
                 Create eight users with several friendships and friendship requests, and staggered last-visit times, with some users set to a long-inactive last visit.
@@ -1409,6 +1458,7 @@ if (django_settings.TESTS):
             Methods:
                 test_site_user_friend_list_view_object_list(self): Asserts site_friends and speedy_net_friends are ordered by last visit, and that site_friends is filtered by match on Speedy Match once genders are updated.
             """
+
             def test_site_user_friend_list_view_object_list(self):
                 """
                 Asserts site_friends and speedy_net_friends only include friendships where the user is the "to user" and are ordered by the friend's last visit (most recent first), and that on Speedy Match, site_friends is additionally filtered to only include matching friends once genders are updated, while speedy_net_friends remains unaffected.
@@ -1452,6 +1502,7 @@ if (django_settings.TESTS):
             Methods:
                 test_site_received_friendship_requests_list_view_object_list(self): Asserts received_friendship_requests is ordered by the sender's last visit and filtered by match on Speedy Match once genders are updated.
             """
+
             def test_site_received_friendship_requests_list_view_object_list(self):
                 """
                 Asserts received_friendship_requests only includes requests where the user is the "to user", is ordered by the sender's last visit (most recent first), and on Speedy Match only includes senders who match the user once genders are updated.
@@ -1478,6 +1529,7 @@ if (django_settings.TESTS):
             Methods:
                 test_site_sent_friendship_requests_list_view_object_list(self): Asserts sent_friendship_requests is ordered by the recipient's last visit and filtered by match on Speedy Match once genders are updated.
             """
+
             def test_site_sent_friendship_requests_list_view_object_list(self):
                 """
                 Asserts sent_friendship_requests only includes requests where the user is the "from user", is ordered by the recipient's last visit (most recent first), and on Speedy Match only includes recipients who match the user once genders are updated.

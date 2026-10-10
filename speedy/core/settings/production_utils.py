@@ -1,6 +1,8 @@
 """
 Utilities for the Speedy Core production environment settings: the function which updates a settings dict for production.
 """
+
+
 def activate_production(settings):
     """
     Update the given settings dict in place for the production environment (from/server email addresses, DEBUG disabled).

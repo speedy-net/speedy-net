@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
+#: .\__translations\__translations.py:8 .\base\tests\test_translations.py:25
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -850,32 +850,32 @@ msgstr ""
 "%(site_name)s আপনার নোটিফিকেশন সেটিংস পরিবর্তন করতে বা তা বন্ধ করতে এই পৃষ্ঠায় "
 "প্রবেশ করুন:"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
 msgstr "একটি বৈধ ইমেল ঠিকানা লিখুন।"
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:12
 msgid "Email address"
 msgstr "ইমেইল ঠিকানা"
 
-#: .\__translations\__translations.py:14 .\accounts\models.py:1712
+#: .\__translations\__translations.py:13 .\accounts\models.py:1713
 msgid "email address"
 msgstr "ইমেল ঠিকানা"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:14
 msgid "Email address:"
 msgstr "ইমেইল ঠিকানা:"
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "ইমেল"
 
-#: .\__translations\__translations.py:17
+#: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
 msgstr "মানটি অবশ্যই বৈধ JSON হতে হবে।"
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:17
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -884,43 +884,43 @@ msgstr ""
 "অনুগ্রহ করে একটি সঠিক লিখুন %(username)s এবং পাসওয়ার্ড। উল্লেখ্য যে, উভয় ফিল্ডই কেস-"
 "সেনসিটিভ হতে পারে।"
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 msgid "Message"
 msgstr "বার্তা"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 msgid "Friendship Request"
 msgstr "বন্ধুত্বের অনুরোধ"
 
-#: .\__translations\__translations.py:25
+#: .\__translations\__translations.py:23
 msgid "Friendship Requests"
 msgstr "বন্ধুত্বের অনুরোধ"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 msgid "Friend"
 msgstr "বন্ধু"
 
-#: .\__translations\__translations.py:28 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "বন্ধুরা"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 msgid "Following Relationship"
 msgstr "সম্পর্ক অনুসরণ"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 msgid "Following Relationships"
 msgstr "সম্পর্ক অনুসরণ"
 
-#: .\__translations\__translations.py:33
+#: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
 msgstr "ব্লকার সম্পর্ক"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
 msgstr "অবরুদ্ধ সম্পর্ক"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:36
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -934,582 +934,626 @@ msgstr[1] ""
 "তালিকায় রয়েছে %(show_value)d আইটেম, এতে এর বেশি থাকা উচিত নয় "
 "%(limit_value)d. "
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
 msgstr "ব্যবহারকারীর নাম (স্লাগ)"
+
+#: .\__translations\__translations.py:43
+msgctxt "male"
+msgid "username (slug)"
+msgstr "ব্যবহারকারীর নাম (স্লাগ)"
+
+#: .\__translations\__translations.py:44
+msgctxt "other"
+msgid "username (slug)"
+msgstr "ব্যবহারকারীর নাম (স্লাগ)"
+
+#: .\__translations\__translations.py:46
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
-msgid "username (slug)"
-msgstr "ব্যবহারকারীর নাম (স্লাগ)"
+msgid "Update your profile picture"
+msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
-msgid "username (slug)"
-msgstr "ব্যবহারকারীর নাম (স্লাগ)"
+msgid "Update your profile picture"
+msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
-msgid "Update your profile picture"
-msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
+msgid "Save Changes"
+msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
 
 #: .\__translations\__translations.py:51
 msgctxt "male"
-msgid "Update your profile picture"
-msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
+msgid "Save Changes"
+msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
 
 #: .\__translations\__translations.py:52
 msgctxt "other"
-msgid "Update your profile picture"
-msgstr "আপনার প্রোফাইল ছবি আপডেট করুন"
+msgid "Save Changes"
+msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
 
 #: .\__translations\__translations.py:54
 msgctxt "female"
-msgid "Save Changes"
-msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
+msgid "You can't change your username."
+msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
 
 #: .\__translations\__translations.py:55
 msgctxt "male"
-msgid "Save Changes"
-msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
+msgid "You can't change your username."
+msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
 
 #: .\__translations\__translations.py:56
 msgctxt "other"
-msgid "Save Changes"
-msgstr "পরিবর্তনগুলি সংরক্ষণ করুন"
+msgid "You can't change your username."
+msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
 
 #: .\__translations\__translations.py:58
+#, python-brace-format
 msgctxt "female"
-msgid "You can't change your username."
-msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
+msgid "Activate your {site_name} account"
+msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:59
+#, python-brace-format
 msgctxt "male"
-msgid "You can't change your username."
-msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
+msgid "Activate your {site_name} account"
+msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:60
+#, python-brace-format
 msgctxt "other"
-msgid "You can't change your username."
-msgstr "আপনি আপনার ইউজারনেম পরিবর্তন করতে পারবেন না।"
+msgid "Activate your {site_name} account"
+msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Deactivate your {site_name} account"
+msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Deactivate your {site_name} account"
+msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
-msgid "Activate your {site_name} account"
-msgstr "আপনার সক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Deactivate your {site_name} account"
+msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
 
 #: .\__translations\__translations.py:66
-#, python-brace-format
 msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Add"
+msgstr "যোগ করুন"
 
 #: .\__translations\__translations.py:67
-#, python-brace-format
 msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Add"
+msgstr "যোগ করুন"
 
 #: .\__translations\__translations.py:68
-#, python-brace-format
 msgctxt "other"
-msgid "Deactivate your {site_name} account"
-msgstr "আপনার নিষ্ক্রিয় করুন {site_name} অ্যাকাউন্ট"
+msgid "Add"
+msgstr "যোগ করুন"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
-msgid "Add"
-msgstr "যোগ করুন"
+msgid "Where do I live?"
+msgstr "আমি কোথায় থাকি?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
-msgid "Add"
-msgstr "যোগ করুন"
+msgid "Where do I live?"
+msgstr "আমি কোথায় থাকি?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
-msgid "Add"
-msgstr "যোগ করুন"
+msgid "Where do I live?"
+msgstr "আমি কোথায় থাকি?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
-msgid "Where do I live?"
-msgstr "আমি কোথায় থাকি?"
+msgid "Where do you live?"
+msgstr "আপনি কোথায় থাকেন?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
-msgid "Where do I live?"
-msgstr "আমি কোথায় থাকি?"
+msgid "Where do you live?"
+msgstr "আপনি কোথায় থাকেন?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
-msgid "Where do I live?"
-msgstr "আমি কোথায় থাকি?"
+msgid "Where do you live?"
+msgstr "আপনি কোথায় থাকেন?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
-msgid "Where do you live?"
-msgstr "আপনি কোথায় থাকেন?"
+msgid "Please write where you live."
+msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
-msgid "Where do you live?"
-msgstr "আপনি কোথায় থাকেন?"
+msgid "Please write where you live."
+msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
-msgid "Where do you live?"
-msgstr "আপনি কোথায় থাকেন?"
+msgid "Please write where you live."
+msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
-msgid "Please write where you live."
-msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
-msgid "Please write where you live."
-msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
 
 #: .\__translations\__translations.py:84
 msgctxt "other"
-msgid "Please write where you live."
-msgstr "আপনি কোথায় থাকেন, অনুগ্রহ করে তা লিখুন।"
+msgid "Vegan (eats only plants and fungi)"
+msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
 
 #: .\__translations\__translations.py:88
 msgctxt "other"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "ভেগান (শুধুমাত্র উদ্ভিদ ও ছত্রাক খায়)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
+msgid "Carnist (eats animals)"
+msgstr "মাংসাশী (পশু ভক্ষণকারী)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
+msgid "Carnist (eats animals)"
+msgstr "মাংসাশী (পশু ভক্ষণকারী)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "নিরামিষাশী (মাছ ও মাংস খান না)"
+msgid "Carnist (eats animals)"
+msgstr "মাংসাশী (পশু ভক্ষণকারী)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "মাংসাশী (পশু ভক্ষণকারী)"
+msgid "Vegan"
+msgstr "ভেগান"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "মাংসাশী (পশু ভক্ষণকারী)"
+msgid "Vegan"
+msgstr "ভেগান"
 
 #: .\__translations\__translations.py:96
 msgctxt "other"
-msgid "Carnist (eats animals)"
-msgstr "মাংসাশী (পশু ভক্ষণকারী)"
+msgid "Vegan"
+msgstr "ভেগান"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
-msgid "Vegan"
-msgstr "ভেগান"
+msgid "Vegetarian"
+msgstr "নিরামিষাশী"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
-msgid "Vegan"
-msgstr "ভেগান"
+msgid "Vegetarian"
+msgstr "নিরামিষাশী"
 
 #: .\__translations\__translations.py:100
 msgctxt "other"
-msgid "Vegan"
-msgstr "ভেগান"
+msgid "Vegetarian"
+msgstr "নিরামিষাশী"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
-msgid "Vegetarian"
-msgstr "নিরামিষাশী"
+msgid "Carnist"
+msgstr "কার্নিস্ট"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
-msgid "Vegetarian"
-msgstr "নিরামিষাশী"
+msgid "Carnist"
+msgstr "কার্নিস্ট"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
-msgid "Vegetarian"
-msgstr "নিরামিষাশী"
+msgid "Carnist"
+msgstr "কার্নিস্ট"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
-msgid "Carnist"
-msgstr "কার্নিস্ট"
+msgid "Not smoking"
+msgstr "ধূমপান না করা"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
-msgid "Carnist"
-msgstr "কার্নিস্ট"
+msgid "Not smoking"
+msgstr "ধূমপান না করা"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
-msgid "Carnist"
-msgstr "কার্নিস্ট"
+msgid "Not smoking"
+msgstr "ধূমপান না করা"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
-msgid "Not smoking"
-msgstr "ধূমপান না করা"
+msgid "Smoking occasionally"
+msgstr "মাঝে মাঝে ধূমপান"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
-msgid "Not smoking"
-msgstr "ধূমপান না করা"
+msgid "Smoking occasionally"
+msgstr "মাঝে মাঝে ধূমপান"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
-msgid "Not smoking"
-msgstr "ধূমপান না করা"
+msgid "Smoking occasionally"
+msgstr "মাঝে মাঝে ধূমপান"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "মাঝে মাঝে ধূমপান"
+msgid "Smoking"
+msgstr "ধূমপান"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "মাঝে মাঝে ধূমপান"
+msgid "Smoking"
+msgstr "ধূমপান"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
-msgid "Smoking occasionally"
-msgstr "মাঝে মাঝে ধূমপান"
+msgid "Smoking"
+msgstr "ধূমপান"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
-msgid "Smoking"
-msgstr "ধূমপান"
+msgid "Single"
+msgstr "একক"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
-msgid "Smoking"
-msgstr "ধূমপান"
+msgid "Single"
+msgstr "একক"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
-msgid "Smoking"
-msgstr "ধূমপান"
+msgid "Single"
+msgstr "একক"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
-msgid "Single"
-msgstr "একক"
+msgid "Divorced"
+msgstr "তালাকপ্রাপ্ত"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
-msgid "Single"
-msgstr "একক"
+msgid "Divorced"
+msgstr "তালাকপ্রাপ্ত"
 
 #: .\__translations\__translations.py:124
 msgctxt "other"
-msgid "Single"
-msgstr "একক"
+msgid "Divorced"
+msgstr "তালাকপ্রাপ্ত"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
-msgid "Divorced"
-msgstr "তালাকপ্রাপ্ত"
+msgid "Widowed"
+msgstr "বিধবা"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
-msgid "Divorced"
-msgstr "তালাকপ্রাপ্ত"
+msgid "Widowed"
+msgstr "বিধবা"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
-msgid "Divorced"
-msgstr "তালাকপ্রাপ্ত"
+msgid "Widowed"
+msgstr "বিধবা"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
-msgid "Widowed"
-msgstr "বিধবা"
+msgid "In a relationship"
+msgstr "একটি সম্পর্কে"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
-msgid "Widowed"
-msgstr "বিধবা"
+msgid "In a relationship"
+msgstr "একটি সম্পর্কে"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
-msgid "Widowed"
-msgstr "বিধবা"
+msgid "In a relationship"
+msgstr "একটি সম্পর্কে"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
-msgid "In a relationship"
-msgstr "একটি সম্পর্কে"
+msgid "In an open relationship"
+msgstr "একটি উন্মুক্ত সম্পর্কে"
 
 #: .\__translations\__translations.py:135
 msgctxt "male"
-msgid "In a relationship"
-msgstr "একটি সম্পর্কে"
+msgid "In an open relationship"
+msgstr "একটি উন্মুক্ত সম্পর্কে"
 
 #: .\__translations\__translations.py:136
 msgctxt "other"
-msgid "In a relationship"
-msgstr "একটি সম্পর্কে"
+msgid "In an open relationship"
+msgstr "একটি উন্মুক্ত সম্পর্কে"
 
 #: .\__translations\__translations.py:138
 msgctxt "female"
-msgid "In an open relationship"
-msgstr "একটি উন্মুক্ত সম্পর্কে"
+msgid "It's complicated"
+msgstr "বিষয়টা জটিল"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
-msgid "In an open relationship"
-msgstr "একটি উন্মুক্ত সম্পর্কে"
+msgid "It's complicated"
+msgstr "বিষয়টা জটিল"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
-msgid "In an open relationship"
-msgstr "একটি উন্মুক্ত সম্পর্কে"
+msgid "It's complicated"
+msgstr "বিষয়টা জটিল"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
-msgid "It's complicated"
-msgstr "বিষয়টা জটিল"
+msgid "Separated"
+msgstr "বিচ্ছিন্ন"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
-msgid "It's complicated"
-msgstr "বিষয়টা জটিল"
+msgid "Separated"
+msgstr "বিচ্ছিন্ন"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
-msgid "It's complicated"
-msgstr "বিষয়টা জটিল"
+msgid "Separated"
+msgstr "বিচ্ছিন্ন"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
-msgid "Separated"
-msgstr "বিচ্ছিন্ন"
+msgid "Engaged"
+msgstr "নিযুক্ত"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
-msgid "Separated"
-msgstr "বিচ্ছিন্ন"
+msgid "Engaged"
+msgstr "নিযুক্ত"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
-msgid "Separated"
-msgstr "বিচ্ছিন্ন"
+msgid "Engaged"
+msgstr "নিযুক্ত"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
-msgid "Engaged"
-msgstr "নিযুক্ত"
+msgid "Married"
+msgstr "বিবাহিত"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
-msgid "Engaged"
-msgstr "নিযুক্ত"
+msgid "Married"
+msgstr "বিবাহিত"
 
 #: .\__translations\__translations.py:152
 msgctxt "other"
-msgid "Engaged"
-msgstr "নিযুক্ত"
+msgid "Married"
+msgstr "বিবাহিত"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
-msgid "Married"
-msgstr "বিবাহিত"
+msgid "Your new password has been saved."
+msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
-msgid "Married"
-msgstr "বিবাহিত"
+msgid "Your new password has been saved."
+msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
-msgid "Married"
-msgstr "বিবাহিত"
+msgid "Your new password has been saved."
+msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
+"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
+"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
-msgid "Your new password has been saved."
-msgstr "আপনার নতুন পাসওয়ার্ডটি সংরক্ষণ করা হয়েছে।"
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
+"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
 
 #: .\__translations\__translations.py:162
+#, python-brace-format
 msgctxt "female"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
-"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
+"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
+"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
 
 #: .\__translations\__translations.py:163
+#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
-"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
+"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
+"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
 
 #: .\__translations\__translations.py:164
+#, python-brace-format
 msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"আপনার Speedy Net এবং Speedy Match অ্যাকাউন্টগুলো নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো "
-"সময় সেগুলো পুনরায় সক্রিয় করতে পারেন।"
+"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
+"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
 
 #: .\__translations\__translations.py:166
-#, python-brace-format
 msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
-"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
+msgid "You've already confirmed this email address."
+msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:167
-#, python-brace-format
 msgctxt "male"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
-"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
+msgid "You've already confirmed this email address."
+msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:168
-#, python-brace-format
 msgctxt "other"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"আপনার {site_name} অ্যাকাউন্টটি নিষ্ক্রিয় করা হয়েছে। আপনি যেকোনো সময় এটি পুনরায় "
-"সক্রিয় করতে পারেন। আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে।"
+msgid "You've already confirmed this email address."
+msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:170
 msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
+msgid "You've confirmed your email address."
+msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:171
 msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
+msgid "You've confirmed your email address."
+msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:172
 msgctxt "other"
-msgid "You've already confirmed this email address."
-msgstr "আপনি ইতিমধ্যেই এই ইমেল ঠিকানাটি নিশ্চিত করেছেন।"
+msgid "You've confirmed your email address."
+msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
 
 #: .\__translations\__translations.py:174
 msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
+msgid "Send"
+msgstr "পাঠান"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
+msgid "Send"
+msgstr "পাঠান"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
-msgid "You've confirmed your email address."
-msgstr "আপনি আপনার ইমেল ঠিকানা নিশ্চিত করেছেন।"
+msgid "Send"
+msgstr "পাঠান"
 
 #: .\__translations\__translations.py:178
+#, python-brace-format
 msgctxt "female"
-msgid "Send"
-msgstr "পাঠান"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
+"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:179
+#, python-brace-format
 msgctxt "male"
-msgid "Send"
-msgstr "পাঠান"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
+"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:180
+#, python-brace-format
 msgctxt "other"
-msgid "Send"
-msgstr "পাঠান"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
+"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
-"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
+"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
+"থেকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "male"
+msgctxt "female_male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
-"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
+"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
+"থেকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "other"
+msgctxt "female_other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"আপনার কাছে ইতিমধ্যেই আছে {0} বন্ধু। তোমার এর বেশি থাকতে পারবে না {1} Speedy "
-"Netে বন্ধু আছে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে বন্ধুদের সরিয়ে দিন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
+"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
+"থেকে সরিয়ে দিতে বলুন।"
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
+"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
+"থেকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1520,7 +1564,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1531,7 +1575,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "female_other"
+msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1542,7 +1586,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1553,18 +1597,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "male_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
-"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
-"থেকে সরিয়ে দিতে বলুন।"
-
-#: .\__translations\__translations.py:191
-#, python-brace-format
-msgctxt "male_other"
+msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1574,211 +1607,208 @@ msgstr ""
 "থেকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:192
-#, python-brace-format
-msgctxt "other_female"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
-"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
-"থেকে সরিয়ে দিতে বলুন।"
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
 
 #: .\__translations\__translations.py:193
-#, python-brace-format
-msgctxt "other_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
-"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
-"থেকে সরিয়ে দিতে বলুন।"
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
 
 #: .\__translations\__translations.py:194
-#, python-brace-format
-msgctxt "other_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই আছে {0} বন্ধুরা। তাদের এর বেশি থাকতে পারবে না। {1} "
-"Speedy Netে আপনার বন্ধুরা আছে। কাজ শুরু করার আগে অনুগ্রহ করে তাদেরকে বন্ধু তালিকা "
-"থেকে সরিয়ে দিতে বলুন।"
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
+msgid "You already requested friendship from this user."
+msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
+msgid "You already requested friendship from this user."
+msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr "তুমি নিজের সাথে বন্ধুত্ব করতে পারো না।"
+msgid "You already requested friendship from this user."
+msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
+msgid "This user already requested friendship from you."
+msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
+msgid "This user already requested friendship from you."
+msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
-msgid "You already requested friendship from this user."
-msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
+msgid "This user already requested friendship from you."
+msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
 
 #: .\__translations\__translations.py:204
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
-
-#: .\__translations\__translations.py:205
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
-
-#: .\__translations\__translations.py:206
-msgctxt "other"
-msgid "This user already requested friendship from you."
-msgstr "এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।"
-
-#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:214
+#: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:216
+#: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।"
 
-#: .\__translations\__translations.py:218
+#: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।"
+
+#: .\__translations\__translations.py:215
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।"
+
+#: .\__translations\__translations.py:216
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।"
+
+#: .\__translations\__translations.py:218
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।"
+msgid "You have removed this user from your friends."
+msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
-msgid "You've cancelled your friendship request."
-msgstr "আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।"
+msgid "You have removed this user from your friends."
+msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
 
 #: .\__translations\__translations.py:222
+#, python-brace-format
 msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
+msgid "Welcome to {site_name}!"
+msgstr "স্বাগতম {site_name}! "
 
 #: .\__translations\__translations.py:223
+#, python-brace-format
 msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
+msgid "Welcome to {site_name}!"
+msgstr "স্বাগতম {site_name}! "
 
 #: .\__translations\__translations.py:224
+#, python-brace-format
 msgctxt "other"
-msgid "You have removed this user from your friends."
-msgstr "আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।"
+msgid "Welcome to {site_name}!"
+msgstr "স্বাগতম {site_name}! "
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "স্বাগতম {site_name}! "
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "স্বাগতম {site_name}! "
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}!"
-msgstr "স্বাগতম {site_name}! "
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
 
 #: .\__translations\__translations.py:230
-#, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
+msgid "Friends"
+msgstr "বন্ধুরা"
 
 #: .\__translations\__translations.py:231
-#, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
+msgid "Friends"
+msgstr "বন্ধুরা"
 
 #: .\__translations\__translations.py:232
-#, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "স্বাগতম {site_name} আপনার অ্যাকাউন্টটি এখন সক্রিয় হয়েছে।"
+msgid "Friends"
+msgstr "বন্ধুরা"
 
 #: .\__translations\__translations.py:234
 msgctxt "female"
-msgid "Friends"
-msgstr "বন্ধুরা"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"স্প্যাম বার্তা পাঠানোর জন্য সাইটটির অপব্যবহারের কারণে, আমাদেরকে একদিনে সাইটের "
+"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছে। অনুগ্রহ করে আগামীকাল "
+"আবার চেষ্টা করুন। অনুগ্রহ করে মনে রাখবেন যে, স্প্যাম বার্তা অথবা একই বিষয়বস্তু সম্বলিত "
+"বার্তা বহু সংখ্যক মানুষের কাছে পাঠানোর জন্য Speedy Net ব্যবহার করার অনুমতি আপনার "
+"নেই।"
 
 #: .\__translations\__translations.py:235
 msgctxt "male"
-msgid "Friends"
-msgstr "বন্ধুরা"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"স্প্যাম বার্তা পাঠানোর জন্য সাইটটির অপব্যবহারের কারণে, আমাদেরকে একদিনে সাইটের "
+"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছে। অনুগ্রহ করে আগামীকাল "
+"আবার চেষ্টা করুন। অনুগ্রহ করে মনে রাখবেন যে, স্প্যাম বার্তা অথবা একই বিষয়বস্তু সম্বলিত "
+"বার্তা বহু সংখ্যক মানুষের কাছে পাঠানোর জন্য Speedy Net ব্যবহার করার অনুমতি আপনার "
+"নেই।"
 
 #: .\__translations\__translations.py:236
 msgctxt "other"
-msgid "Friends"
-msgstr "বন্ধুরা"
-
-#: .\__translations\__translations.py:238
-msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
 "number of messages that can be sent to other members of the site in one day. "
@@ -1792,38 +1822,44 @@ msgstr ""
 "বার্তা বহু সংখ্যক মানুষের কাছে পাঠানোর জন্য Speedy Net ব্যবহার করার অনুমতি আপনার "
 "নেই।"
 
-#: .\__translations\__translations.py:239
-msgctxt "male"
+#: .\__translations\__translations.py:242
+msgctxt "female_female"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"স্প্যাম বার্তা পাঠানোর জন্য সাইটটির অপব্যবহারের কারণে, আমাদেরকে একদিনে সাইটের "
-"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছে। অনুগ্রহ করে আগামীকাল "
-"আবার চেষ্টা করুন। অনুগ্রহ করে মনে রাখবেন যে, স্প্যাম বার্তা অথবা একই বিষয়বস্তু সম্বলিত "
-"বার্তা বহু সংখ্যক মানুষের কাছে পাঠানোর জন্য Speedy Net ব্যবহার করার অনুমতি আপনার "
-"নেই।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
+"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
-#: .\__translations\__translations.py:240
-msgctxt "other"
+#: .\__translations\__translations.py:243
+msgctxt "female_male"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"স্প্যাম বার্তা পাঠানোর জন্য সাইটটির অপব্যবহারের কারণে, আমাদেরকে একদিনে সাইটের "
-"অন্যান্য সদস্যদের কাছে পাঠানো বার্তার সংখ্যা সীমিত করতে হয়েছে। অনুগ্রহ করে আগামীকাল "
-"আবার চেষ্টা করুন। অনুগ্রহ করে মনে রাখবেন যে, স্প্যাম বার্তা অথবা একই বিষয়বস্তু সম্বলিত "
-"বার্তা বহু সংখ্যক মানুষের কাছে পাঠানোর জন্য Speedy Net ব্যবহার করার অনুমতি আপনার "
-"নেই।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
+"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
+
+#: .\__translations\__translations.py:244
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
+"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
+
+#: .\__translations\__translations.py:245
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
+"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:246
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1832,42 +1868,6 @@ msgstr ""
 "দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:247
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
-"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
-
-#: .\__translations\__translations.py:248
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
-"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
-
-#: .\__translations\__translations.py:249
-msgctxt "male_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
-"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
-
-#: .\__translations\__translations.py:250
-msgctxt "male_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
-"দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
-
-#: .\__translations\__translations.py:251
 msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1876,7 +1876,7 @@ msgstr ""
 "এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
 "দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
-#: .\__translations\__translations.py:252
+#: .\__translations\__translations.py:248
 msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1885,7 +1885,7 @@ msgstr ""
 "এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
 "দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
-#: .\__translations\__translations.py:253
+#: .\__translations\__translations.py:249
 msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1894,7 +1894,7 @@ msgstr ""
 "এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
 "দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:250
 msgctxt "other_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1903,7 +1903,7 @@ msgstr ""
 "এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তার Speedy Net প্রোফাইল "
 "দেখতে পারেন। Speedy Netে ব্যবহারকারীর প্রোফাইল দেখুন।"
 
-#: .\__translations\__translations.py:256
+#: .\__translations\__translations.py:252
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1911,7 +1911,7 @@ msgid ""
 msgstr ""
 "আপনার প্রোফাইল ছবি স্বচ্ছ হতে পারবে না। অনুগ্রহ করে একটি অস্বচ্ছ ছবি আপলোড করুন।"
 
-#: .\__translations\__translations.py:257
+#: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1919,7 +1919,7 @@ msgid ""
 msgstr ""
 "আপনার প্রোফাইল ছবি স্বচ্ছ হতে পারবে না। অনুগ্রহ করে একটি অস্বচ্ছ ছবি আপলোড করুন।"
 
-#: .\__translations\__translations.py:258
+#: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -2180,7 +2180,7 @@ msgstr "সর্বশেষ ব্যবহৃত আইপি ঠিকান
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "সর্বশেষ ব্যবহৃত আইপি ঠিকানা https://ipapi.com/ এর কাঁচা ফলাফল"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
+#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
 msgid "user"
 msgstr "ব্যবহারকারী"
 
@@ -2192,56 +2192,56 @@ msgstr "ব্যবহারকারীরা"
 msgid "Superuser must be equal to staff."
 msgstr "সুপারইউজারকে অবশ্যই স্টাফের সমতুল্য হতে হবে।"
 
-#: .\accounts\models.py:1691
+#: .\accounts\models.py:1692
 msgid "email"
 msgstr "ইমেইল"
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1693
 msgid "is confirmed"
 msgstr "নিশ্চিত করা হয়েছে"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1694
 msgid "is primary"
 msgstr "প্রাথমিক"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1695
 msgid "confirmation token"
 msgstr "নিশ্চিতকরণ টোকেন"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1696
 msgid "confirmation sent"
 msgstr "নিশ্চিতকরণ পাঠানো হয়েছে"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1697
 msgid "Who can see this email"
 msgstr "কে এই ইমেলটি দেখতে পাবে"
 
-#: .\accounts\models.py:1713
+#: .\accounts\models.py:1714
 msgid "email addresses"
 msgstr "ইমেল ঠিকানা"
 
-#: .\accounts\models.py:1867
+#: .\accounts\models.py:1868
 msgid "User"
 msgstr "ব্যবহারকারী"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1869
 msgid "last visit"
 msgstr "শেষ পরিদর্শন"
 
-#: .\accounts\models.py:1893
+#: .\accounts\models.py:1894
 msgid "Today"
 msgstr "আজ"
 
-#: .\accounts\models.py:1895
+#: .\accounts\models.py:1896
 msgid "Yesterday"
 msgstr "গতকাল"
 
-#: .\accounts\models.py:1897
+#: .\accounts\models.py:1898
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "চালু {date} ({timesince_ago} )"
 
-#: .\accounts\models.py:1899
+#: .\accounts\models.py:1900
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} আগে"
@@ -2490,7 +2490,7 @@ msgstr ""
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:34
+#: .\base\fields.py:35
 msgid "ID"
 msgstr "আইডি"
 
@@ -2499,15 +2499,15 @@ msgctxt "timesince"
 msgid ", "
 msgstr ", "
 
-#: .\base\validators.py:8 .\base\validators.py:9
+#: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
 msgstr "আইডিতে অবৈধ অক্ষর রয়েছে।"
 
-#: .\base\views.py:102
+#: .\base\views.py:103
 msgid "Changes saved."
 msgstr "পরিবর্তনসমূহ সংরক্ষিত হয়েছে।"
 
-#: .\blocks\managers.py:64 .\blocks\models.py:54
+#: .\blocks\managers.py:65 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "ব্যবহারকারীরা নিজেদেরকে ব্লক করতে পারেন না।"
 
@@ -2599,19 +2599,19 @@ msgstr "প্রতিক্রিয়া"
 msgid "feedbacks"
 msgstr "প্রতিক্রিয়া"
 
-#: .\friends\views.py:325
+#: .\friends\views.py:326
 msgid "Friendship request sent."
 msgstr "বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।"
 
-#: .\friends\views.py:349
+#: .\friends\views.py:350
 msgid "No friendship request."
 msgstr "বন্ধুত্বের অনুরোধ নয়।"
 
-#: .\friends\views.py:419
+#: .\friends\views.py:420
 msgid "Friendship request accepted."
 msgstr "বন্ধুত্বের অনুরোধ গৃহীত হয়েছে।"
 
-#: .\friends\views.py:446
+#: .\friends\views.py:447
 msgid "Friendship request rejected."
 msgstr "বন্ধুত্বের অনুরোধ প্রত্যাখ্যান করা হয়েছে।"
 

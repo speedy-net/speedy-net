@@ -56,6 +56,7 @@ if (django_settings.TESTS):
                 test_cannot_register_invalid_email(self): Verify registering with an invalid email address fails with the "enter a valid email address" error.
                 test_invalid_date_of_birth_list_fail(self): Verify registering with each invalid date of birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST fails with the expected error.
             """
+
             def set_up(self):
                 """
                 Creates the base registration data dict, password and expected username/slug, and asserts no models exist yet.
@@ -607,6 +608,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a English first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a English first name and last name, then computes the required fields.
@@ -639,6 +641,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a French first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a French first name and last name, then computes the required fields.
@@ -671,6 +674,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a German first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a German first name and last name, then computes the required fields.
@@ -703,6 +707,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Spanish first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Spanish first name and last name, then computes the required fields.
@@ -735,6 +740,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Portuguese first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Portuguese first name and last name, then computes the required fields.
@@ -767,6 +773,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Italian first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Italian first name and last name, then computes the required fields.
@@ -799,6 +806,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Dutch first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Dutch first name and last name, then computes the required fields.
@@ -831,6 +839,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Hebrew first name and last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Hebrew first name and last name, then computes the required fields.
@@ -862,6 +871,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a English first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a English first name and an empty last name, then computes the required fields.
@@ -894,6 +904,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a French first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a French first name and an empty last name, then computes the required fields.
@@ -926,6 +937,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a German first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a German first name and an empty last name, then computes the required fields.
@@ -958,6 +970,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Spanish first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Spanish first name and an empty last name, then computes the required fields.
@@ -990,6 +1003,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Portuguese first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Portuguese first name and an empty last name, then computes the required fields.
@@ -1022,6 +1036,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Italian first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Italian first name and an empty last name, then computes the required fields.
@@ -1054,6 +1069,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Dutch first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Dutch first name and an empty last name, then computes the required fields.
@@ -1086,6 +1102,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up registration data with a Hebrew first name and an empty last name, then computes the required fields.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def set_up(self):
                 """
                 Sets up registration data with a Hebrew first name and an empty last name, then computes the required fields.
@@ -1116,6 +1133,7 @@ if (django_settings.TESTS):
                 set_up(self): Creates an active test user.
                 test_has_correct_fields(self): Placeholder that must be overridden by subclasses to assert the expected form fields.
             """
+
             def set_up(self):
                 """
                 Creates an active test user.
@@ -1144,6 +1162,7 @@ if (django_settings.TESTS):
                 test_can_reset_using_other_user_email(self): Verify the form finds the other user by their own confirmed email address.
                 test_cannot_reset_using_unknown_email(self): Verify the form finds no users for an email address that doesn't belong to anyone.
             """
+
             def set_up(self):
                 """
                 Creates two users, each with a primary confirmed email address; the first user also gets an additional confirmed and an unconfirmed email address, and a PasswordResetForm instance is created.
@@ -1204,6 +1223,7 @@ if (django_settings.TESTS):
                 test_incorrect_password(self): Verify the form is invalid when submitted with an incorrect password.
                 test_correct_password(self): Verify the form is valid when submitted with the correct password.
             """
+
             def set_up(self):
                 """
                 Creates an active test user.
@@ -1242,6 +1262,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1259,6 +1280,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1276,6 +1298,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1293,6 +1316,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1310,6 +1334,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1327,6 +1352,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1344,6 +1370,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -1361,13 +1388,13 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
-
 
         # ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")
 

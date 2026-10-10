@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9 .\base\tests\test_translations.py:24
+#: .\__translations\__translations.py:8 .\base\tests\test_translations.py:25
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -853,32 +853,32 @@ msgstr ""
 "%(site_name)s(으)로부터 이러한 유형의 알림을 받기로 구독했습니다. 이 페이지"
 "를 입력하여 알림 설정을 변경하거나 수신 취소하세요:"
 
-#: .\__translations\__translations.py:12
+#: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
 msgstr "올바른 이메일 주소를 입력하세요."
 
-#: .\__translations\__translations.py:13
+#: .\__translations\__translations.py:12
 msgid "Email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:14 .\accounts\models.py:1712
+#: .\__translations\__translations.py:13 .\accounts\models.py:1713
 msgid "email address"
 msgstr "이메일 주소"
 
-#: .\__translations\__translations.py:15
+#: .\__translations\__translations.py:14
 msgid "Email address:"
 msgstr "이메일 주소:"
 
-#: .\__translations\__translations.py:16
+#: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
 msgstr "이메일"
 
-#: .\__translations\__translations.py:17
+#: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
 msgstr "올바른 JSON 형식이여야 합니다."
 
-#: .\__translations\__translations.py:18
+#: .\__translations\__translations.py:17
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
@@ -887,43 +887,43 @@ msgstr ""
 "올바른 %(username)s와/과 비밀번호를 입력하십시오. 두 필드 모두 대문자와 소문"
 "자를 구별합니다."
 
-#: .\__translations\__translations.py:22
+#: .\__translations\__translations.py:20
 msgid "Message"
 msgstr "메시지"
 
-#: .\__translations\__translations.py:24
+#: .\__translations\__translations.py:22
 msgid "Friendship Request"
 msgstr "친구 요청"
 
-#: .\__translations\__translations.py:25
+#: .\__translations\__translations.py:23
 msgid "Friendship Requests"
 msgstr "친구 요청"
 
-#: .\__translations\__translations.py:27
+#: .\__translations\__translations.py:25
 msgid "Friend"
 msgstr "친구"
 
-#: .\__translations\__translations.py:28 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:1043
 msgid "Friends"
 msgstr "친구"
 
-#: .\__translations\__translations.py:30
+#: .\__translations\__translations.py:28
 msgid "Following Relationship"
 msgstr "팔로잉 관계"
 
-#: .\__translations\__translations.py:31
+#: .\__translations\__translations.py:29
 msgid "Following Relationships"
 msgstr "팔로잉 관계"
 
-#: .\__translations\__translations.py:33
+#: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
 msgstr "블로커 관계"
 
-#: .\__translations\__translations.py:34
+#: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
 msgstr "차단된 관계"
 
-#: .\__translations\__translations.py:39
+#: .\__translations\__translations.py:36
 #, python-format
 msgid ""
 "List contains %(show_value)d item, it should contain no more than "
@@ -935,582 +935,622 @@ msgstr[0] ""
 "리스트는 %(show_value)d 아이템들을 포함하며, %(limit_value)d를 초과해서 포함"
 "할 수 없습니다."
 
-#: .\__translations\__translations.py:46
+#: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
 msgstr "사용자명 (slug)"
+
+#: .\__translations\__translations.py:43
+msgctxt "male"
+msgid "username (slug)"
+msgstr "사용자명 (slug)"
+
+#: .\__translations\__translations.py:44
+msgctxt "other"
+msgid "username (slug)"
+msgstr "사용자명 (slug)"
+
+#: .\__translations\__translations.py:46
+msgctxt "female"
+msgid "Update your profile picture"
+msgstr "프로필 사진을 업데이트하세요"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
-msgid "username (slug)"
-msgstr "사용자명 (slug)"
+msgid "Update your profile picture"
+msgstr "프로필 사진을 업데이트하세요"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
-msgid "username (slug)"
-msgstr "사용자명 (slug)"
+msgid "Update your profile picture"
+msgstr "프로필 사진을 업데이트하세요"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
-msgid "Update your profile picture"
-msgstr "프로필 사진을 업데이트하세요"
+msgid "Save Changes"
+msgstr "변경 사항 저장"
 
 #: .\__translations\__translations.py:51
 msgctxt "male"
-msgid "Update your profile picture"
-msgstr "프로필 사진을 업데이트하세요"
+msgid "Save Changes"
+msgstr "변경 사항 저장"
 
 #: .\__translations\__translations.py:52
 msgctxt "other"
-msgid "Update your profile picture"
-msgstr "프로필 사진을 업데이트하세요"
+msgid "Save Changes"
+msgstr "변경 사항 저장"
 
 #: .\__translations\__translations.py:54
 msgctxt "female"
-msgid "Save Changes"
-msgstr "변경 사항 저장"
+msgid "You can't change your username."
+msgstr "사용자명은 변경할 수 없습니다."
 
 #: .\__translations\__translations.py:55
 msgctxt "male"
-msgid "Save Changes"
-msgstr "변경 사항 저장"
+msgid "You can't change your username."
+msgstr "사용자명은 변경할 수 없습니다."
 
 #: .\__translations\__translations.py:56
 msgctxt "other"
-msgid "Save Changes"
-msgstr "변경 사항 저장"
+msgid "You can't change your username."
+msgstr "사용자명은 변경할 수 없습니다."
 
 #: .\__translations\__translations.py:58
+#, python-brace-format
 msgctxt "female"
-msgid "You can't change your username."
-msgstr "사용자명은 변경할 수 없습니다."
+msgid "Activate your {site_name} account"
+msgstr "{site_name} 계정을 활성화하세요"
 
 #: .\__translations\__translations.py:59
+#, python-brace-format
 msgctxt "male"
-msgid "You can't change your username."
-msgstr "사용자명은 변경할 수 없습니다."
+msgid "Activate your {site_name} account"
+msgstr "{site_name} 계정을 활성화하세요"
 
 #: .\__translations\__translations.py:60
+#, python-brace-format
 msgctxt "other"
-msgid "You can't change your username."
-msgstr "사용자명은 변경할 수 없습니다."
+msgid "Activate your {site_name} account"
+msgstr "{site_name} 계정을 활성화하세요"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "female"
-msgid "Activate your {site_name} account"
-msgstr "{site_name} 계정을 활성화하세요"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} 계정을 비활성화하세요"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
-msgid "Activate your {site_name} account"
-msgstr "{site_name} 계정을 활성화하세요"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} 계정을 비활성화하세요"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
-msgid "Activate your {site_name} account"
-msgstr "{site_name} 계정을 활성화하세요"
+msgid "Deactivate your {site_name} account"
+msgstr "{site_name} 계정을 비활성화하세요"
 
 #: .\__translations\__translations.py:66
-#, python-brace-format
 msgctxt "female"
-msgid "Deactivate your {site_name} account"
-msgstr "{site_name} 계정을 비활성화하세요"
+msgid "Add"
+msgstr "추가"
 
 #: .\__translations\__translations.py:67
-#, python-brace-format
 msgctxt "male"
-msgid "Deactivate your {site_name} account"
-msgstr "{site_name} 계정을 비활성화하세요"
+msgid "Add"
+msgstr "추가"
 
 #: .\__translations\__translations.py:68
-#, python-brace-format
 msgctxt "other"
-msgid "Deactivate your {site_name} account"
-msgstr "{site_name} 계정을 비활성화하세요"
+msgid "Add"
+msgstr "추가"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
-msgid "Add"
-msgstr "추가"
+msgid "Where do I live?"
+msgstr "내가 살고 있는 곳은?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
-msgid "Add"
-msgstr "추가"
+msgid "Where do I live?"
+msgstr "내가 살고 있는 곳은?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
-msgid "Add"
-msgstr "추가"
+msgid "Where do I live?"
+msgstr "내가 살고 있는 곳은?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
-msgid "Where do I live?"
-msgstr "내가 살고 있는 곳은?"
+msgid "Where do you live?"
+msgstr "어디에 살고 계신가요?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
-msgid "Where do I live?"
-msgstr "내가 살고 있는 곳은?"
+msgid "Where do you live?"
+msgstr "어디에 살고 계신가요?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
-msgid "Where do I live?"
-msgstr "내가 살고 있는 곳은?"
+msgid "Where do you live?"
+msgstr "어디에 살고 계신가요?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
-msgid "Where do you live?"
-msgstr "어디에 살고 계신가요?"
+msgid "Please write where you live."
+msgstr "살고 있는 곳을 적어 주세요."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
-msgid "Where do you live?"
-msgstr "어디에 살고 계신가요?"
+msgid "Please write where you live."
+msgstr "살고 있는 곳을 적어 주세요."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
-msgid "Where do you live?"
-msgstr "어디에 살고 계신가요?"
+msgid "Please write where you live."
+msgstr "살고 있는 곳을 적어 주세요."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
-msgid "Please write where you live."
-msgstr "살고 있는 곳을 적어 주세요."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "비건(야채와 버섯 종류만 먹음)"
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
-msgid "Please write where you live."
-msgstr "살고 있는 곳을 적어 주세요."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "비건(야채와 버섯 종류만 먹음)"
 
 #: .\__translations\__translations.py:84
 msgctxt "other"
-msgid "Please write where you live."
-msgstr "살고 있는 곳을 적어 주세요."
+msgid "Vegan (eats only plants and fungi)"
+msgstr "비건(야채와 버섯 종류만 먹음)"
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "비건(야채와 버섯 종류만 먹음)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "채식주의자(생선과 육류를 먹지 않음)"
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "비건(야채와 버섯 종류만 먹음)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "채식주의자(생선과 육류를 먹지 않음)"
 
 #: .\__translations\__translations.py:88
 msgctxt "other"
-msgid "Vegan (eats only plants and fungi)"
-msgstr "비건(야채와 버섯 종류만 먹음)"
+msgid "Vegetarian (doesn't eat fish and meat)"
+msgstr "채식주의자(생선과 육류를 먹지 않음)"
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "채식주의자(생선과 육류를 먹지 않음)"
+msgid "Carnist (eats animals)"
+msgstr "육식주의자(육류를 먹음)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "채식주의자(생선과 육류를 먹지 않음)"
+msgid "Carnist (eats animals)"
+msgstr "육식주의자(육류를 먹음)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
-msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "채식주의자(생선과 육류를 먹지 않음)"
+msgid "Carnist (eats animals)"
+msgstr "육식주의자(육류를 먹음)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
-msgid "Carnist (eats animals)"
-msgstr "육식주의자(육류를 먹음)"
+msgid "Vegan"
+msgstr "비건"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
-msgid "Carnist (eats animals)"
-msgstr "육식주의자(육류를 먹음)"
+msgid "Vegan"
+msgstr "비건"
 
 #: .\__translations\__translations.py:96
 msgctxt "other"
-msgid "Carnist (eats animals)"
-msgstr "육식주의자(육류를 먹음)"
+msgid "Vegan"
+msgstr "비건"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
-msgid "Vegan"
-msgstr "비건"
+msgid "Vegetarian"
+msgstr "채식주의자"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
-msgid "Vegan"
-msgstr "비건"
+msgid "Vegetarian"
+msgstr "채식주의자"
 
 #: .\__translations\__translations.py:100
 msgctxt "other"
-msgid "Vegan"
-msgstr "비건"
+msgid "Vegetarian"
+msgstr "채식주의자"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
-msgid "Vegetarian"
-msgstr "채식주의자"
+msgid "Carnist"
+msgstr "육식주의자"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
-msgid "Vegetarian"
-msgstr "채식주의자"
+msgid "Carnist"
+msgstr "육식주의자"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
-msgid "Vegetarian"
-msgstr "채식주의자"
+msgid "Carnist"
+msgstr "육식주의자"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
-msgid "Carnist"
-msgstr "육식주의자"
+msgid "Not smoking"
+msgstr "비흡연자"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
-msgid "Carnist"
-msgstr "육식주의자"
+msgid "Not smoking"
+msgstr "비흡연자"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
-msgid "Carnist"
-msgstr "육식주의자"
+msgid "Not smoking"
+msgstr "비흡연자"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
-msgid "Not smoking"
-msgstr "비흡연자"
+msgid "Smoking occasionally"
+msgstr "종종 흡연함"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
-msgid "Not smoking"
-msgstr "비흡연자"
+msgid "Smoking occasionally"
+msgstr "종종 흡연함"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
-msgid "Not smoking"
-msgstr "비흡연자"
+msgid "Smoking occasionally"
+msgstr "종종 흡연함"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
-msgid "Smoking occasionally"
-msgstr "종종 흡연함"
+msgid "Smoking"
+msgstr "흡연자"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
-msgid "Smoking occasionally"
-msgstr "종종 흡연함"
+msgid "Smoking"
+msgstr "흡연자"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
-msgid "Smoking occasionally"
-msgstr "종종 흡연함"
+msgid "Smoking"
+msgstr "흡연자"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
-msgid "Smoking"
-msgstr "흡연자"
+msgid "Single"
+msgstr "독신"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
-msgid "Smoking"
-msgstr "흡연자"
+msgid "Single"
+msgstr "독신"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
-msgid "Smoking"
-msgstr "흡연자"
+msgid "Single"
+msgstr "독신"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
-msgid "Single"
-msgstr "독신"
+msgid "Divorced"
+msgstr "이혼자"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
-msgid "Single"
-msgstr "독신"
+msgid "Divorced"
+msgstr "이혼자"
 
 #: .\__translations\__translations.py:124
 msgctxt "other"
-msgid "Single"
-msgstr "독신"
+msgid "Divorced"
+msgstr "이혼자"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
-msgid "Divorced"
-msgstr "이혼자"
+msgid "Widowed"
+msgstr "사별자"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
-msgid "Divorced"
-msgstr "이혼자"
+msgid "Widowed"
+msgstr "사별자"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
-msgid "Divorced"
-msgstr "이혼자"
+msgid "Widowed"
+msgstr "사별자"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
-msgid "Widowed"
-msgstr "사별자"
+msgid "In a relationship"
+msgstr "만남 중"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
-msgid "Widowed"
-msgstr "사별자"
+msgid "In a relationship"
+msgstr "만남 중"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
-msgid "Widowed"
-msgstr "사별자"
+msgid "In a relationship"
+msgstr "만남 중"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
-msgid "In a relationship"
-msgstr "만남 중"
+msgid "In an open relationship"
+msgstr "개방적 만남 중"
 
 #: .\__translations\__translations.py:135
 msgctxt "male"
-msgid "In a relationship"
-msgstr "만남 중"
+msgid "In an open relationship"
+msgstr "개방적 만남 중"
 
 #: .\__translations\__translations.py:136
 msgctxt "other"
-msgid "In a relationship"
-msgstr "만남 중"
+msgid "In an open relationship"
+msgstr "개방적 만남 중"
 
 #: .\__translations\__translations.py:138
 msgctxt "female"
-msgid "In an open relationship"
-msgstr "개방적 만남 중"
+msgid "It's complicated"
+msgstr "복잡함"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
-msgid "In an open relationship"
-msgstr "개방적 만남 중"
+msgid "It's complicated"
+msgstr "복잡함"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
-msgid "In an open relationship"
-msgstr "개방적 만남 중"
+msgid "It's complicated"
+msgstr "복잡함"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
-msgid "It's complicated"
-msgstr "복잡함"
+msgid "Separated"
+msgstr "별거"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
-msgid "It's complicated"
-msgstr "복잡함"
+msgid "Separated"
+msgstr "별거"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
-msgid "It's complicated"
-msgstr "복잡함"
+msgid "Separated"
+msgstr "별거"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
-msgid "Separated"
-msgstr "별거"
+msgid "Engaged"
+msgstr "약혼"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
-msgid "Separated"
-msgstr "별거"
+msgid "Engaged"
+msgstr "약혼"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
-msgid "Separated"
-msgstr "별거"
+msgid "Engaged"
+msgstr "약혼"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
-msgid "Engaged"
-msgstr "약혼"
+msgid "Married"
+msgstr "기혼"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
-msgid "Engaged"
-msgstr "약혼"
+msgid "Married"
+msgstr "기혼"
 
 #: .\__translations\__translations.py:152
 msgctxt "other"
-msgid "Engaged"
-msgstr "약혼"
+msgid "Married"
+msgstr "기혼"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
-msgid "Married"
-msgstr "기혼"
+msgid "Your new password has been saved."
+msgstr "새 암호가 저장되었습니다."
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
-msgid "Married"
-msgstr "기혼"
+msgid "Your new password has been saved."
+msgstr "새 암호가 저장되었습니다."
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
-msgid "Married"
-msgstr "기혼"
+msgid "Your new password has been saved."
+msgstr "새 암호가 저장되었습니다."
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
-msgid "Your new password has been saved."
-msgstr "새 암호가 저장되었습니다."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
+"수 있습니다."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
-msgid "Your new password has been saved."
-msgstr "새 암호가 저장되었습니다."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
+"수 있습니다."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
-msgid "Your new password has been saved."
-msgstr "새 암호가 저장되었습니다."
+msgid ""
+"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
+"reactivate them any time."
+msgstr ""
+"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
+"수 있습니다."
 
 #: .\__translations\__translations.py:162
+#, python-brace-format
 msgctxt "female"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
-"수 있습니다."
+"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
+"Speedy Net 계정이 계속 활성화되어 있습니다."
 
 #: .\__translations\__translations.py:163
+#, python-brace-format
 msgctxt "male"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
-"수 있습니다."
+"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
+"Speedy Net 계정이 계속 활성화되어 있습니다."
 
 #: .\__translations\__translations.py:164
+#, python-brace-format
 msgctxt "other"
 msgid ""
-"Your Speedy Net and Speedy Match accounts have been deactivated. You can "
-"reactivate them any time."
+"Your {site_name} account has been deactivated. You can reactivate it any "
+"time. Your Speedy Net account remains active."
 msgstr ""
-"Speedy Net과 Speedy Match 계정이 비활성화되었습니다. 언제든지 다시 활성화할 "
-"수 있습니다."
+"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
+"Speedy Net 계정이 계속 활성화되어 있습니다."
 
 #: .\__translations\__translations.py:166
-#, python-brace-format
 msgctxt "female"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
-"Speedy Net 계정이 계속 활성화되어 있습니다."
+msgid "You've already confirmed this email address."
+msgstr "이 이메일 주소를 이미 확인했습니다."
 
 #: .\__translations\__translations.py:167
-#, python-brace-format
 msgctxt "male"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
-"Speedy Net 계정이 계속 활성화되어 있습니다."
+msgid "You've already confirmed this email address."
+msgstr "이 이메일 주소를 이미 확인했습니다."
 
 #: .\__translations\__translations.py:168
-#, python-brace-format
 msgctxt "other"
-msgid ""
-"Your {site_name} account has been deactivated. You can reactivate it any "
-"time. Your Speedy Net account remains active."
-msgstr ""
-"{site_name} 계정이 비활성화되었습니다 언제든지 다시 활성화할 수 있습니다. "
-"Speedy Net 계정이 계속 활성화되어 있습니다."
+msgid "You've already confirmed this email address."
+msgstr "이 이메일 주소를 이미 확인했습니다."
 
 #: .\__translations\__translations.py:170
 msgctxt "female"
-msgid "You've already confirmed this email address."
-msgstr "이 이메일 주소를 이미 확인했습니다."
+msgid "You've confirmed your email address."
+msgstr "귀하의 이메일 주소를 확인했습니다."
 
 #: .\__translations\__translations.py:171
 msgctxt "male"
-msgid "You've already confirmed this email address."
-msgstr "이 이메일 주소를 이미 확인했습니다."
+msgid "You've confirmed your email address."
+msgstr "귀하의 이메일 주소를 확인했습니다."
 
 #: .\__translations\__translations.py:172
 msgctxt "other"
-msgid "You've already confirmed this email address."
-msgstr "이 이메일 주소를 이미 확인했습니다."
+msgid "You've confirmed your email address."
+msgstr "귀하의 이메일 주소를 확인했습니다."
 
 #: .\__translations\__translations.py:174
 msgctxt "female"
-msgid "You've confirmed your email address."
-msgstr "귀하의 이메일 주소를 확인했습니다."
+msgid "Send"
+msgstr "보내기"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
-msgid "You've confirmed your email address."
-msgstr "귀하의 이메일 주소를 확인했습니다."
+msgid "Send"
+msgstr "보내기"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
-msgid "You've confirmed your email address."
-msgstr "귀하의 이메일 주소를 확인했습니다."
+msgid "Send"
+msgstr "보내기"
 
 #: .\__translations\__translations.py:178
+#, python-brace-format
 msgctxt "female"
-msgid "Send"
-msgstr "보내기"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
+"다. 계속하기 전에 친구를 지우시기 바랍니다."
 
 #: .\__translations\__translations.py:179
+#, python-brace-format
 msgctxt "male"
-msgid "Send"
-msgstr "보내기"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
+"다. 계속하기 전에 친구를 지우시기 바랍니다."
 
 #: .\__translations\__translations.py:180
+#, python-brace-format
 msgctxt "other"
-msgid "Send"
-msgstr "보내기"
+msgid ""
+"You already have {0} friends. You can't have more than {1} friends on Speedy "
+"Net. Please remove friends before you proceed."
+msgstr ""
+"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
+"다. 계속하기 전에 친구를 지우시기 바랍니다."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
-msgctxt "female"
+msgctxt "female_female"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
-"다. 계속하기 전에 친구를 지우시기 바랍니다."
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
-msgctxt "male"
+msgctxt "female_male"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
-"다. 계속하기 전에 친구를 지우시기 바랍니다."
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
-msgctxt "other"
+msgctxt "female_other"
 msgid ""
-"You already have {0} friends. You can't have more than {1} friends on Speedy "
-"Net. Please remove friends before you proceed."
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"이미 {0}명의 친구가 있습니다. Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니"
-"다. 계속하기 전에 친구를 지우시기 바랍니다."
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
+
+#: .\__translations\__translations.py:185
+#, python-brace-format
+msgctxt "male_female"
+msgid ""
+"This user already has {0} friends. They can't have more than {1} friends on "
+"Speedy Net. Please ask them to remove friends before you proceed."
+msgstr ""
+"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
+"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1520,7 +1560,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
-msgctxt "female_male"
+msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1530,7 +1570,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
-msgctxt "female_other"
+msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1540,7 +1580,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
-msgctxt "male_female"
+msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1550,17 +1590,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
-msgctxt "male_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
-"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
-
-#: .\__translations\__translations.py:191
-#, python-brace-format
-msgctxt "male_other"
+msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
@@ -1569,208 +1599,206 @@ msgstr ""
 "{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
 
 #: .\__translations\__translations.py:192
-#, python-brace-format
-msgctxt "other_female"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
-"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
+msgctxt "female"
+msgid "You cannot be friends with yourself."
+msgstr "나 자신과 친구가 될 수 없습니다."
 
 #: .\__translations\__translations.py:193
-#, python-brace-format
-msgctxt "other_male"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
-"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
+msgctxt "male"
+msgid "You cannot be friends with yourself."
+msgstr "나 자신과 친구가 될 수 없습니다."
 
 #: .\__translations\__translations.py:194
-#, python-brace-format
-msgctxt "other_other"
-msgid ""
-"This user already has {0} friends. They can't have more than {1} friends on "
-"Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 "
-"{1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요."
+msgctxt "other"
+msgid "You cannot be friends with yourself."
+msgstr "나 자신과 친구가 될 수 없습니다."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
-msgid "You cannot be friends with yourself."
-msgstr "나 자신과 친구가 될 수 없습니다."
+msgid "You already requested friendship from this user."
+msgstr "이미 이 사용자로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
-msgid "You cannot be friends with yourself."
-msgstr "나 자신과 친구가 될 수 없습니다."
+msgid "You already requested friendship from this user."
+msgstr "이미 이 사용자로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
-msgid "You cannot be friends with yourself."
-msgstr "나 자신과 친구가 될 수 없습니다."
+msgid "You already requested friendship from this user."
+msgstr "이미 이 사용자로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
-msgid "You already requested friendship from this user."
-msgstr "이미 이 사용자로부터 친구를 요청했습니다."
+msgid "This user already requested friendship from you."
+msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
-msgid "You already requested friendship from this user."
-msgstr "이미 이 사용자로부터 친구를 요청했습니다."
+msgid "This user already requested friendship from you."
+msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
-msgid "You already requested friendship from this user."
-msgstr "이미 이 사용자로부터 친구를 요청했습니다."
+msgid "This user already requested friendship from you."
+msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
 
 #: .\__translations\__translations.py:204
-msgctxt "female"
-msgid "This user already requested friendship from you."
-msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
-
-#: .\__translations\__translations.py:205
-msgctxt "male"
-msgid "This user already requested friendship from you."
-msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
-
-#: .\__translations\__translations.py:206
-msgctxt "other"
-msgid "This user already requested friendship from you."
-msgstr "이 사용자는 이미 귀하로부터 친구를 요청했습니다."
-
-#: .\__translations\__translations.py:208
 msgctxt "female_female"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:209
+#: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:210
+#: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:211
+#: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:212
+#: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:213
+#: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:214
+#: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:215
+#: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:216
+#: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
 msgstr "이미 이 사용자와 친구입니다."
 
-#: .\__translations\__translations.py:218
+#: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
 msgstr "친구 요청을 취소했습니다."
+
+#: .\__translations\__translations.py:215
+msgctxt "male"
+msgid "You've cancelled your friendship request."
+msgstr "친구 요청을 취소했습니다."
+
+#: .\__translations\__translations.py:216
+msgctxt "other"
+msgid "You've cancelled your friendship request."
+msgstr "친구 요청을 취소했습니다."
+
+#: .\__translations\__translations.py:218
+msgctxt "female"
+msgid "You have removed this user from your friends."
+msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
-msgid "You've cancelled your friendship request."
-msgstr "친구 요청을 취소했습니다."
+msgid "You have removed this user from your friends."
+msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
-msgid "You've cancelled your friendship request."
-msgstr "친구 요청을 취소했습니다."
+msgid "You have removed this user from your friends."
+msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
 
 #: .\__translations\__translations.py:222
+#, python-brace-format
 msgctxt "female"
-msgid "You have removed this user from your friends."
-msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}에 오신 것을 환영합니다!"
 
 #: .\__translations\__translations.py:223
+#, python-brace-format
 msgctxt "male"
-msgid "You have removed this user from your friends."
-msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}에 오신 것을 환영합니다!"
 
 #: .\__translations\__translations.py:224
+#, python-brace-format
 msgctxt "other"
-msgid "You have removed this user from your friends."
-msgstr "귀하의 친구 목록에서 이 사용자를 지웠습니다."
+msgid "Welcome to {site_name}!"
+msgstr "{site_name}에 오신 것을 환영합니다!"
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}!"
-msgstr "{site_name}에 오신 것을 환영합니다!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}!"
-msgstr "{site_name}에 오신 것을 환영합니다!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}!"
-msgstr "{site_name}에 오신 것을 환영합니다!"
+msgid "Welcome to {site_name}! Your account is now active."
+msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
 
 #: .\__translations\__translations.py:230
-#, python-brace-format
 msgctxt "female"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
+msgid "Friends"
+msgstr "친구"
 
 #: .\__translations\__translations.py:231
-#, python-brace-format
 msgctxt "male"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
+msgid "Friends"
+msgstr "친구"
 
 #: .\__translations\__translations.py:232
-#, python-brace-format
 msgctxt "other"
-msgid "Welcome to {site_name}! Your account is now active."
-msgstr "{site_name}에 오신 것을 환영합니다! 계정이 활성화되었습니다."
+msgid "Friends"
+msgstr "친구"
 
 #: .\__translations\__translations.py:234
 msgctxt "female"
-msgid "Friends"
-msgstr "친구"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"스팸 메시지를 보내기 위해 사이트를 남용하는 경우를 방지하기 위해, 사이트의 다"
+"른 회원들에게 하루에 보낼 수 있는 메시지의 수를 제한해야만 합니다. 내일 다시 "
+"시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 "
+"보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다."
 
 #: .\__translations\__translations.py:235
 msgctxt "male"
-msgid "Friends"
-msgstr "친구"
+msgid ""
+"Due to the abuse of the site to send spam messages, we had to limit the "
+"number of messages that can be sent to other members of the site in one day. "
+"Please try again tomorrow. Please note that you are not allowed to use "
+"Speedy Net to send spam messages, or messages with the same content to a "
+"large number of people."
+msgstr ""
+"스팸 메시지를 보내기 위해 사이트를 남용하는 경우를 방지하기 위해, 사이트의 다"
+"른 회원들에게 하루에 보낼 수 있는 메시지의 수를 제한해야만 합니다. 내일 다시 "
+"시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 "
+"보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다."
 
 #: .\__translations\__translations.py:236
 msgctxt "other"
-msgid "Friends"
-msgstr "친구"
-
-#: .\__translations\__translations.py:238
-msgctxt "female"
 msgid ""
 "Due to the abuse of the site to send spam messages, we had to limit the "
 "number of messages that can be sent to other members of the site in one day. "
@@ -1783,36 +1811,44 @@ msgstr ""
 "시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 "
 "보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다."
 
-#: .\__translations\__translations.py:239
-msgctxt "male"
+#: .\__translations\__translations.py:242
+msgctxt "female_female"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"스팸 메시지를 보내기 위해 사이트를 남용하는 경우를 방지하기 위해, 사이트의 다"
-"른 회원들에게 하루에 보낼 수 있는 메시지의 수를 제한해야만 합니다. 내일 다시 "
-"시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 "
-"보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다."
+"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
+"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
-#: .\__translations\__translations.py:240
-msgctxt "other"
+#: .\__translations\__translations.py:243
+msgctxt "female_male"
 msgid ""
-"Due to the abuse of the site to send spam messages, we had to limit the "
-"number of messages that can be sent to other members of the site in one day. "
-"Please try again tomorrow. Please note that you are not allowed to use "
-"Speedy Net to send spam messages, or messages with the same content to a "
-"large number of people."
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
 msgstr ""
-"스팸 메시지를 보내기 위해 사이트를 남용하는 경우를 방지하기 위해, 사이트의 다"
-"른 회원들에게 하루에 보낼 수 있는 메시지의 수를 제한해야만 합니다. 내일 다시 "
-"시도해 주세요. 스팸 메시지를 보내거나 많은 사람들에게 동일한 내용의 메시지를 "
-"보내기 위해 Speedy Net을 이용하는 것은 허용되지 않음에 유의하시기 바랍니다."
+"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
+"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
+
+#: .\__translations\__translations.py:244
+msgctxt "female_other"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
+"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
+
+#: .\__translations\__translations.py:245
+msgctxt "male_female"
+msgid ""
+"This user doesn't match your profile, but you can visit their Speedy Net "
+"profile. View user's profile on Speedy Net."
+msgstr ""
+"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
+"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
 #: .\__translations\__translations.py:246
-msgctxt "female_female"
+msgctxt "male_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
@@ -1821,42 +1857,6 @@ msgstr ""
 "을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
 #: .\__translations\__translations.py:247
-msgctxt "female_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
-"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
-
-#: .\__translations\__translations.py:248
-msgctxt "female_other"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
-"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
-
-#: .\__translations\__translations.py:249
-msgctxt "male_female"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
-"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
-
-#: .\__translations\__translations.py:250
-msgctxt "male_male"
-msgid ""
-"This user doesn't match your profile, but you can visit their Speedy Net "
-"profile. View user's profile on Speedy Net."
-msgstr ""
-"이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
-"을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
-
-#: .\__translations\__translations.py:251
 msgctxt "male_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1865,7 +1865,7 @@ msgstr ""
 "이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
 "을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
-#: .\__translations\__translations.py:252
+#: .\__translations\__translations.py:248
 msgctxt "other_female"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1874,7 +1874,7 @@ msgstr ""
 "이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
 "을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
-#: .\__translations\__translations.py:253
+#: .\__translations\__translations.py:249
 msgctxt "other_male"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1883,7 +1883,7 @@ msgstr ""
 "이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
 "을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
-#: .\__translations\__translations.py:254
+#: .\__translations\__translations.py:250
 msgctxt "other_other"
 msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
@@ -1892,7 +1892,7 @@ msgstr ""
 "이 사용자는 귀하의 프로필과 일치하지 않지만, 해당 사용자의 Speedy Net 프로필"
 "을 방문할 수 있습니다. Speedy Net에서 사용자 프로필 보기."
 
-#: .\__translations\__translations.py:256
+#: .\__translations\__translations.py:252
 msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1900,7 +1900,7 @@ msgid ""
 msgstr ""
 "프로필 사진을 투명하게 할 수 없습니다. 투명하지 않은 이미지를 업로드해주세요."
 
-#: .\__translations\__translations.py:257
+#: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -1908,7 +1908,7 @@ msgid ""
 msgstr ""
 "프로필 사진을 투명하게 할 수 없습니다. 투명하지 않은 이미지를 업로드해주세요."
 
-#: .\__translations\__translations.py:258
+#: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
@@ -2169,7 +2169,7 @@ msgstr "https://ipapi.com/ time을 사용한 최종 IP 주소"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "https://ipapi.com/ results를 사용한 최종 IP 주소"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1690 .\blocks\models.py:25
+#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
 msgid "user"
 msgstr "사용자"
 
@@ -2181,56 +2181,56 @@ msgstr "사용자"
 msgid "Superuser must be equal to staff."
 msgstr "슈퍼사용자는 스태프와 동일해야 합니다."
 
-#: .\accounts\models.py:1691
+#: .\accounts\models.py:1692
 msgid "email"
 msgstr "이메일"
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1693
 msgid "is confirmed"
 msgstr "은(는) 확인되었습니다"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1694
 msgid "is primary"
 msgstr "은(는) 기본입니다"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1695
 msgid "confirmation token"
 msgstr "확인 토큰"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1696
 msgid "confirmation sent"
 msgstr "확인 보냄"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1697
 msgid "Who can see this email"
 msgstr "이 이메일을 볼 수 있는 사람"
 
-#: .\accounts\models.py:1713
+#: .\accounts\models.py:1714
 msgid "email addresses"
 msgstr "이메일 주소"
 
-#: .\accounts\models.py:1867
+#: .\accounts\models.py:1868
 msgid "User"
 msgstr "사용자"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1869
 msgid "last visit"
 msgstr "최근 방문"
 
-#: .\accounts\models.py:1893
+#: .\accounts\models.py:1894
 msgid "Today"
 msgstr "오늘"
 
-#: .\accounts\models.py:1895
+#: .\accounts\models.py:1896
 msgid "Yesterday"
 msgstr "어제"
 
-#: .\accounts\models.py:1897
+#: .\accounts\models.py:1898
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})에"
 
-#: .\accounts\models.py:1899
+#: .\accounts\models.py:1900
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} 전에"
@@ -2458,7 +2458,7 @@ msgstr ""
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
-#: .\base\fields.py:34
+#: .\base\fields.py:35
 msgid "ID"
 msgstr "ID"
 
@@ -2467,15 +2467,15 @@ msgctxt "timesince"
 msgid ", "
 msgstr ", "
 
-#: .\base\validators.py:8 .\base\validators.py:9
+#: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
 msgstr "ID에 잘못된 문자가 있습니다."
 
-#: .\base\views.py:102
+#: .\base\views.py:103
 msgid "Changes saved."
 msgstr "변경 내용이 저장되었습니다."
 
-#: .\blocks\managers.py:64 .\blocks\models.py:54
+#: .\blocks\managers.py:65 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "사용자는 본인을 차단할 수 없습니다."
 
@@ -2567,19 +2567,19 @@ msgstr "피드백"
 msgid "feedbacks"
 msgstr "피드백"
 
-#: .\friends\views.py:325
+#: .\friends\views.py:326
 msgid "Friendship request sent."
 msgstr "친구 요청 전송됨."
 
-#: .\friends\views.py:349
+#: .\friends\views.py:350
 msgid "No friendship request."
 msgstr "친구 요청 없음."
 
-#: .\friends\views.py:419
+#: .\friends\views.py:420
 msgid "Friendship request accepted."
 msgstr "친구 요청 수락됨."
 
-#: .\friends\views.py:446
+#: .\friends\views.py:447
 msgid "Friendship request rejected."
 msgstr "친구 요청 거부됨."
 

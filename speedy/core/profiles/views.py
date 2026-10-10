@@ -29,6 +29,7 @@ class SelfUserMixin(object):
         get_user(self): Get the currently logged-in user, raising PermissionDenied if not authenticated.
         get_permission_object(self): Get the object used for permission checks (the currently logged-in user).
     """
+
     def get_user(self):
         """
         Get the currently logged-in user.
@@ -202,6 +203,7 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
     Methods:
         get_redirect_url(self, *args, **kwargs): Get the redirect URL to the current user's profile page, with any extra path appended.
     """
+
     def get_redirect_url(self, *args, **kwargs):
         """
         Get the redirect URL to the current user's profile page, with any extra path appended.

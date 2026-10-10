@@ -50,6 +50,7 @@ class LocaleDomainMiddleware(object):
     Methods:
         __call__: Processes the request and returns the appropriate response (the normal response, or a redirect, or the "www" welcome page).
     """
+
     def __init__(self, get_response):
         """
         Initializes the middleware.

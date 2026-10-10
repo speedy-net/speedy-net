@@ -51,6 +51,7 @@ if (django_settings.TESTS):
         :return: The new subclass, with the overridden attributes.
         :rtype: type
         """
+
         class django_settings_class_with_override_settings(django_settings_class):
             """
             A subclass of the given settings class, with some attributes overridden.

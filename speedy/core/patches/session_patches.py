@@ -8,6 +8,7 @@ def patch():
     """
     Monkey patch PBKDF2PasswordHasher to increase the number of iterations and only rehash passwords that use at most 160,000 iterations.
     """
+
     def must_update(self, encoded):
         """
         Determine whether the password hash should be upgraded to the current number of iterations.

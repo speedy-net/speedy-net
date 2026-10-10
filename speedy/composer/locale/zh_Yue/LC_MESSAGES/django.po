@@ -1,13 +1,13 @@
 # Translation files for Speedy Net
 # This file is distributed under the same license as the Speedy Net package.
 # 
-#: .\__translations\__translations.py:9
+#: .\__translations\__translations.py:8
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 12:31+0300\n"
+"POT-Creation-Date: 2026-10-10 18:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,63 +20,63 @@ msgstr ""
 msgid "Speedy Composer Accounts"
 msgstr ""
 
-#: .\accounts\models.py:62
+#: .\accounts\models.py:63
 msgid "Speedy Net User"
 msgstr ""
 
-#: .\accounts\models.py:64
+#: .\accounts\models.py:65
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:78
+#: .\accounts\models.py:79
 msgid "Speedy Composer Profile"
 msgstr ""
 
-#: .\accounts\models.py:79
+#: .\accounts\models.py:80
 msgid "Speedy Composer Profiles"
 msgstr ""
 
-#: .\compose\models.py:17 .\compose\models.py:56
+#: .\compose\models.py:18 .\compose\models.py:58
 msgid "chords template"
 msgstr ""
 
-#: .\compose\models.py:18
+#: .\compose\models.py:19
 msgid "chords templates"
 msgstr ""
 
-#: .\compose\models.py:26 .\compose\models.py:57
+#: .\compose\models.py:28 .\compose\models.py:59
 msgid "accompaniment"
 msgstr ""
 
-#: .\compose\models.py:27
+#: .\compose\models.py:29
 msgid "accompaniments"
 msgstr ""
 
-#: .\compose\models.py:37
+#: .\compose\models.py:39
 msgid "user"
 msgstr ""
 
-#: .\compose\models.py:40 .\compose\models.py:55
+#: .\compose\models.py:42 .\compose\models.py:57
 msgid "folder"
 msgstr ""
 
-#: .\compose\models.py:41
+#: .\compose\models.py:43
 msgid "folders"
 msgstr ""
 
-#: .\compose\models.py:58
+#: .\compose\models.py:60
 msgid "tempo"
 msgstr ""
 
-#: .\compose\models.py:59
+#: .\compose\models.py:61
 msgid "public"
 msgstr ""
 
-#: .\compose\models.py:62
+#: .\compose\models.py:64
 msgid "composition"
 msgstr ""
 
-#: .\compose\models.py:63
+#: .\compose\models.py:65
 msgid "compositions"
 msgstr ""
 

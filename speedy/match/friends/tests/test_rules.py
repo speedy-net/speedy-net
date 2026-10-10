@@ -22,6 +22,7 @@ if (django_settings.TESTS):
                 test_user_can_view_another_user_friend_list(self): Skipped - not implemented in this class.
                 test_user_cannot_view_another_user_friend_list(self): Asserts a user has no permission to view another user's friend list, since friend lists are irrelevant in Speedy Match.
             """
+
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_user_can_view_another_user_friend_list(self):
                 """

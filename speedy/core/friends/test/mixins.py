@@ -18,6 +18,7 @@ if (django_settings.TESTS):
             _this_user_already_has_friends_error_message_by_other_user_number_of_friends_and_both_genders(self, other_user_number_of_friends, both_genders): Returns the formatted "this user already has friends" error message for the given count and both genders.
             set_up(self): Sets up the dictionaries of expected success messages used by the tests in all supported languages.
         """
+
         def _you_already_have_friends_error_message_by_user_number_of_friends_and_gender(self, user_number_of_friends, gender):
             """
             Return the formatted "you already have friends" error message for the given number of friends and gender.

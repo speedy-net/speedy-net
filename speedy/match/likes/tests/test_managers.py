@@ -30,6 +30,7 @@ if (django_settings.TESTS):
                 test_remove_all_likes_from_user(self): Asserts remove_all_likes_from_user removes only likes originating from the given user.
                 test_remove_all_likes_to_user(self): Asserts remove_all_likes_to_user removes only likes directed to the given user.
             """
+
             def set_up(self):
                 """
                 Creates two active users, user_1 and user_2.

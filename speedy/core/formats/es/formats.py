@@ -7,10 +7,9 @@ Django date and time format settings for the Spanish language (es) in Speedy Cor
 DATE_FORMAT = r"j \d\e F \d\e Y"
 MONTH_DAY_FORMAT = r"j \d\e F"
 
-
 # Formats accepted as input for dates in the language 'es' (strptime format strings); only the ISO format YYYY-MM-DD is accepted.
 DATE_INPUT_FORMATS = [
-    "%Y-%m-%d",                           # '2006-10-25',
+    "%Y-%m-%d",  # '2006-10-25',
 ]
 
 

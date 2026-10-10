@@ -1,6 +1,8 @@
 """
 Global settings of Speedy Net - the entity, named entity and user settings.
 """
+
+
 # Used also by Speedy Match.
 
 
@@ -113,7 +115,6 @@ class USER_SETTINGS(object):
 
 # Django's password validators for all sites, taken from the user settings above.
 AUTH_PASSWORD_VALIDATORS = USER_SETTINGS.PASSWORD_VALIDATORS
-
 
 # ENTITY_SETTINGS = EntitySettings
 # NAMED_ENTITY_SETTINGS = NamedEntitySettings

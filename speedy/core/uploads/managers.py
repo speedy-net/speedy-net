@@ -8,6 +8,7 @@ class FileManager(BaseManager):
     """
     Manager for the File model, prefetching related owner data for efficient queries.
     """
+
     def get_queryset(self):
         """
         Get the queryset of File instances, with the owner and the owner's site profiles and photo prefetched.

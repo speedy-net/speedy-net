@@ -12,6 +12,7 @@ if (django_settings.TESTS):
         """
         Tests Python's built-in int(string) conversion limit for very long digit strings (see PEP 670 / bpo-95778), in English.
         """
+
         def test_501_digits(self):
             """
             Tests that converting a 501-digit string (positive or negative) to int succeeds, well under the digit limit.

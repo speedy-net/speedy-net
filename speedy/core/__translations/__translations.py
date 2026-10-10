@@ -5,7 +5,6 @@ Translation strings of Speedy Core which are not used in the code, only collecte
 
 from django.utils.translation import gettext_lazy as _, ngettext_lazy, pgettext_lazy
 
-
 _("")
 
 # from django
@@ -16,7 +15,6 @@ _("Email address:")
 _("Email")
 _("Value must be valid JSON.")
 _("Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.")
-
 
 # from friendship.models
 _('Message')
@@ -33,14 +31,12 @@ _('Following Relationships')
 _('Blocker Relationship')
 _('Blocked Relationships')
 
-
 # from django
 ngettext_lazy(
     singular='List contains %(show_value)d item, it should contain no more than %(limit_value)d.',
     plural='List contains %(show_value)d items, it should contain no more than %(limit_value)d.',
     number='limit_value'
 )
-
 
 # from speedy.core
 pgettext_lazy(context="female", message='username (slug)')

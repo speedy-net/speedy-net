@@ -25,6 +25,7 @@ if (django_settings.TESTS):
                 test_doron_and_jennifer_have_access(self): Not implemented in this mixin; must be overridden by subclasses.
                 test_doron_and_jennifer_have_no_access(self): Not implemented in this mixin; must be overridden by subclasses.
             """
+
             def get_active_user_doron(self):
                 """
                 Creates and returns an active female user named Doron who only wants to match with male users on Speedy Match.

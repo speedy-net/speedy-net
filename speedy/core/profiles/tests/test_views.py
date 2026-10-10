@@ -34,6 +34,7 @@ if (django_settings.TESTS):
             """
             Minimal view combining UserMixin with generic.View, used to test UserMixin's user-resolution logic in isolation.
             """
+
             def get(self, request, *args, **kwargs):
                 """
                 Return the view instance itself (instead of an HTTP response), so tests can inspect it directly.
@@ -55,6 +56,7 @@ if (django_settings.TESTS):
             Methods:
                 test_find_user_by_exact_slug(self): Asserts UserMixin.get_user resolves the user whose slug exactly matches the URL.
             """
+
             def set_up(self):
                 """
                 Creates a request factory and two active users, one with a known slug and username.
@@ -83,6 +85,7 @@ if (django_settings.TESTS):
                 test_redirect_to_login_me(self): Asserts an anonymous visitor requesting /me/ is redirected to the login page.
                 test_redirect_to_login_me_add_trailing_slash(self): Asserts an anonymous visitor requesting /me (without a trailing slash) is redirected to /me/ and then to the login page.
             """
+
             def set_up(self):
                 """
                 Creates two active users, one with a known slug and username.
@@ -119,6 +122,7 @@ if (django_settings.TESTS):
                 test_user_profile_month_day_format_from_friend(self): Asserts a friend viewing the profile sees the date of birth formatted according to the owner's day/month and year access settings.
                 test_user_profile_deactivated_user_from_friend(self): Asserts a friend of a deactivated user gets a 404 when viewing that user's profile.
             """
+
             def set_up(self):
                 """
                 Creates a user with a fixed name, slug, date of birth and gender (chosen at random from a small set of profiles, in a language-specific alphabet when applicable), builds the user's profile URL, and creates another active user.
@@ -408,6 +412,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the English date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for English.
             """
+
             def set_up(self):
                 """
                 Sets up the English date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -480,6 +485,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the French date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for French.
             """
+
             def set_up(self):
                 """
                 Sets up the French date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -552,6 +558,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the German date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for German.
             """
+
             def set_up(self):
                 """
                 Sets up the German date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -624,6 +631,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the Spanish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Spanish.
             """
+
             def set_up(self):
                 """
                 Sets up the Spanish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -696,6 +704,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the Portuguese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Portuguese.
             """
+
             def set_up(self):
                 """
                 Sets up the Portuguese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -768,6 +777,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the Italian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Italian.
             """
+
             def set_up(self):
                 """
                 Sets up the Italian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -840,6 +850,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the Dutch date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Dutch.
             """
+
             def set_up(self):
                 """
                 Sets up the Dutch date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
@@ -912,6 +923,7 @@ if (django_settings.TESTS):
                 set_up(self): Sets up the Hebrew date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Hebrew.
             """
+
             def set_up(self):
                 """
                 Sets up the Hebrew date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.

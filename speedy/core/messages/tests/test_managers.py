@@ -29,6 +29,7 @@ if (django_settings.TESTS):
                 test_chat_with_multiple_users_creates_new_one(self): Asserts group_chat_with creates a new group chat for three users.
                 test_mark_read(self): Asserts chat.mark_read creates a ReadMark for the given entity on the given chat.
             """
+
             def set_up(self):
                 """
                 Creates seven active users and five chats (chat_1_2, chat_1_2_3, chat_4_5, chat_4_5_6, chat_4_7) among them, in a fixed creation order.
@@ -116,6 +117,7 @@ if (django_settings.TESTS):
                 test_sending_message_creates_new_chat(self): Asserts send_message with to_entity creates a new chat, a message and a read mark for the sender.
                 test_sending_message_to_existing_chat(self): Asserts send_message with an existing chat adds the message to it without creating a new chat.
             """
+
             def test_sending_message_creates_new_chat(self):
                 """
                 Asserts that sending a message to another user with no existing chat creates a new private chat, the message, and a read mark for the sender.
@@ -168,6 +170,7 @@ if (django_settings.TESTS):
             Methods:
                 test_mark(self): Asserts mark creates a new read mark on first call and updates the existing one's timestamp on a subsequent call.
             """
+
             def test_mark(self):
                 """
                 Asserts that marking a chat as read for an entity creates a new read mark the first time, and updates (without recreating) the existing read mark's timestamp on a later call.

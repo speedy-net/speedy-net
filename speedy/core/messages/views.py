@@ -29,6 +29,7 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
         get_chat_queryset(self): Returns the queryset of the user's chats with their participants and last message prefetched.
         has_permission(self): Returns whether the requesting user has permission to view the profile's chats.
     """
+
     def dispatch(self, request, *args, **kwargs):
         """
         Dispatches the request, catching a PermissionDenied raised during dispatch and converting it into the no-permission response.
@@ -74,6 +75,7 @@ class UserSingleChatMixin(UserChatsMixin):
         get_context_data(self, **kwargs): Adds the resolved chat to the template context.
         handle_no_permission(self): Handles a permission failure, redirecting to the other user with an error message when appropriate.
     """
+
     def dispatch(self, request, *args, **kwargs):
         """
         Resolves the requested chat and dispatches the request, catching a PermissionDenied raised during dispatch and converting it into the no-permission response.
@@ -421,6 +423,7 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
         post(self, request, *args, **kwargs): Marks the chat as read for the profile's user and redirects to the chat page.
         get_success_url(self): Returns the URL of the chat page.
     """
+
     def get(self, request, *args, **kwargs):
         """
         Redirects GET requests to the chat page without marking it as read, since this action only supports POST.

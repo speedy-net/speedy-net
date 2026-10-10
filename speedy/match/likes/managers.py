@@ -22,6 +22,7 @@ class UserLikeManager(BaseManager):
         get_like_list_from_queryset(self, user): Returns the queryset of likes received by a user from other active, non-blocked users.
         get_like_list_mutual_queryset(self, user): Returns the queryset of mutual likes (users who like the given user back).
     """
+
     def add_like(self, from_user, to_user):
         """
         Creates a like from one user to another, after validating that the users are different, the like doesn't already exist, and there is no block between them.

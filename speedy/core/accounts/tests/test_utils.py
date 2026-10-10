@@ -20,6 +20,7 @@ if (django_settings.TESTS):
                 test_normalize_strings(self): Asserts that non-email strings are only lowercased, leading/trailing whitespace is preserved.
                 test_normalize_emails(self): Asserts that email addresses are lowercased and have their leading/trailing whitespace trimmed.
             """
+
             def test_normalize_none(self):
                 """
                 Asserts that normalizing None returns an empty string.

@@ -30,6 +30,7 @@ if (django_settings.TESTS):
             _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length): Returns the errors dict for text exceeding the maximum length.
             set_up(self): Sets translated error messages ("please contact us by email" and "not 17") for the current test's language.
         """
+
         def _feedback_form_all_the_required_fields_keys(self, user_is_logged_in):
             """
             Returns the list of required field keys for the feedback form, depending on whether the sender is logged in.

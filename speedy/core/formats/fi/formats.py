@@ -7,10 +7,9 @@ Django date and time format settings for the Finnish language (fi) in Speedy Cor
 DATE_FORMAT = "j. E Y"
 MONTH_DAY_FORMAT = "j. F"
 
-
 # Formats accepted as input for dates in the language 'fi' (strptime format strings); only the ISO format YYYY-MM-DD is accepted.
 DATE_INPUT_FORMATS = [
-    "%Y-%m-%d",                           # '2006-10-25',
+    "%Y-%m-%d",  # '2006-10-25',
 ]
 
 

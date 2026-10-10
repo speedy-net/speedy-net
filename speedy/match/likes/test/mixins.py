@@ -15,6 +15,7 @@ if (django_settings.TESTS):
         Methods:
             set_up(self): Builds translated page title dictionaries (by language and by language+gender) and stores them as instance attributes.
         """
+
         def set_up(self):
             """
             Builds the translated page title dictionaries used by likes view tests: a mutual-likes title by language, and gender-specific titles (likes-to, likes-by) by language and gender.

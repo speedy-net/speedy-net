@@ -22,6 +22,7 @@ if (django_settings.TESTS):
             "A profile picture is required" branch is exercised only in speedy.match registration tests,
             and the file size branch is not exercised anywhere).
             """
+
             def test_none_profile_picture_raises_required_error(self):
                 """
                 Asserts that validating a None profile picture raises a ValidationError requiring a profile picture.

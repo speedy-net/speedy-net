@@ -30,6 +30,7 @@ if (django_settings.TESTS):
                 test_user_cannot_send_request_to_himself(self): Asserts a user has no permission to send a friendship request to themselves.
                 test_user_cannot_send_second_request(self): Asserts a user has no permission to send a second friendship request after they are already friends.
             """
+
             def set_up(self):
                 """
                 Create two active users for the tests.
@@ -76,6 +77,7 @@ if (django_settings.TESTS):
                 test_user_cannot_view_incoming_requests_for_other_user(self): Asserts a user has no permission to view another user's incoming friendship requests.
                 test_user_can_view_incoming_requests(self): Asserts a user has permission to view their own incoming friendship requests.
             """
+
             def set_up(self):
                 """
                 Create two active users for the tests.
@@ -108,6 +110,7 @@ if (django_settings.TESTS):
                 test_user_can_view_another_user_friend_list(self): Not implemented in this mixin.
                 test_user_cannot_view_another_user_friend_list(self): Not implemented in this mixin.
             """
+
             def set_up(self):
                 """
                 Create two active users for the tests.
@@ -147,6 +150,7 @@ if (django_settings.TESTS):
                 test_user_cannot_remove_himself(self): Asserts a user has no permission to remove themselves as a friend.
                 test_user_cannot_remove_other_user_if_not_friends(self): Asserts a user has no permission to remove the other user as a friend once they are no longer friends.
             """
+
             def set_up(self):
                 """
                 Create two active users and make them friends.
@@ -196,6 +200,7 @@ if (django_settings.TESTS):
                 test_are_friends_false(self): Asserts are_friends is False in both directions when the users are not friends.
                 test_are_friends_true(self): Asserts are_friends is True in both directions once the users are friends.
             """
+
             def set_up(self):
                 """
                 Create two active users for the tests.

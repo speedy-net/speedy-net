@@ -35,6 +35,7 @@ if (django_settings.TESTS):
                 test_user_name_is_the_same_as_get_name_and_get_full_name(self): Verify user.name matches get_name(), get_full_name() and the formatted first/last name across several user factories.
                 test_cannot_delete_site_profiles_with_queryset_delete(self): Verify deleting site profiles via queryset delete() raises NotImplementedError in all forms (manager, all(), filter(), exclude()).
             """
+
             def get_default_user_doron(self):
                 """
                 Returns an active, saved default test user ("Doron Matalon").
