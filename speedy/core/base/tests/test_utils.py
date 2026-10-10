@@ -151,6 +151,9 @@ if (django_settings.TESTS):
         def test_birthday_already_passed_this_year(self, mock_date):
             """
             Tests that get_age() returns the age after the birthday has already passed this year.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             self.assertEqual(first=get_age(date_of_birth=date(1990, 1, 1)), second=34)
@@ -159,6 +162,9 @@ if (django_settings.TESTS):
         def test_birthday_is_today(self, mock_date):
             """
             Tests that get_age() returns the new age on the exact day of the birthday.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             self.assertEqual(first=get_age(date_of_birth=date(1990, 6, 15)), second=34)
@@ -167,6 +173,9 @@ if (django_settings.TESTS):
         def test_birthday_not_yet_reached_this_year(self, mock_date):
             """
             Tests that get_age() returns the age before the birthday is reached this year.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             self.assertEqual(first=get_age(date_of_birth=date(1990, 12, 31)), second=33)
@@ -175,6 +184,9 @@ if (django_settings.TESTS):
         def test_date_of_birth_on_leap_day(self, mock_date):
             """
             Tests that get_age() correctly computes the age of a person born on a leap day.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 3, 1)
             self.assertEqual(first=get_age(date_of_birth=date(2000, 2, 29)), second=24)
@@ -188,6 +200,9 @@ if (django_settings.TESTS):
         def test_valid_date_of_birth_returns_the_age(self, mock_date):
             """
             Tests that get_age_or_default() returns the computed age when a date of birth is given.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             self.assertEqual(first=get_age_or_default(date_of_birth=date(1990, 1, 1)), second=34)
@@ -213,6 +228,9 @@ if (django_settings.TESTS):
         def test_get_age_ranges_match_with_different_min_and_max_age(self, mock_date):
             """
             Tests that get_age_ranges_match() returns the expected min/max date of birth range when min_age and max_age differ.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             min_date, max_date = get_age_ranges_match(min_age=20, max_age=30)
@@ -223,6 +241,9 @@ if (django_settings.TESTS):
         def test_get_age_ranges_match_with_the_same_min_and_max_age(self, mock_date):
             """
             Tests that get_age_ranges_match() returns the expected min/max date of birth range when min_age equals max_age.
+
+            :param mock_date: The mocked date class patched into speedy.core.base.utils.
+            :type mock_date: unittest.mock.MagicMock
             """
             mock_date.today.return_value = date(2024, 6, 15)
             min_date, max_date = get_age_ranges_match(min_age=25, max_age=25)

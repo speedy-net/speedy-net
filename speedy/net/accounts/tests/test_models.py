@@ -63,6 +63,9 @@ if (django_settings.TESTS):
                 return user
 
             def test_profile_property_and_class(self):
+                """
+                Verify the user.profile property returns the Speedy Net site profile and differs from the Speedy Match profile.
+                """
                 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile
 
                 user = self.get_default_user_doron()
@@ -79,6 +82,9 @@ if (django_settings.TESTS):
                 self.assertNotEqual(first=user.speedy_match_profile.__class__, second=SpeedyNetSiteProfile)
 
             def test_call_activate_directly_and_assert_no_exception(self):
+                """
+                Verify calling activate() directly on the Speedy Net profile activates the user.
+                """
                 user = self.get_inactive_user_jennifer()
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
@@ -87,6 +93,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
 
             def test_call_deactivate_directly_and_assert_no_exception(self):
+                """
+                Verify calling deactivate() directly on the Speedy Net profile deactivates the user.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
@@ -95,6 +104,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
 
             def test_call_call_after_verify_email_address_directly_and_assert_no_exception(self):
+                """
+                Verify calling call_after_verify_email_address() directly is a no-op on Speedy Net.
+                """
                 user = self.get_inactive_user_jennifer()
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
@@ -103,6 +115,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
 
             def test_call_validate_profile_and_activate_directly_and_assert_exception(self):
+                """
+                Verify calling validate_profile_and_activate() directly raises NotImplementedError on Speedy Net.
+                """
                 user = self.get_inactive_user_jennifer()
                 self.assertEqual(first=user.is_active, second=False)
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
@@ -113,14 +128,23 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_net_profile.is_active, second=False)
 
             def test_call_get_name_directly_and_assert_no_exception(self):
+                """
+                Verify get_name() returns the user's full name.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.speedy_net_profile.get_name(), second="Doron Matalon")
 
             def test_call_user_name_directly_and_assert_no_exception(self):
+                """
+                Verify user.name returns the user's full name.
+                """
                 user = self.get_default_user_doron()
                 self.assertEqual(first=user.name, second="Doron Matalon")
 
             def test_user_name_is_the_same_as_get_name_and_get_full_name(self):
+                """
+                Verify user.name matches get_name(), get_full_name() and the formatted first and last name across several user factories.
+                """
                 for user in [self.get_default_user_doron(), self.get_inactive_user_jennifer(), DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.name, second=user.speedy_net_profile.get_name())
                     self.assertEqual(first=user.name, second=user.get_full_name())
@@ -130,6 +154,9 @@ if (django_settings.TESTS):
                     self.assertNotEqual(first=str(user), second=user.name)
 
             def test_cannot_delete_site_profiles_with_queryset_delete(self):
+                """
+                Verify deleting site profiles via queryset delete() raises NotImplementedError in all forms (manager, all(), filter() and exclude()).
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     SpeedyNetSiteProfile.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")

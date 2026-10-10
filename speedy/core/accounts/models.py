@@ -1107,11 +1107,13 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
     def save(self, *args, **kwargs):
         """
-        Save the user but not profile.
+        Save the user but not profile. Raises ValidationError if is_superuser is not equal to is_staff.
+        If the user is not allowed to change their date of birth unlimited times and has changed it at least 12 times,
+        set an unusable password and deactivate the Speedy Net profile.
 
-        :param args:
-        :param kwargs:
-        :return:
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
         """
         _set_unusable_password = False
         # Superuser must be equal to staff.
@@ -1175,9 +1177,9 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         Set user=null on related objects where on_delete=models.SET_NULL.
         Staff and Superuser can't be deleted.
 
-        :param args:
-        :param kwargs:
-        :return:
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: False (and a warning is issued) if the user is staff or superuser, otherwise the result of the parent delete method.
         """
         if ((self.is_staff) or (self.is_superuser)):
             warnings.warn('Can’t delete staff user.')
@@ -1630,7 +1632,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         This method determines if the user should see ads or not.
 
         The user should see ads if:
-        - The user registered more than 30 days ago.
+        - The user registered at least 30 days ago.
 
         :return: True if the user should see ads, False otherwise.
         :rtype: bool
@@ -1910,9 +1912,9 @@ class SiteProfileBase(TimeStampedModel):
         """
         Save the profile.
 
-        :param args:
-        :param kwargs:
-        :return:
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
         """
         return_value = super().save(*args, **kwargs)
         self.user.refresh_all_profiles()

@@ -93,7 +93,16 @@ class UserManager(BaseUserManager):
 
     def _create_user(self, slug, password, **extra_fields):
         """
-        Creates and saves a User with the given username and password.
+        Creates and saves a User with the given slug and password.
+
+        :param slug: The slug (username) of the new user.
+        :type slug: str
+        :param password: The raw password of the new user.
+        :type password: str
+        :param extra_fields: Additional fields to set on the new user; gender defaults to GENDER_OTHER.
+        :return: The created user.
+        :rtype: speedy.core.accounts.models.User
+        :raises ValueError: If the slug is empty.
         """
         extra_fields.setdefault('gender', self.model.GENDER_OTHER)
         if (not (slug)):

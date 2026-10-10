@@ -32,6 +32,8 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The HTTP response.
         :rtype: django.http.HttpResponse
         """
@@ -75,6 +77,8 @@ class UserSingleChatMixin(UserChatsMixin):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The HTTP response.
         :rtype: django.http.HttpResponse
         """
@@ -193,6 +197,8 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The HTTP response.
         :rtype: django.http.HttpResponse
         """
@@ -330,6 +336,8 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the chat page.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -371,6 +379,8 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect to the existing chat, or the compose form response.
         :rtype: django.http.HttpResponse
         """
@@ -414,6 +424,8 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the chat page.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -425,6 +437,8 @@ class MarkChatAsReadView(UserSingleChatMixin, generic.View):
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the chat page.
         :rtype: django.http.HttpResponseRedirect
         """

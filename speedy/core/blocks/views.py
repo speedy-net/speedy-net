@@ -27,6 +27,8 @@ class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the user's profile page.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -38,6 +40,8 @@ class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the user's profile page.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -65,6 +69,8 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the user's profile page.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -76,6 +82,8 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the user's profile page.
         :rtype: django.http.HttpResponseRedirect
         """

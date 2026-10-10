@@ -20,6 +20,7 @@ def patch():
         :type username: str
         :param password: The password to authenticate with.
         :type password: str
+        :param kwargs: Additional credentials; used to look up the username by ``UserModel.USERNAME_FIELD`` if username is None.
         :return: The authenticated user, or None if authentication failed.
         :rtype: django.contrib.auth.models.AbstractUser or None
         """

@@ -97,6 +97,8 @@ class UserMixin(object):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The HTTP response.
         :rtype: django.http.HttpResponse
         """
@@ -202,6 +204,7 @@ class MeView(LoginRequiredMixin, generic.RedirectView):
         Get the redirect URL to the current user's profile page, with any extra path appended.
 
         :param kwargs: Additional keyword arguments; may include 'rest', the path to append after the user's profile URL.
+        :param args: Additional positional arguments.
         :return: The redirect URL.
         :rtype: str
         """

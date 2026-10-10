@@ -21,6 +21,7 @@ class FriendManager:
         Cache invalidated by django-friendship as registered in BUST_CACHES in speedy.core.patches.friendship_patches.
         Better performance than len(Friend.objects.friends(user=user)). Equivalent to user.friends.count() with cache.
 
+        :param user: The user whose friends are counted.
         :type user: speedy.core.accounts.models.User
         :return: The number of friends in Speedy Net.
         """
@@ -50,6 +51,7 @@ class FriendshipRequestManager:
         In Speedy Match, only active users who match the current user and is dependent on language.
         Invalidate based on raw requests count.
 
+        :param user: The user who received the friendship requests.
         :type user: speedy.core.accounts.models.User
         :return: The number of received friendship requests in the current site.
         """

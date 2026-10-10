@@ -25,6 +25,12 @@ class SpeedyComposerNode(TimeStampedModel):  # ~~~~ TODO: check which class we w
         abstract = True
 
     def __str__(self):
+        """
+        Return the node's name as its string representation.
+
+        :return: The name of the node.
+        :rtype: str
+        """
         return '{}'.format(self.name)  # ~~~~ TODO: fix!
 
 
@@ -55,6 +61,12 @@ class SiteProfile(SiteProfileBase):
 
     @cached_property
     def is_active_and_valid(self):
+        """
+        Check if the profile is active and valid.
+
+        :return: True if the profile is active, False otherwise.
+        :rtype: bool
+        """
         return (self.is_active)
 
     class Meta:
@@ -63,20 +75,44 @@ class SiteProfile(SiteProfileBase):
         ordering = ('-last_visit', 'user_id')
 
     def __str__(self):
+        """
+        Return a string representation of the profile.
+
+        :return: The user's string representation followed by the site name.
+        :rtype: str
+        """
         return '{} @ Speedy Composer'.format(super().__str__())
 
     def _get_deleted_name(self):
+        """
+        Get the name to display for a deleted user's profile.
+
+        :return: The deleted user's display name.
+        :rtype: str
+        """
         return self.__class__.DELETED_NAME
 
     def activate(self):
+        """
+        Activate the profile and save the user and profile.
+        """
         self.is_active = True
         self.user.save_user_and_profile()
 
     def deactivate(self):
+        """
+        Deactivate the profile and save the user and profile.
+        """
         self.is_active = False
         self.user.save_user_and_profile()
 
     def get_name(self):
+        """
+        Get the name of the profile.
+
+        :return: The deleted user's display name if the user is deleted, otherwise the user's full name.
+        :rtype: str
+        """
         if (self.user.is_deleted):
             return self._get_deleted_name()
         return self.user.get_full_name()

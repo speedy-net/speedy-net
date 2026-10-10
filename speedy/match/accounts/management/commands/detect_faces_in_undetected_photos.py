@@ -26,9 +26,8 @@ class Command(BaseCommand):
         """
         Processes users with undetected photos and performs facial analysis.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         users = User.objects.active(
             photo__isnull=False,

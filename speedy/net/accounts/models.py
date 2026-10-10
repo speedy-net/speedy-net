@@ -139,9 +139,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Saves the profile.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
+        :return: The result of the parent save method.
+        :rtype: None
         """
         self._update_speedy_net_friends_count()
         return super().save(*args, **kwargs)

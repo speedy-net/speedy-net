@@ -74,11 +74,13 @@ def email_feedback(sender, instance: Feedback, created: bool, **kwargs):
     """
     Signal receiver that sends an email to managers when feedback is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Feedback): The instance of the Feedback model.
-        created (bool): Whether the instance was created.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Feedback instance that was saved.
+    :type instance: Feedback
+    :param created: Whether the instance was created.
+    :type created: bool
+    :param kwargs: Additional keyword arguments.
     """
     if (created):
         headers = {'Reply-To': instance.sender_email or instance.sender.email or "no-reply@{}".format(django_settings.DEFAULT_FROM_EMAIL.strip().rsplit("@", 1)[-1])}

@@ -15,7 +15,12 @@ def patch():
     logger = logging.getLogger(__name__)
 
     def friends(self, user):
-        """ Return a list of all friends """
+        """
+        Return a list of all friends.
+
+        :param user: The user whose friends are returned.
+        :return: A list of the user's friends (users), cached if there are few enough.
+        """
         key = cache_key("friends", user.pk)
         friends = cache.get(key)
 
@@ -35,7 +40,12 @@ def patch():
         return friends
 
     def requests(self, user):
-        """ Return a list of friendship requests """
+        """
+        Return a list of friendship requests received by the user.
+
+        :param user: The user who received the requests.
+        :return: A list of FriendshipRequest instances, cached if there are few enough.
+        """
         key = cache_key("requests", user.pk)
         requests = cache.get(key)
 
@@ -60,7 +70,12 @@ def patch():
         return requests
 
     def sent_requests(self, user):
-        """ Return a list of friendship requests from user """
+        """
+        Return a list of friendship requests sent by the user.
+
+        :param user: The user who sent the requests.
+        :return: A list of FriendshipRequest instances, cached if there are few enough.
+        """
         key = cache_key("sent_requests", user.pk)
         requests = cache.get(key)
 

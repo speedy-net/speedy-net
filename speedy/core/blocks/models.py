@@ -42,8 +42,10 @@ class Block(TimeStampedModel):
         """
         Save the Block instance to the database.
 
-        Raises:
-            ValidationError: If the blocker is the same as the blocked entity.
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
+        :raises django.core.exceptions.ValidationError: If the blocker is the same as the blocked entity.
         """
         if (self.blocker == self.blocked):
             raise ValidationError(_("Users cannot block themselves."))
@@ -55,10 +57,11 @@ def cancel_friendship_requests_on_block(sender, instance: Block, **kwargs):
     """
     Signal receiver that cancels friendship requests between users when a block is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Block): The instance of the Block model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Block instance that was saved.
+    :type instance: Block
+    :param kwargs: Additional keyword arguments.
     """
     # Remove friendship requests between users.
     if ((isinstance(instance.blocker, User))) and (isinstance(instance.blocked, User)):
@@ -74,10 +77,11 @@ def remove_friends_on_block(sender, instance: Block, **kwargs):
     """
     Signal receiver that removes friendship between users when a block is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Block): The instance of the Block model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Block instance that was saved.
+    :type instance: Block
+    :param kwargs: Additional keyword arguments.
     """
     # Remove friendship between users.
     if ((isinstance(instance.blocker, User))) and (isinstance(instance.blocked, User)):
@@ -89,10 +93,11 @@ def remove_like_on_block(sender, instance: Block, **kwargs):
     """
     Signal receiver that removes likes from blocker to blocked when a block is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Block): The instance of the Block model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Block instance that was saved.
+    :type instance: Block
+    :param kwargs: Additional keyword arguments.
     """
     # Remove like from blocker to blocked, but not from blocked to blocker (if the blocker unblocks the blocked, the like persists).
     if ((isinstance(instance.blocker, User))) and (isinstance(instance.blocked, User)):

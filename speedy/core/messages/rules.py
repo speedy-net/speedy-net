@@ -47,6 +47,11 @@ def can_send_new_message(user):
 
     # If the user signed up to Speedy Net less than 6 hours ago, and they don't use a gmail.com email address,
     # then don't let them send any new messages to new chats.
+
+    :param user: The user who wants to send a new message to a new chat.
+    :type user: speedy.core.accounts.models.User
+    :return: True if the user can send new messages to new chats, False otherwise.
+    :rtype: bool
     """
     can_send = True
     language_code = get_language()

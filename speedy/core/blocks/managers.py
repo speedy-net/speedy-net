@@ -31,6 +31,11 @@ class BlockManager(BaseManager):
     def _update_caches(self, blocker, blocked):
         """
         Update caches after block or unblock.
+
+        :param blocker: The entity that blocks or unblocks.
+        :type blocker: speedy.core.accounts.models.Entity
+        :param blocked: The entity that is blocked or unblocked.
+        :type blocked: speedy.core.accounts.models.Entity
         """
         keys1 = get_keys_for_bust_cache(cache_type='blocked', entities_pks=[blocker.pk])
         keys2 = get_keys_for_bust_cache(cache_type='blocking', entities_pks=[blocked.pk])

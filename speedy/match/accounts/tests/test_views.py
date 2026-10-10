@@ -216,6 +216,9 @@ if (django_settings.TESTS):
                 height is a valid value for the height field itself (within MIN/MAX_HEIGHT_ALLOWED), but it's
                 outside the matchable range (MIN/MAX_HEIGHT_TO_MATCH), so the user is not allowed to use Speedy
                 Match.
+
+                :param height: The height to submit in the registration wizard.
+                :type height: int
                 """
                 self._complete_steps_2_to_8(height=height)
                 r = self._post_step_9(follow=True)

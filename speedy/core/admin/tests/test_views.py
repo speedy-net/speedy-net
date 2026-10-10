@@ -83,6 +83,9 @@ if (django_settings.TESTS):
             def test_admin_has_access(self):
                 """
                 Asserts that the admin (superuser/staff) user can access the page, without the permission-denied heading or alert, and returns the response.
+
+                :return: The HTTP response of the page.
+                :rtype: django.http.HttpResponse
                 """
                 self.client.login(username=self.user_3.slug, password=tests_settings.USER_PASSWORD)
                 r = self.client.get(path=self.page_url)

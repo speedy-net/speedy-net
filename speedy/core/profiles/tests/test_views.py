@@ -37,6 +37,8 @@ if (django_settings.TESTS):
 
                 :param request: The current HTTP request.
                 :type request: django.http.HttpRequest
+                :param args: Additional positional arguments.
+                :param kwargs: Additional keyword arguments.
                 :return: The view instance.
                 :rtype: UserMixinTestView
                 """

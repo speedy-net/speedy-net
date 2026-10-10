@@ -30,6 +30,8 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The HTTP response.
         :rtype: django.http.HttpResponse
         """
@@ -56,6 +58,8 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the current user's profile page.
         :rtype: django.http.HttpResponseRedirect
         """

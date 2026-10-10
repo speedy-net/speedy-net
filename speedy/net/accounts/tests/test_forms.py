@@ -31,6 +31,9 @@ if (django_settings.TESTS):
                 test_has_correct_fields(self): Verify the form has only the 'notify_on_message' field on Speedy Net.
             """
             def test_has_correct_fields(self):
+                """
+                Verify the form has only the 'notify_on_message' field on Speedy Net.
+                """
                 form = ProfileNotificationsForm(instance=self.user)
                 self.assertListEqual(list1=list(form.fields.keys()), list2=[
                     'notify_on_message',
@@ -71,6 +74,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Invalid random choice.")
 
             def test_correct_password_and_delete_my_account_text(self):
+                """
+                Verify the form is valid with a correct password and confirmation text.
+                """
                 data = {
                     'password': tests_settings.USER_PASSWORD,
                     'delete_my_account_text': self._yes_delete_my_account_text,
@@ -80,6 +86,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2={})
 
             def test_incorrect_password(self):
+                """
+                Verify the form is invalid with an incorrect password.
+                """
                 data = {
                     'password': 'wrong password!!',
                     'delete_my_account_text': self._yes_delete_my_account_text,
@@ -89,6 +98,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2=self._invalid_password_errors_dict())
 
             def test_incorrect_delete_my_account_text(self):
+                """
+                Verify the form is invalid with an incorrect confirmation text.
+                """
                 data = {
                     'password': tests_settings.USER_PASSWORD,
                     'delete_my_account_text': 'wrong text!!',
@@ -98,6 +110,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2=self._invalid_delete_my_account_text_errors_dict_by_gender(gender=self.user.get_gender()))
 
             def test_no_password(self):
+                """
+                Verify the form is invalid when the password is missing.
+                """
                 data = {
                     'delete_my_account_text': self._yes_delete_my_account_text,
                 }
@@ -106,6 +121,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2=self._password_is_required_errors_dict())
 
             def test_no_delete_my_account_text(self):
+                """
+                Verify the form is invalid when the confirmation text is missing.
+                """
                 data = {
                     'password': tests_settings.USER_PASSWORD,
                 }
@@ -114,12 +132,18 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=form.errors, d2=self._delete_my_account_text_is_required_errors_dict())
 
             def test_no_password_and_delete_my_account_text(self):
+                """
+                Verify the form is invalid when both the password and confirmation text are missing.
+                """
                 data = {}
                 form = DeleteAccountForm(user=self.user, data=data)
                 self.assertIs(expr1=form.is_valid(), expr2=False)
                 self.assertDictEqual(d1=form.errors, d2=self._delete_account_form_all_the_required_fields_are_required_errors_dict())
 
             def test_yes_delete_my_account_text_is_contained_in_are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender_for_all_genders_with_and_without_quotes(self):
+                """
+                Verify, for every gender, the confirmation text appears in the "are you sure" text, and also inside one of the supported quote styles.
+                """
                 for gender in User.ALL_GENDERS:
                     self.assertIs(expr1=self._yes_delete_my_account_text in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender], expr2=True)
                     _yes_delete_my_account_text_with_quotes_1_is_contained_in_string = '"{}"'.format(self._yes_delete_my_account_text) in self._are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender[gender]
@@ -142,6 +166,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'en', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -156,6 +183,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'fr', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -170,6 +200,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'de', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -184,6 +217,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'es', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -198,6 +234,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'pt', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -212,6 +251,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'it', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -226,6 +268,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'nl', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -240,6 +285,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ja', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ja')
 
@@ -254,6 +302,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ru', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ru')
 
@@ -268,6 +319,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'zh', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='zh')
 
@@ -282,6 +336,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'pl', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pl')
 
@@ -296,6 +353,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'fa', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fa')
 
@@ -310,6 +370,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'he', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
@@ -324,6 +387,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ko', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ko')
 
@@ -338,6 +404,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ar', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ar')
 
@@ -352,6 +421,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'id', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='id')
 
@@ -366,6 +438,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'uk', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='uk')
 
@@ -380,6 +455,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'tr', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='tr')
 
@@ -394,6 +472,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'vi', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='vi')
 
@@ -408,6 +489,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'cs', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='cs')
 
@@ -422,6 +506,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'sv', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
 
@@ -436,6 +523,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'fi', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fi')
 
@@ -450,6 +540,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'hu', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hu')
 
@@ -464,6 +557,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'th', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='th')
 
@@ -478,6 +574,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'el', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='el')
 
@@ -492,6 +591,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ms', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ms')
 
@@ -506,6 +608,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'sr', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sr')
 
@@ -520,6 +625,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ro', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ro')
 
@@ -534,6 +642,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'bn', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='bn')
 
@@ -548,6 +659,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ca', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ca')
 
@@ -562,6 +676,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'no', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='no')
 
@@ -576,6 +693,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'bg', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='bg')
 
@@ -590,6 +710,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'da', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='da')
 
@@ -604,6 +727,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'sk', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sk')
 
@@ -618,6 +744,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'hi', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hi')
 
@@ -632,6 +761,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'et', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='et')
 
@@ -646,6 +778,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'hr', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hr')
 
@@ -659,6 +794,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'az', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='az')
 
@@ -673,6 +811,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'zh-yue', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='zh-yue')
 
@@ -687,6 +828,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'lt', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='lt')
 
@@ -701,6 +845,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'sl', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sl')
 
@@ -715,6 +862,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'eu', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='eu')
 
@@ -729,6 +879,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'hy', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='hy')
 
@@ -743,6 +896,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'uz', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='uz')
 
@@ -757,6 +913,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'ta', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='ta')
 
@@ -771,6 +930,9 @@ if (django_settings.TESTS):
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
             def validate_all_values(self):
+                """
+                Verify the active language code is 'lv', in addition to the shared assertions of the mixin.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='lv')
 

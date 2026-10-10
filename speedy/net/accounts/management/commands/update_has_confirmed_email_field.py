@@ -24,9 +24,8 @@ class Command(BaseCommand):
         This method iterates over all users, reloads each user from the database,
         and updates their has_confirmed_email field.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         users = User.objects.all()
         for u in users:

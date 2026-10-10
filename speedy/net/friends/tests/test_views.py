@@ -22,20 +22,32 @@ if (django_settings.TESTS):
                 test_user_cannot_open_other_users_friends_page(self): Skipped; irrelevant on Speedy Net since the page is public.
             """
             def test_visitor_can_open_the_page(self):
+                """
+                Verify an anonymous visitor can open a user's friend list page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.first_user_friends_list_url)
                 self.assertEqual(first=r.status_code, second=200)
 
             @unittest.skip(reason="This test is irrelevant in Speedy Net.")
             def test_visitor_cannot_open_the_page(self):
+                """
+                Skipped; irrelevant on Speedy Net since the page is public.
+                """
                 raise NotImplementedError("This test is not implemented in this class.")
 
             def test_user_can_open_other_users_friends_page(self):
+                """
+                Verify a logged-in user can open another user's friend list page.
+                """
                 r = self.client.get(path=self.second_user_friends_list_url)
                 self.assertEqual(first=r.status_code, second=200)
 
             @unittest.skip(reason="This test is irrelevant in Speedy Net.")
             def test_user_cannot_open_other_users_friends_page(self):
+                """
+                Skipped; irrelevant on Speedy Net since the page is public.
+                """
                 raise NotImplementedError("This test is not implemented in this class.")
 
 

@@ -56,9 +56,9 @@ class File(TimeStampedModel):
         """
         Save the File instance to the database.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
         """
         self.size = self.file.size
         return super().save(*args, **kwargs)

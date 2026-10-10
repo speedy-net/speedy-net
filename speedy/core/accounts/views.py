@@ -30,6 +30,13 @@ logger = logging.getLogger(__name__)
 def set_session(request):
     """
     Cross-domain authentication.
+    Allows a Speedy site to set or delete the session cookie on another Speedy site's domain,
+    if the request's origin belongs to one of the sites. A POST request with a valid session key sets the session, otherwise the session is flushed.
+
+    :param request: The current HTTP request.
+    :type request: django.http.HttpRequest
+    :return: An empty response, with CORS headers set if the origin is valid and the request was processed.
+    :rtype: django.http.HttpResponse
     """
     response = HttpResponse('')
     origin = request.META.get('HTTP_ORIGIN')
@@ -197,6 +204,8 @@ class IndexView(generic.View):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response, or the response from the registration view.
         :rtype: django.http.HttpResponse
         """
@@ -397,6 +406,8 @@ class ActivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequi
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response, or the response from the superclass.
         :rtype: django.http.HttpResponse
         """
@@ -423,6 +434,8 @@ class ActivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequi
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: The response from the superclass, or a redirect to the account activation URL.
         :rtype: django.http.HttpResponse
         """
@@ -536,6 +549,8 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SelfUserMixin, PermissionRe
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL, or to the current URL after logging out.
         :rtype: django.http.HttpResponseRedirect
         :raises AssertionError: If the email address doesn't belong to the current user after the logout redirect check.
@@ -632,6 +647,8 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -643,6 +660,8 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -677,6 +696,8 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -723,6 +744,8 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -734,6 +757,8 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
@@ -770,6 +795,8 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
 
         :param request: The current HTTP request.
         :type request: django.http.HttpRequest
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
         :return: A redirect response to the success URL.
         :rtype: django.http.HttpResponseRedirect
         """
