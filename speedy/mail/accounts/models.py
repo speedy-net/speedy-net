@@ -6,6 +6,23 @@ from speedy.core.accounts.models import SiteProfileBase, User
 
 
 class SiteProfile(SiteProfileBase):
+    """
+    Speedy Mail Software site-specific user profile.
+
+    Attributes:
+        RELATED_NAME (str): The related name used on the User model to access this profile.
+        DELETED_NAME (str): The name to display for a deleted user's profile.
+        user (User): The user associated with the profile.
+        is_active (bool): Whether the Speedy Mail Software profile is active.
+
+    Methods:
+        is_active_and_valid(self): Check if the profile is active and valid.
+        __str__(self): Get a string representation of the profile.
+        _get_deleted_name(self): Get the name to display for a deleted user's profile.
+        activate(self): Activate the profile.
+        deactivate(self): Deactivate the profile.
+        get_name(self): Get the name of the profile.
+    """
     RELATED_NAME = 'speedy_mail_site_profile'
 
     DELETED_NAME = _('Speedy Net User')
