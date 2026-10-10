@@ -22,6 +22,7 @@ if (django_settings.TESTS):
             Methods:
                 test_form_to_chat_save(self): Asserts a valid form bound to an existing chat saves a new message and updates the chat's last message.
             """
+
             def test_form_to_chat_save(self):
                 """
                 Asserts that a valid MessageForm bound to an existing chat is valid, and saving it creates a message with the given text, sender and chat, and sets it as the chat's last message.

@@ -26,6 +26,7 @@ class RegistrationView(speedy_core_accounts_views.RegistrationView):
     Methods:
         get_context_data(self, **kwargs): Adds the active members count text to the context.
     """
+
     def get_context_data(self, **kwargs):
         """
         Adds the active members count text to the template context.
@@ -64,6 +65,7 @@ class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView
         get_success_url(self): Returns the URL to redirect to after a successful form submission.
         form_valid(self, form): Handles a valid form submission, activating the account and displaying relevant messages.
     """
+
     def get_context_data(self, **kwargs):
         """
         Adds the step range, current and previous step numbers, and the conversion-tracking flag (true for users registered within the last 7 days) to the template context.

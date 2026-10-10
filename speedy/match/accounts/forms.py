@@ -31,6 +31,7 @@ class CustomJsonWidget(forms.CheckboxSelectMultiple):
         render(self, name, value, attrs=None, renderer=None): Renders the widget using the json_widget.html template.
         value_from_datadict(self, data, files, name): Extracts the raw value for this field from the submitted form data.
     """
+
     def render(self, name, value, attrs=None, renderer=None):
         """
         Renders the widget using the json_widget.html template, decoding the JSON-encoded value back into choice ranks.
@@ -400,6 +401,7 @@ class SpeedyMatchProfileActivationForm(SpeedyMatchProfileBaseForm):
         get_fields(self): Returns the field names for the current activation step.
         get_visible_fields(self): Returns the visible field names, same as get_fields for this form.
     """
+
     def get_fields(self):
         """
         Returns the field names for the current activation step.

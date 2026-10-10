@@ -34,6 +34,7 @@ if (django_settings.TESTS):
                 test_user_blocks_himself_raises_an_exception(self): Asserts blocking oneself raises a ValidationError with the expected message.
                 test_cannot_delete_blocks_with_queryset_delete(self): Asserts that calling delete() on the Block queryset (in various forms) raises NotImplementedError.
             """
+
             def set_up(self):
                 """
                 Creates two active users (user, other_user) for use in the tests.

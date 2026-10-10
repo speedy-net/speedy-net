@@ -33,6 +33,7 @@ if (django_settings.TESTS):
                 test_user_cannot_like_other_user_if_blocking(self): Asserts a user has no permission to like a user who blocked him.
                 test_user_cannot_like_twice(self): Asserts a user has no permission to like a user he already likes.
             """
+
             def set_up(self):
                 """
                 Creates a user, another user, and an anonymous user.
@@ -94,6 +95,7 @@ if (django_settings.TESTS):
                 test_user_cannot_unlike_if_doesnt_like(self): Asserts a user has no permission to unlike a user he doesn't like.
                 test_user_can_unlike_if_likes(self): Asserts a user has permission to unlike a user he likes.
             """
+
             def set_up(self):
                 """
                 Creates a user, another user, and an anonymous user.
@@ -140,6 +142,7 @@ if (django_settings.TESTS):
                 test_other_user_cannot_view_likes(self): Asserts a user has no permission to view another user's likes.
                 test_user_can_view_likes(self): Asserts a user has permission to view his own likes.
             """
+
             def set_up(self):
                 """
                 Creates a user, another user, and an anonymous user.
@@ -184,6 +187,7 @@ if (django_settings.TESTS):
                 test_both_are_users_true(self): Asserts both_are_users returns True when both arguments are users.
                 test_both_are_users_false(self): Asserts both_are_users returns False whenever at least one argument is not a user (anonymous user, entity, or reserved username).
             """
+
             def set_up(self):
                 """
                 Creates a user, another user, an anonymous user, an entity, and a reserved username, to be used as both user and non-user arguments.

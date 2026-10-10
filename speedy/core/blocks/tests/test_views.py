@@ -19,6 +19,7 @@ if (django_settings.TESTS):
             """
             Test view in Speedy Net. Speedy Match should always return 404.
             """
+
             def set_up(self):
                 """
                 Creates three active users and builds the blocked-users list page URL for the first user.
@@ -74,6 +75,7 @@ if (django_settings.TESTS):
                 test_user_cannot_block_self(self): Asserts a user attempting to block himself gets a 403 response.
                 test_user_can_block_other_user(self): Asserts a user can block another user, which creates a Block instance and redirects to the blocked user's profile page.
             """
+
             def set_up(self):
                 """
                 Creates two active users and builds the block page URL for blocking the second user.
@@ -122,6 +124,7 @@ if (django_settings.TESTS):
                 test_visitor_has_no_access(self): Asserts an anonymous visitor is redirected to login when trying to unblock a user.
                 test_user_can_unblock_other_user(self): Asserts a user can unblock another user, which removes the Block instance and redirects to the unblocked user's profile page.
             """
+
             def set_up(self):
                 """
                 Creates two active users and builds the unblock page URL for unblocking the second user.

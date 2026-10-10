@@ -22,6 +22,7 @@ if (django_settings.TESTS):
                 test_user_can_view_another_user_friend_list(self): Verify any user can view another user's friend list on Speedy Net.
                 test_user_cannot_view_another_user_friend_list(self): Skipped; irrelevant on Speedy Net since friend lists are always visible.
             """
+
             def test_user_can_view_another_user_friend_list(self):
                 """
                 Verify any user can view another user's friend list on Speedy Net.

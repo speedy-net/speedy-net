@@ -13,6 +13,7 @@ if (django_settings.TESTS):
         """
         Tests the haversine() function, which computes the great-circle distance between two (latitude, longitude) points, in English.
         """
+
         def set_up(self):
             """
             Sets up a collection of real-world and synthetic (latitude, longitude) points used by the haversine distance tests.

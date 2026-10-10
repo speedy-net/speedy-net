@@ -30,6 +30,7 @@ if (django_settings.TESTS):
             Methods:
                 test_user_gets_redirected_to_his_matches(self): Asserts the index view redirects to matches, registration step 2, or welcome, depending on the user's random activation state.
             """
+
             def test_user_gets_redirected_to_his_matches(self):
                 """
                 Asserts the index view redirects to the matches list, registration step 2, or the welcome page, depending on the user's random activation state.
@@ -66,6 +67,7 @@ if (django_settings.TESTS):
             Methods:
                 test_user_can_save_his_settings(self): Asserts the user can turn off message and like notifications via the settings form.
             """
+
             def test_user_can_save_his_settings(self):
                 """
                 Asserts the user can turn off message and like notifications via the settings form, and the changes persist.
@@ -247,6 +249,7 @@ if (django_settings.TESTS):
                 test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_3(self): Tests an unmatchable height above the maximum height to match.
                 test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_4(self): Tests an unmatchable height just below the maximum allowed height.
             """
+
             def test_user_can_complete_the_registration_wizard(self):
                 """
                 Asserts a user with a matchable height completes the registration wizard and is redirected to the matches list, with the profile active and valid.

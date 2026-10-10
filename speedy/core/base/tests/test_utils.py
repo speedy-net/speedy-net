@@ -29,6 +29,7 @@ if (django_settings.TESTS):
         """
         Tests normalize_slug(), in English.
         """
+
         def test_normalize_none(self):
             """
             Tests that normalize_slug() raises an AttributeError when called with None.
@@ -108,6 +109,7 @@ if (django_settings.TESTS):
         """
         Tests normalize_username(), in English.
         """
+
         def test_normalize_none(self):
             """
             Tests that normalize_username() raises an AttributeError when called with None.
@@ -150,6 +152,7 @@ if (django_settings.TESTS):
         """
         Tests get_age(), in English.
         """
+
         @patch(target='speedy.core.base.utils.date')
         def test_birthday_already_passed_this_year(self, mock_date):
             """
@@ -199,6 +202,7 @@ if (django_settings.TESTS):
         """
         Tests get_age_or_default(), in English.
         """
+
         @patch(target='speedy.core.base.utils.date')
         def test_valid_date_of_birth_returns_the_age(self, mock_date):
             """
@@ -227,6 +231,7 @@ if (django_settings.TESTS):
         """
         Tests get_age_ranges_match(), in English.
         """
+
         @patch(target='speedy.core.base.utils.date')
         def test_get_age_ranges_match_with_different_min_and_max_age(self, mock_date):
             """
@@ -258,6 +263,7 @@ if (django_settings.TESTS):
         """
         Tests is_animated(), in English.
         """
+
         def test_static_image_is_not_animated(self):
             """
             Tests that is_animated() returns False for a single-frame static image.
@@ -281,6 +287,7 @@ if (django_settings.TESTS):
         """
         Tests is_transparent(), in English.
         """
+
         def test_rgb_image_is_not_transparent(self):
             """
             Tests that is_transparent() returns False for an RGB image, which has no alpha channel.
@@ -338,6 +345,7 @@ if (django_settings.TESTS):
         """
         Tests looks_like_one_color(), in English.
         """
+
         def set_up(self):
             """
             Sets up a fake user object with a date_created attribute, used by looks_like_one_color().
@@ -383,6 +391,7 @@ if (django_settings.TESTS):
             """
             Mixin providing a shared assertion that timesince() returns an empty string when the given date equals now.
             """
+
             def test_timesince(self):
                 """
                 Tests that timesince() returns an empty string when the given date equals now.
@@ -399,6 +408,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -416,6 +426,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -433,6 +444,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -450,6 +462,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -467,6 +480,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -484,6 +498,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -501,6 +516,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
@@ -518,6 +534,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
+
             def validate_all_values(self):
                 """
                 Runs the mixin's shared assertions and verifies the active language code matches this test case's language.

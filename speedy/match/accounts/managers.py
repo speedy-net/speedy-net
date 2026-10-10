@@ -50,6 +50,7 @@ class SiteProfileManager(BaseManager):
         get_matches_from_list(self, user, from_list): Returns the cached or computed list of matches for a user, restricted to from_list.
         get_matches(self, user): Returns the cached or computed list of matches for a user.
     """
+
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):
         """
         Same function as user.speedy_match_profile.get_matching_rank(other_profile=other_user.speedy_match_profile), but more optimized.

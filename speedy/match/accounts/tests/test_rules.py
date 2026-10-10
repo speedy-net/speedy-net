@@ -22,6 +22,7 @@ if (django_settings.TESTS):
                 test_doron_and_jennifer_have_access(self): Skipped on Speedy Match, since this scenario grants no access here.
                 test_doron_and_jennifer_have_no_access(self): Asserts neither Doron nor Jennifer have profile view access to each other.
             """
+
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_doron_and_jennifer_have_access(self):
                 """

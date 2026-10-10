@@ -24,6 +24,7 @@ if (django_settings.TESTS):
                 test_user_can_open_other_users_friends_page(self): Skipped - not implemented in this class.
                 test_user_cannot_open_other_users_friends_page(self): Asserts a logged-in user gets a 403 when trying to view another user's friends page.
             """
+
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
             def test_visitor_can_open_the_page(self):
                 """

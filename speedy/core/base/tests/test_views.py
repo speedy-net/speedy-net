@@ -16,6 +16,7 @@ if (django_settings.TESTS):
             INSTALLED_APPS), so they have no tests/ directory of their own and are not discovered by the
             default test runner. We test them here instead, since speedy.core.base is installed on every site.
             """
+
             def set_up(self):
                 """
                 Sets up the main page URL used by the tests.

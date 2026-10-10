@@ -1166,6 +1166,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         :return: True if the password is correct, False otherwise.
         :rtype: bool
         """
+
         def setter(raw_password):
             """
             Upgrade the stored password hash for the given raw password, skipping the upgrade if the password doesn't pass the password validators.

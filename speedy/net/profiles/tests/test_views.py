@@ -26,6 +26,7 @@ if (django_settings.TESTS):
                 test_user_slug_doesnt_exist_returns_404(self): Verify a non-existent user slug returns a 404 response.
                 test_user_slug_with_invalid_characters_doesnt_work(self): Verify slugs containing invalid characters return a 404 response.
             """
+
             def test_find_user_by_username(self):
                 """
                 Verify a user can be found and redirected to the canonical slug by username.

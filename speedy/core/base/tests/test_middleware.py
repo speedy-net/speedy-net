@@ -13,6 +13,7 @@ if (django_settings.TESTS):
         """
         Tests RemoveExtraSlashesMiddleware, in English.
         """
+
         def test_normalize_path(self):
             """
             Tests that normalize_path() collapses multiple consecutive slashes anywhere in a path into a single slash, without otherwise changing an already-normalized path.

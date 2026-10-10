@@ -20,6 +20,7 @@ if (django_settings.TESTS):
                 test_redirect_to_login_user_by_username(self): Asserts an anonymous visitor requesting an existing user's profile by username is redirected to login.
                 test_redirect_to_login_user_slug_doesnt_exist(self): Asserts an anonymous visitor requesting a profile with a non-existent slug is still redirected to login.
             """
+
             def test_redirect_to_login_user_by_username(self):
                 """
                 Asserts an anonymous visitor requesting a user's profile page by username is redirected to the login page with the correct "next" parameter.

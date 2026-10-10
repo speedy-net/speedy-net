@@ -84,6 +84,7 @@ if (django_settings.TESTS):
                 test_user_can_read_a_chat_they_have_access_to(self): Asserts a user can read all messages of a chat he participates in.
                 test_user_can_read_chat_with_a_blocker(self): Asserts a user can still read a chat even when the two users have blocked each other.
             """
+
             def set_up(self):
                 """
                 Creates three active users, chats between them, and three messages in chat_1_2.
@@ -142,6 +143,7 @@ if (django_settings.TESTS):
                 test_user_gets_all_messages_when_since_is_0(self): Asserts polling with since=0 returns all messages, newest first.
                 test_user_cannot_poll_a_chat_they_have_no_access_to(self): Asserts a user who doesn't participate in the chat gets a not found response.
             """
+
             def set_up(self):
                 """
                 Creates two active users, a chat between them, and two messages with the "since" timestamp recorded between them.
@@ -220,6 +222,7 @@ if (django_settings.TESTS):
                 test_cannot_write_to_other_user_if_blocked(self): Asserts a user who blocked the other user cannot post a message to their chat.
                 test_cannot_write_to_other_user_if_blocking(self): Asserts a user who is blocked by the other user cannot post a message to their chat.
             """
+
             def set_up(self):
                 """
                 Creates three active users and chats between them, and prepares the message data to post.
@@ -296,6 +299,7 @@ if (django_settings.TESTS):
                 test_user_cannot_submit_the_form_with_text_too_long_1(self): Asserts submitting the form with text one character over the maximum length fails validation and creates no message.
                 test_user_cannot_submit_the_form_with_text_too_long_2(self): Asserts submitting the form with a much longer invalid text fails validation and creates no message.
             """
+
             def set_up(self):
                 """
                 Creates two active users whose date_created is slightly in the past, and prepares the message data to post.
@@ -532,6 +536,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'en'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'en'.
@@ -549,6 +554,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'fr'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'fr'.
@@ -566,6 +572,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'de'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'de'.
@@ -583,6 +590,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'es'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'es'.
@@ -600,6 +608,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'pt'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'pt'.
@@ -617,6 +626,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'it'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'it'.
@@ -634,6 +644,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'nl'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'nl'.
@@ -651,6 +662,7 @@ if (django_settings.TESTS):
             Methods:
                 validate_all_values(self): Asserts the active language code is 'he'.
             """
+
             def validate_all_values(self):
                 """
                 Asserts the active language code is 'he'.
@@ -669,6 +681,7 @@ if (django_settings.TESTS):
                 test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
                 test_user_can_mark_chat_as_read(self): Asserts posting to the mark-read url updates the user's read mark to after the last message and redirects to the chat page.
             """
+
             def set_up(self):
                 """
                 Creates an active user, a chat with two messages, and the chat/mark-read urls.

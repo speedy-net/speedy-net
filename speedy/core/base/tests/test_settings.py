@@ -14,6 +14,7 @@ if (django_settings.TESTS):
         """
         Tests various site-related Django settings values, in English.
         """
+
         def test_sites_with_login(self):
             """
             Tests that SITES_WITH_LOGIN contains exactly the Speedy Net and Speedy Match site IDs.
@@ -61,6 +62,7 @@ if (django_settings.TESTS):
         """
         Tests speedy.core.base.test.tests_settings.SLUGS_TO_TEST_LIST, in English.
         """
+
         def test_slugs_to_test_list(self):
             """
             Tests that each entry in SLUGS_TO_TEST_LIST normalizes to a username and slug of the expected lengths, and that there are 8 distinct entries covering 4 distinct username/slug lengths.

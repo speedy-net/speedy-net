@@ -32,6 +32,7 @@ if (django_settings.TESTS):
                 test_cannot_delete_messages_with_queryset_delete(self): Asserts calling delete() on the Message manager/queryset always raises NotImplementedError.
                 test_cannot_delete_readmarks_with_queryset_delete(self): Asserts calling delete() on the ReadMark manager/queryset always raises NotImplementedError.
             """
+
             def get_active_user_doron(self):
                 """
                 Creates, saves and returns an active user named Doron Matalon with the slug 'doron-matalon'.

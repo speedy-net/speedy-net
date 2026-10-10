@@ -17,6 +17,7 @@ if (django_settings.TESTS):
                 test_visitor_can_access_contact_us_page(self): Asserts a visitor can access the contact-us page and it renders the expected template.
                 test_non_canonical_path_redirects_permanently_to_canonical_path(self): Asserts a non-canonical path (with a query string) redirects permanently to the canonical contact-us page URL.
             """
+
             def set_up(self):
                 """
                 Sets the contact-us page URL.
