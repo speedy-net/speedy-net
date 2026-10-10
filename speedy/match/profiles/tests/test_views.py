@@ -1,3 +1,6 @@
+"""
+Test cases for the user mixin of the Speedy Match profiles views.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

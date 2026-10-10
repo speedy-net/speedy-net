@@ -1,3 +1,6 @@
+"""
+Managers for the messages app of Speedy Core: ChatManager, MessageManager and ReadMarkManager.
+"""
 from collections import defaultdict
 
 from django.conf import settings as django_settings

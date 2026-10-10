@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Match accounts app (index, profile notifications and the profile activation wizard).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

@@ -1,3 +1,6 @@
+"""
+Validators of the Speedy Core accounts app for usernames, slugs, passwords, ages, dates of birth and profile pictures.
+"""
 import logging
 from datetime import timedelta
 from PIL import Image

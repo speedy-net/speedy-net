@@ -1,3 +1,6 @@
+"""
+Admin versions of the Speedy Core profile widgets (the user photo and user info widgets shown to admins).
+"""
 from speedy.core.profiles.widgets import UserPhotoWidget, UserInfoWidget
 
 

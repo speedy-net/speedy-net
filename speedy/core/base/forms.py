@@ -1,3 +1,6 @@
+"""
+Base forms, form helpers and form mixins of Speedy Core.
+"""
 from crispy_forms.helper import FormHelper
 
 from django import forms

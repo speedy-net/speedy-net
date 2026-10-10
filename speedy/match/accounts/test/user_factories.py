@@ -1,3 +1,6 @@
+"""
+Test factories of the Speedy Match accounts app for creating inactive, active and Speedy Net inactive users.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

@@ -1,3 +1,6 @@
+"""
+Validators of the Speedy Match accounts app for the profile fields (height, age to match, gender, diet, smoking status, relationship status, rank, city, children and descriptions).
+"""
 import logging
 
 from django.core.exceptions import ValidationError

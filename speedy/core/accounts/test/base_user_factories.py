@@ -1,3 +1,6 @@
+"""
+Base factories of Speedy Core for creating users in tests, including default, inactive and active users.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

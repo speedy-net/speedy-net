@@ -1,3 +1,6 @@
+"""
+Test factories for the messages app of Speedy Core, including the ChatFactory.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

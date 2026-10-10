@@ -1,3 +1,6 @@
+"""
+Settings used by the tests of Speedy Core: dynamic test settings, helpers which create lists of valid and invalid dates of birth, and classes of settings overrides for entities, users, Speedy Match site profiles and logging.
+"""
 import random
 
 from django.conf import settings as django_settings

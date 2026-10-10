@@ -1,3 +1,6 @@
+"""
+Models for the contact by form app of Speedy Core: the Feedback model, and a signal receiver which emails new feedback.
+"""
 from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver

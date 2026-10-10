@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core terms of service app (the terms of service page).
+"""
 from speedy.core.base.views import StaticTermsOfServiceBaseView
 
 

@@ -1,3 +1,6 @@
+"""
+Models for the blocks app of Speedy Core: the Block model, and signal receivers which cancel friendship requests, remove friends and remove likes when a user is blocked.
+"""
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError

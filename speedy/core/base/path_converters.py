@@ -1,3 +1,6 @@
+"""
+URL path converters of Speedy Core, for digits and Speedy slugs.
+"""
 # Define and register Speedy Core path converters.
 
 from django.urls import register_converter

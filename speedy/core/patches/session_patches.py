@@ -1,3 +1,6 @@
+"""
+Monkey patch of Django's PBKDF2PasswordHasher for Speedy Core, which increases the number of password hashing iterations and limits which hashes are rehashed.
+"""
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
 
 

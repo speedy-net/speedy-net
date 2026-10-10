@@ -1,3 +1,6 @@
+"""
+Management command to update the has_confirmed_email field of all users.
+"""
 import logging
 
 from django.core.management import BaseCommand

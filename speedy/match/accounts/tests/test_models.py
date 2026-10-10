@@ -1,3 +1,6 @@
+"""
+Test cases for the Speedy Match SiteProfile model.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

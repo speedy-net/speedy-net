@@ -1,3 +1,6 @@
+"""
+Admin widgets for the friends app of Speedy Core, which define the AdminUserFriendsWidget.
+"""
 from speedy.core.accounts.utils import get_site_profile_model
 from speedy.core.profiles.widgets import Widget
 

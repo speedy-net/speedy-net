@@ -1,3 +1,6 @@
+"""
+Test factories for Speedy Net users - inactive and active user factories.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

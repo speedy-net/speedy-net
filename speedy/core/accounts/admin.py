@@ -1,3 +1,6 @@
+"""
+Django admin configuration of the Speedy Core accounts app, including the base admin class for site profiles.
+"""
 from django.conf import settings as django_settings
 
 from translated_fields import TranslatedFieldAdmin

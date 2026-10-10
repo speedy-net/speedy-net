@@ -1,3 +1,6 @@
+"""
+Base Django settings of the Speedy Net site, shared by all the Speedy Net environments.
+"""
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_with_login import *
 from speedy.core.settings.utils import update_site_paths

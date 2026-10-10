@@ -1,3 +1,6 @@
+"""
+App configuration for the contact by form app of Speedy Core.
+"""
 from django.utils.translation import gettext_lazy as _
 from django.apps import AppConfig
 

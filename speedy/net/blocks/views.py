@@ -1,3 +1,6 @@
+"""
+Views for the blocks of Speedy Net. Defines the blocked users list view.
+"""
 from django.views import generic
 from rules.contrib.views import PermissionRequiredMixin
 

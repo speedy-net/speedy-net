@@ -1,3 +1,6 @@
+"""
+Admin configuration for the user likes of Speedy Match. Registers the read-only UserLike admin.
+"""
 from speedy.core import admin
 from speedy.core.base.admin import ReadOnlyModelAdmin
 from .models import UserLike

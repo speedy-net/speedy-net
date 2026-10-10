@@ -1,3 +1,6 @@
+"""
+Test cases for the utility functions of Speedy Core, such as slug and username normalization, age calculation, image analysis and time since formatting.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

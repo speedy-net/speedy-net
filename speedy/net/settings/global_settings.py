@@ -1,3 +1,6 @@
+"""
+Global settings of Speedy Net - the entity, named entity and user settings.
+"""
 # Used also by Speedy Match.
 
 

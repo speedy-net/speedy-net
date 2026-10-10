@@ -1,3 +1,6 @@
+"""
+Test cases for the forms of the Speedy Core accounts app: registration, profile notifications, password reset and deactivation forms.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

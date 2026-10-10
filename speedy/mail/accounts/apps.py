@@ -1,3 +1,6 @@
+"""
+Django app configuration for the Speedy Mail Software accounts app.
+"""
 from django.utils.translation import gettext_lazy as _
 from django.apps import AppConfig
 

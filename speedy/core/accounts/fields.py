@@ -1,3 +1,6 @@
+"""
+Model fields of the Speedy Core accounts app, containing the user access field.
+"""
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 

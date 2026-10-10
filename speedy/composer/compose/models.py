@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Composer compose app: chords templates, accompaniments, folders and compositions.
+"""
 from django.conf import settings as django_settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _

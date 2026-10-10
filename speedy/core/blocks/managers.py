@@ -1,3 +1,6 @@
+"""
+Managers for the blocks app of Speedy Core, which define the BlockManager used to block and unblock users.
+"""
 import logging
 
 from django.utils.translation import gettext_lazy as _

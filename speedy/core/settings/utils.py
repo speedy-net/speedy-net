@@ -1,3 +1,6 @@
+"""
+Settings utilities of Speedy Core: the project directories, the environment variables reader and the function which updates the paths of a site's settings.
+"""
 import environ
 from pathlib import Path
 

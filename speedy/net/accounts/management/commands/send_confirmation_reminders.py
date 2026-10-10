@@ -1,3 +1,6 @@
+"""
+Management command to send reminders to users with unconfirmed email addresses.
+"""
 import logging
 from datetime import timedelta
 

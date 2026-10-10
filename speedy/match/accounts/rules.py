@@ -1,3 +1,6 @@
+"""
+Permission rules of the Speedy Match accounts app, defining who can view a user's profile, header, info, age and rank.
+"""
 from django.db.models import Q
 from django.conf import settings as django_settings
 

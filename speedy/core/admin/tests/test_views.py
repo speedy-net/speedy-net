@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Core admin app: the main page, users list, users with details list and user detail views.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

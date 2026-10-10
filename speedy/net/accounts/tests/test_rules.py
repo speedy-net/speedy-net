@@ -1,3 +1,6 @@
+"""
+Test cases for the view profile and delete account rules of Speedy Net.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

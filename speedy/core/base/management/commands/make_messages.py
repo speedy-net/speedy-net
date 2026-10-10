@@ -1,3 +1,6 @@
+"""
+Management command `make_messages`, which extends the custom `makemessages` command with fuzzy matching disabled.
+"""
 from speedy.core.base.management.commands import makemessages
 
 

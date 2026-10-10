@@ -1,3 +1,6 @@
+"""
+Mixins for the tests of the contact by form app of Speedy Core, for feedback models and for tests which run in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

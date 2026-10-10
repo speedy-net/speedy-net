@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Match accounts app (the Speedy Match SiteProfile model with its default values, valid values and matching fields).
+"""
 import logging
 
 from django.conf import settings as django_settings

@@ -1,3 +1,6 @@
+"""
+Management command to moderate unmoderated user photos using AWS Rekognition.
+"""
 import logging
 from typing import TYPE_CHECKING
 

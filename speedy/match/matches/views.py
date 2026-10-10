@@ -1,3 +1,6 @@
+"""
+Views for the Speedy Match matches app - the matches list view and the views to edit the match settings and the about me details.
+"""
 import logging
 
 from django.urls import reverse

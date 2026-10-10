@@ -1,3 +1,6 @@
+"""
+Django settings shared by all the Speedy Mail Software environments (site ID, URL configuration and site specific settings).
+"""
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_without_login import *
 from speedy.core.settings.utils import update_site_paths

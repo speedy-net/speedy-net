@@ -1,3 +1,6 @@
+"""
+Management command to remove images with no owner and delete their files.
+"""
 import logging
 import os
 

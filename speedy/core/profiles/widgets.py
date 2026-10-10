@@ -1,3 +1,6 @@
+"""
+Profile widgets of Speedy Core: a base widget class that renders a template, and the user photo and user info widgets displayed on user profile pages.
+"""
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 

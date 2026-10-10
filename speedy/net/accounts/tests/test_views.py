@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Net accounts app - index, profile notifications, site profile activation and delete account views, in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

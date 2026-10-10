@@ -1,3 +1,6 @@
+"""
+Test cases for the permission rules of the messages app of Speedy Core: sending messages, viewing chats and reading chats.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

@@ -1,3 +1,6 @@
+"""
+Mixins for Speedy Core test cases, including the base TestCaseMixin and a mixin for tests which run in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

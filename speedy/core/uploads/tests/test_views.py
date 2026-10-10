@@ -1,3 +1,6 @@
+"""
+Test cases for the upload view of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

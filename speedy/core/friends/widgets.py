@@ -1,3 +1,6 @@
+"""
+Widgets for the friends app of Speedy Core, which define the UserFriendsWidget.
+"""
 import random
 
 from speedy.core.profiles.widgets import Widget

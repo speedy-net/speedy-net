@@ -1,3 +1,6 @@
+"""
+Custom `makemessages` management command of Speedy Core, which avoids rewriting .po files when only the POT-Creation-Date header changed.
+"""
 import os
 import re
 

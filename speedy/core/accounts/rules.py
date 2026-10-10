@@ -1,3 +1,6 @@
+"""
+Permission rules of the Speedy Core accounts app, controlling access to user profiles, user details and email addresses.
+"""
 from django.conf import settings as django_settings
 
 from rules import predicate, add_perm, always_deny

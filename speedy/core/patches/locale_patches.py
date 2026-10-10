@@ -1,3 +1,6 @@
+"""
+Monkey patch of Django's locale formats, language info and translation fallbacks for Speedy Core, to support the additional languages (such as Chinese and Cantonese).
+"""
 from django.conf import settings as django_settings
 from django.conf.locale import LANG_INFO
 from django.utils import formats

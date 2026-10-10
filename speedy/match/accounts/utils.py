@@ -1,3 +1,6 @@
+"""
+Utilities of the Speedy Match accounts app for the profile activation steps (step fields, field validation) and the number of active members text.
+"""
 from datetime import timedelta
 
 from django.utils import formats

@@ -1,3 +1,6 @@
+"""
+Monkey patch of django-friendship's FriendshipManager for Speedy Core, which caches the friends, incoming requests and sent requests lists (with limits on the cached list sizes).
+"""
 def patch():
     """
     Monkey patch friendship's FriendshipManager to cache friends, incoming requests, and sent requests lists, capping cache usage by list size.

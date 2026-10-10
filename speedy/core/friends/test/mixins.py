@@ -1,3 +1,6 @@
+"""
+Mixins for the tests of the friends app of Speedy Core, for tests which run in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

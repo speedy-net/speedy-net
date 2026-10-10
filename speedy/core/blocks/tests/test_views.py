@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the blocks app of Speedy Core: the list of blocked users and blocking and unblocking users.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

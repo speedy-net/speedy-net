@@ -1,3 +1,6 @@
+"""
+Test mixin for the Speedy Net accounts app, providing translated texts per language and gender.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

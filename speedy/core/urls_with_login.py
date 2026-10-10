@@ -1,3 +1,6 @@
+"""
+URL configuration of Speedy Core for sites with login, extending the base Speedy Core URLs with the privacy, terms and contact by form apps.
+"""
 from django.urls import path, include
 
 from speedy.core.urls import app_name, urlpatterns

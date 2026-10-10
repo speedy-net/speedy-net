@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Core accounts app: registration, login, logout, editing the profile, site profile activation, user email addresses and password reset.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

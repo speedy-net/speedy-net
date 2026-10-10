@@ -1,3 +1,6 @@
+"""
+Middleware of Speedy Core: locale by domain, session cookie domain and removal of extra slashes from URLs, and helpers for redirecting to the www domain.
+"""
 import re
 
 from django.conf import settings as django_settings

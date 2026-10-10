@@ -1,3 +1,6 @@
+"""
+Model managers of the Speedy Core uploads app for the file and image models.
+"""
 from speedy.core.base.managers import BaseManager
 
 

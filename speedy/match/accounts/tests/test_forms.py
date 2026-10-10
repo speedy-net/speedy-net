@@ -1,3 +1,6 @@
+"""
+Test cases for the forms of the Speedy Match accounts app (the profile notifications form).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

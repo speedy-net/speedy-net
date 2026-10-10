@@ -1,3 +1,6 @@
+"""
+Models for the likes of Speedy Match. Defines the UserLike model and the signal receivers which send an email on a new like and update the likes counters of users.
+"""
 from django.conf import settings as django_settings
 from django.db import models
 from django.dispatch import receiver

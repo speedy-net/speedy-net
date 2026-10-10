@@ -1,3 +1,6 @@
+"""
+Template tags of the Speedy Core accounts app, containing the profile picture inclusion tag.
+"""
 import copy
 
 from django import template

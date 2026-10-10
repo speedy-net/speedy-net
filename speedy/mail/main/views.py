@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Mail Software main app (the main page).
+"""
 from speedy.core.base.views import StaticMainPageBaseView
 
 

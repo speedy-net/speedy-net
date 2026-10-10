@@ -1,4 +1,7 @@
 # -*- encoding: utf-8 -*-
+"""
+Django date and time format settings for the Swedish language (sv) in Speedy Core.
+"""
 
 # Django date format strings for the language 'sv': DATE_FORMAT (full date) is "j F Y" and MONTH_DAY_FORMAT (month and day, without the year) is "j F".
 DATE_FORMAT = "j F Y"

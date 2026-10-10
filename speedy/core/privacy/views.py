@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core privacy policy app (the privacy policy page).
+"""
 from speedy.core.base.views import StaticPrivacyPolicyBaseView
 
 

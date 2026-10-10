@@ -1,3 +1,6 @@
+"""
+Permission rules for the likes of Speedy Match - who can like, unlike and view likes of users.
+"""
 from rules import predicate, add_perm, is_authenticated
 
 from speedy.core.accounts.base_rules import is_self

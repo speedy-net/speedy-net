@@ -1,3 +1,6 @@
+"""
+Model and form fields of the Speedy Core uploads app: the file input widget and the photo field (a foreign key to an image).
+"""
 from typing import TYPE_CHECKING
 
 from django import forms

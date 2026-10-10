@@ -1,3 +1,6 @@
+"""
+Views for the contact by form app of Speedy Core: the feedback form view and the feedback success page.
+"""
 from django.conf import settings as django_settings
 from django.urls import reverse_lazy
 from django.http import Http404

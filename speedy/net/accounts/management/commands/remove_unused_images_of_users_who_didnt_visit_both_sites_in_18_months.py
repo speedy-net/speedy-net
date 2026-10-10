@@ -1,3 +1,6 @@
+"""
+Management command to remove unused images of users who didn't visit both Speedy Net and Speedy Match in the last 18 months.
+"""
 import logging
 import os
 from datetime import timedelta

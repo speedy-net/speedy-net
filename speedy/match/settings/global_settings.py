@@ -1,3 +1,6 @@
+"""
+Global settings of the Speedy Match site profile, such as the height and age limits and the activation form steps.
+"""
 # Used also by Speedy Net.
 
 class SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):

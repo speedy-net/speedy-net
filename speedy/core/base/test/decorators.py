@@ -1,3 +1,6 @@
+"""
+Decorators for Speedy Core tests, which skip a test conditionally or run it only on specific sites.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

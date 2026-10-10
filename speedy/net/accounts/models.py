@@ -1,3 +1,6 @@
+"""
+Models for the Speedy Net accounts app. Defines the Speedy Net SiteProfile model.
+"""
 import logging
 
 from django.db import models

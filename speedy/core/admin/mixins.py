@@ -1,3 +1,6 @@
+"""
+Mixins of the Speedy Core admin app, which restrict views to admin users.
+"""
 from rules.contrib.views import LoginRequiredMixin
 
 

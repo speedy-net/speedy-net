@@ -1,3 +1,6 @@
+"""
+Models for the friends app of Speedy Core: friendships and friendship requests, and signal receivers which update the friends counts and invalidate cached friendship request counts.
+"""
 from django.db import models
 from django.dispatch import receiver
 from friendship.models import Friend, FriendshipRequest

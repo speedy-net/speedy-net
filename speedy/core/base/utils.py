@@ -1,3 +1,6 @@
+"""
+Utility functions of Speedy Core, such as generating UDIDs, normalizing usernames and slugs, calculating ages and handling images.
+"""
 import logging
 import operator
 import re

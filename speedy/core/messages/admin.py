@@ -1,3 +1,6 @@
+"""
+Django admin configuration for the messages app of Speedy Core, which registers read-only admins for the Chat and Message models.
+"""
 from speedy.core import admin
 from speedy.core.base.admin import ReadOnlyModelAdmin, ReadOnlyModelAdmin2000, ReadOnlyTabularInlinePaginatedModelAdmin
 from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile

@@ -1,3 +1,6 @@
+"""
+Custom `test` management command of Speedy Core, which extends Django's test command.
+"""
 from django.core.management.commands import test
 
 

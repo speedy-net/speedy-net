@@ -1,3 +1,6 @@
+"""
+Views for the contact by email app of Speedy Core, which define the Contact Us page.
+"""
 from speedy.core.base.views import StaticContactUsBaseView
 
 

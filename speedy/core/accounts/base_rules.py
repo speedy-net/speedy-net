@@ -1,3 +1,6 @@
+"""
+Base permission rule predicates of Speedy Core, checking whether two users are the same user and whether the other user's profile is active.
+"""
 from rules import predicate
 
 

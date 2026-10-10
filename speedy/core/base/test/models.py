@@ -1,3 +1,6 @@
+"""
+Test infrastructure of Speedy Core: the site-aware test runners (SiteDiscoverRunner and SpeedyCoreDiscoverRunner) and the SiteTestCase base class.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

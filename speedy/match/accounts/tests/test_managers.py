@@ -1,3 +1,6 @@
+"""
+Test cases for the managers of the Speedy Match accounts app (blocks and matches).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

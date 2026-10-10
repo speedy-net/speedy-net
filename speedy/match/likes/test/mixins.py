@@ -1,3 +1,6 @@
+"""
+Test mixin for the likes of Speedy Match, providing translated page titles per language and gender.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

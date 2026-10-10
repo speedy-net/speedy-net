@@ -1,3 +1,6 @@
+"""
+Utilities for the Speedy Core tests environment settings: the tests media root, the logging configuration and the function which updates a settings dict for tests.
+"""
 from .utils import ROOT_DIR
 
 # Directory where media files are stored while running tests.

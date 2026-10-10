@@ -1,3 +1,6 @@
+"""
+Template tags and filters for the admin pages of Speedy Core, which render site profile attributes, activation steps and numbers of matches as HTML.
+"""
 from django.conf import settings as django_settings
 from django import template
 

@@ -1,3 +1,6 @@
+"""
+Management command which logs the total number of active members as text.
+"""
 import logging
 
 from django.conf import settings as django_settings

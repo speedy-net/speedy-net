@@ -1,3 +1,6 @@
+"""
+Permission rules for the friends app of Speedy Core, which define predicates such as friendship_request_sent, friendship_request_received, are_friends and view_friend_list.
+"""
 from friendship.models import Friend, FriendshipRequest
 from rules import predicate, add_perm, is_authenticated
 from django.conf import settings as django_settings

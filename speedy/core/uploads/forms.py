@@ -1,3 +1,6 @@
+"""
+Forms of the Speedy Core uploads app (the file upload form and the image upload form).
+"""
 from speedy.core.base.forms import ModelFormWithDefaults
 from .models import File, Image
 

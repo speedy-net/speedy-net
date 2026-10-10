@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Core uploads app (File and Image).
+"""
 import os
 
 from django.db import models

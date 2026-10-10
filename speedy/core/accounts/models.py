@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Core accounts app: entities, reserved usernames, users, user email addresses and the base site profile, and mixins used by them.
+"""
 import logging
 import warnings
 import random

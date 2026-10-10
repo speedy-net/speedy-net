@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Match accounts app: registration, the index page, the site profile activation wizard and editing the profile notifications.
+"""
 import logging
 
 from django.contrib import messages

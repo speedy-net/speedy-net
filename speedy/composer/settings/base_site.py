@@ -1,3 +1,6 @@
+"""
+Django settings specific to Speedy Composer, shared by all the Speedy Composer environments.
+"""
 from django.utils.translation import gettext_lazy as _
 from speedy.core.settings.base_without_login import *
 from speedy.core.settings.utils import update_site_paths

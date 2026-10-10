@@ -1,3 +1,6 @@
+"""
+Test cases for the Contact Us view of the contact by email app of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

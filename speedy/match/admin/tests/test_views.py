@@ -1,3 +1,6 @@
+"""
+Test cases for the admin matches list views of Speedy Match, in all main languages and in any language.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

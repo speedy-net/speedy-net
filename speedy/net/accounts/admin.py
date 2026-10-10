@@ -1,3 +1,6 @@
+"""
+Admin configuration for the accounts app of Speedy Net. Registers the Speedy Net site profile admin.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.LOGIN_ENABLED):

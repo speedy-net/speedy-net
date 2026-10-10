@@ -1,3 +1,6 @@
+"""
+Test cases for the permission rules of the Speedy Core accounts app.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

@@ -1,3 +1,6 @@
+"""
+Test mixins of the Speedy Match accounts app for the models and the language specific assertions.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

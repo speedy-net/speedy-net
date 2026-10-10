@@ -1,3 +1,6 @@
+"""
+Manager for the UserLike model of Speedy Match, with methods to like and unlike users and to query likes between users.
+"""
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 

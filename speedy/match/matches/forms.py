@@ -1,3 +1,6 @@
+"""
+Forms for the Speedy Match matches app - the mini matching settings form, and the full match settings and about me forms.
+"""
 from crispy_forms.layout import Div, Row, HTML, Field
 
 from django.utils.translation import pgettext_lazy

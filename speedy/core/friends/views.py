@@ -1,3 +1,6 @@
+"""
+Views for the friends app of Speedy Core: friend lists, sent and received friendship requests, and sending, cancelling, accepting, rejecting and removing friendships.
+"""
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.urls import reverse

@@ -1,3 +1,6 @@
+"""
+Management command to convert existing file names in the database to the new file name format.
+"""
 import logging
 import os
 

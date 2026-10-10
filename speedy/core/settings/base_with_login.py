@@ -1,3 +1,6 @@
+"""
+Django settings for sites with login (Speedy Net and Speedy Match), extending the Speedy Core base settings with login URLs, profile widgets, redirect rules and the available languages.
+"""
 from django.utils.translation import gettext_lazy as _
 
 from .base import *

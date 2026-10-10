@@ -1,3 +1,6 @@
+"""
+Django settings shared by all the Speedy Core sites without login, which also define the Speedy Core specific site ID and test runner.
+"""
 from .base_without_login import *
 from .utils import update_site_paths
 from speedy.match.settings.global_settings import *  # ~~~~ TODO: Maybe we don't need this here? (added because the migrations fail).

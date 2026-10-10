@@ -1,3 +1,6 @@
+"""
+Logging utilities of Speedy Core, including an admin email handler which limits how often emails with the same subject are sent to the admins.
+"""
 import time
 
 from pymemcache.client.murmur3 import murmur3_32

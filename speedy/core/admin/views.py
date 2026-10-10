@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core admin app: the admin main page, users list, users with details list and user detail views.
+"""
 from datetime import timedelta, datetime, timezone, date
 
 from django.conf import settings as django_settings

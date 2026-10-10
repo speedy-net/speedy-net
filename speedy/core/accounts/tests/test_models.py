@@ -1,3 +1,6 @@
+"""
+Test cases for the models of the Speedy Core accounts app: entities, reserved usernames, users and user email addresses.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

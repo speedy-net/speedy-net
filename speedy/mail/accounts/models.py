@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Mail Software accounts app (the Speedy Mail Software SiteProfile model).
+"""
 from django.db import models
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _

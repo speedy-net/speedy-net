@@ -1,3 +1,6 @@
+"""
+Model managers of the Speedy Core accounts app for entities and users.
+"""
 import logging
 
 from django.db.models import Q

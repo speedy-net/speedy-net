@@ -1,3 +1,6 @@
+"""
+Context processors of Speedy Core, which add information about the request, settings, sites, domains and ads to the template context.
+"""
 from datetime import date
 
 from django.utils.translation import get_language, gettext_lazy as _

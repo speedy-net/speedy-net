@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Composer main app, containing the main page view.
+"""
 from speedy.core.base.views import StaticMainPageBaseView
 
 

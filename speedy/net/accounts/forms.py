@@ -1,3 +1,6 @@
+"""
+Forms for the Speedy Net accounts app. Defines the form to delete an account.
+"""
 import logging
 
 from crispy_forms.layout import Submit

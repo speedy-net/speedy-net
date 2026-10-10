@@ -1,3 +1,6 @@
+"""
+Permission rules for the messages app of Speedy Core, which define predicates such as is_participant, can_send_new_message and can_send_message.
+"""
 import logging
 from datetime import timedelta
 

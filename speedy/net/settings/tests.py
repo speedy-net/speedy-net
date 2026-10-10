@@ -1,3 +1,6 @@
+"""
+Django settings of the Speedy Net site for running tests.
+"""
 from .base_site import *
 from speedy.core.settings.tests_utils import activate_tests
 

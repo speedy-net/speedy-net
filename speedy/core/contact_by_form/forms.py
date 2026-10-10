@@ -1,3 +1,6 @@
+"""
+Forms for the contact by form app of Speedy Core, which define the feedback form.
+"""
 from crispy_forms.layout import Submit, Div, Row, MultiWidgetField
 
 from django import forms

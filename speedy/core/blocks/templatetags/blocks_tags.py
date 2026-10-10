@@ -1,3 +1,6 @@
+"""
+Template tags for the blocks app of Speedy Core, including has_blocked.
+"""
 from django import template
 
 from speedy.core.blocks.models import Block

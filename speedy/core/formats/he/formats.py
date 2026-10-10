@@ -1,4 +1,7 @@
 # -*- encoding: utf-8 -*-
+"""
+Django date and time format settings for the Hebrew language (he) in Speedy Core.
+"""
 
 # Django date format strings for the language 'he': DATE_FORMAT (full date) is "j בF Y" and MONTH_DAY_FORMAT (month and day, without the year) is "j בF".
 DATE_FORMAT = "j בF Y"

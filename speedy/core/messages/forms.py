@@ -1,3 +1,6 @@
+"""
+Forms for the messages app of Speedy Core, which define the message form.
+"""
 from crispy_forms.bootstrap import InlineField
 from crispy_forms.layout import Layout, Submit
 

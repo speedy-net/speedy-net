@@ -1,3 +1,6 @@
+"""
+Test cases for the like, unlike and like list views of Speedy Match, in all main languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

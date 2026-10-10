@@ -1,3 +1,6 @@
+"""
+Admin configuration for the Speedy Match accounts app (the site profile admin).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.LOGIN_ENABLED):

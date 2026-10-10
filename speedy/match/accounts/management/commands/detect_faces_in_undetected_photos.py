@@ -1,3 +1,6 @@
+"""
+Management command of Speedy Match which detects faces in profile photos which were not yet checked for faces.
+"""
 import logging
 import boto3
 from datetime import timedelta

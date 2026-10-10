@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core uploads app (the view which uploads an image).
+"""
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator

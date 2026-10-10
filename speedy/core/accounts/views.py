@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core accounts app: login, logout, password reset, registration, editing the profile, site profile activation, and managing user email addresses.
+"""
 import logging
 from importlib import import_module
 from urllib.parse import urlparse

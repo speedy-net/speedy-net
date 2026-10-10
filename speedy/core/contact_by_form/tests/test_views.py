@@ -1,3 +1,6 @@
+"""
+Test cases for the feedback views of the contact by form app of Speedy Core, in all main languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

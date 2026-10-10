@@ -1,3 +1,6 @@
+"""
+Utility functions for the Speedy Net accounts app, such as the text with the total number of active members.
+"""
 from datetime import timedelta
 
 from django.utils import formats

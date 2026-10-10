@@ -1,3 +1,6 @@
+"""
+Management command to fetch information about the IP addresses of users from the ipapi service.
+"""
 import logging
 import json
 import urllib.request

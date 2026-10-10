@@ -1,3 +1,6 @@
+"""
+Admin views of Speedy Match (the lists of matches).
+"""
 from datetime import timedelta, datetime, timezone, date
 
 from django.utils import formats

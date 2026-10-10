@@ -1,4 +1,7 @@
 # -*- encoding: utf-8 -*-
+"""
+Django date and time format settings for the Spanish language (es) in Speedy Core.
+"""
 
 # Django date format strings for the language 'es': DATE_FORMAT (full date) is r"j \d\e F \d\e Y" and MONTH_DAY_FORMAT (month and day, without the year) is r"j \d\e F".
 DATE_FORMAT = r"j \d\e F \d\e Y"

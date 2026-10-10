@@ -1,3 +1,6 @@
+"""
+Forms of the Speedy Match accounts app: the profile and activation forms (including the custom checkbox widget) and the notifications form.
+"""
 import logging
 import json
 

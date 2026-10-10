@@ -1,3 +1,6 @@
+"""
+Test cases for the matches list view and the edit match settings and about me views of Speedy Match.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

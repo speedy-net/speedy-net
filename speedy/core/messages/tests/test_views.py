@@ -1,3 +1,6 @@
+"""
+Test cases for the chat and message sending views of Speedy Core (chat list, chat detail, polling messages and sending messages to a chat or to a user).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

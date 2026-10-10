@@ -1,3 +1,6 @@
+"""
+Test mixins of the Speedy Core accounts app, with model helper methods and language specific translations used by the accounts tests.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

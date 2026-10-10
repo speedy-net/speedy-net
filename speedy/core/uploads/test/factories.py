@@ -1,3 +1,6 @@
+"""
+Test factories of the Speedy Core uploads app for creating files and user images.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

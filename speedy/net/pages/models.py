@@ -1,3 +1,6 @@
+"""
+Models for the Speedy Net pages app. Defines the Page named entity.
+"""
 from speedy.core.accounts.models import NamedEntity
 
 

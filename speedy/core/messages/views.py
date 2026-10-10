@@ -1,3 +1,6 @@
+"""
+Views for the messages app of Speedy Core: chat list, chat details, polling messages, sending messages and marking chats as read.
+"""
 from datetime import datetime, timezone
 
 from django.core.exceptions import PermissionDenied

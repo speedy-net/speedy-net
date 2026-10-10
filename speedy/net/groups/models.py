@@ -1,3 +1,6 @@
+"""
+Models for the Speedy Net groups app. Defines the Group named entity.
+"""
 from speedy.core.accounts.models import NamedEntity
 
 

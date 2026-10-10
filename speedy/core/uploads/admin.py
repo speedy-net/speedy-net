@@ -1,3 +1,6 @@
+"""
+Admin configuration for the Speedy Core uploads app (read-only admin classes for files and images).
+"""
 from speedy.core import admin
 from speedy.core.base.admin import ReadOnlyModelAdmin15000
 from .models import File, Image

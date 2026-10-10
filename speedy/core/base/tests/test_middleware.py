@@ -1,3 +1,6 @@
+"""
+Test cases for the middleware of Speedy Core which removes extra slashes from URLs.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

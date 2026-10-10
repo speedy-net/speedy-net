@@ -1,3 +1,6 @@
+"""
+Test cases for the models of the friends app of Speedy Core: friendships, friendship requests, blocks and friends counters.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

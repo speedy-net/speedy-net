@@ -1,3 +1,6 @@
+"""
+Template tags and filters for the messages app of Speedy Core, such as get_other_participant, read marks annotations, get_chat_slug and unread_chats_count.
+"""
 from django import template
 
 from speedy.core.messages.models import ReadMark, Chat

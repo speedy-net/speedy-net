@@ -1,3 +1,6 @@
+"""
+Models for the messages app of Speedy Core: Chat, Message and ReadMark, and signal receivers which invalidate unread chats counts and email users about new messages.
+"""
 from django.contrib.sites.models import Site
 from django.db import models
 from django.dispatch import receiver

@@ -1,3 +1,6 @@
+"""
+Test cases for the language names of Speedy Core in English and in all the other languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

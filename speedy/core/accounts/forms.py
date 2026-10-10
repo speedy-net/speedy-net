@@ -1,3 +1,6 @@
+"""
+Forms of the Speedy Core accounts app: registration, profile, notifications, login, password reset and set password forms, and other account related forms and form mixins.
+"""
 import logging
 
 from crispy_forms.bootstrap import InlineField

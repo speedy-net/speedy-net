@@ -1,3 +1,6 @@
+"""
+Template tags and filters of the Speedy Match accounts app (the filter which returns the description of a match rank).
+"""
 from django import template
 
 from speedy.match.accounts.models import SiteProfile as SpeedyMatchSiteProfile

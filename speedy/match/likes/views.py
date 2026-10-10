@@ -1,3 +1,6 @@
+"""
+Views for the likes of Speedy Match - the lists of likes to, from and mutual likes of a user, and the like and unlike views.
+"""
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.views import generic

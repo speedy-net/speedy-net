@@ -1,3 +1,6 @@
+"""
+Permission rules for the blocks app of Speedy Core, which define predicates such as has_blocked, is_blocked and there_is_block.
+"""
 from rules import predicate, add_perm, is_authenticated
 
 from speedy.core.accounts.base_rules import is_self

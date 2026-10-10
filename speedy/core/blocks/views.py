@@ -1,3 +1,6 @@
+"""
+Views for the blocks app of Speedy Core, which block and unblock users.
+"""
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _

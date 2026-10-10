@@ -1,3 +1,6 @@
+"""
+Managers for the friends app of Speedy Core: FriendManager and FriendshipRequestManager.
+"""
 from django.conf import settings as django_settings
 from friendship.models import Friend, FriendshipRequest, cache as friendship_cache, cache_key as friendship_cache_key
 

@@ -1,3 +1,6 @@
+"""
+Helper functions of Speedy Core for generating cache keys and busting the cached values of the accounts app.
+"""
 from django.conf import settings as django_settings
 
 from speedy.core.base import cache_manager

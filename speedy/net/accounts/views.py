@@ -1,3 +1,6 @@
+"""
+Views for the Speedy Net accounts app - registration, index, site profile activation and delete account views.
+"""
 import logging
 
 from django.conf import settings as django_settings

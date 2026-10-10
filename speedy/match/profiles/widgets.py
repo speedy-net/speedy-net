@@ -1,3 +1,6 @@
+"""
+Profile widgets of Speedy Match - the user rank widget, the Speedy Match profile widget and the extra details widget.
+"""
 import logging
 
 from django.utils.translation import gettext_lazy as _

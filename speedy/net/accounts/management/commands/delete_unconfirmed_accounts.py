@@ -1,3 +1,6 @@
+"""
+Management command to delete unconfirmed email addresses and the unconfirmed user accounts of Speedy Net.
+"""
 import logging
 from datetime import timedelta
 

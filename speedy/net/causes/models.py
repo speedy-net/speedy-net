@@ -1,3 +1,6 @@
+"""
+Models for the Speedy Net causes app. Defines the Cause named entity.
+"""
 from speedy.core.accounts.models import NamedEntity
 
 

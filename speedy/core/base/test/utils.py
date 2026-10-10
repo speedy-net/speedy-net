@@ -1,3 +1,6 @@
+"""
+Utility functions for Speedy Core tests, such as generating random user passwords and creating Django settings classes with overridden settings.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

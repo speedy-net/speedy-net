@@ -1,3 +1,6 @@
+"""
+Test cases for the friends list view rules of Speedy Net.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

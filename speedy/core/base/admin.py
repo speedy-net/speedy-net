@@ -1,3 +1,6 @@
+"""
+Base Django admin classes of Speedy Core, including read-only model admins and inline admins with different pagination sizes.
+"""
 from django.contrib import admin as django_admin
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group

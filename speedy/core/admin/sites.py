@@ -1,3 +1,6 @@
+"""
+The default Django admin site of Speedy Core, used by sites which don't define their own admin site.
+"""
 from django.contrib import admin as django_admin
 from django.urls import path
 

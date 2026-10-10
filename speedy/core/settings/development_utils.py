@@ -1,3 +1,6 @@
+"""
+Utilities for the Speedy Core development environment settings: the logging configuration and the function which updates a settings dict for development.
+"""
 # Logging configuration for the development environment: verbose console logging at DEBUG level.
 LOGGING = {
     'version': 1,

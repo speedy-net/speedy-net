@@ -1,3 +1,6 @@
+"""
+Profile widgets of Speedy Net. Defines the widget showing the Speedy Net profile of a user.
+"""
 import logging
 
 from speedy.core.profiles.widgets import Widget

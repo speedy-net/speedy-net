@@ -1,3 +1,6 @@
+"""
+Email utilities of Speedy Core for rendering mail templates and sending mail to users and managers.
+"""
 import logging
 from collections import namedtuple
 

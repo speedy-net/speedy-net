@@ -1,3 +1,6 @@
+"""
+Managers of the Speedy Match accounts app: the SiteProfile manager which calculates the matches of a user and a signal handler which invalidates matches after a user update.
+"""
 import logging
 import hashlib
 import random

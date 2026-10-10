@@ -1,3 +1,6 @@
+"""
+Cache manager of Speedy Core, with wrappers around the Django cache that support sliding timeouts and disabling the cache.
+"""
 import time
 
 from django.conf import settings as django_settings

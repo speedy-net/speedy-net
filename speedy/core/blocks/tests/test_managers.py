@@ -1,3 +1,6 @@
+"""
+Test cases for the managers of the blocks app of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

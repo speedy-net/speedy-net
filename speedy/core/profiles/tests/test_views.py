@@ -1,3 +1,6 @@
+"""
+Test cases for the views of the Speedy Core profiles app (the UserMixin, the redirect to the current user's profile and the user detail view).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

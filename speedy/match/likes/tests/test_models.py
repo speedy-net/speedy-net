@@ -1,3 +1,6 @@
+"""
+Test cases for the UserLike model of Speedy Match - blocks, genders and like notification emails in all main languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

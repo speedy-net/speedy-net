@@ -1,3 +1,6 @@
+"""
+Views of the Speedy Core profiles app: the mixins used to look up a user by slug, the redirect to the current user's profile and the user profile detail view.
+"""
 from django.conf import settings as django_settings
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q

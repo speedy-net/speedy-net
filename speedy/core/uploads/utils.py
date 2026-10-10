@@ -1,3 +1,6 @@
+"""
+Utilities of the Speedy Core uploads app (the function which builds the upload path of a file).
+"""
 import hashlib
 import os
 

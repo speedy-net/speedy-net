@@ -1,3 +1,6 @@
+"""
+Test cases which check the PostgreSQL database configuration of Speedy Core.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

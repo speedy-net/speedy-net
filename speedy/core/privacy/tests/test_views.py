@@ -1,3 +1,6 @@
+"""
+Test cases for the privacy policy view of Speedy Core in all the supported languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

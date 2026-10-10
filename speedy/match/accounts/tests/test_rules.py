@@ -1,3 +1,6 @@
+"""
+Test cases for the permission rules of the Speedy Match accounts app (viewing profiles).
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

@@ -1,3 +1,6 @@
+"""
+Middleware of the Speedy Core accounts app, which applies site profile related redirects, last visit updates and user deactivation checks to each request.
+"""
 import logging
 
 from django.conf import settings as django_settings

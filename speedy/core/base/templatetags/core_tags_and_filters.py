@@ -1,3 +1,6 @@
+"""
+Template tags and filters of Speedy Core, such as active_class, set_request_params, pagination and filters which convert domain names between the www, en and he sites.
+"""
 import json
 
 from django import template

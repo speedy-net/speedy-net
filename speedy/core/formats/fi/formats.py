@@ -1,4 +1,7 @@
 # -*- encoding: utf-8 -*-
+"""
+Django date and time format settings for the Finnish language (fi) in Speedy Core.
+"""
 
 # Django date format strings for the language 'fi': DATE_FORMAT (full date) is "j. E Y" and MONTH_DAY_FORMAT (month and day, without the year) is "j. F".
 DATE_FORMAT = "j. E Y"

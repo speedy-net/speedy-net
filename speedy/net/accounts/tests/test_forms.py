@@ -1,3 +1,6 @@
+"""
+Test cases for the forms of the Speedy Net accounts app - profile notifications and delete account forms, in all languages.
+"""
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):

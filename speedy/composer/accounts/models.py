@@ -1,3 +1,6 @@
+"""
+Models of the Speedy Composer accounts app: the base node model of Speedy Composer and the Speedy Composer site profile.
+"""
 from django.db import models
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _

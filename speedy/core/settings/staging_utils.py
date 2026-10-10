@@ -1,3 +1,6 @@
+"""
+Utilities for the Speedy Core staging environment settings: the function which updates a settings dict for staging.
+"""
 def activate_staging(settings):
     """
     Update the given settings dict in place for the staging environment (from/server email addresses, admins/managers, DEBUG enabled).

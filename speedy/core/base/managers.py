@@ -1,3 +1,6 @@
+"""
+Base model managers and querysets of Speedy Core.
+"""
 from django.contrib.auth import models as django_auth_models
 from django.db import models
 
