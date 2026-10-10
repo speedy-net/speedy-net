@@ -32,9 +32,8 @@ class Command(BaseCommand):
         in the last 18 months, logs the removal process, deletes the image files from the filesystem,
         and removes the image records from the database.
 
-        Args:
-            *args: Variable length argument list.
-            **options: Arbitrary keyword arguments.
+        :param args: Additional positional arguments.
+        :param options: Additional keyword arguments.
         """
         images = Image.objects.filter(
             **{

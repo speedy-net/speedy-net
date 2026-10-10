@@ -4,6 +4,9 @@ from .models import UserLike
 
 
 class UserLikeAdmin(ReadOnlyModelAdmin):
+    """
+    Read-only admin configuration for the UserLike model.
+    """
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 

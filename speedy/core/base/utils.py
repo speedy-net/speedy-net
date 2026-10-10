@@ -359,11 +359,31 @@ def update_form_field_choices(field, choices):
 
 
 def get_both_genders_context_from_genders(user_gender, other_user_gender):
+    """
+    Builds a combined genders context string from two gender values, used to select gender-aware translations.
+
+    :param user_gender: The gender of the user.
+    :type user_gender: str
+    :param other_user_gender: The gender of the other user.
+    :type other_user_gender: str
+    :return: A string combining both genders, separated by an underscore.
+    :rtype: str
+    """
     both_genders_context = "{}_{}".format(user_gender, other_user_gender)
     return both_genders_context
 
 
 def get_both_genders_context_from_users(user, other_user):
+    """
+    Builds a combined genders context string from two users, used to select gender-aware translations.
+
+    :param user: The user.
+    :type user: speedy.core.accounts.models.User
+    :param other_user: The other user.
+    :type other_user: speedy.core.accounts.models.User
+    :return: A string combining both users' genders, separated by an underscore.
+    :rtype: str
+    """
     return get_both_genders_context_from_genders(user_gender=user.get_gender(), other_user_gender=other_user.get_gender())
 
 

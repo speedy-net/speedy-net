@@ -3,6 +3,9 @@ from django.apps import AppConfig
 
 
 class SpeedyNetAccountsAppConfig(AppConfig):
+    """
+    App configuration for the Speedy Net accounts app.
+    """
     default = True
     name = 'speedy.net.accounts'
     verbose_name = _("Speedy Net Accounts")

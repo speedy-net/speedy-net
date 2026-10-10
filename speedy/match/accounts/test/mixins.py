@@ -6,7 +6,21 @@ if (django_settings.TESTS):
 
 
     class SpeedyMatchAccountsModelsMixin(TestCaseMixin):
+        """
+        Mixin providing assertions for the Speedy Match profile activation step and validation error messages.
+
+        Methods:
+            assert_step_and_error_messages_ok(self, step, error_messages): Asserts the activation step reached the final step with no error messages.
+        """
         def assert_step_and_error_messages_ok(self, step, error_messages):
+            """
+            Asserts that the activation step reached the final step (10) with no error messages.
+
+            :param step: The activation step reached.
+            :type step: int
+            :param error_messages: The list of validation error messages.
+            :type error_messages: list
+            """
             self.assertEqual(first=step, second=len(SpeedyMatchSiteProfile.settings.SPEEDY_MATCH_SITE_PROFILE_FORM_FIELDS))
             self.assertEqual(first=step, second=10)
             self.assertEqual(first=len(error_messages), second=0)
@@ -14,13 +28,43 @@ if (django_settings.TESTS):
 
 
     class SpeedyMatchAccountsLanguageMixin(TestCaseMixin):
+        """
+        Mixin providing per-language Speedy Match validation error message texts for tests, localized according to self.language_code.
+
+        Methods:
+            _item_in_the_array_did_not_validate_error_message_by_index(self, index): Returns the formatted "item did not validate" message for a given array index.
+            _item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(self, field_name, index, value): Builds an errors dict for an invalid choice value at a given array index.
+            set_up(self): Sets up all the localized error message attributes used by the test cases.
+        """
         def _item_in_the_array_did_not_validate_error_message_by_index(self, index):
+            """
+            Returns the formatted "item did not validate" message for a given array index.
+
+            :param index: The index of the item in the array.
+            :type index: int
+            :return: The formatted error message.
+            :rtype: str
+            """
             return self._item_in_the_array_did_not_validate_error_message_to_format.format(index=index)
 
         def _item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(self, field_name, index, value):
+            """
+            Builds an errors dict for a field whose array value at a given index is not a valid choice.
+
+            :param field_name: The name of the field.
+            :type field_name: str
+            :param index: The index of the invalid item in the array.
+            :type index: int
+            :param value: The invalid value.
+            :return: A dict mapping the field name to the list of error messages.
+            :rtype: dict
+            """
             return {field_name: ["{}{}".format(self._item_in_the_array_did_not_validate_error_message_by_index(index=index), self._value_is_not_a_valid_choice_error_message_by_value(value=value))]}
 
         def set_up(self):
+            """
+            Sets up the localized Speedy Match validation error message attributes, based on self.language_code, for use by test assertions.
+            """
             super().set_up()
 
             _a_profile_picture_is_required_error_message_dict = {'en': 'A profile picture is required.', 'fr': 'Une photo de profil est requise.', 'de': 'Ein Profilbild ist erforderlich.', 'es': 'Se requiere una foto de perfil.', 'pt': 'A foto do perfil é obrigatória.', 'it': 'È un’immagine del profilo.', 'nl': 'Een profielfoto is verplicht.', 'ja': 'プロフィール写真は必須です。', 'ru': 'Требуется изображение профиля.', 'zh': '需提供個人資料照片。', 'pl': 'Wymagane jest zdjęcie profilowe.', 'fa': 'عکس پروفایل الزامی است', 'he': 'נדרשת תמונת פרופיל.', 'ko': '프로필 사진이 필요합니다.', 'ar': 'مطلوب صورة الملف الشخصي.', 'id': 'Diperlukan gambar profil.', 'uk': 'Потрібне зображення профілю.', 'tr': 'Profil resmi gereklidir.', 'vi': 'Một hình ảnh hồ sơ là cần thiết.', 'cs': 'Je vyžadován profilový obrázek.', 'sv': 'En profilbild är obligatorisk.', 'fi': 'Profiilikuva vaaditaan.', 'hu': 'Profilkép szükséges.', 'th': 'จำเป็นต้องมีรูปโปรไฟล์', 'el': 'Απαιτείται φωτογραφία προφίλ.', 'ms': 'Gambar profil diperlukan.', 'sr': 'Слика профила је обавезна.', 'ro': 'Este necesară o poză de profil.', 'bn': 'একটি প্রোফাইল ছবি প্রয়োজন.', 'ca': 'Es requereix una foto de perfil.', 'no': 'Det kreves et profilbilde.', 'bg': 'Необходима е профилна снимка.', 'da': 'Et profilbillede er påkrævet.', 'sk': 'Vyžaduje sa profilový obrázok.', 'hi': 'एक प्रोफ़ाइल चित्र आवश्यक है.', 'et': 'Profiilipilt on nõutav.', 'hr': 'Potrebna je profilna slika.', 'az': 'Profil şəkli tələb olunur.', 'zh-yue': '必須上傳個人照片。', 'lt': 'Profilio nuotrauka yra privaloma.', 'sl': 'Profilna fotografija je obvezna.', 'eu': 'Profileko argazkia beharrezkoa da.', 'hy': 'Պրոֆիլի նկարը պարտադիր է.', 'uz': 'Profil rasmi majburiy.', 'ta': 'ஒரு சுயவிவரப் படம் தேவை.', 'lv': 'Profila fotoattēls ir obligāts.'}

@@ -3,6 +3,16 @@ import os
 
 
 def uuid_dir(instance, filename):
+    """
+    Build the upload path for a file instance, based on a SHA-384 hash of its id, to spread files across directories and obscure the original filename.
+
+    :param instance: The model instance the file is being uploaded for.
+    :type instance: speedy.core.uploads.models.File
+    :param filename: The original filename being uploaded.
+    :type filename: str
+    :return: The relative upload path for the file, including the hashed filename.
+    :rtype: str
+    """
     if (not (instance.id) and (hasattr(instance, 'generate_id_if_needed'))):
         instance.generate_id_if_needed()
 

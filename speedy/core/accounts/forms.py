@@ -30,7 +30,18 @@ logger = logging.getLogger(__name__)
 
 
 class CleanEmailMixin(object):
+    """
+    Mixin that normalizes and validates the uniqueness of a form's `email` field.
+    """
+
     def clean_email(self):
+        """
+        Normalize the submitted email address and validate that it is not already in use.
+
+        :return: The normalized email address.
+        :rtype: str
+        :raises django.core.exceptions.ValidationError: If the email address is already in use.
+        """
         email = self.cleaned_data['email']
         email = normalize_email(email=email)
         speedy_core_accounts_validators.validate_email_unique(email=email)
@@ -38,21 +49,65 @@ class CleanEmailMixin(object):
 
 
 class CleanNewPasswordMixin(object):
+    """
+    Mixin that validates a form's `new_password1` field using Django's password validators.
+    """
+
     def clean_new_password1(self):
+        """
+        Validate the submitted new password against Django's configured password validators.
+
+        :return: The new password.
+        :rtype: str
+        :raises django.core.exceptions.ValidationError: If the password fails validation.
+        """
         new_password = self.cleaned_data['new_password1']
         password_validation.validate_password(password=new_password)
         return new_password
 
 
 class CleanDateOfBirthMixin(object):
+    """
+    Mixin that validates a form's `date_of_birth` field.
+    """
+
     def clean_date_of_birth(self):
+        """
+        Validate the submitted date of birth.
+
+        :return: The date of birth.
+        :rtype: datetime.date
+        :raises django.core.exceptions.ValidationError: If the date of birth is invalid.
+        """
         date_of_birth = self.cleaned_data['date_of_birth']
         speedy_core_accounts_validators.validate_date_of_birth_in_forms(date_of_birth=date_of_birth)
         return date_of_birth
 
 
 class LocalizedFirstLastNameMixin(object):
+    """
+    Mixin that adds per-language first/last name fields to a form, and keeps them in sync with the form's `User` instance.
+
+    Attributes:
+        language_code (str): The language code used to determine which localized fields are required/labeled, taken from the `language_code` keyword argument.
+
+    Methods:
+        __init__(self, *args, **kwargs): Adds the localized name fields to the form, sets their initial values and ordering.
+        save(self, commit=True): Saves the localized name field values onto the form's instance.
+        get_localizable_fields(self): Returns the list of localizable field base names defined on the User model.
+        get_required_localizable_fields(self): Returns the list of required localizable field base names defined on the User model.
+        get_localized_field(self, base_field_name, language_code): Returns the attribute name of a localized field for a given base field name and language code.
+        get_localized_fields(self, language=None): Returns the localized field attribute names for a given language (or the form's language).
+        get_required_localized_fields(self, language=None): Returns the required localized field attribute names for a given language (or the form's language).
+    """
+
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, add the localized name fields, set their initial values and required status, and reorder the fields.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`. Must include `language_code`.
+        """
         assert ('language_code' in kwargs)
         self.language_code = kwargs.pop('language_code', 'en')
         super().__init__(*args, **kwargs)
@@ -68,6 +123,14 @@ class LocalizedFirstLastNameMixin(object):
         self.order_fields(field_order=localized_fields)
 
     def save(self, commit=True):
+        """
+        Save the localized name field values from cleaned data onto the form's instance.
+
+        :param commit: Whether to save the instance to the database. Defaults to True.
+        :type commit: bool
+        :return: The updated instance.
+        :rtype: speedy.core.accounts.models.User
+        """
         instance = super().save(commit=False)
         for loc_field in self.get_localized_fields():
             setattr(instance, loc_field, self.cleaned_data[loc_field])
@@ -77,29 +140,81 @@ class LocalizedFirstLastNameMixin(object):
 
     @staticmethod
     def get_localizable_fields():
+        """
+        Return the list of localizable field base names defined on the User model.
+
+        :return: The localizable field base names.
+        :rtype: tuple
+        """
         return User.NAME_LOCALIZABLE_FIELDS
 
     @staticmethod
     def get_required_localizable_fields():
+        """
+        Return the list of required localizable field base names defined on the User model.
+
+        :return: The required localizable field base names.
+        :rtype: tuple
+        """
         return User.NAME_REQUIRED_LOCALIZABLE_FIELDS
 
     def get_localized_field(self, base_field_name, language_code):
+        """
+        Return the attribute name of a localized field for a given base field name and language code.
+
+        :param base_field_name: The base field name (e.g. "first_name").
+        :type base_field_name: str
+        :param language_code: The language code to localize for, or None to use the form's language code.
+        :type language_code: str or None
+        :return: The localized field's attribute name.
+        :rtype: str
+        """
         return to_attribute(name=base_field_name, language_code=language_code or self.language_code)
 
     def get_localized_fields(self, language=None):
+        """
+        Return the localized field attribute names for all localizable fields, for a given language.
+
+        :param language: The language code to localize for, or None to use the form's language code.
+        :type language: str or None
+        :return: The localized field attribute names.
+        :rtype: list
+        """
         loc_fields = self.get_localizable_fields()
         return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
 
     def get_required_localized_fields(self, language=None):
+        """
+        Return the localized field attribute names for all required localizable fields, for a given language.
+
+        :param language: The language code to localize for, or None to use the form's language code.
+        :type language: str or None
+        :return: The required localized field attribute names.
+        :rtype: list
+        """
         loc_fields = self.get_required_localizable_fields()
         return [self.get_localized_field(base_field_name=loc_field, language_code=language or self.language_code) for loc_field in loc_fields]
 
 
 class AddAttributesToFieldsMixin(object):
+    """
+    Mixin that adds HTML widget attributes (such as disabling autocomplete/autocorrect) to a configured set of form fields, and forces left-to-right direction for some of them.
+
+    Attributes:
+        attribute_fields (list): Names of fields that should get the extra widget attributes.
+        ltr_attribute_fields (list): Names of fields (a subset of `attribute_fields`) that should also be forced to left-to-right direction.
+    """
+
     attribute_fields = ['slug', 'username', 'email', 'sender_email', 'new_password1', 'new_password2', 'old_password', 'password', 'date_of_birth']
     ltr_attribute_fields = ['slug', 'username', 'email', 'sender_email', 'new_password1', 'new_password2', 'old_password', 'password']
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form and add HTML widget attributes to the configured fields.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if (field_name in self.attribute_fields):
@@ -117,9 +232,28 @@ class AddAttributesToFieldsMixin(object):
 
 
 class CustomPhotoWidget(forms.widgets.Widget):
+    """
+    Custom widget that renders a user's profile picture using a dedicated template, instead of a standard file input.
+
+    Attributes:
+        needs_multipart_form (bool): Indicates that the widget requires a multipart form.
+    """
+
     needs_multipart_form = True
 
     def render(self, name, value, attrs=None, renderer=None):
+        """
+        Render the widget using the photo widget template, based on the user set in `self.attrs['user']`.
+
+        :param name: The name of the form field.
+        :type name: str
+        :param value: The value of the form field.
+        :param attrs: Optional additional widget attributes.
+        :type attrs: dict or None
+        :param renderer: Optional form renderer.
+        :return: The rendered HTML for the widget.
+        :rtype: str
+        """
         return render_to_string(template_name='accounts/edit_profile/widgets/photo_widget.html', context={
             'name': name,
             'user_photo': self.attrs['user'].photo,
@@ -127,6 +261,18 @@ class CustomPhotoWidget(forms.widgets.Widget):
 
 
 class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPasswordMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+    """
+    Form used to register a new user account, including email, username, password, gender, date of birth and localized name fields.
+
+    Attributes:
+        email (EmailField): The user's email address.
+        new_password1 (CharField): The user's chosen password.
+
+    Methods:
+        __init__(self, *args, **kwargs): Sets labels, date input formats, and the crispy forms helper.
+        save(self, commit=True): Creates the user, sets the password, saves localized names, and creates the primary email address.
+    """
+
     email = forms.EmailField(label=_('Your email'), required=True)
     new_password1 = forms.CharField(label=_("New password"), strip=False, widget=forms.PasswordInput, required=True)
 
@@ -135,6 +281,12 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         fields = ('email', 'slug', 'new_password1', 'gender', 'date_of_birth')
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, customize the username label, set the date of birth input formats, and configure the crispy forms helper.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = _('New username')
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
@@ -142,6 +294,14 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         self.helper.add_input(Submit('submit', _('Create an account'), css_class='btn-lg btn-arrow-right'))
 
     def save(self, commit=True):
+        """
+        Create the new user, set their password, save their localized names, and (if committed) create their primary email address and log the registration.
+
+        :param commit: Whether to save the user to the database. Defaults to True.
+        :type commit: bool
+        :return: The new user.
+        :rtype: speedy.core.accounts.models.User
+        """
         user = super().save(commit=False)
         user.set_password(raw_password=self.cleaned_data["new_password1"])
         for language_code, language_name in django_settings.LANGUAGES:
@@ -164,6 +324,20 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
 
 
 class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFirstLastNameMixin, forms.ModelForm):
+    """
+    Form used by a user to edit their own profile, including username, gender, date of birth, profile picture and localized name fields.
+
+    Attributes:
+        profile_picture (ImageField): The user's uploaded profile picture.
+
+    Methods:
+        __init__(self, *args, **kwargs): Sets up labels, date input formats, and a two-column crispy forms layout.
+        get_field_pairs(self): Returns the field names grouped as pairs for the two-column layout.
+        clean_profile_picture(self): Validates and stages the uploaded profile picture.
+        clean_slug(self): Validates that the username (slug) was not changed.
+        save(self, commit=True): Saves the profile, applies the new profile picture, and logs date of birth/gender/username changes.
+    """
+
     profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Update your profile picture'), error_messages={'required': _("A profile picture is required.")})
 
     class Meta:
@@ -171,6 +345,12 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         fields = ('slug', 'gender', 'date_of_birth', 'profile_picture')
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, customize labels for the current gender, and configure the two-column crispy forms layout.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         self.fields['slug'].label = pgettext_lazy(context=self.instance.get_gender(), message='username (slug)')
         self.fields['date_of_birth'].input_formats = django_settings.DATE_FIELD_FORMATS
@@ -195,9 +375,21 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         )
 
     def get_field_pairs(self):
+        """
+        Return the form's field names grouped as pairs, used to render the fields in a two-column layout.
+
+        :return: A tuple of field name tuples.
+        :rtype: tuple
+        """
         return ((to_attribute(name='first_name'), to_attribute(name='last_name')), ('slug',), ('gender', 'date_of_birth'), ('profile_picture',))
 
     def clean_profile_picture(self):
+        """
+        Validate the uploaded profile picture (if any), staging it as a new `Image` instance, or validate the existing photo if no new picture was uploaded.
+
+        :return: The profile picture value.
+        :raises django.core.exceptions.ValidationError: If the profile picture is invalid.
+        """
         profile_picture = self.files.get('profile_picture')
         if (profile_picture):
             user_image = Image(owner=self.instance, file=profile_picture)
@@ -217,6 +409,13 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         return self.cleaned_data.get('profile_picture')
 
     def clean_slug(self):
+        """
+        Validate that the submitted slug normalizes to the same username as the existing instance, since users can't change their username.
+
+        :return: The slug.
+        :rtype: str
+        :raises django.core.exceptions.ValidationError: If the slug would change the username.
+        """
         slug = self.cleaned_data.get('slug')
         username = self.instance.username
         if (not (normalize_username(username=slug) == username)):
@@ -224,6 +423,14 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
         return slug
 
     def save(self, commit=True):
+        """
+        Save the profile, applying any new profile picture, and (if committed) logging changes to date of birth, gender and username.
+
+        :param commit: Whether to save the instance to the database. Defaults to True.
+        :type commit: bool
+        :return: The saved user.
+        :rtype: speedy.core.accounts.models.User
+        """
         if (commit):
             if ('profile_picture' in self.fields):
                 profile_picture = self.files.get('profile_picture')
@@ -273,6 +480,18 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
 
 class ProfileNotificationsForm(forms.ModelForm):
+    """
+    Form used to edit a user's notification settings, including both User-level fields and site-specific profile fields.
+
+    Attributes:
+        _profile_model (type): The site profile model class used to look up additional profile fields.
+        _profile_fields (tuple): Names of site profile fields to expose on the form (overridden by subclasses).
+
+    Methods:
+        __init__(self, *args, **kwargs): Adds the configured site profile fields to the form and sets up the crispy forms helper.
+        save(self, commit=True): Saves the site profile fields onto the user's profile.
+    """
+
     _profile_model = get_site_profile_model(profile_model=None)
     _profile_fields = ()
 
@@ -281,6 +500,12 @@ class ProfileNotificationsForm(forms.ModelForm):
         fields = ('notify_on_message',)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, add the configured site profile fields with their current values, and configure the crispy forms helper.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         for field in self._profile_model._meta.fields:
             if (field.name in self._profile_fields):
@@ -295,6 +520,14 @@ class ProfileNotificationsForm(forms.ModelForm):
         )
 
     def save(self, commit=True):
+        """
+        Save the User fields as usual, and additionally save the site profile fields onto the user's profile.
+
+        :param commit: Whether to save the instance(s) to the database. Defaults to True.
+        :type commit: bool
+        :return: The saved user.
+        :rtype: speedy.core.accounts.models.User
+        """
         for field_name in self.fields.keys():
             if (field_name in self._profile_fields):
                 setattr(self.instance.profile, field_name, self.cleaned_data[field_name])
@@ -305,7 +538,21 @@ class ProfileNotificationsForm(forms.ModelForm):
 
 
 class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm):
+    """
+    Login form that allows the user to log in with either their email address or username, and is not restricted to active users only.
+
+    Methods:
+        __init__(self, *args, **kwargs): Lowercases the submitted username, customizes labels, and sets up the crispy forms layout.
+        confirm_login_allowed(self, user): Allows login regardless of the user's active status.
+    """
+
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, lowercase the submitted username (which may be an email address), and configure the crispy forms layout.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         self.data = self.data.copy()
         if ('username' in self.data):
@@ -325,12 +572,36 @@ class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm
         )
 
     def confirm_login_allowed(self, user):
+        """
+        Allow login regardless of whether the user is active, overriding the default Django behavior.
+
+        :param user: The user attempting to log in.
+        :type user: speedy.core.accounts.models.User
+        :return: None, always allowing the login to proceed.
+        :rtype: None
+        """
         return None
 
 
 class PasswordResetForm(django_auth_forms.PasswordResetForm):
+    """
+    Password reset form that looks up users by confirmed email address, logs reset requests, and sends the reset email using the project's own mail sending mechanism.
+
+    Methods:
+        helper(self): Returns the crispy forms helper used to render the submit button.
+        get_users(self, email): Returns the users matching the given email address who should receive a reset.
+        send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None): Sends the password reset email.
+        save(self, domain_override=None, subject_template_name='registration/password_reset_subject.txt', email_template_name='registration/password_reset_email.html', use_https=False, token_generator=default_token_generator, from_email=None, request=None, html_email_template_name=None, extra_email_context=None): Generates a reset link for each matching user and sends it to them.
+    """
+
     @property
     def helper(self):
+        """
+        Build the crispy forms helper used to render the submit button.
+
+        :return: The form helper.
+        :rtype: speedy.core.base.forms.FormHelperWithDefaults
+        """
         helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', _('Submit')))
         return helper
@@ -338,6 +609,11 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
     def get_users(self, email):
         """
         Given an email, return matching user(s) who should receive a reset.
+
+        :param email: The email address to look up.
+        :type email: str
+        :return: The set of users with a confirmed email address matching `email` and a usable password.
+        :rtype: set
         """
         email_addresses = UserEmailAddress.objects.prefetch_related('user').filter(email__iexact=email.lower())
         return {e.user for e in email_addresses if ((e.email == email.lower()) and (e.user.has_usable_password()))}
@@ -345,12 +621,35 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
         """
         Send a django.core.mail.EmailMultiAlternatives to `to_email`.
+
+        :param subject_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param email_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param context: The template context for the email.
+        :type context: dict
+        :param from_email: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param to_email: The recipient email address.
+        :type to_email: str
+        :param html_email_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :return: None
         """
         send_mail(to=[to_email], template_name_prefix='email/accounts/password_reset', context=context)
 
     def save(self, domain_override=None, subject_template_name='registration/password_reset_subject.txt', email_template_name='registration/password_reset_email.html', use_https=False, token_generator=default_token_generator, from_email=None, request=None, html_email_template_name=None, extra_email_context=None):
         """
         Generate a one-use only link for resetting password and send it to the user.
+
+        :param domain_override: Optional domain to use instead of the current site's domain.
+        :param subject_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param email_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param use_https: Whether to use https in the generated link. Defaults to False.
+        :type use_https: bool
+        :param token_generator: The token generator used to create the reset token. Defaults to `default_token_generator`.
+        :param from_email: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param request: The current request, used to determine the current site when `domain_override` is not given.
+        :param html_email_template_name: Unused. Kept for compatibility with Django's PasswordResetForm signature.
+        :param extra_email_context: Optional extra context to merge into the email template context.
+        :type extra_email_context: dict or None
+        :return: None
         """
         email = self.cleaned_data["email"]
         site = Site.objects.get_current()
@@ -401,15 +700,41 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
 
 
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.SetPasswordForm):
+    """
+    Form used to set a new password for a user without requiring their old password (e.g. as part of the password reset flow).
+
+    Methods:
+        helper(self): Returns the crispy forms helper used to render the submit button.
+    """
+
     @property
     def helper(self):
+        """
+        Build the crispy forms helper used to render the submit button.
+
+        :return: The form helper.
+        :rtype: speedy.core.base.forms.FormHelperWithDefaults
+        """
         helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Change Password')))
         return helper
 
 
 class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.PasswordChangeForm):
+    """
+    Form used by a logged-in user to change their password, requiring their current password.
+
+    Methods:
+        __init__(self, *args, **kwargs): Configures the crispy forms helper, including a hidden field marking the form.
+    """
+
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form and configure the crispy forms helper.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
         self.helper.add_input(Hidden('_form', 'password'))
@@ -417,26 +742,64 @@ class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, djan
 
 
 class SiteProfileActivationForm(forms.ModelForm):
+    """
+    Form used to activate a user's site profile (e.g. Speedy Net or Speedy Match profile).
+
+    Methods:
+        __init__(self, *args, **kwargs): Configures the crispy forms helper with a submit button.
+        save(self, commit=True): Activates the site profile and saves the form.
+    """
+
     class Meta:
         model = get_site_profile_model(profile_model=None)
         fields = ()
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form and configure the crispy forms helper with a submit button.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
         self.helper = FormHelperWithDefaults()
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.instance.user.get_gender(), message='Activate your {site_name} account').format(site_name=_(site.name))))
 
     def save(self, commit=True):
+        """
+        Activate the site profile (if committed) and save the form.
+
+        :param commit: Whether to save the instance to the database. Defaults to True.
+        :type commit: bool
+        :return: The saved site profile instance.
+        """
         if (commit):
             self.instance.activate()
         return super().save(commit=commit)
 
 
 class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
+    """
+    Form used to deactivate a user's site profile, requiring the user to confirm their password.
+
+    Attributes:
+        password (CharField): The user's current password, used to confirm the deactivation.
+
+    Methods:
+        __init__(self, *args, **kwargs): Stores the user and configures the crispy forms helper.
+        clean_password(self): Validates that the submitted password matches the user's current password.
+    """
+
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput, required=True)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form, storing the user to deactivate and configuring the crispy forms helper.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`. Must include `user`.
+        """
         self.user = kwargs.pop('user')
         super().__init__(*args, **kwargs)
         site = Site.objects.get_current()
@@ -444,6 +807,13 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
         self.helper.add_input(Submit('submit', pgettext_lazy(context=self.user.get_gender(), message='Deactivate your {site_name} account').format(site_name=_(site.name)), css_class='btn-danger'))
 
     def clean_password(self):
+        """
+        Validate that the submitted password matches the user's current password.
+
+        :return: The password.
+        :rtype: str
+        :raises django.core.exceptions.ValidationError: If the password does not match.
+        """
         password = self.cleaned_data['password']
         if (not (self.user.check_password(raw_password=password))):
             raise ValidationError(_('Invalid password.'))
@@ -451,8 +821,21 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
 
 
 class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFormWithDefaults):
+    """
+    Form used to add a new email address to a user's account.
+
+    Methods:
+        helper(self): Returns the crispy forms helper used to render the submit button.
+    """
+
     @property
     def helper(self):
+        """
+        Build the crispy forms helper used to render the submit button.
+
+        :return: The form helper.
+        :rtype: speedy.core.base.forms.FormHelperWithDefaults
+        """
         helper = FormHelperWithDefaults()
         helper.add_input(Submit('submit', pgettext_lazy(context=self.defaults['user'].get_gender(), message='Add')))
         return helper
@@ -463,8 +846,21 @@ class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFor
 
 
 class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
+    """
+    Form used to change the access/privacy level of one of a user's email addresses.
+
+    Methods:
+        helper(self): Returns the crispy forms helper used to render the inline access field.
+    """
+
     @property
     def helper(self):
+        """
+        Build the crispy forms helper used to render the inline access field, with a custom form action and template.
+
+        :return: The form helper.
+        :rtype: speedy.core.base.forms.FormHelperWithDefaults
+        """
         helper = FormHelperWithDefaults()
         helper.form_class = 'form-inline'
         helper.form_action = reverse(viewname='accounts:change_email_privacy', kwargs={'pk': self.instance.id})
@@ -480,11 +876,24 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
 
 
 class ProfilePrivacyForm(forms.ModelForm):
+    """
+    Form used to change the privacy/access level of a user's date of birth fields.
+
+    Methods:
+        __init__(self, *args, **kwargs): Configures the crispy forms helper and layout.
+    """
+
     class Meta:
         fields = ('access_dob_day_month', 'access_dob_year')
         model = User
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form and configure the crispy forms helper and layout.
+
+        :param args: Positional arguments passed to the parent form's `__init__`.
+        :param kwargs: Keyword arguments passed to the parent form's `__init__`.
+        """
         super().__init__(*args, **kwargs)
         self.helper = FormHelperWithDefaults()
         self.helper.add_default_layout(form=self)

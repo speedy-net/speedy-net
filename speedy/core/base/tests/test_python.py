@@ -6,45 +6,75 @@ if (django_settings.TESTS):
 
 
     class PythonOnlyEnglishTestCase(SpeedyCoreBaseLanguageMixin, SiteTestCase):
+        """
+        Tests Python's built-in int(string) conversion limit for very long digit strings (see PEP 670 / bpo-95778), in English.
+        """
         def test_501_digits(self):
+            """
+            Tests that converting a 501-digit string (positive or negative) to int succeeds, well under the digit limit.
+            """
             for f in ["-5", "5"]:
                 int(f + "0" * 500)
 
         def test_1001_digits(self):
+            """
+            Tests that converting a 1001-digit string (positive or negative) to int succeeds, well under the digit limit.
+            """
             for f in ["-5", "5"]:
                 int(f + "0" * 1000)
 
         def test_2001_digits(self):
+            """
+            Tests that converting a 2001-digit string (positive or negative) to int succeeds, well under the digit limit.
+            """
             for f in ["-5", "5"]:
                 int(f + "0" * 2000)
 
         def test_4001_digits(self):
+            """
+            Tests that converting a 4001-digit string (positive or negative) to int succeeds, below the 4300-digit limit.
+            """
             for f in ["-5", "5"]:
                 int(f + "0" * 4000)
 
         def test_4300_digits(self):
+            """
+            Tests that converting a 4300-digit string (positive or negative) to int succeeds, exactly at the digit limit.
+            """
             for f in ["-5", "5"]:
                 int(f + "0" * 4299)
 
         def test_4301_digits(self):
+            """
+            Tests that converting a 4301-digit string (positive or negative) to int raises a ValueError once the digit limit is exceeded.
+            """
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 4300)
                 self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=4301))
 
         def test_5001_digits(self):
+            """
+            Tests that converting a 5001-digit string (positive or negative) to int raises a ValueError once the digit limit is exceeded.
+            """
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 5000)
                 self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=5001))
 
         def test_50001_digits(self):
+            """
+            Tests that converting a 50001-digit string (positive or negative) to int raises a ValueError once the digit limit is exceeded.
+            """
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 50000)
                 self.assertEqual(first=str(cm.exception), second=self._exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits(digits=50001))
 
         def test_500001_digits(self):
+            """
+            Tests that converting a 500001-digit string (positive or negative) to int raises a ValueError once the digit limit is exceeded.
+            """
             for f in ["-5", "5"]:
                 with self.assertRaises(ValueError) as cm:
                     int(f + "0" * 500000)

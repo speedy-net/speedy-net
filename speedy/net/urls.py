@@ -1,3 +1,6 @@
+"""
+URL configuration for the Speedy Net site.
+"""
 from django.urls import path, include
 
 from speedy.net import admin

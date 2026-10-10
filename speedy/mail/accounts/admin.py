@@ -4,6 +4,9 @@ from speedy.mail.accounts.models import SiteProfile as SpeedyMailSiteProfile
 
 
 class SpeedyMailSiteProfileAdmin(SiteProfileBaseAdmin):
+    """
+    Admin configuration for the Speedy Mail Software site profile.
+    """
     pass
 
 

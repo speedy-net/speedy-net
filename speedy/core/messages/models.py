@@ -38,10 +38,18 @@ class Chat(TimeStampedModel):
 
     @property
     def is_private(self):
+        """
+        :return: True if this is a private (two-participant) chat, False if it's a group chat.
+        :rtype: bool
+        """
         return (not (self.is_group))
 
     @property
     def participants(self):
+        """
+        :return: The chat's participants - a tuple of (ent1, ent2) for a private chat, or the group members ordered by join date for a group chat.
+        :rtype: tuple or django.db.models.QuerySet
+        """
         if (self.is_private):
             return (self.ent1, self.ent2)
         else:
@@ -49,18 +57,34 @@ class Chat(TimeStampedModel):
 
     @property
     def participants_count(self):
+        """
+        :return: The number of participants in the chat.
+        :rtype: int
+        """
         return len(self.participants)
 
     @property
     def messages_queryset(self):
+        """
+        :return: The queryset of all messages in the chat.
+        :rtype: django.db.models.QuerySet
+        """
         return self.messages.all()
 
     @property
     def messages_count(self):
+        """
+        :return: The number of messages in the chat.
+        :rtype: int
+        """
         return len(self.messages_queryset)
 
     @property
     def senders_ids(self):
+        """
+        :return: The set of ids of the entities who have sent at least one message in the chat.
+        :rtype: set
+        """
         return {message.sender.id for message in self.messages_queryset if (message.sender)}
 
     class Meta:
@@ -69,6 +93,10 @@ class Chat(TimeStampedModel):
         ordering = ('-last_message__date_created', '-date_updated')
 
     def __str__(self):
+        """
+        :return: A string representation of the chat, including its id, participants, and message/sender counts.
+        :rtype: str
+        """
         participants = ', '.join(str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants)
         senders_list = [str(ent.user.name) if ent else str(_("Unknown")) for ent in self.participants if (ent and (ent.id in self.senders_ids))]
         if (len(senders_list) > 0):
@@ -81,8 +109,10 @@ class Chat(TimeStampedModel):
         """
         Save the Chat instance to the database.
 
-        Raises:
-            AssertionError: If the private chat does not have two distinct participants or if the group chat has participants.
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
+        :raises AssertionError: If the private chat does not have two distinct participants or if the group chat has participants.
         """
         if (self.is_private):
             assert self.ent1
@@ -102,11 +132,10 @@ class Chat(TimeStampedModel):
         """
         Get the slug for the chat based on the current user.
 
-        Args:
-            current_user (Entity): The current user.
-
-        Returns:
-            str: The slug for the chat.
+        :param current_user: The current user.
+        :type current_user: Entity
+        :return: The slug of the other participant for a private chat, or the chat id otherwise.
+        :rtype: str or int
         """
         if (self.is_private):
             if (self.ent1_id == current_user.id):
@@ -119,11 +148,10 @@ class Chat(TimeStampedModel):
         """
         Get the other participants in the chat excluding the given entity.
 
-        Args:
-            entity (Entity): The entity to exclude.
-
-        Returns:
-            list: The other participants in the chat.
+        :param entity: The entity to exclude.
+        :type entity: Entity
+        :return: The other participants in the chat.
+        :rtype: list
         """
         assert (entity.id in [p.id for p in self.participants])
         return [p for p in self.participants if (not (p.id == entity.id))]
@@ -132,11 +160,10 @@ class Chat(TimeStampedModel):
         """
         Mark the chat as read for the given entity.
 
-        Args:
-            entity (Entity): The entity marking the chat as read.
-
-        Returns:
-            ReadMark: The created ReadMark instance.
+        :param entity: The entity marking the chat as read.
+        :type entity: Entity
+        :return: The ReadMark instance for the entity and chat.
+        :rtype: ReadMark
         """
         return ReadMark.objects.mark(chat=self, entity=entity)
 
@@ -200,10 +227,11 @@ def invalidate_unread_chats_count_after_update_chat(sender, instance: Chat, **kw
     """
     Signal receiver that invalidates the unread chats count cache after a chat is updated.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Chat): The instance of the Chat model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Chat instance that was saved.
+    :type instance: Chat
+    :param kwargs: Additional keyword arguments.
     """
     if (instance.last_message is not None):
         other_participants = instance.get_other_participants(entity=instance.last_message.sender)
@@ -215,10 +243,11 @@ def invalidate_unread_chats_count_after_read_mark(sender, instance: ReadMark, **
     """
     Signal receiver that invalidates the unread chats count cache after a read mark is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (ReadMark): The instance of the ReadMark model.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The ReadMark instance that was saved.
+    :type instance: ReadMark
+    :param kwargs: Additional keyword arguments.
     """
     bust_cache(cache_type='unread_chats_count', entities_pks=[instance.entity.pk])
 
@@ -228,11 +257,13 @@ def mail_user_on_new_message(sender, instance: Message, created, **kwargs):
     """
     Signal receiver that sends an email to users when a new message is created.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (Message): The instance of the Message model.
-        created (bool): Whether the instance was created.
-        **kwargs: Additional keyword arguments.
+    :param sender: The model class that sent the signal.
+    :type sender: type
+    :param instance: The Message instance that was saved.
+    :type instance: Message
+    :param created: Whether the instance was created.
+    :type created: bool
+    :param kwargs: Additional keyword arguments.
     """
     if (created):
         other_participants = instance.chat.get_other_participants(entity=instance.sender)

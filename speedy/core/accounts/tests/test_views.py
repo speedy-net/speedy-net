@@ -26,27 +26,63 @@ if (django_settings.TESTS):
 
 
         class RedirectMeMixin(TestCaseMixin):
+            """
+            Provides assertion helpers for checking where '/me/' redirects a user, based on the active site and the user's activation state.
+
+            Methods:
+                assert_me_url_redirects(self, expected_url): Asserts that GET '/me/' redirects to the given expected URL.
+                assert_me_url_redirects_to_login_url(self): Asserts that '/me/' redirects to the login page.
+                assert_me_url_redirects_to_user_profile_url(self, user): Asserts that '/me/' redirects to the given user's profile page.
+                assert_me_url_redirects_to_welcome_url(self): Asserts that '/me/' redirects to the welcome page.
+                assert_me_url_redirects_to_registration_step_2_url(self): Asserts that '/me/' redirects to the registration step 2 page.
+                assert_me_url_redirects_after_login_by_site_user_and_random_choice(self, user, random_choice): Asserts the expected active/profile states and where '/me/' redirects to for the given user and random choice, on the current site.
+            """
             def assert_me_url_redirects(self, expected_url):
+                """
+                Asserts that GET '/me/' redirects to the given expected URL.
+
+                :param expected_url: The URL '/me/' is expected to redirect to.
+                """
                 r = self.client.get(path='/me/')
                 self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
 
             def assert_me_url_redirects_to_login_url(self):
+                """
+                Asserts that '/me/' redirects to the login page.
+                """
                 expected_url = '/login/?next=/me/'
                 self.assert_me_url_redirects(expected_url=expected_url)
 
             def assert_me_url_redirects_to_user_profile_url(self, user):
+                """
+                Asserts that '/me/' redirects to the given user's profile page.
+
+                :param user: The user whose profile page '/me/' is expected to redirect to.
+                """
                 expected_url = '/{}/'.format(user.slug)
                 self.assert_me_url_redirects(expected_url=expected_url)
 
             def assert_me_url_redirects_to_welcome_url(self):
+                """
+                Asserts that '/me/' redirects to the welcome page.
+                """
                 expected_url = '/welcome/'
                 self.assert_me_url_redirects(expected_url=expected_url)
 
             def assert_me_url_redirects_to_registration_step_2_url(self):
+                """
+                Asserts that '/me/' redirects to the registration step 2 page.
+                """
                 expected_url = '/registration-step-2/'
                 self.assert_me_url_redirects(expected_url=expected_url)
 
             def assert_me_url_redirects_after_login_by_site_user_and_random_choice(self, user, random_choice):
+                """
+                Asserts the expected active/profile states of the user, and where '/me/' redirects to, depending on the current site and the given random choice.
+
+                :param user: The logged-in user.
+                :param random_choice: The random choice (1, 2 or 3) that determined how the user and his profiles were set up.
+                """
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     if (random_choice == 1):
                         self.assertEqual(first=user.is_active, second=True)
@@ -94,7 +130,19 @@ if (django_settings.TESTS):
 
 
         class IndexViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
+            """
+            Tests the main/index page, for both visitors and registered users (active, inactive, or Speedy Net-inactive), including canonical URL redirects.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state.
+                test_visitor_gets_registration_page(self): Asserts the main page is served with the registration page template.
+                test_visitor_gets_redirected_to_canonical_url_1(self): Asserts a URL with an unknown query string parameter redirects to the canonical URL.
+                test_visitor_gets_redirected_to_canonical_url_2(self): Asserts a URL with a different unknown query string parameter redirects to the canonical URL.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state (active, inactive, or Speedy Net-inactive).
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -114,22 +162,37 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_gets_registration_page(self):
+                """
+                Asserts a visitor opening the main page gets the registration page, served with a 200 status code.
+                """
                 r = self.client.get(path='/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
             def test_visitor_gets_redirected_to_canonical_url_1(self):
+                """
+                Asserts that '/?a=1' redirects (301) to the canonical main page URL '/'.
+                """
                 r = self.client.get(path='/?a=1')
                 self.assertRedirects(response=r, expected_url='/', status_code=301, target_status_code=200)
 
             def test_visitor_gets_redirected_to_canonical_url_2(self):
+                """
+                Asserts that '/?b=2' redirects (301) to the canonical main page URL '/'.
+                """
                 r = self.client.get(path='/?b=2')
                 self.assertRedirects(response=r, expected_url='/', status_code=301, target_status_code=200)
 
 
         @only_on_sites_with_login
         class MeViewOnlyEnglishTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            """
+            Tests the '/me/' view, for a visitor (who has no access and is redirected to login) and for a logged-in user (who gets redirected to his own profile page).
+            """
             def set_up(self):
+                """
+                Creates an active user with a fixed slug ('markmark').
+                """
                 super().set_up()
                 self.user = ActiveUserFactory(slug='markmark')
                 self.assert_models_count(
@@ -141,9 +204,15 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a visitor opening '/me/' is redirected to the login page.
+                """
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_gets_redirected_to_his_profile(self):
+                """
+                Asserts a logged-in user opening '/me/' is redirected to his own profile page.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_user_profile_url(user=self.user)
                 # Assert expected_url directly once to confirm.
@@ -152,7 +221,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class LoginOnlyEnglishTestCase(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            """
+            Tests logging in via '/me/' using a user's slug, username, confirmed email, or unconfirmed email, for a user in a randomly chosen activation state, as well as login failures with wrong credentials.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state, with a confirmed and an unconfirmed email address.
+                assert_me_url_redirects_after_login(self, user): Asserts where '/me/' redirects to after logging in as the given user, based on the random choice made in set_up.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state, with a confirmed and an unconfirmed email address.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -174,6 +253,11 @@ if (django_settings.TESTS):
                 )
 
             def assert_me_url_redirects_after_login(self, user):
+                """
+                Asserts where '/me/' redirects to after logging in as the given user, based on the random choice made in set_up.
+
+                :param user: The user that was logged in; must be self.user.
+                """
                 if (user == self.user):
                     random_choice = self.random_choice
                 else:
@@ -181,40 +265,98 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login_by_site_user_and_random_choice(user=user, random_choice=random_choice)
 
             def test_user_can_login_with_slug(self):
+                """
+                Asserts a user can log in using his slug and is redirected as expected afterwards.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_username(self):
+                """
+                Asserts a user can log in using his username and is redirected as expected afterwards.
+                """
                 self.client.login(username=self.user.username, password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_confirmed_email_address(self):
+                """
+                Asserts a user can log in using his confirmed email address and is redirected as expected afterwards.
+                """
                 self.client.login(username=self.confirmed_email_address.email, password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_can_login_with_unconfirmed_email_address(self):
+                """
+                Asserts a user can log in using his unconfirmed email address and is redirected as expected afterwards.
+                """
                 self.client.login(username=self.unconfirmed_email_address.email, password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_user_cannot_login_with_wrong_slug(self):
+                """
+                Asserts that logging in with a slug that doesn't match any user fails, and '/me/' redirects to the login page.
+                """
                 self.client.login(username='a{}'.format(self.user.slug), password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_cannot_login_with_wrong_username(self):
+                """
+                Asserts that logging in with a username that doesn't match any user fails, and '/me/' redirects to the login page.
+                """
                 self.client.login(username='a{}'.format(self.user.username), password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_cannot_login_with_wrong_email(self):
+                """
+                Asserts that logging in with an email address that doesn't match any user fails, and '/me/' redirects to the login page.
+                """
                 self.client.login(username='a{}'.format(self.confirmed_email_address.email), password=tests_settings.USER_PASSWORD)
                 self.assert_me_url_redirects_to_login_url()
 
             def test_user_cannot_login_with_incorrect_password(self):
+                """
+                Asserts that logging in with an incorrect password fails, and '/me/' redirects to the login page.
+                """
                 self.client.login(username=self.user.slug, password='{}-'.format(tests_settings.USER_PASSWORD))
                 self.assert_me_url_redirects_to_login_url()
 
 
         class RegistrationViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the registration view: registering, required fields, password validation, duplicate email handling, and the data and models created on successful registration.
+
+            Methods:
+                set_up(self): Builds the registration form data (email, slug, password, gender, date of birth) for a new user.
+                set_up_required_fields(self): Computes the set of required registration fields (excluding last name) and asserts they're reported as required when missing.
+                test_visitor_can_see_registration_page(self): Asserts the main page is served with the registration page template.
+                test_visitor_can_register(self): Asserts a visitor can register and the created entity, user and email address match the submitted data.
+                run_test_visitor_register_logs_n_records(self, number_of_records_logged): Registers a user and asserts the expected number of "New user" log records were emitted.
+                test_visitor_register_logs_one_record(self): Asserts registering with DEBUG=True logs exactly one "New user" record.
+                test_visitor_register_logs_two_records_with_override_settings(self): Asserts registering with overridden logging settings and DEBUG=True logs exactly two "New user" records.
+                run_test_required_fields(self, data): Posts the given (incomplete) data and asserts the expected required-field errors are returned and no models are created.
+                test_required_fields_1(self): Asserts posting an empty dict reports all required fields as missing.
+                test_required_fields_2(self): Asserts posting empty values for all required fields reports them as missing.
+                test_non_unique_confirmed_email_address(self): Asserts registration fails if the email address is already confirmed by another user.
+                test_unique_confirmed_email_address(self): Asserts registration succeeds if the email address is confirmed by another user but differs from the one submitted.
+                test_non_unique_unconfirmed_email_address(self): Asserts registration fails if the email address is unconfirmed and already used by another user, and that the existing unconfirmed email address is deleted.
+                test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self): Asserts registration succeeds (replacing the other user's unconfirmed email address) if that address was added more than 5 minutes ago.
+                test_unique_unconfirmed_email_address(self): Asserts registration succeeds if the email address is unconfirmed by another user but differs from the one submitted.
+                test_password_too_short(self): Asserts registration fails if the password is too short.
+                test_password_too_long(self): Asserts registration fails if the password is too long.
+                test_password_not_enough_unique_characters(self): Asserts registration fails if the password doesn't contain enough unique characters.
+                test_password_too_short_and_not_enough_unique_characters(self): Asserts registration fails with both errors if the password is too short and doesn't have enough unique characters.
+                test_password_too_long_and_not_enough_unique_characters(self): Asserts registration fails with both errors if the password is too long and doesn't have enough unique characters.
+                test_user_is_logged_in_after_registration(self): Asserts a user is logged in and redirected correctly right after registering, with the expected active/profile state.
+                test_user_gets_email_after_registration(self): Asserts a confirmation email with the expected subject and confirmation token is sent to the user after registration.
+                test_cannot_register_taken_username(self): Asserts registration fails if the normalized username is already taken, even with a different slug.
+                test_email_gets_converted_to_lowercase(self): Asserts the registered email address is stored in lowercase.
+                test_cannot_register_invalid_email(self): Asserts registration fails with an invalid email address.
+                test_invalid_date_of_birth_list_fail(self): Asserts registration fails for each date of birth in the invalid dates list, with no models created.
+            """
             def set_up(self):
+                """
+                Builds the registration form data (email, slug, password, gender, date of birth) for a new user.
+                """
                 super().set_up()
                 self.password = get_random_user_password()
                 self.data = {
@@ -239,15 +381,24 @@ if (django_settings.TESTS):
                 )
 
             def set_up_required_fields(self):
+                """
+                Computes the set of required registration fields (excluding last name), and asserts they're reported as required when missing.
+                """
                 self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
                 self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
             def test_visitor_can_see_registration_page(self):
+                """
+                Asserts the main page is served with the registration page template.
+                """
                 r = self.client.get(path='/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
             def test_visitor_can_register(self):
+                """
+                Asserts a visitor can register, and the created entity, user and email address match the submitted data.
+                """
                 r = self.client.post(path='/', data=self.data)
                 self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
                 self.assert_models_count(
@@ -291,6 +442,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
 
             def run_test_visitor_register_logs_n_records(self, number_of_records_logged):
+                """
+                Registers a user and asserts the expected number of "New user" log records were emitted.
+
+                :param number_of_records_logged: The expected number of "New user" log records.
+                """
                 log_records = []
                 console_handler = next(h for h in logging.root.handlers if h.name == 'console')
                 with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
@@ -303,13 +459,24 @@ if (django_settings.TESTS):
 
             @override_settings(DEBUG=True)
             def test_visitor_register_logs_one_record(self):
+                """
+                Asserts registering with DEBUG=True logs exactly one "New user" record.
+                """
                 self.run_test_visitor_register_logs_n_records(number_of_records_logged=1)
 
             @override_settings(LOGGING=tests_settings.OVERRIDE_LOGGING_SETTINGS.LOGGING, DEBUG=True)
             def test_visitor_register_logs_two_records_with_override_settings(self):
+                """
+                Asserts registering with overridden logging settings and DEBUG=True logs exactly two "New user" records.
+                """
                 self.run_test_visitor_register_logs_n_records(number_of_records_logged=2)
 
             def run_test_required_fields(self, data):
+                """
+                Posts the given (incomplete) data and asserts the expected required-field errors are returned, and no models are created.
+
+                :param data: The form data to post, missing one or more required fields.
+                """
                 r = self.client.post(path='/', data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
@@ -322,14 +489,23 @@ if (django_settings.TESTS):
                 )
 
             def test_required_fields_1(self):
+                """
+                Asserts posting an empty dict reports all required fields as missing.
+                """
                 data = {}
                 self.run_test_required_fields(data=data)
 
             def test_required_fields_2(self):
+                """
+                Asserts posting empty values for all required fields reports them as missing.
+                """
                 data = {field_name: '' for field_name in self.required_fields}
                 self.run_test_required_fields(data=data)
 
             def test_non_unique_confirmed_email_address(self):
+                """
+                Asserts registration fails if the submitted email address is already confirmed by another user, and the existing user and email address are unaffected.
+                """
                 existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=True)
                 existing_user = existing_user_email.user
                 self.assert_models_count(
@@ -373,6 +549,9 @@ if (django_settings.TESTS):
                 )
 
             def test_unique_confirmed_email_address(self):
+                """
+                Asserts registration succeeds if another user has a confirmed email address that differs from the one submitted.
+                """
                 existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=True)
                 existing_user = existing_user_email.user
                 self.assert_models_count(
@@ -415,6 +594,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address(self):
+                """
+                Asserts registration fails with an "already in use" error if the submitted email address is unconfirmed by another user and was added less than 5 minutes ago, leaving the other user's email address unaffected.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
                 existing_user = existing_user_email.user
@@ -459,6 +641,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self):
+                """
+                Asserts registration succeeds and deletes the other user's unconfirmed email address, since it was added 6 minutes ago (more than the 5-minute "still in use" grace period).
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user_email = UserEmailAddressFactory(email=self.data['email'], is_confirmed=False)
                 existing_user_email.date_created -= timedelta(minutes=6)
@@ -504,6 +689,9 @@ if (django_settings.TESTS):
                 )
 
             def test_unique_unconfirmed_email_address(self):
+                """
+                Asserts registration succeeds if another user has an unconfirmed email address that differs from the one submitted, leaving that user's email address unaffected.
+                """
                 existing_user_email = UserEmailAddressFactory(email='a{}'.format(self.data['email']), is_confirmed=False)
                 existing_user = existing_user_email.user
                 self.assert_models_count(
@@ -546,6 +734,9 @@ if (django_settings.TESTS):
                 )
 
             def test_password_too_short(self):
+                """
+                Asserts registration fails with a "password too short" error when the password is too short.
+                """
                 data = self.data.copy()
                 data['new_password1'] = 'abcdef'
                 self.assertEqual(first=len(data['new_password1']), second=6)
@@ -561,6 +752,9 @@ if (django_settings.TESTS):
                 )
 
             def test_password_too_long(self):
+                """
+                Asserts registration fails with a "password too long" error when the password is too long.
+                """
                 data = self.data.copy()
                 data['new_password1'] = 'abcdef' + ('8' * 115)
                 self.assertEqual(first=len(data['new_password1']), second=121)
@@ -576,6 +770,9 @@ if (django_settings.TESTS):
                 )
 
             def test_password_not_enough_unique_characters(self):
+                """
+                Asserts registration fails with a "not enough unique characters" error when the password doesn't have enough unique characters.
+                """
                 data = self.data.copy()
                 data['new_password1'] = '1234' * 2
                 self.assertEqual(first=len(data['new_password1']), second=8)
@@ -591,6 +788,9 @@ if (django_settings.TESTS):
                 )
 
             def test_password_too_short_and_not_enough_unique_characters(self):
+                """
+                Asserts registration fails with both "too short" and "not enough unique characters" errors.
+                """
                 data = self.data.copy()
                 data['new_password1'] = '8' * 3
                 self.assertEqual(first=len(data['new_password1']), second=3)
@@ -606,6 +806,9 @@ if (django_settings.TESTS):
                 )
 
             def test_password_too_long_and_not_enough_unique_characters(self):
+                """
+                Asserts registration fails with both "too long" and "not enough unique characters" errors.
+                """
                 data = self.data.copy()
                 data['new_password1'] = '8' * 121
                 self.assertEqual(first=len(data['new_password1']), second=121)
@@ -621,6 +824,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_is_logged_in_after_registration(self):
+                """
+                Asserts a user is automatically logged in and redirected correctly right after registration, with the expected active/profile state for both sites.
+                """
                 r = self.client.post(path='/', data=self.data)
                 self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
                 r = self.client.get(path='/')
@@ -649,6 +855,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_he, second=2)
 
             def test_user_gets_email_after_registration(self):
+                """
+                Asserts a confirmation email with the expected subject and confirmation token is sent to a new user after registration, and the token appears only for the current site's host.
+                """
                 self.assertEqual(first=len(mail.outbox), second=0)
                 r = self.client.post(path='/', data=self.data)
                 self.assertEqual(first=len(mail.outbox), second=1)
@@ -676,6 +885,9 @@ if (django_settings.TESTS):
                     self.assertNotIn(member=other_full_http_host, container=mail.outbox[0].body)
 
             def test_cannot_register_taken_username(self):
+                """
+                Asserts registration fails with a "username already taken" error if the normalized username matches an existing user's, even with a differently formatted slug.
+                """
                 data = self.data.copy()
                 existing_user = ActiveUserFactory(username='username', slug='user-name')
                 self.assert_models_count(
@@ -720,6 +932,9 @@ if (django_settings.TESTS):
                 )
 
             def test_email_gets_converted_to_lowercase(self):
+                """
+                Asserts the registered email address is stored in lowercase, regardless of the case submitted.
+                """
                 data = self.data.copy()
                 data['email'] = 'EMAIL22@EXAMPLE.COM'
                 r = self.client.post(path='/', data=data)
@@ -737,6 +952,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.email_addresses.first().email, second='email22@example.com')
 
             def test_cannot_register_invalid_email(self):
+                """
+                Asserts registration fails with an "enter a valid email address" error for an invalid email.
+                """
                 data = self.data.copy()
                 data['email'] = 'email'
                 r = self.client.post(path='/', data=data)
@@ -751,6 +969,9 @@ if (django_settings.TESTS):
                 )
 
             def test_invalid_date_of_birth_list_fail(self):
+                """
+                Asserts registration fails for each date of birth in the invalid dates list, reporting the expected error and creating no models.
+                """
                 for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
                     data = self.data.copy()
                     data['date_of_birth'] = date_of_birth
@@ -768,7 +989,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class RegistrationViewWithLastNameAllMainLanguagesEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (English).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for English.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in English and prepares the required fields for this language.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -780,6 +1011,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -787,7 +1021,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class RegistrationViewWithLastNameAllMainLanguagesFrenchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (French).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for French.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in French and prepares the required fields for this language.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -799,6 +1043,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -806,7 +1053,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class RegistrationViewWithLastNameAllMainLanguagesGermanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (German).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for German.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in German and prepares the required fields for this language.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -818,6 +1075,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -825,7 +1085,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class RegistrationViewWithLastNameAllMainLanguagesSpanishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Spanish.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Spanish and prepares the required fields for this language.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -837,6 +1107,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -844,7 +1117,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class RegistrationViewWithLastNameAllMainLanguagesPortugueseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Portuguese.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Portuguese and prepares the required fields for this language.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -856,6 +1139,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -863,7 +1149,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class RegistrationViewWithLastNameAllMainLanguagesItalianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Italian.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Italian and prepares the required fields for this language.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -875,6 +1171,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -882,7 +1181,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class RegistrationViewWithLastNameAllMainLanguagesDutchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Dutch.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Dutch and prepares the required fields for this language.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -894,6 +1203,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -901,7 +1213,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationViewWithLastNameAllMainLanguagesHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Hebrew.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Hebrew and prepares the required fields for this language.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -913,13 +1235,26 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class RegistrationViewWithoutLastNameAllMainLanguagesEnglishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (English).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for English.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in English and prepares the required fields for this language.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -931,6 +1266,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -938,7 +1276,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class RegistrationViewWithoutLastNameAllMainLanguagesFrenchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (French).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for French.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in French and prepares the required fields for this language.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -950,6 +1298,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -957,7 +1308,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class RegistrationViewWithoutLastNameAllMainLanguagesGermanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (German).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for German.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in German and prepares the required fields for this language.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -969,6 +1330,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -976,7 +1340,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class RegistrationViewWithoutLastNameAllMainLanguagesSpanishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Spanish.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Spanish and prepares the required fields for this language.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -988,6 +1362,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -995,7 +1372,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class RegistrationViewWithoutLastNameAllMainLanguagesPortugueseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Portuguese.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Portuguese and prepares the required fields for this language.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -1007,6 +1394,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -1014,7 +1404,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class RegistrationViewWithoutLastNameAllMainLanguagesItalianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Italian.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Italian and prepares the required fields for this language.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -1026,6 +1426,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -1033,7 +1436,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class RegistrationViewWithoutLastNameAllMainLanguagesDutchTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Dutch.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Dutch and prepares the required fields for this language.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -1045,6 +1458,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -1052,7 +1468,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class RegistrationViewWithoutLastNameAllMainLanguagesHebrewTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Hebrew.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Hebrew and prepares the required fields for this language.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -1064,15 +1490,52 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class LoginViewTestCaseMixin(RedirectMeMixin, SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the login view, covering login by slug, username, and email (in various forms and cases), login of users in different activation states, and login failures with incorrect credentials.
+
+            Methods:
+                set_up(self): Creates a user with a dotted slug and email, another user with a known password, and two inactive users.
+                assert_me_url_redirects_after_login(self, user): Asserts where '/me/' redirects to after logging in as the given user, based on the random choices made in set_up.
+                test_visitor_can_see_login_page(self): Asserts the login page is served with the login template.
+                test_visitor_can_login_using_slug(self): Asserts a user can log in using his normalized slug.
+                test_visitor_can_login_using_username(self): Asserts a user can log in using his username.
+                test_visitor_can_login_using_original_slug(self): Asserts a user can log in using his original (unnormalized) slug.
+                test_visitor_can_login_using_slug_modified(self): Asserts a user can log in using a differently formatted variant of his slug.
+                test_visitor_can_login_using_slug_uppercase(self): Asserts a user can log in using an uppercase variant of his slug.
+                test_visitor_can_login_using_email(self): Asserts a user can log in using his email address.
+                test_visitor_can_login_using_email_uppercase(self): Asserts a user can log in using an uppercase variant of his email address.
+                test_visitor_can_login_using_other_user_email_and_password(self): Asserts another user can log in using his own email address and password.
+                test_visitor_can_still_login_if_they_are_not_active_user_1(self): Asserts an inactive user can still log in and is redirected to the welcome page or registration step 2, depending on settings.
+                test_visitor_can_still_login_if_they_are_not_active_user_2(self): Asserts a Speedy Net-inactive user can still log in and is redirected to the welcome page.
+                test_visitor_can_login_using_email_if_there_are_two_users_returned(self): Asserts a user can log in by email even when another user's slug happens to match that email address.
+                test_visitor_can_login_using_short_password(self): Asserts a user with a too-short password (set directly, bypassing validation) can still log in.
+                test_visitor_can_login_using_short_username_and_password(self): Asserts a user with both a too-short username and a too-short password can still log in.
+                test_visitor_cannot_login_using_wrong_email(self): Asserts login fails using another user's email address with the wrong password.
+                test_visitor_cannot_login_using_incorrect_password_1(self): Asserts login fails with an incorrect password.
+                test_visitor_cannot_login_using_incorrect_password_2(self): Asserts login fails with an incorrect password that is also too short.
+                test_visitor_cannot_login_using_incorrect_username_and_password(self): Asserts login fails with both an incorrect username and an incorrect password.
+                test_visitor_cannot_login_using_non_existent_username_and_invalid_password_1(self): Asserts login fails with a non-existent username and a too-short password.
+                test_visitor_cannot_login_using_non_existent_username_and_invalid_password_2(self): Asserts login fails with a too-short, non-existent username and a too-short password.
+                test_visitor_cannot_login_using_non_existent_username_and_invalid_password_3(self): Asserts login fails with a non-existent username and a too-short password with too few unique characters.
+                test_visitor_cannot_login_without_username_and_password(self): Asserts login fails and reports both username and password as required when neither is submitted.
+                test_visitor_cannot_login_without_username(self): Asserts login fails and reports the username as required when it's missing.
+                test_visitor_cannot_login_without_password(self): Asserts login fails and reports the password as required when it's missing.
+            """
             login_url = '/login/'
             _other_user_password = 'abcdef12'
 
             def set_up(self):
+                """
+                Creates a user with a dotted slug and email address (in a randomly chosen activation state), another user with a known password (in a randomly chosen activation state), and two further inactive users.
+                """
                 super().set_up()
                 user_factory_dict = dict(slug='slug.with.dots')
                 self.random_choice_1 = random.choice([1, 2, 3])
@@ -1110,6 +1573,11 @@ if (django_settings.TESTS):
                 )
 
             def assert_me_url_redirects_after_login(self, user):
+                """
+                Asserts where '/me/' redirects to after logging in as the given user, based on the random choices made in set_up.
+
+                :param user: The user that was logged in; must be self.user or self.other_user.
+                """
                 if (user == self.user):
                     random_choice = self.random_choice_1
                 elif (user == self.other_user):
@@ -1123,11 +1591,17 @@ if (django_settings.TESTS):
                         self.assert_me_url_redirects(expected_url='/slug-with-dots/')
 
             def test_visitor_can_see_login_page(self):
+                """
+                Asserts the login page is served with the login template.
+                """
                 r = self.client.get(path=self.login_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/login.html')
 
             def test_visitor_can_login_using_slug(self):
+                """
+                Asserts a user can log in using his normalized slug.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': self.user.slug,
@@ -1138,6 +1612,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_username(self):
+                """
+                Asserts a user can log in using his username.
+                """
                 self.assertEqual(first=self.user.username, second='slugwithdots')
                 data = {
                     'username': self.user.username,
@@ -1148,6 +1625,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_original_slug(self):
+                """
+                Asserts a user can log in using his original (unnormalized, dotted) slug.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug.with.dots',
@@ -1158,6 +1638,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_slug_modified(self):
+                """
+                Asserts a user can log in using a differently formatted (extra dots, underscores and dashes) variant of his slug.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug____with.....dots---',
@@ -1168,6 +1651,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_slug_uppercase(self):
+                """
+                Asserts a user can log in using an uppercase variant of his slug.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'SLUG-WITH-DOTS',
@@ -1178,6 +1664,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_email(self):
+                """
+                Asserts a user can log in using his email address.
+                """
                 data = {
                     'username': self.user_email.email,
                     'password': tests_settings.USER_PASSWORD,
@@ -1187,6 +1676,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_email_uppercase(self):
+                """
+                Asserts a user can log in using an uppercase variant of his email address.
+                """
                 data = {
                     'username': self.user_email.email.upper(),
                     'password': tests_settings.USER_PASSWORD,
@@ -1196,6 +1688,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_other_user_email_and_password(self):
+                """
+                Asserts another user can log in using his own email address and password.
+                """
                 data = {
                     'username': self.other_user_email.email,
                     'password': self._other_user_password,
@@ -1205,6 +1700,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.other_user)
 
             def test_visitor_can_still_login_if_they_are_not_active_user_1(self):
+                """
+                Asserts an inactive user can still log in, and gets redirected to the welcome page or the registration step 2 page, depending on settings.
+                """
                 data = {
                     'username': self.inactive_user_1.slug,
                     'password': tests_settings.USER_PASSWORD,
@@ -1219,6 +1717,9 @@ if (django_settings.TESTS):
                     self.assert_me_url_redirects_to_registration_step_2_url()
 
             def test_visitor_can_still_login_if_they_are_not_active_user_2(self):
+                """
+                Asserts a Speedy Net-inactive user can still log in, and gets redirected to the welcome page.
+                """
                 data = {
                     'username': self.inactive_user_2.slug,
                     'password': tests_settings.USER_PASSWORD,
@@ -1229,6 +1730,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_welcome_url()
 
             def test_visitor_can_login_using_email_if_there_are_two_users_returned(self):
+                """
+                Asserts a user can log in by his email address even when another user's slug happens to match that email address.
+                """
                 # Create another user with the slug as the email address of self.other_user.
                 UserEmailAddressFactory(user=self.other_user, email="mike@example.com")
                 user_factory_dict = dict(slug="mike@example.com")
@@ -1249,6 +1753,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.other_user)
 
             def test_visitor_can_login_using_short_password(self):
+                """
+                Asserts a user whose password was set directly to a too-short value (bypassing validation) can still log in with it.
+                """
                 # Using a password that is too short and with too few unique characters.
                 from django.contrib.auth.hashers import make_password
                 # Call make_password() directly because set_password() will raise an exception if the password is too short.
@@ -1264,6 +1771,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.user)
 
             def test_visitor_can_login_using_short_username_and_password(self):
+                """
+                Asserts a user whose username and password were set directly to too-short values (bypassing validation) can still log in with them.
+                """
                 # Using a password that is too short and with too few unique characters, and a username that is too short.
                 from django.contrib.auth.hashers import make_password
                 # Call make_password() directly because set_password() will raise an exception if the password is too short.
@@ -1280,6 +1790,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_after_login(user=self.other_user)
 
             def test_visitor_cannot_login_using_wrong_email(self):
+                """
+                Asserts login fails using another user's email address together with the wrong password.
+                """
                 data = {
                     'username': self.other_user_email.email,
                     'password': tests_settings.USER_PASSWORD,
@@ -1290,6 +1803,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_incorrect_password_1(self):
+                """
+                Asserts login fails with an incorrect password.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug-with-dots',
@@ -1301,6 +1817,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_incorrect_password_2(self):
+                """
+                Asserts login fails with an incorrect password that is also too short.
+                """
                 # Using a password that is too short and with too few unique characters.
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
@@ -1313,6 +1832,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_incorrect_username_and_password(self):
+                """
+                Asserts login fails with both an incorrect username and an incorrect password.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'wrong username!!',
@@ -1324,6 +1846,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_1(self):
+                """
+                Asserts login fails with a non-existent username and a too-short password.
+                """
                 # Using a password that is too short and with too few unique characters.
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
@@ -1336,6 +1861,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_2(self):
+                """
+                Asserts login fails with a too-short, non-existent username and a too-short password.
+                """
                 # Using a password that is too short and with too few unique characters, and a username that is too short.
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
@@ -1348,6 +1876,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_using_non_existent_username_and_invalid_password_3(self):
+                """
+                Asserts login fails with a non-existent username and a too-short password with too few unique characters.
+                """
                 # Using a password that is too short and with too few unique characters.
                 too_short_password = '8' * 3
                 data = {
@@ -1360,6 +1891,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_without_username_and_password(self):
+                """
+                Asserts login fails and reports both username and password as required when neither is submitted.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {}
                 r = self.client.post(path=self.login_url, data=data)
@@ -1368,6 +1902,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_without_username(self):
+                """
+                Asserts login fails and reports the username as required when it's missing.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'password': 'wrong password!!',
@@ -1378,6 +1915,9 @@ if (django_settings.TESTS):
                 self.assert_me_url_redirects_to_login_url()
 
             def test_visitor_cannot_login_without_password(self):
+                """
+                Asserts login fails and reports the password as required when it's missing.
+                """
                 self.assertEqual(first=self.user.slug, second='slug-with-dots')
                 data = {
                     'username': 'slug-with-dots',
@@ -1390,7 +1930,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class LoginViewAllMainLanguagesEnglishTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -1398,7 +1947,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class LoginViewAllMainLanguagesFrenchTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -1406,7 +1964,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class LoginViewAllMainLanguagesGermanTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -1414,7 +1981,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class LoginViewAllMainLanguagesSpanishTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -1422,7 +1998,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class LoginViewAllMainLanguagesPortugueseTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -1430,7 +2015,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class LoginViewAllMainLanguagesItalianTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -1438,7 +2032,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class LoginViewAllMainLanguagesDutchTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -1446,14 +2049,35 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class LoginViewAllMainLanguagesHebrewTestCase(LoginViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the login view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class LogoutViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            """
+            Tests the logout view: logging out a user in various activation states, and that logout requires POST.
+
+            Methods:
+                set_up(self): Logs in as a randomly chosen user (active, inactive, or Speedy Net-inactive).
+                assert_user_is_active_and_redirects(self, r): Asserts the user's activation state and that the given response redirects accordingly based on the site and the random choice made in set_up.
+                test_user_can_logout(self): Asserts a logged-in user can log out via POST and is then anonymous.
+                test_user_cannot_logout_using_get_method(self): Asserts logging out via GET fails with a 405 response and the user remains logged in.
+            """
             def set_up(self):
+                """
+                Logs in as a user in a randomly chosen activation state (active, inactive, or Speedy Net-inactive).
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -1474,6 +2098,11 @@ if (django_settings.TESTS):
                 )
 
             def assert_user_is_active_and_redirects(self, r):
+                """
+                Asserts the user's activation state and that the given response redirects accordingly, based on the site and the random choice made in set_up.
+
+                :param r: The HTTP response to check for the expected redirect.
+                """
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     if (self.random_choice == 1):
                         self.assertEqual(first=self.user.is_active, second=True)
@@ -1520,6 +2149,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_can_logout(self):
+                """
+                Asserts a logged-in user can log out via POST and becomes anonymous afterwards.
+                """
                 r = self.client.get(path='/')
                 self.assert_user_is_active_and_redirects(r=r)
                 r = self.client.post(path='/logout/')
@@ -1528,6 +2160,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=r.context['user'].is_authenticated, expr2=False)
 
             def test_user_cannot_logout_using_get_method(self):
+                """
+                Asserts logging out via GET fails with a 405 response and the user remains logged in.
+                """
                 r = self.client.get(path='/')
                 self.assert_user_is_active_and_redirects(r=r)
                 r = self.client.get(path='/logout/')
@@ -1538,9 +2173,41 @@ if (django_settings.TESTS):
 
 
         class EditProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the edit profile view: access rules, saving settings (name, slug, gender), required fields, slug/username change rules, and date of birth change limits.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state, logs in, and prepares base form data.
+                set_up_required_fields(self): Computes the set of required fields (excluding last name, which is optional) and asserts they're reported as required.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the edit profile page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive (and Speedy Net-inactive) user can open the edit profile page.
+                test_active_user_can_save_his_settings(self): Asserts an active user can save his settings, and the name is updated in all per-language fields.
+                test_inactive_user_can_save_his_settings(self): Asserts an inactive user can save his settings.
+                run_test_required_fields(self, data): Posts the given data and asserts the required-fields errors are reported, and the name is unchanged.
+                test_required_fields_1(self): Asserts all required fields are reported as required when the form is submitted empty.
+                test_required_fields_2(self): Asserts all required fields are reported as required when submitted as empty strings.
+                run_test_user_can_change_his_slug(self, new_slug): Asserts the user can change his slug to the given (normalized) new slug.
+                run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized): Asserts the given new slug normalizes as expected, then asserts the user can change his slug to it.
+                test_user_can_change_his_slug(self): Asserts the user can change his slug to another already-normalized slug.
+                test_user_can_change_his_slug_with_normalize_slug_1(self): Asserts the user can change his slug to a slug that gets normalized (dots and double dashes).
+                test_user_can_change_his_slug_with_normalize_slug_2(self): Asserts the user can change his slug to a slug containing many special characters that gets normalized.
+                run_test_user_cannot_change_his_username(self, new_slug): Asserts the user cannot change his slug when the new slug would change his username, and nothing changes.
+                run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized): Asserts the given new slug normalizes as expected, then asserts the user cannot change his username using it.
+                test_user_cannot_change_his_username_1(self): Asserts the user cannot change his username by prefixing an extra character to his slug.
+                test_user_cannot_change_his_username_2(self): Asserts the user cannot change his username by inserting an extra digit into his slug.
+                test_user_cannot_change_his_username_with_normalize_slug(self): Asserts the user cannot change his username even when the new slug is normalized from a special-character-laden one.
+                test_valid_date_of_birth_list_ok(self): Asserts every valid date of birth in the test settings list is accepted and saved correctly.
+                test_change_date_of_birth_12_times(self): Asserts a user without unlimited changes allowed can change his date of birth up to 11 times normally, and the 12th change disables Speedy Match and his password, logging him out.
+                test_change_date_of_birth_unlimited_times(self): Asserts a user allowed to change his date of birth unlimited times can do so repeatedly without being blocked from Speedy Match or losing his password.
+                test_invalid_date_of_birth_list_fail(self): Asserts every invalid date of birth in the test settings list is rejected and the date of birth is left unchanged.
+            """
             page_url = '/edit-profile/'
 
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state, logs in as that user, and prepares the base form data (date of birth, slug, gender) for the tests.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -1571,20 +2238,32 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(self.user.slug), second=12)
 
             def set_up_required_fields(self):
+                """
+                Computes the set of required form fields (excluding the last name, which is optional) and asserts they are reported as required when missing.
+                """
                 self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
                 self.assert_profile_form_required_fields(required_fields=self.required_fields)
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the edit profile page.
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user, and a Speedy Net-inactive user, can both open the edit profile page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
@@ -1595,6 +2274,9 @@ if (django_settings.TESTS):
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
 
             def test_active_user_can_save_his_settings(self):
+                """
+                Asserts an active user can save his settings, and the name is updated for the test's language code while other per-language name fields are unchanged.
+                """
                 r = self.client.post(path=self.page_url, data=self.data)
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
                 user = User.objects.get(pk=self.user.pk)
@@ -1628,6 +2310,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
             def test_inactive_user_can_save_his_settings(self):
+                """
+                Asserts an inactive user can save his settings.
+                """
                 self.user.profile.deactivate()
                 r = self.client.post(path=self.page_url, data=self.data)
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
@@ -1640,6 +2325,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
             def run_test_required_fields(self, data):
+                """
+                Posts the given data and asserts all required fields are reported as missing, and the user's name is left unchanged.
+
+                :param data: The form data to submit, expected to be missing required fields.
+                """
                 r = self.client.post(path=self.page_url, data=data)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
@@ -1649,14 +2339,25 @@ if (django_settings.TESTS):
                 self.assert_user_first_and_last_name_in_all_languages(user=user)
 
             def test_required_fields_1(self):
+                """
+                Asserts all required fields are reported as required when the form is submitted empty.
+                """
                 data = {}
                 self.run_test_required_fields(data=data)
 
             def test_required_fields_2(self):
+                """
+                Asserts all required fields are reported as required when submitted as empty strings.
+                """
                 data = {field_name: '' for field_name in self.required_fields}
                 self.run_test_required_fields(data=data)
 
             def run_test_user_can_change_his_slug(self, new_slug):
+                """
+                Asserts the user can change his slug to the given new slug (normalized), and the slug is updated.
+
+                :param new_slug: The new slug to submit, which must normalize to a value different from the user's current slug.
+                """
                 old_slug = self.user.slug
                 data = self.data.copy()
                 data['slug'] = new_slug
@@ -1669,26 +2370,46 @@ if (django_settings.TESTS):
                 self.assertNotEqual(first=user.slug, second=old_slug)
 
             def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
+                """
+                Asserts the given new slug normalizes to the expected value, then asserts the user can change his slug to it.
+
+                :param new_slug: The new, unnormalized slug to submit.
+                :param new_slug_normalized: The expected normalized form of new_slug.
+                """
                 self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
                 self.run_test_user_can_change_his_slug(new_slug=new_slug)
 
             def test_user_can_change_his_slug(self):
+                """
+                Asserts the user can change his slug to another already-normalized slug.
+                """
                 new_slug = '{}-{}-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug)
                 self.run_test_user_can_change_his_slug(new_slug=new_slug)
 
             def test_user_can_change_his_slug_with_normalize_slug_1(self):
+                """
+                Asserts the user can change his slug to a slug containing dots and double dashes that gets normalized.
+                """
                 new_slug = '{}.{}--{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 new_slug_normalized = '{}-{}-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.run_test_user_can_change_his_slug_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
             def test_user_can_change_his_slug_with_normalize_slug_2(self):
+                """
+                Asserts the user can change his slug to a slug containing many special characters that gets normalized.
+                """
                 new_slug = '==-{}\\@!!#@#&^&*()({}=*&^%$)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 new_slug_normalized = '{}-{}-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.run_test_user_can_change_his_slug_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
             def run_test_user_cannot_change_his_username(self, new_slug):
+                """
+                Asserts the user cannot change his slug when the new slug would change his username, and nothing is modified.
+
+                :param new_slug: The new slug to submit, which normalizes to a username different from the user's current username.
+                """
                 old_slug = self.user.slug
                 data = self.data.copy()
                 data['slug'] = new_slug
@@ -1704,26 +2425,44 @@ if (django_settings.TESTS):
                 self.assertNotEqual(first=user.username, second=normalize_username(username=new_slug))
 
             def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
+                """
+                Asserts the given new slug normalizes to the expected value, then asserts the user cannot change his username using it.
+
+                :param new_slug: The new, unnormalized slug to submit.
+                :param new_slug_normalized: The expected normalized form of new_slug.
+                """
                 self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
                 self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
             def test_user_cannot_change_his_username_1(self):
+                """
+                Asserts the user cannot change his username by prefixing an extra character to his slug.
+                """
                 new_slug = 'a{}'.format(self.user.slug)
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug)
                 self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
             def test_user_cannot_change_his_username_2(self):
+                """
+                Asserts the user cannot change his username by inserting an extra digit into his slug.
+                """
                 new_slug = '{}-{}-1-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug)
                 self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
             def test_user_cannot_change_his_username_with_normalize_slug(self):
+                """
+                Asserts the user cannot change his username even when the new slug is normalized from one containing many special characters.
+                """
                 new_slug = '==-{}\\@!!#@#&^&*()({}=*&^%$1)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 new_slug_normalized = '{}-{}-1-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.run_test_user_cannot_change_his_username_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
 
             def test_valid_date_of_birth_list_ok(self):
+                """
+                Asserts every valid date of birth in the test settings list is accepted and saved correctly, along with the name in all languages.
+                """
                 self.user.allowed_to_change_date_of_birth_unlimited_times = True
                 self.user.save_user_and_profile()
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST:
@@ -1762,6 +2501,9 @@ if (django_settings.TESTS):
                     self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
 
             def test_change_date_of_birth_12_times(self):
+                """
+                Asserts a user without unlimited date-of-birth changes allowed can change it normally up to the 11th time, and the 12th change blocks Speedy Match, invalidates his password, and logs him out.
+                """
                 number_of_date_of_birth_changes = 0
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_FORMS_LIST[:12]:
                     data = self.data.copy()
@@ -1797,6 +2539,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=(number_of_date_of_birth_changes == 12), expr2=True)
 
             def test_change_date_of_birth_unlimited_times(self):
+                """
+                Asserts a user allowed to change his date of birth unlimited times can do so repeatedly without being blocked from Speedy Match or losing his password.
+                """
                 self.user.allowed_to_change_date_of_birth_unlimited_times = True
                 self.user.save_user_and_profile()
                 number_of_date_of_birth_changes = 0
@@ -1820,6 +2565,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=(17 < number_of_date_of_birth_changes < 25), expr2=True)
 
             def test_invalid_date_of_birth_list_fail(self):
+                """
+                Asserts every invalid date of birth in the test settings list is rejected with the expected errors and the date of birth is left unchanged.
+                """
                 self.date_of_birth = self.user.date_of_birth
                 for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST:
                     data = self.data.copy()
@@ -1833,7 +2581,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class EditProfileViewWithLastNameAllMainLanguagesEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (English).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for English.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in English and prepares the required fields for this language.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -1845,6 +2603,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -1852,7 +2613,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class EditProfileViewWithLastNameAllMainLanguagesFrenchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (French).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for French.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in French and prepares the required fields for this language.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -1864,6 +2635,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -1871,7 +2645,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class EditProfileViewWithLastNameAllMainLanguagesGermanTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (German).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for German.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in German and prepares the required fields for this language.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -1883,6 +2667,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -1890,7 +2677,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class EditProfileViewWithLastNameAllMainLanguagesSpanishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Spanish.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Spanish and prepares the required fields for this language.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -1902,6 +2699,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -1909,7 +2709,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class EditProfileViewWithLastNameAllMainLanguagesPortugueseTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Portuguese.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Portuguese and prepares the required fields for this language.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -1921,6 +2731,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -1928,7 +2741,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class EditProfileViewWithLastNameAllMainLanguagesItalianTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Italian.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Italian and prepares the required fields for this language.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -1940,6 +2763,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -1947,7 +2773,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class EditProfileViewWithLastNameAllMainLanguagesDutchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Dutch.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Dutch and prepares the required fields for this language.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -1959,6 +2795,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -1966,7 +2805,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileViewWithLastNameAllMainLanguagesHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (with a last name) for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Hebrew.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first and last name fields in Hebrew and prepares the required fields for this language.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -1978,13 +2827,26 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class EditProfileViewWithoutLastNameAllMainLanguagesEnglishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (English).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for English.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in English and prepares the required fields for this language.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -1996,6 +2858,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -2003,7 +2868,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class EditProfileViewWithoutLastNameAllMainLanguagesFrenchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (French).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for French.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in French and prepares the required fields for this language.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -2015,6 +2890,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -2022,7 +2900,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class EditProfileViewWithoutLastNameAllMainLanguagesGermanTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (German).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for German.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in German and prepares the required fields for this language.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -2034,6 +2922,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -2041,7 +2932,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class EditProfileViewWithoutLastNameAllMainLanguagesSpanishTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Spanish.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Spanish and prepares the required fields for this language.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -2053,6 +2954,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -2060,7 +2964,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class EditProfileViewWithoutLastNameAllMainLanguagesPortugueseTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Portuguese.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Portuguese and prepares the required fields for this language.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -2072,6 +2986,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -2079,7 +2996,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class EditProfileViewWithoutLastNameAllMainLanguagesItalianTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Italian.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Italian and prepares the required fields for this language.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -2091,6 +3018,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -2098,7 +3028,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class EditProfileViewWithoutLastNameAllMainLanguagesDutchTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Dutch.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Dutch and prepares the required fields for this language.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -2110,6 +3050,9 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -2117,7 +3060,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileViewWithoutLastNameAllMainLanguagesHebrewTestCase(EditProfileViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile view (without a last name) for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets the first name (and last name, if applicable) and the required fields for Hebrew.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Hebrew and prepares the required fields for this language.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -2129,15 +3082,32 @@ if (django_settings.TESTS):
                 self.set_up_required_fields()
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class EditProfilePrivacyViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            """
+            Tests the edit profile privacy settings view: access rules and saving the date-of-birth visibility settings.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state with a confirmed email address and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the privacy settings page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the privacy settings page.
+                test_user_can_save_his_settings_1(self): Asserts a user can save date-of-birth access settings with one combination of values.
+                test_user_can_save_his_settings_2(self): Asserts a user can save date-of-birth access settings with the reversed combination of values.
+            """
             page_url = '/edit-profile/privacy/'
 
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with a confirmed email address, and logs in as that user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -2159,22 +3129,34 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the privacy settings page.
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the privacy settings page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/privacy.html')
 
             def test_user_can_save_his_settings_1(self):
+                """
+                Asserts a user can save his date-of-birth access settings (day/month and year visibility).
+                """
                 data = {
                     'access_dob_day_month': '2',
                     'access_dob_year': '4',
@@ -2186,6 +3168,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.access_dob_year, second=4)
 
             def test_user_can_save_his_settings_2(self):
+                """
+                Asserts a user can save his date-of-birth access settings with the reversed combination of values.
+                """
                 data = {
                     'access_dob_day_month': '4',
                     'access_dob_year': '2',
@@ -2198,9 +3183,22 @@ if (django_settings.TESTS):
 
 
         class EditProfileNotificationsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
+            """
+            Tests the edit profile notification settings view: access rules and saving settings.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the notifications settings page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the notifications settings page.
+                test_user_can_save_his_settings(self): Not implemented in this mixin; subclasses must override it.
+            """
             page_url = '/edit-profile/notifications/'
 
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state and logs in as that user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -2221,29 +3219,63 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the notifications settings page.
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the notifications settings page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/notifications.html')
 
             def test_user_can_save_his_settings(self):
+                """
+                Not implemented in this mixin; subclasses must override this method with a concrete implementation.
+                """
                 raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the edit profile credentials (password change) view: access rules and password change validation (length, uniqueness, matching, old password correctness).
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state with a confirmed email address and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the credentials page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the credentials page.
+                test_user_can_change_password_1(self): Asserts a user can change his password to a new valid 8-character password.
+                test_user_can_change_password_2(self): Asserts a user can change his password to a new valid 120-character password.
+                test_user_can_change_password_3(self): Asserts a user can change his password to a new valid 120-character password containing slashes.
+                test_old_password_incorrect(self): Asserts changing the password fails with the correct error when the old password is incorrect, and the password is unchanged.
+                test_password_too_short(self): Asserts changing the password fails when the new password is too short.
+                test_password_too_long(self): Asserts changing the password fails when the new password is too long.
+                test_password_not_enough_unique_characters(self): Asserts changing the password fails when the new password doesn't have enough unique characters.
+                test_password_too_short_and_not_enough_unique_characters(self): Asserts changing the password fails and reports both errors when the new password is both too short and lacks unique characters.
+                test_password_too_long_and_not_enough_unique_characters(self): Asserts changing the password fails and reports both errors when the new password is both too long and lacks unique characters.
+                test_passwords_dont_match(self): Asserts changing the password fails when the two new password fields don't match, and the password is unchanged.
+            """
             page_url = '/edit-profile/credentials/'
 
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with a confirmed email address, and logs in as that user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -2265,22 +3297,34 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the credentials page.
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the credentials page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/credentials.html')
 
             def test_user_can_change_password_1(self):
+                """
+                Asserts a user can change his password to a new valid 8-character password.
+                """
                 new_password = 'abcdef12'
                 incorrect_new_password = '1' * 8
                 self.assertEqual(first=len(new_password), second=8)
@@ -2297,6 +3341,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_user_can_change_password_2(self):
+                """
+                Asserts a user can change his password to a new valid 120-character password.
+                """
                 new_password = 'abcdef' + ('8' * 114)
                 incorrect_new_password = 'abcde8' + ('8' * 114)
                 self.assertEqual(first=len(new_password), second=120)
@@ -2313,6 +3360,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_user_can_change_password_3(self):
+                """
+                Asserts a user can change his password to a new valid 120-character password that contains slashes.
+                """
                 new_password = 'abcd//' + ('8' * 114)
                 incorrect_new_password = 'abcd/?' + ('8' * 114)
                 self.assertEqual(first=len(new_password), second=120)
@@ -2329,6 +3379,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_old_password_incorrect(self):
+                """
+                Asserts changing the password fails with the "old password was entered incorrectly" error when the old password is wrong, and the password is unchanged.
+                """
                 incorrect_old_password = '7' * 8
                 new_password = 'abcdef12'
                 self.assertEqual(first=len(new_password), second=8)
@@ -2346,6 +3399,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=incorrect_old_password), expr2=False)
 
             def test_password_too_short(self):
+                """
+                Asserts changing the password fails when the new password is too short, and the password is unchanged.
+                """
                 new_password = 'abcdef'
                 self.assertEqual(first=len(new_password), second=6)
                 data = {
@@ -2361,6 +3417,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long(self):
+                """
+                Asserts changing the password fails when the new password is too long, and the password is unchanged.
+                """
                 new_password = 'abcdef' + ('8' * 115)
                 self.assertEqual(first=len(new_password), second=121)
                 data = {
@@ -2376,6 +3435,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_not_enough_unique_characters(self):
+                """
+                Asserts changing the password fails when the new password doesn't have enough unique characters, and the password is unchanged.
+                """
                 new_password = '1234' * 2
                 self.assertEqual(first=len(new_password), second=8)
                 data = {
@@ -2391,6 +3453,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_short_and_not_enough_unique_characters(self):
+                """
+                Asserts changing the password fails and reports both errors when the new password is both too short and lacks unique characters, and the password is unchanged.
+                """
                 new_password = '8' * 3
                 self.assertEqual(first=len(new_password), second=3)
                 data = {
@@ -2406,6 +3471,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long_and_not_enough_unique_characters(self):
+                """
+                Asserts changing the password fails and reports both errors when the new password is both too long and lacks unique characters, and the password is unchanged.
+                """
                 new_password = '8' * 121
                 self.assertEqual(first=len(new_password), second=121)
                 data = {
@@ -2421,6 +3489,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_passwords_dont_match(self):
+                """
+                Asserts changing the password fails when the two new password fields don't match, and the password is unchanged.
+                """
                 new_password_1 = 'abcdef12'
                 new_password_2 = 'abcdef34'
                 data = {
@@ -2439,7 +3510,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class EditProfileCredentialsViewAllMainLanguagesEnglishTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -2447,7 +3527,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class EditProfileCredentialsViewAllMainLanguagesFrenchTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -2455,7 +3544,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class EditProfileCredentialsViewAllMainLanguagesGermanTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -2463,7 +3561,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class EditProfileCredentialsViewAllMainLanguagesSpanishTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -2471,7 +3578,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class EditProfileCredentialsViewAllMainLanguagesPortugueseTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -2479,7 +3595,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class EditProfileCredentialsViewAllMainLanguagesItalianTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -2487,7 +3612,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class EditProfileCredentialsViewAllMainLanguagesDutchTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -2495,25 +3629,53 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EditProfileCredentialsViewAllMainLanguagesHebrewTestCase(EditProfileCredentialsViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the edit profile credentials view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class ActivateSiteProfileViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, TestCaseMixin):
+            """
+            Tests the site profile activation (welcome) view: access rules for logged-out visitors and already-active users, and that inactive users can open and request activation on the page.
+
+            Methods:
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_inactive_user_has_no_access_to_other_pages(self): Asserts an inactive user is redirected to the activation page when trying to access another page.
+                test_active_user_gets_redirected(self): Asserts an already-active user is redirected away from the activation page to the site's home/matches page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the activation page (directly or after being redirected).
+                test_inactive_user_can_request_activation(self): Not implemented in this mixin; subclasses must override it.
+            """
             page_url = '/welcome/'
             redirect_url = None
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_inactive_user_has_no_access_to_other_pages(self):
+                """
+                Asserts an inactive user is redirected to the activation page when trying to access another page.
+                """
                 r = self.client.get(path='/other-page/')
                 self.assertRedirects(response=r, expected_url=self.redirect_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
 
             def test_active_user_gets_redirected(self):
+                """
+                Asserts an already-active user is redirected away from the activation page to the site's home or matches page.
+                """
                 self.client.logout()
                 user_2 = ActiveUserFactory()
                 self.client.login(username=user_2.slug, password=tests_settings.USER_PASSWORD)
@@ -2534,17 +3696,32 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the activation page (directly or after being redirected to it).
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertIn(member=r.status_code, container={200, 302})
                 if (r.status_code == 200):
                     self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/activate.html')
 
             def test_inactive_user_can_request_activation(self):
+                """
+                Not implemented in this mixin; subclasses must override this method with a concrete implementation.
+                """
                 raise NotImplementedError("This test is not implemented in this mixin.")
 
 
         class ActivateSiteProfileViewWithInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):
+            """
+            Tests site profile activation behavior for an inactive user.
+
+            Methods:
+                set_up(self): Creates an inactive user with no email addresses and logs in.
+            """
             def set_up(self):
+                """
+                Creates an inactive user with no email addresses, and logs in as that user.
+                """
                 super().set_up()
                 self.user = InactiveUserFactory()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -2560,7 +3737,16 @@ if (django_settings.TESTS):
 
 
         class ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):
+            """
+            Tests site profile activation behavior for a Speedy Net-inactive user.
+
+            Methods:
+                set_up(self): Creates a Speedy Net-inactive user with a confirmed email address and logs in.
+            """
             def set_up(self):
+                """
+                Creates a Speedy Net-inactive user with a confirmed email address, and logs in as that user.
+                """
                 super().set_up()
                 self.user = SpeedyNetInactiveUserFactory()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -2577,9 +3763,24 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class DeactivateSiteProfileViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+            """
+            Tests the deactivate site profile view: access rules and deactivating the account with correct/incorrect/missing password.
+
+            Methods:
+                set_up(self): Creates an active user with a confirmed email address and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the deactivate page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the deactivate page.
+                test_user_can_deactivate_his_account(self): Asserts a user can deactivate his account by entering his correct password.
+                test_user_cannot_deactivate_his_account_using_incorrect_password(self): Asserts deactivation fails and the account stays active when the password is incorrect.
+                test_user_cannot_deactivate_his_account_without_password(self): Asserts deactivation fails and reports the password as required when it's missing.
+            """
             page_url = '/edit-profile/deactivate/'
 
             def set_up(self):
+                """
+                Creates an active user with a confirmed email address, and logs in as that user.
+                """
                 super().set_up()
                 self.user = ActiveUserFactory()
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
@@ -2592,22 +3793,34 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path=self.page_url)
                 self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the deactivate account page.
+                """
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the deactivate account page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/deactivate.html')
 
             def test_user_can_deactivate_his_account(self):
+                """
+                Asserts a user can deactivate his account by submitting his correct password.
+                """
                 self.assertEqual(first=self.user.is_active, second=True)
                 self.assertEqual(first=self.user.profile.is_active, second=True)
                 data = {
@@ -2620,6 +3833,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.profile.is_active, second=False)
 
             def test_user_cannot_deactivate_his_account_using_incorrect_password(self):
+                """
+                Asserts deactivation fails with the invalid password error, and the account stays active, when the password is incorrect.
+                """
                 self.assertEqual(first=self.user.is_active, second=True)
                 self.assertEqual(first=self.user.profile.is_active, second=True)
                 data = {
@@ -2633,6 +3849,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.profile.is_active, second=True)
 
             def test_user_cannot_deactivate_his_account_without_password(self):
+                """
+                Asserts deactivation fails and reports the password as required when it's missing, and the account stays active.
+                """
                 self.assertEqual(first=self.user.is_active, second=True)
                 self.assertEqual(first=self.user.profile.is_active, second=True)
                 data = {}
@@ -2645,7 +3864,24 @@ if (django_settings.TESTS):
 
 
         class VerifyUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the verify email address view: error handling for invalid/wrong links, already-confirmed emails, wrong confirmation tokens, and the wrong logged-in user, plus the successful confirmation flow.
+
+            Methods:
+                set_up(self): Creates two users (each in a randomly chosen activation state), one confirmed and one unconfirmed email address for the first user.
+                assert_verify_email_url_redirects_after_error(self, r, user): Asserts where verification errors redirect to, based on the given user's activation state and the site, and returns the final response.
+                test_wrong_link_gives_404(self): Asserts a verification link for an email address belonging to no known user gives a 404.
+                test_wrong_email_id_gives_404(self): Asserts a verification link with a non-existent email address id gives a 404.
+                test_not_authenticated_user_redirects_to_login(self): Asserts a logged-out visitor following a verification link is redirected to the login page.
+                test_confirmed_email_error_message(self): Asserts visiting the verification link for an already-confirmed email address shows the "already confirmed" message.
+                test_unconfirmed_email_link_confirms_email(self): Asserts following a valid verification link confirms the email address and shows the success message.
+                test_wrong_user_login_logs_user_out_and_redirects_to_login(self): Asserts visiting another user's verification link logs the current user out and redirects to login.
+                test_wrong_confirmation_token_error_message(self): Asserts an incorrect confirmation token shows the "invalid confirmation link" error and leaves the email unconfirmed.
+            """
             def set_up(self):
+                """
+                Creates two users (each in a randomly chosen activation state), and gives the first user one confirmed and one unconfirmed email address.
+                """
                 super().set_up()
                 self.random_choice_1 = random.choice([1, 2, 3])
                 if (self.random_choice_1 == 1):
@@ -2676,6 +3912,13 @@ if (django_settings.TESTS):
                 )
 
             def assert_verify_email_url_redirects_after_error(self, r, user):
+                """
+                Asserts where a verification error redirects to, based on the given user's activation state and the site, and returns the final response obtained after following the redirect chain.
+
+                :param r: The initial HTTP response to check for the expected redirect.
+                :param user: The user the verification link belongs to; must be self.user or self.other_user.
+                :return: The response obtained after following the redirect chain to its final page.
+                """
                 if (user == self.user):
                     random_choice = self.random_choice_1
                 elif (user == self.other_user):
@@ -2739,12 +3982,18 @@ if (django_settings.TESTS):
                 return r
 
             def test_wrong_link_gives_404(self):
+                """
+                Asserts a verification link for an email address belonging to no known user gives a 404.
+                """
                 user_email_address = UserEmailAddressFactory()
                 token = user_email_address._generate_confirmation_token()
                 r = self.client.get(path='/edit-profile/emails/verify/{}/'.format(token))
                 self.assertEqual(first=r.status_code, second=404)
 
             def test_wrong_email_id_gives_404(self):
+                """
+                Asserts a verification link with a non-existent email address id gives a 404.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = "111"
                 token = self.unconfirmed_email_address.confirmation_token
@@ -2752,6 +4001,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=404)
 
             def test_not_authenticated_user_redirects_to_login(self):
+                """
+                Asserts a logged-out visitor following a verification link is redirected to the login page.
+                """
                 self.client.logout()
                 email_id = self.unconfirmed_email_address.id
                 token = self.unconfirmed_email_address.confirmation_token
@@ -2759,6 +4011,9 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=200)
 
             def test_confirmed_email_error_message(self):
+                """
+                Asserts visiting the verification link for an already-confirmed email address shows the "already confirmed" error message.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = self.confirmed_email_address.id
                 token = "222"
@@ -2768,6 +4023,9 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._youve_already_confirmed_this_email_address_error_message])
 
             def test_unconfirmed_email_link_confirms_email(self):
+                """
+                Asserts following a valid verification link confirms the unconfirmed email address and shows the success message.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = self.unconfirmed_email_address.id
                 token = self.unconfirmed_email_address.confirmation_token
@@ -2781,6 +4039,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=UserEmailAddress.objects.get(pk=self.unconfirmed_email_address.pk).is_confirmed, expr2=True)
 
             def test_wrong_user_login_logs_user_out_and_redirects_to_login(self):
+                """
+                Asserts following another user's verification link while logged in as a different user logs the current user out and redirects to the login page.
+                """
                 self.client.login(username=self.other_user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = self.unconfirmed_email_address.id
                 token = self.unconfirmed_email_address.confirmation_token
@@ -2790,6 +4051,9 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/{}/verify/{}/'.format(email_id, token), status_code=302, target_status_code=200)
 
             def test_wrong_confirmation_token_error_message(self):
+                """
+                Asserts an incorrect confirmation token shows the "invalid confirmation link" error and leaves the email address unconfirmed.
+                """
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
                 email_id = self.unconfirmed_email_address.id
                 token = "222"
@@ -2802,7 +4066,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class VerifyUserEmailAddressViewAllMainLanguagesEnglishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -2810,7 +4083,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class VerifyUserEmailAddressViewAllMainLanguagesFrenchTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -2818,7 +4100,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class VerifyUserEmailAddressViewAllMainLanguagesGermanTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -2826,7 +4117,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class VerifyUserEmailAddressViewAllMainLanguagesSpanishTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -2834,7 +4134,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class VerifyUserEmailAddressViewAllMainLanguagesPortugueseTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -2842,7 +4151,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class VerifyUserEmailAddressViewAllMainLanguagesItalianTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -2850,7 +4168,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class VerifyUserEmailAddressViewAllMainLanguagesDutchTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -2858,13 +4185,38 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class VerifyUserEmailAddressViewAllMainLanguagesHebrewTestCase(VerifyUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the verify user email address view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class AddUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the add email address view: access rules, uniqueness validation, confirmation email sending, and primary-email assignment.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state with a confirmed, primary email address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
+                test_active_user_can_open_the_page(self): Asserts an active user can open the add email address page.
+                test_inactive_user_can_open_the_page(self): Asserts an inactive user can open the add email address page.
+                test_non_unique_confirmed_email_address(self): Asserts adding an email address already confirmed by the user fails with the "already in use" error and no new record is created.
+                test_non_unique_unconfirmed_email_address(self): Asserts adding an email address already unconfirmed for the user does not create a new record or make it primary.
+                test_user_can_add_email_address(self): Asserts a user can add a new email address, receives a confirmation email, and the address is unconfirmed and not primary.
+                test_first_email_is_primary(self): Asserts that adding an email address when the user has no other confirmed email makes the new address primary.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with a confirmed, primary email address, and logs in as that user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -2887,22 +4239,34 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
                 self.client.logout()
                 r = self.client.get(path='/edit-profile/emails/add/')
                 self.assertRedirects(response=r, expected_url='/login/?next=/edit-profile/emails/add/', status_code=302, target_status_code=200)
 
             def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the add email address page.
+                """
                 r = self.client.get(path='/edit-profile/emails/add/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
 
             def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user can open the add email address page.
+                """
                 self.user.profile.deactivate()
                 r = self.client.get(path='/edit-profile/emails/add/')
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertTemplateUsed(response=r, template_name='accounts/email_address_form.html')
 
             def test_non_unique_confirmed_email_address(self):
+                """
+                Asserts adding an email address that is already confirmed for the user fails with the "already in use" error and no model counts change.
+                """
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
@@ -2925,6 +4289,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address(self):
+                """
+                Asserts adding an email address that is already unconfirmed for the user does not create a new record and leaves it non-primary.
+                """
                 self.unconfirmed_email_address = UserEmailAddressFactory(user=self.user, is_confirmed=False)
                 self.assert_models_count(
                     entity_count=1,
@@ -2948,6 +4315,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_can_add_email_address(self):
+                """
+                Asserts a user can add a new email address, which is created unconfirmed and non-primary, and a confirmation email is sent.
+                """
                 self.assertEqual(first=len(mail.outbox), second=0)
                 self.assert_models_count(
                     entity_count=1,
@@ -2983,6 +4353,9 @@ if (django_settings.TESTS):
                 )
 
             def test_first_email_is_primary(self):
+                """
+                Asserts that after deleting the user's only confirmed email address, a newly added email address becomes primary.
+                """
                 self.assert_models_count(
                     entity_count=1,
                     user_count=1,
@@ -3020,7 +4393,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class AddUserEmailAddressViewAllMainLanguagesEnglishTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3028,7 +4410,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class AddUserEmailAddressViewAllMainLanguagesFrenchTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3036,7 +4427,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class AddUserEmailAddressViewAllMainLanguagesGermanTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3044,7 +4444,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class AddUserEmailAddressViewAllMainLanguagesSpanishTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3052,7 +4461,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class AddUserEmailAddressViewAllMainLanguagesPortugueseTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3060,7 +4478,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class AddUserEmailAddressViewAllMainLanguagesItalianTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3068,7 +4495,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class AddUserEmailAddressViewAllMainLanguagesDutchTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3076,13 +4512,34 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class AddUserEmailAddressViewAllMainLanguagesHebrewTestCase(AddUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the add user email address view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class SendConfirmationEmailViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the resend confirmation email view: access rules (logged-out visitor, other users' addresses) and resending a confirmation email.
+
+            Methods:
+                set_up(self): Creates a user in a randomly chosen activation state with an unconfirmed and a confirmed email address, plus another user's address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is forbidden from resending a confirmation email.
+                test_user_has_no_access_to_other_users_address(self): Asserts a user is forbidden from resending a confirmation email for another user's address.
+                test_user_can_resend_confirmation(self): Asserts a user can resend a confirmation email for his own unconfirmed address.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with an unconfirmed and a confirmed email address, plus another user's email address, and logs in as the first user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3109,15 +4566,24 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is forbidden (403) from resending a confirmation email.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.unconfirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
 
             def test_user_has_no_access_to_other_users_address(self):
+                """
+                Asserts a user is forbidden (403) from resending a confirmation email for another user's address.
+                """
                 r = self.client.post(path=self.other_user_address_url)
                 self.assertEqual(first=r.status_code, second=403)
 
             def test_user_can_resend_confirmation(self):
+                """
+                Asserts a user can resend a confirmation email for his own unconfirmed address, and the email is sent with the confirmation token.
+                """
                 self.assertEqual(first=len(mail.outbox), second=0)
                 email_address = UserEmailAddress.objects.get(email=self.unconfirmed_email_address.email)
                 r = self.client.post(path=self.unconfirmed_email_address_url)
@@ -3137,7 +4603,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class SendConfirmationEmailViewAllMainLanguagesEnglishTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3145,7 +4620,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class SendConfirmationEmailViewAllMainLanguagesFrenchTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3153,7 +4637,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class SendConfirmationEmailViewAllMainLanguagesGermanTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3161,7 +4654,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class SendConfirmationEmailViewAllMainLanguagesSpanishTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3169,7 +4671,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class SendConfirmationEmailViewAllMainLanguagesPortugueseTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3177,7 +4688,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class SendConfirmationEmailViewAllMainLanguagesItalianTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3185,7 +4705,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class SendConfirmationEmailViewAllMainLanguagesDutchTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3193,13 +4722,37 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class SendConfirmationEmailViewAllMainLanguagesHebrewTestCase(SendConfirmationEmailViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the send confirmation email view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the delete email address view: access rules, protecting the primary and only-confirmed addresses from deletion, successful deletion, and the ORM-level protection against bulk queryset deletion.
+
+            Methods:
+                set_up(self): Creates a user with an unconfirmed, a confirmed non-primary, and a primary email address, plus another user's address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is forbidden from deleting an email address.
+                test_user_has_no_access_to_other_users_address(self): Asserts a user is forbidden from deleting another user's email address.
+                test_user_cannot_delete_primary_email_address(self): Asserts a user cannot delete his primary email address.
+                test_user_cannot_delete_only_confirmed_email_address(self): Asserts a user cannot delete his only confirmed email address.
+                test_user_can_delete_email_address_if_not_only_confirmed_email_address(self): Asserts a user can delete a confirmed, non-primary email address when he has another confirmed address.
+                test_cannot_delete_user_email_addresses_with_queryset_delete(self): Asserts bulk queryset deletion of email addresses raises NotImplementedError.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with an unconfirmed, a confirmed non-primary, and a primary email address, plus another user's email address, and logs in as the first user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3235,6 +4788,9 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is forbidden (403) from deleting an email address, and model counts are unchanged.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.confirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
@@ -3254,6 +4810,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_has_no_access_to_other_users_address(self):
+                """
+                Asserts a user is forbidden (403) from deleting another user's email address, and model counts are unchanged.
+                """
                 r = self.client.post(path=self.other_user_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assert_models_count(
@@ -3272,6 +4831,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_cannot_delete_primary_email_address(self):
+                """
+                Asserts a user cannot delete his primary email address, and model counts are unchanged.
+                """
                 r = self.client.post(path=self.primary_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assert_models_count(
@@ -3290,6 +4852,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_cannot_delete_only_confirmed_email_address(self):
+                """
+                Asserts a user cannot delete his only confirmed email address, and model counts are unchanged.
+                """
                 for user_email_address in self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk):
                     user_email_address.delete()
                 self.assert_models_count(
@@ -3324,6 +4889,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_can_delete_email_address_if_not_only_confirmed_email_address(self):
+                """
+                Asserts a user can delete a confirmed, non-primary email address when he has another confirmed address, and a success message is shown.
+                """
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     confirmed_email_address_2 = UserEmailAddressFactory(user=self.user, is_confirmed=True, is_primary=False)
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
@@ -3367,6 +4935,9 @@ if (django_settings.TESTS):
                 )
 
             def test_cannot_delete_user_email_addresses_with_queryset_delete(self):
+                """
+                Asserts bulk queryset deletion of email addresses raises NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     self.user.email_addresses.filter(is_confirmed=True).exclude(pk=self.confirmed_email_address.pk).delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -3383,7 +4954,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class DeleteUserEmailAddressViewAllMainLanguagesEnglishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3391,7 +4971,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class DeleteUserEmailAddressViewAllMainLanguagesFrenchTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3399,7 +4988,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class DeleteUserEmailAddressViewAllMainLanguagesGermanTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3407,7 +5005,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class DeleteUserEmailAddressViewAllMainLanguagesSpanishTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3415,7 +5022,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class DeleteUserEmailAddressViewAllMainLanguagesPortugueseTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3423,7 +5039,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class DeleteUserEmailAddressViewAllMainLanguagesItalianTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3431,7 +5056,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class DeleteUserEmailAddressViewAllMainLanguagesDutchTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3439,13 +5073,35 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class DeleteUserEmailAddressViewAllMainLanguagesHebrewTestCase(DeleteUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the delete user email address view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the set primary email address view: access rules, protecting unconfirmed addresses from becoming primary, and successfully making a confirmed address primary.
+
+            Methods:
+                set_up(self): Creates a user with an unconfirmed, a confirmed non-primary, and a primary email address, plus another user's address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is forbidden from setting an email address as primary.
+                test_user_has_no_access_to_other_users_address(self): Asserts a user is forbidden from setting another user's email address as primary.
+                test_user_cannot_make_unconfirmed_email_address_primary(self): Asserts a user cannot make an unconfirmed email address his primary address.
+                test_user_can_make_confirmed_email_address_primary(self): Asserts a user can make a confirmed, non-primary email address his primary address.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with an unconfirmed, a confirmed non-primary, and a primary email address, plus another user's email address, and logs in as the first user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3482,6 +5138,9 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is forbidden (403) from setting an email address as primary, and model counts are unchanged.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.confirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
@@ -3501,6 +5160,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_has_no_access_to_other_users_address(self):
+                """
+                Asserts a user is forbidden (403) from setting another user's email address as primary, and model counts are unchanged.
+                """
                 r = self.client.post(path=self.other_user_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assert_models_count(
@@ -3519,6 +5181,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_cannot_make_unconfirmed_email_address_primary(self):
+                """
+                Asserts a user cannot make an unconfirmed email address his primary address, and model counts are unchanged.
+                """
                 r = self.client.post(path=self.unconfirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assert_models_count(
@@ -3537,6 +5202,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_can_make_confirmed_email_address_primary(self):
+                """
+                Asserts a user can make a confirmed, non-primary email address his primary address, and the primary address changes accordingly.
+                """
                 self.assert_user_email_addresses_count(
                     user=self.user,
                     user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
@@ -3571,7 +5239,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class SetPrimaryUserEmailAddressViewAllMainLanguagesEnglishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3579,7 +5256,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesFrenchTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3587,7 +5273,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesGermanTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3595,7 +5290,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesSpanishTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3603,7 +5307,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesPortugueseTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3611,7 +5324,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesItalianTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3619,7 +5341,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesDutchTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3627,14 +5358,37 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class SetPrimaryUserEmailAddressViewAllMainLanguagesHebrewTestCase(SetPrimaryUserEmailAddressViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the set primary user email address view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class ChangeUserEmailAddressPrivacyViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SiteTestCase):
+            """
+            Tests the change email address privacy view: access rules and changing an email address's privacy setting.
+
+            Methods:
+                set_up(self): Creates a user with a confirmed email address and another user's address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is forbidden from changing the privacy of an email address.
+                test_user_has_no_access_to_other_users_address(self): Asserts a user is forbidden from changing the privacy of another user's email address.
+                test_get_redirects_to_edit_profile_emails_page(self): Asserts a GET request redirects without changing the privacy setting.
+                test_user_can_change_email_address_privacy_to_friends(self): Asserts a user can change his email address privacy to friends.
+                test_user_can_change_email_address_privacy_to_anyone(self): Asserts a user can change his email address privacy to anyone.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with a confirmed email address (access set to 'me') and another user's email address, and logs in as the first user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3653,6 +5407,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is forbidden (403) from changing the privacy of an email address, and the access setting is unchanged.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
                 self.assertEqual(first=r.status_code, second=403)
@@ -3660,24 +5417,36 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
 
             def test_user_has_no_access_to_other_users_address(self):
+                """
+                Asserts a user is forbidden (403) from changing the privacy of another user's email address, and the access setting is unchanged.
+                """
                 r = self.client.post(path=self.other_user_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
                 self.assertEqual(first=r.status_code, second=403)
                 self.other_user_address.refresh_from_db()
                 self.assertEqual(first=self.other_user_address.access, second=UserAccessField.ACCESS_ME)
 
             def test_get_redirects_to_edit_profile_emails_page(self):
+                """
+                Asserts a GET request to the privacy URL redirects to the emails page without changing the access setting.
+                """
                 r = self.client.get(path=self.email_address_url)
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
                 self.email_address.refresh_from_db()
                 self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_ME)
 
             def test_user_can_change_email_address_privacy_to_friends(self):
+                """
+                Asserts a user can change his email address privacy to friends.
+                """
                 r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_FRIENDS})
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
                 self.email_address.refresh_from_db()
                 self.assertEqual(first=self.email_address.access, second=UserAccessField.ACCESS_FRIENDS)
 
             def test_user_can_change_email_address_privacy_to_anyone(self):
+                """
+                Asserts a user can change his email address privacy to anyone.
+                """
                 r = self.client.post(path=self.email_address_url, data={'access': UserAccessField.ACCESS_ANYONE})
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
                 self.email_address.refresh_from_db()
@@ -3686,7 +5455,21 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class ResendConfirmationEmailViewOnlyEnglishTestCase(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SiteTestCase):
+            """
+            Tests the resend confirmation email view (English only): access rules and resending a confirmation email.
+
+            Methods:
+                set_up(self): Creates a user with an unconfirmed email address, a confirmed non-primary email address, and another user's unconfirmed address, and logs in.
+                test_visitor_has_no_access(self): Asserts a logged-out visitor is forbidden from resending a confirmation email.
+                test_user_has_no_access_to_other_users_address(self): Asserts a user is forbidden from resending a confirmation email for another user's address.
+                test_user_cannot_resend_confirmation_for_already_confirmed_address(self): Asserts a user cannot resend a confirmation email for an already-confirmed address.
+                test_get_redirects_to_edit_profile_emails_page_without_sending_email(self): Asserts a GET request redirects to the emails page without sending an email.
+                test_user_can_resend_confirmation_email(self): Asserts a user can resend a confirmation email for his own unconfirmed address.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with an unconfirmed email address, a confirmed non-primary email address, and another user's unconfirmed email address, and logs in as the first user.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3706,27 +5489,42 @@ if (django_settings.TESTS):
                 self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
 
             def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is forbidden (403) from resending a confirmation email, and no email is sent.
+                """
                 self.client.logout()
                 r = self.client.post(path=self.unconfirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_user_has_no_access_to_other_users_address(self):
+                """
+                Asserts a user is forbidden (403) from resending a confirmation email for another user's address, and no email is sent.
+                """
                 r = self.client.post(path=self.other_user_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_user_cannot_resend_confirmation_for_already_confirmed_address(self):
+                """
+                Asserts a user cannot resend a confirmation email for an already-confirmed address, and no email is sent.
+                """
                 r = self.client.post(path=self.confirmed_email_address_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_get_redirects_to_edit_profile_emails_page_without_sending_email(self):
+                """
+                Asserts a GET request to the resend URL redirects to the emails page without sending an email.
+                """
                 r = self.client.get(path=self.unconfirmed_email_address_url)
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
                 self.assertEqual(first=len(mail.outbox), second=0)
 
             def test_user_can_resend_confirmation_email(self):
+                """
+                Asserts a user can resend a confirmation email for his own unconfirmed address, and the email contains the confirmation token.
+                """
                 self.assertEqual(first=len(mail.outbox), second=0)
                 r = self.client.post(path=self.unconfirmed_email_address_url)
                 self.assertRedirects(response=r, expected_url='/edit-profile/emails/', status_code=302, target_status_code=302)
@@ -3741,7 +5539,19 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class PasswordResetViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the password reset view: opening the page, requesting a password reset email, and the deleted-account edge case.
+
+            Methods:
+                set_up(self): Creates a user with a confirmed primary email address.
+                test_visitor_can_open_the_page(self): Asserts the password reset page can be opened.
+                test_visitor_can_reset_password(self): Asserts a password reset email is sent when requesting a reset for an existing email address.
+                test_visitor_cannot_reset_password_if_account_is_deleted_and_doesnt_have_usable_password(self): Asserts no password reset email is sent for a deleted account without a usable password.
+            """
             def set_up(self):
+                """
+                Creates a user in a randomly chosen activation state with a confirmed primary email address.
+                """
                 super().set_up()
                 self.random_choice = random.choice([1, 2, 3])
                 if (self.random_choice == 1):
@@ -3763,10 +5573,16 @@ if (django_settings.TESTS):
                 )
 
             def test_visitor_can_open_the_page(self):
+                """
+                Asserts the password reset page can be opened.
+                """
                 r = self.client.get(path='/reset-password/')
                 self.assertEqual(first=r.status_code, second=200)
 
             def test_visitor_can_reset_password(self):
+                """
+                Asserts requesting a password reset for an existing email address sends a password reset email with the correct subject.
+                """
                 self.assertEqual(first=len(mail.outbox), second=0)
                 data = {
                     'email': self.email.email,
@@ -3780,6 +5596,9 @@ if (django_settings.TESTS):
                 }[self.site.id])
 
             def test_visitor_cannot_reset_password_if_account_is_deleted_and_doesnt_have_usable_password(self):
+                """
+                Asserts no password reset email is sent when requesting a reset for a deleted account without a usable password.
+                """
                 self.user.speedy_net_profile.deactivate()
                 self.user.set_unusable_password()
                 self.user.save()
@@ -3817,7 +5636,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class PasswordResetViewAllMainLanguagesEnglishTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'en'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3825,7 +5653,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class PasswordResetViewAllMainLanguagesFrenchTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fr'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3833,7 +5670,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class PasswordResetViewAllMainLanguagesGermanTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'de'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3841,7 +5687,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class PasswordResetViewAllMainLanguagesSpanishTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'es'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3849,7 +5704,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class PasswordResetViewAllMainLanguagesPortugueseTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pt'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3857,7 +5721,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class PasswordResetViewAllMainLanguagesItalianTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'it'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3865,7 +5738,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class PasswordResetViewAllMainLanguagesDutchTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'nl'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3873,7 +5755,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class PasswordResetViewAllMainLanguagesHebrewTestCase(PasswordResetViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the password reset view for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'he'.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 

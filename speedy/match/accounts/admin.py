@@ -7,6 +7,9 @@ if (django_settings.LOGIN_ENABLED):
 
 
     class SpeedyMatchSiteProfileAdmin(SiteProfileBaseAdmin):
+        """
+        Admin configuration for the Speedy Match SiteProfile model. Inherits all behavior from SiteProfileBaseAdmin without any additions.
+        """
         pass
 
 

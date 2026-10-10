@@ -30,6 +30,12 @@ class File(TimeStampedModel):
 
     @property
     def basename(self):
+        """
+        Get the base name (file name without directories) of the uploaded file.
+
+        :return: The base name of the file.
+        :rtype: str
+        """
         return os.path.basename(self.file.name)
 
     class Meta:
@@ -38,15 +44,21 @@ class File(TimeStampedModel):
         ordering = ('-date_created',)
 
     def __str__(self):
+        """
+        Return a human-readable string representation of the file.
+
+        :return: A string containing the file's basename and owner.
+        :rtype: str
+        """
         return '{} (owner={})'.format(self.basename, self.owner)
 
     def save(self, *args, **kwargs):
         """
         Save the File instance to the database.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
+        :param args: Additional positional arguments passed to the parent method.
+        :param kwargs: Additional keyword arguments passed to the parent method.
+        :return: The result of the parent save method.
         """
         self.size = self.file.size
         return super().save(*args, **kwargs)

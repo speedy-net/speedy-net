@@ -4,6 +4,12 @@ from .models import Feedback
 
 
 class FeedbackAdmin(ReadOnlyModelAdmin):
+    """
+    Read-only admin interface for Feedback entries.
+
+    Attributes:
+        readonly_fields (tuple): Fields shown as read-only in the admin (creation/update timestamps and id).
+    """
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 

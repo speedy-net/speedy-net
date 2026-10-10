@@ -22,6 +22,14 @@ logger = logging.getLogger(__name__)
 
 @predicate
 def is_participant(user, chat):
+    """
+    :param user: The user to check.
+    :type user: speedy.core.accounts.models.User
+    :param chat: The chat to check participation in.
+    :type chat: speedy.core.messages.models.Chat
+    :return: True if the user is a participant of the chat.
+    :rtype: bool
+    """
     return user.id in (ent.id for ent in chat.participants)
 
 
@@ -39,6 +47,11 @@ def can_send_new_message(user):
 
     # If the user signed up to Speedy Net less than 6 hours ago, and they don't use a gmail.com email address,
     # then don't let them send any new messages to new chats.
+
+    :param user: The user who wants to send a new message to a new chat.
+    :type user: speedy.core.accounts.models.User
+    :return: True if the user can send new messages to new chats, False otherwise.
+    :rtype: bool
     """
     can_send = True
     language_code = get_language()
@@ -152,6 +165,14 @@ def can_send_new_message(user):
 
 @predicate
 def can_send_message(user, other_user):
+    """
+    :param user: The user who wants to send the message.
+    :type user: speedy.core.accounts.models.User
+    :param other_user: The user the message would be sent to.
+    :type other_user: speedy.core.accounts.models.User
+    :return: True if there is already a chat between the users, or if can_send_new_message allows the user to start a new chat.
+    :rtype: bool
+    """
     existing_chat = Chat.objects.chat_with(ent1=user, ent2=other_user, create=False)
     if (existing_chat is not None):
         return True

@@ -1,3 +1,6 @@
+"""
+Permission rules for the Speedy Net accounts app.
+"""
 from django.conf import settings as django_settings
 
 from rules import add_perm, is_authenticated

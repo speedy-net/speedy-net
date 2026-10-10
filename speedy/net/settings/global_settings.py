@@ -5,6 +5,9 @@
 
 
 class ENTITY_SETTINGS(object):
+    """
+    Settings for entities (any named/slugged object on the site, such as users).
+    """
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 120
 
@@ -52,11 +55,17 @@ class ENTITY_SETTINGS(object):
 
 
 class NAMED_ENTITY_SETTINGS(object):
+    """
+    Settings for named entities (entities that have a name, such as users).
+    """
     MIN_NAME_LENGTH = 1  # ~~~~ TODO: too short?
     MAX_NAME_LENGTH = 200
 
 
 class USER_SETTINGS(object):
+    """
+    Settings for users.
+    """
     MIN_USERNAME_LENGTH = 6
     MAX_USERNAME_LENGTH = 40
 

@@ -17,8 +17,23 @@ if (django_settings.TESTS):
 
 
     class TestsDynamicSettings(object):
+        """
+        Provides test settings computed dynamically at test run time, such as lists of valid/invalid dates of birth relative to the current date.
+
+        Methods:
+            valid_date_of_birth_list: Builds a list of valid dates of birth for a given maximum allowed age.
+            invalid_date_of_birth_list: Builds a list of invalid dates of birth for a given maximum allowed age.
+        """
         @staticmethod
         def valid_date_of_birth_list(max_age_allowed):
+            """
+            Builds a sorted list of valid date-of-birth strings (ISO format), for a given maximum allowed age in years.
+
+            :param max_age_allowed: Required. The maximum age allowed, in years.
+            :type max_age_allowed: int
+            :return: A sorted list of valid date-of-birth strings.
+            :rtype: list[str]
+            """
             today = date.today()
             end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             valid_date_of_birth_list = [
@@ -50,6 +65,14 @@ if (django_settings.TESTS):
 
         @staticmethod
         def invalid_date_of_birth_list(max_age_allowed):
+            """
+            Builds a sorted list of invalid date-of-birth strings, for a given maximum allowed age in years.
+
+            :param max_age_allowed: Required. The maximum age allowed, in years.
+            :type max_age_allowed: int
+            :return: A sorted list of invalid date-of-birth strings.
+            :rtype: list[str]
+            """
             today = date.today()
             end_of_tests_date = (datetime.now() + relativedelta(hours=6)).date()
             invalid_date_of_birth_list = [
@@ -110,10 +133,16 @@ if (django_settings.TESTS):
 
 
     class OVERRIDE_ENTITY_SETTINGS(object):
+        """
+        Overridden settings for the Entity model, used in tests.
+        """
         MIN_SLUG_LENGTH = 60
 
 
     class OVERRIDE_USER_SETTINGS(object):
+        """
+        Overridden settings for the User model, used in tests.
+        """
         MIN_SLUG_LENGTH = 60
         MAX_NUMBER_OF_FRIENDS_ALLOWED = 4
 
@@ -125,6 +154,9 @@ if (django_settings.TESTS):
 
 
     class OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS(object):
+        """
+        Overridden settings for the Speedy Match site profile model, used in tests.
+        """
         MIN_AGE_TO_MATCH_ALLOWED = 2  # In years.
         MAX_AGE_TO_MATCH_ALLOWED = 178  # In years.
 
@@ -133,6 +165,9 @@ if (django_settings.TESTS):
 
 
     class OVERRIDE_LOGGING_SETTINGS(object):
+        """
+        Overridden logging settings, used in tests, logging to the console instead of by email.
+        """
         LOGGING = copy.deepcopy(django_settings.LOGGING)
         LOGGING['loggers']['speedy']['handlers'] = ['console']
 
@@ -154,6 +189,11 @@ if (django_settings.TESTS):
 
     @receiver(signal=setting_changed)
     def logging_changed(**kwargs):
+        """
+        Reconfigures Python's logging when the LOGGING setting changes during tests (e.g. via `override_settings`).
+
+        :param kwargs: Required. The signal's keyword arguments, including 'setting' and 'value'.
+        """
         if kwargs['setting'] == 'LOGGING':
             logging.config.dictConfig(config=kwargs['value'])
 

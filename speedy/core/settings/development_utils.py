@@ -61,6 +61,12 @@ LOGGING = {
 
 
 def activate_development(settings):
+    """
+    Update the given settings dict in place for the development environment (console email backend, debug toolbar, verbose logging, insecure cookies, DEBUG enabled).
+
+    :param settings: The settings dict to update.
+    :type settings: dict
+    """
     settings.update({
         'EMAIL_BACKEND': 'django.core.mail.backends.console.EmailBackend',
         'MIDDLEWARE': ['debug_toolbar.middleware.DebugToolbarMiddleware'] + settings['MIDDLEWARE'],

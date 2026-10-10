@@ -11,7 +11,21 @@ _POT_CREATION_DATE_LINE_RE = re.compile(rb'^"POT-Creation-Date: .*$', re.M)
 
 
 class Command(makemessages.Command):
+    """
+    A `makemessages` management command which avoids needless no-op changes to .po files.
+
+    Methods:
+        write_po_file: Writes the .po file, preserving the original file (and its mtime) when only the "POT-Creation-Date" header changed.
+    """
     def write_po_file(self, potfile, locale):
+        """
+        Writes the .po file for the given locale, but avoids rewriting it (and bumping its mtime) when the only difference from the existing file is the "POT-Creation-Date" header line, so that `compilemessages` does not needlessly recompile unchanged files.
+
+        :param potfile: Required. The path to the .pot file.
+        :type potfile: str
+        :param locale: Required. The locale for which to write the .po file.
+        :type locale: str
+        """
         po_filename = os.path.join(os.path.dirname(potfile), locale, "LC_MESSAGES", "%s.po" % self.domain)
         old_bytes = None
         old_stat = None

@@ -31,7 +31,16 @@ if (django_settings.TESTS):
 
 
         class EntityTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the Entity model's validations and behavior, such as slug/username/id generation, length limits and reserved usernames.
+            """
             def create_one_entity(self):
+                """
+                Creates and saves one Entity with a fixed slug and username, and asserts its username, slug and id are set correctly.
+
+                :return: The created entity.
+                :rtype: speedy.core.accounts.models.Entity
+                """
                 entity = Entity(slug='zzzzzz', username='zzzzzz')
                 entity.save()
                 self.assertEqual(first=entity.username, second='zzzzzz')
@@ -40,6 +49,12 @@ if (django_settings.TESTS):
                 return entity
 
             def run_test_all_slugs_to_test_list(self, test_settings):
+                """
+                Attempts to save an entity for each slug in tests_settings.SLUGS_TO_TEST_LIST, counts successes and failures according to the current MIN_SLUG_LENGTH setting, and asserts the resulting counts and model counts match the expected values.
+
+                :param test_settings: A dict containing the key "expected_counts_tuple", a tuple of (ok_count, model_save_failures_count) expected for the current settings.
+                :type test_settings: dict
+                """
                 ok_count, model_save_failures_count = 0, 0
                 for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
                     entity = Entity(slug=slug_dict["slug"])
@@ -63,18 +78,27 @@ if (django_settings.TESTS):
                 self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
             def test_model_settings(self):
+                """
+                Asserts the Entity model's username and slug length settings have the expected default values.
+                """
                 self.assertEqual(first=Entity.settings.MIN_USERNAME_LENGTH, second=6)
                 self.assertEqual(first=Entity.settings.MAX_USERNAME_LENGTH, second=120)
                 self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
                 self.assertEqual(first=Entity.settings.MAX_SLUG_LENGTH, second=200)
 
             def test_cannot_create_entity_without_a_slug(self):
+                """
+                Asserts that saving an Entity without a slug raises a ValidationError because the username doesn't start with at least 4 letters.
+                """
                 entity = Entity()
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
             def test_cannot_create_entities_with_bulk_create(self):
+                """
+                Asserts that creating entities with bulk_create raises a NotImplementedError.
+                """
                 entity_1 = Entity(slug='zzzzzz')
                 entity_2 = Entity(slug='ZZZ-ZZZ')
                 with self.assertRaises(NotImplementedError) as cm:
@@ -82,6 +106,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
             def test_cannot_delete_entities_with_queryset_delete(self):
+                """
+                Asserts that deleting entities via the manager or a queryset (all, filter, exclude) raises a NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     Entity.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -96,6 +123,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_create_entity_with_an_invalid_id_1(self):
+                """
+                Asserts that an entity with an id whose first character is '0' is invalid, since the first character must be a non-zero digit, and saving it raises a ValidationError.
+                """
                 old_entity = self.create_one_entity()
                 old_entity_id = old_entity.id
                 old_entity_id_as_list = list(old_entity_id)
@@ -118,6 +148,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_entity_with_an_invalid_id_2(self):
+                """
+                Asserts that an entity with an id longer than the maximum length (16 characters) is invalid, and saving it raises a ValidationError for illegal characters and exceeding the maximum length.
+                """
                 old_entity = self.create_one_entity()
                 old_entity_id = old_entity.id
                 new_entity_id = '{}1'.format(old_entity_id)
@@ -133,6 +166,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(max_length=15, value_length=16))
 
             def test_cannot_create_entity_with_an_invalid_id_3(self):
+                """
+                Asserts that an entity with an id whose first character is a non-digit (e.g. '_', a letter, or a special character) is invalid, and saving it raises a ValidationError.
+                """
                 old_entity = self.create_one_entity()
                 old_entity_id = old_entity.id
                 old_entity_id_as_list = list(old_entity_id)
@@ -155,6 +191,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_entity_with_an_invalid_id_4(self):
+                """
+                Asserts that an entity with an id shorter than the required length (14 characters) is invalid, and saving it raises a ValidationError for illegal characters.
+                """
                 old_entity = self.create_one_entity()
                 old_entity_id = old_entity.id
                 new_entity_id = '{}'.format(old_entity_id[:14])
@@ -170,18 +209,27 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_entity_with_reserved_username(self):
+                """
+                Asserts that creating an entity with a reserved username ('webmaster') raises a ValidationError.
+                """
                 entity = Entity(slug='webmaster')
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
             def test_cannot_create_entity_with_reserved_and_too_short_username(self):
+                """
+                Asserts that creating an entity with a reserved username that is also too short ('mail') raises a ValidationError for a too-short username.
+                """
                 entity = Entity(slug='mail')
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=4))
 
             def test_cannot_create_entity_with_existing_username(self):
+                """
+                Asserts that creating an entity whose username matches an already-saved entity's username raises a ValidationError.
+                """
                 entity_1 = Entity(slug='zzzzzz')
                 entity_1.save()
                 entity_2 = Entity(slug='ZZZ-ZZZ')
@@ -190,6 +238,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
             def test_automatic_creation_of_username_and_id(self):
+                """
+                Asserts that saving an entity with only a slug automatically generates the matching username and a 15-digit id.
+                """
                 entity = Entity(slug='zzzzzz')
                 entity.save()
                 self.assertEqual(first=entity.username, second='zzzzzz')
@@ -197,6 +248,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=len(entity.id), second=15)
 
             def test_automatic_creation_of_id(self):
+                """
+                Asserts that saving an entity with a slug and username automatically generates a 15-digit numeric id, starting with a non-zero digit.
+                """
                 entity = Entity(slug='zzzzzz', username='zzzzzz')
                 entity.save()
                 self.assertEqual(first=entity.username, second='zzzzzz')
@@ -209,6 +263,9 @@ if (django_settings.TESTS):
                     self.assertIn(member=entity.id[i], container=[str(i) for i in range(10)])
 
             def test_create_2_entities_and_assert_different_ids(self):
+                """
+                Asserts that creating two entities generates distinct usernames, slugs and ids for each.
+                """
                 entity_1 = Entity(slug='zzzzzz1')
                 entity_1.save()
                 entity_2 = Entity(slug='ZZZ-ZZZ-2')
@@ -224,16 +281,25 @@ if (django_settings.TESTS):
                 self.assertNotEqual(first=entity_1.id, second=entity_2.id)
 
             def test_slug_and_username_min_length_fail(self):
+                """
+                Asserts that a slug and username shorter than MIN_SLUG_LENGTH/MIN_USERNAME_LENGTH raise a ValidationError.
+                """
                 entity = Entity(slug='a' * 5, username='a' * 5)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=5))
 
             def test_slug_and_username_min_length_ok_1(self):
+                """
+                Asserts that a slug and username exactly at MIN_SLUG_LENGTH/MIN_USERNAME_LENGTH save successfully.
+                """
                 entity = Entity(slug='a' * 6, username='a' * 6)
                 entity.save()
 
             def test_slug_and_username_min_length_ok_2(self):
+                """
+                Asserts that with the default MIN_SLUG_LENGTH, all slugs in SLUGS_TO_TEST_LIST that meet the minimum length are saved successfully.
+                """
                 self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=6)
                 test_settings = {
                     "expected_counts_tuple": (8, 0),
@@ -242,6 +308,9 @@ if (django_settings.TESTS):
 
             @override_settings(ENTITY_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.ENTITY_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_ENTITY_SETTINGS.MIN_SLUG_LENGTH))
             def test_slug_min_length_fail_username_min_length_ok(self):
+                """
+                Asserts that with an overridden, larger MIN_SLUG_LENGTH, only slugs in SLUGS_TO_TEST_LIST that meet the new minimum are saved successfully, and the rest fail.
+                """
                 self.assertEqual(first=Entity.settings.MIN_SLUG_LENGTH, second=60)
                 test_settings = {
                     "expected_counts_tuple": (4, 4),
@@ -249,66 +318,102 @@ if (django_settings.TESTS):
                 self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
             def test_slug_and_username_max_length_fail(self):
+                """
+                Asserts that a slug and username longer than MAX_SLUG_LENGTH/MAX_USERNAME_LENGTH raise a ValidationError.
+                """
                 entity = Entity(slug='a' * 201, username='z' * 201)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=201))
 
             def test_slug_max_length_ok_username_max_length_fail_1(self):
+                """
+                Asserts that a slug within MAX_SLUG_LENGTH but a username exceeding MAX_USERNAME_LENGTH raises a ValidationError for both.
+                """
                 entity = Entity(slug='b' * 200, username='b' * 200)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=200))
 
             def test_slug_max_length_ok_username_max_length_fail_2(self):
+                """
+                Asserts that a slug within MAX_SLUG_LENGTH but a username slightly over MAX_USERNAME_LENGTH raises a ValidationError for both.
+                """
                 entity = Entity(slug='b' * 121, username='b' * 121)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, username_fail=True, username_value_length=121))
 
             def test_slug_max_length_fail_username_max_length_ok_with_username(self):
+                """
+                Asserts that a slug exceeding MAX_SLUG_LENGTH (due to hyphens inflating its length) raises a ValidationError, even when an explicit username within the limit is given.
+                """
                 entity = Entity(slug='a-' * 120, username='a' * 120)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
             def test_slug_max_length_fail_username_max_length_ok_without_username(self):
+                """
+                Asserts that a slug exceeding MAX_SLUG_LENGTH (due to hyphens inflating its length) raises a ValidationError, even when no username is given and it would be derived from the slug.
+                """
                 entity = Entity(slug='a-' * 120)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_characters_errors_dict_by_value_length(model=Entity, slug_fail=True, slug_value_length=239))
 
             def test_slug_and_username_max_length_ok(self):
+                """
+                Asserts that a slug and username at exactly the maximum allowed lengths save successfully.
+                """
                 entity = Entity(slug='a' * 120 + '-' * 80, username='a' * 120)
                 entity.save()
 
             def test_star2000_is_valid_username(self):
+                """
+                Asserts that a username starting with 4 or more letters followed by digits ('star2000') is valid.
+                """
                 entity = Entity(slug='star2000', username='star2000')
                 entity.save()
 
             def test_come2us_is_valid_username(self):
+                """
+                Asserts that a username starting with 4 or more letters followed by digits ('come2us') is valid.
+                """
                 entity = Entity(slug='come2us', username='come2us')
                 entity.save()
 
             def test_000000_is_invalid_username(self):
+                """
+                Asserts that a username consisting only of digits ('000000') is invalid since it doesn't start with 4 or more letters.
+                """
                 entity = Entity(slug='0' * 6, username='0' * 6)
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
             def test_0test1_is_invalid_username(self):
+                """
+                Asserts that a username starting with a digit ('0test1') is invalid since it doesn't start with 4 or more letters.
+                """
                 entity = Entity(slug='0-test-1', username='0test1')
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=Entity, slug_fail=True, username_fail=True))
 
             def test_slug_and_username_dont_match_but_valid(self):
+                """
+                Asserts that a valid slug and valid username that don't parse to the same value raise a ValidationError for mismatch.
+                """
                 entity = Entity(slug='star2001', username='star2000')
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=Entity))
 
             def test_slug_and_username_dont_match_and_invalid(self):
+                """
+                Asserts that a slug and username that are both invalid and don't match each other raise a ValidationError for the username not starting with 4 or more letters.
+                """
                 entity = Entity(slug='0-test-2', username='0test1')
                 with self.assertRaises(ValidationError) as cm:
                     entity.save()
@@ -317,7 +422,16 @@ if (django_settings.TESTS):
 
         # @only_on_sites_with_login  # ~~~~ TODO
         class EntityAllMainLanguagesEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -325,7 +439,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='fr')
         class EntityAllMainLanguagesFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -333,7 +456,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='de')
         class EntityAllMainLanguagesGermanTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -341,7 +473,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='es')
         class EntityAllMainLanguagesSpanishTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -349,7 +490,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='pt')
         class EntityAllMainLanguagesPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -357,7 +507,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='it')
         class EntityAllMainLanguagesItalianTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -365,7 +524,16 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='nl')
         class EntityAllMainLanguagesDutchTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -373,31 +541,55 @@ if (django_settings.TESTS):
         # @only_on_sites_with_login  # ~~~~ TODO
         @override_settings(LANGUAGE_CODE='he')
         class EntityAllMainLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
+            """
+            Tests the Entity model, for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the ReservedUsername model's validations and behavior, such as required fields, uniqueness, and length limits.
+            """
             def test_cannot_create_reserved_username_without_a_username(self):
+                """
+                Asserts that saving a ReservedUsername without a username or slug raises a ValidationError.
+                """
                 reserved_username = ReservedUsername()
                 with self.assertRaises(ValidationError) as cm:
                     reserved_username.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
             def test_cannot_create_reserved_username_with_empty_username(self):
+                """
+                Asserts that saving a ReservedUsername with an empty username raises a ValidationError.
+                """
                 reserved_username = ReservedUsername(username='')
                 with self.assertRaises(ValidationError) as cm:
                     reserved_username.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
             def test_cannot_create_reserved_username_with_empty_slug(self):
+                """
+                Asserts that saving a ReservedUsername with an empty slug raises a ValidationError.
+                """
                 reserved_username = ReservedUsername(slug='')
                 with self.assertRaises(ValidationError) as cm:
                     reserved_username.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})
 
             def test_cannot_create_reserved_usernames_with_bulk_create(self):
+                """
+                Asserts that creating reserved usernames with bulk_create raises a NotImplementedError.
+                """
                 reserved_username_1 = ReservedUsername(slug='zzzzzz')
                 reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
                 with self.assertRaises(NotImplementedError) as cm:
@@ -405,6 +597,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
             def test_cannot_delete_reserved_usernames_with_queryset_delete(self):
+                """
+                Asserts that deleting reserved usernames via the manager or a queryset (all, filter, exclude) raises a NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     ReservedUsername.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -419,14 +614,23 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_can_create_reserved_username_with_reserved_username(self):
+                """
+                Asserts that a reserved username can itself be created with a reserved slug ('webmaster'), unlike regular entities.
+                """
                 reserved_username = ReservedUsername(slug='webmaster')
                 reserved_username.save()
 
             def test_can_create_reserved_username_with_reserved_and_too_short_username(self):
+                """
+                Asserts that a reserved username can be created with a reserved and too-short slug ('mail'), unlike regular entities.
+                """
                 reserved_username = ReservedUsername(slug='mail')
                 reserved_username.save()
 
             def test_cannot_create_reserved_username_with_existing_username_1(self):
+                """
+                Asserts that creating a reserved username whose username matches an existing Entity's username raises a ValidationError.
+                """
                 entity = Entity(slug='zzzzzz')
                 entity.save()
                 reserved_username = ReservedUsername(slug='ZZZ-ZZZ')
@@ -435,6 +639,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
 
             def test_cannot_create_reserved_username_with_existing_username_2(self):
+                """
+                Asserts that creating a reserved username whose username matches another existing ReservedUsername's username raises a ValidationError.
+                """
                 reserved_username_1 = ReservedUsername(slug='zzzzzz')
                 reserved_username_1.save()
                 reserved_username_2 = ReservedUsername(slug='ZZZ-ZZZ')
@@ -443,68 +650,110 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})
 
             def test_star2000_is_valid_username(self):
+                """
+                Asserts that a username starting with 4 or more letters followed by digits ('star2000') is valid for a reserved username.
+                """
                 reserved_username = ReservedUsername(slug='star2000', username='star2000')
                 reserved_username.save()
 
             def test_come2us_is_valid_username(self):
+                """
+                Asserts that a username starting with 4 or more letters followed by digits ('come2us') is valid for a reserved username.
+                """
                 reserved_username = ReservedUsername(slug='come2us', username='come2us')
                 reserved_username.save()
 
             def test_000000_is_valid_username(self):
+                """
+                Asserts that, unlike regular entities, a reserved username consisting only of digits ('000000') is valid.
+                """
                 reserved_username = ReservedUsername(slug='0' * 6, username='0' * 6)
                 reserved_username.save()
 
             def test_0test1_is_valid_username(self):
+                """
+                Asserts that, unlike regular entities, a reserved username starting with a digit ('0test1') is valid.
+                """
                 reserved_username = ReservedUsername(slug='0-test-1', username='0test1')
                 reserved_username.save()
 
             def test_0_is_valid_username_1(self):
+                """
+                Asserts that a reserved username can be created with only a one-character slug ('0'), with the username derived automatically.
+                """
                 reserved_username = ReservedUsername(slug='0')
                 reserved_username.save()
 
             def test_0_is_valid_username_2(self):
+                """
+                Asserts that a reserved username can be created with only a one-character username ('0'), with the slug derived automatically.
+                """
                 reserved_username = ReservedUsername(username='0')
                 reserved_username.save()
 
             def test_long_username_is_valid_username_1(self):
+                """
+                Asserts that a reserved username can be created with a 250-character slug, with no maximum length enforced.
+                """
                 reserved_username = ReservedUsername(slug='0' * 250)
                 reserved_username.save()
 
             def test_long_username_is_valid_username_2(self):
+                """
+                Asserts that a reserved username can be created with a 250-character username, with no maximum length enforced.
+                """
                 reserved_username = ReservedUsername(username='0' * 250)
                 reserved_username.save()
 
             def test_username_too_long_exception_1(self):
+                """
+                Asserts that a slug of 5000 characters exceeds the database column's character limit and raises a DataError.
+                """
                 reserved_username = ReservedUsername(slug='0' * 5000)
                 with self.assertRaises(DataError) as cm:
                     reserved_username.save()
                 self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
             def test_username_too_long_exception_2(self):
+                """
+                Asserts that a username of 5000 characters exceeds the database column's character limit and raises a DataError.
+                """
                 reserved_username = ReservedUsername(username='0' * 5000)
                 with self.assertRaises(DataError) as cm:
                     reserved_username.save()
                 self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
             def test_username_too_long_exception_3(self):
+                """
+                Asserts that a slug of 260 characters exceeds the database column's character limit and raises a DataError.
+                """
                 reserved_username = ReservedUsername(slug='0' * 260)
                 with self.assertRaises(DataError) as cm:
                     reserved_username.save()
                 self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
             def test_username_too_long_exception_4(self):
+                """
+                Asserts that a username of 260 characters exceeds the database column's character limit and raises a DataError.
+                """
                 reserved_username = ReservedUsername(username='0' * 260)
                 with self.assertRaises(DataError) as cm:
                     reserved_username.save()
                 self.assertIn(member=self._value_too_long_for_type_character_varying_255_error_message, container=str(cm.exception))
 
             def test_slug_and_username_dont_match_1(self):
+                """
+                Asserts that a valid slug and valid username that don't parse to the same value raise a ValidationError for mismatch.
+                """
                 reserved_username = ReservedUsername(slug='star2001', username='star2000')
                 with self.assertRaises(ValidationError) as cm:
                     reserved_username.save()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
 
             def test_slug_and_username_dont_match_2(self):
+                """
+                Asserts that a slug and username that don't parse to the same value raise a ValidationError for mismatch, even when both would individually be valid for reserved usernames.
+                """
                 reserved_username = ReservedUsername(slug='0-test-2', username='0test1')
                 with self.assertRaises(ValidationError) as cm:
                     reserved_username.save()
@@ -512,62 +761,143 @@ if (django_settings.TESTS):
 
 
         class ReservedUsernameAllMainLanguagesEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
 
         @override_settings(LANGUAGE_CODE='fr')
         class ReservedUsernameAllMainLanguagesFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
 
         @override_settings(LANGUAGE_CODE='de')
         class ReservedUsernameAllMainLanguagesGermanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
 
         @override_settings(LANGUAGE_CODE='es')
         class ReservedUsernameAllMainLanguagesSpanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
 
         @override_settings(LANGUAGE_CODE='pt')
         class ReservedUsernameAllMainLanguagesPortugueseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
 
         @override_settings(LANGUAGE_CODE='it')
         class ReservedUsernameAllMainLanguagesItalianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
 
         @override_settings(LANGUAGE_CODE='nl')
         class ReservedUsernameAllMainLanguagesDutchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
 
         @override_settings(LANGUAGE_CODE='he')
         class ReservedUsernameAllMainLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
+            """
+            Tests the ReservedUsername model, for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the User model's validations and behavior, such as required fields, slug/username/id generation, password handling, and concurrency protection.
+            """
             def create_one_user(self):
+                """
+                Creates and saves one default user with a fixed slug and username, and asserts its username, slug and id are set correctly.
+
+                :return: The created user.
+                :rtype: speedy.core.accounts.models.User
+                """
                 user = DefaultUserFactory(slug='zzzzzz', username='zzzzzz')
                 user.save_user_and_profile()
                 self.assertEqual(first=user.username, second='zzzzzz')
@@ -576,12 +906,26 @@ if (django_settings.TESTS):
                 return user
 
             def run_test_cannot_create_user_with_all_the_required_fields_number(self, number, gender_is_valid=False):
+                """
+                Attempts to create a user whose required fields are all set to the given number (as strings, except gender), and asserts saving it raises a ValidationError with the expected errors.
+
+                :param number: The number to use as the value of all required fields.
+                :type number: int
+                :param gender_is_valid: Whether the given number is a valid gender value. Defaults to False.
+                :type gender_is_valid: bool
+                """
                 user = User(**{field_name: (str(number) if (not (field_name in ['gender'])) else number) for field_name in self._user_all_the_required_fields_keys()})
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=number, gender_is_valid=gender_is_valid))
 
             def run_test_all_slugs_to_test_list(self, test_settings):
+                """
+                Attempts to create a user for each slug in tests_settings.SLUGS_TO_TEST_LIST, counts successes and failures according to the current MIN_SLUG_LENGTH setting, and asserts the resulting counts and model counts match the expected values.
+
+                :param test_settings: A dict containing the key "expected_counts_tuple", a tuple of (ok_count, model_save_failures_count) expected for the current settings.
+                :type test_settings: dict
+                """
                 ok_count, model_save_failures_count = 0, 0
                 for slug_dict in tests_settings.SLUGS_TO_TEST_LIST:
                     if (slug_dict["slug_length"] >= User.settings.MIN_SLUG_LENGTH):
@@ -606,6 +950,12 @@ if (django_settings.TESTS):
                 self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
             def run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(self, iterations):
+                """
+                Asserts that checking an invalid raw password against a hash encoded with the given iteration count succeeds but does not trigger a hash upgrade, since the password fails the password validators.
+
+                :param iterations: The number of PBKDF2 iterations used to encode the test password hash.
+                :type iterations: int
+                """
                 # Using a password that is too short or with too few unique characters.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=560000)
@@ -625,6 +975,12 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.password, expr2=encoded)
 
             def run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(self, iterations):
+                """
+                Asserts that checking a valid raw password against a hash encoded with the given (non-default) iteration count succeeds and upgrades the stored password hash to use the default iteration count.
+
+                :param iterations: The number of PBKDF2 iterations used to encode the test password hash.
+                :type iterations: int
+                """
                 # Using a valid password that will pass all password validators.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=560000)
@@ -645,6 +1001,12 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.password, expr2=encoded)
 
             def run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(self, iterations):
+                """
+                Asserts that checking a valid raw password against a hash encoded with an already-sufficient iteration count succeeds without upgrading the stored password hash.
+
+                :param iterations: The number of PBKDF2 iterations used to encode the test password hash.
+                :type iterations: int
+                """
                 # Using a valid password that will pass all password validators.
                 from django.contrib.auth.hashers import PBKDF2PasswordHasher
                 self.assertNotEqual(first=iterations, second=560000)
@@ -664,6 +1026,12 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.password, expr2=encoded)
 
             def run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(self, test_choice):
+                """
+                Asserts that if a user's username and slug are changed concurrently by another process after the in-memory instance was loaded, saving the stale in-memory instance raises a ConcurrencyError and leaves the username and slug unchanged, for both choices of new username/slug.
+
+                :param test_choice: Which concurrent username/slug change to simulate (1 for a custom username, 2 for the user's id as username).
+                :type test_choice: int
+                """
                 user = ActiveUserFactory()
                 username = user.username
                 self.assertEqual(first=user.username, second=username)
@@ -710,6 +1078,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.slug, second=username)
 
             def test_model_settings(self):
+                """
+                Asserts the User model's username, slug, age and password length settings, and the maximum number of friends allowed, have the expected default values.
+                """
                 self.assertEqual(first=User.settings.MIN_USERNAME_LENGTH, second=6)
                 self.assertEqual(first=User.settings.MAX_USERNAME_LENGTH, second=40)
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
@@ -728,6 +1099,9 @@ if (django_settings.TESTS):
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_AGE_ALLOWED_IN_MODEL=tests_settings.OVERRIDE_USER_SETTINGS.MIN_AGE_ALLOWED_IN_MODEL, MAX_AGE_ALLOWED_IN_MODEL=tests_settings.OVERRIDE_USER_SETTINGS.MAX_AGE_ALLOWED_IN_MODEL, MIN_AGE_ALLOWED_IN_FORMS=tests_settings.OVERRIDE_USER_SETTINGS.MIN_AGE_ALLOWED_IN_FORMS, MAX_AGE_ALLOWED_IN_FORMS=tests_settings.OVERRIDE_USER_SETTINGS.MAX_AGE_ALLOWED_IN_FORMS))
             def test_model_settings_with_override_settings(self):
+                """
+                Asserts that overriding the age-related User settings updates the effective settings and the derived valid age ranges accordingly.
+                """
                 self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_MODEL, second=2)
                 self.assertEqual(first=User.settings.MAX_AGE_ALLOWED_IN_MODEL, second=240)
                 self.assertEqual(first=User.settings.MIN_AGE_ALLOWED_IN_FORMS, second=2)
@@ -738,15 +1112,24 @@ if (django_settings.TESTS):
                 self.assertEqual(first=User.AGE_VALID_VALUES_IN_FORMS, second=range(2, 178))
 
             def test_localizable_fields(self):
+                """
+                Asserts the User model's LOCALIZABLE_FIELDS, NAME_LOCALIZABLE_FIELDS and NAME_REQUIRED_LOCALIZABLE_FIELDS have the expected values.
+                """
                 self.assertTupleEqual(tuple1=User.LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name', 'city'))
                 self.assertTupleEqual(tuple1=User.NAME_LOCALIZABLE_FIELDS, tuple2=('first_name', 'last_name'))
                 self.assertTupleEqual(tuple1=User.NAME_REQUIRED_LOCALIZABLE_FIELDS, tuple2=('first_name',))
 
             def test_gender_valid_values(self):
+                """
+                Asserts that User.GENDER_VALID_VALUES contains the range of valid gender integer values.
+                """
                 self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(User.GENDER_UNKNOWN + 1, User.GENDER_MAX_VALUE_PLUS_ONE)))
                 self.assertListEqual(list1=User.GENDER_VALID_VALUES, list2=list(range(1, 3 + 1)))
 
             def test_gender_strings(self):
+                """
+                Asserts the User model's gender string constants and ALL_GENDERS list match the expected values and are consistent with GENDERS_DICT.
+                """
                 self.assertEqual(first=User.GENDER_FEMALE_STRING, second='female')
                 self.assertEqual(first=User.GENDER_MALE_STRING, second='male')
                 self.assertEqual(first=User.GENDER_OTHER_STRING, second='other')
@@ -756,59 +1139,98 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=User.ALL_GENDERS, list2=['female', 'male', 'other'])
 
             def test_genders_dict(self):
+                """
+                Asserts User.GENDERS_DICT maps each valid gender value to its expected string representation.
+                """
                 self.assertListEqual(list1=list(User.GENDERS_DICT.keys()), list2=User.GENDER_VALID_VALUES)
                 self.assertListEqual(list1=list(User.GENDERS_DICT.items()), list2=[(1, 'female'), (2, 'male'), (3, 'other')])
                 self.assertDictEqual(d1=User.GENDERS_DICT, d2={1: 'female', 2: 'male', 3: 'other'})
 
             def test_diet_valid_values(self):
+                """
+                Asserts that User.DIET_VALID_VALUES contains the range of valid diet integer values.
+                """
                 self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(User.DIET_UNKNOWN + 1, User.DIET_MAX_VALUE_PLUS_ONE)))
                 self.assertListEqual(list1=User.DIET_VALID_VALUES, list2=list(range(1, 3 + 1)))
 
             def test_smoking_status_valid_values(self):
+                """
+                Asserts that User.SMOKING_STATUS_VALID_VALUES contains the range of valid smoking status integer values.
+                """
                 self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(User.SMOKING_STATUS_UNKNOWN + 1, User.SMOKING_STATUS_MAX_VALUE_PLUS_ONE)))
                 self.assertListEqual(list1=User.SMOKING_STATUS_VALID_VALUES, list2=list(range(1, 3 + 1)))
 
             def test_relationship_status_valid_values(self):
+                """
+                Asserts that User.RELATIONSHIP_STATUS_VALID_VALUES contains the range of valid relationship status integer values.
+                """
                 self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(User.RELATIONSHIP_STATUS_UNKNOWN + 1, User.RELATIONSHIP_STATUS_MAX_VALUE_PLUS_ONE)))
                 self.assertListEqual(list1=User.RELATIONSHIP_STATUS_VALID_VALUES, list2=list(range(1, 9 + 1)))
 
             def test_cannot_create_user_without_all_the_required_fields(self):
+                """
+                Asserts that saving a user with no fields set raises a ValidationError listing all the missing required fields.
+                """
                 user = User()
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=None))
 
             def test_cannot_create_user_with_all_the_required_fields_blank(self):
+                """
+                Asserts that saving a user whose required fields are all set to an empty string raises a ValidationError listing the blank required fields.
+                """
                 user = User(**{field_name: '' for field_name in self._user_all_the_required_fields_keys()})
                 with self.assertRaises(ValidationError) as cm:
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._cannot_create_user_without_all_the_required_fields_errors_dict_by_value(value=''))
 
             def test_cannot_create_user_with_all_the_required_fields_zero(self):
+                """
+                Asserts that setting all the required fields to 0 raises a ValidationError with the expected errors.
+                """
                 self.run_test_cannot_create_user_with_all_the_required_fields_number(number=0)
 
             def test_cannot_create_user_with_all_the_required_fields_minus_one(self):
+                """
+                Asserts that setting all the required fields to -1 raises a ValidationError with the expected errors.
+                """
                 self.run_test_cannot_create_user_with_all_the_required_fields_number(number=-1)
 
             def test_cannot_create_user_with_all_the_required_fields_ninety_nine(self):
+                """
+                Asserts that setting all the required fields to 99 raises a ValidationError with the expected errors.
+                """
                 self.run_test_cannot_create_user_with_all_the_required_fields_number(number=99)
 
             def test_cannot_create_user_with_all_the_required_fields_one(self):
+                """
+                Asserts that setting all the required fields to 1 raises a ValidationError with the expected errors, noting that 1 is a valid gender value.
+                """
                 self.run_test_cannot_create_user_with_all_the_required_fields_number(number=1, gender_is_valid=True)
 
             def test_cannot_create_user_with_empty_slug(self):
+                """
+                Asserts that creating a user with an empty slug raises a ValidationError since the username doesn't start with 4 or more letters.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_cannot_create_user_with_unknown_gender(self):
+                """
+                Asserts that creating a user with the unknown gender value raises a ValidationError for an invalid choice.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(gender=User.GENDER_UNKNOWN)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._value_is_not_a_valid_choice_errors_dict_by_field_name_and_value(field_name='gender', value=0))
 
             def test_cannot_create_users_with_bulk_create(self):
+                """
+                Asserts that creating users with bulk_create raises a NotImplementedError.
+                """
                 user_1 = User(slug='zzzzzz')
                 user_2 = User(slug='ZZZ-ZZZ')
                 with self.assertRaises(NotImplementedError) as cm:
@@ -816,6 +1238,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
             def test_cannot_delete_users_with_queryset_delete(self):
+                """
+                Asserts that deleting users via the manager or a queryset (all, filter, exclude) raises a NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     User.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -830,6 +1255,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
 
             def test_cannot_create_user_with_an_invalid_id_1(self):
+                """
+                Asserts that creating a user with an id whose first character is '0' raises a ValidationError, since the first character must be a non-zero digit.
+                """
                 old_user = self.create_one_user()
                 old_user_id = old_user.id
                 old_user_id_as_list = list(old_user_id)
@@ -842,6 +1270,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_user_with_an_invalid_id_2(self):
+                """
+                Asserts that creating a user with an id longer than the maximum length (16 characters) raises a ValidationError for illegal characters and exceeding the maximum length.
+                """
                 old_user = self.create_one_user()
                 old_user_id = old_user.id
                 new_user_id = '{}1'.format(old_user_id)
@@ -851,6 +1282,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_and_ensure_this_value_has_at_most_max_length_characters_errors_dict_by_max_length_and_value_length(max_length=15, value_length=16))
 
             def test_cannot_create_user_with_an_invalid_id_3(self):
+                """
+                Asserts that creating a user with an id whose first character is a non-digit (e.g. '_', a letter, or a special character) raises a ValidationError.
+                """
                 old_user = self.create_one_user()
                 old_user_id = old_user.id
                 old_user_id_as_list = list(old_user_id)
@@ -863,6 +1297,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_user_with_an_invalid_id_4(self):
+                """
+                Asserts that creating a user with an id shorter than the required length (14 characters) raises a ValidationError for illegal characters.
+                """
                 old_user = self.create_one_user()
                 old_user_id = old_user.id
                 new_user_id = '{}'.format(old_user_id[:14])
@@ -872,62 +1309,98 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._id_contains_illegal_characters_errors_dict())
 
             def test_cannot_create_user_with_reserved_username(self):
+                """
+                Asserts that creating a user with a reserved username ('webmaster') raises a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='webmaster')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
             def test_cannot_create_user_with_reserved_and_too_short_username(self):
+                """
+                Asserts that creating a user with a reserved username that is also too short ('mail') raises a ValidationError for a too-short username.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='mail')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=4))
 
             def test_admin_is_invalid_username(self):
+                """
+                Asserts that creating a regular user with the username 'admin' (too short and reserved) raises a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='admin')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
 
             def test_doron_is_invalid_username(self):
+                """
+                Asserts that creating a regular user with the username 'doron' (too short and reserved) raises a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='doron')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
 
             def test_can_create_user_admin_with_special_username(self):
+                """
+                Asserts that a user can be created with the reserved username 'admin' when special_username is True.
+                """
                 user = DefaultUserFactory(slug='admin', special_username=True)
                 user.save_user_and_profile()
 
             def test_can_create_user_mail_with_special_username(self):
+                """
+                Asserts that a user can be created with the reserved username 'mail' when special_username is True.
+                """
                 user = DefaultUserFactory(slug='mail', special_username=True)
                 user.save_user_and_profile()
 
             def test_can_create_user_webmaster_with_special_username(self):
+                """
+                Asserts that a user can be created with the reserved username 'webmaster' when special_username is True.
+                """
                 user = DefaultUserFactory(slug='webmaster', special_username=True)
                 user.save_user_and_profile()
 
             def test_can_create_user_doron_with_special_username(self):
+                """
+                Asserts that a user can be created with the reserved username 'doron' when special_username is True.
+                """
                 user = DefaultUserFactory(slug='doron', special_username=True)
                 user.save_user_and_profile()
 
             def test_can_create_user_jennifer_with_special_username(self):
+                """
+                Asserts that a user can be created with the username 'jennifer' when special_username is True.
+                """
                 user = DefaultUserFactory(slug='jennifer', special_username=True)
                 user.save_user_and_profile()
 
             def test_cannot_create_user_without_a_slug_with_special_username(self):
+                """
+                Asserts that creating a user without a slug, even with special_username set to True, raises a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='', special_username=True)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._username_is_required_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
 
             def test_cannot_create_user_with_a_username_and_different_slug_with_special_username(self):
+                """
+                Asserts that creating a user with special_username set to True but a username that doesn't match the given slug raises a ValidationError for the mismatch.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='webmaster', username='webmaster1', special_username=True)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
 
             def test_cannot_create_two_users_with_the_same_username_with_special_username(self):
+                """
+                Asserts that creating two users with special_username set to True whose usernames collide ('admin' and 'adm-in') raises a ValidationError for the second one.
+                """
                 user_1 = DefaultUserFactory(slug='admin', special_username=True)
                 user_1.save_user_and_profile()
                 with self.assertRaises(ValidationError) as cm:
@@ -936,6 +1409,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._this_username_is_already_taken_error_message], 'username': [self._this_username_is_already_taken_error_message]})  # ~~~~ TODO: fix models! Should be 'slug' and not '__all__'.
 
             def test_cannot_create_user_with_existing_username_1(self):
+                """
+                Asserts that creating a user whose username matches an existing Entity's username raises a ValidationError.
+                """
                 entity = Entity(slug='zzzzzz')
                 entity.save()
                 with self.assertRaises(ValidationError) as cm:
@@ -944,6 +1420,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
             def test_cannot_create_user_with_existing_username_2(self):
+                """
+                Asserts that creating a user whose username matches another existing user's username raises a ValidationError.
+                """
                 user_1 = DefaultUserFactory(slug='zzzzzz')
                 user_1.save_user_and_profile()
                 with self.assertRaises(ValidationError) as cm:
@@ -952,6 +1431,9 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._this_username_is_already_taken_errors_dict(slug_fail=True, username_fail=True))
 
             def test_cannot_create_user_with_is_superuser_and_is_staff_not_equal(self):
+                """
+                Asserts that creating a user with is_superuser and is_staff set to different values raises a ValidationError, while equal values (both True or both False) are allowed.
+                """
                 user = DefaultUserFactory(is_superuser=False, is_staff=False)
                 user.save_user_and_profile()
                 user = DefaultUserFactory(is_superuser=True, is_staff=True)
@@ -966,49 +1448,76 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=list(cm.exception), list2=[self._superuser_must_be_equal_to_staff_error_message])
 
             def test_has_no_confirmed_email(self):
+                """
+                Asserts that a user with only unconfirmed email addresses has has_confirmed_email equal to False.
+                """
                 user = DefaultUserFactory()
                 UserEmailAddressFactory(user=user, is_confirmed=False)
                 UserEmailAddressFactory(user=user, is_confirmed=False)
                 self.assertIs(expr1=user.has_confirmed_email, expr2=False)
 
             def test_has_a_confirmed_email(self):
+                """
+                Asserts that a user with at least one confirmed email address has has_confirmed_email equal to True.
+                """
                 user = DefaultUserFactory()
                 UserEmailAddressFactory(user=user, is_confirmed=False)
                 UserEmailAddressFactory(user=user, is_confirmed=True)
                 self.assertIs(expr1=user.has_confirmed_email, expr2=True)
 
             def test_user_id_length(self):
+                """
+                Asserts that a newly created user has a 15-character id.
+                """
                 user = DefaultUserFactory()
                 self.assertEqual(first=len(user.id), second=15)
 
             def test_user_id_number_in_range(self):
+                """
+                Asserts that a newly created user's id, interpreted as a number, falls within the expected 15-digit range.
+                """
                 user = DefaultUserFactory()
                 self.assertGreaterEqual(a=int(user.id), b=10 ** 14)
                 self.assertLess(a=int(user.id), b=10 ** 15)
 
             def test_slug_and_username_min_length_fail(self):
+                """
+                Asserts that a slug and username shorter than MIN_SLUG_LENGTH/MIN_USERNAME_LENGTH raise a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='a' * 5)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_least_min_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=5))
 
             def test_slug_and_username_min_length_ok_1(self):
+                """
+                Asserts that a slug and username exactly at MIN_SLUG_LENGTH/MIN_USERNAME_LENGTH save successfully.
+                """
                 user = DefaultUserFactory(slug='a' * 6)
                 user.save_user_and_profile()
 
             def test_first_name_is_not_optional(self):
+                """
+                Asserts that creating a user with a blank first name in English raises a ValidationError for the first name field in every language.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="")
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_blank_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_first_name_is_none(self):
+                """
+                Asserts that creating a user with a None first name in English and Hebrew raises a ValidationError for the first name field in every language.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en=None, first_name_he=None)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2={'first_name_{language_code}'.format(language_code=language_code).replace("-", "_"): [self._this_field_cannot_be_null_error_message] for language_code, language_name in django_settings.LANGUAGES})
 
             def test_last_name_is_optional(self):
+                """
+                Asserts that a user can be created with a blank last name in English, and that the last name is blank in every supported language.
+                """
                 user = DefaultUserFactory(last_name_en="")
                 user.save_user_and_profile()
                 self.assertEqual(first=user.last_name, second="")
@@ -1025,18 +1534,27 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.last_name_he, second="")
 
             def test_last_name_is_none(self):
+                """
+                Asserts that creating a user with a None last name in English and Hebrew raises an IntegrityError for the not-null constraint on the last_name_en column.
+                """
                 with self.assertRaises(IntegrityError) as cm:
                     user = DefaultUserFactory(last_name_en=None, last_name_he=None)
                     user.save_user_and_profile()
                 self.assertIn(member=self._not_null_constraint_error_message_by_column_and_relation(column="last_name_en", relation="accounts_user"), container=str(cm.exception))
 
             def test_first_name_and_last_name_are_long(self):
+                """
+                Asserts that a first and last name of 200 characters in English exceed the maximum length (150) for every supported language's first_name and last_name fields, raising a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(first_name_en="a" * 200, last_name_en="b" * 200)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2={field_name: [self._ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length(max_length=150, value_length=200)] for field_name in ['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_ja', 'first_name_ru', 'first_name_zh', 'first_name_pl', 'first_name_fa', 'first_name_he', 'first_name_ko', 'first_name_ar', 'first_name_id', 'first_name_uk', 'first_name_tr', 'first_name_vi', 'first_name_cs', 'first_name_sv', 'first_name_fi', 'first_name_hu', 'first_name_th', 'first_name_el', 'first_name_ms', 'first_name_sr', 'first_name_ro', 'first_name_bn', 'first_name_ca', 'first_name_no', 'first_name_bg', 'first_name_da', 'first_name_sk', 'first_name_hi', 'first_name_et', 'first_name_hr', 'first_name_az', 'first_name_zh_yue', 'first_name_lt', 'first_name_sl', 'first_name_eu', 'first_name_hy', 'first_name_uz', 'first_name_ta', 'first_name_lv', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_ja', 'last_name_ru', 'last_name_zh', 'last_name_pl', 'last_name_fa', 'last_name_he', 'last_name_ko', 'last_name_ar', 'last_name_id', 'last_name_uk', 'last_name_tr', 'last_name_vi', 'last_name_cs', 'last_name_sv', 'last_name_fi', 'last_name_hu', 'last_name_th', 'last_name_el', 'last_name_ms', 'last_name_sr', 'last_name_ro', 'last_name_bn', 'last_name_ca', 'last_name_no', 'last_name_bg', 'last_name_da', 'last_name_sk', 'last_name_hi', 'last_name_et', 'last_name_hr', 'last_name_az', 'last_name_zh_yue', 'last_name_lt', 'last_name_sl', 'last_name_eu', 'last_name_hy', 'last_name_uz', 'last_name_ta', 'last_name_lv']})
 
             def test_slug_and_username_min_length_ok_2(self):
+                """
+                Asserts that with the default MIN_SLUG_LENGTH, all slugs in SLUGS_TO_TEST_LIST that meet the minimum length are saved successfully.
+                """
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
                 test_settings = {
                     "expected_counts_tuple": (8, 0),
@@ -1045,6 +1563,9 @@ if (django_settings.TESTS):
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
             def test_slug_min_length_fail_username_min_length_ok(self):
+                """
+                Asserts that with an overridden, larger MIN_SLUG_LENGTH, only slugs in SLUGS_TO_TEST_LIST that meet the new minimum are saved successfully, and the rest fail.
+                """
                 self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
                 test_settings = {
                     "expected_counts_tuple": (4, 4),
@@ -1052,66 +1573,102 @@ if (django_settings.TESTS):
                 self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
             def test_slug_and_username_max_length_fail(self):
+                """
+                Asserts that a slug longer than MAX_SLUG_LENGTH/MAX_USERNAME_LENGTH raises a ValidationError.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='a' * 201)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=201))
 
             def test_slug_max_length_ok_username_max_length_fail_1(self):
+                """
+                Asserts that a slug within MAX_SLUG_LENGTH but a derived username exceeding MAX_USERNAME_LENGTH raises a ValidationError for both.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='b' * 200)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=200))
 
             def test_slug_max_length_ok_username_max_length_fail_2(self):
+                """
+                Asserts that a slug within MAX_SLUG_LENGTH but a derived username slightly over MAX_USERNAME_LENGTH raises a ValidationError for both.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='a' * 41)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._model_slug_or_username_username_must_contain_at_most_max_length_alphanumeric_characters_errors_dict_by_value_length(model=User, slug_fail=True, username_fail=True, username_value_length=41))
 
             def test_slug_and_username_max_length_ok(self):
+                """
+                Asserts that a slug at exactly MAX_USERNAME_LENGTH saves successfully.
+                """
                 user = DefaultUserFactory(slug='a' * 40)
                 user.save_user_and_profile()
 
             def test_star2000_is_valid_username(self):
+                """
+                Asserts that a username starting with 4 or more letters followed by digits ('star2000') is valid for a user.
+                """
                 user = DefaultUserFactory(slug='star2000', username='star2000')
                 user.save_user_and_profile()
 
             def test_jennifer_is_valid_username(self):
+                """
+                Asserts that the username 'jennifer' (8 letters) is a valid regular (non-special) username for a user.
+                """
                 user = DefaultUserFactory(slug='jennifer')
                 user.save_user_and_profile()
 
             def test_come2us_is_invalid_username(self):
+                """
+                Asserts that, unlike entities, a username starting with 4 or more letters followed by digits ('come2us') is invalid for a regular user, since it starts with fewer than 4 letters before a digit boundary check specific to users.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='come2us', username='come2us')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_000000_is_invalid_username(self):
+                """
+                Asserts that a username consisting only of digits ('000000') is invalid for a user since it doesn't start with 4 or more letters.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='0' * 6, username='0' * 6)
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_0test1_is_invalid_username(self):
+                """
+                Asserts that a username starting with a digit ('0test1') is invalid for a user since it doesn't start with 4 or more letters.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='0-test-1', username='0test1')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_slug_and_username_dont_match_but_valid(self):
+                """
+                Asserts that a valid slug and valid username that don't parse to the same value raise a ValidationError for mismatch.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='star2001', username='star2000')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._slug_does_not_parse_to_username_errors_dict(model=User))
 
             def test_slug_and_username_dont_match_and_invalid(self):
+                """
+                Asserts that a slug and username that are both invalid and don't match each other raise a ValidationError for the username not starting with 4 or more letters.
+                """
                 with self.assertRaises(ValidationError) as cm:
                     user = DefaultUserFactory(slug='0-test-2', username='0test1')
                     user.save_user_and_profile()
                 self.assertDictEqual(d1=dict(cm.exception), d2=self._username_must_start_with_4_or_more_letters_errors_dict(model=User, slug_fail=True, username_fail=True))
 
             def test_user_can_change_password_1(self):
+                """
+                Asserts that a user can change their password to a new 8-character password, and only the new password (not the original or an incorrect similar one) authenticates afterwards.
+                """
                 new_password = 'abcdef12'
                 incorrect_new_password = '7' * 8
                 self.assertEqual(first=len(new_password), second=8)
@@ -1123,6 +1680,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_user_can_change_password_2(self):
+                """
+                Asserts that a user can change their password to a new 120-character password, and only the new password (not the original or an incorrect similar one) authenticates afterwards.
+                """
                 new_password = 'abcdef' + ('8' * 114)
                 incorrect_new_password = 'abcde8' + ('8' * 114)
                 self.assertEqual(first=len(new_password), second=120)
@@ -1134,6 +1694,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_user_can_change_password_3(self):
+                """
+                Asserts that a user can change their password to a new 120-character password containing slashes, and only the new password (not the original or an incorrect similar one) authenticates afterwards.
+                """
                 new_password = 'abcd//' + ('8' * 114)
                 incorrect_new_password = 'abcd/?' + ('8' * 114)
                 self.assertEqual(first=len(new_password), second=120)
@@ -1145,6 +1708,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=tests_settings.USER_PASSWORD), expr2=False)
 
             def test_password_too_short_exception(self):
+                """
+                Asserts that setting a password shorter than the minimum length (6 characters) raises a ValidationError and leaves the original password unchanged.
+                """
                 new_password = 'abcdef'
                 self.assertEqual(first=len(new_password), second=6)
                 user = DefaultUserFactory()
@@ -1156,6 +1722,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long_exception(self):
+                """
+                Asserts that setting a password longer than the maximum length (121 characters) raises a ValidationError and leaves the original password unchanged.
+                """
                 new_password = 'abcdef' + ('8' * 115)
                 self.assertEqual(first=len(new_password), second=121)
                 user = DefaultUserFactory()
@@ -1167,6 +1736,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_not_enough_unique_characters_exception(self):
+                """
+                Asserts that setting a password with fewer than 6 unique characters raises a ValidationError and leaves the original password unchanged.
+                """
                 new_password = '1234' * 2
                 self.assertEqual(first=len(new_password), second=8)
                 user = DefaultUserFactory()
@@ -1178,6 +1750,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_short_and_not_enough_unique_characters_exception(self):
+                """
+                Asserts that setting a password that is both too short and has too few unique characters raises a ValidationError with both error messages, and leaves the original password unchanged.
+                """
                 new_password = '8' * 3
                 self.assertEqual(first=len(new_password), second=3)
                 user = DefaultUserFactory()
@@ -1189,6 +1764,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_password_too_long_and_not_enough_unique_characters_exception(self):
+                """
+                Asserts that setting a password that is both too long and has too few unique characters raises a ValidationError with both error messages, and leaves the original password unchanged.
+                """
                 new_password = '8' * 121
                 self.assertEqual(first=len(new_password), second=121)
                 user = DefaultUserFactory()
@@ -1200,27 +1778,51 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.check_password(raw_password=new_password), expr2=False)
 
             def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_1(self):
+                """
+                Runs the hash-upgrade-skip test with 160000 iterations for a password that doesn't pass validators.
+                """
                 self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=160000)
 
             def test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators_2(self):
+                """
+                Runs the hash-upgrade-skip test with 36000 iterations for a password that doesn't pass validators.
+                """
                 self.run_test_check_password_skip_password_hash_upgrade_if_doesnt_pass_password_validators(iterations=36000)
 
             def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_1(self):
+                """
+                Runs the hash-upgrade-doesn't-skip test with 160000 iterations for a password that passes validators.
+                """
                 self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=160000)
 
             def test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators_2(self):
+                """
+                Runs the hash-upgrade-doesn't-skip test with 36000 iterations for a password that passes validators.
+                """
                 self.run_test_check_password_doesnt_skip_password_hash_upgrade_if_passes_password_validators(iterations=36000)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_1(self):
+                """
+                Runs the hash-upgrade-skip-if-iterations-big-enough test with 160001 iterations.
+                """
                 self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=160001)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_2(self):
+                """
+                Runs the hash-upgrade-skip-if-iterations-big-enough test with 170000 iterations.
+                """
                 self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=170000)
 
             def test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough_3(self):
+                """
+                Runs the hash-upgrade-skip-if-iterations-big-enough test with 390000 iterations.
+                """
                 self.run_test_check_password_skip_password_hash_upgrade_if_iterations_are_big_enough(iterations=390000)
 
             def test_user_names_in_both_websites(self):
+                """
+                Asserts that a user's full_name, get_full_name(), first and last name combinations, and localized name formatting are correct and consistent across Speedy Net and Speedy Match for users of various activation states.
+                """
                 for user in [DefaultUserFactory(), InactiveUserFactory(), SpeedyNetInactiveUserFactory(), ActiveUserFactory()]:
                     self.assertEqual(first=user.full_name, second=user.get_full_name())
                     self.assertEqual(first=user.full_name, second='{} {}'.format(user.first_name, user.last_name))
@@ -1364,6 +1966,9 @@ if (django_settings.TESTS):
                 self.assertIs(expr1={'en': "(2\xa0years, 2\xa0months\xa0ago)", 'fr': "(il\xa0y\xa0a\xa02\xa0ans, 2\xa0mois)", 'de': "(vor\xa02\xa0Jahre, 2\xa0Monate)", 'es': "(hace\xa02\xa0años, 2\xa0meses)", 'pt': "(há\xa02\xa0anos, 2\xa0meses)", 'it': "(2\xa0anni, 2\xa0mesi\xa0fa)", 'nl': "(2\xa0jaar, 2\xa0maanden\xa0geleden)", 'sv': "(2\xa0år, 2\xa0månader\xa0sedan)", 'ko': "(2년, 2개월\xa0전에)", 'fi': "(2\xa0vuotta, 2\xa0kuukautta\xa0\xa0sitten)", 'he': "(לפני\xa0שנתיים וחודשיים)"}[self.language_code] in user_26.profile.last_visit_str, expr2=True)
 
             def test_user_main_language_code(self):
+                """
+                Asserts that a user's main_language_code reflects 'en' by default and the active profile's language once activated, across activation, deactivation, and reactivation transitions on both sites.
+                """
                 user = DefaultUserFactory()
                 self.assertEqual(first=user.main_language_code, second='en')
                 user = InactiveUserFactory()
@@ -1426,6 +2031,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_deleted_user_name(self):
+                """
+                Asserts that marking a deactivated user as deleted and clearing their photo sets their name to the site-specific deleted-user name.
+                """
                 user = DefaultUserFactory()
                 user.speedy_net_profile.deactivate()
                 self.assertEqual(first=user.is_active, second=False)
@@ -1446,6 +2054,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_deactivate_race_condition_profile_should_not_become_active(self):
+                """
+                Asserts that saving a stale in-memory user after its profile was deactivated concurrently raises a ConcurrencyError and the profile remains inactive.
+                """
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.profile.is_active, second=True)
@@ -1472,6 +2083,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_deactivate_like_moderate_unmoderated_photos_race_condition_and_reactivate(self):
+                """
+                Asserts that deactivating a profile concurrently (while moderating out an unmoderated photo) raises a ConcurrencyError on the stale instance, and that the profile can later be properly reactivated (with a moderated profile picture where required).
+                """
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
                 self.assertEqual(first=user.profile.is_active, second=True)
@@ -1551,6 +2165,9 @@ if (django_settings.TESTS):
                     raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_call_set_is_active_race_condition_user_model_should_not_change(self):
+                """
+                Asserts that saving a stale in-memory user after is_active was changed concurrently raises a ConcurrencyError and leaves is_active unchanged.
+                """
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_active, second=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
@@ -1574,6 +2191,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_active, second=True)
 
             def test_call_set_is_deleted_race_condition_user_model_should_not_change(self):
+                """
+                Asserts that saving a stale in-memory user after is_deleted was changed concurrently raises a ConcurrencyError and leaves is_deleted and is_deleted_time unchanged.
+                """
                 user = ActiveUserFactory()
                 self.assertIs(expr1=user.is_deleted, expr2=False)
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
@@ -1602,12 +2222,21 @@ if (django_settings.TESTS):
                 self.assertIs(expr1=user.is_deleted_time is None, expr2=True)
 
             def test_call_set_username_and_slug_race_condition_user_model_should_not_change_1(self):
+                """
+                Runs the username/slug race-condition helper with test_choice=1.
+                """
                 self.run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(test_choice=1)
 
             def test_call_set_username_and_slug_race_condition_user_model_should_not_change_2(self):
+                """
+                Runs the username/slug race-condition helper with test_choice=2.
+                """
                 self.run_test_call_set_username_and_slug_race_condition_user_model_should_not_change(test_choice=2)
 
             def test_call_set_is_staff_and_is_superuser_race_condition_user_model_should_not_change(self):
+                """
+                Asserts that saving a stale in-memory user after is_staff and is_superuser were changed concurrently raises a ConcurrencyError and leaves both fields unchanged.
+                """
                 user = ActiveUserFactory()
                 self.assertEqual(first=user.is_staff, second=False)
                 self.assertEqual(first=user.is_superuser, second=False)
@@ -1638,6 +2267,9 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.is_superuser, second=False)
 
             def test_call_set_password_race_condition_user_model_should_not_change(self):
+                """
+                Asserts that saving a stale in-memory user after its password was changed concurrently (to unusable, then to a new password, multiple times) raises a ConcurrencyError and leaves the password unchanged.
+                """
                 user = ActiveUserFactory()
                 self.assertIs(expr1=(user.has_usable_password() is True), expr2=True)
                 user_instance_2 = User.objects.get(pk=user.pk)
@@ -1681,7 +2313,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UserAllMainLanguagesEnglishTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -1689,7 +2330,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class UserAllMainLanguagesFrenchTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -1697,7 +2347,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class UserAllMainLanguagesGermanTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -1705,7 +2364,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class UserAllMainLanguagesSpanishTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -1713,7 +2381,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class UserAllMainLanguagesPortugueseTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -1721,7 +2398,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class UserAllMainLanguagesItalianTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -1729,7 +2415,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class UserAllMainLanguagesDutchTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -1737,7 +2432,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserAllMainLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
@@ -2100,7 +2804,18 @@ if (django_settings.TESTS):
         #         self.assertEqual(first=self.language_code, second='lv')
 
         class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the User model with additional profile data (password, slug, gender, date of birth).
+
+            Methods:
+                set_up(self): Sets up a random password and a base data dict (password, slug, gender, date_of_birth) for creating users.
+                test_valid_date_of_birth_list_ok(self): Asserts that users can be created with each valid date of birth from the test settings list.
+                test_invalid_date_of_birth_list_fail(self): Asserts that creating a user fails with a ValidationError for each invalid date of birth from the test settings list.
+            """
             def set_up(self):
+                """
+                Sets up a random password and a base data dict (password, slug, gender, date_of_birth) for creating users.
+                """
                 super().set_up()
                 self.password = get_random_user_password()
                 self.data = {
@@ -2111,6 +2826,9 @@ if (django_settings.TESTS):
                 }
 
             def test_valid_date_of_birth_list_ok(self):
+                """
+                Asserts that a user can be created and saved successfully with each valid date of birth from VALID_DATE_OF_BIRTH_IN_MODEL_LIST, and that the resulting user's fields and counts are as expected.
+                """
                 for date_of_birth in tests_settings.VALID_DATE_OF_BIRTH_IN_MODEL_LIST:
                     data = self.data.copy()
                     data['slug'] = 'user-{}'.format(date_of_birth)
@@ -2134,6 +2852,9 @@ if (django_settings.TESTS):
                 )
 
             def test_invalid_date_of_birth_list_fail(self):
+                """
+                Asserts that creating a user fails with a ValidationError for each invalid date of birth from INVALID_DATE_OF_BIRTH_IN_MODEL_LIST, and that no objects are created.
+                """
                 for date_of_birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_MODEL_LIST:
                     data = self.data.copy()
                     data['date_of_birth'] = date_of_birth
@@ -2152,7 +2873,17 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UserWithDataWithLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (English).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the English alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the English alphabet, to be used in validate_all_values.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -2163,6 +2894,9 @@ if (django_settings.TESTS):
                 self.last_name = "Matalon"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -2170,7 +2904,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class UserWithDataWithLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (French).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the French alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the French alphabet, to be used in validate_all_values.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -2181,6 +2925,9 @@ if (django_settings.TESTS):
                 self.last_name = "Jacotey"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -2188,7 +2935,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class UserWithDataWithLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (German).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the German alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the German alphabet, to be used in validate_all_values.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -2199,6 +2956,9 @@ if (django_settings.TESTS):
                 self.last_name = "Matalon"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -2206,7 +2966,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class UserWithDataWithLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the Spanish alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Spanish alphabet, to be used in validate_all_values.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -2217,6 +2987,9 @@ if (django_settings.TESTS):
                 self.last_name = "Messi"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -2224,7 +2997,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class UserWithDataWithLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the Portuguese alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Portuguese alphabet, to be used in validate_all_values.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -2235,6 +3018,9 @@ if (django_settings.TESTS):
                 self.last_name = "Ronaldo"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -2242,7 +3028,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class UserWithDataWithLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the Italian alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Italian alphabet, to be used in validate_all_values.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -2253,6 +3049,9 @@ if (django_settings.TESTS):
                 self.last_name = "Bocelli"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -2260,7 +3059,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class UserWithDataWithLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the Dutch alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Dutch alphabet, to be used in validate_all_values.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -2271,6 +3080,9 @@ if (django_settings.TESTS):
                 self.last_name = "Matalon"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -2278,7 +3090,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserWithDataWithLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data including a last name, for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets up the user's first and last name in the Hebrew alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Hebrew alphabet, to be used in validate_all_values.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -2289,13 +3111,26 @@ if (django_settings.TESTS):
                 self.last_name = "מטלון"
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         @only_on_sites_with_login
         class UserWithDataWithoutLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (English).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the English alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first name (with no last name) in the English alphabet, to be used in validate_all_values.
+                """
                 # Check names in English alphabet.
                 super().set_up()
                 self.data.update({
@@ -2306,6 +3141,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -2313,7 +3151,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class UserWithDataWithoutLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (French).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the French alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the French alphabet, to be used in validate_all_values.
+                """
                 # Check names in French alphabet.
                 super().set_up()
                 self.data.update({
@@ -2324,6 +3172,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -2331,7 +3182,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class UserWithDataWithoutLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (German).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the German alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the German alphabet, to be used in validate_all_values.
+                """
                 # Check names in German alphabet.
                 super().set_up()
                 self.data.update({
@@ -2342,6 +3203,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -2349,7 +3213,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class UserWithDataWithoutLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (Spanish).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the Spanish alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Spanish alphabet, to be used in validate_all_values.
+                """
                 # Check names in Spanish alphabet.
                 super().set_up()
                 self.data.update({
@@ -2360,6 +3234,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -2367,7 +3244,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class UserWithDataWithoutLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (Portuguese).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the Portuguese alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Portuguese alphabet, to be used in validate_all_values.
+                """
                 # Check names in Portuguese alphabet.
                 super().set_up()
                 self.data.update({
@@ -2378,6 +3265,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -2385,7 +3275,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class UserWithDataWithoutLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (Italian).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the Italian alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Italian alphabet, to be used in validate_all_values.
+                """
                 # Check names in Italian alphabet.
                 super().set_up()
                 self.data.update({
@@ -2396,6 +3296,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -2403,7 +3306,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class UserWithDataWithoutLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (Dutch).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the Dutch alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Dutch alphabet, to be used in validate_all_values.
+                """
                 # Check names in Dutch alphabet.
                 super().set_up()
                 self.data.update({
@@ -2414,6 +3327,9 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -2421,7 +3337,17 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserWithDataWithoutLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
+            """
+            Tests creating a user with data without a last name, for all main languages (Hebrew).
+
+            Methods:
+                set_up(self): Sets up the user's first name (with no last name) in the Hebrew alphabet, to be used in validate_all_values.
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def set_up(self):
+                """
+                Sets up the user's first and last name in the Hebrew alphabet, to be used in validate_all_values.
+                """
                 # Check names in Hebrew alphabet.
                 super().set_up()
                 self.data.update({
@@ -2432,12 +3358,21 @@ if (django_settings.TESTS):
                 self.last_name = ""
 
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 
 
         class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+            """
+            Tests the UserEmailAddress model.
+            """
             def test_cannot_create_user_email_address_without_all_the_required_fields(self):
+                """
+                Asserts that creating a UserEmailAddress without all the required fields raises a ValidationError and creates no objects.
+                """
                 user_email_address = UserEmailAddress()
                 with self.assertRaises(ValidationError) as cm:
                     user_email_address.save()
@@ -2451,6 +3386,9 @@ if (django_settings.TESTS):
                 )
 
             def test_cannot_create_user_email_address_with_invalid_email(self):
+                """
+                Asserts that creating a UserEmailAddress with any of several invalid email formats raises a ValidationError and creates no email address objects.
+                """
                 email_list = ['email', 'email@example', 'email@example.', 'email@.example', 'email@example.com.', 'email@.example.com', 'email@example..com']
                 user = DefaultUserFactory()
                 for email in email_list:
@@ -2474,6 +3412,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_confirmed_email_address(self):
+                """
+                Asserts that adding an email address that is already confirmed by another user raises a ValidationError and doesn't create a new email address for the new user.
+                """
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
                 self.assert_user_email_addresses_count(
@@ -2527,6 +3468,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_confirmed_email_address_uppercase(self):
+                """
+                Asserts that adding an uppercase variant of an email address already confirmed by another user raises a ValidationError and doesn't create a new email address for the new user.
+                """
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=True)
                 self.assert_user_email_addresses_count(
@@ -2580,6 +3524,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address(self):
+                """
+                Asserts that adding an email address that is currently unconfirmed and recently added by another user raises a ValidationError, since it isn't old enough to be deleted and reassigned.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=False)
@@ -2634,6 +3581,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self):
+                """
+                Asserts that an unconfirmed email address registered more than 5 minutes ago is deleted and successfully reassigned to a new user who adds it, removing it from the original user.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email@example.com', is_confirmed=False)
@@ -2688,6 +3638,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address_uppercase(self):
+                """
+                Asserts that adding an uppercase variant of an email address that is currently unconfirmed and recently added by another user raises a ValidationError, since it isn't old enough to be deleted and reassigned.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
@@ -2742,6 +3695,9 @@ if (django_settings.TESTS):
                 )
 
             def test_non_unique_unconfirmed_email_address_uppercase_registered_6_minutes_ago(self):
+                """
+                Asserts that an unconfirmed email address registered more than 5 minutes ago is deleted and successfully reassigned (in its lowercase form) to a new user who adds it as uppercase, removing it from the original user.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
@@ -2796,6 +3752,9 @@ if (django_settings.TESTS):
                 )
 
             def test_different_unconfirmed_email_addresses_uppercase(self):
+                """
+                Asserts that two different users can each have their own distinct unconfirmed email address (case-insensitively different), with both addresses coexisting.
+                """
                 # Unconfirmed email address is deleted if another user adds it again.
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email='email77@example.com', is_confirmed=False)
@@ -2848,6 +3807,9 @@ if (django_settings.TESTS):
                 )
 
             def test_email_gets_converted_to_lowercase_1(self):
+                """
+                Asserts that saving a UserEmailAddress with an uppercase email converts it to lowercase.
+                """
                 user = DefaultUserFactory()
                 user_email_address = UserEmailAddress(user=user, email='EMAIL77@EXAMPLE.COM')
                 user_email_address.save()
@@ -2876,6 +3838,9 @@ if (django_settings.TESTS):
                 )
 
             def test_email_gets_converted_to_lowercase_2(self):
+                """
+                Asserts that creating a UserEmailAddress via the factory with an uppercase email converts it to lowercase.
+                """
                 user = DefaultUserFactory()
                 user_email_address = UserEmailAddressFactory(user=user, email='EMAIL75@EXAMPLE.COM')
                 self.assertEqual(first=user_email_address.email, second='email75@example.com')
@@ -2903,6 +3868,9 @@ if (django_settings.TESTS):
                 )
 
             def test_save_unconfirmed_email_address_5_times(self):
+                """
+                Asserts that saving the same unconfirmed UserEmailAddress 5 times doesn't create duplicate email address objects.
+                """
                 user = DefaultUserFactory()
                 user_email_address = UserEmailAddress(user=user, email='email75@example.com')
                 for i in range(5):
@@ -2932,6 +3900,9 @@ if (django_settings.TESTS):
                 )
 
             def test_save_confirmed_email_address_5_times(self):
+                """
+                Asserts that saving the same confirmed UserEmailAddress 5 times doesn't create duplicate email address objects.
+                """
                 user = DefaultUserFactory()
                 user_email_address = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
                 for i in range(5):
@@ -2961,6 +3932,9 @@ if (django_settings.TESTS):
                 )
 
             def test_confirming_the_first_email_address_makes_it_primary(self):
+                """
+                Asserts that confirming a user's second unconfirmed email address (when the first is also unconfirmed) makes it the new primary and confirmed email address, while the first becomes non-primary.
+                """
                 user = DefaultUserFactory()
                 user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=False)
                 user_email_address_1.save()
@@ -3004,6 +3978,9 @@ if (django_settings.TESTS):
                 )
 
             def test_confirming_the_second_email_address_doesnt_make_it_primary(self):
+                """
+                Asserts that confirming a user's second email address does not make it primary when the first email address is already confirmed and primary.
+                """
                 user = DefaultUserFactory()
                 user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
                 user_email_address_1.save()
@@ -3047,6 +4024,9 @@ if (django_settings.TESTS):
                 )
 
             def test_user_email_address_ordering(self):
+                """
+                Asserts that a user's email addresses are ordered by date_created, and that this ordering is preserved after deleting one of the addresses.
+                """
                 # If UserEmailAddress.Meta.ordering is not equal to ('date_created',) in models, this test should fail.
                 user = DefaultUserFactory()
                 user_email_address_1 = UserEmailAddress(user=user, email='email75@example.com', is_confirmed=True)
@@ -3079,11 +4059,17 @@ if (django_settings.TESTS):
                 self.assertListEqual(list1=[address.pk for address in user_email_addresses], list2=[user_email_address_1.id, user_email_address_2.id, user_email_address_4.id])
 
             def test_cannot_create_user_email_addresses_with_bulk_create(self):
+                """
+                Asserts that calling bulk_create on the UserEmailAddress manager raises a NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     UserEmailAddress.objects.bulk_create([])
                 self.assertEqual(first=str(cm.exception), second="bulk_create is not implemented.")
 
             def test_cannot_delete_user_email_addresses_with_queryset_delete(self):
+                """
+                Asserts that calling delete on the UserEmailAddress manager or any of its querysets raises a NotImplementedError.
+                """
                 with self.assertRaises(NotImplementedError) as cm:
                     UserEmailAddress.objects.delete()
                 self.assertEqual(first=str(cm.exception), second="delete is not implemented.")
@@ -3100,7 +4086,16 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         class UserEmailAddressAllMainLanguagesEnglishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (English).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='en')
 
@@ -3108,7 +4103,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class UserEmailAddressAllMainLanguagesFrenchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (French).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='fr')
 
@@ -3116,7 +4120,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class UserEmailAddressAllMainLanguagesGermanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (German).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='de')
 
@@ -3124,7 +4137,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class UserEmailAddressAllMainLanguagesSpanishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (Spanish).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='es')
 
@@ -3132,7 +4154,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class UserEmailAddressAllMainLanguagesPortugueseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (Portuguese).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='pt')
 
@@ -3140,7 +4171,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class UserEmailAddressAllMainLanguagesItalianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (Italian).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='it')
 
@@ -3148,7 +4188,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class UserEmailAddressAllMainLanguagesDutchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (Dutch).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='nl')
 
@@ -3156,7 +4205,16 @@ if (django_settings.TESTS):
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserEmailAddressAllMainLanguagesHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
+            """
+            Tests the UserEmailAddress model, for all main languages (Hebrew).
+
+            Methods:
+                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+            """
             def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
 

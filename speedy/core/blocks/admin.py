@@ -4,6 +4,9 @@ from .models import Block
 
 
 class BlockAdmin(ReadOnlyModelAdmin):
+    """
+    Read-only admin interface for the Block model.
+    """
     readonly_fields = ('date_created', 'date_updated', 'id')
 
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+Django's command-line utility for administrative tasks on the Speedy Mail Software site, using the tests environment settings.
+"""
 import os
 import sys
 from pathlib import Path

@@ -24,6 +24,16 @@ def cache_key(cache_type, subject):
 
 
 class AdminEmailHandler(log.AdminEmailHandler):
+    """
+    An admin email handler which throttles emails for WARNING and some ERROR messages, sending at most one email per subject per hour, and suppresses emails entirely for some specific messages.
+
+    Attributes:
+        COUNT_FORMAT (str): The format string used to describe the number of times a message was logged in the last hour.
+        COUNT_HTML_FORMAT (str): The HTML format string used to describe the number of times a message was logged in the last hour.
+
+    Methods:
+        send_mail: Sends mail only once per hour for WARNING messages or specific ERROR messages.
+    """
     COUNT_FORMAT = 'Number in the last hour: {}'
     COUNT_HTML_FORMAT = '<p>{}</p>'.format(COUNT_FORMAT)
 

@@ -187,11 +187,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Returns the description for a given rank.
 
-        Args:
-            rank (int): The rank value.
-
-        Returns:
-            str: The description of the rank.
+        :param rank: The rank value (one of RANK_0 ... RANK_5).
+        :return: The description of the rank, or an empty string if the rank is unknown.
+        :rtype: str
         """
         rank_descriptions = {
             __class__.RANK_0: _("No match"),
@@ -389,10 +387,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     def _set_active_languages(self, languages):
         """
-        Sets the active languages for the profile.
+        Sets the active languages for the profile (sorted, without duplicates)
+        and clears the cached is_active and is_active_and_valid properties.
 
-        Args:
-            languages (list): The list of active languages.
+        :param languages: The collection of active language codes.
         """
         self.active_languages = sorted(list(set(languages)))
         if ("is_active" in self.__dict__):
@@ -404,9 +402,8 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Deactivates the profile in the current language.
 
-        Args:
-            step (int): The step at which the profile is deactivated.
-            commit (bool): Whether to commit the changes.
+        :param step: The activation step to set for the profile.
+        :param commit: Whether to save the user and profile after deactivating.
         """
         # Profile is invalid. Deactivate in this language.
         language_code = get_language()
@@ -425,12 +422,10 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Gets the matching rank between self and other_profile.
 
-        Args:
-            other_profile (SiteProfile): The other profile to match with.
-            second_call (bool): Whether this is the second call to the function.
-
-        Returns:
-            int: The matching rank between self and other_profile.
+        :param other_profile: The other profile to match with.
+        :param second_call: Whether the reverse (other_profile to self) check may be performed.
+        :return: The matching rank between self and other_profile.
+        :rtype: int
         """
         self._get_matching_rank_calls = getattr(self, "_get_matching_rank_calls", 0) + 1
         if (self._get_matching_rank_calls >= 5):
@@ -474,11 +469,11 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
 
     def save(self, *args, **kwargs):
         """
-        Saves the profile.
+        Saves the profile, after normalizing activation step, values to match and active languages.
 
-        Args:
-            *args: Variable length argument list.
-            **kwargs: Arbitrary keyword arguments.
+        :param args: Positional arguments passed to the parent ``save``.
+        :param kwargs: Keyword arguments passed to the parent ``save``.
+        :return: The result of the parent ``save`` (normally ``None``).
         """
         if (hasattr(self, "_rank_dict")):
             delattr(self, "_rank_dict")
@@ -504,11 +499,9 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Validates the profile and activates it if valid.
 
-        Args:
-            commit (bool): Whether to commit the changes.
-
-        Returns:
-            tuple: The step and error messages.
+        :param commit: Whether to save the changes (deactivate the language or activate the profile).
+        :return: A tuple of the step and the list of error messages.
+        :rtype: tuple
         """
         from speedy.match.accounts import utils
         language_code = get_language()
@@ -555,11 +548,11 @@ class SiteProfile(OptimisticLockingModelMixin, SiteProfileBase):
         """
         Gets the matching rank between self and other_profile.
 
-        Args:
-            other_profile (SiteProfile): The other profile to match with.
+        Results are cached per other user until the profile is saved.
 
-        Returns:
-            int: The matching rank between self and other_profile.
+        :param other_profile: The other profile to match with.
+        :return: The matching rank between self and other_profile.
+        :rtype: int
         """
         if (self.user.pk == other_profile.user.pk):
             return self.__class__.RANK_0
@@ -668,10 +661,11 @@ def invalidate_matches_after_update_site_profile(sender, instance: SiteProfile, 
     """
     Signal receiver that invalidates the matches cache after a SiteProfile is updated.
 
-    Args:
-        sender (type): The model class that sent the signal.
-        instance (SiteProfile): The instance of the SiteProfile model.
-        **kwargs: Additional keyword arguments.
+    The cache is not busted when the save is part of a last visit update.
+
+    :param sender: The model class that sent the signal (SiteProfile).
+    :param instance: The SiteProfile instance that was saved.
+    :param kwargs: Additional keyword arguments from the signal.
     """
     if (not (getattr(instance, '_in_update_last_visit', None))):
         bust_cache(cache_type='matches', entities_pks=[instance.user.pk])

@@ -4,6 +4,9 @@ from speedy.composer.accounts.models import SiteProfile as SpeedyComposerSitePro
 
 
 class SpeedyComposerSiteProfileAdmin(SiteProfileBaseAdmin):
+    """
+    Admin configuration for the Speedy Composer site profile.
+    """
     pass
 
 
