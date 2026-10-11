@@ -51,9 +51,9 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
@@ -67,7 +67,7 @@ jobs:
         run: |
           sudo apt-get -y install libpq-dev
           pip uninstall -y psycopg-binary
-          # pip install --upgrade psycopg-c==3.3.4
+          # pip install --upgrade psycopg-c==3.3.5
       - run: pip freeze
       - run: pwd
       - run: lsb_release -a
