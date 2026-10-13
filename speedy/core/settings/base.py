@@ -84,6 +84,7 @@ INSTALLED_APPS = [
     'speedy.core.privacy',
     'speedy.core.terms',
     'speedy.net.accounts',
+    'speedy.net.blocks',
     'speedy.match.accounts',
     'speedy.match.likes',
     'speedy.composer.accounts',  # For admin - for deleting users.
