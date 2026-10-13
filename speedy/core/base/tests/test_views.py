@@ -23,6 +23,30 @@ if (django_settings.TESTS):
             test_path_not_ending_with_a_slash_redirects_permanently_to_canonical_path(self): Tests that requesting the page with a path which doesn't end with a slash redirects permanently (301) to the canonical page URL.
         """
 
+        def get_page_url(self):
+            """
+            Returns the URL of the edit view under test.
+
+            :raises NotImplementedError: Always, unless overridden by a subclass.
+            """
+            raise NotImplementedError("This method is not implemented in this mixin.")
+
+        def get_template_name(self):
+            """
+            Returns the expected template name for the edit view under test.
+
+            :raises NotImplementedError: Always, unless overridden by a subclass.
+            """
+            raise NotImplementedError("This method is not implemented in this mixin.")
+
+        def set_up(self):
+            """
+            Resolves the page URL and expected template name for this test case.
+            """
+            super().set_up()
+            self.page_url = self.get_page_url()
+            self.template_name = self.get_template_name()
+
         def test_non_canonical_path_redirects_permanently_to_canonical_path(self):
             """
             Tests that requesting the page with an extra query string redirects permanently (301) to the canonical page URL.

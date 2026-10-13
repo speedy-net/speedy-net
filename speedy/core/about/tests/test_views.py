@@ -16,12 +16,13 @@ if (django_settings.TESTS):
             test_visitor_can_access_about_page(self): Verify a visitor can access the about page.
         """
 
-        def set_up(self):
-            """
-            Sets up the about page URL.
-            """
-            super().set_up()
-            self.page_url = '/about/'
+        def get_page_url(self):
+            """Returns the URL of the "about my match" settings edit page."""
+            return '/about/'
+
+        def get_template_name(self):
+            """Returns the template name of the "about my match" settings edit page."""
+            return 'about/about.html'
 
         def test_visitor_can_access_about_page(self):
             """
@@ -29,6 +30,6 @@ if (django_settings.TESTS):
             """
             r = self.client.get(path=self.page_url)
             self.assertEqual(first=r.status_code, second=200)
-            self.assertTemplateUsed(response=r, template_name='about/about.html')
+            self.assertTemplateUsed(response=r, template_name=self.template_name)
 
 
