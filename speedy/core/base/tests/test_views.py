@@ -32,20 +32,28 @@ if (django_settings.TESTS):
             """
             Tests that requesting the page with a path starting with 2 slashes (for example "//about/") redirects permanently (301) to the canonical page URL.
             """
-            r = self.client.get(path='/' + self.page_url)
-            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
+            # The test client treats a path starting with 2 slashes as a host, so the path is passed in PATH_INFO.
+            r = self.client.get(path=self.page_url, PATH_INFO='/' + self.page_url)
+            # The target is fetched separately, since assertRedirects would reuse PATH_INFO of this request.
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path=self.page_url).status_code, second=200)
 
         def test_path_ending_with_2_slashes_redirects_permanently_to_canonical_path(self):
             """
             Tests that requesting the page with a path ending with 2 slashes (for example "/about//") redirects permanently (301) to the canonical page URL.
             """
-            r = self.client.get(path=self.page_url + '/')
-            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
+            r = self.client.get(path=self.page_url, PATH_INFO=self.page_url + '/')
+            # The target is fetched separately, since assertRedirects would reuse PATH_INFO of this request.
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path=self.page_url).status_code, second=200)
 
         def test_path_not_ending_with_a_slash_redirects_permanently_to_canonical_path(self):
             """
             Tests that requesting the page with a path which doesn't end with a slash (for example "/about") redirects permanently (301) to the canonical page URL.
             """
+            if (self.page_url == '/'):
+                self.skipTest(reason="The main page has no path without a slash.")
+            self.assertEqual(first=self.page_url[:-1] + '/', second=self.page_url, msg="The canonical page URL must end with a slash.")
             r = self.client.get(path=self.page_url[:-1])
             self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
 
@@ -83,10 +91,14 @@ if (django_settings.TESTS):
             """
             Asserts a path other than the root path on the "www" host redirects permanently (301) to the "www" page.
             """
-            for path in ['//', '/about/', '/login/', '/zzz/']:
+            for path in ['/about/', '/login/', '/zzz/']:
                 r = self.client.get(path=path)
                 self.assertEqual(first=r.status_code, second=301, msg="{} didn't return 301.".format(path))
                 self.assertEqual(first=r['Location'], second=self.www_page_url, msg="{} didn't redirect to the www page.".format(path))
+            # Extra slashes are removed first (by RemoveExtraSlashesMiddleware), and then the "www" page is served.
+            r = self.client.get(path='/', PATH_INFO='//')
+            self.assertRedirects(response=r, expected_url='/', status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path='/').status_code, second=200)
 
         def test_query_string_redirects_permanently_to_www_page(self):
             """
