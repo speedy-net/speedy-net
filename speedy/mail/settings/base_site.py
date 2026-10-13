@@ -19,6 +19,7 @@ ROOT_URLCONF = 'speedy.mail.urls'
 # if (LOGIN_ENABLED):
 if (True or LOGIN_ENABLED):  # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
+        'speedy.mail.main',
         # 'speedy.mail.accounts',
     ]
 

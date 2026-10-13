@@ -19,6 +19,7 @@ ROOT_URLCONF = 'speedy.composer.urls'
 # if (LOGIN_ENABLED):
 if (True or LOGIN_ENABLED):  # ~~~~ TODO: remove this line!
     INSTALLED_APPS += [
+        'speedy.composer.main',
         # 'speedy.composer.accounts',
         # 'speedy.composer.compose',
     ]
