@@ -3,9 +3,33 @@ Base views and view mixins of Speedy Core, including static page views and pagin
 """
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.urls import resolve, Resolver404
 from django.utils.translation import gettext_lazy as _
 from django.views import generic
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+
+class AppendSlashOrMainPageRedirectView(generic.View):
+    """
+    A view for the catch-all pattern before the main page of sites whose main page matches any path.
+
+    Redirects (permanently) a path without a trailing slash to the same path with a slash, if the path with a slash is handled by a view other than the main page. Otherwise redirects to the main page.
+    """
+
+    def get(self, request, *args, **kwargs):
+        """
+        :param request: The current request.
+        :param args: Additional positional arguments.
+        :param kwargs: Additional keyword arguments.
+        :return: A permanent redirect to the path with a trailing slash, or to the main page.
+        """
+        try:
+            match = resolve(path=request.path_info + '/')
+        except Resolver404:
+            match = None
+        if ((match is not None) and ('main' not in match.namespaces)):
+            return redirect(to=request.get_full_path(force_append_slash=True), permanent=True)
+        return redirect(to='/', permanent=True)
 
 
 class StaticBaseView(generic.TemplateView):
