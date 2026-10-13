@@ -4,6 +4,8 @@ Base test case mixins for the views of Speedy Core.
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
+    import random
+
     from speedy.core.base.test.mixins import TestCaseMixin
     from speedy.core.base.test.models import SiteTestCase
 
@@ -117,7 +119,6 @@ if (django_settings.TESTS):
             self.assertEqual(first=r.status_code, second=301)
             self.assertEqual(first=r['Location'], second=self.www_page_url)
 
-
         def test_domain_without_language_code_redirects_permanently_to_www_page_1(self):
             """
             Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
@@ -128,23 +129,11 @@ if (django_settings.TESTS):
             self.assertEqual(first=r.status_code, second=301)
             self.assertEqual(first=r['Location'], second=self.www_page_url)
 
-
         def test_domain_without_language_code_redirects_permanently_to_www_page_2(self):
             """
             Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
             """
-            http_host = "1.2.{domain}".format(domain=self.site.domain)
-            client = self.client_class(HTTP_HOST=http_host)
-            r = client.get(path='/')
-            self.assertEqual(first=r.status_code, second=301)
-            self.assertEqual(first=r['Location'], second=self.www_page_url)
-
-
-        def test_domain_without_language_code_redirects_permanently_to_www_page_3(self):
-            """
-            Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
-            """
-            http_host = "1.2.3.{domain}".format(domain=self.site.domain)
+            http_host = "{labels}.{domain}".format(labels=".".join([str(i) for i in range(1, random.randint(2, 6) + 1)]), domain=self.site.domain)
             client = self.client_class(HTTP_HOST=http_host)
             r = client.get(path='/')
             self.assertEqual(first=r.status_code, second=301)
