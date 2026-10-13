@@ -14,10 +14,6 @@ if (django_settings.TESTS):
         class ContactUsViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Tests the static contact-us page, for sites without login (English only).
-
-            Methods:
-                get_page_url(self): Returns the canonical URL path of the page.
-                get_template_name(self): Returns the name of the template expected to render the page.
             """
 
             def get_page_url(self):

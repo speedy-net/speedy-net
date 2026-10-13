@@ -24,12 +24,6 @@ if (django_settings.TESTS):
     class SpeedyCoreBaseLanguageMixin(TestCaseMixin):
         """
         A mixin providing translated error messages for the current test's language, used by language-aware tests.
-
-        Methods:
-            _all_the_required_fields_are_required_errors_dict_by_required_fields: Builds a dict mapping required field names to the "this field is required" error message.
-            _ensure_this_value_has_at_most_max_length_characters_error_message_by_max_length_and_value_length: Builds the "ensure this value has at most ... characters" error message.
-            _exceeds_the_limit_4300_digits_for_integer_string_conversion_error_message_by_digits: Builds the "exceeds the limit ... digits" error message.
-            set_up: Sets up the translated error messages for the current test's language.
         """
 
         def _all_the_required_fields_are_required_errors_dict_by_required_fields(self, required_fields):

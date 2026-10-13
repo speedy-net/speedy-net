@@ -24,10 +24,6 @@ if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
 class SelfUserMixin(object):
     """
     Mixin for views that always operate on the currently logged-in user, regardless of any user identifier in the URL.
-
-    Methods:
-        get_user(self): Get the currently logged-in user, raising PermissionDenied if not authenticated.
-        get_permission_object(self): Get the object used for permission checks (the currently logged-in user).
     """
 
     def get_user(self):
@@ -60,15 +56,6 @@ class UserMixin(object):
 
     Attributes:
         user_slug_kwarg (str): The name of the URL keyword argument holding the user's slug.
-
-    Methods:
-        use_request_user(self): Check whether the view should use the request's user instead of looking up a user from the URL.
-        render_to_response(self, context, **response_kwargs): Render the response, returning a 404 status if the viewer lacks permission to view the profile.
-        dispatch(self, request, *args, **kwargs): Resolve the user, redirecting permanently to the canonical slug if needed, then dispatch the request.
-        get_user_queryset(self): Get the queryset of users eligible to be looked up (all users for staff superusers, active users otherwise).
-        get_user(self): Get the user the view operates on, from the request's user or by looking up the URL's slug/username/id.
-        get_permission_object(self): Get the object used for permission checks (the resolved user).
-        get_context_data(self, **kwargs): Get the context data for the view, including the user and, if authenticated, friendship and (on Speedy Match) like information.
     """
     user_slug_kwarg = 'slug'
 
@@ -199,9 +186,6 @@ class UserMixin(object):
 class MeView(LoginRequiredMixin, generic.RedirectView):
     """
     View that redirects a logged-in user from /me/ (optionally followed by a sub-path) to their own profile page.
-
-    Methods:
-        get_redirect_url(self, *args, **kwargs): Get the redirect URL to the current user's profile page, with any extra path appended.
     """
 
     def get_redirect_url(self, *args, **kwargs):
@@ -226,11 +210,6 @@ class UserDetailView(UserMixin, generic.TemplateView):
 
     Attributes:
         template_name (str): The template used to render the user's profile detail page.
-
-    Methods:
-        get_widget_kwargs(self): Get the keyword arguments used to instantiate each profile widget.
-        get_widgets(self): Instantiate all profile widgets configured in USER_PROFILE_WIDGETS.
-        get_context_data(self, **kwargs): Get the context data for the view, including the instantiated widgets.
     """
     template_name = 'profiles/user_detail.html'
 

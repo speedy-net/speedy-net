@@ -12,9 +12,6 @@ class ModelFormWithDefaults(forms.ModelForm):
 
     Attributes:
         defaults (dict): A mapping of field names to default values to apply to the instance on save.
-
-    Methods:
-        save: Saves the instance, applying the default field values.
     """
 
     def __init__(self, *args, **kwargs):
@@ -49,9 +46,6 @@ class FormHelperWithDefaults(FormHelper):
 
     Attributes:
         render_unmentioned_fields (bool): Whether to render fields that aren't mentioned in the layout. Always True.
-
-    Methods:
-        add_default_layout: Adds the form's default layout to the helper.
     """
     render_unmentioned_fields = True
 
@@ -67,9 +61,6 @@ class FormHelperWithDefaults(FormHelper):
 class DeleteUnneededFieldsMixin(object):
     """
     A mixin for forms which removes fields that aren't needed.
-
-    Methods:
-        delete_unneeded_fields: Deletes unneeded fields from the form.
     """
 
     def delete_unneeded_fields(self):

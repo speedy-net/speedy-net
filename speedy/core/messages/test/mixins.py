@@ -10,10 +10,6 @@ if (django_settings.TESTS):
     class SpeedyCoreMessagesLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         """
         Language-aware mixin for messages tests, providing error message helpers and localized "you have a new message" email subjects for Speedy Net and Speedy Match.
-
-        Methods:
-            _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length): Returns the expected form errors dict for a 'text' field value exceeding the maximum length.
-            set_up(self): Sets up the localized new-message email subjects for Speedy Net and Speedy Match in the current language.
         """
 
         def _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length):

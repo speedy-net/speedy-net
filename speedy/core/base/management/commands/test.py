@@ -7,9 +7,6 @@ from django.core.management.commands import test
 class Command(test.Command):
     """
     Custom management command to run tests with additional language options.
-
-    Methods:
-        add_arguments(self, parser): Adds custom arguments to the command parser.
     """
 
     def add_arguments(self, parser):

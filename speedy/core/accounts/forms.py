@@ -93,15 +93,6 @@ class LocalizedFirstLastNameMixin(object):
 
     Attributes:
         language_code (str): The language code used to determine which localized fields are required/labeled, taken from the `language_code` keyword argument.
-
-    Methods:
-        __init__(self, *args, **kwargs): Adds the localized name fields to the form, sets their initial values and ordering.
-        save(self, commit=True): Saves the localized name field values onto the form's instance.
-        get_localizable_fields(self): Returns the list of localizable field base names defined on the User model.
-        get_required_localizable_fields(self): Returns the list of required localizable field base names defined on the User model.
-        get_localized_field(self, base_field_name, language_code): Returns the attribute name of a localized field for a given base field name and language code.
-        get_localized_fields(self, language=None): Returns the localized field attribute names for a given language (or the form's language).
-        get_required_localized_fields(self, language=None): Returns the required localized field attribute names for a given language (or the form's language).
     """
 
     def __init__(self, *args, **kwargs):
@@ -270,10 +261,6 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
     Attributes:
         email (EmailField): The user's email address.
         new_password1 (CharField): The user's chosen password.
-
-    Methods:
-        __init__(self, *args, **kwargs): Sets labels, date input formats, and the crispy forms helper.
-        save(self, commit=True): Creates the user, sets the password, saves localized names, and creates the primary email address.
     """
 
     email = forms.EmailField(label=_('Your email'), required=True)
@@ -332,13 +319,6 @@ class ProfileForm(AddAttributesToFieldsMixin, CleanDateOfBirthMixin, LocalizedFi
 
     Attributes:
         profile_picture (ImageField): The user's uploaded profile picture.
-
-    Methods:
-        __init__(self, *args, **kwargs): Sets up labels, date input formats, and a two-column crispy forms layout.
-        get_field_pairs(self): Returns the field names grouped as pairs for the two-column layout.
-        clean_profile_picture(self): Validates and stages the uploaded profile picture.
-        clean_slug(self): Validates that the username (slug) was not changed.
-        save(self, commit=True): Saves the profile, applies the new profile picture, and logs date of birth/gender/username changes.
     """
 
     profile_picture = forms.ImageField(required=False, widget=CustomPhotoWidget, label=_('Update your profile picture'), error_messages={'required': _("A profile picture is required.")})
@@ -489,10 +469,6 @@ class ProfileNotificationsForm(forms.ModelForm):
     Attributes:
         _profile_model (type): The site profile model class used to look up additional profile fields.
         _profile_fields (tuple): Names of site profile fields to expose on the form (overridden by subclasses).
-
-    Methods:
-        __init__(self, *args, **kwargs): Adds the configured site profile fields to the form and sets up the crispy forms helper.
-        save(self, commit=True): Saves the site profile fields onto the user's profile.
     """
 
     _profile_model = get_site_profile_model(profile_model=None)
@@ -543,10 +519,6 @@ class ProfileNotificationsForm(forms.ModelForm):
 class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm):
     """
     Login form that allows the user to log in with either their email address or username, and is not restricted to active users only.
-
-    Methods:
-        __init__(self, *args, **kwargs): Lowercases the submitted username, customizes labels, and sets up the crispy forms layout.
-        confirm_login_allowed(self, user): Allows login regardless of the user's active status.
     """
 
     def __init__(self, *args, **kwargs):
@@ -589,12 +561,6 @@ class LoginForm(AddAttributesToFieldsMixin, django_auth_forms.AuthenticationForm
 class PasswordResetForm(django_auth_forms.PasswordResetForm):
     """
     Password reset form that looks up users by confirmed email address, logs reset requests, and sends the reset email using the project's own mail sending mechanism.
-
-    Methods:
-        helper(self): Returns the crispy forms helper used to render the submit button.
-        get_users(self, email): Returns the users matching the given email address who should receive a reset.
-        send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None): Sends the password reset email.
-        save(self, domain_override=None, subject_template_name='registration/password_reset_subject.txt', email_template_name='registration/password_reset_email.html', use_https=False, token_generator=default_token_generator, from_email=None, request=None, html_email_template_name=None, extra_email_context=None): Generates a reset link for each matching user and sends it to them.
     """
 
     @property
@@ -705,9 +671,6 @@ class PasswordResetForm(django_auth_forms.PasswordResetForm):
 class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.SetPasswordForm):
     """
     Form used to set a new password for a user without requiring their old password (e.g. as part of the password reset flow).
-
-    Methods:
-        helper(self): Returns the crispy forms helper used to render the submit button.
     """
 
     @property
@@ -726,9 +689,6 @@ class SetPasswordForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_
 class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, django_auth_forms.PasswordChangeForm):
     """
     Form used by a logged-in user to change their password, requiring their current password.
-
-    Methods:
-        __init__(self, *args, **kwargs): Configures the crispy forms helper, including a hidden field marking the form.
     """
 
     def __init__(self, *args, **kwargs):
@@ -747,10 +707,6 @@ class PasswordChangeForm(AddAttributesToFieldsMixin, CleanNewPasswordMixin, djan
 class SiteProfileActivationForm(forms.ModelForm):
     """
     Form used to activate a user's site profile (e.g. Speedy Net or Speedy Match profile).
-
-    Methods:
-        __init__(self, *args, **kwargs): Configures the crispy forms helper with a submit button.
-        save(self, commit=True): Activates the site profile and saves the form.
     """
 
     class Meta:
@@ -788,10 +744,6 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
 
     Attributes:
         password (CharField): The user's current password, used to confirm the deactivation.
-
-    Methods:
-        __init__(self, *args, **kwargs): Stores the user and configures the crispy forms helper.
-        clean_password(self): Validates that the submitted password matches the user's current password.
     """
 
     password = forms.CharField(label=_('Your password'), strip=False, widget=forms.PasswordInput, required=True)
@@ -826,9 +778,6 @@ class SiteProfileDeactivationForm(AddAttributesToFieldsMixin, forms.Form):
 class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFormWithDefaults):
     """
     Form used to add a new email address to a user's account.
-
-    Methods:
-        helper(self): Returns the crispy forms helper used to render the submit button.
     """
 
     @property
@@ -851,9 +800,6 @@ class UserEmailAddressForm(AddAttributesToFieldsMixin, CleanEmailMixin, ModelFor
 class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
     """
     Form used to change the access/privacy level of one of a user's email addresses.
-
-    Methods:
-        helper(self): Returns the crispy forms helper used to render the inline access field.
     """
 
     @property
@@ -881,9 +827,6 @@ class UserEmailAddressPrivacyForm(ModelFormWithDefaults):
 class ProfilePrivacyForm(forms.ModelForm):
     """
     Form used to change the privacy/access level of a user's date of birth fields.
-
-    Methods:
-        __init__(self, *args, **kwargs): Configures the crispy forms helper and layout.
     """
 
     class Meta:

@@ -24,12 +24,6 @@ if (django_settings.TESTS):
         class UploadViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the AJAX image upload view and the restrictions on deleting File/Image querysets.
-
-            Methods:
-                test_visitor_has_no_access(self): Asserts an anonymous visitor is redirected to login when trying to upload a file.
-                test_upload_file(self): Asserts a logged-in user can upload a file, which creates an Image instance with the expected hashed name, size and owner, and returns the expected JSON response.
-                test_cannot_delete_files_with_queryset_delete(self): Asserts that calling delete() on the File queryset (in various forms) raises NotImplementedError.
-                test_cannot_delete_images_with_queryset_delete(self): Asserts that calling delete() on the Image queryset (in various forms) raises NotImplementedError.
             """
             page_url = '/uploads/upload/'
 

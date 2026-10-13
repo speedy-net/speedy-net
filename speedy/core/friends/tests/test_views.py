@@ -30,14 +30,6 @@ if (django_settings.TESTS):
         class UserFriendListViewTestCaseMixin(TestCaseMixin):
             """
             Mixin that tests access to the user friend-list page. Subclasses run it once in English (on Speedy Net) or override some tests (on Speedy Match, where friend lists are irrelevant for other users).
-
-            Methods:
-                set_up(self): Creates two active users and logs in as the first user.
-                test_visitor_can_open_the_page(self): Not implemented in this mixin.
-                test_visitor_cannot_open_the_page(self): Not implemented in this mixin.
-                test_user_can_open_other_users_friends_page(self): Not implemented in this mixin.
-                test_user_cannot_open_other_users_friends_page(self): Not implemented in this mixin.
-                test_user_can_open_his_friends_page(self): Asserts a logged-in user can open their own friends page.
             """
 
             def set_up(self):
@@ -87,12 +79,6 @@ if (django_settings.TESTS):
         class ReceivedFriendshipRequestsListViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests access to the received friendship requests page, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users and logs in as the first user.
-                test_visitor_cannot_open_the_page(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_open_the_page(self): Asserts a logged-in user can open their own received friendship requests page.
-                test_user_cannot_open_other_users_requests_page(self): Asserts a logged-in user gets a 403 when trying to view another user's received friendship requests page.
             """
 
             def set_up(self):
@@ -133,12 +119,6 @@ if (django_settings.TESTS):
         class SentFriendshipRequestsListViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests access to the sent friendship requests page, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users and logs in as the first user.
-                test_visitor_cannot_open_the_page(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_open_the_page(self): Asserts a logged-in user can open their own sent friendship requests page.
-                test_user_cannot_open_other_users_requests_page(self): Asserts a logged-in user gets a 403 when trying to view another user's sent friendship requests page.
             """
 
             def set_up(self):
@@ -178,17 +158,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests sending a friendship request, run once per supported language via the AllMainLanguages subclasses below.
-
-            Methods:
-                set_up(self): Creates two active users, logs in as the first user, and builds the friendship request page URLs.
-                test_visitor_cannot_send_friendship_request(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_send_friendship_request(self): Asserts a logged-in user can send a friendship request and sees a success message.
-                test_user_cannot_send_friendship_request_twice(self): Asserts sending a second friendship request to the same user does not create a duplicate and shows an error message.
-                test_user_cannot_send_friendship_request_to_a_user_who_sent_them_a_friendship_request(self): Asserts a user cannot send a friendship request to a user who already sent them one, in either direction.
-                test_user_cannot_send_friendship_request_to_a_friend(self): Asserts a user cannot send a friendship request to an existing friend.
-                test_user_cannot_send_friendship_request_to_himself(self): Asserts a user cannot send a friendship request to themselves.
-                test_user_can_send_friendship_request_if_not_maximum(self): Asserts a user can send a friendship request when they have fewer than the maximum allowed friends.
-                test_user_cannot_send_friendship_request_if_maximum(self): Asserts a user cannot send a friendship request when they already have the maximum allowed friends.
             """
 
             def set_up(self):
@@ -363,9 +332,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesEnglishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in English (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -381,9 +347,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesFrenchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in French (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -399,9 +362,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesGermanTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in German (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -417,9 +377,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesSpanishTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in Spanish (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -435,9 +392,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesPortugueseTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in Portuguese (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -453,9 +407,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesItalianTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in Italian (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -471,9 +422,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesDutchTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in Dutch (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -489,9 +437,6 @@ if (django_settings.TESTS):
         class UserFriendshipRequestViewAllMainLanguagesHebrewTestCase(UserFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests sending a friendship request, run once in Hebrew (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -505,11 +450,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests cancelling a friendship request, run once per supported language via the AllMainLanguages subclasses below.
-
-            Methods:
-                set_up(self): Creates two active users, logs in as the first user, and builds the cancel friendship request page URL.
-                test_visitor_cannot_cancel_friendship_request(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_cancel_friendship_request(self): Asserts a logged-in user can cancel a friendship request they sent and sees a success message.
             """
 
             def set_up(self):
@@ -550,9 +490,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesEnglishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in English (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -568,9 +505,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesFrenchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in French (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -586,9 +520,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesGermanTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in German (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -604,9 +535,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesSpanishTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in Spanish (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -622,9 +550,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesPortugueseTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in Portuguese (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -640,9 +565,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesItalianTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in Italian (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -658,9 +580,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesDutchTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in Dutch (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -676,9 +595,6 @@ if (django_settings.TESTS):
         class CancelFriendshipRequestViewAllMainLanguagesHebrewTestCase(CancelFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests cancelling a friendship request, run once in Hebrew (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -692,16 +608,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests accepting a friendship request, run once per supported language via the AllMainLanguages subclasses below.
-
-            Methods:
-                set_up(self): Creates two active users, has the first user send the second a friendship request, and builds the accept friendship request page URL.
-                test_visitor_cannot_accept_friendship_request(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_cannot_accept_friendship_request_they_sent_another_user(self): Asserts the user who sent the request gets a 403 when trying to accept it themselves.
-                test_user_that_has_received_request_can_accept_it(self): Asserts the user who received the request can accept it, becoming friends and seeing a success message.
-                test_user_that_has_received_request_can_accept_it_if_not_maximum(self): Asserts the receiving user can accept the request when they have fewer than the maximum allowed friends.
-                test_user_that_has_received_request_cannot_accept_it_if_maximum(self): Asserts the receiving user cannot accept the request when they already have the maximum allowed friends.
-                test_user_that_has_received_request_can_accept_it_if_other_not_maximum(self): Asserts the receiving user can accept the request when the sender has fewer than the maximum allowed friends.
-                test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self): Asserts the receiving user cannot accept the request when the sender already has the maximum allowed friends.
             """
 
             def set_up(self):
@@ -833,9 +739,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesEnglishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in English (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -851,9 +754,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesFrenchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in French (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -869,9 +769,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesGermanTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in German (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -887,9 +784,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesSpanishTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in Spanish (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -905,9 +799,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesPortugueseTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in Portuguese (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -923,9 +814,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesItalianTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in Italian (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -941,9 +829,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesDutchTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in Dutch (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -959,9 +844,6 @@ if (django_settings.TESTS):
         class AcceptFriendshipRequestViewAllMainLanguagesHebrewTestCase(AcceptFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests accepting a friendship request, run once in Hebrew (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -975,12 +857,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests rejecting a friendship request, run once per supported language via the AllMainLanguages subclasses below.
-
-            Methods:
-                set_up(self): Creates two active users, has the first user send the second a friendship request, and builds the reject friendship request page URL.
-                test_visitor_cannot_reject_friendship_request(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_cannot_reject_friendship_request_they_sent_another_user(self): Asserts the user who sent the request gets a 403 when trying to reject it themselves.
-                test_user_that_has_received_request_can_reject_it(self): Asserts the user who received the request can reject it, removing the request and seeing a success message.
             """
 
             def set_up(self):
@@ -1033,9 +909,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesEnglishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in English (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1051,9 +924,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesFrenchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in French (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1069,9 +939,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesGermanTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in German (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1087,9 +954,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesSpanishTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in Spanish (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1105,9 +969,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesPortugueseTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in Portuguese (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1123,9 +984,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesItalianTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in Italian (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1141,9 +999,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesDutchTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in Dutch (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1159,9 +1014,6 @@ if (django_settings.TESTS):
         class RejectFriendshipRequestViewAllMainLanguagesHebrewTestCase(RejectFriendshipRequestViewTestCaseMixin, SiteTestCase):
             """
             Tests rejecting a friendship request, run once in Hebrew (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1175,12 +1027,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests removing a friend, run once per supported language via the AllMainLanguages subclasses below.
-
-            Methods:
-                set_up(self): Creates two active users and makes them friends, without logging in as either.
-                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_remove_other_user(self): Asserts the first user can remove the second user as a friend and sees a success message.
-                test_other_user_can_remove_first_user(self): Asserts the second user can remove the first user as a friend and sees a success message.
             """
 
             def set_up(self):
@@ -1239,9 +1085,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesEnglishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in English (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1257,9 +1100,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesFrenchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in French (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1275,9 +1115,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesGermanTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in German (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1293,9 +1130,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesSpanishTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in Spanish (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1311,9 +1145,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesPortugueseTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in Portuguese (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1329,9 +1160,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesItalianTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in Italian (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1347,9 +1175,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesDutchTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in Dutch (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1365,9 +1190,6 @@ if (django_settings.TESTS):
         class RemoveFriendViewAllMainLanguagesHebrewTestCase(RemoveFriendViewTestCaseMixin, SiteTestCase):
             """
             Tests removing a friend, run once in Hebrew (as part of the suite that runs this mixin's tests in all main languages).
-
-            Methods:
-                validate_all_values(self): Asserts the current language code is as expected, in addition to the base class's validations.
             """
 
             def validate_all_values(self):
@@ -1381,10 +1203,6 @@ if (django_settings.TESTS):
         class FriendListsViewsObjectListTestCaseMixin(TestCaseMixin):
             """
             Mixin that tests the object list rendered by the friend list, received friendship requests and sent friendship requests views, used by the three OnlyEnglishTestCase classes below.
-
-            Methods:
-                set_up(self): Creates eight users with several friendships and friendship requests, and staggered last-visit times (some users long inactive).
-                update_users_gender_to_match_to_gender_other(self): Updates some users to only match users of gender "other", to test filtering by match on Speedy Match.
             """
 
             def set_up(self):
@@ -1454,9 +1272,6 @@ if (django_settings.TESTS):
         class UserFriendListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             """
             Tests the object list rendered by the user friend list view, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_site_user_friend_list_view_object_list(self): Asserts site_friends and speedy_net_friends are ordered by last visit, and that site_friends is filtered by match on Speedy Match once genders are updated.
             """
 
             def test_site_user_friend_list_view_object_list(self):
@@ -1498,9 +1313,6 @@ if (django_settings.TESTS):
         class ReceivedFriendshipRequestsListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             """
             Tests the object list rendered by the received friendship requests view, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_site_received_friendship_requests_list_view_object_list(self): Asserts received_friendship_requests is ordered by the sender's last visit and filtered by match on Speedy Match once genders are updated.
             """
 
             def test_site_received_friendship_requests_list_view_object_list(self):
@@ -1525,9 +1337,6 @@ if (django_settings.TESTS):
         class SentFriendshipRequestsListViewObjectListOnlyEnglishTestCase(FriendListsViewsObjectListTestCaseMixin, SiteTestCase):
             """
             Tests the object list rendered by the sent friendship requests view, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_site_sent_friendship_requests_list_view_object_list(self): Asserts sent_friendship_requests is ordered by the recipient's last visit and filtered by match on Speedy Match once genders are updated.
             """
 
             def test_site_sent_friendship_requests_list_view_object_list(self):

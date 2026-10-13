@@ -52,9 +52,6 @@ if (django_settings.TESTS):
         class UserMixinTestCaseMixin(TestCaseMixin):
             """
             Tests UserMixin's ability to resolve a user by an exact slug match.
-
-            Methods:
-                test_find_user_by_exact_slug(self): Asserts UserMixin.get_user resolves the user whose slug exactly matches the URL.
             """
 
             def set_up(self):
@@ -80,10 +77,6 @@ if (django_settings.TESTS):
         class LoggedInUserOnlyEnglishTestCase(RedirectMeMixin, SiteTestCase):
             """
             Tests that anonymous visitors requesting the /me/ URL are redirected to login (English only, since the behaviour doesn't depend on the language).
-
-            Methods:
-                test_redirect_to_login_me(self): Asserts an anonymous visitor requesting /me/ is redirected to the login page.
-                test_redirect_to_login_me_add_trailing_slash(self): Asserts an anonymous visitor requesting /me (without a trailing slash) is redirected to /me/ and then to the login page.
             """
 
             def set_up(self):
@@ -114,13 +107,6 @@ if (django_settings.TESTS):
         class UserDetailViewTestCaseMixin(TestCaseMixin):
             """
             Tests the user detail view's visibility rules for the profile owner's name, date of birth and 404 behaviour, across active/deactivated users, friends/non-friends, and (on Speedy Match) match eligibility.
-
-            Methods:
-                deactivate_user(self): Deactivate the profile's user.
-                test_user_profile_not_logged_in(self): Asserts an anonymous visitor sees the profile (on Speedy Net, with date of birth visibility controlled by access settings) or is redirected to login (on Speedy Match), and gets a 404 if the user is deactivated.
-                test_user_own_profile_logged_in(self): Asserts the profile owner, logged in, sees their own full profile including date of birth, and gets a 404 (Speedy Net) or is redirected to /welcome/ (Speedy Match) once deactivated.
-                test_user_profile_month_day_format_from_friend(self): Asserts a friend viewing the profile sees the date of birth formatted according to the owner's day/month and year access settings.
-                test_user_profile_deactivated_user_from_friend(self): Asserts a friend of a deactivated user gets a 404 when viewing that user's profile.
             """
 
             def set_up(self):
@@ -407,10 +393,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesEnglishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (English).
-
-            Methods:
-                set_up(self): Sets up the English date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for English.
             """
 
             def set_up(self):
@@ -480,10 +462,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesFrenchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (French).
-
-            Methods:
-                set_up(self): Sets up the French date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for French.
             """
 
             def set_up(self):
@@ -553,10 +531,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesGermanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (German).
-
-            Methods:
-                set_up(self): Sets up the German date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for German.
             """
 
             def set_up(self):
@@ -626,10 +600,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesSpanishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (Spanish).
-
-            Methods:
-                set_up(self): Sets up the Spanish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Spanish.
             """
 
             def set_up(self):
@@ -699,10 +669,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesPortugueseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (Portuguese).
-
-            Methods:
-                set_up(self): Sets up the Portuguese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Portuguese.
             """
 
             def set_up(self):
@@ -772,10 +738,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesItalianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (Italian).
-
-            Methods:
-                set_up(self): Sets up the Italian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Italian.
             """
 
             def set_up(self):
@@ -845,10 +807,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesDutchTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (Dutch).
-
-            Methods:
-                set_up(self): Sets up the Dutch date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Dutch.
             """
 
             def set_up(self):
@@ -918,10 +876,6 @@ if (django_settings.TESTS):
         class UserDetailViewAllMainLanguagesHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the user detail view for all main languages (Hebrew).
-
-            Methods:
-                set_up(self): Sets up the Hebrew date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code and expected titles for Hebrew.
             """
 
             def set_up(self):

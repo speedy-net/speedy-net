@@ -21,14 +21,6 @@ if (django_settings.TESTS):
         class FeedbackFormTestCaseMixin(SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             """
             Tests the FeedbackForm, covering field visibility/requirements for visitors vs. logged-in users, validation errors, and saving an abuse report.
-
-            Methods:
-                assert_form_text_field(self, form): Asserts the form's text field is required.
-                test_feedback_form_for_visitor_displays_name_and_email(self): Asserts a visitor's form includes and requires the sender name/email fields, plus the required text field.
-                test_visitor_cannot_submit_form_without_all_the_required_fields(self): Asserts an empty visitor submission is invalid, with "required" errors for all required fields.
-                test_feedback_form_for_user_doesnt_require_name_and_email(self): Asserts a logged-in user's form omits the sender name/email fields and only requires the text field.
-                test_user_cannot_submit_form_without_all_the_required_fields(self): Asserts an empty logged-in user submission is invalid, with a "required" error only for the text field.
-                test_form_save_for_abuse_report_as_user(self): Asserts a valid abuse report (reporting another user) saves a Feedback instance with the expected sender, type, reported entity, and text.
             """
 
             def assert_form_text_field(self, form):
@@ -125,9 +117,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesEnglishTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -143,9 +132,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesFrenchTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -161,9 +147,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesGermanTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -179,9 +162,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesSpanishTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -197,9 +177,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesPortugueseTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -215,9 +192,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesItalianTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -233,9 +207,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesDutchTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -251,9 +222,6 @@ if (django_settings.TESTS):
         class FeedbackFormAllMainLanguagesHebrewTestCase(FeedbackFormTestCaseMixin, SiteTestCase):
             """
             Tests the feedback form for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

@@ -19,9 +19,6 @@ class Command(BaseCommand):
 
     This command filters unconfirmed email addresses that were created more than 5 days ago
     and sends confirmation reminders to the users.
-
-    Methods:
-        handle(*args, **options): Executes the command to send confirmation reminders.
     """
 
     def handle(self, *args, **options):

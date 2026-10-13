@@ -20,9 +20,6 @@ class SiteProfileMiddleware(MiddlewareMixin):
     the admin site, logs out and redirects deleted users, keeps the user's last visit and IP address up to date,
     deactivates users on Speedy Net who have not confirmed their email, and redirects users whose profile is not
     active and valid to the account activation flow.
-
-    Methods:
-        process_request(self, request): Process an incoming request and apply the site-profile redirects.
     """
 
     def process_request(self, request):

@@ -23,10 +23,6 @@ if (django_settings.TESTS):
         class WidgetTestCaseMixin(object):
             """
             Mixin for widget test cases, creating a request factory and a helper to build a widget for a viewer and a user.
-
-            Methods:
-                set_up(self): Creates a request factory, an active user and another active user (the viewer).
-                get_widget(self, widget_class, viewer, user=None): Creates a widget of the given class, for the given viewer and user.
             """
 
             def set_up(self):
@@ -60,12 +56,6 @@ if (django_settings.TESTS):
         class UserRankWidgetOnlyEnglishTestCase(WidgetTestCaseMixin, SiteTestCase):
             """
             Tests the user rank widget on Speedy Match (English only).
-
-            Methods:
-                test_matching_user_can_see_the_rank(self): Asserts a user who matches the profile's user sees the match rank.
-                test_user_cannot_see_own_rank(self): Asserts the widget is empty when a user views their own profile.
-                test_visitor_cannot_see_the_rank(self): Asserts the widget is empty for a visitor.
-                test_blocked_user_cannot_see_the_rank(self): Asserts the widget is empty when there is a block between the viewer and the user.
             """
 
             def test_matching_user_can_see_the_rank(self):
@@ -99,14 +89,6 @@ if (django_settings.TESTS):
         class UserExtraDetailsWidgetOnlyEnglishTestCase(WidgetTestCaseMixin, SiteTestCase):
             """
             Tests the user extra details widget on Speedy Match (English only).
-
-            Methods:
-                test_context_data_of_valid_details(self): Asserts the context data contains the user's diet, smoking status and relationship status.
-                test_context_data_of_unknown_details(self): Asserts unknown diet, smoking status and relationship status are displayed as "Unknown".
-                test_context_data_of_genders_to_match(self): Asserts the genders to match are listed in the context data, or "None" if there are none.
-                test_matching_user_can_see_the_details(self): Asserts a user who matches the profile's user sees the extra details.
-                test_visitor_cannot_see_the_details(self): Asserts the widget is empty for a visitor.
-                test_blocked_user_cannot_see_the_details(self): Asserts the widget is empty when the viewer is blocked by the user.
             """
 
             def test_context_data_of_valid_details(self):
@@ -167,13 +149,6 @@ if (django_settings.TESTS):
         class UserOnSpeedyNetWidgetOnlyEnglishTestCase(WidgetTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Net user widget (defined in speedy.net.profiles) when it is displayed on Speedy Match (English only).
-
-            Methods:
-                test_active_user_and_no_block(self): Asserts the context data is positive and the widget is displayed for an active user who is not blocked.
-                test_user_viewing_own_profile(self): Asserts the context data is positive when a user views their own profile.
-                test_visitor(self): Asserts the context data is negative and the widget is empty for a visitor.
-                test_inactive_user_on_speedy_net(self): Asserts the context data is negative when the user is not active on Speedy Net.
-                test_blocked_user(self): Asserts the context data is negative and the widget is empty when there is a block between the viewer and the user.
             """
 
             def test_active_user_and_no_block(self):

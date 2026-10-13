@@ -404,9 +404,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesEnglishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -422,9 +419,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesFrenchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -440,9 +434,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesGermanTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -458,9 +449,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesSpanishTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -476,9 +464,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesPortugueseTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -494,9 +479,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesItalianTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -512,9 +494,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesDutchTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -530,9 +509,6 @@ if (django_settings.TESTS):
         class TimeSinceAllMainLanguagesHebrewTestCase(TimeSinceTestCaseMixin, SiteTestCase):
             """
             Tests that timesince() returns an empty string when the given date equals now, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

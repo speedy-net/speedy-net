@@ -17,10 +17,6 @@ class BlockView(UserMixin, PermissionRequiredMixin, generic.View):
 
     Attributes:
         permission_required (str): The permission required to block a user ('blocks.block').
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the user's profile page without blocking.
-        post(self, request, *args, **kwargs): Block the user and redirect to the user's profile page.
     """
     permission_required = 'blocks.block'
 
@@ -59,10 +55,6 @@ class UnblockView(UserMixin, PermissionRequiredMixin, generic.View):
 
     Attributes:
         permission_required (str): The permission required to unblock a user ('blocks.unblock').
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the user's profile page without unblocking.
-        post(self, request, *args, **kwargs): Unblock the user and redirect to the user's profile page.
     """
     permission_required = 'blocks.unblock'
 

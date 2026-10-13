@@ -13,9 +13,6 @@ class AdminSite(django_admin.AdminSite):
 
     Attributes:
         final_catch_all_view (bool): Always False, disabling Django's default admin catch-all view.
-
-    Methods:
-        get_urls(self): Returns the admin site's URLs, including the users list, users-with-details list, and user detail routes.
     """
     final_catch_all_view = False
 

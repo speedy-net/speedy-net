@@ -18,18 +18,6 @@ logger = logging.getLogger(__name__)
 class BlockManager(BaseManager):
     """
     Manager for the Block model, providing operations to block/unblock entities and query block relationships.
-
-    Methods:
-        _update_caches(self, blocker, blocked): Invalidate the cached blocked/blocking entities ids after a block or unblock.
-        block(self, blocker, blocked): Block an entity, creating a Block instance if one doesn't already exist.
-        unblock(self, blocker, blocked): Remove the Block instance(s) between blocker and blocked.
-        remove_all_blocks_by_entity(self, blocker): Remove all blocks created by the given entity.
-        remove_all_blocks_of_entity(self, blocked): Remove all blocks targeting the given entity.
-        has_blocked(self, blocker, blocked): Check whether blocker has blocked blocked.
-        there_is_block(self, entity_1, entity_2): Check whether there is a block in either direction between the two entities.
-        get_blocked_entities_ids(self, blocker): Get the (cached) ids of entities blocked by blocker.
-        get_blocking_entities_ids(self, blocked): Get the (cached) ids of entities blocking blocked.
-        get_blocked_list_to_queryset(self, blocker): Get a queryset of Block instances for the entities blocker has blocked (including inactive users).
     """
 
     def _update_caches(self, blocker, blocked):

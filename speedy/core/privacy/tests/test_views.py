@@ -21,11 +21,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewTestCaseMixin(StaticBaseViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the translated text of the privacy policy page, for all genders, in the current test's language.
-
-            Methods:
-                get_page_url(self): Returns the canonical URL path of the page.
-                get_template_name(self): Returns the name of the template expected to render the page.
-                test_translations(self): Asserts the "Delete Account" and "Edit Profile" translations, and that the "delete your account" paragraph contains them (quoted, except in the Hebrew "other" gender case), and that non-English text differs from the English text.
             """
 
             def get_page_url(self):
@@ -93,9 +88,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesEnglishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -111,9 +103,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesFrenchTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -129,9 +118,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesGermanTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -147,9 +133,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesSpanishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -165,9 +148,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesPortugueseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -183,9 +163,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesItalianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -201,9 +178,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesDutchTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -219,9 +193,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesJapaneseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Japanese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -237,9 +208,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesRussianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Russian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -255,9 +223,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesChineseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Chinese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -273,9 +238,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesPolishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Polish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -291,9 +253,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesPersianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Persian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -309,9 +268,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesHebrewTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -327,9 +283,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesKoreanTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Korean).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -345,9 +298,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesArabicTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Arabic).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -363,9 +313,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesIndonesianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Indonesian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -381,9 +328,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesUkrainianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Ukrainian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -399,9 +343,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesTurkishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Turkish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -417,9 +358,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesVietnameseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Vietnamese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -435,9 +373,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesCzechTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Czech).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -453,9 +388,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesSwedishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Swedish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -471,9 +403,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesFinnishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Finnish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -489,9 +418,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesHungarianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Hungarian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -507,9 +433,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesThaiTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Thai).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -525,9 +448,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesGreekTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Greek).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -543,9 +463,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesMalayTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Malay).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -561,9 +478,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesSerbianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Serbian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -579,9 +493,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesRomanianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Romanian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -597,9 +508,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesBengaliTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Bengali).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -615,9 +523,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesCatalanTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Catalan).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -633,9 +538,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesNorwegianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Norwegian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -651,9 +553,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesBulgarianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Bulgarian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -669,9 +568,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesDanishTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Danish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -687,9 +583,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesSlovakTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Slovak).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -705,9 +598,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesHindiTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Hindi).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -723,9 +613,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesEstonianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Estonian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -741,9 +628,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesCroatianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Croatian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -759,9 +643,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesAzerbaijaniTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Azerbaijani).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -777,9 +658,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesCantoneseTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Cantonese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -795,9 +673,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesLithuanianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Lithuanian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -813,9 +688,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesSlovenianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Slovenian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -831,9 +703,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesBasqueTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Basque).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -849,9 +718,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesArmenianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Armenian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -867,9 +733,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesUzbekTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Uzbek).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -885,9 +748,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesTamilTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Tamil).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -903,9 +763,6 @@ if (django_settings.TESTS):
         class PrivacyPolicyViewAllLanguagesLatvianTestCase(PrivacyPolicyViewTestCaseMixin, SiteTestCase):
             """
             Tests the privacy policy page translations for all main languages (Latvian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

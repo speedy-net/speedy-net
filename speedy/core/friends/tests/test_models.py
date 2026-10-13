@@ -24,17 +24,6 @@ if (django_settings.TESTS):
         class FriendBlocksOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the interaction between blocking users and friendship requests/friendships, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two users, one accepted friendship and one pending friendship request in each direction for user_1.
-                assert_counters(self, user, received_friendship_requests, sent_friendship_requests, friends): Asserts the user's received/sent friendship request counts and friends count, via several equivalent APIs.
-                test_set_up(self): Asserts the initial counters set up in set_up are as expected for both users.
-                test_delete_users(self): Asserts deleting all other users resets user_1's counters to zero, and new friendships update the counters correctly afterwards.
-                test_if_no_relation_between_users_nothing_get_affected(self): Asserts blocking/unblocking two users with no relation between them does not change either user's counters.
-                test_if_user1_blocked_user2_request_is_removed(self): Asserts blocking removes a pending friendship request between the two users, and unblocking does not restore it.
-                test_if_user2_blocked_user1_request_is_removed(self): Asserts blocking removes a pending friendship request between the two users regardless of who blocks whom, and unblocking does not restore it.
-                test_if_user1_blocked_user2_friendship_is_removed(self): Asserts blocking removes an accepted friendship between the two users, and unblocking does not restore it.
-                test_if_user2_blocked_user1_friendship_is_removed(self): Asserts blocking removes an accepted friendship between the two users regardless of who blocks whom, and unblocking does not restore it.
             """
 
             def set_up(self):
@@ -167,12 +156,6 @@ if (django_settings.TESTS):
         class FriendListsOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the ordering of site_friends, speedy_net_friends, received_friendship_requests and sent_friendship_requests, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates six users with varying attributes and last-visit times.
-                test_site_friends_list(self): Asserts site_friends and speedy_net_friends are ordered by last visit and filtered according to the current site.
-                test_site_received_friendship_requests_list(self): Asserts received_friendship_requests is ordered by last visit and filtered according to the current site.
-                test_site_sent_friendship_requests_list(self): Asserts sent_friendship_requests is ordered by last visit and filtered according to the current site.
             """
 
             def set_up(self):

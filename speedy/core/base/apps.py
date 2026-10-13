@@ -19,9 +19,6 @@ class SpeedyCoreBaseAppConfig(AppConfig):
         name (str): The full Python path to the application.
         verbose_name (str): The human-readable name of the app.
         label (str): The short name of the app.
-
-    Methods:
-        ready: Applies the Speedy Core patches when the app is ready.
     """
     default = True
     name = 'speedy.core.base'

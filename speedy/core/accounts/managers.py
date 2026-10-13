@@ -68,16 +68,6 @@ class EntityManager(BaseManager):
 class UserManager(BaseUserManager):
     """
     Manager for the User model, handling user creation, lookup by username or email, and account deletion.
-
-    Methods:
-        normalize_email(cls, email): Normalize the email address by lowercasing it.
-        _create_user(self, slug, password, **extra_fields): Create and save a user with the given username and password.
-        get_queryset(self): Return the base queryset with related site profiles and photo prefetched.
-        get_by_natural_key(self, username): Look up a user by username or email address.
-        active(self, *args, **kwargs): Filter the queryset to only active, non-deleted users.
-        create_user(self, slug, password, **extra_fields): Create and save a regular (non-staff, non-superuser) user.
-        create_superuser(self, slug, password, **extra_fields): Create and save a staff superuser.
-        mark_a_user_as_deleted(self, user, delete_password): Permanently mark a user as deleted.
     """
 
     @classmethod

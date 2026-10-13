@@ -20,15 +20,6 @@ if (django_settings.TESTS):
         class UserLikeManagerOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the UserLike manager's add_like, remove_all_likes_from_user and remove_all_likes_to_user methods, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users, user_1 and user_2.
-                test_user_likes_himself_raises_an_exception(self): Asserts a user cannot like himself.
-                test_user_likes_other_user_twice_raises_an_exception(self): Asserts a user cannot like another user twice.
-                test_user_cannot_like_a_user_who_blocked_him(self): Asserts a user cannot like a user who blocked him.
-                test_user_cannot_like_a_user_he_blocked(self): Asserts a user cannot like a user he blocked.
-                test_remove_all_likes_from_user(self): Asserts remove_all_likes_from_user removes only likes originating from the given user.
-                test_remove_all_likes_to_user(self): Asserts remove_all_likes_to_user removes only likes directed to the given user.
             """
 
             def set_up(self):

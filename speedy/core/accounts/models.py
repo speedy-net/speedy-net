@@ -57,11 +57,6 @@ class ConcurrencyError(DatabaseError):
 class CleanAndValidateAllFieldsMixin(object):
     """
     Mixin class to clean and validate all fields of a model.
-
-    Methods:
-        clean_fields(self, exclude=None): Clean and validate fields of the model.
-        clean_all_fields(self, exclude=None): Clean all fields of the model.
-        validate_all_fields(self, errors, exclude=None): Validate all fields of the model.
     """
 
     def clean_fields(self, exclude=None):
@@ -136,10 +131,6 @@ class OptimisticLockingModelMixin:
     Attributes:
         _optimistic_locking_fields (tuple): Fields to be used for optimistic locking.
         _modified (set): Set of modified fields.
-
-    Methods:
-        __setattr__(self, name, value): Override to track changes to optimistic locking fields.
-        _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update): Perform an update with optimistic locking.
     """
     _optimistic_locking_fields = ()
 
@@ -213,19 +204,6 @@ class Entity(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         slug (str): The slug of the entity.
         photo (PhotoField): The profile photo of the entity.
         special_username (bool): Indicates if the username is special.
-
-    Methods:
-        settings(cls): Returns the entity settings.
-        validators(cls): Returns the validators for the entity.
-        blocked_entities_ids(self): Returns a list of blocked entities ids.
-        blocking_entities_ids(self): Returns a list of blocking entities ids.
-        clean_all_fields(self, exclude=None): Cleans all fields of the entity.
-        normalize_slug_and_username(self): Normalizes the slug and username.
-        validate_slug(self): Validates the slug.
-        validate_username_for_slug(self): Validates the username for the slug.
-        validate_username_required(self): Validates that the username is required.
-        validate_username_unique(self): Validates that the username is unique.
-        show_profile_picture_on_website(self): Returns True if the profile picture should be shown on the website.
     """
     id = SmallUDIDField()
     username = models.CharField(verbose_name=_('username'), max_length=255, unique=True, error_messages={'unique': _('This username is already taken.')})
@@ -397,9 +375,6 @@ class NamedEntity(Entity):
 
     Attributes:
         name (str): The name of the entity.
-
-    Methods:
-        settings(cls): Get the settings for the named entity.
     """
     name = models.CharField(verbose_name=_('name'), max_length=255)
 
@@ -433,11 +408,6 @@ class ReservedUsername(Entity):
     Attributes:
         description (str): Description of the reserved username.
         objects (BaseManager): Manager for the ReservedUsername model.
-
-    Methods:
-        __init__(self, *args, **kwargs): Initialize the ReservedUsername instance.
-        __str__(self): Return a string representation of the reserved username.
-        clean_fields(self, exclude=None): Clean and validate fields of the model.
     """
     description = models.TextField(verbose_name=_('description'), max_length=50000, validators=[MaxLengthValidator(limit_value=50000)], blank=True)
     objects = BaseManager()
@@ -516,67 +486,6 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         last_ip_address_used_original_ipapi_call (bool): Whether the last IP address used was an original ipapi call.
         last_ip_address_used_ipapi_time (datetime): The time of the last IP address used ipapi call.
         last_ip_address_used_raw_ipapi_results (dict): The raw results of the last IP address used ipapi call.
-
-    Methods:
-        diet_choices_with_description(gender): Get diet choices with description based on gender.
-        diet_choices(gender): Get diet choices based on gender.
-        smoking_status_choices(gender): Get smoking status choices based on gender.
-        relationship_status_choices(gender): Get relationship status choices based on gender.
-        settings(cls): Get user settings.
-        AGE_VALID_VALUES_IN_MODEL(cls): Get valid age values in the model.
-        AGE_VALID_VALUES_IN_FORMS(cls): Get valid age values in forms.
-        validators(cls): Get validators for the user model.
-        name: Get the name of the user.
-        full_name: Get the full name of the user.
-        first_name_property: Get the first name of the user.
-        short_name: Get the short name of the user.
-        email: Get the primary email of the user.
-        profile: Get the profile of the user.
-        speedy_net_profile: Get the Speedy Net profile of the user.
-        speedy_match_profile: Get the Speedy Match profile of the user.
-        received_friendship_requests: Get received friendship requests in the current site.
-        received_friendship_requests_count: Get the number of received friendship requests in the current site.
-        sent_friendship_requests: Get sent friendship requests in the current site.
-        sent_friendship_requests_count: Get the number of sent friendship requests in the current site.
-        site_friends: Get friends in the current site.
-        site_friends_count: Get the number of friends in the current site.
-        speedy_net_friends: Get friends in Speedy Net.
-        speedy_net_friends_count: Get the number of friends in Speedy Net.
-        friends_trans: Get the translated label for friends.
-        has_confirmed_email_or_registered_now: Check if the user has confirmed email or registered recently.
-        main_language_code: Get the main language code of the user.
-        _update_has_confirmed_email_field: Update the has_confirmed_email field.
-        _mark_as_deleted: Mark the user as deleted.
-        save: Save the user but not profile.
-        set_password: Set the password for the user.
-        check_password: Check the password for the user.
-        delete: Delete the user and all profiles.
-        clean_fields: Clean fields of the user.
-        clean_all_fields: Clean all fields of the user.
-        clean_localizable_field: Clean a localizable field.
-        get_absolute_url: Get the absolute URL of the user.
-        mail_user: Send an email to the user.
-        get_full_name: Get the full name of the user.
-        get_first_name: Get the first name of the user.
-        get_short_name: Get the short name of the user.
-        activate: Activate the user.
-        get_profile: Get the profile of the user.
-        refresh_all_profiles: Refresh all profiles of the user.
-        get_received_friendship_requests: Get received friendship requests in the current site.
-        get_sent_friendship_requests: Get sent friendship requests in the current site.
-        get_speedy_net_friends: Get friends in Speedy Net.
-        get_site_friends: Get friends in the current site.
-        save_user_and_profile: Save the user and profile.
-        get_gender: Get the gender of the user.
-        get_diet: Get the diet of the user.
-        get_smoking_status: Get the smoking status of the user.
-        get_relationship_status: Get the relationship status of the user.
-        get_age: Get the age of the user.
-        get_diet_choices_with_description: Get diet choices with description.
-        get_smoking_status_choices: Get smoking status choices.
-        get_relationship_status_choices: Get relationship status choices.
-        update_last_ip_address_used: Update the last IP address used by the user.
-        display_ads: Determine if the user should see ads.
     """
     # Fields of the user which have a separate value for each language; the first two are the name fields and only the first one (first_name) is required.
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
@@ -1673,18 +1582,6 @@ class UserEmailAddress(CleanAndValidateAllFieldsMixin, TimeStampedModel):
         confirmation_token (str): The confirmation token.
         confirmation_sent (int): The number of times the confirmation email has been sent.
         access (UserAccessField): The access level of the email address.
-
-    Methods:
-        _generate_confirmation_token(self): Generate a confirmation token.
-        save(self, *args, **kwargs): Save the email address.
-        clean_all_fields(self, exclude=None): Clean and validate all fields of the model.
-        normalize_email(self): Normalize the email address.
-        validate_email(self): Validate the email address.
-        validate_email_unique(self): Validate the uniqueness of the email address.
-        mail(self, template_name_prefix, context=None): Send an email to the email address.
-        send_confirmation_email(self): Send a confirmation email to the email address.
-        verify(self): Verify the email address.
-        make_primary(self): Make the email address primary.
     """
     id = RegularUDIDField()
     # Type hint "User" will not be necessary after AUTH_USER_MODEL support in https://youtrack.jetbrains.com/issue/PY-34394
@@ -1851,19 +1748,6 @@ class SiteProfileBase(TimeStampedModel):
         user (User): The user associated with the profile.
         last_visit (datetime): The last visit time of the user.
         is_active (bool): Whether the profile is active.
-
-    Methods:
-        is_active_and_valid(self): Check if the profile is active and valid.
-        last_visit_str(self): Get the last visit time as a string.
-        __str__(self): Return a string representation of the profile.
-        _get_deleted_name(self): Get the placeholder name used for deleted users.
-        save(self, *args, **kwargs): Save the profile.
-        update_last_visit(self): Update the last visit time of the user.
-        activate(self): Activate the profile.
-        deactivate(self): Deactivate the profile.
-        get_name(self): Get the name of the profile.
-        validate_profile_and_activate(self, commit=True): Validate and activate the profile.
-        call_after_verify_email_address(self): Call after verifying the email address.
     """
     user = models.OneToOneField(to=User, verbose_name=_('User'), primary_key=True, on_delete=models.CASCADE, related_name='+')
     last_visit = models.DateTimeField(_('last visit'), auto_now_add=True)

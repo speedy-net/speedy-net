@@ -29,9 +29,6 @@ if (django_settings.TESTS):
         class ProfileNotificationsFormOnlyEnglishTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
             """
             Test the profile notifications form on Speedy Net (English only, the form fields don't depend on the language).
-
-            Methods:
-                test_has_correct_fields(self): Verify the form has only the 'notify_on_message' field on Speedy Net.
             """
 
             def test_has_correct_fields(self):
@@ -51,16 +48,6 @@ if (django_settings.TESTS):
             Attributes:
                 random_choice (int): A random choice (1 or 2) of which inactive user factory to use.
                 user (speedy.core.accounts.models.User): The inactive test user created in set_up.
-
-            Methods:
-                set_up(self): Creates an inactive test user, randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
-                test_correct_password_and_delete_my_account_text(self): Verify the form is valid with a correct password and confirmation text.
-                test_incorrect_password(self): Verify the form is invalid with an incorrect password.
-                test_incorrect_delete_my_account_text(self): Verify the form is invalid with an incorrect confirmation text.
-                test_no_password(self): Verify the form is invalid when the password is missing.
-                test_no_delete_my_account_text(self): Verify the form is invalid when the confirmation text is missing.
-                test_no_password_and_delete_my_account_text(self): Verify the form is invalid when both the password and confirmation text are missing.
-                test_yes_delete_my_account_text_is_contained_in_are_you_sure_you_want_to_delete_your_speedy_net_account_text_dict_by_gender_for_all_genders_with_and_without_quotes(self): Verify the "yes, delete my account" confirmation text appears (with or without surrounding quote characters) inside the "are you sure" message, for every gender.
             """
 
             def set_up(self):
@@ -166,9 +153,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesEnglishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -184,9 +168,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesFrenchTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -202,9 +183,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesGermanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -220,9 +198,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesSpanishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -238,9 +213,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesPortugueseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -256,9 +228,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesItalianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -274,9 +243,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesDutchTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -292,9 +258,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesJapaneseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -310,9 +273,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesRussianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -328,9 +288,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesChineseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -346,9 +303,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesPolishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -364,9 +318,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesPersianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -382,9 +333,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesHebrewTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -400,9 +348,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesKoreanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -418,9 +363,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesArabicTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -436,9 +378,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesIndonesianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -454,9 +393,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesUkrainianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -472,9 +408,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesTurkishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -490,9 +423,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesVietnameseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -508,9 +438,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesCzechTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -526,9 +453,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesSwedishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -544,9 +468,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesFinnishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -562,9 +483,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesHungarianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -580,9 +498,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesThaiTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -598,9 +513,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesGreekTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -616,9 +528,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesMalayTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -634,9 +543,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesSerbianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -652,9 +558,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesRomanianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -670,9 +573,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesBengaliTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -688,9 +588,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesCatalanTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -706,9 +603,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesNorwegianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -724,9 +618,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesBulgarianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -742,9 +633,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesDanishTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -760,9 +648,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesSlovakTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -778,9 +663,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesHindiTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -796,9 +678,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesEstonianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -814,9 +693,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesCroatianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -832,9 +708,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesAzerbaijaniTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -850,9 +723,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesCantoneseTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -868,9 +738,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesLithuanianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -886,9 +753,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesSlovenianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -904,9 +768,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesBasqueTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -922,9 +783,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesArmenianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -940,9 +798,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesUzbekTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -958,9 +813,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesTamilTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -976,9 +828,6 @@ if (django_settings.TESTS):
         class DeleteAccountFormAllLanguagesLatvianTestCase(DeleteAccountFormTestCaseMixin, SiteTestCase):
             """
             Test the delete account form validation errors and "are you sure" text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

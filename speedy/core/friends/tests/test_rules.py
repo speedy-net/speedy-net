@@ -22,13 +22,6 @@ if (django_settings.TESTS):
         class RequestRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the friends.request permission rule, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users for the tests.
-                test_user_can_send_request_to_other_user(self): Asserts a user has permission to send a friendship request to another user.
-                test_user_cannot_send_request_to_other_user_if_blocked(self): Asserts neither user has permission to send a friendship request to the other if the other user has blocked them.
-                test_user_cannot_send_request_to_himself(self): Asserts a user has no permission to send a friendship request to themselves.
-                test_user_cannot_send_second_request(self): Asserts a user has no permission to send a second friendship request after they are already friends.
             """
 
             def set_up(self):
@@ -71,11 +64,6 @@ if (django_settings.TESTS):
         class ViewRequestsRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the friends.view_requests permission rule, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users for the tests.
-                test_user_cannot_view_incoming_requests_for_other_user(self): Asserts a user has no permission to view another user's incoming friendship requests.
-                test_user_can_view_incoming_requests(self): Asserts a user has permission to view their own incoming friendship requests.
             """
 
             def set_up(self):
@@ -103,12 +91,6 @@ if (django_settings.TESTS):
         class ViewFriendListRulesTestCaseMixin(TestCaseMixin):
             """
             Mixin that tests the friends.view_friend_list permission rule. Subclasses run it once in English (on Speedy Net) or once per site (on Speedy Match, where it is overridden).
-
-            Methods:
-                set_up(self): Creates two active users for the tests.
-                test_user_can_view_his_own_friend_list(self): Asserts a user has permission to view their own friend list.
-                test_user_can_view_another_user_friend_list(self): Not implemented in this mixin.
-                test_user_cannot_view_another_user_friend_list(self): Not implemented in this mixin.
             """
 
             def set_up(self):
@@ -142,13 +124,6 @@ if (django_settings.TESTS):
         class RemoveRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the friends.remove permission rule, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users and makes them friends.
-                test_user_can_remove_other_user(self): Asserts a user has permission to remove the other user as a friend.
-                test_other_user_can_remove_user(self): Asserts the other user has permission to remove the user as a friend.
-                test_user_cannot_remove_himself(self): Asserts a user has no permission to remove themselves as a friend.
-                test_user_cannot_remove_other_user_if_not_friends(self): Asserts a user has no permission to remove the other user as a friend once they are no longer friends.
             """
 
             def set_up(self):
@@ -190,15 +165,6 @@ if (django_settings.TESTS):
         class FriendshipRequestRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the friendship_request_sent, friendship_request_received and are_friends predicates, run only once (in English) since they are language-independent.
-
-            Methods:
-                set_up(self): Creates two active users for the tests.
-                test_friendship_request_sent_false(self): Asserts friendship_request_sent is False in both directions when no request was sent.
-                test_friendship_request_sent_true(self): Asserts friendship_request_sent is True only in the direction the request was sent.
-                test_friendship_request_received_false(self): Asserts friendship_request_received is False in both directions when no request was received.
-                test_friendship_request_received_true(self): Asserts friendship_request_received is True only in the direction the request was received.
-                test_are_friends_false(self): Asserts are_friends is False in both directions when the users are not friends.
-                test_are_friends_true(self): Asserts are_friends is True in both directions once the users are friends.
             """
 
             def set_up(self):

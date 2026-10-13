@@ -25,9 +25,6 @@ class Command(BaseCommand):
     This class extends the `BaseCommand` class provided by Django to implement a custom
     management command. It uses a utility function to retrieve the total number of active
     members and logs the result.
-
-    Methods:
-        handle(*args, **options): Logs the total number of active members by calling a utility function.
     """
 
     def handle(self, *args, **options):

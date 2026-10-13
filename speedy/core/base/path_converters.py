@@ -12,10 +12,6 @@ class BaseConverter:
 
     Attributes:
         regex (str): The regular expression used to match this converter's value in the URL. Must be set by subclasses.
-
-    Methods:
-        to_python: Converts the matched string from the URL to a Python value.
-        to_url: Converts a Python value to a string for use in a URL.
     """
     regex = None
 

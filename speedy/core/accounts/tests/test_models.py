@@ -428,9 +428,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -446,9 +443,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -464,9 +458,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesGermanTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -482,9 +473,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesSpanishTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -500,9 +488,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -518,9 +503,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesItalianTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -536,9 +518,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesDutchTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -554,9 +533,6 @@ if (django_settings.TESTS):
         class EntityAllMainLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -777,9 +753,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -795,9 +768,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -813,9 +783,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesGermanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -831,9 +798,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesSpanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -849,9 +813,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesPortugueseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -867,9 +828,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesItalianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -885,9 +843,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesDutchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -903,9 +858,6 @@ if (django_settings.TESTS):
         class ReservedUsernameAllMainLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2380,9 +2332,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesEnglishTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2398,9 +2347,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesFrenchTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2416,9 +2362,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesGermanTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2434,9 +2377,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesSpanishTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2452,9 +2392,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesPortugueseTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2470,9 +2407,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesItalianTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2488,9 +2422,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesDutchTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2506,9 +2437,6 @@ if (django_settings.TESTS):
         class UserAllMainLanguagesHebrewTestCase(UserTestCaseMixin, SiteTestCase):
             """
             Tests the User model, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -2879,11 +2807,6 @@ if (django_settings.TESTS):
         class UserWithDataTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the User model with additional profile data (password, slug, gender, date of birth).
-
-            Methods:
-                set_up(self): Sets up a random password and a base data dict (password, slug, gender, date_of_birth) for creating users.
-                test_valid_date_of_birth_list_ok(self): Asserts that users can be created with each valid date of birth from the test settings list.
-                test_invalid_date_of_birth_list_fail(self): Asserts that creating a user fails with a ValidationError for each invalid date of birth from the test settings list.
             """
 
             def set_up(self):
@@ -2949,10 +2872,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (English).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the English alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -2981,10 +2900,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (French).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the French alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3013,10 +2928,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (German).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the German alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3045,10 +2956,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (Spanish).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the Spanish alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3077,10 +2984,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (Portuguese).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the Portuguese alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3109,10 +3012,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (Italian).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the Italian alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3141,10 +3040,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (Dutch).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the Dutch alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3173,10 +3068,6 @@ if (django_settings.TESTS):
         class UserWithDataWithLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data including a last name, for all main languages (Hebrew).
-
-            Methods:
-                set_up(self): Sets up the user's first and last name in the Hebrew alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3204,10 +3095,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesEnglishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (English).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the English alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3236,10 +3123,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesFrenchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (French).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the French alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3268,10 +3151,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesGermanTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (German).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the German alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3300,10 +3179,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesSpanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (Spanish).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the Spanish alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3332,10 +3207,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesPortugueseTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (Portuguese).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the Portuguese alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3364,10 +3235,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesItalianTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (Italian).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the Italian alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3396,10 +3263,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesDutchTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (Dutch).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the Dutch alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -3428,10 +3291,6 @@ if (django_settings.TESTS):
         class UserWithDataWithoutLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
             Tests creating a user with data without a last name, for all main languages (Hebrew).
-
-            Methods:
-                set_up(self): Sets up the user's first name (with no last name) in the Hebrew alphabet, to be used in validate_all_values.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -4179,9 +4038,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesEnglishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4197,9 +4053,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesFrenchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4215,9 +4068,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesGermanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4233,9 +4083,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesSpanishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4251,9 +4098,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesPortugueseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4269,9 +4113,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesItalianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4287,9 +4128,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesDutchTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -4305,9 +4143,6 @@ if (django_settings.TESTS):
         class UserEmailAddressAllMainLanguagesHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
             Tests the UserEmailAddress model, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

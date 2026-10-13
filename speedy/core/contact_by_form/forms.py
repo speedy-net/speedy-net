@@ -19,11 +19,6 @@ class FeedbackForm(AddAttributesToFieldsMixin, ModelFormWithDefaults):
     Attributes:
         _not_allowed_strings (list): Strings that are not allowed to appear in the feedback text (likely spam links).
         no_bots (CharField): Anti-bot field requiring the text "17" to be entered.
-
-    Methods:
-        __init__(self, *args, **kwargs): Removes sender-identifying and anti-bot fields and sets the submit button text when a logged-in sender is provided; otherwise requires the sender's name and email.
-        clean_text(self): Validates that the feedback text doesn't contain any not-allowed strings.
-        clean_no_bots(self): Validates that the anti-bot field contains the value "17".
     """
     _not_allowed_strings = ["https://t.me/pump_upp", "https://datebest.net", "https://t.me/FeedbackFormEU"]
     no_bots = forms.CharField(label=_('Type the number "17"'), required=True)

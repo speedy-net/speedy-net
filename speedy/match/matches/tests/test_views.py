@@ -26,13 +26,6 @@ if (django_settings.TESTS):
                 user: The active user used to access the page.
                 page_url: The URL of the edit view, from get_page_url().
                 template_name: The expected template name, from get_template_name().
-
-            Methods:
-                get_page_url(self): Returns the URL of the edit view (must be implemented by subclasses).
-                get_template_name(self): Returns the expected template name (must be implemented by subclasses).
-                set_up(self): Creates an active user and resolves the page URL and template name.
-                test_anonymous_has_no_access(self): Asserts an anonymous visitor is redirected to login.
-                test_user_can_access(self): Asserts a logged-in user can access the page and it renders the expected template.
             """
 
             def get_page_url(self):
@@ -81,10 +74,6 @@ if (django_settings.TESTS):
         class EditMatchSettingsViewOnlyEnglishTestCase(EditViewBaseMixin, SiteTestCase):
             """
             Tests access to the "about my match" settings edit view, in English only.
-
-            Methods:
-                get_page_url(self): Returns the "about my match" settings edit page URL.
-                get_template_name(self): Returns the "about my match" settings template name.
             """
 
             def get_page_url(self):
@@ -104,10 +93,6 @@ if (django_settings.TESTS):
         class EditAboutMeViewOnlyEnglishTestCase(EditViewBaseMixin, SiteTestCase):
             """
             Tests access to the "about me" settings edit view, in English only.
-
-            Methods:
-                get_page_url(self): Returns the "about me" settings edit page URL.
-                get_template_name(self): Returns the "about me" settings template name.
             """
 
             def get_page_url(self):
@@ -127,11 +112,6 @@ if (django_settings.TESTS):
         class EditMatchSettingsViewSaveOnlyEnglishTestCase(SiteTestCase):
             """
             Tests saving the "about my match" settings form, in English only.
-
-            Methods:
-                set_up(self): Creates a logged-in active user and resolves the settings page URL.
-                test_user_can_save_his_match_settings(self): Asserts valid match settings are saved and the user is redirected with a success message.
-                test_user_cannot_save_invalid_match_settings(self): Asserts an invalid min/max age range is rejected and the settings are not saved.
             """
 
             def set_up(self):
@@ -196,11 +176,6 @@ if (django_settings.TESTS):
         class EditAboutMeViewSaveOnlyEnglishTestCase(SiteTestCase):
             """
             Tests saving the "about me" settings form, in English only.
-
-            Methods:
-                set_up(self): Creates a logged-in active user and resolves the settings page URL.
-                test_user_can_save_his_about_me_settings(self): Asserts valid about-me settings are saved and the user is redirected with a success message.
-                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self): Asserts an unmatchable height disables the user's Speedy Match profile and redirects to the registration step.
             """
 
             def set_up(self):
@@ -274,14 +249,6 @@ if (django_settings.TESTS):
         class MatchesListViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the matches list view, in English only.
-
-            Methods:
-                set_up(self): Creates an active user and resolves the matches list page URL.
-                test_anonymous_has_no_access(self): Asserts an anonymous visitor is redirected to login.
-                test_user_can_access(self): Asserts a logged-in user can access the page with an empty matches list.
-                test_user_with_no_matches_sees_empty_matches_list(self): Asserts another active user doesn't appear in the matches list and the page doesn't error out.
-                test_anonymous_post_redirects_to_edit_match_settings_without_saving(self): Asserts an anonymous POST redirects to the edit match settings page without saving anything.
-                test_user_post_redirects_to_edit_match_settings_without_saving(self): Asserts a logged-in user's POST redirects to the edit match settings page without saving anything.
             """
 
             def set_up(self):
@@ -343,11 +310,6 @@ if (django_settings.TESTS):
         class MatchSettingsDefaultRedirectViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the default match settings redirect view, in English only.
-
-            Methods:
-                set_up(self): Creates an active user and resolves the default match settings page URL.
-                test_anonymous_has_no_access(self): Asserts an anonymous visitor is redirected to login.
-                test_user_is_redirected_to_edit_match_settings(self): Asserts a logged-in user is redirected to the "about my match" edit page.
             """
 
             def set_up(self):

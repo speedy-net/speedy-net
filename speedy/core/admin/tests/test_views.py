@@ -20,15 +20,6 @@ if (django_settings.TESTS):
         class AdminViewBaseMixin(SpeedyCoreAdminLanguageMixin, TestCaseMixin):
             """
             Base mixin for testing admin-only views: sets up three users (two regular, one admin/superuser) and asserts access is denied to visitors and regular users, but granted to the admin.
-
-            Methods:
-                get_page_url(self): Not implemented in this mixin - must be overridden by subclasses to return the page URL under test.
-                assert_permission_denied(self, r): Asserts the given response denies permission (status code 403, with the "Permission Denied" heading and the private-page alert).
-                set_up(self): Creates two regular users and one admin/superuser user, and sets the page URL under test.
-                test_visitor_has_no_access(self): Asserts a logged-out visitor is denied access to the page.
-                test_user_1_has_no_access(self): Asserts a regular (non-admin) user is denied access to the page.
-                test_user_2_has_no_access(self): Asserts another regular (non-admin) user is denied access to the page.
-                test_admin_has_access(self): Asserts the admin user can access the page (status code 200, without the permission-denied heading or alert), and returns the response.
             """
 
             def get_page_url(self):
@@ -102,11 +93,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             """
             Tests the admin main page view, asserting it links to both the Speedy Net and Speedy Match profile lists.
-
-            Methods:
-                get_page_url(self): Returns the admin main page URL.
-                assert_permission_denied(self, r): Asserts the given response redirects to the admin login page, without the profile-list links.
-                test_admin_has_access(self): Asserts the admin can access the page and it contains both the Speedy Net and Speedy Match profile-list links.
             """
 
             def get_page_url(self):
@@ -142,9 +128,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesEnglishTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -160,9 +143,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesFrenchTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -178,9 +158,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesGermanTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -196,9 +173,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesSpanishTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -214,9 +188,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesPortugueseTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -232,9 +203,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesItalianTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -250,9 +218,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesDutchTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -268,9 +233,6 @@ if (django_settings.TESTS):
         class AdminMainPageViewAllMainLanguagesHebrewTestCase(AdminMainPageViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin main page view for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -284,10 +246,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             """
             Tests the admin users list view, asserting the three users appear (or not) by first name, name, full name and id depending on the site, and that no "other"-language users are mislabeled.
-
-            Methods:
-                get_page_url(self): Returns the admin users list page URL.
-                test_admin_has_access(self): Asserts the admin can access the page and all three users appear by first name and name; full name appears only on Speedy Net, and ids never appear.
             """
 
             def get_page_url(self):
@@ -321,9 +279,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesEnglishTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -339,9 +294,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesFrenchTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -357,9 +309,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesGermanTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -375,9 +324,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesSpanishTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -393,9 +339,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesPortugueseTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -411,9 +354,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesItalianTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -429,9 +369,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesDutchTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -447,9 +384,6 @@ if (django_settings.TESTS):
         class AdminUsersListViewAllMainLanguagesHebrewTestCase(AdminUsersListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users list view for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -463,10 +397,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             """
             Tests the admin users list view with details, asserting the three users appear by first name, name, full name (Speedy Net only) and id, with language markers present only on Speedy Match.
-
-            Methods:
-                get_page_url(self): Returns the admin users with-details list page URL.
-                test_admin_has_access(self): Asserts the admin can access the page and all three users appear by first name, name and id; full name appears only on Speedy Net; language markers appear only on Speedy Match (once per user).
             """
 
             def get_page_url(self):
@@ -505,9 +435,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesEnglishTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -523,9 +450,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesFrenchTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -541,9 +465,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesGermanTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -559,9 +480,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesSpanishTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -577,9 +495,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesPortugueseTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -595,9 +510,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesItalianTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -613,9 +525,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesDutchTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -631,9 +540,6 @@ if (django_settings.TESTS):
         class AdminUsersWithDetailsListViewAllMainLanguagesHebrewTestCase(AdminUsersWithDetailsListViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin users with details list view for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -647,10 +553,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewTestCaseMixin(AdminViewBaseMixin, TestCaseMixin):
             """
             Tests the admin user detail view, asserting user_1's details appear (full name only on Speedy Net), with exactly one language marker on Speedy Match.
-
-            Methods:
-                get_page_url(self): Returns the admin user detail page URL for user_1.
-                test_admin_has_access(self): Asserts the admin can access the page and user_1's first name, name and id appear; full name appears only on Speedy Net; exactly one language marker appears on Speedy Match.
             """
 
             def get_page_url(self):
@@ -689,9 +591,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesEnglishTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -707,9 +606,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesFrenchTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -725,9 +621,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesGermanTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -743,9 +636,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesSpanishTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -761,9 +651,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesPortugueseTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -779,9 +666,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesItalianTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -797,9 +681,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesDutchTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -815,9 +696,6 @@ if (django_settings.TESTS):
         class AdminUserDetailViewAllMainLanguagesHebrewTestCase(AdminUserDetailViewTestCaseMixin, SiteTestCase):
             """
             Tests the admin user detail view for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

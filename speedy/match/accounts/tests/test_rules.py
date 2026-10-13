@@ -17,10 +17,6 @@ if (django_settings.TESTS):
         class ViewProfileRulesOnlyEnglishTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
             """
             Tests the "view_profile" permission rule on Speedy Match, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_doron_and_jennifer_have_access(self): Skipped on Speedy Match, since this scenario grants no access here.
-                test_doron_and_jennifer_have_no_access(self): Asserts neither Doron nor Jennifer have profile view access to each other.
             """
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")
@@ -28,7 +24,7 @@ if (django_settings.TESTS):
                 """
                 Not implemented on Speedy Match - this scenario is irrelevant here and the test is skipped.
 
-                :raises NotImplementedError: Always, since this test is not implemented in this class.
+                :raises NotImplementedError: Always, since this test is not implemented in ViewProfileRulesOnlyEnglishTestCase.
                 """
                 raise NotImplementedError("test_doron_and_jennifer_have_access is not implemented in ViewProfileRulesOnlyEnglishTestCase.")
 

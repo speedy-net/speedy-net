@@ -30,9 +30,6 @@ class Command(BaseCommand):
     It checks for various conditions such as animation, transparency, and single color.
     If the photo is valid, it uses AWS Rekognition to detect moderation labels.
     Based on the results, it updates the user's profile and photo visibility.
-
-    Methods:
-        handle(self, *args, **options): Main method to process unmoderated photos.
     """
 
     def handle(self, *args, **options):

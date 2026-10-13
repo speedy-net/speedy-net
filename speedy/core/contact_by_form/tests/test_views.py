@@ -26,27 +26,6 @@ if (django_settings.TESTS):
         class FeedbackViewBaseMixin(SpeedyCoreFeedbackModelsMixin, SpeedyCoreFeedbackLanguageMixin, TestCaseMixin):
             """
             Base mixin for testing the feedback view, covering form display, submission by visitors and logged-in users, validation errors, and that Feedback deletion via querysets is disabled.
-
-            Methods:
-                set_up_class(self): Not implemented in this mixin - must be overridden by subclasses to set expected feedback type/report ids.
-                get_page_url(self): Not implemented in this mixin - must be overridden by subclasses to return the page URL under test.
-                set_up(self): Creates a random active/inactive user (when login is enabled), calls set_up_class(), and sets the page URL.
-                check_feedback(self, feedback, expected_sender_id, expected_sender_name, expected_sender_email, expected_text): Asserts the given Feedback instance matches the expected type, report ids, sender, and text.
-                test_visitor_can_see_feedback_form(self): Asserts a visitor sees the feedback form with the expected fields, ids, labels, and textarea.
-                run_test_visitor_can_submit_form(self, data): Submits the form as a visitor with the given data and asserts a Feedback instance is created and redirects to the thank-you page.
-                test_visitor_can_submit_form_1(self): Asserts a visitor can submit a short feedback message.
-                test_visitor_can_submit_form_2(self): Asserts a visitor can submit feedback with a leading/trailing-space no_bots value.
-                test_visitor_can_submit_form_3(self): Asserts a visitor can submit feedback with the maximum allowed text length (50000 characters).
-                test_visitor_cannot_submit_form_without_all_the_required_fields(self): Asserts an empty visitor submission is invalid, with "required" errors for all required fields.
-                test_visitor_cannot_submit_form_without_no_bots_17_1(self): Asserts an incorrect no_bots value ("16") produces a "not 17" error and doesn't create a Feedback instance.
-                test_visitor_cannot_submit_form_without_no_bots_17_2(self): Asserts a blank no_bots value produces a "required" error and doesn't create a Feedback instance.
-                test_visitor_cannot_submit_form_with_not_allowed_strings(self): Asserts text containing a not-allowed string produces a "please contact us by email" error and doesn't create a Feedback instance.
-                test_visitor_cannot_submit_form_with_text_too_long_1(self): Asserts text one character over the maximum length produces a max-length error and doesn't create a Feedback instance.
-                test_visitor_cannot_submit_form_with_text_too_long_2(self): Asserts a much longer text produces a max-length error and doesn't create a Feedback instance.
-                test_user_can_see_feedback_form(self): Asserts a logged-in user sees the feedback form with only the text field (no sender name/email).
-                test_user_can_submit_form(self): Asserts a logged-in user can submit feedback, which creates a Feedback instance linked to the user and sends a notification email.
-                test_user_cannot_submit_form_without_all_the_required_fields(self): Asserts an empty logged-in user submission is invalid, with a "required" error only for the text field, and no email is sent.
-                test_cannot_delete_feedbacks_with_queryset_delete(self): Asserts that deleting Feedback objects via queryset delete() (in various forms) always raises NotImplementedError.
             """
 
             def set_up_class(self):
@@ -342,10 +321,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             """
             Tests the feedback view for a plain feedback submission (not an abuse report).
-
-            Methods:
-                set_up_class(self): Sets the expected feedback type (TYPE_FEEDBACK) and no report entity/file.
-                get_page_url(self): Returns the feedback page URL.
             """
 
             def set_up_class(self):
@@ -370,9 +345,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesEnglishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -388,9 +360,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesFrenchTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -406,9 +375,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesGermanTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -424,9 +390,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesSpanishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -442,9 +405,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesPortugueseTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -460,9 +420,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesItalianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -478,9 +435,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesDutchTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -496,9 +450,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeFeedbackAllMainLanguagesHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (plain feedback) for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -512,11 +463,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             """
             Tests the feedback view for reporting another user (entity abuse report).
-
-            Methods:
-                set_up_class(self): Creates another user to report and sets the expected feedback type (TYPE_REPORT_ENTITY) and reported entity id.
-                get_page_url(self): Returns the report-entity page URL for the other user.
-                test_404(self): Asserts requesting the report-entity page for a nonexistent slug returns a 404.
             """
 
             def set_up_class(self):
@@ -549,9 +495,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesEnglishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -567,9 +510,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesFrenchTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -585,9 +525,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesGermanTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -603,9 +540,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesSpanishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -621,9 +555,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesPortugueseTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -639,9 +570,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesItalianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -657,9 +585,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesDutchTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -675,9 +600,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportEntityAllMainLanguagesHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting another user) for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -691,11 +613,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
             """
             Tests the feedback view for reporting an uploaded file (file abuse report).
-
-            Methods:
-                set_up_class(self): Creates a file to report and sets the expected feedback type (TYPE_REPORT_FILE) and reported file id.
-                get_page_url(self): Returns the report-file page URL for the file.
-                test_404(self): Asserts requesting the report-file page for a nonexistent file id returns a 404.
             """
 
             def set_up_class(self):
@@ -728,9 +645,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesEnglishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -746,9 +660,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesFrenchTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -764,9 +675,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesGermanTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -782,9 +690,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesSpanishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -800,9 +705,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesPortugueseTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -818,9 +720,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesItalianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -836,9 +735,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesDutchTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -854,9 +750,6 @@ if (django_settings.TESTS):
         class FeedbackViewTypeReportFileAllMainLanguagesHebrewTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
             Tests the feedback view (reporting a file) for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

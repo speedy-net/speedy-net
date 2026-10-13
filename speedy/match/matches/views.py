@@ -24,14 +24,6 @@ logger = logging.getLogger(__name__)
 class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
     """
     Displays the authenticated user's list of matches along with an inline mini settings form.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Redirects POST requests to the match settings edit view.
-        redirect_on_exception(self): Returns a redirect to the matches list on exception.
-        get_matches_list(self): Returns the list of matches for the authenticated user.
-        get_object_list(self): Returns the object list for pagination, empty for POST requests.
-        get_object(self, queryset=None): Returns the requesting user's Speedy Match site profile.
-        get_context_data(self, **kwargs): Adds the matches list, active-members text, and conversion-tracking flag to the context.
     """
     template_name = 'matches/match_list.html'
     page_size = 24
@@ -122,9 +114,6 @@ class MatchesListView(LoginRequiredMixin, PaginationMixin, generic.UpdateView):
 class MatchSettingsDefaultRedirectView(LoginRequiredMixin, generic.RedirectView):
     """
     Redirects to the match settings edit view.
-
-    Methods:
-        get_redirect_url(self, *args, **kwargs): Returns the URL of the match settings edit view.
     """
 
     def get_redirect_url(self, *args, **kwargs):
@@ -142,10 +131,6 @@ class MatchSettingsDefaultRedirectView(LoginRequiredMixin, generic.RedirectView)
 class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
     """
     View for editing the user's matching preferences (full settings page).
-
-    Methods:
-        get_object(self, queryset=None): Returns the requesting user's Speedy Match site profile.
-        form_valid(self, form): Saves the form and displays a success message.
     """
     template_name = 'matches/settings/about_my_match.html'
     form_class = SpeedyMatchProfileFullMatchForm
@@ -176,10 +161,6 @@ class EditMatchSettingsView(LoginRequiredMixin, generic.UpdateView):
 class EditAboutMeView(LoginRequiredMixin, generic.UpdateView):
     """
     View for editing the user's "about me" profile fields (full settings page).
-
-    Methods:
-        get_object(self, queryset=None): Returns the requesting user's Speedy Match site profile.
-        form_valid(self, form): Saves the form and displays a success message.
     """
     template_name = 'matches/settings/about_me.html'
     form_class = SpeedyMatchProfileFullAboutMeForm

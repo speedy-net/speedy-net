@@ -23,11 +23,6 @@ from .models import Chat
 class UserChatsMixin(UserMixin, PermissionRequiredMixin):
     """
     Mixin for views that need the list of chats belonging to the profile's user, restricted by a view_chats permission check.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Dispatches the request, converting a raised PermissionDenied into the no-permission response.
-        get_chat_queryset(self): Returns the queryset of the user's chats with their participants and last message prefetched.
-        has_permission(self): Returns whether the requesting user has permission to view the profile's chats.
     """
 
     def dispatch(self, request, *args, **kwargs):
@@ -66,14 +61,6 @@ class UserChatsMixin(UserMixin, PermissionRequiredMixin):
 class UserSingleChatMixin(UserChatsMixin):
     """
     Mixin for views operating on a single chat identified in the URL, restricted by a read_chat permission check.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Resolves the chat and dispatches the request, converting a raised PermissionDenied into the no-permission response.
-        get_chat(self): Returns the single chat matching the chat_slug URL kwarg, or raises Http404.
-        get_messages_queryset(self): Returns the queryset of messages in the resolved chat.
-        has_permission(self): Returns whether the requesting user has permission to view the chats and read this specific chat.
-        get_context_data(self, **kwargs): Adds the resolved chat to the template context.
-        handle_no_permission(self): Handles a permission failure, redirecting to the other user with an error message when appropriate.
     """
 
     def dispatch(self, request, *args, **kwargs):
@@ -164,9 +151,6 @@ class UserSingleChatMixin(UserChatsMixin):
 class ChatListView(UserChatsMixin, generic.ListView):
     """
     Displays the paginated list of chats belonging to the profile's user.
-
-    Methods:
-        get_queryset(self): Returns the profile's chat queryset.
     """
     template_name = 'messages/chat_list.html'
     page_size = 24
@@ -183,13 +167,6 @@ class ChatListView(UserChatsMixin, generic.ListView):
 class ChatDetailView(UserSingleChatMixin, generic.ListView):
     """
     Displays the paginated message history of a single chat, or a message compose form if no chat exists yet between the current user and the profile's user.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Redirects to the canonical slug, or switches to compose mode, before dispatching normally.
-        get_form(self): Returns the message form bound to the resolved chat or the target user.
-        get_queryset(self): Returns the chat's messages, or an empty list if there is no existing chat.
-        get_template_names(self): Returns the chat detail template, or the message compose form template if there is no existing chat.
-        get_context_data(self, **kwargs): Adds the message form to the template context.
     """
     permission_required = 'messages.read_chat'
     template_name = 'messages/chat_detail.html'
@@ -276,10 +253,6 @@ class ChatDetailView(UserSingleChatMixin, generic.ListView):
 class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
     """
     Returns, via AJAX polling, the messages of a chat created after a given timestamp.
-
-    Methods:
-        get_queryset(self): Returns the chat's messages created after the 'since' query parameter's timestamp.
-        get_context_data(self, **kwargs): Marks the context as an AJAX view.
     """
     template_name = 'messages/message_list_poll.html'
     raise_exception = True
@@ -311,12 +284,6 @@ class ChatPollMessagesView(UserSingleChatMixin, generic.ListView):
 class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
     """
     Handles posting a new message to an existing chat.
-
-    Methods:
-        get_form_kwargs(self): Adds the sender entity and target chat to the form kwargs.
-        get(self, request, *args, **kwargs): Redirects GET requests to the chat page, since messages are only sent via POST.
-        get_success_url(self): Returns the URL of the chat after a message is sent.
-        has_permission(self): Returns whether the requesting user has permission to send a message to the chat.
     """
     permission_required = 'messages.send_message'
     template_name = 'messages/chat_detail.html'
@@ -368,11 +335,6 @@ class SendMessageToChatView(UserSingleChatMixin, generic.CreateView):
 class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateView):
     """
     Handles sending the first message of a new private chat to a user, either showing a compose form or redirecting to an already-existing chat.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirects to an existing chat with the profile's user, if there is one, otherwise shows the compose form.
-        get_form_kwargs(self): Adds the sender entity and target entity to the form kwargs.
-        get_success_url(self): Returns the URL of the newly created chat.
     """
     permission_required = 'messages.send_message'
     template_name = 'messages/message_form.html'
@@ -417,11 +379,6 @@ class SendMessageToUserView(UserMixin, PermissionRequiredMixin, generic.CreateVi
 class MarkChatAsReadView(UserSingleChatMixin, generic.View):
     """
     Marks the resolved chat as read for the profile's user.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirects GET requests to the chat page without marking it as read.
-        post(self, request, *args, **kwargs): Marks the chat as read for the profile's user and redirects to the chat page.
-        get_success_url(self): Returns the URL of the chat page.
     """
 
     def get(self, request, *args, **kwargs):

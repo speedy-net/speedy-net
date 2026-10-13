@@ -32,12 +32,6 @@ class AdminUsersListView(OnlyAdminMixin, generic.ListView):
         page_size (int): The number of users shown per page.
         paginate_by (int): The number of users shown per page (used by Django's pagination).
         show_details (bool): Whether to show extended details (e.g. user id) for each user.
-
-    Methods:
-        get_default_filter_dict(self): Returns the default filter used to select users (confirmed email only).
-        get_total_number_of_members_text(self): Builds a text summary of member counts by recent activity, registration period, and registration year.
-        get_queryset(self): Returns all users, ordered optionally by friends count and then by last visit.
-        get_context_data(self, **kwargs): Adds the users list, show_details flag, and member statistics text to the context.
     """
     template_name = 'admin/users_list.html'
     # page_size = 96
@@ -222,9 +216,6 @@ class AdminUserDetailView(OnlyAdminMixin, UserDetailView):
 
     Attributes:
         template_name (str): The template used to render the user detail page.
-
-    Methods:
-        get_widgets(self): Returns the configured admin user-profile widgets, instantiated for this view.
     """
     template_name = 'admin/profiles/user_detail.html'
 

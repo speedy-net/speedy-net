@@ -14,10 +14,6 @@ if (django_settings.TESTS):
         class TermsOfServiceViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Test the terms of service page view (English only, since the terms of service page doesn't depend on the language).
-
-            Methods:
-                get_page_url(self): Returns the canonical URL path of the page.
-                get_template_name(self): Returns the name of the template expected to render the page.
             """
 
             def get_page_url(self):

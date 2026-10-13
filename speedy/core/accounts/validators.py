@@ -160,11 +160,6 @@ class PasswordMinLengthValidator:
 
     Attributes:
         min_length (int): The minimum number of characters a password must contain.
-
-    Methods:
-        __init__(self, min_length=None): Sets the minimum length, defaulting to ``User.settings.MIN_PASSWORD_LENGTH``.
-        validate(self, password, user=None): Raises a :class:`~django.core.exceptions.ValidationError` if the password is shorter than the minimum length.
-        get_help_text(self): Returns a help text describing the minimum length requirement.
     """
 
     def __init__(self, min_length=None):
@@ -220,11 +215,6 @@ class PasswordMaxLengthValidator:
 
     Attributes:
         max_length (int): The maximum number of characters a password may contain.
-
-    Methods:
-        __init__(self, max_length=None): Sets the maximum length, defaulting to ``User.settings.MAX_PASSWORD_LENGTH``.
-        validate(self, password, user=None): Raises a :class:`~django.core.exceptions.ValidationError` if the password is longer than the maximum length.
-        get_help_text(self): Returns a help text describing the maximum length requirement.
     """
 
     def __init__(self, max_length=None):
@@ -280,11 +270,6 @@ class PasswordMinUniqueCharsValidator:
 
     Attributes:
         min_unique_characters (int): The minimum number of distinct characters a password must contain.
-
-    Methods:
-        __init__(self, min_unique_characters=None): Sets the minimum unique characters, defaulting to ``User.settings.MIN_PASSWORD_UNIQUE_CHARACTERS``.
-        validate(self, password, user=None): Raises a :class:`~django.core.exceptions.ValidationError` if the password has fewer unique characters than required.
-        get_help_text(self): Returns a help text describing the minimum unique characters requirement.
     """
 
     def __init__(self, min_unique_characters=None):

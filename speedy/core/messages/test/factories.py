@@ -21,10 +21,6 @@ if (django_settings.TESTS):
         class ChatFactory(factory.django.DjangoModelFactory, ChatTypeHintMixin):
             """
             Factory for creating Chat instances for tests, defaulting to a private chat between two new active users.
-
-            Methods:
-                group(self, created, extracted, **kwargs): Post-generation hook that adds the given entities as group chat participants.
-                group_chat_with(cls, group): Creates a new group chat with the given group of entities.
             """
             ent1 = factory.SubFactory(ActiveUserFactory)
             ent2 = factory.SubFactory(ActiveUserFactory)

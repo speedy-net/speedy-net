@@ -16,9 +16,6 @@ from .models import UserLike
 class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
     """
     Redirects to the default likes list view (likes given by the user) for a user's slug.
-
-    Methods:
-        get_redirect_url(self, *args, **kwargs): Returns the URL of the "likes to" list view for the user.
     """
 
     def get_redirect_url(self, *args, **kwargs):
@@ -36,9 +33,6 @@ class LikeListDefaultRedirectView(UserMixin, generic.RedirectView):
 class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
     """
     Base view for the likes list pages (likes given, likes received, mutual likes), building the gender-aware page titles.
-
-    Methods:
-        get_context_data(self, **kwargs): Adds the display mode and gender-aware titles to the context.
     """
     permission_required = 'likes.view_likes'
     template_name = 'likes/like_list.html'
@@ -79,9 +73,6 @@ class LikeListViewBase(UserMixin, PermissionRequiredMixin, generic.ListView):
 class LikeListToView(LikeListViewBase):
     """
     Lists the users that the viewed user likes.
-
-    Methods:
-        get_queryset(self): Returns the queryset of likes given by the user.
     """
     display = 'to'
 
@@ -98,9 +89,6 @@ class LikeListToView(LikeListViewBase):
 class LikeListFromView(LikeListViewBase):
     """
     Lists the users who like the viewed user.
-
-    Methods:
-        get_queryset(self): Returns the queryset of likes received by the user.
     """
     display = 'from'
 
@@ -117,9 +105,6 @@ class LikeListFromView(LikeListViewBase):
 class LikeListMutualView(LikeListViewBase):
     """
     Lists the users who mutually like the viewed user.
-
-    Methods:
-        get_queryset(self): Returns the queryset of mutual likes.
     """
     display = 'to'
 
@@ -136,10 +121,6 @@ class LikeListMutualView(LikeListViewBase):
 class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
     """
     Handles creating a like from the requesting user to the viewed user.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirects to the viewed user's profile without creating a like.
-        post(self, request, *args, **kwargs): Creates the like and redirects to the viewed user's profile.
     """
     permission_required = 'likes.like'
     raise_exception = True
@@ -171,10 +152,6 @@ class LikeView(UserMixin, PermissionRequiredMixin, generic.View):
 class UnlikeView(UserMixin, PermissionRequiredMixin, generic.View):
     """
     Handles removing a like from the requesting user to the viewed user.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirects to the viewed user's profile without removing the like.
-        post(self, request, *args, **kwargs): Removes the like and redirects to the viewed user's profile.
     """
     permission_required = 'likes.unlike'
     raise_exception = True

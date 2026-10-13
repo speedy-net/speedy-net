@@ -69,11 +69,6 @@ if (django_settings.TESTS):
         class BlockViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the view that lets a logged-in user block another user.
-
-            Methods:
-                test_visitor_has_no_access(self): Asserts an anonymous visitor is redirected to login when trying to block a user.
-                test_user_cannot_block_self(self): Asserts a user attempting to block himself gets a 403 response.
-                test_user_can_block_other_user(self): Asserts a user can block another user, which creates a Block instance and redirects to the blocked user's profile page.
             """
 
             def set_up(self):
@@ -119,10 +114,6 @@ if (django_settings.TESTS):
         class UnblockViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the view that lets a logged-in user unblock a previously blocked user.
-
-            Methods:
-                test_visitor_has_no_access(self): Asserts an anonymous visitor is redirected to login when trying to unblock a user.
-                test_user_can_unblock_other_user(self): Asserts a user can unblock another user, which removes the Block instance and redirects to the unblocked user's profile page.
             """
 
             def set_up(self):

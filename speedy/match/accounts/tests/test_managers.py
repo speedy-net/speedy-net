@@ -27,11 +27,6 @@ if (django_settings.TESTS):
         class ManagerBlocksOnlyEnglishTestCase(SiteTestCase):
             """
             Tests that blocking/unblocking users affects the Speedy Match matches list, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates 5 active users for use by the tests.
-                test_set_up(self): Asserts the 5 users were created correctly.
-                test_blocked_users_dont_appear_in_matches_list(self): Test that blocked and blocking users don't appear in matches list.
             """
 
             def set_up(self):
@@ -100,14 +95,6 @@ if (django_settings.TESTS):
         class ManagerMatchesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the Speedy Match matches list computation (gender/length/photo visibility rules), run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates 5 active users of various genders for use by the tests.
-                test_set_up(self): Asserts the 5 users were created correctly.
-                test_gender_doesnt_match_profile_in_matches_list(self): Test that users with non-matching genders don't appear in matches list.
-                test_length_of_matches_list(self): Test that the matches list has the expected length as more users are added, and that it's capped.
-                test_photo_not_visible_doesnt_match_profile_in_matches_list(self): Test that users with invisible photos don't appear in matches list, but their matches are not affected.
-                test_cannot_delete_site_profiles_with_queryset_delete(self): Test that bulk-deleting site profiles via the queryset always raises NotImplementedError.
             """
 
             def set_up(self):

@@ -18,19 +18,6 @@ if (django_settings.TESTS):
         class ChatOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the Chat and Message models, run only once (in English) since it is language-independent.
-
-            Methods:
-                get_active_user_doron(self): Creates and returns an active user named Doron Matalon.
-                get_active_user_jennifer(self): Creates and returns an active user named Jennifer Connelly.
-                test_id_length(self): Asserts a chat's id has a length of 20 characters.
-                test_str_private_chat(self): Asserts the string representation of a private chat reflects its participants, message count and senders as messages are sent.
-                test_get_slug_private_chat(self): Asserts get_slug returns the other participant's slug for each side of a private chat.
-                test_str_group_chat(self): Asserts the string representation of a group chat reflects its participants, message count and senders as messages are sent.
-                test_get_slug_group_chat(self): Asserts get_slug returns the chat's own id for a group chat.
-                test_cannot_delete_chats_with_queryset_delete_1(self): Asserts calling delete() on the Chat manager/queryset always raises NotImplementedError.
-                test_cannot_delete_chats_with_queryset_delete_2(self): Asserts calling delete() on Chat.all_sites_objects/queryset always raises NotImplementedError.
-                test_cannot_delete_messages_with_queryset_delete(self): Asserts calling delete() on the Message manager/queryset always raises NotImplementedError.
-                test_cannot_delete_readmarks_with_queryset_delete(self): Asserts calling delete() on the ReadMark manager/queryset always raises NotImplementedError.
             """
 
             def get_active_user_doron(self):

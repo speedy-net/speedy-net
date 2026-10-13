@@ -20,9 +20,6 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     """
     Command to detect faces in undetected photos of users.
-
-    Methods:
-        handle(self, *args, **options): Main method to process users and detect faces in their photos.
     """
 
     def handle(self, *args, **options):

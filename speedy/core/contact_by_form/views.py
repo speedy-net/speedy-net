@@ -22,12 +22,6 @@ class FeedbackView(generic.CreateView):
         form_class (type): The form class used to submit feedback.
         template_name (str): The template used to render the feedback form.
         success_url (str): The URL to redirect to after a successful submission.
-
-    Methods:
-        get_type(self): Returns the feedback type from the URL kwargs (defaults to TYPE_FEEDBACK).
-        get_report_entity(self): Returns the reported entity (if this is an entity report), or raises Http404 if not found.
-        get_report_file(self): Returns the reported file (if this is a file report), or raises Http404 if not found.
-        get_form_kwargs(self): Adds the sender, type, report_entity and report_file defaults to the form's keyword arguments.
     """
     form_class = FeedbackForm
     template_name = 'contact_by_form/feedback_form.html'

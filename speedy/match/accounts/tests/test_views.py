@@ -26,9 +26,6 @@ if (django_settings.TESTS):
         class IndexViewOnlyEnglishTestCase(IndexViewTestCaseMixin, SiteTestCase):
             """
             Tests that the index view redirects users based on their account/profile activation state, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_user_gets_redirected_to_his_matches(self): Asserts the index view redirects to matches, registration step 2, or welcome, depending on the user's random activation state.
             """
 
             def test_user_gets_redirected_to_his_matches(self):
@@ -63,9 +60,6 @@ if (django_settings.TESTS):
         class EditProfileNotificationsViewOnlyEnglishTestCase(EditProfileNotificationsViewTestCaseMixin, SiteTestCase):
             """
             Tests saving the Speedy Match profile notification settings, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_user_can_save_his_settings(self): Asserts the user can turn off message and like notifications via the settings form.
             """
 
             def test_user_can_save_his_settings(self):
@@ -89,9 +83,6 @@ if (django_settings.TESTS):
         class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithInactiveUserTestCaseMixin, SiteTestCase):
             """
             Tests the activation view with an inactive user; this test is irrelevant in Speedy Match and is skipped.
-
-            Methods:
-                test_inactive_user_can_request_activation(self): Skipped - not implemented in this class.
             """
             redirect_url = '/registration-step-2/'
 
@@ -107,9 +98,6 @@ if (django_settings.TESTS):
         class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin, SiteTestCase):
             """
             Tests the activation view with a Speedy Net inactive user; this test is irrelevant in Speedy Match and is skipped.
-
-            Methods:
-                test_inactive_user_can_request_activation(self): Skipped - not implemented in this class.
             """
             redirect_url = '/welcome/'
 
@@ -241,13 +229,6 @@ if (django_settings.TESTS):
         class ActivateSiteProfileViewWizardOnlyEnglishTestCase(ActivateSiteProfileViewWizardTestCaseMixin, SiteTestCase):
             """
             Tests completing the Speedy Match registration wizard, including the unmatchable-height edge cases, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_user_can_complete_the_registration_wizard(self): Asserts a user with a matchable height completes the wizard and is redirected to the matches list.
-                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_1(self): Tests an unmatchable height just above the minimum allowed height.
-                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_2(self): Tests an unmatchable height below the minimum height to match.
-                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_3(self): Tests an unmatchable height above the maximum height to match.
-                test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match_4(self): Tests an unmatchable height just below the maximum allowed height.
             """
 
             def test_user_can_complete_the_registration_wizard(self):

@@ -11,9 +11,6 @@ if (django_settings.TESTS):
     class SpeedyMatchLikesLanguageMixin(TestCaseMixin):
         """
         Provides per-language and per-gender translated page title dictionaries for Speedy Match likes-related pages (mutual likes, likes-to, likes-by), used by likes test cases.
-
-        Methods:
-            set_up(self): Builds translated page title dictionaries (by language and by language+gender) and stores them as instance attributes.
         """
 
         def set_up(self):

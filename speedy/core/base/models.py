@@ -10,9 +10,6 @@ from .managers import BaseManager
 class ValidateModelMixin(object):
     """
     Mixin to validate the model before saving.
-
-    Methods:
-        save(self, *args, **kwargs): Call `full_clean` before saving the model.
     """
 
     def save(self, *args, **kwargs):
@@ -33,10 +30,6 @@ class BaseModel(ValidateModelMixin, models.Model):
 
     Attributes:
         objects (BaseManager): The manager for the model.
-
-    Methods:
-        save(self, *args, **kwargs): Save the model, generating an ID if needed.
-        generate_id_if_needed(self): Generate an ID if the model does not have one.
     """
     objects = BaseManager()
 

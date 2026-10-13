@@ -26,9 +26,6 @@ logger = logging.getLogger(__name__)
 class RegistrationView(speedy_core_accounts_views.RegistrationView):
     """
     Registration view for Speedy Net. Adds the total number of active members text to the template context.
-
-    Methods:
-        get_context_data(self, **kwargs): Add the total number of active members text to the context.
     """
 
     def get_context_data(self, **kwargs):
@@ -57,11 +54,6 @@ class IndexView(speedy_core_accounts_views.IndexView):
 class ActivateSiteProfileView(speedy_core_accounts_views.ActivateSiteProfileView):
     """
     View used to activate a newly registered user's Speedy Net profile.
-
-    Methods:
-        get_account_activation_url(self): Get the URL of the account activation page.
-        display_welcome_message(self): Display a welcome message to the user once their account is active.
-        form_valid(self, form): Activate the profile, display the welcome message, log the activation, and redirect to the success URL.
     """
 
     def get_account_activation_url(self):
@@ -113,11 +105,6 @@ class DeleteAccountView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMix
         template_name (str): The template used to render this view.
         form_class (type): The form class used to confirm the deletion.
         success_url (str): The URL to redirect to after a successful deletion.
-
-    Methods:
-        __init__(self, *args, **kwargs): Assert that this view is only used on the Speedy Net site.
-        get_form_kwargs(self): Add the current user to the form kwargs.
-        form_valid(self, form): Mark the user as deleted, display a confirmation message, log the deletion, log the user out, and redirect to the index page.
     """
     permission_required = 'accounts.delete_account'
     template_name = 'accounts/edit_profile/delete_account.html'

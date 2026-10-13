@@ -18,9 +18,6 @@ if (django_settings.TESTS):
         class MessageFormOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the MessageForm, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_form_to_chat_save(self): Asserts a valid form bound to an existing chat saves a new message and updates the chat's last message.
             """
 
             def test_form_to_chat_save(self):

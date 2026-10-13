@@ -11,9 +11,6 @@ if (django_settings.TESTS):
     class SpeedyMatchAccountsModelsMixin(TestCaseMixin):
         """
         Mixin providing assertions for the Speedy Match profile activation step and validation error messages.
-
-        Methods:
-            assert_step_and_error_messages_ok(self, step, error_messages): Asserts the activation step reached the final step with no error messages.
         """
 
         def assert_step_and_error_messages_ok(self, step, error_messages):
@@ -34,11 +31,6 @@ if (django_settings.TESTS):
     class SpeedyMatchAccountsLanguageMixin(TestCaseMixin):
         """
         Mixin providing per-language Speedy Match validation error message texts for tests, localized according to self.language_code.
-
-        Methods:
-            _item_in_the_array_did_not_validate_error_message_by_index(self, index): Returns the formatted "item did not validate" message for a given array index.
-            _item_in_the_array_did_not_validate_value_is_not_a_valid_choice_errors_dict_by_field_name_and_index_and_value(self, field_name, index, value): Builds an errors dict for an invalid choice value at a given array index.
-            set_up(self): Sets up all the localized error message attributes used by the test cases.
         """
 
         def _item_in_the_array_did_not_validate_error_message_by_index(self, index):

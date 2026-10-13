@@ -15,16 +15,6 @@ from speedy.core.base.managers import BaseManager
 class ChatManager(BaseManager):
     """
     Manager for the Chat model, providing methods for querying and creating chats and for counting messages/chats matching various criteria.
-
-    Methods:
-        get_queryset(self): Returns the queryset of chats restricted to the current site, with messages and senders prefetched.
-        chats(self, entity): Returns the queryset of chats the given entity participates in.
-        chat_with(self, ent1, ent2, create): Returns the private chat between two entities, creating it if it doesn't exist and create is True.
-        group_chat_with(self, *entities): Creates a new group chat with the given entities as participants.
-        count_chats_with_string_in_messages_and_only_one_sender(self, entity, string_in_messages, created_after): Counts the entity's chats, created after a given date, that contain a string in a message and have only the entity as sender.
-        count_chats_with_strings_in_messages_and_only_one_sender(self, entity, strings_in_messages, created_after): Returns the maximum count, over several strings, of chats matching count_chats_with_string_in_messages_and_only_one_sender.
-        count_identical_messages_in_chats_with_only_one_sender(self, entity): Returns the count and text of the most repeated long message sent by the entity in chats where it is the only sender.
-        count_unread_chats(self, entity): Returns the number of unread chats for the given entity, using a cache.
     """
 
     def get_queryset(self):
@@ -156,9 +146,6 @@ class ChatManager(BaseManager):
 class MessageManager(BaseManager):
     """
     Manager for the Message model, providing a method for creating a message and attaching it to an existing or new chat.
-
-    Methods:
-        send_message(self, from_entity, to_entity, chat, text): Creates a message from one entity to another entity or an existing chat, and updates the chat accordingly.
     """
 
     def send_message(self, from_entity, to_entity=None, chat=None, text=None):
@@ -191,10 +178,6 @@ class MessageManager(BaseManager):
 class ReadMarkManager(BaseManager):
     """
     Manager for the ReadMark model, providing methods for annotating chats with their unread status and for marking a chat as read.
-
-    Methods:
-        annotate_chats_with_read_marks(self, chat_list, entity): Sets the is_unread attribute on each chat in chat_list based on the entity's read marks.
-        mark(self, chat, entity): Creates or updates the read mark for the given chat and entity.
     """
 
     def annotate_chats_with_read_marks(self, chat_list, entity):

@@ -17,12 +17,6 @@ if (django_settings.TESTS):
         class UserFriendListViewOnlyEnglishTestCase(UserFriendListViewTestCaseMixin, SiteTestCase):
             """
             Tests access to the user friend-list page in Speedy Match, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_visitor_can_open_the_page(self): Skipped - not implemented in this class.
-                test_visitor_cannot_open_the_page(self): Asserts a logged-out visitor is redirected to the login page.
-                test_user_can_open_other_users_friends_page(self): Skipped - not implemented in this class.
-                test_user_cannot_open_other_users_friends_page(self): Asserts a logged-in user gets a 403 when trying to view another user's friends page.
             """
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")

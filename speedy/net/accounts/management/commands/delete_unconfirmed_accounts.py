@@ -23,9 +23,6 @@ class Command(BaseCommand):
 
     This command deletes unconfirmed email addresses and user accounts
     that have not confirmed their email within a specified time frame.
-
-    Methods:
-        handle(*args, **options): Main entry point for the command. Processes all unconfirmed emails and users.
     """
 
     def handle(self, *args, **options):

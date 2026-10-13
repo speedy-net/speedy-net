@@ -11,10 +11,6 @@ if (django_settings.TESTS):
     class AboutViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
         """
         Test the about page view (English only, since the about page doesn't depend on the language).
-
-        Methods:
-            get_page_url(self): Returns the canonical URL path of the page.
-            get_template_name(self): Returns the name of the template expected to render the page.
         """
 
         def get_page_url(self):

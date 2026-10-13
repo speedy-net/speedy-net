@@ -46,9 +46,6 @@ def show_www_template(request: HttpRequest) -> HttpResponseBase:
 class LocaleDomainMiddleware(object):
     """
     Middleware which handles locale subdomains, lower-cases the domain, redirects legacy or unrecognized domains to the correct site, and shows the "www" welcome page for requests to the bare "www" domain.
-
-    Methods:
-        __call__: Processes the request and returns the appropriate response (the normal response, or a redirect, or the "www" welcome page).
     """
 
     def __init__(self, get_response):
@@ -130,9 +127,6 @@ class SessionCookieDomainMiddleware(object):
     """
     Cross-domain auth.
     Overrides SESSION_COOKIE_DOMAIN setting with Site.objects.get_current().domain.
-
-    Methods:
-        __call__: Processes the request and sets the session cookie's domain on the response.
     """
 
     def __init__(self, get_response):
@@ -162,10 +156,6 @@ class SessionCookieDomainMiddleware(object):
 class RemoveExtraSlashesMiddleware(object):
     """
     Remove extra slashes from URLs.
-
-    Methods:
-        normalize_path: Collapses consecutive slashes in a path into a single slash.
-        __call__: Redirects to the normalized path if it differs from the requested path, otherwise delegates to the next middleware/view.
     """
 
     def __init__(self, get_response):

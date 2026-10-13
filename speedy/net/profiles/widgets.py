@@ -16,10 +16,6 @@ class UserOnSpeedyNetWidget(Widget):
     Attributes:
         template_name (str): The template used to render this widget.
         permission_required (str): The permission required to view this widget.
-
-    Methods:
-        is_active_and_there_is_no_block(self): Checks whether the profile user is active on Speedy Net and not blocked by the viewer.
-        get_context_data(self): Returns the template context data for this widget.
     """
     template_name = 'profiles/user_on_speedy_net_widget.html'
     permission_required = 'accounts.view_user_on_speedy_net_widget'

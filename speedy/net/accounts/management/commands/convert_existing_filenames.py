@@ -17,9 +17,6 @@ class Command(BaseCommand):
 
     This command iterates over all files in the database, generates new filenames
     for them, and renames the files on the filesystem accordingly.
-
-    Methods:
-        handle(*args, **options): Main entry point for the command. Processes all files.
     """
 
     def handle(self, *args, **options):

@@ -17,10 +17,6 @@ if (django_settings.TESTS):
         class ViewFriendListRulesOnlyEnglishTestCase(ViewFriendListRulesTestCaseMixin, SiteTestCase):
             """
             Tests the view-friend-list permission rule in Speedy Match, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_user_can_view_another_user_friend_list(self): Skipped - not implemented in this class.
-                test_user_cannot_view_another_user_friend_list(self): Asserts a user has no permission to view another user's friend list, since friend lists are irrelevant in Speedy Match.
             """
 
             @unittest.skip(reason="This test is irrelevant in Speedy Match.")

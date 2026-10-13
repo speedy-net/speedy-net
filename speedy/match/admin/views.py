@@ -24,12 +24,6 @@ class AdminMatchesListView(OnlyAdminMixin, generic.ListView):
     Attributes:
         only_current_language: Whether to filter members active in the current language only.
         any_language: Whether to filter members active in any language.
-
-    Methods:
-        get_default_filter_dict(self): Returns the base filter dict for active, eligible members.
-        get_total_number_of_active_members_text(self): Returns an HTML breakdown of active member counts by gender, recency and age range.
-        get_queryset(self): Returns the filtered and ordered queryset of matching users.
-        get_context_data(self, **kwargs): Adds the matches list and statistics text to the context.
     """
     template_name = 'admin/matches/match_list.html'
     # page_size = 96

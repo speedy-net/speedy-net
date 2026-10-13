@@ -41,14 +41,6 @@ def invalidate_matches_after_update_user(sender, instance: User, **kwargs):
 class SiteProfileManager(BaseManager):
     """
     Manager for the Speedy Match SiteProfile model, providing the matching algorithm and cached matches list retrieval.
-
-    Methods:
-        _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids): Computes the matching rank between two users.
-        _get_distance_offset(self, index): Returns the distance offset used while scanning candidate matches by index.
-        _get_matching_users_queryset(self, user, from_list=None): Returns the queryset of candidate users to match against.
-        _get_matches(self, user): Computes and returns the list of matches for a user.
-        get_matches_from_list(self, user, from_list): Returns the cached or computed list of matches for a user, restricted to from_list.
-        get_matches(self, user): Returns the cached or computed list of matches for a user.
     """
 
     def _get_rank(self, user, other_user, blocked_users_ids, blocking_users_ids):

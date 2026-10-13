@@ -27,34 +27,6 @@ if (django_settings.TESTS):
         class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Test mixin for the registration form, covering slug/username normalization, validation and required fields, duplicate emails, and invalid dates of birth.
-
-            Methods:
-                set_up(self): Creates the base registration data dict, password and expected username/slug, and asserts no models exist yet.
-                set_up_required_fields(self): Computes the set of required fields (all fields except last name for the current language) and asserts the form reports them as required.
-                run_test_all_slugs_to_test_list(self, test_settings): Registers a user for each slug in tests_settings.SLUGS_TO_TEST_LIST, asserting success for long-enough slugs and failure otherwise, and checks the resulting counts.
-                test_visitor_can_register(self): Verify a visitor can register and that the created entity/user and its email address have all the expected values.
-                test_slug_gets_converted_to_username(self): Verify a slug with dashes is kept as-is while the derived username has the dashes removed.
-                test_slug_dots_and_underscores_gets_converted_to_dashes(self): Verify dots and underscores in the slug are converted to dashes.
-                test_slug_dashes_are_trimmed_and_double_dashes_are_converted_to_single_dashes(self): Verify leading/trailing dashes are trimmed and repeated dashes are collapsed to a single dash.
-                test_slug_gets_converted_to_lowercase(self): Verify an uppercase slug is converted to lowercase.
-                test_email_gets_converted_to_lowercase(self): Verify an uppercase email address is converted to lowercase.
-                run_test_required_fields(self, data): Submits the given data and asserts the form is invalid with the expected "all required fields are required" errors.
-                test_required_fields_1(self): Verify submitting an empty data dict fails with all required fields reported as required.
-                test_required_fields_2(self): Verify submitting empty-string values for all required fields fails with all required fields reported as required.
-                test_non_unique_confirmed_email_address(self): Verify registering with an email address that is already confirmed by another user fails and leaves the existing user and email unchanged.
-                test_non_unique_unconfirmed_email_address(self): Verify registering with an email address that is unconfirmed and recently added by another user fails and leaves the existing user and email unchanged.
-                test_non_unique_unconfirmed_email_address_registered_6_minutes_ago(self): Verify registering with an email address that is unconfirmed and was added by another user 6 minutes ago succeeds, deleting the old unconfirmed address.
-                test_slug_validation_fails_with_reserved_username(self): Verify registering with a reserved username (e.g. "webmaster") fails as already taken.
-                test_slug_validation_fails_with_reserved_and_too_short_username(self): Verify registering with a reserved and too-short username fails with the minimum alphanumeric length error.
-                test_slug_validation_fails_with_username_already_taken(self): Verify registering with a slug whose normalized username is already taken by another user fails as already taken.
-                test_slug_validation_ok(self): Verify registering with various slugs of the minimum valid length succeeds and the created user can then be deleted.
-                test_slug_validation_fails_with_username_too_short(self): Verify registering with slugs whose normalized username is below the minimum length fails with the minimum alphanumeric length error.
-                test_slug_and_username_min_length_ok(self): Verify the default minimum slug length is 6 and running all the test slugs yields the expected success/failure counts.
-                test_slug_min_length_fail_username_min_length_ok(self): With an overridden higher minimum slug length, verify running all the test slugs yields the expected success/failure counts.
-                test_slug_validation_fails_with_username_too_long(self): Verify registering with a slug longer than the maximum allowed length fails with the maximum length error.
-                test_slug_validation_fails_with_invalid_username_regex(self): Verify registering with slugs that don't match the required username regex (e.g. starting with digits, containing spaces or symbols) fails.
-                test_cannot_register_invalid_email(self): Verify registering with an invalid email address fails with the "enter a valid email address" error.
-                test_invalid_date_of_birth_list_fail(self): Verify registering with each invalid date of birth in tests_settings.INVALID_DATE_OF_BIRTH_IN_FORMS_LIST fails with the expected error.
             """
 
             def set_up(self):
@@ -673,10 +645,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in English, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a English first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -706,10 +674,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in French, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a French first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -739,10 +703,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in German, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a German first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -772,10 +732,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Spanish, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Spanish first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -805,10 +761,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Portuguese, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Portuguese first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -838,10 +790,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Italian, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Italian first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -871,10 +819,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Dutch, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Dutch first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -904,10 +848,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithLastNameAllMainLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Hebrew, including a last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Hebrew first name and last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -936,10 +876,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in English, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a English first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -969,10 +905,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in French, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a French first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1002,10 +934,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in German, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a German first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1035,10 +963,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Spanish, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Spanish first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1068,10 +992,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Portuguese, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Portuguese first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1101,10 +1021,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Italian, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Italian first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1134,10 +1050,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Dutch, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Dutch first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1167,10 +1079,6 @@ if (django_settings.TESTS):
         class RegistrationFormWithoutLastNameAllMainLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Hebrew, with an empty last name.
-
-            Methods:
-                set_up(self): Sets up registration data with a Hebrew first name and an empty last name, then computes the required fields.
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def set_up(self):
@@ -1198,10 +1106,6 @@ if (django_settings.TESTS):
         class ProfileNotificationsFormTestCaseMixin(TestCaseMixin):
             """
             Test mixin for the profile notifications form, shared between Speedy Net and Speedy Match.
-
-            Methods:
-                set_up(self): Creates an active test user.
-                test_has_correct_fields(self): Placeholder that must be overridden by subclasses to assert the expected form fields.
             """
 
             def set_up(self):
@@ -1222,15 +1126,6 @@ if (django_settings.TESTS):
         class PasswordResetFormOnlyEnglishTestCase(SiteTestCase):
             """
             Test the password reset form's lookup of users by email address, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two users with primary/confirmed/unconfirmed email addresses for testing password reset lookups.
-                test_can_reset_using_primary_email(self): Verify the form finds the user by their primary email address.
-                test_can_reset_using_primary_email_uppercase(self): Verify the form finds the user by their primary email address in uppercase.
-                test_can_reset_using_confirmed_email(self): Verify the form finds the user by a confirmed, non-primary email address.
-                test_can_reset_using_unconfirmed_email(self): Verify the form finds the user by an unconfirmed email address.
-                test_can_reset_using_other_user_email(self): Verify the form finds the other user by their own confirmed email address.
-                test_cannot_reset_using_unknown_email(self): Verify the form finds no users for an email address that doesn't belong to anyone.
             """
 
             def set_up(self):
@@ -1287,11 +1182,6 @@ if (django_settings.TESTS):
         class DeactivationFormTestCaseMixin(SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Test mixin for the site profile deactivation form, covering correct and incorrect password validation.
-
-            Methods:
-                set_up(self): Creates an active test user.
-                test_incorrect_password(self): Verify the form is invalid when submitted with an incorrect password.
-                test_correct_password(self): Verify the form is valid when submitted with the correct password.
             """
 
             def set_up(self):
@@ -1328,9 +1218,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesEnglishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in English.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1346,9 +1233,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesFrenchTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in French.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1364,9 +1248,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesGermanTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in German.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1382,9 +1263,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesSpanishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in Spanish.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1400,9 +1278,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesPortugueseTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in Portuguese.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1418,9 +1293,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesItalianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in Italian.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1436,9 +1308,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesDutchTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in Dutch.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1454,9 +1323,6 @@ if (django_settings.TESTS):
         class DeactivationFormAllMainLanguagesHebrewTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
             Test the deactivation form in Hebrew.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

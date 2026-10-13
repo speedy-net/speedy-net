@@ -25,29 +25,6 @@ if (django_settings.TESTS):
         class SendMessageRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the rules governing whether a user can send a message to another user (self-messaging, blocking, and rate limits on emails, Discord links and identical messages), run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users, user_1 and user_2.
-                _create_users(self, users_count): Creates the given number of additional active users, named user_3, user_4, etc.
-                test_cannot_send_message_to_self(self): Asserts a user cannot send a message to himself.
-                test_can_send_message_to_other_user(self): Asserts a user can send a message to another user.
-                test_cannot_send_message_to_other_user_if_blocked(self): Asserts neither side of a block relationship can send a message to the other.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_emails_1(self): Asserts a user whose account is less than 6 hours old can still send up to 4 messages containing an email address and still send messages to other users.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_emails_2(self): Asserts sending 5 messages without an email address does not trigger the too-many-emails rule.
-                test_cannot_send_message_to_other_user_if_sent_too_many_emails_1(self): Asserts that sending too many messages containing email addresses blocks sending to users not yet messaged, but is lifted once another user replies or the chat is active long enough, and reapplies if another message with an email address is sent and lifted again once the other side replies.
-                test_cannot_send_message_to_other_user_if_sent_too_many_emails_2(self): Asserts the too-many-emails restriction is lifted for a user whose account is more than 3 days old once enough other users reply to his messages containing email addresses.
-                test_cannot_send_message_to_other_user_if_sent_too_many_emails_3(self): Asserts that a user whose account is 30 days old can send more messages containing email addresses before the too-many-emails restriction is triggered than a newer account.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_discord_messages(self): Asserts sending up to 9 messages inviting users to a Discord server does not trigger a restriction.
-                test_cannot_send_message_to_other_user_if_sent_too_many_discord_messages(self): Asserts sending a 10th message inviting a new user to a Discord server triggers the too-many-discord-messages restriction on messaging users not yet messaged.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_1(self): Asserts sending 14 messages with only 2 distinct texts to different users does not trigger the too-many-identical-messages rule.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_2(self): Asserts a user with a confirmed email address from a common email provider can send more messages with only 2 distinct texts before the too-many-identical-messages rule would apply.
-                test_can_send_message_to_other_user_if_didnt_send_too_many_identical_messages_3(self): Asserts a user whose account is 60 days old can send more messages with only 2 distinct texts before the too-many-identical-messages rule would apply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_1(self): Asserts that sending the same message text to too many different users blocks sending to users not yet messaged, and is lifted once enough of those users reply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_2(self): Asserts a user with a confirmed email address from a common email provider still triggers the too-many-identical-messages restriction after sending the same text to enough users, and the restriction is lifted once enough of those users reply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_3(self): Asserts a user whose account is 60 days old still triggers the too-many-identical-messages restriction after sending the same text to enough users, and the restriction is lifted once enough of those users reply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_4(self): Asserts that sending messages alternating between only 2 distinct texts triggers the too-many-identical-messages restriction partway through, and the restriction is lifted once enough recipients reply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_5(self): Asserts a user with a confirmed email address from a common email provider sending messages alternating between only 2 distinct texts triggers the too-many-identical-messages restriction later than a user without such an email address, and the restriction is lifted once enough recipients reply.
-                test_cannot_send_message_to_other_user_if_sent_too_many_identical_messages_6(self): Asserts a user whose account is 60 days old sending messages alternating between only 2 distinct texts triggers the too-many-identical-messages restriction later than a newer account, and the restriction is lifted once enough recipients reply.
             """
 
             def set_up(self):
@@ -508,11 +485,6 @@ if (django_settings.TESTS):
         class ViewChatsRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the rules governing whether a user can view a list of chats belonging to a given user, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two active users, user_1 and user_2.
-                test_can_see_his_chats(self): Asserts a user can view his own list of chats.
-                test_cannot_see_other_user_chats(self): Asserts a user cannot view another user's list of chats.
             """
 
             def set_up(self):
@@ -540,11 +512,6 @@ if (django_settings.TESTS):
         class ReadChatRulesOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the rules governing whether a user can read a chat, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates three active users and two chats, one between user_1 and user_2, and another between user_1 and user_3.
-                test_can_read_his_chat(self): Asserts a user can read a chat he participates in.
-                test_cannot_read_a_chat_user_is_not_participate_in(self): Asserts a user cannot read a chat he does not participate in.
             """
 
             def set_up(self):

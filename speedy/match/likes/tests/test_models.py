@@ -27,14 +27,6 @@ if (django_settings.TESTS):
         class LikeBlocksOnlyEnglishTestCase(SiteTestCase):
             """
             Tests that blocking affects like counters only in the direction of the block (blocker's likes-from counter is reduced, but the blocked user's likes-to counter is unaffected), run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two users (user_1, user_2) and several likes to/from other users.
-                assert_counters(self, user, likes_from_user, likes_to_user): Asserts a user's likes-from and likes-to counters match the given expected values.
-                test_set_up(self): Asserts the initial like counters set up in set_up are correct.
-                test_if_no_relation_between_users_nothing_get_affected(self): Asserts blocking/unblocking two users who have no like relation doesn't change their like counters.
-                test_if_user1_blocked_user2_like_is_removed(self): Asserts that when user_1 blocks user_2, their mutual like is removed, and stays removed after unblocking.
-                test_if_user2_blocked_user1_like_isnt_removed(self): Asserts that when user_2 blocks user_1, the like from user_1 to user_2 is unaffected.
             """
 
             def set_up(self):
@@ -122,13 +114,6 @@ if (django_settings.TESTS):
         class LikeGenderOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the SiteProfile.get_like_gender method, which reports the predominant gender of a user's liked/liking users, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates three users, one of each gender.
-                _create_users(self, users_count, gender): Creates a number of users of the given gender, stored as sequentially-numbered instance attributes.
-                test_get_like_gender_if_there_are_no_liked_and_liking_users(self): Asserts get_like_gender returns 'other' with no likes, and the matched gender once gender_to_match is set.
-                test_get_like_gender_for_15_liked_and_liking_users(self): Asserts get_like_gender correctly reports the predominant gender across a range of liked/liking user combinations, with up to 15 users of mixed genders.
-                test_get_like_gender_for_35_liked_and_liking_users(self): Asserts get_like_gender correctly reports the predominant gender across a range of liked/liking user combinations, with up to 35 users of mixed genders.
             """
 
             def set_up(self):
@@ -310,11 +295,6 @@ if (django_settings.TESTS):
         class LikeNotificationsTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             """
             Tests whether a user gets notified by email when liked, depending on his notify_on_like setting.
-
-            Methods:
-                set_up(self): Creates two users (user_1, user_2).
-                test_user_gets_notified_on_like(self): Asserts an email is sent when a user with notify_on_like enabled is liked.
-                test_user_doesnt_get_notified_on_like(self): Asserts no email is sent when a user with notify_on_like disabled is liked.
             """
 
             def set_up(self):
@@ -399,9 +379,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesEnglishTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -417,9 +394,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesFrenchTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -435,9 +409,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesGermanTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -453,9 +424,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesSpanishTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -471,9 +439,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesPortugueseTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -489,9 +454,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesItalianTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -507,9 +469,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesDutchTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -525,9 +484,6 @@ if (django_settings.TESTS):
         class LikeNotificationsAllMainLanguagesHebrewTestCase(LikeNotificationsTestCaseMixin, SiteTestCase):
             """
             Tests like email notifications for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

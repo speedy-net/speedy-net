@@ -26,9 +26,6 @@ if (django_settings.TESTS):
         class IndexViewOnlyEnglishTestCase(IndexViewTestCaseMixin, SiteTestCase):
             """
             Test the index view redirect behavior on Speedy Net (English only, the redirect logic doesn't depend on the language).
-
-            Methods:
-                test_user_gets_redirected_to_his_profile(self): Verify a logged-in user is redirected to their profile page if active, or to the welcome page if inactive.
             """
 
             def test_user_gets_redirected_to_his_profile(self):
@@ -63,9 +60,6 @@ if (django_settings.TESTS):
         class EditProfileNotificationsViewOnlyEnglishTestCase(EditProfileNotificationsViewTestCaseMixin, SiteTestCase):
             """
             Test the edit profile notifications view on Speedy Net (English only, the view logic doesn't depend on the language).
-
-            Methods:
-                test_user_can_save_his_settings(self): Verify a user can change their notify_on_message setting and it is persisted.
             """
 
             def test_user_can_save_his_settings(self):
@@ -89,9 +83,6 @@ if (django_settings.TESTS):
 
             Attributes:
                 redirect_url (str): The URL the user is redirected to after a successful request.
-
-            Methods:
-                test_inactive_user_can_request_activation(self): Verify requesting activation activates the user on Speedy Net but not on Speedy Match.
             """
             redirect_url = '/welcome/'
 
@@ -115,9 +106,6 @@ if (django_settings.TESTS):
 
             Attributes:
                 redirect_url (str): The URL the user is redirected to after a successful request.
-
-            Methods:
-                test_inactive_user_can_request_activation(self): Verify requesting activation activates the user on both Speedy Net and Speedy Match.
             """
             redirect_url = '/welcome/'
 
@@ -141,26 +129,6 @@ if (django_settings.TESTS):
             Attributes:
                 page_url (str): The URL path of the delete account page.
                 user (speedy.core.accounts.models.User): The active test user created and logged in in set_up.
-
-            Methods:
-                set_up(self): Creates an active test user, logs them in, and verifies the initial models/email counts.
-                assert_user_is_not_deleted(self, user, user_is_active): Asserts the user is not deleted and has the expected active state and email address counts.
-                assert_user_is_deleted(self, user): Asserts the user is deleted, has no email addresses, and has the Speedy Net deleted user name.
-                assert_user_is_logged_out(self): Asserts the user is logged out by checking the delete account page redirects to login and the home page loads the main page template.
-                assert_user_is_logged_in(self, user, user_is_active): Asserts the user is logged in and the delete account page is accessible only when inactive.
-                test_translations(self): Verify the delete-account related translated strings match their expected per-gender text.
-                test_visitor_has_no_access(self): Verify an anonymous visitor is redirected to the login page.
-                test_inactive_user_can_open_the_page(self): Verify an inactive user can open the delete account page.
-                test_active_user_cannot_open_the_page(self): Verify an active user gets a 403 response on the delete account page.
-                test_staff_and_superuser_gets_redirected(self): Verify a staff/superuser is redirected to the admin site regardless of their active/inactive state, until they are no longer staff or superuser.
-                test_inactive_user_can_delete_his_account(self): Verify an inactive user can delete their account with the correct password and confirmation text.
-                test_active_user_cannot_delete_his_account(self): Verify an active user cannot delete their account, even with correct credentials.
-                test_inactive_user_cannot_delete_his_account_using_incorrect_password(self): Verify account deletion fails with an incorrect password.
-                test_inactive_user_cannot_delete_his_account_using_incorrect_delete_my_account_text(self): Verify account deletion fails with an incorrect confirmation text.
-                test_inactive_user_cannot_delete_his_account_using_incorrect_password_and_delete_my_account_text(self): Verify account deletion fails with both an incorrect password and confirmation text.
-                test_inactive_user_cannot_delete_his_account_without_password(self): Verify account deletion fails when the password is missing.
-                test_inactive_user_cannot_delete_his_account_without_delete_my_account_text(self): Verify account deletion fails when the confirmation text is missing.
-                test_inactive_user_cannot_delete_his_account_without_password_and_delete_my_account_text(self): Verify account deletion fails when both the password and confirmation text are missing.
             """
             page_url = '/edit-profile/delete-account/'
 
@@ -522,9 +490,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesEnglishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -540,9 +505,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesFrenchTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -558,9 +520,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesGermanTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -576,9 +535,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesSpanishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -594,9 +550,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesPortugueseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -612,9 +565,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesItalianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -630,9 +580,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesDutchTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -648,9 +595,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesJapaneseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -666,9 +610,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesRussianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -684,9 +625,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesChineseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -702,9 +640,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesPolishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -720,9 +655,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesPersianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -738,9 +670,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesHebrewTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -756,9 +685,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesKoreanTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -774,9 +700,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesArabicTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -792,9 +715,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesIndonesianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -810,9 +730,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesUkrainianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -828,9 +745,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesTurkishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -846,9 +760,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesVietnameseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -864,9 +775,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesCzechTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -882,9 +790,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesSwedishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -900,9 +805,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesFinnishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -918,9 +820,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesHungarianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -936,9 +835,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesThaiTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -954,9 +850,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesGreekTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -972,9 +865,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesMalayTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -990,9 +880,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesSerbianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1008,9 +895,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesRomanianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1026,9 +910,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesBengaliTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1044,9 +925,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesCatalanTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1062,9 +940,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesNorwegianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1080,9 +955,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesBulgarianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1098,9 +970,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesDanishTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1116,9 +985,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesSlovakTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1134,9 +1000,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesHindiTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1152,9 +1015,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesEstonianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1170,9 +1030,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesCroatianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1188,9 +1045,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesAzerbaijaniTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1206,9 +1060,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesCantoneseTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1224,9 +1075,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesLithuanianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1242,9 +1090,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesSlovenianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1260,9 +1105,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesBasqueTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1278,9 +1120,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesArmenianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1296,9 +1135,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesUzbekTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1314,9 +1150,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesTamilTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1332,9 +1165,6 @@ if (django_settings.TESTS):
         class DeleteAccountViewAllLanguagesLatvianTestCase(DeleteAccountViewTestCaseMixin, SiteTestCase):
             """
             Test the delete account view and its translated text for this language variant.
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

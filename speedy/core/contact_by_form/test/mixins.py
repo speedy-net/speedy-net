@@ -20,15 +20,6 @@ if (django_settings.TESTS):
     class SpeedyCoreFeedbackLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         """
         Provides error-dict helpers and language-specific translated error messages used by feedback form/view tests.
-
-        Methods:
-            _feedback_form_all_the_required_fields_keys(self, user_is_logged_in): Returns the list of required field keys, depending on whether the sender is logged in.
-            _feedback_form_all_the_required_fields_are_required_errors_dict(self, user_is_logged_in): Returns the "this field is required" errors dict for all required fields.
-            _feedback_form_no_bots_is_required_errors_dict(self): Returns the errors dict for a missing anti-bot field value.
-            _feedback_form_no_bots_is_not_17_errors_dict(self): Returns the errors dict for an incorrect anti-bot field value.
-            _please_contact_us_by_email_errors_dict(self): Returns the errors dict for text containing a not-allowed string.
-            _ensure_this_value_has_at_most_max_length_characters_errors_dict_by_value_length(self, value_length): Returns the errors dict for text exceeding the maximum length.
-            set_up(self): Sets translated error messages ("please contact us by email" and "not 17") for the current test's language.
         """
 
         def _feedback_form_all_the_required_fields_keys(self, user_is_logged_in):

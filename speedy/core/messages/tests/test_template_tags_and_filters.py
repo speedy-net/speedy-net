@@ -21,9 +21,6 @@ if (django_settings.TESTS):
         class GetOtherParticipantOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the get_other_participant template tag, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_tag(self): Asserts get_other_participant returns each user's counterpart in a private chat.
             """
 
             def test_tag(self):
@@ -41,9 +38,6 @@ if (django_settings.TESTS):
         class AnnotateChatsWithReadMarksOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the annotate_chats_with_read_marks template tag, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_tag(self): Asserts annotate_chats_with_read_marks correctly sets is_unread on chats with and without messages and read marks.
             """
 
             def test_tag(self):
@@ -100,9 +94,6 @@ if (django_settings.TESTS):
         class AnnotateMessagesWithReadMarksOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the annotate_messages_with_read_marks template tag, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_tag(self): Asserts annotate_messages_with_read_marks sets is_unread correctly for each entity based on their read marks.
             """
 
             def test_tag(self):
@@ -138,9 +129,6 @@ if (django_settings.TESTS):
         class UnreadChatsCountOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the unread_chats_count template tag, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_tag(self): Asserts unread_chats_count returns the correct number of unread chats for each of three users across three chats.
             """
 
             def test_tag(self):

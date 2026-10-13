@@ -12,15 +12,6 @@ from speedy.core.accounts.models import User
 class UserLikeManager(BaseManager):
     """
     Manager for the UserLike model, providing methods for creating/removing likes and for querying like lists (sent, received, mutual).
-
-    Methods:
-        add_like(self, from_user, to_user): Creates a like from one user to another, validating it is allowed.
-        remove_like(self, from_user, to_user): Removes the like from one user to another, if it exists.
-        remove_all_likes_from_user(self, from_user): Removes all likes given by a user.
-        remove_all_likes_to_user(self, to_user): Removes all likes received by a user.
-        get_like_list_to_queryset(self, user): Returns the queryset of likes given by a user to other active users.
-        get_like_list_from_queryset(self, user): Returns the queryset of likes received by a user from other active, non-blocked users.
-        get_like_list_mutual_queryset(self, user): Returns the queryset of mutual likes (users who like the given user back).
     """
 
     def add_like(self, from_user, to_user):

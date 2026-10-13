@@ -17,14 +17,6 @@ class SiteProfile(SiteProfileBase):
         DELETED_NAME (str): The name to display for a deleted user's profile.
         user (User): The user associated with the profile.
         is_active (bool): Whether the Speedy Mail Software profile is active.
-
-    Methods:
-        is_active_and_valid(self): Check if the profile is active and valid.
-        __str__(self): Get a string representation of the profile.
-        _get_deleted_name(self): Get the name to display for a deleted user's profile.
-        activate(self): Activate the profile.
-        deactivate(self): Deactivate the profile.
-        get_name(self): Get the name of the profile.
     """
     # Name of the reverse one-to-one accessor from User to this site profile (User.speedy_mail_site_profile).
     RELATED_NAME = 'speedy_mail_site_profile'

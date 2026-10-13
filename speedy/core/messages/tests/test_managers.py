@@ -20,14 +20,6 @@ if (django_settings.TESTS):
         class ChatManagerOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the ChatManager's chats, chat_with, group_chat_with and count_unread_chats methods, and Chat.mark_read, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates seven active users and five chats (two private, two group, one private) among them.
-                test_chats(self): Asserts chats() returns the correct chats, ordered most-recently-updated first, for several users.
-                test_chat_with_two_users_returns_existing_one(self): Asserts chat_with returns the existing private chat between two users who already have one.
-                test_chat_with_two_users_creates_new_one(self): Asserts chat_with creates a new private chat between two users who don't have one yet.
-                test_chat_with_multiple_users_creates_new_one(self): Asserts group_chat_with creates a new group chat for three users.
-                test_mark_read(self): Asserts chat.mark_read creates a ReadMark for the given entity on the given chat.
             """
 
             def set_up(self):
@@ -112,10 +104,6 @@ if (django_settings.TESTS):
         class MessageManagerOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the MessageManager.send_message method, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_sending_message_creates_new_chat(self): Asserts send_message with to_entity creates a new chat, a message and a read mark for the sender.
-                test_sending_message_to_existing_chat(self): Asserts send_message with an existing chat adds the message to it without creating a new chat.
             """
 
             def test_sending_message_creates_new_chat(self):
@@ -166,9 +154,6 @@ if (django_settings.TESTS):
         class ReadMarkManagerOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the ReadMarkManager.mark method, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_mark(self): Asserts mark creates a new read mark on first call and updates the existing one's timestamp on a subsequent call.
             """
 
             def test_mark(self):

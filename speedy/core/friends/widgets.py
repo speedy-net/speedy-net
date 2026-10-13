@@ -12,10 +12,6 @@ class UserFriendsWidget(Widget):
 
     Attributes:
         template_name (str): The template used to render the widget.
-
-    Methods:
-        get_random_friends(self, count): Returns up to ``count`` random friends of the user, without repetition.
-        get_context_data(self): Returns the context data for rendering the widget, including the random friends.
     """
     template_name = 'friends/user_friends_widget.html'
 

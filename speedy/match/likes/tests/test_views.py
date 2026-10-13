@@ -28,15 +28,6 @@ if (django_settings.TESTS):
         class LikeViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             """
             Tests the like view, including permission checks and the notification email sent to the liked user.
-
-            Methods:
-                set_up(self): Creates two users (user_1, user_2) and the like page URL for user_2.
-                test_user_can_like_and_other_user_gets_notified_on_like(self): Asserts a user can like another user and an email notification is sent.
-                test_user_can_like_and_other_user_doesnt_get_notified_on_like(self): Asserts a user can like another user who has disabled like notifications, and no email is sent.
-                test_user_cannot_like_self(self): Asserts a user cannot like himself.
-                test_user_cannot_like_other_user_if_blocked(self): Asserts a user cannot like another user he has blocked.
-                test_user_cannot_like_other_user_if_blocking(self): Asserts a user cannot like another user who has blocked him.
-                test_user_cannot_like_twice(self): Asserts a user cannot like another user he already likes.
             """
 
             def set_up(self):
@@ -184,9 +175,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesEnglishTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -202,9 +190,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesFrenchTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -220,9 +205,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesGermanTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -238,9 +220,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesSpanishTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -256,9 +235,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesPortugueseTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -274,9 +250,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesItalianTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -292,9 +265,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesDutchTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -310,9 +280,6 @@ if (django_settings.TESTS):
         class LikeViewAllMainLanguagesHebrewTestCase(LikeViewTestCaseMixin, SiteTestCase):
             """
             Tests the like view for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -327,12 +294,6 @@ if (django_settings.TESTS):
         class UnlikeViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the unlike view, run only once (in English) since it is language-independent.
-
-            Methods:
-                set_up(self): Creates two users (user_1, user_2) and the unlike page URL for user_2.
-                test_user_can_unlike(self): Asserts a user can unlike a user he likes.
-                test_user_cannot_unlike_if_doesnt_like(self): Asserts a user cannot unlike a user he doesn't like.
-                test_user_cannot_unlike_twice(self): Asserts a user cannot unlike a user twice in a row.
             """
 
             def set_up(self):
@@ -385,19 +346,6 @@ if (django_settings.TESTS):
         class LikeListViewsTestCaseMixin(SpeedyMatchLikesLanguageMixin, TestCaseMixin):
             """
             Tests the like-list views (people I like, people who like me, mutual likes), including ordering, blocking, gender-based titles, and deletion protections.
-
-            Methods:
-                set_up(self): Creates 5 users with a mix of likes between them and builds the like-list page URLs.
-                _test_all_like_list_views_contain_strings(self, strings): Asserts each like-list view returns 200, has the expected object count, and contains all the given strings.
-                test_visitor_has_no_access(self): Asserts a logged-out visitor is redirected away from all like-list pages.
-                test_default_redirect(self): Asserts the default likes URL redirects to the "people I like" page.
-                test_user_can_see_who_they_like(self): Asserts the "people I like" view lists the correct users, in the correct (last-visit) order, excluding blocked users.
-                test_user_can_see_who_likes_them(self): Asserts the "people who like me" view lists the correct users, in the correct (last-visit) order, excluding blocked users.
-                test_user_can_see_mutual_likes(self): Asserts the "mutual likes" view lists only users with a mutual like, in the correct (last-visit) order, excluding blocked users.
-                test_like_list_views_titles(self): Asserts the like-list view titles reflect the correct gender-specific wording based on the current user's gender_to_match and the liked/liking users' genders.
-                test_like_list_views_titles_with_empty_lists(self): Asserts the like-list view titles reflect the correct gender-specific wording even when the like lists are empty.
-                test_cannot_delete_users_with_queryset_delete(self): Asserts deleting users or the current user via a queryset raises NotImplementedError.
-                test_cannot_delete_likes_with_queryset_delete(self): Asserts deleting likes via a queryset raises NotImplementedError.
             """
 
             def set_up(self):
@@ -772,9 +720,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesEnglishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -790,9 +735,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesFrenchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -808,9 +750,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesGermanTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -826,9 +765,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesSpanishTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -844,9 +780,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesPortugueseTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -862,9 +795,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesItalianTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -880,9 +810,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesDutchTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -898,9 +825,6 @@ if (django_settings.TESTS):
         class LikeListViewsAllMainLanguagesHebrewTestCase(LikeListViewsTestCaseMixin, SiteTestCase):
             """
             Tests the like-list views (likes-to, likes-by, mutual-likes) for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

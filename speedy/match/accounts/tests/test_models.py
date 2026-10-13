@@ -43,25 +43,6 @@ if (django_settings.TESTS):
                 _too_long_string_values_to_test_max_length_120: Sample string values exceeding a max length of 120.
                 _valid_string_values_to_test_max_length_50000: Sample valid string values for fields with a max length of 50000.
                 _too_long_string_values_to_test_max_length_50000: Sample string values exceeding a max length of 50000.
-
-            Methods:
-                get_default_user_doron(self): Returns a default (non-active-on-Speedy-Match) user fixture named Doron Matalon.
-                get_active_user_jennifer(self): Returns an active-on-Speedy-Match user fixture named Jennifer Connelly.
-                get_min_max_age_to_match_default_test_settings(self): Returns the default test settings dict for the min/max age to match fields.
-                get_diet_match_default_test_settings(self): Returns the default test settings dict for the diet_match field.
-                get_smoking_status_match_default_test_settings(self): Returns the default test settings dict for the smoking_status_match field.
-                get_relationship_status_match_default_test_settings(self): Returns the default test settings dict for the relationship_status_match field.
-                get_field_default_value(self, field_name): Returns the model's default value for a given rank-dict field name.
-                validate_all_user_values(self, user): Validates all step fields of the user's Speedy Match profile against the steps/fields utilities.
-                assert_list_2_contains_all_elements_in_list_1(self, list_1, list_2): Asserts every element of list_1 is contained in list_2.
-                assert_list_2_doesnt_contain_elements_in_list_1(self, list_1, list_2): Asserts no element of list_1 is contained in list_2.
-                assert_valid_values_ok(self, values_to_test, valid_values_to_assign, valid_values_to_save, valid_values, invalid_values): Asserts consistency between the valid/invalid value subsets of a full set of test values.
-                save_user_and_profile_and_assert_exceptions_for_integer(self, user, field_name, value_to_test, null, choices_only): Saves the user/profile and asserts the expected exception for an invalid integer field value.
-                save_user_and_profile_and_assert_exceptions_for_string(self, user, field_name, value_to_test, max_length): Saves the user/profile and asserts the expected exception for a too-long string field value.
-                save_user_and_profile_and_assert_exceptions_for_gender_to_match(self, user, field_name, value_to_test): Saves the user/profile and asserts the expected exception for an invalid gender_to_match field value.
-                save_user_and_profile_and_assert_exceptions_for_jsonfield(self, user, field_name, value_to_test, blank, null): Saves the user/profile and asserts the expected exception for an invalid JSON field value.
-                save_user_and_profile_and_assert_exceptions_for_integer_list(self, user, field_name_list, value_to_test, null): Saves the user/profile and asserts the expected exception for an invalid list of integer field values.
-                run_test_validate_profile_and_activate_exception(self, test_settings): Runs a parametrized set of invalid-value scenarios against validate_profile_and_activate and asserts the expected failures.
             """
             _none_list = [None]
             _empty_string_list = [""]
@@ -1630,9 +1611,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesEnglishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1648,9 +1626,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesFrenchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1666,9 +1641,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesGermanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1684,9 +1656,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesSpanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1702,9 +1671,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesPortugueseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1720,9 +1686,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesItalianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1738,9 +1701,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesDutchTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1756,9 +1716,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileAllMainLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match site profile model validations and behavior, for all main languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -1773,25 +1730,6 @@ if (django_settings.TESTS):
         class SpeedyMatchSiteProfileMatchOnlyEnglishTestCase(SpeedyMatchAccountsModelsMixin, SiteTestCase):
             """
             Tests the matching rank computation between two Speedy Match profiles, run only once (in English) since it is language-independent.
-
-            Methods:
-                get_active_user_doron(self): Returns an active male user fixture (Doron) configured for matching tests.
-                get_active_user_jennifer(self): Returns an active female user fixture (Jennifer) configured for matching tests.
-                test_user_doesnt_match_self(self): Tests that a user's matching rank with themselves is always 0.
-                test_gender_doesnt_match_profile(self): Tests that two users seeking the same (non-matching) gender get a rank of 0.
-                test_gender_match_profile_different_gender(self): Tests that two users of different genders, matching each other's gender_to_match, get the maximal rank.
-                test_gender_match_profile_same_gender(self): Tests that two users of the same gender, matching each other's gender_to_match, get the maximal rank.
-                test_age_doesnt_match_profile(self): Tests that a user outside the other's age-to-match range gets a rank of 0.
-                run_test_height_doesnt_match_profile(self, with_override_settings): Runs the height-matching-rank scenarios, optionally with overridden height-to-match settings.
-                test_height_doesnt_match_profile(self): Tests the height-matching rank with default settings.
-                test_height_doesnt_match_profile_with_override_settings(self): Tests the height-matching rank with overridden min/max height-to-match settings.
-                test_not_allowed_to_use_speedy_match(self): Tests that a profile flagged not_allowed_to_use_speedy_match always gets a rank of 0, until the flag is cleared and the profile is reactivated.
-                test_smoking_status_doesnt_match_profile(self): Tests that a non-matching smoking status rank of 0 results in a rank of 0.
-                test_relationship_status_match_profile(self): Tests that a matching relationship status keeps the maximal rank even when other statuses are set to 0.
-                test_relationship_status_doesnt_match_profile(self): Tests that a non-matching relationship status rank of 0 results in a rank of 0.
-                test_match_profile_rank_3(self): Tests that the lowest of several partial-match ranks (here 3) determines the overall matching rank.
-                test_match_profile_rank_4(self): Tests that a partial diet match rank (here 4) determines the overall matching rank.
-                test_match_profile_rank_1(self): Tests that the lowest of several partial-match ranks (here 1) determines the overall matching rank, in either direction.
             """
 
             def get_active_user_doron(self):

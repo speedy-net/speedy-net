@@ -11,9 +11,6 @@ class AdminUserFriendsWidget(Widget):
 
     Attributes:
         template_name (str): The template used to render the widget.
-
-    Methods:
-        get_context_data(self): Returns the context data for rendering the widget, including up to 30 friends and the total friends count.
     """
     template_name = 'admin/friends/user_friends_widget.html'
 

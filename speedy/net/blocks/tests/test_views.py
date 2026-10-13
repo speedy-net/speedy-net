@@ -18,12 +18,6 @@ if (django_settings.TESTS):
         class BlockedUsersListViewOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the content and pagination of the blocked users list page of Speedy Net.
-
-            Methods:
-                set_up(self): Creates three active users and builds the blocked users list page URL for the first user.
-                test_empty_list_when_user_is_not_blocking_anybody(self): Asserts the list is empty when the user is not blocking anybody.
-                test_list_contains_only_users_blocked_by_the_user(self): Asserts the list contains only the users blocked by the list's owner.
-                test_blocked_users_list_is_paginated(self): Asserts the list is paginated, with 24 blocked users in the first page.
             """
 
             def set_up(self):

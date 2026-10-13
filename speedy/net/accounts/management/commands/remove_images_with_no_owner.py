@@ -17,9 +17,6 @@ class Command(BaseCommand):
 
     This command filters images that have no owner and deletes them from the filesystem
     and the database.
-
-    Methods:
-        handle(*args, **options): Executes the command to remove images with no owner.
     """
 
     def handle(self, *args, **options):

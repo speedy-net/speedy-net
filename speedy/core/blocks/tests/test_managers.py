@@ -19,20 +19,6 @@ if (django_settings.TESTS):
         class BlockManagerOnlyEnglishTestCase(SiteTestCase):
             """
             Tests the BlockManager methods for blocking, unblocking, checking block status, and removing blocks between entities.
-
-            Methods:
-                test_block(self): Asserts blocking an entity creates a Block instance with the expected blocker and blocked ids.
-                test_existing_block(self): Asserts blocking an already-blocked entity returns the existing Block instance instead of creating a new one.
-                test_unblock(self): Asserts unblocking removes the Block instance, and is a no-op if no block exists.
-                test_has_blocked_true(self): Asserts has_blocked returns True when the blocker has blocked the blocked entity.
-                test_has_blocked_false(self): Asserts has_blocked returns False when no block exists.
-                test_there_is_block_false(self): Asserts there_is_block returns False in both directions when no block exists between the two entities.
-                test_there_is_block_true_when_blocker_blocked_the_other(self): Asserts there_is_block returns True in both directions when the first entity has blocked the second.
-                test_there_is_block_true_when_blocked_blocked_the_blocker(self): Asserts there_is_block returns True in both directions when the second entity has blocked the first.
-                test_remove_all_blocks_by_entity(self): Asserts remove_all_blocks_by_entity removes only the blocks created by the given entity, leaving blocks against it intact.
-                test_remove_all_blocks_of_entity(self): Asserts remove_all_blocks_of_entity removes only the blocks targeting the given entity, leaving blocks it created intact.
-                test_user_blocks_himself_raises_an_exception(self): Asserts blocking oneself raises a ValidationError with the expected message.
-                test_cannot_delete_blocks_with_queryset_delete(self): Asserts that calling delete() on the Block queryset (in various forms) raises NotImplementedError.
             """
 
             def set_up(self):

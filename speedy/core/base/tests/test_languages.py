@@ -48,9 +48,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesEnglishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (English).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -66,9 +63,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesFrenchTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (French).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -84,9 +78,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesGermanTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (German).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -102,9 +93,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesSpanishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Spanish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -120,9 +108,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesPortugueseTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Portuguese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -138,9 +123,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesItalianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Italian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -156,9 +138,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesDutchTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Dutch).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -174,9 +153,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesJapaneseTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Japanese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -192,9 +168,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesRussianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Russian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -210,9 +183,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesChineseTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Chinese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -228,9 +198,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesPolishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Polish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -246,9 +213,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesPersianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Persian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -264,9 +228,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesHebrewTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Hebrew).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -282,9 +243,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesKoreanTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Korean).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -300,9 +258,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesArabicTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Arabic).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -318,9 +273,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesIndonesianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Indonesian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -336,9 +288,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesUkrainianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Ukrainian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -354,9 +303,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesTurkishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Turkish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -372,9 +318,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesVietnameseTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Vietnamese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -390,9 +333,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesCzechTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Czech).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -408,9 +348,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesSwedishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Swedish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -426,9 +363,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesFinnishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Finnish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -444,9 +378,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesHungarianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Hungarian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -462,9 +393,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesThaiTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Thai).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -480,9 +408,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesGreekTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Greek).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -498,9 +423,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesMalayTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Malay).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -516,9 +438,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesSerbianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Serbian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -534,9 +453,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesRomanianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Romanian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -552,9 +468,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesBengaliTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Bengali).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -570,9 +483,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesCatalanTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Catalan).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -588,9 +498,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesNorwegianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Norwegian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -606,9 +513,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesBulgarianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Bulgarian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -624,9 +528,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesDanishTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Danish).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -642,9 +543,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesSlovakTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Slovak).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -660,9 +558,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesHindiTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Hindi).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -678,9 +573,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesEstonianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Estonian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -696,9 +588,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesCroatianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Croatian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -714,9 +603,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesAzerbaijaniTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Azerbaijani).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -732,9 +618,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesCantoneseTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Cantonese).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -750,9 +633,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesLithuanianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Lithuanian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -768,9 +648,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesSlovenianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Slovenian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -786,9 +663,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesBasqueTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Basque).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -804,9 +678,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesArmenianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Armenian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -822,9 +693,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesUzbekTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Uzbek).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -840,9 +708,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesTamilTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Tamil).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):
@@ -858,9 +723,6 @@ if (django_settings.TESTS):
         class LanguageNameAllLanguagesLatvianTestCase(LanguageNameTestCaseMixin, SiteTestCase):
             """
             Tests that the local name of the active language matches Django's translated language name, for all languages (Latvian).
-
-            Methods:
-                validate_all_values(self): Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
             """
 
             def validate_all_values(self):

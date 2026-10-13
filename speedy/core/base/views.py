@@ -38,9 +38,6 @@ class StaticBaseView(generic.TemplateView):
 
     Attributes:
         canonical_full_path (str): The canonical full path of the page. Must be defined in classes inherited from this class.
-
-    Methods:
-        get: Serves the page if the request matches the canonical path, otherwise redirects to it.
     """
 
     # canonical_full_path must be defined in classes inherited from this class.
@@ -119,10 +116,6 @@ class FormValidMessageMixin(object):
 
     Attributes:
         form_valid_message (str): The default success message to show.
-
-    Methods:
-        get_form_valid_message: Returns the success message to show for the given form.
-        form_valid: Shows the success message and returns the parent's form_valid response.
     """
     form_valid_message = _('Changes saved.')
 
@@ -151,11 +144,6 @@ class FormValidMessageMixin(object):
 class PaginationMixin(object):
     """
     A mixin for views which paginates a list of objects.
-
-    Methods:
-        redirect_on_exception: Returns the response to use when the requested page is invalid. Must be implemented in subclasses.
-        dispatch: Paginates `self.get_object_list()` according to the requested page number before dispatching the request.
-        get_context_data: Adds pagination data to the template context.
     """
 
     def redirect_on_exception(self):

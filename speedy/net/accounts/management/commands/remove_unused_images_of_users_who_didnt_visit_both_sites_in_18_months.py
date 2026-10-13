@@ -22,9 +22,6 @@ class Command(BaseCommand):
 
     This command filters images whose owners haven't visited both Speedy Match and Speedy Net sites
     in the last 18 months and deletes them from the filesystem and the database.
-
-    Methods:
-        handle(*args, **options): Executes the command to remove unused images.
     """
 
     def handle(self, *args, **options):

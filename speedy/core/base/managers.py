@@ -8,9 +8,6 @@ from django.db import models
 class QuerySet(models.query.QuerySet):
     """
     A QuerySet which disables bulk deletion.
-
-    Methods:
-        delete: Always raises NotImplementedError.
     """
 
     def delete(self):
@@ -25,11 +22,6 @@ class QuerySet(models.query.QuerySet):
 class ManagerMixin(object):
     """
     A mixin for managers which disables bulk creation and bulk deletion, and returns our own QuerySet (without method .delete()).
-
-    Methods:
-        bulk_create: Always raises NotImplementedError.
-        delete: Always raises NotImplementedError.
-        get_queryset: Returns our own QuerySet without method .delete().
     """
 
     def bulk_create(self, *args, **kwargs):

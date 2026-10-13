@@ -35,9 +35,6 @@ class AdminEmailHandler(log.AdminEmailHandler):
     Attributes:
         COUNT_FORMAT (str): The format string used to describe the number of times a message was logged in the last hour.
         COUNT_HTML_FORMAT (str): The HTML format string used to describe the number of times a message was logged in the last hour.
-
-    Methods:
-        send_mail: Sends mail only once per hour for WARNING messages or specific ERROR messages.
     """
     # Format strings (plain text and HTML) which describe the number of times a message was logged in the last hour.
     COUNT_FORMAT = 'Number in the last hour: {}'

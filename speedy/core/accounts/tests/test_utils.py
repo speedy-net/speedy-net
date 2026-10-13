@@ -15,12 +15,6 @@ if (django_settings.TESTS):
         class NormalizeEmailOnlyEnglishTestCase(SiteTestCase):
             """
             Tests speedy.core.accounts.utils.normalize_email, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_normalize_none(self): Asserts that normalizing None returns an empty string.
-                test_normalize_empty_string(self): Asserts that normalizing an empty string returns an empty string.
-                test_normalize_strings(self): Asserts that non-email strings are only lowercased, leading/trailing whitespace is preserved.
-                test_normalize_emails(self): Asserts that email addresses are lowercased and have their leading/trailing whitespace trimmed.
             """
 
             def test_normalize_none(self):

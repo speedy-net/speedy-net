@@ -11,9 +11,6 @@ from .models import Chat, Message
 class MessageInlineAdmin(ReadOnlyTabularInlinePaginatedModelAdmin):
     """
     Read-only, paginated inline admin for displaying a chat's messages on the Chat admin page.
-
-    Methods:
-        get_queryset(self, request): Returns the messages queryset with related chat participants and senders prefetched.
     """
     model = Message
     per_page = 100

@@ -17,12 +17,6 @@ class UploadView(LoginRequiredMixin, generic.CreateView):
 
     Attributes:
         form_class (type): The form class used to validate and save the uploaded image.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Dispatch the request, exempting it from CSRF protection.
-        get_form_kwargs(self): Add the current user as the default owner of the uploaded image.
-        get(self, request, *args, **kwargs): Redirect GET requests to the current user's profile page.
-        form_valid(self, form): Save the uploaded image and return a JSON response describing it.
     """
     form_class = ImageUploadForm
 

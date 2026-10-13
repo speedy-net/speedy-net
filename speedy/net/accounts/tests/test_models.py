@@ -21,19 +21,6 @@ if (django_settings.TESTS):
         class SpeedyNetSiteProfileOnlyEnglishTestCase(SiteTestCase):
             """
             Test the Speedy Net SiteProfile model on Speedy Net (English only, the model logic doesn't depend on the language).
-
-            Methods:
-                get_default_user_doron(self): Returns an active, saved default test user ("Doron Matalon").
-                get_inactive_user_jennifer(self): Returns an inactive, saved test user ("Jennifer Connelly"), randomly choosing between InactiveUserFactory and SpeedyNetInactiveUserFactory.
-                test_profile_property_and_class(self): Verify the user.profile property returns the Speedy Net site profile and differs from the Speedy Match profile.
-                test_call_activate_directly_and_assert_no_exception(self): Verify calling activate() directly on the Speedy Net profile activates the user.
-                test_call_deactivate_directly_and_assert_no_exception(self): Verify calling deactivate() directly on the Speedy Net profile deactivates the user.
-                test_call_call_after_verify_email_address_directly_and_assert_no_exception(self): Verify calling call_after_verify_email_address() directly is a no-op on Speedy Net.
-                test_call_validate_profile_and_activate_directly_and_assert_exception(self): Verify calling validate_profile_and_activate() directly raises NotImplementedError on Speedy Net.
-                test_call_get_name_directly_and_assert_no_exception(self): Verify get_name() returns the user's full name.
-                test_call_user_name_directly_and_assert_no_exception(self): Verify user.name returns the user's full name.
-                test_user_name_is_the_same_as_get_name_and_get_full_name(self): Verify user.name matches get_name(), get_full_name() and the formatted first/last name across several user factories.
-                test_cannot_delete_site_profiles_with_queryset_delete(self): Verify deleting site profiles via queryset delete() raises NotImplementedError in all forms (manager, all(), filter(), exclude()).
             """
 
             def get_default_user_doron(self):

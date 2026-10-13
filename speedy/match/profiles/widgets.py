@@ -24,10 +24,6 @@ class UserRankWidget(Widget):
 class UserOnSpeedyMatchWidget(Widget):
     """
     Profile widget displayed on Speedy Net showing a link/preview to the viewed user's Speedy Match profile, when the viewer and user are a match.
-
-    Methods:
-        is_match(self): Checks whether the viewer and the viewed user are considered a match.
-        get_context_data(self): Adds the match status to the widget's context.
     """
     template_name = 'profiles/user_on_speedy_match_widget.html'
     permission_required = 'accounts.view_user_on_speedy_match_widget'
@@ -70,9 +66,6 @@ class UserOnSpeedyMatchWidget(Widget):
 class UserExtraDetailsWidget(Widget):
     """
     Profile widget showing extra Speedy Match details about the viewed user (diet, smoking status, relationship status, genders to match).
-
-    Methods:
-        get_context_data(self): Adds the formatted extra details to the widget's context.
     """
     template_name = 'profiles/user_extra_info_widget.html'
     permission_required = 'accounts.view_profile_info'

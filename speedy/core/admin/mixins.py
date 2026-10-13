@@ -10,9 +10,6 @@ class OnlyAdminMixin(LoginRequiredMixin):
 
     Attributes:
         raise_exception (bool): Always True, so unauthenticated/unauthorized access raises rather than redirecting to login.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Denies access unless the user is authenticated and both a superuser and staff.
     """
     raise_exception = True
 

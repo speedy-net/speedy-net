@@ -16,9 +16,6 @@ _POT_CREATION_DATE_LINE_RE = re.compile(rb'^"POT-Creation-Date: .*$', re.M)
 class Command(makemessages.Command):
     """
     A `makemessages` management command which avoids needless no-op changes to .po files.
-
-    Methods:
-        write_po_file: Writes the .po file, preserving the original file (and its mtime) when only the "POT-Creation-Date" header changed.
     """
 
     def write_po_file(self, potfile, locale):

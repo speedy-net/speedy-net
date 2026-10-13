@@ -121,10 +121,6 @@ class RegistrationView(generic.CreateView):
 
     Saves the new user, optionally activates their site profile (depending on settings), logs the user in, sends a
     confirmation email to each of their email addresses, and redirects to the home page.
-
-    Methods:
-        form_valid(self, form): Save the new user, activate the profile if configured to, send confirmation emails and log the user in.
-        get_form_kwargs(self): Add the current language code to the form's keyword arguments.
     """
     template_name = 'main/main_page.html'
     form_class = RegistrationForm
@@ -192,9 +188,6 @@ class IndexView(generic.View):
         canonical_full_path (str): The canonical path of the home page ("/").
         redirect_authenticated_users_to (str): The URL name or path to redirect authenticated users to.
         registration_view (type): The view class used to render the registration form for anonymous users.
-
-    Methods:
-        dispatch(self, request, *args, **kwargs): Redirect authenticated users, enforce the canonical path, and otherwise delegate to the registration view.
     """
     canonical_full_path = "/"
     redirect_authenticated_users_to = 'profiles:me'  # The default.
@@ -231,10 +224,6 @@ class EditProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequiredMixin
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_form_kwargs(self): Add the current language code to the form's keyword arguments.
-        get_object(self, queryset=None): Return the current user as the object being edited.
     """
     permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/profile.html'
@@ -272,9 +261,6 @@ class EditProfileNotificationsView(LoginRequiredMixin, SelfUserMixin, Permission
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_object(self, queryset=None): Return the current user as the object being edited.
     """
     permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/notifications.html'
@@ -299,11 +285,6 @@ class EditProfileCredentialsView(LoginRequiredMixin, SelfUserMixin, PermissionRe
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_form_kwargs(self): Add the current user to the form's keyword arguments.
-        get_context_data(self, **kwargs): Add the user's email addresses (each with a privacy form) to the template context.
-        form_valid(self, form): Save the new password, update the session's auth hash, and show a success message.
     """
     permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/credentials.html'
@@ -370,13 +351,6 @@ class ActivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionRequi
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_object(self, queryset=None): Return the current user's site profile as the object being edited.
-        get_form_class(self): Return the activation form class configured for the current site.
-        dispatch(self, request, *args, **kwargs): Redirect already-active users to the success URL, otherwise delegate to the superclass.
-        get_account_activation_url(self): Abstract method - must be implemented by subclasses.
-        post(self, request, *args, **kwargs): Allow the form to be submitted only if the user has confirmed an email address or just registered.
     """
     permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/activate.html'
@@ -455,10 +429,6 @@ class DeactivateSiteProfileView(LoginRequiredMixin, SelfUserMixin, PermissionReq
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_form_kwargs(self): Add the current user to the form's keyword arguments.
-        form_valid(self, form): Deactivate the profile, show a success message, and log the deactivation.
     """
     # A user can deactivate their account also if they are already inactive.
     permission_required = 'accounts.edit_profile'
@@ -521,10 +491,6 @@ class VerifyUserEmailAddressView(LoginRequiredMixin, SelfUserMixin, PermissionRe
         model (type): The model this view looks up its object from (``UserEmailAddress``).
         permission_required (str): The permission required to confirm the email address ('accounts.edit_profile').
         success_url (str): The default URL to redirect to after handling the confirmation link.
-
-    Methods:
-        get_success_url(self): Return the URL to redirect to, preferring the Speedy Match matches page when applicable.
-        get(self, request, *args, **kwargs): Verify the email address's confirmation token and redirect accordingly.
     """
     model = UserEmailAddress
     permission_required = 'accounts.edit_profile'
@@ -581,10 +547,6 @@ class AddUserEmailAddressView(LoginRequiredMixin, SelfUserMixin, PermissionRequi
 
     Attributes:
         permission_required (str): The permission required to add the email address ('accounts.edit_profile').
-
-    Methods:
-        get_form_kwargs(self): Add the current user as the default owner of the new email address.
-        form_valid(self, form): Send a confirmation email, make the address primary if it's the user's first, and show a success message.
     """
     permission_required = 'accounts.edit_profile'
     form_class = UserEmailAddressForm
@@ -634,10 +596,6 @@ class ResendConfirmationEmailView(PermissionRequiredMixin, SingleObjectMixin, ge
         permission_required (str): The permission required to resend the confirmation email ('accounts.confirm_useremailaddress').
         success_url (str): The URL to redirect to after handling the request.
         raise_exception (bool): Whether to raise ``PermissionDenied`` instead of redirecting to the login page when permission is missing.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the success URL without resending the email.
-        post(self, request, *args, **kwargs): Resend the confirmation email and show a success message.
     """
     model = UserEmailAddress
     permission_required = 'accounts.confirm_useremailaddress'
@@ -683,10 +641,6 @@ class DeleteUserEmailAddressView(PermissionRequiredMixin, generic.DeleteView):
         permission_required (str): The permission required to delete the email address ('accounts.delete_useremailaddress').
         success_url (str): The URL to redirect to after handling the request.
         raise_exception (bool): Whether to raise ``PermissionDenied`` instead of redirecting to the login page when permission is missing.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the success URL without deleting the email address.
-        form_valid(self, *args, **kwargs): Delete the email address and show a success message.
     """
     model = UserEmailAddress
     permission_required = 'accounts.delete_useremailaddress'
@@ -731,10 +685,6 @@ class SetPrimaryUserEmailAddressView(PermissionRequiredMixin, SingleObjectMixin,
         permission_required (str): The permission required to set the primary email address ('accounts.setprimary_useremailaddress').
         success_url (str): The URL to redirect to after handling the request.
         raise_exception (bool): Whether to raise ``PermissionDenied`` instead of redirecting to the login page when permission is missing.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the success URL without changing the primary email address.
-        post(self, request, *args, **kwargs): Make the email address primary and show a success message.
     """
     model = UserEmailAddress
     permission_required = 'accounts.setprimary_useremailaddress'
@@ -781,9 +731,6 @@ class ChangeUserEmailAddressPrivacyView(PermissionRequiredMixin, generic.UpdateV
         permission_required (str): The permission required to change the privacy setting ('accounts.change_useremailaddress').
         success_url (str): The URL to redirect to after handling the request.
         raise_exception (bool): Whether to raise ``PermissionDenied`` instead of redirecting to the login page when permission is missing.
-
-    Methods:
-        get(self, request, *args, **kwargs): Redirect to the success URL without changing the privacy setting.
     """
     model = UserEmailAddress
     form_class = UserEmailAddressPrivacyForm
@@ -812,9 +759,6 @@ class EditProfilePrivacyView(LoginRequiredMixin, SelfUserMixin, PermissionRequir
 
     Attributes:
         permission_required (str): The permission required to edit the profile ('accounts.edit_profile').
-
-    Methods:
-        get_object(self, queryset=None): Return the current user as the object being edited.
     """
     permission_required = 'accounts.edit_profile'
     template_name = 'accounts/edit_profile/privacy.html'

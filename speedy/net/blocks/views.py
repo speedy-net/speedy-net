@@ -16,9 +16,6 @@ class BlockedUsersListView(UserMixin, PermissionRequiredMixin, generic.ListView)
         permission_required (str): The permission required to view the blocked users list.
         page_size (int): The number of blocked users displayed per page.
         paginate_by (int): The number of items per page, used by Django's ListView pagination.
-
-    Methods:
-        get_queryset(self): Returns the queryset of users blocked by the current user.
     """
     permission_required = 'accounts.view_blocked_users_list'
     page_size = 24

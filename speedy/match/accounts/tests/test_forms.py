@@ -17,9 +17,6 @@ if (django_settings.TESTS):
         class ProfileNotificationsFormOnlyEnglishTestCase(ProfileNotificationsFormTestCaseMixin, SiteTestCase):
             """
             Tests the Speedy Match ProfileNotificationsForm field set, run only once (in English) since it is language-independent.
-
-            Methods:
-                test_has_correct_fields(self): Asserts the form exposes exactly the expected notification fields.
             """
 
             def test_has_correct_fields(self):

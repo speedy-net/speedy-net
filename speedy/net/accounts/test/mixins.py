@@ -11,14 +11,6 @@ if (django_settings.TESTS):
     class SpeedyNetAccountsLanguageMixin(TestCaseMixin):
         """
         Test mixin providing per-language, per-gender delete-account text fixtures and error dicts for Speedy Net account tests.
-
-        Methods:
-            _delete_account_form_all_the_required_fields_keys(self): Returns the list of required field names on the delete account form.
-            _delete_account_form_all_the_required_fields_are_required_errors_dict(self): Returns the errors dict for all required fields being missing on the delete account form.
-            _delete_my_account_text_is_required_errors_dict(self): Returns the errors dict for a missing "delete my account" confirmation text.
-            _invalid_delete_my_account_text_errors_dict_by_gender(self, gender): Returns the errors dict for an invalid "delete my account" confirmation text, by gender.
-            _invalid_password_and_delete_my_account_text_errors_dict_by_gender(self, gender): Returns the errors dict for both an invalid password and an invalid "delete my account" confirmation text, by gender.
-            set_up(self): Sets up per-language, per-gender delete-account text fixtures used by the account deletion tests.
         """
 
         def _delete_account_form_all_the_required_fields_keys(self):

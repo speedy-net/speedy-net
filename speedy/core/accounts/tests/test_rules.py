@@ -15,15 +15,6 @@ if (django_settings.TESTS):
         class ViewProfileRulesTestCaseMixin(TestCaseMixin):
             """
             Mixin testing the 'accounts.view_profile' permission rule, including the effect of blocking and of Speedy Match gender-matching preferences.
-
-            Methods:
-                get_active_user_doron(self): Creates and returns an active female user named Doron who only wants to match with males.
-                get_active_user_jennifer(self): Creates and returns an active female user named Jennifer with default matching preferences.
-                set_up(self): Creates self.user, self.other_user, self.doron and self.jennifer for use by the test methods.
-                test_user_and_other_user_have_access(self): Asserts that two mutually-matching users can both view each other's profile.
-                test_user_and_other_user_have_no_access_if_blocked(self): Asserts that blocking removes both users' permission to view each other's profile.
-                test_doron_and_jennifer_have_access(self): Not implemented in this mixin; must be overridden by subclasses.
-                test_doron_and_jennifer_have_no_access(self): Not implemented in this mixin; must be overridden by subclasses.
             """
 
             def get_active_user_doron(self):

@@ -12,13 +12,6 @@ class Widget(object):
     Attributes:
         template_name (str): The name of the template to render.
         permission_required (str): The permission required to view the widget.
-
-    Methods:
-        html(self): Property returning the rendered HTML of the widget.
-        get_context_data(self): Get the context data for rendering the widget's template.
-        get_template_name(self): Get the name of the template to render.
-        get_permission_required(self): Get the permission required to view the widget.
-        render(self): Render the widget's template, or an empty string if the viewer lacks permission.
     """
     template_name = None
     permission_required = 'accounts.view_profile'

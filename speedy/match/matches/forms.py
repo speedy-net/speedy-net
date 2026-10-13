@@ -13,10 +13,6 @@ from speedy.match.accounts.forms import SpeedyMatchProfileBaseForm
 class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
     """
     Compact matching-preferences form shown inline (e.g. in the sidebar), exposing only the most important match fields.
-
-    Methods:
-        get_fields(self): Returns the field names included in this form.
-        get_visible_fields(self): Returns the field names visible on this form.
     """
 
     def get_fields(self):
@@ -41,10 +37,6 @@ class SpeedyMatchSettingsMiniForm(SpeedyMatchProfileBaseForm):
 class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
     """
     Base form for the full-page Speedy Match settings forms, laying out fields in two-column rows and adding a save button.
-
-    Methods:
-        __init__(self, *args, **kwargs): Builds the form and its crispy-forms layout.
-        get_field_pairs(self): Not implemented in this abstract base form; must be implemented by subclasses.
     """
 
     def __init__(self, *args, **kwargs):
@@ -90,11 +82,6 @@ class SpeedyMatchProfileFullSettingsBaseForm(SpeedyMatchProfileBaseForm):
 class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
     """
     Full-page form for editing a user's matching preferences (gender to match, age range, match description, diet/smoking/relationship match ranks).
-
-    Methods:
-        get_fields(self): Returns the field names included in this form.
-        get_field_pairs(self): Returns the field pairs used to lay out this form.
-        get_visible_fields(self): Returns the field names visible on this form.
     """
 
     def get_fields(self):
@@ -128,11 +115,6 @@ class SpeedyMatchProfileFullMatchForm(SpeedyMatchProfileFullSettingsBaseForm):
 class SpeedyMatchProfileFullAboutMeForm(SpeedyMatchProfileFullSettingsBaseForm):
     """
     Full-page form for editing a user's "about me" profile fields (description, city, height, children, lifestyle choices).
-
-    Methods:
-        get_fields(self): Returns the field names included in this form.
-        get_field_pairs(self): Returns the field pairs used to lay out this form.
-        get_visible_fields(self): Returns the field names visible on this form.
     """
 
     def get_fields(self):

@@ -15,9 +15,6 @@ class Command(BaseCommand):
     A Django management command to update the has_confirmed_email field for all users.
 
     This command iterates over all users and updates their has_confirmed_email field.
-
-    Methods:
-        handle(*args, **options): Executes the command to update the has_confirmed_email field.
     """
 
     def handle(self, *args, **options):

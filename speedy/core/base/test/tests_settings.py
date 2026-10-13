@@ -22,10 +22,6 @@ if (django_settings.TESTS):
     class TestsDynamicSettings(object):
         """
         Provides test settings computed dynamically at test run time, such as lists of valid/invalid dates of birth relative to the current date.
-
-        Methods:
-            valid_date_of_birth_list: Builds a list of valid dates of birth for a given maximum allowed age.
-            invalid_date_of_birth_list: Builds a list of invalid dates of birth for a given maximum allowed age.
         """
 
         @staticmethod
