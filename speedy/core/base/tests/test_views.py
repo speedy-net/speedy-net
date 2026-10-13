@@ -27,8 +27,10 @@ if (django_settings.TESTS):
 
     if (not (django_settings.LOGIN_ENABLED)):
         from speedy.core.base.test.models import SiteTestCase
+        from speedy.core.base.test.decorators import only_on_sites_without_login
 
 
+        @only_on_sites_without_login
         class MainPageViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Tests speedy.composer.main.views.MainPageView and speedy.mail.main.views.MainPageView.

@@ -10,10 +10,12 @@ if (django_settings.TESTS):
         from django.core.exceptions import ValidationError
 
         from speedy.core.base.test.models import SiteTestCase
+        from speedy.core.base.test.decorators import only_on_sites_with_login
 
         from speedy.core.accounts.validators import validate_profile_picture
 
 
+        @only_on_sites_with_login
         class ValidateProfilePictureOnlyEnglishTestCase(SiteTestCase):
             """
             Tests speedy.core.accounts.validators.validate_profile_picture.

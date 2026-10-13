@@ -425,6 +425,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         class EntityAllMainLanguagesEnglishTestCase(EntityTestCaseMixin, SiteTestCase):
             """
             Tests the Entity model, for all main languages (English).
@@ -442,6 +443,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class EntityAllMainLanguagesFrenchTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -460,6 +462,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class EntityAllMainLanguagesGermanTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -478,6 +481,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class EntityAllMainLanguagesSpanishTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -496,6 +500,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class EntityAllMainLanguagesPortugueseTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -514,6 +519,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class EntityAllMainLanguagesItalianTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -532,6 +538,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class EntityAllMainLanguagesDutchTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -550,6 +557,7 @@ if (django_settings.TESTS):
 
 
         # @only_on_sites_with_login  # ~~~~ TODO
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EntityAllMainLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -773,6 +781,7 @@ if (django_settings.TESTS):
                 self.assertDictEqual(d1=dict(cm.exception), d2={'__all__': [self._slug_does_not_parse_to_username_error_message]})
 
 
+        @only_on_sites_with_login
         class ReservedUsernameAllMainLanguagesEnglishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
             Tests the ReservedUsername model, for all main languages (English).
@@ -789,6 +798,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='en')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
         class ReservedUsernameAllMainLanguagesFrenchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -806,6 +816,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='fr')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
         class ReservedUsernameAllMainLanguagesGermanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -823,6 +834,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='de')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
         class ReservedUsernameAllMainLanguagesSpanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -840,6 +852,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='es')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
         class ReservedUsernameAllMainLanguagesPortugueseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -857,6 +870,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='pt')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
         class ReservedUsernameAllMainLanguagesItalianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -874,6 +888,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='it')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
         class ReservedUsernameAllMainLanguagesDutchTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -891,6 +906,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='nl')
 
 
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class ReservedUsernameAllMainLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
