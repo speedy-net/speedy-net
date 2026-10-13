@@ -19,19 +19,16 @@ if (django_settings.TESTS):
             directory of their own, so they are tested here, in the speedy.core.main app, which is installed on every site without login.
             """
 
-            def set_up(self):
+            def get_page_url(self):
                 """
-                Sets up the main page URL used by the tests.
+                :return: The canonical URL path of the page.
                 """
-                super().set_up()
-                self.page_url = '/'
+                return '/'
 
-            def test_visitor_can_access_main_page(self):
+            def get_template_name(self):
                 """
-                Tests that a visitor can access the main page and that it renders the expected template.
+                :return: The name of the template expected to render the page.
                 """
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='main/main_page.html')
+                return 'main/main_page.html'
 
 

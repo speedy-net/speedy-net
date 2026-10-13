@@ -14,14 +14,48 @@ if (django_settings.TESTS):
         """
         A mixin for test cases of views which redirect non-canonical paths to the canonical path.
 
-        Test cases using this mixin must set `self.page_url` to the canonical path of the page (in `set_up`).
+        Test cases using this mixin must define `get_page_url` and `get_template_name`. Their results are stored in `self.page_url` and `self.template_name` in `set_up`.
 
         Methods:
+            get_page_url(self): Returns the canonical URL path of the page. Must be defined in classes inherited from this class.
+            get_template_name(self): Returns the name of the template expected to render the page. Must be defined in classes inherited from this class.
+            set_up(self): Sets `self.page_url` and `self.template_name`.
+            test_visitor_can_access_page(self): Asserts a visitor can access the page and that it uses the expected template.
             test_non_canonical_path_redirects_permanently_to_canonical_path(self): Tests that requesting the page with an extra query string redirects permanently (301) to the canonical page URL.
             test_path_starting_with_2_slashes_redirects_permanently_to_canonical_path(self): Tests that requesting the page with a path starting with 2 slashes redirects permanently (301) to the canonical page URL.
             test_path_ending_with_2_slashes_redirects_permanently_to_canonical_path(self): Tests that requesting the page with a path ending with 2 slashes redirects permanently (301) to the canonical page URL.
             test_path_not_ending_with_a_slash_redirects_permanently_to_canonical_path(self): Tests that requesting the page with a path which doesn't end with a slash redirects permanently (301) to the canonical page URL.
         """
+
+        def get_page_url(self):
+            """
+            :return: The canonical URL path of the page.
+            :raises NotImplementedError: Must be defined in classes inherited from this class.
+            """
+            raise NotImplementedError("get_page_url must be defined in classes inherited from StaticBaseViewTestCaseMixin.")
+
+        def get_template_name(self):
+            """
+            :return: The name of the template expected to render the page.
+            :raises NotImplementedError: Must be defined in classes inherited from this class.
+            """
+            raise NotImplementedError("get_template_name must be defined in classes inherited from StaticBaseViewTestCaseMixin.")
+
+        def set_up(self):
+            """
+            Sets `self.page_url` and `self.template_name` from `get_page_url` and `get_template_name`.
+            """
+            super().set_up()
+            self.page_url = self.get_page_url()
+            self.template_name = self.get_template_name()
+
+        def test_visitor_can_access_page(self):
+            """
+            Asserts a visitor can access the page and that it uses the expected template.
+            """
+            r = self.client.get(path=self.page_url)
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertTemplateUsed(response=r, template_name=self.template_name)
 
         def test_non_canonical_path_redirects_permanently_to_canonical_path(self):
             """

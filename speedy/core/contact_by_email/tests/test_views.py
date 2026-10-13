@@ -16,23 +16,20 @@ if (django_settings.TESTS):
             Tests the static contact-us page, for sites without login (English only).
 
             Methods:
-                set_up(self): Sets the contact-us page URL.
-                test_visitor_can_access_contact_us_page(self): Asserts a visitor can access the contact-us page and it renders the expected template.
+                get_page_url(self): Returns the canonical URL path of the page.
+                get_template_name(self): Returns the name of the template expected to render the page.
             """
 
-            def set_up(self):
+            def get_page_url(self):
                 """
-                Sets the contact-us page URL.
+                :return: The canonical URL path of the page.
                 """
-                super().set_up()
-                self.page_url = '/contact/'
+                return '/contact/'
 
-            def test_visitor_can_access_contact_us_page(self):
+            def get_template_name(self):
                 """
-                Asserts a visitor can access the contact-us page and it renders the expected template.
+                :return: The name of the template expected to render the page.
                 """
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='contact_by_email/contact_us.html')
+                return 'contact_by_email/contact_us.html'
 
 

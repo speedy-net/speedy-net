@@ -88,11 +88,15 @@ if (django_settings.TESTS):
             """
 
             def get_page_url(self):
-                """Returns the URL of the "about my match" settings edit page."""
+                """
+                Returns the URL of the "about my match" settings edit page.
+                """
                 return '/matches/settings/about-my-match/'
 
             def get_template_name(self):
-                """Returns the template name of the "about my match" settings edit page."""
+                """
+                Returns the template name of the "about my match" settings edit page.
+                """
                 return 'matches/settings/about_my_match.html'
 
 
@@ -107,11 +111,15 @@ if (django_settings.TESTS):
             """
 
             def get_page_url(self):
-                """Returns the URL of the "about me" settings edit page."""
+                """
+                Returns the URL of the "about me" settings edit page.
+                """
                 return '/matches/settings/about-me/'
 
             def get_template_name(self):
-                """Returns the template name of the "about me" settings edit page."""
+                """
+                Returns the template name of the "about me" settings edit page.
+                """
                 return 'matches/settings/about_me.html'
 
 

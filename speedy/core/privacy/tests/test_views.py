@@ -23,25 +23,22 @@ if (django_settings.TESTS):
             Tests the translated text of the privacy policy page, for all genders, in the current test's language.
 
             Methods:
-                set_up(self): Sets the privacy policy page URL.
-                test_visitor_can_access_privacy_policy_page(self): Asserts a visitor can access the privacy policy page and that it uses the expected template.
+                get_page_url(self): Returns the canonical URL path of the page.
+                get_template_name(self): Returns the name of the template expected to render the page.
                 test_translations(self): Asserts the "Delete Account" and "Edit Profile" translations, and that the "delete your account" paragraph contains them (quoted, except in the Hebrew "other" gender case), and that non-English text differs from the English text.
             """
 
-            def set_up(self):
+            def get_page_url(self):
                 """
-                Sets the privacy policy page URL.
+                :return: The canonical URL path of the page.
                 """
-                super().set_up()
-                self.page_url = '/privacy/'
+                return '/privacy/'
 
-            def test_visitor_can_access_privacy_policy_page(self):
+            def get_template_name(self):
                 """
-                Asserts a visitor can access the privacy policy page and that it uses the expected template.
+                :return: The name of the template expected to render the page.
                 """
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='privacy/privacy_policy.html')
+                return 'privacy/privacy_policy.html'
 
             def test_translations(self):
                 """
