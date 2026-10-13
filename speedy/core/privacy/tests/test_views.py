@@ -11,19 +11,37 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
+        from speedy.core.base.tests.test_views import NonCanonicalPathRedirectsPermanentlyTestCaseMixin
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
         from speedy.net.accounts.test.mixins import SpeedyNetAccountsLanguageMixin
 
         from speedy.core.accounts.models import User
 
 
-        class PrivacyPolicyViewTestCaseMixin(SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
+        class PrivacyPolicyViewTestCaseMixin(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the translated text of the privacy policy page, for all genders, in the current test's language.
 
             Methods:
+                set_up(self): Sets the privacy policy page URL.
+                test_visitor_can_access_privacy_policy_page(self): Asserts a visitor can access the privacy policy page and that it uses the expected template.
                 test_translations(self): Asserts the "Delete Account" and "Edit Profile" translations, and that the "delete your account" paragraph contains them (quoted, except in the Hebrew "other" gender case), and that non-English text differs from the English text.
             """
+
+            def set_up(self):
+                """
+                Sets the privacy policy page URL.
+                """
+                super().set_up()
+                self.page_url = '/privacy/'
+
+            def test_visitor_can_access_privacy_policy_page(self):
+                """
+                Asserts a visitor can access the privacy policy page and that it uses the expected template.
+                """
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='privacy/privacy_policy.html')
 
             def test_translations(self):
                 """
