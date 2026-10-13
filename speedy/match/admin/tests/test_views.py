@@ -73,9 +73,6 @@ if (django_settings.TESTS):
             def test_admin_has_access(self):
                 """
                 Asserts the admin can access the page and only same-language users (user_1, user_2, user_3) appear by first name and name (but not full name or id), while other-language users (user_4, user_5) do not appear at all.
-
-                :return: The HTTP response from the base class's access check.
-                :rtype: django.http.HttpResponse
                 """
                 r = super().test_admin_has_access()
                 for user in [self.user_1, self.user_2, self.user_3]:
@@ -227,9 +224,6 @@ if (django_settings.TESTS):
             def test_admin_has_access(self):
                 """
                 Asserts the admin can access the page and all users (user_1 through user_5), regardless of language, appear in it by first name and name (but not full name or id).
-
-                :return: The HTTP response from the base class's access check.
-                :rtype: django.http.HttpResponse
                 """
                 r = super().test_admin_has_access()
                 for user in [self.user_1, self.user_2, self.user_3, self.user_4, self.user_5]:
