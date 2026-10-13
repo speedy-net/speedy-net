@@ -24,6 +24,7 @@ DEFAULT_FROM_EMAIL = 'notifications@speedy.net'
 SERVER_EMAIL = 'webmaster+server@speedy.net'
 
 INSTALLED_APPS += [
+    'speedy.net.blocks',
     # 'speedy.net.pages',
     # 'speedy.net.groups',
     # 'speedy.net.causes',

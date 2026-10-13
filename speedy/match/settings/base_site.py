@@ -26,6 +26,7 @@ SERVER_EMAIL = 'webmaster+server@speedymatch.com'
 INSTALLED_APPS += [
     'speedy.match.profiles',
     'speedy.match.matches',
+    'speedy.net.profiles',
 ]
 
 # The SiteProfile model of Speedy Match, used by the accounts app for per-site user profiles.

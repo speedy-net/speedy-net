@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-13 17:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1063,13 +1063,25 @@ msgstr "Speedy Match Matches"
 msgid "Your match settings were saved."
 msgstr "Twoje ustawienia dopasowania zostały zapisane."
 
-#: .\profiles\widgets.py:90 .\profiles\widgets.py:93 .\profiles\widgets.py:96
+#: .\profiles\tests\test_widgets.py:76
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "Ranking meczowy"
+
+#: .\profiles\tests\test_widgets.py:129 .\profiles\tests\test_widgets.py:130
+#: .\profiles\tests\test_widgets.py:131 .\profiles\widgets.py:90
+#: .\profiles\widgets.py:93 .\profiles\widgets.py:96
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: .\profiles\widgets.py:101
+#: .\profiles\tests\test_widgets.py:142 .\profiles\widgets.py:101
 msgid "None"
 msgstr "Nic"
+
+#: .\profiles\tests\test_widgets.py:149
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "Więcej informacji"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Match [alpha]"
@@ -1384,10 +1396,6 @@ msgstr "Lubisz"
 msgid "Friendship request sent"
 msgstr "Wysłano prośbę o dodanie do znajomych"
 
-#: .\templates\profiles\user_extra_info_widget.html:12
-msgid "More Information"
-msgstr "Więcej informacji"
-
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
 msgstr "Gdzie mieszkam?"
@@ -1403,10 +1411,6 @@ msgstr "Stan związku"
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
 msgstr "Ostatnio odwiedzane Speedy Match"
-
-#: .\templates\profiles\user_rank_widget.html:12
-msgid "Match rank"
-msgstr "Ranking meczowy"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."

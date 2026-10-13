@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-13 17:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1059,13 +1059,25 @@ msgstr "Speedy Match atitikmenys"
 msgid "Your match settings were saved."
 msgstr "Jūsų atitikmenų nustatymai išsaugoti."
 
-#: .\profiles\widgets.py:90 .\profiles\widgets.py:93 .\profiles\widgets.py:96
+#: .\profiles\tests\test_widgets.py:76
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "Atitikmens įvertinimas"
+
+#: .\profiles\tests\test_widgets.py:129 .\profiles\tests\test_widgets.py:130
+#: .\profiles\tests\test_widgets.py:131 .\profiles\widgets.py:90
+#: .\profiles\widgets.py:93 .\profiles\widgets.py:96
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: .\profiles\widgets.py:101
+#: .\profiles\tests\test_widgets.py:142 .\profiles\widgets.py:101
 msgid "None"
 msgstr "Nėra"
+
+#: .\profiles\tests\test_widgets.py:149
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "Daugiau informacijos"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Match [alpha]"
@@ -1383,10 +1395,6 @@ msgstr "Jums patinka"
 msgid "Friendship request sent"
 msgstr "Kvietimas draugauti išsiųstas"
 
-#: .\templates\profiles\user_extra_info_widget.html:12
-msgid "More Information"
-msgstr "Daugiau informacijos"
-
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
 msgstr "Kur aš gyvenu?"
@@ -1402,10 +1410,6 @@ msgstr "Santykių statusas"
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
 msgstr "Paskutinį kartą lankėsi Speedy Match"
-
-#: .\templates\profiles\user_rank_widget.html:12
-msgid "Match rank"
-msgstr "Atitikmens įvertinimas"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."

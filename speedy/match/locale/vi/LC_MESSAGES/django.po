@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-13 17:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1063,13 +1063,25 @@ msgstr "Speedy Match Matches"
 msgid "Your match settings were saved."
 msgstr "Cài đặt trận đấu của bạn đã được lưu."
 
-#: .\profiles\widgets.py:90 .\profiles\widgets.py:93 .\profiles\widgets.py:96
+#: .\profiles\tests\test_widgets.py:76
+#: .\templates\profiles\user_rank_widget.html:12
+msgid "Match rank"
+msgstr "Xếp hạng trận đấu"
+
+#: .\profiles\tests\test_widgets.py:129 .\profiles\tests\test_widgets.py:130
+#: .\profiles\tests\test_widgets.py:131 .\profiles\widgets.py:90
+#: .\profiles\widgets.py:93 .\profiles\widgets.py:96
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: .\profiles\widgets.py:101
+#: .\profiles\tests\test_widgets.py:142 .\profiles\widgets.py:101
 msgid "None"
 msgstr "Không có"
+
+#: .\profiles\tests\test_widgets.py:149
+#: .\templates\profiles\user_extra_info_widget.html:12
+msgid "More Information"
+msgstr "Thông tin thêm"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Match [alpha]"
@@ -1386,10 +1398,6 @@ msgstr "Bạn thích"
 msgid "Friendship request sent"
 msgstr "Đã gửi lời mời kết bạn"
 
-#: .\templates\profiles\user_extra_info_widget.html:12
-msgid "More Information"
-msgstr "Thông tin thêm"
-
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
 msgstr "Tôi sống ở đâu?"
@@ -1405,10 +1413,6 @@ msgstr "Tình trạng quan hệ"
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
 msgstr "Lần cuối truy cập Speedy Match"
-
-#: .\templates\profiles\user_rank_widget.html:12
-msgid "Match rank"
-msgstr "Xếp hạng trận đấu"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
