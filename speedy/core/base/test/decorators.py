@@ -42,6 +42,17 @@ if (django_settings.TESTS):
         return conditional_test(conditional_function=lambda: (django_settings.SITE_ID == site_id))
 
 
+    def exclude_on_sites(site_id_list):
+        """
+        Builds a decorator which skips a test when running on one of the given sites.
+
+        :param site_id_list: Required. The list of site IDs to exclude.
+        :type site_id_list: list[int]
+        :return: A `unittest.skipUnless` decorator.
+        """
+        return conditional_test(conditional_function=lambda: (not (django_settings.SITE_ID in site_id_list)))
+
+
     def only_on_sites(site_id_list):
         """
         Builds a decorator which skips a test unless running on one of the given sites.
@@ -64,5 +75,6 @@ if (django_settings.TESTS):
     only_on_speedy_mail_software = only_on_site(site_id=django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID)
 
     only_on_sites_with_login = only_on_sites(site_id_list=django_settings.SITES_WITH_LOGIN)
+    only_on_sites_without_login = exclude_on_sites(site_id_list=django_settings.SITES_WITH_LOGIN)
 
 

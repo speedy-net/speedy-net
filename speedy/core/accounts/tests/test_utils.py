@@ -6,10 +6,12 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.models import SiteTestCase
+        from speedy.core.base.test.decorators import only_on_sites_with_login
 
         from speedy.core.accounts.utils import normalize_email
 
 
+        @only_on_sites_with_login
         class NormalizeEmailOnlyEnglishTestCase(SiteTestCase):
             """
             Tests speedy.core.accounts.utils.normalize_email, run only once (in English) since it is language-independent.

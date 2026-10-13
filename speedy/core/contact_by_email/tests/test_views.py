@@ -6,9 +6,11 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (not (django_settings.LOGIN_ENABLED)):
         from speedy.core.base.test.models import SiteTestCase
+        from speedy.core.base.test.decorators import only_on_sites_without_login
         from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
 
 
+        @only_on_sites_without_login
         class ContactUsViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Tests the static contact-us page, for sites without login (English only).
