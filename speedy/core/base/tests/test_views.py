@@ -34,14 +34,18 @@ if (django_settings.TESTS):
             """
             # The test client treats a path starting with 2 slashes as a host, so the path is passed in PATH_INFO.
             r = self.client.get(path=self.page_url, PATH_INFO='/' + self.page_url)
-            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
+            # The target is fetched separately, since assertRedirects would reuse PATH_INFO of this request.
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path=self.page_url).status_code, second=200)
 
         def test_path_ending_with_2_slashes_redirects_permanently_to_canonical_path(self):
             """
             Tests that requesting the page with a path ending with 2 slashes (for example "/about//") redirects permanently (301) to the canonical page URL.
             """
             r = self.client.get(path=self.page_url, PATH_INFO=self.page_url + '/')
-            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, target_status_code=200)
+            # The target is fetched separately, since assertRedirects would reuse PATH_INFO of this request.
+            self.assertRedirects(response=r, expected_url=self.page_url, status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path=self.page_url).status_code, second=200)
 
         def test_path_not_ending_with_a_slash_redirects_permanently_to_canonical_path(self):
             """
@@ -92,7 +96,8 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r['Location'], second=self.www_page_url, msg="{} didn't redirect to the www page.".format(path))
             # Extra slashes are removed first (by RemoveExtraSlashesMiddleware), and then the "www" page is served.
             r = self.client.get(path='/', PATH_INFO='//')
-            self.assertRedirects(response=r, expected_url='/', status_code=301, target_status_code=200)
+            self.assertRedirects(response=r, expected_url='/', status_code=301, fetch_redirect_response=False)
+            self.assertEqual(first=self.client.get(path='/').status_code, second=200)
 
         def test_query_string_redirects_permanently_to_www_page(self):
             """
