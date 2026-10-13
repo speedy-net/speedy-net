@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'speedy.net.accounts',
     'speedy.match.accounts',
     'speedy.match.likes',
+    'speedy.match.profiles',
     'speedy.composer.accounts',  # For admin - for deleting users.
     'speedy.mail.accounts',  # For admin - for deleting users.
 ]

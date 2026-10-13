@@ -24,7 +24,6 @@ DEFAULT_FROM_EMAIL = 'notifications@speedymatch.com'
 SERVER_EMAIL = 'webmaster+server@speedymatch.com'
 
 INSTALLED_APPS += [
-    'speedy.match.profiles',
     'speedy.match.matches',
     'speedy.net.profiles',
 ]
