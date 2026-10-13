@@ -37,7 +37,7 @@ if (django_settings.TESTS):
                 """
                 Skipped; irrelevant on Speedy Net since profiles are always visible.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_doron_and_jennifer_have_no_access is not implemented in ViewProfileRulesOnlyEnglishTestCase.")
 
 
         @only_on_speedy_net

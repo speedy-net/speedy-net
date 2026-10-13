@@ -100,7 +100,7 @@ if (django_settings.TESTS):
                 """
                 Skipped. This test is irrelevant in Speedy Match.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_inactive_user_can_request_activation is not implemented in ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase.")
 
 
         @only_on_speedy_match
@@ -118,7 +118,7 @@ if (django_settings.TESTS):
                 """
                 Skipped. This test is irrelevant in Speedy Match.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_inactive_user_can_request_activation is not implemented in ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase.")
 
 
         class ActivateSiteProfileViewWizardTestCaseMixin(TestCaseMixin):

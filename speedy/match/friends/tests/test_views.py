@@ -30,7 +30,7 @@ if (django_settings.TESTS):
                 """
                 Skipped. This test is irrelevant in Speedy Match.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_visitor_can_open_the_page is not implemented in UserFriendListViewOnlyEnglishTestCase.")
 
             def test_visitor_cannot_open_the_page(self):
                 """
@@ -45,7 +45,7 @@ if (django_settings.TESTS):
                 """
                 Skipped. This test is irrelevant in Speedy Match.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_user_can_open_other_users_friends_page is not implemented in UserFriendListViewOnlyEnglishTestCase.")
 
             def test_user_cannot_open_other_users_friends_page(self):
                 """

@@ -34,6 +34,6 @@ if (django_settings.TESTS):
                 """
                 Skipped; irrelevant on Speedy Net since friend lists are always visible.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_user_cannot_view_another_user_friend_list is not implemented in ViewFriendListRulesOnlyEnglishTestCase.")
 
 

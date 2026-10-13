@@ -30,7 +30,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, since this test is not implemented in this class.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_doron_and_jennifer_have_access is not implemented in ViewProfileRulesOnlyEnglishTestCase.")
 
             def test_doron_and_jennifer_have_no_access(self):
                 """

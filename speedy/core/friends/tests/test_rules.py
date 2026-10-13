@@ -129,13 +129,13 @@ if (django_settings.TESTS):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_user_can_view_another_user_friend_list must be defined in classes inherited from ViewFriendListRulesTestCaseMixin.")
 
             def test_user_cannot_view_another_user_friend_list(self):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_user_cannot_view_another_user_friend_list must be defined in classes inherited from ViewFriendListRulesTestCaseMixin.")
 
 
         @only_on_sites_with_login

@@ -164,7 +164,7 @@ class PaginationMixin(object):
 
         :raises NotImplementedError: Always, unless overridden in a subclass.
         """
-        raise NotImplementedError("This method is not implemented in this mixin.")
+        raise NotImplementedError("redirect_on_exception must be defined in classes inherited from PaginationMixin.")
 
     def dispatch(self, request, *args, **kwargs):
         """

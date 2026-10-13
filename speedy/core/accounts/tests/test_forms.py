@@ -1215,7 +1215,7 @@ if (django_settings.TESTS):
                 """
                 Placeholder that raises NotImplementedError; subclasses must override this to assert the expected form fields for their site.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_has_correct_fields must be defined in classes inherited from ProfileNotificationsFormTestCaseMixin.")
 
 
         @only_on_sites_with_login

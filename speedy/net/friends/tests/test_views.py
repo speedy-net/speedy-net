@@ -38,7 +38,7 @@ if (django_settings.TESTS):
                 """
                 Skipped; irrelevant on Speedy Net since the page is public.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_visitor_cannot_open_the_page is not implemented in UserFriendListViewOnlyEnglishTestCase.")
 
             def test_user_can_open_other_users_friends_page(self):
                 """
@@ -52,6 +52,6 @@ if (django_settings.TESTS):
                 """
                 Skipped; irrelevant on Speedy Net since the page is public.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_user_cannot_open_other_users_friends_page is not implemented in UserFriendListViewOnlyEnglishTestCase.")
 
 

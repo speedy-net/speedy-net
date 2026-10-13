@@ -3436,7 +3436,7 @@ if (django_settings.TESTS):
                 """
                 Not implemented in this mixin; subclasses must override this method with a concrete implementation.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_user_can_save_his_settings must be defined in classes inherited from EditProfileNotificationsViewTestCaseMixin.")
 
 
         class EditProfileCredentialsViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
@@ -3905,7 +3905,7 @@ if (django_settings.TESTS):
                 """
                 Not implemented in this mixin; subclasses must override this method with a concrete implementation.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_inactive_user_can_request_activation must be defined in classes inherited from ActivateSiteProfileViewTestCaseMixin.")
 
 
         class ActivateSiteProfileViewWithInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):

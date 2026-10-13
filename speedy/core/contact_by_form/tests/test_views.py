@@ -55,7 +55,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, since this method must be overridden by subclasses.
                 """
-                raise NotImplementedError("This method is not implemented in this mixin.")
+                raise NotImplementedError("set_up_class must be defined in classes inherited from FeedbackViewBaseMixin.")
 
             def get_page_url(self):
                 """
@@ -63,7 +63,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, since this method must be overridden by subclasses.
                 """
-                raise NotImplementedError("This method is not implemented in this mixin.")
+                raise NotImplementedError("get_page_url must be defined in classes inherited from FeedbackViewBaseMixin.")
 
             def set_up(self):
                 """

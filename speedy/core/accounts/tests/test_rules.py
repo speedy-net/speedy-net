@@ -80,12 +80,12 @@ if (django_settings.TESTS):
                 """
                 Not implemented in this mixin; subclasses must override this test for the specific site under test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_doron_and_jennifer_have_access must be defined in classes inherited from ViewProfileRulesTestCaseMixin.")
 
             def test_doron_and_jennifer_have_no_access(self):
                 """
                 Not implemented in this mixin; subclasses must override this test for the specific site under test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_doron_and_jennifer_have_no_access must be defined in classes inherited from ViewProfileRulesTestCaseMixin.")
 
 

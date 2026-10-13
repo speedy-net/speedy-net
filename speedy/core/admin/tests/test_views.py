@@ -37,7 +37,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, since this method must be overridden by subclasses.
                 """
-                raise NotImplementedError("This method is not implemented in this mixin.")
+                raise NotImplementedError("get_page_url must be defined in classes inherited from AdminViewBaseMixin.")
 
             def assert_permission_denied(self, r):
                 """

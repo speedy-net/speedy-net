@@ -41,7 +41,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, unless overridden by a subclass.
                 """
-                raise NotImplementedError("This method is not implemented in this mixin.")
+                raise NotImplementedError("get_page_url must be defined in classes inherited from EditViewBaseMixin.")
 
             def get_template_name(self):
                 """
@@ -49,7 +49,7 @@ if (django_settings.TESTS):
 
                 :raises NotImplementedError: Always, unless overridden by a subclass.
                 """
-                raise NotImplementedError("This method is not implemented in this mixin.")
+                raise NotImplementedError("get_template_name must be defined in classes inherited from EditViewBaseMixin.")
 
             def set_up(self):
                 """

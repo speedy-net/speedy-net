@@ -55,25 +55,25 @@ if (django_settings.TESTS):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_visitor_can_open_the_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
 
             def test_visitor_cannot_open_the_page(self):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_visitor_cannot_open_the_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
 
             def test_user_can_open_other_users_friends_page(self):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_user_can_open_other_users_friends_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
 
             def test_user_cannot_open_other_users_friends_page(self):
                 """
                 Not implemented in this mixin. Subclasses must override this test.
                 """
-                raise NotImplementedError("This test is not implemented in this mixin.")
+                raise NotImplementedError("test_user_cannot_open_other_users_friends_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
 
             def test_user_can_open_his_friends_page(self):
                 """

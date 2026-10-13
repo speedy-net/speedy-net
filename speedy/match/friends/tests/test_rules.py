@@ -28,7 +28,7 @@ if (django_settings.TESTS):
                 """
                 Skipped. This test is irrelevant in Speedy Match.
                 """
-                raise NotImplementedError("This test is not implemented in this class.")
+                raise NotImplementedError("test_user_can_view_another_user_friend_list is not implemented in ViewFriendListRulesOnlyEnglishTestCase.")
 
             def test_user_cannot_view_another_user_friend_list(self):
                 """
