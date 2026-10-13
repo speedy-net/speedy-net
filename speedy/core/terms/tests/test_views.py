@@ -6,10 +6,10 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from speedy.core.base.test.models import SiteTestCase
-        from speedy.core.base.tests.test_views import NonCanonicalPathRedirectsPermanentlyTestCaseMixin
+        from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
 
 
-        class TermsOfServiceViewOnlyEnglishTestCase(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SiteTestCase):
+        class TermsOfServiceViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Test the terms of service page view (English only, since the terms of service page doesn't depend on the language).
 

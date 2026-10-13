@@ -11,14 +11,14 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.base.tests.test_views import NonCanonicalPathRedirectsPermanentlyTestCaseMixin
+        from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
         from speedy.net.accounts.test.mixins import SpeedyNetAccountsLanguageMixin
 
         from speedy.core.accounts.models import User
 
 
-        class PrivacyPolicyViewTestCaseMixin(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
+        class PrivacyPolicyViewTestCaseMixin(StaticBaseViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the translated text of the privacy policy page, for all genders, in the current test's language.
 

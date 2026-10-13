@@ -5,10 +5,10 @@ from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     from speedy.core.base.test.models import SiteTestCase
-    from speedy.core.base.tests.test_views import NonCanonicalPathRedirectsPermanentlyTestCaseMixin
+    from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
 
 
-    class AboutViewOnlyEnglishTestCase(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SiteTestCase):
+    class AboutViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
         """
         Test the about page view (English only, since the about page doesn't depend on the language).
 

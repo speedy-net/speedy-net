@@ -7,7 +7,7 @@ if (django_settings.TESTS):
     from speedy.core.base.test.mixins import TestCaseMixin
 
 
-    class NonCanonicalPathRedirectsPermanentlyTestCaseMixin(TestCaseMixin):
+    class StaticBaseViewTestCaseMixin(TestCaseMixin):
         """
         A mixin for test cases of views which redirect non-canonical paths to the canonical path.
 
@@ -29,7 +29,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
 
 
-        class MainPageViewOnlyEnglishTestCase(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SiteTestCase):
+        class MainPageViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Tests speedy.composer.main.views.MainPageView and speedy.mail.main.views.MainPageView.
 

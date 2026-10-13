@@ -6,10 +6,10 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     if (not (django_settings.LOGIN_ENABLED)):
         from speedy.core.base.test.models import SiteTestCase
-        from speedy.core.base.tests.test_views import NonCanonicalPathRedirectsPermanentlyTestCaseMixin
+        from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
 
 
-        class ContactUsViewOnlyEnglishTestCase(NonCanonicalPathRedirectsPermanentlyTestCaseMixin, SiteTestCase):
+        class ContactUsViewOnlyEnglishTestCase(StaticBaseViewTestCaseMixin, SiteTestCase):
             """
             Tests the static contact-us page, for sites without login (English only).
 
