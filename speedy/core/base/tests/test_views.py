@@ -135,7 +135,7 @@ if (django_settings.TESTS):
             """
             Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
             """
-            http_host = "{labels}.{domain}".format(labels=".".join([str(i) for i in range(1, random.randint(2, 6))]), domain=self.site.domain)
+            http_host = "{labels}.{domain}".format(labels=".".join([str(i) for i in range(1, random.randint(2, 6) + 1)]), domain=self.site.domain)
             client = self.client_class(HTTP_HOST=http_host)
             r = client.get(path='/')
             self.assertEqual(first=r.status_code, second=301)
