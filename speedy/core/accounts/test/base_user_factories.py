@@ -13,6 +13,7 @@ if (django_settings.TESTS):
         import factory.fuzzy
 
         from django import test as django_test
+        from django.utils.translation import get_language
 
         from speedy.core.base.test import tests_settings
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin
@@ -47,6 +48,8 @@ if (django_settings.TESTS):
             slug = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
             username = factory.LazyAttribute(lambda o: normalize_username(username=o.slug))
             password = factory.fuzzy.FuzzyText(chars=string.ascii_lowercase)
+            registration_site_id = factory.LazyFunction(lambda: django_settings.SITE_ID)
+            registration_language_code = factory.LazyFunction(lambda: get_language())
             _password = factory.PostGenerationMethodCall(method_name='set_password', raw_password=tests_settings.USER_PASSWORD)
             _save = factory.PostGenerationMethodCall(method_name='save')  # Call save after set_password
 
