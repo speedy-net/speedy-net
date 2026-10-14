@@ -816,6 +816,17 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_en, second=2)
                 self.assertEqual(first=r.context['user'].speedy_match_profile.activation_step_he, second=2)
 
+            def test_registration_site_id_and_language_code_are_set_from_http_host(self):
+                """
+                Asserts a new user gets the SITE_ID and the language code of the HTTP host used to register.
+                """
+                r = self.client.post(path='/', data=self.data)
+                self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                user = User.objects.get(username=self.username)
+                self.assertEqual(first=user.registration_site_id, second=django_settings.SITE_ID)
+                self.assertEqual(first=user.registration_language_code, second=self.language_code)
+                self.assertEqual(first=user.main_language_code, second=self.language_code)
+
             def test_user_gets_email_after_registration(self):
                 """
                 Asserts a confirmation email with the expected subject and confirmation token is sent to a new user after registration, and the token appears only for the current site's host.

@@ -285,7 +285,7 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
 
     def save(self, commit=True):
         """
-        Create the new user, set their password, save their localized names, and (if committed) create their primary email address and log the registration.
+        Create the new user, set their password, the site and language of the registration, save their localized names, and (if committed) create their primary email address and log the registration.
 
         :param commit: Whether to save the user to the database. Defaults to True.
         :type commit: bool
@@ -294,6 +294,8 @@ class RegistrationForm(AddAttributesToFieldsMixin, CleanEmailMixin, CleanNewPass
         """
         user = super().save(commit=False)
         user.set_password(raw_password=self.cleaned_data["new_password1"])
+        user.registration_site_id = django_settings.SITE_ID
+        user.registration_language_code = get_language()
         for language_code, language_name in django_settings.LANGUAGES:
             for loc_field in self.get_localizable_fields():
                 setattr(user, self.get_localized_field(base_field_name=loc_field, language_code=language_code), self.cleaned_data[self.get_localized_field(base_field_name=loc_field, language_code=self.language_code)])
