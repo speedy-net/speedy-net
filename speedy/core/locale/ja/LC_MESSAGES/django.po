@@ -749,19 +749,19 @@ msgstr "読んでください:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s でメール アドレスを確認してください"
+msgstr "%(site_name)s でメールアドレスを確認してください"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s でメール アドレスを確認してください"
+msgstr "%(site_name)s でメールアドレスを確認してください"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s でメール アドレスを確認してください"
+msgstr "%(site_name)s でメールアドレスを確認してください"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -2262,9 +2262,7 @@ msgstr ""
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
-msgstr ""
-"ユーザー名は 4 文字以上の文字で始まる必要があり、その後は任意の桁数にすること"
-"ができます。単語の間にダッシュを追加できます。"
+msgstr "ユーザー名は 4 文字以上の文字で始まる必要があり、その後は任意の桁数にすることができます。単語の間にダッシュを追加できます。"
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2274,12 +2272,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"ユーザー名には少なくとも %(limit_value)d の英数字が含まれている必要がありま"
-"す (%(show_value)d が含まれます)。"
-msgstr[1] ""
-"ユーザー名には少なくとも %(limit_value)d 文字の英数字が含まれている必要があり"
-"ます (%(show_value)d も含まれます)。"
+msgstr[0] "ユーザー名には少なくとも %(limit_value)d 文字の英数字が必要です（現在は %(show_value)d 文字です）。"
+msgstr[1] "ユーザー名には少なくとも %(limit_value)d 文字の英数字が必要です（現在は %(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2289,12 +2283,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"ユーザー名には最大 %(limit_value)d の英数字が含まれている必要があります "
-"(%(show_value)d も含まれます)。"
-msgstr[1] ""
-"ユーザー名には最大 %(limit_value)d 文字の英数字を含める必要があります "
-"(%(show_value)d も含まれます)。"
+msgstr[0] "ユーザー名に使用できる英数字は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
+msgstr[1] "ユーザー名に使用できる英数字は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2304,12 +2294,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"ユーザー名には少なくとも %(limit_value)d 文字が含まれている必要があります "
-"(%(show_value)d が含まれます)。"
-msgstr[1] ""
-"ユーザー名には少なくとも %(limit_value)d 文字が含まれている必要があります "
-"(%(show_value)d が含まれます)。"
+msgstr[0] "ユーザー名には少なくとも %(limit_value)d 文字が必要です（現在は %(show_value)d 文字です）。"
+msgstr[1] "ユーザー名には少なくとも %(limit_value)d 文字が必要です（現在は %(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2319,12 +2305,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"ユーザー名には最大 %(limit_value)d 文字を含める必要があります "
-"(%(show_value)d も含まれます)。"
-msgstr[1] ""
-"ユーザー名には最大 %(limit_value)d 文字を含める必要があります "
-"(%(show_value)d も含まれます)。"
+msgstr[0] "ユーザー名は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
+msgstr[1] "ユーザー名は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:195
 #, python-format
@@ -2334,12 +2316,8 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"このパスワードは短すぎます。少なくとも %(min_length)d 文字を含める必要があり"
-"ます。"
-msgstr[1] ""
-"このパスワードは短すぎます。少なくとも %(min_length)d 文字を含める必要があり"
-"ます。"
+msgstr[0] "このパスワードは短すぎます。%(min_length)d文字以上で入力してください。"
+msgstr[1] "このパスワードは短すぎます。%(min_length)d文字以上で入力してください。"
 
 #: .\accounts\validators.py:211
 #, python-format
@@ -2356,10 +2334,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"このパスワードは長すぎます。最大 %(max_length)d 文字を含める必要があります。"
-msgstr[1] ""
-"このパスワードは長すぎます。最大 %(max_length)d 文字を含める必要があります。"
+msgstr[0] "このパスワードは長すぎます。%(max_length)d文字以下で入力してください。"
+msgstr[1] "このパスワードは長すぎます。%(max_length)d文字以下で入力してください。"
 
 #: .\accounts\validators.py:271
 #, python-format
@@ -2373,9 +2349,7 @@ msgstr[1] "パスワードには最大 %(max_length)d 文字を含める必要�
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr ""
-"パスワードには少なくとも %(min_unique_characters)d 個の一意の文字が含まれてい"
-"る必要があります。"
+msgstr "パスワードには少なくとも %(min_unique_characters)d 種類の異なる文字を含める必要があります。"
 
 #: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
@@ -3210,7 +3184,7 @@ msgstr "このリンクを使用してアカウントをアクティブ化しま
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "%(site_name)s でメール アドレスを確認してください"
+msgstr "%(site_name)s でメールアドレスを確認してください"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"

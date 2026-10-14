@@ -740,19 +740,19 @@ msgstr "閱讀全文："
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "請確認您的電郵地址%(site_name)s"
+msgstr "請喺 %(site_name)s 度確認你嘅電郵地址"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "請確認您的電郵地址%(site_name)s"
+msgstr "請喺 %(site_name)s 度確認你嘅電郵地址"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "請確認您的電郵地址%(site_name)s"
+msgstr "請喺 %(site_name)s 度確認你嘅電郵地址"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -2214,9 +2214,7 @@ msgstr "使用者名稱必須以 4 個或更多字母開頭，並且可以包含
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
-msgstr ""
-"使用者名稱必須以至少 4 個字母開頭，後面可以跟著任意數量的數字。單字之間可以用"
-"短橫線隔開。"
+msgstr "使用者名稱必須以至少 4 個字母開頭，後面可以跟著任意數量的數字。單字之間可以用短橫線隔開。"
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2226,9 +2224,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"使用者名稱必須至少包含以下內容%(limit_value)d字母數字字元（它"
-"有）%(show_value)d）。"
+msgstr[0] "使用者名稱必須至少有 %(limit_value)d 個英數字符(而家有 %(show_value)d 個)。"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2238,9 +2234,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"使用者名稱最多只能包含 0 個字元。%(limit_value)d字母數字字元（它"
-"有%(show_value)d）。"
+msgstr[0] "使用者名稱最多只可以有 %(limit_value)d 個英數字符(而家有 %(show_value)d 個)。"
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2250,8 +2244,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"使用者名稱必須至少包含以下內容%(limit_value)d性格（它有）%(show_value)d）。"
+msgstr[0] "使用者名稱必須至少有 %(limit_value)d 個字符(而家有 %(show_value)d 個)。"
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2261,9 +2254,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"使用者名稱最多只能包含 0 個字元。%(limit_value)d性格（它"
-"有）%(show_value)d）。"
+msgstr[0] "使用者名稱最多只可以有 %(limit_value)d 個字符(而家有 %(show_value)d 個)。"
 
 #: .\accounts\validators.py:195
 #, python-format
@@ -2273,7 +2264,7 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "此密碼太短。它必須至少包含…%(min_length)d特點。"
+msgstr[0] "呢個密碼太短。必須至少有 %(min_length)d 個字符。"
 
 #: .\accounts\validators.py:211
 #, python-format
@@ -2287,7 +2278,7 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "密碼過長。密碼長度不得超過 30 個字元。%(max_length)d特點。"
+msgstr[0] "呢個密碼太長。最多只可以有 %(max_length)d 個字符。"
 
 #: .\accounts\validators.py:271
 #, python-format
@@ -2300,7 +2291,7 @@ msgstr[0] "您的密碼最多只能包含 60 個字元。%(max_length)d特點。
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr "您的密碼必須至少包含以下內容%(min_unique_characters)d獨特的角色。"
+msgstr "你嘅密碼必須至少有 %(min_unique_characters)d 個獨特嘅字符。"
 
 #: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
@@ -3124,7 +3115,7 @@ msgstr "請使用此連結啟動您的帳戶："
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "請確認您的電郵地址%(site_name)s"
+msgstr "請喺 %(site_name)s 度確認你嘅電郵地址"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"

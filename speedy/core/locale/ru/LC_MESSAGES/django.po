@@ -761,19 +761,19 @@ msgstr "Прочитайте это:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Подтвердите свой адрес электронной почты на %(site_name)s."
+msgstr "Подтвердите свой адрес электронной почты в %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Подтвердите свой адрес электронной почты на %(site_name)s."
+msgstr "Подтвердите свой адрес электронной почты в %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Подтвердите свой адрес электронной почты на %(site_name)s."
+msgstr "Подтвердите свой адрес электронной почты в %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -2275,9 +2275,7 @@ msgstr ""
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
-msgstr ""
-"Имя пользователя должно начинаться с 4 и более букв, после которых может "
-"быть любое количество цифр. Между словами можно ставить тире."
+msgstr "Имя пользователя должно начинаться с 4 и более букв, после которых может быть любое количество цифр. Между словами можно ставить тире."
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2287,12 +2285,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Имя пользователя должно содержать не менее %(limit_value)d буквенно-"
-"цифрового символа (оно имеет %(show_value)d)."
-msgstr[1] ""
-"Имя пользователя должно содержать не менее %(limit_value)d буквенно-цифровых "
-"символов (оно имеет %(show_value)d)."
+msgstr[0] "Имя пользователя должно содержать не менее %(limit_value)d буквенно-цифровых символов (сейчас %(show_value)d)."
+msgstr[1] "Имя пользователя должно содержать не менее %(limit_value)d буквенно-цифровых символов (сейчас %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2302,12 +2296,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Имя пользователя должно содержать не более %(limit_value)d буквенно-"
-"цифрового символа (оно имеет %(show_value)d)."
-msgstr[1] ""
-"Имя пользователя должно содержать не более %(limit_value)d буквенно-цифровых "
-"символов (оно имеет %(show_value)d)."
+msgstr[0] "Имя пользователя должно содержать не более %(limit_value)d буквенно-цифровых символов (сейчас %(show_value)d)."
+msgstr[1] "Имя пользователя должно содержать не более %(limit_value)d буквенно-цифровых символов (сейчас %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2317,12 +2307,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Имя пользователя должно содержать как минимум символ %(limit_value)d (оно "
-"имеет %(show_value)d)."
-msgstr[1] ""
-"Имя пользователя должно содержать не менее %(limit_value)d символов (оно "
-"имеет %(show_value)d)."
+msgstr[0] "Имя пользователя должно содержать не менее %(limit_value)d символов (сейчас %(show_value)d)."
+msgstr[1] "Имя пользователя должно содержать не менее %(limit_value)d символов (сейчас %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2332,12 +2318,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Имя пользователя должно содержать не более символов %(limit_value)d (оно "
-"имеет %(show_value)d)."
-msgstr[1] ""
-"Имя пользователя должно содержать не более %(limit_value)d символов (оно "
-"имеет %(show_value)d)."
+msgstr[0] "Имя пользователя должно содержать не более %(limit_value)d символов (сейчас %(show_value)d)."
+msgstr[1] "Имя пользователя должно содержать не более %(limit_value)d символов (сейчас %(show_value)d)."
 
 #: .\accounts\validators.py:195
 #, python-format
@@ -2347,12 +2329,8 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"Этот пароль слишком короткий. Он должен содержать как минимум символ "
-"%(min_length)d."
-msgstr[1] ""
-"Этот пароль слишком короткий. Он должен содержать не менее %(min_length)d "
-"символов."
+msgstr[0] "Этот пароль слишком короткий. Он должен содержать не менее %(min_length)d символов."
+msgstr[1] "Этот пароль слишком короткий. Он должен содержать не менее %(min_length)d символов."
 
 #: .\accounts\validators.py:211
 #, python-format
@@ -2367,12 +2345,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Этот пароль слишком длинный. Он должен содержать не более символов "
-"%(max_length)d."
-msgstr[1] ""
-"Этот пароль слишком длинный. Он должен содержать не более %(max_length)d "
-"символов."
+msgstr[0] "Этот пароль слишком длинный. Он должен содержать не более %(max_length)d символов."
+msgstr[1] "Этот пароль слишком длинный. Он должен содержать не более %(max_length)d символов."
 
 #: .\accounts\validators.py:271
 #, python-format
@@ -2386,9 +2360,7 @@ msgstr[1] "Ваш пароль должен содержать не более %
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr ""
-"Ваш пароль должен содержать не менее %(min_unique_characters)d уникальных "
-"символов."
+msgstr "Ваш пароль должен содержать не менее %(min_unique_characters)d уникальных символов."
 
 #: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
@@ -3233,7 +3205,7 @@ msgstr "Используйте эту ссылку, чтобы активиро�
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Подтвердите свой адрес электронной почты на %(site_name)s."
+msgstr "Подтвердите свой адрес электронной почты в %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"

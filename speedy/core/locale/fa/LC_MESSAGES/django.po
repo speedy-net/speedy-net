@@ -746,19 +746,19 @@ msgstr "آن را بخوانید:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "آدرس ایمیل خود را در %(site_name)s تأیید کنید"
+msgstr "نشانی ایمیل خود را در %(site_name)s تأیید کنید"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "آدرس ایمیل خود را در %(site_name)s تأیید کنید"
+msgstr "نشانی ایمیل خود را در %(site_name)s تأیید کنید"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "آدرس ایمیل خود را در %(site_name)s تأیید کنید"
+msgstr "نشانی ایمیل خود را در %(site_name)s تأیید کنید"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -2245,9 +2245,7 @@ msgstr ""
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
-msgstr ""
-"نام کاربری باید با 4 حرف یا بیشتر شروع شود که بعد از آن می تواند هر تعداد "
-"رقم باشد. می توانید بین کلمات خط تیره اضافه کنید."
+msgstr "نام کاربری باید با 4 حرف یا بیشتر شروع شود که بعد از آن می تواند هر تعداد رقم باشد. می توانید بین کلمات خط تیره اضافه کنید."
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2257,12 +2255,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"نام کاربری باید حداقل دارای نویسه الفبایی %(limit_value)d باشد (دارای "
-"%(show_value)d است)."
-msgstr[1] ""
-"نام کاربری باید حداقل دارای %(limit_value)d نویسه الفبایی باشد (دارای "
-"%(show_value)d است)."
+msgstr[0] "نام کاربری باید حداقل %(limit_value)d نویسهٔ الفبایی‌عددی داشته باشد (اکنون %(show_value)d نویسه دارد)."
+msgstr[1] "نام کاربری باید حداقل %(limit_value)d نویسهٔ الفبایی‌عددی داشته باشد (اکنون %(show_value)d نویسه دارد)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2272,12 +2266,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"نام کاربری باید حداکثر حاوی %(limit_value)d نویسه الفبایی باشد (دارای "
-"%(show_value)d است)."
-msgstr[1] ""
-"نام کاربری باید حداکثر دارای %(limit_value)d نویسه الفبایی باشد (دارای "
-"%(show_value)d است)."
+msgstr[0] "نام کاربری باید حداکثر %(limit_value)d نویسهٔ الفبایی‌عددی داشته باشد (اکنون %(show_value)d نویسه دارد)."
+msgstr[1] "نام کاربری باید حداکثر %(limit_value)d نویسهٔ الفبایی‌عددی داشته باشد (اکنون %(show_value)d نویسه دارد)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2287,12 +2277,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"نام کاربری باید حداقل دارای نویسه %(limit_value)d باشد (دارای %(show_value)d "
-"است)."
-msgstr[1] ""
-"نام کاربری باید حداقل دارای %(limit_value)d کاراکتر باشد (دارای "
-"%(show_value)d است)."
+msgstr[0] "نام کاربری باید حداقل %(limit_value)d نویسه داشته باشد (اکنون %(show_value)d نویسه دارد)."
+msgstr[1] "نام کاربری باید حداقل %(limit_value)d نویسه داشته باشد (اکنون %(show_value)d نویسه دارد)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2302,12 +2288,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"نام کاربری باید حداکثر دارای نویسه %(limit_value)d باشد (دارای "
-"%(show_value)d است)."
-msgstr[1] ""
-"نام کاربری باید حداکثر دارای %(limit_value)d نویسه باشد (دارای "
-"%(show_value)d است)."
+msgstr[0] "نام کاربری باید حداکثر %(limit_value)d نویسه داشته باشد (اکنون %(show_value)d نویسه دارد)."
+msgstr[1] "نام کاربری باید حداکثر %(limit_value)d نویسه داشته باشد (اکنون %(show_value)d نویسه دارد)."
 
 #: .\accounts\validators.py:195
 #, python-format
@@ -2317,10 +2299,8 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"این رمز عبور خیلی کوتاه است. باید حداقل نویسه %(min_length)d داشته باشد."
-msgstr[1] ""
-"این رمز عبور خیلی کوتاه است. باید حداقل %(min_length)d نویسه داشته باشد."
+msgstr[0] "این گذرواژه خیلی کوتاه است. باید حداقل %(min_length)d نویسه داشته باشد."
+msgstr[1] "این گذرواژه خیلی کوتاه است. باید حداقل %(min_length)d نویسه داشته باشد."
 
 #: .\accounts\validators.py:211
 #, python-format
@@ -2335,10 +2315,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"این رمز عبور خیلی طولانی است. حداکثر باید حاوی %(max_length)d نویسه باشد."
-msgstr[1] ""
-"این رمز عبور خیلی طولانی است. باید حداکثر دارای %(max_length)d نویسه باشد."
+msgstr[0] "این گذرواژه خیلی بلند است. باید حداکثر %(max_length)d نویسه داشته باشد."
+msgstr[1] "این گذرواژه خیلی بلند است. باید حداکثر %(max_length)d نویسه داشته باشد."
 
 #: .\accounts\validators.py:271
 #, python-format
@@ -2352,9 +2330,7 @@ msgstr[1] "رمز عبور شما باید حداکثر دارای %(max_length)
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr ""
-"رمز عبور شما باید حداقل دارای %(min_unique_characters)d نویسه منحصر به فرد "
-"باشد."
+msgstr "گذرواژه شما باید حداقل %(min_unique_characters)d نویسهٔ منحصربه‌فرد داشته باشد."
 
 #: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
@@ -3192,7 +3168,7 @@ msgstr "برای فعال کردن حساب خود از این لینک استف
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "آدرس ایمیل خود را در %(site_name)s تأیید کنید"
+msgstr "نشانی ایمیل خود را در %(site_name)s تأیید کنید"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"

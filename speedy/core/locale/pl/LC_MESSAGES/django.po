@@ -746,19 +746,19 @@ msgstr "Przeczytaj to:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Potwierdź swój adres e-mail na %(site_name)s"
+msgstr "Potwierdź swój adres e-mail w %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Potwierdź swój adres e-mail na %(site_name)s"
+msgstr "Potwierdź swój adres e-mail w %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Potwierdź swój adres e-mail na %(site_name)s"
+msgstr "Potwierdź swój adres e-mail w %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -2253,9 +2253,7 @@ msgstr ""
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
-msgstr ""
-"Nazwa użytkownika musi zaczynać się od 4 lub więcej liter, po których może "
-"nastąpić dowolna liczba cyfr. Możesz dodać myślniki pomiędzy wyrazami."
+msgstr "Nazwa użytkownika musi zaczynać się od 4 lub więcej liter, po których może nastąpić dowolna liczba cyfr. Możesz dodać myślniki pomiędzy wyrazami."
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2265,12 +2263,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znak "
-"alfanumeryczny (ma %(show_value)d)."
-msgstr[1] ""
-"Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków "
-"alfanumerycznych (ma %(show_value)d)."
+msgstr[0] "Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków alfanumerycznych (obecnie ma %(show_value)d)."
+msgstr[1] "Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków alfanumerycznych (obecnie ma %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2280,12 +2274,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Nazwa użytkownika musi zawierać maksymalnie %(limit_value)d znaków "
-"alfanumerycznych (ma %(show_value)d)."
-msgstr[1] ""
-"Nazwa użytkownika musi zawierać maksymalnie %(limit_value)d znaków "
-"alfanumerycznych (ma %(show_value)d)."
+msgstr[0] "Nazwa użytkownika musi zawierać co najwyżej %(limit_value)d znaków alfanumerycznych (obecnie ma %(show_value)d)."
+msgstr[1] "Nazwa użytkownika musi zawierać co najwyżej %(limit_value)d znaków alfanumerycznych (obecnie ma %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2295,12 +2285,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znak (ma "
-"%(show_value)d)."
-msgstr[1] ""
-"Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków (ma "
-"%(show_value)d)."
+msgstr[0] "Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków (obecnie ma %(show_value)d)."
+msgstr[1] "Nazwa użytkownika musi zawierać co najmniej %(limit_value)d znaków (obecnie ma %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2310,12 +2296,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Nazwa użytkownika musi zawierać maksymalnie %(limit_value)d znaku (ma "
-"%(show_value)d)."
-msgstr[1] ""
-"Nazwa użytkownika musi zawierać maksymalnie %(limit_value)d znaków (ma "
-"%(show_value)d)."
+msgstr[0] "Nazwa użytkownika może zawierać co najwyżej %(limit_value)d znaków (obecnie ma %(show_value)d)."
+msgstr[1] "Nazwa użytkownika może zawierać co najwyżej %(limit_value)d znaków (obecnie ma %(show_value)d)."
 
 #: .\accounts\validators.py:195
 #, python-format
@@ -2325,10 +2307,8 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"To hasło jest za krótkie. Musi zawierać co najmniej znak %(min_length)d."
-msgstr[1] ""
-"To hasło jest za krótkie. Musi zawierać co najmniej %(min_length)d znaków."
+msgstr[0] "To hasło jest za krótkie. Musi zawierać co najmniej %(min_length)d znaków."
+msgstr[1] "To hasło jest za krótkie. Musi zawierać co najmniej %(min_length)d znaków."
 
 #: .\accounts\validators.py:211
 #, python-format
@@ -2343,10 +2323,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"To hasło jest za długie. Musi zawierać maksymalnie %(max_length)d znaku."
-msgstr[1] ""
-"To hasło jest za długie. Musi zawierać maksymalnie %(max_length)d znaków."
+msgstr[0] "To hasło jest za długie. Musi zawierać najwyżej %(max_length)d znaków."
+msgstr[1] "To hasło jest za długie. Musi zawierać najwyżej %(max_length)d znaków."
 
 #: .\accounts\validators.py:271
 #, python-format
@@ -2360,9 +2338,7 @@ msgstr[1] "Twoje hasło musi zawierać maksymalnie %(max_length)d znaków."
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
-msgstr ""
-"Twoje hasło musi zawierać co najmniej %(min_unique_characters)d unikalnych "
-"znaków."
+msgstr "Hasło musi zawierać co najmniej %(min_unique_characters)d unikalnych znaków."
 
 #: .\accounts\validators.py:418 .\accounts\validators.py:432
 msgid "This field cannot be null."
@@ -3205,7 +3181,7 @@ msgstr "Użyj tego linku, aby aktywować swoje konto:"
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Potwierdź swój adres e-mail na %(site_name)s"
+msgstr "Potwierdź swój adres e-mail w %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
