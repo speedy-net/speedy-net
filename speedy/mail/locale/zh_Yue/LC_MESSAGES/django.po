@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 msgid "Speedy Mail Software Accounts"
 msgstr ""
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:25
 msgid "Speedy Net User"
 msgstr ""
 
-#: .\accounts\models.py:35
+#: .\accounts\models.py:27
 msgid "User"
 msgstr ""
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:41
 msgid "Speedy Mail Profile"
 msgstr ""
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:42
 msgid "Speedy Mail Profiles"
 msgstr ""
 

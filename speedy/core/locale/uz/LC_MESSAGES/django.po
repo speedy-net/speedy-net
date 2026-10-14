@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -876,7 +876,7 @@ msgstr "Amaldagi email manzilingizni kiriting."
 msgid "Email address"
 msgstr "Elektron pochta manzili"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1713
+#: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
 msgstr "elektron pochta manzili"
 
@@ -918,7 +918,7 @@ msgstr "Do'stlik so'rovlari"
 msgid "Friend"
 msgstr "Do'st"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
 msgstr "Do'stlar"
 
@@ -1974,305 +1974,305 @@ msgstr "Men va do'stlarim"
 msgid "Anyone"
 msgstr "Har kim"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:115
 msgid "Last name (optional)"
 msgstr "Familiya (ixtiyoriy)"
 
-#: .\accounts\forms.py:279
+#: .\accounts\forms.py:266
 msgid "Your email"
 msgstr "Email manzilingiz"
 
-#: .\accounts\forms.py:280
+#: .\accounts\forms.py:267
 msgid "New password"
 msgstr "Yangi parol"
 
-#: .\accounts\forms.py:294
+#: .\accounts\forms.py:281
 msgid "New username"
 msgstr "Yangi foydalanuvchi nomi"
 
-#: .\accounts\forms.py:297
+#: .\accounts\forms.py:284
 msgid "Create an account"
 msgstr "Roʻyxatdan oʻtish"
 
-#: .\accounts\forms.py:344
+#: .\accounts\forms.py:326
 msgid "Update your profile picture"
 msgstr "Profilni yangilash"
 
-#: .\accounts\forms.py:344 .\accounts\validators.py:507
+#: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
 msgstr "Profil rasmi talab qilinadi"
 
-#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "Elektron pochta yoki foydalanuvchi nomi"
 
-#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Tizimga kirish"
 
-#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Parolni unutdingizmi'"
 
-#: .\accounts\forms.py:609
+#: .\accounts\forms.py:577
 msgid "Submit"
 msgstr "Yuborish"
 
-#: .\accounts\forms.py:797
+#: .\accounts\forms.py:751
 msgid "Your password"
 msgstr "Parolingiz"
 
-#: .\accounts\forms.py:822
+#: .\accounts\forms.py:776
 msgid "Invalid password."
 msgstr "Noto'g'ri parol."
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:209
 msgid "username"
 msgstr "Foydalanuvchi nomi"
 
-#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "Bu foydalanuvchi nomi allaqachon band."
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:210
 msgid "username (slug)"
 msgstr "foydalanuvchi nomi (slug)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:211
 msgid "photo"
 msgstr "SURAT"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:212
 msgid "Special username"
 msgstr "Maxsus foydalanuvchi nomi"
 
-#: .\accounts\models.py:285 .\messages\models.py:215
+#: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
 msgstr "OxiriStencils"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:264
 msgid "entities"
 msgstr "Korxonalar"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:321
 msgid "Slug does not parse to username."
 msgstr "Slug foydalanuvchi nomini tahlil qilmaydi."
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:331
 msgid "Username is required."
 msgstr "Foydalanuvchi ismi talab qilinadi"
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:379
 msgid "name"
 msgstr "nomi"
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:412
 msgid "description"
 msgstr "Tavsif"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:511
 msgid "Female"
 msgstr "Ayol"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:512
 msgid "Male"
 msgstr "Erkak"
 
-#: .\accounts\models.py:602
+#: .\accounts\models.py:513
 msgid "Other"
 msgstr "Boshqa"
 
-#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "Noma'lum"
 
-#: .\accounts\models.py:618
+#: .\accounts\models.py:529
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (faqat o'simliklar va zamburug'lar bilan oziqlanadi)"
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:530
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vegetarian (baliq va go'sht yemaydi)"
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
 msgstr "Karnist (hayvonlar bilan oziqlanadi)"
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:546
 msgid "Not smoking"
 msgstr "Chekish taqiqlangan"
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:547
 msgid "Smoking occasionally"
 msgstr "Vaqti-vaqti bilan chekish"
 
-#: .\accounts\models.py:637
+#: .\accounts\models.py:548
 msgid "Smoking"
 msgstr "Chekish"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:569
 msgid "Single"
 msgstr "Yagona"
 
-#: .\accounts\models.py:659
+#: .\accounts\models.py:570
 msgid "Divorced"
 msgstr "Ajrashgan"
 
-#: .\accounts\models.py:660
+#: .\accounts\models.py:571
 msgid "Widowed"
 msgstr "Beva"
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:572
 msgid "In a relationship"
 msgstr "Ushrashmoqda"
 
-#: .\accounts\models.py:662
+#: .\accounts\models.py:573
 msgid "In an open relationship"
 msgstr "Ochiq hikoh munosabatlari"
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:574
 msgid "It's complicated"
 msgstr "Bu murakkab"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:575
 msgid "Separated"
 msgstr "Ajratilgan"
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:576
 msgid "Engaged"
 msgstr "Ulashilgan"
 
-#: .\accounts\models.py:666
+#: .\accounts\models.py:577
 msgid "Married"
 msgstr "Uylangan/turmushga chiqqan"
 
-#: .\accounts\models.py:677
+#: .\accounts\models.py:588
 msgid "Notify me"
 msgstr "eslatib qo'yish"
 
-#: .\accounts\models.py:678
+#: .\accounts\models.py:589
 msgid "Don't notify me"
 msgstr "Menga xabar bermang"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:669
 msgid "first name"
 msgstr "Ism"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:672
 msgid "last name"
 msgstr "familiycui"
 
-#: .\accounts\models.py:763
+#: .\accounts\models.py:674
 msgid "I am"
 msgstr "Men"
 
-#: .\accounts\models.py:764
+#: .\accounts\models.py:675
 msgid "date of birth"
 msgstr "Tug'ilgan sanasi"
 
-#: .\accounts\models.py:765
+#: .\accounts\models.py:676
 msgid "diet"
 msgstr "Parhez"
 
-#: .\accounts\models.py:766
+#: .\accounts\models.py:677
 msgid "smoking status"
 msgstr "chekish holati"
 
-#: .\accounts\models.py:767
+#: .\accounts\models.py:678
 msgid "relationship status"
 msgstr "munosabatlar holati"
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:680
 msgid "Where do I live?"
 msgstr "Men qayerda yashayman'"
 
-#: .\accounts\models.py:776
+#: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
 msgstr "Tug'ilgan oyim va kunimni kim ko'ra oladi"
 
-#: .\accounts\models.py:777
+#: .\accounts\models.py:688
 msgid "Who can view my birth year"
 msgstr "Tug'ilgan yilimni kim ko'ra oladi"
 
-#: .\accounts\models.py:778
+#: .\accounts\models.py:689
 msgid "On new messages"
 msgstr "Yangi xabarlar haqida"
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Oxirgi ishlatilgan IP-manzil https://ipapi.com/ vaqti"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Oxirgi IP-manzil https://ipapi.com/ natijalari bo'yicha ishlatilgan"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
+#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
 msgstr "foydalanuvchi"
 
-#: .\accounts\models.py:1078
+#: .\accounts\models.py:991
 msgid "users"
 msgstr "foydalanuvchilar"
 
-#: .\accounts\models.py:1137
+#: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
 msgstr "Superuser xodimlarga teng bo'lishi kerak."
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1593
 msgid "email"
 msgstr "Elektron pochta"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1594
 msgid "is confirmed"
 msgstr "tasdiqlangan"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1595
 msgid "is primary"
 msgstr "Boshlang’ich"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1596
 msgid "confirmation token"
 msgstr "tasdiqlash tokeni"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1597
 msgid "confirmation sent"
 msgstr "Tasdiqlash yuborildi"
 
-#: .\accounts\models.py:1697
+#: .\accounts\models.py:1598
 msgid "Who can see this email"
 msgstr "Bu elektron pochtani kim ko'ra oladi"
 
-#: .\accounts\models.py:1714
+#: .\accounts\models.py:1615
 msgid "email addresses"
 msgstr "Elektron pochtalar:"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1756
 msgid "User"
 msgstr "Foydalanuvchi"
 
-#: .\accounts\models.py:1869
+#: .\accounts\models.py:1757
 msgid "last visit"
 msgstr "Oxirgi Tashrif"
 
-#: .\accounts\models.py:1894
+#: .\accounts\models.py:1782
 msgid "Today"
 msgstr "Bugun"
 
-#: .\accounts\models.py:1896
+#: .\accounts\models.py:1784
 msgid "Yesterday"
 msgstr "Kecha"
 
-#: .\accounts\models.py:1898
+#: .\accounts\models.py:1786
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) da"
 
-#: .\accounts\models.py:1900
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} oldin"
@@ -2342,7 +2342,7 @@ msgstr[0] ""
 "Foydalanuvchi nomida ko'pi bilan %(limit_value)d belgilar bo'lishi kerak (u "
 "%(show_value)d ga ega)."
 
-#: .\accounts\validators.py:195
+#: .\accounts\validators.py:190
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2353,13 +2353,13 @@ msgid_plural ""
 msgstr[0] ""
 "Bu parol juda qisqa. Unda kamida %(min_length)d belgilar bo'lishi kerak."
 
-#: .\accounts\validators.py:211
+#: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Parolingiz kamida %(min_length)d belgilardan iborat bo'lishi kerak."
 
-#: .\accounts\validators.py:255
+#: .\accounts\validators.py:245
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2368,14 +2368,14 @@ msgid_plural ""
 msgstr[0] ""
 "Bu parol juda uzun. Unda ko'pi bilan %(max_length)d belgi bo'lishi kerak."
 
-#: .\accounts\validators.py:271
+#: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
 "Parolingiz eng ko'pi bilan %(max_length)d belgidan iborat bo'lishi kerak."
 
-#: .\accounts\validators.py:314 .\accounts\validators.py:325
+#: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2383,29 +2383,29 @@ msgid ""
 msgstr ""
 "Parolingizda kamida %(min_unique_characters)d noyob belgilar bo'lishi kerak."
 
-#: .\accounts\validators.py:418 .\accounts\validators.py:432
+#: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
 msgstr "Bu maydon nolga teng bo'lmasligi kerak."
 
-#: .\accounts\validators.py:420
+#: .\accounts\validators.py:405
 msgid "This field cannot be blank."
 msgstr "Bu maydon bo'sh bo'lishi mumkin emas."
 
-#: .\accounts\validators.py:446 .\accounts\validators.py:460
+#: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
 msgstr "Yaroqli sanani kiriting."
 
-#: .\accounts\validators.py:482
+#: .\accounts\validators.py:467
 msgid "This email is already in use."
 msgstr "Bu elektron pochta allaqachon ishlatilmoqda."
 
-#: .\accounts\validators.py:509
+#: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Bu rasm faylining hajmi juda katta. Ruxsat etilgan maksimal fayl hajmi 30 MB."
 
-#: .\accounts\validators.py:542 .\accounts\validators.py:561
+#: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2413,24 +2413,24 @@ msgstr ""
 "Profil rasmingiz uchun ushbu formatdan foydalana olmaysiz. Faqat JPEG yoki "
 "PNG formatlari qabul qilinadi."
 
-#: .\accounts\views.py:574
+#: .\accounts\views.py:540
 msgid "Invalid confirmation link."
 msgstr "Tasdiqlash havolasi noto'g'ri."
 
-#: .\accounts\views.py:624 .\accounts\views.py:673
+#: .\accounts\views.py:586 .\accounts\views.py:631
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Tasdiqlash xabari {email_address} ga yuborildi"
 
-#: .\accounts\views.py:721
+#: .\accounts\views.py:675
 msgid "The email address was deleted."
 msgstr "Elektron pochta manzili o'chirib tashlandi."
 
-#: .\accounts\views.py:770
+#: .\accounts\views.py:720
 msgid "You have made this email address primary."
 msgstr "Siz ushbu elektron pochta manzilini asosiy qilib belgiladingiz."
 
-#: .\admin\views.py:102
+#: .\admin\views.py:96
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2452,7 +2452,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_two_years} a'zolari saytga so'nggi ikki "
 "yil ichida kirgan."
 
-#: .\admin\views.py:148
+#: .\admin\views.py:142
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2492,7 +2492,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} a'zolari 2019-yil 1-"
 "avgustdan oldin ro'yxatdan o'tgan."
 
-#: .\admin\views.py:168
+#: .\admin\views.py:162
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2501,7 +2501,7 @@ msgstr ""
 "Admin: {year} da ro'yxatdan o'tgan "
 "{total_number_of_members_registered_in_year} a'zolari."
 
-#: .\base\apps.py:28
+#: .\base\apps.py:25
 msgid "Speedy Core Base App"
 msgstr "Speedy Core asosiy ilovasi"
 
@@ -2518,11 +2518,11 @@ msgstr ", "
 msgid "id contains illegal characters."
 msgstr "idda noqonuniy belgilar mavjud."
 
-#: .\base\views.py:103
+#: .\base\views.py:120
 msgid "Changes saved."
 msgstr "O'zgartirishlar saqlandi."
 
-#: .\blocks\managers.py:65 .\blocks\models.py:54
+#: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Foydalanuvchilar o'zlarini bloklay olmaydilar."
 
@@ -2538,11 +2538,11 @@ msgstr "blok"
 msgid "user blocks"
 msgstr "foydalanuvchi bloklari"
 
-#: .\blocks\views.py:52
+#: .\blocks\views.py:48
 msgid "You have blocked {}."
 msgstr "Siz {} ni blokladingiz."
 
-#: .\blocks\views.py:94
+#: .\blocks\views.py:86
 msgid "You have unblocked {}."
 msgstr "Siz {} ni blokdan chiqardingiz."
 
@@ -2550,19 +2550,19 @@ msgstr "Siz {} ni blokdan chiqardingiz."
 msgid "Contact By Form"
 msgstr "Forma orqali bog'lanish"
 
-#: .\contact_by_form\forms.py:29
+#: .\contact_by_form\forms.py:24
 msgid "Type the number \"17\""
 msgstr "\"17\" raqamini tering"
 
-#: .\contact_by_form\forms.py:62
+#: .\contact_by_form\forms.py:57
 msgid "Send"
 msgstr "Yuborish"
 
-#: .\contact_by_form\forms.py:75
+#: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
 msgstr "Iltimos, biz bilan elektron pochta orqali bog'laning."
 
-#: .\contact_by_form\forms.py:88
+#: .\contact_by_form\forms.py:83
 msgid "Not 17."
 msgstr "17 emas."
 
@@ -2690,11 +2690,11 @@ msgstr "o'qish belgisi"
 msgid "read marks"
 msgstr "o'qish belgilari"
 
-#: .\settings\base.py:226
+#: .\settings\base.py:227
 msgid "English"
 msgstr "Ingliz"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:228
 msgid "Hebrew"
 msgstr "Yahudiy tili"
 

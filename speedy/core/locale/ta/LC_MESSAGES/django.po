@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -867,7 +867,7 @@ msgstr "செல்லுபடியாகும் மின்னஞ்ச�
 msgid "Email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1713
+#: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
@@ -909,7 +909,7 @@ msgstr "நட்பு கோரிக்கைகள்"
 msgid "Friend"
 msgstr "நண்பர்"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
 msgstr "நண்பர்கள்"
 
@@ -1956,305 +1956,305 @@ msgstr "நானும் என் நண்பர்களும்"
 msgid "Anyone"
 msgstr "எவரும்"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:115
 msgid "Last name (optional)"
 msgstr "குடும்பப் பெயர் (விருப்பம்)"
 
-#: .\accounts\forms.py:279
+#: .\accounts\forms.py:266
 msgid "Your email"
 msgstr "உங்கள் மின்னஞ்சல்"
 
-#: .\accounts\forms.py:280
+#: .\accounts\forms.py:267
 msgid "New password"
 msgstr "புதிய கடவுச்சொல்"
 
-#: .\accounts\forms.py:294
+#: .\accounts\forms.py:281
 msgid "New username"
 msgstr "புதிய பயனர் பெயர்"
 
-#: .\accounts\forms.py:297
+#: .\accounts\forms.py:284
 msgid "Create an account"
 msgstr "ஒரு கணக்கை உருவாக்கவும்"
 
-#: .\accounts\forms.py:344
+#: .\accounts\forms.py:326
 msgid "Update your profile picture"
 msgstr "உங்கள் சுயவிவரப் படத்தை புதுப்பிக்கவும்"
 
-#: .\accounts\forms.py:344 .\accounts\validators.py:507
+#: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
 msgstr "ஒரு சுயவிவரப் படம் தேவை."
 
-#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "மின்னஞ்சல் அல்லது பயனர் பெயர்"
 
-#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "உள்நுழைவு"
 
-#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "உங்கள் கடவுச்சொல்லை மறந்துவிட்டீர்களா?"
 
-#: .\accounts\forms.py:609
+#: .\accounts\forms.py:577
 msgid "Submit"
 msgstr "சமர்ப்பிக்கவும்"
 
-#: .\accounts\forms.py:797
+#: .\accounts\forms.py:751
 msgid "Your password"
 msgstr "உங்கள் கடவுச்சொல்"
 
-#: .\accounts\forms.py:822
+#: .\accounts\forms.py:776
 msgid "Invalid password."
 msgstr "செல்லாத கடவுச்சொல்."
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:209
 msgid "username"
 msgstr "பயனர் பெயர்"
 
-#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "இந்த பயனர் பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது."
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:210
 msgid "username (slug)"
 msgstr "பயனர் பெயர் (slug)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:211
 msgid "photo"
 msgstr "புகைப்படம்"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:212
 msgid "Special username"
 msgstr "சிறப்பு பயனர் பெயர்"
 
-#: .\accounts\models.py:285 .\messages\models.py:215
+#: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
 msgstr "நிறுவனம்"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:264
 msgid "entities"
 msgstr "நிறுவனங்கள்"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:321
 msgid "Slug does not parse to username."
 msgstr "ஸ்லக் பயனர்பெயரைப் பார்க்கவில்லை."
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:331
 msgid "Username is required."
 msgstr "பயனர் பெயர் தேவை."
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:379
 msgid "name"
 msgstr "பெயர்"
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:412
 msgid "description"
 msgstr "விவரம்"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:511
 msgid "Female"
 msgstr "பெண்"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:512
 msgid "Male"
 msgstr "ஆண்"
 
-#: .\accounts\models.py:602
+#: .\accounts\models.py:513
 msgid "Other"
 msgstr "மற்றவை"
 
-#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "தெரியாத"
 
-#: .\accounts\models.py:618
+#: .\accounts\models.py:529
 msgid "Vegan (eats only plants and fungi)"
 msgstr "சைவ உணவு (வளைப்புகள் மற்றும் பூஞ்சைகளை மட்டுமே சாப்பிடுகிறது)"
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:530
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "சைவ உணவு (மீன் மற்றும் இறைச்சி சாப்பிடாது)"
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
 msgstr "இறைச்சி (விலங்குகளை சாப்பிடுகிறது)"
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:546
 msgid "Not smoking"
 msgstr "புகைபிடிப்பதில்லை"
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:547
 msgid "Smoking occasionally"
 msgstr "அவ்வப்போது புகைத்தல்"
 
-#: .\accounts\models.py:637
+#: .\accounts\models.py:548
 msgid "Smoking"
 msgstr "புகைத்தல்"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:569
 msgid "Single"
 msgstr "ஒற்றை"
 
-#: .\accounts\models.py:659
+#: .\accounts\models.py:570
 msgid "Divorced"
 msgstr "விவாகரத்து"
 
-#: .\accounts\models.py:660
+#: .\accounts\models.py:571
 msgid "Widowed"
 msgstr "விதவை"
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:572
 msgid "In a relationship"
 msgstr "ஒரு உறவில்"
 
-#: .\accounts\models.py:662
+#: .\accounts\models.py:573
 msgid "In an open relationship"
 msgstr "ஒரு திறந்த உறவில்"
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:574
 msgid "It's complicated"
 msgstr "அது சிக்கலானது"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:575
 msgid "Separated"
 msgstr "பிரித்தல்"
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:576
 msgid "Engaged"
 msgstr "நிச்சயதார்த்தம்"
 
-#: .\accounts\models.py:666
+#: .\accounts\models.py:577
 msgid "Married"
 msgstr "திருமணமானவர்"
 
-#: .\accounts\models.py:677
+#: .\accounts\models.py:588
 msgid "Notify me"
 msgstr "எனக்கு அறிவிக்கவும்"
 
-#: .\accounts\models.py:678
+#: .\accounts\models.py:589
 msgid "Don't notify me"
 msgstr "எனக்கு அறிவிக்க வேண்டாம்"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:669
 msgid "first name"
 msgstr "முதல் பெயர்"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:672
 msgid "last name"
 msgstr "கடைசி பெயர்"
 
-#: .\accounts\models.py:763
+#: .\accounts\models.py:674
 msgid "I am"
 msgstr "நான்"
 
-#: .\accounts\models.py:764
+#: .\accounts\models.py:675
 msgid "date of birth"
 msgstr "பிறந்த தேதி"
 
-#: .\accounts\models.py:765
+#: .\accounts\models.py:676
 msgid "diet"
 msgstr "உணவு"
 
-#: .\accounts\models.py:766
+#: .\accounts\models.py:677
 msgid "smoking status"
 msgstr "புகைபிடித்தல் நிலை"
 
-#: .\accounts\models.py:767
+#: .\accounts\models.py:678
 msgid "relationship status"
 msgstr "உறவு நிலை"
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:680
 msgid "Where do I live?"
 msgstr "நான் எங்கே வசிக்கிறேன்?"
 
-#: .\accounts\models.py:776
+#: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
 msgstr "யார் என் பிறந்த மாதம் மற்றும் நாள் பார்க்க முடியும்"
 
-#: .\accounts\models.py:777
+#: .\accounts\models.py:688
 msgid "Who can view my birth year"
 msgstr "யார் என் பிறந்த ஆண்டு பார்க்க முடியும்"
 
-#: .\accounts\models.py:778
+#: .\accounts\models.py:689
 msgid "On new messages"
 msgstr "புதிய செய்திகள்"
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "கடைசியாக பயன்படுத்தப்பட்ட IP முகவரி https://ipapi. com/ நேரம்"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "கடைசி ஐபி முகவரி மூல https://ipapi. com/ முடிவுகள்"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
+#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
 msgstr "பயனர்"
 
-#: .\accounts\models.py:1078
+#: .\accounts\models.py:991
 msgid "users"
 msgstr "பயனர்கள்"
 
-#: .\accounts\models.py:1137
+#: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
 msgstr "சூப்பர் பயனர் ஊழியர்களுக்கு சமமாக இருக்க வேண்டும்."
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1593
 msgid "email"
 msgstr "மின்னஞ்சல்"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1594
 msgid "is confirmed"
 msgstr "உறுதிப்படுத்தப்பட்டுள்ளது"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1595
 msgid "is primary"
 msgstr "முதன்மை"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1596
 msgid "confirmation token"
 msgstr "உறுதிப்படுத்தல் குறி"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1597
 msgid "confirmation sent"
 msgstr "அனுப்பிய உறுதிப்படுத்தல்"
 
-#: .\accounts\models.py:1697
+#: .\accounts\models.py:1598
 msgid "Who can see this email"
 msgstr "யார் இந்த மின்னஞ்சல் பார்க்க முடியும்"
 
-#: .\accounts\models.py:1714
+#: .\accounts\models.py:1615
 msgid "email addresses"
 msgstr "மின்னஞ்சல் முகவரிகள்"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1756
 msgid "User"
 msgstr "பயனர்"
 
-#: .\accounts\models.py:1869
+#: .\accounts\models.py:1757
 msgid "last visit"
 msgstr "கடைசி வருகை"
 
-#: .\accounts\models.py:1894
+#: .\accounts\models.py:1782
 msgid "Today"
 msgstr "இன்று"
 
-#: .\accounts\models.py:1896
+#: .\accounts\models.py:1784
 msgid "Yesterday"
 msgstr "நேற்று"
 
-#: .\accounts\models.py:1898
+#: .\accounts\models.py:1786
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} அன்று ({timesince_ago})"
 
-#: .\accounts\models.py:1900
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} முன்பு"
@@ -2335,7 +2335,7 @@ msgstr[1] ""
 "பயனர்பெயர் அதிகபட்சம் %(limit_value)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும் (அதில் "
 "%(show_value)d உள்ளது)."
 
-#: .\accounts\validators.py:195
+#: .\accounts\validators.py:190
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2350,14 +2350,14 @@ msgstr[1] ""
 "இந்த கடவுச்சொல் மிகக் குறுகியதாகும். இதில் குறைந்தது %(min_length)d எழுத்துக்கள் இருக்க "
 "வேண்டும்."
 
-#: .\accounts\validators.py:211
+#: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_length)d எழுத்து இருக்க வேண்டும்."
 msgstr[1] "உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_length)d எழுத்துக்கள் இருக்க வேண்டும்."
 
-#: .\accounts\validators.py:255
+#: .\accounts\validators.py:245
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2369,14 +2369,14 @@ msgstr[1] ""
 "இந்த கடவுச்சொல் மிக நீளமானது. இதில் அதிகபட்சம் %(max_length)d எழுத்துக்கள் இருக்க "
 "வேண்டும்."
 
-#: .\accounts\validators.py:271
+#: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "உங்கள் கடவுச்சொல் அதிகபட்சம் %(max_length)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும்."
 msgstr[1] "உங்கள் கடவுச்சொல் அதிகபட்சம் %(max_length)d எழுத்துக்களைக் கொண்டிருக்க வேண்டும்."
 
-#: .\accounts\validators.py:314 .\accounts\validators.py:325
+#: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2385,28 +2385,28 @@ msgstr ""
 "உங்கள் கடவுச்சொல்லில் குறைந்தது %(min_unique_characters)d தனித்துவமான எழுத்துக்கள் "
 "இருக்க வேண்டும்."
 
-#: .\accounts\validators.py:418 .\accounts\validators.py:432
+#: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
 msgstr "இந்த புலம் காலியாக இருக்கக் கூடாது"
 
-#: .\accounts\validators.py:420
+#: .\accounts\validators.py:405
 msgid "This field cannot be blank."
 msgstr "இந்த புலம் வெற்று இருக்க முடியாது."
 
-#: .\accounts\validators.py:446 .\accounts\validators.py:460
+#: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
 msgstr "செல்லுபடியாகும் தேதியை உள்ளிடவும்."
 
-#: .\accounts\validators.py:482
+#: .\accounts\validators.py:467
 msgid "This email is already in use."
 msgstr "இந்த மின்னஞ்சல் ஏற்கனவே பயன்படுத்தப்படுகிறது."
 
-#: .\accounts\validators.py:509
+#: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr "இந்த படத்தின் கோப்பு அளவு மிகப்பெரியது. அதிகபட்ச கோப்பு அளவு 30 MB ஆகும்."
 
-#: .\accounts\validators.py:542 .\accounts\validators.py:561
+#: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2414,24 +2414,24 @@ msgstr ""
 "உங்கள் சுயவிவரப் படத்திற்கு இந்த வடிவத்தை நீங்கள் பயன்படுத்த முடியாது. JPEG அல்லது PNG "
 "வடிவங்கள் மட்டுமே ஏற்றுக்கொள்ளப்படுகின்றன."
 
-#: .\accounts\views.py:574
+#: .\accounts\views.py:540
 msgid "Invalid confirmation link."
 msgstr "செல்லாத உறுதிப்படுத்தல் இணைப்பு."
 
-#: .\accounts\views.py:624 .\accounts\views.py:673
+#: .\accounts\views.py:586 .\accounts\views.py:631
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "ஒரு உறுதிப்படுத்தல் செய்தி அனுப்பப்பட்டது {email_address}"
 
-#: .\accounts\views.py:721
+#: .\accounts\views.py:675
 msgid "The email address was deleted."
 msgstr "மின்னஞ்சல் முகவரி நீக்கப்பட்டது."
 
-#: .\accounts\views.py:770
+#: .\accounts\views.py:720
 msgid "You have made this email address primary."
 msgstr "இந்த மின்னஞ்சல் முகவரியை முதன்மைப்படுத்தியுள்ளீர்கள்."
 
-#: .\admin\views.py:102
+#: .\admin\views.py:96
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2454,7 +2454,7 @@ msgstr ""
 "மாதங்களில் தளத்திற்குள் நுழைந்தனர், {total_number_of_members_in_the_last_two_years} "
 "உறுப்பினர்கள் கடந்த இரண்டு ஆண்டுகளில் தளத்திற்குள் நுழைந்தனர்."
 
-#: .\admin\views.py:148
+#: .\admin\views.py:142
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2494,7 +2494,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} உறுப்பினர்கள் பதிவு "
 "செய்யப்பட்டனர்."
 
-#: .\admin\views.py:168
+#: .\admin\views.py:162
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2503,7 +2503,7 @@ msgstr ""
 "நிர்வாகி: {year} இல் {total_number_of_members_registered_in_year} உறுப்பினர்கள் "
 "பதிவு செய்யப்பட்டனர்."
 
-#: .\base\apps.py:28
+#: .\base\apps.py:25
 msgid "Speedy Core Base App"
 msgstr "Speedy Core அடிப்படை பயன்பாடு"
 
@@ -2520,11 +2520,11 @@ msgstr ", "
 msgid "id contains illegal characters."
 msgstr "ஐடி சட்டவிரோத எழுத்துக்களைக் கொண்டுள்ளது."
 
-#: .\base\views.py:103
+#: .\base\views.py:120
 msgid "Changes saved."
 msgstr "மாற்றங்கள் சேமிக்கப்பட்டன."
 
-#: .\blocks\managers.py:65 .\blocks\models.py:54
+#: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "பயனர்கள் தங்களைத் தடுக்க முடியாது."
 
@@ -2540,11 +2540,11 @@ msgstr "தொகுதி"
 msgid "user blocks"
 msgstr "பயனர் தொகுதிகள்"
 
-#: .\blocks\views.py:52
+#: .\blocks\views.py:48
 msgid "You have blocked {}."
 msgstr "{ \\ pos (192,220) } நீங்கள் தடுக்கப்பட்டீர்கள்."
 
-#: .\blocks\views.py:94
+#: .\blocks\views.py:86
 msgid "You have unblocked {}."
 msgstr "நீங்கள் திறந்து {}."
 
@@ -2552,19 +2552,19 @@ msgstr "நீங்கள் திறந்து {}."
 msgid "Contact By Form"
 msgstr "படிவத்தின் மூலம் தொடர்பு"
 
-#: .\contact_by_form\forms.py:29
+#: .\contact_by_form\forms.py:24
 msgid "Type the number \"17\""
 msgstr "\"17\" என்ற எண்ணை தட்டச்சு செய்யவும்"
 
-#: .\contact_by_form\forms.py:62
+#: .\contact_by_form\forms.py:57
 msgid "Send"
 msgstr "அனுப்பு"
 
-#: .\contact_by_form\forms.py:75
+#: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
 msgstr "தயவுசெய்து மின்னஞ்சல் மூலம் எங்களை தொடர்பு கொள்ளவும்."
 
-#: .\contact_by_form\forms.py:88
+#: .\contact_by_form\forms.py:83
 msgid "Not 17."
 msgstr "17 இல்லை."
 
@@ -2692,11 +2692,11 @@ msgstr "வாசிப்பு குறி"
 msgid "read marks"
 msgstr "படிப்பு குறிகள்"
 
-#: .\settings\base.py:226
+#: .\settings\base.py:227
 msgid "English"
 msgstr "ஆங்கிலம்"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:228
 msgid "Hebrew"
 msgstr "ஹீப்ரு"
 

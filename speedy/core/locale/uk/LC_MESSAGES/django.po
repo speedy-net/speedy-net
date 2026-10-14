@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -873,7 +873,7 @@ msgstr "Введіть дійсну адресу електронної пошт
 msgid "Email address"
 msgstr "Адреса електронної пошти"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1713
+#: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
 msgstr "адреса електронної пошти"
 
@@ -915,7 +915,7 @@ msgstr "Запити на дружбу"
 msgid "Friend"
 msgstr "Друг"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
 msgstr "друзі"
 
@@ -1953,306 +1953,306 @@ msgstr "Я і мої друзі"
 msgid "Anyone"
 msgstr "хто завгодно"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:115
 msgid "Last name (optional)"
 msgstr "Прізвище (необов'язково)"
 
-#: .\accounts\forms.py:279
+#: .\accounts\forms.py:266
 msgid "Your email"
 msgstr "Ваш email"
 
-#: .\accounts\forms.py:280
+#: .\accounts\forms.py:267
 msgid "New password"
 msgstr "Новий пароль"
 
-#: .\accounts\forms.py:294
+#: .\accounts\forms.py:281
 msgid "New username"
 msgstr "Нове ім'я користувача"
 
-#: .\accounts\forms.py:297
+#: .\accounts\forms.py:284
 msgid "Create an account"
 msgstr "Створіть обліковий запис"
 
-#: .\accounts\forms.py:344
+#: .\accounts\forms.py:326
 msgid "Update your profile picture"
 msgstr "Оновіть зображення профілю"
 
-#: .\accounts\forms.py:344 .\accounts\validators.py:507
+#: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
 msgstr "Потрібне зображення профілю."
 
-#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "Електронна пошта або ім'я користувача"
 
-#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Логін"
 
-#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Забули пароль?"
 
-#: .\accounts\forms.py:609
+#: .\accounts\forms.py:577
 msgid "Submit"
 msgstr "Надіслати"
 
-#: .\accounts\forms.py:797
+#: .\accounts\forms.py:751
 msgid "Your password"
 msgstr "Ваш пароль"
 
-#: .\accounts\forms.py:822
+#: .\accounts\forms.py:776
 msgid "Invalid password."
 msgstr "Недійсний пароль."
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:209
 msgid "username"
 msgstr "ім'я користувача"
 
-#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "Це ім'я користувача вже зайняте."
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:210
 msgid "username (slug)"
 msgstr "ім'я користувача (слаг)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:211
 msgid "photo"
 msgstr "фото"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:212
 msgid "Special username"
 msgstr "Спеціальне ім'я користувача"
 
-#: .\accounts\models.py:285 .\messages\models.py:215
+#: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
 msgstr "сутність"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:264
 msgid "entities"
 msgstr "сутності"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:321
 msgid "Slug does not parse to username."
 msgstr "Slug не аналізує ім'я користувача."
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:331
 msgid "Username is required."
 msgstr "Потрібно ввести ім'я користувача."
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:379
 msgid "name"
 msgstr "назва"
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:412
 msgid "description"
 msgstr "опис"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:511
 msgid "Female"
 msgstr "Жінка"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:512
 msgid "Male"
 msgstr "Чоловік"
 
-#: .\accounts\models.py:602
+#: .\accounts\models.py:513
 msgid "Other"
 msgstr "інше"
 
-#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: .\accounts\models.py:618
+#: .\accounts\models.py:529
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Веган (їсть тільки рослини та гриби)"
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:530
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Вегетаріанець (не їсть рибу та м'ясо)"
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
 msgstr "Карніст (їсть тварин)"
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:546
 msgid "Not smoking"
 msgstr "Не палить"
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:547
 msgid "Smoking occasionally"
 msgstr "Час від часу курить"
 
-#: .\accounts\models.py:637
+#: .\accounts\models.py:548
 msgid "Smoking"
 msgstr "куріння"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:569
 msgid "Single"
 msgstr "неодружений"
 
-#: .\accounts\models.py:659
+#: .\accounts\models.py:570
 msgid "Divorced"
 msgstr "Розлучений"
 
-#: .\accounts\models.py:660
+#: .\accounts\models.py:571
 msgid "Widowed"
 msgstr "Овдовіла"
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:572
 msgid "In a relationship"
 msgstr "У відносинах"
 
-#: .\accounts\models.py:662
+#: .\accounts\models.py:573
 msgid "In an open relationship"
 msgstr "У відкритих стосунках"
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:574
 msgid "It's complicated"
 msgstr "Це складно"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:575
 msgid "Separated"
 msgstr "Відокремлені"
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:576
 msgid "Engaged"
 msgstr "Заручений"
 
-#: .\accounts\models.py:666
+#: .\accounts\models.py:577
 msgid "Married"
 msgstr "Одружений"
 
-#: .\accounts\models.py:677
+#: .\accounts\models.py:588
 msgid "Notify me"
 msgstr "Повідомте мене"
 
-#: .\accounts\models.py:678
+#: .\accounts\models.py:589
 msgid "Don't notify me"
 msgstr "Не сповіщати мене"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:669
 msgid "first name"
 msgstr "ім'я"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:672
 msgid "last name"
 msgstr "прізвище"
 
-#: .\accounts\models.py:763
+#: .\accounts\models.py:674
 msgid "I am"
 msgstr "я"
 
-#: .\accounts\models.py:764
+#: .\accounts\models.py:675
 msgid "date of birth"
 msgstr "дата народження"
 
-#: .\accounts\models.py:765
+#: .\accounts\models.py:676
 msgid "diet"
 msgstr "дієта"
 
-#: .\accounts\models.py:766
+#: .\accounts\models.py:677
 msgid "smoking status"
 msgstr "статус куріння"
 
-#: .\accounts\models.py:767
+#: .\accounts\models.py:678
 msgid "relationship status"
 msgstr "статус відносин"
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:680
 msgid "Where do I live?"
 msgstr "де я живу"
 
-#: .\accounts\models.py:776
+#: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
 msgstr "Хто може бачити місяць і день мого народження"
 
-#: .\accounts\models.py:777
+#: .\accounts\models.py:688
 msgid "Who can view my birth year"
 msgstr "Хто може переглянути мій рік народження"
 
-#: .\accounts\models.py:778
+#: .\accounts\models.py:689
 msgid "On new messages"
 msgstr "На нові повідомлення"
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Остання IP-адреса використана https://ipapi.com/ раз"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr ""
 "Остання IP-адреса використовувала необроблені результати https://ipapi.com/"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
+#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
 msgstr "користувача"
 
-#: .\accounts\models.py:1078
+#: .\accounts\models.py:991
 msgid "users"
 msgstr "користувачів"
 
-#: .\accounts\models.py:1137
+#: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
 msgstr "Суперкористувач повинен бути рівним персоналу."
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1593
 msgid "email"
 msgstr "електронною поштою"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1594
 msgid "is confirmed"
 msgstr "підтверджується"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1595
 msgid "is primary"
 msgstr "є первинним"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1596
 msgid "confirmation token"
 msgstr "маркер підтвердження"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1597
 msgid "confirmation sent"
 msgstr "підтвердження надіслано"
 
-#: .\accounts\models.py:1697
+#: .\accounts\models.py:1598
 msgid "Who can see this email"
 msgstr "Хто може бачити цей електронний лист"
 
-#: .\accounts\models.py:1714
+#: .\accounts\models.py:1615
 msgid "email addresses"
 msgstr "адреси електронної пошти"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1756
 msgid "User"
 msgstr "Користувач"
 
-#: .\accounts\models.py:1869
+#: .\accounts\models.py:1757
 msgid "last visit"
 msgstr "останній візит"
 
-#: .\accounts\models.py:1894
+#: .\accounts\models.py:1782
 msgid "Today"
 msgstr "Сьогодні"
 
-#: .\accounts\models.py:1896
+#: .\accounts\models.py:1784
 msgid "Yesterday"
 msgstr "вчора"
 
-#: .\accounts\models.py:1898
+#: .\accounts\models.py:1786
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago})"
 
-#: .\accounts\models.py:1900
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} тому"
@@ -2333,7 +2333,7 @@ msgstr[1] ""
 "Ім’я користувача має містити не більше %(limit_value)d символів (воно має "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:195
+#: .\accounts\validators.py:190
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2347,14 +2347,14 @@ msgstr[1] ""
 "Цей пароль занадто короткий. Він має містити принаймні %(min_length)d "
 "символів."
 
-#: .\accounts\validators.py:211
+#: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Ваш пароль має містити принаймні %(min_length)d символ."
 msgstr[1] "Ваш пароль має містити принаймні %(min_length)d символів."
 
-#: .\accounts\validators.py:255
+#: .\accounts\validators.py:245
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2365,14 +2365,14 @@ msgstr[0] ""
 msgstr[1] ""
 "Цей пароль задовгий. Він має містити щонайбільше %(max_length)d символів."
 
-#: .\accounts\validators.py:271
+#: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Ваш пароль має містити не більше %(max_length)d символів."
 msgstr[1] "Ваш пароль має містити щонайбільше %(max_length)d символів."
 
-#: .\accounts\validators.py:314 .\accounts\validators.py:325
+#: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2381,30 +2381,30 @@ msgstr ""
 "Ваш пароль має містити принаймні %(min_unique_characters)d унікальних "
 "символів."
 
-#: .\accounts\validators.py:418 .\accounts\validators.py:432
+#: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
 msgstr "Це поле не може бути нульовим."
 
-#: .\accounts\validators.py:420
+#: .\accounts\validators.py:405
 msgid "This field cannot be blank."
 msgstr "Це поле не може бути порожнім."
 
-#: .\accounts\validators.py:446 .\accounts\validators.py:460
+#: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
 msgstr "Введіть дійсну дату."
 
-#: .\accounts\validators.py:482
+#: .\accounts\validators.py:467
 msgid "This email is already in use."
 msgstr "Ця електронна адреса вже використовується."
 
-#: .\accounts\validators.py:509
+#: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Розмір файлу цього зображення завеликий. Максимально допустимий розмір файлу "
 "становить 30 Мб."
 
-#: .\accounts\validators.py:542 .\accounts\validators.py:561
+#: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2412,24 +2412,24 @@ msgstr ""
 "Ви не можете використовувати цей формат для зображення профілю. Приймаються "
 "лише формати JPEG або PNG."
 
-#: .\accounts\views.py:574
+#: .\accounts\views.py:540
 msgid "Invalid confirmation link."
 msgstr "Недійсне посилання підтвердження."
 
-#: .\accounts\views.py:624 .\accounts\views.py:673
+#: .\accounts\views.py:586 .\accounts\views.py:631
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "Повідомлення з підтвердженням надіслано на {email_address}"
 
-#: .\accounts\views.py:721
+#: .\accounts\views.py:675
 msgid "The email address was deleted."
 msgstr "Електронну адресу видалено."
 
-#: .\accounts\views.py:770
+#: .\accounts\views.py:720
 msgid "You have made this email address primary."
 msgstr "Ви зробили цю електронну адресу основною."
 
-#: .\admin\views.py:102
+#: .\admin\views.py:96
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2453,7 +2453,7 @@ msgstr ""
 "{total_number_of_members_in_the_last_two_years} користувачів зайшли на сайт "
 "за останні два роки."
 
-#: .\admin\views.py:148
+#: .\admin\views.py:142
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2490,7 +2490,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} учасників, "
 "зареєстрованих до 1 серпня 2019 року."
 
-#: .\admin\views.py:168
+#: .\admin\views.py:162
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2499,7 +2499,7 @@ msgstr ""
 "Адміністратор: {total_number_of_members_registered_in_year} учасників "
 "зареєстровано в {year}."
 
-#: .\base\apps.py:28
+#: .\base\apps.py:25
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
@@ -2516,11 +2516,11 @@ msgstr "None "
 msgid "id contains illegal characters."
 msgstr "ідентифікатор містить заборонені символи."
 
-#: .\base\views.py:103
+#: .\base\views.py:120
 msgid "Changes saved."
 msgstr "Зміни збережено."
 
-#: .\blocks\managers.py:65 .\blocks\models.py:54
+#: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Користувачі не можуть заблокувати себе."
 
@@ -2536,11 +2536,11 @@ msgstr "блокувати"
 msgid "user blocks"
 msgstr "блоки користувачів"
 
-#: .\blocks\views.py:52
+#: .\blocks\views.py:48
 msgid "You have blocked {}."
 msgstr "Ви заблокували {}."
 
-#: .\blocks\views.py:94
+#: .\blocks\views.py:86
 msgid "You have unblocked {}."
 msgstr "Ви розблокували {}."
 
@@ -2548,19 +2548,19 @@ msgstr "Ви розблокували {}."
 msgid "Contact By Form"
 msgstr "Контакт за формою"
 
-#: .\contact_by_form\forms.py:29
+#: .\contact_by_form\forms.py:24
 msgid "Type the number \"17\""
 msgstr "Введіть число \"17\""
 
-#: .\contact_by_form\forms.py:62
+#: .\contact_by_form\forms.py:57
 msgid "Send"
 msgstr "Надіслати"
 
-#: .\contact_by_form\forms.py:75
+#: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
 msgstr "Будь ласка, зв'яжіться з нами електронною поштою."
 
-#: .\contact_by_form\forms.py:88
+#: .\contact_by_form\forms.py:83
 msgid "Not 17."
 msgstr "Не 17."
 
@@ -2688,11 +2688,11 @@ msgstr "позначка читання"
 msgid "read marks"
 msgstr "прочитані позначки"
 
-#: .\settings\base.py:226
+#: .\settings\base.py:227
 msgid "English"
 msgstr "англійська"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:228
 msgid "Hebrew"
 msgstr "іврит"
 

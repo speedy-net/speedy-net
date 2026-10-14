@@ -642,7 +642,7 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RegistrationFormWithLastNameAllMainLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in English, including a last name.
             """
@@ -671,7 +671,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class RegistrationFormWithLastNameAllMainLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in French, including a last name.
             """
@@ -700,7 +700,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class RegistrationFormWithLastNameAllMainLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in German, including a last name.
             """
@@ -729,7 +729,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class RegistrationFormWithLastNameAllMainLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Spanish, including a last name.
             """
@@ -758,7 +758,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class RegistrationFormWithLastNameAllMainLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Portuguese, including a last name.
             """
@@ -787,7 +787,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class RegistrationFormWithLastNameAllMainLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Italian, including a last name.
             """
@@ -816,7 +816,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class RegistrationFormWithLastNameAllMainLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Dutch, including a last name.
             """
@@ -844,8 +844,153 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesJapaneseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Japanese, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Japanese first name and last name, then computes the required fields.
+                """
+                # Check names in Japanese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ja': "ドロン",
+                    'last_name_ja': "マタロン",
+                })
+                self.first_name = "ドロン"
+                self.last_name = "マタロン"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesRussianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Russian, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Russian first name and last name, then computes the required fields.
+                """
+                # Check names in Russian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ru': "Дорон",
+                    'last_name_ru': "Маталон",
+                })
+                self.first_name = "Дорон"
+                self.last_name = "Маталон"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesChineseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Chinese, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Chinese first name and last name, then computes the required fields.
+                """
+                # Check names in Chinese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh': "多伦",
+                    'last_name_zh': "马塔隆",
+                })
+                self.first_name = "多伦"
+                self.last_name = "马塔隆"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesPolishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Polish, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Polish first name and last name, then computes the required fields.
+                """
+                # Check names in Polish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_pl': "Łukasz",
+                    'last_name_pl': "Wójcik",
+                })
+                self.first_name = "Łukasz"
+                self.last_name = "Wójcik"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesPersianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Persian, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Persian first name and last name, then computes the required fields.
+                """
+                # Check names in Persian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fa': "درون",
+                    'last_name_fa': "متالون",
+                })
+                self.first_name = "درون"
+                self.last_name = "متالون"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class RegistrationFormWithLastNameAllMainLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithLastNameAllMainPlusLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Hebrew, including a last name.
             """
@@ -873,7 +1018,36 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class RegistrationFormWithoutLastNameAllMainLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class RegistrationFormWithLastNameAllMainPlusLanguagesCantoneseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Cantonese, including a last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Cantonese first name and last name, then computes the required fields.
+                """
+                # Check names in Cantonese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh_yue': "多倫",
+                    'last_name_zh_yue': "馬塔倫",
+                })
+                self.first_name = "多倫"
+                self.last_name = "馬塔倫"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesEnglishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in English, with an empty last name.
             """
@@ -902,7 +1076,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='fr')
-        class RegistrationFormWithoutLastNameAllMainLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesFrenchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in French, with an empty last name.
             """
@@ -931,7 +1105,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='de')
-        class RegistrationFormWithoutLastNameAllMainLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesGermanTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in German, with an empty last name.
             """
@@ -960,7 +1134,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='es')
-        class RegistrationFormWithoutLastNameAllMainLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesSpanishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Spanish, with an empty last name.
             """
@@ -989,7 +1163,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='pt')
-        class RegistrationFormWithoutLastNameAllMainLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesPortugueseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Portuguese, with an empty last name.
             """
@@ -1018,7 +1192,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='it')
-        class RegistrationFormWithoutLastNameAllMainLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesItalianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Italian, with an empty last name.
             """
@@ -1047,7 +1221,7 @@ if (django_settings.TESTS):
 
         @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='nl')
-        class RegistrationFormWithoutLastNameAllMainLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesDutchTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Dutch, with an empty last name.
             """
@@ -1075,8 +1249,153 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesJapaneseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Japanese, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Japanese first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Japanese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ja': "ドロン",
+                    'last_name_ja': "",
+                })
+                self.first_name = "ドロン"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesRussianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Russian, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Russian first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Russian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ru': "Дорон",
+                    'last_name_ru': "",
+                })
+                self.first_name = "Дорон"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesChineseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Chinese, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Chinese first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Chinese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh': "多伦",
+                    'last_name_zh': "",
+                })
+                self.first_name = "多伦"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesPolishTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Polish, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Polish first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Polish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_pl': "Łukasz",
+                    'last_name_pl': "",
+                })
+                self.first_name = "Łukasz"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesPersianTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Persian, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Persian first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Persian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fa': "درون",
+                    'last_name_fa': "",
+                })
+                self.first_name = "درون"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
-        class RegistrationFormWithoutLastNameAllMainLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesHebrewTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
             """
             Test the registration form in Hebrew, with an empty last name.
             """
@@ -1101,6 +1420,35 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class RegistrationFormWithoutLastNameAllMainPlusLanguagesCantoneseTestCase(RegistrationFormTestCaseMixin, SiteTestCase):
+            """
+            Test the registration form in Cantonese, with an empty last name.
+            """
+
+            def set_up(self):
+                """
+                Sets up registration data with a Cantonese first name and an empty last name, then computes the required fields.
+                """
+                # Check names in Cantonese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh_yue': "多倫",
+                    'last_name_zh_yue': "",
+                })
+                self.first_name = "多倫"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
 
 
         class ProfileNotificationsFormTestCaseMixin(TestCaseMixin):
