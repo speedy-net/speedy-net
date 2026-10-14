@@ -1995,11 +1995,12 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.main_language_code, second=self.language_code)
                 user = SpeedyNetInactiveUserFactory()
                 self.assertEqual(first=user.main_language_code, second=self.language_code)
-                if (self.language_code == 'fr'):
+                # Check also language codes with long code (more than 2 characters) to ensure it works with them as well.
+                language_code = random.choice(['fr', 'zh-yue'])
+                if (self.language_code == language_code):
                     language_code = 'en'
-                else:
-                    language_code = 'fr'
                 with override_settings(LANGUAGE_CODE=language_code):
+                    # Ensure that the language codes are different.
                     self.assertNotEqual(first=self.language_code, second=language_code)
                     self.assertEqual(first=get_language(), second=language_code)
                     user = ActiveUserFactory(registration_language_code=self.language_code)
