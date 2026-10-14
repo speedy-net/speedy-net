@@ -15,6 +15,7 @@ if (django_settings.TESTS):
         from django.db.utils import DataError, IntegrityError
         from django.core.exceptions import ValidationError
         from django.utils.timezone import now
+        from django.utils.translation import get_language
 
         from speedy.core.base.test.utils import get_random_user_password
 
@@ -1992,61 +1993,67 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.main_language_code, second=self.language_code)
                 user = SpeedyNetInactiveUserFactory()
                 self.assertEqual(first=user.main_language_code, second=self.language_code)
-                user = ActiveUserFactory()
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
+                if (self.language_code == 'fr'):
+                    language_code = 'en'
                 else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
-                user.is_active = False
-                user.save()
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.main_language_code, second=self.language_code)
-                user.is_active = True
-                user.save()
-                user = User.objects.get(pk=user.pk)
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
-                user.speedy_net_profile.deactivate()
-                user = User.objects.get(pk=user.pk)
-                self.assertEqual(first=user.main_language_code, second=self.language_code)
-                user.speedy_net_profile.activate()
-                user = User.objects.get(pk=user.pk)
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    pass
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    user.speedy_match_profile.deactivate()
+                    language_code = 'fr'
+                with override_settings(LANGUAGE_CODE=language_code):
+                    self.assertNotEqual(first=self.language_code, second=language_code)
+                    self.assertEqual(first=get_language(), second=language_code)
+                    user = ActiveUserFactory(registration_language_code=self.language_code)
+                    if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=self.language_code)
+                    elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=language_code)
+                    else:
+                        raise NotImplementedError("Unsupported SITE_ID.")
+                    user.is_active = False
+                    user.save()
                     user = User.objects.get(pk=user.pk)
                     self.assertEqual(first=user.main_language_code, second=self.language_code)
-                    step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
-                    self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                    user.is_active = True
+                    user.save()
+                    user = User.objects.get(pk=user.pk)
+                    if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=self.language_code)
+                    elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=language_code)
+                    else:
+                        raise NotImplementedError("Unsupported SITE_ID.")
+                    user.speedy_net_profile.deactivate()
                     user = User.objects.get(pk=user.pk)
                     self.assertEqual(first=user.main_language_code, second=self.language_code)
-                    user.speedy_match_profile.deactivate()
+                    user.speedy_net_profile.activate()
                     user = User.objects.get(pk=user.pk)
-                    self.assertEqual(first=user.main_language_code, second=self.language_code)
-                    for i in range(0, 11):
-                        user.speedy_match_profile.activation_step = i
-                        user.speedy_match_profile.save()
+                    if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=self.language_code)
+                    elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                        self.assertEqual(first=user.main_language_code, second=language_code)
+                    else:
+                        raise NotImplementedError("Unsupported SITE_ID.")
+                    if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                        pass
+                    elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                        user.speedy_match_profile.deactivate()
                         user = User.objects.get(pk=user.pk)
-                        if (i in range(7, 11)):
-                            self.assertEqual(first=user.main_language_code, second=self.language_code)
-                        else:
-                            self.assertEqual(first=user.main_language_code, second=self.language_code)
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
-
+                        self.assertEqual(first=user.main_language_code, second=self.language_code)
+                        step, error_messages = user.speedy_match_profile.validate_profile_and_activate()
+                        self.assert_step_and_error_messages_ok(step=step, error_messages=error_messages)
+                        user = User.objects.get(pk=user.pk)
+                        self.assertEqual(first=user.main_language_code, second=language_code)
+                        user.speedy_match_profile.deactivate()
+                        user = User.objects.get(pk=user.pk)
+                        self.assertEqual(first=user.main_language_code, second=self.language_code)
+                        for i in range(0, 11):
+                            user.speedy_match_profile.activation_step = i
+                            user.speedy_match_profile.save()
+                            user = User.objects.get(pk=user.pk)
+                            if (i in range(7, 11)):
+                                self.assertEqual(first=user.main_language_code, second=language_code)
+                            else:
+                                self.assertEqual(first=user.main_language_code, second=self.language_code)
+                    else:
+                        raise NotImplementedError("Unsupported SITE_ID.")
             def test_deleted_user_name(self):
                 """
                 Asserts that marking a deactivated user as deleted and clearing their photo sets their name to the site-specific deleted-user name.
