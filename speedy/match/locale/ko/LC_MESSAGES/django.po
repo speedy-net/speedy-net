@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-13 17:11+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,100 +508,97 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr "Speedy Match 계정"
 
-#: .\accounts\forms.py:110
+#: .\accounts\forms.py:96
 msgid "Add profile picture"
 msgstr "프로필 사진 추가"
 
-#: .\accounts\forms.py:110 .\accounts\forms.py:149
+#: .\accounts\forms.py:96 .\accounts\forms.py:135
 msgid "A profile picture is required."
 msgstr "프로필 사진이 필요합니다."
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:97
 msgid "My diet"
 msgstr "내 식단"
 
-#: .\accounts\forms.py:111 .\accounts\forms.py:155
-#: .\accounts\validators.py:181
+#: .\accounts\forms.py:97 .\accounts\forms.py:141 .\accounts\validators.py:181
 msgid "Your diet is required."
 msgstr "식단이 필요합니다."
 
-#: .\accounts\forms.py:112
+#: .\accounts\forms.py:98
 msgid "My smoking status"
 msgstr "내 흡연 여부"
 
-#: .\accounts\forms.py:112 .\accounts\forms.py:158
-#: .\accounts\validators.py:193
+#: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
 msgstr "흡연 여부를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:113
+#: .\accounts\forms.py:99
 msgid "My relationship status"
 msgstr "관계 상태"
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:161
-#: .\accounts\validators.py:205
+#: .\accounts\forms.py:99 .\accounts\forms.py:147 .\accounts\validators.py:205
 msgid "Your relationship status is required."
 msgstr "관계 상태를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:114 .\accounts\forms.py:179
+#: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
 msgstr "매치 성별이 필요합니다."
 
-#: .\accounts\forms.py:152
+#: .\accounts\forms.py:138
 msgid "Your height is required."
 msgstr "키를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:164 .\accounts\validators.py:109
+#: .\accounts\forms.py:150 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
 msgstr "귀하에 대한 몇 가지 단어를 적어주세요."
 
-#: .\accounts\forms.py:167 .\accounts\forms.py:208
+#: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
 msgstr "살고 있는 곳을 적어 주세요."
 
-#: .\accounts\forms.py:170 .\accounts\models.py:227
+#: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "자녀가 있습니까? 몇 명입니까?"
 
-#: .\accounts\forms.py:173 .\accounts\models.py:230
+#: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "(더 많은) 자녀를 원합니까?"
 
-#: .\accounts\forms.py:176 .\accounts\validators.py:157
+#: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
 msgstr "이상적인 파트너는 누구입니까?"
 
-#: .\accounts\forms.py:182
+#: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
 msgstr "매치 최소 연령을 알려주셔야 합니다."
 
-#: .\accounts\forms.py:185
+#: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
 msgstr "매치 최고 연령을 알려주셔야 합니다."
 
-#: .\accounts\forms.py:188 .\accounts\validators.py:269
+#: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
 msgstr "식단 매치를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:191 .\accounts\validators.py:284
+#: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
 msgstr "흡연 여부 매치를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:194 .\accounts\validators.py:299
+#: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
 msgstr "관계 상태 매치를 알려주셔야 합니다."
 
-#: .\accounts\forms.py:208
+#: .\accounts\forms.py:194
 msgid "Where do you live?"
 msgstr "어디에 살고 계신가요?"
 
-#: .\accounts\forms.py:244 .\accounts\models.py:237
+#: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "매치 성별"
@@ -757,7 +754,7 @@ msgstr "적어도 하나의 흡연 여부 매치 옵션이 하트 5개이어야 
 msgid "At least one relationship status match option should be five hearts."
 msgstr "적어도 하나의 관계 상태 매치 옵션이 하트 5개이어야 합니다."
 
-#: .\admin\views.py:231
+#: .\admin\views.py:225
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -854,7 +851,7 @@ msgstr ""
 "회원, {total_percent_of_other_active_members_in_the_last_two_years} 의 기타 "
 "회원)이 지난 2년 동안에 사이트를 방문했습니다."
 
-#: .\admin\views.py:313
+#: .\admin\views.py:307
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -895,7 +892,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01}명의 활성 회원들"
 "이 2019년 8월 1일 이전에 등록했습니다."
 
-#: .\admin\views.py:333
+#: .\admin\views.py:327
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -904,7 +901,7 @@ msgstr ""
 "관리자: {total_number_of_active_members_registered_in_year}명의 활성 회원들"
 "이 {year}에 등록했습니다."
 
-#: .\admin\views.py:388
+#: .\admin\views.py:382
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -925,7 +922,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range}가 남성 회원, "
 "{total_percent_of_other_active_members_in_age_range}가 기타 회원임)."
 
-#: .\admin\views.py:452
+#: .\admin\views.py:446
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -958,7 +955,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
 "의 기타 회원) 지난 8개월 동안에 해당 사이트를 방문했음."
 
-#: .\admin\views.py:516
+#: .\admin\views.py:510
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
@@ -990,15 +987,15 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
 "의 기타 활성 회원) 지난 4개월 동안에 해당 사이트를 방문했음."
 
-#: .\likes\managers.py:39 .\likes\models.py:55
+#: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
 msgstr "사용자는 본인을 좋아할 수 없습니다."
 
-#: .\likes\managers.py:42
+#: .\likes\managers.py:33
 msgid "User already likes other user."
 msgstr "사용자가 이미 다른 사용자를 좋아합니다."
 
-#: .\likes\managers.py:45
+#: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
 msgstr "사용자는 차단된 사용자를 좋아할 수 없습니다."
 
@@ -1018,31 +1015,31 @@ msgstr "사용자 좋아요"
 msgid "user likes"
 msgstr "사용자 좋아요"
 
-#: .\likes\views.py:59
+#: .\likes\views.py:53
 msgid "Girls You Like"
 msgstr "귀하가 좋아하는 여성"
 
-#: .\likes\views.py:60
+#: .\likes\views.py:54
 msgid "Boys You Like"
 msgstr "귀하가 좋아하는 남성"
 
-#: .\likes\views.py:61
+#: .\likes\views.py:55
 msgid "People You Like"
 msgstr "귀하가 좋아하는 사람"
 
-#: .\likes\views.py:64
+#: .\likes\views.py:58
 msgid "Girls Who Like You"
 msgstr "귀하를 좋아하는 여성"
 
-#: .\likes\views.py:65
+#: .\likes\views.py:59
 msgid "Boys Who Like You"
 msgstr "귀하를 좋아하는 남성"
 
-#: .\likes\views.py:66
+#: .\likes\views.py:60
 msgid "People Who Like You"
 msgstr "귀하를 좋아하는 사람"
 
-#: .\likes\views.py:68
+#: .\likes\views.py:62
 msgid "Mutual Likes"
 msgstr "상호 좋아요"
 
@@ -1050,26 +1047,26 @@ msgstr "상호 좋아요"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match 의 매치"
 
-#: .\matches\views.py:172 .\matches\views.py:206
+#: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
 msgstr "매치 설정이 저장되었습니다."
 
-#: .\profiles\tests\test_widgets.py:76
+#: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
 msgstr "매치 순위"
 
-#: .\profiles\tests\test_widgets.py:129 .\profiles\tests\test_widgets.py:130
-#: .\profiles\tests\test_widgets.py:131 .\profiles\widgets.py:90
-#: .\profiles\widgets.py:93 .\profiles\widgets.py:96
+#: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
+#: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
+#: .\profiles\widgets.py:86 .\profiles\widgets.py:89
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: .\profiles\tests\test_widgets.py:142 .\profiles\widgets.py:101
+#: .\profiles\tests\test_widgets.py:124 .\profiles\widgets.py:94
 msgid "None"
 msgstr "없음"
 
-#: .\profiles\tests\test_widgets.py:149
+#: .\profiles\tests\test_widgets.py:131
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
 msgstr "자세히 알아보기"

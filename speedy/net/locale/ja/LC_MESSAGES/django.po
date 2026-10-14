@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,11 +123,11 @@ msgstr ""
 msgid "Speedy Net Accounts"
 msgstr "Speedy Net Accounts"
 
-#: .\accounts\forms.py:33
+#: .\accounts\forms.py:28
 msgid "Your password"
 msgstr "あなたのパスワード"
 
-#: .\accounts\forms.py:34
+#: .\accounts\forms.py:29
 msgid ""
 "Are you sure you want to delete your Speedy Net account? This is permanent "
 "and irreversible. Deleting your Speedy Net account will also delete your "
@@ -139,12 +139,12 @@ msgstr ""
 "トも削除されます。間違いがない場合は、「はい。アカウントを削除してくださ"
 "い。」と入力します。このフィールドでは正確に、大文字と小文字が区別されます。"
 
-#: .\accounts\forms.py:61
+#: .\accounts\forms.py:56
 msgid "Invalid password."
 msgstr "パスワードが無効です。"
 
-#: .\accounts\forms.py:73 .\accounts\tests\test_views.py:302
-#: .\accounts\views.py:162
+#: .\accounts\forms.py:68 .\accounts\tests\test_views.py:270
+#: .\accounts\views.py:149
 msgid "Yes. Delete my account."
 msgstr "はい。アカウントを削除してください。"
 

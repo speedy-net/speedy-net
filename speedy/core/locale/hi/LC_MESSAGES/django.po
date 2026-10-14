@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -852,7 +852,7 @@ msgstr "एक मान्य ईमेल पता दर्ज करें�
 msgid "Email address"
 msgstr "मेल पता"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1713
+#: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
 msgstr "मेल पता"
 
@@ -894,7 +894,7 @@ msgstr "मित्रता अनुरोध"
 msgid "Friend"
 msgstr "दोस्त"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
 msgstr "दोस्त"
 
@@ -1932,305 +1932,305 @@ msgstr "मै और मेरी मित्र"
 msgid "Anyone"
 msgstr "कोई भी"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:115
 msgid "Last name (optional)"
 msgstr "अंतिम नाम (वैकल्पिक)"
 
-#: .\accounts\forms.py:279
+#: .\accounts\forms.py:266
 msgid "Your email"
 msgstr "आपका ईमेल"
 
-#: .\accounts\forms.py:280
+#: .\accounts\forms.py:267
 msgid "New password"
 msgstr "नया पासवर्ड"
 
-#: .\accounts\forms.py:294
+#: .\accounts\forms.py:281
 msgid "New username"
 msgstr "नया उपयोगकर्ता नाम"
 
-#: .\accounts\forms.py:297
+#: .\accounts\forms.py:284
 msgid "Create an account"
 msgstr "खाता बनाएं"
 
-#: .\accounts\forms.py:344
+#: .\accounts\forms.py:326
 msgid "Update your profile picture"
 msgstr "अपनी प्रोफ़ाइल तस्वीर अपडेट करें"
 
-#: .\accounts\forms.py:344 .\accounts\validators.py:507
+#: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
 msgstr "प्रोफ़ाइल चित्र आवश्यक है।"
 
-#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "ईमेल या उपयोगकर्ता का नाम"
 
-#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "लॉग इन करें"
 
-#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "अपना कूट शब्द भूल गए?"
 
-#: .\accounts\forms.py:609
+#: .\accounts\forms.py:577
 msgid "Submit"
 msgstr "जमा करना"
 
-#: .\accounts\forms.py:797
+#: .\accounts\forms.py:751
 msgid "Your password"
 msgstr "आपका पासवर्ड"
 
-#: .\accounts\forms.py:822
+#: .\accounts\forms.py:776
 msgid "Invalid password."
 msgstr "अवैध पासवर्ड।"
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:209
 msgid "username"
 msgstr "उपयोगकर्ता नाम"
 
-#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "यह उपयोगकर्ता नाम पहले ही ले लिया है।"
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:210
 msgid "username (slug)"
 msgstr "उपयोगकर्ता नाम (स्लग)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:211
 msgid "photo"
 msgstr "तस्वीर"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:212
 msgid "Special username"
 msgstr "विशेष उपयोगकर्ता नाम"
 
-#: .\accounts\models.py:285 .\messages\models.py:215
+#: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
 msgstr "इकाई"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:264
 msgid "entities"
 msgstr "इकाइयां,"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:321
 msgid "Slug does not parse to username."
 msgstr "स्लग को उपयोगकर्ता नाम में परिवर्तित नहीं किया जा सकता है।"
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:331
 msgid "Username is required."
 msgstr "उपयोगकर्ता नाम आवश्यक है।"
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:379
 msgid "name"
 msgstr "नाम"
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:412
 msgid "description"
 msgstr "विवरण"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:511
 msgid "Female"
 msgstr "महिला"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:512
 msgid "Male"
 msgstr "पुरुष"
 
-#: .\accounts\models.py:602
+#: .\accounts\models.py:513
 msgid "Other"
 msgstr "अन्य"
 
-#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: .\accounts\models.py:618
+#: .\accounts\models.py:529
 msgid "Vegan (eats only plants and fungi)"
 msgstr "शाकाहारी (केवल पौधे और कवक खाता है)"
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:530
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "शाकाहारी (मछली और मांस नहीं खाता)"
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
 msgstr "मांसाहारी (जानवरों का मांस खाने वाला)"
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:546
 msgid "Not smoking"
 msgstr "धूम्रपान नहीं करना"
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:547
 msgid "Smoking occasionally"
 msgstr "कभी-कभार धूम्रपान करना"
 
-#: .\accounts\models.py:637
+#: .\accounts\models.py:548
 msgid "Smoking"
 msgstr "धूम्रपान"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:569
 msgid "Single"
 msgstr "अकेला"
 
-#: .\accounts\models.py:659
+#: .\accounts\models.py:570
 msgid "Divorced"
 msgstr "तलाकशुदा"
 
-#: .\accounts\models.py:660
+#: .\accounts\models.py:571
 msgid "Widowed"
 msgstr "विधवा"
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:572
 msgid "In a relationship"
 msgstr "रिश्ते में"
 
-#: .\accounts\models.py:662
+#: .\accounts\models.py:573
 msgid "In an open relationship"
 msgstr "ओपन रिलेशनशिप में"
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:574
 msgid "It's complicated"
 msgstr "यह जटिल है"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:575
 msgid "Separated"
 msgstr "अलग किए"
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:576
 msgid "Engaged"
 msgstr "काम में लगा हुआ"
 
-#: .\accounts\models.py:666
+#: .\accounts\models.py:577
 msgid "Married"
 msgstr "विवाहित"
 
-#: .\accounts\models.py:677
+#: .\accounts\models.py:588
 msgid "Notify me"
 msgstr "मुझे सूचित करें"
 
-#: .\accounts\models.py:678
+#: .\accounts\models.py:589
 msgid "Don't notify me"
 msgstr "मुझे सूचित न करें"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:669
 msgid "first name"
 msgstr "पहला नाम"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:672
 msgid "last name"
 msgstr "उपनाम"
 
-#: .\accounts\models.py:763
+#: .\accounts\models.py:674
 msgid "I am"
 msgstr "मैं हूँ"
 
-#: .\accounts\models.py:764
+#: .\accounts\models.py:675
 msgid "date of birth"
 msgstr "जन्म तिथि"
 
-#: .\accounts\models.py:765
+#: .\accounts\models.py:676
 msgid "diet"
 msgstr "आहार"
 
-#: .\accounts\models.py:766
+#: .\accounts\models.py:677
 msgid "smoking status"
 msgstr "सिगरेट पीने की स्थिति"
 
-#: .\accounts\models.py:767
+#: .\accounts\models.py:678
 msgid "relationship status"
 msgstr "रिश्ते की स्थिति"
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:680
 msgid "Where do I live?"
 msgstr "मैं कहाँ रहता हूँ?"
 
-#: .\accounts\models.py:776
+#: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
 msgstr "मेरी जन्मतिथि (जन्म का महीना और दिन) कौन देख सकता है?"
 
-#: .\accounts\models.py:777
+#: .\accounts\models.py:688
 msgid "Who can view my birth year"
 msgstr "मेरा जन्म वर्ष कौन देख सकता है?"
 
-#: .\accounts\models.py:778
+#: .\accounts\models.py:689
 msgid "On new messages"
 msgstr "नए संदेशों पर"
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "अंतिम बार उपयोग किया गया आईपी पता https://ipapi.com/"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "अंतिम बार उपयोग किए गए IP पते से https://ipapi.com/ के कच्चे परिणाम प्राप्त हुए"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
+#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
 msgstr "उपयोगकर्ता"
 
-#: .\accounts\models.py:1078
+#: .\accounts\models.py:991
 msgid "users"
 msgstr "उपयोगकर्ताओं"
 
-#: .\accounts\models.py:1137
+#: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
 msgstr "सुपरयूजर का पद स्टाफ के बराबर होना चाहिए।"
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1593
 msgid "email"
 msgstr "ईमेल"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1594
 msgid "is confirmed"
 msgstr "पुष्टि हो गई है"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1595
 msgid "is primary"
 msgstr "प्राथमिक है"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1596
 msgid "confirmation token"
 msgstr "पुष्टिकरण टोकन"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1597
 msgid "confirmation sent"
 msgstr "पुष्टि भेज दी गई"
 
-#: .\accounts\models.py:1697
+#: .\accounts\models.py:1598
 msgid "Who can see this email"
 msgstr "यह ईमेल कौन देख सकता है?"
 
-#: .\accounts\models.py:1714
+#: .\accounts\models.py:1615
 msgid "email addresses"
 msgstr "ईमेल पते"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1756
 msgid "User"
 msgstr "उपयोगकर्ता"
 
-#: .\accounts\models.py:1869
+#: .\accounts\models.py:1757
 msgid "last visit"
 msgstr "अंतिम विजिट"
 
-#: .\accounts\models.py:1894
+#: .\accounts\models.py:1782
 msgid "Today"
 msgstr "आज"
 
-#: .\accounts\models.py:1896
+#: .\accounts\models.py:1784
 msgid "Yesterday"
 msgstr "कल"
 
-#: .\accounts\models.py:1898
+#: .\accounts\models.py:1786
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "पर {date} ({timesince_ago} )"
 
-#: .\accounts\models.py:1900
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} पहले"
@@ -2311,7 +2311,7 @@ msgstr[1] ""
 "उपयोगकर्ता नाम में अधिकतम कितनी लंबाई होनी चाहिए? %(limit_value)d अक्षर (इसमें है "
 "%(show_value)d)."
 
-#: .\accounts\validators.py:195
+#: .\accounts\validators.py:190
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2324,14 +2324,14 @@ msgstr[0] ""
 msgstr[1] ""
 "यह पासवर्ड बहुत छोटा है। इसमें कम से कम ये शब्द होने चाहिए। %(min_length)d पात्र।"
 
-#: .\accounts\validators.py:211
+#: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_length)d चरित्र।"
 msgstr[1] "आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_length)d पात्र।"
 
-#: .\accounts\validators.py:255
+#: .\accounts\validators.py:245
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2342,14 +2342,14 @@ msgstr[0] ""
 msgstr[1] ""
 "यह पासवर्ड बहुत लंबा है। इसमें अधिकतम इतने शब्द होने चाहिए। %(max_length)d पात्र।"
 
-#: .\accounts\validators.py:271
+#: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "आपके पासवर्ड में अधिकतम कितने अक्षर होने चाहिए? %(max_length)d चरित्र।"
 msgstr[1] "आपके पासवर्ड में अधिकतम कितने अक्षर होने चाहिए? %(max_length)d पात्र।"
 
-#: .\accounts\validators.py:314 .\accounts\validators.py:325
+#: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2357,28 +2357,28 @@ msgid ""
 msgstr ""
 "आपके पासवर्ड में कम से कम ये शब्द होने चाहिए %(min_unique_characters)d अनोखे पात्र।"
 
-#: .\accounts\validators.py:418 .\accounts\validators.py:432
+#: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
 msgstr "यह फ़ील्ड खाली नहीं हो सकता।"
 
-#: .\accounts\validators.py:420
+#: .\accounts\validators.py:405
 msgid "This field cannot be blank."
 msgstr "यह क्षेत्र रिक्त नहीं हो सकता।"
 
-#: .\accounts\validators.py:446 .\accounts\validators.py:460
+#: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
 msgstr "एक मान्य तिथि दर्ज करें।"
 
-#: .\accounts\validators.py:482
+#: .\accounts\validators.py:467
 msgid "This email is already in use."
 msgstr "यह ईमेल पहले से ही उपयोग में है।"
 
-#: .\accounts\validators.py:509
+#: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr "इस तस्वीर का फ़ाइल आकार बहुत बड़ा है। अधिकतम अनुमत फ़ाइल आकार 30 MB है।"
 
-#: .\accounts\validators.py:542 .\accounts\validators.py:561
+#: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2386,24 +2386,24 @@ msgstr ""
 "आप इस फॉर्मेट को अपनी प्रोफाइल पिक्चर के लिए इस्तेमाल नहीं कर सकते। केवल JPEG या PNG "
 "फॉर्मेट ही स्वीकार्य हैं।"
 
-#: .\accounts\views.py:574
+#: .\accounts\views.py:540
 msgid "Invalid confirmation link."
 msgstr "अमान्य पुष्टिकरण लिंक।"
 
-#: .\accounts\views.py:624 .\accounts\views.py:673
+#: .\accounts\views.py:586 .\accounts\views.py:631
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "पुष्टिकरण संदेश भेजा गया {email_address}"
 
-#: .\accounts\views.py:721
+#: .\accounts\views.py:675
 msgid "The email address was deleted."
 msgstr "ईमेल पता हटा दिया गया है।"
 
-#: .\accounts\views.py:770
+#: .\accounts\views.py:720
 msgid "You have made this email address primary."
 msgstr "आपने इस ईमेल पते को प्राथमिक ईमेल पता बना दिया है।"
 
-#: .\admin\views.py:102
+#: .\admin\views.py:96
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2425,7 +2425,7 @@ msgstr ""
 "साइट पर प्रवेश किया, और {total_number_of_members_in_the_last_two_years} पिछले "
 "दो वर्षों में सदस्यों ने साइट में प्रवेश किया है।"
 
-#: .\admin\views.py:148
+#: .\admin\views.py:142
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2462,7 +2462,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} 1 अगस्त 2019 से पहले "
 "पंजीकृत सदस्य।"
 
-#: .\admin\views.py:168
+#: .\admin\views.py:162
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2470,7 +2470,7 @@ msgid ""
 msgstr ""
 "व्यवस्थापक: {total_number_of_members_registered_in_year} पंजीकृत सदस्य {year}. "
 
-#: .\base\apps.py:28
+#: .\base\apps.py:25
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
@@ -2487,11 +2487,11 @@ msgstr ", "
 msgid "id contains illegal characters."
 msgstr "आईडी में अवैध वर्ण हैं।"
 
-#: .\base\views.py:103
+#: .\base\views.py:120
 msgid "Changes saved."
 msgstr "परिवर्तन सहेज लिए गए।"
 
-#: .\blocks\managers.py:65 .\blocks\models.py:54
+#: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "उपयोगकर्ता स्वयं को ब्लॉक नहीं कर सकते।"
 
@@ -2507,11 +2507,11 @@ msgstr "अवरोध पैदा करना"
 msgid "user blocks"
 msgstr "उपयोगकर्ता ब्लॉक"
 
-#: .\blocks\views.py:52
+#: .\blocks\views.py:48
 msgid "You have blocked {}."
 msgstr "आपने ब्लॉक कर दिया है {}. "
 
-#: .\blocks\views.py:94
+#: .\blocks\views.py:86
 msgid "You have unblocked {}."
 msgstr "आपने अनब्लॉक कर दिया है {}. "
 
@@ -2519,19 +2519,19 @@ msgstr "आपने अनब्लॉक कर दिया है {}. "
 msgid "Contact By Form"
 msgstr "फॉर्म के माध्यम से संपर्क करें"
 
-#: .\contact_by_form\forms.py:29
+#: .\contact_by_form\forms.py:24
 msgid "Type the number \"17\""
 msgstr "संख्या \"17\" टाइप करें"
 
-#: .\contact_by_form\forms.py:62
+#: .\contact_by_form\forms.py:57
 msgid "Send"
 msgstr "भेजना"
 
-#: .\contact_by_form\forms.py:75
+#: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
 msgstr "हमसे ईमेल द्वारा संपर्क करें।"
 
-#: .\contact_by_form\forms.py:88
+#: .\contact_by_form\forms.py:83
 msgid "Not 17."
 msgstr "17 नहीं।"
 
@@ -2659,11 +2659,11 @@ msgstr "रीड मार्क"
 msgid "read marks"
 msgstr "पढ़े हुए निशान"
 
-#: .\settings\base.py:226
+#: .\settings\base.py:227
 msgid "English"
 msgstr "अंग्रेज़ी"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:228
 msgid "Hebrew"
 msgstr "यहूदी"
 

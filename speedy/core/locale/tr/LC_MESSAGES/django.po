@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 18:20+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -861,7 +861,7 @@ msgstr "Geçerli bir e-posta adresi girin."
 msgid "Email address"
 msgstr "E-posta adresi"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1713
+#: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
 msgstr "e-posta adresi"
 
@@ -903,7 +903,7 @@ msgstr "Arkadaşlık İstekleri"
 msgid "Friend"
 msgstr "Arkadaş"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:1043
+#: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
 msgstr "Arkadaşlar"
 
@@ -1936,305 +1936,305 @@ msgstr "Ben ve arkadaşlarım"
 msgid "Anyone"
 msgstr "Herhangi biri"
 
-#: .\accounts\forms.py:124
+#: .\accounts\forms.py:115
 msgid "Last name (optional)"
 msgstr "Soyadı (isteğe bağlı)"
 
-#: .\accounts\forms.py:279
+#: .\accounts\forms.py:266
 msgid "Your email"
 msgstr "E-postanız"
 
-#: .\accounts\forms.py:280
+#: .\accounts\forms.py:267
 msgid "New password"
 msgstr "Yeni Şifre"
 
-#: .\accounts\forms.py:294
+#: .\accounts\forms.py:281
 msgid "New username"
 msgstr "Yeni kullanıcı adı"
 
-#: .\accounts\forms.py:297
+#: .\accounts\forms.py:284
 msgid "Create an account"
 msgstr "Bir hesap oluşturun"
 
-#: .\accounts\forms.py:344
+#: .\accounts\forms.py:326
 msgid "Update your profile picture"
 msgstr "Profil resminizi güncelleyin"
 
-#: .\accounts\forms.py:344 .\accounts\validators.py:507
+#: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
 msgstr "Profil resmi gereklidir."
 
-#: .\accounts\forms.py:563 .\templates\base_with_login.html:127
+#: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
 msgstr "E-posta veya Kullanıcı Adı"
 
-#: .\accounts\forms.py:569 .\templates\accounts\login.html:6
+#: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
 msgstr "Giriş yapmak"
 
-#: .\accounts\forms.py:572 .\templates\base_with_login.html:73
+#: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
 msgstr "Şifrenizi mi unuttunuz?"
 
-#: .\accounts\forms.py:609
+#: .\accounts\forms.py:577
 msgid "Submit"
 msgstr "Göndermek"
 
-#: .\accounts\forms.py:797
+#: .\accounts\forms.py:751
 msgid "Your password"
 msgstr "Şifreniz"
 
-#: .\accounts\forms.py:822
+#: .\accounts\forms.py:776
 msgid "Invalid password."
 msgstr "Geçersiz şifre."
 
-#: .\accounts\models.py:231
+#: .\accounts\models.py:209
 msgid "username"
 msgstr "kullanıcı adı"
 
-#: .\accounts\models.py:231 .\accounts\models.py:232
+#: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
 msgstr "Bu kullanıcı adı zaten alınmış."
 
-#: .\accounts\models.py:232
+#: .\accounts\models.py:210
 msgid "username (slug)"
 msgstr "kullanıcı adı (sümüklüböcek)"
 
-#: .\accounts\models.py:233
+#: .\accounts\models.py:211
 msgid "photo"
 msgstr "fotoğraf"
 
-#: .\accounts\models.py:234
+#: .\accounts\models.py:212
 msgid "Special username"
 msgstr "Özel kullanıcı adı"
 
-#: .\accounts\models.py:285 .\messages\models.py:215
+#: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
 msgstr "varlık"
 
-#: .\accounts\models.py:286
+#: .\accounts\models.py:264
 msgid "entities"
 msgstr "varlıklar"
 
-#: .\accounts\models.py:343
+#: .\accounts\models.py:321
 msgid "Slug does not parse to username."
 msgstr "Slug kullanıcı adına ayrıştırılmıyor."
 
-#: .\accounts\models.py:353
+#: .\accounts\models.py:331
 msgid "Username is required."
 msgstr "Kullanıcı adı gerekli."
 
-#: .\accounts\models.py:404
+#: .\accounts\models.py:379
 msgid "name"
 msgstr "isim"
 
-#: .\accounts\models.py:442
+#: .\accounts\models.py:412
 msgid "description"
 msgstr "Tanım"
 
-#: .\accounts\models.py:600
+#: .\accounts\models.py:511
 msgid "Female"
 msgstr "Dişi"
 
-#: .\accounts\models.py:601
+#: .\accounts\models.py:512
 msgid "Male"
 msgstr "Erkek"
 
-#: .\accounts\models.py:602
+#: .\accounts\models.py:513
 msgid "Other"
 msgstr "Diğer"
 
-#: .\accounts\models.py:617 .\accounts\models.py:634 .\accounts\models.py:657
+#: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: .\accounts\models.py:618
+#: .\accounts\models.py:529
 msgid "Vegan (eats only plants and fungi)"
 msgstr "Vegan (sadece bitki ve mantarları yer)"
 
-#: .\accounts\models.py:619
+#: .\accounts\models.py:530
 msgid "Vegetarian (doesn't eat fish and meat)"
 msgstr "Vejetaryen (balık ve et yemez)"
 
-#: .\accounts\models.py:620
+#: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
 msgstr "Karnist (hayvanları yer)"
 
-#: .\accounts\models.py:635
+#: .\accounts\models.py:546
 msgid "Not smoking"
 msgstr "Sigara içmemek"
 
-#: .\accounts\models.py:636
+#: .\accounts\models.py:547
 msgid "Smoking occasionally"
 msgstr "Ara sıra sigara içmek"
 
-#: .\accounts\models.py:637
+#: .\accounts\models.py:548
 msgid "Smoking"
 msgstr "Sigara içmek"
 
-#: .\accounts\models.py:658
+#: .\accounts\models.py:569
 msgid "Single"
 msgstr "Bekar"
 
-#: .\accounts\models.py:659
+#: .\accounts\models.py:570
 msgid "Divorced"
 msgstr "Boşanmış"
 
-#: .\accounts\models.py:660
+#: .\accounts\models.py:571
 msgid "Widowed"
 msgstr "Dul"
 
-#: .\accounts\models.py:661
+#: .\accounts\models.py:572
 msgid "In a relationship"
 msgstr "Bir ilişkide"
 
-#: .\accounts\models.py:662
+#: .\accounts\models.py:573
 msgid "In an open relationship"
 msgstr "Açık bir ilişkide"
 
-#: .\accounts\models.py:663
+#: .\accounts\models.py:574
 msgid "It's complicated"
 msgstr "Karmaşık"
 
-#: .\accounts\models.py:664
+#: .\accounts\models.py:575
 msgid "Separated"
 msgstr "ayrılmış"
 
-#: .\accounts\models.py:665
+#: .\accounts\models.py:576
 msgid "Engaged"
 msgstr "Nişanlı"
 
-#: .\accounts\models.py:666
+#: .\accounts\models.py:577
 msgid "Married"
 msgstr "Evli"
 
-#: .\accounts\models.py:677
+#: .\accounts\models.py:588
 msgid "Notify me"
 msgstr "Bana bildir"
 
-#: .\accounts\models.py:678
+#: .\accounts\models.py:589
 msgid "Don't notify me"
 msgstr "Bana haber verme"
 
-#: .\accounts\models.py:758
+#: .\accounts\models.py:669
 msgid "first name"
 msgstr "ilk adı"
 
-#: .\accounts\models.py:761
+#: .\accounts\models.py:672
 msgid "last name"
 msgstr "soy isim"
 
-#: .\accounts\models.py:763
+#: .\accounts\models.py:674
 msgid "I am"
 msgstr "ben"
 
-#: .\accounts\models.py:764
+#: .\accounts\models.py:675
 msgid "date of birth"
 msgstr "doğum tarihi"
 
-#: .\accounts\models.py:765
+#: .\accounts\models.py:676
 msgid "diet"
 msgstr "diyet"
 
-#: .\accounts\models.py:766
+#: .\accounts\models.py:677
 msgid "smoking status"
 msgstr "sigara içme durumu"
 
-#: .\accounts\models.py:767
+#: .\accounts\models.py:678
 msgid "relationship status"
 msgstr "ilişki durumu"
 
-#: .\accounts\models.py:769
+#: .\accounts\models.py:680
 msgid "Where do I live?"
 msgstr "Nerede yaşıyorum?"
 
-#: .\accounts\models.py:776
+#: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
 msgstr "Doğum ayımı ve günümü kimler görebilir?"
 
-#: .\accounts\models.py:777
+#: .\accounts\models.py:688
 msgid "Who can view my birth year"
 msgstr "Doğum yılımı kimler görebilir?"
 
-#: .\accounts\models.py:778
+#: .\accounts\models.py:689
 msgid "On new messages"
 msgstr "Yeni mesajlarda"
 
-#: .\accounts\models.py:784
+#: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
 msgstr "Son IP adresi https://ipapi.com/ kez kullanıldı"
 
-#: .\accounts\models.py:785
+#: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Son kullanılan IP adresi ham https://ipapi.com/ sonuçları"
 
-#: .\accounts\models.py:1077 .\accounts\models.py:1691 .\blocks\models.py:25
+#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
 msgstr "kullanıcı"
 
-#: .\accounts\models.py:1078
+#: .\accounts\models.py:991
 msgid "users"
 msgstr "kullanıcılar"
 
-#: .\accounts\models.py:1137
+#: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
 msgstr "Süper kullanıcı personele eşit olmalıdır."
 
-#: .\accounts\models.py:1692
+#: .\accounts\models.py:1593
 msgid "email"
 msgstr "e-posta"
 
-#: .\accounts\models.py:1693
+#: .\accounts\models.py:1594
 msgid "is confirmed"
 msgstr "onaylandı"
 
-#: .\accounts\models.py:1694
+#: .\accounts\models.py:1595
 msgid "is primary"
 msgstr "birincildir"
 
-#: .\accounts\models.py:1695
+#: .\accounts\models.py:1596
 msgid "confirmation token"
 msgstr "onay jetonu"
 
-#: .\accounts\models.py:1696
+#: .\accounts\models.py:1597
 msgid "confirmation sent"
 msgstr "onay gönderildi"
 
-#: .\accounts\models.py:1697
+#: .\accounts\models.py:1598
 msgid "Who can see this email"
 msgstr "Bu e-postayı kimler görebilir?"
 
-#: .\accounts\models.py:1714
+#: .\accounts\models.py:1615
 msgid "email addresses"
 msgstr "e-posta adresleri"
 
-#: .\accounts\models.py:1868
+#: .\accounts\models.py:1756
 msgid "User"
 msgstr "Kullanıcı"
 
-#: .\accounts\models.py:1869
+#: .\accounts\models.py:1757
 msgid "last visit"
 msgstr "son ziyaret"
 
-#: .\accounts\models.py:1894
+#: .\accounts\models.py:1782
 msgid "Today"
 msgstr "Bugün"
 
-#: .\accounts\models.py:1896
+#: .\accounts\models.py:1784
 msgid "Yesterday"
 msgstr "Dün"
 
-#: .\accounts\models.py:1898
+#: .\accounts\models.py:1786
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} ({timesince_ago}) tarihinde"
 
-#: .\accounts\models.py:1900
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} önce"
@@ -2315,7 +2315,7 @@ msgstr[1] ""
 "Kullanıcı adı en fazla %(limit_value)d karakter içermelidir (%(show_value)d "
 "içerir)."
 
-#: .\accounts\validators.py:195
+#: .\accounts\validators.py:190
 #, python-format
 msgid ""
 "This password is too short. It must contain at least %(min_length)d "
@@ -2326,14 +2326,14 @@ msgid_plural ""
 msgstr[0] "Bu şifre çok kısa. En az %(min_length)d karakteri içermelidir."
 msgstr[1] "Bu şifre çok kısa. En az %(min_length)d karakter içermelidir."
 
-#: .\accounts\validators.py:211
+#: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Şifreniz en az %(min_length)d karakter içermelidir."
 msgstr[1] "Şifreniz en az %(min_length)d karakter içermelidir."
 
-#: .\accounts\validators.py:255
+#: .\accounts\validators.py:245
 #, python-format
 msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
@@ -2342,14 +2342,14 @@ msgid_plural ""
 msgstr[0] "Bu şifre çok uzun. En fazla %(max_length)d karakteri içermelidir."
 msgstr[1] "Bu şifre çok uzun. En fazla %(max_length)d karakter içermelidir."
 
-#: .\accounts\validators.py:271
+#: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Şifreniz en fazla %(max_length)d karakter içermelidir."
 msgstr[1] "Şifreniz en fazla %(max_length)d karakter içermelidir."
 
-#: .\accounts\validators.py:314 .\accounts\validators.py:325
+#: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
 msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
@@ -2357,30 +2357,30 @@ msgid ""
 msgstr ""
 "Şifreniz en az %(min_unique_characters)d benzersiz karakter içermelidir."
 
-#: .\accounts\validators.py:418 .\accounts\validators.py:432
+#: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
 msgstr "Bu alan boş olamaz."
 
-#: .\accounts\validators.py:420
+#: .\accounts\validators.py:405
 msgid "This field cannot be blank."
 msgstr "Bu alan boş olamaz."
 
-#: .\accounts\validators.py:446 .\accounts\validators.py:460
+#: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
 msgstr "Geçerli bir tarih girin."
 
-#: .\accounts\validators.py:482
+#: .\accounts\validators.py:467
 msgid "This email is already in use."
 msgstr "Bu e-posta zaten kullanılıyor."
 
-#: .\accounts\validators.py:509
+#: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
 msgstr ""
 "Bu resmin dosya boyutu çok büyük. İzin verilen maksimum dosya boyutu 30 "
 "MB'tır."
 
-#: .\accounts\validators.py:542 .\accounts\validators.py:561
+#: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
 "You can't use this format for your profile picture. Only JPEG or PNG formats "
 "are accepted."
@@ -2388,24 +2388,24 @@ msgstr ""
 "Profil resminiz için bu formatı kullanamazsınız. Yalnızca JPEG veya PNG "
 "formatları kabul edilir."
 
-#: .\accounts\views.py:574
+#: .\accounts\views.py:540
 msgid "Invalid confirmation link."
 msgstr "Geçersiz onay bağlantısı."
 
-#: .\accounts\views.py:624 .\accounts\views.py:673
+#: .\accounts\views.py:586 .\accounts\views.py:631
 #, python-brace-format
 msgid "A confirmation message was sent to {email_address}"
 msgstr "{email_address} adresine bir onay mesajı gönderildi"
 
-#: .\accounts\views.py:721
+#: .\accounts\views.py:675
 msgid "The email address was deleted."
 msgstr "E-posta adresi silindi."
 
-#: .\accounts\views.py:770
+#: .\accounts\views.py:720
 msgid "You have made this email address primary."
 msgstr "Bu e-posta adresini birincil yaptınız."
 
-#: .\admin\views.py:102
+#: .\admin\views.py:96
 #, python-brace-format
 msgid ""
 "Admin: The total number of members on the site is {total_number_of_members}, "
@@ -2426,7 +2426,7 @@ msgstr ""
 "sekiz ayda ve {total_number_of_members_in_the_last_two_years} üyeleri siteye "
 "son iki yılda giriş yapmıştır."
 
-#: .\admin\views.py:148
+#: .\admin\views.py:142
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_the_last_week} members "
@@ -2464,7 +2464,7 @@ msgstr ""
 "{total_number_of_members_registered_before_2019_08_01} üyeleri 1 Ağustos "
 "2019'dan önce kaydoldu."
 
-#: .\admin\views.py:168
+#: .\admin\views.py:162
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
@@ -2472,7 +2472,7 @@ msgid ""
 msgstr ""
 "Yönetici: {year}'de kayıtlı {total_number_of_members_registered_in_year} üye."
 
-#: .\base\apps.py:28
+#: .\base\apps.py:25
 msgid "Speedy Core Base App"
 msgstr "Speedy Core Base App"
 
@@ -2489,11 +2489,11 @@ msgstr "None "
 msgid "id contains illegal characters."
 msgstr "kimlik geçersiz karakterler içeriyor."
 
-#: .\base\views.py:103
+#: .\base\views.py:120
 msgid "Changes saved."
 msgstr "Değişiklikler kaydedildi."
 
-#: .\blocks\managers.py:65 .\blocks\models.py:54
+#: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
 msgstr "Kullanıcılar kendilerini engelleyemez."
 
@@ -2509,11 +2509,11 @@ msgstr "engellemek"
 msgid "user blocks"
 msgstr "kullanıcı blokları"
 
-#: .\blocks\views.py:52
+#: .\blocks\views.py:48
 msgid "You have blocked {}."
 msgstr "{}'ı engellediniz."
 
-#: .\blocks\views.py:94
+#: .\blocks\views.py:86
 msgid "You have unblocked {}."
 msgstr "{} adlı kişinin engellemesini kaldırdınız."
 
@@ -2521,19 +2521,19 @@ msgstr "{} adlı kişinin engellemesini kaldırdınız."
 msgid "Contact By Form"
 msgstr "Forma Göre İletişim"
 
-#: .\contact_by_form\forms.py:29
+#: .\contact_by_form\forms.py:24
 msgid "Type the number \"17\""
 msgstr "\"17\" sayısını yazın"
 
-#: .\contact_by_form\forms.py:62
+#: .\contact_by_form\forms.py:57
 msgid "Send"
 msgstr "Göndermek"
 
-#: .\contact_by_form\forms.py:75
+#: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
 msgstr "Lütfen e-posta yoluyla bizimle iletişime geçin."
 
-#: .\contact_by_form\forms.py:88
+#: .\contact_by_form\forms.py:83
 msgid "Not 17."
 msgstr "17 değil."
 
@@ -2661,11 +2661,11 @@ msgstr "okuma işareti"
 msgid "read marks"
 msgstr "işaretleri oku"
 
-#: .\settings\base.py:226
+#: .\settings\base.py:227
 msgid "English"
 msgstr "İngilizce"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:228
 msgid "Hebrew"
 msgstr "İbranice"
 

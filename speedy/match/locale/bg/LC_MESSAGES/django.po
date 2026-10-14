@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-13 17:11+0300\n"
+"POT-Creation-Date: 2026-10-14 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -511,100 +511,97 @@ msgstr ""
 msgid "Speedy Match Accounts"
 msgstr "Speedy Match Accounts"
 
-#: .\accounts\forms.py:110
+#: .\accounts\forms.py:96
 msgid "Add profile picture"
 msgstr "Добавете профилна снимка"
 
-#: .\accounts\forms.py:110 .\accounts\forms.py:149
+#: .\accounts\forms.py:96 .\accounts\forms.py:135
 msgid "A profile picture is required."
 msgstr "Необходима е профилна снимка."
 
-#: .\accounts\forms.py:111
+#: .\accounts\forms.py:97
 msgid "My diet"
 msgstr "Моята диета"
 
-#: .\accounts\forms.py:111 .\accounts\forms.py:155
-#: .\accounts\validators.py:181
+#: .\accounts\forms.py:97 .\accounts\forms.py:141 .\accounts\validators.py:181
 msgid "Your diet is required."
 msgstr "Вашата диета е задължителна."
 
-#: .\accounts\forms.py:112
+#: .\accounts\forms.py:98
 msgid "My smoking status"
 msgstr "Пушачът ми"
 
-#: .\accounts\forms.py:112 .\accounts\forms.py:158
-#: .\accounts\validators.py:193
+#: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
 msgstr "Изисква се вашият статут на пушене."
 
-#: .\accounts\forms.py:113
+#: .\accounts\forms.py:99
 msgid "My relationship status"
 msgstr "Състоянието на връзката ми"
 
-#: .\accounts\forms.py:113 .\accounts\forms.py:161
-#: .\accounts\validators.py:205
+#: .\accounts\forms.py:99 .\accounts\forms.py:147 .\accounts\validators.py:205
 msgid "Your relationship status is required."
 msgstr "Изисква се състоянието на вашата връзка."
 
-#: .\accounts\forms.py:114 .\accounts\forms.py:179
+#: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
 msgstr "Изисква се пол за съответствие."
 
-#: .\accounts\forms.py:152
+#: .\accounts\forms.py:138
 msgid "Your height is required."
 msgstr "Вашият ръст е задължителен."
 
-#: .\accounts\forms.py:164 .\accounts\validators.py:109
+#: .\accounts\forms.py:150 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
 msgstr "Моля, напишете няколко думи за себе си."
 
-#: .\accounts\forms.py:167 .\accounts\forms.py:208
+#: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
 msgstr "Моля пишете къде живеете."
 
-#: .\accounts\forms.py:170 .\accounts\models.py:227
+#: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
 msgstr "имаш ли деца колко?"
 
-#: .\accounts\forms.py:173 .\accounts\models.py:230
+#: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
 msgstr "Искате ли (още) деца?"
 
-#: .\accounts\forms.py:176 .\accounts\validators.py:157
+#: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
 msgstr "Кой е вашият идеален партньор?"
 
-#: .\accounts\forms.py:182
+#: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
 msgstr "Изисква се минимална възраст за съответствие."
 
-#: .\accounts\forms.py:185
+#: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
 msgstr "Изисква се максимална възраст за съответствие."
 
-#: .\accounts\forms.py:188 .\accounts\validators.py:269
+#: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
 msgstr "Изисква се съответствие на диетата."
 
-#: .\accounts\forms.py:191 .\accounts\validators.py:284
+#: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
 msgstr "Изисква се съответствие на статуса за пушене."
 
-#: .\accounts\forms.py:194 .\accounts\validators.py:299
+#: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
 msgstr "Изисква се съответствие на състоянието на връзката."
 
-#: .\accounts\forms.py:208
+#: .\accounts\forms.py:194
 msgid "Where do you live?"
 msgstr "къде живееш"
 
-#: .\accounts\forms.py:244 .\accounts\models.py:237
+#: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
 msgstr "Пол за съвпадение"
@@ -766,7 +763,7 @@ msgstr ""
 "Поне една опция за съвпадение на състоянието на връзката трябва да бъде пет "
 "сърца."
 
-#: .\admin\views.py:231
+#: .\admin\views.py:225
 #, python-brace-format
 msgid ""
 "Admin: The total number of active members on the site is "
@@ -863,7 +860,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_the_last_two_years} други) са "
 "влезли в сайта през последните две години."
 
-#: .\admin\views.py:313
+#: .\admin\views.py:307
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_the_last_week} active "
@@ -904,7 +901,7 @@ msgstr ""
 "{total_number_of_active_members_registered_before_2019_08_01} активни "
 "членове, регистрирани преди 1 август 2019 г."
 
-#: .\admin\views.py:333
+#: .\admin\views.py:327
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
@@ -913,7 +910,7 @@ msgstr ""
 "Администратор: {total_number_of_active_members_registered_in_year} активни "
 "членове, регистрирани в {year}."
 
-#: .\admin\views.py:388
+#: .\admin\views.py:382
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range} "
@@ -934,7 +931,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range} мъже, "
 "{total_percent_of_other_active_members_in_age_range} други)."
 
-#: .\admin\views.py:452
+#: .\admin\views.py:446
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
@@ -966,7 +963,7 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "други) влязоха в сайта през последните осем месеца."
 
-#: .\admin\views.py:516
+#: .\admin\views.py:510
 #, python-brace-format
 msgid ""
 "Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
@@ -998,15 +995,15 @@ msgstr ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "други) влязоха в сайта през последните четири месеца."
 
-#: .\likes\managers.py:39 .\likes\models.py:55
+#: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
 msgstr "Потребителите не могат да се харесват."
 
-#: .\likes\managers.py:42
+#: .\likes\managers.py:33
 msgid "User already likes other user."
 msgstr "Потребителят вече харесва друг потребител."
 
-#: .\likes\managers.py:45
+#: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
 msgstr "Потребителят не може да хареса блокиран потребител."
 
@@ -1026,31 +1023,31 @@ msgstr "харесване на потребителя"
 msgid "user likes"
 msgstr "потребителски харесвания"
 
-#: .\likes\views.py:59
+#: .\likes\views.py:53
 msgid "Girls You Like"
 msgstr "Момичета, които харесвате"
 
-#: .\likes\views.py:60
+#: .\likes\views.py:54
 msgid "Boys You Like"
 msgstr "Момчета, които харесвате"
 
-#: .\likes\views.py:61
+#: .\likes\views.py:55
 msgid "People You Like"
 msgstr "Хора, които харесвате"
 
-#: .\likes\views.py:64
+#: .\likes\views.py:58
 msgid "Girls Who Like You"
 msgstr "Момичета, които те харесват"
 
-#: .\likes\views.py:65
+#: .\likes\views.py:59
 msgid "Boys Who Like You"
 msgstr "Момчета, които те харесват"
 
-#: .\likes\views.py:66
+#: .\likes\views.py:60
 msgid "People Who Like You"
 msgstr "Хора, които те харесват"
 
-#: .\likes\views.py:68
+#: .\likes\views.py:62
 msgid "Mutual Likes"
 msgstr "Взаимни харесвания"
 
@@ -1058,26 +1055,26 @@ msgstr "Взаимни харесвания"
 msgid "Speedy Match Matches"
 msgstr "Speedy Match Matches"
 
-#: .\matches\views.py:172 .\matches\views.py:206
+#: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
 msgstr "Вашите настройки за съответствие бяха запазени."
 
-#: .\profiles\tests\test_widgets.py:76
+#: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
 msgstr "Ранг на мача"
 
-#: .\profiles\tests\test_widgets.py:129 .\profiles\tests\test_widgets.py:130
-#: .\profiles\tests\test_widgets.py:131 .\profiles\widgets.py:90
-#: .\profiles\widgets.py:93 .\profiles\widgets.py:96
+#: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
+#: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
+#: .\profiles\widgets.py:86 .\profiles\widgets.py:89
 msgid "Unknown"
 msgstr "неизвестен"
 
-#: .\profiles\tests\test_widgets.py:142 .\profiles\widgets.py:101
+#: .\profiles\tests\test_widgets.py:124 .\profiles\widgets.py:94
 msgid "None"
 msgstr "Няма"
 
-#: .\profiles\tests\test_widgets.py:149
+#: .\profiles\tests\test_widgets.py:131
 #: .\templates\profiles\user_extra_info_widget.html:12
 msgid "More Information"
 msgstr "Повече информация"
