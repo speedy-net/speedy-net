@@ -29,8 +29,8 @@ def set_registration_site_id_and_language_code(apps, schema_editor):
     """
     User = apps.get_model('accounts', 'User')
     SiteProfile = apps.get_model('match_accounts', 'SiteProfile')
-    profiles = {profile.user_id: profile for profile in SiteProfile.objects.all().iterator()}
-    for user in User.objects.all().iterator():
+    profiles = {profile.user_id: profile for profile in     SiteProfile.objects.order_by().iterator()}
+        for user in User.objects.order_by().iterator():
         site_id, language_code = get_registration_site_id_and_language_code(user=user, profile=profiles.get(user.pk))
         User.objects.filter(pk=user.pk).update(registration_site_id=site_id, registration_language_code=language_code)
 
