@@ -486,6 +486,8 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         last_ip_address_used_original_ipapi_call (bool): Whether the last IP address used was an original ipapi call.
         last_ip_address_used_ipapi_time (datetime): The time of the last IP address used ipapi call.
         last_ip_address_used_raw_ipapi_results (dict): The raw results of the last IP address used ipapi call.
+        registration_site_id (int): The SITE_ID of the site the user registered on (Speedy Net by default).
+        registration_language_code (str): The language code of the language the user registered in ('en' by default).
     """
     # Fields of the user which have a separate value for each language; the first two are the name fields and only the first one (first_name) is required.
     LOCALIZABLE_FIELDS = ('first_name', 'last_name', 'city')
@@ -692,6 +694,8 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
     last_ip_address_used_original_ipapi_call = models.BooleanField(default=False)
     last_ip_address_used_ipapi_time = models.DateTimeField(verbose_name=_('Last IP address used https://ipapi.com/ time'), blank=True, null=True)
     last_ip_address_used_raw_ipapi_results = models.JSONField(verbose_name=_('Last IP address used raw https://ipapi.com/ results'), blank=True, null=True)
+    registration_site_id = models.PositiveSmallIntegerField(default=django_settings.SPEEDY_NET_SITE_ID)  # The SITE_ID of the site the user registered on.
+    registration_language_code = models.CharField(max_length=10, choices=django_settings.LANGUAGES, default='en')  # The language the user registered in (the active language at the time of registration).
 
     # Reverse accessors. Type hint not built-in as per https://youtrack.jetbrains.com/issue/PY-24411
     email_addresses: 'QuerySet[UserEmailAddress]'
@@ -967,7 +971,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
         Return the main language code of the user.
         If the user is active and has a language in Speedy Match, return that language.
         Otherwise, if the user completed registration step 6 in Speedy Match, return that language.
-        Otherwise, return 'en'.
+        Otherwise, return the language the user registered in.
         If the user has more than one language in Speedy Match, return the first one according to django_settings.LANGUAGES.
 
         :return: The main language code of the user.
@@ -980,7 +984,7 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
             for language_code, language_name in django_settings.LANGUAGES:
                 if getattr(self.speedy_match_profile, to_attribute(name='activation_step', language_code=language_code), 0) >= 7:
                     return language_code
-        return 'en'
+        return self.registration_language_code
 
     class Meta:
         verbose_name = _('user')
