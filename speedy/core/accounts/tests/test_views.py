@@ -1337,6 +1337,238 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesKoreanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Korean).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Korean and prepares the required fields for this language.
+                """
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "도론",
+                    'last_name_ko': "마탈론",
+                })
+                self.first_name = "도론"
+                self.last_name = "마탈론"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesArabicTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Arabic).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Arabic and prepares the required fields for this language.
+                """
+                # Check names in Arabic alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ar': "دورون",
+                    'last_name_ar': "ماتالون",
+                })
+                self.first_name = "دورون"
+                self.last_name = "ماتالون"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesIndonesianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Indonesian).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Indonesian and prepares the required fields for this language.
+                """
+                # Check names in Indonesian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_id': "Doron",
+                    'last_name_id': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesUkrainianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Ukrainian).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Ukrainian and prepares the required fields for this language.
+                """
+                # Check names in Ukrainian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uk': "Дорон",
+                    'last_name_uk': "Маталон",
+                })
+                self.first_name = "Дорон"
+                self.last_name = "Маталон"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesTurkishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Turkish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Turkish and prepares the required fields for this language.
+                """
+                # Check names in Turkish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesVietnameseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Vietnamese).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Vietnamese and prepares the required fields for this language.
+                """
+                # Check names in Vietnamese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesCzechTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Czech).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Czech and prepares the required fields for this language.
+                """
+                # Check names in Czech alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesSwedishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Swedish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Swedish and prepares the required fields for this language.
+                """
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='zh-yue')
         class RegistrationViewWithLastNameAllMainPlusLanguagesCantoneseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             """
@@ -1739,6 +1971,238 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesKoreanTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Korean).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Korean and prepares the required fields for this language.
+                """
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "도론",
+                    'last_name_ko': "",
+                })
+                self.first_name = "도론"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesArabicTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Arabic).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Arabic and prepares the required fields for this language.
+                """
+                # Check names in Arabic alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ar': "دورون",
+                    'last_name_ar': "",
+                })
+                self.first_name = "دورون"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesIndonesianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Indonesian).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Indonesian and prepares the required fields for this language.
+                """
+                # Check names in Indonesian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_id': "Doron",
+                    'last_name_id': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesUkrainianTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Ukrainian).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Ukrainian and prepares the required fields for this language.
+                """
+                # Check names in Ukrainian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uk': "Дорон",
+                    'last_name_uk': "",
+                })
+                self.first_name = "Дорон"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesTurkishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Turkish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Turkish and prepares the required fields for this language.
+                """
+                # Check names in Turkish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesVietnameseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Vietnamese).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Vietnamese and prepares the required fields for this language.
+                """
+                # Check names in Vietnamese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesCzechTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Czech).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Czech and prepares the required fields for this language.
+                """
+                # Check names in Czech alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesSwedishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Swedish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Swedish and prepares the required fields for this language.
+                """
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
 
 
         @only_on_sites_with_login
