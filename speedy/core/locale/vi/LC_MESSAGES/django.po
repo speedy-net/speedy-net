@@ -2272,10 +2272,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có) "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có) "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:94
@@ -2287,10 +2287,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có) "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có) "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:117
@@ -2302,10 +2302,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d nhân vật (nó có) "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có) "
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:140
@@ -2317,10 +2317,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d nhân vật (nó có) "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có "
 "%(show_value)d)."
 msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có) "
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có "
 "%(show_value)d)."
 
 #: .\accounts\validators.py:190
@@ -2332,16 +2332,16 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Mật khẩu này quá ngắn. Nó phải chứa ít nhất... %(min_length)d tính cách."
+"Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
 msgstr[1] ""
-"Mật khẩu này quá ngắn. Nó phải chứa ít nhất... %(min_length)d các nhân vật."
+"Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Mật khẩu của bạn phải chứa ít nhất... %(min_length)d tính cách."
-msgstr[1] "Mật khẩu của bạn phải chứa ít nhất... %(min_length)d các nhân vật."
+msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
+msgstr[1] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2350,16 +2350,16 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Mật khẩu này quá dài. Nó phải chứa tối đa... %(max_length)d tính cách."
+"Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
 msgstr[1] ""
-"Mật khẩu này quá dài. Nó phải chứa tối đa... %(max_length)d các nhân vật."
+"Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "Mật khẩu của bạn phải chứa tối đa... %(max_length)d tính cách."
-msgstr[1] "Mật khẩu của bạn phải chứa tối đa... %(max_length)d các nhân vật."
+msgstr[0] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
+msgstr[1] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2367,8 +2367,8 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Mật khẩu của bạn phải chứa ít nhất... %(min_unique_characters)d các nhân vật "
-"độc đáo."
+"Mật khẩu của bạn phải chứa ít nhất %(min_unique_characters)d ký tự "
+"khác nhau."
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."

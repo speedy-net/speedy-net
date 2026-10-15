@@ -2332,9 +2332,9 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"كلمة المرور هذه قصيرة جدًا. يجب أن يحتوي على حرف %(min_length)d على الأقل."
+"كلمة المرور هذه قصيرة جدًا. يجب أن تحتوي على حرف %(min_length)d على الأقل."
 msgstr[1] ""
-"كلمة المرور هذه قصيرة جدًا. يجب أن يحتوي على %(min_length)d حرفًا على الأقل."
+"كلمة المرور هذه قصيرة جدًا. يجب أن تحتوي على %(min_length)d حرفًا على الأقل."
 
 #: .\accounts\validators.py:206
 #, python-format
@@ -2352,9 +2352,9 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"كلمة المرور هذه طويلة جدًا. يجب أن يحتوي على حرف %(max_length)d على الأكثر."
+"كلمة المرور هذه طويلة جدًا. يجب أن تحتوي على حرف %(max_length)d على الأكثر."
 msgstr[1] ""
-"كلمة المرور هذه طويلة جدًا. يجب أن يحتوي على %(max_length)d حرفًا على الأكثر."
+"كلمة المرور هذه طويلة جدًا. يجب أن تحتوي على %(max_length)d حرفًا على الأكثر."
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -2371,8 +2371,8 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"يجب أن تحتوي كلمة المرور الخاصة بك على %(min_unique_characters)d على الأقل "
-"من الأحرف الفريدة."
+"يجب أن تحتوي كلمة المرور الخاصة بك على %(min_unique_characters)d من الأحرف الفريدة "
+"على الأقل."
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
