@@ -2534,6 +2534,126 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserAllMainPlusLanguagesKoreanTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserAllMainPlusLanguagesArabicTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserAllMainPlusLanguagesIndonesianTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserAllMainPlusLanguagesUkrainianTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserAllMainPlusLanguagesTurkishTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserAllMainPlusLanguagesVietnameseTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserAllMainPlusLanguagesCzechTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserAllMainPlusLanguagesSwedishTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='zh-yue')
         class UserAllMainPlusLanguagesCantoneseTestCase(UserTestCaseMixin, SiteTestCase):
             """
