@@ -18,6 +18,6 @@ def rank_description(rank):
     :return: The description of the rank.
     :rtype: str
     """
-    return SpeedyMatchSiteProfile.get_rank_description(rank)
+    return SpeedyMatchSiteProfile.get_rank_description(rank=rank)
 
 
