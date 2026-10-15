@@ -1303,16 +1303,16 @@ if (django_settings.TESTS):
                     **{gender: '다음에서 이메일 주소 확인 Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{gender: 'أكّد عنوان بريدك الإلكتروني على Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'قم بتأكيد عنوان بريدك الإلكتروني على Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Konfirmasikan alamat email Anda di Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Підтвердьте свою електронну адресу у Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Підтвердьте свою електронну адресу на Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{gender: 'Speedy Net üzerinde e-posta adresinizi doğrulayın' for gender in User.ALL_GENDERS},
+                    **{gender: "E-posta adresinizi Speedy Net'da doğrulayın" for gender in User.ALL_GENDERS},
                 },
                 'vi': {
                     **{gender: 'Xác nhận địa chỉ email của bạn trên Speedy Net' for gender in User.ALL_GENDERS},
@@ -1446,16 +1446,16 @@ if (django_settings.TESTS):
                     **{gender: '다음에서 이메일 주소 확인 Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{gender: 'أكّد عنوان بريدك الإلكتروني على Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'قم بتأكيد عنوان بريدك الإلكتروني على Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'id': {
                     **{gender: 'Konfirmasikan alamat email Anda di Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Підтвердьте свою електронну адресу у Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Підтвердьте свою електронну адресу на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{gender: 'Speedy Match üzerinde e-posta adresinizi doğrulayın' for gender in User.ALL_GENDERS},
+                    **{gender: "E-posta adresinizi Speedy Match'da doğrulayın" for gender in User.ALL_GENDERS},
                 },
                 'vi': {
                     **{gender: 'Xác nhận địa chỉ email của bạn trên Speedy Match' for gender in User.ALL_GENDERS},

@@ -752,19 +752,19 @@ msgstr "Hãy đọc nó:"
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -3204,7 +3204,7 @@ msgstr "Sử dụng liên kết này để kích hoạt tài khoản của bạn
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Xác nhận địa chỉ email của bạn tại đây. %(site_name)s"
+msgstr "Xác nhận địa chỉ email của bạn trên %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
