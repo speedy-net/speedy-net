@@ -8,6 +8,38 @@ if (django_settings.TESTS):
     from speedy.core.accounts.models import User
 
 
+    class SpeedyNetAccountsModelsMixin(TestCaseMixin):
+        """
+        Test mixin providing helpers for checking that a translated text appears inside a string, wrapped in one of the supported quote styles.
+        """
+
+        def _is_text_contained_in_string_with_quotes(self, text, string):
+            """
+            Checks whether the text is contained in the string, wrapped in any of the supported quote styles.
+
+            :param text: Required. The text to look for.
+            :type text: str
+            :param string: Required. The string to look in.
+            :type string: str
+            :return: True if the text, wrapped in quotes, is contained in the string.
+            :rtype: bool
+            """
+            return any(quote_format.format(text) in string for quote_format in ['"{}"', '”{}”', '„{}”', '„{}“', '“{}”', '«{}»', '「{}」', '« {} »'])
+
+        def assert_text_is_contained_in_string_with_quotes(self, text, string, expected):
+            """
+            Asserts whether the text is contained in the string, wrapped in any of the supported quote styles.
+
+            :param text: Required. The text to look for.
+            :type text: str
+            :param string: Required. The string to look in.
+            :type string: str
+            :param expected: Required. Whether the text is expected to be contained in the string, wrapped in quotes.
+            :type expected: bool
+            """
+            self.assertIs(expr1=self._is_text_contained_in_string_with_quotes(text=text, string=string), expr2=expected)
+
+
     class SpeedyNetAccountsLanguageMixin(TestCaseMixin):
         """
         Test mixin providing per-language, per-gender delete-account text fixtures and error dicts for Speedy Net account tests.

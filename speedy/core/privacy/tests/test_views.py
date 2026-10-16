@@ -13,12 +13,12 @@ if (django_settings.TESTS):
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.tests.test_views import StaticBaseViewTestCaseMixin
         from speedy.core.accounts.test.mixins import SpeedyCoreAccountsLanguageMixin
-        from speedy.net.accounts.test.mixins import SpeedyNetAccountsLanguageMixin
+        from speedy.net.accounts.test.mixins import SpeedyNetAccountsModelsMixin, SpeedyNetAccountsLanguageMixin
 
         from speedy.core.accounts.models import User
 
 
-        class PrivacyPolicyViewTestCaseMixin(StaticBaseViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
+        class PrivacyPolicyViewTestCaseMixin(StaticBaseViewTestCaseMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsModelsMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the translated text of the privacy policy page, for all genders, in the current test's language.
             """
@@ -60,28 +60,9 @@ if (django_settings.TESTS):
                         self.assertIs(expr1=_delete_account_text in _if_you_want_you_can_delete_your_account_on_speedy_net_text, expr2=False)
                     else:
                         self.assertIs(expr1=_delete_account_text in _if_you_want_you_can_delete_your_account_on_speedy_net_text, expr2=True)
-                    _delete_account_text_with_quotes_1_is_contained_in_string = '"{}"'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_2_is_contained_in_string = '”{}”'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_3_is_contained_in_string = '„{}”'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_4_is_contained_in_string = '„{}“'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_5_is_contained_in_string = '“{}”'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_6_is_contained_in_string = '«{}»'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_7_is_contained_in_string = '「{}」'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _delete_account_text_with_quotes_8_is_contained_in_string = '« {} »'.format(_delete_account_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    if ((self.language_code == 'he') and (gender == User.GENDER_OTHER_STRING)):
-                        self.assertIs(expr1=_delete_account_text_with_quotes_1_is_contained_in_string or _delete_account_text_with_quotes_2_is_contained_in_string or _delete_account_text_with_quotes_3_is_contained_in_string or _delete_account_text_with_quotes_4_is_contained_in_string or _delete_account_text_with_quotes_5_is_contained_in_string or _delete_account_text_with_quotes_6_is_contained_in_string or _delete_account_text_with_quotes_7_is_contained_in_string or _delete_account_text_with_quotes_8_is_contained_in_string, expr2=False)
-                    else:
-                        self.assertIs(expr1=_delete_account_text_with_quotes_1_is_contained_in_string or _delete_account_text_with_quotes_2_is_contained_in_string or _delete_account_text_with_quotes_3_is_contained_in_string or _delete_account_text_with_quotes_4_is_contained_in_string or _delete_account_text_with_quotes_5_is_contained_in_string or _delete_account_text_with_quotes_6_is_contained_in_string or _delete_account_text_with_quotes_7_is_contained_in_string or _delete_account_text_with_quotes_8_is_contained_in_string, expr2=True)
+                    self.assert_text_is_contained_in_string_with_quotes(text=_delete_account_text, string=_if_you_want_you_can_delete_your_account_on_speedy_net_text, expected=(not ((self.language_code == 'he') and (gender == User.GENDER_OTHER_STRING))))
                     self.assertIs(expr1=_edit_profile_text in _if_you_want_you_can_delete_your_account_on_speedy_net_text, expr2=True)
-                    _edit_profile_text_with_quotes_1_is_contained_in_string = '"{}"'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_2_is_contained_in_string = '”{}”'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_3_is_contained_in_string = '„{}”'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_4_is_contained_in_string = '„{}“'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_5_is_contained_in_string = '“{}”'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_6_is_contained_in_string = '«{}»'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_7_is_contained_in_string = '「{}」'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    _edit_profile_text_with_quotes_8_is_contained_in_string = '« {} »'.format(_edit_profile_text) in _if_you_want_you_can_delete_your_account_on_speedy_net_text
-                    self.assertIs(expr1=_edit_profile_text_with_quotes_1_is_contained_in_string or _edit_profile_text_with_quotes_2_is_contained_in_string or _edit_profile_text_with_quotes_3_is_contained_in_string or _edit_profile_text_with_quotes_4_is_contained_in_string or _edit_profile_text_with_quotes_5_is_contained_in_string or _edit_profile_text_with_quotes_6_is_contained_in_string or _edit_profile_text_with_quotes_7_is_contained_in_string or _edit_profile_text_with_quotes_8_is_contained_in_string, expr2=True)
+                    self.assert_text_is_contained_in_string_with_quotes(text=_edit_profile_text, string=_if_you_want_you_can_delete_your_account_on_speedy_net_text, expected=True)
 
 
         @only_on_sites_with_login
