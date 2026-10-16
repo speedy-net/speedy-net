@@ -1569,6 +1569,35 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationViewWithLastNameAllMainPlusLanguagesFinnishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (with a last name) for all main plus languages (Finnish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first and last name fields in Finnish and prepares the required fields for this language.
+                """
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='zh-yue')
         class RegistrationViewWithLastNameAllMainPlusLanguagesCantoneseTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
             """
@@ -2203,6 +2232,35 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class RegistrationViewWithoutLastNameAllMainPlusLanguagesFinnishTestCase(RegistrationViewTestCaseMixin, SiteTestCase):
+            """
+            Tests the registration view (without a last name) for all main plus languages (Finnish).
+            """
+
+            def set_up(self):
+                """
+                Sets the first name field (with an empty last name) in Finnish and prepares the required fields for this language.
+                """
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+                self.set_up_required_fields()
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
 
 
         @only_on_sites_with_login

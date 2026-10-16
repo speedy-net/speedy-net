@@ -2654,6 +2654,21 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserAllMainPlusLanguagesFinnishTestCase(UserTestCaseMixin, SiteTestCase):
+            """
+            Tests the User model, for all main plus languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='zh-yue')
         class UserAllMainPlusLanguagesCantoneseTestCase(UserTestCaseMixin, SiteTestCase):
             """
