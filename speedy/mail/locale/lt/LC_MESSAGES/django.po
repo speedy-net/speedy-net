@@ -15,41 +15,39 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
-"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
-"1 : n % 1 != 0 ? 2: 3);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: .\accounts\apps.py:14
 msgid "Speedy Mail Software Accounts"
-msgstr ""
+msgstr "Speedy Mail Software paskyros"
 
 #: .\accounts\models.py:25
 msgid "Speedy Net User"
-msgstr ""
+msgstr "Speedy Net naudotojas"
 
 #: .\accounts\models.py:27
 msgid "User"
-msgstr ""
+msgstr "Naudotojas"
 
 #: .\accounts\models.py:41
 msgid "Speedy Mail Profile"
-msgstr ""
+msgstr "Speedy Mail profilis"
 
 #: .\accounts\models.py:42
 msgid "Speedy Mail Profiles"
-msgstr ""
+msgstr "Speedy Mail profiliai"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"
-msgstr ""
+msgstr "Apie Speedy Mail Software"
 
 #: .\templates\about\about.html:15
 msgid ""
-"Speedy Mail Software will be a free software and open source web-based email "
-"such as Gmail. We want the mail to be as similar as possible to the "
+"Speedy Mail Software will be a free software and open source web-based email"
+" such as Gmail. We want the mail to be as similar as possible to the "
 "excellent email of Google, Gmail. When we develop such a mail software, we "
-"intend to run a free email service to all members of Speedy Net, so that the "
-"username of each person at Speedy Net + the speedy.net domain name will be "
+"intend to run a free email service to all members of Speedy Net, so that the"
+" username of each person at Speedy Net + the speedy.net domain name will be "
 "the email address of the user. In the past we operated an email like this, "
 "but unfortunately we had to close it because it was a lot worse than Gmail, "
 "in terms of features and storage, and also because we were not able to "
@@ -58,6 +56,18 @@ msgid ""
 "Speedy Mail and will allow any company or organization to operate a similar "
 "web-based email on their site."
 msgstr ""
+"Speedy Mail Software bus nemokamas atvirojo kodo žiniatinklio el. paštas, "
+"panašus į Gmail. Norime, kad paštas būtų kuo panašesnis į puikų Google el. "
+"paštą Gmail. Sukūrę tokią pašto programinę įrangą, ketiname teikti nemokamą "
+"el. pašto paslaugą visiems Speedy Net nariams, kad kiekvieno asmens Speedy "
+"Net naudotojo vardas + domeno vardas speedy.net būtų naudotojo el. pašto "
+"adresas. Anksčiau tokį el. paštą valdėme, bet deja, turėjome jį uždaryti, "
+"nes jis buvo gerokai prastesnis už Gmail pagal funkcijas ir talpą, taip pat "
+"negalėjome suvaldyti šlamšto („nepageidaujamo pašto“) siuntimo mūsų "
+"klientams problemos. Tačiau jei sugebėsime pritraukti savanorių geros el. "
+"pašto programos sukūrimui, vėl paleisime Speedy Mail ir leisime bet kuriai "
+"įmonei ar organizacijai savo svetainėje teikti panašų žiniatinklio el. "
+"paštą."
 
 #: .\templates\about\about.html:17
 msgid ""
@@ -66,40 +76,50 @@ msgid ""
 "free software & open source projects. If you want to help developing Speedy "
 "Mail Software, please contact me by email."
 msgstr ""
+"Speedy Mail Software bus prieinamas dviem kalbomis – anglų ir hebrajų – ir "
+"bus nemokamas. Speedy Net ir Speedy Mail Software yra nemokamos programinės "
+"įrangos ir atvirojo kodo projektai. Jei norite padėti kurti Speedy Mail "
+"Software, susisiekite su manimi el. paštu."
 
 #: .\templates\about\about.html:19
 msgid ""
-"Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
-"speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was "
-"with us for many years and died in 2003. Speedy gave birth to 7 puppies in "
-"1988."
+"Speedy Mail Software is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Mail Software pavadintas <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> – kalytės, kuri daug metų buvo su mumis ir mirė "
+"2003 m., vardu. Speedy 1988 m. atvedė 7 šuniukus."
 
 #: .\templates\about\about.html:21 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "Ačiū ir sėkmės,"
 
 #: .\templates\about\about.html:22 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"
-msgstr ""
+msgstr "Speedy Net ir Speedy Mail įkūrėjas ir direktorius,"
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based email such as Gmail."
 msgstr ""
+"Ieškome savanorių, kurie padėtų mums kurti Speedy Mail Software – nemokamą "
+"atvirojo kodo žiniatinklio el. paštą, panašų į Gmail."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Mail Software!"
-msgstr ""
+msgstr "Sveiki atvykę į Speedy Mail Software!"
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -116,6 +136,18 @@ msgid ""
 "good email program, we will reactivate Speedy Mail and will allow any "
 "company or organization to operate a similar web-based email on their site."
 msgstr ""
+"Ieškome savanorių, kurie padėtų mums kurti Speedy Mail Software – nemokamą "
+"atvirojo kodo žiniatinklio el. paštą, panašų į Gmail. Norime, kad paštas "
+"būtų kuo panašesnis į puikų Google el. paštą Gmail. Sukūrę tokią pašto "
+"programinę įrangą, ketiname teikti nemokamą el. pašto paslaugą visiems "
+"Speedy Net nariams, kad kiekvieno asmens Speedy Net naudotojo vardas + "
+"domeno vardas speedy.net būtų naudotojo el. pašto adresas. Anksčiau tokį el."
+" paštą valdėme, bet deja, turėjome jį uždaryti, nes jis buvo gerokai "
+"prastesnis už Gmail pagal funkcijas ir talpą, taip pat negalėjome suvaldyti "
+"šlamšto („nepageidaujamo pašto“) siuntimo mūsų klientams problemos. Tačiau "
+"jei sugebėsime pritraukti savanorių geros el. pašto programos sukūrimui, vėl"
+" paleisime Speedy Mail ir leisime bet kuriai įmonei ar organizacijai savo "
+"svetainėje teikti panašų žiniatinklio el. paštą."
 
 #: .\templates\main\main_page.html:21
 msgid ""
@@ -123,3 +155,6 @@ msgid ""
 "Net is also free software and open source. If you are interested in "
 "volunteering, please contact me by email."
 msgstr ""
+"Speedy Mail Software naudos Python ir JavaScript kalbas. Speedy Net taip pat"
+" yra nemokama programinė įranga su atviruoju kodu. Jei norite savanoriauti, "
+"susisiekite su manimi el. paštu."

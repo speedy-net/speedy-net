@@ -2850,7 +2850,7 @@ msgstr "Esloveniera"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "Basque"
+msgstr "Euskara"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"
@@ -3283,7 +3283,7 @@ msgstr "Doakoa da, eta edonork eman dezake izena!"
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Txateatu <a href=\"%(link)s\">%(user_name)s</a> erabiltzailarekin"
+msgstr "Txateatu <a href=\"%(link)s\">%(user_name)s</a> erabiltzailearekin"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9

@@ -40,10 +40,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
-"i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà "
-"el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el "
-"meu compte.” en aquest camp, exactament i sensible a les majúscules."
+"Segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
+"i irreversible. Si elimines el teu compte de Speedy Net, també "
+"s'eliminarà el teu compte de Speedy Match. Si ho tens clar, escriu «Sí. "
+"Suprimeix el meu compte.» en aquest camp, exactament i respectant "
+"majúscules i minúscules."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +54,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
-"i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà "
-"el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el "
-"meu compte.” en aquest camp, exactament i sensible a les majúscules."
+"Segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
+"i irreversible. Si elimines el teu compte de Speedy Net, també "
+"s'eliminarà el teu compte de Speedy Match. Si ho tens clar, escriu «Sí. "
+"Suprimeix el meu compte.» en aquest camp, exactament i respectant "
+"majúscules i minúscules."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,28 +68,29 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
-"i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà "
-"el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el "
-"meu compte.” en aquest camp, exactament i sensible a les majúscules."
+"Segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
+"i irreversible. Si elimines el teu compte de Speedy Net, també "
+"s'eliminarà el teu compte de Speedy Match. Si ho tens clar, escriu «Sí. "
+"Suprimeix el meu compte.» en aquest camp, exactament i respectant "
+"majúscules i minúscules."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "Suprimeix permanentment el teu compte {site_name}"
+msgstr "Suprimeix permanentment el teu compte de {site_name}"
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "Suprimeix permanentment el teu compte {site_name}"
+msgstr "Suprimeix permanentment el teu compte de {site_name}"
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "Suprimeix permanentment el teu compte {site_name}"
+msgstr "Suprimeix permanentment el teu compte de {site_name}"
 
 #: .\__translations\__translations.py:18
 #, python-brace-format
@@ -96,8 +99,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
-"utilitzar {site_name}."
+"S'han suprimit els teus comptes de Speedy Net i Speedy Match. Gràcies "
+"per utilitzar {site_name}."
 
 #: .\__translations\__translations.py:19
 #, python-brace-format
@@ -106,8 +109,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
-"utilitzar {site_name}."
+"S'han suprimit els teus comptes de Speedy Net i Speedy Match. Gràcies "
+"per utilitzar {site_name}."
 
 #: .\__translations\__translations.py:20
 #, python-brace-format
@@ -116,12 +119,12 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"S'han Speedy Net suprimit els Speedy Match vostres comptes de i. Gràcies per "
-"utilitzar {site_name}."
+"S'han suprimit els teus comptes de Speedy Net i Speedy Match. Gràcies "
+"per utilitzar {site_name}."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Comptes de Speedy Net"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
@@ -134,10 +137,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Estàs segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
-"i irreversible. L'eliminació del vostre compte de Speedy Net també eliminarà "
-"el vostre compte Speedy Match. Si esteu segurs, escriviu “Sí. Suprimeix el "
-"meu compte.” en aquest camp, exactament i sensible a les majúscules."
+"Segur que vols eliminar el teu compte de Speedy Net? Això és permanent "
+"i irreversible. Si elimines el teu compte de Speedy Net, també "
+"s'eliminarà el teu compte de Speedy Match. Si ho tens clar, escriu «Sí. "
+"Suprimeix el meu compte.» en aquest camp, exactament i respectant "
+"majúscules i minúscules."
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -162,11 +166,11 @@ msgstr "Nombre d'amics a la darrera visita de l'usuari"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Perfil de Speedy Net"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Perfils de Speedy Net"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -199,11 +203,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> és una nova xarxa social. Amb Speedy Net pots comunicar-"
-"te amb els teus amics. Speedy Net està Speedy Net obert al registre gratuït "
-"per a persones de tots els països i edats (sense límit d'edat!). El lloc és "
-"vegà i apte per a vegetarians. Actualment està disponible en "
-"%(languages_num)s idiomes."
+"Net\">Speedy Net</a> és una nova xarxa social. Amb Speedy Net pots "
+"comunicar-te amb els teus amics. Speedy Net és d'accés obert amb "
+"registre gratuït per a persones de tots els països i edats (sense límit "
+"d'edat!). El lloc és amigable amb vegans i vegetarians. Actualment està "
+"disponible en %(languages_num)s idiomes."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -222,11 +226,11 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
-"Vam decidir limitar el nombre d'amics a Speedy Net a 800. Us animem a afegir "
-"com a amics només persones que coneixeu personalment. Pots seleccionar quins "
-"detalls apareixeran al teu perfil com a públics, quins detalls només per als "
-"amics i quins detalls seran privats. Els detalls privats només us "
-"apareixeran a vosaltres."
+"Hem decidit limitar el nombre d'amics a Speedy Net a 800. T'animem a "
+"afegir com a amics només persones que coneixes personalment. Pots "
+"seleccionar quins detalls apareixeran al teu perfil com a públics, "
+"quins només per als amics i quins seran privats. Els detalls privats "
+"només els veuràs tu."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -235,10 +239,10 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Pots utilitzar la nostra nova aplicació, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, per trobar "
-"persones que coincideixin amb les cites. Speedy Match està obert a solters "
-"de totes les edats."
+"Pots utilitzar la nostra nova aplicació, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, per trobar persones compatibles per quedar. "
+"Speedy Match és oberta a solters de totes les edats."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -255,8 +259,8 @@ msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net és un projecte de programari lliure i de codi obert. Si voleu "
-"ajudar a desenvolupar i millorar, poseu Speedy Net -vos en contacte amb mi "
+"Speedy Net és un projecte de programari lliure i de codi obert. Si vols "
+"ajudar a desenvolupar i millorar Speedy Net, posa't en contacte amb mi "
 "per correu electrònic."
 
 #: .\templates\about\about.html:29
@@ -265,9 +269,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net porta el nom de <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, una gossa que va estar amb "
-"nosaltres durant molts anys i que va morir el 2003. va donar a llum 7 "
+"Speedy Net porta el nom de <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, una gossa que va estar amb nosaltres "
+"durant molts anys i que va morir el 2003. Speedy va donar a llum 7 "
 "cadells el 1988."
 
 #: .\templates\about\about.html:31
@@ -285,7 +290,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fundador i director de Speedy Net Speedy Match i,"
+msgstr "Fundador i director de Speedy Net i Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -293,22 +298,22 @@ msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr "Benvingut"
+msgstr "Et donem la benvinguda"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Benvingut a %(site_name)s"
+msgstr "Et donem la benvinguda a %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "Si us plau, confirmeu la vostra adreça de correu electrònic."
+msgstr "Si us plau, confirma la teva adreça de correu electrònic."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"El vostre compte de Speedy Net no està actiu. Entra en aquesta pàgina per "
-"activar-la."
+"El teu compte de Speedy Net no està actiu. Entra a aquesta pàgina per "
+"activar-lo."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -353,7 +358,7 @@ msgstr "Speedy Match: cites amb Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Busques un xicot? Busques núvia? Vine a conèixer Speedy!"
+msgstr "Busques un xicot? Busques una xicota? Vine a conèixer Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

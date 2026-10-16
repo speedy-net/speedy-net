@@ -15,39 +15,39 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .\accounts\apps.py:14
 msgid "Speedy Mail Software Accounts"
-msgstr ""
+msgstr "Speedy Mail Software հաշիվներ"
 
 #: .\accounts\models.py:25
 msgid "Speedy Net User"
-msgstr ""
+msgstr "Speedy Net օգտատեր"
 
 #: .\accounts\models.py:27
 msgid "User"
-msgstr ""
+msgstr "Օգտատեր"
 
 #: .\accounts\models.py:41
 msgid "Speedy Mail Profile"
-msgstr ""
+msgstr "Speedy Mail պրոֆիլ"
 
 #: .\accounts\models.py:42
 msgid "Speedy Mail Profiles"
-msgstr ""
+msgstr "Speedy Mail պրոֆիլներ"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"
-msgstr ""
+msgstr "Speedy Mail Software-ի մասին"
 
 #: .\templates\about\about.html:15
 msgid ""
-"Speedy Mail Software will be a free software and open source web-based email "
-"such as Gmail. We want the mail to be as similar as possible to the "
+"Speedy Mail Software will be a free software and open source web-based email"
+" such as Gmail. We want the mail to be as similar as possible to the "
 "excellent email of Google, Gmail. When we develop such a mail software, we "
-"intend to run a free email service to all members of Speedy Net, so that the "
-"username of each person at Speedy Net + the speedy.net domain name will be "
+"intend to run a free email service to all members of Speedy Net, so that the"
+" username of each person at Speedy Net + the speedy.net domain name will be "
 "the email address of the user. In the past we operated an email like this, "
 "but unfortunately we had to close it because it was a lot worse than Gmail, "
 "in terms of features and storage, and also because we were not able to "
@@ -56,6 +56,19 @@ msgid ""
 "Speedy Mail and will allow any company or organization to operate a similar "
 "web-based email on their site."
 msgstr ""
+"Speedy Mail Software-ը Gmail-ի նման անվճար և բաց կոդով վեբ-հիմնված էլփոստ "
+"կլինի։ Մենք ցանկանում ենք, որ փոստը հնարավորինս նման լինի Google-ի գերազանց "
+"էլփոստին՝ Gmail-ին։ Երբ մշակենք այդպիսի փոստային ծրագիր, մենք մտադիր ենք "
+"Speedy Net-ի բոլոր անդամների համար գործարկել անվճար էլփոստի ծառայություն, "
+"որպեսզի Speedy Net-ում յուրաքանչյուր մարդու օգտանունը + speedy.net տիրույթի "
+"անվանումը լինի օգտատիրոջ էլփոստի հասցեն։ Նախկինում մենք գործարկել էինք "
+"այսպիսի էլփոստ, բայց, ցավոք, ստիպված եղանք փակել այն, քանի որ այն շատ ավելի "
+"վատ էր, քան Gmail-ը՝ հնարավորությունների և պահեստավորման առումով, ինչպես նաև"
+" այն պատճառով, որ չէինք կարողանում վերահսկել մեր հաճախորդներին ուղարկվող "
+"սպամի («անպետք փոստի») խնդիրը։ Բայց եթե կարողանանք հավաքագրել կամավորներ՝ "
+"լավ էլփոստային ծրագիր ստեղծելու համար, մենք կվերագործարկենք Speedy Mail-ը և "
+"թույլ կտանք ցանկացած ընկերության կամ կազմակերպության իրենց կայքում գործարկել"
+" նմանատիպ վեբ-հիմնված էլփոստ։"
 
 #: .\templates\about\about.html:17
 msgid ""
@@ -64,40 +77,50 @@ msgid ""
 "free software & open source projects. If you want to help developing Speedy "
 "Mail Software, please contact me by email."
 msgstr ""
+"Speedy Mail Software-ը հասանելի կլինի երկու լեզվով՝ անգլերեն և եբրայերեն, և "
+"անվճար կլինի։ Speedy Net-ը և Speedy Mail Software-ը ազատ ծրագրային ապահովման"
+" և բաց կոդով նախագծեր են։ Եթե ցանկանում եք օգնել Speedy Mail Software-ի "
+"մշակմանը, խնդրում եմ կապվեք ինձ հետ էլփոստով։"
 
 #: .\templates\about\about.html:19
 msgid ""
-"Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
-"speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was "
-"with us for many years and died in 2003. Speedy gave birth to 7 puppies in "
-"1988."
+"Speedy Mail Software is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Mail Software-ը անվանվել է <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>-ի պատվին. նա էգ շուն էր, որը շատ տարիներ մեզ հետ"
+" էր և մահացավ 2003 թվականին։ Speedy-ն 1988 թվականին ծնեց 7 լակոտ։"
 
 #: .\templates\about\about.html:21 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "Շնորհակալություն և հաջողություն,"
 
 #: .\templates\about\about.html:22 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"
-msgstr ""
+msgstr "Speedy Net-ի և Speedy Mail-ի հիմնադիր և տնօրեն,"
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based email such as Gmail."
 msgstr ""
+"Մենք փնտրում ենք կամավորների, որոնք կօգնեն մեզ մշակել Speedy Mail "
+"Software-ը՝ Gmail-ի նման անվճար և բաց կոդով վեբ-հիմնված էլփոստ։"
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Mail Software!"
-msgstr ""
+msgstr "Բարի գալուստ Speedy Mail Software։"
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -114,6 +137,20 @@ msgid ""
 "good email program, we will reactivate Speedy Mail and will allow any "
 "company or organization to operate a similar web-based email on their site."
 msgstr ""
+"Մենք փնտրում ենք կամավորների, որոնք կօգնեն մեզ մշակել Speedy Mail "
+"Software-ը՝ Gmail-ի նման անվճար և բաց կոդով վեբ-հիմնված էլփոստ։ Մենք "
+"ցանկանում ենք, որ փոստը հնարավորինս նման լինի Google-ի գերազանց էլփոստին՝ "
+"Gmail-ին։ Երբ մշակենք այդպիսի փոստային ծրագիր, մենք մտադիր ենք Speedy Net-ի "
+"բոլոր անդամների համար գործարկել անվճար էլփոստի ծառայություն, որպեսզի Speedy "
+"Net-ում յուրաքանչյուր մարդու օգտանունը + speedy.net տիրույթի անվանումը լինի "
+"օգտատիրոջ էլփոստի հասցեն։ Նախկինում մենք գործարկել էինք այսպիսի էլփոստ, "
+"բայց, ցավոք, ստիպված եղանք փակել այն, քանի որ այն շատ ավելի վատ էր, քան "
+"Gmail-ը՝ հնարավորությունների և պահեստավորման առումով, ինչպես նաև այն "
+"պատճառով, որ չէինք կարողանում վերահսկել մեր հաճախորդներին ուղարկվող սպամի "
+"(«անպետք փոստի») խնդիրը։ Բայց եթե կարողանանք հավաքագրել կամավորներ՝ լավ "
+"էլփոստային ծրագիր ստեղծելու համար, մենք կվերագործարկենք Speedy Mail-ը և "
+"թույլ կտանք ցանկացած ընկերության կամ կազմակերպության իրենց կայքում գործարկել"
+" նմանատիպ վեբ-հիմնված էլփոստ։"
 
 #: .\templates\main\main_page.html:21
 msgid ""
@@ -121,3 +158,6 @@ msgid ""
 "Net is also free software and open source. If you are interested in "
 "volunteering, please contact me by email."
 msgstr ""
+"Speedy Mail Software-ը կօգտագործի Python և JavaScript լեզուները։ Speedy "
+"Net-ը նույնպես ազատ ծրագրային ապահովում է և բաց կոդով։ Եթե ցանկանում եք "
+"կամավորություն անել, խնդրում եմ կապվեք ինձ հետ էլփոստով։"

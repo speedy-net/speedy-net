@@ -170,7 +170,7 @@ msgstr "Αριθμός φίλων κατά την τελευταία επίσκ�
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Προφίλ της Speedy Net"
+msgstr "Προφίλ Speedy Net"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
@@ -186,7 +186,7 @@ msgid ""
 msgstr ""
 "Ο συνολικός αριθμός των ενεργών μελών στον ιστότοπο είναι "
 "{total_number_of_active_members_in_the_last_four_months}, εκ των οποίων "
-"{total_number_of_active_members_in_the_last_week} μέλη εγγράφηκαν στον "
+"{total_number_of_active_members_in_the_last_week} μέλη επισκέφθηκαν τον "
 "ιστότοπο την τελευταία εβδομάδα."
 
 #: .\settings\base_site.py:17
@@ -195,7 +195,7 @@ msgstr "Speedy Net [άλφα]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Σχετικά με την Speedy Net"
+msgstr "Σχετικά με το Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -207,12 +207,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Το "
-"Speedy Net</a> είναι ένα νέο κοινωνικό δίκτυο. Μέσω του Speedy Net μπορείτε "
-"να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι ανοιχτό για δωρεάν "
-"εγγραφή σε άτομα από όλες τις χώρες και όλες τις ηλικίες (χωρίς όριο "
-"ηλικίας!). Ο ιστότοπος είναι φιλικός προς τους βέγκαν και τους χορτοφάγους. "
-"Αυτή τη στιγμή είναι διαθέσιμο σε %(languages_num)s γλώσσες."
+"Το <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> είναι ένα νέο κοινωνικό δίκτυο. Μέσω του Speedy Net "
+"μπορείτε να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι ανοιχτό "
+"για δωρεάν εγγραφή σε άτομα από όλες τις χώρες και όλες τις ηλικίες (χωρίς"
+" όριο ηλικίας!). Ο ιστότοπος είναι φιλικός προς τους βίγκαν και τους "
+"χορτοφάγους. Αυτή τη στιγμή είναι διαθέσιμο σε %(languages_num)s γλώσσες."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -244,10 +244,10 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Μπορείτε να χρησιμοποιήσετε τη νέα μας εφαρμογή, <a href=\"https://"
-"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">το Speedy Match</"
-"a>, για να βρείτε άτομα που σας ταιριάζουν για ραντεβού. Το Speedy Match "
-"είναι ανοιχτό σε ελεύθερους όλων των ηλικιών."
+"Μπορείτε να χρησιμοποιήσετε τη νέα μας εφαρμογή, το <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, για να βρείτε άτομα που σας ταιριάζουν για "
+"ραντεβού. Το Speedy Match είναι ανοιχτό σε ελεύθερους όλων των ηλικιών."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -265,9 +265,9 @@ msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Το Speedy Net είναι ένα έργο ελεύθερου λογισμικού & ανοιχτού κώδικα. Αν "
-"θέλετε να συμβάλετε στην ανάπτυξη και τη βελτίωση του Speedy Net, παρακαλώ "
-"επικοινωνήστε μαζί μου μέσω email."
+"Το Speedy Net είναι ένα έργο ελεύθερου λογισμικού και ανοιχτού κώδικα. Αν "
+"θέλετε να συμβάλετε στην ανάπτυξη και τη βελτίωση του Speedy Net, "
+"παρακαλούμε επικοινωνήστε μαζί μου μέσω email."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -275,10 +275,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Το Speedy Net πήρε το όνομά του από <a href=\"https://www.facebook.com/"
-"speedy.the.female.dog\" title=\"Speedy\">τη Speedy</a>, μια σκυλίτσα που "
-"ήταν μαζί μας για πολλά χρόνια και πέθανε το 2003. Η Speedy γέννησε 7 "
-"κουτάβια το 1988."
+"Το Speedy Net πήρε το όνομά του από τη <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, μια σκυλίτσα που ήταν μαζί μας για πολλά "
+"χρόνια και πέθανε το 2003. Η Speedy γέννησε 7 κουτάβια το 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -292,7 +292,7 @@ msgstr "Σας ευχαριστώ και καλή επιτυχία,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
-msgstr "Ούρι Ρόντμπεργκ"
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
@@ -313,7 +313,7 @@ msgstr "Καλώς ήρθατε στο %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "Παρακαλώ επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
+msgstr "Παρακαλούμε επιβεβαιώστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
@@ -331,11 +331,11 @@ msgstr "Διαγραφή λογαριασμού"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Δεν έχεις ακόμα φίλους."
+msgstr "Δεν έχετε ακόμα φίλους."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Οι φίλοι σου"
+msgstr "Οι φίλοι σας"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -344,10 +344,11 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Το Speedy Net είναι ένα νέο κοινωνικό δίκτυο. Μέσω του Speedy Net μπορείτε "
-"να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι ανοιχτό για δωρεάν "
-"εγγραφή σε άτομα από όλες τις χώρες και όλες τις ηλικίες (χωρίς όριο "
-"ηλικίας!). Ο ιστότοπος είναι φιλικός προς τους βίγκαν και τους χορτοφάγους."
+"Το Speedy Net είναι ένα νέο κοινωνικό δίκτυο. Μέσω του Speedy Net μπορείτε"
+" να επικοινωνείτε με τους φίλους σας. Το Speedy Net είναι ανοιχτό για "
+"δωρεάν εγγραφή σε άτομα από όλες τις χώρες και όλες τις ηλικίες (χωρίς "
+"όριο ηλικίας!). Ο ιστότοπος είναι φιλικός προς τους βίγκαν και τους "
+"χορτοφάγους."
 
 #: .\templates\main\main_page.html:17
 msgid ""
@@ -360,12 +361,12 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – γνωριμίες με το Speedy"
+msgstr "Speedy Match – γνωριμίες με τον Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Ψάχνεις για φίλο; Ψάχνεις για φίλη; Έλα να γνωρίσεις τον Speedy!"
+msgstr "Ψάχνετε για φίλο; Ψάχνετε για φίλη; Ελάτε να γνωρίσετε τον Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
@@ -377,8 +378,8 @@ msgstr "Φίλοι"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Ο φίλος σου"
+msgstr "Ο φίλος σας"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "Αποστάλθηκε αίτημα φιλίας"
+msgstr "Το αίτημα φιλίας εστάλη"

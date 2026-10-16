@@ -19,11 +19,11 @@ msgstr ""
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Barátsági felkérés elküldve"
+msgstr "Barátsági kérelem elküldve"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
@@ -65,8 +65,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Szia <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"üdvözöljük a %(site_name)s-ban!"
+"Üdvözöljük újra, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, a(z) %(site_name)s oldalon!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -75,8 +75,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Szia <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"üdvözöljük a %(site_name)s-ban!"
+"Üdvözöljük újra, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, a(z) %(site_name)s oldalon!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -85,8 +85,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Szia <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"üdvözöljük a %(site_name)s-ban!"
+"Üdvözöljük újra, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, a(z) %(site_name)s oldalon!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -106,47 +106,47 @@ msgstr "Kérjük, erősítse meg e-mail címét."
 #: .\__translations\__translations.html:24
 msgctxt "female"
 msgid "Deactivate Account"
-msgstr "Fiók kikapcsolása"
+msgstr "Fiók deaktiválása"
 
 #: .\__translations\__translations.html:25
 msgctxt "male"
 msgid "Deactivate Account"
-msgstr "Fiók kikapcsolása"
+msgstr "Fiók deaktiválása"
 
 #: .\__translations\__translations.html:26
 msgctxt "other"
 msgid "Deactivate Account"
-msgstr "Fiók kikapcsolása"
+msgstr "Fiók deaktiválása"
 
 #: .\__translations\__translations.html:28
 msgctxt "female"
 msgid "Resend a confirmation email"
-msgstr "Küldjön újra egy megerősítő e-mailt"
+msgstr "Megerősítő e-mail újraküldése"
 
 #: .\__translations\__translations.html:29
 msgctxt "male"
 msgid "Resend a confirmation email"
-msgstr "Küldjön újra egy megerősítő e-mailt"
+msgstr "Megerősítő e-mail újraküldése"
 
 #: .\__translations\__translations.html:30
 msgctxt "other"
 msgid "Resend a confirmation email"
-msgstr "Küldjön újra egy megerősítő e-mailt"
+msgstr "Megerősítő e-mail újraküldése"
 
 #: .\__translations\__translations.html:32
 msgctxt "female"
 msgid "Make this email address primary"
-msgstr "Legyen ez az e-mail cím elsődleges"
+msgstr "Legyen ez az e-mail cím az elsődleges"
 
 #: .\__translations\__translations.html:33
 msgctxt "male"
 msgid "Make this email address primary"
-msgstr "Legyen ez az e-mail cím elsődleges"
+msgstr "Legyen ez az e-mail cím az elsődleges"
 
 #: .\__translations\__translations.html:34
 msgctxt "other"
 msgid "Make this email address primary"
-msgstr "Legyen ez az e-mail cím elsődleges"
+msgstr "Legyen ez az e-mail cím az elsődleges"
 
 #: .\__translations\__translations.html:36
 msgctxt "female"
@@ -166,32 +166,32 @@ msgstr "Biztosan törli ezt az e-mail címet?"
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr "Törölje ezt az e-mail címet"
+msgstr "E-mail cím törlése"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr "Törölje ezt az e-mail címet"
+msgstr "E-mail cím törlése"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr "Törölje ezt az e-mail címet"
+msgstr "E-mail cím törlése"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
 msgid "Add Another"
-msgstr "Adjon hozzá egy másikat"
+msgstr "Újabb hozzáadása"
 
 #: .\__translations\__translations.html:45
 msgctxt "male"
 msgid "Add Another"
-msgstr "Adjon hozzá egy másikat"
+msgstr "Újabb hozzáadása"
 
 #: .\__translations\__translations.html:46
 msgctxt "other"
 msgid "Add Another"
-msgstr "Adjon hozzá egy másikat"
+msgstr "Újabb hozzáadása"
 
 #: .\__translations\__translations.html:48
 msgctxt "female"
@@ -226,17 +226,17 @@ msgstr "Módosítsa az e-mail címek adatvédelmi beállításait a profiljában
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "Nem blokkolsz senkit."
+msgstr "Ön nem tiltott le senkit."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "Nem blokkolsz senkit."
+msgstr "Ön nem tiltott le senkit."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "Nem blokkolsz senkit."
+msgstr "Ön nem tiltott le senkit."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
@@ -272,49 +272,49 @@ msgstr "Visszajelzését elküldtük a rendszergazdáknak."
 #, python-format
 msgctxt "female"
 msgid "Send a message to %(user_name)s"
-msgstr "Üzenet küldése a következő címre: %(user_name)s"
+msgstr "Üzenet küldése %(user_name)s részére"
 
 #: .\__translations\__translations.html:77
 #, python-format
 msgctxt "male"
 msgid "Send a message to %(user_name)s"
-msgstr "Üzenet küldése a következő címre: %(user_name)s"
+msgstr "Üzenet küldése %(user_name)s részére"
 
 #: .\__translations\__translations.html:78
 #, python-format
 msgctxt "other"
 msgid "Send a message to %(user_name)s"
-msgstr "Üzenet küldése a következő címre: %(user_name)s"
+msgstr "Üzenet küldése %(user_name)s részére"
 
 #: .\__translations\__translations.html:80
 msgctxt "female"
 msgid "Mark All as Read"
-msgstr "Az összes megjelölése olvasottként"
+msgstr "Összes megjelölése olvasottként"
 
 #: .\__translations\__translations.html:81
 msgctxt "male"
 msgid "Mark All as Read"
-msgstr "Az összes megjelölése olvasottként"
+msgstr "Összes megjelölése olvasottként"
 
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr "Az összes megjelölése olvasottként"
+msgstr "Összes megjelölése olvasottként"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "Te:"
+msgstr "Ön:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "Te:"
+msgstr "Ön:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "Te:"
+msgstr "Ön:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -334,32 +334,32 @@ msgstr "Még nincsenek üzenetei."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Ön letiltotta "
+msgstr "Ön letiltotta ezt a felhasználót: "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Ön letiltotta "
+msgstr "Ön letiltotta ezt a felhasználót: "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Ön letiltotta "
+msgstr "Ön letiltotta ezt a felhasználót: "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " blokkolt téged."
+msgstr " letiltotta Önt."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " blokkolt téged."
+msgstr " letiltotta Önt."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " blokkolt téged."
+msgstr " letiltotta Önt."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -368,7 +368,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
+"%(user_name)s is rendelkezik Speedy Match profillal. Tekintse meg "
 "%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:101
@@ -378,7 +378,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
+"%(user_name)s is rendelkezik Speedy Match profillal. Tekintse meg "
 "%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:102
@@ -388,7 +388,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
+"%(user_name)s is rendelkezik Speedy Match profillal. Tekintse meg "
 "%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\__translations\__translations.html:104
@@ -398,8 +398,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten."
+"%(user_name)s is rendelkezik Speedy Net profillal. Tekintse meg "
+"%(user_name)s profilját a Speedy Net oldalon."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -408,8 +408,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten."
+"%(user_name)s is rendelkezik Speedy Net profillal. Tekintse meg "
+"%(user_name)s profilját a Speedy Net oldalon."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -418,26 +418,29 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten."
+"%(user_name)s is rendelkezik Speedy Net profillal. Tekintse meg "
+"%(user_name)s profilját a Speedy Net oldalon."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -457,107 +460,107 @@ msgstr "Hozzáadás a barátokhoz"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani? "
+msgstr "Biztosan letiltja ezt a felhasználót: "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani? "
+msgstr "Biztosan letiltja ezt a felhasználót: "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani? "
+msgstr "Biztosan letiltja ezt a felhasználót: "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Tömb "
+msgstr "Letiltás "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Tömb "
+msgstr "Letiltás "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Tömb "
+msgstr "Letiltás "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "Blokkolás feloldása "
+msgstr "Letiltás feloldása "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "Blokkolás feloldása "
+msgstr "Letiltás feloldása "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "Blokkolás feloldása "
+msgstr "Letiltás feloldása "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Jelentés "
+msgstr "Bejelentés "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Jelentés "
+msgstr "Bejelentés "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Jelentés "
+msgstr "Bejelentés "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
 msgid "Report this photo"
-msgstr "Jelenítse ezt a fényképet"
+msgstr "Fénykép bejelentése"
 
 #: .\__translations\__translations.html:133
 msgctxt "male"
 msgid "Report this photo"
-msgstr "Jelenítse ezt a fényképet"
+msgstr "Fénykép bejelentése"
 
 #: .\__translations\__translations.html:134
 msgctxt "other"
 msgid "Report this photo"
-msgstr "Jelenítse ezt a fényképet"
+msgstr "Fénykép bejelentése"
 
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "Ismerős eltávolítása"
+msgstr "Barát eltávolítása"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
-msgstr "Ismerős eltávolítása"
+msgstr "Barát eltávolítása"
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
-msgstr "Ismerős eltávolítása"
+msgstr "Barát eltávolítása"
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Törölje a barátsági kérést"
+msgstr "Barátsági kérelem visszavonása"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Törölje a barátsági kérést"
+msgstr "Barátsági kérelem visszavonása"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Törölje a barátsági kérést"
+msgstr "Barátsági kérelem visszavonása"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
@@ -577,47 +580,47 @@ msgstr "Elfogadás"
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr "Elutasít"
+msgstr "Elutasítás"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr "Elutasít"
+msgstr "Elutasítás"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr "Elutasít"
+msgstr "Elutasítás"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Fogadja el a barátságra vonatkozó kérést"
+msgstr "Barátsági kérelem elfogadása"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Fogadja el a barátságra vonatkozó kérést"
+msgstr "Barátsági kérelem elfogadása"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Fogadja el a barátságra vonatkozó kérést"
+msgstr "Barátsági kérelem elfogadása"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Barátságkérés elutasítása"
+msgstr "Barátsági kérelem elutasítása"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Barátságkérés elutasítása"
+msgstr "Barátsági kérelem elutasítása"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Barátságkérés elutasítása"
+msgstr "Barátsági kérelem elutasítása"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
@@ -652,17 +655,17 @@ msgstr "Üdvözöljük"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
@@ -701,19 +704,19 @@ msgstr ""
 #, python-format
 msgctxt "female"
 msgid "Welcome to %(site_name)s"
-msgstr "Üdvözöljük a %(site_name)s"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:181
 #, python-format
 msgctxt "male"
 msgid "Welcome to %(site_name)s"
-msgstr "Üdvözöljük a %(site_name)s"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:182
 #, python-format
 msgctxt "other"
 msgid "Welcome to %(site_name)s"
-msgstr "Üdvözöljük a %(site_name)s"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:184
 msgctxt "female"
@@ -733,35 +736,35 @@ msgstr "üzenetet küldött Önnek."
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr "Olvasd el:"
+msgstr "Olvassa el:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr "Olvasd el:"
+msgstr "Olvassa el:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr "Olvasd el:"
+msgstr "Olvassa el:"
 
 #: .\__translations\__translations.html:192
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Erősítse meg e-mail címét itt: %(site_name)s"
+msgstr "Erősítse meg e-mail címét a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Erősítse meg e-mail címét itt: %(site_name)s"
+msgstr "Erősítse meg e-mail címét a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Erősítse meg e-mail címét itt: %(site_name)s"
+msgstr "Erősítse meg e-mail címét a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
@@ -796,17 +799,17 @@ msgstr "Használja ezt a linket e-mail címének ellenőrzéséhez:"
 #: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
-msgstr "Jelszava megváltoztatásához használja ezt a linket:"
+msgstr "Jelszava módosításához használja ezt a linket:"
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
-msgstr "Jelszava megváltoztatásához használja ezt a linket:"
+msgstr "Jelszava módosításához használja ezt a linket:"
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
-msgstr "Jelszava megváltoztatásához használja ezt a linket:"
+msgstr "Jelszava módosításához használja ezt a linket:"
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
@@ -830,8 +833,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Feliratkozott az ilyen típusú értesítések fogadására innen: %(site_name)s. "
-"Lépjen be erre az oldalra az értesítési beállítások módosításához vagy a "
+"Feliratkozott a(z) %(site_name)s ilyen típusú értesítéseire. Lépjen be "
+"erre az oldalra az értesítési beállítások módosításához vagy a "
 "leiratkozáshoz:"
 
 #: .\__translations\__translations.html:213
@@ -841,8 +844,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Feliratkozott az ilyen típusú értesítések fogadására innen: %(site_name)s. "
-"Lépjen be erre az oldalra az értesítési beállítások módosításához vagy a "
+"Feliratkozott a(z) %(site_name)s ilyen típusú értesítéseire. Lépjen be "
+"erre az oldalra az értesítési beállítások módosításához vagy a "
 "leiratkozáshoz:"
 
 #: .\__translations\__translations.html:214
@@ -852,8 +855,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Feliratkozott az ilyen típusú értesítések fogadására innen: %(site_name)s. "
-"Lépjen be erre az oldalra az értesítési beállítások módosításához vagy a "
+"Feliratkozott a(z) %(site_name)s ilyen típusú értesítéseire. Lépjen be "
+"erre az oldalra az értesítési beállítások módosításához vagy a "
 "leiratkozáshoz:"
 
 #: .\__translations\__translations.py:11
@@ -866,7 +869,7 @@ msgstr "E-mail cím"
 
 #: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
-msgstr "email címre"
+msgstr "e-mail cím"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
@@ -875,7 +878,7 @@ msgstr "E-mail cím:"
 #: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
@@ -887,8 +890,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"Kérjük, adjon meg helyes %(username)s-t és jelszót. Vegye figyelembe, hogy "
-"mindkét mező megkülönböztetheti a kis- és nagybetűket."
+"Kérjük, adjon meg egy helyes %(username)s és jelszó párost. Vegye "
+"figyelembe, hogy mindkét mező megkülönböztetheti a kis- és nagybetűket."
 
 #: .\__translations\__translations.py:20
 msgid "Message"
@@ -896,11 +899,11 @@ msgstr "Üzenet"
 
 #: .\__translations\__translations.py:22
 msgid "Friendship Request"
-msgstr "Barátságkérés"
+msgstr "Barátsági kérelem"
 
 #: .\__translations\__translations.py:23
 msgid "Friendship Requests"
-msgstr "Barátság kérések"
+msgstr "Barátsági kérelmek"
 
 #: .\__translations\__translations.py:25
 msgid "Friend"
@@ -912,19 +915,19 @@ msgstr "Barátok"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Kapcsolat követése"
+msgstr "Követési kapcsolat"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Kapcsolatok követése"
+msgstr "Követési kapcsolatok"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Blokkoló kapcsolat"
+msgstr "Letiltó kapcsolat"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
-msgstr "Blokkolt kapcsolatok"
+msgstr "Letiltott kapcsolatok"
 
 #: .\__translations\__translations.py:36
 #, python-format
@@ -944,17 +947,17 @@ msgstr[1] ""
 #: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
-msgstr "felhasználónév (csiga)"
+msgstr "felhasználónév (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "male"
 msgid "username (slug)"
-msgstr "felhasználónév (csiga)"
+msgstr "felhasználónév (slug)"
 
 #: .\__translations\__translations.py:44
 msgctxt "other"
 msgid "username (slug)"
-msgstr "felhasználónév (csiga)"
+msgstr "felhasználónév (slug)"
 
 #: .\__translations\__translations.py:46
 msgctxt "female"
@@ -989,17 +992,17 @@ msgstr "Módosítások mentése"
 #: .\__translations\__translations.py:54
 msgctxt "female"
 msgid "You can't change your username."
-msgstr "A felhasználónevedet nem tudod megváltoztatni."
+msgstr "Nem módosíthatja a felhasználónevét."
 
 #: .\__translations\__translations.py:55
 msgctxt "male"
 msgid "You can't change your username."
-msgstr "A felhasználónevedet nem tudod megváltoztatni."
+msgstr "Nem módosíthatja a felhasználónevét."
 
 #: .\__translations\__translations.py:56
 msgctxt "other"
 msgid "You can't change your username."
-msgstr "A felhasználónevedet nem tudod megváltoztatni."
+msgstr "Nem módosíthatja a felhasználónevét."
 
 #: .\__translations\__translations.py:58
 #, python-brace-format
@@ -1023,19 +1026,19 @@ msgstr "Aktiválja {site_name} fiókját"
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Inaktiválja {site_name} fiókját"
+msgstr "Deaktiválja {site_name} fiókját"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Inaktiválja {site_name} fiókját"
+msgstr "Deaktiválja {site_name} fiókját"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Inaktiválja {site_name} fiókját"
+msgstr "Deaktiválja {site_name} fiókját"
 
 #: .\__translations\__translations.py:66
 msgctxt "female"
@@ -1055,47 +1058,47 @@ msgstr "Hozzáadás"
 #: .\__translations\__translations.py:70
 msgctxt "female"
 msgid "Where do I live?"
-msgstr "hol lakom?"
+msgstr "Hol lakom?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
 msgid "Where do I live?"
-msgstr "hol lakom?"
+msgstr "Hol lakom?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
 msgid "Where do I live?"
-msgstr "hol lakom?"
+msgstr "Hol lakom?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "hol laksz?"
+msgstr "Hol lakik?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "hol laksz?"
+msgstr "Hol lakik?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "hol laksz?"
+msgstr "Hol lakik?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Kérlek írd meg hol laksz."
+msgstr "Kérjük, írja meg, hol lakik."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Kérlek írd meg hol laksz."
+msgstr "Kérjük, írja meg, hol lakik."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Kérlek írd meg hol laksz."
+msgstr "Kérjük, írja meg, hol lakik."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
@@ -1130,17 +1133,17 @@ msgstr "Vegetáriánus (nem eszik halat és húst)"
 #: .\__translations\__translations.py:90
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (állatokat eszik)"
+msgstr "Karnista (állatokat eszik)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (állatokat eszik)"
+msgstr "Karnista (állatokat eszik)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (állatokat eszik)"
+msgstr "Karnista (állatokat eszik)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
@@ -1175,17 +1178,17 @@ msgstr "Vegetáriánus"
 #: .\__translations\__translations.py:102
 msgctxt "female"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "Karnista"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "Karnista"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
 msgid "Carnist"
-msgstr "Carnist"
+msgstr "Karnista"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
@@ -1220,32 +1223,32 @@ msgstr "Alkalmanként dohányzik"
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Dohányzó"
+msgstr "Dohányzik"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Dohányzó"
+msgstr "Dohányzik"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Dohányzó"
+msgstr "Dohányzik"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Egyetlen"
+msgstr "Egyedülálló"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "Single"
-msgstr "Egyetlen"
+msgstr "Egyedülálló"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Egyetlen"
+msgstr "Egyedülálló"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
@@ -1265,32 +1268,32 @@ msgstr "Elvált"
 #: .\__translations\__translations.py:126
 msgctxt "female"
 msgid "Widowed"
-msgstr "Megözvegyült"
+msgstr "Özvegy"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Megözvegyült"
+msgstr "Özvegy"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Megözvegyült"
+msgstr "Özvegy"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
 msgid "In a relationship"
-msgstr "Egy kapcsolatban"
+msgstr "Párkapcsolatban"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
 msgid "In a relationship"
-msgstr "Egy kapcsolatban"
+msgstr "Párkapcsolatban"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
 msgid "In a relationship"
-msgstr "Egy kapcsolatban"
+msgstr "Párkapcsolatban"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
@@ -1310,47 +1313,47 @@ msgstr "Nyitott kapcsolatban"
 #: .\__translations\__translations.py:138
 msgctxt "female"
 msgid "It's complicated"
-msgstr "Ez bonyolult"
+msgstr "Bonyolult"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
 msgid "It's complicated"
-msgstr "Ez bonyolult"
+msgstr "Bonyolult"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
 msgid "It's complicated"
-msgstr "Ez bonyolult"
+msgstr "Bonyolult"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
 msgid "Separated"
-msgstr "Elválasztott"
+msgstr "Különváltan él"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
 msgid "Separated"
-msgstr "Elválasztott"
+msgstr "Különváltan él"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
 msgid "Separated"
-msgstr "Elválasztott"
+msgstr "Különváltan él"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
 msgid "Engaged"
-msgstr "Elkötelezett"
+msgstr "Jegyben jár"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
 msgid "Engaged"
-msgstr "Elkötelezett"
+msgstr "Jegyben jár"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
 msgid "Engaged"
-msgstr "Elkötelezett"
+msgstr "Jegyben jár"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
@@ -1370,17 +1373,17 @@ msgstr "Házas"
 #: .\__translations\__translations.py:154
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "Az új jelszava el lett mentve."
+msgstr "Az új jelszavát elmentettük."
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "Az új jelszava el lett mentve."
+msgstr "Az új jelszavát elmentettük."
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "Az új jelszava el lett mentve."
+msgstr "Az új jelszavát elmentettük."
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
@@ -1388,7 +1391,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat deaktiváltuk. Bármikor "
+"Speedy Net és Speedy Match fiókjait deaktiváltuk. Bármikor "
 "újraaktiválhatja őket."
 
 #: .\__translations\__translations.py:159
@@ -1397,7 +1400,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat deaktiváltuk. Bármikor "
+"Speedy Net és Speedy Match fiókjait deaktiváltuk. Bármikor "
 "újraaktiválhatja őket."
 
 #: .\__translations\__translations.py:160
@@ -1406,7 +1409,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat deaktiváltuk. Bármikor "
+"Speedy Net és Speedy Match fiókjait deaktiváltuk. Bármikor "
 "újraaktiválhatja őket."
 
 #: .\__translations\__translations.py:162
@@ -1416,7 +1419,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} fiókja deaktiválva lett. Bármikor újraaktiválhatja. A Speedy Net "
+"{site_name} fiókját deaktiváltuk. Bármikor újraaktiválhatja. Speedy Net "
 "fiókja aktív marad."
 
 #: .\__translations\__translations.py:163
@@ -1426,7 +1429,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} fiókja deaktiválva lett. Bármikor újraaktiválhatja. A Speedy Net "
+"{site_name} fiókját deaktiváltuk. Bármikor újraaktiválhatja. Speedy Net "
 "fiókja aktív marad."
 
 #: .\__translations\__translations.py:164
@@ -1436,7 +1439,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} fiókja deaktiválva lett. Bármikor újraaktiválhatja. A Speedy Net "
+"{site_name} fiókját deaktiváltuk. Bármikor újraaktiválhatja. Speedy Net "
 "fiókja aktív marad."
 
 #: .\__translations\__translations.py:166
@@ -1472,17 +1475,17 @@ msgstr "Megerősítette az e-mail címét."
 #: .\__translations\__translations.py:174
 msgctxt "female"
 msgid "Send"
-msgstr "Elküld"
+msgstr "Küldés"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
 msgid "Send"
-msgstr "Elküld"
+msgstr "Küldés"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
 msgid "Send"
-msgstr "Elküld"
+msgstr "Küldés"
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1491,8 +1494,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná."
+"Önnek már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net "
+"oldalon. Kérjük, távolítson el barátokat, mielőtt folytatná."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1501,8 +1504,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná."
+"Önnek már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net "
+"oldalon. Kérjük, távolítson el barátokat, mielőtt folytatná."
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1511,8 +1514,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, "
-"távolítsa el az ismerőseit, mielőtt folytatná."
+"Önnek már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net "
+"oldalon. Kérjük, távolítson el barátokat, mielőtt folytatná."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1521,8 +1524,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:183
@@ -1532,8 +1535,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:184
@@ -1543,8 +1546,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:185
@@ -1554,8 +1557,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:186
@@ -1565,8 +1568,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:187
@@ -1576,8 +1579,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:188
@@ -1587,8 +1590,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:189
@@ -1598,8 +1601,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:190
@@ -1609,165 +1612,165 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a "
-"Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt "
+"Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a"
+" Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt "
 "folytatná."
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "Nem lehetsz barátod magaddal."
+msgstr "Nem lehet barátja önmagának."
 
 #: .\__translations\__translations.py:193
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "Nem lehetsz barátod magaddal."
+msgstr "Nem lehet barátja önmagának."
 
 #: .\__translations\__translations.py:194
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "Nem lehetsz barátod magaddal."
+msgstr "Nem lehet barátja önmagának."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Már kértél barátságot ettől a felhasználótól."
+msgstr "Ön már küldött barátsági kérelmet ennek a felhasználónak."
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Már kértél barátságot ettől a felhasználótól."
+msgstr "Ön már küldött barátsági kérelmet ennek a felhasználónak."
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Már kértél barátságot ettől a felhasználótól."
+msgstr "Ön már küldött barátsági kérelmet ennek a felhasználónak."
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Ez a felhasználó már barátságot kért tőled."
+msgstr "Ez a felhasználó már küldött Önnek barátsági kérelmet."
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "Ez a felhasználó már barátságot kért tőled."
+msgstr "Ez a felhasználó már küldött Önnek barátsági kérelmet."
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "Ez a felhasználó már barátságot kért tőled."
+msgstr "Ez a felhasználó már küldött Önnek barátsági kérelmet."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "Ön már barátja ezzel a felhasználóval."
+msgstr "Ön már barátja ennek a felhasználónak."
 
 #: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "Lemondtad a barátkozási kérelmed."
+msgstr "Visszavonta a barátsági kérelmét."
 
 #: .\__translations\__translations.py:215
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "Lemondtad a barátkozási kérelmed."
+msgstr "Visszavonta a barátsági kérelmét."
 
 #: .\__translations\__translations.py:216
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "Lemondtad a barátkozási kérelmed."
+msgstr "Visszavonta a barátsági kérelmét."
 
 #: .\__translations\__translations.py:218
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "Eltávolította ezt a felhasználót az ismerősei közül."
+msgstr "Eltávolította ezt a felhasználót a barátai közül."
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "Eltávolította ezt a felhasználót az ismerősei közül."
+msgstr "Eltávolította ezt a felhasználót a barátai közül."
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "Eltávolította ezt a felhasználót az ismerősei közül."
+msgstr "Eltávolította ezt a felhasználót a barátai közül."
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}!"
-msgstr "Üdvözöljük a {site_name}!"
+msgstr "Üdvözöljük a(z) {site_name} oldalon!"
 
 #: .\__translations\__translations.py:223
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}!"
-msgstr "Üdvözöljük a {site_name}!"
+msgstr "Üdvözöljük a(z) {site_name} oldalon!"
 
 #: .\__translations\__translations.py:224
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}!"
-msgstr "Üdvözöljük a {site_name}!"
+msgstr "Üdvözöljük a(z) {site_name} oldalon!"
 
 #: .\__translations\__translations.py:226
 #, python-brace-format
 msgctxt "female"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Üdvözöljük a {site_name}! Fiókja most aktív."
+msgstr "Üdvözöljük a(z) {site_name} oldalon! Fiókja most már aktív."
 
 #: .\__translations\__translations.py:227
 #, python-brace-format
 msgctxt "male"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Üdvözöljük a {site_name}! Fiókja most aktív."
+msgstr "Üdvözöljük a(z) {site_name} oldalon! Fiókja most már aktív."
 
 #: .\__translations\__translations.py:228
 #, python-brace-format
 msgctxt "other"
 msgid "Welcome to {site_name}! Your account is now active."
-msgstr "Üdvözöljük a {site_name}! Fiókja most aktív."
+msgstr "Üdvözöljük a(z) {site_name} oldalon! Fiókja most már aktív."
 
 #: .\__translations\__translations.py:230
 msgctxt "female"
@@ -1793,10 +1796,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Az oldal spam üzenetek küldésére való visszaélése miatt korlátoznunk kellett "
-"az egy napon belül az oldal többi tagjának elküldhető üzenetek számát. "
-"Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy nem használhatja a "
-"Speedy Netet spam vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
+"Mivel az oldalt visszaélésszerűen használták spamüzenetek küldésére, "
+"korlátoznunk kellett az oldal többi tagjának egy nap alatt küldhető "
+"üzenetek számát. Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy a"
+" Speedy Net nem használható spamüzenetek, illetve azonos tartalmú üzenetek"
+" nagyszámú embernek történő küldésére."
 
 #: .\__translations\__translations.py:235
 msgctxt "male"
@@ -1807,10 +1811,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Az oldal spam üzenetek küldésére való visszaélése miatt korlátoznunk kellett "
-"az egy napon belül az oldal többi tagjának elküldhető üzenetek számát. "
-"Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy nem használhatja a "
-"Speedy Netet spam vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
+"Mivel az oldalt visszaélésszerűen használták spamüzenetek küldésére, "
+"korlátoznunk kellett az oldal többi tagjának egy nap alatt küldhető "
+"üzenetek számát. Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy a"
+" Speedy Net nem használható spamüzenetek, illetve azonos tartalmú üzenetek"
+" nagyszámú embernek történő küldésére."
 
 #: .\__translations\__translations.py:236
 msgctxt "other"
@@ -1821,10 +1826,11 @@ msgid ""
 "Speedy Net to send spam messages, or messages with the same content to a "
 "large number of people."
 msgstr ""
-"Az oldal spam üzenetek küldésére való visszaélése miatt korlátoznunk kellett "
-"az egy napon belül az oldal többi tagjának elküldhető üzenetek számát. "
-"Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy nem használhatja a "
-"Speedy Netet spam vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
+"Mivel az oldalt visszaélésszerűen használták spamüzenetek küldésére, "
+"korlátoznunk kellett az oldal többi tagjának egy nap alatt küldhető "
+"üzenetek számát. Kérjük, próbálja újra holnap. Felhívjuk figyelmét, hogy a"
+" Speedy Net nem használható spamüzenetek, illetve azonos tartalmú üzenetek"
+" nagyszámú embernek történő küldésére."
 
 #: .\__translations\__translations.py:242
 msgctxt "female_female"
@@ -1832,8 +1838,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_male"
@@ -1841,8 +1848,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:244
 msgctxt "female_other"
@@ -1850,8 +1858,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_female"
@@ -1859,8 +1868,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_male"
@@ -1868,8 +1878,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:247
 msgctxt "male_other"
@@ -1877,8 +1888,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_female"
@@ -1886,8 +1898,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_male"
@@ -1895,8 +1908,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:250
 msgctxt "other_other"
@@ -1904,8 +1918,9 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Ez a felhasználó nem egyezik a profiloddal, de meglátogathatod a Speedy Net "
-"profilját. Felhasználói profil megtekintése a Speedy Neten."
+"Ez a felhasználó nem egyezik az Ön profiljával, de meglátogathatja a "
+"Speedy Net profilját. A felhasználó profiljának megtekintése a Speedy Net "
+"oldalon."
 
 #: .\__translations\__translations.py:252
 msgctxt "female"
@@ -1933,7 +1948,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Speedy Core fiókok"
 
 #: .\accounts\fields.py:27
 msgid "Only me"
@@ -1953,7 +1968,7 @@ msgstr "Vezetéknév (nem kötelező)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "Az Ön email címe"
+msgstr "Az Ön e-mail címe"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -1973,11 +1988,11 @@ msgstr "Frissítse profilképét"
 
 #: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
-msgstr "Profilkép szükséges."
+msgstr "Profilkép megadása kötelező."
 
 #: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "E-mail vagy Felhasználónév"
+msgstr "E-mail vagy felhasználónév"
 
 #: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
@@ -1992,11 +2007,11 @@ msgstr "Elfelejtette jelszavát?"
 
 #: .\accounts\forms.py:577
 msgid "Submit"
-msgstr "Beküld"
+msgstr "Elküldés"
 
 #: .\accounts\forms.py:751
 msgid "Your password"
-msgstr "A jelszavad"
+msgstr "Az Ön jelszava"
 
 #: .\accounts\forms.py:776
 msgid "Invalid password."
@@ -2013,7 +2028,7 @@ msgstr "Ez a felhasználónév már foglalt."
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
-msgstr "felhasználónév (csiga)"
+msgstr "felhasználónév (slug)"
 
 #: .\accounts\models.py:211
 msgid "photo"
@@ -2033,11 +2048,11 @@ msgstr "entitások"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "A Slug nem értelmezi a felhasználónévvé."
+msgstr "A slug nem értelmezhető felhasználónévként."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
-msgstr "Felhasználónév megadása kötelező."
+msgstr "A felhasználónév megadása kötelező."
 
 #: .\accounts\models.py:379
 msgid "name"
@@ -2057,7 +2072,7 @@ msgstr "Férfi"
 
 #: .\accounts\models.py:513
 msgid "Other"
-msgstr "Más"
+msgstr "Egyéb"
 
 #: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
@@ -2074,7 +2089,7 @@ msgstr "Vegetáriánus (nem eszik halat és húst)"
 
 #: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
-msgstr "Carnist (állatokat eszik)"
+msgstr "Karnista (állatokat eszik)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
@@ -2086,11 +2101,11 @@ msgstr "Alkalmanként dohányzik"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Dohányzó"
+msgstr "Dohányzik"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "Egyetlen"
+msgstr "Egyedülálló"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
@@ -2098,11 +2113,11 @@ msgstr "Elvált"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Megözvegyült"
+msgstr "Özvegy"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
-msgstr "Egy kapcsolatban"
+msgstr "Párkapcsolatban"
 
 #: .\accounts\models.py:573
 msgid "In an open relationship"
@@ -2110,15 +2125,15 @@ msgstr "Nyitott kapcsolatban"
 
 #: .\accounts\models.py:574
 msgid "It's complicated"
-msgstr "Ez bonyolult"
+msgstr "Bonyolult"
 
 #: .\accounts\models.py:575
 msgid "Separated"
-msgstr "Elválasztott"
+msgstr "Különváltan él"
 
 #: .\accounts\models.py:576
 msgid "Engaged"
-msgstr "Elkötelezett"
+msgstr "Jegyben jár"
 
 #: .\accounts\models.py:577
 msgid "Married"
@@ -2126,11 +2141,11 @@ msgstr "Házas"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
-msgstr "Értesítsen"
+msgstr "Értesítést kérek"
 
 #: .\accounts\models.py:589
 msgid "Don't notify me"
-msgstr "Ne értesíts"
+msgstr "Nem kérek értesítést"
 
 #: .\accounts\models.py:669
 msgid "first name"
@@ -2146,7 +2161,7 @@ msgstr "én vagyok"
 
 #: .\accounts\models.py:675
 msgid "date of birth"
-msgstr "születési idő"
+msgstr "születési dátum"
 
 #: .\accounts\models.py:676
 msgid "diet"
@@ -2162,7 +2177,7 @@ msgstr "kapcsolati állapot"
 
 #: .\accounts\models.py:680
 msgid "Where do I live?"
-msgstr "hol lakom?"
+msgstr "Hol lakom?"
 
 #: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
@@ -2174,15 +2189,15 @@ msgstr "Ki láthatja a születési évemet"
 
 #: .\accounts\models.py:689
 msgid "On new messages"
-msgstr "Az új üzenetekről"
+msgstr "Új üzenetek esetén"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Utoljára használt IP-cím https://ipapi.com/ ideje"
+msgstr "Utoljára használt IP-cím ideje (https://ipapi.com/)"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Az utolsó használt IP-cím nyers https://ipapi.com/ eredmény"
+msgstr "Utoljára használt IP-cím nyers eredményei (https://ipapi.com/)"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2190,19 +2205,19 @@ msgstr "felhasználó"
 
 #: .\accounts\models.py:991
 msgid "users"
-msgstr "felhasználókat"
+msgstr "felhasználók"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
-msgstr "A szuperfelhasználónak egyenlőnek kell lennie a személyzettel."
+msgstr "A szuperfelhasználó értékének egyeznie kell a személyzet értékével."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "email"
+msgstr "e-mail"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
-msgstr "megerősítést nyer"
+msgstr "megerősítve"
 
 #: .\accounts\models.py:1595
 msgid "is primary"
@@ -2222,7 +2237,7 @@ msgstr "Ki láthatja ezt az e-mailt"
 
 #: .\accounts\models.py:1615
 msgid "email addresses"
-msgstr "email címeket"
+msgstr "e-mail címek"
 
 #: .\accounts\models.py:1756
 msgid "User"
@@ -2230,7 +2245,7 @@ msgstr "Felhasználó"
 
 #: .\accounts\models.py:1757
 msgid "last visit"
-msgstr "utolsó látogatása"
+msgstr "utolsó látogatás"
 
 #: .\accounts\models.py:1782
 msgid "Today"
@@ -2344,7 +2359,7 @@ msgstr[1] ""
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "A jelszónak legalább %(min_length)d karaktert kell tartalmaznia."
-msgstr[1] "A jelszónak legalább %(min_length)d karakterből kell állnia."
+msgstr[1] "A jelszónak legalább %(min_length)d karaktert kell tartalmaznia."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2362,7 +2377,7 @@ msgstr[1] ""
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "A jelszó legfeljebb %(max_length)d karaktert tartalmazhat."
-msgstr[1] "A jelszó legfeljebb %(max_length)d karakterből állhat."
+msgstr[1] "A jelszó legfeljebb %(max_length)d karaktert tartalmazhat."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2387,7 +2402,7 @@ msgstr "Adjon meg egy érvényes dátumot."
 
 #: .\accounts\validators.py:467
 msgid "This email is already in use."
-msgstr "Ez az e-mail már használatban van."
+msgstr "Ez az e-mail cím már használatban van."
 
 #: .\accounts\validators.py:494
 msgid ""
@@ -2417,7 +2432,7 @@ msgstr "Az e-mail cím törölve lett."
 
 #: .\accounts\views.py:720
 msgid "You have made this email address primary."
-msgstr "Ezt az e-mail címet választotta elsődlegesnek."
+msgstr "Ezt az e-mail címet elsődlegessé tette."
 
 #: .\admin\views.py:96
 #, python-brace-format
@@ -2432,13 +2447,13 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Admin: Az oldalon lévő tagok száma összesen {total_number_of_members}, ebből "
+"Admin: Az oldalon a tagok száma összesen {total_number_of_members}, ebből "
 "{total_number_of_members_in_the_last_week} tag az elmúlt héten, "
 "{total_number_of_members_in_the_last_month} tag az elmúlt hónapban, "
 "{total_number_of_members_in_the_last_four_months} tag az elmúlt négy "
-"hónapban, {total_number_of_members_in_the_last_eight_months} tag az elmúlt "
-"nyolc hónapban, és {total_number_of_members_in_the_last_two_years} az elmúlt "
-"két évben lépett be az oldalra."
+"hónapban, {total_number_of_members_in_the_last_eight_months} tag az elmúlt"
+" nyolc hónapban, és {total_number_of_members_in_the_last_two_years} tag az"
+" elmúlt két évben lépett be az oldalra."
 
 #: .\admin\views.py:142
 #, python-brace-format
@@ -2461,23 +2476,24 @@ msgid ""
 "{total_number_of_members_registered_before_2019_08_01} members registered "
 "before 1 August 2019."
 msgstr ""
-"Adminisztrátor: {total_number_of_members_registered_in_the_last_week} tag "
+"Admin: {total_number_of_members_registered_in_the_last_week} tag "
 "regisztrált az elmúlt héten. "
 "{total_number_of_members_registered_in_the_last_month} tag regisztrált az "
 "elmúlt hónapban. "
-"{total_number_of_members_registered_in_the_last_four_months} tag regisztrált "
-"az elmúlt négy hónapban. "
-"{total_number_of_members_registered_more_than_four_months_ago} tag több mint "
-"négy hónapja regisztrált. "
+"{total_number_of_members_registered_in_the_last_four_months} tag "
+"regisztrált az elmúlt négy hónapban. "
+"{total_number_of_members_registered_more_than_four_months_ago} tag több "
+"mint négy hónapja regisztrált. "
 "{total_number_of_members_registered_in_the_last_eight_months} tag "
 "regisztrált az elmúlt nyolc hónapban. "
 "{total_number_of_members_registered_more_than_eight_months_ago} tag több "
 "mint nyolc hónapja regisztrált. "
-"{total_number_of_members_registered_in_the_last_two_years} regisztrált tag "
-"az elmúlt két évben. "
-"{total_number_of_members_registered_more_than_two_years_ago} tag több mint "
-"két éve regisztrált. {total_number_of_members_registered_before_2019_08_01} "
-"2019. augusztus 1. előtt regisztrált tagok."
+"{total_number_of_members_registered_in_the_last_two_years} tag regisztrált"
+" az elmúlt két évben. "
+"{total_number_of_members_registered_more_than_two_years_ago} tag több mint"
+" két éve regisztrált. "
+"{total_number_of_members_registered_before_2019_08_01} tag 2019. augusztus"
+" 1. előtt regisztrált."
 
 #: .\admin\views.py:162
 #, python-brace-format
@@ -2485,12 +2501,12 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Adminisztrátor: {total_number_of_members_registered_in_year} tag regisztrált "
-"itt: {year}."
+"Admin: {total_number_of_members_registered_in_year} tag regisztrált {year}"
+" folyamán."
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Speedy Core alapalkalmazás"
 
 #: .\base\fields.py:35
 msgid "ID"
@@ -2499,7 +2515,7 @@ msgstr "ID"
 #: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
@@ -2519,7 +2535,7 @@ msgstr "letiltott felhasználó"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "tömb"
+msgstr "letiltás"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
@@ -2527,11 +2543,11 @@ msgstr "felhasználói blokkok"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
-msgstr "Letiltotta {} felhasználót."
+msgstr "Letiltotta a következő felhasználót: {}."
 
 #: .\blocks\views.py:86
 msgid "You have unblocked {}."
-msgstr "Feloldotta {} letiltását."
+msgstr "Feloldotta a következő felhasználó letiltását: {}."
 
 #: .\contact_by_form\apps.py:19
 msgid "Contact By Form"
@@ -2543,7 +2559,7 @@ msgstr "Írja be a \"17\" számot"
 
 #: .\contact_by_form\forms.py:57
 msgid "Send"
-msgstr "Elküld"
+msgstr "Küldés"
 
 #: .\contact_by_form\forms.py:70
 msgid "Please contact us by email."
@@ -2555,7 +2571,7 @@ msgstr "Nem 17."
 
 #: .\contact_by_form\models.py:37
 msgid "Feedback"
-msgstr "Visszacsatolás"
+msgstr "Visszajelzés"
 
 #: .\contact_by_form\models.py:38
 msgid "Abuse (User)"
@@ -2571,11 +2587,11 @@ msgstr "feladó"
 
 #: .\contact_by_form\models.py:43
 msgid "your name"
-msgstr "a neved"
+msgstr "az Ön neve"
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
-msgstr "az email címed"
+msgstr "az Ön e-mail címe"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
@@ -2583,7 +2599,7 @@ msgstr "típus"
 
 #: .\contact_by_form\models.py:46
 msgid "your message"
-msgstr "üzenetét"
+msgstr "az Ön üzenete"
 
 #: .\contact_by_form\models.py:48
 msgid "reported entity"
@@ -2591,31 +2607,31 @@ msgstr "bejelentett entitás"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
-msgstr "közölt fotó"
+msgstr "bejelentett fénykép"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
-msgstr "visszacsatolás"
+msgstr "visszajelzés"
 
 #: .\contact_by_form\models.py:53
 msgid "feedbacks"
-msgstr "visszajelzéseket"
+msgstr "visszajelzések"
 
 #: .\friends\views.py:326
 msgid "Friendship request sent."
-msgstr "Barátsági felkérés elküldve."
+msgstr "Barátsági kérelem elküldve."
 
 #: .\friends\views.py:350
 msgid "No friendship request."
-msgstr "Nincs barátságkérés."
+msgstr "Nincs barátsági kérelem."
 
 #: .\friends\views.py:420
 msgid "Friendship request accepted."
-msgstr "Baráti felkérés elfogadva."
+msgstr "Barátsági kérelem elfogadva."
 
 #: .\friends\views.py:447
 msgid "Friendship request rejected."
-msgstr "A barátkozási kérelmet elutasították."
+msgstr "Barátsági kérelem elutasítva."
 
 #: .\messages\apps.py:14 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2627,7 +2643,7 @@ msgstr "Üzenetek"
 
 #: .\messages\models.py:32
 msgid "site"
-msgstr "telek"
+msgstr "oldal"
 
 #: .\messages\models.py:33
 msgid "participant 1"
@@ -2655,7 +2671,7 @@ msgstr "csevegés"
 
 #: .\messages\models.py:95
 msgid "chats"
-msgstr "chateket"
+msgstr "csevegések"
 
 #: .\messages\models.py:108
 msgid "None"
@@ -2667,15 +2683,15 @@ msgstr "üzenet"
 
 #: .\messages\models.py:193
 msgid "messages"
-msgstr "üzeneteket"
+msgstr "üzenetek"
 
 #: .\messages\models.py:221
 msgid "read mark"
-msgstr "jelet olvasni"
+msgstr "olvasottsági jelölés"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "jeleket olvasni"
+msgstr "olvasottsági jelölések"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2767,7 +2783,7 @@ msgstr "finn"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "Magyar"
+msgstr "magyar"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
@@ -2863,7 +2879,7 @@ msgstr "lett"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Rossz kérés"
+msgstr "Hibás kérés"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
@@ -2871,7 +2887,7 @@ msgstr "Speedy sajnálja, de nem tudjuk teljesíteni kérését."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "Engedély megtagadva"
+msgstr "Hozzáférés megtagadva"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
@@ -2893,7 +2909,7 @@ msgstr "Belső szerver hiba"
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
-msgstr "Körülbelül"
+msgstr "Rólunk"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
@@ -2912,7 +2928,7 @@ msgstr "Profil információ"
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
-msgstr "Magánélet"
+msgstr "Adatvédelem"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
@@ -2924,7 +2940,7 @@ msgstr "E-mailek és jelszó"
 
 #: .\templates\accounts\edit_profile\core_base.html:45
 msgid "Deactivate Account"
-msgstr "Fiók kikapcsolása"
+msgstr "Fiók deaktiválása"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
@@ -2944,7 +2960,7 @@ msgstr "Láthatóság"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
-msgstr "Akciók"
+msgstr "Műveletek"
 
 #: .\templates\accounts\edit_profile\credentials.html:23
 msgid "Unconfirmed"
@@ -2956,11 +2972,11 @@ msgstr "Elsődleges"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
-msgstr "Küldjön újra egy megerősítő e-mailt"
+msgstr "Megerősítő e-mail újraküldése"
 
 #: .\templates\accounts\edit_profile\credentials.html:53
 msgid "Make this email address primary"
-msgstr "Legyen ez az e-mail cím elsődleges"
+msgstr "Legyen ez az e-mail cím az elsődleges"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
@@ -2968,11 +2984,11 @@ msgstr "Biztosan törli ezt az e-mail címet?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr "Törölje ezt az e-mail címet"
+msgstr "E-mail cím törlése"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
-msgstr "Adjon hozzá egy másikat"
+msgstr "Újabb hozzáadása"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
@@ -2980,7 +2996,9 @@ msgstr "Jelszó módosítása"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Életkora látható lesz a meccsein Speedy Match."
+msgstr ""
+"Életkora látható lesz az Önnel egyező felhasználók számára a Speedy Match "
+"oldalon."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2993,7 +3011,7 @@ msgstr "E-mail hozzáadása"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
-msgstr "Kijelentkezett"
+msgstr "Kijelentkezve"
 
 #: .\templates\accounts\password_reset\complete.html:5
 #: .\templates\accounts\password_reset\complete.html:11
@@ -3025,7 +3043,7 @@ msgstr "Összes megtekintése"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "Admin - Barátok"
+msgstr "Admin – Barátok"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
@@ -3037,7 +3055,7 @@ msgstr "Még nincsenek barátok."
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
-msgstr "Adminisztrációs információk"
+msgstr "Admin információk"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
@@ -3058,7 +3076,7 @@ msgstr ""
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Speedy Net blog"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3087,7 +3105,7 @@ msgstr "Kijelentkezés"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Otthon"
+msgstr "Főoldal"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3103,15 +3121,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "Speedy Net bolt"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Speedy Match bolt"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "Speedy S-logo bolt"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3139,7 +3157,7 @@ msgstr "Feltételek"
 #: .\templates\contact_by_form\feedback_form.html:14
 #: .\templates\menu\about_mobile_menu_links.html:20
 msgid "Contact Us"
-msgstr "Lépjen kapcsolatba velünk"
+msgstr "Kapcsolat"
 
 #: .\templates\base_without_login.html:19
 msgid "Speedy Composer"
@@ -3151,7 +3169,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Speedy Composer bolt"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3159,7 +3177,7 @@ msgstr "Letiltott felhasználók"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "Nem blokkolsz senkit."
+msgstr "Ön nem tiltott le senkit."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
@@ -3185,7 +3203,7 @@ msgstr "Fénykép bejelentése"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr "Köszönöm"
+msgstr "Köszönjük"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
@@ -3207,7 +3225,7 @@ msgstr "Fiókja aktiválásához használja ezt a linket:"
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "Erősítse meg e-mail címét itt: %(site_name)s"
+msgstr "Erősítse meg e-mail címét a(z) %(site_name)s oldalon"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3215,12 +3233,12 @@ msgstr "Használja ezt a linket e-mail címének ellenőrzéséhez:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr "Jelszava megváltoztatásához használja ezt a linket:"
+msgstr "Jelszava módosításához használja ezt a linket:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Jelszó visszaállítása itt: %(site_name)s"
+msgstr "Jelszó visszaállítása a(z) %(site_name)s oldalon"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3228,7 +3246,7 @@ msgstr "üzenetet küldött Önnek."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "Olvasd el:"
+msgstr "Olvassa el:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -3236,14 +3254,14 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Feliratkozott az ilyen típusú értesítések fogadására innen: %(site_name)s. "
-"Lépjen be erre az oldalra az értesítési beállítások módosításához vagy a "
+"Feliratkozott a(z) %(site_name)s ilyen típusú értesítéseire. Lépjen be "
+"erre az oldalra az értesítési beállítások módosításához vagy a "
 "leiratkozáshoz:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "Új üzenete érkezett a következőn: %(site_name)s"
+msgstr "Új üzenete érkezett a(z) %(site_name)s oldalon"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
@@ -3261,12 +3279,12 @@ msgstr "Nincsenek függőben lévő barátsági kérések."
 #: .\templates\main\main_page_base.html:12
 #, python-format
 msgid "Welcome to %(site_name)s!"
-msgstr "Üdvözöljük a %(site_name)s!"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon!"
 
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "Csatlakozz a %(site_name)s-hoz!"
+msgstr "Csatlakozzon a(z) %(site_name)s oldalhoz!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
@@ -3275,17 +3293,17 @@ msgstr "Ingyenes és bárki csatlakozhat!"
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Csevegés <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Csevegés <a href=\"%(link)s\">%(user_name)s</a> felhasználóval"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
 #, python-format
 msgid "Send a message to %(user_name)s"
-msgstr "Üzenet küldése a következő címre: %(user_name)s"
+msgstr "Üzenet küldése %(user_name)s részére"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
-msgstr "Az összes megjelölése olvasottként"
+msgstr "Összes megjelölése olvasottként"
 
 #: .\templates\messages\chat_list.html:56
 msgid "Unread"
@@ -3293,7 +3311,7 @@ msgstr "Nem olvasott"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "Te:"
+msgstr "Ön:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3327,13 +3345,13 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Profilja a Speedy Net-en mindenki számára látható, de kiválaszthatja, hogy "
-"kivel osztja meg e-mail címét és születési dátumát. Ha feliratkozott a "
-"Speedy Match szolgáltatásra, akkor Speedy Match profilját csak azok "
-"láthatják, akik az oldalon beállított beállítások szerint megfelelnek Önnek, "
-"és ha Ön az ő beállításaik szerint egyezteti őket. A Speedy Match-en lévő "
-"profilod nem jelenik meg a Google-on, és nem látható azon személyek számára, "
-"akik nem regisztráltak az oldalra."
+"Speedy Net profilja mindenki számára látható, de Ön választhatja meg, "
+"kivel osztja meg e-mail címét és születési dátumát. Ha regisztrált a "
+"Speedy Match oldalra, Speedy Match profilja csak azok számára lesz "
+"látható, akik az Ön által az oldalon megadott beállítások szerint "
+"megfelelnek Önnek, és akiknek Ön is megfelel az ő beállításaik szerint. "
+"Speedy Match profilja nem jelenik meg a Google-ben, és nem látható azok "
+"számára, akik nem regisztráltak az oldalra."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3362,29 +3380,30 @@ msgid ""
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
-"Ha szeretné, törölheti fiókját a en. A Speedy Net fiók törlése automatikusan "
-"Speedy Net törli fiókját is. A fiók törléséhez Speedy Match jelentkezzen be "
-"a be Speedy Net, deaktiválja fiókját, Speedy Net majd kattintson a „Fiók "
-"törlése” gombra (a „Profil szerkesztése” menüben). Töltse ki az adatokat az "
-"űrlapon, és erősítse meg. Felhívjuk figyelmét, hogy a törölt fiókot nem "
-"lehet visszaállítani. A fiók törlése végleges és visszafordíthatatlan."
+"Ha szeretné, törölheti fiókját a Speedy Net oldalon. Speedy Net fiókja "
+"törlésével automatikusan törlődik Speedy Match fiókja is. Speedy Net "
+"fiókja törléséhez jelentkezzen be a Speedy Net oldalra, deaktiválja "
+"fiókját, majd kattintson a „Fiók törlése” gombra (a „Profil szerkesztése” "
+"menüben). Töltse ki az űrlapon az adatokat, és erősítse meg. Felhívjuk "
+"figyelmét, hogy a törölt fiók nem állítható vissza. A fiók törlése "
+"végleges és visszafordíthatatlan."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Ön letiltotta "
+msgstr "Ön letiltotta ezt a felhasználót: "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " blokkolt téged."
+msgstr " letiltotta Önt."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Fogadja el a barátságra vonatkozó kérést"
+msgstr "Barátsági kérelem elfogadása"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
@@ -3394,12 +3413,12 @@ msgstr "Elfogadás"
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Barátságkérés elutasítása"
+msgstr "Barátsági kérelem elutasítása"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr "Elutasít"
+msgstr "Elutasítás"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
@@ -3409,41 +3428,41 @@ msgstr "Hozzáadás a barátokhoz"
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Váltás a legördülő menüben"
+msgstr "Legördülő menü"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Biztos benne, hogy le szeretné tiltani? "
+msgstr "Biztosan letiltja ezt a felhasználót: "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Tömb "
+msgstr "Letiltás "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Blokkolás feloldása "
+msgstr "Letiltás feloldása "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Jelentés "
+msgstr "Bejelentés "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
-msgstr "Jelenítse ezt a fényképet"
+msgstr "Fénykép bejelentése"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Törölje a barátsági kérést"
+msgstr "Barátsági kérelem visszavonása"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr "Ismerős eltávolítása"
+msgstr "Barát eltávolítása"
 
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
@@ -3484,13 +3503,14 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"A %(user_name)s Speedy Match profillal is rendelkezik. Tekintse meg "
+"%(user_name)s is rendelkezik Speedy Match profillal. Tekintse meg "
 "%(user_name)s profilját a Speedy Match oldalon."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Neten."
+"Önnek is van Speedy Net profilja. Tekintse meg profilját a Speedy Net "
+"oldalon."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3498,8 +3518,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"A %(user_name)s Speedy Net profillal is rendelkezik. Tekintse meg "
-"%(user_name)s profilját a Speedy Neten."
+"%(user_name)s is rendelkezik Speedy Net profillal. Tekintse meg "
+"%(user_name)s profilját a Speedy Net oldalon."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3516,10 +3536,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"A Speedy Netet kizárólag jogi célokra használhatja. Nem tölthet fel "
-"gyűlöletkel, erőszakkal, állatkínzásokkal, meztelenséggel vagy "
-"pornográfiával kapcsolatos tartalmakat Speedy Net. Nem használhatja a et "
-"spam vagy azonos tartalmú üzenetek küldésére nagyszámú embernek."
+"A Speedy Net kizárólag jogszerű célokra használható. Tilos "
+"gyűlöletkeltéssel, erőszakkal, állatkínzással, meztelenséggel vagy "
+"pornográfiával kapcsolatos tartalmakat feltölteni. Tilos a Speedy Net "
+"használata spamüzenetek, illetve azonos tartalmú üzenetek nagyszámú "
+"embernek történő küldésére."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3529,12 +3550,13 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"A webhely kezelése nem tudja ellenőrizni a webhely felhasználói által "
-"megadott személyes adatokat. Előfordulhat, hogy egyes felhasználók személyes "
-"adatai nem helyesek. Az oldal menedzsmentje nem vállal felelősséget az "
-"oldalon kívüli felhasználói tevékenységekért. If you choose to meet or talk "
-"on the phone with people you met on the site, the responsibility for the "
-"results of the meeting or phone call is yours."
+"Az oldal üzemeltetői nem tudják ellenőrizni az oldal felhasználói által "
+"megadott személyes adatokat. Előfordulhat, hogy egyes felhasználók "
+"személyes adatai nem helyesek. Az oldal üzemeltetői nem vállalnak "
+"felelősséget az oldalon kívüli felhasználói tevékenységekért. Ha úgy dönt,"
+" hogy személyesen találkozik vagy telefonon beszél az oldalon megismert "
+"emberekkel, a találkozó vagy telefonhívás kimeneteléért Ön viseli a "
+"felelősséget."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3563,10 +3585,10 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"A profilképed legyen egy kép rólad, ahol láthatjuk az arcodat. Profilkép "
-"feltöltése másokkal engedélyezett. Ne töltsön fel meztelen fotókat, nemi "
-"szerveket (férfiak vagy nők) vagy meztelen mellkasú képeket (férfiak vagy "
-"nők)."
+"Profilképének Önről készült képnek kell lennie, amelyen látható az arca. "
+"Megengedett olyan profilkép feltöltése, amelyen más emberek is "
+"szerepelnek. Ne töltsön fel meztelen fotókat, nemi szervet (férfiét vagy "
+"nőét) mutató fotókat, illetve félmeztelen (férfi vagy női) képeket."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3578,7 +3600,7 @@ msgstr "tulajdonos"
 
 #: .\uploads\models.py:28
 msgid "file"
-msgstr "fájlt"
+msgstr "fájl"
 
 #: .\uploads\models.py:29
 msgid "is stored"
@@ -3594,7 +3616,7 @@ msgstr "feltöltött fájl"
 
 #: .\uploads\models.py:46
 msgid "uploaded files"
-msgstr "feltöltött fájlokat"
+msgstr "feltöltött fájlok"
 
 #: .\uploads\models.py:90
 msgid "visible on website"
@@ -3602,7 +3624,7 @@ msgstr "honlapon látható"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Gyors képmoderálási idő Speedy"
+msgstr "Speedy képmoderálási idő"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"

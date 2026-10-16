@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2 : 3);\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
@@ -67,27 +67,21 @@ msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr ""
-"Zatiaľ nemáte žiadne zápasy. Try to broaden your search settings or check "
-"again later."
+msgstr "Zatiaľ nemáte žiadne zhody. Skúste rozšíriť nastavenia vyhľadávania alebo sa pozrite znova neskôr."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr ""
-"Zatiaľ nemáte žiadne zápasy. Try to broaden your search settings or check "
-"again later."
+msgstr "Zatiaľ nemáte žiadne zhody. Skúste rozšíriť nastavenia vyhľadávania alebo sa pozrite znova neskôr."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr ""
-"Zatiaľ nemáte žiadne zápasy. Try to broaden your search settings or check "
-"again later."
+msgstr "Zatiaľ nemáte žiadne zhody. Skúste rozšíriť nastavenia vyhľadávania alebo sa pozrite znova neskôr."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -107,47 +101,47 @@ msgstr "Nastavenia zhody"
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "Ako"
+msgstr "Páči sa mi"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "Ako"
+msgstr "Páči sa mi"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "Ako"
+msgstr "Páči sa mi"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "Na rozdiel od"
+msgstr "Už sa mi nepáči"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "Na rozdiel od"
+msgstr "Už sa mi nepáči"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "Na rozdiel od"
+msgstr "Už sa mi nepáči"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "Vaše zápasy"
+msgstr "Vaše zhody"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "Vaše zápasy"
+msgstr "Vaše zhody"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Vaše zápasy"
+msgstr "Vaše zhody"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -212,17 +206,17 @@ msgstr "O mne"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "O mojom zápase"
+msgstr "O mojej zhode"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "O mojom zápase"
+msgstr "O mojej zhode"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "O mojom zápase"
+msgstr "O mojej zhode"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
@@ -260,47 +254,47 @@ msgstr "Niekto vás má rád na %(site_name)s"
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "má ťa rád."
+msgstr "má vás rád."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "má ťa rád."
+msgstr "má vás rád."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "má ťa rád."
+msgstr "má vás rád."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "má ťa rád"
+msgstr "má vás rád"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "má ťa rád"
+msgstr "má vás rád"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "má ťa rád"
+msgstr "má vás rád"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "sa ti páči"
+msgstr "Páči sa vám"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "sa ti páči"
+msgstr "Páči sa vám"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "sa ti páči"
+msgstr "Páči sa vám"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
@@ -355,37 +349,37 @@ msgstr "Moja výška v centimetroch"
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "Môj ideálny zápas"
+msgstr "Moja ideálna zhoda"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "Môj ideálny zápas"
+msgstr "Moja ideálna zhoda"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "Môj ideálny zápas"
+msgstr "Moja ideálna zhoda"
 
 #: .\__translations\__translations.py:24
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "Minimálny vek"
+msgstr "Minimálny vek na zhodu"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "Minimálny vek"
+msgstr "Minimálny vek na zhodu"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "Minimálny vek"
+msgstr "Minimálny vek na zhodu"
 
 #: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
@@ -423,17 +417,17 @@ msgstr "Napíšte prosím pár slov o sebe."
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "máte deti? koľko?"
+msgstr "Máte deti? Koľko?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "máte deti? koľko?"
+msgstr "Máte deti? Koľko?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "máte deti? koľko?"
+msgstr "Máte deti? Koľko?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
@@ -453,17 +447,17 @@ msgstr "Chcete (viac) deti?"
 #: .\__translations\__translations.py:44
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "Kto je tvoj ideálny partner?"
+msgstr "Kto je váš ideálny partner?"
 
 #: .\__translations\__translations.py:45
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "Kto je tvoj ideálny partner?"
+msgstr "Kto je váš ideálny partner?"
 
 #: .\__translations\__translations.py:46
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Kto je tvoj ideálny partner?"
+msgstr "Kto je váš ideálny partner?"
 
 #: .\__translations\__translations.py:48
 #, python-brace-format
@@ -546,7 +540,7 @@ msgstr "Vyžaduje sa stav vášho vzťahu."
 #: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
-msgstr "Vyžaduje sa zhoda pohlavia."
+msgstr "Vyžaduje sa pohlavie na zhodu."
 
 #: .\accounts\forms.py:138
 msgid "Your height is required."
@@ -565,7 +559,7 @@ msgstr "Prosím napíšte kde bývate."
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "máte deti? koľko?"
+msgstr "Máte deti? Koľko?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
@@ -575,11 +569,11 @@ msgstr "Chcete (viac) deti?"
 
 #: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
-msgstr "Kto je tvoj ideálny partner?"
+msgstr "Kto je váš ideálny partner?"
 
 #: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
-msgstr "Vyžaduje sa minimálny vek."
+msgstr "Vyžaduje sa minimálny vek na zhodu."
 
 #: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
@@ -599,7 +593,7 @@ msgstr "Vyžaduje sa zhoda stavu vzťahu."
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgstr "Kde bývate?"
 
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
@@ -663,11 +657,11 @@ msgstr "Pár slov o mne"
 #: .\accounts\models.py:233
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "Môj ideálny zápas"
+msgstr "Moja ideálna zhoda"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
-msgstr "Minimálny vek"
+msgstr "Minimálny vek na zhodu"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
@@ -675,7 +669,7 @@ msgstr "Maximálny vek na zhodu"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "Diétny zápas"
+msgstr "Zhoda stravy"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
@@ -687,11 +681,11 @@ msgstr "Zhoda stavu vzťahu"
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
-msgstr "Diéta, aby zodpovedala"
+msgstr "Strava na zhodu"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "Fajčenie, aby zodpovedalo"
+msgstr "Stav fajčenia na zhodu"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
@@ -724,11 +718,7 @@ msgid ""
 "{total_number_of_active_members_in_the_last_four_months}, of which "
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
-msgstr ""
-"Celkový počet aktívnych členov na lokalite je "
-"{total_number_of_active_members_in_the_last_four_months}, z toho "
-"{total_number_of_active_members_in_the_last_week} členov vstúpilo na "
-"lokalitu za posledný týždeň."
+msgstr "Celkový počet aktívnych členov na stránke je {total_number_of_active_members_in_the_last_four_months}, z toho {total_number_of_active_members_in_the_last_week} členov navštívilo stránku za posledný týždeň."
 
 #: .\accounts\validators.py:169
 msgid "Height must be from 1 to 450 cm."
@@ -756,7 +746,7 @@ msgstr "Aspoň jedna možnosť zhody stavu fajčenia by mala byť päť sŕdc."
 
 #: .\accounts\validators.py:301
 msgid "At least one relationship status match option should be five hearts."
-msgstr "Aspoň jedna možnosť zhody stavu vzťahu by mala byť päť srdiečok."
+msgstr "Aspoň jedna možnosť zhody stavu vzťahu by mala byť päť sŕdc."
 
 #: .\admin\views.py:225
 #, python-brace-format
@@ -807,53 +797,7 @@ msgid ""
 "{total_percent_of_male_active_members_in_the_last_two_years} males, "
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
-msgstr ""
-"Admin: The total number of active members on the site is "
-"{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+msgstr "Admin: Celkový počet aktívnych členov na stránke je {total_number_of_active_members} ({total_number_of_female_active_members} žien, {total_number_of_male_active_members} mužov, {total_number_of_other_active_members} iných; {total_percent_of_female_active_members} žien, {total_percent_of_male_active_members} mužov, {total_percent_of_other_active_members} iných), z toho {total_number_of_active_members_in_the_last_week} členov ({total_number_of_female_active_members_in_the_last_week} žien, {total_number_of_male_active_members_in_the_last_week} mužov, {total_number_of_other_active_members_in_the_last_week} iných; {total_percent_of_female_active_members_in_the_last_week} žien, {total_percent_of_male_active_members_in_the_last_week} mužov, {total_percent_of_other_active_members_in_the_last_week} iných) navštívilo stránku za posledný týždeň, {total_number_of_active_members_in_the_last_month} členov ({total_number_of_female_active_members_in_the_last_month} žien, {total_number_of_male_active_members_in_the_last_month} mužov, {total_number_of_other_active_members_in_the_last_month} iných; {total_percent_of_female_active_members_in_the_last_month} žien, {total_percent_of_male_active_members_in_the_last_month} mužov, {total_percent_of_other_active_members_in_the_last_month} iných) navštívilo stránku za posledný mesiac, {total_number_of_active_members_in_the_last_four_months} členov ({total_number_of_female_active_members_in_the_last_four_months} žien, {total_number_of_male_active_members_in_the_last_four_months} mužov, {total_number_of_other_active_members_in_the_last_four_months} iných; {total_percent_of_female_active_members_in_the_last_four_months} žien, {total_percent_of_male_active_members_in_the_last_four_months} mužov, {total_percent_of_other_active_members_in_the_last_four_months} iných) navštívilo stránku za posledné štyri mesiace, {total_number_of_active_members_in_the_last_eight_months} členov ({total_number_of_female_active_members_in_the_last_eight_months} žien, {total_number_of_male_active_members_in_the_last_eight_months} mužov, {total_number_of_other_active_members_in_the_last_eight_months} iných; {total_percent_of_female_active_members_in_the_last_eight_months} žien, {total_percent_of_male_active_members_in_the_last_eight_months} mužov, {total_percent_of_other_active_members_in_the_last_eight_months} iných) navštívilo stránku za posledných osem mesiacov, a {total_number_of_active_members_in_the_last_two_years} členov ({total_number_of_female_active_members_in_the_last_two_years} žien, {total_number_of_male_active_members_in_the_last_two_years} mužov, {total_number_of_other_active_members_in_the_last_two_years} iných; {total_percent_of_female_active_members_in_the_last_two_years} žien, {total_percent_of_male_active_members_in_the_last_two_years} mužov, {total_percent_of_other_active_members_in_the_last_two_years} iných) navštívilo stránku za posledné dva roky."
 
 #: .\admin\views.py:307
 #, python-brace-format
@@ -1024,23 +968,23 @@ msgstr "Dievčatá, ktoré sa vám páčia"
 
 #: .\likes\views.py:54
 msgid "Boys You Like"
-msgstr "Chlapci, ktorých máte radi"
+msgstr "Chlapci, ktorí sa vám páčia"
 
 #: .\likes\views.py:55
 msgid "People You Like"
-msgstr "Ľudia, ktorých máte radi"
+msgstr "Ľudia, ktorí sa vám páčia"
 
 #: .\likes\views.py:58
 msgid "Girls Who Like You"
-msgstr "Dievčatá, ktoré ťa majú radi"
+msgstr "Dievčatá, ktoré vás majú rady"
 
 #: .\likes\views.py:59
 msgid "Boys Who Like You"
-msgstr "Chlapci, ktorí ťa majú radi"
+msgstr "Chlapci, ktorí vás majú radi"
 
 #: .\likes\views.py:60
 msgid "People Who Like You"
-msgstr "Ľudia, ktorí ťa majú radi"
+msgstr "Ľudia, ktorí vás majú radi"
 
 #: .\likes\views.py:62
 msgid "Mutual Likes"
@@ -1052,12 +996,12 @@ msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
-msgstr "Vaše nastavenia zápasu boli uložené."
+msgstr "Vaše nastavenia zhody boli uložené."
 
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "Poradie zápasu"
+msgstr "Poradie zhody"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
@@ -1067,7 +1011,7 @@ msgstr "Neznámy"
 
 #: .\profiles\tests\test_widgets.py:124 .\profiles\widgets.py:94
 msgid "None"
-msgstr "žiadne"
+msgstr "Žiadne"
 
 #: .\profiles\tests\test_widgets.py:131
 #: .\templates\profiles\user_extra_info_widget.html:12
@@ -1080,7 +1024,7 @@ msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Speedy Match O"
+msgstr "O Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1124,24 +1068,14 @@ msgid ""
 "your profile and which details will appear on your profile as public, which "
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
-msgstr ""
-"Iba ľudia, ktorí spĺňajú vaše požiadavky, budú môcť vidieť váš profil a "
-"kontaktovať vás. Nepovoľujeme anonymné vyhľadávania a profily Speedy Match "
-"rýchlej zhody sú viditeľné iba pre zodpovedajúcich partnerov. Môžete si "
-"vybrať, kto bude môcť vidieť váš profil a ktoré podrobnosti sa budú "
-"zobrazovať vo vašom profile ako verejné, ktoré podrobnosti len priateľom a "
-"ktoré podrobnosti budú súkromné. Súkromné ​​údaje sa zobrazia iba vám."
+msgstr "Iba ľudia, ktorí spĺňajú vaše požiadavky, budú môcť vidieť váš profil a kontaktovať vás. Nepovoľujeme anonymné vyhľadávania a profily v Speedy Match sú viditeľné iba pre zodpovedajúcich partnerov. Môžete si vybrať, kto bude môcť vidieť váš profil a ktoré podrobnosti sa budú zobrazovať vo vašom profile ako verejné, ktoré podrobnosti len priateľom a ktoré podrobnosti budú súkromné. Súkromné údaje sa zobrazia iba vám."
 
 #: .\templates\about\about.html:23
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
-msgstr ""
-"Všetky funkcie na Speedy Net a Speedy Match sú bezplatné. Pripojte sa k ešte "
-"Speedy Match dnes a nájdite zodpovedajúcich partnerov, trvá to len niekoľko "
-"minút. <a href=\"/\" title=\"Join Speedy Match\">Kliknutím sem</a> sa "
-"pripojte."
+msgstr "Všetky funkcie na Speedy Net a Speedy Match sú bezplatné. Pripojte sa k Speedy Match ešte dnes a nájdite zodpovedajúcich partnerov, trvá to len niekoľko minút. <a href=\"/\" title=\"Join Speedy Match\">Kliknite sem</a> a pripojte sa."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1156,10 +1090,7 @@ msgid ""
 "Speedy Match is named after <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
-msgstr ""
-"Speedy Match je pomenovaný po <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, sučke, ktorá bola s nami dlhé roky "
-"a zomrela v roku 2003. porodila v roku 1988 7 šteniatok."
+msgstr "Speedy Match je pomenovaný po <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, sučke, ktorá bola s nami dlhé roky a zomrela v roku 2003. Speedy porodila v roku 1988 7 šteniat."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1179,7 +1110,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Zakladateľ a riaditeľ Speedy Net spoločností Speedy Match a,"
+msgstr "Zakladateľ a riaditeľ Speedy Net a Speedy Match,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1209,7 +1140,7 @@ msgstr "O mne"
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "O mojom zápase"
+msgstr "O mojej zhode"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
@@ -1231,7 +1162,7 @@ msgstr "Admin - Všetky zápasy"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Vaše zápasy"
+msgstr "Vaše zhody"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
@@ -1261,7 +1192,7 @@ msgstr "Vegánsky priateľský web"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "má ťa rád."
+msgstr "má vás rád."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1314,10 +1245,7 @@ msgstr "Hľadáš priateľa? Hľadáš priateľku? Príďte a zoznámte sa so Sp
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
-msgstr ""
-"Všetky funkcie na Speedy Net a Speedy Match sú bezplatné. Pripojte sa k "
-"Speedy Match ešte dnes a nájdite zodpovedajúcich partnerov, trvá to len "
-"niekoľko minút."
+msgstr "Všetky funkcie na Speedy Net a Speedy Match sú bezplatné. Pripojte sa k Speedy Match ešte dnes a nájdite zodpovedajúcich partnerov, trvá to len niekoľko minút."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
@@ -1344,9 +1272,7 @@ msgstr "Pridajte ďalšie možnosti"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr ""
-"Zatiaľ nemáte žiadne zápasy. Try to broaden your search settings or check "
-"again later."
+msgstr "Zatiaľ nemáte žiadne zhody. Skúste rozšíriť nastavenia vyhľadávania alebo sa pozrite znova neskôr."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
@@ -1363,12 +1289,12 @@ msgstr "Priatelia"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "Ako"
+msgstr "Páči sa mi"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "Na rozdiel od"
+msgstr "Už sa mi nepáči"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
@@ -1377,12 +1303,12 @@ msgstr "Tvoj priateľ"
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "má ťa rád"
+msgstr "má vás rád"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "sa ti páči"
+msgstr "Páči sa vám"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"

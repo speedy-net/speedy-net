@@ -49,17 +49,17 @@ msgstr ""
 #: .\__translations\__translations.html:12
 msgctxt "female"
 msgid "Logout"
-msgstr "பதிவு"
+msgstr "வெளியேறு"
 
 #: .\__translations\__translations.html:13
 msgctxt "male"
 msgid "Logout"
-msgstr "பதிவு"
+msgstr "வெளியேறு"
 
 #: .\__translations\__translations.html:14
 msgctxt "other"
 msgid "Logout"
-msgstr "பதிவு"
+msgstr "வெளியேறு"
 
 #: .\__translations\__translations.html:16
 #, python-format
@@ -307,17 +307,17 @@ msgstr "எல்லாவற்றையும் வாசிக்கவு�
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "நீ:"
+msgstr "நீங்கள்:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "நீ:"
+msgstr "நீங்கள்:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "நீ:"
+msgstr "நீங்கள்:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -478,32 +478,32 @@ msgstr "நீங்கள் தடுக்க வேண்டும் என
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "தொகுதி "
+msgstr "தடு "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "தொகுதி "
+msgstr "தடு "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "தொகுதி "
+msgstr "தடு "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
 msgid "Unblock "
-msgstr "திறக்கவும் "
+msgstr "தடை நீக்கு "
 
 #: .\__translations\__translations.html:125
 msgctxt "male"
 msgid "Unblock "
-msgstr "திறக்கவும் "
+msgstr "தடை நீக்கு "
 
 #: .\__translations\__translations.html:126
 msgctxt "other"
 msgid "Unblock "
-msgstr "திறக்கவும் "
+msgstr "தடை நீக்கு "
 
 #: .\__translations\__translations.html:128
 msgctxt "female"
@@ -772,47 +772,47 @@ msgstr "உங்கள் மின்னஞ்சல் முகவரிய�
 #: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
-msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
-msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
-msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
 msgid "Use this link to verify your email address:"
-msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:201
 msgctxt "male"
 msgid "Use this link to verify your email address:"
-msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:202
 msgctxt "other"
 msgid "Use this link to verify your email address:"
-msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
-msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
-msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
-msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
@@ -837,7 +837,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
-"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -847,7 +847,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
-"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -857,7 +857,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
-"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்:"
 
 #: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
@@ -873,7 +873,7 @@ msgstr "மின்னஞ்சல் முகவரி"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
-msgstr "மின்னஞ்சல் முகவரிஃ"
+msgstr "மின்னஞ்சல் முகவரி:"
 
 #: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
@@ -1073,17 +1073,17 @@ msgstr "நான் எங்கே வசிக்கிறேன்?"
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "நீ எங்கே வசிக்கிறாய்?"
+msgstr "நீங்கள் எங்கே வசிக்கிறீர்கள்?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "நீ எங்கே வசிக்கிறாய்?"
+msgstr "நீங்கள் எங்கே வசிக்கிறீர்கள்?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "நீ எங்கே வசிக்கிறாய்?"
+msgstr "நீங்கள் எங்கே வசிக்கிறீர்கள்?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
@@ -2284,10 +2284,10 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"பயனர்பெயர் குறைந்தது %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"பயனர்பெயர் குறைந்தது %(limit_value)d எண்ணெழுத்து எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
 "(அதில் %(show_value)d உள்ளது)."
 msgstr[1] ""
-"பயனர்பெயர் குறைந்தது %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"பயனர்பெயர் குறைந்தது %(limit_value)d எண்ணெழுத்து எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
 "(அதில் %(show_value)d உள்ளது)."
 
 #: .\accounts\validators.py:94
@@ -2299,10 +2299,10 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"பயனர்பெயர் அதிகபட்சம் %(limit_value)d அல்பான்யூமரிக் எழுத்தை கொண்டிருக்க வேண்டும் (அதில் "
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d எண்ணெழுத்து எழுத்தை கொண்டிருக்க வேண்டும் (அதில் "
 "%(show_value)d உள்ளது)."
 msgstr[1] ""
-"பயனர்பெயர் அதிகபட்சம் %(limit_value)d அல்பான்யூமரிக் எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
+"பயனர்பெயர் அதிகபட்சம் %(limit_value)d எண்ணெழுத்து எழுத்துக்களைக் கொண்டிருக்க வேண்டும் "
 "(அதில் %(show_value)d உள்ளது)."
 
 #: .\accounts\validators.py:117
@@ -2444,7 +2444,7 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"நிர்வாகிஃ தளத்தில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை {total_number_of_members}, "
+"நிர்வாகி: தளத்தில் உள்ள உறுப்பினர்களின் மொத்த எண்ணிக்கை {total_number_of_members}, "
 "இதில் {total_number_of_members_in_the_last_week} உறுப்பினர்கள் கடந்த வாரம் "
 "தளத்திற்குள் நுழைந்தனர், {total_number_of_members_in_the_last_month} உறுப்பினர்கள் "
 "கடந்த மாதத்தில் தளத்திற்குள் நுழைந்தனர், "
@@ -2534,7 +2534,7 @@ msgstr "தடுக்கப்பட்ட பயனர்"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "தொகுதி"
+msgstr "தடு"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
@@ -3099,11 +3099,11 @@ msgstr "Speedy"
 
 #: .\templates\base_with_login.html:59 .\templates\base_with_login.html:117
 msgid "Logout"
-msgstr "பதிவு"
+msgstr "வெளியேறு"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "வீடு"
+msgstr "முகப்பு"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3187,7 +3187,7 @@ msgstr ""
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, நிறுவனர் மற்றும் வலை மேலாளர்ஃ"
+msgstr "Uri Rodberg, நிறுவனர் மற்றும் வலை மேலாளர்:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
@@ -3217,7 +3217,7 @@ msgstr "அடுத்தது"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கணக்கை செயல்படுத்த இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
@@ -3227,11 +3227,11 @@ msgstr "உங்கள் மின்னஞ்சல் முகவரிய�
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
-msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் மின்னஞ்சல் முகவரியை சரிபார்க்க இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்ஃ"
+msgstr "உங்கள் கடவுச்சொல்லை மாற்ற இந்த இணைப்பைப் பயன்படுத்தவும்:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
@@ -3253,7 +3253,7 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
-"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3308,7 +3308,7 @@ msgstr "படிக்காதது"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "நீ:"
+msgstr "நீங்கள்:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3436,12 +3436,12 @@ msgstr "?"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "தொகுதி "
+msgstr "தடு "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "திறக்கவும் "
+msgstr "தடை நீக்கு "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
@@ -3582,7 +3582,7 @@ msgstr ""
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr "ப்ராஃப்ஸ்..."
+msgstr "உலாவு..."
 
 #: .\uploads\models.py:27
 msgid "owner"

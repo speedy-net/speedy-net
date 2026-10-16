@@ -175,10 +175,7 @@ msgid ""
 "{total_number_of_active_members_in_the_last_four_months}, of which "
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
-msgstr ""
-"Det samlede antal aktive medlemmer på siden er {total_number_of_active_members_in_the_last_four_months}, "
-"hvoraf {total_number_of_active_members_in_the_last_week} medlemmer er kommet "
-"ind på siden i den sidste uge."
+msgstr "Det samlede antal aktive medlemmer på siden er {total_number_of_active_members_in_the_last_four_months}, hvoraf {total_number_of_active_members_in_the_last_week} medlemmer har besøgt siden i den sidste uge."
 
 #: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
@@ -261,10 +258,7 @@ msgid ""
 "Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
-msgstr ""
-"Speedy Net er opkaldt efter <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, en hunhund, som var hos os i mange "
-"år og døde i 2003. fødte 7 hvalpe i 1988."
+msgstr "Speedy Net er opkaldt efter <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, en hunhund, som var hos os i mange år og døde i 2003. Speedy fødte 7 hvalpe i 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -280,7 +274,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Grundlægger og direktør Speedy Net for Speedy Match og,"
+msgstr "Grundlægger og direktør for Speedy Net og Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -288,7 +282,7 @@ msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\accounts\edit_profile\activate.html:6
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format

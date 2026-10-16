@@ -40,10 +40,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv "
-"ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy "
-"Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu konto.\" selles "
-"valdkonnas täpselt ja tõstutundlikult."
+"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on "
+"püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka "
+"teie Speedy Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu "
+"konto.\" sellel väljal täpselt ja tõstutundlikult."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +53,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv "
-"ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy "
-"Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu konto.\" selles "
-"valdkonnas täpselt ja tõstutundlikult."
+"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on "
+"püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka "
+"teie Speedy Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu "
+"konto.\" sellel väljal täpselt ja tõstutundlikult."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,10 +66,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv "
-"ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy "
-"Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu konto.\" selles "
-"valdkonnas täpselt ja tõstutundlikult."
+"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on "
+"püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka "
+"teie Speedy Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu "
+"konto.\" sellel väljal täpselt ja tõstutundlikult."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -121,7 +121,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Speedy Net kontod"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
@@ -134,10 +134,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on püsiv "
-"ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka teie Speedy "
-"Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu konto.\" selles "
-"valdkonnas täpselt ja tõstutundlikult."
+"Kas olete kindel, et soovite oma Speedy Neti konto kustutada? See on "
+"püsiv ja pöördumatu. Speedy Neti konto kustutamisel kustutatakse ka "
+"teie Speedy Matchi konto. Kui olete kindel, tippige \"Jah. Kustuta minu "
+"konto.\" sellel väljal täpselt ja tõstutundlikult."
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -162,11 +162,11 @@ msgstr "Sõprade arv viimase kasutaja külastuse ajal"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Speedy Net profiil"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Speedy Net profiilid"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -199,11 +199,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> on uus suhtlusvõrgustik. Speedy Netiga saate suhelda "
-"oma sõpradega. Speedy Net on avatud Speedy Net tasuta registreerimiseks "
-"kõikides riikides ja vanuses inimestele (vanusepiiranguta!). Sait on vegan- "
-"ja taimetoitlastele sõbralik. See on praegu saadaval %(languages_num)s "
-"keeles."
+"Net\">Speedy Net</a> on uus suhtlusvõrgustik. Speedy Netiga saate "
+"suhelda oma sõpradega. Speedy Net on avatud tasuta registreerimiseks "
+"kõikides riikides ja vanuses inimestele (vanusepiiranguta!). Sait on "
+"vegan- ja taimetoitlastele sõbralik. See on praegu saadaval "
+"%(languages_num)s keeles."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -265,9 +265,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net on oma nime saanud <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, emase koera järgi, kes oli meiega "
-"palju aastaid ja suri 2003. aastal. sünnitas 1988. aastal 7 kutsikat."
+"Speedy Net on oma nime saanud <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, emase koera järgi, kes oli meiega palju "
+"aastaid ja suri 2003. aastal. Speedy sünnitas 1988. aastal 7 kutsikat."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."

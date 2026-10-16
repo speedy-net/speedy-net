@@ -1086,7 +1086,7 @@ msgstr "Informazio gehiago"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"

@@ -20,71 +20,71 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Composer Accounts"
-msgstr ""
+msgstr "Računi Speedy Composer"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net User"
-msgstr ""
+msgstr "Uporabnik Speedy Net"
 
 #: .\accounts\models.py:57
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: .\accounts\models.py:71
 msgid "Speedy Composer Profile"
-msgstr ""
+msgstr "Profil Speedy Composer"
 
 #: .\accounts\models.py:72
 msgid "Speedy Composer Profiles"
-msgstr ""
+msgstr "Profili Speedy Composer"
 
 #: .\compose\models.py:18 .\compose\models.py:58
 msgid "chords template"
-msgstr ""
+msgstr "predloga akordov"
 
 #: .\compose\models.py:19
 msgid "chords templates"
-msgstr ""
+msgstr "predloge akordov"
 
 #: .\compose\models.py:28 .\compose\models.py:59
 msgid "accompaniment"
-msgstr ""
+msgstr "spremljava"
 
 #: .\compose\models.py:29
 msgid "accompaniments"
-msgstr ""
+msgstr "spremljave"
 
 #: .\compose\models.py:39
 msgid "user"
-msgstr ""
+msgstr "uporabnik"
 
 #: .\compose\models.py:42 .\compose\models.py:57
 msgid "folder"
-msgstr ""
+msgstr "mapa"
 
 #: .\compose\models.py:43
 msgid "folders"
-msgstr ""
+msgstr "mape"
 
 #: .\compose\models.py:60
 msgid "tempo"
-msgstr ""
+msgstr "tempo"
 
 #: .\compose\models.py:61
 msgid "public"
-msgstr ""
+msgstr "javno"
 
 #: .\compose\models.py:64
 msgid "composition"
-msgstr ""
+msgstr "skladba"
 
 #: .\compose\models.py:65
 msgid "compositions"
-msgstr ""
+msgstr "skladbe"
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"
-msgstr ""
+msgstr "O Speedy Composer"
 
 #: .\templates\about\about.html:15
 #, python-format
@@ -96,14 +96,24 @@ msgid ""
 "compose will be saved in your personal compositions directory. You will be "
 "able to rename compositions, delete them and share them with your friends."
 msgstr ""
+"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"Speedy "
+"Composer\">Speedy Composer</a> bo novo spletno mesto za samodejno "
+"komponiranje melodij za člane Speedy Net. Za komponiranje melodij za vas bo "
+"uporabljalo tehnologijo umetnih nevronskih mrež. Melodije, ki jih boste "
+"skomponirali, bodo shranjene v vašem osebnem imeniku skladb. Skladbe boste "
+"lahko preimenovali, izbrisali in jih delili s prijatelji."
 
 #: .\templates\about\about.html:17
 msgid ""
 "Speedy Composer will be available in two languages - English and Hebrew. If "
-"you want to know how it works, you can read the <a href=\"https://www."
-"speedysoftware.com/composer/\" title=\"Speedy Composer (November "
-"1999)\">documentation</a> from November 1999."
+"you want to know how it works, you can read the <a "
+"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
+"(November 1999)\">documentation</a> from November 1999."
 msgstr ""
+"Speedy Composer bo na voljo v dveh jezikih – angleščini in hebrejščini. Če "
+"želite izvedeti, kako deluje, lahko preberete <a "
+"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
+"(November 1999)\">dokumentacijo</a> iz novembra 1999."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -111,39 +121,49 @@ msgid ""
 "Speedy Composer are free software & open source projects. If you want to "
 "help developing Speedy Composer, please contact me by email."
 msgstr ""
+"Vse funkcije Speedy Composer bodo brezplačne. Speedy Net in Speedy Composer "
+"sta projekta proste in odprtokodne programske opreme. Če želite pomagati pri"
+" razvoju Speedy Composer, me prosim kontaktirajte po e-pošti."
 
 #: .\templates\about\about.html:21
 msgid ""
-"Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Composer is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
+"Speedy Composer je poimenovan po <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, psički, ki je bila z nami več let in je umrla "
+"leta 2003. Speedy je leta 1988 skotila 7 mladičev."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr ""
+msgstr "Hvala in veliko sreče,"
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr ""
+msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
-msgstr ""
+msgstr "Ustanovitelj in direktor Speedy Net in Speedy Composer,"
 
 #: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr ""
+msgstr "Speedy Paz Technologies Ltd."
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are currently looking for volunteers to help us convert Speedy Composer "
 "to Python."
 msgstr ""
+"Trenutno iščemo prostovoljce, ki bi nam pomagali pretvoriti Speedy Composer "
+"v Python."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Composer!"
-msgstr ""
+msgstr "Dobrodošli v Speedy Composer!"
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -157,10 +177,23 @@ msgid ""
 "by Speedy Composer, and when the website is reopened we will upload them to "
 "the new site."
 msgstr ""
+"Hvala za vaše zanimanje za Speedy Composer. Speedy Composer je samodejna "
+"aplikacija za komponiranje melodij za člane Speedy Net. Pred kratkim smo "
+"spremenili izvorno kodo Speedy Net in jo pretvorili v programski jezik "
+"Python in ogrodje Django. Ker je bil Speedy Composer prvotno napisan v PHP, "
+"v trenutni obliki ni prilagojen za delovanje s Speedy Net. Zato smo žal "
+"morali aplikacijo Speedy Composer začasno zapreti. Ne skrbite pa, varnostne "
+"kopije vseh melodij, ki jih je skomponiral Speedy Composer, smo ohranili in "
+"ko bo spletno mesto ponovno odprto, jih bomo naložili na novo spletno mesto."
 
 #: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "
-"to Python. If you are interested in volunteering, please contact me by email."
+"to Python. If you are interested in volunteering, please contact me by "
+"email."
 msgstr ""
+"Speedy Composer in Speedy Net sta odprtokodni aplikaciji, prosta programska "
+"oprema. Trenutno iščemo prostovoljce, ki bi nam pomagali pretvoriti Speedy "
+"Composer v Python. Če vas zanima prostovoljno delo, me prosim kontaktirajte "
+"po e-pošti."

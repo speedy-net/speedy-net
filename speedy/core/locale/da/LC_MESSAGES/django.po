@@ -364,9 +364,7 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s har også en Speedy Match-profil. Se %(user_name)ss profil på "
-"Speedy Match."
+msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -374,9 +372,7 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s har også en Speedy Match-profil. Se %(user_name)ss profil på "
-"Speedy Match."
+msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -384,9 +380,7 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s har også en Speedy Match-profil. Se %(user_name)ss profil på "
-"Speedy Match."
+msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -394,9 +388,7 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s har også en Speedy Net-profil. Se %(user_name)ss profil på "
-"Speedy Net."
+msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -404,9 +396,7 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s har også en Speedy Net-profil. Se %(user_name)ss profil på "
-"Speedy Net."
+msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -414,9 +404,7 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s har også en Speedy Net-profil. Se %(user_name)ss profil på "
-"Speedy Net."
+msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -466,17 +454,17 @@ msgstr "Er du sikker på, at du vil blokere "
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blok "
+msgstr "Bloker "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blok "
+msgstr "Bloker "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blok "
+msgstr "Bloker "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
@@ -496,17 +484,17 @@ msgstr "Fjern blokering "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Rapport "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Rapport "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Rapport "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -556,32 +544,32 @@ msgstr "Annuller venskabsanmodning"
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr "Acceptere"
+msgstr "Accepter"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr "Acceptere"
+msgstr "Accepter"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr "Acceptere"
+msgstr "Accepter"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr "Afvise"
+msgstr "Afvis"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr "Afvise"
+msgstr "Afvis"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr "Afvise"
+msgstr "Afvis"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
@@ -631,17 +619,17 @@ msgstr "Send besked"
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
@@ -903,15 +891,15 @@ msgstr "Venner"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Efter forhold"
+msgstr "Følgeforhold"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Følger forhold"
+msgstr "Følgeforhold"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Blocker forhold"
+msgstr "Blokeringsforhold"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -996,52 +984,52 @@ msgstr "Du kan ikke ændre dit brugernavn."
 #, python-brace-format
 msgctxt "female"
 msgid "Activate your {site_name} account"
-msgstr "Aktiver din {site_name} konto"
+msgstr "Aktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:59
 #, python-brace-format
 msgctxt "male"
 msgid "Activate your {site_name} account"
-msgstr "Aktiver din {site_name} konto"
+msgstr "Aktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:60
 #, python-brace-format
 msgctxt "other"
 msgid "Activate your {site_name} account"
-msgstr "Aktiver din {site_name} konto"
+msgstr "Aktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:62
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver din {site_name} konto"
+msgstr "Deaktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver din {site_name} konto"
+msgstr "Deaktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Deaktiver din {site_name} konto"
+msgstr "Deaktiver din {site_name}-konto"
 
 #: .\__translations\__translations.py:66
 msgctxt "female"
 msgid "Add"
-msgstr "Tilføje"
+msgstr "Tilføj"
 
 #: .\__translations\__translations.py:67
 msgctxt "male"
 msgid "Add"
-msgstr "Tilføje"
+msgstr "Tilføj"
 
 #: .\__translations\__translations.py:68
 msgctxt "other"
 msgid "Add"
-msgstr "Tilføje"
+msgstr "Tilføj"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
@@ -1211,32 +1199,32 @@ msgstr "Ryger af og til"
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Rygning"
+msgstr "Ryger"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Rygning"
+msgstr "Ryger"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Rygning"
+msgstr "Ryger"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Single"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Single"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Single"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
@@ -1261,12 +1249,12 @@ msgstr "Enke"
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enkemand"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enke/enkemand"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
@@ -1406,9 +1394,7 @@ msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Din {site_name} konto er blevet deaktiveret. Du kan til enhver tid "
-"genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1416,9 +1402,7 @@ msgctxt "male"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Din {site_name} konto er blevet deaktiveret. Du kan til enhver tid "
-"genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:164
 #, python-brace-format
@@ -1426,9 +1410,7 @@ msgctxt "other"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Din {site_name} konto er blevet deaktiveret. Du kan til enhver tid "
-"genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:166
 msgctxt "female"
@@ -2021,7 +2003,7 @@ msgstr "enheder"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "Slug parser ikke til brugernavn."
+msgstr "Slug kan ikke fortolkes som brugernavn."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
@@ -2041,11 +2023,11 @@ msgstr "Kvinde"
 
 #: .\accounts\models.py:512
 msgid "Male"
-msgstr "Han"
+msgstr "Mand"
 
 #: .\accounts\models.py:513
 msgid "Other"
-msgstr "Andre"
+msgstr "Andet"
 
 #: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
@@ -2074,11 +2056,11 @@ msgstr "Ryger af og til"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Rygning"
+msgstr "Ryger"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Single"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
@@ -2086,7 +2068,7 @@ msgstr "Skilt"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enke/enkemand"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
@@ -2166,11 +2148,11 @@ msgstr "På nye beskeder"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Sidst brugte IP-adresse https://ipapi.com/ tid"
+msgstr "Tidspunkt for sidst brugte IP-adresse https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Sidste brugte IP-adresse rå https://ipapi.com/ resultater"
+msgstr "Rå https://ipapi.com/-resultater for sidst brugte IP-adresse"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2182,7 +2164,7 @@ msgstr "brugere"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
-msgstr "Superbruger skal være lig personale."
+msgstr "Superbruger skal være lig med personale."
 
 #: .\accounts\models.py:1593
 msgid "email"
@@ -2340,10 +2322,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Denne adgangskode er for lang. Det må højst indeholde %(max_length)d tegn."
-msgstr[1] ""
-"Denne adgangskode er for lang. Det må højst indeholde %(max_length)d tegn."
+msgstr[0] "Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
+msgstr[1] "Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -2524,7 +2504,7 @@ msgstr "Du har blokeret {}."
 
 #: .\blocks\views.py:86
 msgid "You have unblocked {}."
-msgstr "Du har fjernet blokeringen af ​​{}."
+msgstr "Du har fjernet blokeringen af {}."
 
 #: .\contact_by_form\apps.py:19
 msgid "Contact By Form"
@@ -2580,11 +2560,11 @@ msgstr "din besked"
 
 #: .\contact_by_form\models.py:48
 msgid "reported entity"
-msgstr "indberettet enhed"
+msgstr "rapporteret enhed"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
-msgstr "anmeldt billede"
+msgstr "rapporteret billede"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
@@ -2644,7 +2624,7 @@ msgstr "sidste besked"
 
 #: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
-msgstr "snak"
+msgstr "chat"
 
 #: .\messages\models.py:95
 msgid "chats"
@@ -2664,11 +2644,11 @@ msgstr "beskeder"
 
 #: .\messages\models.py:221
 msgid "read mark"
-msgstr "læst mærke"
+msgstr "læsemærke"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "læse mærker"
+msgstr "læsemærker"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2716,7 +2696,7 @@ msgstr "kinesisk"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
-msgstr "Polere"
+msgstr "polsk"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
@@ -2764,7 +2744,7 @@ msgstr "ungarsk"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
-msgstr "Thai"
+msgstr "thai"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
@@ -2856,7 +2836,7 @@ msgstr "lettisk"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Dårlig anmodning"
+msgstr "Ugyldig anmodning"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
@@ -2899,7 +2879,7 @@ msgstr "Rediger profil"
 
 #: .\templates\accounts\edit_profile\core_base.html:19
 msgid "Profile Info"
-msgstr "Profil info"
+msgstr "Profilinformation"
 
 #: .\templates\accounts\edit_profile\core_base.html:25
 #: .\templates\base_with_login.html:231
@@ -2909,7 +2889,7 @@ msgstr "Privatliv"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
-msgstr "Meddelelser"
+msgstr "Notifikationer"
 
 #: .\templates\accounts\edit_profile\core_base.html:37
 msgid "Emails & Password"
@@ -2921,7 +2901,7 @@ msgstr "Deaktiver konto"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "E-mail-adresser"
+msgstr "E-mailadresser"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
@@ -2933,7 +2913,7 @@ msgstr "Tilføjet"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr "Sigtbarhed"
+msgstr "Synlighed"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
@@ -2973,7 +2953,7 @@ msgstr "Skift adgangskode"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Din alder vil være synlig for dine kampe på Speedy Match."
+msgstr "Din alder vil være synlig for dine matches på Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3068,7 +3048,7 @@ msgstr "Speedy Sale"
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "En vegansk venlig hjemmeside"
+msgstr "En veganervenlig hjemmeside"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
@@ -3158,9 +3138,7 @@ msgstr "Du blokerer ikke nogen."
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
-msgstr ""
-"Hvis du har spørgsmål, forslag eller er interesseret i at blive en del af "
-"teamet - kontakt os venligst på mail."
+msgstr "Hvis du har spørgsmål, forslag eller er interesseret i at blive en del af teamet - kontakt os venligst via e-mail."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3186,7 +3164,7 @@ msgstr "Din feedback blev sendt til administratorer."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
-msgstr "Tidligere"
+msgstr "Forrige"
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
@@ -3302,12 +3280,7 @@ msgid ""
 "password. Messages you send to people on Speedy Net are personal and will "
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
-msgstr ""
-"Vi respekterer dit privatliv. Vi vil ikke sælge eller dele dine personlige "
-"oplysninger, herunder dit navn, din fødselsdato, din e-mailadresse og din "
-"adgangskode. Beskeder, du sender til personer på Speedy Net, er personlige "
-"og vil ikke blive delt med andre personer eller websteder. Dit kodeord "
-"gemmes krypteret i vores database."
+msgstr "Vi respekterer dit privatliv. Vi vil ikke sælge eller dele dine personlige oplysninger, herunder dit navn, din fødselsdato, din e-mailadresse og din adgangskode. Beskeder, du sender til personer på Speedy Net, er personlige og vil ikke blive delt med andre personer eller websteder. Din adgangskode gemmes krypteret i vores database."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3318,14 +3291,7 @@ msgid ""
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
-msgstr ""
-"Din profil på Speedy Net er synlig for alle, men du kan vælge, hvem du vil "
-"dele med din e-mailadresse og din fødselsdato. Hvis du har tilmeldt dig "
-"Speedy Match, vil din Speedy Match profil kun være synlig for personer, der "
-"matcher dig i henhold til de indstillinger, du har sat op på siden, og at du "
-"matcher dem i henhold til deres indstillinger. Din profil på Speedy Match "
-"vises ikke på Google og er ikke synlig for personer, der ikke er registreret "
-"på siden."
+msgstr "Din profil på Speedy Net er synlig for alle, men du kan vælge, hvem du vil dele din e-mailadresse og din fødselsdato med. Hvis du har tilmeldt dig Speedy Match, vil din Speedy Match-profil kun være synlig for personer, der matcher dig i henhold til de indstillinger, du har sat op på siden, og som du matcher i henhold til deres indstillinger. Din profil på Speedy Match vises ikke på Google og er ikke synlig for personer, der ikke er registreret på siden."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3381,7 +3347,7 @@ msgstr "Accepter venskabsanmodning"
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Acceptere"
+msgstr "Accepter"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
@@ -3391,7 +3357,7 @@ msgstr "Afvis venskabsanmodning"
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr "Afvise"
+msgstr "Afvis"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
@@ -3401,7 +3367,7 @@ msgstr "Føj til venner"
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Skift dropdown"
+msgstr "Vis/skjul dropdown-menu"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
@@ -3414,7 +3380,7 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blok "
+msgstr "Bloker "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
@@ -3423,7 +3389,7 @@ msgstr "Fjern blokering "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Rapport "
+msgstr "Rapporter "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3475,9 +3441,7 @@ msgstr "Alder"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s har også en Speedy Match-profil. Se %(user_name)ss profil på "
-"Speedy Match."
+msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3488,9 +3452,7 @@ msgstr "Du har også en Speedy Net-profil. Se din profil på Speedy Net."
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s har også en Speedy Net-profil. Se %(user_name)ss profil på "
-"Speedy Net."
+msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3593,19 +3555,19 @@ msgstr "synlig på hjemmesiden"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Hurtig billedmodereringstid Speedy"
+msgstr "Speedy-billedmodereringstid"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"
-msgstr "AWS billedmodereringstid"
+msgstr "AWS-billedmodereringstid"
 
 #: .\uploads\models.py:93
 msgid "AWS facial analysis time"
-msgstr "AWS ansigtsanalyse tid"
+msgstr "AWS-ansigtsanalysetid"
 
 #: .\uploads\models.py:94
 msgid "AWS raw image moderation results"
-msgstr "AWS rå billedmoderering resultater"
+msgstr "AWS-rå billedmodereringsresultater"
 
 #: .\uploads\models.py:95
 msgid "AWS raw facial analysis results"

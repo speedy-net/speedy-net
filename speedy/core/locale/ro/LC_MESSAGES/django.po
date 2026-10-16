@@ -15,36 +15,36 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
-msgstr "Solicitare de prietenie trimisă"
+msgstr "Cerere de prietenie trimisă"
 
 #: .\__translations\__translations.html:8
 msgctxt "female"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Nu ți-ai confirmat adresa de e-mail. Vă rugăm să vă verificați căsuța de e-"
-"mail."
+"Nu v-ați confirmat adresa de e-mail. Vă rugăm să verificați căsuța de "
+"e-mail."
 
 #: .\__translations\__translations.html:9
 msgctxt "male"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Nu ți-ai confirmat adresa de e-mail. Vă rugăm să vă verificați căsuța de e-"
-"mail."
+"Nu v-ați confirmat adresa de e-mail. Vă rugăm să verificați căsuța de "
+"e-mail."
 
 #: .\__translations\__translations.html:10
 msgctxt "other"
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Nu ți-ai confirmat adresa de e-mail. Vă rugăm să vă verificați căsuța de e-"
-"mail."
+"Nu v-ați confirmat adresa de e-mail. Vă rugăm să verificați căsuța de "
+"e-mail."
 
 #: .\__translations\__translations.html:12
 msgctxt "female"
@@ -68,8 +68,9 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Bună <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bine "
-"ai revenit la %(site_name)s!"
+"Bună ziua, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, bine ați revenit la "
+"%(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -78,8 +79,9 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Bună <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bine "
-"ai revenit la %(site_name)s!"
+"Bună ziua, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, bine ați revenit la "
+"%(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -88,23 +90,24 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Bună <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, bine "
-"ai revenit la %(site_name)s!"
+"Bună ziua, <a href=\"%(user_link)s\" "
+"class=\"navbar-link\">%(user_name)s</a>, bine ați revenit la "
+"%(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
 msgid "Please confirm your email address."
-msgstr "Vă rugăm să confirmați adresa dvs. de e-mail."
+msgstr "Vă rugăm să vă confirmați adresa de e-mail."
 
 #: .\__translations\__translations.html:21
 msgctxt "male"
 msgid "Please confirm your email address."
-msgstr "Vă rugăm să confirmați adresa dvs. de e-mail."
+msgstr "Vă rugăm să vă confirmați adresa de e-mail."
 
 #: .\__translations\__translations.html:22
 msgctxt "other"
 msgid "Please confirm your email address."
-msgstr "Vă rugăm să confirmați adresa dvs. de e-mail."
+msgstr "Vă rugăm să vă confirmați adresa de e-mail."
 
 #: .\__translations\__translations.html:24
 msgctxt "female"
@@ -199,17 +202,17 @@ msgstr "Adăugați altul"
 #: .\__translations\__translations.html:48
 msgctxt "female"
 msgid "Change Password"
-msgstr "Schimbaţi parola"
+msgstr "Schimbați parola"
 
 #: .\__translations\__translations.html:49
 msgctxt "male"
 msgid "Change Password"
-msgstr "Schimbaţi parola"
+msgstr "Schimbați parola"
 
 #: .\__translations\__translations.html:50
 msgctxt "other"
 msgid "Change Password"
-msgstr "Schimbaţi parola"
+msgstr "Schimbați parola"
 
 #: .\__translations\__translations.html:52
 msgctxt "female"
@@ -235,17 +238,17 @@ msgstr ""
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "Nu blochezi pe nimeni."
+msgstr "Nu blocați pe nimeni."
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "Nu blochezi pe nimeni."
+msgstr "Nu blocați pe nimeni."
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "Nu blochezi pe nimeni."
+msgstr "Nu blocați pe nimeni."
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
@@ -308,22 +311,22 @@ msgstr "Marcați toate ca citite"
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr "Marcați toate ca citite"
+msgstr "Cerere de prietenie trimisă"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "Tu:"
+msgstr "Dvs.:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "Tu:"
+msgstr "Dvs.:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "Tu:"
+msgstr "Dvs.:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -343,32 +346,32 @@ msgstr "Nu aveți încă mesaje."
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "Ai blocat "
+msgstr "Ați blocat "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "Ai blocat "
+msgstr "Ați blocat "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "Ai blocat "
+msgstr "Ați blocat "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " te-a blocat."
+msgstr " v-a blocat."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " te-a blocat."
+msgstr " v-a blocat."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " te-a blocat."
+msgstr " v-a blocat."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -377,8 +380,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s are și un Speedy Match profil. Vezi profilul lui %(user_name)s "
-"pe Speedy Match."
+"%(user_name)s are și un profil Speedy Match. Vedeți profilul lui "
+"%(user_name)s pe Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -387,8 +390,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s are și un Speedy Match profil. Vezi profilul lui %(user_name)s "
-"pe Speedy Match."
+"%(user_name)s are și un profil Speedy Match. Vedeți profilul lui "
+"%(user_name)s pe Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -397,8 +400,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s are și un Speedy Match profil. Vezi profilul lui %(user_name)s "
-"pe Speedy Match."
+"%(user_name)s are și un profil Speedy Match. Vedeți profilul lui "
+"%(user_name)s pe Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -407,8 +410,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s are, de asemenea Speedy Net, un profil. Vizualizați profilul "
-"lui %(user_name)s pe Speedy Net."
+"%(user_name)s are și un profil Speedy Net. Vedeți profilul lui "
+"%(user_name)s pe Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -417,8 +420,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s are, de asemenea Speedy Net, un profil. Vizualizați profilul "
-"lui %(user_name)s pe Speedy Net."
+"%(user_name)s are și un profil Speedy Net. Vedeți profilul lui "
+"%(user_name)s pe Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -427,74 +430,68 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s are, de asemenea Speedy Net, un profil. Vizualizați profilul "
-"lui %(user_name)s pe Speedy Net."
+"%(user_name)s are și un profil Speedy Net. Vedeți profilul lui "
+"%(user_name)s pe Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"De asemenea, aveți Speedy Net un profil. Vizualizați profilul dvs. pe Speedy "
-"Net."
+msgstr "Aveți și un profil Speedy Net. Vedeți-vă profilul pe Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"De asemenea, aveți Speedy Net un profil. Vizualizați profilul dvs. pe Speedy "
-"Net."
+msgstr "Aveți și un profil Speedy Net. Vedeți-vă profilul pe Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"De asemenea, aveți Speedy Net un profil. Vizualizați profilul dvs. pe Speedy "
-"Net."
+msgstr "Aveți și un profil Speedy Net. Vedeți-vă profilul pe Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
-msgstr "Adaugă la prieteni"
+msgstr "Adăugați la prieteni"
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
-msgstr "Adaugă la prieteni"
+msgstr "Adăugați la prieteni"
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
-msgstr "Adaugă la prieteni"
+msgstr "Adăugați la prieteni"
 
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Sigur vrei să blochezi "
+msgstr "Sigur doriți să blocați "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Sigur vrei să blochezi "
+msgstr "Sigur doriți să blocați "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Sigur vrei să blochezi "
+msgstr "Sigur doriți să blocați "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Bloc "
+msgstr "Blocați "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Bloc "
+msgstr "Blocați "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Bloc "
+msgstr "Blocați "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
@@ -514,17 +511,17 @@ msgstr "Deblocați "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Raport "
+msgstr "Raportați "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Raport "
+msgstr "Raportați "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Raport "
+msgstr "Raportați "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -559,47 +556,47 @@ msgstr "Eliminați prietenul"
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Anulează cererea de prietenie"
+msgstr "Anulați cererea de prietenie"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Anulează cererea de prietenie"
+msgstr "Anulați cererea de prietenie"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Anulează cererea de prietenie"
+msgstr "Anulați cererea de prietenie"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr "Accepta"
+msgstr "Acceptați"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr "Accepta"
+msgstr "Acceptați"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr "Accepta"
+msgstr "Acceptați"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
 msgid "Reject"
-msgstr "Respinge"
+msgstr "Respingeți"
 
 #: .\__translations\__translations.html:149
 msgctxt "male"
 msgid "Reject"
-msgstr "Respinge"
+msgstr "Respingeți"
 
 #: .\__translations\__translations.html:150
 msgctxt "other"
 msgid "Reject"
-msgstr "Respinge"
+msgstr "Respingeți"
 
 #: .\__translations\__translations.html:152
 msgctxt "female"
@@ -619,32 +616,32 @@ msgstr "Acceptați cererea de prietenie"
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Respinge cererea de prietenie"
+msgstr "Respingeți cererea de prietenie"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Respinge cererea de prietenie"
+msgstr "Respingeți cererea de prietenie"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Respinge cererea de prietenie"
+msgstr "Respingeți cererea de prietenie"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
 msgid "Send Message"
-msgstr "Trimite mesaj"
+msgstr "Trimiteți mesajul"
 
 #: .\__translations\__translations.html:161
 msgctxt "male"
 msgid "Send Message"
-msgstr "Trimite mesaj"
+msgstr "Trimiteți mesajul"
 
 #: .\__translations\__translations.html:162
 msgctxt "other"
 msgid "Send Message"
-msgstr "Trimite mesaj"
+msgstr "Trimiteți mesajul"
 
 #: .\__translations\__translations.html:164
 msgctxt "female"
@@ -664,17 +661,17 @@ msgstr "Bun venit"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
@@ -695,22 +692,22 @@ msgstr "Vezi toate"
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Contul dvs. Speedy Net nu este activ. Intră pe această pagină pentru a o "
-"activa."
+"Contul dvs. Speedy Net nu este activ. Intrați pe această pagină pentru "
+"a-l activa."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Contul dvs. Speedy Net nu este activ. Intră pe această pagină pentru a o "
-"activa."
+"Contul dvs. Speedy Net nu este activ. Intrați pe această pagină pentru "
+"a-l activa."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Contul dvs. Speedy Net nu este activ. Intră pe această pagină pentru a o "
-"activa."
+"Contul dvs. Speedy Net nu este activ. Intrați pe această pagină pentru "
+"a-l activa."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -748,17 +745,17 @@ msgstr "v-a trimis un mesaj."
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr "Citește-l:"
+msgstr "Citiți-l:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr "Citește-l:"
+msgstr "Citiți-l:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr "Citește-l:"
+msgstr "Citiți-l:"
 
 #: .\__translations\__translations.html:192
 #, python-format
@@ -877,15 +874,15 @@ msgstr "Introduceți o adresă de e-mail validă."
 
 #: .\__translations\__translations.py:12
 msgid "Email address"
-msgstr "Adresa de e-mail"
+msgstr "Adresă de e-mail"
 
 #: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
-msgstr "Adresa de e-mail"
+msgstr "adresă de e-mail"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
-msgstr "Adresa de e-mail:"
+msgstr "Adresă de e-mail:"
 
 #: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
@@ -894,7 +891,7 @@ msgstr "E-mail"
 
 #: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
-msgstr "Valoarea trebuie să fie JSON validă."
+msgstr "Valoarea trebuie să fie JSON valid."
 
 #: .\__translations\__translations.py:17
 #, python-format
@@ -919,7 +916,7 @@ msgstr "Cereri de prietenie"
 
 #: .\__translations\__translations.py:25
 msgid "Friend"
-msgstr "Prietene"
+msgstr "Prieten"
 
 #: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
@@ -927,15 +924,15 @@ msgstr "Prieteni"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Următoarea Relație"
+msgstr "Relație de urmărire"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Urmărirea Relațiilor"
+msgstr "Relații de urmărire"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Relația de blocare"
+msgstr "Relație de blocare"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -950,11 +947,14 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Lista conține %(show_value)d articol, nu trebuie să conțină mai mult de "
+"Lista conține %(show_value)d element, nu trebuie să conțină mai mult de "
 "%(limit_value)d."
 msgstr[1] ""
-"Lista conține %(show_value)d elemente, nu trebuie să conțină mai mult de "
-"%(limit_value)d."
+"Lista conține %(show_value)d elemente, nu trebuie să conțină mai mult "
+"de %(limit_value)d."
+msgstr[2] ""
+"Lista conține %(show_value)d de elemente, nu trebuie să conțină mai "
+"mult de %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -1038,34 +1038,34 @@ msgstr "Activați-vă contul {site_name}"
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "Dezactivează-ți contul {site_name}"
+msgstr "Dezactivați-vă contul {site_name}"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "Dezactivează-ți contul {site_name}"
+msgstr "Dezactivați-vă contul {site_name}"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "Dezactivează-ți contul {site_name}"
+msgstr "Dezactivați-vă contul {site_name}"
 
 #: .\__translations\__translations.py:66
 msgctxt "female"
 msgid "Add"
-msgstr "Adăuga"
+msgstr "Adăugați"
 
 #: .\__translations\__translations.py:67
 msgctxt "male"
 msgid "Add"
-msgstr "Adăuga"
+msgstr "Adăugați"
 
 #: .\__translations\__translations.py:68
 msgctxt "other"
 msgid "Add"
-msgstr "Adăuga"
+msgstr "Adăugați"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
@@ -1085,37 +1085,37 @@ msgstr "Unde locuiesc?"
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "Unde locuiţi?"
+msgstr "Unde locuiți?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "Unde locuiţi?"
+msgstr "Unde locuiți?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "Unde locuiţi?"
+msgstr "Unde locuiți?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Vă rog să scrieți unde locuiți."
+msgstr "Vă rugăm să scrieți unde locuiți."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Vă rog să scrieți unde locuiți."
+msgstr "Vă rugăm să scrieți unde locuiți."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Vă rog să scrieți unde locuiți."
+msgstr "Vă rugăm să scrieți unde locuiți."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (mănâncă numai plante și ciuperci)"
+msgstr "Vegană (mănâncă numai plante și ciuperci)"
 
 #: .\__translations\__translations.py:83
 msgctxt "male"
@@ -1125,12 +1125,12 @@ msgstr "Vegan (mănâncă numai plante și ciuperci)"
 #: .\__translations\__translations.py:84
 msgctxt "other"
 msgid "Vegan (eats only plants and fungi)"
-msgstr "Vegan (mănâncă numai plante și ciuperci)"
+msgstr "Vegan/ă (mănâncă numai plante și ciuperci)"
 
 #: .\__translations\__translations.py:86
 msgctxt "female"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (nu mănâncă pește și carne)"
+msgstr "Vegetariană (nu mănâncă pește și carne)"
 
 #: .\__translations\__translations.py:87
 msgctxt "male"
@@ -1140,12 +1140,12 @@ msgstr "Vegetarian (nu mănâncă pește și carne)"
 #: .\__translations\__translations.py:88
 msgctxt "other"
 msgid "Vegetarian (doesn't eat fish and meat)"
-msgstr "Vegetarian (nu mănâncă pește și carne)"
+msgstr "Vegetarian/ă (nu mănâncă pește și carne)"
 
 #: .\__translations\__translations.py:90
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (mănâncă animale)"
+msgstr "Carnistă (mănâncă animale)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
@@ -1155,12 +1155,12 @@ msgstr "Carnist (mănâncă animale)"
 #: .\__translations\__translations.py:92
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (mănâncă animale)"
+msgstr "Carnist/ă (mănâncă animale)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Vegană"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
@@ -1170,12 +1170,12 @@ msgstr "Vegan"
 #: .\__translations\__translations.py:96
 msgctxt "other"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Vegan/ă"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
 msgid "Vegetarian"
-msgstr "Vegetarian"
+msgstr "Vegetariană"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
@@ -1185,72 +1185,72 @@ msgstr "Vegetarian"
 #: .\__translations\__translations.py:100
 msgctxt "other"
 msgid "Vegetarian"
-msgstr "Vegetarian"
+msgstr "Vegetarian/ă"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
 msgid "Carnist"
-msgstr "carnist"
+msgstr "Carnistă"
 
 #: .\__translations\__translations.py:103
 msgctxt "male"
 msgid "Carnist"
-msgstr "carnist"
+msgstr "Carnist"
 
 #: .\__translations\__translations.py:104
 msgctxt "other"
 msgid "Carnist"
-msgstr "carnist"
+msgstr "Carnist/ă"
 
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Nu fumeaza"
+msgstr "Nu fumez"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Nu fumeaza"
+msgstr "Nu fumez"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Nu fumeaza"
+msgstr "Nu fumez"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Fumatul ocazional"
+msgstr "Fumez ocazional"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Fumatul ocazional"
+msgstr "Fumez ocazional"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Fumatul ocazional"
+msgstr "Fumez ocazional"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Fumat"
+msgstr "Fumez"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Fumat"
+msgstr "Fumez"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Fumat"
+msgstr "Fumez"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Singur"
+msgstr "Singură"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
@@ -1260,22 +1260,22 @@ msgstr "Singur"
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Singur"
+msgstr "Singur/ă"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
 msgid "Divorced"
-msgstr "Divorţat"
+msgstr "Divorțată"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
 msgid "Divorced"
-msgstr "Divorţat"
+msgstr "Divorțat"
 
 #: .\__translations\__translations.py:124
 msgctxt "other"
 msgid "Divorced"
-msgstr "Divorţat"
+msgstr "Divorțat/ă"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
@@ -1285,12 +1285,12 @@ msgstr "Văduvă"
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Văduvă"
+msgstr "Văduv"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Văduvă"
+msgstr "Văduv/ă"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
@@ -1340,7 +1340,7 @@ msgstr "E complicat"
 #: .\__translations\__translations.py:142
 msgctxt "female"
 msgid "Separated"
-msgstr "Separat"
+msgstr "Separată"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
@@ -1350,12 +1350,12 @@ msgstr "Separat"
 #: .\__translations\__translations.py:144
 msgctxt "other"
 msgid "Separated"
-msgstr "Separat"
+msgstr "Separat/ă"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
 msgid "Engaged"
-msgstr "Logodit"
+msgstr "Logodită"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
@@ -1365,12 +1365,12 @@ msgstr "Logodit"
 #: .\__translations\__translations.py:148
 msgctxt "other"
 msgid "Engaged"
-msgstr "Logodit"
+msgstr "Logodit/ă"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
 msgid "Married"
-msgstr "Căsătorit"
+msgstr "Căsătorită"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
@@ -1380,22 +1380,22 @@ msgstr "Căsătorit"
 #: .\__translations\__translations.py:152
 msgctxt "other"
 msgid "Married"
-msgstr "Căsătorit"
+msgstr "Căsătorit/ă"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
 msgid "Your new password has been saved."
-msgstr "Noua ta parolă a fost salvată."
+msgstr "Noua dvs. parolă a fost salvată."
 
 #: .\__translations\__translations.py:155
 msgctxt "male"
 msgid "Your new password has been saved."
-msgstr "Noua ta parolă a fost salvată."
+msgstr "Noua dvs. parolă a fost salvată."
 
 #: .\__translations\__translations.py:156
 msgctxt "other"
 msgid "Your new password has been saved."
-msgstr "Noua ta parolă a fost salvată."
+msgstr "Noua dvs. parolă a fost salvată."
 
 #: .\__translations\__translations.py:158
 msgctxt "female"
@@ -1472,32 +1472,32 @@ msgstr "Ați confirmat deja această adresă de e-mail."
 #: .\__translations\__translations.py:170
 msgctxt "female"
 msgid "You've confirmed your email address."
-msgstr "Ți-ai confirmat adresa de e-mail."
+msgstr "Ați confirmat adresa de e-mail."
 
 #: .\__translations\__translations.py:171
 msgctxt "male"
 msgid "You've confirmed your email address."
-msgstr "Ți-ai confirmat adresa de e-mail."
+msgstr "Ați confirmat adresa de e-mail."
 
 #: .\__translations\__translations.py:172
 msgctxt "other"
 msgid "You've confirmed your email address."
-msgstr "Ți-ai confirmat adresa de e-mail."
+msgstr "Ați confirmat adresa de e-mail."
 
 #: .\__translations\__translations.py:174
 msgctxt "female"
 msgid "Send"
-msgstr "Trimite"
+msgstr "Trimiteți"
 
 #: .\__translations\__translations.py:175
 msgctxt "male"
 msgid "Send"
-msgstr "Trimite"
+msgstr "Trimiteți"
 
 #: .\__translations\__translations.py:176
 msgctxt "other"
 msgid "Send"
-msgstr "Trimite"
+msgstr "Trimiteți"
 
 #: .\__translations\__translations.py:178
 #, python-brace-format
@@ -1506,8 +1506,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Ai deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe Speedy Net. "
-"Vă rugăm să eliminați prietenii înainte de a continua."
+"Aveți deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe "
+"Speedy Net. Vă rugăm să eliminați prieteni înainte de a continua."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1516,8 +1516,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Ai deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe Speedy Net. "
-"Vă rugăm să eliminați prietenii înainte de a continua."
+"Aveți deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe "
+"Speedy Net. Vă rugăm să eliminați prieteni înainte de a continua."
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1526,8 +1526,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Ai deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe Speedy Net. "
-"Vă rugăm să eliminați prietenii înainte de a continua."
+"Aveți deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe "
+"Speedy Net. Vă rugăm să eliminați prieteni înainte de a continua."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1631,67 +1631,67 @@ msgstr ""
 #: .\__translations\__translations.py:192
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "Nu poți fi prieten cu tine însuți."
+msgstr "Nu puteți fi prieten cu dvs. înșivă."
 
 #: .\__translations\__translations.py:193
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "Nu poți fi prieten cu tine însuți."
+msgstr "Nu puteți fi prieten cu dvs. înșivă."
 
 #: .\__translations\__translations.py:194
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "Nu poți fi prieten cu tine însuți."
+msgstr "Nu puteți fi prieten cu dvs. înșivă."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "Ai cerut deja prietenia acestui utilizator."
+msgstr "Ați solicitat deja prietenia acestui utilizator."
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "Ai cerut deja prietenia acestui utilizator."
+msgstr "Ați solicitat deja prietenia acestui utilizator."
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "Ai cerut deja prietenia acestui utilizator."
+msgstr "Ați solicitat deja prietenia acestui utilizator."
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "Acest utilizator a cerut deja prietenie de la tine."
+msgstr "Acest utilizator v-a solicitat deja prietenia."
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "Acest utilizator a cerut deja prietenie de la tine."
+msgstr "Acest utilizator v-a solicitat deja prietenia."
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "Acest utilizator a cerut deja prietenie de la tine."
+msgstr "Acest utilizator v-a solicitat deja prietenia."
 
 #: .\__translations\__translations.py:204
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Sunteți deja prieten cu acest utilizator."
+msgstr "Sunteți deja prietenă cu această utilizatoare."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Sunteți deja prieten cu acest utilizator."
+msgstr "Sunteți deja prietenă cu acest utilizator."
 
 #: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Sunteți deja prieten cu acest utilizator."
+msgstr "Sunteți deja prietenă cu acest utilizator."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Sunteți deja prieten cu acest utilizator."
+msgstr "Sunteți deja prieten cu această utilizatoare."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_male"
@@ -1706,7 +1706,7 @@ msgstr "Sunteți deja prieten cu acest utilizator."
 #: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Sunteți deja prieten cu acest utilizator."
+msgstr "Sunteți deja prieten cu această utilizatoare."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_male"
@@ -1721,32 +1721,32 @@ msgstr "Sunteți deja prieten cu acest utilizator."
 #: .\__translations\__translations.py:214
 msgctxt "female"
 msgid "You've cancelled your friendship request."
-msgstr "Ți-ai anulat cererea de prietenie."
+msgstr "Ați anulat cererea de prietenie."
 
 #: .\__translations\__translations.py:215
 msgctxt "male"
 msgid "You've cancelled your friendship request."
-msgstr "Ți-ai anulat cererea de prietenie."
+msgstr "Ați anulat cererea de prietenie."
 
 #: .\__translations\__translations.py:216
 msgctxt "other"
 msgid "You've cancelled your friendship request."
-msgstr "Ți-ai anulat cererea de prietenie."
+msgstr "Ați anulat cererea de prietenie."
 
 #: .\__translations\__translations.py:218
 msgctxt "female"
 msgid "You have removed this user from your friends."
-msgstr "Ai eliminat acest utilizator dintre prietenii tăi."
+msgstr "Ați eliminat acest utilizator dintre prietenii dvs."
 
 #: .\__translations\__translations.py:219
 msgctxt "male"
 msgid "You have removed this user from your friends."
-msgstr "Ai eliminat acest utilizator dintre prietenii tăi."
+msgstr "Ați eliminat acest utilizator dintre prietenii dvs."
 
 #: .\__translations\__translations.py:220
 msgctxt "other"
 msgid "You have removed this user from your friends."
-msgstr "Ai eliminat acest utilizator dintre prietenii tăi."
+msgstr "Ați eliminat acest utilizator dintre prietenii dvs."
 
 #: .\__translations\__translations.py:222
 #, python-brace-format
@@ -1850,8 +1850,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_male"
@@ -1859,8 +1859,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:244
 msgctxt "female_other"
@@ -1868,8 +1868,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_female"
@@ -1877,8 +1877,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_male"
@@ -1886,8 +1886,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:247
 msgctxt "male_other"
@@ -1895,8 +1895,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_female"
@@ -1904,8 +1904,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_male"
@@ -1913,8 +1913,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:250
 msgctxt "other_other"
@@ -1922,8 +1922,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"Acest utilizator nu se potrivește cu profilul tău, dar îi poți vizita "
-"profilul Speedy Net. Vizualizați profilul utilizatorului pe Speedy Net."
+"Acest utilizator nu se potrivește cu profilul dvs., dar puteți vizita "
+"profilul său Speedy Net. Vedeți profilul utilizatorului pe Speedy Net."
 
 #: .\__translations\__translations.py:252
 msgctxt "female"
@@ -1931,8 +1931,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Poza ta de profil nu poate fi transparentă. Vă rugăm să încărcați o imagine "
-"netransparentă."
+"Fotografia dvs. de profil nu poate fi transparentă. Vă rugăm să "
+"încărcați o imagine netransparentă."
 
 #: .\__translations\__translations.py:253
 msgctxt "male"
@@ -1940,8 +1940,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Poza ta de profil nu poate fi transparentă. Vă rugăm să încărcați o imagine "
-"netransparentă."
+"Fotografia dvs. de profil nu poate fi transparentă. Vă rugăm să "
+"încărcați o imagine netransparentă."
 
 #: .\__translations\__translations.py:254
 msgctxt "other"
@@ -1949,12 +1949,12 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Poza ta de profil nu poate fi transparentă. Vă rugăm să încărcați o imagine "
-"netransparentă."
+"Fotografia dvs. de profil nu poate fi transparentă. Vă rugăm să "
+"încărcați o imagine netransparentă."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Conturi Speedy Core"
 
 #: .\accounts\fields.py:27
 msgid "Only me"
@@ -1966,19 +1966,19 @@ msgstr "Eu și prietenii mei"
 
 #: .\accounts\fields.py:30
 msgid "Anyone"
-msgstr "Cineva"
+msgstr "Oricine"
 
 #: .\accounts\forms.py:115
 msgid "Last name (optional)"
-msgstr "Nume (opțional)"
+msgstr "Nume de familie (opțional)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "E-mailul dvs"
+msgstr "E-mailul dvs."
 
 #: .\accounts\forms.py:267
 msgid "New password"
-msgstr "Parolă Nouă"
+msgstr "Parolă nouă"
 
 #: .\accounts\forms.py:281
 msgid "New username"
@@ -1998,13 +1998,13 @@ msgstr "Este necesară o poză de profil."
 
 #: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "E-mail sau Nume de utilizator"
+msgstr "E-mail sau nume de utilizator"
 
 #: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
 #: .\templates\base_with_login.html:140
 msgid "Login"
-msgstr "Log in"
+msgstr "Autentificare"
 
 #: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
@@ -2017,7 +2017,7 @@ msgstr "Trimiteți"
 
 #: .\accounts\forms.py:751
 msgid "Your password"
-msgstr "Parola dvs"
+msgstr "Parola dvs."
 
 #: .\accounts\forms.py:776
 msgid "Invalid password."
@@ -2030,7 +2030,7 @@ msgstr "nume de utilizator"
 #: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
-msgstr "Acest nume de utilizator este deja luat."
+msgstr "Acest nume de utilizator este deja folosit."
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
@@ -2054,7 +2054,7 @@ msgstr "entitati"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "Slug nu se analizează la numele de utilizator."
+msgstr "Slug-ul nu poate fi convertit într-un nume de utilizator."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
@@ -2078,7 +2078,7 @@ msgstr "Bărbat"
 
 #: .\accounts\models.py:513
 msgid "Other"
-msgstr "Alte"
+msgstr "Altul"
 
 #: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
@@ -2099,15 +2099,15 @@ msgstr "Carnist (mănâncă animale)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "Nu fumeaza"
+msgstr "Nu fumez"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
-msgstr "Fumatul ocazional"
+msgstr "Fumez ocazional"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Fumat"
+msgstr "Fumez"
 
 #: .\accounts\models.py:569
 msgid "Single"
@@ -2115,11 +2115,11 @@ msgstr "Singur"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
-msgstr "Divorţat"
+msgstr "Divorțat"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Văduvă"
+msgstr "Văduv"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
@@ -2147,11 +2147,11 @@ msgstr "Căsătorit"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
-msgstr "Anunta-ma"
+msgstr "Anunțați-mă"
 
 #: .\accounts\models.py:589
 msgid "Don't notify me"
-msgstr "Nu mă anunța"
+msgstr "Nu mă anunțați"
 
 #: .\accounts\models.py:669
 msgid "first name"
@@ -2163,7 +2163,7 @@ msgstr "nume"
 
 #: .\accounts\models.py:674
 msgid "I am"
-msgstr "eu sunt"
+msgstr "Sunt"
 
 #: .\accounts\models.py:675
 msgid "date of birth"
@@ -2171,7 +2171,7 @@ msgstr "data nașterii"
 
 #: .\accounts\models.py:676
 msgid "diet"
-msgstr "dieta"
+msgstr "dietă"
 
 #: .\accounts\models.py:677
 msgid "smoking status"
@@ -2199,11 +2199,11 @@ msgstr "La mesajele noi"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Ultima adresă IP utilizată https://ipapi.com/ timp"
+msgstr "Momentul ultimei adrese IP utilizate https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Ultima adresă IP a folosit rezultate brute https://ipapi.com/"
+msgstr "Rezultate brute https://ipapi.com/ pentru ultima adresă IP utilizată"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2211,7 +2211,7 @@ msgstr "utilizator"
 
 #: .\accounts\models.py:991
 msgid "users"
-msgstr "utilizatorilor"
+msgstr "utilizatori"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
@@ -2231,7 +2231,7 @@ msgstr "este primar"
 
 #: .\accounts\models.py:1596
 msgid "confirmation token"
-msgstr "jeton de confirmare"
+msgstr "token de confirmare"
 
 #: .\accounts\models.py:1597
 msgid "confirmation sent"
@@ -2239,7 +2239,7 @@ msgstr "confirmare trimisă"
 
 #: .\accounts\models.py:1598
 msgid "Who can see this email"
-msgstr "Cine poate vedea acest e-mail"
+msgstr "Cine poate vedea această adresă de e-mail"
 
 #: .\accounts\models.py:1615
 msgid "email addresses"
@@ -2296,11 +2296,14 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d caracter "
-"alfanumeric (are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d "
+"caracter alfanumeric (are %(show_value)d)."
 msgstr[1] ""
-"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d caractere "
-"alfanumerice (are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d "
+"caractere alfanumerice (are %(show_value)d)."
+msgstr[2] ""
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d de "
+"caractere alfanumerice (are %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2311,11 +2314,14 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Numele de utilizator trebuie să conțină cel mult %(limit_value)d caracter "
-"alfanumeric (are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d "
+"caracter alfanumeric (are %(show_value)d)."
 msgstr[1] ""
-"Numele de utilizator trebuie să conțină cel mult %(limit_value)d caractere "
-"alfanumerice (are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d "
+"caractere alfanumerice (are %(show_value)d)."
+msgstr[2] ""
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d de "
+"caractere alfanumerice (are %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2326,11 +2332,14 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d caracter "
-"(are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d "
+"caracter (are %(show_value)d)."
 msgstr[1] ""
-"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d caractere "
-"(are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d "
+"caractere (are %(show_value)d)."
+msgstr[2] ""
+"Numele de utilizator trebuie să conțină cel puțin %(limit_value)d de "
+"caractere (are %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2341,11 +2350,14 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Numele de utilizator trebuie să conțină cel mult %(limit_value)d caracter "
-"(are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d "
+"caracter (are %(show_value)d)."
 msgstr[1] ""
-"Numele de utilizator trebuie să conțină cel mult %(limit_value)d caractere "
-"(are %(show_value)d)."
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d "
+"caractere (are %(show_value)d)."
+msgstr[2] ""
+"Numele de utilizator trebuie să conțină cel mult %(limit_value)d de "
+"caractere (are %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2356,11 +2368,14 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Această parolă este prea scurtă. Trebuie să conțină cel puțin %(min_length)d "
-"caracter."
+"Această parolă este prea scurtă. Trebuie să conțină cel puțin "
+"%(min_length)d caracter."
 msgstr[1] ""
-"Această parolă este prea scurtă. Trebuie să conțină cel puțin %(min_length)d "
-"caractere."
+"Această parolă este prea scurtă. Trebuie să conțină cel puțin "
+"%(min_length)d caractere."
+msgstr[2] ""
+"Această parolă este prea scurtă. Trebuie să conțină cel puțin "
+"%(min_length)d de caractere."
 
 #: .\accounts\validators.py:206
 #, python-format
@@ -2368,6 +2383,7 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Parola dvs. trebuie să conțină cel puțin %(min_length)d caracter."
 msgstr[1] "Parola dvs. trebuie să conțină cel puțin %(min_length)d caractere."
+msgstr[2] "Parola dvs. trebuie să conțină cel puțin %(min_length)d de caractere."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2376,11 +2392,14 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Această parolă este prea lungă. Trebuie să conțină cel mult %(max_length)d "
-"caracter."
+"Această parolă este prea lungă. Trebuie să conțină cel mult "
+"%(max_length)d caracter."
 msgstr[1] ""
-"Această parolă este prea lungă. Trebuie să conțină cel mult %(max_length)d "
-"caractere."
+"Această parolă este prea lungă. Trebuie să conțină cel mult "
+"%(max_length)d caractere."
+msgstr[2] ""
+"Această parolă este prea lungă. Trebuie să conțină cel mult "
+"%(max_length)d de caractere."
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -2388,6 +2407,7 @@ msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Parola dvs. trebuie să conțină cel mult %(max_length)d caracter."
 msgstr[1] "Parola dvs. trebuie să conțină cel mult %(max_length)d caractere."
+msgstr[2] "Parola dvs. trebuie să conțină cel mult %(max_length)d de caractere."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2408,11 +2428,11 @@ msgstr "Acest câmp nu poate fi gol."
 
 #: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
-msgstr "Introdu o dată validă."
+msgstr "Introduceți o dată validă."
 
 #: .\accounts\validators.py:467
 msgid "This email is already in use."
-msgstr "Acest e-mail este deja utilizat."
+msgstr "Această adresă de e-mail este deja utilizată."
 
 #: .\accounts\validators.py:494
 msgid ""
@@ -2459,15 +2479,17 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"Admin: The total number of members on the site is {total_number_of_members}, "
-"of which {total_number_of_members_in_the_last_week} members entered the site "
-"in the last week, {total_number_of_members_in_the_last_month} members "
-"entered the site in the last month, "
-"{total_number_of_members_in_the_last_four_months} members entered the site "
-"in the last four months, {total_number_of_members_in_the_last_eight_months} "
-"members entered the site in the last eight months, and "
-"{total_number_of_members_in_the_last_two_years} members entered the site in "
-"the last two years."
+"Administrator: Numărul total de membri de pe site este "
+"{total_number_of_members}, dintre care "
+"{total_number_of_members_in_the_last_week} membri au intrat pe site în "
+"ultima săptămână, {total_number_of_members_in_the_last_month} membri au "
+"intrat pe site în ultima lună, "
+"{total_number_of_members_in_the_last_four_months} membri au intrat pe "
+"site în ultimele patru luni, "
+"{total_number_of_members_in_the_last_eight_months} membri au intrat pe "
+"site în ultimele opt luni, și "
+"{total_number_of_members_in_the_last_two_years} membri au intrat pe "
+"site în ultimii doi ani."
 
 #: .\admin\views.py:142
 #, python-brace-format
@@ -2519,7 +2541,7 @@ msgstr ""
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Aplicația de bază Speedy Core"
 
 #: .\base\fields.py:35
 msgid "ID"
@@ -2528,7 +2550,7 @@ msgstr "ID"
 #: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
@@ -2540,7 +2562,7 @@ msgstr "Modificările au fost salvate."
 
 #: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
-msgstr "Utilizatorii nu se pot bloca."
+msgstr "Utilizatorii nu se pot bloca singuri."
 
 #: .\blocks\models.py:26
 msgid "blocked user"
@@ -2548,11 +2570,11 @@ msgstr "utilizator blocat"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "bloc"
+msgstr "blocare"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
-msgstr "blocuri de utilizatori"
+msgstr "blocări de utilizatori"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
@@ -2600,11 +2622,11 @@ msgstr "expeditor"
 
 #: .\contact_by_form\models.py:43
 msgid "your name"
-msgstr "Numele dumneavoastră"
+msgstr "Numele dvs."
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
-msgstr "e-mailul dvs"
+msgstr "E-mailul dvs."
 
 #: .\contact_by_form\models.py:45
 msgid "type"
@@ -2620,7 +2642,7 @@ msgstr "entitate raportată"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
-msgstr "poza raportata"
+msgstr "fotografie raportată"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
@@ -2632,7 +2654,7 @@ msgstr "feedback-uri"
 
 #: .\friends\views.py:326
 msgid "Friendship request sent."
-msgstr "Solicitare de prietenie trimisă."
+msgstr "Cerere de prietenie trimisă."
 
 #: .\friends\views.py:350
 msgid "No friendship request."
@@ -2644,7 +2666,7 @@ msgstr "Cerere de prietenie acceptată."
 
 #: .\friends\views.py:447
 msgid "Friendship request rejected."
-msgstr "Solicitarea de prietenie a fost respinsă."
+msgstr "Cererea de prietenie a fost respinsă."
 
 #: .\messages\apps.py:14 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2668,7 +2690,7 @@ msgstr "participant 2"
 
 #: .\messages\models.py:35
 msgid "participants"
-msgstr "participanții"
+msgstr "participanți"
 
 #: .\messages\models.py:36
 msgid "is group chat"
@@ -2684,11 +2706,11 @@ msgstr "chat"
 
 #: .\messages\models.py:95
 msgid "chats"
-msgstr "chaturi"
+msgstr "chat-uri"
 
 #: .\messages\models.py:108
 msgid "None"
-msgstr "Nici unul"
+msgstr "Niciunul"
 
 #: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
@@ -2704,7 +2726,7 @@ msgstr "marca de citit"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "citiți semnele"
+msgstr "marcaje de citire"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2720,7 +2742,7 @@ msgstr "franceză"
 
 #: .\settings\base_with_login.py:77
 msgid "German"
-msgstr "german"
+msgstr "germană"
 
 #: .\settings\base_with_login.py:78
 msgid "Spanish"
@@ -2732,7 +2754,7 @@ msgstr "portugheză"
 
 #: .\settings\base_with_login.py:80
 msgid "Italian"
-msgstr "italian"
+msgstr "italiană"
 
 #: .\settings\base_with_login.py:81
 msgid "Dutch"
@@ -2740,7 +2762,7 @@ msgstr "olandeză"
 
 #: .\settings\base_with_login.py:82
 msgid "Japanese"
-msgstr "japonez"
+msgstr "japoneză"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
@@ -2752,7 +2774,7 @@ msgstr "chinez"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
-msgstr "Lustrui"
+msgstr "poloneză"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
@@ -2764,7 +2786,7 @@ msgstr "coreean"
 
 #: .\settings\base_with_login.py:91
 msgid "Arabic"
-msgstr "arabic"
+msgstr "arabă"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
@@ -2772,23 +2794,23 @@ msgstr "indoneziană"
 
 #: .\settings\base_with_login.py:93
 msgid "Ukrainian"
-msgstr "ucrainean"
+msgstr "ucraineană"
 
 #: .\settings\base_with_login.py:94
 msgid "Turkish"
-msgstr "turc"
+msgstr "turcă"
 
 #: .\settings\base_with_login.py:95
 msgid "Vietnamese"
-msgstr "vietnamez"
+msgstr "vietnameză"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "ceh"
+msgstr "cehă"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
-msgstr "suedez"
+msgstr "suedeză"
 
 #: .\settings\base_with_login.py:98
 msgid "Finnish"
@@ -2800,7 +2822,7 @@ msgstr "maghiară"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
-msgstr "thailandez"
+msgstr "thailandeză"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
@@ -2812,11 +2834,11 @@ msgstr "Malaeză"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "sârb"
+msgstr "sârbă"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
-msgstr "Română"
+msgstr "română"
 
 #: .\settings\base_with_login.py:105
 msgid "Bengali"
@@ -2824,7 +2846,7 @@ msgstr "bengaleză"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "catalan"
+msgstr "catalană"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
@@ -2832,11 +2854,11 @@ msgstr "norvegiană (bokmål)"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
-msgstr "bulgar"
+msgstr "bulgară"
 
 #: .\settings\base_with_login.py:109
 msgid "Danish"
-msgstr "danez"
+msgstr "daneză"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
@@ -2852,7 +2874,7 @@ msgstr "estonă"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "croat"
+msgstr "croată"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
@@ -2892,11 +2914,11 @@ msgstr "letonă"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Cerere greşită"
+msgstr "Cerere incorectă"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Speedy îmi pare rău, dar nu ne putem ocupa de solicitarea dvs."
+msgstr "Speedy regretă, dar nu putem procesa cererea dvs."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
@@ -2904,7 +2926,7 @@ msgstr "Acces refuzat"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy îmi pare rău, dar această pagină este privată."
+msgstr "Speedy regretă, dar această pagină este privată."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2912,11 +2934,11 @@ msgstr "Pagina nu a fost găsită"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy îmi pare rău, dar pagina nu a fost găsită."
+msgstr "Speedy regretă, dar pagina nu a fost găsită."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
-msgstr "Internal Server Error"
+msgstr "Eroare internă a serverului"
 
 #: .\templates\about\about_base.html:6 .\templates\base_with_login.html:230
 #: .\templates\base_without_login.html:36
@@ -2961,7 +2983,7 @@ msgstr "Adrese de e-mail"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
-msgstr "Adresa"
+msgstr "Adresă"
 
 #: .\templates\accounts\edit_profile\credentials.html:13
 msgid "Added"
@@ -3009,7 +3031,7 @@ msgstr "Schimbaţi parola"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Vârsta ta va fi vizibilă pentru meciurile tale pe Speedy Match."
+msgstr "Vârsta dvs. va fi vizibilă pentru potrivirile dvs. de pe Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3035,11 +3057,11 @@ msgstr "Deconectat"
 #: .\templates\accounts\password_reset\form.html:6
 #: .\templates\accounts\password_reset\form.html:12
 msgid "Reset Password"
-msgstr "Resetează parola"
+msgstr "Resetați parola"
 
 #: .\templates\accounts\password_reset\complete.html:14
 msgid "Password reset successfully."
-msgstr "Resetarea parolei cu succes."
+msgstr "Parola a fost resetată cu succes."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
@@ -3076,7 +3098,7 @@ msgstr "Administrator - Toți utilizatorii"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr "Fără utilizatori."
+msgstr "Niciun utilizator."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
@@ -3085,8 +3107,8 @@ msgstr "Acest site este în construcție"
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
 msgstr ""
-"Nu ți-ai confirmat adresa de e-mail. Vă rugăm să vă verificați căsuța de e-"
-"mail."
+"Nu v-ați confirmat adresa de e-mail. Vă rugăm să verificați căsuța de "
+"e-mail."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
@@ -3107,7 +3129,7 @@ msgstr "Speedy Sale"
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "Un site vegan prietenos"
+msgstr "Un site prietenos cu veganii"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
@@ -3135,15 +3157,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "Magazinul Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Magazinul Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "Magazinul Speedy S-logo"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3183,7 +3205,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Magazinul Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3191,7 +3213,7 @@ msgstr "Utilizatori blocați"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "Nu blochezi pe nimeni."
+msgstr "Nu blocați pe nimeni."
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
@@ -3217,7 +3239,7 @@ msgstr "Raportați o fotografie"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr "Multumesc"
+msgstr "Vă mulțumim"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
@@ -3260,7 +3282,7 @@ msgstr "v-a trimis un mesaj."
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "Citește-l:"
+msgstr "Citiți-l:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -3275,7 +3297,7 @@ msgstr ""
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
 msgid "You have a new message on %(site_name)s"
-msgstr "Ai un mesaj nou pe %(site_name)s"
+msgstr "Aveți un mesaj nou pe %(site_name)s"
 
 #: .\templates\friends\base.html:35
 msgid "Received Requests"
@@ -3283,7 +3305,7 @@ msgstr "Cereri primite"
 
 #: .\templates\friends\base.html:41
 msgid "Sent Requests"
-msgstr "Solicitari trimise"
+msgstr "Cereri trimise"
 
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
@@ -3325,7 +3347,7 @@ msgstr "Necitit"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "Tu:"
+msgstr "Dvs.:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3343,11 +3365,11 @@ msgid ""
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
 msgstr ""
-"Vă respectăm intimitatea. Nu vom vinde sau împărtăși datele dumneavoastră "
-"personale, inclusiv numele, data nașterii, adresa de e-mail și parola. "
-"Mesajele pe care le trimiteți persoanelor pe Speedy Net sunt personale și nu "
-"vor fi partajate altor persoane sau site-uri web. Parola dvs. este salvată "
-"criptată în baza noastră de date."
+"Vă respectăm confidențialitatea. Nu vom vinde și nu vom partaja datele "
+"dvs. personale, inclusiv numele, data nașterii, adresa de e-mail și "
+"parola. Mesajele pe care le trimiteți altor persoane de pe Speedy Net "
+"sunt private și nu vor fi partajate altor persoane sau site-uri web. "
+"Parola dvs. este stocată criptat în baza noastră de date."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3359,13 +3381,13 @@ msgid ""
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
 msgstr ""
-"Profilul dvs. de pe Speedy Net este vizibil pentru toată lumea, dar puteți "
-"alege cui să distribuiți cu adresa de e-mail și data de naștere. Dacă te-ai "
-"înscris Speedy Match la, profilul tău Speedy Match va fi vizibil numai "
-"pentru persoanele care ți se potrivesc conform setărilor pe care le-ai "
-"configurat pe site și că le potriviți în funcție de setările lor. Profilul "
-"dvs. de pe Speedy Match nu va apărea pe Google și nu este vizibil pentru "
-"persoanele care nu sunt înregistrate pe site."
+"Profilul dvs. de pe Speedy Net este vizibil pentru toată lumea, dar "
+"puteți alege cu cine să partajați adresa de e-mail și data nașterii. "
+"Dacă v-ați înscris pe Speedy Match, profilul dvs. Speedy Match va fi "
+"vizibil doar persoanelor care se potrivesc cu dvs. conform setărilor pe "
+"care le-ați configurat pe site și cu care vă potriviți conform "
+"setărilor lor. Profilul dvs. de pe Speedy Match nu va apărea pe Google "
+"și nu este vizibil persoanelor care nu sunt înregistrate pe site."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3377,13 +3399,13 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"Dacă v-ați dezactivat contul pe Speedy Net sau Speedy Match, profilul dvs. "
-"de pe site-ul respectiv va fi eliminat de pe site și nu veți apărea în "
-"rezultatele căutării altor persoane de pe site. Rețineți că dezactivarea "
-"contului dvs. pe Speedy Net dezactivează automat contul dvs. la Speedy "
-"Match. Îți poți dezactiva doar contul la Speedy Match, caz în care contul "
-"tău Speedy Net va rămâne activ. Vă puteți reactiva contul după ce îl "
-"dezactivați oricând doriți."
+"Dacă v-ați dezactivat contul pe Speedy Net sau Speedy Match, profilul "
+"dvs. de pe site-ul respectiv va fi eliminat de pe site și nu veți "
+"apărea în rezultatele căutării altor persoane de pe site. Rețineți că "
+"dezactivarea contului dvs. pe Speedy Net dezactivează automat și contul "
+"dvs. Speedy Match. Puteți dezactiva doar contul dvs. Speedy Match, caz "
+"în care contul dvs. Speedy Net va rămâne activ. Vă puteți reactiva "
+"contul după ce îl dezactivați oricând doriți."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3404,15 +3426,15 @@ msgstr ""
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "Ai blocat "
+msgstr "Ați blocat "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " te-a blocat."
+msgstr " v-a blocat."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3422,40 +3444,40 @@ msgstr "Acceptați cererea de prietenie"
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Accepta"
+msgstr "Acceptați"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Respinge cererea de prietenie"
+msgstr "Respingeți cererea de prietenie"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
 msgid "Reject"
-msgstr "Respinge"
+msgstr "Respingeți"
 
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr "Adaugă la prieteni"
+msgstr "Adăugați la prieteni"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Comutați în meniul drop-down"
+msgstr "Comutați meniul derulant"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Sigur vrei să blochezi "
+msgstr "Sigur doriți să blocați "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Bloc "
+msgstr "Blocați "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
@@ -3464,7 +3486,7 @@ msgstr "Deblocați "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Raport "
+msgstr "Raportați "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3472,7 +3494,7 @@ msgstr "Raportați această fotografie"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Anulează cererea de prietenie"
+msgstr "Anulați cererea de prietenie"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
@@ -3481,7 +3503,7 @@ msgstr "Eliminați prietenul"
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
 msgid "Send Message"
-msgstr "Trimite mesaj"
+msgstr "Trimiteți mesajul"
 
 #: .\templates\profiles\user_info_widget.html:12
 msgid "Information"
@@ -3517,14 +3539,12 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s are și un Speedy Match profil. Vezi profilul lui %(user_name)s "
-"pe Speedy Match."
+"%(user_name)s are și un profil Speedy Match. Vedeți profilul lui "
+"%(user_name)s pe Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"De asemenea, aveți Speedy Net un profil. Vizualizați profilul dvs. pe Speedy "
-"Net."
+msgstr "Aveți și un profil Speedy Net. Vedeți-vă profilul pe Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3532,15 +3552,15 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s are, de asemenea Speedy Net, un profil. Vizualizați profilul "
-"lui %(user_name)s pe Speedy Net."
+"%(user_name)s are și un profil Speedy Net. Vedeți profilul lui "
+"%(user_name)s pe Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"Site-ul este în alfa, pot exista erori. Managementul site-ului nu este "
+"Site-ul este în alfa, pot exista erori. Administrarea site-ului nu este "
 "responsabil pentru eventualele defecțiuni ale site-ului."
 
 #: .\templates\terms\terms_of_service.html:21
@@ -3563,13 +3583,13 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"Administrarea site-ului nu poate verifica informațiile personale furnizate "
-"de utilizatorii site-ului. Este posibil ca informațiile personale ale unor "
-"utilizatori să nu fie corecte. Managementul site-ului nu este responsabil "
-"pentru activitatea utilizatorului în afara site-ului. Dacă alegi să te "
-"întâlnești sau să vorbești la telefon cu persoane pe care le-ai întâlnit pe "
-"site, responsabilitatea pentru rezultatele întâlnirii sau a apelului "
-"telefonic este a ta."
+"Administrarea site-ului nu poate verifica informațiile personale "
+"furnizate de utilizatorii site-ului. Este posibil ca informațiile "
+"personale ale unor utilizatori să nu fie corecte. Administrarea "
+"site-ului nu este responsabil pentru activitatea utilizatorului în "
+"afara site-ului. Dacă alegeți să vă întâlniți sau să vorbiți la telefon "
+"cu persoane pe care le-ați cunoscut pe site, responsabilitatea pentru "
+"rezultatele întâlnirii sau ale apelului telefonic vă aparține."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3598,14 +3618,15 @@ msgid ""
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
 msgstr ""
-"Poza ta de profil ar trebui să fie o poză cu tine, unde să-ți putem vedea "
-"fața. Este permisă încărcarea unei fotografii de profil cu alte persoane. Nu "
-"încărcați fotografii nud, fotografii care prezintă organe genitale (ale "
-"bărbați sau femei) sau imagini cu pieptul gol (cu bărbați sau femei)."
+"Fotografia dvs. de profil ar trebui să fie o fotografie cu dvs., în "
+"care să vi se vadă fața. Este permis să încărcați o fotografie de "
+"profil cu alte persoane. Nu încărcați fotografii cu nuduri, fotografii "
+"care prezintă organe genitale (de bărbați sau femei) sau imagini cu "
+"torsul dezgolit (de bărbați sau femei)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
-msgstr "Răsfoiește..."
+msgstr "Răsfoiți..."
 
 #: .\uploads\models.py:27
 msgid "owner"
@@ -3637,7 +3658,7 @@ msgstr "vizibile pe site"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Timp rapid de moderare a imaginii Speedy"
+msgstr "Timpul de moderare a imaginii Speedy"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"

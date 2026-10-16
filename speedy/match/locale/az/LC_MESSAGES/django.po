@@ -529,11 +529,11 @@ msgstr "Pəhriziniz tələb olunur."
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
-msgstr "Sigaret çəkmə statusum"
+msgstr "Siqaret çəkmə statusum"
 
 #: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
-msgstr "Sigaret çəkmə statusunuz tələb olunur."
+msgstr "Siqaret çəkmə statusunuz tələb olunur."
 
 #: .\accounts\forms.py:99
 msgid "My relationship status"
@@ -591,7 +591,7 @@ msgstr "Pəhriz uyğunluğu tələb olunur."
 
 #: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
-msgstr "Sigaret çəkmə statusu uyğunluğu tələb olunur."
+msgstr "Siqaret çəkmə statusu uyğunluğu tələb olunur."
 
 #: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
@@ -636,7 +636,7 @@ msgstr "Beş ürək"
 
 #: .\accounts\models.py:212
 msgid "User"
-msgstr "istifadəçi"
+msgstr "İstifadəçi"
 
 #: .\accounts\models.py:213
 msgid "On new likes"
@@ -679,7 +679,7 @@ msgstr "Pəhriz uyğunluğu"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
-msgstr "Sigaret çəkmə statusu uyğunluğu"
+msgstr "Siqaret çəkmə statusu uyğunluğu"
 
 #: .\accounts\models.py:247
 msgid "Relationship status match"
@@ -691,7 +691,7 @@ msgstr "Uyğunlaşdırılacaq pəhriz"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "Uyğunlaşdırılacaq sigaret çəkmə statusu"
+msgstr "Uyğunlaşdırılacaq siqaret çəkmə statusu"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
@@ -752,7 +752,8 @@ msgstr "Pəhriz uyğunluğu seçimlərindən ən azı biri beş ürək olmalıd�
 #: .\accounts\validators.py:286
 msgid "At least one smoking status match option should be five hearts."
 msgstr ""
-"Sigaret çəkmə statusu uyğunluğu seçimlərindən ən azı biri beş ürək olmalıdır."
+"Siqaret çəkmə statusu uyğunluğu seçimlərindən ən azı biri beş ürək "
+"olmalıdır."
 
 #: .\accounts\validators.py:301
 msgid "At least one relationship status match option should be five hearts."
@@ -1395,7 +1396,7 @@ msgstr "Mən harada yaşayıram?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Sigaret çəkmə statusu"
+msgstr "Siqaret çəkmə statusu"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"

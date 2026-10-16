@@ -163,17 +163,17 @@ msgstr "Kas olete kindel, et soovite selle e-posti aadressi kustutada?"
 #: .\__translations\__translations.html:40
 msgctxt "female"
 msgid "Delete this email address"
-msgstr "Kustuta see meiliaadress"
+msgstr "Kustuta see e-posti aadress"
 
 #: .\__translations\__translations.html:41
 msgctxt "male"
 msgid "Delete this email address"
-msgstr "Kustuta see meiliaadress"
+msgstr "Kustuta see e-posti aadress"
 
 #: .\__translations\__translations.html:42
 msgctxt "other"
 msgid "Delete this email address"
-msgstr "Kustuta see meiliaadress"
+msgstr "Kustuta see e-posti aadress"
 
 #: .\__translations\__translations.html:44
 msgctxt "female"
@@ -541,17 +541,17 @@ msgstr "Eemalda sõber"
 #: .\__translations\__translations.html:140
 msgctxt "female"
 msgid "Cancel Friendship Request"
-msgstr "Tühista sõprustaotlus"
+msgstr "Tühista sõbrakutse"
 
 #: .\__translations\__translations.html:141
 msgctxt "male"
 msgid "Cancel Friendship Request"
-msgstr "Tühista sõprustaotlus"
+msgstr "Tühista sõbrakutse"
 
 #: .\__translations\__translations.html:142
 msgctxt "other"
 msgid "Cancel Friendship Request"
-msgstr "Tühista sõprustaotlus"
+msgstr "Tühista sõbrakutse"
 
 #: .\__translations\__translations.html:144
 msgctxt "female"
@@ -586,32 +586,32 @@ msgstr "Keeldu"
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Võtke vastu sõprustaotlus"
+msgstr "Võtke vastu sõbrakutse"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Võtke vastu sõprustaotlus"
+msgstr "Võtke vastu sõbrakutse"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Võtke vastu sõprustaotlus"
+msgstr "Võtke vastu sõbrakutse"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
 msgid "Reject Friendship Request"
-msgstr "Lükka tagasi sõprustaotlus"
+msgstr "Lükka tagasi sõbrakutse"
 
 #: .\__translations\__translations.html:157
 msgctxt "male"
 msgid "Reject Friendship Request"
-msgstr "Lükka tagasi sõprustaotlus"
+msgstr "Lükka tagasi sõbrakutse"
 
 #: .\__translations\__translations.html:158
 msgctxt "other"
 msgid "Reject Friendship Request"
-msgstr "Lükka tagasi sõprustaotlus"
+msgstr "Lükka tagasi sõbrakutse"
 
 #: .\__translations\__translations.html:160
 msgctxt "female"
@@ -860,7 +860,7 @@ msgstr "E-posti aadress"
 
 #: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
-msgstr "meiliaadress"
+msgstr "e-posti aadress"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
@@ -869,7 +869,7 @@ msgstr "E-posti aadress:"
 #: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr "Meil"
+msgstr "E-post"
 
 #: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
@@ -890,11 +890,11 @@ msgstr "Sõnum"
 
 #: .\__translations\__translations.py:22
 msgid "Friendship Request"
-msgstr "Sõpruse taotlus"
+msgstr "Sõbrakutse"
 
 #: .\__translations\__translations.py:23
 msgid "Friendship Requests"
-msgstr "Sõpruse palved"
+msgstr "Sõbrakutsed"
 
 #: .\__translations\__translations.py:25
 msgid "Friend"
@@ -1436,17 +1436,17 @@ msgstr ""
 #: .\__translations\__translations.py:166
 msgctxt "female"
 msgid "You've already confirmed this email address."
-msgstr "Olete selle meiliaadressi juba kinnitanud."
+msgstr "Olete selle e-posti aadressi juba kinnitanud."
 
 #: .\__translations\__translations.py:167
 msgctxt "male"
 msgid "You've already confirmed this email address."
-msgstr "Olete selle meiliaadressi juba kinnitanud."
+msgstr "Olete selle e-posti aadressi juba kinnitanud."
 
 #: .\__translations\__translations.py:168
 msgctxt "other"
 msgid "You've already confirmed this email address."
-msgstr "Olete selle meiliaadressi juba kinnitanud."
+msgstr "Olete selle e-posti aadressi juba kinnitanud."
 
 #: .\__translations\__translations.py:170
 msgctxt "female"
@@ -1918,7 +1918,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Speedy Core kontod"
 
 #: .\accounts\fields.py:27
 msgid "Only me"
@@ -1938,7 +1938,7 @@ msgstr "Perekonnanimi (valikuline)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "Teie meiliaadress"
+msgstr "Teie e-posti aadress"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -2135,7 +2135,7 @@ msgstr "sünniaeg"
 
 #: .\accounts\models.py:676
 msgid "diet"
-msgstr "dieeti"
+msgstr "dieet"
 
 #: .\accounts\models.py:677
 msgid "smoking status"
@@ -2183,7 +2183,7 @@ msgstr "Superkasutaja peab olema võrdne personaliga."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "meili"
+msgstr "e-posti aadress"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
@@ -2207,7 +2207,7 @@ msgstr "Kes seda meili näevad"
 
 #: .\accounts\models.py:1615
 msgid "email addresses"
-msgstr "meiliaadressid"
+msgstr "e-posti aadressid"
 
 #: .\accounts\models.py:1756
 msgid "User"
@@ -2248,8 +2248,8 @@ msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"Username must start with 4 or more letters, after which can be any number of "
-"digits. Sõnade vahele saab lisada sidekriipse."
+"Kasutajanimi peab algama vähemalt 4 tähega, mille järel võib olla mis "
+"tahes arv numbreid. Sõnade vahele saab lisada sidekriipse."
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2588,11 +2588,11 @@ msgstr "teatatud foto"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
-msgstr "tagasisidet"
+msgstr "tagasiside"
 
 #: .\contact_by_form\models.py:53
 msgid "feedbacks"
-msgstr "tagasisidet"
+msgstr "tagasisided"
 
 #: .\friends\views.py:326
 msgid "Friendship request sent."
@@ -2608,7 +2608,7 @@ msgstr "Sõbrakutse vastu võetud."
 
 #: .\friends\views.py:447
 msgid "Friendship request rejected."
-msgstr "Sõprustaotlus lükati tagasi."
+msgstr "Sõbrakutse lükati tagasi."
 
 #: .\messages\apps.py:14 .\templates\base_with_login.html:40
 #: .\templates\menu\user_menu_profile_is_active_base.html:16
@@ -2620,7 +2620,7 @@ msgstr "Sõnumid"
 
 #: .\messages\models.py:32
 msgid "site"
-msgstr "saidile"
+msgstr "sait"
 
 #: .\messages\models.py:33
 msgid "participant 1"
@@ -2644,7 +2644,7 @@ msgstr "viimane sõnum"
 
 #: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
-msgstr "vestelda"
+msgstr "vestlus"
 
 #: .\messages\models.py:95
 msgid "chats"
@@ -2652,7 +2652,7 @@ msgstr "vestlused"
 
 #: .\messages\models.py:108
 msgid "None"
-msgstr "Mitte ühtegi"
+msgstr "Puudub"
 
 #: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
@@ -2664,11 +2664,11 @@ msgstr "sõnumid"
 
 #: .\messages\models.py:221
 msgid "read mark"
-msgstr "loe märk"
+msgstr "lugemismärk"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "loe märke"
+msgstr "lugemismärgid"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2704,7 +2704,7 @@ msgstr "hollandi keel"
 
 #: .\settings\base_with_login.py:82
 msgid "Japanese"
-msgstr "Jaapani"
+msgstr "jaapani keel"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
@@ -2720,7 +2720,7 @@ msgstr "poola keel"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
-msgstr "pärslane"
+msgstr "pärsia keel"
 
 #: .\settings\base_with_login.py:90
 msgid "Korean"
@@ -2732,11 +2732,11 @@ msgstr "araabia keel"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
-msgstr "Indoneesia"
+msgstr "indoneesia keel"
 
 #: .\settings\base_with_login.py:93
 msgid "Ukrainian"
-msgstr "ukrainlane"
+msgstr "ukraina keel"
 
 #: .\settings\base_with_login.py:94
 msgid "Turkish"
@@ -2744,11 +2744,11 @@ msgstr "türgi keel"
 
 #: .\settings\base_with_login.py:95
 msgid "Vietnamese"
-msgstr "vietnamlane"
+msgstr "vietnami keel"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "tšehhi"
+msgstr "tšehhi keel"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
@@ -2760,11 +2760,11 @@ msgstr "soome keel"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "ungari"
+msgstr "ungari keel"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
-msgstr "Tai"
+msgstr "tai keel"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
@@ -2772,27 +2772,27 @@ msgstr "kreeka keel"
 
 #: .\settings\base_with_login.py:102
 msgid "Malay"
-msgstr "malai"
+msgstr "malai keel"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "serblane"
+msgstr "serbia keel"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
-msgstr "rumeenlane"
+msgstr "rumeenia keel"
 
 #: .\settings\base_with_login.py:105
 msgid "Bengali"
-msgstr "bengali"
+msgstr "bengali keel"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "katalaani"
+msgstr "katalaani keel"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
-msgstr "norra (bokmål)"
+msgstr "norra keel (bokmål)"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
@@ -2804,55 +2804,55 @@ msgstr "taani keel"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
-msgstr "slovaki"
+msgstr "slovaki keel"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
-msgstr "hindi"
+msgstr "hindi keel"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "eesti"
+msgstr "eesti keel"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "Horvaatia"
+msgstr "horvaadi keel"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
-msgstr "Aserbaidžaan"
+msgstr "aserbaidžaani keel"
 
 #: .\settings\base_with_login.py:115
 msgid "Cantonese"
-msgstr "Kantoni"
+msgstr "kantoni keel"
 
 #: .\settings\base_with_login.py:116
 msgid "Lithuanian"
-msgstr "Leedu"
+msgstr "leedu keel"
 
 #: .\settings\base_with_login.py:117
 msgid "Slovenian"
-msgstr "Sloveenia"
+msgstr "sloveeni keel"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "Baski"
+msgstr "baski keel"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"
-msgstr "Armeenia"
+msgstr "armeenia keel"
 
 #: .\settings\base_with_login.py:120
 msgid "Uzbek"
-msgstr "Usbeki"
+msgstr "usbeki keel"
 
 #: .\settings\base_with_login.py:121
 msgid "Tamil"
-msgstr "Tamili"
+msgstr "tamili keel"
 
 #: .\settings\base_with_login.py:122
 msgid "Latvian"
-msgstr "Läti"
+msgstr "läti keel"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2868,7 +2868,7 @@ msgstr "Luba ei antud"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Vabandage Speedy, kuid see leht on privaatne."
+msgstr "Speedy vabandab, kuid see leht on privaatne."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2961,7 +2961,7 @@ msgstr "Kas olete kindel, et soovite selle e-posti aadressi kustutada?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
-msgstr "Kustuta see meiliaadress"
+msgstr "Kustuta see e-posti aadress"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
@@ -3247,7 +3247,7 @@ msgstr "Saadetud taotlused"
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr "Ootel sõprustaotlusi pole."
+msgstr "Ootel sõbrakutsei pole."
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
@@ -3337,11 +3337,11 @@ msgid ""
 msgstr ""
 "Kui olete oma konto Speedy Netis või Speedy Matchis deaktiveerinud, "
 "eemaldatakse teie sellel saidil olev profiil sellelt saidilt ja teid ei "
-"kuvata sellel saidil teiste inimeste otsingutulemustes. Pange tähele, et "
-"Speedy Netis konto deaktiveerimine deaktiveerib automaatselt ka teie konto "
-"Speedy Matchis. is saate deaktiveerida Speedy Match ainult oma konto, sel "
-"juhul jääb teie Speedy Neti konto aktiivseks. Pärast desaktiveerimist saate "
-"oma konto igal ajal uuesti aktiveerida."
+"kuvata sellel saidil teiste inimeste otsingutulemustes. Pange tähele, "
+"et Speedy Netis konto deaktiveerimine deaktiveerib automaatselt ka teie "
+"konto Speedy Matchis. Soovi korral saate deaktiveerida oma konto ainult "
+"Speedy Matchis, sel juhul jääb teie Speedy Neti konto aktiivseks. "
+"Pärast desaktiveerimist saate oma konto igal ajal uuesti aktiveerida."
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3353,11 +3353,11 @@ msgid ""
 "cannot be recovered. Account deletion is permanent and irreversible."
 msgstr ""
 "Soovi korral saate oma konto Speedy Netis kustutada. Speedy Neti konto "
-"kustutamisel kustutatakse automaatselt ka teie Speedy Matchi konto. 'i konto "
-"kustutamiseks Speedy Net logige Speedy Net'i sisse, deaktiveerige oma konto "
+"kustutamisel kustutatakse automaatselt ka teie Speedy Matchi konto. "
+"Konto kustutamiseks logige Speedy Neti sisse, deaktiveerige oma konto "
 "ja seejärel klõpsake \"Kustuta konto\" (menüüs \"Redigeeri profiili\"). "
-"Täitke vormis olevad andmed ja kinnitage. Pange tähele, et kustutatud kontot "
-"ei saa taastada. Konto kustutamine on püsiv ja pöördumatu."
+"Täitke vormis olevad andmed ja kinnitage. Pange tähele, et kustutatud "
+"kontot ei saa taastada. Konto kustutamine on püsiv ja pöördumatu."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3374,7 +3374,7 @@ msgstr " blokeeris sind."
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Võtke vastu sõprustaotlus"
+msgstr "Võtke vastu sõbrakutse"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
@@ -3384,7 +3384,7 @@ msgstr "Nõustu"
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
 msgid "Reject Friendship Request"
-msgstr "Lükka tagasi sõprustaotlus"
+msgstr "Lükka tagasi sõbrakutse"
 
 #: .\templates\profiles\tools\add_to_friends.html:19
 #: .\templates\profiles\user_list_item.html:39
@@ -3429,7 +3429,7 @@ msgstr "Teata sellest fotost"
 
 #: .\templates\profiles\tools\friendship_request_sent.html:7
 msgid "Cancel Friendship Request"
-msgstr "Tühista sõprustaotlus"
+msgstr "Tühista sõbrakutse"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
@@ -3566,7 +3566,7 @@ msgstr "omanik"
 
 #: .\uploads\models.py:28
 msgid "file"
-msgstr "faili"
+msgstr "fail"
 
 #: .\uploads\models.py:29
 msgid "is stored"

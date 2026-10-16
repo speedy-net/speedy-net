@@ -183,7 +183,7 @@ msgstr ""
 
 #: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"

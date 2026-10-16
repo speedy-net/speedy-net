@@ -319,7 +319,7 @@ msgstr "கணக்கை நீக்கு"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+msgstr "உங்களுக்கு இன்னும் நண்பர்கள் இல்லை."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"

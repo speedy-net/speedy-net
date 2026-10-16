@@ -107,47 +107,47 @@ msgstr "பொருந்தக்கூடிய அமைப்புகள�
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "போன்ற"
+msgstr "விரும்பு"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "போன்ற"
+msgstr "விரும்பு"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "போன்ற"
+msgstr "விரும்பு"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "வேறுபட்ட"
+msgstr "விருப்பத்தை நீக்கு"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "வேறுபட்ட"
+msgstr "விருப்பத்தை நீக்கு"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "வேறுபட்ட"
+msgstr "விருப்பத்தை நீக்கு"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "உங்கள் போட்டிகள்"
+msgstr "உங்கள் பொருத்தங்கள்"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "உங்கள் போட்டிகள்"
+msgstr "உங்கள் பொருத்தங்கள்"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "உங்கள் போட்டிகள்"
+msgstr "உங்கள் பொருத்தங்கள்"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -182,17 +182,17 @@ msgstr "உங்கள் நண்பர்கள்"
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+msgstr "உங்களுக்கு இன்னும் நண்பர்கள் இல்லை."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+msgstr "உங்களுக்கு இன்னும் நண்பர்கள் இல்லை."
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+msgstr "உங்களுக்கு இன்னும் நண்பர்கள் இல்லை."
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
@@ -243,64 +243,64 @@ msgstr "பாலினம் பொருந்தும்"
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+msgstr "%(site_name)s இல் யாரோ உங்களை விரும்புகிறார்கள்"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+msgstr "%(site_name)s இல் யாரோ உங்களை விரும்புகிறார்கள்"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+msgstr "%(site_name)s இல் யாரோ உங்களை விரும்புகிறார்கள்"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "உன்னை விரும்புகிறார்."
+msgstr "உங்களை விரும்புகிறார்."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "உன்னை விரும்புகிறார்."
+msgstr "உங்களை விரும்புகிறார்."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "உன்னை விரும்புகிறார்."
+msgstr "உங்களை விரும்புகிறார்."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "உன்னை விரும்புகிறது"
+msgstr "உங்களை விரும்புகிறார்"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "உன்னை விரும்புகிறது"
+msgstr "உங்களை விரும்புகிறார்"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "உன்னை விரும்புகிறது"
+msgstr "உங்களை விரும்புகிறார்"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "உனக்கு பிடிக்கும்"
+msgstr "நீங்கள் விரும்புகிறீர்கள்"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "உனக்கு பிடிக்கும்"
+msgstr "நீங்கள் விரும்புகிறீர்கள்"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "உனக்கு பிடிக்கும்"
+msgstr "நீங்கள் விரும்புகிறீர்கள்"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
@@ -355,19 +355,19 @@ msgstr "என் உயரம் சென்டிமீட்டர்"
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "என் சிறந்த போட்டியாக"
+msgstr "என் சிறந்த பொருத்தம்"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "என் சிறந்த போட்டியாக"
+msgstr "என் சிறந்த பொருத்தம்"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "என் சிறந்த போட்டியாக"
+msgstr "என் சிறந்த பொருத்தம்"
 
 #: .\__translations\__translations.py:24
 #: .\templates\accounts\edit_profile\activate.html:116
@@ -423,17 +423,17 @@ msgstr "தயவு செய்து உங்களை பற்றி ச�
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+msgstr "உங்களுக்கு குழந்தைகள் உள்ளனரா? எத்தனை?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+msgstr "உங்களுக்கு குழந்தைகள் உள்ளனரா? எத்தனை?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+msgstr "உங்களுக்கு குழந்தைகள் உள்ளனரா? எத்தனை?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
@@ -565,7 +565,7 @@ msgstr "தயவுசெய்து நீங்கள் எங்கு வ
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "உனக்கு குழந்தைகள் உள்ளதா?"
+msgstr "உங்களுக்கு குழந்தைகள் உள்ளனரா? எத்தனை?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
@@ -587,19 +587,19 @@ msgstr "பொருந்தக்கூடிய அதிகபட்ச வ�
 
 #: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
-msgstr "உணவு முறைக்கு ஏற்ப ஏற்ப ஏற்பாடு செய்ய வேண்டும்."
+msgstr "உணவு பொருத்தம் தேவை."
 
 #: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
-msgstr "புகைபிடித்தல் நிலை பொருந்தும்."
+msgstr "புகைபிடித்தல் நிலை பொருத்தம் தேவை."
 
 #: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
-msgstr "உறவு நிலை பொருந்தும்."
+msgstr "உறவு நிலை பொருத்தம் தேவை."
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
-msgstr "நீ எங்கே வசிக்கிறாய்?"
+msgstr "நீங்கள் எங்கே வசிக்கிறீர்கள்?"
 
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
@@ -663,7 +663,7 @@ msgstr "என்னை பற்றி சில வார்த்தைகள
 #: .\accounts\models.py:233
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "என் சிறந்த போட்டியாக"
+msgstr "என் சிறந்த பொருத்தம்"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
@@ -675,7 +675,7 @@ msgstr "பொருந்தக்கூடிய அதிகபட்ச வ�
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "உணவு போட்டி"
+msgstr "உணவு பொருத்தம்"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
@@ -1017,7 +1017,7 @@ msgstr "பயனருக்கு"
 
 #: .\likes\models.py:31
 msgid "user like"
-msgstr "பயனர் போன்ற"
+msgstr "பயனர் விருப்பம்"
 
 #: .\likes\models.py:32
 msgid "user likes"
@@ -1025,31 +1025,31 @@ msgstr "பயனர் விரும்புகிறார்"
 
 #: .\likes\views.py:53
 msgid "Girls You Like"
-msgstr "உனக்கு பிடித்த பெண்கள்"
+msgstr "நீங்கள் விரும்பும் பெண்கள்"
 
 #: .\likes\views.py:54
 msgid "Boys You Like"
-msgstr "உங்களுக்கு பிடித்த சிறுவர்கள்"
+msgstr "நீங்கள் விரும்பும் சிறுவர்கள்"
 
 #: .\likes\views.py:55
 msgid "People You Like"
-msgstr "உங்களுக்கு பிடித்தவர்கள்"
+msgstr "நீங்கள் விரும்பும் நபர்கள்"
 
 #: .\likes\views.py:58
 msgid "Girls Who Like You"
-msgstr "உன்னைப் பிடித்த பெண்கள்"
+msgstr "உங்களை விரும்பும் பெண்கள்"
 
 #: .\likes\views.py:59
 msgid "Boys Who Like You"
-msgstr "உங்களைப் போன்ற சிறுவர்கள்"
+msgstr "உங்களை விரும்பும் சிறுவர்கள்"
 
 #: .\likes\views.py:60
 msgid "People Who Like You"
-msgstr "உங்களைப் போன்றவர்கள்"
+msgstr "உங்களை விரும்பும் நபர்கள்"
 
 #: .\likes\views.py:62
 msgid "Mutual Likes"
-msgstr "பரஸ்பர விருப்பம்"
+msgstr "பரஸ்பர விருப்பங்கள்"
 
 #: .\matches\apps.py:14
 msgid "Speedy Match Matches"
@@ -1057,7 +1057,7 @@ msgstr "Speedy Match பொருத்தங்கள்"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
-msgstr "உங்கள் போட்டி அமைப்புகள் சேமிக்கப்பட்டன."
+msgstr "உங்கள் பொருத்த அமைப்புகள் சேமிக்கப்பட்டன."
 
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
@@ -1219,7 +1219,7 @@ msgstr "என் போட்டியை பற்றி"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
-msgstr "திரும்பி"
+msgstr "பின்செல்"
 
 #: .\templates\accounts\edit_profile\activate.html:79
 msgid "Next step"
@@ -1236,7 +1236,7 @@ msgstr "நிர்வாகி - அனைத்து பொருந்த�
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "உங்கள் போட்டிகள்"
+msgstr "உங்கள் பொருத்தங்கள்"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
@@ -1247,7 +1247,7 @@ msgstr "பொருத்தங்கள்"
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "பிடிக்கும்"
+msgstr "விருப்பங்கள்"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1266,7 +1266,7 @@ msgstr "ஒரு வேகன் நட்பு வலைத்தளம்"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "உன்னை விரும்புகிறார்."
+msgstr "உங்களை விரும்புகிறார்."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1275,16 +1275,16 @@ msgid ""
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
 "நீங்கள் இந்த வகை அறிவிப்புகளைப் பெறுவதற்கு பதிவுபெற்றிருக்கிறீர்கள் %(site_name)s. உங்கள் "
-"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்ஃ"
+"அறிவிப்பு அமைப்புகளை மாற்ற இந்த பக்கத்தை உள்ளிடவும் அல்லது தேர்வு செய்ய வேண்டாம்:"
 
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "யாரோ உங்களை விரும்புகிறார்கள் %(site_name)s"
+msgstr "%(site_name)s இல் யாரோ உங்களை விரும்புகிறார்கள்"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "உனக்கு இன்னும் நண்பர்கள் இல்லை."
+msgstr "உங்களுக்கு இன்னும் நண்பர்கள் இல்லை."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
@@ -1335,7 +1335,7 @@ msgstr "உணவு"
 
 #: .\templates\matches\match_list.html:60
 msgid "Age:"
-msgstr "வயதுஃ"
+msgstr "வயது:"
 
 #: .\templates\matches\match_list.html:74
 msgid "Refresh"
@@ -1368,12 +1368,12 @@ msgstr "நண்பர்கள்"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "போன்ற"
+msgstr "விரும்பு"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "வேறுபட்ட"
+msgstr "விருப்பத்தை நீக்கு"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
@@ -1382,12 +1382,12 @@ msgstr "உங்கள் நண்பர்"
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "உன்னை விரும்புகிறது"
+msgstr "உங்களை விரும்புகிறார்"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "உனக்கு பிடிக்கும்"
+msgstr "நீங்கள் விரும்புகிறீர்கள்"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
@@ -1411,4 +1411,4 @@ msgstr "Speedy Match-ஐ கடைசியாகப் பார்வையி
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr "ஒத்திருக்கவில்லை."
+msgstr "பொருத்தம் எதுவும் இல்லை."

@@ -559,7 +559,7 @@ msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
 #: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
-msgstr "Iltimos, qaerda yashayotganingizni yozing."
+msgstr "Iltimos, qayerda yashayotganingizni yozing."
 
 #: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
@@ -1173,9 +1173,7 @@ msgstr ""
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
-msgstr ""
-"Speedy Match hozircha alpha bosqichida. U 2019-yil avgust oyida ishga "
-"tushirilgan. Speedy Match ning inglizcha versiyasi ishlatishda."
+msgstr "Speedy Match hozircha alpha bosqichida. U 2019-yil avgust oyida ishga tushirilgan. Speedy Match ning inglizcha versiyasi ishlab chiqarishda."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

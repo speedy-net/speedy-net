@@ -40,10 +40,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Biztosan törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net-fiók törlése a Speedy Match fiókját is "
-"törli. Ha biztos benne, írja be az \"Igen. Fiókom törlése.\" ebben a mezőben "
-"pontosan és a kis- és kis- és nagybetűkkel bír."
+"Biztosan törölni szeretné a Speedy Net fiókját? Ez végleges és "
+"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiókja "
+"is törlődik. Ha biztos benne, írja be ebbe a mezőbe pontosan, a kis- és "
+"nagybetűk megkülönböztetésével: \"Igen. Fiókom törlése.\""
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +53,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Biztosan törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net-fiók törlése a Speedy Match fiókját is "
-"törli. Ha biztos benne, írja be az \"Igen. Fiókom törlése.\" ebben a mezőben "
-"pontosan és a kis- és kis- és nagybetűkkel bír."
+"Biztosan törölni szeretné a Speedy Net fiókját? Ez végleges és "
+"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiókja "
+"is törlődik. Ha biztos benne, írja be ebbe a mezőbe pontosan, a kis- és "
+"nagybetűk megkülönböztetésével: \"Igen. Fiókom törlése.\""
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,28 +66,28 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Biztosan törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net-fiók törlése a Speedy Match fiókját is "
-"törli. Ha biztos benne, írja be az \"Igen. Fiókom törlése.\" ebben a mezőben "
-"pontosan és a kis- és kis- és nagybetűkkel bír."
+"Biztosan törölni szeretné a Speedy Net fiókját? Ez végleges és "
+"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiókja "
+"is törlődik. Ha biztos benne, írja be ebbe a mezőbe pontosan, a kis- és "
+"nagybetűk megkülönböztetésével: \"Igen. Fiókom törlése.\""
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
 msgctxt "female"
 msgid "Permanently delete your {site_name} account"
-msgstr "Véglegesen törölje {site_name} fiókját"
+msgstr "Végleges törlés: {site_name} fiókja"
 
 #: .\__translations\__translations.py:15
 #, python-brace-format
 msgctxt "male"
 msgid "Permanently delete your {site_name} account"
-msgstr "Véglegesen törölje {site_name} fiókját"
+msgstr "Végleges törlés: {site_name} fiókja"
 
 #: .\__translations\__translations.py:16
 #, python-brace-format
 msgctxt "other"
 msgid "Permanently delete your {site_name} account"
-msgstr "Véglegesen törölje {site_name} fiókját"
+msgstr "Végleges törlés: {site_name} fiókja"
 
 #: .\__translations\__translations.py:18
 #, python-brace-format
@@ -96,8 +96,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat töröltük. Köszönjük, hogy a "
-"{site_name} szolgáltatást használja."
+"Speedy Net és Speedy Match fiókját töröltük. Köszönjük, hogy a(z) "
+"{site_name} oldalt használta."
 
 #: .\__translations\__translations.py:19
 #, python-brace-format
@@ -106,8 +106,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat töröltük. Köszönjük, hogy a "
-"{site_name} szolgáltatást használja."
+"Speedy Net és Speedy Match fiókját töröltük. Köszönjük, hogy a(z) "
+"{site_name} oldalt használta."
 
 #: .\__translations\__translations.py:20
 #, python-brace-format
@@ -116,16 +116,16 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"A Speedy Net és Speedy Match fiókokat töröltük. Köszönjük, hogy a "
-"{site_name} szolgáltatást használja."
+"Speedy Net és Speedy Match fiókját töröltük. Köszönjük, hogy a(z) "
+"{site_name} oldalt használta."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Speedy Net fiókok"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
-msgstr "A jelszavad"
+msgstr "Az Ön jelszava"
 
 #: .\accounts\forms.py:29
 msgid ""
@@ -134,10 +134,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Biztosan törölni szeretné Speedy Net fiókját? Ez állandó és "
-"visszafordíthatatlan. A Speedy Net-fiók törlése a Speedy Match fiókját is "
-"törli. Ha biztos benne, írja be az \"Igen. Fiókom törlése.\" ebben a mezőben "
-"pontosan és a kis- és kis- és nagybetűkkel bír."
+"Biztosan törölni szeretné a Speedy Net fiókját? Ez végleges és "
+"visszafordíthatatlan. A Speedy Net fiók törlésével a Speedy Match fiókja "
+"is törlődik. Ha biztos benne, írja be ebbe a mezőbe pontosan, a kis- és "
+"nagybetűk megkülönböztetésével: \"Igen. Fiókom törlése.\""
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -150,7 +150,7 @@ msgstr "Igen. Fiókom törlése."
 
 #: .\accounts\models.py:35
 msgid "Speedy Net User"
-msgstr "Speedy Net Felhasználó"
+msgstr "Speedy Net felhasználó"
 
 #: .\accounts\models.py:37
 msgid "User"
@@ -158,15 +158,15 @@ msgstr "Felhasználó"
 
 #: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"
-msgstr "Ismerősök száma az utolsó felhasználó látogatása során"
+msgstr "Barátok száma a felhasználó utolsó látogatásakor"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Speedy Net profil"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Speedy Net profilok"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -176,9 +176,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"Az oldalon az aktív tagok száma összesen {total_number_of_active_members_in_the_last_four_months}, "
-"ebből {total_number_of_active_members_in_the_last_week} tag lépett be az "
-"oldalra az elmúlt héten."
+"Az oldalon az aktív tagok száma összesen "
+"{total_number_of_active_members_in_the_last_four_months}, ebből "
+"{total_number_of_active_members_in_the_last_week} tag lépett be az oldalra"
+" az elmúlt héten."
 
 #: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
@@ -186,7 +187,7 @@ msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "A Speedy Net ről"
+msgstr "A Speedy Netről"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -200,9 +201,10 @@ msgid ""
 msgstr ""
 "A <a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
 "Net\">Speedy Net</a> egy új közösségi hálózat. A Speedy Net segítségével "
-"kommunikálhat barátaival Speedy Net. A Speedy Net ingyenes regisztrációra "
-"nyitva áll minden országból és korosztályból (korhatár nélkül!). Az oldal "
-"vegán és vegetáriánusbarát. Jelenleg %(languages_num)s nyelven érhető el."
+"kapcsolatban maradhat barátaival. A Speedy Net ingyenes regisztrációra "
+"nyitva áll minden országból és minden korosztály számára (korhatár "
+"nélkül!). Az oldal vegán- és vegetáriánusbarát. Jelenleg %(languages_num)s"
+" nyelven érhető el."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -221,11 +223,11 @@ msgid ""
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
 msgstr ""
-"Úgy döntöttünk, hogy a Speedy Net ismerőseinek számát 800-ra korlátozzuk. "
-"Javasoljuk, hogy csak olyan személyeket vegyen fel barátként, akiket "
-"személyesen ismer. Kiválaszthatod, hogy mely adatok jelenjenek meg a "
-"profilodon nyilvánosként, mely adatok csak az ismerősök számára, és melyek "
-"legyenek privátok. A privát adatok csak Önnek jelennek meg."
+"Úgy döntöttünk, hogy a Speedy Neten a barátok számát 800-ra korlátozzuk. "
+"Javasoljuk, hogy csak olyan embereket vegyen fel barátként, akiket "
+"személyesen ismer. Kiválaszthatja, mely adatok jelenjenek meg a profilján "
+"nyilvánosan, melyek csak a barátok számára, és melyek legyenek privátok. A"
+" privát adatok csak Önnek láthatók."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -234,10 +236,11 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Használhatja új alkalmazásunkat, a <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, hogy megfelelő "
-"embereket találjon randevúzáshoz. A Speedy Match minden korosztály számára "
-"nyitott."
+"Használhatja új alkalmazásunkat, a <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Matchet</a>, hogy a hozzá illő embereket találjon "
+"randevúzáshoz. A Speedy Match minden korosztály számára nyitott "
+"egyedülállóknak."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -245,19 +248,19 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a hez "
-"még ma Speedy Net, hogy barátokat találjon, mindössze néhány percet vesz "
-"igénybe. <a href=\"/\" title=\"Join Speedy Net\">Kattintson ide</a> a "
-"csatlakozáshoz."
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon még"
+" ma a Speedy Nethez, hogy barátokat találjon – mindössze néhány percet "
+"vesz igénybe. <a href=\"/\" title=\"Join Speedy Net\">Kattintson ide</a> a"
+" csatlakozáshoz."
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"A Speedy Net egy ingyenes szoftver és nyílt forráskódú projekt. Ha segíteni "
-"szeretne a fejlesztésében és javításában, Speedy Net kérjük, vegye fel velem "
-"a kapcsolatot e-mailben."
+"A Speedy Net ingyenes szoftver és nyílt forráskódú projekt. Ha segíteni "
+"szeretne a Speedy Net fejlesztésében és javításában, kérjük, vegye fel "
+"velem a kapcsolatot e-mailben."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -265,13 +268,15 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"A Speedy Net nevét <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a>-ról kapta, egy nőstény kutyáról, aki sok "
-"éven át velünk volt, és 2003-ban pusztult el. 1988-ban 7 kiskutyát szült."
+"A Speedy Net <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>-ről kapta a nevét, egy nőstény kutyáról, aki "
+"sok éven át velünk volt, és 2003-ban elpusztult. Speedy 1988-ban 7 "
+"kölyöknek adott életet."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr "A Speedy Net jelenleg alfában van. 2012 júniusában indult."
+msgstr ""
+"A Speedy Net jelenleg alfa állapotban van. 2012 júniusában indították el."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -283,7 +288,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "A és a alapítója és Speedy Net Speedy Match igazgatója,"
+msgstr "A Speedy Net és a Speedy Match alapítója és igazgatója,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -296,7 +301,7 @@ msgstr "Üdvözöljük"
 #: .\templates\accounts\edit_profile\activate.html:12
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Üdvözöljük a %(site_name)s"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
@@ -317,11 +322,11 @@ msgstr "Fiók törlése"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Még nincsenek barátaid."
+msgstr "Önnek még nincsenek barátai."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "A barátaid"
+msgstr "Az Ön barátai"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -331,27 +336,27 @@ msgid ""
 "friendly."
 msgstr ""
 "A Speedy Net egy új közösségi hálózat. A Speedy Net segítségével "
-"kommunikálhat barátaival. A Speedy Net ingyenes regisztrációra nyitva áll "
-"minden országból és korosztályból (korhatár nélkül!). Az oldal vegán és "
-"vegetáriánusbarát."
+"kapcsolatban maradhat barátaival. A Speedy Net ingyenes regisztrációra "
+"nyitva áll minden országból és minden korosztály számára (korhatár "
+"nélkül!). Az oldal vegán- és vegetáriánusbarát."
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a "
-"Speedy Nethez még ma, hogy barátokat találjon, mindössze néhány percet vesz "
-"igénybe."
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon még"
+" ma a Speedy Nethez, hogy barátokat találjon – mindössze néhány percet "
+"vesz igénybe."
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – randevúzni Speedyvel"
+msgstr "Speedy Match – randevúzás a Speedyvel"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Barátot keresel? Barátnőt keresel? Gyere és találkozz Speedyvel!"
+msgstr "Barátot keres? Barátnőt keres? Jöjjön, és ismerje meg Speedyt!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
@@ -363,8 +368,8 @@ msgstr "Barátok"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "Barátsági felkérés elküldve"
+msgstr "Barátsági kérelem elküldve"

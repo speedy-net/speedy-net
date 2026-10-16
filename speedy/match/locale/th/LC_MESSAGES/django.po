@@ -15,37 +15,37 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "คุณไม่มีสิ่งที่ชอบที่นี่"
+msgstr "คุณไม่มีรายการถูกใจที่นี่"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "คุณไม่มีสิ่งที่ชอบที่นี่"
+msgstr "คุณไม่มีรายการถูกใจที่นี่"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "คุณไม่มีสิ่งที่ชอบที่นี่"
+msgstr "คุณไม่มีรายการถูกใจที่นี่"
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr "อัพเดทการแข่งขัน"
+msgstr "อัปเดตคู่ที่เข้ากัน"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr "อัพเดทการแข่งขัน"
+msgstr "อัปเดตคู่ที่เข้ากัน"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr "อัพเดทการแข่งขัน"
+msgstr "อัปเดตคู่ที่เข้ากัน"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
@@ -67,21 +67,27 @@ msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "คุณยังไม่มีการแข่งขันใดๆ ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
+msgstr ""
+"คุณยังไม่มีคู่ที่เข้ากัน "
+"ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "คุณยังไม่มีการแข่งขันใดๆ ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
+msgstr ""
+"คุณยังไม่มีคู่ที่เข้ากัน "
+"ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "คุณยังไม่มีการแข่งขันใดๆ ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
+msgstr ""
+"คุณยังไม่มีคู่ที่เข้ากัน "
+"ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -101,47 +107,47 @@ msgstr "การตั้งค่าการจับคู่"
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "ชอบ"
+msgstr "ถูกใจ"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "ชอบ"
+msgstr "ถูกใจ"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "ชอบ"
+msgstr "ถูกใจ"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "ไม่เหมือน"
+msgstr "เลิกถูกใจ"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "ไม่เหมือน"
+msgstr "เลิกถูกใจ"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "ไม่เหมือน"
+msgstr "เลิกถูกใจ"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "การแข่งขันของคุณ"
+msgstr "คู่ที่เข้ากันของคุณ"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "การแข่งขันของคุณ"
+msgstr "คู่ที่เข้ากันของคุณ"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "การแข่งขันของคุณ"
+msgstr "คู่ที่เข้ากันของคุณ"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -206,110 +212,110 @@ msgstr "เกี่ยวกับฉัน"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "เกี่ยวกับการแข่งขันของฉัน"
+msgstr "เกี่ยวกับคู่ของฉัน"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "เกี่ยวกับการแข่งขันของฉัน"
+msgstr "เกี่ยวกับคู่ของฉัน"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "เกี่ยวกับการแข่งขันของฉัน"
+msgstr "เกี่ยวกับคู่ของฉัน"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "เพศให้ตรงกัน"
+msgstr "เพศที่ต้องการจับคู่"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "เพศให้ตรงกัน"
+msgstr "เพศที่ต้องการจับคู่"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "เพศให้ตรงกัน"
+msgstr "เพศที่ต้องการจับคู่"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "มีคนชอบคุณใน %(site_name)s"
+msgstr "มีคนถูกใจคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "มีคนชอบคุณใน %(site_name)s"
+msgstr "มีคนถูกใจคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "มีคนชอบคุณใน %(site_name)s"
+msgstr "มีคนถูกใจคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "คุณชอบ"
+msgstr "คุณถูกใจ"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "คุณชอบ"
+msgstr "คุณถูกใจ"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "คุณชอบ"
+msgstr "คุณถูกใจ"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "เข้าชมครั้งล่าสุด Speedy Match"
+msgstr "เข้าชม Speedy Match ครั้งล่าสุด"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "เข้าชมครั้งล่าสุด Speedy Match"
+msgstr "เข้าชม Speedy Match ครั้งล่าสุด"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "เข้าชมครั้งล่าสุด Speedy Match"
+msgstr "เข้าชม Speedy Match ครั้งล่าสุด"
 
 #: .\__translations\__translations.py:10
 msgid "My height in centimeters"
@@ -367,37 +373,37 @@ msgstr "คู่ในอุดมคติของฉัน"
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "อายุขั้นต่ำที่จะจับคู่"
+msgstr "อายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "อายุขั้นต่ำที่จะจับคู่"
+msgstr "อายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "อายุขั้นต่ำที่จะจับคู่"
+msgstr "อายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "อายุสูงสุดที่จะจับคู่"
+msgstr "อายุสูงสุดที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "อายุสูงสุดที่จะจับคู่"
+msgstr "อายุสูงสุดที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "อายุสูงสุดที่จะจับคู่"
+msgstr "อายุสูงสุดที่ต้องการจับคู่"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
@@ -417,17 +423,17 @@ msgstr "โปรดเขียนคำสองสามคำเกี่ย
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "คุณมีลูกไหม? เท่าไหร่?"
+msgstr "คุณมีลูกหรือไม่? กี่คน?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "คุณมีลูกไหม? เท่าไหร่?"
+msgstr "คุณมีลูกหรือไม่? กี่คน?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "คุณมีลูกไหม? เท่าไหร่?"
+msgstr "คุณมีลูกหรือไม่? กี่คน?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
@@ -447,17 +453,17 @@ msgstr "คุณต้องการมีลูก (มากขึ้น) �
 #: .\__translations\__translations.py:44
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "ใครคือหุ้นส่วนในอุดมคติของคุณ?"
+msgstr "คู่ในอุดมคติของคุณเป็นอย่างไร?"
 
 #: .\__translations\__translations.py:45
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "ใครคือหุ้นส่วนในอุดมคติของคุณ?"
+msgstr "คู่ในอุดมคติของคุณเป็นอย่างไร?"
 
 #: .\__translations\__translations.py:46
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "ใครคือหุ้นส่วนในอุดมคติของคุณ?"
+msgstr "คู่ในอุดมคติของคุณเป็นอย่างไร?"
 
 #: .\__translations\__translations.py:48
 #, python-brace-format
@@ -500,7 +506,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "บัญชี Speedy Match"
 
 #: .\accounts\forms.py:96
 msgid "Add profile picture"
@@ -512,11 +518,11 @@ msgstr "จำเป็นต้องมีรูปโปรไฟล์"
 
 #: .\accounts\forms.py:97
 msgid "My diet"
-msgstr "อาหารของฉัน"
+msgstr "การรับประทานอาหารของฉัน"
 
 #: .\accounts\forms.py:97 .\accounts\forms.py:141 .\accounts\validators.py:181
 msgid "Your diet is required."
-msgstr "อาหารของคุณเป็นสิ่งจำเป็น"
+msgstr "จำเป็นต้องระบุการรับประทานอาหารของคุณ"
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
@@ -524,7 +530,7 @@ msgstr "สถานะการสูบบุหรี่ของฉัน"
 
 #: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
-msgstr "สถานะการสูบบุหรี่ของคุณเป็นสิ่งจำเป็น"
+msgstr "จำเป็นต้องระบุสถานะการสูบบุหรี่ของคุณ"
 
 #: .\accounts\forms.py:99
 msgid "My relationship status"
@@ -537,11 +543,11 @@ msgstr "จำเป็นต้องมีสถานะความสัม
 #: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
-msgstr "จำเป็นต้องระบุเพศให้ตรงกัน"
+msgstr "จำเป็นต้องระบุเพศที่ต้องการจับคู่"
 
 #: .\accounts\forms.py:138
 msgid "Your height is required."
-msgstr "ต้องระบุส่วนสูงของคุณ"
+msgstr "จำเป็นต้องระบุส่วนสูงของคุณ"
 
 #: .\accounts\forms.py:150 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
@@ -556,7 +562,7 @@ msgstr "กรุณาเขียนสถานที่ที่คุณอ
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "คุณมีลูกไหม? เท่าไหร่?"
+msgstr "คุณมีลูกหรือไม่? กี่คน?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
@@ -566,15 +572,15 @@ msgstr "คุณต้องการมีลูก (มากขึ้น) �
 
 #: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
-msgstr "ใครคือหุ้นส่วนในอุดมคติของคุณ?"
+msgstr "คู่ในอุดมคติของคุณเป็นอย่างไร?"
 
 #: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
-msgstr "อายุขั้นต่ำจึงจะตรงกันได้"
+msgstr "จำเป็นต้องระบุอายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
-msgstr "ต้องมีอายุสูงสุดจึงจะตรงกันได้"
+msgstr "จำเป็นต้องระบุอายุสูงสุดที่ต้องการจับคู่"
 
 #: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
@@ -595,15 +601,15 @@ msgstr "คุณอาศัยอยู่ที่ใด?"
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "เพศให้ตรงกัน"
+msgstr "เพศที่ต้องการจับคู่"
 
 #: .\accounts\models.py:70
 msgid "Speedy Match User"
-msgstr "Speedy Match ผู้ใช้"
+msgstr "ผู้ใช้ Speedy Match"
 
 #: .\accounts\models.py:82 .\accounts\models.py:203
 msgid "No match"
-msgstr "ไม่มีการแข่งขัน"
+msgstr "ไม่มีคู่ที่เข้ากัน"
 
 #: .\accounts\models.py:83 .\accounts\models.py:204
 msgid "One heart"
@@ -615,15 +621,15 @@ msgstr "หัวใจสองดวง"
 
 #: .\accounts\models.py:85 .\accounts\models.py:206
 msgid "Three hearts"
-msgstr "สามหัวใจ"
+msgstr "หัวใจสามดวง"
 
 #: .\accounts\models.py:86 .\accounts\models.py:207
 msgid "Four hearts"
-msgstr "สี่หัวใจ"
+msgstr "หัวใจสี่ดวง"
 
 #: .\accounts\models.py:87 .\accounts\models.py:208
 msgid "Five hearts"
-msgstr "ห้าหัวใจ"
+msgstr "หัวใจห้าดวง"
 
 #: .\accounts\models.py:212
 msgid "User"
@@ -631,7 +637,7 @@ msgstr "ผู้ใช้"
 
 #: .\accounts\models.py:213
 msgid "On new likes"
-msgstr "เมื่อชอบใหม่"
+msgstr "เมื่อมีคนถูกใจใหม่"
 
 #: .\accounts\models.py:216
 msgid "Active languages"
@@ -645,11 +651,11 @@ msgstr "ความสูง"
 #: .\accounts\models.py:222
 #: .\templates\profiles\user_extra_info_widget.html:27
 msgid "cm"
-msgstr "ซม"
+msgstr "ซม."
 
 #: .\accounts\models.py:224
 msgid "Few words about me"
-msgstr "คำไม่กี่คำเกี่ยวกับฉัน"
+msgstr "ไม่กี่คำเกี่ยวกับฉัน"
 
 #: .\accounts\models.py:233
 #: .\templates\profiles\user_extra_info_widget.html:54
@@ -658,15 +664,15 @@ msgstr "คู่ในอุดมคติของฉัน"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
-msgstr "อายุขั้นต่ำที่จะจับคู่"
+msgstr "อายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "อายุสูงสุดที่จะจับคู่"
+msgstr "อายุสูงสุดที่ต้องการจับคู่"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "จับคู่อาหาร"
+msgstr "การจับคู่การรับประทานอาหาร"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
@@ -678,15 +684,15 @@ msgstr "การจับคู่สถานะความสัมพัน
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
-msgstr "อาหารให้เข้ากัน"
+msgstr "การรับประทานอาหารที่ต้องการจับคู่"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "สถานะการสูบบุหรี่ให้ตรงกัน"
+msgstr "สถานะการสูบบุหรี่ที่ต้องการจับคู่"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
-msgstr "สถานะความสัมพันธ์ให้ตรงกัน"
+msgstr "สถานะความสัมพันธ์ที่ต้องการจับคู่"
 
 #: .\accounts\models.py:273
 msgid "Activation step"
@@ -694,15 +700,15 @@ msgstr "ขั้นตอนการเปิดใช้งาน"
 
 #: .\accounts\models.py:276
 msgid "Number of matches on last user's search"
-msgstr "จำนวนการแข่งขันในการค้นหาของผู้ใช้ครั้งล่าสุด"
+msgstr "จำนวนคู่ที่เข้ากันในการค้นหาครั้งล่าสุดของผู้ใช้"
 
 #: .\accounts\models.py:352
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "โปรไฟล์ Speedy Match"
 
 #: .\accounts\models.py:353 .\profiles\apps.py:14
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "โปรไฟล์ Speedy Match"
 
 #: .\accounts\models.py:546 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -716,9 +722,10 @@ msgid ""
 "{total_number_of_active_members_in_the_last_week} members entered the site "
 "in the last week."
 msgstr ""
-"จำนวนสมาชิกที่ใช้งานอยู่บนไซต์ทั้งหมดคือ "
-"{total_number_of_active_members_in_the_last_four_months} ซึ่งสมาชิก "
-"{total_number_of_active_members_in_the_last_week} เข้ามาในไซต์เมื่อสัปดาห์ที่แล้ว"
+"จำนวนสมาชิกที่ใช้งานอยู่บนเว็บไซต์ทั้งหมดคือ "
+"{total_number_of_active_members_in_the_last_four_months} คน "
+"ในจำนวนนี้สมาชิก {total_number_of_active_members_in_the_last_week} "
+"คนเข้าสู่เว็บไซต์ในสัปดาห์ที่ผ่านมา"
 
 #: .\accounts\validators.py:169
 msgid "Height must be from 1 to 450 cm."
@@ -726,15 +733,15 @@ msgstr "ความสูงต้องอยู่ระหว่าง 1 ถ
 
 #: .\accounts\validators.py:229
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "อายุขั้นต่ำในการจับคู่จะต้องมีตั้งแต่ 0 ถึง 180 ปี"
+msgstr "อายุขั้นต่ำที่ต้องการจับคู่ต้องอยู่ระหว่าง 0 ถึง 180 ปี"
 
 #: .\accounts\validators.py:241
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "อายุสูงสุดในการจับคู่จะต้องอยู่ระหว่าง 0 ถึง 180 ปี"
+msgstr "อายุสูงสุดที่ต้องการจับคู่ต้องอยู่ระหว่าง 0 ถึง 180 ปี"
 
 #: .\accounts\validators.py:256
 msgid "Maximal age to match can't be less than minimal age to match."
-msgstr "อายุสูงสุดที่จะจับคู่ต้องไม่น้อยกว่าอายุขั้นต่ำในการจับคู่"
+msgstr "อายุสูงสุดที่ต้องการจับคู่ต้องไม่น้อยกว่าอายุขั้นต่ำที่ต้องการจับคู่"
 
 #: .\accounts\validators.py:271
 msgid "At least one diet match option should be five hearts."
@@ -798,53 +805,54 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"ผู้ดูแลระบบ: จำนวนสมาชิกที่ใช้งานบนเว็บไซต์คือ {total_number_of_active_members} "
-"({total_number_of_female_active_members} หญิง, "
-"{total_number_of_male_active_members} ชาย, "
-"{total_number_of_other_active_members} อื่น ๆ; "
-"{total_percent_of_female_active_members} หญิง, "
-"{total_percent_of_male_active_members} ชาย, "
-"{total_percent_of_other_active_members} อื่น ๆ) ซึ่งสมาชิก "
-"{total_number_of_active_members_in_the_last_week} "
-"({total_number_of_female_active_members_in_the_last_week} หญิง, "
-"{total_number_of_male_active_members_in_the_last_week} ชาย, "
-"{total_number_of_other_active_members_in_the_last_week} อื่น ๆ; "
-"{total_percent_of_female_active_members_in_the_last_week} หญิง, "
-"{total_percent_of_male_active_members_in_the_last_week} ชาย "
-"{total_percent_of_other_active_members_in_the_last_week} อื่นๆ) "
-"เข้ามาในไซต์ในสัปดาห์ที่ผ่านมา สมาชิก "
-"{total_number_of_active_members_in_the_last_month} "
-"({total_number_of_female_active_members_in_the_last_month} หญิง, "
-"{total_number_of_male_active_members_in_the_last_month} ชาย, "
-"{total_number_of_other_active_members_in_the_last_month} อื่นๆ; "
-"{total_percent_of_female_active_members_in_the_last_month} หญิง, "
-"{total_percent_of_male_active_members_in_the_last_month} ชาย, "
-"{total_percent_of_other_active_members_in_the_last_month} อื่นๆ) "
-"เข้ามาในไซต์ในเดือนที่แล้ว สมาชิก "
-"{total_number_of_active_members_in_the_last_four_months} "
-"({total_number_of_female_active_members_in_the_last_four_months} หญิง, "
-"{total_number_of_male_active_members_in_the_last_four_months} ชาย, "
-"{total_number_of_other_active_members_in_the_last_four_months} อื่นๆ; "
-"{total_percent_of_female_active_members_in_the_last_four_months} หญิง, "
-"{total_percent_of_male_active_members_in_the_last_four_months} ชาย, "
-"{total_percent_of_other_active_members_in_the_last_four_months} อื่นๆ) "
-"เข้ามาในไซต์ในช่วงสี่เดือนที่ผ่านมา สมาชิก "
-"{total_number_of_active_members_in_the_last_eight_months} "
-"({total_number_of_female_active_members_in_the_last_eight_months} หญิง, "
-"{total_number_of_male_active_members_in_the_last_eight_months} ชาย, "
-"{total_number_of_other_active_members_in_the_last_eight_months} อื่นๆ; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} หญิง, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} ชาย, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} อื่นๆ) "
-"เข้ามาในไซต์ในช่วงแปดเดือนที่ผ่านมา และสมาชิก "
-"{total_number_of_active_members_in_the_last_two_years} "
-"({total_number_of_female_active_members_in_the_last_two_years} หญิง, "
-"{total_number_of_male_active_members_in_the_last_two_years} ชาย, "
-"{total_number_of_other_active_members_in_the_last_two_years} อื่นๆ; "
-"{total_percent_of_female_active_members_in_the_last_two_years} หญิง, "
-"{total_percent_of_male_active_members_in_the_last_two_years} ชาย, "
-"{total_percent_of_other_active_members_in_the_last_two_years} อื่นๆ) "
-"เข้ามาในไซต์ในช่วงสองปีที่ผ่านมา"
+"ผู้ดูแลระบบ: จำนวนสมาชิกที่ใช้งานอยู่บนเว็บไซต์ทั้งหมดคือ "
+"{total_number_of_active_members} คน (หญิง "
+"{total_number_of_female_active_members} คน ชาย "
+"{total_number_of_male_active_members} คน อื่น ๆ "
+"{total_number_of_other_active_members} คน; หญิง "
+"{total_percent_of_female_active_members} ชาย "
+"{total_percent_of_male_active_members} อื่น ๆ "
+"{total_percent_of_other_active_members}) ในจำนวนนี้ สมาชิก "
+"{total_number_of_active_members_in_the_last_week} คน (หญิง "
+"{total_number_of_female_active_members_in_the_last_week} คน ชาย "
+"{total_number_of_male_active_members_in_the_last_week} คน อื่น ๆ "
+"{total_number_of_other_active_members_in_the_last_week} คน; หญิง "
+"{total_percent_of_female_active_members_in_the_last_week} ชาย "
+"{total_percent_of_male_active_members_in_the_last_week} อื่น ๆ "
+"{total_percent_of_other_active_members_in_the_last_week}) "
+"เข้าสู่เว็บไซต์ในสัปดาห์ที่ผ่านมา, สมาชิก "
+"{total_number_of_active_members_in_the_last_month} คน (หญิง "
+"{total_number_of_female_active_members_in_the_last_month} คน ชาย "
+"{total_number_of_male_active_members_in_the_last_month} คน อื่น ๆ "
+"{total_number_of_other_active_members_in_the_last_month} คน; หญิง "
+"{total_percent_of_female_active_members_in_the_last_month} ชาย "
+"{total_percent_of_male_active_members_in_the_last_month} อื่น ๆ "
+"{total_percent_of_other_active_members_in_the_last_month}) "
+"เข้าสู่เว็บไซต์ในเดือนที่ผ่านมา, สมาชิก "
+"{total_number_of_active_members_in_the_last_four_months} คน (หญิง "
+"{total_number_of_female_active_members_in_the_last_four_months} คน ชาย "
+"{total_number_of_male_active_members_in_the_last_four_months} คน อื่น ๆ "
+"{total_number_of_other_active_members_in_the_last_four_months} คน; หญิง "
+"{total_percent_of_female_active_members_in_the_last_four_months} ชาย "
+"{total_percent_of_male_active_members_in_the_last_four_months} อื่น ๆ "
+"{total_percent_of_other_active_members_in_the_last_four_months}) "
+"เข้าสู่เว็บไซต์ในสี่เดือนที่ผ่านมา, สมาชิก "
+"{total_number_of_active_members_in_the_last_eight_months} คน (หญิง "
+"{total_number_of_female_active_members_in_the_last_eight_months} คน ชาย "
+"{total_number_of_male_active_members_in_the_last_eight_months} คน อื่น ๆ "
+"{total_number_of_other_active_members_in_the_last_eight_months} คน; หญิง "
+"{total_percent_of_female_active_members_in_the_last_eight_months} ชาย "
+"{total_percent_of_male_active_members_in_the_last_eight_months} อื่น ๆ "
+"{total_percent_of_other_active_members_in_the_last_eight_months}) "
+"เข้าสู่เว็บไซต์ในแปดเดือนที่ผ่านมา และ สมาชิก "
+"{total_number_of_active_members_in_the_last_two_years} คน (หญิง "
+"{total_number_of_female_active_members_in_the_last_two_years} คน ชาย "
+"{total_number_of_male_active_members_in_the_last_two_years} คน อื่น ๆ "
+"{total_number_of_other_active_members_in_the_last_two_years} คน; หญิง "
+"{total_percent_of_female_active_members_in_the_last_two_years} ชาย "
+"{total_percent_of_male_active_members_in_the_last_two_years} อื่น ๆ "
+"{total_percent_of_other_active_members_in_the_last_two_years}) "
+"เข้าสู่เว็บไซต์ในสองปีที่ผ่านมา"
 
 #: .\admin\views.py:307
 #, python-brace-format
@@ -868,24 +876,25 @@ msgid ""
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
 msgstr ""
-"ผู้ดูแลระบบ: {total_number_of_active_members_registered_in_the_last_week} "
-"สมาชิกที่ลงทะเบียนในสัปดาห์ที่ผ่านมา "
+"ผู้ดูแลระบบ: สมาชิกที่ใช้งานอยู่ "
+"{total_number_of_active_members_registered_in_the_last_week} "
+"คนลงทะเบียนในสัปดาห์ที่ผ่านมา "
 "{total_number_of_active_members_registered_in_the_last_month} "
-"สมาชิกที่ลงทะเบียนในเดือนที่ผ่านมา "
+"คนลงทะเบียนในเดือนที่ผ่านมา "
 "{total_number_of_active_members_registered_in_the_last_four_months} "
-"สมาชิกที่ลงทะเบียนในช่วงสี่เดือนที่ผ่านมา "
+"คนลงทะเบียนในสี่เดือนที่ผ่านมา "
 "{total_number_of_active_members_registered_more_than_four_months_ago} "
-"สมาชิกที่มีการใช้งานที่ลงทะเบียนมากกว่าสี่เดือนที่ผ่านมา "
+"คนลงทะเบียนเมื่อมากกว่าสี่เดือนที่แล้ว "
 "{total_number_of_active_members_registered_in_the_last_eight_months} "
-"สมาชิกที่ลงทะเบียนในช่วงแปดเดือนที่ผ่านมา "
+"คนลงทะเบียนในแปดเดือนที่ผ่านมา "
 "{total_number_of_active_members_registered_more_than_eight_months_ago} "
-"สมาชิกที่มีการใช้งานที่ลงทะเบียนมากกว่าแปดเดือนที่ผ่านมา "
+"คนลงทะเบียนเมื่อมากกว่าแปดเดือนที่แล้ว "
 "{total_number_of_active_members_registered_in_the_last_two_years} "
-"สมาชิกที่ลงทะเบียนในช่วงสองปีที่ผ่านมา "
+"คนลงทะเบียนในสองปีที่ผ่านมา "
 "{total_number_of_active_members_registered_more_than_two_years_ago} "
-"สมาชิกที่ลงทะเบียนไว้มากกว่าสองปีที่แล้ว "
+"คนลงทะเบียนเมื่อมากกว่าสองปีที่แล้ว "
 "{total_number_of_active_members_registered_before_2019_08_01} "
-"สมาชิกที่ลงทะเบียนก่อนวันที่ 1 สิงหาคม 2019"
+"คนลงทะเบียนก่อนวันที่ 1 สิงหาคม 2019"
 
 #: .\admin\views.py:327
 #, python-brace-format
@@ -893,8 +902,8 @@ msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
-"ผู้ดูแลระบบ: {total_number_of_active_members_registered_in_year} "
-"สมาชิกที่ใช้งานอยู่ซึ่งลงทะเบียนใน {year}"
+"ผู้ดูแลระบบ: สมาชิกที่ใช้งานอยู่ "
+"{total_number_of_active_members_registered_in_year} คนลงทะเบียนในปี {year}"
 
 #: .\admin\views.py:382
 #, python-brace-format
@@ -908,14 +917,15 @@ msgid ""
 "{total_percent_of_male_active_members_in_age_range} males, "
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
-"ผู้ดูแลระบบ: {total_number_of_active_members_in_age_range} "
-"({total_number_of_female_active_members_in_age_range} หญิง "
-"{total_number_of_male_active_members_in_age_range} ชาย "
-"{total_number_of_other_active_members_in_age_range} อื่นๆ) สมาชิกที่ใช้งานอยู่ อายุ "
-"{min_age} ถึง {max_age} "
-"({total_percent_of_female_active_members_in_age_range} หญิง "
-"{total_percent_of_male_active_members_in_age_range} ชาย "
-"{total_percent_of_other_active_members_in_age_range} อื่นๆ)"
+"ผู้ดูแลระบบ: สมาชิกที่ใช้งานอยู่ "
+"{total_number_of_active_members_in_age_range} คน (หญิง "
+"{total_number_of_female_active_members_in_age_range} ชาย "
+"{total_number_of_male_active_members_in_age_range} อื่น ๆ "
+"{total_number_of_other_active_members_in_age_range}) อายุระหว่าง {min_age}"
+" ถึง {max_age} ปี (หญิง "
+"{total_percent_of_female_active_members_in_age_range} ชาย "
+"{total_percent_of_male_active_members_in_age_range} อื่น ๆ "
+"{total_percent_of_other_active_members_in_age_range})"
 
 #: .\admin\views.py:446
 #, python-brace-format
@@ -934,20 +944,21 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "others) entered the site in the last eight months."
 msgstr ""
-"ผู้ดูแลระบบ: "
-"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"หญิง, "
-"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"ชาย, "
-"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"อื่นๆ) สมาชิกที่ใช้งานอยู่ที่มีอายุตั้งแต่ {min_age} ถึง {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
-"หญิง, "
-"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
-"ชาย, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"อื่นๆ) เข้ามาในไซต์ในช่วงแปดเดือนที่ผ่านมา"
+"ผู้ดูแลระบบ: สมาชิกที่ใช้งานอยู่ "
+"{total_number_of_active_members_in_age_range_in_the_last_eight_months} คน "
+"(หญิง "
+"{total_number_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" ชาย "
+"{total_number_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" อื่น ๆ "
+"{total_number_of_other_active_members_in_age_range_in_the_last_eight_months})"
+" อายุระหว่าง {min_age} ถึง {max_age} ปี (หญิง "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_eight_months}"
+" ชาย "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
+" อื่น ๆ "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months})"
+" เข้าสู่เว็บไซต์ในแปดเดือนที่ผ่านมา"
 
 #: .\admin\views.py:510
 #, python-brace-format
@@ -966,24 +977,25 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) entered the site in the last four months."
 msgstr ""
-"ผู้ดูแลระบบ: "
-"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
-"({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
-"หญิง, "
-"{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
-"ชาย, "
-"{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
-"อื่นๆ) สมาชิกที่ใช้งานอยู่ที่มีอายุตั้งแต่ {min_age} ถึง {max_age} "
-"({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
-"หญิง, "
-"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
-"ชาย, "
-"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"อื่นๆ) เข้ามาในไซต์ในช่วงสี่เดือนที่ผ่านมา"
+"ผู้ดูแลระบบ: สมาชิกที่ใช้งานอยู่ "
+"{total_number_of_active_members_in_age_range_in_the_last_four_months} คน "
+"(หญิง "
+"{total_number_of_female_active_members_in_age_range_in_the_last_four_months}"
+" ชาย "
+"{total_number_of_male_active_members_in_age_range_in_the_last_four_months}"
+" อื่น ๆ "
+"{total_number_of_other_active_members_in_age_range_in_the_last_four_months})"
+" อายุระหว่าง {min_age} ถึง {max_age} ปี (หญิง "
+"{total_percent_of_female_active_members_in_age_range_in_the_last_four_months}"
+" ชาย "
+"{total_percent_of_male_active_members_in_age_range_in_the_last_four_months}"
+" อื่น ๆ "
+"{total_percent_of_other_active_members_in_age_range_in_the_last_four_months})"
+" เข้าสู่เว็บไซต์ในสี่เดือนที่ผ่านมา"
 
 #: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
-msgstr "ผู้ใช้ไม่สามารถชอบตัวเองได้"
+msgstr "ผู้ใช้ไม่สามารถถูกใจตัวเองได้"
 
 #: .\likes\managers.py:33
 msgid "User already likes other user."
@@ -991,7 +1003,7 @@ msgstr "ผู้ใช้ถูกใจผู้ใช้รายอื่น
 
 #: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
-msgstr "ผู้ใช้ไม่สามารถชอบผู้ใช้ที่ถูกบล็อกได้"
+msgstr "ผู้ใช้ไม่สามารถถูกใจผู้ใช้ที่ถูกบล็อกได้"
 
 #: .\likes\models.py:24
 msgid "from user"
@@ -1003,43 +1015,43 @@ msgstr "ให้กับผู้ใช้"
 
 #: .\likes\models.py:31
 msgid "user like"
-msgstr "ผู้ใช้ชอบ"
+msgstr "การถูกใจของผู้ใช้"
 
 #: .\likes\models.py:32
 msgid "user likes"
-msgstr "ผู้ใช้ชอบ"
+msgstr "การถูกใจของผู้ใช้"
 
 #: .\likes\views.py:53
 msgid "Girls You Like"
-msgstr "ผู้หญิงที่คุณชอบ"
+msgstr "ผู้หญิงที่คุณถูกใจ"
 
 #: .\likes\views.py:54
 msgid "Boys You Like"
-msgstr "ผู้ชายที่คุณชอบ"
+msgstr "ผู้ชายที่คุณถูกใจ"
 
 #: .\likes\views.py:55
 msgid "People You Like"
-msgstr "คนที่คุณชอบ"
+msgstr "คนที่คุณถูกใจ"
 
 #: .\likes\views.py:58
 msgid "Girls Who Like You"
-msgstr "ผู้หญิงที่ชอบคุณ"
+msgstr "ผู้หญิงที่ถูกใจคุณ"
 
 #: .\likes\views.py:59
 msgid "Boys Who Like You"
-msgstr "เด็กผู้ชายที่ชอบคุณ"
+msgstr "ผู้ชายที่ถูกใจคุณ"
 
 #: .\likes\views.py:60
 msgid "People Who Like You"
-msgstr "คนที่ชอบคุณ"
+msgstr "คนที่ถูกใจคุณ"
 
 #: .\likes\views.py:62
 msgid "Mutual Likes"
-msgstr "ความชอบร่วมกัน"
+msgstr "ถูกใจซึ่งกันและกัน"
 
 #: .\matches\apps.py:14
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "คู่ที่เข้ากันของ Speedy Match"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
@@ -1048,7 +1060,7 @@ msgstr "บันทึกการตั้งค่าการจับคู
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "อันดับการแข่งขัน"
+msgstr "อันดับการจับคู่"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
@@ -1071,7 +1083,7 @@ msgstr "Speedy Match [อัลฟา]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "เกี่ยวกับ สปีดี้ แมตช์ Speedy Match"
+msgstr "เกี่ยวกับ Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1086,14 +1098,14 @@ msgid ""
 "(no age limit!). The site is vegan and vegetarian friendly. It is currently "
 "available in %(languages_num)s languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedymatch.com/ Speedy Match \" Speedy "
-"Match title=\"\"></a> เป็นเว็บแอปหาคู่/"
-"จับคู่ใหม่เพื่อจุดประสงค์โรแมนติกสำหรับคนโสดที่เป็นสมาชิกของ <a href=\"https://"
-"%(language_code)s. Speedy Net.net Speedy Net /\" title= Speedy Match \"\"></"
-"a> ด้วย คุณสามารถค้นหาผู้คนที่ตรงกันเพื่อออกเดทและแชทกับพวกเขาทางออนไลน์ คุณสามารถเพิ ่มผ "
-"Speedy Net ู้คนเป็นเพื่อนบน กดไลค์ผู้คนและส Speedy Match ่งข ้อความถึงพวกเขาได้ Speedy "
-"Match เปิดให้ลงทะเบียนฟรีสำหรับผู้คนจากทุกประเทศและทุกวัย (ไม่จำกัดอายุ!) "
-"เว็บไซต์นี้เป็นมิตรกับมังสวิรัติและมังสวิรัติ ขณะนี้มีให้บริการในภาษา %(languages_num)s"
+"<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> "
+"เป็นเว็บแอปหาคู่/จับคู่ใหม่เพื่อจุดประสงค์ด้านความรักสำหรับคนโสดที่เป็นสมาชิกของ"
+" Speedy Net ด้วย Speedy Match "
+"คุณสามารถค้นหาคนที่เข้ากันได้เพื่อออกเดทและแชทกับพวกเขาออนไลน์ Speedy "
+"Match เปิดให้คนโสดทุกวัยเข้าร่วม (ไม่จำกัดอายุ!) "
+"เว็บไซต์นี้เป็นมิตรกับชาววีแกนและมังสวิรัติ ขณะนี้มีให้บริการใน "
+"%(languages_num)s ภาษา"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1101,8 +1113,9 @@ msgid ""
 "experiments on animals. Speedy Match is a dating app friendly for vegan and "
 "vegetarian people and animals."
 msgstr ""
-"ผู้ก่อตั้ง Speedy Match เป็นวีแกน สนับสนุนสิทธิสัตว์ และคัดค้านการทดลองกับสัตว์ Speedy Match "
-"เป็นแอปหาคู่ที่เหมาะสำหรับผู้เป็นมังสวิรัติและมังสวิรัติและสัตว์ต่างๆ"
+"ผู้ก่อตั้ง Speedy Match เป็นชาววีแกน สนับสนุนสิทธิสัตว์ "
+"และคัดค้านการทดลองกับสัตว์ Speedy Match เป็นแอปหาคู่ที่เป็นมิตรกับชาววีแกน"
+" มังสวิรัติ และสัตว์ต่าง ๆ"
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -1125,9 +1138,9 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"ฟีเจอร์ทั้งหมดบน Speedy Net และ Speedy Match นั้นไม่มีค่าใช้จ่าย เข้าร่วม Speedy Match "
-"วันนี้เพื่อค้นหาคู่ที่ตรงกัน ใช้เวลาเพียงไม่กี่นาที <a href=\"/\" title=\"Join Speedy "
-"Match\">คลิกที่นี่</a> เพื่อเข้าร่วม"
+"ฟีเจอร์ทั้งหมดบน Speedy Net และ Speedy Match ไม่มีค่าใช้จ่าย เข้าร่วม "
+"Speedy Match วันนี้เพื่อค้นหาคู่ที่เข้ากัน ใช้เวลาเพียงไม่กี่นาที <a "
+"href=\"/\" title=\"Join Speedy Match\">คลิกที่นี่</a> เพื่อเข้าร่วม"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -1143,21 +1156,22 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Match ตั้งชื่อตาม <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a> สุนัขตัวเมียที่อยู่กับเรามานานหลายปีและเสียชีวิตในปี "
-"2546 ให้กำเนิดลูกสุนัข 7 ตัวในปี 1988"
+"Speedy Match ตั้งชื่อตาม <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> สุนัขตัวเมียที่อยู่กับเรามาหลายปีและตายในปี "
+"2003 Speedy ให้กำเนิดลูกสุนัข 7 ตัวในปี 1988"
 
 #: .\templates\about\about.html:29
 msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"ขณะนี้ Speedy Match อยู่ในเวอร์ชันอัลฟ่า เปิดตัวในเดือนสิงหาคม 2019 เวอร์ชันภาษาอ Speedy "
-"Match ังกฤษอยู่ระหว่างการผลิต"
+"ขณะนี้ Speedy Match อยู่ในรุ่นอัลฟ่า เปิดตัวในเดือนสิงหาคม 2019 Speedy "
+"Match เวอร์ชันภาษาอังกฤษอยู่ระหว่างการผลิต"
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
-msgstr "ขอขอบคุณและขอให้โชคดี"
+msgstr "ขอบคุณและขอให้โชคดี"
 
 #: .\templates\about\about.html:32
 msgid "Uri Rodberg"
@@ -1165,7 +1179,7 @@ msgstr "อูรี ร็อดเบิร์ก"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "ผู้ก่อตั้งและผู้อำนวยการ Speedy Net Speedy Match และ"
+msgstr "ผู้ก่อตั้งและผู้อำนวยการของ Speedy Net และ Speedy Match"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1195,7 +1209,7 @@ msgstr "เกี่ยวกับฉัน"
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "เกี่ยวกับการแข่งขันของฉัน"
+msgstr "เกี่ยวกับคู่ของฉัน"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
@@ -1207,26 +1221,27 @@ msgstr "ขั้นตอนต่อไป"
 
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "บัญชี Speedy Net ของคุณไม่ได้ใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
+msgstr ""
+"บัญชี Speedy Net ของคุณยังไม่ได้เปิดใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "ผู้ดูแลระบบ - การแข่งขันทั้งหมด"
+msgstr "ผู้ดูแลระบบ - คู่ที่เข้ากันทั้งหมด"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "การแข่งขันของคุณ"
+msgstr "คู่ที่เข้ากันของคุณ"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "ไม้ขีด"
+msgstr "คู่ที่เข้ากัน"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "ชอบ"
+msgstr "ถูกใจ"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1241,11 +1256,11 @@ msgstr "การตั้งค่าการจับคู่"
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "เว็บไซต์ที่เป็นมิตรต่อมังสวิรัติ"
+msgstr "เว็บไซต์ที่เป็นมิตรต่อชาววีแกน"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1259,7 +1274,7 @@ msgstr ""
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "มีคนชอบคุณใน %(site_name)s"
+msgstr "มีคนถูกใจคุณบน %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -1271,11 +1286,11 @@ msgstr "เพื่อนของคุณ"
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "คุณไม่มีสิ่งที่ชอบที่นี่"
+msgstr "คุณไม่มีรายการถูกใจที่นี่"
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
-msgstr "ออกเดทออนไลน์ฟรี"
+msgstr "หาคู่ออนไลน์ฟรี"
 
 #: .\templates\main\main_page.html:10
 msgid ""
@@ -1284,32 +1299,33 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"Speedy Match เป็นเว็บแอปหาคู่/จับคู่ใหม่เพื่อจุดประสงค์โรแมนติกสำหรับคนโสดที่เป็นสมาชิกของ "
-"Speedy Net ด้วย Speedy Match "
-"คุณสามารถค้นหาผู้คนที่ตรงกันเพื่อออกเดทและแชทกับพวกเขาทางออนไลน์ "
-"เว็บไซต์นี้เป็นมิตรกับมังสวิรัติและมังสวิรัติ"
+"Speedy Match "
+"เป็นเว็บแอปหาคู่/จับคู่ใหม่เพื่อจุดประสงค์ด้านความรักสำหรับคนโสดที่เป็นสมาชิกของ"
+" Speedy Net ด้วย Speedy Match "
+"คุณสามารถค้นหาคนที่เข้ากันได้เพื่อออกเดทและแชทกับพวกเขาออนไลน์ "
+"เว็บไซต์นี้เป็นมิตรกับชาววีแกนและมังสวิรัติ"
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "กำลังมองหาแฟน? กำลังมองหาแฟน? มาพบกับสปีดี้! Speedy"
+msgstr "กำลังมองหาแฟนหนุ่ม? กำลังมองหาแฟนสาว? มาพบกับ Speedy สิ!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"ฟีเจอร์ทั้งหมดบน Speedy Net และ Speedy Match นั้นไม่มีค่าใช้จ่าย เข้าร่วม Speedy Match "
-"วันนี้เพื่อค้นหาคู่ที่ตรงกัน ใช้เวลาเพียงไม่กี่นาที"
+"ฟีเจอร์ทั้งหมดบน Speedy Net และ Speedy Match ไม่มีค่าใช้จ่าย เข้าร่วม "
+"Speedy Match วันนี้เพื่อค้นหาคู่ที่เข้ากัน ใช้เวลาเพียงไม่กี่นาที"
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
-msgstr "อัพเดทการแข่งขัน"
+msgstr "อัปเดตคู่ที่เข้ากัน"
 
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "อาหาร"
+msgstr "การรับประทานอาหาร"
 
 #: .\templates\matches\match_list.html:60
 msgid "Age:"
@@ -1327,11 +1343,13 @@ msgstr "เพิ่มตัวเลือกเพิ่มเติม"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "คุณยังไม่มีการแข่งขันใดๆ ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
+msgstr ""
+"คุณยังไม่มีคู่ที่เข้ากัน "
+"ลองขยายการตั้งค่าการค้นหาของคุณหรือตรวจสอบอีกครั้งในภายหลัง"
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "กลับไปที่การแข่งขัน"
+msgstr "กลับไปที่คู่ที่เข้ากัน"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
@@ -1344,12 +1362,12 @@ msgstr "เพื่อน"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "ชอบ"
+msgstr "ถูกใจ"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "ไม่เหมือน"
+msgstr "เลิกถูกใจ"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
@@ -1358,12 +1376,12 @@ msgstr "เพื่อนของคุณ"
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "ชอบคุณ"
+msgstr "ถูกใจคุณ"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "คุณชอบ"
+msgstr "คุณถูกใจ"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
@@ -1383,8 +1401,8 @@ msgstr "สถานะความสัมพันธ์"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "เข้าชมครั้งล่าสุด Speedy Match"
+msgstr "เข้าชม Speedy Match ครั้งล่าสุด"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr "ไม่มีการแข่งขัน"
+msgstr "ไม่มีคู่ที่เข้ากัน"

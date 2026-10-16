@@ -317,7 +317,7 @@ msgstr "Izbriši račun"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Još nemaš prijatelja."
+msgstr "Še nimate prijateljev."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"

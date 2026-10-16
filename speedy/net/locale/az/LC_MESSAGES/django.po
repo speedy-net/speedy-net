@@ -154,7 +154,7 @@ msgstr "Speedy Net istifadəçisi"
 
 #: .\accounts\models.py:37
 msgid "User"
-msgstr "istifadəçi"
+msgstr "İstifadəçi"
 
 #: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"

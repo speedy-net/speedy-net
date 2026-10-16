@@ -40,10 +40,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը? Սա մշտական է և "
-"անշրջելի. Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը. "
-"Եթե վստահ եք, այս դաշտում գրեք \"Yes. Delete my account.\" ճիշտ նույնությամբ "
-"և մեծատառերի տարբերությունը պահպանելով."
+"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը։ Սա մշտական է և "
+"անշրջելի։ Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը։ "
+"Եթե վստահ եք, այս դաշտում գրեք «Այո։ Ջնջել իմ հաշիվը։» ճիշտ նույնությամբ՝ "
+"մեծատառերի և փոքրատառերի տարբերությունը պահպանելով։"
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +53,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը? Սա մշտական է և "
-"անշրջելի. Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը. "
-"Եթե վստահ եք, այս դաշտում գրեք \"Yes. Delete my account.\" ճիշտ նույնությամբ "
-"և մեծատառերի տարբերությունը պահպանելով."
+"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը։ Սա մշտական է և "
+"անշրջելի։ Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը։ "
+"Եթե վստահ եք, այս դաշտում գրեք «Այո։ Ջնջել իմ հաշիվը։» ճիշտ նույնությամբ՝ "
+"մեծատառերի և փոքրատառերի տարբերությունը պահպանելով։"
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,10 +66,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը? Սա մշտական է և "
-"անշրջելի. Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը. "
-"Եթե վստահ եք, այս դաշտում գրեք \"Yes. Delete my account.\" ճիշտ նույնությամբ "
-"և մեծատառերի տարբերությունը պահպանելով."
+"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը։ Սա մշտական է և "
+"անշրջելի։ Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը։ "
+"Եթե վստահ եք, այս դաշտում գրեք «Այո։ Ջնջել իմ հաշիվը։» ճիշտ նույնությամբ՝ "
+"մեծատառերի և փոքրատառերի տարբերությունը պահպանելով։"
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -134,19 +134,19 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը? Սա մշտական է և "
-"անշրջելի. Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը. "
-"Եթե վստահ եք, այս դաշտում գրեք \"Yes. Delete my account.\" ճիշտ նույնությամբ "
-"և մեծատառերի տարբերությունը պահպանելով."
+"Վստա՞հ եք, որ ցանկանում եք ջնջել ձեր Speedy Net հաշիվը։ Սա մշտական է և "
+"անշրջելի։ Ձեր Speedy Net հաշիվը ջնջելը նաև կջնջի ձեր Speedy Match հաշիվը։ "
+"Եթե վստահ եք, այս դաշտում գրեք «Այո։ Ջնջել իմ հաշիվը։» ճիշտ նույնությամբ՝ "
+"մեծատառերի և փոքրատառերի տարբերությունը պահպանելով։"
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
-msgstr "Անվավեր գաղտնաբառ."
+msgstr "Անվավեր գաղտնաբառ։"
 
 #: .\accounts\forms.py:68 .\accounts\tests\test_views.py:270
 #: .\accounts\views.py:149
 msgid "Yes. Delete my account."
-msgstr "Yes. Delete my account."
+msgstr "Այո։ Ջնջել իմ հաշիվը։"
 
 #: .\accounts\models.py:35
 msgid "Speedy Net User"
@@ -154,7 +154,7 @@ msgstr "Speedy Net օգտատեր"
 
 #: .\accounts\models.py:37
 msgid "User"
-msgstr "Օգտագործող"
+msgstr "Օգտատեր"
 
 #: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"
@@ -179,11 +179,11 @@ msgstr ""
 "Կայքում ակտիվ անդամների ընդհանուր թիվը "
 "{total_number_of_active_members_in_the_last_four_months} է, որոնցից "
 "{total_number_of_active_members_in_the_last_week} անդամ մուտք է գործել կայք "
-"վերջին շաբաթվա ընթացքում."
+"վերջին շաբաթվա ընթացքում։"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Net [alpha]"
-msgstr "Speedy Net [alpha]"
+msgstr "Speedy Net [ալֆա]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
@@ -200,11 +200,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a>-ը նոր սոցիալական ցանց է. Speedy Net-ի միջոցով կարող եք "
-"շփվել ձեր ընկերների հետ. Speedy Net-ը բաց է անվճար գրանցման համար բոլոր "
-"երկրների և բոլոր տարիքների մարդկանց համար (տարիքային սահմանափակում չկա!). "
-"Կայքը հարմար է վեգան և բուսակեր մարդկանց համար. այն ներկայումս հասանելի է "
-"%(languages_num)s լեզվով."
+"Net\">Speedy Net</a>-ը նոր սոցիալական ցանց է։ Speedy Net-ի միջոցով կարող եք "
+"շփվել ձեր ընկերների հետ։ Speedy Net-ը բաց է անվճար գրանցման համար բոլոր "
+"երկրների և բոլոր տարիքների մարդկանց համար (տարիքային սահմանափակում չկա!)։ "
+"Կայքը հարմար է վեգան և բուսակեր մարդկանց համար։ Այն ներկայումս հասանելի է "
+"%(languages_num)s լեզվով։"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -213,68 +213,72 @@ msgid ""
 "and vegetarian people and animals."
 msgstr ""
 "Speedy Net-ի հիմնադիրները վեգան են, աջակցում են կենդանիների իրավունքներին և "
-"դեմ են կենդանիների վրա փորձերին. Speedy Net-ը սոցիալական ցանց է, որը "
-"բարեկամական է վեգան և բուսակեր մարդկանց ու կենդանիների համար."
+"դեմ են կենդանիների վրա փորձերին։ Speedy Net-ը սոցիալական ցանց է, որը "
+"բարեկամական է վեգան և բուսակեր մարդկանց ու կենդանիների համար։"
 
 #: .\templates\about\about.html:21
 msgid ""
-"We decided to limit the number of friends on Speedy Net to 800. We encourage "
-"you to add as friends only people you know personally. You can select which "
-"details will appear on your profile as public, which details only to friends "
-"and which details will be private. Private details will appear only to you."
+"We decided to limit the number of friends on Speedy Net to 800. We encourage"
+" you to add as friends only people you know personally. You can select which"
+" details will appear on your profile as public, which details only to "
+"friends and which details will be private. Private details will appear only "
+"to you."
 msgstr ""
-"Մենք որոշել ենք սահմանափակել ընկերների քանակը Speedy Net-ում մինչև 800. մենք "
-"խրախուսում ենք ձեզ որպես ընկեր ավելացնել միայն այն մարդկանց, որոնց անձամբ "
-"գիտեք. դուք կարող եք ընտրել, թե որ տվյալները կհայտնվեն ձեր պրոֆիլում որպես "
-"հանրային, որոնք միայն ընկերների համար և որոնք կլինեն մասնավոր. մասնավոր "
-"տվյալները տեսանելի կլինեն միայն ձեզ."
+"Մենք որոշել ենք սահմանափակել ընկերների քանակը Speedy Net-ում մինչև 800։ Մենք"
+" խրախուսում ենք ձեզ որպես ընկեր ավելացնել միայն այն մարդկանց, որոնց անձամբ "
+"գիտեք։ Դուք կարող եք ընտրել, թե որ տվյալները կհայտնվեն ձեր պրոֆիլում որպես "
+"հանրային, որոնք միայն ընկերների համար և որոնք կլինեն մասնավոր։ Մասնավոր "
+"տվյալները տեսանելի կլինեն միայն ձեզ։"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
 msgid ""
-"You can use our new app, <a href=\"https://%(language_code)s.speedymatch.com/"
-"\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
-"dating. Speedy Match is open to singles of all ages."
+"You can use our new app, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, to find matching people for dating. Speedy Match "
+"is open to singles of all ages."
 msgstr ""
-"Դուք կարող եք օգտագործել մեր նոր հավելվածը՝ <a href=\"https://"
-"%(language_code)s.speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>-"
-"ը, ժամադրության համար համապատասխան մարդկանց գտնելու նպատակով. Speedy Match-ը "
-"բաց է բոլոր տարիքների միայնակ մարդկանց համար."
+"Դուք կարող եք օգտագործել մեր նոր հավելվածը՝ <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>-ը, ժամադրության համար համապատասխան մարդկանց գտնելու"
+" նպատակով։ Speedy Match-ը բաց է բոլոր տարիքների միայնակ մարդկանց համար։"
 
 #: .\templates\about\about.html:25
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
-"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
-"title=\"Join Speedy Net\">Click here</a> to join."
+"Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\""
+" title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Speedy Net-ի և Speedy Match-ի բոլոր հնարավորությունները անվճար են. միացեք "
-"Speedy Net-ին այսօր ընկերներ գտնելու համար, դա կտևի ընդամենը մի քանի րոպե. "
-"միանալու համար <a href=\"/\" title=\"Join Speedy Net\">սեղմեք այստեղ</a>."
+"Speedy Net-ի և Speedy Match-ի բոլոր հնարավորությունները անվճար են։ Միացեք "
+"Speedy Net-ին այսօր ընկերներ գտնելու համար, դա կտևի ընդամենը մի քանի րոպե։ "
+"Միանալու համար <a href=\"/\" title=\"Join Speedy Net\">սեղմեք այստեղ</a>։"
 
 #: .\templates\about\about.html:27
 msgid ""
 "Speedy Net is a free software & open source project. If you want to help "
 "developing and improving Speedy Net, please contact me by email."
 msgstr ""
-"Speedy Net-ը ազատ ծրագրային և բաց կոդով նախագիծ է. եթե ցանկանում եք օգնել "
+"Speedy Net-ը ազատ ծրագրային և բաց կոդով նախագիծ է։ Եթե ցանկանում եք օգնել "
 "Speedy Net-ը զարգացնելու և բարելավելու գործում, խնդրում եմ կապվեք ինձ հետ "
-"էլփոստով."
+"էլփոստով։"
 
 #: .\templates\about\about.html:29
 msgid ""
-"Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
-"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Net is named after <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
+"and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net-ը կոչվել է <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a>-ի անունով, էգ շան, որը երկար տարիներ մեզ "
-"հետ էր և սատկեց 2003 թվականին. Speedy-ն 1988 թվականին ծնեց 7 ձագ."
+"Speedy Net-ը կոչվել է <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>-ի անունով, էգ շան, որը երկար տարիներ մեզ հետ էր "
+"և սատկեց 2003 թվականին։ Speedy-ն 1988 թվականին ծնեց 7 ձագ։"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
 msgstr ""
-"Speedy Net-ը ներկայումս alpha փուլում է. այն գործարկվել է 2012 թվականի "
-"հունիսին."
+"Speedy Net-ը ներկայումս alpha փուլում է։ Այն գործարկվել է 2012 թվականի "
+"հունիսին։"
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -303,12 +307,12 @@ msgstr "Բարի գալուստ %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "Խնդրում ենք հաստատել ձեր էլփոստի հասցեն."
+msgstr "Խնդրում ենք հաստատել ձեր էլփոստի հասցեն։"
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Ձեր Speedy Net հաշիվը ակտիվ չէ. մուտք գործեք այս էջը այն ակտիվացնելու համար."
+"Ձեր Speedy Net հաշիվը ակտիվ չէ։ Մուտք գործեք այս էջը այն ակտիվացնելու համար։"
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -320,7 +324,7 @@ msgstr "Ջնջել հաշիվը"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Դուք դեռ ընկերներ չունեք."
+msgstr "Դուք դեռ ընկերներ չունեք։"
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
@@ -328,23 +332,23 @@ msgstr "Ձեր ընկերները"
 
 #: .\templates\main\main_page.html:9
 msgid ""
-"Speedy Net is a new social network. With Speedy Net you can communicate with "
-"your friends. Speedy Net is open to free registration for people from all "
+"Speedy Net is a new social network. With Speedy Net you can communicate with"
+" your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net-ը նոր սոցիալական ցանց է. Speedy Net-ի միջոցով կարող եք շփվել ձեր "
-"ընկերների հետ. Speedy Net-ը բաց է անվճար գրանցման համար բոլոր երկրների և "
-"բոլոր տարիքների մարդկանց համար (տարիքային սահմանափակում չկա!). Կայքը հարմար "
-"է վեգան և բուսակեր մարդկանց համար."
+"Speedy Net-ը նոր սոցիալական ցանց է։ Speedy Net-ի միջոցով կարող եք շփվել ձեր "
+"ընկերների հետ։ Speedy Net-ը բաց է անվճար գրանցման համար բոլոր երկրների և "
+"բոլոր տարիքների մարդկանց համար (տարիքային սահմանափակում չկա!)։ Կայքը հարմար "
+"է վեգան և բուսակեր մարդկանց համար։"
 
 #: .\templates\main\main_page.html:17
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Net today to find friends, it only takes a few minutes."
 msgstr ""
-"Speedy Net-ի և Speedy Match-ի բոլոր հնարավորությունները անվճար են. միացեք "
-"Speedy Net-ին այսօր ընկերներ գտնելու համար, դա կտևի ընդամենը մի քանի րոպե."
+"Speedy Net-ի և Speedy Match-ի բոլոր հնարավորությունները անվճար են։ Միացեք "
+"Speedy Net-ին այսօր ընկերներ գտնելու համար, դա կտևի ընդամենը մի քանի րոպե։"
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
@@ -353,7 +357,8 @@ msgstr "Speedy Match – Speedy-ի ծանոթություններ"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Փնտրո՞ւմ եք ընկեր? Փնտրո՞ւմ եք ընկերուհի? Եկեք և հանդիպեք Speedy-ին!"
+msgstr ""
+"Փնտրո՞ւմ եք սիրեկան։ Փնտրո՞ւմ եք սիրած աղջկա։ Եկեք և հանդիպեք Speedy-ին։"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"

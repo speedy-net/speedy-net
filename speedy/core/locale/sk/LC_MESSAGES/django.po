@@ -15,11 +15,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2 : 3);\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "Tvoj priateľ"
+msgstr "Váš priateľ"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
@@ -310,17 +310,17 @@ msgstr "Označiť všetko ako prečítané"
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "ty:"
+msgstr "Vy:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "ty:"
+msgstr "Vy:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "ty:"
+msgstr "Vy:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -373,9 +373,7 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Match. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Match."
+msgstr "%(user_name)s má aj profil na Speedy Match. Zobraziť profil používateľa %(user_name)s na Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -383,9 +381,7 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Match. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Match."
+msgstr "%(user_name)s má aj profil na Speedy Match. Zobraziť profil používateľa %(user_name)s na Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -393,9 +389,7 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Match. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Match."
+msgstr "%(user_name)s má aj profil na Speedy Match. Zobraziť profil používateľa %(user_name)s na Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -403,9 +397,7 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Net. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Net."
+msgstr "%(user_name)s má aj profil na Speedy Net. Zobraziť profil používateľa %(user_name)s na Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -413,9 +405,7 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Net. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Net."
+msgstr "%(user_name)s má aj profil na Speedy Net. Zobraziť profil používateľa %(user_name)s na Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -423,24 +413,22 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Net. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Net."
+msgstr "%(user_name)s má aj profil na Speedy Net. Zobraziť profil používateľa %(user_name)s na Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Máte tiež profil Speedy Net. Pozrite si svoj profil na Speedy Net."
+msgstr "Máte aj profil na Speedy Net. Pozrite si svoj profil na Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Máte tiež profil Speedy Net. Pozrite si svoj profil na Speedy Net."
+msgstr "Máte aj profil na Speedy Net. Pozrite si svoj profil na Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Máte tiež profil Speedy Net. Pozrite si svoj profil na Speedy Net."
+msgstr "Máte aj profil na Speedy Net. Pozrite si svoj profil na Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -460,17 +448,17 @@ msgstr "Pridať medzi priateľov"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Naozaj chcete blokovať? "
+msgstr "Naozaj chcete zablokovať "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Naozaj chcete blokovať? "
+msgstr "Naozaj chcete zablokovať "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Naozaj chcete blokovať? "
+msgstr "Naozaj chcete zablokovať "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -505,17 +493,17 @@ msgstr "Odblokovať "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Správa "
+msgstr "Nahlásiť "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Správa "
+msgstr "Nahlásiť "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Správa "
+msgstr "Nahlásiť "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -595,17 +583,17 @@ msgstr "Odmietnuť"
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "Prijmite žiadosť o priateľstvo"
+msgstr "Prijať žiadosť o priateľstvo"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "Prijmite žiadosť o priateľstvo"
+msgstr "Prijať žiadosť o priateľstvo"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "Prijmite žiadosť o priateľstvo"
+msgstr "Prijať žiadosť o priateľstvo"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
@@ -655,17 +643,17 @@ msgstr "Vitajte"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "Tvoj priateľ"
+msgstr "Váš priateľ"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "Tvoj priateľ"
+msgstr "Váš priateľ"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr "Tvoj priateľ"
+msgstr "Váš priateľ"
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
@@ -685,23 +673,17 @@ msgstr "Zobraziť všetko"
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"Váš účet Speedy Net nie je aktívny. Ak ju chcete aktivovať, prejdite na túto "
-"stránku."
+msgstr "Váš účet na Speedy Net nie je aktívny. Ak ho chcete aktivovať, prejdite na túto stránku."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"Váš účet Speedy Net nie je aktívny. Ak ju chcete aktivovať, prejdite na túto "
-"stránku."
+msgstr "Váš účet na Speedy Net nie je aktívny. Ak ho chcete aktivovať, prejdite na túto stránku."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"Váš účet Speedy Net nie je aktívny. Ak ju chcete aktivovať, prejdite na túto "
-"stránku."
+msgstr "Váš účet na Speedy Net nie je aktívny. Ak ho chcete aktivovať, prejdite na túto stránku."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -869,7 +851,7 @@ msgstr "E-mailová adresa"
 
 #: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
-msgstr "emailová adresa"
+msgstr "e-mailová adresa"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
@@ -878,7 +860,7 @@ msgstr "E-mailová adresa:"
 #: .\__translations\__translations.py:15
 #: .\templates\profiles\user_info_widget.html:70
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: .\__translations\__translations.py:16
 msgid "Value must be valid JSON."
@@ -915,19 +897,19 @@ msgstr "Priatelia"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Sledovanie vzťahu"
+msgstr "Vzťah sledovania"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Nasledujúce vzťahy"
+msgstr "Vzťahy sledovania"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Blokátorský vzťah"
+msgstr "Vzťah blokovania"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
-msgstr "Blokované vzťahy"
+msgstr "Vzťahy blokovania"
 
 #: .\__translations\__translations.py:36
 #, python-format
@@ -937,27 +919,25 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] ""
-"Zoznam obsahuje %(show_value)d položku, nemal by obsahovať viac ako "
-"%(limit_value)d."
-msgstr[1] ""
-"Zoznam obsahuje %(show_value)d položiek, nemal by obsahovať viac ako "
-"%(limit_value)d."
+msgstr[0] "Zoznam obsahuje %(show_value)d položku, nemal by obsahovať viac ako %(limit_value)d."
+msgstr[1] "Zoznam obsahuje %(show_value)d položky, nemal by obsahovať viac ako %(limit_value)d."
+msgstr[2] "Zoznam obsahuje %(show_value)d položky, nemal by obsahovať viac ako %(limit_value)d."
+msgstr[3] "Zoznam obsahuje %(show_value)d položiek, nemal by obsahovať viac ako %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgstr "používateľské meno (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "male"
 msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgstr "používateľské meno (slug)"
 
 #: .\__translations\__translations.py:44
 msgctxt "other"
 msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgstr "používateľské meno (slug)"
 
 #: .\__translations\__translations.py:46
 msgctxt "female"
@@ -1058,47 +1038,47 @@ msgstr "Pridať"
 #: .\__translations\__translations.py:70
 msgctxt "female"
 msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgstr "Kde bývam?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
 msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgstr "Kde bývam?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
 msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgstr "Kde bývam?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgstr "Kde bývate?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgstr "Kde bývate?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "kde bývaš?"
+msgstr "Kde bývate?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgstr "Napíšte, kde bývate."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgstr "Napíšte, kde bývate."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Prosím napíšte kde bývate."
+msgstr "Napíšte, kde bývate."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
@@ -1148,32 +1128,32 @@ msgstr "Carnist (žerie zvieratá)"
 #: .\__translations\__translations.py:94
 msgctxt "female"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Vegánka"
 
 #: .\__translations\__translations.py:95
 msgctxt "male"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Vegán"
 
 #: .\__translations\__translations.py:96
 msgctxt "other"
 msgid "Vegan"
-msgstr "Vegan"
+msgstr "Vegán/ka"
 
 #: .\__translations\__translations.py:98
 msgctxt "female"
 msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgstr "Vegetariánka"
 
 #: .\__translations\__translations.py:99
 msgctxt "male"
 msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgstr "Vegetarián"
 
 #: .\__translations\__translations.py:100
 msgctxt "other"
 msgid "Vegetarian"
-msgstr "Vegetariánska"
+msgstr "Vegetarián/ka"
 
 #: .\__translations\__translations.py:102
 msgctxt "female"
@@ -1193,52 +1173,52 @@ msgstr "Carnist"
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Nefajčiť"
+msgstr "Nefajčí"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Nefajčiť"
+msgstr "Nefajčí"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Nefajčiť"
+msgstr "Nefajčí"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgstr "Fajčí príležitostne"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgstr "Fajčí príležitostne"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgstr "Fajčí príležitostne"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Fajčenie"
+msgstr "Fajčí"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Fajčenie"
+msgstr "Fajčí"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Fajčenie"
+msgstr "Fajčí"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Slobodný"
+msgstr "Slobodná"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
@@ -1248,12 +1228,12 @@ msgstr "Slobodný"
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Slobodný"
+msgstr "Slobodný/á"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
 msgid "Divorced"
-msgstr "Rozvedený"
+msgstr "Rozvedená"
 
 #: .\__translations\__translations.py:123
 msgctxt "male"
@@ -1263,7 +1243,7 @@ msgstr "Rozvedený"
 #: .\__translations\__translations.py:124
 msgctxt "other"
 msgid "Divorced"
-msgstr "Rozvedený"
+msgstr "Rozvedený/á"
 
 #: .\__translations\__translations.py:126
 msgctxt "female"
@@ -1273,12 +1253,12 @@ msgstr "Vdova"
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Vdova"
+msgstr "Vdovec"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Vdova"
+msgstr "Vdovec/vdova"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
@@ -1328,22 +1308,22 @@ msgstr "Je to komplikované"
 #: .\__translations\__translations.py:142
 msgctxt "female"
 msgid "Separated"
-msgstr "Oddelené"
+msgstr "Odlúčená"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
 msgid "Separated"
-msgstr "Oddelené"
+msgstr "Odlúčený"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
 msgid "Separated"
-msgstr "Oddelené"
+msgstr "Odlúčený/á"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
 msgid "Engaged"
-msgstr "Zasnúbený"
+msgstr "Zasnúbená"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
@@ -1353,12 +1333,12 @@ msgstr "Zasnúbený"
 #: .\__translations\__translations.py:148
 msgctxt "other"
 msgid "Engaged"
-msgstr "Zasnúbený"
+msgstr "Zasnúbený/á"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
 msgid "Married"
-msgstr "Ženatý"
+msgstr "Vydatá"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
@@ -1368,7 +1348,7 @@ msgstr "Ženatý"
 #: .\__translations\__translations.py:152
 msgctxt "other"
 msgid "Married"
-msgstr "Ženatý"
+msgstr "Ženatý/vydatá"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
@@ -1390,27 +1370,21 @@ msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+msgstr "Vaše účty na Speedy Net a Speedy Match boli deaktivované. Môžete ich kedykoľvek znova aktivovať."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+msgstr "Vaše účty na Speedy Net a Speedy Match boli deaktivované. Môžete ich kedykoľvek znova aktivovať."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr ""
-"Vaše Speedy Net účty Speedy Match a boli deaktivované. Môžete ich kedykoľvek "
-"znova aktivovať."
+msgstr "Vaše účty na Speedy Net a Speedy Match boli deaktivované. Môžete ich kedykoľvek znova aktivovať."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1418,9 +1392,7 @@ msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgstr "Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. Váš účet na Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1428,9 +1400,7 @@ msgctxt "male"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgstr "Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. Váš účet na Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:164
 #, python-brace-format
@@ -1438,9 +1408,7 @@ msgctxt "other"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr ""
-"Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. "
-"Váš účet Speedy Net zostáva aktívny."
+msgstr "Váš účet {site_name} bol deaktivovaný. Môžete ho kedykoľvek znova aktivovať. Váš účet na Speedy Net zostáva aktívny."
 
 #: .\__translations\__translations.py:166
 msgctxt "female"
@@ -1493,9 +1461,7 @@ msgctxt "female"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+msgstr "Už máte {0} priateľov. Na Speedy Net nemôžete mať viac ako {1} priateľov. Pred pokračovaním odstráňte niektorých priateľov."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1503,9 +1469,7 @@ msgctxt "male"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+msgstr "Už máte {0} priateľov. Na Speedy Net nemôžete mať viac ako {1} priateľov. Pred pokračovaním odstráňte niektorých priateľov."
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1513,9 +1477,7 @@ msgctxt "other"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr ""
-"Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy "
-"Net. Pred pokračovaním odstráňte priateľov."
+msgstr "Už máte {0} priateľov. Na Speedy Net nemôžete mať viac ako {1} priateľov. Pred pokračovaním odstráňte niektorých priateľov."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1523,10 +1485,7 @@ msgctxt "female_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1534,10 +1493,7 @@ msgctxt "female_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1545,10 +1501,7 @@ msgctxt "female_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1556,10 +1509,7 @@ msgctxt "male_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1567,10 +1517,7 @@ msgctxt "male_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1578,10 +1525,7 @@ msgctxt "male_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1589,10 +1533,7 @@ msgctxt "other_female"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1600,10 +1541,7 @@ msgctxt "other_male"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1611,10 +1549,7 @@ msgctxt "other_other"
 msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
-msgstr ""
-"Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} "
-"priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby "
-"odstránili priateľov."
+msgstr "Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov."
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -1959,7 +1894,7 @@ msgstr "Priezvisko (voliteľné)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "Váš email"
+msgstr "Váš e-mail"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -1983,7 +1918,7 @@ msgstr "Vyžaduje sa profilový obrázok."
 
 #: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "Email alebo Používateľské meno"
+msgstr "E-mail alebo používateľské meno"
 
 #: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
@@ -2010,7 +1945,7 @@ msgstr "Neplatné heslo."
 
 #: .\accounts\models.py:209
 msgid "username"
-msgstr "užívateľské meno"
+msgstr "používateľské meno"
 
 #: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
@@ -2019,11 +1954,11 @@ msgstr "Toto používateľské meno je už obsadené."
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
-msgstr "užívateľské meno (slimák)"
+msgstr "používateľské meno (slug)"
 
 #: .\accounts\models.py:211
 msgid "photo"
-msgstr "fotografiu"
+msgstr "fotografia"
 
 #: .\accounts\models.py:212
 msgid "Special username"
@@ -2035,11 +1970,11 @@ msgstr "subjekt"
 
 #: .\accounts\models.py:264
 msgid "entities"
-msgstr "subjektov"
+msgstr "subjekty"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "Slug neanalyzuje používateľské meno."
+msgstr "Slug sa nedá spracovať na používateľské meno."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
@@ -2059,7 +1994,7 @@ msgstr "Žena"
 
 #: .\accounts\models.py:512
 msgid "Male"
-msgstr "Mužský"
+msgstr "Muž"
 
 #: .\accounts\models.py:513
 msgid "Other"
@@ -2084,27 +2019,27 @@ msgstr "Carnist (žerie zvieratá)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "Nefajčiť"
+msgstr "Nefajčí"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
-msgstr "Príležitostne fajčiť"
+msgstr "Fajčí príležitostne"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Fajčenie"
+msgstr "Fajčí"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "Slobodný"
+msgstr "Slobodný/á"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
-msgstr "Rozvedený"
+msgstr "Rozvedený/á"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Vdova"
+msgstr "Vdovec/vdova"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
@@ -2120,15 +2055,15 @@ msgstr "Je to komplikované"
 
 #: .\accounts\models.py:575
 msgid "Separated"
-msgstr "Oddelené"
+msgstr "Odlúčený/á"
 
 #: .\accounts\models.py:576
 msgid "Engaged"
-msgstr "Zasnúbený"
+msgstr "Zasnúbený/á"
 
 #: .\accounts\models.py:577
 msgid "Married"
-msgstr "Ženatý"
+msgstr "Ženatý/vydatá"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
@@ -2168,7 +2103,7 @@ msgstr "stav vzťahu"
 
 #: .\accounts\models.py:680
 msgid "Where do I live?"
-msgstr "kde to bývam?"
+msgstr "Kde bývam?"
 
 #: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
@@ -2184,27 +2119,27 @@ msgstr "Pri nových správach"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Posledná použitá adresa IP https://ipapi.com/ krát"
+msgstr "Čas poslednej použitej adresy IP https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Posledná adresa IP použila nespracované výsledky https://ipapi.com/"
+msgstr "Nespracované výsledky https://ipapi.com/ pre poslednú použitú adresu IP"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
-msgstr "užívateľ"
+msgstr "používateľ"
 
 #: .\accounts\models.py:991
 msgid "users"
-msgstr "používateľov"
+msgstr "používatelia"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
-msgstr "Superuser sa musí rovnať personálu."
+msgstr "Superpoužívateľ sa musí rovnať členovi personálu."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "e-mailom"
+msgstr "e-mail"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
@@ -2280,12 +2215,10 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerický znak "
-"(má %(show_value)d)."
-msgstr[1] ""
-"Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerických "
-"znakov (má %(show_value)d)."
+msgstr[0] "Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerický znak (má %(show_value)d)."
+msgstr[1] "Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerické znaky (má %(show_value)d)."
+msgstr[2] "Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerických znakov (má %(show_value)d)."
+msgstr[3] "Používateľské meno musí obsahovať aspoň %(limit_value)d alfanumerických znakov (má %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2295,12 +2228,10 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerických "
-"znakov (má %(show_value)d)."
-msgstr[1] ""
-"Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerických "
-"znakov (má %(show_value)d)."
+msgstr[0] "Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerický znak (má %(show_value)d)."
+msgstr[1] "Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerické znaky (má %(show_value)d)."
+msgstr[2] "Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerických znakov (má %(show_value)d)."
+msgstr[3] "Používateľské meno musí obsahovať najviac %(limit_value)d alfanumerických znakov (má %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2310,12 +2241,10 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Používateľské meno musí obsahovať aspoň %(limit_value)d znak (má "
-"%(show_value)d)."
-msgstr[1] ""
-"Používateľské meno musí obsahovať aspoň %(limit_value)d znakov (má "
-"%(show_value)d)."
+msgstr[0] "Používateľské meno musí obsahovať aspoň %(limit_value)d znak (má %(show_value)d)."
+msgstr[1] "Používateľské meno musí obsahovať aspoň %(limit_value)d znaky (má %(show_value)d)."
+msgstr[2] "Používateľské meno musí obsahovať aspoň %(limit_value)d znakov (má %(show_value)d)."
+msgstr[3] "Používateľské meno musí obsahovať aspoň %(limit_value)d znakov (má %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2325,12 +2254,10 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Používateľské meno musí obsahovať najviac %(limit_value)d znakov (má "
-"%(show_value)d)."
-msgstr[1] ""
-"Používateľské meno musí obsahovať najviac %(limit_value)d znakov (má "
-"%(show_value)d)."
+msgstr[0] "Používateľské meno musí obsahovať najviac %(limit_value)d znak (má %(show_value)d)."
+msgstr[1] "Používateľské meno musí obsahovať najviac %(limit_value)d znaky (má %(show_value)d)."
+msgstr[2] "Používateľské meno musí obsahovať najviac %(limit_value)d znakov (má %(show_value)d)."
+msgstr[3] "Používateľské meno musí obsahovať najviac %(limit_value)d znakov (má %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2340,17 +2267,19 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znak."
-msgstr[1] ""
-"Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znakov."
+msgstr[0] "Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znak."
+msgstr[1] "Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znaky."
+msgstr[2] "Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znakov."
+msgstr[3] "Toto heslo je príliš krátke. Musí obsahovať aspoň %(min_length)d znakov."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Vaše heslo musí obsahovať aspoň %(min_length)d znak."
-msgstr[1] "Vaše heslo musí obsahovať aspoň %(min_length)d znakov."
+msgstr[1] "Vaše heslo musí obsahovať aspoň %(min_length)d znaky."
+msgstr[2] "Vaše heslo musí obsahovať aspoň %(min_length)d znakov."
+msgstr[3] "Vaše heslo musí obsahovať aspoň %(min_length)d znakov."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2358,17 +2287,19 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znakov."
-msgstr[1] ""
-"Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znakov."
+msgstr[0] "Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znak."
+msgstr[1] "Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znaky."
+msgstr[2] "Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znakov."
+msgstr[3] "Toto heslo je príliš dlhé. Musí obsahovať najviac %(max_length)d znakov."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] "Vaše heslo musí obsahovať najviac %(max_length)d znakov."
-msgstr[1] "Vaše heslo musí obsahovať najviac %(max_length)d znakov."
+msgstr[0] "Vaše heslo musí obsahovať najviac %(max_length)d znak."
+msgstr[1] "Vaše heslo musí obsahovať najviac %(max_length)d znaky."
+msgstr[2] "Vaše heslo musí obsahovať najviac %(max_length)d znakov."
+msgstr[3] "Vaše heslo musí obsahovať najviac %(max_length)d znakov."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2438,16 +2369,7 @@ msgid ""
 "members entered the site in the last eight months, and "
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
-msgstr ""
-"Správca: Celkový počet členov na stránke je {total_number_of_members}, z "
-"toho {total_number_of_members_in_the_last_week} členov vstúpilo na stránku "
-"za posledný týždeň, {total_number_of_members_in_the_last_month} členov "
-"vstúpilo na stránku za posledný mesiac, "
-"{total_number_of_members_in_the_last_four_months} členov vstúpilo na stránku "
-"za posledné štyri mesiace, "
-"{total_number_of_members_in_the_last_eight_months} členov vstúpilo na "
-"stránku za posledných osem mesiacov a "
-"{total_number_of_members_in_the_last_two_years} členov."
+msgstr "Správca: Celkový počet členov na stránke je {total_number_of_members}, z toho {total_number_of_members_in_the_last_week} členov vstúpilo na stránku za posledný týždeň, {total_number_of_members_in_the_last_month} členov vstúpilo na stránku za posledný mesiac, {total_number_of_members_in_the_last_four_months} členov vstúpilo na stránku za posledné štyri mesiace, {total_number_of_members_in_the_last_eight_months} členov vstúpilo na stránku za posledných osem mesiacov a {total_number_of_members_in_the_last_two_years} členov vstúpilo na stránku za posledné dva roky."
 
 #: .\admin\views.py:142
 #, python-brace-format
@@ -2521,7 +2443,7 @@ msgstr "Zmeny boli uložené."
 
 #: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
-msgstr "Používatelia sa nemôžu zablokovať."
+msgstr "Používatelia nemôžu zablokovať sami seba."
 
 #: .\blocks\models.py:26
 msgid "blocked user"
@@ -2529,11 +2451,11 @@ msgstr "zablokovaný používateľ"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "blokovať"
+msgstr "blokovanie"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
-msgstr "užívateľské bloky"
+msgstr "blokovania používateľov"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
@@ -2577,11 +2499,11 @@ msgstr "Zneužitie (foto)"
 
 #: .\contact_by_form\models.py:42 .\messages\models.py:186
 msgid "sender"
-msgstr "odosielateľa"
+msgstr "odosielateľ"
 
 #: .\contact_by_form\models.py:43
 msgid "your name"
-msgstr "tvoje meno"
+msgstr "vaše meno"
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
@@ -2589,11 +2511,11 @@ msgstr "váš email"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
-msgstr "typu"
+msgstr "typ"
 
 #: .\contact_by_form\models.py:46
 msgid "your message"
-msgstr "vašu správu"
+msgstr "vaša správa"
 
 #: .\contact_by_form\models.py:48
 msgid "reported entity"
@@ -2637,7 +2559,7 @@ msgstr "Správy"
 
 #: .\messages\models.py:32
 msgid "site"
-msgstr "stránky"
+msgstr "stránka"
 
 #: .\messages\models.py:33
 msgid "participant 1"
@@ -2649,7 +2571,7 @@ msgstr "účastník 2"
 
 #: .\messages\models.py:35
 msgid "participants"
-msgstr "účastníkov"
+msgstr "účastníci"
 
 #: .\messages\models.py:36
 msgid "is group chat"
@@ -2661,7 +2583,7 @@ msgstr "posledná správa"
 
 #: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
-msgstr "chatovať"
+msgstr "chat"
 
 #: .\messages\models.py:95
 msgid "chats"
@@ -2669,11 +2591,11 @@ msgstr "chaty"
 
 #: .\messages\models.py:108
 msgid "None"
-msgstr "žiadne"
+msgstr "Žiadne"
 
 #: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
-msgstr "správu"
+msgstr "správa"
 
 #: .\messages\models.py:193
 msgid "messages"
@@ -2697,11 +2619,11 @@ msgstr "hebrejčina"
 
 #: .\settings\base_with_login.py:76
 msgid "French"
-msgstr "francúzsky"
+msgstr "francúzština"
 
 #: .\settings\base_with_login.py:77
 msgid "German"
-msgstr "nemecký"
+msgstr "nemčina"
 
 #: .\settings\base_with_login.py:78
 msgid "Spanish"
@@ -2713,11 +2635,11 @@ msgstr "portugalčina"
 
 #: .\settings\base_with_login.py:80
 msgid "Italian"
-msgstr "taliansky"
+msgstr "taliančina"
 
 #: .\settings\base_with_login.py:81
 msgid "Dutch"
-msgstr "holandský"
+msgstr "holandčina"
 
 #: .\settings\base_with_login.py:82
 msgid "Japanese"
@@ -2725,23 +2647,23 @@ msgstr "japončina"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
-msgstr "ruský"
+msgstr "ruština"
 
 #: .\settings\base_with_login.py:84
 msgid "Chinese"
-msgstr "čínsky"
+msgstr "čínština"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
-msgstr "poľský"
+msgstr "poľština"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
-msgstr "perzský"
+msgstr "perzština"
 
 #: .\settings\base_with_login.py:90
 msgid "Korean"
-msgstr "kórejský"
+msgstr "kórejčina"
 
 #: .\settings\base_with_login.py:91
 msgid "Arabic"
@@ -2749,35 +2671,35 @@ msgstr "arabčina"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
-msgstr "indonézsky"
+msgstr "indonézština"
 
 #: .\settings\base_with_login.py:93
 msgid "Ukrainian"
-msgstr "Ukrajinčina"
+msgstr "ukrajinčina"
 
 #: .\settings\base_with_login.py:94
 msgid "Turkish"
-msgstr "turecký"
+msgstr "turečtina"
 
 #: .\settings\base_with_login.py:95
 msgid "Vietnamese"
-msgstr "Vietnamci"
+msgstr "vietnamčina"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "český"
+msgstr "čeština"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
-msgstr "švédsky"
+msgstr "švédčina"
 
 #: .\settings\base_with_login.py:98
 msgid "Finnish"
-msgstr "fínsky"
+msgstr "fínčina"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "maďarský"
+msgstr "maďarčina"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
@@ -2785,7 +2707,7 @@ msgstr "thajčina"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
-msgstr "grécky"
+msgstr "gréčtina"
 
 #: .\settings\base_with_login.py:102
 msgid "Malay"
@@ -2793,19 +2715,19 @@ msgstr "malajčina"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "srbský"
+msgstr "srbčina"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
-msgstr "rumunský"
+msgstr "rumunčina"
 
 #: .\settings\base_with_login.py:105
 msgid "Bengali"
-msgstr "bengálsky"
+msgstr "bengálčina"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "katalánsky"
+msgstr "katalánčina"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
@@ -2821,7 +2743,7 @@ msgstr "dánčina"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
-msgstr "slovensky"
+msgstr "slovenčina"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
@@ -2829,63 +2751,63 @@ msgstr "hindčina"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "estónsky"
+msgstr "estónčina"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "chorvátsky"
+msgstr "chorvátčina"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
-msgstr "azerbajdžanský"
+msgstr "azerbajdžančina"
 
 #: .\settings\base_with_login.py:115
 msgid "Cantonese"
-msgstr "kantonský"
+msgstr "kantončina"
 
 #: .\settings\base_with_login.py:116
 msgid "Lithuanian"
-msgstr "litovský"
+msgstr "litovčina"
 
 #: .\settings\base_with_login.py:117
 msgid "Slovenian"
-msgstr "slovinský"
+msgstr "slovinčina"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "baskický"
+msgstr "baskičtina"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"
-msgstr "arménsky"
+msgstr "arménčina"
 
 #: .\settings\base_with_login.py:120
 msgid "Uzbek"
-msgstr "uzbecký"
+msgstr "uzbečtina"
 
 #: .\settings\base_with_login.py:121
 msgid "Tamil"
-msgstr "tamilský"
+msgstr "tamilčina"
 
 #: .\settings\base_with_login.py:122
 msgid "Latvian"
-msgstr "lotyšský"
+msgstr "lotyština"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Zlá požiadavka"
+msgstr "Neplatná požiadavka"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
-msgstr "Speedy je nám ľúto, ale nemôžeme spracovať vašu požiadavku."
+msgstr "Speedy sa ospravedlňuje, ale vašu požiadavku nemôžeme spracovať."
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "Povolenie zamietnuté"
+msgstr "Prístup zamietnutý"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy prepáč, ale táto stránka je súkromná."
+msgstr "Speedy sa ospravedlňuje, ale táto stránka je súkromná."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2893,7 +2815,7 @@ msgstr "Stránka sa nenašla"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy prepáč, ale stránka sa nenašla."
+msgstr "Speedy sa ospravedlňuje, ale stránka sa nenašla."
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -2903,7 +2825,7 @@ msgstr "Interná chyba servera"
 #: .\templates\base_without_login.html:36
 #: .\templates\menu\about_mobile_menu_links.html:11
 msgid "About"
-msgstr "O"
+msgstr "O nás"
 
 #: .\templates\accounts\edit_profile\core_base.html:6
 #: .\templates\accounts\edit_profile\core_base.html:12
@@ -2990,7 +2912,7 @@ msgstr "Zmeniť heslo"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Váš vek bude viditeľný vo vašich zápasoch na Speedy Match."
+msgstr "Váš vek bude viditeľný pre vaše zhody na Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3037,7 +2959,7 @@ msgstr "Zobraziť všetko"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "Admin - Priatelia"
+msgstr "Správca - Priatelia"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
@@ -3053,7 +2975,7 @@ msgstr "Informácie o správcovi"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr "Admin - Všetci používatelia"
+msgstr "Správca - Všetci používatelia"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
@@ -3087,7 +3009,7 @@ msgstr "Speedy Sale"
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "Vegánsky priateľský web"
+msgstr "Web priateľský k vegánom"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
@@ -3103,7 +3025,7 @@ msgstr "Domov"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
-msgstr "heslo"
+msgstr "Heslo"
 
 #: .\templates\base_with_login.html:200 .\templates\base_without_login.html:17
 msgid "Speedy Net"
@@ -3193,11 +3115,11 @@ msgstr "Nahlásiť používateľa"
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr "Nahlásiť fotku"
+msgstr "Nahlásiť fotografiu"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
-msgstr "Ďakujem"
+msgstr "Ďakujeme"
 
 #: .\templates\contact_by_form\feedback_success.html:11
 msgid "Your feedback was sent to administrators."
@@ -3286,7 +3208,7 @@ msgstr "Je to zadarmo a zapojiť sa môže ktokoľvek!"
 #: .\templates\messages\chat_detail.html:35
 #, python-format
 msgid "Chat with <a href=\"%(link)s\">%(user_name)s</a>"
-msgstr "Rozhovor s <a href=\"%(link)s\">%(user_name)s</a>"
+msgstr "Chat s <a href=\"%(link)s\">%(user_name)s</a>"
 
 #: .\templates\messages\chat_detail.html:41
 #: .\templates\messages\message_form.html:9
@@ -3304,7 +3226,7 @@ msgstr "Neprečítané"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "ty:"
+msgstr "Vy:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3337,14 +3259,7 @@ msgid ""
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
-msgstr ""
-"Váš profil na Speedy Net je viditeľný pre každého, ale môžete si vybrať, "
-"koho budete zdieľať so svojou e-mailovou adresou a dátumom narodenia. Ak ste "
-"sa Speedy Match zaregistrovali do, váš profil Speedy Match bude viditeľný "
-"iba pre ľudí, ktorí sa k vám priraďujú podľa nastavení, ktoré ste si na "
-"stránke nastavili, a že ich priraďujete podľa ich nastavení. Váš profil na "
-"Speedy Match sa nezobrazí na Google a nie je viditeľný pre ľudí, ktorí nie "
-"sú zaregistrovaní na stránke."
+msgstr "Váš profil na Speedy Net je viditeľný pre každého, ale môžete si vybrať, s kým budete zdieľať svoju e-mailovú adresu a dátum narodenia. Ak ste sa zaregistrovali na Speedy Match, váš profil na Speedy Match bude viditeľný iba pre ľudí, ktorí sa s vami zhodujú podľa nastavení, ktoré ste si na stránke nastavili, a s ktorými sa zhodujete vy podľa ich nastavení. Váš profil na Speedy Match sa nezobrazí na Google a nie je viditeľný pre ľudí, ktorí nie sú zaregistrovaní na stránke."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3395,7 +3310,7 @@ msgstr " zablokoval vás."
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "Prijmite žiadosť o priateľstvo"
+msgstr "Prijať žiadosť o priateľstvo"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
@@ -3424,7 +3339,7 @@ msgstr "Prepnúť rozbaľovaciu ponuku"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Naozaj chcete blokovať? "
+msgstr "Naozaj chcete zablokovať "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3442,7 +3357,7 @@ msgstr "Odblokovať "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Správa "
+msgstr "Nahlásiť "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3494,22 +3409,18 @@ msgstr "Vek"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Match. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Match."
+msgstr "%(user_name)s má aj profil na Speedy Match. Zobraziť profil používateľa %(user_name)s na Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr "Máte tiež profil Speedy Net. Pozrite si svoj profil na Speedy Net."
+msgstr "Máte aj profil na Speedy Net. Pozrite si svoj profil na Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr ""
-"%(user_name)s má tiež profil Speedy Net. Zobraziť profil používateľa "
-"%(user_name)s v službe Speedy Net."
+msgstr "%(user_name)s má aj profil na Speedy Net. Zobraziť profil používateľa %(user_name)s na Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3525,11 +3436,7 @@ msgid ""
 "upload contents related to hate, violence, animal abuse, nudity or "
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
-msgstr ""
-"Speedy Net môžete používať iba na právne účely. Nie je dovolené nahrávať "
-"obsah súvisiaci s nenávisťou, násilím, zneužívaním zvierat, nahotou alebo "
-"pornografiou. Nie je dovolené používať Speedy Net službu na odosielanie "
-"spamových správ alebo správ s rovnakým obsahom veľkému počtu ľudí."
+msgstr "Speedy Net môžete používať iba na zákonné účely. Nie je dovolené nahrávať obsah súvisiaci s nenávisťou, násilím, týraním zvierat, nahotou alebo pornografiou. Nie je dovolené používať Speedy Net na odosielanie spamových správ alebo správ s rovnakým obsahom veľkému počtu ľudí."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3550,10 +3457,7 @@ msgid ""
 "After signing up for the site you are asked to verify your email address via "
 "a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
-msgstr ""
-"Po registrácii na stránke budete požiadaní o overenie svojej e-mailovej "
-"adresy prostredníctvom odkazu, ktorý vám bol zaslaný. Účty bez overenej e-"
-"mailovej adresy budú z lokality odstránené po 10 dňoch."
+msgstr "Po registrácii na stránke budete požiadaní o overenie svojej e-mailovej adresy prostredníctvom odkazu, ktorý vám bol zaslaný. Účty bez overenej e-mailovej adresy budú zo stránky odstránené po 10 dňoch."
 
 #: .\templates\terms\terms_of_service.html:27
 msgid ""
@@ -3571,11 +3475,7 @@ msgid ""
 "It is allowed to upload a profile picture with other people. Do not upload "
 "nude photos, photos showing genitals (of men or women) or bare-chested "
 "images (of men or women)."
-msgstr ""
-"Tvoja profilová fotka by mala byť tvoja fotka, na ktorej môžeme vidieť tvoju "
-"tvár. Je povolené nahrať profilový obrázok s inými ľuďmi. Nenahrávajte nahé "
-"fotografie, fotografie zobrazujúce pohlavné orgány (mužov alebo žien) alebo "
-"obrázky s odhalenou hruďou (mužov alebo žien)."
+msgstr "Váš profilový obrázok by mal byť vaša fotografia, na ktorej vidíme vašu tvár. Je povolené nahrať profilový obrázok s inými ľuďmi. Nenahrávajte nahé fotografie, fotografie zobrazujúce pohlavné orgány (mužov alebo žien) ani obrázky s odhalenou hruďou (mužov alebo žien)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3611,11 +3511,11 @@ msgstr "viditeľné na webovej stránke"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Rýchly čas moderovania obrazu Speedy"
+msgstr "Čas moderovania obrázka Speedy"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"
-msgstr "Čas moderovania obrazu AWS"
+msgstr "Čas moderovania obrázka AWS"
 
 #: .\uploads\models.py:93
 msgid "AWS facial analysis time"
@@ -3623,7 +3523,7 @@ msgstr "Čas analýzy tváre AWS"
 
 #: .\uploads\models.py:94
 msgid "AWS raw image moderation results"
-msgstr "Výsledky moderovania neupraveného obrazu AWS"
+msgstr "Výsledky moderovania neupraveného obrázka AWS"
 
 #: .\uploads\models.py:95
 msgid "AWS raw facial analysis results"
