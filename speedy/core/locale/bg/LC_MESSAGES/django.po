@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +64,9 @@ msgctxt "female"
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
-msgstr "Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, добре дошли отново в %(site_name)s!"
+msgstr ""
+"Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</"
+"a>, добре дошли отново в %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -72,7 +74,9 @@ msgctxt "male"
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
-msgstr "Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, добре дошли отново в %(site_name)s!"
+msgstr ""
+"Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</"
+"a>, добре дошли отново в %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -80,7 +84,9 @@ msgctxt "other"
 msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
-msgstr "Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, добре дошли отново в %(site_name)s!"
+msgstr ""
+"Здравейте, <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</"
+"a>, добре дошли отново в %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -364,7 +370,9 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s в Speedy Match."
+msgstr ""
+"%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s "
+"в Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -372,7 +380,9 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s в Speedy Match."
+msgstr ""
+"%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s "
+"в Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -380,7 +390,9 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s в Speedy Match."
+msgstr ""
+"%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s "
+"в Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -388,7 +400,9 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в Speedy Net."
+msgstr ""
+"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
+"Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -396,7 +410,9 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в Speedy Net."
+msgstr ""
+"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
+"Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -404,7 +420,9 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в Speedy Net."
+msgstr ""
+"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
+"Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -664,17 +682,23 @@ msgstr "Вижте всички"
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го активирате."
+msgstr ""
+"Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го "
+"активирате."
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го активирате."
+msgstr ""
+"Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го "
+"активирате."
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го активирате."
+msgstr ""
+"Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го "
+"активирате."
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -1363,21 +1387,27 @@ msgctxt "female"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr "Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги активирате отново по всяко време."
+msgstr ""
+"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
+"активирате отново по всяко време."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr "Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги активирате отново по всяко време."
+msgstr ""
+"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
+"активирате отново по всяко време."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
 msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
-msgstr "Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги активирате отново по всяко време."
+msgstr ""
+"Вашите акаунти в Speedy Net и Speedy Match са деактивирани. Можете да ги "
+"активирате отново по всяко време."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1385,7 +1415,9 @@ msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по всяко време. Вашият акаунт в Speedy Net остава активен."
+msgstr ""
+"Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по "
+"всяко време. Вашият акаунт в Speedy Net остава активен."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1393,7 +1425,9 @@ msgctxt "male"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по всяко време. Вашият акаунт в Speedy Net остава активен."
+msgstr ""
+"Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по "
+"всяко време. Вашият акаунт в Speedy Net остава активен."
 
 #: .\__translations\__translations.py:164
 #, python-brace-format
@@ -1401,7 +1435,9 @@ msgctxt "other"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по всяко време. Вашият акаунт в Speedy Net остава активен."
+msgstr ""
+"Вашият акаунт в {site_name} е деактивиран. Можете да го активирате отново по "
+"всяко време. Вашият акаунт в Speedy Net остава активен."
 
 #: .\__translations\__translations.py:166
 msgctxt "female"
@@ -1454,7 +1490,9 @@ msgctxt "female"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy Net. Моля, премахнете приятели, преди да продължите."
+msgstr ""
+"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1462,7 +1500,9 @@ msgctxt "male"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy Net. Моля, премахнете приятели, преди да продължите."
+msgstr ""
+"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1470,7 +1510,9 @@ msgctxt "other"
 msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
-msgstr "Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy Net. Моля, премахнете приятели, преди да продължите."
+msgstr ""
+"Вече имате {0} приятели. Не можете да имате повече от {1} приятели в Speedy "
+"Net. Моля, премахнете приятели, преди да продължите."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -2155,7 +2197,8 @@ msgstr "Време на последния използван IP адрес http
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Необработени резултати от https://ipapi.com/ за последния използван IP адрес"
+msgstr ""
+"Необработени резултати от https://ipapi.com/ за последния използван IP адрес"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -3289,7 +3332,12 @@ msgid ""
 "password. Messages you send to people on Speedy Net are personal and will "
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
-msgstr "Ние уважаваме вашата поверителност. Няма да продаваме или споделяме вашите лични данни, включително вашето име, дата на раждане, имейл адрес и парола. Съобщенията, които изпращате до хора в Speedy Net, са лични и няма да бъдат споделяни с други хора или уебсайтове. Вашата парола се съхранява криптирана в нашата база данни."
+msgstr ""
+"Ние уважаваме вашата поверителност. Няма да продаваме или споделяме вашите "
+"лични данни, включително вашето име, дата на раждане, имейл адрес и парола. "
+"Съобщенията, които изпращате до хора в Speedy Net, са лични и няма да бъдат "
+"споделяни с други хора или уебсайтове. Вашата парола се съхранява криптирана "
+"в нашата база данни."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3300,7 +3348,13 @@ msgid ""
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
-msgstr "Вашият профил в Speedy Net е видим за всички, но можете да изберете с кого да споделите имейл адреса и датата си на раждане. Ако сте се регистрирали в Speedy Match, вашият профил в Speedy Match ще бъде видим само за хора, които съвпадат с вас според настройките, които сте задали в сайта, и с които вие съвпадате според техните настройки. Вашият профил в Speedy Match няма да се показва в Google и не е видим за хора, които не са регистрирани в сайта."
+msgstr ""
+"Вашият профил в Speedy Net е видим за всички, но можете да изберете с кого "
+"да споделите имейл адреса и датата си на раждане. Ако сте се регистрирали в "
+"Speedy Match, вашият профил в Speedy Match ще бъде видим само за хора, които "
+"съвпадат с вас според настройките, които сте задали в сайта, и с които вие "
+"съвпадате според техните настройки. Вашият профил в Speedy Match няма да се "
+"показва в Google и не е видим за хора, които не са регистрирани в сайта."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3328,7 +3382,14 @@ msgid ""
 "account, and then click “Delete Account” (in the “Edit Profile” menu). Fill "
 "out the details in the form and confirm. Please note that a deleted account "
 "cannot be recovered. Account deletion is permanent and irreversible."
-msgstr "Ако желаете, можете да изтриете акаунта си в Speedy Net. Изтриването на вашия акаунт в Speedy Net автоматично ще изтрие и вашия акаунт в Speedy Match. За да изтриете акаунта си в Speedy Net, влезте в Speedy Net, деактивирайте акаунта си и след това щракнете върху „Изтриване на акаунт“ (в менюто „Редактиране на профил“). Попълнете данните във формата и потвърдете. Моля, имайте предвид, че изтрит акаунт не може да бъде възстановен. Изтриването на акаунта е окончателно и необратимо."
+msgstr ""
+"Ако желаете, можете да изтриете акаунта си в Speedy Net. Изтриването на "
+"вашия акаунт в Speedy Net автоматично ще изтрие и вашия акаунт в Speedy "
+"Match. За да изтриете акаунта си в Speedy Net, влезте в Speedy Net, "
+"деактивирайте акаунта си и след това щракнете върху „Изтриване на акаунт“ (в "
+"менюто „Редактиране на профил“). Попълнете данните във формата и потвърдете. "
+"Моля, имайте предвид, че изтрит акаунт не може да бъде възстановен. "
+"Изтриването на акаунта е окончателно и необратимо."
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
@@ -3444,7 +3505,9 @@ msgstr "Възраст"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s в Speedy Match."
+msgstr ""
+"%(user_name)s също има профил в Speedy Match. Вижте профила на %(user_name)s "
+"в Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3455,7 +3518,9 @@ msgstr "Имате и профил в Speedy Net. Вижте профила си
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в Speedy Net."
+msgstr ""
+"%(user_name)s също има профил в Speedy Net. Вижте профила на %(user_name)s в "
+"Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""

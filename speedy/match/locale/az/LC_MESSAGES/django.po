@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -752,8 +752,7 @@ msgstr "Pəhriz uyğunluğu seçimlərindən ən azı biri beş ürək olmalıd�
 #: .\accounts\validators.py:286
 msgid "At least one smoking status match option should be five hearts."
 msgstr ""
-"Siqaret çəkmə statusu uyğunluğu seçimlərindən ən azı biri beş ürək "
-"olmalıdır."
+"Siqaret çəkmə statusu uyğunluğu seçimlərindən ən azı biri beş ürək olmalıdır."
 
 #: .\accounts\validators.py:301
 msgid "At least one relationship status match option should be five hearts."

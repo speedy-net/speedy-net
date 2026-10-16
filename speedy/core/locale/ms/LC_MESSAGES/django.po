@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -365,8 +365,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
+"di Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -375,8 +375,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
+"di Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -385,8 +385,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
+"di Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -395,8 +395,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s"
-" di Speedy Net."
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
+"di Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -405,8 +405,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s"
-" di Speedy Net."
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
+"di Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -415,8 +415,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s"
-" di Speedy Net."
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
+"di Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -1913,8 +1913,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak "
-"lut sinar."
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\__translations\__translations.py:253
 msgctxt "male"
@@ -1922,8 +1922,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak "
-"lut sinar."
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\__translations\__translations.py:254
 msgctxt "other"
@@ -1931,8 +1931,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak "
-"lut sinar."
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
@@ -2334,8 +2334,7 @@ msgstr[0] ""
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-"Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d "
-"aksara."
+"Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d aksara."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2478,8 +2477,8 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Pentadbir: {total_number_of_members_registered_in_year} ahli mendaftar "
-"pada {year}."
+"Pentadbir: {total_number_of_members_registered_in_year} ahli mendaftar pada "
+"{year}."
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
@@ -3478,8 +3477,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil "
-"%(user_name)s di Speedy Match."
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
+"di Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3492,8 +3491,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s"
-" di Speedy Net."
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
+"di Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3510,11 +3509,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Anda hanya boleh menggunakan Speedy Net untuk tujuan yang sah di sisi "
-"undang-undang. Anda tidak dibenarkan memuat naik kandungan yang berkaitan "
-"dengan kebencian, keganasan, penderaan haiwan, kebogelan atau pornografi. "
-"Anda tidak dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, "
-"atau mesej dengan kandungan yang sama kepada sebilangan besar orang."
+"Anda hanya boleh menggunakan Speedy Net untuk tujuan yang sah di sisi undang-"
+"undang. Anda tidak dibenarkan memuat naik kandungan yang berkaitan dengan "
+"kebencian, keganasan, penderaan haiwan, kebogelan atau pornografi. Anda "
+"tidak dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, atau "
+"mesej dengan kandungan yang sama kepada sebilangan besar orang."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3526,10 +3525,10 @@ msgid ""
 msgstr ""
 "Pengurusan tapak tidak boleh mengesahkan maklumat peribadi yang diberikan "
 "oleh pengguna tapak. Sesetengah maklumat peribadi pengguna mungkin tidak "
-"betul. Pengurusan tapak tidak bertanggungjawab terhadap aktiviti pengguna "
-"di luar tapak. Jika anda memilih untuk bertemu atau bercakap melalui "
-"telefon dengan orang yang anda temui di tapak, tanggungjawab terhadap "
-"hasil pertemuan atau panggilan telefon itu terletak pada anda."
+"betul. Pengurusan tapak tidak bertanggungjawab terhadap aktiviti pengguna di "
+"luar tapak. Jika anda memilih untuk bertemu atau bercakap melalui telefon "
+"dengan orang yang anda temui di tapak, tanggungjawab terhadap hasil "
+"pertemuan atau panggilan telefon itu terletak pada anda."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""

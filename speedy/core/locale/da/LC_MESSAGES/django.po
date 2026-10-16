@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -364,7 +364,9 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s "
+"på Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -372,7 +374,9 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s "
+"på Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -380,7 +384,9 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s "
+"på Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -388,7 +394,9 @@ msgctxt "female"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s "
+"på Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -396,7 +404,9 @@ msgctxt "male"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s "
+"på Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -404,7 +414,9 @@ msgctxt "other"
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s "
+"på Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -1394,7 +1406,9 @@ msgctxt "female"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr ""
+"Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid "
+"genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:163
 #, python-brace-format
@@ -1402,7 +1416,9 @@ msgctxt "male"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr ""
+"Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid "
+"genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:164
 #, python-brace-format
@@ -1410,7 +1426,9 @@ msgctxt "other"
 msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
-msgstr "Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid genaktivere den. Din Speedy Net-konto forbliver aktiv."
+msgstr ""
+"Din {site_name}-konto er blevet deaktiveret. Du kan til enhver tid "
+"genaktivere den. Din Speedy Net-konto forbliver aktiv."
 
 #: .\__translations\__translations.py:166
 msgctxt "female"
@@ -2322,8 +2340,10 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
-msgstr[1] "Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
+msgstr[0] ""
+"Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
+msgstr[1] ""
+"Denne adgangskode er for lang. Den må højst indeholde %(max_length)d tegn."
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -3138,7 +3158,9 @@ msgstr "Du blokerer ikke nogen."
 msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
-msgstr "Hvis du har spørgsmål, forslag eller er interesseret i at blive en del af teamet - kontakt os venligst via e-mail."
+msgstr ""
+"Hvis du har spørgsmål, forslag eller er interesseret i at blive en del af "
+"teamet - kontakt os venligst via e-mail."
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3280,7 +3302,12 @@ msgid ""
 "password. Messages you send to people on Speedy Net are personal and will "
 "not be shared with other people or websites. Your password is saved "
 "encrypted on our database."
-msgstr "Vi respekterer dit privatliv. Vi vil ikke sælge eller dele dine personlige oplysninger, herunder dit navn, din fødselsdato, din e-mailadresse og din adgangskode. Beskeder, du sender til personer på Speedy Net, er personlige og vil ikke blive delt med andre personer eller websteder. Din adgangskode gemmes krypteret i vores database."
+msgstr ""
+"Vi respekterer dit privatliv. Vi vil ikke sælge eller dele dine personlige "
+"oplysninger, herunder dit navn, din fødselsdato, din e-mailadresse og din "
+"adgangskode. Beskeder, du sender til personer på Speedy Net, er personlige "
+"og vil ikke blive delt med andre personer eller websteder. Din adgangskode "
+"gemmes krypteret i vores database."
 
 #: .\templates\privacy\privacy_policy.html:21
 msgid ""
@@ -3291,7 +3318,14 @@ msgid ""
 "you match them according to their settings. Your profile on Speedy Match "
 "will not appear on Google and is not visible to people who are not "
 "registered to the site."
-msgstr "Din profil på Speedy Net er synlig for alle, men du kan vælge, hvem du vil dele din e-mailadresse og din fødselsdato med. Hvis du har tilmeldt dig Speedy Match, vil din Speedy Match-profil kun være synlig for personer, der matcher dig i henhold til de indstillinger, du har sat op på siden, og som du matcher i henhold til deres indstillinger. Din profil på Speedy Match vises ikke på Google og er ikke synlig for personer, der ikke er registreret på siden."
+msgstr ""
+"Din profil på Speedy Net er synlig for alle, men du kan vælge, hvem du vil "
+"dele din e-mailadresse og din fødselsdato med. Hvis du har tilmeldt dig "
+"Speedy Match, vil din Speedy Match-profil kun være synlig for personer, der "
+"matcher dig i henhold til de indstillinger, du har sat op på siden, og som "
+"du matcher i henhold til deres indstillinger. Din profil på Speedy Match "
+"vises ikke på Google og er ikke synlig for personer, der ikke er registreret "
+"på siden."
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3441,7 +3475,9 @@ msgstr "Alder"
 msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
-msgstr "%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s på Speedy Match."
+msgstr ""
+"%(user_name)s har også en Speedy Match-profil. Se profilen for %(user_name)s "
+"på Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3452,7 +3488,9 @@ msgstr "Du har også en Speedy Net-profil. Se din profil på Speedy Net."
 msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
-msgstr "%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s på Speedy Net."
+msgstr ""
+"%(user_name)s har også en Speedy Net-profil. Se profilen for %(user_name)s "
+"på Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""

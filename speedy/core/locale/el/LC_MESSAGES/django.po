@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,9 +68,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Γεια σας <a href=\"%(user_link)s\" "
-"class=\"navbar-link\">%(user_name)s</a>, καλώς ήρθατε ξανά στο "
-"%(site_name)s!"
+"Γεια σας <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"καλώς ήρθατε ξανά στο %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -79,9 +78,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Γεια σας <a href=\"%(user_link)s\" "
-"class=\"navbar-link\">%(user_name)s</a>, καλώς ήρθατε ξανά στο "
-"%(site_name)s!"
+"Γεια σας <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"καλώς ήρθατε ξανά στο %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -90,9 +88,8 @@ msgid ""
 "Hi <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
 "welcome back to %(site_name)s!"
 msgstr ""
-"Γεια σας <a href=\"%(user_link)s\" "
-"class=\"navbar-link\">%(user_name)s</a>, καλώς ήρθατε ξανά στο "
-"%(site_name)s!"
+"Γεια σας <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
+"καλώς ήρθατε ξανά στο %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -386,8 +383,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ"
-" του/της %(user_name)s στο Speedy Match."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ "
+"του/της %(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -396,8 +393,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ"
-" του/της %(user_name)s στο Speedy Match."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ "
+"του/της %(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -406,8 +403,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ"
-" του/της %(user_name)s στο Speedy Match."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ "
+"του/της %(user_name)s στο Speedy Match."
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -416,8 +413,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ "
-"του/της %(user_name)s στο Speedy Net."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του/"
+"της %(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -426,8 +423,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ "
-"του/της %(user_name)s στο Speedy Net."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του/"
+"της %(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -436,8 +433,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ "
-"του/της %(user_name)s στο Speedy Net."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του/"
+"της %(user_name)s στο Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
@@ -1528,8 +1525,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους "
-"στο Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
+"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
+"Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1538,8 +1535,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους "
-"στο Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
+"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
+"Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1548,8 +1545,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους "
-"στο Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
+"Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο "
+"Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε."
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1559,8 +1556,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1570,8 +1567,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1581,8 +1578,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1592,8 +1589,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1603,8 +1600,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1614,8 +1611,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1625,8 +1622,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1636,8 +1633,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1647,8 +1644,8 @@ msgid ""
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
 "Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από "
-"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους "
-"πριν συνεχίσετε."
+"{1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν "
+"συνεχίσετε."
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -1965,8 +1962,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε"
-" μια μη διαφανή εικόνα."
+"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε "
+"μια μη διαφανή εικόνα."
 
 #: .\__translations\__translations.py:253
 msgctxt "male"
@@ -1974,8 +1971,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε"
-" μια μη διαφανή εικόνα."
+"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε "
+"μια μη διαφανή εικόνα."
 
 #: .\__translations\__translations.py:254
 msgctxt "other"
@@ -1983,8 +1980,8 @@ msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
 msgstr ""
-"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε"
-" μια μη διαφανή εικόνα."
+"Η φωτογραφία προφίλ σας δεν μπορεί να είναι διαφανής. Παρακαλούμε ανεβάστε "
+"μια μη διαφανή εικόνα."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
@@ -2333,8 +2330,8 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d "
-"αλφαριθμητικό χαρακτήρα (περιέχει %(show_value)d)."
+"Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d αλφαριθμητικό "
+"χαρακτήρα (περιέχει %(show_value)d)."
 msgstr[1] ""
 "Το όνομα χρήστη πρέπει να περιέχει τουλάχιστον %(limit_value)d "
 "αλφαριθμητικούς χαρακτήρες (περιέχει %(show_value)d)."
@@ -2351,8 +2348,8 @@ msgstr[0] ""
 "Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικό "
 "χαρακτήρα (περιέχει %(show_value)d)."
 msgstr[1] ""
-"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικούς"
-" χαρακτήρες (περιέχει %(show_value)d)."
+"Το όνομα χρήστη πρέπει να περιέχει το πολύ %(limit_value)d αλφαριθμητικούς "
+"χαρακτήρες (περιέχει %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2428,11 +2425,9 @@ msgstr[1] ""
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d "
-"χαρακτήρα."
+"Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d χαρακτήρα."
 msgstr[1] ""
-"Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d "
-"χαρακτήρες."
+"Ο κωδικός πρόσβασής σας πρέπει να περιέχει το πολύ %(max_length)d χαρακτήρες."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2562,8 +2557,8 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Διαχειριστής: {total_number_of_members_registered_in_year} μέλη εγγράφηκαν"
-" το {year}."
+"Διαχειριστής: {total_number_of_members_registered_in_year} μέλη εγγράφηκαν "
+"το {year}."
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
@@ -3578,8 +3573,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ"
-" του/της %(user_name)s στο Speedy Match."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Match. Δείτε το προφίλ "
+"του/της %(user_name)s στο Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3592,8 +3587,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ "
-"του/της %(user_name)s στο Speedy Net."
+"Ο/Η %(user_name)s διαθέτει επίσης προφίλ στο Speedy Net. Δείτε το προφίλ του/"
+"της %(user_name)s στο Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
@@ -3666,8 +3661,8 @@ msgstr ""
 "Η φωτογραφία προφίλ σας πρέπει να είναι μια φωτογραφία σας, στην οποία να "
 "φαίνεται το πρόσωπό σας. Επιτρέπεται η ανάρτηση φωτογραφίας προφίλ στην "
 "οποία εμφανίζονται και άλλα άτομα. Μην αναρτάτε γυμνές φωτογραφίες, "
-"φωτογραφίες που δείχνουν γεννητικά όργανα (ανδρών ή γυναικών) ή "
-"φωτογραφίες με γυμνό στήθος (ανδρών ή γυναικών)."
+"φωτογραφίες που δείχνουν γεννητικά όργανα (ανδρών ή γυναικών) ή φωτογραφίες "
+"με γυμνό στήθος (ανδρών ή γυναικών)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."

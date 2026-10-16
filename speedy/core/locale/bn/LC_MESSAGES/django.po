@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,8 +395,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ "
-"%(user_name)s-এর প্রোফাইল দেখুন।"
+"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ %(user_name)s-এর "
+"প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:105
 #, python-format
@@ -405,8 +405,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ "
-"%(user_name)s-এর প্রোফাইল দেখুন।"
+"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ %(user_name)s-এর "
+"প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:106
 #, python-format
@@ -415,26 +415,23 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ "
-"%(user_name)s-এর প্রোফাইল দেখুন।"
+"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ %(user_name)s-এর "
+"প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
+msgstr "আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
+msgstr "আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
+msgstr "আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
@@ -827,9 +824,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব "
-"করেছেন। আপনার বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই "
-"পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব করেছেন। আপনার "
+"বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.html:213
 #, python-format
@@ -838,9 +834,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব "
-"করেছেন। আপনার বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই "
-"পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব করেছেন। আপনার "
+"বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.html:214
 #, python-format
@@ -849,9 +844,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব "
-"করেছেন। আপনার বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই "
-"পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব করেছেন। আপনার "
+"বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
@@ -884,8 +878,8 @@ msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
-"অনুগ্রহ করে একটি সঠিক %(username)s এবং পাসওয়ার্ড লিখুন। উল্লেখ্য যে, "
-"উভয় ফিল্ডই কেস-সেনসিটিভ হতে পারে।"
+"অনুগ্রহ করে একটি সঠিক %(username)s এবং পাসওয়ার্ড লিখুন। উল্লেখ্য যে, উভয় ফিল্ডই কেস-"
+"সেনসিটিভ হতে পারে।"
 
 #: .\__translations\__translations.py:20
 msgid "Message"
@@ -932,11 +926,9 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"তালিকায় %(show_value)dটি আইটেম আছে, %(limit_value)dটির বেশি থাকা উচিত "
-"নয়।"
+"তালিকায় %(show_value)dটি আইটেম আছে, %(limit_value)dটির বেশি থাকা উচিত নয়।"
 msgstr[1] ""
-"তালিকায় %(show_value)dটি আইটেম আছে, %(limit_value)dটির বেশি থাকা উচিত "
-"নয়।"
+"তালিকায় %(show_value)dটি আইটেম আছে, %(limit_value)dটির বেশি থাকা উচিত নয়।"
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -1488,8 +1480,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু "
-"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
+"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু রাখতে "
+"পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:179
 #, python-brace-format
@@ -1498,8 +1490,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু "
-"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
+"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু রাখতে "
+"পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:180
 #, python-brace-format
@@ -1508,8 +1500,8 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু "
-"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
+"আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু রাখতে "
+"পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।"
 
 #: .\__translations\__translations.py:182
 #, python-brace-format
@@ -1518,9 +1510,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1529,9 +1520,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1540,9 +1530,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1551,9 +1540,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1562,9 +1550,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1573,9 +1560,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1584,9 +1570,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1595,9 +1580,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1606,9 +1590,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের "
-"বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু "
-"বন্ধুকে সরিয়ে দিতে বলুন।"
+"এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু "
+"রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।"
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -1832,8 +1815,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:243
 msgctxt "female_male"
@@ -1841,8 +1824,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:244
 msgctxt "female_other"
@@ -1850,8 +1833,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:245
 msgctxt "male_female"
@@ -1859,8 +1842,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:246
 msgctxt "male_male"
@@ -1868,8 +1851,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:247
 msgctxt "male_other"
@@ -1877,8 +1860,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:248
 msgctxt "other_female"
@@ -1886,8 +1869,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:249
 msgctxt "other_male"
@@ -1895,8 +1878,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:250
 msgctxt "other_other"
@@ -1904,8 +1887,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy "
-"Net প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
+"এই ব্যবহারকারী আপনার প্রোফাইলের সাথে মেলে না, কিন্তু আপনি তাদের Speedy Net "
+"প্রোফাইল দেখতে পারেন। Speedy Net-এ ব্যবহারকারীর প্রোফাইল দেখুন।"
 
 #: .\__translations\__translations.py:252
 msgctxt "female"
@@ -2255,16 +2238,16 @@ msgid ""
 "Username must start with 4 or more letters, and may contain letters, digits "
 "or dashes."
 msgstr ""
-"ব্যবহারকারীর নাম অবশ্যই ৪ বা তার বেশি অক্ষর দিয়ে শুরু হতে হবে এবং এতে "
-"অক্ষর, সংখ্যা বা ড্যাশ থাকতে পারে।"
+"ব্যবহারকারীর নাম অবশ্যই ৪ বা তার বেশি অক্ষর দিয়ে শুরু হতে হবে এবং এতে অক্ষর, সংখ্যা "
+"বা ড্যাশ থাকতে পারে।"
 
 #: .\accounts\validators.py:61
 msgid ""
 "Username must start with 4 or more letters, after which can be any number of "
 "digits. You can add dashes between words."
 msgstr ""
-"ব্যবহারকারীর নাম অবশ্যই ৪ বা তার বেশি অক্ষর দিয়ে শুরু হতে হবে, যার পরে "
-"যেকোনো সংখ্যক সংখ্যা থাকতে পারে। শব্দগুলোর মধ্যে ড্যাশ যোগ করা যাবে।"
+"ব্যবহারকারীর নাম অবশ্যই ৪ বা তার বেশি অক্ষর দিয়ে শুরু হতে হবে, যার পরে যেকোনো "
+"সংখ্যক সংখ্যা থাকতে পারে। শব্দগুলোর মধ্যে ড্যাশ যোগ করা যাবে।"
 
 #: .\accounts\validators.py:71
 #, python-format
@@ -2275,11 +2258,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ব্যবহারকারীর নামে কমপক্ষে %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে "
-"হবে (এতে আছে %(show_value)dটি)।"
+"ব্যবহারকারীর নামে কমপক্ষে %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে হবে (এতে "
+"আছে %(show_value)dটি)।"
 msgstr[1] ""
-"ব্যবহারকারীর নামে কমপক্ষে %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে "
-"হবে (এতে আছে %(show_value)dটি)।"
+"ব্যবহারকারীর নামে কমপক্ষে %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে হবে (এতে "
+"আছে %(show_value)dটি)।"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2290,11 +2273,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ব্যবহারকারীর নামে সর্বোচ্চ %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে "
-"পারবে (এতে আছে %(show_value)dটি)।"
+"ব্যবহারকারীর নামে সর্বোচ্চ %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে পারবে (এতে "
+"আছে %(show_value)dটি)।"
 msgstr[1] ""
-"ব্যবহারকারীর নামে সর্বোচ্চ %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে "
-"পারবে (এতে আছে %(show_value)dটি)।"
+"ব্যবহারকারীর নামে সর্বোচ্চ %(limit_value)dটি আলফানিউমেরিক অক্ষর থাকতে পারবে (এতে "
+"আছে %(show_value)dটি)।"
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2350,12 +2333,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"এই পাসওয়ার্ডটি খুব বড়। এতে সর্বোচ্চ %(max_length)dটি অক্ষর থাকতে "
-"পারবে।"
-msgstr[1] ""
-"এই পাসওয়ার্ডটি খুব বড়। এতে সর্বোচ্চ %(max_length)dটি অক্ষর থাকতে "
-"পারবে।"
+msgstr[0] "এই পাসওয়ার্ডটি খুব বড়। এতে সর্বোচ্চ %(max_length)dটি অক্ষর থাকতে পারবে।"
+msgstr[1] "এই পাসওয়ার্ডটি খুব বড়। এতে সর্বোচ্চ %(max_length)dটি অক্ষর থাকতে পারবে।"
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -2370,8 +2349,7 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"আপনার পাসওয়ার্ডে কমপক্ষে %(min_unique_characters)dটি স্বতন্ত্র অক্ষর "
-"থাকতে হবে।"
+"আপনার পাসওয়ার্ডে কমপক্ষে %(min_unique_characters)dটি স্বতন্ত্র অক্ষর থাকতে হবে।"
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
@@ -2433,15 +2411,14 @@ msgid ""
 "{total_number_of_members_in_the_last_two_years} members entered the site in "
 "the last two years."
 msgstr ""
-"প্রশাসক: সাইটে মোট সদস্য সংখ্যা হলো {total_number_of_members}, যার "
-"মধ্যে {total_number_of_members_in_the_last_week} জন সদস্য গত সপ্তাহে "
-"সাইটে প্রবেশ করেছেন, {total_number_of_members_in_the_last_month} জন "
-"সদস্য গত মাসে সাইটে প্রবেশ করেছেন, "
-"{total_number_of_members_in_the_last_four_months} জন সদস্য গত চার মাসে "
-"সাইটে প্রবেশ করেছেন, {total_number_of_members_in_the_last_eight_months} "
-"জন সদস্য গত আট মাসে সাইটে প্রবেশ করেছেন, এবং "
-"{total_number_of_members_in_the_last_two_years} জন সদস্য গত দুই বছরে "
-"সাইটে প্রবেশ করেছেন."
+"প্রশাসক: সাইটে মোট সদস্য সংখ্যা হলো {total_number_of_members}, যার মধ্যে "
+"{total_number_of_members_in_the_last_week} জন সদস্য গত সপ্তাহে সাইটে প্রবেশ "
+"করেছেন, {total_number_of_members_in_the_last_month} জন সদস্য গত মাসে সাইটে "
+"প্রবেশ করেছেন, {total_number_of_members_in_the_last_four_months} জন সদস্য গত "
+"চার মাসে সাইটে প্রবেশ করেছেন, "
+"{total_number_of_members_in_the_last_eight_months} জন সদস্য গত আট মাসে সাইটে "
+"প্রবেশ করেছেন, এবং {total_number_of_members_in_the_last_two_years} জন সদস্য গত "
+"দুই বছরে সাইটে প্রবেশ করেছেন."
 
 #: .\admin\views.py:142
 #, python-brace-format
@@ -2487,8 +2464,8 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"প্রশাসক: {year} সালে {total_number_of_members_registered_in_year} জন "
-"সদস্য নিবন্ধন করেছেন।"
+"প্রশাসক: {year} সালে {total_number_of_members_registered_in_year} জন সদস্য "
+"নিবন্ধন করেছেন।"
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
@@ -3167,8 +3144,8 @@ msgid ""
 "If you have any questions, suggestions or are interested in joining the team "
 "- please contact us by email."
 msgstr ""
-"আপনার কোনো প্রশ্ন বা পরামর্শ থাকলে, অথবা দলে যোগ দিতে আগ্রহী হলে, "
-"অনুগ্রহ করে ইমেলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।"
+"আপনার কোনো প্রশ্ন বা পরামর্শ থাকলে, অথবা দলে যোগ দিতে আগ্রহী হলে, অনুগ্রহ করে "
+"ইমেলের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।"
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
@@ -3237,9 +3214,8 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব "
-"করেছেন। আপনার বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই "
-"পৃষ্ঠায় প্রবেশ করুন:"
+"আপনি %(site_name)s থেকে এই ধরনের বিজ্ঞপ্তি পাওয়ার জন্য সাবস্ক্রাইব করেছেন। আপনার "
+"বিজ্ঞপ্তির সেটিংস পরিবর্তন করতে বা সদস্যতা ত্যাগ করতে এই পৃষ্ঠায় প্রবেশ করুন:"
 
 #: .\templates\email\messages\new_message_subject.txt:1
 #, python-format
@@ -3345,14 +3321,13 @@ msgid ""
 "your Speedy Net account will remain active. You can reactivate your account "
 "after you deactivate it whenever you like."
 msgstr ""
-"আপনি যদি Speedy Net বা Speedy Match-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করে "
-"থাকেন, তাহলে সেই সাইট থেকে আপনার প্রোফাইলটি মুছে ফেলা হবে এবং সাইটে "
-"অন্য লোকেদের অনুসন্ধানের ফলাফলে আপনাকে দেখা যাবে না। মনে রাখবেন যে, "
-"Speedy Net-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করলে Speedy Match-এও আপনার "
-"অ্যাকাউন্টটি স্বয়ংক্রিয়ভাবে নিষ্ক্রিয় হয়ে যাবে। আপনি শুধুমাত্র "
-"Speedy Match-এ আপনার অ্যাকাউন্টটি নিষ্ক্রিয় করতে পারেন, সেক্ষেত্রে "
-"আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে। নিষ্ক্রিয় করার পর আপনি "
-"যখন খুশি আপনার অ্যাকাউন্টটি পুনরায় সক্রিয় করতে পারেন।"
+"আপনি যদি Speedy Net বা Speedy Match-এ আপনার অ্যাকাউন্ট নিষ্ক্রিয় করে থাকেন, "
+"তাহলে সেই সাইট থেকে আপনার প্রোফাইলটি মুছে ফেলা হবে এবং সাইটে অন্য লোকেদের "
+"অনুসন্ধানের ফলাফলে আপনাকে দেখা যাবে না। মনে রাখবেন যে, Speedy Net-এ আপনার "
+"অ্যাকাউন্ট নিষ্ক্রিয় করলে Speedy Match-এও আপনার অ্যাকাউন্টটি স্বয়ংক্রিয়ভাবে নিষ্ক্রিয় "
+"হয়ে যাবে। আপনি শুধুমাত্র Speedy Match-এ আপনার অ্যাকাউন্টটি নিষ্ক্রিয় করতে পারেন, "
+"সেক্ষেত্রে আপনার Speedy Net অ্যাকাউন্টটি সক্রিয় থাকবে। নিষ্ক্রিয় করার পর আপনি যখন "
+"খুশি আপনার অ্যাকাউন্টটি পুনরায় সক্রিয় করতে পারেন।"
 
 #: .\templates\privacy\privacy_policy.html:25
 msgid ""
@@ -3491,8 +3466,7 @@ msgstr ""
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
-msgstr ""
-"আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
+msgstr "আপনারও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ আপনার প্রোফাইল দেখুন।"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3500,8 +3474,8 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ "
-"%(user_name)s-এর প্রোফাইল দেখুন।"
+"%(user_name)s-এরও একটি Speedy Net প্রোফাইল আছে। Speedy Net-এ %(user_name)s-এর "
+"প্রোফাইল দেখুন।"
 
 #: .\templates\terms\terms_of_service.html:19
 msgid ""
