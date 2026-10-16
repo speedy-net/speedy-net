@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "Itt nincsenek kedveléseid."
+msgstr "Itt nincsenek kedvelései."
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "Itt nincsenek kedveléseid."
+msgstr "Itt nincsenek kedvelései."
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "Itt nincsenek kedveléseid."
+msgstr "Itt nincsenek kedvelései."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr "Frissítse a találatokat"
+msgstr "Találatok frissítése"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr "Frissítse a találatokat"
+msgstr "Találatok frissítése"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr "Frissítse a találatokat"
+msgstr "Találatok frissítése"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
@@ -68,8 +68,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Még nincsenek egyezései. Próbálja kibővíteni a keresési beállításokat, vagy "
-"ellenőrizze később."
+"Önnek még nincsenek találatai. Próbálja meg kibővíteni a keresési "
+"beállításokat, vagy nézzen vissza később."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -77,8 +77,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Még nincsenek egyezései. Próbálja kibővíteni a keresési beállításokat, vagy "
-"ellenőrizze később."
+"Önnek még nincsenek találatai. Próbálja meg kibővíteni a keresési "
+"beállításokat, vagy nézzen vissza később."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -86,68 +86,68 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Még nincsenek egyezései. Próbálja kibővíteni a keresési beállításokat, vagy "
-"ellenőrizze később."
+"Önnek még nincsenek találatai. Próbálja meg kibővíteni a keresési "
+"beállításokat, vagy nézzen vissza később."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Keresési beállítások"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Keresési beállítások"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Keresési beállítások"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "Mint"
+msgstr "Kedvelés"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "Mint"
+msgstr "Kedvelés"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "Mint"
+msgstr "Kedvelés"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "Ellentétben"
+msgstr "Kedvelés visszavonása"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "Ellentétben"
+msgstr "Kedvelés visszavonása"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "Ellentétben"
+msgstr "Kedvelés visszavonása"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "Az Ön meccsei"
+msgstr "Az Ön találatai"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "Az Ön meccsei"
+msgstr "Az Ön találatai"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Az Ön meccsei"
+msgstr "Az Ön találatai"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -167,32 +167,32 @@ msgstr "Barátok"
 #: .\__translations\__translations.html:42
 msgctxt "female"
 msgid "Your Friends"
-msgstr "A barátaid"
+msgstr "Az Ön barátai"
 
 #: .\__translations\__translations.html:43
 msgctxt "male"
 msgid "Your Friends"
-msgstr "A barátaid"
+msgstr "Az Ön barátai"
 
 #: .\__translations\__translations.html:44
 msgctxt "other"
 msgid "Your Friends"
-msgstr "A barátaid"
+msgstr "Az Ön barátai"
 
 #: .\__translations\__translations.html:46
 msgctxt "female"
 msgid "You don't have any friends yet."
-msgstr "Még nincsenek barátaid."
+msgstr "Önnek még nincsenek barátai."
 
 #: .\__translations\__translations.html:47
 msgctxt "male"
 msgid "You don't have any friends yet."
-msgstr "Még nincsenek barátaid."
+msgstr "Önnek még nincsenek barátai."
 
 #: .\__translations\__translations.html:48
 msgctxt "other"
 msgid "You don't have any friends yet."
-msgstr "Még nincsenek barátaid."
+msgstr "Önnek még nincsenek barátai."
 
 #: .\__translations\__translations.html:50
 msgctxt "female"
@@ -212,110 +212,110 @@ msgstr "Rólam"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "A meccsemről"
+msgstr "A keresett partnerről"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "A meccsemről"
+msgstr "A keresett partnerről"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "A meccsemről"
+msgstr "A keresett partnerről"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "Megfelelő nem"
+msgstr "Keresett nem"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "Megfelelő nem"
+msgstr "Keresett nem"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "Megfelelő nem"
+msgstr "Keresett nem"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Valaki kedvel téged a %(site_name)s-on"
+msgstr "Valaki kedveli Önt a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Valaki kedvel téged a %(site_name)s-on"
+msgstr "Valaki kedveli Önt a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Valaki kedvel téged a %(site_name)s-on"
+msgstr "Valaki kedveli Önt a(z) %(site_name)s oldalon"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "kedvel téged."
+msgstr "kedveli Önt."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "kedvel téged."
+msgstr "kedveli Önt."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "kedvel téged."
+msgstr "kedveli Önt."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "kedvel téged"
+msgstr "kedveli Önt"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "kedvel téged"
+msgstr "kedveli Önt"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "kedvel téged"
+msgstr "kedveli Önt"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "tetszik"
+msgstr "Ön kedveli"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "tetszik"
+msgstr "Ön kedveli"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "tetszik"
+msgstr "Ön kedveli"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Legutóbbi látogatás Speedy Match"
+msgstr "Utoljára itt járt: Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Legutóbbi látogatás Speedy Match"
+msgstr "Utoljára itt járt: Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Legutóbbi látogatás Speedy Match"
+msgstr "Utoljára itt járt: Speedy Match"
 
 #: .\__translations\__translations.py:10
 msgid "My height in centimeters"
@@ -355,115 +355,115 @@ msgstr "A magasságom centiméterben"
 #: .\templates\accounts\edit_profile\activate.html:115
 msgctxt "female"
 msgid "My ideal match"
-msgstr "Az ideális párom"
+msgstr "Az ideális partnerem"
 
 #: .\__translations\__translations.py:21
 #: .\templates\accounts\edit_profile\activate.html:121
 msgctxt "male"
 msgid "My ideal match"
-msgstr "Az ideális párom"
+msgstr "Az ideális partnerem"
 
 #: .\__translations\__translations.py:22
 #: .\templates\accounts\edit_profile\activate.html:128
 msgctxt "other"
 msgid "My ideal match"
-msgstr "Az ideális párom"
+msgstr "Az ideális partnerem"
 
 #: .\__translations\__translations.py:24
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "Minimális életkor"
+msgstr "Keresett minimális életkor"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "Minimális életkor"
+msgstr "Keresett minimális életkor"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "Minimális életkor"
+msgstr "Keresett minimális életkor"
 
 #: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "Maximális életkor"
+msgstr "Keresett maximális életkor"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "Maximális életkor"
+msgstr "Keresett maximális életkor"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "Maximális életkor"
+msgstr "Keresett maximális életkor"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
 msgid "Please write a few words about yourself."
-msgstr "Kérlek írj pár szót magadról."
+msgstr "Kérjük, írjon néhány szót magáról."
 
 #: .\__translations\__translations.py:33
 msgctxt "male"
 msgid "Please write a few words about yourself."
-msgstr "Kérlek írj pár szót magadról."
+msgstr "Kérjük, írjon néhány szót magáról."
 
 #: .\__translations\__translations.py:34
 msgctxt "other"
 msgid "Please write a few words about yourself."
-msgstr "Kérlek írj pár szót magadról."
+msgstr "Kérjük, írjon néhány szót magáról."
 
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "Vannak gyerekei? Hány?"
+msgstr "Vannak gyermekei? Hány?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "Vannak gyerekei? Hány?"
+msgstr "Vannak gyermekei? Hány?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "Vannak gyerekei? Hány?"
+msgstr "Vannak gyermekei? Hány?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
 msgid "Do you want (more) children?"
-msgstr "Akarsz (több) gyereket?"
+msgstr "Szeretne (több) gyermeket?"
 
 #: .\__translations\__translations.py:41
 msgctxt "male"
 msgid "Do you want (more) children?"
-msgstr "Akarsz (több) gyereket?"
+msgstr "Szeretne (több) gyermeket?"
 
 #: .\__translations\__translations.py:42
 msgctxt "other"
 msgid "Do you want (more) children?"
-msgstr "Akarsz (több) gyereket?"
+msgstr "Szeretne (több) gyermeket?"
 
 #: .\__translations\__translations.py:44
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "Ki az ideális partnered?"
+msgstr "Ki az ideális partnere?"
 
 #: .\__translations\__translations.py:45
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "Ki az ideális partnered?"
+msgstr "Ki az ideális partnere?"
 
 #: .\__translations\__translations.py:46
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Ki az ideális partnered?"
+msgstr "Ki az ideális partnere?"
 
 #: .\__translations\__translations.py:48
 #, python-brace-format
@@ -509,7 +509,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Speedy Match fiókok"
 
 #: .\accounts\forms.py:96
 msgid "Add profile picture"
@@ -517,15 +517,15 @@ msgstr "Profilkép hozzáadása"
 
 #: .\accounts\forms.py:96 .\accounts\forms.py:135
 msgid "A profile picture is required."
-msgstr "Profilkép szükséges."
+msgstr "Profilkép megadása kötelező."
 
 #: .\accounts\forms.py:97
 msgid "My diet"
-msgstr "Az én diétám"
+msgstr "Diétám"
 
 #: .\accounts\forms.py:97 .\accounts\forms.py:141 .\accounts\validators.py:181
 msgid "Your diet is required."
-msgstr "Diétája kötelező."
+msgstr "A diéta megadása kötelező."
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
@@ -541,74 +541,74 @@ msgstr "A kapcsolati állapotom"
 
 #: .\accounts\forms.py:99 .\accounts\forms.py:147 .\accounts\validators.py:205
 msgid "Your relationship status is required."
-msgstr "A kapcsolat állapota kötelező."
+msgstr "A kapcsolati állapot megadása kötelező."
 
 #: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
-msgstr "Meg kell adni a nemet."
+msgstr "A keresett nem megadása kötelező."
 
 #: .\accounts\forms.py:138
 msgid "Your height is required."
-msgstr "A magasságod kötelező."
+msgstr "A magasság megadása kötelező."
 
 #: .\accounts\forms.py:150 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
-msgstr "Kérlek írj pár szót magadról."
+msgstr "Kérjük, írjon néhány szót magáról."
 
 #: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
-msgstr "Kérlek írd meg hol laksz."
+msgstr "Kérjük, írja meg, hol lakik."
 
 #: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "Vannak gyerekei? Hány?"
+msgstr "Vannak gyermekei? Hány?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
-msgstr "Akarsz (több) gyereket?"
+msgstr "Szeretne (több) gyermeket?"
 
 #: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
-msgstr "Ki az ideális partnered?"
+msgstr "Ki az ideális partnere?"
 
 #: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
-msgstr "Minimális életkor szükséges."
+msgstr "A keresett minimális életkor megadása kötelező."
 
 #: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
-msgstr "A megfeleléshez szükséges maximális életkor megadása kötelező."
+msgstr "A keresett maximális életkor megadása kötelező."
 
 #: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
-msgstr "Diéta egyezés szükséges."
+msgstr "A diétaegyezés megadása kötelező."
 
 #: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
-msgstr "A dohányzási állapot egyezése kötelező."
+msgstr "A dohányzási állapot egyezésének megadása kötelező."
 
 #: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
-msgstr "A kapcsolati állapot egyezése kötelező."
+msgstr "A kapcsolati állapot egyezésének megadása kötelező."
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
-msgstr "hol laksz?"
+msgstr "Hol lakik?"
 
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "Megfelelő nem"
+msgstr "Keresett nem"
 
 #: .\accounts\models.py:70
 msgid "Speedy Match User"
-msgstr "Speedy Match Felhasználó"
+msgstr "Speedy Match felhasználó"
 
 #: .\accounts\models.py:82 .\accounts\models.py:203
 msgid "No match"
@@ -640,7 +640,7 @@ msgstr "Felhasználó"
 
 #: .\accounts\models.py:213
 msgid "On new likes"
-msgstr "Az új kedveléseken"
+msgstr "Új kedvelések esetén"
 
 #: .\accounts\models.py:216
 msgid "Active languages"
@@ -658,44 +658,44 @@ msgstr "cm"
 
 #: .\accounts\models.py:224
 msgid "Few words about me"
-msgstr "Pár szót rólam"
+msgstr "Néhány szó rólam"
 
 #: .\accounts\models.py:233
 #: .\templates\profiles\user_extra_info_widget.html:54
 msgid "My ideal match"
-msgstr "Az ideális párom"
+msgstr "Az ideális partnerem"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
-msgstr "Minimális életkor"
+msgstr "Keresett minimális életkor"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "Maximális életkor"
+msgstr "Keresett maximális életkor"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "Diéta meccs"
+msgstr "Diétaegyezés"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
-msgstr "Dohányzási állapot mérkőzés"
+msgstr "Dohányzási állapot egyezése"
 
 #: .\accounts\models.py:247
 msgid "Relationship status match"
-msgstr "A kapcsolati állapot egyezés"
+msgstr "Kapcsolati állapot egyezése"
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
-msgstr "Diéta hozzáillő"
+msgstr "Keresett diéta"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "A megfelelő dohányzási állapot"
+msgstr "Keresett dohányzási állapot"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
-msgstr "Megfelelő kapcsolati állapot"
+msgstr "Keresett kapcsolati állapot"
 
 #: .\accounts\models.py:273
 msgid "Activation step"
@@ -703,15 +703,15 @@ msgstr "Aktiválási lépés"
 
 #: .\accounts\models.py:276
 msgid "Number of matches on last user's search"
-msgstr "Egyezések száma az utolsó felhasználó keresésében"
+msgstr "Találatok száma a felhasználó utolsó keresésében"
 
 #: .\accounts\models.py:352
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Speedy Match profil"
 
 #: .\accounts\models.py:353 .\profiles\apps.py:14
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Speedy Match profilok"
 
 #: .\accounts\models.py:546 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -735,31 +735,31 @@ msgstr "A magasságnak 1 és 450 cm között kell lennie."
 
 #: .\accounts\validators.py:229
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr "A megfeleléshez szükséges minimális életkor 0 és 180 év között lehet."
+msgstr "A keresett minimális életkornak 0 és 180 év között kell lennie."
 
 #: .\accounts\validators.py:241
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr "A mérkőzés maximális korhatára 0 és 180 év között lehet."
+msgstr "A keresett maximális életkornak 0 és 180 év között kell lennie."
 
 #: .\accounts\validators.py:256
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
-"A megfelelő maximális életkor nem lehet alacsonyabb, mint a megfelelő "
-"minimális életkor."
+"A keresett maximális életkor nem lehet kisebb, mint a keresett minimális "
+"életkor."
 
 #: .\accounts\validators.py:271
 msgid "At least one diet match option should be five hearts."
-msgstr "Legalább egy diétás választási lehetőségnek öt szívnek kell lennie."
+msgstr "Legalább egy diétaegyezési lehetőségnél öt szívet kell megadni."
 
 #: .\accounts\validators.py:286
 msgid "At least one smoking status match option should be five hearts."
 msgstr ""
-"Legalább egy dohányzási állapot egyezési opciónak öt szívnek kell lennie."
+"Legalább egy dohányzási állapot egyezési lehetőségnél öt szívet kell megadni."
 
 #: .\accounts\validators.py:301
 msgid "At least one relationship status match option should be five hearts."
 msgstr ""
-"Legalább egy kapcsolati állapot egyezési lehetőségnek öt szívnek kell lennie."
+"Legalább egy kapcsolati állapot egyezési lehetőségnél öt szívet kell megadni."
 
 #: .\admin\views.py:225
 #, python-brace-format
@@ -811,52 +811,51 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
+"Admin: Az oldalon az aktív tagok száma összesen "
 "{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"nő, {total_number_of_male_active_members} férfi, "
+"{total_number_of_other_active_members} egyéb; "
+"{total_percent_of_female_active_members} nő, "
+"{total_percent_of_male_active_members} férfi, "
+"{total_percent_of_other_active_members} egyéb), ebből "
+"{total_number_of_active_members_in_the_last_week} tag "
+"({total_number_of_female_active_members_in_the_last_week} nő, "
+"{total_number_of_male_active_members_in_the_last_week} férfi, "
+"{total_number_of_other_active_members_in_the_last_week} egyéb; "
+"{total_percent_of_female_active_members_in_the_last_week} nő, "
+"{total_percent_of_male_active_members_in_the_last_week} férfi, "
+"{total_percent_of_other_active_members_in_the_last_week} egyéb) az elmúlt "
+"héten, {total_number_of_active_members_in_the_last_month} tag "
+"({total_number_of_female_active_members_in_the_last_month} nő, "
+"{total_number_of_male_active_members_in_the_last_month} férfi, "
+"{total_number_of_other_active_members_in_the_last_month} egyéb; "
+"{total_percent_of_female_active_members_in_the_last_month} nő, "
+"{total_percent_of_male_active_members_in_the_last_month} férfi, "
+"{total_percent_of_other_active_members_in_the_last_month} egyéb) az elmúlt "
+"hónapban, {total_number_of_active_members_in_the_last_four_months} tag "
+"({total_number_of_female_active_members_in_the_last_four_months} nő, "
+"{total_number_of_male_active_members_in_the_last_four_months} férfi, "
+"{total_number_of_other_active_members_in_the_last_four_months} egyéb; "
+"{total_percent_of_female_active_members_in_the_last_four_months} nő, "
+"{total_percent_of_male_active_members_in_the_last_four_months} férfi, "
+"{total_percent_of_other_active_members_in_the_last_four_months} egyéb) az "
+"elmúlt négy hónapban, "
+"{total_number_of_active_members_in_the_last_eight_months} tag "
+"({total_number_of_female_active_members_in_the_last_eight_months} nő, "
+"{total_number_of_male_active_members_in_the_last_eight_months} férfi, "
+"{total_number_of_other_active_members_in_the_last_eight_months} egyéb; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} nő, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} férfi, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} egyéb) az "
+"elmúlt nyolc hónapban, és "
+"{total_number_of_active_members_in_the_last_two_years} tag "
+"({total_number_of_female_active_members_in_the_last_two_years} nő, "
+"{total_number_of_male_active_members_in_the_last_two_years} férfi, "
+"{total_number_of_other_active_members_in_the_last_two_years} egyéb; "
+"{total_percent_of_female_active_members_in_the_last_two_years} nő, "
+"{total_percent_of_male_active_members_in_the_last_two_years} férfi, "
+"{total_percent_of_other_active_members_in_the_last_two_years} egyéb) az "
+"elmúlt két évben lépett be az oldalra."
 
 #: .\admin\views.py:307
 #, python-brace-format
@@ -880,8 +879,8 @@ msgid ""
 "{total_number_of_active_members_registered_before_2019_08_01} active members "
 "registered before 1 August 2019."
 msgstr ""
-"Adminisztrátor: {total_number_of_active_members_registered_in_the_last_week} "
-"aktív tag regisztrált az elmúlt héten. "
+"Admin: {total_number_of_active_members_registered_in_the_last_week} aktív "
+"tag regisztrált az elmúlt héten. "
 "{total_number_of_active_members_registered_in_the_last_month} aktív tag "
 "regisztrált az elmúlt hónapban. "
 "{total_number_of_active_members_registered_in_the_last_four_months} aktív "
@@ -891,13 +890,13 @@ msgstr ""
 "{total_number_of_active_members_registered_in_the_last_eight_months} aktív "
 "tag regisztrált az elmúlt nyolc hónapban. "
 "{total_number_of_active_members_registered_more_than_eight_months_ago} aktív "
-"tagok több mint nyolc hónapja regisztráltak. "
+"tag több mint nyolc hónapja regisztrált. "
 "{total_number_of_active_members_registered_in_the_last_two_years} aktív tag "
 "regisztrált az elmúlt két évben. "
 "{total_number_of_active_members_registered_more_than_two_years_ago} aktív "
-"tagok több mint két éve regisztráltak. "
-"{total_number_of_active_members_registered_before_2019_08_01} 2019. "
-"augusztus 1. előtt regisztrált aktív tagok."
+"tag több mint két éve regisztrált. "
+"{total_number_of_active_members_registered_before_2019_08_01} aktív tag "
+"2019. augusztus 1. előtt regisztrált."
 
 #: .\admin\views.py:327
 #, python-brace-format
@@ -905,8 +904,8 @@ msgid ""
 "Admin: {total_number_of_active_members_registered_in_year} active members "
 "registered in {year}."
 msgstr ""
-"Adminisztrátor: {total_number_of_active_members_registered_in_year} aktív "
-"tag regisztrált itt: {year}."
+"Admin: {total_number_of_active_members_registered_in_year} aktív tag "
+"regisztrált {year} folyamán."
 
 #: .\admin\views.py:382
 #, python-brace-format
@@ -920,14 +919,14 @@ msgid ""
 "{total_percent_of_male_active_members_in_age_range} males, "
 "{total_percent_of_other_active_members_in_age_range} others)."
 msgstr ""
-"Adminisztrátor: {total_number_of_active_members_in_age_range} "
+"Admin: {total_number_of_active_members_in_age_range} "
 "({total_number_of_female_active_members_in_age_range} nő, "
 "{total_number_of_male_active_members_in_age_range} férfi, "
-"{total_number_of_other_active_members_in_age_range} másik) aktív tag "
+"{total_number_of_other_active_members_in_age_range} egyéb) aktív tag "
 "{min_age} és {max_age} év között "
 "({total_percent_of_female_active_members_in_age_range} nő, "
 "{total_percent_of_male_active_members_in_age_range} férfi, "
-"{total_percent_of_other_active_members_in_age_range} másik)."
+"{total_percent_of_other_active_members_in_age_range} egyéb)."
 
 #: .\admin\views.py:446
 #, python-brace-format
@@ -946,20 +945,19 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
 "others) entered the site in the last eight months."
 msgstr ""
-"Adminisztrátor: "
-"{total_number_of_active_members_in_age_range_in_the_last_eight_months} "
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_eight_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_eight_months} "
 "nő, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_eight_months} "
 "férfi, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"másik) {min_age} és {max_age} év közötti aktív tag "
+"egyéb) aktív tag {min_age} és {max_age} év között "
 "({total_percent_of_female_active_members_in_age_range_in_the_last_eight_months} "
 "nő, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months} "
 "férfi, "
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months} "
-"másik) jelentkezett be az oldalra az elmúlt nyolc hónapban."
+"egyéb) lépett be az oldalra az elmúlt nyolc hónapban."
 
 #: .\admin\views.py:510
 #, python-brace-format
@@ -978,20 +976,19 @@ msgid ""
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
 "others) entered the site in the last four months."
 msgstr ""
-"Adminisztrátor: "
-"{total_number_of_active_members_in_age_range_in_the_last_four_months} "
+"Admin: {total_number_of_active_members_in_age_range_in_the_last_four_months} "
 "({total_number_of_female_active_members_in_age_range_in_the_last_four_months} "
 "nő, "
 "{total_number_of_male_active_members_in_age_range_in_the_last_four_months} "
 "férfi, "
 "{total_number_of_other_active_members_in_age_range_in_the_last_four_months} "
-"másik) {min_age} és {max_age} év közötti aktív tag "
+"egyéb) aktív tag {min_age} és {max_age} év között "
 "({total_percent_of_female_active_members_in_age_range_in_the_last_four_months} "
 "nő, "
 "{total_percent_of_male_active_members_in_age_range_in_the_last_four_months} "
 "férfi, "
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months} "
-"másik) jelentkezett be az oldalra az elmúlt négy hónapban."
+"egyéb) lépett be az oldalra az elmúlt négy hónapban."
 
 #: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
@@ -999,7 +996,7 @@ msgstr "A felhasználók nem kedvelhetik magukat."
 
 #: .\likes\managers.py:33
 msgid "User already likes other user."
-msgstr "A felhasználónak már tetszik egy másik felhasználó."
+msgstr "A felhasználó már kedveli a másik felhasználót."
 
 #: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
@@ -1007,43 +1004,43 @@ msgstr "A felhasználó nem kedvelheti a letiltott felhasználót."
 
 #: .\likes\models.py:24
 msgid "from user"
-msgstr "felhasználótól"
+msgstr "feladó felhasználó"
 
 #: .\likes\models.py:25
 msgid "to user"
-msgstr "felhasználónak"
+msgstr "címzett felhasználó"
 
 #: .\likes\models.py:31
 msgid "user like"
-msgstr "felhasználó kedveli"
+msgstr "felhasználói kedvelés"
 
 #: .\likes\models.py:32
 msgid "user likes"
-msgstr "felhasználó kedveli"
+msgstr "felhasználói kedvelések"
 
 #: .\likes\views.py:53
 msgid "Girls You Like"
-msgstr "Lányok, akiket kedvelsz"
+msgstr "Lányok, akiket Ön kedvel"
 
 #: .\likes\views.py:54
 msgid "Boys You Like"
-msgstr "Fiúk, akiket kedvelsz"
+msgstr "Fiúk, akiket Ön kedvel"
 
 #: .\likes\views.py:55
 msgid "People You Like"
-msgstr "Olyan emberek, akiket kedvelsz"
+msgstr "Emberek, akiket Ön kedvel"
 
 #: .\likes\views.py:58
 msgid "Girls Who Like You"
-msgstr "Lányok, akik kedvelnek téged"
+msgstr "Lányok, akik kedvelik Önt"
 
 #: .\likes\views.py:59
 msgid "Boys Who Like You"
-msgstr "Fiúk, akik kedvelnek téged"
+msgstr "Fiúk, akik kedvelik Önt"
 
 #: .\likes\views.py:60
 msgid "People Who Like You"
-msgstr "Emberek, akik kedvelnek téged"
+msgstr "Emberek, akik kedvelik Önt"
 
 #: .\likes\views.py:62
 msgid "Mutual Likes"
@@ -1051,16 +1048,16 @@ msgstr "Kölcsönös kedvelések"
 
 #: .\matches\apps.py:14
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Speedy Match találatok"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
-msgstr "A mérkőzés beállításait elmentettük."
+msgstr "Keresési beállításait elmentettük."
 
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "Match rang"
+msgstr "Egyezési rang"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
@@ -1083,7 +1080,7 @@ msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "A Speedy Match -ről"
+msgstr "A Speedy Matchről"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1099,15 +1096,15 @@ msgid ""
 "available in %(languages_num)s languages."
 msgstr ""
 "A <a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">Speedy Match</a> egy új randevúzási/párkereső internetes alkalmazás "
-"romantikus célokra olyan egyedülállók számára, akik a <a href=\"https://"
-"%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> tagjai. "
-"A Speedy Match segítségével megtalálhatja a megfelelő embereket "
-"randevúzáshoz, és online cseveghet velük. Hozzáadhat embereket barátokként a "
-"Speedy Neten, kedvelheti az embereket, és üzeneteket küldhet nekik. A Speedy "
-"Match ingyenes regisztrációra nyitva áll minden országból és korosztályból "
-"(korhatár nélkül!). Az oldal vegán és vegetáriánusbarát. Jelenleg "
-"%(languages_num)s nyelven érhető el."
+"Match\">Speedy Match</a> egy új társkereső webalkalmazás romantikus célokra "
+"olyan egyedülállók számára, akik a <a href=\"https://%(language_code)s."
+"speedy.net/\" title=\"Speedy Net\">Speedy Net</a> tagjai. A Speedy Match "
+"segítségével megtalálhatja a hozzá illő embereket randevúzáshoz, és online "
+"cseveghet velük. Hozzáadhat embereket barátként a Speedy Neten, kedvelheti "
+"őket, és üzeneteket küldhet nekik. A Speedy Match ingyenes regisztrációra "
+"nyitva áll minden országból és minden korosztály számára (korhatár nélkül!). "
+"Az oldal vegán- és vegetáriánusbarát. Jelenleg %(languages_num)s nyelven "
+"érhető el."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -1128,12 +1125,12 @@ msgid ""
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
 msgstr ""
-"Csak az Ön igényeinek megfelelő személyek láthatják profilját, és "
-"kapcsolatba léphetnek Önnel. Nem engedélyezzük az anonim kereséseket Speedy "
-"Match, és a profilokat csak a megfelelő partnerek láthatják. Kiválaszthatja, "
-"hogy ki láthatja profilját, és mely adatok jelenjenek meg a profiljában "
-"nyilvánosként, melyek csak az ismerősök számára, és melyek legyenek "
-"privátok. A privát adatok csak Önnek jelennek meg."
+"Csak az Ön elvárásainak megfelelő személyek láthatják a profilját, és "
+"léphetnek Önnel kapcsolatba. Nem engedélyezzük az anonim keresést, és a "
+"Speedy Match profilok csak a hozzájuk illő partnerek számára láthatók. "
+"Kiválaszthatja, hogy ki láthatja a profilját, és mely adatok jelenjenek meg "
+"a profilján nyilvánosan, melyek csak a barátok számára, és melyek legyenek "
+"privátok. A privát adatok csak Önnek láthatók."
 
 #: .\templates\about\about.html:23
 msgid ""
@@ -1141,19 +1138,19 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a hez "
-"még Speedy Match ma, hogy megfelelő partnereket találjon, mindössze néhány "
-"percet vesz igénybe. <a href=\"/\" title=\"Join Speedy Match\">Kattintson "
-"ide</a> a csatlakozáshoz."
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon még "
+"ma a Speedy Matchhez, hogy megtalálja a hozzá illő partnereket – mindössze "
+"néhány percet vesz igénybe. <a href=\"/\" title=\"Join Speedy "
+"Match\">Kattintson ide</a> a csatlakozáshoz."
 
 #: .\templates\about\about.html:25
 msgid ""
 "Speedy Match is a free software & open source project. If you want to help "
 "developing and improving Speedy Match, please contact me by email."
 msgstr ""
-"A Speedy Match egy ingyenes szoftveres és nyílt forráskódú projekt. Ha "
-"segíteni szeretne a fejlesztésében Speedy Match és javításában, forduljon "
-"hozzám e-mailben."
+"A Speedy Match ingyenes szoftver és nyílt forráskódú projekt. Ha segíteni "
+"szeretne a Speedy Match fejlesztésében és javításában, kérjük, vegye fel "
+"velem a kapcsolatot e-mailben."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -1161,9 +1158,9 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"A Speedy Match nevét <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a>-ról kapta, egy nőstény kutyáról, aki sok "
-"éven át velünk volt, és 2003-ban pusztult el. 1988-ban 7 kölyökkutyának "
+"A Speedy Match <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>-ről kapta a nevét, egy nőstény kutyáról, aki sok "
+"éven át velünk volt, és 2003-ban elpusztult. Speedy 1988-ban 7 kölyöknek "
 "adott életet."
 
 #: .\templates\about\about.html:29
@@ -1171,8 +1168,8 @@ msgid ""
 "Speedy Match is currently in alpha. It was launched in August 2019. The "
 "English version of Speedy Match is in production."
 msgstr ""
-"A Speedy Match jelenleg alfában van. 2019 augusztusában indították el. A "
-"angol Speedy Match verziója gyártás alatt áll."
+"A Speedy Match jelenleg alfa állapotban van. 2019 augusztusában indították "
+"el. A Speedy Match angol nyelvű verziója fejlesztés alatt áll."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
@@ -1184,7 +1181,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "A és a alapítója és Speedy Net Speedy Match igazgatója,"
+msgstr "A Speedy Net és a Speedy Match alapítója és igazgatója,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1201,7 +1198,7 @@ msgstr "Üdvözöljük"
 #: .\templates\accounts\edit_profile\activate.html:25
 #, python-format
 msgid "Welcome to %(site_name)s"
-msgstr "Üdvözöljük a %(site_name)s"
+msgstr "Üdvözöljük a(z) %(site_name)s oldalon"
 
 #: .\templates\accounts\edit_profile\activate.html:46
 #: .\templates\accounts\edit_profile\base.html:10
@@ -1214,7 +1211,7 @@ msgstr "Rólam"
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "A meccsemről"
+msgstr "A keresett partnerről"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
@@ -1231,32 +1228,32 @@ msgstr ""
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "Adminisztrátor – Minden egyezés"
+msgstr "Admin – Minden találat"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Az Ön meccsei"
+msgstr "Az Ön találatai"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "Gyufa"
+msgstr "Találatok"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "Tetszik"
+msgstr "Kedvelések"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr "Az Ön egyezési beállításai"
+msgstr "Az Ön keresési beállításai"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Keresési beállítások"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
@@ -1265,7 +1262,7 @@ msgstr "Vegánbarát weboldal"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "kedvel téged."
+msgstr "kedveli Önt."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1273,26 +1270,25 @@ msgid ""
 "You are subscribed to receive this type of notifications from %(site_name)s. "
 "Enter this page to change your notifications settings or opt out:"
 msgstr ""
-"Feliratkozott az ilyen típusú értesítések fogadására innen: %(site_name)s. "
-"Lépjen be erre az oldalra az értesítési beállítások módosításához vagy a "
-"leiratkozáshoz:"
+"Feliratkozott a(z) %(site_name)s ilyen típusú értesítéseire. Lépjen be erre "
+"az oldalra az értesítési beállítások módosításához vagy a leiratkozáshoz:"
 
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Valaki kedvel téged a %(site_name)s-on"
+msgstr "Valaki kedveli Önt a(z) %(site_name)s oldalon"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Még nincsenek barátaid."
+msgstr "Önnek még nincsenek barátai."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "A barátaid"
+msgstr "Az Ön barátai"
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "Itt nincsenek kedveléseid."
+msgstr "Itt nincsenek kedvelései."
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
@@ -1305,28 +1301,28 @@ msgid ""
 "matching people for dating and chat with them online. The site is vegan and "
 "vegetarian friendly."
 msgstr ""
-"A Speedy Match egy új randevúzási/egyeztetési webalkalmazás romantikus "
-"célokra a tagjainak szinglik számára Speedy Net. A Speedy Match segítségével "
-"megtalálhatja a megfelelő embereket randevúzáshoz, és online cseveghet "
-"velük. Az oldal vegán és vegetáriánusbarát."
+"A Speedy Match egy új társkereső webalkalmazás romantikus célokra olyan "
+"egyedülállók számára, akik a Speedy Net tagjai. A Speedy Match segítségével "
+"megtalálhatja a hozzá illő embereket randevúzáshoz, és online cseveghet "
+"velük. Az oldal vegán- és vegetáriánusbarát."
 
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Barátot keresel? Barátnőt keresel? Gyere és találkozz Speedyvel!"
+msgstr "Barátot keres? Barátnőt keres? Jöjjön, és ismerje meg Speedyt!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon a "
-"Speedy Matchhez még ma, hogy megfelelő partnereket találjon, mindössze "
+"A Speedy Net és a Speedy Match összes funkciója ingyenes. Csatlakozzon még "
+"ma a Speedy Matchhez, hogy megtalálja a hozzá illő partnereket – mindössze "
 "néhány percet vesz igénybe."
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
-msgstr "Frissítse a találatokat"
+msgstr "Találatok frissítése"
 
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
@@ -1350,16 +1346,16 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Még nincsenek egyezései. Próbálja kibővíteni a keresési beállításokat, vagy "
-"ellenőrizze később."
+"Önnek még nincsenek találatai. Próbálja meg kibővíteni a keresési "
+"beállításokat, vagy nézzen vissza később."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "Vissza a mérkőzésekhez"
+msgstr "Vissza a találatokhoz"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
-msgstr "Profil információ"
+msgstr "Profil információk"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
@@ -1368,38 +1364,38 @@ msgstr "Barátok"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "Mint"
+msgstr "Kedvelés"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "Ellentétben"
+msgstr "Kedvelés visszavonása"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "A barátod"
+msgstr "Az Ön barátja"
 
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "kedvel téged"
+msgstr "kedveli Önt"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "tetszik"
+msgstr "Ön kedveli"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr "Barátsági felkérés elküldve"
+msgstr "Barátsági kérelem elküldve"
 
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
-msgstr "hol lakom?"
+msgstr "Hol lakom?"
 
 #: .\templates\profiles\user_extra_info_widget.html:42
 msgid "Smoking status"
-msgstr "Dohányzás állapota"
+msgstr "Dohányzási állapot"
 
 #: .\templates\profiles\user_extra_info_widget.html:46
 msgid "Relationship status"
@@ -1407,7 +1403,7 @@ msgstr "Kapcsolati állapot"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Legutóbbi látogatás Speedy Match"
+msgstr "Utoljára itt járt: Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -154,17 +154,17 @@ msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -313,17 +313,17 @@ msgstr "Hammasini oʻqilgan deb belgilash"
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "Siz"
+msgstr "Siz:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "Siz"
+msgstr "Siz:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "Siz"
+msgstr "Siz:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -463,32 +463,32 @@ msgstr "Do'stlarga qo'shish"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+msgstr "Haqiqatan ham bloklamoqchimisiz "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+msgstr "Haqiqatan ham bloklamoqchimisiz "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+msgstr "Haqiqatan ham bloklamoqchimisiz "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Block "
+msgstr "Bloklash "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Block "
+msgstr "Bloklash "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Block "
+msgstr "Bloklash "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
@@ -508,17 +508,17 @@ msgstr "Blokdan chiqarish "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Hisobot "
+msgstr "Xabar berish "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Hisobot "
+msgstr "Xabar berish "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Hisobot "
+msgstr "Xabar berish "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -870,7 +870,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:11
 msgid "Enter a valid email address."
-msgstr "Amaldagi email manzilingizni kiriting."
+msgstr "Yaroqli elektron pochta manzilini kiriting."
 
 #: .\__translations\__translations.py:12
 msgid "Email address"
@@ -924,15 +924,15 @@ msgstr "Do'stlar"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Keyingi munosabatlar"
+msgstr "Kuzatuv munosabati"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Munosabatlar"
+msgstr "Kuzatuv munosabatlari"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Bloker munosabatlari"
+msgstr "Bloklovchi munosabati"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -947,8 +947,11 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Roʻyxatda %(show_value)d elementlari mavjud, ulardan koʻpi %(limit_value)d "
-"boʻlmasligi kerak."
+"Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan "
+"oshmasligi kerak."
+msgstr[1] ""
+"Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan "
+"oshmasligi kerak."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -968,17 +971,17 @@ msgstr "foydalanuvchi nomi (slug)"
 #: .\__translations\__translations.py:46
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "Profilni yangilash"
+msgstr "Profil rasmini yangilash"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "Profilni yangilash"
+msgstr "Profil rasmini yangilash"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "Profilni yangilash"
+msgstr "Profil rasmini yangilash"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
@@ -1032,19 +1035,19 @@ msgstr "{site_name} hisobingizni faollashtiring"
 #, python-brace-format
 msgctxt "female"
 msgid "Deactivate your {site_name} account"
-msgstr "{site_name} hisobingizni o'chiring"
+msgstr "{site_name} hisobingizni faolsizlantiring"
 
 #: .\__translations\__translations.py:63
 #, python-brace-format
 msgctxt "male"
 msgid "Deactivate your {site_name} account"
-msgstr "{site_name} hisobingizni o'chiring"
+msgstr "{site_name} hisobingizni faolsizlantiring"
 
 #: .\__translations\__translations.py:64
 #, python-brace-format
 msgctxt "other"
 msgid "Deactivate your {site_name} account"
-msgstr "{site_name} hisobingizni o'chiring"
+msgstr "{site_name} hisobingizni faolsizlantiring"
 
 #: .\__translations\__translations.py:66
 msgctxt "female"
@@ -1064,47 +1067,47 @@ msgstr "Qo'shish"
 #: .\__translations\__translations.py:70
 msgctxt "female"
 msgid "Where do I live?"
-msgstr "Men qayerda yashayman'"
+msgstr "Men qayerda yashayman?"
 
 #: .\__translations\__translations.py:71
 msgctxt "male"
 msgid "Where do I live?"
-msgstr "Men qayerda yashayman'"
+msgstr "Men qayerda yashayman?"
 
 #: .\__translations\__translations.py:72
 msgctxt "other"
 msgid "Where do I live?"
-msgstr "Men qayerda yashayman'"
+msgstr "Men qayerda yashayman?"
 
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "Qayerda yashaysiz'"
+msgstr "Qayerda yashaysiz?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "Qayerda yashaysiz'"
+msgstr "Qayerda yashaysiz?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "Qayerda yashaysiz'"
+msgstr "Qayerda yashaysiz?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Iltimos, qayerda yashashingizni yozing."
+msgstr "Iltimos, qayerda yashayotganingizni yozing."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Iltimos, qayerda yashashingizni yozing."
+msgstr "Iltimos, qayerda yashayotganingizni yozing."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Iltimos, qayerda yashashingizni yozing."
+msgstr "Iltimos, qayerda yashayotganingizni yozing."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
@@ -1199,62 +1202,62 @@ msgstr "Karnist"
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Chekish taqiqlangan"
+msgstr "Chekmaydi"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Chekish taqiqlangan"
+msgstr "Chekmaydi"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Chekish taqiqlangan"
+msgstr "Chekmaydi"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "Vaqti-vaqti bilan chekish"
+msgstr "Vaqti-vaqti bilan chekadi"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "Vaqti-vaqti bilan chekish"
+msgstr "Vaqti-vaqti bilan chekadi"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "Vaqti-vaqti bilan chekish"
+msgstr "Vaqti-vaqti bilan chekadi"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Chekish"
+msgstr "Chekadi"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Chekish"
+msgstr "Chekadi"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Chekish"
+msgstr "Chekadi"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Yagona"
+msgstr "Yolg'iz"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "Single"
-msgstr "Yagona"
+msgstr "Yolg'iz"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Yagona"
+msgstr "Yolg'iz"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
@@ -1289,32 +1292,32 @@ msgstr "Beva"
 #: .\__translations\__translations.py:130
 msgctxt "female"
 msgid "In a relationship"
-msgstr "Ushrashmoqda"
+msgstr "Munosabatda"
 
 #: .\__translations\__translations.py:131
 msgctxt "male"
 msgid "In a relationship"
-msgstr "Ushrashmoqda"
+msgstr "Munosabatda"
 
 #: .\__translations\__translations.py:132
 msgctxt "other"
 msgid "In a relationship"
-msgstr "Ushrashmoqda"
+msgstr "Munosabatda"
 
 #: .\__translations\__translations.py:134
 msgctxt "female"
 msgid "In an open relationship"
-msgstr "Ochiq hikoh munosabatlari"
+msgstr "Ochiq munosabatda"
 
 #: .\__translations\__translations.py:135
 msgctxt "male"
 msgid "In an open relationship"
-msgstr "Ochiq hikoh munosabatlari"
+msgstr "Ochiq munosabatda"
 
 #: .\__translations\__translations.py:136
 msgctxt "other"
 msgid "In an open relationship"
-msgstr "Ochiq hikoh munosabatlari"
+msgstr "Ochiq munosabatda"
 
 #: .\__translations\__translations.py:138
 msgctxt "female"
@@ -1334,32 +1337,32 @@ msgstr "Bu murakkab"
 #: .\__translations\__translations.py:142
 msgctxt "female"
 msgid "Separated"
-msgstr "Ajratilgan"
+msgstr "Alohida yashaydi"
 
 #: .\__translations\__translations.py:143
 msgctxt "male"
 msgid "Separated"
-msgstr "Ajratilgan"
+msgstr "Alohida yashaydi"
 
 #: .\__translations\__translations.py:144
 msgctxt "other"
 msgid "Separated"
-msgstr "Ajratilgan"
+msgstr "Alohida yashaydi"
 
 #: .\__translations\__translations.py:146
 msgctxt "female"
 msgid "Engaged"
-msgstr "Ulashilgan"
+msgstr "Unashtirilgan"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
 msgid "Engaged"
-msgstr "Ulashilgan"
+msgstr "Unashtirilgan"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
 msgid "Engaged"
-msgstr "Ulashilgan"
+msgstr "Unashtirilgan"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
@@ -1397,8 +1400,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
-"istalgan vaqtda qayta faollashtirishingiz mumkin."
+"Sizning Speedy Net va Speedy Match hisoblaringiz faolsizlantirildi. Siz "
+"ularni istalgan vaqtda qayta faollashtirishingiz mumkin."
 
 #: .\__translations\__translations.py:159
 msgctxt "male"
@@ -1406,8 +1409,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
-"istalgan vaqtda qayta faollashtirishingiz mumkin."
+"Sizning Speedy Net va Speedy Match hisoblaringiz faolsizlantirildi. Siz "
+"ularni istalgan vaqtda qayta faollashtirishingiz mumkin."
 
 #: .\__translations\__translations.py:160
 msgctxt "other"
@@ -1415,8 +1418,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deactivated. You can "
 "reactivate them any time."
 msgstr ""
-"Sizning Speedy Net va Speedy Match hisoblaringiz o'chirildi. Siz ularni "
-"istalgan vaqtda qayta faollashtirishingiz mumkin."
+"Sizning Speedy Net va Speedy Match hisoblaringiz faolsizlantirildi. Siz "
+"ularni istalgan vaqtda qayta faollashtirishingiz mumkin."
 
 #: .\__translations\__translations.py:162
 #, python-brace-format
@@ -1425,7 +1428,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"{site_name} hisobingiz faolsizlantirildi. Uni istalgan vaqtda qayta "
 "faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
 
 #: .\__translations\__translations.py:163
@@ -1435,7 +1438,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"{site_name} hisobingiz faolsizlantirildi. Uni istalgan vaqtda qayta "
 "faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
 
 #: .\__translations\__translations.py:164
@@ -1445,7 +1448,7 @@ msgid ""
 "Your {site_name} account has been deactivated. You can reactivate it any "
 "time. Your Speedy Net account remains active."
 msgstr ""
-"{site_name} hisobingiz o'chirildi. Uni istalgan vaqtda qayta "
+"{site_name} hisobingiz faolsizlantirildi. Uni istalgan vaqtda qayta "
 "faollashtirishingiz mumkin. Speedy Net hisobingiz faolligicha qoladi."
 
 #: .\__translations\__translations.py:166
@@ -1980,7 +1983,7 @@ msgstr "Familiya (ixtiyoriy)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "Email manzilingiz"
+msgstr "Elektron pochta manzilingiz"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -1996,11 +1999,11 @@ msgstr "Roʻyxatdan oʻtish"
 
 #: .\accounts\forms.py:326
 msgid "Update your profile picture"
-msgstr "Profilni yangilash"
+msgstr "Profil rasmini yangilash"
 
 #: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
-msgstr "Profil rasmi talab qilinadi"
+msgstr "Profil rasmi majburiy."
 
 #: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
@@ -2015,7 +2018,7 @@ msgstr "Tizimga kirish"
 #: .\accounts\forms.py:546 .\templates\base_with_login.html:73
 #: .\templates\base_with_login.html:137
 msgid "Forgot your password?"
-msgstr "Parolni unutdingizmi'"
+msgstr "Parolni unutdingizmi?"
 
 #: .\accounts\forms.py:577
 msgid "Submit"
@@ -2044,7 +2047,7 @@ msgstr "foydalanuvchi nomi (slug)"
 
 #: .\accounts\models.py:211
 msgid "photo"
-msgstr "SURAT"
+msgstr "fotosurat"
 
 #: .\accounts\models.py:212
 msgid "Special username"
@@ -2052,11 +2055,11 @@ msgstr "Maxsus foydalanuvchi nomi"
 
 #: .\accounts\models.py:263 .\messages\models.py:215
 msgid "entity"
-msgstr "OxiriStencils"
+msgstr "ob'ekt"
 
 #: .\accounts\models.py:264
 msgid "entities"
-msgstr "Korxonalar"
+msgstr "ob'ektlar"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
@@ -2064,7 +2067,7 @@ msgstr "Slug foydalanuvchi nomini tahlil qilmaydi."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
-msgstr "Foydalanuvchi ismi talab qilinadi"
+msgstr "Foydalanuvchi nomi talab qilinadi."
 
 #: .\accounts\models.py:379
 msgid "name"
@@ -2072,7 +2075,7 @@ msgstr "nomi"
 
 #: .\accounts\models.py:412
 msgid "description"
-msgstr "Tavsif"
+msgstr "tavsif"
 
 #: .\accounts\models.py:511
 msgid "Female"
@@ -2105,19 +2108,19 @@ msgstr "Karnist (hayvonlar bilan oziqlanadi)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "Chekish taqiqlangan"
+msgstr "Chekmaydi"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
-msgstr "Vaqti-vaqti bilan chekish"
+msgstr "Vaqti-vaqti bilan chekadi"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Chekish"
+msgstr "Chekadi"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "Yagona"
+msgstr "Yolg'iz"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
@@ -2129,11 +2132,11 @@ msgstr "Beva"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
-msgstr "Ushrashmoqda"
+msgstr "Munosabatda"
 
 #: .\accounts\models.py:573
 msgid "In an open relationship"
-msgstr "Ochiq hikoh munosabatlari"
+msgstr "Ochiq munosabatda"
 
 #: .\accounts\models.py:574
 msgid "It's complicated"
@@ -2141,11 +2144,11 @@ msgstr "Bu murakkab"
 
 #: .\accounts\models.py:575
 msgid "Separated"
-msgstr "Ajratilgan"
+msgstr "Alohida yashaydi"
 
 #: .\accounts\models.py:576
 msgid "Engaged"
-msgstr "Ulashilgan"
+msgstr "Unashtirilgan"
 
 #: .\accounts\models.py:577
 msgid "Married"
@@ -2153,7 +2156,7 @@ msgstr "Uylangan/turmushga chiqqan"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
-msgstr "eslatib qo'yish"
+msgstr "Menga xabar berish"
 
 #: .\accounts\models.py:589
 msgid "Don't notify me"
@@ -2161,11 +2164,11 @@ msgstr "Menga xabar bermang"
 
 #: .\accounts\models.py:669
 msgid "first name"
-msgstr "Ism"
+msgstr "ism"
 
 #: .\accounts\models.py:672
 msgid "last name"
-msgstr "familiycui"
+msgstr "familiya"
 
 #: .\accounts\models.py:674
 msgid "I am"
@@ -2177,7 +2180,7 @@ msgstr "Tug'ilgan sanasi"
 
 #: .\accounts\models.py:676
 msgid "diet"
-msgstr "Parhez"
+msgstr "ovqatlanish"
 
 #: .\accounts\models.py:677
 msgid "smoking status"
@@ -2189,7 +2192,7 @@ msgstr "munosabatlar holati"
 
 #: .\accounts\models.py:680
 msgid "Where do I live?"
-msgstr "Men qayerda yashayman'"
+msgstr "Men qayerda yashayman?"
 
 #: .\accounts\models.py:687
 msgid "Who can view my birth month and day"
@@ -2209,7 +2212,7 @@ msgstr "Oxirgi ishlatilgan IP-manzil https://ipapi.com/ vaqti"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Oxirgi IP-manzil https://ipapi.com/ natijalari bo'yicha ishlatilgan"
+msgstr "Oxirgi ishlatilgan IP-manzilning https://ipapi.com/ xom natijalari"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2233,7 +2236,7 @@ msgstr "tasdiqlangan"
 
 #: .\accounts\models.py:1595
 msgid "is primary"
-msgstr "Boshlang’ich"
+msgstr "asosiy"
 
 #: .\accounts\models.py:1596
 msgid "confirmation token"
@@ -2241,7 +2244,7 @@ msgstr "tasdiqlash tokeni"
 
 #: .\accounts\models.py:1597
 msgid "confirmation sent"
-msgstr "Tasdiqlash yuborildi"
+msgstr "tasdiqlash yuborilgan"
 
 #: .\accounts\models.py:1598
 msgid "Who can see this email"
@@ -2249,7 +2252,7 @@ msgstr "Bu elektron pochtani kim ko'ra oladi"
 
 #: .\accounts\models.py:1615
 msgid "email addresses"
-msgstr "Elektron pochtalar:"
+msgstr "elektron pochta manzillari"
 
 #: .\accounts\models.py:1756
 msgid "User"
@@ -2257,7 +2260,7 @@ msgstr "Foydalanuvchi"
 
 #: .\accounts\models.py:1757
 msgid "last visit"
-msgstr "Oxirgi Tashrif"
+msgstr "oxirgi tashrif"
 
 #: .\accounts\models.py:1782
 msgid "Today"
@@ -2303,8 +2306,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Foydalanuvchi nomida kamida %(limit_value)d harf-raqamli belgilar bo'lishi "
-"kerak (u %(show_value)d ga ega)."
+"Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi "
+"kerak (unda %(show_value)d ta bor)."
+msgstr[1] ""
+"Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi "
+"kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2315,8 +2321,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d harf-raqamli belgilar "
-"bo'lishi kerak (u %(show_value)d ga ega)."
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi "
+"bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[1] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi "
+"bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2327,8 +2336,11 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Foydalanuvchi nomi kamida %(limit_value)d belgilardan iborat bo'lishi kerak "
-"(u %(show_value)d ga ega)."
+"Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda "
+"%(show_value)d ta bor)."
+msgstr[1] ""
+"Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda "
+"%(show_value)d ta bor)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2339,8 +2351,11 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d belgilar bo'lishi kerak (u "
-"%(show_value)d ga ega)."
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak "
+"(unda %(show_value)d ta bor)."
+msgstr[1] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak "
+"(unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2351,13 +2366,16 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Bu parol juda qisqa. Unda kamida %(min_length)d belgilar bo'lishi kerak."
+"Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
+msgstr[1] ""
+"Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Parolingiz kamida %(min_length)d belgilardan iborat bo'lishi kerak."
+msgstr[0] "Parolingizda kamida %(min_length)d ta belgi bo'lishi kerak."
+msgstr[1] "Parolingizda kamida %(min_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2366,14 +2384,16 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d belgi bo'lishi kerak."
+"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
+msgstr[1] ""
+"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Parolingiz eng ko'pi bilan %(max_length)d belgidan iborat bo'lishi kerak."
+msgstr[0] "Parolingizda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
+msgstr[1] "Parolingizda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2381,7 +2401,7 @@ msgid ""
 "Your password must contain at least %(min_unique_characters)d unique "
 "characters."
 msgstr ""
-"Parolingizda kamida %(min_unique_characters)d noyob belgilar bo'lishi kerak."
+"Parolingizda kamida %(min_unique_characters)d ta noyob belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
@@ -2576,7 +2596,7 @@ msgstr "Suiiste'mol (Foydalanuvchi)"
 
 #: .\contact_by_form\models.py:39
 msgid "Abuse (Photo)"
-msgstr "Zo'ravonlik (Surat)"
+msgstr "Suiiste'mol (Fotosurat)"
 
 #: .\contact_by_form\models.py:42 .\messages\models.py:186
 msgid "sender"
@@ -2588,7 +2608,7 @@ msgstr "Ismingiz"
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
-msgstr "Email manzilingiz"
+msgstr "Elektron pochta manzilingiz"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
@@ -2600,7 +2620,7 @@ msgstr "sizning xabaringiz"
 
 #: .\contact_by_form\models.py:48
 msgid "reported entity"
-msgstr "xabar qilingan tashkilot"
+msgstr "xabar qilingan ob'ekt"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
@@ -2672,7 +2692,7 @@ msgstr "Chatlar"
 
 #: .\messages\models.py:108
 msgid "None"
-msgstr "Hech qanday"
+msgstr "Yo'q"
 
 #: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
@@ -2692,23 +2712,23 @@ msgstr "o'qish belgilari"
 
 #: .\settings\base.py:227
 msgid "English"
-msgstr "Ingliz"
+msgstr "Ingliz tili"
 
 #: .\settings\base.py:228
 msgid "Hebrew"
-msgstr "Yahudiy tili"
+msgstr "Ivrit tili"
 
 #: .\settings\base_with_login.py:76
 msgid "French"
-msgstr "Fransuz"
+msgstr "Fransuz tili"
 
 #: .\settings\base_with_login.py:77
 msgid "German"
-msgstr "Nemis"
+msgstr "Nemis tili"
 
 #: .\settings\base_with_login.py:78
 msgid "Spanish"
-msgstr "Xitoycha"
+msgstr "Ispan tili"
 
 #: .\settings\base_with_login.py:79
 msgid "Portuguese"
@@ -2716,15 +2736,15 @@ msgstr "Portugal tili"
 
 #: .\settings\base_with_login.py:80
 msgid "Italian"
-msgstr "Italyancha"
+msgstr "Italyan tili"
 
 #: .\settings\base_with_login.py:81
 msgid "Dutch"
-msgstr "Golland"
+msgstr "Golland tili"
 
 #: .\settings\base_with_login.py:82
 msgid "Japanese"
-msgstr "Yaponcha"
+msgstr "Yapon tili"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
@@ -2744,19 +2764,19 @@ msgstr "Fors tili"
 
 #: .\settings\base_with_login.py:90
 msgid "Korean"
-msgstr "Koreyscha"
+msgstr "Koreys tili"
 
 #: .\settings\base_with_login.py:91
 msgid "Arabic"
-msgstr "Arabcha"
+msgstr "Arab tili"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
-msgstr "IndonezchaName"
+msgstr "Indonez tili"
 
 #: .\settings\base_with_login.py:93
 msgid "Ukrainian"
-msgstr "Ukraincha"
+msgstr "Ukrain tili"
 
 #: .\settings\base_with_login.py:94
 msgid "Turkish"
@@ -2768,19 +2788,19 @@ msgstr "Vetnam tili"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "ChexchaName"
+msgstr "Chex tili"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
-msgstr "Swedish"
+msgstr "Shved tili"
 
 #: .\settings\base_with_login.py:98
 msgid "Finnish"
-msgstr "Finnish"
+msgstr "Fin tili"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "Taycha"
+msgstr "Venger tili"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
@@ -2792,11 +2812,11 @@ msgstr "Grek tili"
 
 #: .\settings\base_with_login.py:102
 msgid "Malay"
-msgstr "MalaychaName"
+msgstr "Malay tili"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "Gujarati"
+msgstr "Serb tili"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
@@ -2808,23 +2828,23 @@ msgstr "Bengal tili"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "Katalancha"
+msgstr "Katalan tili"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
-msgstr "Norvegcha (Bokmaal) Name"
+msgstr "Norveg tili (Bokmål)"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
-msgstr "BolgarchaName"
+msgstr "Bolgar tili"
 
 #: .\settings\base_with_login.py:109
 msgid "Danish"
-msgstr "Danish"
+msgstr "Daniya tili"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
-msgstr "Litvacha querty \"dasturchilarga\""
+msgstr "Slovak tili"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
@@ -2832,7 +2852,7 @@ msgstr "Hind tili"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "EstonchaName"
+msgstr "Eston tili"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
@@ -2941,7 +2961,7 @@ msgstr "Akkauntni faolsizlantirish"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "Elektron pochtalar:"
+msgstr "Elektron pochta manzillari"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
@@ -2977,7 +2997,7 @@ msgstr "Ushbu elektron pochta manzilini asosiy qilib belgilang"
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz'"
+msgstr "Haqiqatan ham ushbu elektron pochta manzilini o'chirmoqchimisiz?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
@@ -3004,7 +3024,7 @@ msgstr ""
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr "Elektron pochtani tahrirlash"
+msgstr "Elektron pochta qo'shish"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
@@ -3307,11 +3327,11 @@ msgstr "Hammasini oʻqilgan deb belgilash"
 
 #: .\templates\messages\chat_list.html:56
 msgid "Unread"
-msgstr "& Xabar"
+msgstr "O'qilmagan"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "Siz"
+msgstr "Siz:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3397,7 +3417,7 @@ msgstr "Siz blokladingiz "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "QARORI"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
@@ -3435,25 +3455,25 @@ msgstr "Ochiq menyuni yoqish/o'chirish"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "Bloklamoqchi ekanligingizga aminmisiz' "
+msgstr "Haqiqatan ham bloklamoqchimisiz "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "'"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Block "
+msgstr "Bloklash "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
 msgid "Unblock "
-msgstr "Блокдан очиш "
+msgstr "Blokdan chiqarish "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Hisobot "
+msgstr "Xabar berish "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"

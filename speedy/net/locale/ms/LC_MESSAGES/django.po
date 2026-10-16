@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
@@ -40,10 +40,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak "
-"boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun "
-"Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" dalam "
-"bidang ini, tepat dan sensitif huruf besar."
+"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan "
+"tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan"
+" akaun Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" "
+"dalam ruangan ini, tepat dan peka huruf besar/kecil."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +53,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak "
-"boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun "
-"Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" dalam "
-"bidang ini, tepat dan sensitif huruf besar."
+"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan "
+"tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan"
+" akaun Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" "
+"dalam ruangan ini, tepat dan peka huruf besar/kecil."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,10 +66,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak "
-"boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun "
-"Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" dalam "
-"bidang ini, tepat dan sensitif huruf besar."
+"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan "
+"tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan"
+" akaun Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" "
+"dalam ruangan ini, tepat dan peka huruf besar/kecil."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -121,7 +121,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Akaun Speedy Net"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
@@ -134,10 +134,10 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan tidak "
-"boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan akaun "
-"Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" dalam "
-"bidang ini, tepat dan sensitif huruf besar."
+"Adakah anda pasti mahu memadamkan akaun Speedy Net anda? Ini kekal dan "
+"tidak boleh dipulihkan. Memadam akaun Speedy Net anda juga akan memadamkan"
+" akaun Speedy Match anda. Jika anda pasti, taip \"Ya. Padam akaun saya.\" "
+"dalam ruangan ini, tepat dan peka huruf besar/kecil."
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -154,7 +154,7 @@ msgstr "Pengguna Speedy Net"
 
 #: .\accounts\models.py:37
 msgid "User"
-msgstr "pengguna"
+msgstr "Pengguna"
 
 #: .\accounts\models.py:39
 msgid "Number of friends on last user's visit"
@@ -162,11 +162,11 @@ msgstr "Bilangan rakan pada lawatan pengguna terakhir"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Profil Speedy Net"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Profil Speedy Net"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -186,7 +186,7 @@ msgstr "Speedy Net [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Mengenai Speedy Net"
+msgstr "Tentang Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -199,11 +199,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> ialah rangkaian sosial baharu. Dengan Speedy Net anda "
-"boleh berkomunikasi dengan rakan Speedy Net anda. Speedy Net terbuka kepada "
-"pendaftaran percuma untuk orang dari semua negara dan umur (tiada had "
-"umur!). Tapak ini mesra vegan dan vegetarian. Ia kini tersedia dalam "
-"%(languages_num)s bahasa."
+"Net\">Speedy Net</a> ialah rangkaian sosial baharu. Dengan Speedy Net anda"
+" boleh berhubung dengan rakan anda. Speedy Net terbuka kepada pendaftaran "
+"percuma untuk orang dari semua negara dan umur (tiada had umur!). Tapak "
+"ini mesra vegan dan vegetarian. Ia kini tersedia dalam %(languages_num)s "
+"bahasa."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -236,10 +236,10 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"Anda boleh menggunakan apl baharu kami, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">Speedy Match</a>, untuk mencari "
-"orang yang sepadan untuk dating. Speedy Match terbuka kepada perseorangan "
-"dari semua peringkat umur."
+"Anda boleh menggunakan apl baharu kami, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a>, untuk mencari orang yang sepadan untuk "
+"berdating. Speedy Match terbuka kepada bujang dari semua peringkat umur."
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -247,9 +247,9 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai hari ini "
-"untuk Speedy Net mencari rakan, ia hanya mengambil masa beberapa minit. <a "
-"href=\"/\" title=\"Join Speedy Net\">Klik di sini</a> untuk menyertai."
+"Semua ciri pada Speedy Net dan Speedy Match adalah percuma. Sertai Speedy "
+"Net hari ini untuk mencari rakan, ia hanya mengambil masa beberapa minit. "
+"<a href=\"/\" title=\"Join Speedy Net\">Klik di sini</a> untuk menyertai."
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -266,9 +266,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net dinamakan sempena <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama "
-"kami selama bertahun-tahun dan mati pada tahun 2003. melahirkan 7 ekor anak "
+"Speedy Net dinamakan sempena <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, seekor anjing betina yang bersama kami selama"
+" bertahun-tahun dan mati pada tahun 2003. Speedy melahirkan 7 ekor anak "
 "anjing pada tahun 1988."
 
 #: .\templates\about\about.html:31
@@ -285,7 +286,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Pengasas dan pengarah Speedy Net Speedy Match dan,"
+msgstr "Pengasas dan pengarah Speedy Net dan Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -320,11 +321,11 @@ msgstr "Padam Akaun"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Anda belum mempunyai kawan."
+msgstr "Anda belum mempunyai rakan."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Rakan-rakan anda"
+msgstr "Rakan Anda"
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -348,7 +349,7 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – dating dengan Speedy"
+msgstr "Speedy Match – berdating dengan Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
@@ -357,15 +358,15 @@ msgstr "Mencari teman lelaki? Mencari teman wanita? Datang dan temui Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
-msgstr "Temu Dalam Talian Percuma"
+msgstr "Temu Janji Dalam Talian Percuma"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "Kawan-kawan"
+msgstr "Rakan"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "kawan awak"
+msgstr "Rakan anda"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"

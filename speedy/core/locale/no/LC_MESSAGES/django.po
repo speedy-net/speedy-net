@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -469,17 +469,17 @@ msgstr "Er du sikker på at du vil blokkere "
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "Blokkere "
+msgstr "Blokker "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "Blokkere "
+msgstr "Blokker "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "Blokkere "
+msgstr "Blokker "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
@@ -499,17 +499,17 @@ msgstr "Fjern blokkering "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Rapportere "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Rapportere "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Rapportere "
+msgstr "Rapporter "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -559,17 +559,17 @@ msgstr "Avbryt venneforespørsel"
 #: .\__translations\__translations.html:144
 msgctxt "female"
 msgid "Accept"
-msgstr "Akseptere"
+msgstr "Godta"
 
 #: .\__translations\__translations.html:145
 msgctxt "male"
 msgid "Accept"
-msgstr "Akseptere"
+msgstr "Godta"
 
 #: .\__translations\__translations.html:146
 msgctxt "other"
 msgid "Accept"
-msgstr "Akseptere"
+msgstr "Godta"
 
 #: .\__translations\__translations.html:148
 msgctxt "female"
@@ -634,17 +634,17 @@ msgstr "Send melding"
 #: .\__translations\__translations.html:164
 msgctxt "female"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:165
 msgctxt "male"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:166
 msgctxt "other"
 msgid "Welcome"
-msgstr "Velkomst"
+msgstr "Velkommen"
 
 #: .\__translations\__translations.html:168
 msgctxt "female"
@@ -889,7 +889,7 @@ msgstr ""
 
 #: .\__translations\__translations.py:20
 msgid "Message"
-msgstr "Beskjed"
+msgstr "Melding"
 
 #: .\__translations\__translations.py:22
 msgid "Friendship Request"
@@ -909,15 +909,15 @@ msgstr "Venner"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Følger forholdet"
+msgstr "Følgeforhold"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Følger forhold"
+msgstr "Følgeforhold"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Blocker forhold"
+msgstr "Blokkeringsforhold"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -941,17 +941,17 @@ msgstr[1] ""
 #: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgstr "brukernavn (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "male"
 msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgstr "brukernavn (slug)"
 
 #: .\__translations\__translations.py:44
 msgctxt "other"
 msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgstr "brukernavn (slug)"
 
 #: .\__translations\__translations.py:46
 msgctxt "female"
@@ -1037,17 +1037,17 @@ msgstr "Deaktiver {site_name}-kontoen din"
 #: .\__translations\__translations.py:66
 msgctxt "female"
 msgid "Add"
-msgstr "Legge til"
+msgstr "Legg til"
 
 #: .\__translations\__translations.py:67
 msgctxt "male"
 msgid "Add"
-msgstr "Legge til"
+msgstr "Legg til"
 
 #: .\__translations\__translations.py:68
 msgctxt "other"
 msgid "Add"
-msgstr "Legge til"
+msgstr "Legg til"
 
 #: .\__translations\__translations.py:70
 msgctxt "female"
@@ -1082,17 +1082,17 @@ msgstr "Hvor bor du?"
 #: .\__translations\__translations.py:78
 msgctxt "female"
 msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgstr "Skriv hvor du bor."
 
 #: .\__translations\__translations.py:79
 msgctxt "male"
 msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgstr "Skriv hvor du bor."
 
 #: .\__translations\__translations.py:80
 msgctxt "other"
 msgid "Please write where you live."
-msgstr "Skriv gjerne hvor du bor."
+msgstr "Skriv hvor du bor."
 
 #: .\__translations\__translations.py:82
 msgctxt "female"
@@ -1187,17 +1187,17 @@ msgstr "Carnist"
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Ikke røyker"
+msgstr "Røyker ikke"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Ikke røyker"
+msgstr "Røyker ikke"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Ikke røyker"
+msgstr "Røyker ikke"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
@@ -1217,32 +1217,32 @@ msgstr "Røyker av og til"
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Røyking"
+msgstr "Røyker"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Røyking"
+msgstr "Røyker"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Røyking"
+msgstr "Røyker"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Singel"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Singel"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Singel"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
@@ -1267,12 +1267,12 @@ msgstr "Enke"
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enkemann"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enke/enkemann"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
@@ -1947,7 +1947,7 @@ msgstr "Etternavn (valgfritt)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "Din e-post"
+msgstr "Din e-postadresse"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -1971,7 +1971,7 @@ msgstr "Det kreves et profilbilde."
 
 #: .\accounts\forms.py:537 .\templates\base_with_login.html:127
 msgid "Email or Username"
-msgstr "E-post eller brukernavn"
+msgstr "E-postadresse eller brukernavn"
 
 #: .\accounts\forms.py:543 .\templates\accounts\login.html:6
 #: .\templates\accounts\login.html:12 .\templates\base_with_login.html:70
@@ -2007,7 +2007,7 @@ msgstr "Dette brukernavnet er allerede tatt."
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
-msgstr "brukernavn (snegl)"
+msgstr "brukernavn (slug)"
 
 #: .\accounts\models.py:211
 msgid "photo"
@@ -2027,7 +2027,7 @@ msgstr "enheter"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "Slug analyserer ikke til brukernavn."
+msgstr "Slug kan ikke tolkes som brukernavn."
 
 #: .\accounts\models.py:331
 msgid "Username is required."
@@ -2043,7 +2043,7 @@ msgstr "beskrivelse"
 
 #: .\accounts\models.py:511
 msgid "Female"
-msgstr "Hunn"
+msgstr "Kvinne"
 
 #: .\accounts\models.py:512
 msgid "Male"
@@ -2051,7 +2051,7 @@ msgstr "Mann"
 
 #: .\accounts\models.py:513
 msgid "Other"
-msgstr "Annen"
+msgstr "Annet"
 
 #: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
@@ -2072,7 +2072,7 @@ msgstr "Carnist (spiser dyr)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "Ikke røyker"
+msgstr "Røyker ikke"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
@@ -2080,11 +2080,11 @@ msgstr "Røyker av og til"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Røyking"
+msgstr "Røyker"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "Enkelt"
+msgstr "Singel"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
@@ -2092,7 +2092,7 @@ msgstr "Skilt"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Enke"
+msgstr "Enke/enkemann"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
@@ -2120,11 +2120,11 @@ msgstr "Gift"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
-msgstr "Gi meg beskjed"
+msgstr "Varsle meg"
 
 #: .\accounts\models.py:589
 msgid "Don't notify me"
-msgstr "Ikke gi meg beskjed"
+msgstr "Ikke varsle meg"
 
 #: .\accounts\models.py:669
 msgid "first name"
@@ -2168,15 +2168,15 @@ msgstr "Hvem kan se fødselsåret mitt"
 
 #: .\accounts\models.py:689
 msgid "On new messages"
-msgstr "På nye meldinger"
+msgstr "Ved nye meldinger"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Siste IP-adresse ble brukt https://ipapi.com/ tid"
+msgstr "Tidspunkt for sist brukte IP-adresse https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Siste IP-adresse brukte rå https://ipapi.com/ resultater"
+msgstr "Rå https://ipapi.com/-resultater for sist brukte IP-adresse"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2188,11 +2188,11 @@ msgstr "brukere"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
-msgstr "Superbruker skal være lik personalet."
+msgstr "Superbruker må være lik ansatt."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "e-post"
+msgstr "e-postadresse"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
@@ -2212,7 +2212,7 @@ msgstr "bekreftelse sendt"
 
 #: .\accounts\models.py:1598
 msgid "Who can see this email"
-msgstr "Hvem kan se denne e-posten"
+msgstr "Hvem kan se denne e-postadressen"
 
 #: .\accounts\models.py:1615
 msgid "email addresses"
@@ -2329,9 +2329,9 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"Dette passordet er for kort. Den må inneholde minst %(min_length)d tegn."
+"Dette passordet er for kort. Det må inneholde minst %(min_length)d tegn."
 msgstr[1] ""
-"Dette passordet er for kort. Den må inneholde minst %(min_length)d tegn."
+"Dette passordet er for kort. Det må inneholde minst %(min_length)d tegn."
 
 #: .\accounts\validators.py:206
 #, python-format
@@ -2347,9 +2347,9 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Dette passordet er for langt. Den må inneholde maksimalt %(max_length)d tegn."
+"Dette passordet er for langt. Det må inneholde maksimalt %(max_length)d tegn."
 msgstr[1] ""
-"Dette passordet er for langt. Den må inneholde maksimalt %(max_length)d tegn."
+"Dette passordet er for langt. Det må inneholde maksimalt %(max_length)d tegn."
 
 #: .\accounts\validators.py:261
 #, python-format
@@ -2380,7 +2380,7 @@ msgstr "Angi en gyldig dato."
 
 #: .\accounts\validators.py:467
 msgid "This email is already in use."
-msgstr "Denne e-posten er allerede i bruk."
+msgstr "Denne e-postadressen er allerede i bruk."
 
 #: .\accounts\validators.py:494
 msgid ""
@@ -2519,11 +2519,11 @@ msgstr "blokkert bruker"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "blokkere"
+msgstr "blokkering"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
-msgstr "bruker blokkerer"
+msgstr "brukerblokkeringer"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
@@ -2591,7 +2591,7 @@ msgstr "rapportert enhet"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
-msgstr "rapporterte bilde"
+msgstr "rapportert bilde"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
@@ -2651,7 +2651,7 @@ msgstr "siste melding"
 
 #: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
-msgstr "chatte"
+msgstr "chat"
 
 #: .\messages\models.py:95
 msgid "chats"
@@ -2675,7 +2675,7 @@ msgstr "lesemerke"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "lese merker"
+msgstr "lesemerker"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2723,7 +2723,7 @@ msgstr "kinesisk"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
-msgstr "Pusse"
+msgstr "polsk"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
@@ -2771,7 +2771,7 @@ msgstr "ungarsk"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
-msgstr "Thai"
+msgstr "thai"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
@@ -2803,7 +2803,7 @@ msgstr "norsk"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
-msgstr "Bulgarsk"
+msgstr "bulgarsk"
 
 #: .\settings\base_with_login.py:109
 msgid "Danish"
@@ -2815,7 +2815,7 @@ msgstr "slovakisk"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
-msgstr "Hindi"
+msgstr "hindi"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
@@ -2863,7 +2863,7 @@ msgstr "latvisk"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Dårlig forespørsel"
+msgstr "Ugyldig forespørsel"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
@@ -2879,7 +2879,7 @@ msgstr "Speedy beklager, men denne siden er privat."
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
-msgstr "Siden ikke funnet"
+msgstr "Siden ble ikke funnet"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
@@ -2912,7 +2912,7 @@ msgstr "Profilinformasjon"
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
 msgid "Privacy"
-msgstr "Privatliv"
+msgstr "Personvern"
 
 #: .\templates\accounts\edit_profile\core_base.html:31
 msgid "Notifications"
@@ -2980,7 +2980,7 @@ msgstr "Endre passord"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Din alder vil være synlig for kampene dine på Speedy Match."
+msgstr "Alderen din vil være synlig for matchene dine på Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2989,7 +2989,7 @@ msgstr "Endre personverninnstillingene for e-postadresser på profilen din."
 #: .\templates\accounts\email_address_form.html:6
 #: .\templates\accounts\email_address_form.html:12
 msgid "Add Email"
-msgstr "Legg til e-post"
+msgstr "Legg til e-postadresse"
 
 #: .\templates\accounts\logged_out.html:5
 msgid "Logged Out"
@@ -3012,7 +3012,7 @@ msgstr "Passord tilbakestilt."
 
 #: .\templates\accounts\password_reset\confirm.html:18
 msgid "Password reset failed. Invalid link."
-msgstr "Tilbakestilling av passord mislyktes. Ugyldig link."
+msgstr "Tilbakestilling av passord mislyktes. Ugyldig lenke."
 
 #: .\templates\accounts\password_reset\done.html:14
 msgid "Email with password reset instructions has been sent."
@@ -3049,7 +3049,7 @@ msgstr "Ingen brukere."
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
-msgstr "Denne siden er under konstruksjon"
+msgstr "Dette nettstedet er under utvikling"
 
 #: .\templates\base.html:110
 msgid "You haven't confirmed your email address. Please check your inbox."
@@ -3075,7 +3075,7 @@ msgstr "Speedy Sale"
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "En veganervennlig nettside"
+msgstr "Et veganvennlig nettsted"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
@@ -3171,7 +3171,7 @@ msgstr ""
 
 #: .\templates\contact_by_email\contact_us.html:21
 msgid "Uri Rodberg, founder and webmaster:"
-msgstr "Uri Rodberg, gründer og webmaster:"
+msgstr "Uri Rodberg, grunnlegger og webmaster:"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
@@ -3193,7 +3193,7 @@ msgstr "Tilbakemeldingen din ble sendt til administratorer."
 
 #: .\templates\core\pagination.html:9
 msgid "Previous"
-msgstr "Tidligere"
+msgstr "Forrige"
 
 #: .\templates\core\pagination.html:32
 msgid "Next"
@@ -3220,7 +3220,7 @@ msgstr "Bruk denne lenken for å endre passordet ditt:"
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "Passord tilbakestilt på %(site_name)s"
+msgstr "Tilbakestilling av passord på %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3265,7 +3265,7 @@ msgstr "Velkommen til %(site_name)s!"
 #: .\templates\main\main_page_base.html:21
 #, python-format
 msgid "Join %(site_name)s!"
-msgstr "Bli med %(site_name)s!"
+msgstr "Bli med på %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
@@ -3388,7 +3388,7 @@ msgstr "Godta venneforespørsel"
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
 msgid "Accept"
-msgstr "Akseptere"
+msgstr "Godta"
 
 #: .\templates\profiles\tools\add_to_friends.html:17
 #: .\templates\profiles\user_list_item.html:37
@@ -3408,7 +3408,7 @@ msgstr "Legg til i venner"
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
 msgid "Toggle Dropdown"
-msgstr "Slå på rullegardinmenyen"
+msgstr "Vis/skjul rullegardinmeny"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
@@ -3421,7 +3421,7 @@ msgstr "None"
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "Blokkere "
+msgstr "Blokker "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
@@ -3430,7 +3430,7 @@ msgstr "Fjern blokkering "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Rapportere "
+msgstr "Rapporter "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3528,11 +3528,11 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"Nettstedsadministrasjon kan ikke bekrefte personlig informasjon gitt av "
+"Nettstedets ledelse kan ikke bekrefte personlige opplysninger oppgitt av "
 "brukere av nettstedet. Enkelte brukeres personlige opplysninger er kanskje "
 "ikke korrekte. Nettstedets ledelse er ikke ansvarlig for brukeraktivitet "
-"utenfor nettstedet. Hvis du velger å møte eller snakke på telefon med "
-"personer du møtte på siden, er ansvaret for resultatet av møtet eller "
+"utenfor nettstedet. Hvis du velger å møte eller snakke i telefon med "
+"personer du møtte på nettstedet, er ansvaret for resultatet av møtet eller "
 "telefonsamtalen ditt."
 
 #: .\templates\terms\terms_of_service.html:25
@@ -3563,9 +3563,9 @@ msgid ""
 "images (of men or women)."
 msgstr ""
 "Profilbildet ditt skal være et bilde av deg, der vi kan se ansiktet ditt. "
-"Det er lov å laste opp et profilbilde med andre. Ikke last opp nakenbilder, "
-"bilder som viser kjønnsorganer (av menn eller kvinner) eller bilder med bar "
-"bryst (av menn eller kvinner)."
+"Det er lov å laste opp et profilbilde med andre personer. Ikke last opp "
+"nakenbilder, bilder som viser kjønnsorganer (av menn eller kvinner) eller "
+"bilder med bar overkropp (av menn eller kvinner)."
 
 #: .\templates\uploads\file_input.html:6
 msgid "Browse..."
@@ -3601,7 +3601,7 @@ msgstr "synlig på nettsiden"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Rask bildemodereringstid Speedy"
+msgstr "Speedy-bildemodereringstid"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"

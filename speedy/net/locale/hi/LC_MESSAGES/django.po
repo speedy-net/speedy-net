@@ -20,17 +20,17 @@ msgstr ""
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "Delete Account"
-msgstr "खाता हटा दो"
+msgstr "खाता हटाएँ"
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "Delete Account"
-msgstr "खाता हटा दो"
+msgstr "खाता हटाएँ"
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "Delete Account"
-msgstr "खाता हटा दो"
+msgstr "खाता हटाएँ"
 
 #: .\__translations\__translations.py:10
 msgctxt "female"
@@ -118,7 +118,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net अकाउंट्स"
+msgstr "Speedy Net खाते"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
@@ -162,7 +162,7 @@ msgstr "Speedy Net प्रोफ़ाइल"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net प्रोफाइल"
+msgstr "Speedy Net प्रोफ़ाइलें"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -195,11 +195,12 @@ msgid ""
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">स्पीडी "
-"नेट</a> Speedy Net एक नया सोशल नेटवर्क है। Speedy Net के ज़रिए आप अपने दोस्तों से "
-"बातचीत कर सकते हैं। Speedy Net पर सभी देशों और उम्र के लोग मुफ़्त में रजिस्टर कर सकते हैं "
-"(कोई उम्र सीमा नहीं!)। यह साइट शाकाहारी और वीगन लोगों के लिए भी उपयुक्त है। यह "
-"फिलहाल उपलब्ध है। %(languages_num)s भाषाएँ।"
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> Speedy Net एक नया सोशल नेटवर्क है। Speedy Net के "
+"ज़रिए आप अपने दोस्तों से बातचीत कर सकते हैं। Speedy Net पर सभी देशों और "
+"उम्र के लोग मुफ़्त में रजिस्टर कर सकते हैं (कोई उम्र सीमा नहीं!)। यह "
+"साइट शाकाहारी और वीगन लोगों के लिए भी उपयुक्त है। यह फिलहाल उपलब्ध है। "
+"%(languages_num)s भाषाएँ।"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -230,9 +231,10 @@ msgid ""
 "\" title=\"Speedy Match\">Speedy Match</a>, to find matching people for "
 "dating. Speedy Match is open to singles of all ages."
 msgstr ""
-"आप हमारे नए ऐप का उपयोग कर सकते हैं, <a href=\"https://%(language_code)s."
-"speedymatch.com/\" title=\"Speedy Match\">त्वरित मैच</a> डेटिंग के लिए उपयुक्त लोगों "
-"को खोजने के लिए, Speedy Match सभी उम्र के सिंगल्स के लिए खुला है।"
+"आप हमारे नए ऐप का उपयोग कर सकते हैं, <a "
+"href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
+"Match\">Speedy Match</a> डेटिंग के लिए उपयुक्त लोगों को खोजने के लिए, "
+"Speedy Match सभी उम्र के सिंगल्स के लिए खुला है।"
 
 #: .\templates\about\about.html:25
 msgid ""
@@ -240,9 +242,9 @@ msgid ""
 "Speedy Net today to find friends, it only takes a few minutes. <a href=\"/\" "
 "title=\"Join Speedy Net\">Click here</a> to join."
 msgstr ""
-"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Net से जुड़ें और दोस्त "
-"बनाएँ, इसमें बस कुछ ही मिनट लगते हैं। <a href=\"/\" title=\"Join Speedy Net\">यहाँ "
-"क्लिक करें</a> शामिल होना।"
+"Speedy Net और Speedy Match के सभी फ़ीचर मुफ़्त हैं। आज ही Speedy Net से "
+"जुड़ें और दोस्त बनाएँ, इसमें बस कुछ ही मिनट लगते हैं। <a href=\"/\" "
+"title=\"Join Speedy Net\">शामिल होने के लिए यहाँ क्लिक करें</a>।"
 
 #: .\templates\about\about.html:27
 msgid ""
@@ -258,10 +260,11 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net का नाम इसके बाद रखा गया है <a href=\"https://www.facebook.com/"
-"speedy.the.female.dog\" title=\"Speedy\">तीव्र</a> स्पीड़ी नाम की एक मादा कुतिया "
-"कई वर्षों तक हमारे साथ रही और 2003 में उसकी मृत्यु हो गई। स्पीड़ी ने 1988 में 7 पिल्लों को "
-"जन्म दिया था।"
+"Speedy Net का नाम इसके बाद रखा गया है <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a> Speedy नाम की एक मादा कुतिया कई वर्षों तक "
+"हमारे साथ रही और 2003 में उसकी मृत्यु हो गई। Speedy ने 1988 में 7 "
+"पिल्लों को जन्म दिया था।"
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -306,7 +309,7 @@ msgstr "अवरुद्ध उपयोगकर्ता"
 
 #: .\templates\accounts\edit_profile\base.html:17
 msgid "Delete Account"
-msgstr "खाता हटा दो"
+msgstr "खाता हटाएँ"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
@@ -337,13 +340,14 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – स्पीडी के साथ डेटिंग"
+msgstr "Speedy Match – Speedy के साथ डेटिंग"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
 msgstr ""
-"क्या आप बॉयफ्रेंड की तलाश में हैं? क्या आप गर्लफ्रेंड की तलाश में हैं? आइए और स्पीड़ी से मिलिए!"
+"क्या आप बॉयफ्रेंड की तलाश में हैं? क्या आप गर्लफ्रेंड की तलाश में हैं? "
+"आइए और Speedy से मिलिए!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
@@ -359,4 +363,4 @@ msgstr "आपके दोस्त"
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "मित्रता का अनुरोध भेजा गया"
+msgstr "मित्रता अनुरोध भेजा गया"

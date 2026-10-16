@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,22 +15,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && "
+"n%100<20)) ? 1 : 2);\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
 msgid "You have no likes here."
-msgstr "Nu ai like-uri aici."
+msgstr "Nu aveți like-uri aici."
 
 #: .\__translations\__translations.html:7
 msgctxt "male"
 msgid "You have no likes here."
-msgstr "Nu ai like-uri aici."
+msgstr "Nu aveți like-uri aici."
 
 #: .\__translations\__translations.html:8
 msgctxt "other"
 msgid "You have no likes here."
-msgstr "Nu ai like-uri aici."
+msgstr "Nu aveți like-uri aici."
 
 #: .\__translations\__translations.html:10
 msgctxt "female"
@@ -68,8 +69,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Încă nu ai nicio potrivire. Încercați să extindeți setările de căutare sau "
-"verificați din nou mai târziu."
+"Încă nu aveți nicio potrivire. Încercați să extindeți setările de căutare "
+"sau reveniți mai târziu."
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
@@ -77,8 +78,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Încă nu ai nicio potrivire. Încercați să extindeți setările de căutare sau "
-"verificați din nou mai târziu."
+"Încă nu aveți nicio potrivire. Încercați să extindeți setările de căutare "
+"sau reveniți mai târziu."
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
@@ -86,8 +87,8 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Încă nu ai nicio potrivire. Încercați să extindeți setările de căutare sau "
-"verificați din nou mai târziu."
+"Încă nu aveți nicio potrivire. Încercați să extindeți setările de căutare "
+"sau reveniți mai târziu."
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
@@ -107,47 +108,47 @@ msgstr "Setări de potrivire"
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "Ca"
+msgstr "Îmi place"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "Ca"
+msgstr "Îmi place"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "Ca"
+msgstr "Îmi place"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "Spre deosebire de"
+msgstr "Nu-mi mai place"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "Spre deosebire de"
+msgstr "Nu-mi mai place"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "Spre deosebire de"
+msgstr "Nu-mi mai place"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "Meciurile tale"
+msgstr "Potrivirile dvs."
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "Meciurile tale"
+msgstr "Potrivirile dvs."
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Meciurile tale"
+msgstr "Potrivirile dvs."
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -212,110 +213,110 @@ msgstr "Despre mine"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "Despre meciul meu"
+msgstr "Despre potrivirea mea"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "Despre meciul meu"
+msgstr "Despre potrivirea mea"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "Despre meciul meu"
+msgstr "Despre potrivirea mea"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "Gen pentru a se potrivi"
+msgstr "Genul pentru potrivire"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "Gen pentru a se potrivi"
+msgstr "Genul pentru potrivire"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "Gen pentru a se potrivi"
+msgstr "Genul pentru potrivire"
 
 #: .\__translations\__translations.html:62
 #, python-format
 msgctxt "female"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Cineva te place pe %(site_name)s"
+msgstr "Cuiva îi plăceți pe %(site_name)s"
 
 #: .\__translations\__translations.html:63
 #, python-format
 msgctxt "male"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Cineva te place pe %(site_name)s"
+msgstr "Cuiva îi plăceți pe %(site_name)s"
 
 #: .\__translations\__translations.html:64
 #, python-format
 msgctxt "other"
 msgid "Someone likes you on %(site_name)s"
-msgstr "Cineva te place pe %(site_name)s"
+msgstr "Cuiva îi plăceți pe %(site_name)s"
 
 #: .\__translations\__translations.html:66
 msgctxt "female"
 msgid "likes you."
-msgstr "te place."
+msgstr "vă place."
 
 #: .\__translations\__translations.html:67
 msgctxt "male"
 msgid "likes you."
-msgstr "te place."
+msgstr "vă place."
 
 #: .\__translations\__translations.html:68
 msgctxt "other"
 msgid "likes you."
-msgstr "te place."
+msgstr "vă place."
 
 #: .\__translations\__translations.html:70
 msgctxt "female"
 msgid "likes you"
-msgstr "te place"
+msgstr "vă place"
 
 #: .\__translations\__translations.html:71
 msgctxt "male"
 msgid "likes you"
-msgstr "te place"
+msgstr "vă place"
 
 #: .\__translations\__translations.html:72
 msgctxt "other"
 msgid "likes you"
-msgstr "te place"
+msgstr "vă place"
 
 #: .\__translations\__translations.html:74
 msgctxt "female"
 msgid "You like"
-msgstr "iti place"
+msgstr "Vă place"
 
 #: .\__translations\__translations.html:75
 msgctxt "male"
 msgid "You like"
-msgstr "iti place"
+msgstr "Vă place"
 
 #: .\__translations\__translations.html:76
 msgctxt "other"
 msgid "You like"
-msgstr "iti place"
+msgstr "Vă place"
 
 #: .\__translations\__translations.html:78
 msgctxt "female"
 msgid "Last visited Speedy Match"
-msgstr "Ultima vizitare Speedy Match"
+msgstr "Ultima vizită pe Speedy Match"
 
 #: .\__translations\__translations.html:79
 msgctxt "male"
 msgid "Last visited Speedy Match"
-msgstr "Ultima vizitare Speedy Match"
+msgstr "Ultima vizită pe Speedy Match"
 
 #: .\__translations\__translations.html:80
 msgctxt "other"
 msgid "Last visited Speedy Match"
-msgstr "Ultima vizitare Speedy Match"
+msgstr "Ultima vizită pe Speedy Match"
 
 #: .\__translations\__translations.py:10
 msgid "My height in centimeters"
@@ -373,37 +374,37 @@ msgstr "Perechea mea ideală"
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "Vârsta minimă pentru a se potrivi"
+msgstr "Vârsta minimă pentru potrivire"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "Vârsta minimă pentru a se potrivi"
+msgstr "Vârsta minimă pentru potrivire"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "Vârsta minimă pentru a se potrivi"
+msgstr "Vârsta minimă pentru potrivire"
 
 #: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "Vârsta maximă pentru a se potrivi"
+msgstr "Vârsta maximă pentru potrivire"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "Vârsta maximă pentru a se potrivi"
+msgstr "Vârsta maximă pentru potrivire"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "Vârsta maximă pentru a se potrivi"
+msgstr "Vârsta maximă pentru potrivire"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
@@ -423,47 +424,47 @@ msgstr "Vă rugăm să scrieți câteva cuvinte despre dvs."
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "Aveţi copii? Câți?"
+msgstr "Aveți copii? Câți?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "Aveţi copii? Câți?"
+msgstr "Aveți copii? Câți?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "Aveţi copii? Câți?"
+msgstr "Aveți copii? Câți?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
 msgid "Do you want (more) children?"
-msgstr "Vrei (mai) copii?"
+msgstr "Doriți (mai mulți) copii?"
 
 #: .\__translations\__translations.py:41
 msgctxt "male"
 msgid "Do you want (more) children?"
-msgstr "Vrei (mai) copii?"
+msgstr "Doriți (mai mulți) copii?"
 
 #: .\__translations\__translations.py:42
 msgctxt "other"
 msgid "Do you want (more) children?"
-msgstr "Vrei (mai) copii?"
+msgstr "Doriți (mai mulți) copii?"
 
 #: .\__translations\__translations.py:44
 msgctxt "female"
 msgid "Who is your ideal partner?"
-msgstr "Cine este partenerul tău ideal?"
+msgstr "Cine este partenerul dvs. ideal?"
 
 #: .\__translations\__translations.py:45
 msgctxt "male"
 msgid "Who is your ideal partner?"
-msgstr "Cine este partenerul tău ideal?"
+msgstr "Cine este partenerul dvs. ideal?"
 
 #: .\__translations\__translations.py:46
 msgctxt "other"
 msgid "Who is your ideal partner?"
-msgstr "Cine este partenerul tău ideal?"
+msgstr "Cine este partenerul dvs. ideal?"
 
 #: .\__translations\__translations.py:48
 #, python-brace-format
@@ -474,7 +475,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}."
+"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}. "
 "Am constatat că unele dintre informațiile pe care le-ați furnizat la "
 "înregistrarea pe site sunt incorecte sau că ați încălcat regulile de "
 "utilizare a site-ului. Prin urmare, nu sunteți autorizat să utilizați site-"
@@ -489,7 +490,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}."
+"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}. "
 "Am constatat că unele dintre informațiile pe care le-ați furnizat la "
 "înregistrarea pe site sunt incorecte sau că ați încălcat regulile de "
 "utilizare a site-ului. Prin urmare, nu sunteți autorizat să utilizați site-"
@@ -504,7 +505,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}."
+"Ne pare rău, dar nu sunteți autorizat să utilizați site-ul web {site_name}. "
 "Am constatat că unele dintre informațiile pe care le-ați furnizat la "
 "înregistrarea pe site sunt incorecte sau că ați încălcat regulile de "
 "utilizare a site-ului. Prin urmare, nu sunteți autorizat să utilizați site-"
@@ -512,7 +513,7 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Conturi Speedy Match"
 
 #: .\accounts\forms.py:96
 msgid "Add profile picture"
@@ -528,7 +529,7 @@ msgstr "Dieta mea"
 
 #: .\accounts\forms.py:97 .\accounts\forms.py:141 .\accounts\validators.py:181
 msgid "Your diet is required."
-msgstr "Dieta dvs. este necesară."
+msgstr "Dieta dvs. este obligatorie."
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
@@ -536,7 +537,7 @@ msgstr "Starea mea de fumat"
 
 #: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
-msgstr "Statutul dvs. de fumat este obligatoriu."
+msgstr "Statutul dvs. de fumător este obligatoriu."
 
 #: .\accounts\forms.py:99
 msgid "My relationship status"
@@ -549,11 +550,11 @@ msgstr "Starea relației dvs. este obligatorie."
 #: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
-msgstr "Este necesar să se potrivească sexul."
+msgstr "Genul pentru potrivire este obligatoriu."
 
 #: .\accounts\forms.py:138
 msgid "Your height is required."
-msgstr "Înălțimea dvs. este necesară."
+msgstr "Înălțimea dvs. este obligatorie."
 
 #: .\accounts\forms.py:150 .\accounts\validators.py:109
 msgid "Please write a few words about yourself."
@@ -562,52 +563,52 @@ msgstr "Vă rugăm să scrieți câteva cuvinte despre dvs."
 #: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
-msgstr "Vă rog să scrieți unde locuiți."
+msgstr "Vă rugăm să scrieți unde locuiți."
 
 #: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "Aveţi copii? Câți?"
+msgstr "Aveți copii? Câți?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
 #: .\templates\profiles\user_extra_info_widget.html:34
 msgid "Do you want (more) children?"
-msgstr "Vrei (mai) copii?"
+msgstr "Doriți (mai mulți) copii?"
 
 #: .\accounts\forms.py:162 .\accounts\validators.py:157
 msgid "Who is your ideal partner?"
-msgstr "Cine este partenerul tău ideal?"
+msgstr "Cine este partenerul dvs. ideal?"
 
 #: .\accounts\forms.py:168
 msgid "Minimal age to match is required."
-msgstr "Este necesară vârsta minimă pentru a se potrivi."
+msgstr "Vârsta minimă pentru potrivire este obligatorie."
 
 #: .\accounts\forms.py:171
 msgid "Maximal age to match is required."
-msgstr "Este necesară vârsta maximă pentru a se potrivi."
+msgstr "Vârsta maximă pentru potrivire este obligatorie."
 
 #: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
-msgstr "Este necesară potrivirea dietei."
+msgstr "Potrivirea dietei este obligatorie."
 
 #: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
-msgstr "Este necesară potrivirea statutului de fumat."
+msgstr "Potrivirea statutului de fumat este obligatorie."
 
 #: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
-msgstr "Este necesară potrivirea stării relației."
+msgstr "Potrivirea stării relației este obligatorie."
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
-msgstr "Unde locuiţi?"
+msgstr "Unde locuiți?"
 
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "Gen pentru a se potrivi"
+msgstr "Genul pentru potrivire"
 
 #: .\accounts\models.py:70
 msgid "Speedy Match User"
@@ -643,7 +644,7 @@ msgstr "Utilizator"
 
 #: .\accounts\models.py:213
 msgid "On new likes"
-msgstr "Pe like-uri noi"
+msgstr "La like-uri noi"
 
 #: .\accounts\models.py:216
 msgid "Active languages"
@@ -670,15 +671,15 @@ msgstr "Perechea mea ideală"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
-msgstr "Vârsta minimă pentru a se potrivi"
+msgstr "Vârsta minimă pentru potrivire"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "Vârsta maximă pentru a se potrivi"
+msgstr "Vârsta maximă pentru potrivire"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "Meci de dietă"
+msgstr "Potrivire pentru dietă"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
@@ -686,19 +687,19 @@ msgstr "Potrivire pentru starea de fumat"
 
 #: .\accounts\models.py:247
 msgid "Relationship status match"
-msgstr "Starea relației potrivi"
+msgstr "Potrivire pentru starea relației"
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
-msgstr "Dieta pe masura"
+msgstr "Dieta pentru potrivire"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "Statutul de fumat pentru a se potrivi"
+msgstr "Statutul de fumat pentru potrivire"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
-msgstr "Starea relației pentru a se potrivi"
+msgstr "Starea relației pentru potrivire"
 
 #: .\accounts\models.py:273
 msgid "Activation step"
@@ -710,15 +711,15 @@ msgstr "Numărul de potriviri la căutarea ultimului utilizator"
 
 #: .\accounts\models.py:352
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Profil Speedy Match"
 
 #: .\accounts\models.py:353 .\profiles\apps.py:14
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Profiluri Speedy Match"
 
 #: .\accounts\models.py:546 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
-msgstr "Vă rugăm să confirmați adresa dvs. de e-mail."
+msgstr "Vă rugăm să vă confirmați adresa de e-mail."
 
 #: .\accounts\utils.py:130
 #, python-brace-format
@@ -734,23 +735,21 @@ msgstr ""
 
 #: .\accounts\validators.py:169
 msgid "Height must be from 1 to 450 cm."
-msgstr "Înălțimea trebuie să fie de la 1 la 450 cm."
+msgstr "Înălțimea trebuie să fie între 1 și 450 cm."
 
 #: .\accounts\validators.py:229
 msgid "Minimal age to match must be from 0 to 180 years."
-msgstr ""
-"Vârsta minimă pentru a se potrivi trebuie să fie de la 0 la 180 de ani."
+msgstr "Vârsta minimă pentru potrivire trebuie să fie între 0 și 180 de ani."
 
 #: .\accounts\validators.py:241
 msgid "Maximal age to match must be from 0 to 180 years."
-msgstr ""
-"Vârsta maximă pentru a se potrivi trebuie să fie de la 0 la 180 de ani."
+msgstr "Vârsta maximă pentru potrivire trebuie să fie între 0 și 180 de ani."
 
 #: .\accounts\validators.py:256
 msgid "Maximal age to match can't be less than minimal age to match."
 msgstr ""
-"Vârsta maximă pentru a se potrivi nu poate fi mai mică decât vârsta minimă "
-"pentru a se potrivi."
+"Vârsta maximă pentru potrivire nu poate fi mai mică decât vârsta minimă "
+"pentru potrivire."
 
 #: .\accounts\validators.py:271
 msgid "At least one diet match option should be five hearts."
@@ -819,52 +818,52 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
+"Administrator: Numărul total de membri activi de pe site este "
 "{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"femei, {total_number_of_male_active_members} bărbați, "
+"{total_number_of_other_active_members} alții; "
+"{total_percent_of_female_active_members} femei, "
+"{total_percent_of_male_active_members} bărbați, "
+"{total_percent_of_other_active_members} alții), dintre care "
+"{total_number_of_active_members_in_the_last_week} membri "
+"({total_number_of_female_active_members_in_the_last_week} femei, "
+"{total_number_of_male_active_members_in_the_last_week} bărbați, "
+"{total_number_of_other_active_members_in_the_last_week} alții; "
+"{total_percent_of_female_active_members_in_the_last_week} femei, "
+"{total_percent_of_male_active_members_in_the_last_week} bărbați, "
+"{total_percent_of_other_active_members_in_the_last_week} alții) au intrat pe "
+"site în ultima săptămână, {total_number_of_active_members_in_the_last_month} "
+"membri ({total_number_of_female_active_members_in_the_last_month} femei, "
+"{total_number_of_male_active_members_in_the_last_month} bărbați, "
+"{total_number_of_other_active_members_in_the_last_month} alții; "
+"{total_percent_of_female_active_members_in_the_last_month} femei, "
+"{total_percent_of_male_active_members_in_the_last_month} bărbați, "
+"{total_percent_of_other_active_members_in_the_last_month} alții) au intrat "
+"pe site în ultima lună, "
+"{total_number_of_active_members_in_the_last_four_months} membri "
+"({total_number_of_female_active_members_in_the_last_four_months} femei, "
+"{total_number_of_male_active_members_in_the_last_four_months} bărbați, "
+"{total_number_of_other_active_members_in_the_last_four_months} alții; "
+"{total_percent_of_female_active_members_in_the_last_four_months} femei, "
+"{total_percent_of_male_active_members_in_the_last_four_months} bărbați, "
+"{total_percent_of_other_active_members_in_the_last_four_months} alții) au "
+"intrat pe site în ultimele patru luni, "
+"{total_number_of_active_members_in_the_last_eight_months} membri "
+"({total_number_of_female_active_members_in_the_last_eight_months} femei, "
+"{total_number_of_male_active_members_in_the_last_eight_months} bărbați, "
+"{total_number_of_other_active_members_in_the_last_eight_months} alții; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} femei, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} bărbați, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} alții) au "
+"intrat pe site în ultimele opt luni, și "
+"{total_number_of_active_members_in_the_last_two_years} membri "
+"({total_number_of_female_active_members_in_the_last_two_years} femei, "
+"{total_number_of_male_active_members_in_the_last_two_years} bărbați, "
+"{total_number_of_other_active_members_in_the_last_two_years} alții; "
+"{total_percent_of_female_active_members_in_the_last_two_years} femei, "
+"{total_percent_of_male_active_members_in_the_last_two_years} bărbați, "
+"{total_percent_of_other_active_members_in_the_last_two_years} alții) au "
+"intrat pe site în ultimii doi ani."
 
 #: .\admin\views.py:307
 #, python-brace-format
@@ -1003,11 +1002,11 @@ msgstr ""
 
 #: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
-msgstr "Utilizatorii nu pot să-și placă."
+msgstr "Utilizatorii nu se pot aprecia singuri."
 
 #: .\likes\managers.py:33
 msgid "User already likes other user."
-msgstr "Utilizatorului îi place deja alt utilizator."
+msgstr "Utilizatorul apreciază deja celălalt utilizator."
 
 #: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
@@ -1023,11 +1022,11 @@ msgstr "către utilizator"
 
 #: .\likes\models.py:31
 msgid "user like"
-msgstr "utilizator ca"
+msgstr "apreciere de utilizator"
 
 #: .\likes\models.py:32
 msgid "user likes"
-msgstr "placerile utilizatorului"
+msgstr "aprecieri de utilizatori"
 
 #: .\likes\views.py:53
 msgid "Girls You Like"
@@ -1039,19 +1038,19 @@ msgstr "Băieți care vă plac"
 
 #: .\likes\views.py:55
 msgid "People You Like"
-msgstr "Oameni care vă plac"
+msgstr "Persoane care vă plac"
 
 #: .\likes\views.py:58
 msgid "Girls Who Like You"
-msgstr "Fete care te plac"
+msgstr "Fete cărora le plăceți"
 
 #: .\likes\views.py:59
 msgid "Boys Who Like You"
-msgstr "Băieți care vă plac"
+msgstr "Băieți cărora le plăceți"
 
 #: .\likes\views.py:60
 msgid "People Who Like You"
-msgstr "Oameni care te plac"
+msgstr "Persoane cărora le plăceți"
 
 #: .\likes\views.py:62
 msgid "Mutual Likes"
@@ -1059,7 +1058,7 @@ msgstr "Like-uri reciproce"
 
 #: .\matches\apps.py:14
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Potriviri Speedy Match"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
@@ -1068,7 +1067,7 @@ msgstr "Setările dvs. de potrivire au fost salvate."
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "Rangul meciului"
+msgstr "Rangul potrivirii"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
@@ -1137,8 +1136,8 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Doar persoanele care corespund cerințelor dvs. vor putea să vă vadă profilul "
-"și să vă contacteze. Nu permitem căutări anonime, iar Speedy Match "
-"profilurile sunt vizibile numai pentru partenerii care se potrivesc. Puteți "
+"și să vă contacteze. Nu permitem căutări anonime, iar profilurile Speedy "
+"Match sunt vizibile numai pentru partenerii care se potrivesc. Puteți "
 "selecta cine vă va putea vedea profilul și ce detalii vor apărea pe profilul "
 "dvs. ca publice, care detalii numai prietenilor și ce detalii vor fi "
 "private. Detaliile private vor apărea numai pentru dvs."
@@ -1171,7 +1170,7 @@ msgid ""
 msgstr ""
 "Speedy Match poartă numele lui <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți "
-"ani și a murit în 2003. a născut 7 căței în 1988."
+"ani și a murit în 2003. Speedy a născut 7 căței în 1988."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1183,7 +1182,7 @@ msgstr ""
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"
-msgstr "Multumesc si mult succes,"
+msgstr "Vă mulțumim și succes,"
 
 #: .\templates\about\about.html:32
 msgid "Uri Rodberg"
@@ -1191,7 +1190,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net Speedy Match și,"
+msgstr "Fondator și director al Speedy Net și Speedy Match,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1225,7 +1224,7 @@ msgstr "Despre meciul meu"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
-msgstr "Spate"
+msgstr "Înapoi"
 
 #: .\templates\accounts\edit_profile\activate.html:79
 msgid "Next step"
@@ -1234,27 +1233,27 @@ msgstr "Următorul pas"
 #: .\templates\accounts\edit_profile\activate.html:85
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Contul dvs. Speedy Net nu este activ. Intră pe această pagină pentru a o "
+"Contul dvs. Speedy Net nu este activ. Intrați pe această pagină pentru a-l "
 "activa."
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "Administrator - Toate meciurile"
+msgstr "Administrator - Toate potrivirile"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Meciurile tale"
+msgstr "Potrivirile dvs."
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "Chibrituri"
+msgstr "Potriviri"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
 #: .\templates\menu\user_menu_profile_is_active.html:20
 msgid "Likes"
-msgstr "Like"
+msgstr "Like-uri"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
@@ -1269,11 +1268,11 @@ msgstr "Setări de potrivire"
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
 msgid "A vegan friendly website"
-msgstr "Un site vegan prietenos"
+msgstr "Un site prietenos cu veganii"
 
 #: .\templates\email\likes\like_body.txt:1
 msgid "likes you."
-msgstr "te place."
+msgstr "vă place."
 
 #: .\templates\email\likes\like_body.txt:6
 #, python-format
@@ -1288,19 +1287,19 @@ msgstr ""
 #: .\templates\email\likes\like_subject.txt:1
 #, python-format
 msgid "Someone likes you on %(site_name)s"
-msgstr "Cineva te place pe %(site_name)s"
+msgstr "Cuiva îi plăceți pe %(site_name)s"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Încă nu ai prieteni."
+msgstr "Încă nu aveți prieteni."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Prietenii tăi"
+msgstr "Prietenii dvs."
 
 #: .\templates\likes\like_list.html:51
 msgid "You have no likes here."
-msgstr "Nu ai like-uri aici."
+msgstr "Nu aveți like-uri aici."
 
 #: .\templates\main\main_page.html:7
 msgid "Free online dating"
@@ -1321,15 +1320,15 @@ msgstr ""
 #: .\templates\main\main_page.html:14
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Cauți un iubit? Cauți o iubită? Vino să-l cunoști pe Speedy!"
+msgstr "Căutați un iubit? Căutați o iubită? Veniți să-l cunoașteți pe Speedy!"
 
 #: .\templates\main\main_page.html:16
 msgid ""
 "All the features on Speedy Net and Speedy Match are free of charge. Join "
 "Speedy Match today to find matching partners, it only takes a few minutes."
 msgstr ""
-"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Alăturați-vă "
-"Speedy Match astăzi pentru a găsi parteneri care se potrivesc, durează doar "
+"Toate funcțiile de pe Speedy Net și Speedy Match sunt gratuite. Înscrieți-vă "
+"astăzi pe Speedy Match pentru a găsi parteneri potriviți, durează doar "
 "câteva minute."
 
 #: .\templates\matches\match_list.html:41
@@ -1339,15 +1338,15 @@ msgstr "Actualizați potrivirile"
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
 msgid "Diet"
-msgstr "Dieta"
+msgstr "Dietă"
 
 #: .\templates\matches\match_list.html:60
 msgid "Age:"
-msgstr "Vârstă:"
+msgstr "Vârsta:"
 
 #: .\templates\matches\match_list.html:74
 msgid "Refresh"
-msgstr "Reîmprospăta"
+msgstr "Reîmprospătați"
 
 #: .\templates\matches\match_list.html:81
 msgid "Add more options"
@@ -1358,12 +1357,12 @@ msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
 msgstr ""
-"Încă nu ai nicio potrivire. Încercați să extindeți setările de căutare sau "
-"verificați din nou mai târziu."
+"Încă nu aveți nicio potrivire. Încercați să extindeți setările de căutare "
+"sau reveniți mai târziu."
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "Înapoi la meciuri"
+msgstr "Înapoi la potriviri"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
@@ -1376,30 +1375,30 @@ msgstr "Prieteni"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "Ca"
+msgstr "Îmi place"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "Spre deosebire de"
+msgstr "Nu-mi mai place"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\templates\profiles\user_base_site.html:10
 #: .\templates\profiles\user_base_site.html:16
 msgid "likes you"
-msgstr "te place"
+msgstr "vă place"
 
 #: .\templates\profiles\user_base_site.html:12
 #: .\templates\profiles\user_base_site.html:18
 msgid "You like"
-msgstr "iti place"
+msgstr "Vă place"
 
 #: .\templates\profiles\user_base_site.html:14
 msgid "Friendship request sent"
-msgstr "Solicitare de prietenie trimisă"
+msgstr "Cerere de prietenie trimisă"
 
 #: .\templates\profiles\user_extra_info_widget.html:22
 msgid "Where do I live?"
@@ -1415,7 +1414,7 @@ msgstr "Starea relației"
 
 #: .\templates\profiles\user_extra_info_widget.html:58
 msgid "Last visited Speedy Match"
-msgstr "Ultima vizitare Speedy Match"
+msgstr "Ultima vizită pe Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."

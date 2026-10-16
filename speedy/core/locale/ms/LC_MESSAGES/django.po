@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
-msgstr "kawan awak"
+msgstr "Rakan anda"
 
 #: .\__translations\__translations.html:6
 msgid "Friendship request sent"
@@ -63,7 +63,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Hai <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"selamat datang kembali ke %(site_name)s!"
+"selamat kembali ke %(site_name)s!"
 
 #: .\__translations\__translations.html:17
 #, python-format
@@ -73,7 +73,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Hai <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"selamat datang kembali ke %(site_name)s!"
+"selamat kembali ke %(site_name)s!"
 
 #: .\__translations\__translations.html:18
 #, python-format
@@ -83,7 +83,7 @@ msgid ""
 "welcome back to %(site_name)s!"
 msgstr ""
 "Hai <a href=\"%(user_link)s\" class=\"navbar-link\">%(user_name)s</a>, "
-"selamat datang kembali ke %(site_name)s!"
+"selamat kembali ke %(site_name)s!"
 
 #: .\__translations\__translations.html:20
 msgctxt "female"
@@ -286,32 +286,32 @@ msgstr "Hantar mesej kepada %(user_name)s"
 #: .\__translations\__translations.html:80
 msgctxt "female"
 msgid "Mark All as Read"
-msgstr "Tandai Semua sebagai Dibaca"
+msgstr "Tandakan Semua sebagai Dibaca"
 
 #: .\__translations\__translations.html:81
 msgctxt "male"
 msgid "Mark All as Read"
-msgstr "Tandai Semua sebagai Dibaca"
+msgstr "Tandakan Semua sebagai Dibaca"
 
 #: .\__translations\__translations.html:82
 msgctxt "other"
 msgid "Mark All as Read"
-msgstr "Tandai Semua sebagai Dibaca"
+msgstr "Tandakan Semua sebagai Dibaca"
 
 #: .\__translations\__translations.html:84
 msgctxt "female"
 msgid "You:"
-msgstr "anda:"
+msgstr "Anda:"
 
 #: .\__translations\__translations.html:85
 msgctxt "male"
 msgid "You:"
-msgstr "anda:"
+msgstr "Anda:"
 
 #: .\__translations\__translations.html:86
 msgctxt "other"
 msgid "You:"
-msgstr "anda:"
+msgstr "Anda:"
 
 #: .\__translations\__translations.html:88
 msgctxt "female"
@@ -346,17 +346,17 @@ msgstr "Anda menyekat "
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " menyekat awak."
+msgstr " menyekat anda."
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " menyekat awak."
+msgstr " menyekat anda."
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " menyekat awak."
+msgstr " menyekat anda."
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -365,7 +365,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Match profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
 "di Speedy Match."
 
 #: .\__translations\__translations.html:101
@@ -375,7 +375,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Match profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
 "di Speedy Match."
 
 #: .\__translations\__translations.html:102
@@ -385,7 +385,7 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Match profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
 "di Speedy Match."
 
 #: .\__translations\__translations.html:104
@@ -395,7 +395,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Net profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
 "di Speedy Net."
 
 #: .\__translations\__translations.html:105
@@ -405,7 +405,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Net profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
 "di Speedy Net."
 
 #: .\__translations\__translations.html:106
@@ -415,41 +415,41 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Net profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
 "di Speedy Net."
 
 #: .\__translations\__translations.html:108
 msgctxt "female"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Anda juga mempunyai Speedy Net profil. Lihat profil anda di Speedy Net."
+"Anda juga mempunyai profil Speedy Net. Lihat profil anda di Speedy Net."
 
 #: .\__translations\__translations.html:109
 msgctxt "male"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Anda juga mempunyai Speedy Net profil. Lihat profil anda di Speedy Net."
+"Anda juga mempunyai profil Speedy Net. Lihat profil anda di Speedy Net."
 
 #: .\__translations\__translations.html:110
 msgctxt "other"
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Anda juga mempunyai Speedy Net profil. Lihat profil anda di Speedy Net."
+"Anda juga mempunyai profil Speedy Net. Lihat profil anda di Speedy Net."
 
 #: .\__translations\__translations.html:112
 msgctxt "female"
 msgid "Add to Friends"
-msgstr "Tambahkan pada Rakan"
+msgstr "Tambah ke Rakan"
 
 #: .\__translations\__translations.html:113
 msgctxt "male"
 msgid "Add to Friends"
-msgstr "Tambahkan pada Rakan"
+msgstr "Tambah ke Rakan"
 
 #: .\__translations\__translations.html:114
 msgctxt "other"
 msgid "Add to Friends"
-msgstr "Tambahkan pada Rakan"
+msgstr "Tambah ke Rakan"
 
 #: .\__translations\__translations.html:116
 msgctxt "female"
@@ -499,17 +499,17 @@ msgstr "Nyahsekat "
 #: .\__translations\__translations.html:128
 msgctxt "female"
 msgid "Report "
-msgstr "Laporan "
+msgstr "Laporkan "
 
 #: .\__translations\__translations.html:129
 msgctxt "male"
 msgid "Report "
-msgstr "Laporan "
+msgstr "Laporkan "
 
 #: .\__translations\__translations.html:130
 msgctxt "other"
 msgid "Report "
-msgstr "Laporan "
+msgstr "Laporkan "
 
 #: .\__translations\__translations.html:132
 msgctxt "female"
@@ -529,17 +529,17 @@ msgstr "Laporkan foto ini"
 #: .\__translations\__translations.html:136
 msgctxt "female"
 msgid "Remove Friend"
-msgstr "Alih keluar Rakan"
+msgstr "Alih Keluar Rakan"
 
 #: .\__translations\__translations.html:137
 msgctxt "male"
 msgid "Remove Friend"
-msgstr "Alih keluar Rakan"
+msgstr "Alih Keluar Rakan"
 
 #: .\__translations\__translations.html:138
 msgctxt "other"
 msgid "Remove Friend"
-msgstr "Alih keluar Rakan"
+msgstr "Alih Keluar Rakan"
 
 #: .\__translations\__translations.html:140
 msgctxt "female"
@@ -649,17 +649,17 @@ msgstr "Selamat datang"
 #: .\__translations\__translations.html:168
 msgctxt "female"
 msgid "Your friend"
-msgstr "kawan awak"
+msgstr "Rakan anda"
 
 #: .\__translations\__translations.html:169
 msgctxt "male"
 msgid "Your friend"
-msgstr "kawan awak"
+msgstr "Rakan anda"
 
 #: .\__translations\__translations.html:170
 msgctxt "other"
 msgid "Your friend"
-msgstr "kawan awak"
+msgstr "Rakan anda"
 
 #: .\__translations\__translations.html:172
 msgctxt "female"
@@ -904,23 +904,23 @@ msgstr "Permintaan Persahabatan"
 
 #: .\__translations\__translations.py:25
 msgid "Friend"
-msgstr "kawan"
+msgstr "Rakan"
 
 #: .\__translations\__translations.py:26 .\accounts\models.py:956
 msgid "Friends"
-msgstr "Kawan-kawan"
+msgstr "Rakan"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "Mengikuti Perhubungan"
+msgstr "Hubungan Mengikuti"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "Mengikuti Perhubungan"
+msgstr "Hubungan Mengikuti"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "Hubungan Penghalang"
+msgstr "Hubungan Menyekat"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -935,11 +935,8 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"Senarai mengandungi %(show_value)d item, ia harus mengandungi tidak lebih "
+"Senarai mengandungi %(show_value)d item, ia mesti mengandungi tidak lebih "
 "daripada %(limit_value)d."
-msgstr[1] ""
-"Senarai mengandungi %(show_value)d item, ia hendaklah mengandungi tidak "
-"lebih daripada %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -1070,17 +1067,17 @@ msgstr "Di mana saya tinggal?"
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "awak tinggal kat mana?"
+msgstr "Di mana anda tinggal?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "awak tinggal kat mana?"
+msgstr "Di mana anda tinggal?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "awak tinggal kat mana?"
+msgstr "Di mana anda tinggal?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
@@ -1265,17 +1262,17 @@ msgstr "Bercerai"
 #: .\__translations\__translations.py:126
 msgctxt "female"
 msgid "Widowed"
-msgstr "Janda"
+msgstr "Balu"
 
 #: .\__translations\__translations.py:127
 msgctxt "male"
 msgid "Widowed"
-msgstr "Janda"
+msgstr "Balu"
 
 #: .\__translations\__translations.py:128
 msgctxt "other"
 msgid "Widowed"
-msgstr "Janda"
+msgstr "Balu"
 
 #: .\__translations\__translations.py:130
 msgctxt "female"
@@ -1310,17 +1307,17 @@ msgstr "Dalam hubungan terbuka"
 #: .\__translations\__translations.py:138
 msgctxt "female"
 msgid "It's complicated"
-msgstr "Ia rumit"
+msgstr "Rumit"
 
 #: .\__translations\__translations.py:139
 msgctxt "male"
 msgid "It's complicated"
-msgstr "Ia rumit"
+msgstr "Rumit"
 
 #: .\__translations\__translations.py:140
 msgctxt "other"
 msgid "It's complicated"
-msgstr "Ia rumit"
+msgstr "Rumit"
 
 #: .\__translations\__translations.py:142
 msgctxt "female"
@@ -1355,17 +1352,17 @@ msgstr "Bertunang"
 #: .\__translations\__translations.py:150
 msgctxt "female"
 msgid "Married"
-msgstr "dah kahwin"
+msgstr "Berkahwin"
 
 #: .\__translations\__translations.py:151
 msgctxt "male"
 msgid "Married"
-msgstr "dah kahwin"
+msgstr "Berkahwin"
 
 #: .\__translations\__translations.py:152
 msgctxt "other"
 msgid "Married"
-msgstr "dah kahwin"
+msgstr "Berkahwin"
 
 #: .\__translations\__translations.py:154
 msgctxt "female"
@@ -1616,17 +1613,17 @@ msgstr ""
 #: .\__translations\__translations.py:192
 msgctxt "female"
 msgid "You cannot be friends with yourself."
-msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+msgstr "Anda tidak boleh menjadi rakan dengan diri sendiri."
 
 #: .\__translations\__translations.py:193
 msgctxt "male"
 msgid "You cannot be friends with yourself."
-msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+msgstr "Anda tidak boleh menjadi rakan dengan diri sendiri."
 
 #: .\__translations\__translations.py:194
 msgctxt "other"
 msgid "You cannot be friends with yourself."
-msgstr "Anda tidak boleh berkawan dengan diri sendiri."
+msgstr "Anda tidak boleh menjadi rakan dengan diri sendiri."
 
 #: .\__translations\__translations.py:196
 msgctxt "female"
@@ -1661,47 +1658,47 @@ msgstr "Pengguna ini telah meminta persahabatan daripada anda."
 #: .\__translations\__translations.py:204
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "Anda sudah berkawan dengan pengguna ini."
+msgstr "Anda sudah menjadi rakan dengan pengguna ini."
 
 #: .\__translations\__translations.py:214
 msgctxt "female"
@@ -1772,17 +1769,17 @@ msgstr "Selamat datang ke {site_name}! Akaun anda kini aktif."
 #: .\__translations\__translations.py:230
 msgctxt "female"
 msgid "Friends"
-msgstr "Kawan-kawan"
+msgstr "Rakan"
 
 #: .\__translations\__translations.py:231
 msgctxt "male"
 msgid "Friends"
-msgstr "Kawan-kawan"
+msgstr "Rakan"
 
 #: .\__translations\__translations.py:232
 msgctxt "other"
 msgid "Friends"
-msgstr "Kawan-kawan"
+msgstr "Rakan"
 
 #: .\__translations\__translations.py:234
 msgctxt "female"
@@ -1915,25 +1912,31 @@ msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
+msgstr ""
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
+msgstr ""
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "Gambar profil anda tidak boleh telus. Sila muat naik imej tidak telus."
+msgstr ""
+"Gambar profil anda tidak boleh lut sinar. Sila muat naik imej yang tidak lut "
+"sinar."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "Akaun Speedy Core"
 
 #: .\accounts\fields.py:27
 msgid "Only me"
@@ -1953,7 +1956,7 @@ msgstr "Nama keluarga (pilihan)"
 
 #: .\accounts\forms.py:266
 msgid "Your email"
-msgstr "e-mel anda"
+msgstr "E-mel anda"
 
 #: .\accounts\forms.py:267
 msgid "New password"
@@ -1961,7 +1964,7 @@ msgstr "Kata laluan baharu"
 
 #: .\accounts\forms.py:281
 msgid "New username"
-msgstr "nama pengguna baharu"
+msgstr "Nama pengguna baharu"
 
 #: .\accounts\forms.py:284
 msgid "Create an account"
@@ -2049,11 +2052,11 @@ msgstr "penerangan"
 
 #: .\accounts\models.py:511
 msgid "Female"
-msgstr "perempuan"
+msgstr "Perempuan"
 
 #: .\accounts\models.py:512
 msgid "Male"
-msgstr "jantan"
+msgstr "Lelaki"
 
 #: .\accounts\models.py:513
 msgid "Other"
@@ -2098,7 +2101,7 @@ msgstr "Bercerai"
 
 #: .\accounts\models.py:571
 msgid "Widowed"
-msgstr "Janda"
+msgstr "Balu"
 
 #: .\accounts\models.py:572
 msgid "In a relationship"
@@ -2110,7 +2113,7 @@ msgstr "Dalam hubungan terbuka"
 
 #: .\accounts\models.py:574
 msgid "It's complicated"
-msgstr "Ia rumit"
+msgstr "Rumit"
 
 #: .\accounts\models.py:575
 msgid "Separated"
@@ -2122,7 +2125,7 @@ msgstr "Bertunang"
 
 #: .\accounts\models.py:577
 msgid "Married"
-msgstr "dah kahwin"
+msgstr "Berkahwin"
 
 #: .\accounts\models.py:588
 msgid "Notify me"
@@ -2142,7 +2145,7 @@ msgstr "nama keluarga"
 
 #: .\accounts\models.py:674
 msgid "I am"
-msgstr "saya"
+msgstr "Saya"
 
 #: .\accounts\models.py:675
 msgid "date of birth"
@@ -2174,15 +2177,15 @@ msgstr "Siapa yang boleh melihat tahun lahir saya"
 
 #: .\accounts\models.py:689
 msgid "On new messages"
-msgstr "Pada mesej baharu"
+msgstr "Apabila ada mesej baharu"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "Alamat IP terakhir digunakan https://ipapi.com/ masa"
+msgstr "Masa alamat IP terakhir digunakan https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "Alamat IP terakhir menggunakan hasil https://ipapi.com/ mentah"
+msgstr "Hasil mentah alamat IP terakhir digunakan https://ipapi.com/"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2198,7 +2201,7 @@ msgstr "Pengguna super mestilah sama dengan kakitangan."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "emel"
+msgstr "e-mel"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
@@ -2206,7 +2209,7 @@ msgstr "disahkan"
 
 #: .\accounts\models.py:1595
 msgid "is primary"
-msgstr "adalah primer"
+msgstr "adalah utama"
 
 #: .\accounts\models.py:1596
 msgid "confirmation token"
@@ -2226,7 +2229,7 @@ msgstr "alamat e-mel"
 
 #: .\accounts\models.py:1756
 msgid "User"
-msgstr "pengguna"
+msgstr "Pengguna"
 
 #: .\accounts\models.py:1757
 msgid "last visit"
@@ -2276,10 +2279,7 @@ msgid_plural ""
 "has %(show_value)d)."
 msgstr[0] ""
 "Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
-"abjad angka (ia mempunyai %(show_value)d)."
-msgstr[1] ""
-"Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
-"abjad angka (ia mempunyai %(show_value)d)."
+"alfanumerik (ia mempunyai %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2290,11 +2290,8 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara abjad "
-"angka (ia mempunyai %(show_value)d)."
-msgstr[1] ""
-"Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara abjad "
-"angka (ia mempunyai %(show_value)d)."
+"Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara "
+"alfanumerik (ia mempunyai %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2305,9 +2302,6 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
-"(ia mempunyai %(show_value)d)."
-msgstr[1] ""
 "Nama pengguna mesti mengandungi sekurang-kurangnya %(limit_value)d aksara "
 "(ia mempunyai %(show_value)d)."
 
@@ -2322,9 +2316,6 @@ msgid_plural ""
 msgstr[0] ""
 "Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara (ia "
 "mempunyai %(show_value)d)."
-msgstr[1] ""
-"Nama pengguna mesti mengandungi paling banyak %(limit_value)d aksara (ia "
-"mempunyai %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2337,17 +2328,12 @@ msgid_plural ""
 msgstr[0] ""
 "Kata laluan ini terlalu pendek. Ia mesti mengandungi sekurang-kurangnya "
 "%(min_length)d aksara."
-msgstr[1] ""
-"Kata laluan ini terlalu pendek. Ia mesti mengandungi sekurang-kurangnya "
-"%(min_length)d aksara."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-"Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d aksara."
-msgstr[1] ""
 "Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d aksara."
 
 #: .\accounts\validators.py:245
@@ -2359,17 +2345,12 @@ msgid_plural ""
 msgstr[0] ""
 "Kata laluan ini terlalu panjang. Ia mesti mengandungi paling banyak "
 "%(max_length)d aksara."
-msgstr[1] ""
-"Kata laluan ini terlalu panjang. Ia mesti mengandungi paling banyak "
-"%(max_length)d aksara."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] ""
-"Kata laluan anda mesti mengandungi paling banyak %(max_length)d aksara."
-msgstr[1] ""
 "Kata laluan anda mesti mengandungi paling banyak %(max_length)d aksara."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
@@ -2383,7 +2364,7 @@ msgstr ""
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
-msgstr "Medan ini tidak boleh batal."
+msgstr "Medan ini tidak boleh null."
 
 #: .\accounts\validators.py:405
 msgid "This field cannot be blank."
@@ -2496,12 +2477,12 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"Pentadbir: {total_number_of_members_registered_in_year} ahli berdaftar di "
+"Pentadbir: {total_number_of_members_registered_in_year} ahli mendaftar pada "
 "{year}."
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "Aplikasi Asas Speedy Core"
 
 #: .\base\fields.py:35
 msgid "ID"
@@ -2510,11 +2491,11 @@ msgstr "ID"
 #: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
-msgstr "id mengandungi aksara haram."
+msgstr "id mengandungi aksara yang tidak dibenarkan."
 
 #: .\base\views.py:120
 msgid "Changes saved."
@@ -2530,7 +2511,7 @@ msgstr "pengguna disekat"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "blok"
+msgstr "sekatan"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
@@ -2582,7 +2563,7 @@ msgstr "penghantar"
 
 #: .\contact_by_form\models.py:43
 msgid "your name"
-msgstr "nama awak"
+msgstr "nama anda"
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
@@ -2590,7 +2571,7 @@ msgstr "e-mel anda"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
-msgstr "taip"
+msgstr "jenis"
 
 #: .\contact_by_form\models.py:46
 msgid "your message"
@@ -2662,7 +2643,7 @@ msgstr "mesej terakhir"
 
 #: .\messages\models.py:94 .\messages\models.py:185 .\messages\models.py:216
 msgid "chat"
-msgstr "berbual"
+msgstr "sembang"
 
 #: .\messages\models.py:95
 msgid "chats"
@@ -2682,11 +2663,11 @@ msgstr "mesej"
 
 #: .\messages\models.py:221
 msgid "read mark"
-msgstr "tanda baca"
+msgstr "tanda dibaca"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "membaca markah"
+msgstr "tanda dibaca"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2694,7 +2675,7 @@ msgstr "Inggeris"
 
 #: .\settings\base.py:228
 msgid "Hebrew"
-msgstr "bahasa Ibrani"
+msgstr "Ibrani"
 
 #: .\settings\base_with_login.py:76
 msgid "French"
@@ -2706,7 +2687,7 @@ msgstr "Jerman"
 
 #: .\settings\base_with_login.py:78
 msgid "Spanish"
-msgstr "bahasa Sepanyol"
+msgstr "Sepanyol"
 
 #: .\settings\base_with_login.py:79
 msgid "Portuguese"
@@ -2726,11 +2707,11 @@ msgstr "Jepun"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
-msgstr "bahasa Rusia"
+msgstr "Rusia"
 
 #: .\settings\base_with_login.py:84
 msgid "Chinese"
-msgstr "cina"
+msgstr "Cina"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
@@ -2746,7 +2727,7 @@ msgstr "Korea"
 
 #: .\settings\base_with_login.py:91
 msgid "Arabic"
-msgstr "bahasa arab"
+msgstr "Arab"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
@@ -2758,27 +2739,27 @@ msgstr "Ukraine"
 
 #: .\settings\base_with_login.py:94
 msgid "Turkish"
-msgstr "bahasa Turki"
+msgstr "Turki"
 
 #: .\settings\base_with_login.py:95
 msgid "Vietnamese"
-msgstr "bahasa Vietnam"
+msgstr "Vietnam"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "bahasa Czech"
+msgstr "Czech"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
-msgstr "bahasa Sweden"
+msgstr "Sweden"
 
 #: .\settings\base_with_login.py:98
 msgid "Finnish"
-msgstr "bahasa Finland"
+msgstr "Finland"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "bahasa Hungary"
+msgstr "Hungary"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"
@@ -2786,7 +2767,7 @@ msgstr "Thai"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
-msgstr "bahasa Yunani"
+msgstr "Yunani"
 
 #: .\settings\base_with_login.py:102
 msgid "Malay"
@@ -2794,19 +2775,19 @@ msgstr "Bahasa Melayu"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "bahasa Serbia"
+msgstr "Serbia"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
-msgstr "bahasa Romania"
+msgstr "Romania"
 
 #: .\settings\base_with_login.py:105
 msgid "Bengali"
-msgstr "Benggali"
+msgstr "Bengali"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "Catalan"
+msgstr "Catalonia"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
@@ -2814,15 +2795,15 @@ msgstr "Norway (Bokmål)"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
-msgstr "bahasa Bulgaria"
+msgstr "Bulgaria"
 
 #: .\settings\base_with_login.py:109
 msgid "Danish"
-msgstr "Danish"
+msgstr "Denmark"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
-msgstr "Bahasa Slovak"
+msgstr "Slovak"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
@@ -2830,51 +2811,51 @@ msgstr "Hindi"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "bahasa Estonia"
+msgstr "Estonia"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "bahasa Croatia"
+msgstr "Croatia"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
-msgstr "bahasa Azerbaijan"
+msgstr "Azerbaijan"
 
 #: .\settings\base_with_login.py:115
 msgid "Cantonese"
-msgstr "bahasa Kantonis"
+msgstr "Kantonis"
 
 #: .\settings\base_with_login.py:116
 msgid "Lithuanian"
-msgstr "bahasa Lithuania"
+msgstr "Lithuania"
 
 #: .\settings\base_with_login.py:117
 msgid "Slovenian"
-msgstr "bahasa Slovenia"
+msgstr "Slovenia"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "bahasa Basque"
+msgstr "Basque"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"
-msgstr "bahasa Armenia"
+msgstr "Armenia"
 
 #: .\settings\base_with_login.py:120
 msgid "Uzbek"
-msgstr "bahasa Uzbek"
+msgstr "Uzbek"
 
 #: .\settings\base_with_login.py:121
 msgid "Tamil"
-msgstr "bahasa Tamil"
+msgstr "Tamil"
 
 #: .\settings\base_with_login.py:122
 msgid "Latvian"
-msgstr "bahasa Latvia"
+msgstr "Latvia"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
-msgstr "Permintaan buruk"
+msgstr "Permintaan tidak sah"
 
 #: .\templates\400.html:14 .\templates\500.html:14
 msgid "Speedy is sorry, but we can't handle your request."
@@ -2963,7 +2944,7 @@ msgstr "Tidak disahkan"
 
 #: .\templates\accounts\edit_profile\credentials.html:25
 msgid "Primary"
-msgstr "utama"
+msgstr "Utama"
 
 #: .\templates\accounts\edit_profile\credentials.html:45
 msgid "Resend a confirmation email"
@@ -2991,7 +2972,7 @@ msgstr "Tukar Kata Laluan"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "Umur anda akan dapat dilihat pada perlawanan anda di Speedy Match."
+msgstr "Umur anda akan kelihatan kepada padanan anda di Speedy Match."
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -3036,15 +3017,15 @@ msgstr "Lihat Semua"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "Admin - Kawan"
+msgstr "Pentadbir - Rakan"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
-msgstr "kawan-kawan"
+msgstr "rakan"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
-msgstr "Belum ada kawan."
+msgstr "Belum ada rakan."
 
 #: .\templates\admin\profiles\user_info_widget.html:11
 msgid "Admin Information"
@@ -3068,7 +3049,7 @@ msgstr "Anda belum mengesahkan alamat e-mel anda. Sila semak peti masuk anda."
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "Blog Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3097,7 +3078,7 @@ msgstr "Log keluar"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "Rumah"
+msgstr "Laman Utama"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3113,15 +3094,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "Kedai Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "Kedai Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "Kedai Speedy S-logo"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3161,7 +3142,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "Kedai Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3295,7 +3276,7 @@ msgstr "Hantar mesej kepada %(user_name)s"
 
 #: .\templates\messages\chat_detail.html:55
 msgid "Mark All as Read"
-msgstr "Tandai Semua sebagai Dibaca"
+msgstr "Tandakan Semua sebagai Dibaca"
 
 #: .\templates\messages\chat_list.html:56
 msgid "Unread"
@@ -3303,7 +3284,7 @@ msgstr "Belum dibaca"
 
 #: .\templates\messages\chat_list.html:63
 msgid "You:"
-msgstr "anda:"
+msgstr "Anda:"
 
 #: .\templates\messages\chat_list.html:83
 msgid "You have no messages yet."
@@ -3311,7 +3292,7 @@ msgstr "Anda belum mempunyai mesej lagi."
 
 #: .\templates\messages\message.html:20
 msgid "New"
-msgstr "baru"
+msgstr "Baharu"
 
 #: .\templates\privacy\privacy_policy.html:19
 msgid ""
@@ -3387,11 +3368,11 @@ msgstr "Anda menyekat "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " menyekat awak."
+msgstr " menyekat anda."
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3416,7 +3397,7 @@ msgstr "Tolak"
 #: .\templates\profiles\tools\add_to_friends.html:25
 #: .\templates\profiles\tools\add_to_friends.html:27
 msgid "Add to Friends"
-msgstr "Tambahkan pada Rakan"
+msgstr "Tambah ke Rakan"
 
 #: .\templates\profiles\tools\block_user.html:10
 #: .\templates\profiles\tools\block_user.html:12
@@ -3429,7 +3410,7 @@ msgstr "Adakah anda pasti mahu menyekat "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
@@ -3443,7 +3424,7 @@ msgstr "Nyahsekat "
 
 #: .\templates\profiles\tools\block_user.html:30
 msgid "Report "
-msgstr "Laporan "
+msgstr "Laporkan "
 
 #: .\templates\profiles\tools\block_user.html:32
 msgid "Report this photo"
@@ -3455,7 +3436,7 @@ msgstr "Batalkan Permintaan Persahabatan"
 
 #: .\templates\profiles\tools\remove_from_friends.html:7
 msgid "Remove Friend"
-msgstr "Alih keluar Rakan"
+msgstr "Alih Keluar Rakan"
 
 #: .\templates\profiles\tools\send_message.html:9
 #: .\templates\profiles\tools\send_message.html:11
@@ -3496,13 +3477,13 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Match profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Match. Lihat profil %(user_name)s "
 "di Speedy Match."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
 msgstr ""
-"Anda juga mempunyai Speedy Net profil. Lihat profil anda di Speedy Net."
+"Anda juga mempunyai profil Speedy Net. Lihat profil anda di Speedy Net."
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:9
 #, python-format
@@ -3510,7 +3491,7 @@ msgid ""
 "%(user_name)s also has a Speedy Net profile. View %(user_name)s’s profile on "
 "Speedy Net."
 msgstr ""
-"%(user_name)s juga mempunyai Speedy Net profil. Lihat profil %(user_name)s "
+"%(user_name)s juga mempunyai profil Speedy Net. Lihat profil %(user_name)s "
 "di Speedy Net."
 
 #: .\templates\terms\terms_of_service.html:19
@@ -3528,11 +3509,11 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"Anda boleh menggunakan Speedy Net untuk tujuan undang-undang sahaja. Anda "
-"tidak dibenarkan memuat naik kandungan yang berkaitan dengan kebencian, "
-"keganasan, penderaan haiwan, kebogelan atau pornografi. Anda tidak "
-"dibenarkan Speedy Net menggunakan untuk menghantar mesej spam, atau mesej "
-"dengan kandungan yang sama kepada sebilangan besar orang."
+"Anda hanya boleh menggunakan Speedy Net untuk tujuan yang sah di sisi undang-"
+"undang. Anda tidak dibenarkan memuat naik kandungan yang berkaitan dengan "
+"kebencian, keganasan, penderaan haiwan, kebogelan atau pornografi. Anda "
+"tidak dibenarkan menggunakan Speedy Net untuk menghantar mesej spam, atau "
+"mesej dengan kandungan yang sama kepada sebilangan besar orang."
 
 #: .\templates\terms\terms_of_service.html:23
 msgid ""
@@ -3543,11 +3524,11 @@ msgid ""
 "the results of the meeting or phone call is yours."
 msgstr ""
 "Pengurusan tapak tidak boleh mengesahkan maklumat peribadi yang diberikan "
-"oleh pengguna tapak. Beberapa maklumat peribadi pengguna mungkin tidak "
-"betul. Pengurusan tapak tidak bertanggungjawab untuk aktiviti pengguna di "
+"oleh pengguna tapak. Sesetengah maklumat peribadi pengguna mungkin tidak "
+"betul. Pengurusan tapak tidak bertanggungjawab terhadap aktiviti pengguna di "
 "luar tapak. Jika anda memilih untuk bertemu atau bercakap melalui telefon "
-"dengan orang yang anda temui di tapak, tanggungjawab untuk keputusan "
-"mesyuarat atau panggilan telefon adalah milik anda."
+"dengan orang yang anda temui di tapak, tanggungjawab terhadap hasil "
+"pertemuan atau panggilan telefon itu terletak pada anda."
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3615,7 +3596,7 @@ msgstr "kelihatan di laman web"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "Masa penyederhanaan imej yang pantas Speedy"
+msgstr "Masa penyederhanaan imej Speedy"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"

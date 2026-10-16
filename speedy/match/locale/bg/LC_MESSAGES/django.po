@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,47 +107,47 @@ msgstr "Настройки за съвпадение"
 #: .\__translations\__translations.html:26
 msgctxt "female"
 msgid "Like"
-msgstr "като"
+msgstr "Харесване"
 
 #: .\__translations\__translations.html:27
 msgctxt "male"
 msgid "Like"
-msgstr "като"
+msgstr "Харесване"
 
 #: .\__translations\__translations.html:28
 msgctxt "other"
 msgid "Like"
-msgstr "като"
+msgstr "Харесване"
 
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "За разлика от"
+msgstr "Отмяна на харесването"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "За разлика от"
+msgstr "Отмяна на харесването"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "За разлика от"
+msgstr "Отмяна на харесването"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
 msgid "Your Matches"
-msgstr "Вашите мачове"
+msgstr "Вашите съвпадения"
 
 #: .\__translations\__translations.html:35
 msgctxt "male"
 msgid "Your Matches"
-msgstr "Вашите мачове"
+msgstr "Вашите съвпадения"
 
 #: .\__translations\__translations.html:36
 msgctxt "other"
 msgid "Your Matches"
-msgstr "Вашите мачове"
+msgstr "Вашите съвпадения"
 
 #: .\__translations\__translations.html:38
 msgctxt "female"
@@ -212,17 +212,17 @@ msgstr "За мен"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "За моя мач"
+msgstr "За моето съвпадение"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "За моя мач"
+msgstr "За моето съвпадение"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "За моя мач"
+msgstr "За моето съвпадение"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
@@ -373,37 +373,37 @@ msgstr "Идеалната ми половинка"
 #: .\templates\accounts\edit_profile\activate.html:116
 msgctxt "female"
 msgid "Minimal age to match"
-msgstr "Минимална възраст за съответствие"
+msgstr "Минимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:25
 #: .\templates\accounts\edit_profile\activate.html:122
 msgctxt "male"
 msgid "Minimal age to match"
-msgstr "Минимална възраст за съответствие"
+msgstr "Минимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:26
 #: .\templates\accounts\edit_profile\activate.html:129
 msgctxt "other"
 msgid "Minimal age to match"
-msgstr "Минимална възраст за съответствие"
+msgstr "Минимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:28
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "Максимална съвпадаща възраст"
+msgstr "Максимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "Максимална съвпадаща възраст"
+msgstr "Максимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "Максимална съвпадаща възраст"
+msgstr "Максимална възраст за съвпадение"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
@@ -423,17 +423,17 @@ msgstr "Моля, напишете няколко думи за себе си."
 #: .\__translations\__translations.py:36
 msgctxt "female"
 msgid "Do you have children? How many?"
-msgstr "имаш ли деца колко?"
+msgstr "Имате ли деца? Колко?"
 
 #: .\__translations\__translations.py:37
 msgctxt "male"
 msgid "Do you have children? How many?"
-msgstr "имаш ли деца колко?"
+msgstr "Имате ли деца? Колко?"
 
 #: .\__translations\__translations.py:38
 msgctxt "other"
 msgid "Do you have children? How many?"
-msgstr "имаш ли деца колко?"
+msgstr "Имате ли деца? Колко?"
 
 #: .\__translations\__translations.py:40
 msgctxt "female"
@@ -529,7 +529,7 @@ msgstr "Вашата диета е задължителна."
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
-msgstr "Пушачът ми"
+msgstr "Моят статус на пушене"
 
 #: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
@@ -537,7 +537,7 @@ msgstr "Изисква се вашият статут на пушене."
 
 #: .\accounts\forms.py:99
 msgid "My relationship status"
-msgstr "Състоянието на връзката ми"
+msgstr "Моят статус на връзка"
 
 #: .\accounts\forms.py:99 .\accounts\forms.py:147 .\accounts\validators.py:205
 msgid "Your relationship status is required."
@@ -565,7 +565,7 @@ msgstr "Моля пишете къде живеете."
 #: .\accounts\validators.py:133
 #: .\templates\profiles\user_extra_info_widget.html:30
 msgid "Do you have children? How many?"
-msgstr "имаш ли деца колко?"
+msgstr "Имате ли деца? Колко?"
 
 #: .\accounts\forms.py:159 .\accounts\models.py:230
 #: .\accounts\validators.py:145
@@ -599,7 +599,7 @@ msgstr "Изисква се съответствие на състоянието
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
-msgstr "къде живееш"
+msgstr "Къде живеете?"
 
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
@@ -667,15 +667,15 @@ msgstr "Идеалната ми половинка"
 
 #: .\accounts\models.py:243
 msgid "Minimal age to match"
-msgstr "Минимална възраст за съответствие"
+msgstr "Минимална възраст за съвпадение"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "Максимална съвпадаща възраст"
+msgstr "Максимална възраст за съвпадение"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "Диетичен мач"
+msgstr "Съвпадение на диетата"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
@@ -687,15 +687,15 @@ msgstr "Съвпадение на състоянието на връзката"
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
-msgstr "Диета в съответствие"
+msgstr "Диета за съвпадение"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "Статус на пушене, за да съответства"
+msgstr "Статус на пушене за съвпадение"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
-msgstr "Състояние на връзката, което да съответства"
+msgstr "Статус на връзка за съвпадение"
 
 #: .\accounts\models.py:273
 msgid "Activation step"
@@ -1062,13 +1062,13 @@ msgstr "Вашите настройки за съответствие бяха �
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "Ранг на мача"
+msgstr "Ранг на съвпадението"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
 #: .\profiles\widgets.py:86 .\profiles\widgets.py:89
 msgid "Unknown"
-msgstr "неизвестен"
+msgstr "Неизвестен"
 
 #: .\profiles\tests\test_widgets.py:124 .\profiles\widgets.py:94
 msgid "None"
@@ -1085,7 +1085,7 @@ msgstr "Speedy Match [алфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"
-msgstr "Относно Speedy Match"
+msgstr "За Speedy Match"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:14
 #, python-format
@@ -1131,8 +1131,8 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Само хора, които отговарят на вашите изисквания, ще могат да видят вашия "
-"профил и да се свържат с вас. Не разрешаваме анонимни търсения Speedy Match "
-"и профилите на са видими само за съответстващи партньори. Можете да изберете "
+"профил и да се свържат с вас. Не разрешаваме анонимни търсения и профилите в "
+"Speedy Match са видими само за съответстващи партньори. Можете да изберете "
 "кой ще може да вижда вашия профил и кои подробности ще се показват в профила "
 "ви като публични, кои подробности само за приятели и кои подробности ще "
 "бъдат лични. Личните данни ще се показват само на вас."
@@ -1165,7 +1165,8 @@ msgid ""
 msgstr ""
 "Speedy Match е кръстен на <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в "
-"продължение на много години и умря през 2003 г. роди 7 кученца през 1988 г."
+"продължение на много години и умря през 2003 г. Speedy роди 7 кученца през "
+"1988 г."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1185,7 +1186,7 @@ msgstr "Ури Родберг"
 
 #: .\templates\about\about.html:33
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Основател и директор на Speedy Net Speedy Match и,"
+msgstr "Основател и директор на Speedy Net и Speedy Match,"
 
 #: .\templates\about\about.html:34
 msgid "Speedy Paz Technologies Ltd."
@@ -1215,7 +1216,7 @@ msgstr "За мен"
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "За моя мач"
+msgstr "За моето съвпадение"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
@@ -1237,7 +1238,7 @@ msgstr "Администратор - Всички съвпадения"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
-msgstr "Вашите мачове"
+msgstr "Вашите съвпадения"
 
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
@@ -1370,12 +1371,12 @@ msgstr "приятели"
 #: .\templates\profiles\tools\like.html:11
 #: .\templates\profiles\tools\like.html:13
 msgid "Like"
-msgstr "като"
+msgstr "Харесване"
 
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "За разлика от"
+msgstr "Отмяна на харесването"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"

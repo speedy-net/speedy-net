@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1078,7 +1078,7 @@ msgstr "Daugiau informacijos"
 
 #: .\settings\base_site.py:17
 msgid "Speedy Match [alpha]"
-msgstr "Speedy Match [alpha]"
+msgstr "Speedy Match [alfa]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Match"

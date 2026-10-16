@@ -44,7 +44,7 @@ msgstr ""
 "Vai tiešām vēlaties dzēst savu Speedy Net kontu? Tas ir neatgriezeniski un "
 "galīgi. Dzēšot savu Speedy Net kontu, tiks dzēsts arī jūsu Speedy Match "
 "konts. Ja esat pārliecināts, ierakstiet šajā laukā tieši šādi, ievērojot "
-"lielos un mazos burtus: \"Yes. Delete my account.\"."
+"lielos un mazos burtus: \"Jā. Dzēst manu kontu.\"."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -57,7 +57,7 @@ msgstr ""
 "Vai tiešām vēlaties dzēst savu Speedy Net kontu? Tas ir neatgriezeniski un "
 "galīgi. Dzēšot savu Speedy Net kontu, tiks dzēsts arī jūsu Speedy Match "
 "konts. Ja esat pārliecināts, ierakstiet šajā laukā tieši šādi, ievērojot "
-"lielos un mazos burtus: \"Yes. Delete my account.\"."
+"lielos un mazos burtus: \"Jā. Dzēst manu kontu.\"."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -70,7 +70,7 @@ msgstr ""
 "Vai tiešām vēlaties dzēst savu Speedy Net kontu? Tas ir neatgriezeniski un "
 "galīgi. Dzēšot savu Speedy Net kontu, tiks dzēsts arī jūsu Speedy Match "
 "konts. Ja esat pārliecināts, ierakstiet šajā laukā tieši šādi, ievērojot "
-"lielos un mazos burtus: \"Yes. Delete my account.\"."
+"lielos un mazos burtus: \"Jā. Dzēst manu kontu.\"."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -138,7 +138,7 @@ msgstr ""
 "Vai tiešām vēlaties dzēst savu Speedy Net kontu? Tas ir neatgriezeniski un "
 "galīgi. Dzēšot savu Speedy Net kontu, tiks dzēsts arī jūsu Speedy Match "
 "konts. Ja esat pārliecināts, ierakstiet šajā laukā tieši šādi, ievērojot "
-"lielos un mazos burtus: \"Yes. Delete my account.\"."
+"lielos un mazos burtus: \"Jā. Dzēst manu kontu.\"."
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -147,7 +147,7 @@ msgstr "Nederīga parole."
 #: .\accounts\forms.py:68 .\accounts\tests\test_views.py:270
 #: .\accounts\views.py:149
 msgid "Yes. Delete my account."
-msgstr "Yes. Delete my account."
+msgstr "Jā. Dzēst manu kontu."
 
 #: .\accounts\models.py:35
 msgid "Speedy Net User"

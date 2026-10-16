@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,17 +92,17 @@ msgstr ""
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Sobitamise seaded"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Sobitamise seaded"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Sobitamise seaded"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -122,17 +122,17 @@ msgstr "meeldib"
 #: .\__translations\__translations.html:30
 msgctxt "female"
 msgid "Unlike"
-msgstr "Erinevalt"
+msgstr "Ei meeldi"
 
 #: .\__translations\__translations.html:31
 msgctxt "male"
 msgid "Unlike"
-msgstr "Erinevalt"
+msgstr "Ei meeldi"
 
 #: .\__translations\__translations.html:32
 msgctxt "other"
 msgid "Unlike"
-msgstr "Erinevalt"
+msgstr "Ei meeldi"
 
 #: .\__translations\__translations.html:34
 msgctxt "female"
@@ -391,19 +391,19 @@ msgstr "Minimaalne vanus sobitamiseks"
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "Maksimaalne vanus sobitada"
+msgstr "Maksimaalne vanus sobitamiseks"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "Maksimaalne vanus sobitada"
+msgstr "Maksimaalne vanus sobitamiseks"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "Maksimaalne vanus sobitada"
+msgstr "Maksimaalne vanus sobitamiseks"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
@@ -474,7 +474,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Vabandame, kuid teil pole volitust {site_name} veebisaiti kasutada. Oleme "
+"Vabandame, kuid teil puudub volitus {site_name} veebisaiti kasutada. Oleme "
 "avastanud, et osa teie poolt saidil registreerumisel esitatud teabest on "
 "valed või olete rikkunud saidi kasutamise reegleid. Seetõttu ei ole teil "
 "õigust seda saiti kasutada."
@@ -488,7 +488,7 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Vabandame, kuid teil pole volitust {site_name} veebisaiti kasutada. Oleme "
+"Vabandame, kuid teil puudub volitus {site_name} veebisaiti kasutada. Oleme "
 "avastanud, et osa teie poolt saidil registreerumisel esitatud teabest on "
 "valed või olete rikkunud saidi kasutamise reegleid. Seetõttu ei ole teil "
 "õigust seda saiti kasutada."
@@ -502,14 +502,14 @@ msgid ""
 "site is incorrect or that you have violated the rules of use of the site. "
 "Therefore you are not authorized to use the site."
 msgstr ""
-"Vabandame, kuid teil pole volitust {site_name} veebisaiti kasutada. Oleme "
+"Vabandame, kuid teil puudub volitus {site_name} veebisaiti kasutada. Oleme "
 "avastanud, et osa teie poolt saidil registreerumisel esitatud teabest on "
 "valed või olete rikkunud saidi kasutamise reegleid. Seetõttu ei ole teil "
 "õigust seda saiti kasutada."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Match Accounts"
-msgstr "Speedy Match Accounts"
+msgstr "Speedy Match kontod"
 
 #: .\accounts\forms.py:96
 msgid "Add profile picture"
@@ -671,7 +671,7 @@ msgstr "Minimaalne vanus sobitamiseks"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "Maksimaalne vanus sobitada"
+msgstr "Maksimaalne vanus sobitamiseks"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
@@ -707,11 +707,11 @@ msgstr "Vastete arv viimase kasutaja otsingul"
 
 #: .\accounts\models.py:352
 msgid "Speedy Match Profile"
-msgstr "Speedy Match Profile"
+msgstr "Speedy Match profiil"
 
 #: .\accounts\models.py:353 .\profiles\apps.py:14
 msgid "Speedy Match Profiles"
-msgstr "Speedy Match Profiles"
+msgstr "Speedy Match profiilid"
 
 #: .\accounts\models.py:546 .\templates\accounts\edit_profile\activate.html:29
 msgid "Please confirm your email address."
@@ -807,52 +807,52 @@ msgid ""
 "{total_percent_of_other_active_members_in_the_last_two_years} others) "
 "entered the site in the last two years."
 msgstr ""
-"Admin: The total number of active members on the site is "
-"{total_number_of_active_members} ({total_number_of_female_active_members} "
-"females, {total_number_of_male_active_members} males, "
-"{total_number_of_other_active_members} others; "
-"{total_percent_of_female_active_members} females, "
-"{total_percent_of_male_active_members} males, "
-"{total_percent_of_other_active_members} others), of which "
-"{total_number_of_active_members_in_the_last_week} members "
-"({total_number_of_female_active_members_in_the_last_week} females, "
-"{total_number_of_male_active_members_in_the_last_week} males, "
-"{total_number_of_other_active_members_in_the_last_week} others; "
-"{total_percent_of_female_active_members_in_the_last_week} females, "
-"{total_percent_of_male_active_members_in_the_last_week} males, "
-"{total_percent_of_other_active_members_in_the_last_week} others) entered the "
-"site in the last week, {total_number_of_active_members_in_the_last_month} "
-"members ({total_number_of_female_active_members_in_the_last_month} females, "
-"{total_number_of_male_active_members_in_the_last_month} males, "
-"{total_number_of_other_active_members_in_the_last_month} others; "
-"{total_percent_of_female_active_members_in_the_last_month} females, "
-"{total_percent_of_male_active_members_in_the_last_month} males, "
-"{total_percent_of_other_active_members_in_the_last_month} others) entered "
-"the site in the last month, "
-"{total_number_of_active_members_in_the_last_four_months} members "
-"({total_number_of_female_active_members_in_the_last_four_months} females, "
-"{total_number_of_male_active_members_in_the_last_four_months} males, "
-"{total_number_of_other_active_members_in_the_last_four_months} others; "
-"{total_percent_of_female_active_members_in_the_last_four_months} females, "
-"{total_percent_of_male_active_members_in_the_last_four_months} males, "
-"{total_percent_of_other_active_members_in_the_last_four_months} others) "
-"entered the site in the last four months, "
-"{total_number_of_active_members_in_the_last_eight_months} members "
-"({total_number_of_female_active_members_in_the_last_eight_months} females, "
-"{total_number_of_male_active_members_in_the_last_eight_months} males, "
-"{total_number_of_other_active_members_in_the_last_eight_months} others; "
-"{total_percent_of_female_active_members_in_the_last_eight_months} females, "
-"{total_percent_of_male_active_members_in_the_last_eight_months} males, "
-"{total_percent_of_other_active_members_in_the_last_eight_months} others) "
-"entered the site in the last eight months, and "
-"{total_number_of_active_members_in_the_last_two_years} members "
-"({total_number_of_female_active_members_in_the_last_two_years} females, "
-"{total_number_of_male_active_members_in_the_last_two_years} males, "
-"{total_number_of_other_active_members_in_the_last_two_years} others; "
-"{total_percent_of_female_active_members_in_the_last_two_years} females, "
-"{total_percent_of_male_active_members_in_the_last_two_years} males, "
-"{total_percent_of_other_active_members_in_the_last_two_years} others) "
-"entered the site in the last two years."
+"Admin: Saidi aktiivsete liikmete koguarv on {total_number_of_active_members} "
+"({total_number_of_female_active_members} naist, "
+"{total_number_of_male_active_members} meest, "
+"{total_number_of_other_active_members} muud; "
+"{total_percent_of_female_active_members} naist, "
+"{total_percent_of_male_active_members} meest, "
+"{total_percent_of_other_active_members} muud), neist "
+"{total_number_of_active_members_in_the_last_week} liiget "
+"({total_number_of_female_active_members_in_the_last_week} naist, "
+"{total_number_of_male_active_members_in_the_last_week} meest, "
+"{total_number_of_other_active_members_in_the_last_week} muud; "
+"{total_percent_of_female_active_members_in_the_last_week} naist, "
+"{total_percent_of_male_active_members_in_the_last_week} meest, "
+"{total_percent_of_other_active_members_in_the_last_week} muud) külastas "
+"saiti viimasel nädalal, {total_number_of_active_members_in_the_last_month} "
+"liiget ({total_number_of_female_active_members_in_the_last_month} naist, "
+"{total_number_of_male_active_members_in_the_last_month} meest, "
+"{total_number_of_other_active_members_in_the_last_month} muud; "
+"{total_percent_of_female_active_members_in_the_last_month} naist, "
+"{total_percent_of_male_active_members_in_the_last_month} meest, "
+"{total_percent_of_other_active_members_in_the_last_month} muud) külastas "
+"saiti viimasel kuul, "
+"{total_number_of_active_members_in_the_last_four_months} liiget "
+"({total_number_of_female_active_members_in_the_last_four_months} naist, "
+"{total_number_of_male_active_members_in_the_last_four_months} meest, "
+"{total_number_of_other_active_members_in_the_last_four_months} muud; "
+"{total_percent_of_female_active_members_in_the_last_four_months} naist, "
+"{total_percent_of_male_active_members_in_the_last_four_months} meest, "
+"{total_percent_of_other_active_members_in_the_last_four_months} muud) "
+"külastas saiti viimase nelja kuu jooksul, "
+"{total_number_of_active_members_in_the_last_eight_months} liiget "
+"({total_number_of_female_active_members_in_the_last_eight_months} naist, "
+"{total_number_of_male_active_members_in_the_last_eight_months} meest, "
+"{total_number_of_other_active_members_in_the_last_eight_months} muud; "
+"{total_percent_of_female_active_members_in_the_last_eight_months} naist, "
+"{total_percent_of_male_active_members_in_the_last_eight_months} meest, "
+"{total_percent_of_other_active_members_in_the_last_eight_months} muud) "
+"külastas saiti viimase kaheksa kuu jooksul, ja "
+"{total_number_of_active_members_in_the_last_two_years} liiget "
+"({total_number_of_female_active_members_in_the_last_two_years} naist, "
+"{total_number_of_male_active_members_in_the_last_two_years} meest, "
+"{total_number_of_other_active_members_in_the_last_two_years} muud; "
+"{total_percent_of_female_active_members_in_the_last_two_years} naist, "
+"{total_percent_of_male_active_members_in_the_last_two_years} meest, "
+"{total_percent_of_other_active_members_in_the_last_two_years} muud) külastas "
+"saiti viimase kahe aasta jooksul."
 
 #: .\admin\views.py:307
 #, python-brace-format
@@ -995,7 +995,7 @@ msgstr "Kasutajad ei saa endale meeldida."
 
 #: .\likes\managers.py:33
 msgid "User already likes other user."
-msgstr "Kasutajale meeldib juba teine ​​kasutaja."
+msgstr "Kasutajale meeldib juba teine kasutaja."
 
 #: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
@@ -1047,7 +1047,7 @@ msgstr "Vastastikused meeldimised"
 
 #: .\matches\apps.py:14
 msgid "Speedy Match Matches"
-msgstr "Speedy Match Matches"
+msgstr "Speedy Match vasted"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
@@ -1066,7 +1066,7 @@ msgstr "Tundmatu"
 
 #: .\profiles\tests\test_widgets.py:124 .\profiles\widgets.py:94
 msgid "None"
-msgstr "Mitte ühtegi"
+msgstr "Puudub"
 
 #: .\profiles\tests\test_widgets.py:131
 #: .\templates\profiles\user_extra_info_widget.html:12
@@ -1125,7 +1125,7 @@ msgid ""
 "will appear only to you."
 msgstr ""
 "Ainult inimesed, kes vastavad teie nõuetele, näevad teie profiili ja saavad "
-"teiega ühendust võtta. Me ei luba anonüümseid Speedy Match otsinguid ja i "
+"teiega ühendust võtta. Me ei luba anonüümseid Speedy Match otsinguid ja teie "
 "profiile näevad ainult vastavad partnerid. Saate valida, kes teie profiili "
 "näevad ja millised andmed kuvatakse teie profiilil avalikuna, millised on "
 "ainult sõpradele ja millised on privaatsed. Privaatsed andmed kuvatakse "
@@ -1137,8 +1137,8 @@ msgid ""
 "Speedy Match today to find matching partners, it only takes a few minutes. "
 "<a href=\"/\" title=\"Join Speedy Match\">Click here</a> to join."
 msgstr ""
-"Kõik Speedy Neti ja Speedy Matchi funktsioonid on tasuta. Liituge iga juba "
-"Speedy Match täna, et leida sobivaid partnereid – selleks kulub vaid mõni "
+"Kõik Speedy Neti ja Speedy Matchi funktsioonid on tasuta. Liituge Speedy "
+"Matchiga juba täna, et leida sobivaid partnereid – selleks kulub vaid mõni "
 "minut. <a href=\"/\" title=\"Join Speedy Match\">Liitumiseks klõpsake siin</"
 "a>."
 
@@ -1159,7 +1159,7 @@ msgid ""
 msgstr ""
 "Speedy Match on saanud nime <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, emase koera järgi, kes oli meiega "
-"palju aastaid ja suri 2003. aastal. sünnitas 1988. aastal 7 kutsikat."
+"palju aastaid ja suri 2003. aastal. Speedy sünnitas 1988. aastal 7 kutsikat."
 
 #: .\templates\about\about.html:29
 msgid ""
@@ -1236,7 +1236,7 @@ msgstr "Teie vasted"
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "Tikud"
+msgstr "Vasted"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
@@ -1252,7 +1252,7 @@ msgstr "Teie matši seaded"
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "Match Settings"
+msgstr "Sobitamise seaded"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
@@ -1350,7 +1350,7 @@ msgstr ""
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "Tagasi mängudesse"
+msgstr "Tagasi vastete juurde"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
@@ -1368,7 +1368,7 @@ msgstr "meeldib"
 #: .\templates\profiles\tools\like.html:19
 #: .\templates\profiles\tools\like.html:21
 msgid "Unlike"
-msgstr "Erinevalt"
+msgstr "Ei meeldi"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"

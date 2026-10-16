@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
@@ -40,10 +40,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
-"Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu.” în "
-"acest domeniu, exact și cu majuscule și minuscule."
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este "
+"permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge "
+"și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. "
+"Ștergeți contul meu.” în acest câmp, exact, respectând majusculele și "
+"minusculele."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -53,10 +54,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
-"Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu.” în "
-"acest domeniu, exact și cu majuscule și minuscule."
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este "
+"permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge "
+"și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. "
+"Ștergeți contul meu.” în acest câmp, exact, respectând majusculele și "
+"minusculele."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -66,10 +68,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
-"Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu.” în "
-"acest domeniu, exact și cu majuscule și minuscule."
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este "
+"permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge "
+"și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. "
+"Ștergeți contul meu.” în acest câmp, exact, respectând majusculele și "
+"minusculele."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format
@@ -96,8 +99,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
-"folosiți {site_name}."
+"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim "
+"că ați folosit {site_name}."
 
 #: .\__translations\__translations.py:19
 #, python-brace-format
@@ -106,8 +109,8 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
-"folosiți {site_name}."
+"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim "
+"că ați folosit {site_name}."
 
 #: .\__translations\__translations.py:20
 #, python-brace-format
@@ -116,16 +119,16 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"Conturile Speedy Net Speedy Match dvs. și au fost șterse. Vă mulțumim că "
-"folosiți {site_name}."
+"Conturile dvs. Speedy Net și Speedy Match au fost șterse. Vă mulțumim "
+"că ați folosit {site_name}."
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"
-msgstr "Speedy Net Accounts"
+msgstr "Conturi Speedy Net"
 
 #: .\accounts\forms.py:28
 msgid "Your password"
-msgstr "Parola dvs"
+msgstr "Parola dvs."
 
 #: .\accounts\forms.py:29
 msgid ""
@@ -134,10 +137,11 @@ msgid ""
 "Speedy Match account. If you are sure, type \"Yes. Delete my account.\" in "
 "this field, exactly and case sensitive."
 msgstr ""
-"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este permanent și "
-"ireversibil. Ștergerea contului dvs. Speedy Net va șterge și contul dvs. "
-"Speedy Match. Dacă sunteți sigur, introduceți „Da. Ștergeți contul meu.” în "
-"acest domeniu, exact și cu majuscule și minuscule."
+"Sigur doriți să vă ștergeți contul Speedy Net? Acest lucru este "
+"permanent și ireversibil. Ștergerea contului dvs. Speedy Net va șterge "
+"și contul dvs. Speedy Match. Dacă sunteți sigur, introduceți „Da. "
+"Ștergeți contul meu.” în acest câmp, exact, respectând majusculele și "
+"minusculele."
 
 #: .\accounts\forms.py:56
 msgid "Invalid password."
@@ -162,11 +166,11 @@ msgstr "Numărul de prieteni la ultima vizită a utilizatorului"
 
 #: .\accounts\models.py:55
 msgid "Speedy Net Profile"
-msgstr "Speedy Net Profile"
+msgstr "Profil Speedy Net"
 
 #: .\accounts\models.py:56
 msgid "Speedy Net Profiles"
-msgstr "Speedy Net Profiles"
+msgstr "Profiluri Speedy Net"
 
 #: .\accounts\utils.py:34
 #, python-brace-format
@@ -199,11 +203,11 @@ msgid ""
 "languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> este o nouă rețea socială. Cu Speedy Net poți comunica "
-"cu prietenii tăi. Speedy Net este deschis Speedy Net pentru înregistrarea "
-"gratuită pentru persoane din toate țările și vârstele (fără limită de "
-"vârstă!). Site-ul este vegan și vegetarian. În prezent este disponibil în "
-"%(languages_num)s limbi."
+"Net\">Speedy Net</a> este o nouă rețea socială. Cu Speedy Net puteți "
+"comunica cu prietenii dvs. Speedy Net este deschis înregistrării "
+"gratuite pentru persoane din toate țările și vârstele (fără limită de "
+"vârstă!). Site-ul este prietenos cu veganii și vegetarienii. În prezent "
+"este disponibil în %(languages_num)s limbi."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -266,9 +270,10 @@ msgid ""
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Net poartă numele lui <a href=\"https://www.facebook.com/speedy.the."
-"female.dog\" title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți "
-"ani și a murit în 2003. a născut 7 căței în 1988."
+"Speedy Net poartă numele lui <a "
+"href=\"https://www.facebook.com/speedy.the.female.dog\" "
+"title=\"Speedy\">Speedy</a>, o femelă care a fost cu noi mulți ani și a "
+"murit în 2003. Speedy a născut 7 căței în 1988."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -276,7 +281,7 @@ msgstr "Speedy Net este momentan în alfa. A fost lansat în iunie 2012."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
-msgstr "Multumesc si mult succes,"
+msgstr "Vă mulțumim și succes,"
 
 #: .\templates\about\about.html:34
 msgid "Uri Rodberg"
@@ -284,7 +289,7 @@ msgstr "Uri Rodberg"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Fondator și director al Speedy Net Speedy Match și,"
+msgstr "Fondator și director al Speedy Net și Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -301,13 +306,13 @@ msgstr "Bun venit la %(site_name)s"
 
 #: .\templates\accounts\edit_profile\activate.html:16
 msgid "Please confirm your email address."
-msgstr "Vă rugăm să confirmați adresa dvs. de e-mail."
+msgstr "Vă rugăm să vă confirmați adresa de e-mail."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
 msgstr ""
-"Contul dvs. Speedy Net nu este activ. Intră pe această pagină pentru a o "
-"activa."
+"Contul dvs. Speedy Net nu este activ. Intrați pe această pagină pentru "
+"a-l activa."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -319,11 +324,11 @@ msgstr "Ștergeți contul"
 
 #: .\templates\friends\you_dont_have_any_friends_trans.html:3
 msgid "You don't have any friends yet."
-msgstr "Încă nu ai prieteni."
+msgstr "Încă nu aveți prieteni."
 
 #: .\templates\friends\your_friends_trans.html:3
 msgid "Your Friends"
-msgstr "Prietenii tăi"
+msgstr "Prietenii dvs."
 
 #: .\templates\main\main_page.html:9
 msgid ""
@@ -332,10 +337,10 @@ msgid ""
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
 msgstr ""
-"Speedy Net este o nouă rețea socială. Cu Speedy Net poți comunica cu "
-"prietenii tăi. Speedy Net este deschis pentru înregistrarea gratuită pentru "
-"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul este "
-"vegan și vegetarian."
+"Speedy Net este o nouă rețea socială. Cu Speedy Net puteți comunica cu "
+"prietenii dvs. Speedy Net este deschis înregistrării gratuite pentru "
+"persoane din toate țările și vârstele (fără limită de vârstă!). Site-ul "
+"este prietenos cu veganii și vegetarienii."
 
 #: .\templates\main\main_page.html:17
 msgid ""
@@ -347,12 +352,12 @@ msgstr ""
 
 #: .\templates\main\main_page.html:49
 msgid "Speedy Match – dating Speedy"
-msgstr "Speedy Match – întâlnire cu Speedy"
+msgstr "Speedy Match – întâlniri Speedy"
 
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr "Cauți un iubit? Cauți o iubită? Vino să-l cunoști pe Speedy!"
+msgstr "Căutați un iubit? Căutați o iubită? Veniți să-l cunoașteți pe Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
@@ -364,8 +369,8 @@ msgstr "Prieteni"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"
-msgstr "Prietenul tău"
+msgstr "Prietenul dvs."
 
 #: .\templates\profiles\user_base_site.html:9
 msgid "Friendship request sent"
-msgstr "Solicitare de prietenie trimisă"
+msgstr "Cerere de prietenie trimisă"

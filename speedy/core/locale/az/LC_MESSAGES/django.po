@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -866,7 +866,7 @@ msgstr "E-poçt ünvanı"
 
 #: .\__translations\__translations.py:13 .\accounts\models.py:1614
 msgid "email address"
-msgstr "E-poçt ünvanı"
+msgstr "e-poçt ünvanı"
 
 #: .\__translations\__translations.py:14
 msgid "Email address:"
@@ -1190,17 +1190,17 @@ msgstr "Ət yeyən"
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "Sigaret çəkmir"
+msgstr "Siqaret çəkmir"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "Sigaret çəkmir"
+msgstr "Siqaret çəkmir"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "Sigaret çəkmir"
+msgstr "Siqaret çəkmir"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
@@ -1220,17 +1220,17 @@ msgstr "Bəzən siqaret çəkir"
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "Sigaret çəkmə"
+msgstr "Siqaret çəkmə"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "Sigaret çəkmə"
+msgstr "Siqaret çəkmə"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "Sigaret çəkmə"
+msgstr "Siqaret çəkmə"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
@@ -1521,9 +1521,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. She can't have more "
-"than {1} friends on Speedy Net. Please ask her to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1532,9 +1531,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. He can't have more than "
-"{1} friends on Speedy Net. Please ask him to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1543,9 +1541,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. They can't have more "
-"than {1} friends on Speedy Net. Please ask them to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1554,9 +1551,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. She can't have more "
-"than {1} friends on Speedy Net. Please ask her to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1565,9 +1561,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. He can't have more than "
-"{1} friends on Speedy Net. Please ask him to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1576,9 +1571,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. They can't have more "
-"than {1} friends on Speedy Net. Please ask them to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1587,9 +1581,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. She can't have more "
-"than {1} friends on Speedy Net. Please ask her to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1598,9 +1591,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. He can't have more than "
-"{1} friends on Speedy Net. Please ask him to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1609,9 +1601,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"yüklənmiş şəkillərThis user already has {0} friends. They can't have more "
-"than {1} friends on Speedy Net. Please ask them to remove friends before you "
-"proceed."
+"Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu "
+"ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin."
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -1835,8 +1826,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"her Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:243
 msgctxt "female_male"
@@ -1844,8 +1835,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"his Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:244
 msgctxt "female_other"
@@ -1853,8 +1844,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"their Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:245
 msgctxt "male_female"
@@ -1862,8 +1853,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"her Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:246
 msgctxt "male_male"
@@ -1871,8 +1862,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"his Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:247
 msgctxt "male_other"
@@ -1880,8 +1871,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"their Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:248
 msgctxt "other_female"
@@ -1889,8 +1880,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"her Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:249
 msgctxt "other_male"
@@ -1898,8 +1889,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"his Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:250
 msgctxt "other_other"
@@ -1907,8 +1898,8 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"yüklənmiş şəkillərThis user doesn't match your profile, but you can visit "
-"their Speedy Net profile. View user's profile on Speedy Net."
+"Bu istifadəçi profilinizə uyğun gəlmir, lakin onun Speedy Net profilinə baxa "
+"bilərsiniz. İstifadəçinin Speedy Net profilinə baxın."
 
 #: .\__translations\__translations.py:252
 msgctxt "female"
@@ -2007,7 +1998,7 @@ msgstr "Yanlış şifrə."
 
 #: .\accounts\models.py:209
 msgid "username"
-msgstr "İstifadəçi adı"
+msgstr "istifadəçi adı"
 
 #: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
@@ -2081,7 +2072,7 @@ msgstr "Ət yeyən (heyvan yeyir)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "Sigaret çəkmir"
+msgstr "Siqaret çəkmir"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
@@ -2089,7 +2080,7 @@ msgstr "Bəzən siqaret çəkir"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "Sigaret çəkmə"
+msgstr "Siqaret çəkmə"
 
 #: .\accounts\models.py:569
 msgid "Single"
@@ -2153,11 +2144,11 @@ msgstr "doğum tarixi"
 
 #: .\accounts\models.py:676
 msgid "diet"
-msgstr "Pəhriz"
+msgstr "pəhriz"
 
 #: .\accounts\models.py:677
 msgid "smoking status"
-msgstr "Sigaret çəkmə statusu"
+msgstr "siqaret çəkmə statusu"
 
 #: .\accounts\models.py:678
 msgid "relationship status"
@@ -2201,7 +2192,7 @@ msgstr "Superistifadəçi əməkdaşa bərabər olmalıdır."
 
 #: .\accounts\models.py:1593
 msgid "email"
-msgstr "E-poçt"
+msgstr "e-poçt"
 
 #: .\accounts\models.py:1594
 msgid "is confirmed"
@@ -2229,7 +2220,7 @@ msgstr "e-poçt ünvanları"
 
 #: .\accounts\models.py:1756
 msgid "User"
-msgstr "istifadəçi"
+msgstr "İstifadəçi"
 
 #: .\accounts\models.py:1757
 msgid "last visit"
@@ -2578,7 +2569,7 @@ msgstr "adınız"
 
 #: .\contact_by_form\models.py:44
 msgid "your email"
-msgstr "E-poçtunuz"
+msgstr "e-poçtunuz"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
@@ -2598,7 +2589,7 @@ msgstr "şikayət edilən şəkil"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
-msgstr "Rəy"
+msgstr "rəy"
 
 #: .\contact_by_form\models.py:53
 msgid "feedbacks"
@@ -2646,7 +2637,7 @@ msgstr "iştirakçılar"
 
 #: .\messages\models.py:36
 msgid "is group chat"
-msgstr "qlup söhbətidir"
+msgstr "qrup söhbətidir"
 
 #: .\messages\models.py:37
 msgid "last message"
@@ -2666,11 +2657,11 @@ msgstr "Heç biri"
 
 #: .\messages\models.py:187 .\messages\models.py:192
 msgid "message"
-msgstr "Mesaj"
+msgstr "mesaj"
 
 #: .\messages\models.py:193
 msgid "messages"
-msgstr "Mesajlar"
+msgstr "mesajlar"
 
 #: .\messages\models.py:221
 msgid "read mark"
@@ -2931,7 +2922,7 @@ msgstr "Hesabı deaktiv et"
 
 #: .\templates\accounts\edit_profile\credentials.html:7
 msgid "Email Addresses"
-msgstr "e-poçt ünvanları"
+msgstr "E-poçt ünvanları"
 
 #: .\templates\accounts\edit_profile\credentials.html:12
 msgid "Address"
@@ -3032,7 +3023,7 @@ msgstr "İdarəetmə — dostlar"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
-msgstr "Dostlar"
+msgstr "dostlar"
 
 #: .\templates\admin\friends\user_friends_widget.html:25
 msgid "No friends yet."
@@ -3458,7 +3449,7 @@ msgstr "Məlumat"
 
 #: .\templates\profiles\user_info_widget.html:19
 msgid "Name"
-msgstr "ad"
+msgstr "Ad"
 
 #: .\templates\profiles\user_info_widget.html:25
 msgid "Username"

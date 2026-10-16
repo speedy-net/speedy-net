@@ -93,7 +93,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+"你嘅 Speedy Net 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\__translations\__translations.py:19
 #, python-brace-format
@@ -102,7 +102,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+"你嘅 Speedy Net 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\__translations\__translations.py:20
 #, python-brace-format
@@ -111,7 +111,7 @@ msgid ""
 "Your Speedy Net and Speedy Match accounts have been deleted. Thank you for "
 "using {site_name}."
 msgstr ""
-"你嘅 {site_name} 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
+"你嘅 Speedy Net 同 Speedy Match 帳戶已經刪除咗。多謝你使用 {site_name}。"
 
 #: .\accounts\apps.py:14
 msgid "Speedy Net Accounts"

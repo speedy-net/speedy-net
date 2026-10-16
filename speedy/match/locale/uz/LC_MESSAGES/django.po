@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\__translations\__translations.html:6
 msgctxt "female"
@@ -559,7 +559,7 @@ msgstr "Iltimos, o'zingiz haqingizda bir necha so'z yozing."
 #: .\accounts\forms.py:153 .\accounts\forms.py:194
 #: .\accounts\validators.py:121
 msgid "Please write where you live."
-msgstr "Iltimos, qaerda yashayotganingizni yozing."
+msgstr "Iltimos, qayerda yashayotganingizni yozing."
 
 #: .\accounts\forms.py:156 .\accounts\models.py:227
 #: .\accounts\validators.py:133
@@ -1175,7 +1175,7 @@ msgid ""
 "English version of Speedy Match is in production."
 msgstr ""
 "Speedy Match hozircha alpha bosqichida. U 2019-yil avgust oyida ishga "
-"tushirilgan. Speedy Match ning inglizcha versiyasi ishlatishda."
+"tushirilgan. Speedy Match ning inglizcha versiyasi ishlab chiqarishda."
 
 #: .\templates\about\about.html:31
 msgid "Thank you and good luck,"

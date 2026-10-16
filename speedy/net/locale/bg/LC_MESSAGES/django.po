@@ -187,7 +187,7 @@ msgstr "Speedy Net [алфа]"
 
 #: .\templates\about\about.html:13
 msgid "About Speedy Net"
-msgstr "Относно Спиди Нет Speedy Net"
+msgstr "За Speedy Net"
 
 #: .\templates\about\about.html:17 .\templates\main\main_page.html:13
 #, python-format
@@ -198,23 +198,14 @@ msgid ""
 "people from all countries and ages (no age limit!). The site is vegan and "
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
-msgstr ""
-"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
-"Net\">Speedy Net</a> е нова социална мрежа. Със Спиди Нет Speedy Net можете "
-"да общувате с приятелите си. е Speedy Net отворен за безплатна регистрация "
-"за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е "
-"подходящ за вегани и вегетарианци. В момента се предлага на "
-"%(languages_num)s езика."
+msgstr "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> е нова социална мрежа. Със Speedy Net можете да общувате с приятелите си. Speedy Net е отворен за безплатна регистрация за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за вегани и вегетарианци. В момента е достъпен на %(languages_num)s езика."
 
 #: .\templates\about\about.html:19
 msgid ""
 "The founders of Speedy Net are vegan, support animal rights and object to "
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
-msgstr ""
-"Основателите на Speedy Net Спиди Нет са вегани, подкрепят правата на "
-"животните и се противопоставят Speedy Net на опитите върху животни. е "
-"социална мрежа, удобна за вегани и вегетарианци и животни."
+msgstr "Основателите на Speedy Net са вегани, подкрепят правата на животните и се противопоставят на опитите върху животни. Speedy Net е социална мрежа, подходяща за хора и животни вегани и вегетарианци."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -222,12 +213,7 @@ msgid ""
 "you to add as friends only people you know personally. You can select which "
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
-msgstr ""
-"Решихме да ограничим броя на приятелите в Спиди Speedy Net Нет до 800. "
-"Съветваме ви да добавяте като приятели само хора, които познавате лично. "
-"Можете да изберете кои подробности ще се показват в профила ви като "
-"публични, кои подробности само за приятели и кои подробности ще бъдат лични. "
-"Личните данни ще се показват само на вас."
+msgstr "Решихме да ограничим броя на приятелите в Speedy Net до 800. Съветваме ви да добавяте като приятели само хора, които познавате лично. Можете да изберете кои подробности ще се показват в профила ви като публични, кои само за приятели и кои ще бъдат лични. Личните данни ще се показват само на вас."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -265,15 +251,11 @@ msgid ""
 "Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
-msgstr ""
-"Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female."
-"dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в "
-"продължение на много години и умря през 2003 г. роди 7 кученца през 1988 г."
+msgstr "Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в продължение на много години и умря през 2003 г. Speedy роди 7 кученца през 1988 г."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
-msgstr ""
-"Speedy Net Спиди Нет в момента е в алфа версия. Лансиран е през юни 2012 г."
+msgstr "Speedy Net в момента е в алфа версия. Стартиран е през юни 2012 г."
 
 #: .\templates\about\about.html:33
 msgid "Thank you and good luck,"
@@ -285,7 +267,7 @@ msgstr "Ури Родберг"
 
 #: .\templates\about\about.html:35
 msgid "Founder and director of Speedy Net and Speedy Match,"
-msgstr "Основател и директор на Speedy Net Speedy Match и,"
+msgstr "Основател и директор на Speedy Net и Speedy Match,"
 
 #: .\templates\about\about.html:36
 msgid "Speedy Paz Technologies Ltd."
@@ -306,9 +288,7 @@ msgstr "Моля, потвърдете своя имейл адрес."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr ""
-"Вашият Speedy Net акаунт в Спиди Нет не е активен. Влезте в тази страница, "
-"за да я активирате."
+msgstr "Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го активирате."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -332,11 +312,7 @@ msgid ""
 "your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
-msgstr ""
-"Спиди Нет е нова социална мрежа. Със Спиди Нет Speedy Net Speedy Net можете "
-"да общувате с приятелите Speedy Net си. е отворен за безплатна регистрация "
-"за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е "
-"подходящ за вегани и вегетарианци."
+msgstr "Speedy Net е нова социална мрежа. Със Speedy Net можете да общувате с приятелите си. Speedy Net е отворен за безплатна регистрация за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за вегани и вегетарианци."
 
 #: .\templates\main\main_page.html:17
 msgid ""
@@ -353,8 +329,7 @@ msgstr "Speedy Match – запознанства със Speedy"
 #: .\templates\main\main_page.html:49
 msgid ""
 "Looking for a boyfriend? Looking for a girlfriend? Come and meet Speedy!"
-msgstr ""
-"Търсиш си гадже? Търсиш си приятелка? Елате и се запознайте със Спиди! Speedy"
+msgstr "Търсите гадже? Търсите приятелка? Елате и се запознайте със Speedy!"
 
 #: .\templates\main\main_page.html:78
 msgid "Free Online Dating"
@@ -362,7 +337,7 @@ msgstr "Безплатни онлайн запознанства"
 
 #: .\templates\menu\friends_trans.html:3
 msgid "Friends"
-msgstr "приятели"
+msgstr "Приятели"
 
 #: .\templates\profiles\user_base_site.html:7
 msgid "Your friend"

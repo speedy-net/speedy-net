@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-16 09:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -148,17 +148,17 @@ msgstr "ทำให้ที่อยู่อีเมลนี้เป็น
 #: .\__translations\__translations.html:36
 msgctxt "female"
 msgid "Are you sure you want to delete this email address?"
-msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้?"
 
 #: .\__translations\__translations.html:37
 msgctxt "male"
 msgid "Are you sure you want to delete this email address?"
-msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้?"
 
 #: .\__translations\__translations.html:38
 msgctxt "other"
 msgid "Are you sure you want to delete this email address?"
-msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้?"
 
 #: .\__translations\__translations.html:40
 msgctxt "female"
@@ -178,17 +178,17 @@ msgstr "ลบที่อยู่อีเมลนี้"
 #: .\__translations\__translations.html:44
 msgctxt "female"
 msgid "Add Another"
-msgstr "เพิ่มอีกอัน"
+msgstr "เพิ่มอีกรายการ"
 
 #: .\__translations\__translations.html:45
 msgctxt "male"
 msgid "Add Another"
-msgstr "เพิ่มอีกอัน"
+msgstr "เพิ่มอีกรายการ"
 
 #: .\__translations\__translations.html:46
 msgctxt "other"
 msgid "Add Another"
-msgstr "เพิ่มอีกอัน"
+msgstr "เพิ่มอีกรายการ"
 
 #: .\__translations\__translations.html:48
 msgctxt "female"
@@ -331,32 +331,32 @@ msgstr "คุณยังไม่มีข้อความเลย"
 #: .\__translations\__translations.html:92
 msgctxt "female"
 msgid "You blocked "
-msgstr "คุณถูกบล็อก "
+msgstr "คุณได้บล็อก "
 
 #: .\__translations\__translations.html:93
 msgctxt "male"
 msgid "You blocked "
-msgstr "คุณถูกบล็อก "
+msgstr "คุณได้บล็อก "
 
 #: .\__translations\__translations.html:94
 msgctxt "other"
 msgid "You blocked "
-msgstr "คุณถูกบล็อก "
+msgstr "คุณได้บล็อก "
 
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " บล็อกคุณ"
+msgstr " ได้บล็อกคุณ"
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " บล็อกคุณ"
+msgstr " ได้บล็อกคุณ"
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " บล็อกคุณ"
+msgstr " ได้บล็อกคุณ"
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -365,8 +365,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ยังมีโปรไฟล์ Speedy Match อีกด้วย ดูโปรไฟล์ของ %(user_name)s บน "
-"Speedy Match"
+"%(user_name)s มีโปรไฟล์ Speedy Match ด้วย ดูโปรไฟล์ของ %(user_name)s บน Speedy "
+"Match"
 
 #: .\__translations\__translations.html:101
 #, python-format
@@ -375,8 +375,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ยังมีโปรไฟล์ Speedy Match อีกด้วย ดูโปรไฟล์ของ %(user_name)s บน "
-"Speedy Match"
+"%(user_name)s มีโปรไฟล์ Speedy Match ด้วย ดูโปรไฟล์ของ %(user_name)s บน Speedy "
+"Match"
 
 #: .\__translations\__translations.html:102
 #, python-format
@@ -385,8 +385,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ยังมีโปรไฟล์ Speedy Match อีกด้วย ดูโปรไฟล์ของ %(user_name)s บน "
-"Speedy Match"
+"%(user_name)s มีโปรไฟล์ Speedy Match ด้วย ดูโปรไฟล์ของ %(user_name)s บน Speedy "
+"Match"
 
 #: .\__translations\__translations.html:104
 #, python-format
@@ -463,17 +463,17 @@ msgstr "คุณแน่ใจหรือไม่ว่าต้องกา
 #: .\__translations\__translations.html:120
 msgctxt "female"
 msgid "Block "
-msgstr "ปิดกั้น "
+msgstr "บล็อก "
 
 #: .\__translations\__translations.html:121
 msgctxt "male"
 msgid "Block "
-msgstr "ปิดกั้น "
+msgstr "บล็อก "
 
 #: .\__translations\__translations.html:122
 msgctxt "other"
 msgid "Block "
-msgstr "ปิดกั้น "
+msgstr "บล็อก "
 
 #: .\__translations\__translations.html:124
 msgctxt "female"
@@ -583,17 +583,17 @@ msgstr "ปฏิเสธ"
 #: .\__translations\__translations.html:152
 msgctxt "female"
 msgid "Accept Friendship Request"
-msgstr "ยอมรับคำขอมิตรภาพ"
+msgstr "ยอมรับคำขอเป็นเพื่อน"
 
 #: .\__translations\__translations.html:153
 msgctxt "male"
 msgid "Accept Friendship Request"
-msgstr "ยอมรับคำขอมิตรภาพ"
+msgstr "ยอมรับคำขอเป็นเพื่อน"
 
 #: .\__translations\__translations.html:154
 msgctxt "other"
 msgid "Accept Friendship Request"
-msgstr "ยอมรับคำขอมิตรภาพ"
+msgstr "ยอมรับคำขอเป็นเพื่อน"
 
 #: .\__translations\__translations.html:156
 msgctxt "female"
@@ -673,17 +673,17 @@ msgstr "ดูทั้งหมด"
 #: .\__translations\__translations.html:176
 msgctxt "female"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "บัญชี Speedy Net ของคุณไม่ได้ใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
+msgstr "บัญชี Speedy Net ของคุณยังไม่ได้เปิดใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
 
 #: .\__translations\__translations.html:177
 msgctxt "male"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "บัญชี Speedy Net ของคุณไม่ได้ใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
+msgstr "บัญชี Speedy Net ของคุณยังไม่ได้เปิดใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
 
 #: .\__translations\__translations.html:178
 msgctxt "other"
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "บัญชี Speedy Net ของคุณไม่ได้ใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
+msgstr "บัญชี Speedy Net ของคุณยังไม่ได้เปิดใช้งาน เข้าสู่หน้านี้เพื่อเปิดใช้งาน"
 
 #: .\__translations\__translations.html:180
 #, python-format
@@ -721,50 +721,50 @@ msgstr "ได้ส่งข้อความถึงคุณ"
 #: .\__translations\__translations.html:188
 msgctxt "female"
 msgid "Read it:"
-msgstr "อ่านมัน:"
+msgstr "อ่านข้อความ:"
 
 #: .\__translations\__translations.html:189
 msgctxt "male"
 msgid "Read it:"
-msgstr "อ่านมัน:"
+msgstr "อ่านข้อความ:"
 
 #: .\__translations\__translations.html:190
 msgctxt "other"
 msgid "Read it:"
-msgstr "อ่านมัน:"
+msgstr "อ่านข้อความ:"
 
 #: .\__translations\__translations.html:192
 #, python-format
 msgctxt "female"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "ยืนยันที่อยู่อีเมลของคุณใน %(site_name)s"
+msgstr "ยืนยันที่อยู่อีเมลของคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:193
 #, python-format
 msgctxt "male"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "ยืนยันที่อยู่อีเมลของคุณใน %(site_name)s"
+msgstr "ยืนยันที่อยู่อีเมลของคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:194
 #, python-format
 msgctxt "other"
 msgid "Confirm your email address on %(site_name)s"
-msgstr "ยืนยันที่อยู่อีเมลของคุณใน %(site_name)s"
+msgstr "ยืนยันที่อยู่อีเมลของคุณบน %(site_name)s"
 
 #: .\__translations\__translations.html:196
 msgctxt "female"
 msgid "Use this link to activate your account:"
-msgstr "ใช้ลิงค์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
 
 #: .\__translations\__translations.html:197
 msgctxt "male"
 msgid "Use this link to activate your account:"
-msgstr "ใช้ลิงค์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
 
 #: .\__translations\__translations.html:198
 msgctxt "other"
 msgid "Use this link to activate your account:"
-msgstr "ใช้ลิงค์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
 
 #: .\__translations\__translations.html:200
 msgctxt "female"
@@ -784,17 +784,17 @@ msgstr "ใช้ลิงก์นี้เพื่อยืนยันที
 #: .\__translations\__translations.html:204
 msgctxt "female"
 msgid "Use this link to change your password:"
-msgstr "ใช้ลิงค์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
 
 #: .\__translations\__translations.html:205
 msgctxt "male"
 msgid "Use this link to change your password:"
-msgstr "ใช้ลิงค์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
 
 #: .\__translations\__translations.html:206
 msgctxt "other"
 msgid "Use this link to change your password:"
-msgstr "ใช้ลิงค์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
 
 #: .\__translations\__translations.html:208
 msgctxt "female"
@@ -881,11 +881,11 @@ msgstr "ข้อความ"
 
 #: .\__translations\__translations.py:22
 msgid "Friendship Request"
-msgstr "คำขอมิตรภาพ"
+msgstr "คำขอเป็นเพื่อน"
 
 #: .\__translations\__translations.py:23
 msgid "Friendship Requests"
-msgstr "การร้องขอมิตรภาพ"
+msgstr "คำขอเป็นเพื่อน"
 
 #: .\__translations\__translations.py:25
 msgid "Friend"
@@ -897,15 +897,15 @@ msgstr "เพื่อน"
 
 #: .\__translations\__translations.py:28
 msgid "Following Relationship"
-msgstr "ติดตามความสัมพันธ์"
+msgstr "ความสัมพันธ์การติดตาม"
 
 #: .\__translations\__translations.py:29
 msgid "Following Relationships"
-msgstr "ติดตามความสัมพันธ์"
+msgstr "ความสัมพันธ์การติดตาม"
 
 #: .\__translations\__translations.py:31
 msgid "Blocker Relationship"
-msgstr "ความสัมพันธ์แบบบล็อคเกอร์"
+msgstr "ความสัมพันธ์การบล็อก"
 
 #: .\__translations\__translations.py:32
 msgid "Blocked Relationships"
@@ -919,38 +919,37 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] "รายการมีรายการ %(show_value)d ซึ่งไม่ควรเกิน %(limit_value)d"
-msgstr[1] "รายการมี %(show_value)d รายการ ซึ่งไม่ควรเกิน %(limit_value)d"
+msgstr[0] "รายการมี %(show_value)d รายการ ซึ่งไม่ควรเกิน %(limit_value)d"
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
 msgid "username (slug)"
-msgstr "ชื่อผู้ใช้ (ตัวบุ้ง)"
+msgstr "ชื่อผู้ใช้ (slug)"
 
 #: .\__translations\__translations.py:43
 msgctxt "male"
 msgid "username (slug)"
-msgstr "ชื่อผู้ใช้ (ตัวบุ้ง)"
+msgstr "ชื่อผู้ใช้ (slug)"
 
 #: .\__translations\__translations.py:44
 msgctxt "other"
 msgid "username (slug)"
-msgstr "ชื่อผู้ใช้ (ตัวบุ้ง)"
+msgstr "ชื่อผู้ใช้ (slug)"
 
 #: .\__translations\__translations.py:46
 msgctxt "female"
 msgid "Update your profile picture"
-msgstr "อัพเดตรูปโปรไฟล์ของคุณ"
+msgstr "อัปเดตรูปโปรไฟล์ของคุณ"
 
 #: .\__translations\__translations.py:47
 msgctxt "male"
 msgid "Update your profile picture"
-msgstr "อัพเดตรูปโปรไฟล์ของคุณ"
+msgstr "อัปเดตรูปโปรไฟล์ของคุณ"
 
 #: .\__translations\__translations.py:48
 msgctxt "other"
 msgid "Update your profile picture"
-msgstr "อัพเดตรูปโปรไฟล์ของคุณ"
+msgstr "อัปเดตรูปโปรไฟล์ของคุณ"
 
 #: .\__translations\__translations.py:50
 msgctxt "female"
@@ -1051,17 +1050,17 @@ msgstr "ฉันอาศัยอยู่ที่ไหน?"
 #: .\__translations\__translations.py:74
 msgctxt "female"
 msgid "Where do you live?"
-msgstr "คุณอาศัยอยู่ที่ใด?"
+msgstr "คุณอาศัยอยู่ที่ไหน?"
 
 #: .\__translations\__translations.py:75
 msgctxt "male"
 msgid "Where do you live?"
-msgstr "คุณอาศัยอยู่ที่ใด?"
+msgstr "คุณอาศัยอยู่ที่ไหน?"
 
 #: .\__translations\__translations.py:76
 msgctxt "other"
 msgid "Where do you live?"
-msgstr "คุณอาศัยอยู่ที่ใด?"
+msgstr "คุณอาศัยอยู่ที่ไหน?"
 
 #: .\__translations\__translations.py:78
 msgctxt "female"
@@ -1111,17 +1110,17 @@ msgstr "มังสวิรัติ (ไม่กินปลาและเ�
 #: .\__translations\__translations.py:90
 msgctxt "female"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (กินสัตว์)"
+msgstr "คาร์นิสต์ (กินสัตว์)"
 
 #: .\__translations\__translations.py:91
 msgctxt "male"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (กินสัตว์)"
+msgstr "คาร์นิสต์ (กินสัตว์)"
 
 #: .\__translations\__translations.py:92
 msgctxt "other"
 msgid "Carnist (eats animals)"
-msgstr "Carnist (กินสัตว์)"
+msgstr "คาร์นิสต์ (กินสัตว์)"
 
 #: .\__translations\__translations.py:94
 msgctxt "female"
@@ -1216,17 +1215,17 @@ msgstr "สูบบุหรี่"
 #: .\__translations\__translations.py:118
 msgctxt "female"
 msgid "Single"
-msgstr "เดี่ยว"
+msgstr "โสด"
 
 #: .\__translations\__translations.py:119
 msgctxt "male"
 msgid "Single"
-msgstr "เดี่ยว"
+msgstr "โสด"
 
 #: .\__translations\__translations.py:120
 msgctxt "other"
 msgid "Single"
-msgstr "เดี่ยว"
+msgstr "โสด"
 
 #: .\__translations\__translations.py:122
 msgctxt "female"
@@ -1321,17 +1320,17 @@ msgstr "แยกจากกัน"
 #: .\__translations\__translations.py:146
 msgctxt "female"
 msgid "Engaged"
-msgstr "มีส่วนร่วม"
+msgstr "หมั้นแล้ว"
 
 #: .\__translations\__translations.py:147
 msgctxt "male"
 msgid "Engaged"
-msgstr "มีส่วนร่วม"
+msgstr "หมั้นแล้ว"
 
 #: .\__translations\__translations.py:148
 msgctxt "other"
 msgid "Engaged"
-msgstr "มีส่วนร่วม"
+msgstr "หมั้นแล้ว"
 
 #: .\__translations\__translations.py:150
 msgctxt "female"
@@ -1472,7 +1471,7 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"คุณมีเพื่อน {0} แล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
+"คุณมีเพื่อน {0} คนแล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
 "กรุณาลบเพื่อนก่อนที่จะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:179
@@ -1482,7 +1481,7 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"คุณมีเพื่อน {0} แล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
+"คุณมีเพื่อน {0} คนแล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
 "กรุณาลบเพื่อนก่อนที่จะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:180
@@ -1492,7 +1491,7 @@ msgid ""
 "You already have {0} friends. You can't have more than {1} friends on Speedy "
 "Net. Please remove friends before you proceed."
 msgstr ""
-"คุณมีเพื่อน {0} แล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
+"คุณมีเพื่อน {0} คนแล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net "
 "กรุณาลบเพื่อนก่อนที่จะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:182
@@ -1502,8 +1501,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1512,8 +1511,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1522,8 +1521,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1532,8 +1531,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1542,8 +1541,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1552,8 +1551,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1562,8 +1561,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1572,8 +1571,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1582,8 +1581,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
-"โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ"
+"ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net "
+"กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ"
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -1603,32 +1602,32 @@ msgstr "คุณไม่สามารถเป็นเพื่อนกั
 #: .\__translations\__translations.py:196
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "คุณได้ร้องขอมิตรภาพจากผู้ใช้รายนี้แล้ว"
+msgstr "คุณได้ส่งคำขอเป็นเพื่อนถึงผู้ใช้รายนี้แล้ว"
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "คุณได้ร้องขอมิตรภาพจากผู้ใช้รายนี้แล้ว"
+msgstr "คุณได้ส่งคำขอเป็นเพื่อนถึงผู้ใช้รายนี้แล้ว"
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "คุณได้ร้องขอมิตรภาพจากผู้ใช้รายนี้แล้ว"
+msgstr "คุณได้ส่งคำขอเป็นเพื่อนถึงผู้ใช้รายนี้แล้ว"
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "ผู้ใช้รายนี้ร้องขอมิตรภาพจากคุณแล้ว"
+msgstr "ผู้ใช้รายนี้ได้ส่งคำขอเป็นเพื่อนถึงคุณแล้ว"
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "ผู้ใช้รายนี้ร้องขอมิตรภาพจากคุณแล้ว"
+msgstr "ผู้ใช้รายนี้ได้ส่งคำขอเป็นเพื่อนถึงคุณแล้ว"
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "ผู้ใช้รายนี้ร้องขอมิตรภาพจากคุณแล้ว"
+msgstr "ผู้ใช้รายนี้ได้ส่งคำขอเป็นเพื่อนถึงคุณแล้ว"
 
 #: .\__translations\__translations.py:204
 msgctxt "female_female"
@@ -1884,25 +1883,25 @@ msgctxt "female"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส โปรดอัปโหลดภาพที่ไม่โปร่งใส"
+msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส กรุณาอัปโหลดรูปภาพที่ไม่โปร่งใส"
 
 #: .\__translations\__translations.py:253
 msgctxt "male"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส โปรดอัปโหลดภาพที่ไม่โปร่งใส"
+msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส กรุณาอัปโหลดรูปภาพที่ไม่โปร่งใส"
 
 #: .\__translations\__translations.py:254
 msgctxt "other"
 msgid ""
 "Your profile picture can't be transparent. Please upload a nontransparent "
 "image."
-msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส โปรดอัปโหลดภาพที่ไม่โปร่งใส"
+msgstr "รูปโปรไฟล์ของคุณต้องไม่โปร่งใส กรุณาอัปโหลดรูปภาพที่ไม่โปร่งใส"
 
 #: .\accounts\apps.py:14
 msgid "Speedy Core Accounts"
-msgstr "Speedy Core Accounts"
+msgstr "บัญชี Speedy Core"
 
 #: .\accounts\fields.py:27
 msgid "Only me"
@@ -1938,7 +1937,7 @@ msgstr "สร้างบัญชี"
 
 #: .\accounts\forms.py:326
 msgid "Update your profile picture"
-msgstr "อัพเดตรูปโปรไฟล์ของคุณ"
+msgstr "อัปเดตรูปโปรไฟล์ของคุณ"
 
 #: .\accounts\forms.py:326 .\accounts\validators.py:492
 msgid "A profile picture is required."
@@ -1982,7 +1981,7 @@ msgstr "ชื่อผู้ใช้นี้ถูกใช้แล้ว"
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
-msgstr "ชื่อผู้ใช้ (ตัวบุ้ง)"
+msgstr "ชื่อผู้ใช้ (slug)"
 
 #: .\accounts\models.py:211
 msgid "photo"
@@ -2002,11 +2001,11 @@ msgstr "เอนทิตี"
 
 #: .\accounts\models.py:321
 msgid "Slug does not parse to username."
-msgstr "Slug ไม่แยกวิเคราะห์ชื่อผู้ใช้"
+msgstr "Slug ไม่สามารถแปลงเป็นชื่อผู้ใช้ได้"
 
 #: .\accounts\models.py:331
 msgid "Username is required."
-msgstr "ชื่อผู้ใช้ เป็นสิ่งจำเป็น"
+msgstr "จำเป็นต้องมีชื่อผู้ใช้"
 
 #: .\accounts\models.py:379
 msgid "name"
@@ -2026,7 +2025,7 @@ msgstr "ชาย"
 
 #: .\accounts\models.py:513
 msgid "Other"
-msgstr "อื่น"
+msgstr "อื่น ๆ"
 
 #: .\accounts\models.py:528 .\accounts\models.py:545 .\accounts\models.py:568
 #: .\messages\models.py:103 .\messages\models.py:104 .\messages\models.py:204
@@ -2043,7 +2042,7 @@ msgstr "มังสวิรัติ (ไม่กินปลาและเ�
 
 #: .\accounts\models.py:531
 msgid "Carnist (eats animals)"
-msgstr "Carnist (กินสัตว์)"
+msgstr "คาร์นิสต์ (กินสัตว์)"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
@@ -2059,7 +2058,7 @@ msgstr "สูบบุหรี่"
 
 #: .\accounts\models.py:569
 msgid "Single"
-msgstr "เดี่ยว"
+msgstr "โสด"
 
 #: .\accounts\models.py:570
 msgid "Divorced"
@@ -2087,7 +2086,7 @@ msgstr "แยกจากกัน"
 
 #: .\accounts\models.py:576
 msgid "Engaged"
-msgstr "มีส่วนร่วม"
+msgstr "หมั้นแล้ว"
 
 #: .\accounts\models.py:577
 msgid "Married"
@@ -2099,11 +2098,11 @@ msgstr "แจ้งให้ฉันทราบ"
 
 #: .\accounts\models.py:589
 msgid "Don't notify me"
-msgstr "อย่าแจ้งเตือนฉัน"
+msgstr "ไม่ต้องแจ้งเตือนฉัน"
 
 #: .\accounts\models.py:669
 msgid "first name"
-msgstr "ชื่อ"
+msgstr "ชื่อจริง"
 
 #: .\accounts\models.py:672
 msgid "last name"
@@ -2119,7 +2118,7 @@ msgstr "วันเดือนปีเกิด"
 
 #: .\accounts\models.py:676
 msgid "diet"
-msgstr "อาหาร"
+msgstr "การรับประทานอาหาร"
 
 #: .\accounts\models.py:677
 msgid "smoking status"
@@ -2143,15 +2142,15 @@ msgstr "ใครสามารถดูปีเกิดของฉันไ
 
 #: .\accounts\models.py:689
 msgid "On new messages"
-msgstr "เกี่ยวกับข้อความใหม่"
+msgstr "เมื่อมีข้อความใหม่"
 
 #: .\accounts\models.py:695
 msgid "Last IP address used https://ipapi.com/ time"
-msgstr "ที่อยู่ IP ล่าสุดที่ใช้ https://ipapi.com/ ครั้ง"
+msgstr "เวลาของที่อยู่ IP ล่าสุดที่ใช้ https://ipapi.com/"
 
 #: .\accounts\models.py:696
 msgid "Last IP address used raw https://ipapi.com/ results"
-msgstr "ที่อยู่ IP สุดท้ายใช้ผลลัพธ์ดิบ https://ipapi.com/"
+msgstr "ผลลัพธ์ดิบของที่อยู่ IP ล่าสุดที่ใช้ https://ipapi.com/"
 
 #: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
 msgid "user"
@@ -2163,7 +2162,7 @@ msgstr "ผู้ใช้"
 
 #: .\accounts\models.py:1050
 msgid "Superuser must be equal to staff."
-msgstr "Superuser จะต้องเท่ากับพนักงาน"
+msgstr "Superuser ต้องเท่ากับ staff"
 
 #: .\accounts\models.py:1593
 msgid "email"
@@ -2175,7 +2174,7 @@ msgstr "ได้รับการยืนยันแล้ว"
 
 #: .\accounts\models.py:1595
 msgid "is primary"
-msgstr "เป็นหลัก"
+msgstr "เป็นที่อยู่หลัก"
 
 #: .\accounts\models.py:1596
 msgid "confirmation token"
@@ -2242,9 +2241,7 @@ msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ชื่อผู้ใช้ต้องมีอักขระตัวอักษรและตัวเลขอย่างน้อย %(limit_value)d (มี %(show_value)d)"
-msgstr[1] ""
-"ชื่อผู้ใช้ต้องมีอักขระตัวอักษรและตัวเลขอย่างน้อย %(limit_value)d (มี %(show_value)d)"
+"ชื่อผู้ใช้ต้องมีตัวอักษรหรือตัวเลขอย่างน้อย %(limit_value)d ตัว (มี %(show_value)d ตัว)"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2255,9 +2252,7 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ชื่อผู้ใช้ต้องมีอักขระตัวอักษรผสมตัวเลขไม่เกิน %(limit_value)d (มี %(show_value)d)"
-msgstr[1] ""
-"ชื่อผู้ใช้ต้องมีอักขระตัวอักษรและตัวเลขไม่เกิน %(limit_value)d (มี %(show_value)d)"
+"ชื่อผู้ใช้ต้องมีตัวอักษรหรือตัวเลขไม่เกิน %(limit_value)d ตัว (มี %(show_value)d ตัว)"
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2267,8 +2262,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "ชื่อผู้ใช้ต้องมีอักขระอย่างน้อย %(limit_value)d (มี %(show_value)d)"
-msgstr[1] "ชื่อผู้ใช้ต้องมีอักขระอย่างน้อย %(limit_value)d (มี %(show_value)d)"
+msgstr[0] "ชื่อผู้ใช้ต้องมีอักขระอย่างน้อย %(limit_value)d ตัว (มี %(show_value)d ตัว)"
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2278,8 +2272,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "ชื่อผู้ใช้ต้องมีอักขระไม่เกิน %(limit_value)d ตัว (มี %(show_value)d)"
-msgstr[1] "ชื่อผู้ใช้ต้องมีอักขระไม่เกิน %(limit_value)d ตัว (มี %(show_value)d)"
+msgstr[0] "ชื่อผู้ใช้ต้องมีอักขระไม่เกิน %(limit_value)d ตัว (มี %(show_value)d ตัว)"
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2289,15 +2282,13 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "รหัสผ่านนี้สั้นเกินไป ต้องมีอักขระอย่างน้อย %(min_length)d"
-msgstr[1] "รหัสผ่านนี้สั้นเกินไป ต้องมีอักขระอย่างน้อย %(min_length)d"
+msgstr[0] "รหัสผ่านนี้สั้นเกินไป ต้องมีอักขระอย่างน้อย %(min_length)d ตัว"
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "รหัสผ่านของคุณต้องมีอักขระอย่างน้อย %(min_length)d"
-msgstr[1] "รหัสผ่านของคุณต้องมีอักขระอย่างน้อย %(min_length)d ตัว"
+msgstr[0] "รหัสผ่านของคุณต้องมีอักขระอย่างน้อย %(min_length)d ตัว"
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2306,14 +2297,12 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] "รหัสผ่านนี้ยาวเกินไป ต้องมีอักขระไม่เกิน %(max_length)d ตัว"
-msgstr[1] "รหัสผ่านนี้ยาวเกินไป ต้องมีอักขระไม่เกิน %(max_length)d ตัว"
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "รหัสผ่านของคุณต้องมีอักขระไม่เกิน %(max_length)d ตัว"
-msgstr[1] "รหัสผ่านของคุณต้องมีอักขระไม่เกิน %(max_length)d ตัว"
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
@@ -2324,11 +2313,11 @@ msgstr "รหัสผ่านของคุณต้องมีอักข
 
 #: .\accounts\validators.py:403 .\accounts\validators.py:417
 msgid "This field cannot be null."
-msgstr "ฟิลด์นี้ไม่สามารถเป็นค่าว่างได้"
+msgstr "ฟิลด์นี้ต้องไม่เป็นค่า null"
 
 #: .\accounts\validators.py:405
 msgid "This field cannot be blank."
-msgstr "ฟิลด์นี้ไม่สามารถเว้นว่างได้"
+msgstr "ฟิลด์นี้ต้องไม่เว้นว่าง"
 
 #: .\accounts\validators.py:431 .\accounts\validators.py:445
 msgid "Enter a valid date."
@@ -2433,25 +2422,25 @@ msgid ""
 "Admin: {total_number_of_members_registered_in_year} members registered in "
 "{year}."
 msgstr ""
-"ผู้ดูแลระบบ: {total_number_of_members_registered_in_year} สมาชิกที่ลงทะเบียนใน "
+"ผู้ดูแลระบบ: สมาชิก {total_number_of_members_registered_in_year} คนลงทะเบียนในปี "
 "{year}"
 
 #: .\base\apps.py:25
 msgid "Speedy Core Base App"
-msgstr "Speedy Core Base App"
+msgstr "แอปพื้นฐาน Speedy Core"
 
 #: .\base\fields.py:35
 msgid "ID"
-msgstr "บัตรประจำตัวประชาชน"
+msgstr "ID"
 
 #: .\base\utils.py:441
 msgctxt "timesince"
 msgid ", "
-msgstr "None "
+msgstr ", "
 
 #: .\base\validators.py:7 .\base\validators.py:8
 msgid "id contains illegal characters."
-msgstr "id มีอักขระที่ผิดกฎหมาย"
+msgstr "id มีอักขระที่ไม่ได้รับอนุญาต"
 
 #: .\base\views.py:120
 msgid "Changes saved."
@@ -2467,15 +2456,15 @@ msgstr "ผู้ใช้ที่ถูกบล็อก"
 
 #: .\blocks\models.py:31
 msgid "block"
-msgstr "ปิดกั้น"
+msgstr "บล็อก"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
-msgstr "บล็อกผู้ใช้"
+msgstr "การบล็อกผู้ใช้"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
-msgstr "คุณได้บล็อก {}"
+msgstr "คุณได้บล็อก {} แล้ว"
 
 #: .\blocks\views.py:86
 msgid "You have unblocked {}."
@@ -2527,7 +2516,7 @@ msgstr "อีเมลของคุณ"
 
 #: .\contact_by_form\models.py:45
 msgid "type"
-msgstr "พิมพ์"
+msgstr "ประเภท"
 
 #: .\contact_by_form\models.py:46
 msgid "your message"
@@ -2535,11 +2524,11 @@ msgstr "ข้อความของคุณ"
 
 #: .\contact_by_form\models.py:48
 msgid "reported entity"
-msgstr "นิติบุคคลที่รายงาน"
+msgstr "เอนทิตีที่ถูกรายงาน"
 
 #: .\contact_by_form\models.py:49
 msgid "reported photo"
-msgstr "รายงานรูปภาพ"
+msgstr "รูปภาพที่ถูกรายงาน"
 
 #: .\contact_by_form\models.py:52
 msgid "feedback"
@@ -2547,7 +2536,7 @@ msgstr "ข้อเสนอแนะ"
 
 #: .\contact_by_form\models.py:53
 msgid "feedbacks"
-msgstr "การตอบรับ"
+msgstr "ข้อเสนอแนะ"
 
 #: .\friends\views.py:326
 msgid "Friendship request sent."
@@ -2555,7 +2544,7 @@ msgstr "ส่งคำขอเป็นเพื่อนแล้ว"
 
 #: .\friends\views.py:350
 msgid "No friendship request."
-msgstr "ไม่มีการร้องขอมิตรภาพ"
+msgstr "ไม่มีคำขอเป็นเพื่อน"
 
 #: .\friends\views.py:420
 msgid "Friendship request accepted."
@@ -2619,11 +2608,11 @@ msgstr "ข้อความ"
 
 #: .\messages\models.py:221
 msgid "read mark"
-msgstr "อ่านเครื่องหมาย"
+msgstr "เครื่องหมายอ่านแล้ว"
 
 #: .\messages\models.py:222
 msgid "read marks"
-msgstr "อ่านเครื่องหมาย"
+msgstr "เครื่องหมายอ่านแล้ว"
 
 #: .\settings\base.py:227
 msgid "English"
@@ -2639,15 +2628,15 @@ msgstr "ภาษาฝรั่งเศส"
 
 #: .\settings\base_with_login.py:77
 msgid "German"
-msgstr "เยอรมัน"
+msgstr "ภาษาเยอรมัน"
 
 #: .\settings\base_with_login.py:78
 msgid "Spanish"
-msgstr "สเปน"
+msgstr "ภาษาสเปน"
 
 #: .\settings\base_with_login.py:79
 msgid "Portuguese"
-msgstr "โปรตุเกส"
+msgstr "ภาษาโปรตุเกส"
 
 #: .\settings\base_with_login.py:80
 msgid "Italian"
@@ -2659,7 +2648,7 @@ msgstr "ภาษาดัตช์"
 
 #: .\settings\base_with_login.py:82
 msgid "Japanese"
-msgstr "ญี่ปุ่น"
+msgstr "ภาษาญี่ปุ่น"
 
 #: .\settings\base_with_login.py:83
 msgid "Russian"
@@ -2667,19 +2656,19 @@ msgstr "ภาษารัสเซีย"
 
 #: .\settings\base_with_login.py:84
 msgid "Chinese"
-msgstr "ชาวจีน"
+msgstr "ภาษาจีน"
 
 #: .\settings\base_with_login.py:85
 msgid "Polish"
-msgstr "ขัด"
+msgstr "ภาษาโปแลนด์"
 
 #: .\settings\base_with_login.py:86
 msgid "Persian"
-msgstr "เปอร์เซีย"
+msgstr "ภาษาเปอร์เซีย"
 
 #: .\settings\base_with_login.py:90
 msgid "Korean"
-msgstr "เกาหลี"
+msgstr "ภาษาเกาหลี"
 
 #: .\settings\base_with_login.py:91
 msgid "Arabic"
@@ -2687,7 +2676,7 @@ msgstr "ภาษาอาหรับ"
 
 #: .\settings\base_with_login.py:92
 msgid "Indonesian"
-msgstr "ชาวอินโดนีเซีย"
+msgstr "ภาษาอินโดนีเซีย"
 
 #: .\settings\base_with_login.py:93
 msgid "Ukrainian"
@@ -2703,7 +2692,7 @@ msgstr "ภาษาเวียดนาม"
 
 #: .\settings\base_with_login.py:96
 msgid "Czech"
-msgstr "เช็ก"
+msgstr "ภาษาเช็ก"
 
 #: .\settings\base_with_login.py:97
 msgid "Swedish"
@@ -2723,35 +2712,35 @@ msgstr "ภาษาไทย"
 
 #: .\settings\base_with_login.py:101
 msgid "Greek"
-msgstr "กรีก"
+msgstr "ภาษากรีก"
 
 #: .\settings\base_with_login.py:102
 msgid "Malay"
-msgstr "มาเลย์"
+msgstr "ภาษามาเลย์"
 
 #: .\settings\base_with_login.py:103
 msgid "Serbian"
-msgstr "เซอร์เบีย"
+msgstr "ภาษาเซอร์เบีย"
 
 #: .\settings\base_with_login.py:104
 msgid "Romanian"
-msgstr "โรมาเนีย"
+msgstr "ภาษาโรมาเนีย"
 
 #: .\settings\base_with_login.py:105
 msgid "Bengali"
-msgstr "เบงกาลี"
+msgstr "ภาษาเบงกาลี"
 
 #: .\settings\base_with_login.py:106
 msgid "Catalan"
-msgstr "คาตาลัน"
+msgstr "ภาษาคาตาลัน"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
-msgstr "นอร์เวย์ (บุ๊กมอล)"
+msgstr "ภาษานอร์เวย์ (บุ๊กมอล)"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"
-msgstr "บัลแกเรีย"
+msgstr "ภาษาบัลแกเรีย"
 
 #: .\settings\base_with_login.py:109
 msgid "Danish"
@@ -2759,55 +2748,55 @@ msgstr "ภาษาเดนมาร์ก"
 
 #: .\settings\base_with_login.py:110
 msgid "Slovak"
-msgstr "สโลวัก"
+msgstr "ภาษาสโลวัก"
 
 #: .\settings\base_with_login.py:111
 msgid "Hindi"
-msgstr "ฮินดี"
+msgstr "ภาษาฮินดี"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "เอสโตเนีย"
+msgstr "ภาษาเอสโตเนีย"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "โครเอเชีย"
+msgstr "ภาษาโครเอเชีย"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"
-msgstr "อาเซอร์ไบจาน"
+msgstr "ภาษาอาเซอร์ไบจาน"
 
 #: .\settings\base_with_login.py:115
 msgid "Cantonese"
-msgstr "กวางตุ้ง"
+msgstr "ภาษากวางตุ้ง"
 
 #: .\settings\base_with_login.py:116
 msgid "Lithuanian"
-msgstr "ลิทัวเนีย"
+msgstr "ภาษาลิทัวเนีย"
 
 #: .\settings\base_with_login.py:117
 msgid "Slovenian"
-msgstr "สโลวีเนีย"
+msgstr "ภาษาสโลวีเนีย"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "บาสก์"
+msgstr "ภาษาบาสก์"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"
-msgstr "อาร์เมเนีย"
+msgstr "ภาษาอาร์เมเนีย"
 
 #: .\settings\base_with_login.py:120
 msgid "Uzbek"
-msgstr "อุซเบก"
+msgstr "ภาษาอุซเบก"
 
 #: .\settings\base_with_login.py:121
 msgid "Tamil"
-msgstr "ทมิฬ"
+msgstr "ภาษาทมิฬ"
 
 #: .\settings\base_with_login.py:122
 msgid "Latvian"
-msgstr "ลัตเวีย"
+msgstr "ภาษาลัตเวีย"
 
 #: .\templates\400.html:6 .\templates\400.html:10
 msgid "Bad request"
@@ -2819,11 +2808,11 @@ msgstr "Speedy ขออภัย เราไม่สามารถจัด�
 
 #: .\templates\403.html:6 .\templates\403.html:10
 msgid "Permission denied"
-msgstr "การอนุญาตถูกปฏิเสธ"
+msgstr "ไม่ได้รับอนุญาต"
 
 #: .\templates\403.html:14
 msgid "Speedy is sorry, but this page is private."
-msgstr "Speedy ขออภัย แต่เพจนี้เป็นเพจส่วนตัว"
+msgstr "Speedy ขออภัย แต่หน้านี้เป็นส่วนตัว"
 
 #: .\templates\404.html:6 .\templates\404.html:10
 msgid "Page not found"
@@ -2831,7 +2820,7 @@ msgstr "ไม่พบหน้า"
 
 #: .\templates\404.html:14
 msgid "Speedy is sorry, but the page is not found."
-msgstr "Speedy ขออภัย ไม่พบเพจดังกล่าว"
+msgstr "Speedy ขออภัย ไม่พบหน้าดังกล่าว"
 
 #: .\templates\500.html:6 .\templates\500.html:10
 msgid "Internal server error"
@@ -2888,7 +2877,7 @@ msgstr "เพิ่มแล้ว"
 
 #: .\templates\accounts\edit_profile\credentials.html:14
 msgid "Visibility"
-msgstr "ทัศนวิสัย"
+msgstr "การมองเห็น"
 
 #: .\templates\accounts\edit_profile\credentials.html:15
 msgid "Actions"
@@ -2912,7 +2901,7 @@ msgstr "ทำให้ที่อยู่อีเมลนี้เป็น
 
 #: .\templates\accounts\edit_profile\credentials.html:59
 msgid "Are you sure you want to delete this email address?"
-msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบที่อยู่อีเมลนี้?"
 
 #: .\templates\accounts\edit_profile\credentials.html:61
 msgid "Delete this email address"
@@ -2920,7 +2909,7 @@ msgstr "ลบที่อยู่อีเมลนี้"
 
 #: .\templates\accounts\edit_profile\credentials.html:77
 msgid "Add Another"
-msgstr "เพิ่มอีกอัน"
+msgstr "เพิ่มอีกรายการ"
 
 #: .\templates\accounts\edit_profile\credentials.html:84
 msgid "Change Password"
@@ -2928,7 +2917,7 @@ msgstr "เปลี่ยนรหัสผ่าน"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "อายุของคุณจะปรากฏแก่การแข่งขันของคุณบน Speedy Match"
+msgstr "อายุของคุณจะปรากฏแก่คู่ที่เข้ากันได้ของคุณบน Speedy Match"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2973,7 +2962,7 @@ msgstr "ดูทั้งหมด"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "Admin - Friends"
-msgstr "แอดมิน-เพื่อน"
+msgstr "ผู้ดูแลระบบ - เพื่อน"
 
 #: .\templates\admin\friends\user_friends_widget.html:13
 msgid "friends"
@@ -3005,7 +2994,7 @@ msgstr "คุณยังไม่ได้ยืนยันที่อยู
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net Blog"
+msgstr "บล็อก Speedy Net"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3022,7 +3011,7 @@ msgstr "Speedy Sale"
 #: .\templates\base.html:195 .\templates\base.html:196
 #: .\templates\base_with_login.html:87 .\templates\base_with_login.html:88
 msgid "A vegan friendly website"
-msgstr "เว็บไซต์ที่เป็นมิตรต่อมังสวิรัติ"
+msgstr "เว็บไซต์ที่เป็นมิตรต่อชาววีแกน"
 
 #: .\templates\base.html:212 .\templates\base.html:214
 msgid "Speedy"
@@ -3034,7 +3023,7 @@ msgstr "ออกจากระบบ"
 
 #: .\templates\base_with_login.html:67
 msgid "Home"
-msgstr "บ้าน"
+msgstr "หน้าแรก"
 
 #: .\templates\base_with_login.html:133
 msgid "Password"
@@ -3050,15 +3039,15 @@ msgstr "Speedy Match"
 
 #: .\templates\base_with_login.html:212 .\templates\base_without_login.html:26
 msgid "Speedy Net's Shop"
-msgstr "Speedy Net's Shop"
+msgstr "ร้านค้า Speedy Net"
 
 #: .\templates\base_with_login.html:213 .\templates\base_without_login.html:27
 msgid "Speedy Match's Shop"
-msgstr "Speedy Match's Shop"
+msgstr "ร้านค้า Speedy Match"
 
 #: .\templates\base_with_login.html:218 .\templates\base_without_login.html:29
 msgid "Speedy S-logo Shop"
-msgstr "Speedy S-logo Shop"
+msgstr "ร้านค้า Speedy S-logo"
 
 #: .\templates\base_with_login.html:231
 #: .\templates\menu\about_mobile_menu_links.html:14
@@ -3077,7 +3066,7 @@ msgstr "ข้อกำหนดในการให้บริการ"
 #: .\templates\base_with_login.html:232
 #: .\templates\menu\about_mobile_menu_links.html:17
 msgid "Terms"
-msgstr "เงื่อนไข"
+msgstr "ข้อกำหนด"
 
 #: .\templates\base_with_login.html:233 .\templates\base_without_login.html:37
 #: .\templates\contact_by_email\contact_us.html:8
@@ -3098,7 +3087,7 @@ msgstr "Speedy Mail Software"
 
 #: .\templates\base_without_login.html:28
 msgid "Speedy Composer's Shop"
-msgstr "Speedy Composer's Shop"
+msgstr "ร้านค้า Speedy Composer"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
@@ -3126,7 +3115,7 @@ msgstr "รายงานผู้ใช้"
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
 msgid "Report a Photo"
-msgstr "รายงานภาพถ่าย"
+msgstr "รายงานรูปภาพ"
 
 #: .\templates\contact_by_form\feedback_success.html:8
 msgid "Thank You"
@@ -3146,13 +3135,13 @@ msgstr "ต่อไป"
 
 #: .\templates\email\accounts\confirm_first_email_body.txt:5
 msgid "Use this link to activate your account:"
-msgstr "ใช้ลิงค์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปิดใช้งานบัญชีของคุณ:"
 
 #: .\templates\email\accounts\confirm_first_email_subject.txt:1
 #: .\templates\email\accounts\confirm_second_email_subject.txt:1
 #, python-format
 msgid "Confirm your email address on %(site_name)s"
-msgstr "ยืนยันที่อยู่อีเมลของคุณใน %(site_name)s"
+msgstr "ยืนยันที่อยู่อีเมลของคุณบน %(site_name)s"
 
 #: .\templates\email\accounts\confirm_second_email_body.txt:5
 msgid "Use this link to verify your email address:"
@@ -3160,12 +3149,12 @@ msgstr "ใช้ลิงก์นี้เพื่อยืนยันที
 
 #: .\templates\email\accounts\password_reset_body.txt:5
 msgid "Use this link to change your password:"
-msgstr "ใช้ลิงค์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
+msgstr "ใช้ลิงก์นี้เพื่อเปลี่ยนรหัสผ่านของคุณ:"
 
 #: .\templates\email\accounts\password_reset_subject.txt:1
 #, python-format
 msgid "Password reset on %(site_name)s"
-msgstr "รีเซ็ตรหัสผ่านเมื่อ %(site_name)s"
+msgstr "รีเซ็ตรหัสผ่านบน %(site_name)s"
 
 #: .\templates\email\messages\new_message_body.txt:1
 msgid "has sent you a message."
@@ -3173,7 +3162,7 @@ msgstr "ได้ส่งข้อความถึงคุณ"
 
 #: .\templates\email\messages\new_message_body.txt:3
 msgid "Read it:"
-msgstr "อ่านมัน:"
+msgstr "อ่านข้อความ:"
 
 #: .\templates\email\messages\new_message_body.txt:7
 #, python-format
@@ -3195,12 +3184,12 @@ msgstr "คำขอที่ได้รับ"
 
 #: .\templates\friends\base.html:41
 msgid "Sent Requests"
-msgstr "ส่งคำขอแล้ว"
+msgstr "คำขอที่ส่งแล้ว"
 
 #: .\templates\friends\received_requests.html:19
 #: .\templates\friends\sent_requests.html:13
 msgid "There are no pending friendship requests."
-msgstr "ไม่มีคำขอมิตรภาพที่รอดำเนินการ"
+msgstr "ไม่มีคำขอเป็นเพื่อนที่รอดำเนินการ"
 
 #: .\templates\main\main_page_base.html:12
 #, python-format
@@ -3214,7 +3203,7 @@ msgstr "เข้าร่วม %(site_name)s!"
 
 #: .\templates\main\main_page_base.html:24
 msgid "It's free and anyone can join!"
-msgstr "ได้ฟรีและทุกคนสามารถเข้าร่วมได้!"
+msgstr "ฟรีและทุกคนสามารถเข้าร่วมได้!"
 
 #: .\templates\messages\chat_detail.html:35
 #, python-format
@@ -3310,20 +3299,20 @@ msgstr ""
 
 #: .\templates\profiles\block_warning.html:9
 msgid "You blocked "
-msgstr "คุณถูกบล็อก "
+msgstr "คุณได้บล็อก "
 
 #: .\templates\profiles\block_warning.html:9
 msgid "."
-msgstr "None"
+msgstr "."
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " บล็อกคุณ"
+msgstr " ได้บล็อกคุณ"
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
 msgid "Accept Friendship Request"
-msgstr "ยอมรับคำขอมิตรภาพ"
+msgstr "ยอมรับคำขอเป็นเพื่อน"
 
 #: .\templates\profiles\tools\add_to_friends.html:12
 #: .\templates\profiles\user_list_item.html:32
@@ -3356,12 +3345,12 @@ msgstr "คุณแน่ใจหรือไม่ว่าต้องกา
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
-msgstr "None"
+msgstr "?"
 
 #: .\templates\profiles\tools\block_user.html:18
 #: .\templates\profiles\tools\block_user.html:19
 msgid "Block "
-msgstr "ปิดกั้น "
+msgstr "บล็อก "
 
 #: .\templates\profiles\tools\block_user.html:25
 #: .\templates\profiles\tools\block_user.html:26
@@ -3423,8 +3412,8 @@ msgid ""
 "%(user_name)s also has a Speedy Match profile. View %(user_name)s’s profile "
 "on Speedy Match."
 msgstr ""
-"%(user_name)s ยังมีโปรไฟล์ Speedy Match อีกด้วย ดูโปรไฟล์ของ %(user_name)s บน "
-"Speedy Match"
+"%(user_name)s มีโปรไฟล์ Speedy Match ด้วย ดูโปรไฟล์ของ %(user_name)s บน Speedy "
+"Match"
 
 #: .\templates\profiles\user_on_speedy_net_widget.html:7
 msgid "You also have a Speedy Net profile. View your profile on Speedy Net."
@@ -3443,7 +3432,7 @@ msgid ""
 "The site is in alpha, there may be errors. Site management is not "
 "responsible for any faults on the site."
 msgstr ""
-"เว็บไซต์อยู่ในรุ่นอัลฟ่า อาจมีข้อผิดพลาด การจัดการไซต์จะไม่รับผิดชอบต่อความผิดพลาดใดๆ บนไซต์"
+"เว็บไซต์อยู่ในรุ่นอัลฟ่า อาจมีข้อผิดพลาด ผู้ดูแลเว็บไซต์ไม่รับผิดชอบต่อความผิดพลาดใด ๆ บนเว็บไซต์"
 
 #: .\templates\terms\terms_of_service.html:21
 msgid ""
@@ -3452,9 +3441,9 @@ msgid ""
 "pornography. You are not allowed to use Speedy Net to send spam messages, or "
 "messages with the same content to a large number of people."
 msgstr ""
-"คุณสามารถใช้ Speedy Net เพื่อวัตถุประสงค์ทางกฎหมายเท่านั้น "
+"คุณสามารถใช้ Speedy Net เพื่อวัตถุประสงค์ที่ถูกกฎหมายเท่านั้น "
 "คุณไม่ได้รับอนุญาตให้อัปโหลดเนื้อหาที่เกี่ยวข้องกับความเกลียดชัง ความรุนแรง การทารุณกรรมสัตว์ "
-"ภาพเปลือย หรือสื่อลามก Speedy Net คุณไม่ได้รับอนุญาตให้ใช้ "
+"ภาพเปลือย หรือสื่อลามก คุณไม่ได้รับอนุญาตให้ใช้ Speedy Net "
 "เพื่อส่งข้อความสแปมหรือข้อความที่มีเนื้อหาเดียวกันไปยังผู้คนจำนวนมาก"
 
 #: .\templates\terms\terms_of_service.html:23
@@ -3465,11 +3454,10 @@ msgid ""
 "or talk on the phone with people you met on the site, the responsibility for "
 "the results of the meeting or phone call is yours."
 msgstr ""
-"การจัดการไซต์ไม่สามารถตรวจสอบข้อมูลส่วนบุคคลที่ได้รับจากผู้ใช้ไซต์ได้ "
-"ข้อมูลส่วนบุคคลของผู้ใช้บางรายอาจไม่ถูกต้อง "
-"การจัดการไซต์จะไม่รับผิดชอบต่อกิจกรรมของผู้ใช้ภายนอกไซต์ "
+"ผู้ดูแลเว็บไซต์ไม่สามารถตรวจสอบข้อมูลส่วนบุคคลที่ผู้ใช้เว็บไซต์ให้ไว้ได้ "
+"ข้อมูลส่วนบุคคลของผู้ใช้บางรายอาจไม่ถูกต้อง ผู้ดูแลเว็บไซต์ไม่รับผิดชอบต่อกิจกรรมของผู้ใช้นอกเว็บไซต์ "
 "หากคุณเลือกที่จะพบปะหรือพูดคุยทางโทรศัพท์กับคนที่คุณพบบนเว็บไซต์ "
-"คุณจะเป็นผู้รับผิดชอบผลการประชุมหรือการโทรทางโทรศัพท์"
+"คุณเป็นผู้รับผิดชอบต่อผลของการพบปะหรือการสนทนาทางโทรศัพท์นั้น"
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
@@ -3535,7 +3523,7 @@ msgstr "มองเห็นได้บนเว็บไซต์"
 
 #: .\uploads\models.py:91
 msgid "Speedy image moderation time"
-msgstr "เวลาการกลั่นกรองภาพที่รวดเร็ว Speedy"
+msgstr "เวลาการกลั่นกรองรูปภาพของ Speedy"
 
 #: .\uploads\models.py:92
 msgid "AWS image moderation time"
