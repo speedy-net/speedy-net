@@ -2839,7 +2839,7 @@ msgstr "estonski"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"
-msgstr "hrvatski"
+msgstr "Hrvatski"
 
 #: .\settings\base_with_login.py:114
 msgid "Azerbaijani"

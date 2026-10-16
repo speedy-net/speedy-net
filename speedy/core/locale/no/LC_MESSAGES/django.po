@@ -2799,7 +2799,7 @@ msgstr "katalansk"
 
 #: .\settings\base_with_login.py:107
 msgid "Norwegian (Bokmål)"
-msgstr "norsk (bokmål)"
+msgstr "norsk"
 
 #: .\settings\base_with_login.py:108
 msgid "Bulgarian"

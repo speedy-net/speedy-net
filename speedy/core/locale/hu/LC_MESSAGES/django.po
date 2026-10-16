@@ -2769,7 +2769,7 @@ msgstr "finn"
 
 #: .\settings\base_with_login.py:99
 msgid "Hungarian"
-msgstr "magyar"
+msgstr "Magyar"
 
 #: .\settings\base_with_login.py:100
 msgid "Thai"

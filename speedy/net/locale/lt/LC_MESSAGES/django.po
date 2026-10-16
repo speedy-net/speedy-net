@@ -43,7 +43,7 @@ msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
 "negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
 "Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+"laikydamiesi raidžių dydžio, tekstą „Taip. Ištrinti mano paskyrą.“."
 
 #: .\__translations\__translations.py:11
 msgctxt "male"
@@ -56,7 +56,7 @@ msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
 "negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
 "Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+"laikydamiesi raidžių dydžio, tekstą „Taip. Ištrinti mano paskyrą.“."
 
 #: .\__translations\__translations.py:12
 msgctxt "other"
@@ -69,7 +69,7 @@ msgstr ""
 "Ar tikrai norite ištrinti savo Speedy Net paskyrą? Tai yra nuolatinis ir "
 "negrįžtamas veiksmas. Ištrynus Speedy Net paskyrą taip pat bus ištrinta jūsų "
 "Speedy Match paskyra. Jei esate tikri, įveskite šiame lauke tiksliai, "
-"laikydamiesi raidžių dydžio, tekstą „Yes. Delete my account.“."
+"laikydamiesi raidžių dydžio, tekstą „Taip. Ištrinti mano paskyrą.“."
 
 #: .\__translations\__translations.py:14
 #, python-brace-format

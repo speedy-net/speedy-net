@@ -2852,7 +2852,7 @@ msgstr "Kantoniečių"
 
 #: .\settings\base_with_login.py:116
 msgid "Lithuanian"
-msgstr "Lietuvių"
+msgstr "Lietuviškai"
 
 #: .\settings\base_with_login.py:117
 msgid "Slovenian"

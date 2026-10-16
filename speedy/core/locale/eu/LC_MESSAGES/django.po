@@ -2850,7 +2850,7 @@ msgstr "Esloveniera"
 
 #: .\settings\base_with_login.py:118
 msgid "Basque"
-msgstr "Euskara"
+msgstr "Basque"
 
 #: .\settings\base_with_login.py:119
 msgid "Armenian"

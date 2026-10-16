@@ -2812,7 +2812,7 @@ msgstr "hindi keel"
 
 #: .\settings\base_with_login.py:112
 msgid "Estonian"
-msgstr "eesti keel"
+msgstr "eesti"
 
 #: .\settings\base_with_login.py:113
 msgid "Croatian"

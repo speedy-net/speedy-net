@@ -2884,7 +2884,7 @@ msgstr "Arman tili"
 
 #: .\settings\base_with_login.py:120
 msgid "Uzbek"
-msgstr "O'zbek tili"
+msgstr "oʻzbek tili"
 
 #: .\settings\base_with_login.py:121
 msgid "Tamil"
