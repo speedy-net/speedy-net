@@ -19,71 +19,71 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Composer Accounts"
-msgstr "Speedy Composer kontuak"
+msgstr ""
 
 #: .\accounts\models.py:55
 msgid "Speedy Net User"
-msgstr "Speedy Net erabiltzailea"
+msgstr ""
 
 #: .\accounts\models.py:57
 msgid "User"
-msgstr "Erabiltzailea"
+msgstr ""
 
 #: .\accounts\models.py:71
 msgid "Speedy Composer Profile"
-msgstr "Speedy Composer profila"
+msgstr ""
 
 #: .\accounts\models.py:72
 msgid "Speedy Composer Profiles"
-msgstr "Speedy Composer profilak"
+msgstr ""
 
 #: .\compose\models.py:18 .\compose\models.py:58
 msgid "chords template"
-msgstr "akorde-txantiloia"
+msgstr ""
 
 #: .\compose\models.py:19
 msgid "chords templates"
-msgstr "akorde-txantiloiak"
+msgstr ""
 
 #: .\compose\models.py:28 .\compose\models.py:59
 msgid "accompaniment"
-msgstr "akonpainamendua"
+msgstr ""
 
 #: .\compose\models.py:29
 msgid "accompaniments"
-msgstr "akonpainamenduak"
+msgstr ""
 
 #: .\compose\models.py:39
 msgid "user"
-msgstr "erabiltzailea"
+msgstr ""
 
 #: .\compose\models.py:42 .\compose\models.py:57
 msgid "folder"
-msgstr "karpeta"
+msgstr ""
 
 #: .\compose\models.py:43
 msgid "folders"
-msgstr "karpetak"
+msgstr ""
 
 #: .\compose\models.py:60
 msgid "tempo"
-msgstr "tempoa"
+msgstr ""
 
 #: .\compose\models.py:61
 msgid "public"
-msgstr "publikoa"
+msgstr ""
 
 #: .\compose\models.py:64
 msgid "composition"
-msgstr "konposizioa"
+msgstr ""
 
 #: .\compose\models.py:65
 msgid "compositions"
-msgstr "konposizioak"
+msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"
-msgstr "Speedy Composer-i buruz"
+msgstr ""
 
 #: .\templates\about\about.html:15
 #, python-format
@@ -95,25 +95,14 @@ msgid ""
 "compose will be saved in your personal compositions directory. You will be "
 "able to rename compositions, delete them and share them with your friends."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"Speedy "
-"Composer\">Speedy Composer</a> Speedy Net-eko kideentzat melodiak "
-"automatikoki konposatzeko webgune berri bat izango da. Sare neuronal "
-"artifizialen teknologia erabiliko du zuretzako melodiak konposatzeko. "
-"Konposatzen dituzun melodiak zure konposizioen direktorio pertsonalean "
-"gordeko dira. Konposizioen izena aldatu, ezabatu eta lagunekin partekatu "
-"ahal izango dituzu."
 
 #: .\templates\about\about.html:17
 msgid ""
 "Speedy Composer will be available in two languages - English and Hebrew. If "
-"you want to know how it works, you can read the <a "
-"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
-"(November 1999)\">documentation</a> from November 1999."
+"you want to know how it works, you can read the <a href=\"https://www."
+"speedysoftware.com/composer/\" title=\"Speedy Composer (November "
+"1999)\">documentation</a> from November 1999."
 msgstr ""
-"Speedy Composer bi hizkuntzatan egongo da eskuragarri: ingelesez eta "
-"hebreeraz. Nola funtzionatzen duen jakin nahi baduzu, 1999ko azaroko <a "
-"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
-"(November 1999)\">dokumentazioa</a> irakur dezakezu."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -121,50 +110,39 @@ msgid ""
 "Speedy Composer are free software & open source projects. If you want to "
 "help developing Speedy Composer, please contact me by email."
 msgstr ""
-"Speedy Composer-en ezaugarri guztiak doakoak izango dira. Speedy Net eta "
-"Speedy Composer software librea eta kode irekiko proiektuak dira. Speedy "
-"Composer garatzen laguntzea nahi baduzu, jarri nirekin harremanetan posta "
-"elektronikoz."
 
 #: .\templates\about\about.html:21
 msgid ""
-"Speedy Composer is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Composer <a href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> txakurrari ezarri zitzaion izena; urte askotan "
-"gurekin egon zen eta 2003an hil zen. Speedy-k 7 txakurkume izan zituen "
-"1988an."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr "Eskerrik asko eta zorte on,"
+msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr "Uri Rodberg"
+msgstr ""
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
-msgstr "Speedy Net eta Speedy Composer-en sortzailea eta zuzendaria,"
+msgstr ""
 
 #: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr ""
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are currently looking for volunteers to help us convert Speedy Composer "
 "to Python."
 msgstr ""
-"Gaur egun, Speedy Composer Python-era bihurtzen laguntzeko boluntarioak "
-"bilatzen ari gara."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Composer!"
-msgstr "Ongi etorri Speedy Composer-era!"
+msgstr ""
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -178,24 +156,10 @@ msgid ""
 "by Speedy Composer, and when the website is reopened we will upload them to "
 "the new site."
 msgstr ""
-"Eskerrik asko Speedy Composer-en interesagatik. Speedy Composer Speedy Net-"
-"eko kideentzat melodiak automatikoki konposatzeko aplikazio bat da. Duela "
-"gutxi Speedy Net-en iturburu-kodea aldatu dugu, eta Python lengoaiara eta "
-"Django framework-era bihurtu dugu. Speedy Composer jatorriz PHP-n idatzita "
-"zegoenez, ez dago egokituta Speedy Net-ekin egungo moduan funtzionatzeko. "
-"Hori dela eta, zoritxarrez Speedy Composer aplikazioa aldi baterako ixtera "
-"behartuta egon gara. Baina ez kezkatu: Speedy Composer-ek konposatutako "
-"melodia guztien babeskopiak gorde ditugu, eta webgunea berriro irekitzen "
-"denean gune berrira igoko ditugu."
 
 #: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "
-"to Python. If you are interested in volunteering, please contact me by "
-"email."
+"to Python. If you are interested in volunteering, please contact me by email."
 msgstr ""
-"Speedy Composer eta Speedy Net kode irekiko aplikazioak dira, software "
-"librea. Gaur egun, Speedy Composer Python-era bihurtzen laguntzeko "
-"boluntarioak bilatzen ari gara. Boluntario lanetan aritzeko interesa baduzu,"
-" jarri nirekin harremanetan posta elektronikoz."

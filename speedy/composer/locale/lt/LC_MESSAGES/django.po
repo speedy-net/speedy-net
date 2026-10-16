@@ -19,71 +19,71 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Composer Accounts"
-msgstr "Speedy Composer paskyros"
+msgstr ""
 
 #: .\accounts\models.py:55
 msgid "Speedy Net User"
-msgstr "Speedy Net naudotojas"
+msgstr ""
 
 #: .\accounts\models.py:57
 msgid "User"
-msgstr "Naudotojas"
+msgstr ""
 
 #: .\accounts\models.py:71
 msgid "Speedy Composer Profile"
-msgstr "Speedy Composer profilis"
+msgstr ""
 
 #: .\accounts\models.py:72
 msgid "Speedy Composer Profiles"
-msgstr "Speedy Composer profiliai"
+msgstr ""
 
 #: .\compose\models.py:18 .\compose\models.py:58
 msgid "chords template"
-msgstr "akordų šablonas"
+msgstr ""
 
 #: .\compose\models.py:19
 msgid "chords templates"
-msgstr "akordų šablonai"
+msgstr ""
 
 #: .\compose\models.py:28 .\compose\models.py:59
 msgid "accompaniment"
-msgstr "akompanimentas"
+msgstr ""
 
 #: .\compose\models.py:29
 msgid "accompaniments"
-msgstr "akompanimentai"
+msgstr ""
 
 #: .\compose\models.py:39
 msgid "user"
-msgstr "naudotojas"
+msgstr ""
 
 #: .\compose\models.py:42 .\compose\models.py:57
 msgid "folder"
-msgstr "aplankas"
+msgstr ""
 
 #: .\compose\models.py:43
 msgid "folders"
-msgstr "aplankai"
+msgstr ""
 
 #: .\compose\models.py:60
 msgid "tempo"
-msgstr "tempas"
+msgstr ""
 
 #: .\compose\models.py:61
 msgid "public"
-msgstr "viešas"
+msgstr ""
 
 #: .\compose\models.py:64
 msgid "composition"
-msgstr "kompozicija"
+msgstr ""
 
 #: .\compose\models.py:65
 msgid "compositions"
-msgstr "kompozicijos"
+msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"
-msgstr "Apie Speedy Composer"
+msgstr ""
 
 #: .\templates\about\about.html:15
 #, python-format
@@ -95,24 +95,14 @@ msgid ""
 "compose will be saved in your personal compositions directory. You will be "
 "able to rename compositions, delete them and share them with your friends."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"Speedy "
-"Composer\">Speedy Composer</a> bus nauja svetainė, skirta automatiškai kurti"
-" melodijas Speedy Net nariams. Ji naudos dirbtinių neuroninių tinklų "
-"technologiją, kad sukurtų melodijas jums. Jūsų sukurtos melodijos bus "
-"išsaugomos jūsų asmeniniame kompozicijų kataloge. Galėsite pervadinti "
-"kompozicijas, jas ištrinti ir dalytis jomis su draugais."
 
 #: .\templates\about\about.html:17
 msgid ""
 "Speedy Composer will be available in two languages - English and Hebrew. If "
-"you want to know how it works, you can read the <a "
-"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
-"(November 1999)\">documentation</a> from November 1999."
+"you want to know how it works, you can read the <a href=\"https://www."
+"speedysoftware.com/composer/\" title=\"Speedy Composer (November "
+"1999)\">documentation</a> from November 1999."
 msgstr ""
-"Speedy Composer bus prieinamas dviem kalbomis – anglų ir hebrajų. Jei norite"
-" sužinoti, kaip jis veikia, galite perskaityti 1999 m. lapkričio <a "
-"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
-"(November 1999)\">dokumentaciją</a>."
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -120,49 +110,39 @@ msgid ""
 "Speedy Composer are free software & open source projects. If you want to "
 "help developing Speedy Composer, please contact me by email."
 msgstr ""
-"Visos Speedy Composer funkcijos bus nemokamos. Speedy Net ir Speedy Composer"
-" yra nemokamos programinės įrangos ir atvirojo kodo projektai. Jei norite "
-"padėti kurti Speedy Composer, susisiekite su manimi el. paštu."
 
 #: .\templates\about\about.html:21
 msgid ""
-"Speedy Composer is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Composer pavadintas <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a> – kalytės, kuri daug metų buvo su mumis ir mirė "
-"2003 m., vardu. Speedy 1988 m. atvedė 7 šuniukus."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr "Ačiū ir sėkmės,"
+msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr "Uri Rodberg"
+msgstr ""
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
-msgstr "Speedy Net ir Speedy Composer įkūrėjas ir direktorius,"
+msgstr ""
 
 #: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr ""
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are currently looking for volunteers to help us convert Speedy Composer "
 "to Python."
 msgstr ""
-"Šiuo metu ieškome savanorių, kurie padėtų mums perkelti Speedy Composer į "
-"Python."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Composer!"
-msgstr "Sveiki atvykę į Speedy Composer!"
+msgstr ""
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -176,23 +156,10 @@ msgid ""
 "by Speedy Composer, and when the website is reopened we will upload them to "
 "the new site."
 msgstr ""
-"Dėkojame už susidomėjimą Speedy Composer. Speedy Composer yra automatinė "
-"programa melodijoms kurti Speedy Net nariams. Neseniai pakeitėme Speedy Net "
-"šaltinio kodą ir perkėlėme jį į Python kalbą bei Django karkasą. Kadangi "
-"Speedy Composer iš pradžių buvo parašytas PHP kalba, jis nėra pritaikytas "
-"veikti su Speedy Net dabartine forma. Todėl deja buvome priversti laikinai "
-"uždaryti programą Speedy Composer. Bet nesijaudinkite – turime visų Speedy "
-"Composer sukurtų melodijų atsargines kopijas ir, kai svetainė vėl bus "
-"atidaryta, jas įkelsime į naują svetainę."
 
 #: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "
-"to Python. If you are interested in volunteering, please contact me by "
-"email."
+"to Python. If you are interested in volunteering, please contact me by email."
 msgstr ""
-"Speedy Composer ir Speedy Net yra atvirojo kodo programos, nemokama "
-"programinė įranga. Šiuo metu ieškome savanorių, kurie padėtų mums perkelti "
-"Speedy Composer į Python. Jei norite savanoriauti, susisiekite su manimi el."
-" paštu."

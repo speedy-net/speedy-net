@@ -19,71 +19,71 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Composer Accounts"
-msgstr "Speedy Composer հաշիվներ"
+msgstr ""
 
 #: .\accounts\models.py:55
 msgid "Speedy Net User"
-msgstr "Speedy Net օգտատեր"
+msgstr ""
 
 #: .\accounts\models.py:57
 msgid "User"
-msgstr "Օգտատեր"
+msgstr ""
 
 #: .\accounts\models.py:71
 msgid "Speedy Composer Profile"
-msgstr "Speedy Composer պրոֆիլ"
+msgstr ""
 
 #: .\accounts\models.py:72
 msgid "Speedy Composer Profiles"
-msgstr "Speedy Composer պրոֆիլներ"
+msgstr ""
 
 #: .\compose\models.py:18 .\compose\models.py:58
 msgid "chords template"
-msgstr "ակորդների կաղապար"
+msgstr ""
 
 #: .\compose\models.py:19
 msgid "chords templates"
-msgstr "ակորդների կաղապարներ"
+msgstr ""
 
 #: .\compose\models.py:28 .\compose\models.py:59
 msgid "accompaniment"
-msgstr "նվագակցություն"
+msgstr ""
 
 #: .\compose\models.py:29
 msgid "accompaniments"
-msgstr "նվագակցություններ"
+msgstr ""
 
 #: .\compose\models.py:39
 msgid "user"
-msgstr "օգտատեր"
+msgstr ""
 
 #: .\compose\models.py:42 .\compose\models.py:57
 msgid "folder"
-msgstr "թղթապանակ"
+msgstr ""
 
 #: .\compose\models.py:43
 msgid "folders"
-msgstr "թղթապանակներ"
+msgstr ""
 
 #: .\compose\models.py:60
 msgid "tempo"
-msgstr "տեմպ"
+msgstr ""
 
 #: .\compose\models.py:61
 msgid "public"
-msgstr "հրապարակային"
+msgstr ""
 
 #: .\compose\models.py:64
 msgid "composition"
-msgstr "երաժշտական ստեղծագործություն"
+msgstr ""
 
 #: .\compose\models.py:65
 msgid "compositions"
-msgstr "երաժշտական ստեղծագործություններ"
+msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Composer"
-msgstr "Speedy Composer-ի մասին"
+msgstr ""
 
 #: .\templates\about\about.html:15
 #, python-format
@@ -95,25 +95,14 @@ msgid ""
 "compose will be saved in your personal compositions directory. You will be "
 "able to rename compositions, delete them and share them with your friends."
 msgstr ""
-"<a href=\"https://%(language_code)s.speedycomposer.com/\" title=\"Speedy "
-"Composer\">Speedy Composer</a>-ը Speedy Net-ի անդամների համար մեղեդիների "
-"ավտոմատ ստեղծման նոր կայք կլինի։ Այն կօգտագործի արհեստական նեյրոնային "
-"ցանցերի տեխնոլոգիան՝ ձեզ համար մեղեդիներ ստեղծելու համար։ Ձեր ստեղծած "
-"մեղեդիները կպահվեն ձեր անձնական ստեղծագործությունների թղթապանակում։ Դուք "
-"կկարողանաք վերանվանել ստեղծագործությունները, ջնջել դրանք և կիսվել ընկերների "
-"հետ։"
 
 #: .\templates\about\about.html:17
 msgid ""
 "Speedy Composer will be available in two languages - English and Hebrew. If "
-"you want to know how it works, you can read the <a "
-"href=\"https://www.speedysoftware.com/composer/\" title=\"Speedy Composer "
-"(November 1999)\">documentation</a> from November 1999."
+"you want to know how it works, you can read the <a href=\"https://www."
+"speedysoftware.com/composer/\" title=\"Speedy Composer (November "
+"1999)\">documentation</a> from November 1999."
 msgstr ""
-"Speedy Composer-ը հասանելի կլինի երկու լեզվով՝ անգլերեն և եբրայերեն։ Եթե "
-"ցանկանում եք իմանալ, թե ինչպես է այն աշխատում, կարող եք կարդալ 1999 թվականի "
-"նոյեմբերի <a href=\"https://www.speedysoftware.com/composer/\" "
-"title=\"Speedy Composer (November 1999)\">փաստաթղթերը</a>։"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -121,50 +110,39 @@ msgid ""
 "Speedy Composer are free software & open source projects. If you want to "
 "help developing Speedy Composer, please contact me by email."
 msgstr ""
-"Speedy Composer-ի բոլոր հնարավորությունները անվճար կլինեն։ Speedy Net-ը և "
-"Speedy Composer-ը ազատ ծրագրային ապահովման և բաց կոդով նախագծեր են։ Եթե "
-"ցանկանում եք օգնել Speedy Composer-ի մշակմանը, խնդրում եմ կապվեք ինձ հետ "
-"էլփոստով։"
 
 #: .\templates\about\about.html:21
 msgid ""
-"Speedy Composer is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Composer is named after <a href=\"https://www.facebook.com/speedy.the."
+"female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
+"many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
 msgstr ""
-"Speedy Composer-ը անվանվել է <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>-ի պատվին. նա էգ շուն էր, որը շատ տարիներ մեզ հետ"
-" էր և մահացավ 2003 թվականին։ Speedy-ն 1988 թվականին ծնեց 7 լակոտ։"
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr "Շնորհակալություն և հաջողություն,"
+msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr "Uri Rodberg"
+msgstr ""
 
 #: .\templates\about\about.html:25 .\templates\main\main_page.html:25
 msgid "Founder and Director of Speedy Net and Speedy Composer,"
-msgstr "Speedy Net-ի և Speedy Composer-ի հիմնադիր և տնօրեն,"
+msgstr ""
 
 #: .\templates\about\about.html:26 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr ""
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are currently looking for volunteers to help us convert Speedy Composer "
 "to Python."
 msgstr ""
-"Այս պահին մենք փնտրում ենք կամավորների, որոնք կօգնեն մեզ Speedy Composer-ը "
-"փոխակերպել Python-ի։"
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Composer!"
-msgstr "Բարի գալուստ Speedy Composer։"
+msgstr ""
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -178,24 +156,10 @@ msgid ""
 "by Speedy Composer, and when the website is reopened we will upload them to "
 "the new site."
 msgstr ""
-"Շնորհակալություն Speedy Composer-ի նկատմամբ ցուցաբերած հետաքրքրության համար։"
-" Speedy Composer-ը Speedy Net-ի անդամների համար մեղեդիներ ավտոմատ ստեղծելու "
-"հավելված է։ Վերջերս մենք փոփոխություններ կատարեցինք Speedy Net-ի սկզբնական "
-"կոդում և այն փոխակերպեցինք Python լեզվի և Django շրջանակի։ Քանի որ Speedy "
-"Composer-ը սկզբում գրվել էր PHP-ով, այն հարմարեցված չէ Speedy Net-ի հետ "
-"աշխատելու իր ներկա տեսքով։ Ուստի, ցավոք, մենք ստիպված եղանք ժամանակավորապես "
-"փակել Speedy Composer հավելվածը։ Բայց մի անհանգստացեք. մենք պահել ենք Speedy"
-" Composer-ի ստեղծած բոլոր մեղեդիների պահուստային պատճենները և կայքը "
-"վերաբացվելիս դրանք կվերբեռնենք նոր կայք։"
 
 #: .\templates\main\main_page.html:21
 msgid ""
 "Speedy Composer and Speedy Net are open source applications, free software. "
 "We are currently looking for volunteers to help us convert Speedy Composer "
-"to Python. If you are interested in volunteering, please contact me by "
-"email."
+"to Python. If you are interested in volunteering, please contact me by email."
 msgstr ""
-"Speedy Composer-ը և Speedy Net-ը բաց կոդով հավելվածներ են՝ ազատ ծրագրային "
-"ապահովում։ Այս պահին մենք փնտրում ենք կամավորների, որոնք կօգնեն մեզ Speedy "
-"Composer-ը փոխակերպել Python-ի։ Եթե ցանկանում եք կամավորություն անել, "
-"խնդրում եմ կապվեք ինձ հետ էլփոստով։"

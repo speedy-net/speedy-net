@@ -20,35 +20,35 @@ msgstr ""
 
 #: .\accounts\apps.py:14
 msgid "Speedy Mail Software Accounts"
-msgstr "Računi Speedy Mail Software"
+msgstr ""
 
 #: .\accounts\models.py:25
 msgid "Speedy Net User"
-msgstr "Uporabnik Speedy Net"
+msgstr ""
 
 #: .\accounts\models.py:27
 msgid "User"
-msgstr "Uporabnik"
+msgstr ""
 
 #: .\accounts\models.py:41
 msgid "Speedy Mail Profile"
-msgstr "Profil Speedy Mail"
+msgstr ""
 
 #: .\accounts\models.py:42
 msgid "Speedy Mail Profiles"
-msgstr "Profili Speedy Mail"
+msgstr ""
 
 #: .\templates\about\about.html:11
 msgid "About Speedy Mail Software"
-msgstr "O Speedy Mail Software"
+msgstr ""
 
 #: .\templates\about\about.html:15
 msgid ""
-"Speedy Mail Software will be a free software and open source web-based email"
-" such as Gmail. We want the mail to be as similar as possible to the "
+"Speedy Mail Software will be a free software and open source web-based email "
+"such as Gmail. We want the mail to be as similar as possible to the "
 "excellent email of Google, Gmail. When we develop such a mail software, we "
-"intend to run a free email service to all members of Speedy Net, so that the"
-" username of each person at Speedy Net + the speedy.net domain name will be "
+"intend to run a free email service to all members of Speedy Net, so that the "
+"username of each person at Speedy Net + the speedy.net domain name will be "
 "the email address of the user. In the past we operated an email like this, "
 "but unfortunately we had to close it because it was a lot worse than Gmail, "
 "in terms of features and storage, and also because we were not able to "
@@ -57,18 +57,6 @@ msgid ""
 "Speedy Mail and will allow any company or organization to operate a similar "
 "web-based email on their site."
 msgstr ""
-"Speedy Mail Software bo prosta in odprtokodna spletna e-pošta, kot je Gmail."
-" Želimo, da je pošta čim bolj podobna odlični Googlovi e-pošti Gmail. Ko "
-"bomo razvili takšno programsko opremo za e-pošto, nameravamo vsem članom "
-"Speedy Net ponuditi brezplačno e-poštno storitev, tako da bo uporabniško ime"
-" vsake osebe na Speedy Net + domena speedy.net njen e-poštni naslov. V "
-"preteklosti smo upravljali takšno e-pošto, a smo jo žal morali ukiniti, ker "
-"je bila bistveno slabša od Gmaila glede funkcij in prostora za shranjevanje,"
-" pa tudi ker nismo mogli obvladati težave z neželeno pošto (\"junk mail\"), "
-"poslano našim strankam. Če pa bomo lahko pridobili prostovoljce za izdelavo "
-"dobrega e-poštnega programa, bomo ponovno zagnali Speedy Mail in vsakemu "
-"podjetju ali organizaciji omogočili upravljanje podobne spletne e-pošte na "
-"svojem spletnem mestu."
 
 #: .\templates\about\about.html:17
 msgid ""
@@ -77,50 +65,40 @@ msgid ""
 "free software & open source projects. If you want to help developing Speedy "
 "Mail Software, please contact me by email."
 msgstr ""
-"Speedy Mail Software bo na voljo v dveh jezikih – angleščini in hebrejščini "
-"ter bo brezplačen. Speedy Net in Speedy Mail Software sta projekta proste in"
-" odprtokodne programske opreme. Če želite pomagati pri razvoju Speedy Mail "
-"Software, me prosim kontaktirajte po e-pošti."
 
 #: .\templates\about\about.html:19
 msgid ""
-"Speedy Mail Software is named after <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, a female dog that was with us for many years "
-"and died in 2003. Speedy gave birth to 7 puppies in 1988."
+"Speedy Mail Software is named after <a href=\"https://www.facebook.com/"
+"speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was "
+"with us for many years and died in 2003. Speedy gave birth to 7 puppies in "
+"1988."
 msgstr ""
-"Speedy Mail Software je poimenovan po <a "
-"href=\"https://www.facebook.com/speedy.the.female.dog\" "
-"title=\"Speedy\">Speedy</a>, psički, ki je bila z nami več let in je umrla "
-"leta 2003. Speedy je leta 1988 skotila 7 mladičev."
 
 #: .\templates\about\about.html:21 .\templates\main\main_page.html:23
 msgid "Thank you and good luck,"
-msgstr "Hvala in veliko sreče,"
+msgstr ""
 
 #: .\templates\about\about.html:22 .\templates\main\main_page.html:24
 msgid "Uri Rodberg"
-msgstr "Uri Rodberg"
+msgstr ""
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:25
 msgid "Founder and director of Speedy Net and Speedy Mail,"
-msgstr "Ustanovitelj in direktor Speedy Net in Speedy Mail,"
+msgstr ""
 
 #: .\templates\about\about.html:24 .\templates\main\main_page.html:26
 msgid "Speedy Paz Technologies Ltd."
-msgstr "Speedy Paz Technologies Ltd."
+msgstr ""
 
 #: .\templates\main\main_page.html:9
 msgid ""
 "We are looking for volunteers to help us develop Speedy Mail Software, a "
 "free software and open source web-based email such as Gmail."
 msgstr ""
-"Iščemo prostovoljce, ki bi nam pomagali razvijati Speedy Mail Software, "
-"prosto in odprtokodno spletno e-pošto, kot je Gmail."
 
 #: .\templates\main\main_page.html:15
 msgid "Welcome to Speedy Mail Software!"
-msgstr "Dobrodošli v Speedy Mail Software!"
+msgstr ""
 
 #: .\templates\main\main_page.html:19
 msgid ""
@@ -137,19 +115,6 @@ msgid ""
 "good email program, we will reactivate Speedy Mail and will allow any "
 "company or organization to operate a similar web-based email on their site."
 msgstr ""
-"Iščemo prostovoljce, ki bi nam pomagali razvijati Speedy Mail Software, "
-"prosto in odprtokodno spletno e-pošto, kot je Gmail. Želimo, da je pošta čim"
-" bolj podobna odlični Googlovi e-pošti Gmail. Ko bomo razvili takšno "
-"programsko opremo za e-pošto, nameravamo vsem članom Speedy Net ponuditi "
-"brezplačno e-poštno storitev, tako da bo uporabniško ime vsake osebe na "
-"Speedy Net + domena speedy.net njen e-poštni naslov. V preteklosti smo "
-"upravljali takšno e-pošto, a smo jo žal morali ukiniti, ker je bila bistveno"
-" slabša od Gmaila glede funkcij in prostora za shranjevanje, pa tudi ker "
-"nismo mogli obvladati težave z neželeno pošto (\"junk mail\"), poslano našim"
-" strankam. Če pa bomo lahko pridobili prostovoljce za izdelavo dobrega "
-"e-poštnega programa, bomo ponovno zagnali Speedy Mail in vsakemu podjetju "
-"ali organizaciji omogočili upravljanje podobne spletne e-pošte na svojem "
-"spletnem mestu."
 
 #: .\templates\main\main_page.html:21
 msgid ""
@@ -157,6 +122,3 @@ msgid ""
 "Net is also free software and open source. If you are interested in "
 "volunteering, please contact me by email."
 msgstr ""
-"Speedy Mail Software bo uporabljal programska jezika Python in JavaScript. "
-"Speedy Net je prav tako prosta in odprtokodna programska oprema. Če vas "
-"zanima prostovoljno delo, me prosim kontaktirajte po e-pošti."
