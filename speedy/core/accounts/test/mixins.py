@@ -1329,7 +1329,7 @@ if (django_settings.TESTS):
                     **{gender: 'Vahvista sähköpostiosoitteesi Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Erősítse meg az e-mail-címét a Speedy Net oldalon' for gender in User.ALL_GENDERS},
+                    **{gender: 'Erősítse meg e-mail címét a(z) Speedy Net oldalon' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'ยืนยันที่อยู่อีเมลของคุณบน Speedy Net' for gender in User.ALL_GENDERS},
@@ -1338,25 +1338,25 @@ if (django_settings.TESTS):
                     **{gender: 'Επιβεβαιώστε τη διεύθυνση email σας στο Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{gender: 'Sahkan alamat e-mel anda di Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Sahkan alamat e-mel anda pada Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Потврдите своју имејл адресу на Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Потврдите своју адресу е-поште на Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Confirmați adresa dvs. de e-mail pe Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Confirmați-vă adresa de e-mail pe Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
                     **{gender: 'Speedy Net-এ আপনার ইমেল ঠিকানা নিশ্চিত করুন' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Confirma la teva adreça electrònica a Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Confirma la teva adreça de correu electrònic a Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Bekreft e-postadressen din på Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'bg': {
-                    **{gender: 'Потвърдете имейл адреса си в Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Потвърдете своя имейл адрес на Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'da': {
                     **{gender: 'Bekræft din e-mailadresse på Speedy Net' for gender in User.ALL_GENDERS},
@@ -1365,16 +1365,16 @@ if (django_settings.TESTS):
                     **{gender: 'Potvrďte svoju e-mailovú adresu na Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'Speedy Net पर अपना ईमेल पता पुष्टि करें' for gender in User.ALL_GENDERS},
+                    **{gender: 'अपना ईईमेल पता सत्यापित करें Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'et': {
-                    **{gender: 'Kinnitage oma e-posti aadress Speedy Net platvormil' for gender in User.ALL_GENDERS},
+                    **{gender: 'Kinnitage oma e-posti aadress aadressil Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Potvrdite svoju adresu e-pošte na platformi Speedy Net' for gender in User.ALL_GENDERS},
+                    **{gender: 'Potvrdite svoju adresu e-pošte na Speedy Net' for gender in User.ALL_GENDERS},
                 },
                 'az': {
-                    **{gender: 'Speedy Net-də e-pocç ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Net-də e-poçt ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
                     **{gender: '請喺 Speedy Net 度確認你嘅電郵地址' for gender in User.ALL_GENDERS},
@@ -1472,7 +1472,7 @@ if (django_settings.TESTS):
                     **{gender: 'Vahvista sähköpostiosoitteesi Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Erősítse meg az e-mail-címét a Speedy Match oldalon' for gender in User.ALL_GENDERS},
+                    **{gender: 'Erősítse meg e-mail címét a(z) Speedy Match oldalon' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'ยืนยันที่อยู่อีเมลของคุณบน Speedy Match' for gender in User.ALL_GENDERS},
@@ -1481,25 +1481,25 @@ if (django_settings.TESTS):
                     **{gender: 'Επιβεβαιώστε τη διεύθυνση email σας στο Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{gender: 'Sahkan alamat e-mel anda di Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Sahkan alamat e-mel anda pada Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Потврдите своју имејл адресу на Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Потврдите своју адресу е-поште на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Confirmați adresa dvs. de e-mail pe Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Confirmați-vă adresa de e-mail pe Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
                     **{gender: 'Speedy Match-এ আপনার ইমেল ঠিকানা নিশ্চিত করুন' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Confirma la teva adreça electrònica a Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Confirma la teva adreça de correu electrònic a Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Bekreft e-postadressen din på Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'bg': {
-                    **{gender: 'Потвърдете имейл адреса си в Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Потвърдете своя имейл адрес на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'da': {
                     **{gender: 'Bekræft din e-mailadresse på Speedy Match' for gender in User.ALL_GENDERS},
@@ -1508,16 +1508,16 @@ if (django_settings.TESTS):
                     **{gender: 'Potvrďte svoju e-mailovú adresu na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'Speedy Match पर अपना ईमेल पता पुष्टि करें' for gender in User.ALL_GENDERS},
+                    **{gender: 'अपना ईईमेल पता सत्यापित करें Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'et': {
-                    **{gender: 'Kinnitage oma e-posti aadress Speedy Match platvormil' for gender in User.ALL_GENDERS},
+                    **{gender: 'Kinnitage oma e-posti aadress aadressil Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Potvrdite svoju adresu e-pošte na platformi Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Potvrdite svoju adresu e-pošte na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'az': {
-                    **{gender: 'Speedy Match-də e-pocç ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Match-də e-poçt ünvanınızı təsdiqləyin' for gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
                     **{gender: '請喺 Speedy Match 度確認你嘅電郵地址' for gender in User.ALL_GENDERS},

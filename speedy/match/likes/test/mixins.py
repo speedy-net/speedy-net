@@ -557,22 +557,22 @@ if (django_settings.TESTS):
                     **{gender: 'Joku tykkää sinusta Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Valaki kedvel téged a Speedy Match oldalon' for gender in User.ALL_GENDERS},
+                    **{gender: 'Valaki kedveli Önt a(z) Speedy Match oldalon' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'มีคนกดถูกใจคุณบน Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'มีคนถูกใจคุณบน Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Κάποιος σας συμπαθεί στο Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Κάποιος σας έκανε «Μου αρέσει» στο Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Seseorang menyukai anda di Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Неко вас је лајковао на Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Неко вас лајкује на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Cineva te place pe Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Cuiva îi plăceți pe Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
                     **{gender: 'Speedy Match-এ কেউ আপনাকে পছন্দ করেছে' for gender in User.ALL_GENDERS},
@@ -584,25 +584,25 @@ if (django_settings.TESTS):
                     **{gender: 'Noen liker deg på Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'bg': {
-                    **{gender: 'Някой ви харесва в Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Някой ви харесва на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'da': {
                     **{gender: 'Nogen kan lide dig på Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'sk': {
-                    **{gender: 'Niekomu sa páčite na Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Niekto vás má rád na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'Speedy Match पर कोई आपको पसंद करता है' for gender in User.ALL_GENDERS},
+                    **{gender: 'कोई आपको पसंद करता है Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'et': {
-                    **{gender: 'Kellelegi meeldid Speedy Match platvormil' for gender in User.ALL_GENDERS},
+                    **{gender: 'Sa meeldid kellelegi teenuses Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Nekome se sviđate na platformi Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Nekome se sviđate na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'az': {
-                    **{gender: 'Kimsə sizi Speedy Match-də bəyənir' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Match-də kimsə sizi bəyənir' for gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
                     **{gender: '有人喺 Speedy Match 度鍾意你' for gender in User.ALL_GENDERS},
@@ -623,7 +623,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Match da kimdir sizni yoqtirdi' for gender in User.ALL_GENDERS},
                 },
                 'ta': {
-                    **{gender: 'யாரோ உங்களை Speedy Match இல் விரும்புகிறார்கள்' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Match இல் யாரோ உங்களை விரும்புகிறார்கள்' for gender in User.ALL_GENDERS},
                 },
                 'lv': {
                     **{gender: 'Kāds vietnē Speedy Match izrāda jums simpātijas' for gender in User.ALL_GENDERS},
