@@ -516,13 +516,13 @@ if (django_settings.TESTS):
                     **{gender: 'Вы кому-то нравитесь на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '在 Speedy Match 上有人喜欢你' for gender in User.ALL_GENDERS},
+                    **{gender: '有人喜歡你Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Ktoś Cię lubi na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'fa': {
-                    **{gender: 'شخصی در Speedy Match شما را پسندیده است' for gender in User.ALL_GENDERS},
+                    **{gender: 'کسی شما را در Speedy Match دوست دارد' for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מישהי עשתה לך לייק בספידי מץ'",
@@ -533,13 +533,13 @@ if (django_settings.TESTS):
                     **{gender: '누군가가 다음에서 귀하를 좋아합니다 Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{gender: 'هناك شخص معجب بك على Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'شخص ما معجب بك على Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'id': {
-                    **{gender: 'Seseorang menyukai Anda di Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Seseorang menyukaimu di Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Ви комусь сподобалися у Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ти комусь подобаєшся на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
                     **{gender: 'Birisi sizi Speedy Match üzerinde beğendi' for gender in User.ALL_GENDERS},

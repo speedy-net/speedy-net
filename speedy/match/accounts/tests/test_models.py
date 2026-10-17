@@ -110,8 +110,8 @@ if (django_settings.TESTS):
                     "expected_error_message_keys_and_ranks_invalid": self._diet_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_diet_match_option_should_be_5_hearts_error_message,
                 }
-                test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
-                test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_keys_and_ranks_invalid"] = [str([test_settings["expected_error_message_keys_and_ranks_invalid"]]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_max_rank_invalid"] = [str([test_settings["expected_error_message_max_rank_invalid"]]).replace("\xa0", "\\xa0")]
                 return test_settings
 
             def get_smoking_status_match_default_test_settings(self):
@@ -127,8 +127,8 @@ if (django_settings.TESTS):
                     "expected_error_message_keys_and_ranks_invalid": self._smoking_status_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_smoking_status_match_option_should_be_5_hearts_error_message,
                 }
-                test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
-                test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_keys_and_ranks_invalid"] = [str([test_settings["expected_error_message_keys_and_ranks_invalid"]]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_max_rank_invalid"] = [str([test_settings["expected_error_message_max_rank_invalid"]]).replace("\xa0", "\\xa0")]
                 return test_settings
 
             def get_relationship_status_match_default_test_settings(self):
@@ -144,8 +144,8 @@ if (django_settings.TESTS):
                     "expected_error_message_keys_and_ranks_invalid": self._relationship_status_match_is_required_error_message,
                     "expected_error_message_max_rank_invalid": self._at_least_one_relationship_status_match_option_should_be_5_hearts_error_message,
                 }
-                test_settings["expected_error_messages_keys_and_ranks_invalid"] = ["['{expected_error_message_keys_and_ranks_invalid}']".format(expected_error_message_keys_and_ranks_invalid=test_settings["expected_error_message_keys_and_ranks_invalid"]).replace("\xa0", "\\xa0")]
-                test_settings["expected_error_messages_max_rank_invalid"] = ["['{expected_error_message_max_rank_invalid}']".format(expected_error_message_max_rank_invalid=test_settings["expected_error_message_max_rank_invalid"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_keys_and_ranks_invalid"] = [str([test_settings["expected_error_message_keys_and_ranks_invalid"]]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages_max_rank_invalid"] = [str([test_settings["expected_error_message_max_rank_invalid"]]).replace("\xa0", "\\xa0")]
                 return test_settings
 
             def get_field_default_value(self, field_name):
@@ -1273,7 +1273,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._a_profile_picture_is_required_error_message,
                     "expected_counts_tuple": (1, 1, 26, 0),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_profile_description(self):
@@ -1288,7 +1288,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._please_write_a_few_words_about_yourself_error_message,
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_city(self):
@@ -1303,7 +1303,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._please_write_where_you_live_error_message,
                     "expected_counts_tuple": (7, 2, 0, 7),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_children(self):
@@ -1318,7 +1318,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._do_you_have_children_how_many_error_message,
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_more_children(self):
@@ -1333,7 +1333,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._do_you_want_more_children_error_message,
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_match_description(self):
@@ -1348,7 +1348,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._who_is_your_ideal_partner_error_message,
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_height(self):
@@ -1363,7 +1363,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._height_must_be_from_1_to_450_cm_error_message,
                     "expected_counts_tuple": (450, 22, 0, 13),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_diet(self):
@@ -1378,7 +1378,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._your_diet_is_required_error_message,
                     "expected_counts_tuple": (3, 1, 0, 34),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_smoking_status(self):
@@ -1393,7 +1393,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._your_smoking_status_is_required_error_message,
                     "expected_counts_tuple": (3, 1, 0, 34),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_relationship_status(self):
@@ -1408,7 +1408,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._your_relationship_status_is_required_error_message,
                     "expected_counts_tuple": (9, 1, 0, 34),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_gender_to_match(self):
@@ -1423,7 +1423,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._gender_to_match_is_required_error_message,
                     "expected_counts_tuple": (77, 5, 0, 133),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
@@ -1438,7 +1438,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_counts_tuple": (181, 20, 0, 14),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
@@ -1454,7 +1454,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._minimal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_counts_tuple": (177, 22, 0, 14),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
@@ -1469,7 +1469,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_counts_tuple": (181, 20, 0, 14),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
@@ -1485,7 +1485,7 @@ if (django_settings.TESTS):
                     "expected_error_message": self._maximal_age_to_match_must_be_from_0_to_180_years_error_message,
                     "expected_counts_tuple": (177, 22, 0, 14),
                 }
-                test_settings["expected_error_messages"] = ["['{expected_error_message}']".format(expected_error_message=test_settings["expected_error_message"]).replace("\xa0", "\\xa0")]
+                test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
                 self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
 
             def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
