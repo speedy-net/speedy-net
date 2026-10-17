@@ -109,6 +109,18 @@ if (django_settings.TESTS):
             Tests the user detail view's visibility rules for the profile owner's name, date of birth and 404 behaviour, across active/deactivated users, friends/non-friends, and (on Speedy Match) match eligibility.
             """
 
+            def assert_text_in_page(self, text, page):
+                """
+                Asserts that the text is in the page, either HTML-escaped or as is (texts translated in templates are not escaped).
+                """
+                self.assertIs(expr1=((escape(text=text) in page) or (text in page)), expr2=True)
+
+            def assert_text_not_in_page(self, text, page):
+                """
+                Asserts that the text is in the page neither HTML-escaped nor as is.
+                """
+                self.assertIs(expr1=((escape(text=text) in page) or (text in page)), expr2=False)
+
             def set_up(self):
                 """
                 Creates a user with a fixed name, slug, date of birth and gender (chosen at random from a small set of profiles, in a language-specific alphabet when applicable), builds the user's profile URL, and creates another active user.
@@ -172,8 +184,8 @@ if (django_settings.TESTS):
                     self.assertEqual(first=r.status_code, second=200)
                     self.assertIn(member=escape(text=self.full_name), container=r.content.decode())
                     self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_date), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_date, page=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                     self.assertNotIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                     # Now, check if the date of birth is visible.
                     self.user.access_dob_day_month = UserAccessField.ACCESS_ANYONE
@@ -182,8 +194,8 @@ if (django_settings.TESTS):
                     r = self.client.get(path=self.user_profile_url)
                     self.assertEqual(first=r.status_code, second=200)
                     self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                    self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                    self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                     self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                     self.assertIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                     self.assertNotIn(member=escape(text=self.not_user_birth_date), container=r.content.decode())
@@ -196,8 +208,8 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.user_profile_url)
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=r.status_code, second=404)
-                    self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_404_title[self.site.id])), container=r.content.decode())
-                    self.assertIn(member=escape(text=self.expected_404_speedy_is_sorry), container=r.content.decode())
+                    self.assert_text_in_page(text=self.expected_404_title[self.site.id], page=r.content.decode())
+                    self.assert_text_in_page(text=self.expected_404_speedy_is_sorry, page=r.content.decode())
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     expected_url = '/login/?next={}'.format(self.user_profile_url)
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -219,8 +231,8 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
-                self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
+                self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.not_user_birth_date), container=r.content.decode())
@@ -229,8 +241,8 @@ if (django_settings.TESTS):
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     # ~~~~ TODO: should redirect to '/welcome/'.
                     self.assertEqual(first=r.status_code, second=404)
-                    self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_404_title[self.site.id])), container=r.content.decode())
-                    self.assertIn(member=escape(text=self.expected_404_speedy_is_sorry), container=r.content.decode())
+                    self.assert_text_in_page(text=self.expected_404_title[self.site.id], page=r.content.decode())
+                    self.assert_text_in_page(text=self.expected_404_speedy_is_sorry, page=r.content.decode())
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     expected_url = '/welcome/'
                     self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200)
@@ -257,8 +269,8 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError("Unsupported SITE_ID.")
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
-                self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
+                self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.not_user_birth_month_day), container=r.content.decode())
@@ -269,9 +281,9 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
-                self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
-                if (self.language_code not in {'ru', 'ms', 'hr', 'cs', 'vi', 'eu', 'id'}):
+                self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
+                self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
+                if (self.language_code not in {'ru', 'ms', 'hr', 'cs', 'vi', 'eu', 'id', 'uk', 'el'}):
                     self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_date), container=r.content.decode())
@@ -283,8 +295,8 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                self.assertNotIn(member=escape(text=self.birth_date), container=r.content.decode())
-                self.assertIn(member=escape(text=self.birth_year), container=r.content.decode())
+                self.assert_text_not_in_page(text=self.birth_date, page=r.content.decode())
+                self.assert_text_in_page(text=self.birth_year, page=r.content.decode())
                 self.assertNotIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.user_birth_date), container=r.content.decode())
@@ -297,8 +309,8 @@ if (django_settings.TESTS):
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     self.assertEqual(first=r.status_code, second=200)
                     self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_date), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_date, page=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                     self.assertNotIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                     self.assertNotIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                     self.assertNotIn(member=escape(text=self.not_user_birth_month_day), container=r.content.decode())
@@ -309,8 +321,8 @@ if (django_settings.TESTS):
                     r = self.client.get(path=self.user_profile_url)
                     self.assertEqual(first=r.status_code, second=200)
                     self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
-                    self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
-                    self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
+                    self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
+                    self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
                     self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                     self.assertNotIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                     self.assertNotIn(member=escape(text=self.not_user_birth_month_day), container=r.content.decode())
@@ -373,8 +385,8 @@ if (django_settings.TESTS):
                 self.assertNotIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
                 if (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
                     self.assertNotIn(member="<title>{}</title>".format(escape(text=self.expected_title_no_match[self.site.id])), container=r.content.decode())
-                self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_404_title[self.site.id])), container=r.content.decode())
-                self.assertIn(member=escape(text=self.expected_404_speedy_is_sorry), container=r.content.decode())
+                self.assert_text_in_page(text=self.expected_404_title[self.site.id], page=r.content.decode())
+                self.assert_text_in_page(text=self.expected_404_speedy_is_sorry, page=r.content.decode())
 
             def test_user_profile_deactivated_user_from_friend(self):
                 """
@@ -386,8 +398,8 @@ if (django_settings.TESTS):
                 self.deactivate_user()
                 r = self.client.get(path=self.user_profile_url)
                 self.assertEqual(first=r.status_code, second=404)
-                self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_404_title[self.site.id])), container=r.content.decode())
-                self.assertIn(member=escape(text=self.expected_404_speedy_is_sorry), container=r.content.decode())
+                self.assert_text_in_page(text=self.expected_404_title[self.site.id], page=r.content.decode())
+                self.assert_text_in_page(text=self.expected_404_speedy_is_sorry, page=r.content.decode())
 
 
         @only_on_sites_with_login

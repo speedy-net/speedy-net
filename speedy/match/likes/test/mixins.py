@@ -510,7 +510,7 @@ if (django_settings.TESTS):
                     **{gender: 'Iemand vindt je leuk op Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ja': {
-                    **{gender: 'Speedy Match であなたに「いいね！」した人がいます' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Match で誰かがあなたを好きです' for gender in User.ALL_GENDERS},
                 },
                 'ru': {
                     **{gender: 'Вы кому-то нравитесь на Speedy Match' for gender in User.ALL_GENDERS},
@@ -542,13 +542,13 @@ if (django_settings.TESTS):
                     **{gender: 'Ти комусь подобаєшся на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{gender: 'Birisi sizi Speedy Match üzerinde beğendi' for gender in User.ALL_GENDERS},
+                    **{gender: "Birisi seni Speedy Match'da beğeniyor" for gender in User.ALL_GENDERS},
                 },
                 'vi': {
                     **{gender: 'Có người thích bạn trên Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
-                    **{gender: 'Někomu se líbíte na Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Někdo vás má rád na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: 'Någon gillar dig på Speedy Match' for gender in User.ALL_GENDERS},
@@ -605,7 +605,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Match-də kimsə sizi bəyənir' for gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
-                    **{gender: '有人喺 Speedy Match 度鍾意你' for gender in User.ALL_GENDERS},
+                    **{gender: '有人喜歡你Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'lt': {
                     **{gender: 'Kažkas jus pažymėjo „Patinka“ svetainėje Speedy Match' for gender in User.ALL_GENDERS},
