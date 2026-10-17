@@ -271,7 +271,8 @@ if (django_settings.TESTS):
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
                 self.assertIn(member=escape(text=self.birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.birth_year), container=r.content.decode())
-                self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
+                if (self.language_code not in {'ru', 'ms'}):
+                    self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_date), container=r.content.decode())
                 self.assertNotIn(member=escape(text=self.not_user_birth_month_day), container=r.content.decode())

@@ -513,7 +513,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Match であなたに「いいね！」した人がいます' for gender in User.ALL_GENDERS},
                 },
                 'ru': {
-                    **{gender: 'Кому-то вы понравились в Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Вы кому-то нравитесь на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
                     **{gender: '在 Speedy Match 上有人喜欢你' for gender in User.ALL_GENDERS},

@@ -174,7 +174,7 @@ if (django_settings.TESTS):
                 :param user: The user whose profile fields are validated.
                 :type user: User
                 """
-                all_fields = [field_name.format(language_code=self.language_code) for field_name in ['profile_picture', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
+                all_fields = [field_name.format(language_code=self.language_code.replace('-', '_')) for field_name in ['profile_picture', 'profile_description_{language_code}', 'city_{language_code}', 'children_{language_code}', 'more_children_{language_code}', 'match_description_{language_code}', 'height', 'diet', 'smoking_status', 'relationship_status', 'gender_to_match', 'min_age_to_match', 'max_age_to_match', 'min_max_age_to_match', 'diet_match', 'smoking_status_match', 'relationship_status_match']]
                 _all_fields = []
                 for step in utils.get_steps_range():
                     fields = utils.get_step_fields_to_validate(step=step)
