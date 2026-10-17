@@ -4096,8 +4096,8 @@ if (django_settings.TESTS):
                 # Check names in Japanese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ja': "Doron",
+                    'last_name_ja': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4124,8 +4124,8 @@ if (django_settings.TESTS):
                 # Check names in Russian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ru': "Doron",
+                    'last_name_ru': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4152,8 +4152,8 @@ if (django_settings.TESTS):
                 # Check names in Chinese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_zh': "Doron",
+                    'last_name_zh': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4180,8 +4180,8 @@ if (django_settings.TESTS):
                 # Check names in Polish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_pl': "Doron",
+                    'last_name_pl': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4208,8 +4208,8 @@ if (django_settings.TESTS):
                 # Check names in Persian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_fa': "Doron",
+                    'last_name_fa': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4264,8 +4264,8 @@ if (django_settings.TESTS):
                 # Check names in Korean alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4292,8 +4292,8 @@ if (django_settings.TESTS):
                 # Check names in Arabic alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ar': "Doron",
+                    'last_name_ar': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4320,8 +4320,8 @@ if (django_settings.TESTS):
                 # Check names in Indonesian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_id': "Doron",
+                    'last_name_id': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4348,8 +4348,8 @@ if (django_settings.TESTS):
                 # Check names in Ukrainian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_uk': "Doron",
+                    'last_name_uk': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4376,8 +4376,8 @@ if (django_settings.TESTS):
                 # Check names in Turkish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4404,8 +4404,8 @@ if (django_settings.TESTS):
                 # Check names in Vietnamese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4432,8 +4432,8 @@ if (django_settings.TESTS):
                 # Check names in Czech alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4460,8 +4460,8 @@ if (django_settings.TESTS):
                 # Check names in Swedish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4488,8 +4488,8 @@ if (django_settings.TESTS):
                 # Check names in Finnish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4516,8 +4516,8 @@ if (django_settings.TESTS):
                 # Check names in Hungarian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_hu': "Doron",
+                    'last_name_hu': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4544,8 +4544,8 @@ if (django_settings.TESTS):
                 # Check names in Thai alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_th': "Doron",
+                    'last_name_th': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4572,8 +4572,8 @@ if (django_settings.TESTS):
                 # Check names in Greek alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_el': "Doron",
+                    'last_name_el': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4600,8 +4600,8 @@ if (django_settings.TESTS):
                 # Check names in Malay alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ms': "Doron",
+                    'last_name_ms': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4628,8 +4628,8 @@ if (django_settings.TESTS):
                 # Check names in Serbian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_sr': "Doron",
+                    'last_name_sr': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4656,8 +4656,8 @@ if (django_settings.TESTS):
                 # Check names in Romanian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ro': "Doron",
+                    'last_name_ro': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4684,8 +4684,8 @@ if (django_settings.TESTS):
                 # Check names in Bengali alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_bn': "Doron",
+                    'last_name_bn': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4712,8 +4712,8 @@ if (django_settings.TESTS):
                 # Check names in Catalan alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ca': "Doron",
+                    'last_name_ca': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4740,8 +4740,8 @@ if (django_settings.TESTS):
                 # Check names in Norwegian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_no': "Doron",
+                    'last_name_no': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4768,8 +4768,8 @@ if (django_settings.TESTS):
                 # Check names in Bulgarian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_bg': "Doron",
+                    'last_name_bg': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4796,8 +4796,8 @@ if (django_settings.TESTS):
                 # Check names in Danish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_da': "Doron",
+                    'last_name_da': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4824,8 +4824,8 @@ if (django_settings.TESTS):
                 # Check names in Slovak alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_sk': "Doron",
+                    'last_name_sk': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4852,8 +4852,8 @@ if (django_settings.TESTS):
                 # Check names in Hindi alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_hi': "Doron",
+                    'last_name_hi': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4880,8 +4880,8 @@ if (django_settings.TESTS):
                 # Check names in Estonian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_et': "Doron",
+                    'last_name_et': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4908,8 +4908,8 @@ if (django_settings.TESTS):
                 # Check names in Croatian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_hr': "Doron",
+                    'last_name_hr': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4936,8 +4936,8 @@ if (django_settings.TESTS):
                 # Check names in Azerbaijani alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_az': "Doron",
+                    'last_name_az': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4964,8 +4964,8 @@ if (django_settings.TESTS):
                 # Check names in Cantonese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_zh_yue': "Doron",
+                    'last_name_zh_yue': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -4992,8 +4992,8 @@ if (django_settings.TESTS):
                 # Check names in Lithuanian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_lt': "Doron",
+                    'last_name_lt': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5020,8 +5020,8 @@ if (django_settings.TESTS):
                 # Check names in Slovenian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_sl': "Doron",
+                    'last_name_sl': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5048,8 +5048,8 @@ if (django_settings.TESTS):
                 # Check names in Basque alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_eu': "Doron",
+                    'last_name_eu': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5076,8 +5076,8 @@ if (django_settings.TESTS):
                 # Check names in Armenian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_hy': "Doron",
+                    'last_name_hy': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5104,8 +5104,8 @@ if (django_settings.TESTS):
                 # Check names in Uzbek alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_uz': "Doron",
+                    'last_name_uz': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5132,8 +5132,8 @@ if (django_settings.TESTS):
                 # Check names in Tamil alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_ta': "Doron",
+                    'last_name_ta': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5160,8 +5160,8 @@ if (django_settings.TESTS):
                 # Check names in Latvian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "Matalon",
+                    'first_name_lv': "Doron",
+                    'last_name_lv': "Matalon",
                 })
                 self.first_name = "Doron"
                 self.last_name = "Matalon"
@@ -5383,8 +5383,8 @@ if (django_settings.TESTS):
                 # Check names in Japanese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ja': "Doron",
+                    'last_name_ja': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5411,8 +5411,8 @@ if (django_settings.TESTS):
                 # Check names in Russian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ru': "Doron",
+                    'last_name_ru': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5439,8 +5439,8 @@ if (django_settings.TESTS):
                 # Check names in Chinese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_zh': "Doron",
+                    'last_name_zh': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5467,8 +5467,8 @@ if (django_settings.TESTS):
                 # Check names in Polish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_pl': "Doron",
+                    'last_name_pl': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5495,8 +5495,8 @@ if (django_settings.TESTS):
                 # Check names in Persian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_fa': "Doron",
+                    'last_name_fa': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5551,8 +5551,8 @@ if (django_settings.TESTS):
                 # Check names in Korean alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5579,8 +5579,8 @@ if (django_settings.TESTS):
                 # Check names in Arabic alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ar': "Doron",
+                    'last_name_ar': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5607,8 +5607,8 @@ if (django_settings.TESTS):
                 # Check names in Indonesian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_id': "Doron",
+                    'last_name_id': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5635,8 +5635,8 @@ if (django_settings.TESTS):
                 # Check names in Ukrainian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_uk': "Doron",
+                    'last_name_uk': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5663,8 +5663,8 @@ if (django_settings.TESTS):
                 # Check names in Turkish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5691,8 +5691,8 @@ if (django_settings.TESTS):
                 # Check names in Vietnamese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5719,8 +5719,8 @@ if (django_settings.TESTS):
                 # Check names in Czech alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5747,8 +5747,8 @@ if (django_settings.TESTS):
                 # Check names in Swedish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5775,8 +5775,8 @@ if (django_settings.TESTS):
                 # Check names in Finnish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5803,8 +5803,8 @@ if (django_settings.TESTS):
                 # Check names in Hungarian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_hu': "Doron",
+                    'last_name_hu': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5831,8 +5831,8 @@ if (django_settings.TESTS):
                 # Check names in Thai alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_th': "Doron",
+                    'last_name_th': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5859,8 +5859,8 @@ if (django_settings.TESTS):
                 # Check names in Greek alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_el': "Doron",
+                    'last_name_el': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5887,8 +5887,8 @@ if (django_settings.TESTS):
                 # Check names in Malay alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ms': "Doron",
+                    'last_name_ms': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5915,8 +5915,8 @@ if (django_settings.TESTS):
                 # Check names in Serbian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_sr': "Doron",
+                    'last_name_sr': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5943,8 +5943,8 @@ if (django_settings.TESTS):
                 # Check names in Romanian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ro': "Doron",
+                    'last_name_ro': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5971,8 +5971,8 @@ if (django_settings.TESTS):
                 # Check names in Bengali alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_bn': "Doron",
+                    'last_name_bn': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -5999,8 +5999,8 @@ if (django_settings.TESTS):
                 # Check names in Catalan alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ca': "Doron",
+                    'last_name_ca': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6027,8 +6027,8 @@ if (django_settings.TESTS):
                 # Check names in Norwegian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_no': "Doron",
+                    'last_name_no': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6055,8 +6055,8 @@ if (django_settings.TESTS):
                 # Check names in Bulgarian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_bg': "Doron",
+                    'last_name_bg': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6083,8 +6083,8 @@ if (django_settings.TESTS):
                 # Check names in Danish alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_da': "Doron",
+                    'last_name_da': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6111,8 +6111,8 @@ if (django_settings.TESTS):
                 # Check names in Slovak alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_sk': "Doron",
+                    'last_name_sk': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6139,8 +6139,8 @@ if (django_settings.TESTS):
                 # Check names in Hindi alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_hi': "Doron",
+                    'last_name_hi': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6167,8 +6167,8 @@ if (django_settings.TESTS):
                 # Check names in Estonian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_et': "Doron",
+                    'last_name_et': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6195,8 +6195,8 @@ if (django_settings.TESTS):
                 # Check names in Croatian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_hr': "Doron",
+                    'last_name_hr': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6223,8 +6223,8 @@ if (django_settings.TESTS):
                 # Check names in Azerbaijani alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_az': "Doron",
+                    'last_name_az': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6251,8 +6251,8 @@ if (django_settings.TESTS):
                 # Check names in Cantonese alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_zh_yue': "Doron",
+                    'last_name_zh_yue': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6279,8 +6279,8 @@ if (django_settings.TESTS):
                 # Check names in Lithuanian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_lt': "Doron",
+                    'last_name_lt': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6307,8 +6307,8 @@ if (django_settings.TESTS):
                 # Check names in Slovenian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_sl': "Doron",
+                    'last_name_sl': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6335,8 +6335,8 @@ if (django_settings.TESTS):
                 # Check names in Basque alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_eu': "Doron",
+                    'last_name_eu': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6363,8 +6363,8 @@ if (django_settings.TESTS):
                 # Check names in Armenian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_hy': "Doron",
+                    'last_name_hy': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6391,8 +6391,8 @@ if (django_settings.TESTS):
                 # Check names in Uzbek alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_uz': "Doron",
+                    'last_name_uz': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6419,8 +6419,8 @@ if (django_settings.TESTS):
                 # Check names in Tamil alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_ta': "Doron",
+                    'last_name_ta': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""
@@ -6447,8 +6447,8 @@ if (django_settings.TESTS):
                 # Check names in Latvian alphabet.
                 super().set_up()
                 self.data.update({
-                    'first_name_nl': "Doron",
-                    'last_name_nl': "",
+                    'first_name_lv': "Doron",
+                    'last_name_lv': "",
                 })
                 self.first_name = "Doron"
                 self.last_name = ""

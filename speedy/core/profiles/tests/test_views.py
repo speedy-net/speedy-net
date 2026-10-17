@@ -121,7 +121,7 @@ if (django_settings.TESTS):
                         self.user = ActiveUserFactory(first_name_en="Corrin", last_name_en="Gideon", slug="corrin-gideon", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
                         self.user.first_name_he = "קורין"
                         self.user.last_name_he = "גדעון"
-                    elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                    elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'ja', 'ru', 'zh', 'pl', 'fa', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                         # Check names in English alphabet.
                         self.user = ActiveUserFactory(first_name_en="Bar", last_name_en="Refaeli", slug="bar-refaeli", date_of_birth=date(year=1992, month=9, day=12), gender=User.GENDER_FEMALE)
                     else:
@@ -144,7 +144,7 @@ if (django_settings.TESTS):
                     elif (self.language_code == 'it'):
                         # Check names in Italian alphabet.
                         self.user = ActiveUserFactory(first_name_en="Andrea", last_name_en="Bocelli", slug="andrea-bocelli", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_MALE)
-                    elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi'}):
+                    elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi', 'ja', 'ru', 'zh', 'pl', 'fa', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                         # Check names in English alphabet.
                         self.user = ActiveUserFactory(first_name_en="Doron", last_name_en="Matalon", slug="doron-matalon", date_of_birth=date(year=1978, month=1, day=31), gender=User.GENDER_FEMALE)
                     else:
@@ -333,7 +333,7 @@ if (django_settings.TESTS):
                     if (self.random_choice == 1):
                         if (self.language_code in {'en', 'he', 'fr', 'de'}):
                             self.assertEqual(first=self.user.slug, second="corrin-gideon")
-                        elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi'}):
+                        elif (self.language_code in {'es', 'pt', 'it', 'nl', 'sv', 'ko', 'fi', 'ja', 'ru', 'zh', 'pl', 'fa', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                             self.assertEqual(first=self.user.slug, second="bar-refaeli")
                         else:
                             raise NotImplementedError("Unsupported language_code.")
@@ -351,7 +351,7 @@ if (django_settings.TESTS):
                             self.assertEqual(first=self.user.slug, second="cristiano-ronaldo")
                         elif (self.language_code == 'it'):
                             self.assertEqual(first=self.user.slug, second="andrea-bocelli")
-                        elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi'}):
+                        elif (self.language_code in {'de', 'nl', 'sv', 'ko', 'fi', 'ja', 'ru', 'zh', 'pl', 'fa', 'ar', 'id', 'uk', 'tr', 'vi', 'cs', 'hu', 'th', 'el', 'ms', 'sr', 'ro', 'bn', 'ca', 'no', 'bg', 'da', 'sk', 'hi', 'et', 'hr', 'az', 'zh-yue', 'lt', 'sl', 'eu', 'hy', 'uz', 'ta', 'lv'}):
                             self.assertEqual(first=self.user.slug, second="doron-matalon")
                         else:
                             raise NotImplementedError("Unsupported language_code.")
