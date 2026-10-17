@@ -112,12 +112,18 @@ if (django_settings.TESTS):
             def assert_text_in_page(self, text, page):
                 """
                 Asserts that the text is in the page, either HTML-escaped or as is (texts translated in templates are not escaped).
+
+                :param text: The text to look for.
+                :param page: The decoded page content to search in.
                 """
                 self.assertIs(expr1=((escape(text=text) in page) or (text in page)), expr2=True)
 
             def assert_text_not_in_page(self, text, page):
                 """
                 Asserts that the text is in the page neither HTML-escaped nor as is.
+
+                :param text: The text to look for.
+                :param page: The decoded page content to search in.
                 """
                 self.assertIs(expr1=((escape(text=text) in page) or (text in page)), expr2=False)
 
