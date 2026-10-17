@@ -105,7 +105,7 @@ if (django_settings.TESTS):
                     **{gender: 'Arkadaşlık isteğinizi iptal ettiniz.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã hủy yêu cầu kết bạn của mình.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã hủy yêu cầu kết bạn.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Zrušili jste svou žádost o přátelství.' for gender in User.ALL_GENDERS},
@@ -117,7 +117,7 @@ if (django_settings.TESTS):
                     **{gender: 'Olet peruuttanut ystävyyspyyntösi.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Lemondtad a barátkozási kérelmed.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Visszavonta a barátsági kérelmét.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณได้ยกเลิกคำขอเป็นเพื่อนแล้ว' for gender in User.ALL_GENDERS},
@@ -132,10 +132,10 @@ if (django_settings.TESTS):
                     **{gender: 'Отказали сте свој захтев за пријатељство.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ți-ai anulat cererea de prietenie.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați anulat cererea de prietenie.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি আপনার বন্ধুত্বের অনুরোধ বাতিল করেছেন।' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Has cancel·lat la teva sol·licitud d'amistat." for gender in User.ALL_GENDERS},
@@ -153,7 +153,7 @@ if (django_settings.TESTS):
                     **{gender: 'Zrušili ste svoju žiadosť o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपने अपना मित्रता अनुरोध रद्द कर दिया है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने अपना मित्रता अनुरोध रद्द कर दिया है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete oma sõbrakutse tühistanud.' for gender in User.ALL_GENDERS},
@@ -177,7 +177,7 @@ if (django_settings.TESTS):
                     **{gender: 'Zure laguntasun-eskaera ezeztatu duzu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք չեղարկել եք ձեր ընկերության հարցումը.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք չեղարկել եք ձեր ընկերության հարցումը։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz do'stlik so'rovingizni bekor qildingiz." for gender in User.ALL_GENDERS},
@@ -225,7 +225,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы удалили этого пользователя из друзей.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已將此使用者從您的好友中刪除。' for gender in User.ALL_GENDERS},
+                    **{gender: '您已將此使用者從好友清單中移除。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Usunąłeś tego użytkownika ze swoich znajomych.' for gender in User.ALL_GENDERS},
@@ -254,7 +254,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcıyı arkadaşlarınızdan kaldırdınız.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã xóa người dùng này khỏi bạn bè của bạn.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã xóa người dùng này khỏi danh sách bạn bè.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Odebrali jste tohoto uživatele ze svých přátel.' for gender in User.ALL_GENDERS},
@@ -266,13 +266,13 @@ if (django_settings.TESTS):
                     **{gender: 'Olet poistanut tämän käyttäjän ystävistäsi.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Eltávolította ezt a felhasználót az ismerősei közül.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Eltávolította ezt a felhasználót a barátai közül.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณได้ลบผู้ใช้รายนี้ออกจากเพื่อนของคุณแล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Έχετε αφαιρέσει αυτόν τον χρήστη από τους φίλους σας.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Αφαιρέσατε αυτόν τον χρήστη από τους φίλους σας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Anda telah mengalih keluar pengguna ini daripada rakan anda.' for gender in User.ALL_GENDERS},
@@ -281,13 +281,13 @@ if (django_settings.TESTS):
                     **{gender: 'Уклонили сте овог корисника из својих пријатеља.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ai eliminat acest utilizator dintre prietenii tăi.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați eliminat acest utilizator dintre prietenii dvs.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের থেকে সরিয়ে দিয়েছেন৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Heu eliminat aquest usuari dels vostres amics.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Has eliminat aquest usuari dels teus amics.' for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Du har fjernet denne brukeren fra vennene dine.' for gender in User.ALL_GENDERS},
@@ -302,7 +302,7 @@ if (django_settings.TESTS):
                     **{gender: 'Tohto používateľa ste odstránili zo svojich priateľov.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपने इस उपयोगकर्ता को अपने मित्रों से हटा दिया है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने इस उपयोगकर्ता को अपने मित्रों की सूची से हटा दिया है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete selle kasutaja oma sõprade hulgast eemaldanud.' for gender in User.ALL_GENDERS},
@@ -326,7 +326,7 @@ if (django_settings.TESTS):
                     **{gender: 'Erabiltzaile hau zure lagunetatik kendu duzu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz bu foydalanuvchini do'stlaringiz ro'yxatidan olib tashladingiz." for gender in User.ALL_GENDERS},
@@ -372,7 +372,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы уже запросили дружбу у этого пользователя.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已經要求與該用戶建立友誼。' for gender in User.ALL_GENDERS},
+                    **{gender: '您已向該用戶發送過好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Już poprosiłeś tego użytkownika o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -401,7 +401,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcıdan zaten arkadaşlık talebinde bulundunuz.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã yêu cầu kết bạn từ người dùng này.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã gửi yêu cầu kết bạn đến người dùng này rồi.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Od tohoto uživatele jste již požádali o přátelství.' for gender in User.ALL_GENDERS},
@@ -413,13 +413,13 @@ if (django_settings.TESTS):
                     **{gender: 'Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Már kértél barátságot ettől a felhasználótól.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ön már küldött barátsági kérelmet ennek a felhasználónak.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'คุณได้ร้องขอมิตรภาพจากผู้ใช้รายนี้แล้ว' for gender in User.ALL_GENDERS},
+                    **{gender: 'คุณได้ส่งคำขอเป็นเพื่อนถึงผู้ใช้รายนี้แล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Έχετε ήδη ζητήσει φιλία από αυτόν τον χρήστη.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Έχετε ήδη στείλει αίτημα φιλίας σε αυτόν τον χρήστη.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Anda sudah meminta persahabatan daripada pengguna ini.' for gender in User.ALL_GENDERS},
@@ -428,13 +428,13 @@ if (django_settings.TESTS):
                     **{gender: 'Већ сте тражили пријатељство од овог корисника.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ai cerut deja prietenia acestui utilizator.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați solicitat deja prietenia acestui utilizator.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি ইতিমধ্যে এই ব্যবহারকারীর কাছ থেকে বন্ধুত্বের অনুরোধ করেছেন৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Ja has sol·licitat amistat a aquest usuari.' for gender in User.ALL_GENDERS},
+                    **{gender: "Ja has sol·licitat l'amistat d'aquest usuari." for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Du har allerede bedt om vennskap fra denne brukeren.' for gender in User.ALL_GENDERS},
@@ -449,7 +449,7 @@ if (django_settings.TESTS):
                     **{gender: 'Od tohto používateľa ste už požiadali o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आप पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध कर चुके हैं।' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने पहले ही इस उपयोगकर्ता को मित्रता अनुरोध भेजा है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete sellelt kasutajalt juba sõprust taotlenud.' for gender in User.ALL_GENDERS},
@@ -473,7 +473,7 @@ if (django_settings.TESTS):
                     **{gender: 'Jada laguntasun-eskaera bidali diozu erabiltzaile honi.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz allaqachon ushbu foydalanuvchidan do'stlik so'ragansiz." for gender in User.ALL_GENDERS},
@@ -519,7 +519,7 @@ if (django_settings.TESTS):
                     **{gender: 'Этот пользователь уже запросил у вас дружбу.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '該用戶已要求與您建立友誼。' for gender in User.ALL_GENDERS},
+                    **{gender: '該用戶已向您發送好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Ten użytkownik poprosił Cię już o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -548,7 +548,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcı zaten sizden arkadaşlık talebinde bulundu.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Người dùng này đã yêu cầu kết bạn từ bạn.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Người dùng này đã gửi yêu cầu kết bạn với bạn.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Tento uživatel od vás již požádal o přátelství.' for gender in User.ALL_GENDERS},
@@ -560,13 +560,13 @@ if (django_settings.TESTS):
                     **{gender: 'Tämä käyttäjä on jo lähettänyt sinulle ystäväpyynnön.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Ez a felhasználó már barátságot kért tőled.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ez a felhasználó már küldött Önnek barátsági kérelmet.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'ผู้ใช้รายนี้ร้องขอมิตรภาพจากคุณแล้ว' for gender in User.ALL_GENDERS},
+                    **{gender: 'ผู้ใช้รายนี้ได้ส่งคำขอเป็นเพื่อนถึงคุณแล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Αυτός ο χρήστης έχει ήδη ζητήσει φιλία από εσάς.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Αυτός ο χρήστης σας έχει ήδη στείλει αίτημα φιλίας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Pengguna ini telah meminta persahabatan daripada anda.' for gender in User.ALL_GENDERS},
@@ -575,10 +575,10 @@ if (django_settings.TESTS):
                     **{gender: 'Овај корисник је већ затражио пријатељство од вас.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Acest utilizator a cerut deja prietenie de la tine.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Acest utilizator v-a solicitat deja prietenia.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছ থেকে বন্ধুত্বের অনুরোধ করেছে৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Aquest usuari ja t'ha sol·licitat amistat." for gender in User.ALL_GENDERS},
@@ -596,7 +596,7 @@ if (django_settings.TESTS):
                     **{gender: 'Tento používateľ už od vás požiadal o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'यह उपयोगकर्ता पहले ही आपसे मित्रता का अनुरोध कर चुका है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'इस उपयोगकर्ता ने पहले ही आपको मित्रता अनुरोध भेजा है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'See kasutaja on juba sinult sõprust taotlenud.' for gender in User.ALL_GENDERS},
@@ -620,7 +620,7 @@ if (django_settings.TESTS):
                     **{gender: 'Erabiltzaile honek jada laguntasun-eskaera bidali dizu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Bu foydalanuvchi sizdan allaqachon do'stlik so'ragan." for gender in User.ALL_GENDERS},
@@ -702,7 +702,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Вы уже дружите с этим пользователем.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): '您已經是該使用者的朋友。' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Jesteś już znajomym tego użytkownika.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -737,7 +739,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Bu kullanıcıyla zaten arkadaşsınız.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Bạn đã là bạn bè với người dùng này.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'S tímto uživatelem jste již přáteli.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -749,7 +753,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Olet jo ystävä tämän käyttäjän kanssa.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Ön már barátja ezzel a felhasználóval.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'คุณเป็นเพื่อนกับผู้ใช้รายนี้แล้ว' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -758,19 +764,39 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Είστε ήδη φίλοι με αυτόν τον χρήστη.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Anda sudah berkawan dengan pengguna ini.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Већ сте пријатељи са овим корисником.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Већ сте пријатељи са овом корисницом.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Већ сте пријатељи са овим корисником.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Већ сте пријатељи са овим корисником.' for user_gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Sunteți deja prieten cu acest utilizator.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prietenă cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prietenă cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prietenă cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prieten cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prieten cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prieten cu acest utilizator.',
                 },
                 'bn': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Ja sou amic d'aquest usuari." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amiga d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amiga d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amiga d'aquesta persona.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amic d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amic d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amic d'aquesta persona.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amic/amiga d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amic/amiga d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amic/amiga d'aquesta persona.",
                 },
                 'no': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Du er allerede venner med denne brukeren.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -785,7 +811,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'S týmto používateľom ste už priatelia.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Olete selle kasutajaga juba sõbrad.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -809,7 +837,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Jada erabiltzaile honen laguna zara.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Siz allaqachon bu foydalanuvchi bilan do'stsiz." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -857,7 +887,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы не можете дружить сами с собой.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '你無法與自己成為朋友。' for gender in User.ALL_GENDERS},
+                    **{gender: '你不可能和自己做朋友。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Nie możesz być przyjacielem samego siebie.' for gender in User.ALL_GENDERS},
@@ -898,28 +928,30 @@ if (django_settings.TESTS):
                     **{gender: 'Et voi olla ystävä itsesi kanssa.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Nem lehetsz barátod magaddal.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Nem lehet barátja önmagának.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณไม่สามารถเป็นเพื่อนกับตัวเองได้' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Δεν μπορείς να είσαι φίλος με τον εαυτό σου.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Δεν μπορείτε να είστε φίλος με τον εαυτό σας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{gender: 'Anda tidak boleh berkawan dengan diri sendiri.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Anda tidak boleh menjadi rakan dengan diri sendiri.' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Не можете бити пријатељи сами са собом.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Не можете бити пријатељ сами са собом.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Nu poți fi prieten cu tine însuți.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Nu puteți fi prieten cu dvs. înșivă.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি নিজের সাথে বন্ধু হতে পারবেন না।' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি নিজের সাথে বন্ধুত্ব করতে পারবেন না।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'No pots ser amic de tu mateix.' for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: 'No pots ser amiga de tu mateixa.',
+                    User.GENDER_MALE_STRING: 'No pots ser amic de tu mateix.',
+                    User.GENDER_OTHER_STRING: 'No pots ser amic/amiga de tu mateix/a.',
                 },
                 'no': {
                     **{gender: 'Du kan ikke være venn med deg selv.' for gender in User.ALL_GENDERS},
@@ -934,13 +966,13 @@ if (django_settings.TESTS):
                     **{gender: 'Nemôžete byť sami so sebou priateľmi.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आप स्वयं से मित्र नहीं बन सकते.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आप खुद से दोस्ती नहीं कर सकते।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Sa ei saa iseendaga sõber olla.' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Ne možete sami sebi biti prijatelji.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ne možete biti prijatelj sami sa sobom.' for gender in User.ALL_GENDERS},
                 },
                 'az': {
                     **{gender: 'Özünüzlə dost ola bilməzsiniz.' for gender in User.ALL_GENDERS},
@@ -958,7 +990,7 @@ if (django_settings.TESTS):
                     **{gender: 'Ezin zara zeure buruaren lagun izan.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz o'zingiz bilan do'st bo'la olmaysiz." for gender in User.ALL_GENDERS},
