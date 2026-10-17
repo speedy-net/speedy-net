@@ -1712,6 +1712,81 @@ if (django_settings.TESTS):
 
 
         @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ja')
+        class SpeedyMatchSiteProfileAllMainLanguagesJapaneseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ru')
+        class SpeedyMatchSiteProfileAllMainLanguagesRussianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='zh')
+        class SpeedyMatchSiteProfileAllMainLanguagesChineseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='pl')
+        class SpeedyMatchSiteProfileAllMainLanguagesPolishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fa')
+        class SpeedyMatchSiteProfileAllMainLanguagesPersianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_speedy_match
         @override_settings(LANGUAGE_CODE='he')
         class SpeedyMatchSiteProfileAllMainLanguagesHebrewTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):
             """
@@ -1724,6 +1799,501 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ko')
+        class SpeedyMatchSiteProfileAllMainLanguagesKoreanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ar')
+        class SpeedyMatchSiteProfileAllMainLanguagesArabicTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='id')
+        class SpeedyMatchSiteProfileAllMainLanguagesIndonesianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='uk')
+        class SpeedyMatchSiteProfileAllMainLanguagesUkrainianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='tr')
+        class SpeedyMatchSiteProfileAllMainLanguagesTurkishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='vi')
+        class SpeedyMatchSiteProfileAllMainLanguagesVietnameseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='cs')
+        class SpeedyMatchSiteProfileAllMainLanguagesCzechTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sv')
+        class SpeedyMatchSiteProfileAllMainLanguagesSwedishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='fi')
+        class SpeedyMatchSiteProfileAllMainLanguagesFinnishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='hu')
+        class SpeedyMatchSiteProfileAllMainLanguagesHungarianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='th')
+        class SpeedyMatchSiteProfileAllMainLanguagesThaiTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='el')
+        class SpeedyMatchSiteProfileAllMainLanguagesGreekTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ms')
+        class SpeedyMatchSiteProfileAllMainLanguagesMalayTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sr')
+        class SpeedyMatchSiteProfileAllMainLanguagesSerbianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ro')
+        class SpeedyMatchSiteProfileAllMainLanguagesRomanianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='bn')
+        class SpeedyMatchSiteProfileAllMainLanguagesBengaliTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ca')
+        class SpeedyMatchSiteProfileAllMainLanguagesCatalanTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='no')
+        class SpeedyMatchSiteProfileAllMainLanguagesNorwegianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='bg')
+        class SpeedyMatchSiteProfileAllMainLanguagesBulgarianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='da')
+        class SpeedyMatchSiteProfileAllMainLanguagesDanishTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sk')
+        class SpeedyMatchSiteProfileAllMainLanguagesSlovakTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='hi')
+        class SpeedyMatchSiteProfileAllMainLanguagesHindiTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='et')
+        class SpeedyMatchSiteProfileAllMainLanguagesEstonianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='hr')
+        class SpeedyMatchSiteProfileAllMainLanguagesCroatianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='az')
+        class SpeedyMatchSiteProfileAllMainLanguagesAzerbaijaniTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class SpeedyMatchSiteProfileAllMainLanguagesCantoneseTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='lt')
+        class SpeedyMatchSiteProfileAllMainLanguagesLithuanianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='sl')
+        class SpeedyMatchSiteProfileAllMainLanguagesSlovenianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='eu')
+        class SpeedyMatchSiteProfileAllMainLanguagesBasqueTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='hy')
+        class SpeedyMatchSiteProfileAllMainLanguagesArmenianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='uz')
+        class SpeedyMatchSiteProfileAllMainLanguagesUzbekTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='ta')
+        class SpeedyMatchSiteProfileAllMainLanguagesTamilTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_speedy_match
+        @override_settings(LANGUAGE_CODE='lv')
+        class SpeedyMatchSiteProfileAllMainLanguagesLatvianTestCase(SpeedyMatchSiteProfileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Speedy Match site profile model validations and behavior, for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         @only_on_speedy_match

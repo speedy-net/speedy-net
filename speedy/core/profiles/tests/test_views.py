@@ -872,6 +872,351 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class UserDetailViewAllMainLanguagesJapaneseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Japanese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Japanese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ja' and the expected titles use the Japanese format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class UserDetailViewAllMainLanguagesRussianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Russian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Russian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ru' and the expected titles use the Russian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class UserDetailViewAllMainLanguagesChineseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Chinese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Chinese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh' and the expected titles use the Chinese format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class UserDetailViewAllMainLanguagesPolishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Polish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Polish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pl' and the expected titles use the Polish format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class UserDetailViewAllMainLanguagesPersianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Persian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Persian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fa' and the expected titles use the Persian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserDetailViewAllMainLanguagesHebrewTestCase(UserDetailViewTestCaseMixin, SiteTestCase):
             """
@@ -937,6 +1282,2283 @@ if (django_settings.TESTS):
                 })
                 self.assertDictEqual(d1=self.expected_title_no_match, d2={
                     django_settings.SPEEDY_MATCH_SITE_ID: "{} / ספידי מץ' [אלפא]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserDetailViewAllMainLanguagesKoreanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Korean).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Korean date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko' and the expected titles use the Korean format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserDetailViewAllMainLanguagesArabicTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Arabic).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Arabic date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar' and the expected titles use the Arabic format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserDetailViewAllMainLanguagesIndonesianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Indonesian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Indonesian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id' and the expected titles use the Indonesian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserDetailViewAllMainLanguagesUkrainianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Ukrainian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Ukrainian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk' and the expected titles use the Ukrainian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserDetailViewAllMainLanguagesTurkishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Turkish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Turkish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr' and the expected titles use the Turkish format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserDetailViewAllMainLanguagesVietnameseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Vietnamese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Vietnamese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi' and the expected titles use the Vietnamese format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserDetailViewAllMainLanguagesCzechTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Czech).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Czech date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs' and the expected titles use the Czech format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserDetailViewAllMainLanguagesSwedishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Swedish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Swedish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv' and the expected titles use the Swedish format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserDetailViewAllMainLanguagesFinnishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Finnish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Finnish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi' and the expected titles use the Finnish format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class UserDetailViewAllMainLanguagesHungarianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Hungarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Hungarian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hu' and the expected titles use the Hungarian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class UserDetailViewAllMainLanguagesThaiTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Thai).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Thai date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'th' and the expected titles use the Thai format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class UserDetailViewAllMainLanguagesGreekTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Greek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Greek date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'el' and the expected titles use the Greek format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class UserDetailViewAllMainLanguagesMalayTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Malay).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Malay date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ms' and the expected titles use the Malay format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class UserDetailViewAllMainLanguagesSerbianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Serbian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Serbian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sr' and the expected titles use the Serbian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class UserDetailViewAllMainLanguagesRomanianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Romanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Romanian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ro' and the expected titles use the Romanian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class UserDetailViewAllMainLanguagesBengaliTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Bengali).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Bengali date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bn' and the expected titles use the Bengali format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class UserDetailViewAllMainLanguagesCatalanTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Catalan).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Catalan date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ca' and the expected titles use the Catalan format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class UserDetailViewAllMainLanguagesNorwegianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Norwegian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Norwegian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'no' and the expected titles use the Norwegian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class UserDetailViewAllMainLanguagesBulgarianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Bulgarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Bulgarian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bg' and the expected titles use the Bulgarian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class UserDetailViewAllMainLanguagesDanishTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Danish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Danish date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'da' and the expected titles use the Danish format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class UserDetailViewAllMainLanguagesSlovakTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Slovak).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Slovak date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sk' and the expected titles use the Slovak format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class UserDetailViewAllMainLanguagesHindiTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Hindi).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Hindi date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hi' and the expected titles use the Hindi format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class UserDetailViewAllMainLanguagesEstonianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Estonian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Estonian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'et' and the expected titles use the Estonian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class UserDetailViewAllMainLanguagesCroatianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Croatian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Croatian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hr' and the expected titles use the Croatian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class UserDetailViewAllMainLanguagesAzerbaijaniTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Azerbaijani).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Azerbaijani date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'az' and the expected titles use the Azerbaijani format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class UserDetailViewAllMainLanguagesCantoneseTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Cantonese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Cantonese date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh-yue' and the expected titles use the Cantonese format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class UserDetailViewAllMainLanguagesLithuanianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Lithuanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Lithuanian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lt' and the expected titles use the Lithuanian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class UserDetailViewAllMainLanguagesSlovenianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Slovenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Slovenian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sl' and the expected titles use the Slovenian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class UserDetailViewAllMainLanguagesBasqueTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Basque).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Basque date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'eu' and the expected titles use the Basque format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class UserDetailViewAllMainLanguagesArmenianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Armenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Armenian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hy' and the expected titles use the Armenian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class UserDetailViewAllMainLanguagesUzbekTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Uzbek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Uzbek date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uz' and the expected titles use the Uzbek format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class UserDetailViewAllMainLanguagesTamilTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Tamil).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Tamil date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ta' and the expected titles use the Tamil format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
+                })
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class UserDetailViewAllMainLanguagesLatvianTestCase(UserDetailViewTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the user detail view for all main languages (Latvian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the Latvian date-of-birth labels, name/date-of-birth/title expectations for the randomly chosen profile, and the expected 404 title/message.
+                """
+                super().set_up()
+                self.birth_date = "Geboortedatum"
+                self.birth_year = "Geboortejaar"
+                if (self.random_choice == 1):
+                    self.first_name = "Bar"
+                    self.last_name = "Refaeli"
+                    self.full_name = "Bar Refaeli"
+                    self.user_birth_date = "12 september 1992"
+                    self.user_birth_month_day = "12 september"
+                    self.user_birth_year = "1992"
+                    self.not_user_birth_date = "12 september 1990"
+                    self.not_user_birth_month_day = "21 september"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Bar Refaeli / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Bar / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "bar-refaeli / Speedy Match [alfa]",
+                    }
+                elif (self.random_choice == 2):
+                    self.first_name = "Doron"
+                    self.last_name = "Matalon"
+                    self.full_name = "Doron Matalon"
+                    self.user_birth_date = "31 januari 1978"
+                    self.user_birth_month_day = "31 januari"
+                    self.user_birth_year = "1978"
+                    self.not_user_birth_date = "31 januari 1990"
+                    self.not_user_birth_month_day = "30 januari"
+                    self.expected_title = {
+                        django_settings.SPEEDY_NET_SITE_ID: "Doron Matalon / Speedy Net [alfa]",
+                        django_settings.SPEEDY_MATCH_SITE_ID: "Doron / Speedy Match [alfa]",
+                    }
+                    self.expected_title_no_match = {
+                        django_settings.SPEEDY_MATCH_SITE_ID: "doron-matalon / Speedy Match [alfa]",
+                    }
+                else:
+                    raise NotImplementedError("Invalid random choice.")
+                self.expected_404_title = {
+                    django_settings.SPEEDY_NET_SITE_ID: "Pagina Niet Gevonden / Speedy Net [alfa]",
+                    django_settings.SPEEDY_MATCH_SITE_ID: "Pagina Niet Gevonden / Speedy Match [alfa]",
+                }
+                self.expected_404_speedy_is_sorry = 'Het spijt Speedy, maar de pagina is niet gevonden.'
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lv' and the expected titles use the Latvian format.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
+                self.assertDictEqual(d1=self.expected_title, d2={
+                    django_settings.SPEEDY_NET_SITE_ID: "{} / Speedy Net [alfa]".format(self.full_name),
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.first_name),
+                })
+                self.assertDictEqual(d1=self.expected_title_no_match, d2={
+                    django_settings.SPEEDY_MATCH_SITE_ID: "{} / Speedy Match [alfa]".format(self.user.slug),
                 })
 
 

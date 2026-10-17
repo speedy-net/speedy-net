@@ -2189,6 +2189,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class DeactivationFormAllMainLanguagesJapaneseTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Japanese.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class DeactivationFormAllMainLanguagesRussianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Russian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class DeactivationFormAllMainLanguagesChineseTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Chinese.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class DeactivationFormAllMainLanguagesPolishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Polish.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class DeactivationFormAllMainLanguagesPersianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Persian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class DeactivationFormAllMainLanguagesHebrewTestCase(DeactivationFormTestCaseMixin, SiteTestCase):
             """
@@ -2203,5 +2278,500 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
         # ~~~~ TODO: test ProfileForm - try to change username and get error message. ("You can't change your username.")
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class DeactivationFormAllMainLanguagesKoreanTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Korean.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class DeactivationFormAllMainLanguagesArabicTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Arabic.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class DeactivationFormAllMainLanguagesIndonesianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Indonesian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class DeactivationFormAllMainLanguagesUkrainianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Ukrainian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class DeactivationFormAllMainLanguagesTurkishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Turkish.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class DeactivationFormAllMainLanguagesVietnameseTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Vietnamese.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class DeactivationFormAllMainLanguagesCzechTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Czech.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class DeactivationFormAllMainLanguagesSwedishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Swedish.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class DeactivationFormAllMainLanguagesFinnishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Finnish.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class DeactivationFormAllMainLanguagesHungarianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Hungarian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class DeactivationFormAllMainLanguagesThaiTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Thai.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class DeactivationFormAllMainLanguagesGreekTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Greek.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class DeactivationFormAllMainLanguagesMalayTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Malay.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class DeactivationFormAllMainLanguagesSerbianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Serbian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class DeactivationFormAllMainLanguagesRomanianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Romanian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class DeactivationFormAllMainLanguagesBengaliTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Bengali.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class DeactivationFormAllMainLanguagesCatalanTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Catalan.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class DeactivationFormAllMainLanguagesNorwegianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Norwegian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class DeactivationFormAllMainLanguagesBulgarianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Bulgarian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class DeactivationFormAllMainLanguagesDanishTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Danish.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class DeactivationFormAllMainLanguagesSlovakTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Slovak.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class DeactivationFormAllMainLanguagesHindiTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Hindi.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class DeactivationFormAllMainLanguagesEstonianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Estonian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class DeactivationFormAllMainLanguagesCroatianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Croatian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class DeactivationFormAllMainLanguagesAzerbaijaniTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Azerbaijani.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class DeactivationFormAllMainLanguagesCantoneseTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Cantonese.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class DeactivationFormAllMainLanguagesLithuanianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Lithuanian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class DeactivationFormAllMainLanguagesSlovenianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Slovenian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class DeactivationFormAllMainLanguagesBasqueTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Basque.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class DeactivationFormAllMainLanguagesArmenianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Armenian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class DeactivationFormAllMainLanguagesUzbekTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Uzbek.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class DeactivationFormAllMainLanguagesTamilTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Tamil.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class DeactivationFormAllMainLanguagesLatvianTestCase(DeactivationFormTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Test the deactivation form in Latvian.
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
