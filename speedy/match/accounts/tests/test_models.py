@@ -373,7 +373,7 @@ if (django_settings.TESTS):
                 else:
                     self.assertDictEqual(d1=dict(cm.exception), d2=self._value_must_be_an_integer_errors_dict_by_field_name_list_and_value_list(field_name_list=field_name_list, value_list=value_to_test))
 
-            def run_test_validate_profile_and_activate_exception(self, test_settings):
+            def run_test_validate_profile_and_activate_raises_an_exception(self, test_settings):
                 """
                 Runs a parametrized set of invalid-value scenarios for a given field against validate_profile_and_activate, asserting the expected step and error-message failures.
 
@@ -1261,7 +1261,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=user.speedy_match_profile.is_active_and_valid, second=False)
                 self.assertEqual(first=len(user.speedy_match_profile.active_languages), second=0)
 
-            def test_validate_profile_and_activate_exception_on_profile_picture(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_profile_picture(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid profile picture values.
                 """
@@ -1274,9 +1274,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (1, 1, 26, 0),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_profile_description(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_profile_description(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid profile description values.
                 """
@@ -1289,9 +1289,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_city(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_city(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid city values.
                 """
@@ -1304,9 +1304,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (7, 2, 0, 7),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_children(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_children(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid children values.
                 """
@@ -1319,9 +1319,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_more_children(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_more_children(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid more children values.
                 """
@@ -1334,9 +1334,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_match_description(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_match_description(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid match description values.
                 """
@@ -1349,9 +1349,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (11, 2, 0, 3),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_height(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_height(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid height values.
                 """
@@ -1364,9 +1364,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (450, 22, 0, 13),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_diet(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_diet(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet values.
                 """
@@ -1379,9 +1379,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (3, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_smoking_status(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_smoking_status(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status values.
                 """
@@ -1394,9 +1394,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (3, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_relationship_status(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_relationship_status(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status values.
                 """
@@ -1409,9 +1409,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (9, 1, 0, 34),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_gender_to_match(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_gender_to_match(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid gender to match values.
                 """
@@ -1424,9 +1424,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (77, 5, 0, 133),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_min_age_to_match(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_min_age_to_match(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min age to match values.
                 """
@@ -1439,10 +1439,10 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (181, 20, 0, 14),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
-            def test_validate_profile_and_activate_exception_on_min_age_to_match_with_override_settings(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_min_age_to_match_with_override_settings(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min age to match with override settings values.
                 """
@@ -1455,9 +1455,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (177, 22, 0, 14),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_max_age_to_match(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_max_age_to_match(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid max age to match values.
                 """
@@ -1470,10 +1470,10 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (181, 20, 0, 14),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
             @override_settings(SPEEDY_MATCH_SITE_PROFILE_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.SPEEDY_MATCH_SITE_PROFILE_SETTINGS, MIN_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MIN_AGE_TO_MATCH_ALLOWED, MAX_AGE_TO_MATCH_ALLOWED=tests_settings.OVERRIDE_SPEEDY_MATCH_SITE_PROFILE_SETTINGS.MAX_AGE_TO_MATCH_ALLOWED))
-            def test_validate_profile_and_activate_exception_on_max_age_to_match_with_override_settings(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_max_age_to_match_with_override_settings(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid max age to match with override settings values.
                 """
@@ -1486,9 +1486,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (177, 22, 0, 14),
                 }
                 test_settings["expected_error_messages"] = [str([test_settings["expected_error_message"]]).replace("\xa0", "\\xa0")]
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_min_max_age_to_match_without_invalid_ages_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min max age to match without invalid ages and invalid values to save values.
                 """
@@ -1500,9 +1500,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (91, 90, 0, 0),
                     "expected_min_max_age_to_match_error_messages_counts_tuple": (90, 0),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_min_max_age_to_match_with_invalid_ages_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid min max age to match with invalid ages and invalid values to save values.
                 """
@@ -1514,9 +1514,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (91, 110, 0, 6),
                     "expected_min_max_age_to_match_error_messages_counts_tuple": (90, 20),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_diet_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet match with invalid keys and ranks and invalid values to save values.
                 """
@@ -1529,9 +1529,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (31, 151, 0, 6),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (86, 65),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_diet_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid diet match without invalid keys and ranks and invalid values to save values.
                 """
@@ -1544,9 +1544,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (31, 65, 0, 0),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (0, 65),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_smoking_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status match with invalid keys and ranks and invalid values to save values.
                 """
@@ -1559,9 +1559,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (31, 151, 0, 6),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (86, 65),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_smoking_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid smoking status match without invalid keys and ranks and invalid values to save values.
                 """
@@ -1574,9 +1574,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (31, 65, 0, 0),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (0, 65),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_relationship_status_match_with_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status match with invalid keys and ranks and invalid values to save values.
                 """
@@ -1589,9 +1589,9 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (91, 433, 0, 6),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (248, 185),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
-            def test_validate_profile_and_activate_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
+            def test_validate_profile_and_activate_raises_an_exception_on_relationship_status_match_without_invalid_keys_and_ranks_and_invalid_values_to_save(self):
                 """
                 Tests that validate_profile_and_activate() raises the expected step and error messages for invalid relationship status match without invalid keys and ranks and invalid values to save values.
                 """
@@ -1604,7 +1604,7 @@ if (django_settings.TESTS):
                     "expected_counts_tuple": (91, 185, 0, 0),
                     "expected_keys_and_ranks_error_messages_counts_tuple": (0, 185),
                 })
-                self.run_test_validate_profile_and_activate_exception(test_settings=test_settings)
+                self.run_test_validate_profile_and_activate_raises_an_exception(test_settings=test_settings)
 
 
         @only_on_speedy_match
