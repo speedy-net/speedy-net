@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -934,12 +934,7 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] ""
-"Danh sách chứa %(show_value)d mục này không được chứa quá... "
-"%(limit_value)d. "
-msgstr[1] ""
-"Danh sách chứa %(show_value)d các mặt hàng, nó không được chứa nhiều hơn "
-"%(limit_value)d. "
+msgstr[0] "Danh sách chứa %(show_value)d mục, không được chứa nhiều hơn %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2271,12 +2266,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có "
-"%(show_value)d)."
-msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có "
-"%(show_value)d)."
+msgstr[0] "Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2286,12 +2276,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có "
-"%(show_value)d)."
-msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có "
-"%(show_value)d)."
+msgstr[0] "Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2301,12 +2286,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
-"%(show_value)d)."
-msgstr[1] ""
-"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
-"%(show_value)d)."
+msgstr[0] "Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2316,10 +2296,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
-msgstr[1] ""
-"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
+msgstr[0] "Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2330,14 +2307,12 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] "Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
-msgstr[1] "Mật khẩu này quá ngắn. Nó phải chứa ít nhất %(min_length)d ký tự."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
-msgstr[1] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2346,14 +2321,12 @@ msgid ""
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] "Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
-msgstr[1] "Mật khẩu này quá dài. Nó phải chứa tối đa %(max_length)d ký tự."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
-msgstr[1] "Mật khẩu của bạn phải chứa tối đa %(max_length)d ký tự."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format

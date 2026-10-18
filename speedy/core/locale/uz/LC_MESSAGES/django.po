@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -946,12 +946,7 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] ""
-"Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan "
-"oshmasligi kerak."
-msgstr[1] ""
-"Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan "
-"oshmasligi kerak."
+msgstr[0] "Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan oshmasligi kerak."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2305,12 +2300,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi "
-"kerak (unda %(show_value)d ta bor)."
-msgstr[1] ""
-"Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi "
-"kerak (unda %(show_value)d ta bor)."
+msgstr[0] "Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2320,12 +2310,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi "
-"bo'lishi kerak (unda %(show_value)d ta bor)."
-msgstr[1] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi "
-"bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[0] "Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2335,12 +2320,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda "
-"%(show_value)d ta bor)."
-msgstr[1] ""
-"Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda "
-"%(show_value)d ta bor)."
+msgstr[0] "Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2350,12 +2330,7 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak "
-"(unda %(show_value)d ta bor)."
-msgstr[1] ""
-"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak "
-"(unda %(show_value)d ta bor)."
+msgstr[0] "Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2365,17 +2340,13 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
-msgstr[1] ""
-"Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
+msgstr[0] "Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Parolingizda kamida %(min_length)d ta belgi bo'lishi kerak."
-msgstr[1] "Parolingizda kamida %(min_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2383,17 +2354,13 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
-msgstr[1] ""
-"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
+msgstr[0] "Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Parolingizda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
-msgstr[1] "Parolingizda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format

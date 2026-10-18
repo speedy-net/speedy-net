@@ -15,7 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -943,12 +944,9 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] ""
-"La lista contiene %(show_value)d elemento, no debería contener más de "
-"%(limit_value)d."
-msgstr[1] ""
-"La lista contiene %(show_value)d elementos, no debería contener más de "
-"%(limit_value)d."
+msgstr[0] "La lista contiene %(show_value)d elemento, no debería contener más de %(limit_value)d."
+msgstr[1] "La lista contiene %(show_value)d de elementos, no debería contener más de %(limit_value)d."
+msgstr[2] "La lista contiene %(show_value)d elementos, no debería contener más de %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2278,12 +2276,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"El nombre de usuario debe contener al menos %(limit_value)d caracter "
-"alfanumérico (tiene %(show_value)d)."
-msgstr[1] ""
-"El nombre de usuario debe contener al menos %(limit_value)d caracteres "
-"alfanumérico (tiene %(show_value)d)."
+msgstr[0] "El nombre de usuario debe contener al menos %(limit_value)d caracter alfanumérico (tiene %(show_value)d)."
+msgstr[1] "El nombre de usuario debe contener al menos %(limit_value)d de caracteres alfanuméricos (tiene %(show_value)d)."
+msgstr[2] "El nombre de usuario debe contener al menos %(limit_value)d caracteres alfanuméricos (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2293,12 +2288,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracter "
-"alfanumérico (tiene %(show_value)d)."
-msgstr[1] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracteres "
-"alfanumérico (tiene %(show_value)d)."
+msgstr[0] "El nombre de usuario debe contener como máximo %(limit_value)d caracter alfanumérico (tiene %(show_value)d)."
+msgstr[1] "El nombre de usuario debe contener como máximo %(limit_value)d de caracteres alfanuméricos (tiene %(show_value)d)."
+msgstr[2] "El nombre de usuario debe contener como máximo %(limit_value)d caracteres alfanuméricos (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2308,12 +2300,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"El nombre de usuario debe contener al menos %(limit_value)d caracter (tiene "
-"%(show_value)d)."
-msgstr[1] ""
-"El nombre de usuario debe contener al menos %(limit_value)d caracteres "
-"(tiene %(show_value)d)."
+msgstr[0] "El nombre de usuario debe contener al menos %(limit_value)d caracter (tiene %(show_value)d)."
+msgstr[1] "El nombre de usuario debe contener al menos %(limit_value)d de caracteres (tiene %(show_value)d)."
+msgstr[2] "El nombre de usuario debe contener al menos %(limit_value)d caracteres (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2323,12 +2312,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracter "
-"(tiene %(show_value)d)."
-msgstr[1] ""
-"El nombre de usuario debe contener como máximo %(limit_value)d caracteres "
-"(tiene %(show_value)d)."
+msgstr[0] "El nombre de usuario debe contener como máximo %(limit_value)d caracter (tiene %(show_value)d)."
+msgstr[1] "El nombre de usuario debe contener como máximo %(limit_value)d de caracteres (tiene %(show_value)d)."
+msgstr[2] "El nombre de usuario debe contener como máximo %(limit_value)d caracteres (tiene %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2338,19 +2324,17 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] ""
-"Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d "
-"caracter."
-msgstr[1] ""
-"Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d "
-"caracteres."
+msgstr[0] "Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d caracter."
+msgstr[1] "Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d de caracteres."
+msgstr[2] "Esta contraseña es demasiado corta. Debe contener al menos %(min_length)d caracteres."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Su contraseña debe contener al menos %(min_length)d caracter."
-msgstr[1] "Su contraseña debe contener al menos %(min_length)d caracteres."
+msgstr[1] "Su contraseña debe contener al menos %(min_length)d de caracteres."
+msgstr[2] "Su contraseña debe contener al menos %(min_length)d caracteres."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2358,19 +2342,17 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] ""
-"Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d "
-"caracter."
-msgstr[1] ""
-"Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d "
-"caracteres."
+msgstr[0] "Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d caracter."
+msgstr[1] "Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d de caracteres."
+msgstr[2] "Esta contraseña es demasiado larga. Debe contener como máximo %(max_length)d caracteres."
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "Tu contraseña debe contener como máximo %(max_length)d caracter."
-msgstr[1] "Tu contraseña debe contener como máximo %(max_length)d caracteres."
+msgstr[1] "Tu contraseña debe contener como máximo %(max_length)d de caracteres."
+msgstr[2] "Tu contraseña debe contener como máximo %(max_length)d caracteres."
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format
