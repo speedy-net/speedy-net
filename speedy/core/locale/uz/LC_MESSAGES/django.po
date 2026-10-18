@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-16 09:19+0300\n"
+"POT-Creation-Date: 2026-10-18 03:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -946,7 +946,9 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] "Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan oshmasligi kerak."
+msgstr[0] ""
+"Roʻyxatda %(show_value)d ta element bor, ular %(limit_value)d tadan "
+"oshmasligi kerak."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2300,7 +2302,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[0] ""
+"Foydalanuvchi nomida kamida %(limit_value)d ta harf-raqamli belgi bo'lishi "
+"kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2310,7 +2314,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[0] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta harf-raqamli belgi "
+"bo'lishi kerak (unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2320,7 +2326,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[0] ""
+"Foydalanuvchi nomida kamida %(limit_value)d ta belgi bo'lishi kerak (unda "
+"%(show_value)d ta bor)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2330,7 +2338,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak (unda %(show_value)d ta bor)."
+msgstr[0] ""
+"Foydalanuvchi nomida ko'pi bilan %(limit_value)d ta belgi bo'lishi kerak "
+"(unda %(show_value)d ta bor)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2340,7 +2350,8 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
+msgstr[0] ""
+"Bu parol juda qisqa. Unda kamida %(min_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:206
 #, python-format
@@ -2354,7 +2365,8 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
+msgstr[0] ""
+"Bu parol juda uzun. Unda ko'pi bilan %(max_length)d ta belgi bo'lishi kerak."
 
 #: .\accounts\validators.py:261
 #, python-format

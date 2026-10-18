@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-15 17:10+0300\n"
+"POT-Creation-Date: 2026-10-18 03:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -934,7 +934,8 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] "Danh sách chứa %(show_value)d mục, không được chứa nhiều hơn %(limit_value)d."
+msgstr[0] ""
+"Danh sách chứa %(show_value)d mục, không được chứa nhiều hơn %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2266,7 +2267,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có %(show_value)d)."
+msgstr[0] ""
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự chữ số (nó có "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2276,7 +2279,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có %(show_value)d)."
+msgstr[0] ""
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự chữ số (nó có "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2286,7 +2291,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có %(show_value)d)."
+msgstr[0] ""
+"Tên người dùng phải chứa ít nhất %(limit_value)d ký tự (nó có "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2296,7 +2303,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
+msgstr[0] ""
+"Tên người dùng phải chứa tối đa %(limit_value)d ký tự (nó có %(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-18 03:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -931,7 +931,8 @@ msgid ""
 msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
-msgstr[0] "Daftar berisi %(show_value)d item, tidak boleh lebih dari %(limit_value)d."
+msgstr[0] ""
+"Daftar berisi %(show_value)d item, tidak boleh lebih dari %(limit_value)d."
 
 #: .\__translations\__translations.py:42
 msgctxt "female"
@@ -2273,7 +2274,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Nama pengguna harus mengandung setidaknya %(limit_value)d karakter alfanumerik (memiliki %(show_value)d)."
+msgstr[0] ""
+"Nama pengguna harus mengandung setidaknya %(limit_value)d karakter "
+"alfanumerik (memiliki %(show_value)d)."
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2283,7 +2286,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "Nama pengguna harus berisi paling banyak %(limit_value)d karakter alfanumerik (memiliki %(show_value)d)."
+msgstr[0] ""
+"Nama pengguna harus berisi paling banyak %(limit_value)d karakter "
+"alfanumerik (memiliki %(show_value)d)."
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2293,7 +2298,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Nama pengguna harus mengandung setidaknya %(limit_value)d karakter (memiliki %(show_value)d)."
+msgstr[0] ""
+"Nama pengguna harus mengandung setidaknya %(limit_value)d karakter (memiliki "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2303,7 +2310,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "Nama pengguna harus berisi paling banyak %(limit_value)d karakter (memiliki %(show_value)d)."
+msgstr[0] ""
+"Nama pengguna harus berisi paling banyak %(limit_value)d karakter (memiliki "
+"%(show_value)d)."
 
 #: .\accounts\validators.py:190
 #, python-format
@@ -2313,13 +2322,15 @@ msgid ""
 msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
-msgstr[0] "Kata sandi ini terlalu pendek. Minimal harus berisi %(min_length)d karakter."
+msgstr[0] ""
+"Kata sandi ini terlalu pendek. Minimal harus berisi %(min_length)d karakter."
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Kata sandi Anda harus mengandung setidaknya %(min_length)d karakter."
+msgstr[0] ""
+"Kata sandi Anda harus mengandung setidaknya %(min_length)d karakter."
 
 #: .\accounts\validators.py:245
 #, python-format
@@ -2327,7 +2338,9 @@ msgid ""
 "This password is too long. It must contain at most %(max_length)d character."
 msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
-msgstr[0] "Kata sandi ini terlalu panjang. Ini harus berisi paling banyak %(max_length)d karakter."
+msgstr[0] ""
+"Kata sandi ini terlalu panjang. Ini harus berisi paling banyak "
+"%(max_length)d karakter."
 
 #: .\accounts\validators.py:261
 #, python-format

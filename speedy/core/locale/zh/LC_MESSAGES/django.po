@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-18 03:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2229,7 +2229,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "使用者名稱必須至少包含 %(limit_value)d 個英數字元（目前有 %(show_value)d 個）。"
+msgstr[0] ""
+"使用者名稱必須至少包含 %(limit_value)d 個英數字元（目前有 %(show_value)d "
+"個）。"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2239,7 +2241,9 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
-msgstr[0] "使用者名稱最多只能包含 %(limit_value)d 個英數字元（目前有 %(show_value)d 個）。"
+msgstr[0] ""
+"使用者名稱最多只能包含 %(limit_value)d 個英數字元（目前有 %(show_value)d "
+"個）。"
 
 #: .\accounts\validators.py:117
 #, python-format
@@ -2249,7 +2253,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "使用者名稱必須至少包含 %(limit_value)d 個字元（目前有 %(show_value)d 個）。"
+msgstr[0] ""
+"使用者名稱必須至少包含 %(limit_value)d 個字元（目前有 %(show_value)d 個）。"
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2259,7 +2264,8 @@ msgid ""
 msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] "使用者名稱最多只能包含 %(limit_value)d 個字元（目前有 %(show_value)d 個）。"
+msgstr[0] ""
+"使用者名稱最多只能包含 %(limit_value)d 個字元（目前有 %(show_value)d 個）。"
 
 #: .\accounts\validators.py:190
 #, python-format
