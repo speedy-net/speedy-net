@@ -143,7 +143,7 @@ msgstr "是的，請刪除我的帳號。"
 
 #: .\accounts\models.py:35
 msgid "Speedy Net User"
-msgstr "Speedy Net 用户"
+msgstr "Speedy Net 用戶"
 
 #: .\accounts\models.py:37
 msgid "User"
