@@ -372,7 +372,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы уже запросили дружбу у этого пользователя.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已向該用戶發送過好友請求。' for gender in User.ALL_GENDERS},
+                    **{gender: '您已向該使用者發送過好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Już poprosiłeś tego użytkownika o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -519,7 +519,7 @@ if (django_settings.TESTS):
                     **{gender: 'Этот пользователь уже запросил у вас дружбу.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '該用戶已向您發送好友請求。' for gender in User.ALL_GENDERS},
+                    **{gender: '該使用者已向您發送好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Ten użytkownik poprosił Cię już o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -702,9 +702,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Вы уже дружите с этим пользователем.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '您已經是該用戶的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Jesteś już znajomym tego użytkownika.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -1193,9 +1193,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'У этого пользователя уже есть {0} друзей. У них не может быть более {1} друзей в Speedy Net. Прежде чем продолжить, попросите их удалить друзей.' for user_gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych.' for user_gender in User.ALL_GENDERS},

@@ -35,17 +35,17 @@ msgstr "你在這裡沒有按讚。"
 #: .\__translations\__translations.html:10
 msgctxt "female"
 msgid "Update matches"
-msgstr "更新比賽"
+msgstr "更新配對"
 
 #: .\__translations\__translations.html:11
 msgctxt "male"
 msgid "Update matches"
-msgstr "更新比賽"
+msgstr "更新配對"
 
 #: .\__translations\__translations.html:12
 msgctxt "other"
 msgid "Update matches"
-msgstr "更新比賽"
+msgstr "更新配對"
 
 #: .\__translations\__translations.html:14
 msgctxt "female"
@@ -67,36 +67,36 @@ msgctxt "female"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
+msgstr "目前還沒有找到任何配對結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:19
 msgctxt "male"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
+msgstr "目前還沒有找到任何配對結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:20
 msgctxt "other"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
+msgstr "目前還沒有找到任何配對結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\__translations\__translations.html:22
 msgctxt "female"
 msgid "Match Settings"
-msgstr "比賽設定"
+msgstr "配對設定"
 
 #: .\__translations\__translations.html:23
 msgctxt "male"
 msgid "Match Settings"
-msgstr "比賽設定"
+msgstr "配對設定"
 
 #: .\__translations\__translations.html:24
 msgctxt "other"
 msgid "Match Settings"
-msgstr "比賽設定"
+msgstr "配對設定"
 
 #: .\__translations\__translations.html:26
 msgctxt "female"
@@ -206,32 +206,32 @@ msgstr "關於我"
 #: .\__translations\__translations.html:54
 msgctxt "female"
 msgid "About my match"
-msgstr "關於我的比賽"
+msgstr "關於我的配對"
 
 #: .\__translations\__translations.html:55
 msgctxt "male"
 msgid "About my match"
-msgstr "關於我的比賽"
+msgstr "關於我的配對"
 
 #: .\__translations\__translations.html:56
 msgctxt "other"
 msgid "About my match"
-msgstr "關於我的比賽"
+msgstr "關於我的配對"
 
 #: .\__translations\__translations.html:58
 msgctxt "female"
 msgid "Gender to match"
-msgstr "性別匹配"
+msgstr "性別配對"
 
 #: .\__translations\__translations.html:59
 msgctxt "male"
 msgid "Gender to match"
-msgstr "性別匹配"
+msgstr "性別配對"
 
 #: .\__translations\__translations.html:60
 msgctxt "other"
 msgid "Gender to match"
-msgstr "性別匹配"
+msgstr "性別配對"
 
 #: .\__translations\__translations.html:62
 #, python-format
@@ -385,19 +385,19 @@ msgstr "最低年齡要求"
 #: .\templates\accounts\edit_profile\activate.html:117
 msgctxt "female"
 msgid "Maximal age to match"
-msgstr "匹配的最大年齡"
+msgstr "配對的最大年齡"
 
 #: .\__translations\__translations.py:29
 #: .\templates\accounts\edit_profile\activate.html:123
 msgctxt "male"
 msgid "Maximal age to match"
-msgstr "匹配的最大年齡"
+msgstr "配對的最大年齡"
 
 #: .\__translations\__translations.py:30
 #: .\templates\accounts\edit_profile\activate.html:130
 msgctxt "other"
 msgid "Maximal age to match"
-msgstr "匹配的最大年齡"
+msgstr "配對的最大年齡"
 
 #: .\__translations\__translations.py:32
 msgctxt "female"
@@ -517,11 +517,11 @@ msgstr "你的飲食是必需的。"
 
 #: .\accounts\forms.py:98
 msgid "My smoking status"
-msgstr "我的吸煙狀況"
+msgstr "我的吸菸狀況"
 
 #: .\accounts\forms.py:98 .\accounts\forms.py:144 .\accounts\validators.py:193
 msgid "Your smoking status is required."
-msgstr "您必須填寫吸煙狀況。"
+msgstr "您必須填寫吸菸狀況。"
 
 #: .\accounts\forms.py:99
 msgid "My relationship status"
@@ -534,7 +534,7 @@ msgstr "您的婚姻狀況為必填。"
 #: .\accounts\forms.py:100 .\accounts\forms.py:165
 #: .\accounts\validators.py:217
 msgid "Gender to match is required."
-msgstr "性別必須匹配。"
+msgstr "性別必須配對。"
 
 #: .\accounts\forms.py:138
 msgid "Your height is required."
@@ -575,15 +575,15 @@ msgstr "參賽者必須達到最高年齡要求。"
 
 #: .\accounts\forms.py:174 .\accounts\validators.py:269
 msgid "Diet match is required."
-msgstr "飲食必須匹配。"
+msgstr "飲食必須配對。"
 
 #: .\accounts\forms.py:177 .\accounts\validators.py:284
 msgid "Smoking status match is required."
-msgstr "吸煙狀況必須相符。"
+msgstr "吸菸狀況必須相符。"
 
 #: .\accounts\forms.py:180 .\accounts\validators.py:299
 msgid "Relationship status match is required."
-msgstr "關係狀態必須匹配。"
+msgstr "關係狀態必須配對。"
 
 #: .\accounts\forms.py:194
 msgid "Where do you live?"
@@ -592,15 +592,15 @@ msgstr "你住在哪裡？"
 #: .\accounts\forms.py:230 .\accounts\models.py:237
 #: .\templates\profiles\user_extra_info_widget.html:50
 msgid "Gender to match"
-msgstr "性別匹配"
+msgstr "性別配對"
 
 #: .\accounts\models.py:70
 msgid "Speedy Match User"
-msgstr "Speedy Match 用戶"
+msgstr "Speedy Match 使用者"
 
 #: .\accounts\models.py:82 .\accounts\models.py:203
 msgid "No match"
-msgstr "沒有匹配項"
+msgstr "沒有配對項"
 
 #: .\accounts\models.py:83 .\accounts\models.py:204
 msgid "One heart"
@@ -659,19 +659,19 @@ msgstr "最低年齡要求"
 
 #: .\accounts\models.py:244
 msgid "Maximal age to match"
-msgstr "匹配的最大年齡"
+msgstr "配對的最大年齡"
 
 #: .\accounts\models.py:245
 msgid "Diet match"
-msgstr "飲食匹配"
+msgstr "飲食配對"
 
 #: .\accounts\models.py:246
 msgid "Smoking status match"
-msgstr "吸煙狀況匹配"
+msgstr "吸菸狀況配對"
 
 #: .\accounts\models.py:247
 msgid "Relationship status match"
-msgstr "關係狀態匹配"
+msgstr "關係狀態配對"
 
 #: .\accounts\models.py:250
 msgid "Diet to match"
@@ -679,11 +679,11 @@ msgstr "飲食搭配"
 
 #: .\accounts\models.py:258
 msgid "Smoking status to match"
-msgstr "吸煙狀況匹配"
+msgstr "吸菸狀況配對"
 
 #: .\accounts\models.py:266
 msgid "Relationship status to match"
-msgstr "關係狀態匹配"
+msgstr "關係狀態配對"
 
 #: .\accounts\models.py:273
 msgid "Activation step"
@@ -691,7 +691,7 @@ msgstr "啟動步驟"
 
 #: .\accounts\models.py:276
 msgid "Number of matches on last user's search"
-msgstr "上次用戶搜尋的匹配結果數量"
+msgstr "上次使用者搜尋的配對結果數量"
 
 #: .\accounts\models.py:352
 msgid "Speedy Match Profile"
@@ -738,11 +738,11 @@ msgstr "至少有一種飲食方案應該達到五顆心的水平。"
 
 #: .\accounts\validators.py:286
 msgid "At least one smoking status match option should be five hearts."
-msgstr "至少應該有一個吸煙狀態匹配選項是五顆心。"
+msgstr "至少應該有一個吸菸狀態配對選項是五顆心。"
 
 #: .\accounts\validators.py:301
 msgid "At least one relationship status match option should be five hearts."
-msgstr "至少應該有一個關係狀態匹配選項顯示為五顆心。"
+msgstr "至少應該有一個關係狀態配對選項顯示為五顆心。"
 
 #: .\admin\views.py:225
 #, python-brace-format
@@ -807,21 +807,21 @@ msgstr ""
 "{total_number_of_other_active_members_in_the_last_week}其他的; "
 "{total_percent_of_female_active_members_in_the_last_week}女性，"
 "{total_percent_of_male_active_members_in_the_last_week}男性，"
-"{total_percent_of_other_active_members_in_the_last_week}其他用戶）在上週進入"
+"{total_percent_of_other_active_members_in_the_last_week}其他使用者）在上週進入"
 "了該網站，{total_number_of_active_members_in_the_last_month}成員"
 "（{total_number_of_female_active_members_in_the_last_month}女性，"
 "{total_number_of_male_active_members_in_the_last_month}男性，"
 "{total_number_of_other_active_members_in_the_last_month}其他的; "
 "{total_percent_of_female_active_members_in_the_last_month}女性，"
 "{total_percent_of_male_active_members_in_the_last_month}男性，"
-"{total_percent_of_other_active_members_in_the_last_month}其他用戶）在上個月也"
+"{total_percent_of_other_active_members_in_the_last_month}其他使用者）在上個月也"
 "進入了該網站，{total_number_of_active_members_in_the_last_four_months}成員"
 "（{total_number_of_female_active_members_in_the_last_four_months}女性，"
 "{total_number_of_male_active_members_in_the_last_four_months}男性，"
 "{total_number_of_other_active_members_in_the_last_four_months}其他的; "
 "{total_percent_of_female_active_members_in_the_last_four_months}女性，"
 "{total_percent_of_male_active_members_in_the_last_four_months}男性，"
-"{total_percent_of_other_active_members_in_the_last_four_months}其他用戶）在過"
+"{total_percent_of_other_active_members_in_the_last_four_months}其他使用者）在過"
 "去四個月內也造訪了該網站，"
 "{total_number_of_active_members_in_the_last_eight_months}成員"
 "（{total_number_of_female_active_members_in_the_last_eight_months}女性，"
@@ -829,7 +829,7 @@ msgstr ""
 "{total_number_of_other_active_members_in_the_last_eight_months}其他的; "
 "{total_percent_of_female_active_members_in_the_last_eight_months}女性，"
 "{total_percent_of_male_active_members_in_the_last_eight_months}男性，"
-"{total_percent_of_other_active_members_in_the_last_eight_months}其他用戶）在"
+"{total_percent_of_other_active_members_in_the_last_eight_months}其他使用者）在"
 "過去八個月內也進入了該網站，並且"
 "{total_number_of_active_members_in_the_last_two_years}成員"
 "（{total_number_of_female_active_members_in_the_last_two_years}女性，"
@@ -938,7 +938,7 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range_in_the_last_eight_months}"
 "男性，"
 "{total_percent_of_other_active_members_in_age_range_in_the_last_eight_months}"
-"其他用戶）在過去八個月內造訪了該網站。"
+"其他使用者）在過去八個月內造訪了該網站。"
 
 #: .\admin\views.py:510
 #, python-brace-format
@@ -969,19 +969,19 @@ msgstr ""
 "{total_percent_of_male_active_members_in_age_range_in_the_last_four_months}男"
 "性，"
 "{total_percent_of_other_active_members_in_age_range_in_the_last_four_months}"
-"其他用戶）在過去四個月內進入了該網站。"
+"其他使用者）在過去四個月內進入了該網站。"
 
 #: .\likes\managers.py:30 .\likes\models.py:55
 msgid "Users cannot like themselves."
-msgstr "用戶無法喜歡自己。"
+msgstr "使用者無法喜歡自己。"
 
 #: .\likes\managers.py:33
 msgid "User already likes other user."
-msgstr "用戶已經喜歡了其他用戶。"
+msgstr "使用者已經喜歡了其他使用者。"
 
 #: .\likes\managers.py:36
 msgid "User cannot like a blocked user."
-msgstr "用戶無法按讚被封鎖的用戶。"
+msgstr "使用者無法按讚被封鎖的使用者。"
 
 #: .\likes\models.py:24
 msgid "from user"
@@ -989,15 +989,15 @@ msgstr "來自使用者"
 
 #: .\likes\models.py:25
 msgid "to user"
-msgstr "致用戶"
+msgstr "致使用者"
 
 #: .\likes\models.py:31
 msgid "user like"
-msgstr "用戶按讚"
+msgstr "使用者按讚"
 
 #: .\likes\models.py:32
 msgid "user likes"
-msgstr "用戶按讚"
+msgstr "使用者按讚"
 
 #: .\likes\views.py:53
 msgid "Girls You Like"
@@ -1033,12 +1033,12 @@ msgstr "Speedy Match Matches"
 
 #: .\matches\views.py:157 .\matches\views.py:187
 msgid "Your match settings were saved."
-msgstr "您的比賽設定已儲存。"
+msgstr "您的配對設定已儲存。"
 
 #: .\profiles\tests\test_widgets.py:66
 #: .\templates\profiles\user_rank_widget.html:12
 msgid "Match rank"
-msgstr "比賽排名"
+msgstr "配對排名"
 
 #: .\profiles\tests\test_widgets.py:111 .\profiles\tests\test_widgets.py:112
 #: .\profiles\tests\test_widgets.py:113 .\profiles\widgets.py:83
@@ -1077,11 +1077,11 @@ msgid ""
 "available in %(languages_num)s languages."
 msgstr ""
 "<a href=\"https://%(language_code)s.speedymatch.com/\" title=\"Speedy "
-"Match\">快速比賽</a>是一款面向單身人士的全新約會/配對網路應用程序，旨在為他們"
+"Match\">快速配對</a>是一款面向單身人士的全新約會/配對網路應用程式，旨在為他們"
 "提供浪漫邂逅。<a href=\"https://%(language_code)s.speedy.net/\" "
 "title=\"Speedy Net\">速網</a>透過 Speedy Match，您可以找到合適的約會對象並在"
 "線上聊天。您可以在 Speedy Net 上新增好友、按讚並傳送訊息。 Speedy Match 為所"
-"有國家和地區的用戶免費開放註冊（無年齡限制！）。該網站對素食主義者和純素食主"
+"有國家和地區的使用者免費開放註冊（無年齡限制！）。該網站對素食主義者和純素食主"
 "義者友好。目前可在以下地區使用：%(languages_num)s語言。"
 
 #: .\templates\about\about.html:19
@@ -1102,8 +1102,8 @@ msgid ""
 "details only to friends and which details will be private. Private details "
 "will appear only to you."
 msgstr ""
-"只有符合您條件的人才能看到您的個人資料並與您聯繫。我們不允許匿名搜索，Speedy "
-"Match 的個人資料僅對匹配對象可見。您可以選擇誰可以查看您的個人資料，以及哪些"
+"只有符合您條件的人才能看到您的個人資料並與您聯繫。我們不允許匿名搜尋，Speedy "
+"Match 的個人資料僅對配對對象可見。您可以選擇誰可以查看您的個人資料，以及哪些"
 "資訊會公開顯示，哪些資訊僅對好友可見，哪些資訊設為私密。私密資訊僅對您可見。"
 
 #: .\templates\about\about.html:23
@@ -1182,7 +1182,7 @@ msgstr "關於我"
 #: .\templates\accounts\edit_profile\base.html:15
 #: .\templates\matches\settings\base.html:36
 msgid "About my match"
-msgstr "關於我的比賽"
+msgstr "關於我的配對"
 
 #: .\templates\accounts\edit_profile\activate.html:76
 msgid "Back"
@@ -1198,7 +1198,7 @@ msgstr "您的 Speedy Net 帳戶尚未啟動。請進入此頁面啟動帳戶。
 
 #: .\templates\admin\matches\match_list.html:5
 msgid "Admin - All Matches"
-msgstr "管理員 - 所有比賽"
+msgstr "管理員 - 所有配對"
 
 #: .\templates\base_site.html:29 .\templates\matches\match_list.html:10
 msgid "Your Matches"
@@ -1207,7 +1207,7 @@ msgstr "你的配對結果"
 #: .\templates\base_site.html:29
 #: .\templates\menu\user_menu_profile_is_active.html:11
 msgid "Matches"
-msgstr "比賽"
+msgstr "配對"
 
 #: .\templates\base_site.html:35 .\templates\likes\like_list.html:6
 #: .\templates\likes\like_list.html:22
@@ -1217,13 +1217,13 @@ msgstr "讚"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:48
 msgid "Your Match Settings"
-msgstr "您的比賽設置"
+msgstr "您的配對設定"
 
 #: .\templates\base_site.html:42 .\templates\base_site.html:50
 #: .\templates\matches\settings\base.html:10
 #: .\templates\matches\settings\base.html:30
 msgid "Match Settings"
-msgstr "比賽設定"
+msgstr "配對設定"
 
 #: .\templates\base_site.html:105 .\templates\base_site.html:106
 #: .\templates\base_site.html:114 .\templates\base_site.html:115
@@ -1289,7 +1289,7 @@ msgstr ""
 
 #: .\templates\matches\match_list.html:41
 msgid "Update matches"
-msgstr "更新比賽"
+msgstr "更新配對"
 
 #: .\templates\matches\match_list.html:49
 #: .\templates\profiles\user_extra_info_widget.html:38
@@ -1312,11 +1312,11 @@ msgstr "新增更多選項"
 msgid ""
 "You don't have any matches yet. Try to broaden your search settings or check "
 "again later."
-msgstr "目前還沒有找到任何匹配結果。請嘗試擴大搜尋範圍或稍後再試。"
+msgstr "目前還沒有找到任何配對結果。請嘗試擴大搜尋範圍或稍後再試。"
 
 #: .\templates\matches\settings\base.html:27
 msgid "Back to Matches"
-msgstr "返回比賽列表"
+msgstr "返回配對清單"
 
 #: .\templates\matches\settings\base.html:46
 msgid "Profile Info"
@@ -1372,4 +1372,4 @@ msgstr "上次造訪的是 Speedy Match"
 
 #: .\templates\profiles\user_rank_widget.html:28
 msgid "There is no match."
-msgstr "沒有匹配項。"
+msgstr "沒有配對項。"

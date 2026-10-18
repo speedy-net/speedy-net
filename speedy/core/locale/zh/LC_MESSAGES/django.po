@@ -223,32 +223,32 @@ msgstr "更改個人資料中電子郵件地址的隱私設定。"
 #: .\__translations\__translations.html:56
 msgctxt "female"
 msgid "You're not blocking anybody."
-msgstr "你沒有屏蔽任何人。"
+msgstr "你沒有封鎖任何人。"
 
 #: .\__translations\__translations.html:57
 msgctxt "male"
 msgid "You're not blocking anybody."
-msgstr "你沒有屏蔽任何人。"
+msgstr "你沒有封鎖任何人。"
 
 #: .\__translations\__translations.html:58
 msgctxt "other"
 msgid "You're not blocking anybody."
-msgstr "你沒有屏蔽任何人。"
+msgstr "你沒有封鎖任何人。"
 
 #: .\__translations\__translations.html:60
 msgctxt "female"
 msgid "Report a User"
-msgstr "檢舉用戶"
+msgstr "檢舉使用者"
 
 #: .\__translations\__translations.html:61
 msgctxt "male"
 msgid "Report a User"
-msgstr "檢舉用戶"
+msgstr "檢舉使用者"
 
 #: .\__translations\__translations.html:62
 msgctxt "other"
 msgid "Report a User"
-msgstr "檢舉用戶"
+msgstr "檢舉使用者"
 
 #: .\__translations\__translations.html:72
 msgctxt "female"
@@ -346,17 +346,17 @@ msgstr "您已封鎖 "
 #: .\__translations\__translations.html:96
 msgctxt "female"
 msgid " blocked you."
-msgstr " 已屏蔽。"
+msgstr " 已封鎖。"
 
 #: .\__translations\__translations.html:97
 msgctxt "male"
 msgid " blocked you."
-msgstr " 已屏蔽。"
+msgstr " 已封鎖。"
 
 #: .\__translations\__translations.html:98
 msgctxt "other"
 msgid " blocked you."
-msgstr " 已屏蔽。"
+msgstr " 已封鎖。"
 
 #: .\__translations\__translations.html:100
 #, python-format
@@ -451,17 +451,17 @@ msgstr "加入好友"
 #: .\__translations\__translations.html:116
 msgctxt "female"
 msgid "Are you sure you want to block "
-msgstr "您確定要屏蔽嗎？ "
+msgstr "您確定要封鎖嗎？ "
 
 #: .\__translations\__translations.html:117
 msgctxt "male"
 msgid "Are you sure you want to block "
-msgstr "您確定要屏蔽嗎？ "
+msgstr "您確定要封鎖嗎？ "
 
 #: .\__translations\__translations.html:118
 msgctxt "other"
 msgid "Are you sure you want to block "
-msgstr "您確定要屏蔽嗎？ "
+msgstr "您確定要封鎖嗎？ "
 
 #: .\__translations\__translations.html:120
 msgctxt "female"
@@ -1168,47 +1168,47 @@ msgstr "肉食主義者"
 #: .\__translations\__translations.py:106
 msgctxt "female"
 msgid "Not smoking"
-msgstr "不吸煙"
+msgstr "不吸菸"
 
 #: .\__translations\__translations.py:107
 msgctxt "male"
 msgid "Not smoking"
-msgstr "不吸煙"
+msgstr "不吸菸"
 
 #: .\__translations\__translations.py:108
 msgctxt "other"
 msgid "Not smoking"
-msgstr "不吸煙"
+msgstr "不吸菸"
 
 #: .\__translations\__translations.py:110
 msgctxt "female"
 msgid "Smoking occasionally"
-msgstr "偶爾吸煙"
+msgstr "偶爾吸菸"
 
 #: .\__translations\__translations.py:111
 msgctxt "male"
 msgid "Smoking occasionally"
-msgstr "偶爾吸煙"
+msgstr "偶爾吸菸"
 
 #: .\__translations\__translations.py:112
 msgctxt "other"
 msgid "Smoking occasionally"
-msgstr "偶爾吸煙"
+msgstr "偶爾吸菸"
 
 #: .\__translations\__translations.py:114
 msgctxt "female"
 msgid "Smoking"
-msgstr "吸煙"
+msgstr "吸菸"
 
 #: .\__translations\__translations.py:115
 msgctxt "male"
 msgid "Smoking"
-msgstr "吸煙"
+msgstr "吸菸"
 
 #: .\__translations\__translations.py:116
 msgctxt "other"
 msgid "Smoking"
-msgstr "吸煙"
+msgstr "吸菸"
 
 #: .\__translations\__translations.py:118
 msgctxt "female"
@@ -1493,7 +1493,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:183
@@ -1503,7 +1503,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:184
@@ -1513,7 +1513,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:185
@@ -1523,7 +1523,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:186
@@ -1533,7 +1533,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:187
@@ -1543,7 +1543,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:188
@@ -1553,7 +1553,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:189
@@ -1563,7 +1563,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:190
@@ -1573,7 +1573,7 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該用戶已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
 "們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:192
@@ -1594,77 +1594,77 @@ msgstr "你不可能和自己做朋友。"
 #: .\__translations\__translations.py:196
 msgctxt "female"
 msgid "You already requested friendship from this user."
-msgstr "您已向該用戶發送過好友請求。"
+msgstr "您已向該使用者發送過好友請求。"
 
 #: .\__translations\__translations.py:197
 msgctxt "male"
 msgid "You already requested friendship from this user."
-msgstr "您已向該用戶發送過好友請求。"
+msgstr "您已向該使用者發送過好友請求。"
 
 #: .\__translations\__translations.py:198
 msgctxt "other"
 msgid "You already requested friendship from this user."
-msgstr "您已向該用戶發送過好友請求。"
+msgstr "您已向該使用者發送過好友請求。"
 
 #: .\__translations\__translations.py:200
 msgctxt "female"
 msgid "This user already requested friendship from you."
-msgstr "該用戶已向您發送好友請求。"
+msgstr "該使用者已向您發送好友請求。"
 
 #: .\__translations\__translations.py:201
 msgctxt "male"
 msgid "This user already requested friendship from you."
-msgstr "該用戶已向您發送好友請求。"
+msgstr "該使用者已向您發送好友請求。"
 
 #: .\__translations\__translations.py:202
 msgctxt "other"
 msgid "This user already requested friendship from you."
-msgstr "該用戶已向您發送好友請求。"
+msgstr "該使用者已向您發送好友請求。"
 
 #: .\__translations\__translations.py:204
 msgctxt "female_female"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:205
 msgctxt "female_male"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:206
 msgctxt "female_other"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:207
 msgctxt "male_female"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:208
 msgctxt "male_male"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:209
 msgctxt "male_other"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:210
 msgctxt "other_female"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:211
 msgctxt "other_male"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:212
 msgctxt "other_other"
 msgid "You already are friends with this user."
-msgstr "您已經是該用戶的好友了。"
+msgstr "您已經是該使用者的好友了。"
 
 #: .\__translations\__translations.py:214
 msgctxt "female"
@@ -1792,7 +1792,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:243
@@ -1801,7 +1801,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:244
@@ -1810,7 +1810,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:245
@@ -1819,7 +1819,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:246
@@ -1828,7 +1828,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:247
@@ -1837,7 +1837,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:248
@@ -1846,7 +1846,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:249
@@ -1855,7 +1855,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:250
@@ -1864,7 +1864,7 @@ msgid ""
 "This user doesn't match your profile, but you can visit their Speedy Net "
 "profile. View user's profile on Speedy Net."
 msgstr ""
-"該用戶與您的個人資料不匹配，但您可以存取其 Speedy Net 個人資料。在 Speedy "
+"該使用者與您的個人資料不配對，但您可以存取其 Speedy Net 個人資料。在 Speedy "
 "Net 上查看該使用者的個人資料。"
 
 #: .\__translations\__translations.py:252
@@ -1918,7 +1918,7 @@ msgstr "新密碼"
 
 #: .\accounts\forms.py:281
 msgid "New username"
-msgstr "新用戶名"
+msgstr "新使用者名"
 
 #: .\accounts\forms.py:284
 msgid "Create an account"
@@ -1966,7 +1966,7 @@ msgstr "使用者名稱"
 #: .\accounts\models.py:209 .\accounts\models.py:210
 #: .\accounts\validators.py:31
 msgid "This username is already taken."
-msgstr "該用戶名已被佔用。"
+msgstr "該使用者名已被佔用。"
 
 #: .\accounts\models.py:210
 msgid "username (slug)"
@@ -2035,15 +2035,15 @@ msgstr "肉食者（吃動物）"
 
 #: .\accounts\models.py:546
 msgid "Not smoking"
-msgstr "不吸煙"
+msgstr "不吸菸"
 
 #: .\accounts\models.py:547
 msgid "Smoking occasionally"
-msgstr "偶爾吸煙"
+msgstr "偶爾吸菸"
 
 #: .\accounts\models.py:548
 msgid "Smoking"
-msgstr "吸煙"
+msgstr "吸菸"
 
 #: .\accounts\models.py:569
 msgid "Single"
@@ -2187,7 +2187,7 @@ msgstr "使用者"
 
 #: .\accounts\models.py:1757
 msgid "last visit"
-msgstr "上次訪問"
+msgstr "上次造訪"
 
 #: .\accounts\models.py:1782
 msgid "Today"
@@ -2323,7 +2323,7 @@ msgstr "該電子郵件已被使用。"
 #: .\accounts\validators.py:494
 msgid ""
 "This picture's file size is too big. The maximal file size allowed is 30 MB."
-msgstr "這張圖片的文件太大了。允許的最大檔案大小為 30 MB。"
+msgstr "這張圖片的檔案太大了。允許的最大檔案大小為 30 MB。"
 
 #: .\accounts\validators.py:527 .\accounts\validators.py:546
 msgid ""
@@ -2433,11 +2433,11 @@ msgstr "更改已儲存。"
 
 #: .\blocks\managers.py:53 .\blocks\models.py:54
 msgid "Users cannot block themselves."
-msgstr "用戶無法屏蔽自己。"
+msgstr "使用者無法封鎖自己。"
 
 #: .\blocks\models.py:26
 msgid "blocked user"
-msgstr "用戶已被封鎖"
+msgstr "使用者已被封鎖"
 
 #: .\blocks\models.py:31
 msgid "block"
@@ -2445,7 +2445,7 @@ msgstr "堵塞"
 
 #: .\blocks\models.py:32
 msgid "user blocks"
-msgstr "用戶區塊"
+msgstr "使用者區塊"
 
 #: .\blocks\views.py:48
 msgid "You have blocked {}."
@@ -2902,7 +2902,7 @@ msgstr "更改密碼"
 
 #: .\templates\accounts\edit_profile\privacy.html:12
 msgid "Your age will be visible to your matches on Speedy Match."
-msgstr "在 Speedy Match 上，您的年齡將對您的匹配對象可見。"
+msgstr "在 Speedy Match 上，您的年齡將對您的配對對象可見。"
 
 #: .\templates\accounts\edit_profile\privacy.html:16
 msgid "Change privacy settings of email addresses on your profile."
@@ -2963,11 +2963,11 @@ msgstr "管理員資訊"
 
 #: .\templates\admin\users_list.html:7
 msgid "Admin - All Users"
-msgstr "管理員 - 所有用戶"
+msgstr "管理員 - 所有使用者"
 
 #: .\templates\admin\users_list.html:19
 msgid "No users."
-msgstr "沒有用戶。"
+msgstr "沒有使用者。"
 
 #: .\templates\base.html:98
 msgid "This site is under construction"
@@ -2979,7 +2979,7 @@ msgstr "您尚未驗證您的電子郵件地址。請檢查您的收件匣。"
 
 #: .\templates\base.html:163
 msgid "Speedy Net Blog"
-msgstr "Speedy Net 博客"
+msgstr "Speedy Net 部落格"
 
 #: .\templates\base.html:165
 msgid "Speedy Paz"
@@ -3076,11 +3076,11 @@ msgstr "Speedy Composer商店"
 
 #: .\templates\blocks\block_list.html:6
 msgid "Blocked Users"
-msgstr "已封鎖用戶"
+msgstr "已封鎖使用者"
 
 #: .\templates\blocks\block_list.html:15
 msgid "You're not blocking anybody."
-msgstr "你沒有屏蔽任何人。"
+msgstr "你沒有封鎖任何人。"
 
 #: .\templates\contact_by_email\contact_us.html:19
 msgid ""
@@ -3095,7 +3095,7 @@ msgstr "Uri Rodberg，創辦人兼網站管理員："
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:10
 msgid "Report a User"
-msgstr "檢舉用戶"
+msgstr "檢舉使用者"
 
 #: .\templates\contact_by_form\feedback_base.html:6
 #: .\templates\contact_by_form\feedback_form.html:12
@@ -3244,8 +3244,8 @@ msgid ""
 msgstr ""
 "您在 Speedy Net 上的個人資料對所有人可見，但您可以選擇與哪些人分享您的電子郵"
 "件地址和出生日期。如果您註冊了 Speedy Match，您的 Speedy Match 個人資料僅對符"
-"合您在網站上設定的匹配條件的用戶可見，並且您也必須符合他們的匹配條件。您的 "
-"Speedy Match 個人資料不會出現在 Google 搜尋結果中，並且對未註冊用戶不可見。"
+"合您在網站上設定的配對條件的使用者可見，並且您也必須符合他們的配對條件。您的 "
+"Speedy Match 個人資料不會出現在 Google 搜尋結果中，並且對未註冊使用者不可見。"
 
 #: .\templates\privacy\privacy_policy.html:23
 msgid ""
@@ -3287,7 +3287,7 @@ msgstr "。"
 
 #: .\templates\profiles\block_warning.html:11
 msgid " blocked you."
-msgstr " 已屏蔽。"
+msgstr " 已封鎖。"
 
 #: .\templates\profiles\tools\add_to_friends.html:10
 #: .\templates\profiles\user_list_item.html:30
@@ -3321,7 +3321,7 @@ msgstr "切換下拉式選單"
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "Are you sure you want to block "
-msgstr "您確定要屏蔽嗎？ "
+msgstr "您確定要封鎖嗎？ "
 
 #: .\templates\profiles\tools\block_user.html:16
 msgid "?"
@@ -3434,7 +3434,7 @@ msgid ""
 "the results of the meeting or phone call is yours."
 msgstr ""
 "網站管理方無法核實使用者提供的個人資訊。部分使用者的個人資訊可能不準確。網站"
-"管理方不對用戶在網站之外的活動負責。如果您選擇與在網站上認識的人見面或通話，"
+"管理方不對使用者在網站之外的活動負責。如果您選擇與在網站上認識的人見面或通話，"
 "則見面或通話的後果由您自行承擔。"
 
 #: .\templates\terms\terms_of_service.html:25
@@ -3443,7 +3443,7 @@ msgid ""
 "a link sent to you. Accounts without a verified email address will be "
 "deleted from the site after 10 days."
 msgstr ""
-"註冊網站後，您需要透過發送到您郵箱的連結來驗證您的郵箱地址。未驗證郵箱地址的"
+"註冊網站後，您需要透過發送到您信箱的連結來驗證您的信箱地址。未驗證信箱地址的"
 "帳戶將在10天後從網站刪除。"
 
 #: .\templates\terms\terms_of_service.html:27
@@ -3476,7 +3476,7 @@ msgstr "擁有者"
 
 #: .\uploads\models.py:28
 msgid "file"
-msgstr "文件"
+msgstr "檔案"
 
 #: .\uploads\models.py:29
 msgid "is stored"
@@ -3484,15 +3484,15 @@ msgstr "儲存"
 
 #: .\uploads\models.py:30
 msgid "file size"
-msgstr "文件大小"
+msgstr "檔案大小"
 
 #: .\uploads\models.py:45
 msgid "uploaded file"
-msgstr "上傳文件"
+msgstr "上傳檔案"
 
 #: .\uploads\models.py:46
 msgid "uploaded files"
-msgstr "上傳的文件"
+msgstr "上傳的檔案"
 
 #: .\uploads\models.py:90
 msgid "visible on website"
