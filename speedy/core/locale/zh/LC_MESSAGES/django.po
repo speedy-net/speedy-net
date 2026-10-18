@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 03:23+0300\n"
+"POT-Creation-Date: 2026-10-18 05:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1493,8 +1493,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:183
 #, python-brace-format
@@ -1503,8 +1503,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:184
 #, python-brace-format
@@ -1513,8 +1513,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:185
 #, python-brace-format
@@ -1523,8 +1523,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:186
 #, python-brace-format
@@ -1533,8 +1533,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:187
 #, python-brace-format
@@ -1543,8 +1543,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:188
 #, python-brace-format
@@ -1553,8 +1553,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:189
 #, python-brace-format
@@ -1563,8 +1563,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:190
 #, python-brace-format
@@ -1573,8 +1573,8 @@ msgid ""
 "This user already has {0} friends. They can't have more than {1} friends on "
 "Speedy Net. Please ask them to remove friends before you proceed."
 msgstr ""
-"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他"
-"們刪除好友，然後再繼續操作。"
+"該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓"
+"他們刪除好友，然後再繼續操作。"
 
 #: .\__translations\__translations.py:192
 msgctxt "female"
@@ -3434,8 +3434,8 @@ msgid ""
 "the results of the meeting or phone call is yours."
 msgstr ""
 "網站管理方無法核實使用者提供的個人資訊。部分使用者的個人資訊可能不準確。網站"
-"管理方不對使用者在網站之外的活動負責。如果您選擇與在網站上認識的人見面或通話，"
-"則見面或通話的後果由您自行承擔。"
+"管理方不對使用者在網站之外的活動負責。如果您選擇與在網站上認識的人見面或通"
+"話，則見面或通話的後果由您自行承擔。"
 
 #: .\templates\terms\terms_of_service.html:25
 msgid ""
