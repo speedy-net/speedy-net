@@ -446,6 +446,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ja')
+        class FeedbackViewTypeFeedbackAllMainLanguagesJapaneseTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ja'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ru')
+        class FeedbackViewTypeFeedbackAllMainLanguagesRussianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ru'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='zh')
+        class FeedbackViewTypeFeedbackAllMainLanguagesChineseTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='pl')
+        class FeedbackViewTypeFeedbackAllMainLanguagesPolishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='fa')
+        class FeedbackViewTypeFeedbackAllMainLanguagesPersianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fa'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeFeedbackAllMainLanguagesHebrewTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):
             """
@@ -458,6 +533,501 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeFeedbackAllMainLanguagesKoreanTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ar')
+        class FeedbackViewTypeFeedbackAllMainLanguagesArabicTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='id')
+        class FeedbackViewTypeFeedbackAllMainLanguagesIndonesianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='uk')
+        class FeedbackViewTypeFeedbackAllMainLanguagesUkrainianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='tr')
+        class FeedbackViewTypeFeedbackAllMainLanguagesTurkishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='vi')
+        class FeedbackViewTypeFeedbackAllMainLanguagesVietnameseTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='cs')
+        class FeedbackViewTypeFeedbackAllMainLanguagesCzechTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeFeedbackAllMainLanguagesSwedishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeFeedbackAllMainLanguagesFinnishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='hu')
+        class FeedbackViewTypeFeedbackAllMainLanguagesHungarianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='th')
+        class FeedbackViewTypeFeedbackAllMainLanguagesThaiTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'th'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='el')
+        class FeedbackViewTypeFeedbackAllMainLanguagesGreekTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'el'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ms')
+        class FeedbackViewTypeFeedbackAllMainLanguagesMalayTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ms'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='sr')
+        class FeedbackViewTypeFeedbackAllMainLanguagesSerbianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ro')
+        class FeedbackViewTypeFeedbackAllMainLanguagesRomanianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ro'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='bn')
+        class FeedbackViewTypeFeedbackAllMainLanguagesBengaliTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bn'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ca')
+        class FeedbackViewTypeFeedbackAllMainLanguagesCatalanTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ca'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='no')
+        class FeedbackViewTypeFeedbackAllMainLanguagesNorwegianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'no'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='bg')
+        class FeedbackViewTypeFeedbackAllMainLanguagesBulgarianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bg'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='da')
+        class FeedbackViewTypeFeedbackAllMainLanguagesDanishTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'da'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='sk')
+        class FeedbackViewTypeFeedbackAllMainLanguagesSlovakTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='hi')
+        class FeedbackViewTypeFeedbackAllMainLanguagesHindiTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='et')
+        class FeedbackViewTypeFeedbackAllMainLanguagesEstonianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'et'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='hr')
+        class FeedbackViewTypeFeedbackAllMainLanguagesCroatianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='az')
+        class FeedbackViewTypeFeedbackAllMainLanguagesAzerbaijaniTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'az'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class FeedbackViewTypeFeedbackAllMainLanguagesCantoneseTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh-yue'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='lt')
+        class FeedbackViewTypeFeedbackAllMainLanguagesLithuanianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lt'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='sl')
+        class FeedbackViewTypeFeedbackAllMainLanguagesSlovenianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='eu')
+        class FeedbackViewTypeFeedbackAllMainLanguagesBasqueTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'eu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='hy')
+        class FeedbackViewTypeFeedbackAllMainLanguagesArmenianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hy'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='uz')
+        class FeedbackViewTypeFeedbackAllMainLanguagesUzbekTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uz'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='ta')
+        class FeedbackViewTypeFeedbackAllMainLanguagesTamilTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ta'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login  # Contact by form is currently limited only to sites with login.
+        @override_settings(LANGUAGE_CODE='lv')
+        class FeedbackViewTypeFeedbackAllMainLanguagesLatvianTestCase(FeedbackViewTypeFeedbackTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (plain feedback) for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         class FeedbackViewTypeReportEntityTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
@@ -596,6 +1166,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class FeedbackViewTypeReportEntityAllMainLanguagesJapaneseTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ja'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class FeedbackViewTypeReportEntityAllMainLanguagesRussianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ru'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class FeedbackViewTypeReportEntityAllMainLanguagesChineseTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class FeedbackViewTypeReportEntityAllMainLanguagesPolishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class FeedbackViewTypeReportEntityAllMainLanguagesPersianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fa'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeReportEntityAllMainLanguagesHebrewTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):
             """
@@ -608,6 +1253,501 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeReportEntityAllMainLanguagesKoreanTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class FeedbackViewTypeReportEntityAllMainLanguagesArabicTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class FeedbackViewTypeReportEntityAllMainLanguagesIndonesianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class FeedbackViewTypeReportEntityAllMainLanguagesUkrainianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class FeedbackViewTypeReportEntityAllMainLanguagesTurkishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class FeedbackViewTypeReportEntityAllMainLanguagesVietnameseTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class FeedbackViewTypeReportEntityAllMainLanguagesCzechTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeReportEntityAllMainLanguagesSwedishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeReportEntityAllMainLanguagesFinnishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class FeedbackViewTypeReportEntityAllMainLanguagesHungarianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class FeedbackViewTypeReportEntityAllMainLanguagesThaiTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'th'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class FeedbackViewTypeReportEntityAllMainLanguagesGreekTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'el'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class FeedbackViewTypeReportEntityAllMainLanguagesMalayTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ms'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class FeedbackViewTypeReportEntityAllMainLanguagesSerbianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class FeedbackViewTypeReportEntityAllMainLanguagesRomanianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ro'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class FeedbackViewTypeReportEntityAllMainLanguagesBengaliTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bn'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class FeedbackViewTypeReportEntityAllMainLanguagesCatalanTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ca'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class FeedbackViewTypeReportEntityAllMainLanguagesNorwegianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'no'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class FeedbackViewTypeReportEntityAllMainLanguagesBulgarianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bg'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class FeedbackViewTypeReportEntityAllMainLanguagesDanishTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'da'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class FeedbackViewTypeReportEntityAllMainLanguagesSlovakTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class FeedbackViewTypeReportEntityAllMainLanguagesHindiTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class FeedbackViewTypeReportEntityAllMainLanguagesEstonianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'et'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class FeedbackViewTypeReportEntityAllMainLanguagesCroatianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class FeedbackViewTypeReportEntityAllMainLanguagesAzerbaijaniTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'az'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class FeedbackViewTypeReportEntityAllMainLanguagesCantoneseTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh-yue'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class FeedbackViewTypeReportEntityAllMainLanguagesLithuanianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lt'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class FeedbackViewTypeReportEntityAllMainLanguagesSlovenianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class FeedbackViewTypeReportEntityAllMainLanguagesBasqueTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'eu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class FeedbackViewTypeReportEntityAllMainLanguagesArmenianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hy'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class FeedbackViewTypeReportEntityAllMainLanguagesUzbekTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uz'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class FeedbackViewTypeReportEntityAllMainLanguagesTamilTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ta'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class FeedbackViewTypeReportEntityAllMainLanguagesLatvianTestCase(FeedbackViewTypeReportEntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting another user) for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         class FeedbackViewTypeReportFileTestCaseMixin(FeedbackViewBaseMixin, TestCaseMixin):
@@ -746,6 +1886,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class FeedbackViewTypeReportFileAllMainLanguagesJapaneseTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ja'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class FeedbackViewTypeReportFileAllMainLanguagesRussianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ru'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class FeedbackViewTypeReportFileAllMainLanguagesChineseTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class FeedbackViewTypeReportFileAllMainLanguagesPolishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'pl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class FeedbackViewTypeReportFileAllMainLanguagesPersianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fa'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class FeedbackViewTypeReportFileAllMainLanguagesHebrewTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):
             """
@@ -758,5 +1973,500 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class FeedbackViewTypeReportFileAllMainLanguagesKoreanTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ko'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class FeedbackViewTypeReportFileAllMainLanguagesArabicTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ar'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class FeedbackViewTypeReportFileAllMainLanguagesIndonesianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'id'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class FeedbackViewTypeReportFileAllMainLanguagesUkrainianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class FeedbackViewTypeReportFileAllMainLanguagesTurkishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'tr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class FeedbackViewTypeReportFileAllMainLanguagesVietnameseTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'vi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class FeedbackViewTypeReportFileAllMainLanguagesCzechTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'cs'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class FeedbackViewTypeReportFileAllMainLanguagesSwedishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class FeedbackViewTypeReportFileAllMainLanguagesFinnishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'fi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class FeedbackViewTypeReportFileAllMainLanguagesHungarianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class FeedbackViewTypeReportFileAllMainLanguagesThaiTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'th'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class FeedbackViewTypeReportFileAllMainLanguagesGreekTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'el'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class FeedbackViewTypeReportFileAllMainLanguagesMalayTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ms'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class FeedbackViewTypeReportFileAllMainLanguagesSerbianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class FeedbackViewTypeReportFileAllMainLanguagesRomanianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ro'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class FeedbackViewTypeReportFileAllMainLanguagesBengaliTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bn'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class FeedbackViewTypeReportFileAllMainLanguagesCatalanTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ca'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class FeedbackViewTypeReportFileAllMainLanguagesNorwegianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'no'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class FeedbackViewTypeReportFileAllMainLanguagesBulgarianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'bg'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class FeedbackViewTypeReportFileAllMainLanguagesDanishTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'da'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class FeedbackViewTypeReportFileAllMainLanguagesSlovakTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sk'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class FeedbackViewTypeReportFileAllMainLanguagesHindiTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hi'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class FeedbackViewTypeReportFileAllMainLanguagesEstonianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'et'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class FeedbackViewTypeReportFileAllMainLanguagesCroatianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hr'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class FeedbackViewTypeReportFileAllMainLanguagesAzerbaijaniTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'az'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class FeedbackViewTypeReportFileAllMainLanguagesCantoneseTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'zh-yue'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class FeedbackViewTypeReportFileAllMainLanguagesLithuanianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lt'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class FeedbackViewTypeReportFileAllMainLanguagesSlovenianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'sl'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class FeedbackViewTypeReportFileAllMainLanguagesBasqueTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'eu'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class FeedbackViewTypeReportFileAllMainLanguagesArmenianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'hy'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class FeedbackViewTypeReportFileAllMainLanguagesUzbekTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'uz'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class FeedbackViewTypeReportFileAllMainLanguagesTamilTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'ta'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class FeedbackViewTypeReportFileAllMainLanguagesLatvianTestCase(FeedbackViewTypeReportFileTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the feedback view (reporting a file) for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code is 'lv'.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 

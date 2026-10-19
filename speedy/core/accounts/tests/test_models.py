@@ -530,6 +530,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class EntityAllMainLanguagesJapaneseTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class EntityAllMainLanguagesRussianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class EntityAllMainLanguagesChineseTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class EntityAllMainLanguagesPolishTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class EntityAllMainLanguagesPersianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class EntityAllMainLanguagesHebrewTestCase(EntityTestCaseMixin, SiteTestCase):
             """
@@ -542,6 +617,501 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class EntityAllMainLanguagesKoreanTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class EntityAllMainLanguagesArabicTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class EntityAllMainLanguagesIndonesianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class EntityAllMainLanguagesUkrainianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class EntityAllMainLanguagesTurkishTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class EntityAllMainLanguagesVietnameseTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class EntityAllMainLanguagesCzechTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class EntityAllMainLanguagesSwedishTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class EntityAllMainLanguagesFinnishTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class EntityAllMainLanguagesHungarianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class EntityAllMainLanguagesThaiTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class EntityAllMainLanguagesGreekTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class EntityAllMainLanguagesMalayTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class EntityAllMainLanguagesSerbianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class EntityAllMainLanguagesRomanianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class EntityAllMainLanguagesBengaliTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class EntityAllMainLanguagesCatalanTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class EntityAllMainLanguagesNorwegianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class EntityAllMainLanguagesBulgarianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class EntityAllMainLanguagesDanishTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class EntityAllMainLanguagesSlovakTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class EntityAllMainLanguagesHindiTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class EntityAllMainLanguagesEstonianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class EntityAllMainLanguagesCroatianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class EntityAllMainLanguagesAzerbaijaniTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class EntityAllMainLanguagesCantoneseTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class EntityAllMainLanguagesLithuanianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class EntityAllMainLanguagesSlovenianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class EntityAllMainLanguagesBasqueTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class EntityAllMainLanguagesArmenianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class EntityAllMainLanguagesUzbekTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class EntityAllMainLanguagesTamilTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class EntityAllMainLanguagesLatvianTestCase(EntityTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the Entity model, for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         class ReservedUsernameTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
@@ -855,6 +1425,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class ReservedUsernameAllMainLanguagesJapaneseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class ReservedUsernameAllMainLanguagesRussianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class ReservedUsernameAllMainLanguagesChineseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class ReservedUsernameAllMainLanguagesPolishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class ReservedUsernameAllMainLanguagesPersianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class ReservedUsernameAllMainLanguagesHebrewTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):
             """
@@ -867,6 +1512,501 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class ReservedUsernameAllMainLanguagesKoreanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class ReservedUsernameAllMainLanguagesArabicTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class ReservedUsernameAllMainLanguagesIndonesianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class ReservedUsernameAllMainLanguagesUkrainianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class ReservedUsernameAllMainLanguagesTurkishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class ReservedUsernameAllMainLanguagesVietnameseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class ReservedUsernameAllMainLanguagesCzechTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class ReservedUsernameAllMainLanguagesSwedishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class ReservedUsernameAllMainLanguagesFinnishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class ReservedUsernameAllMainLanguagesHungarianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class ReservedUsernameAllMainLanguagesThaiTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class ReservedUsernameAllMainLanguagesGreekTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class ReservedUsernameAllMainLanguagesMalayTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class ReservedUsernameAllMainLanguagesSerbianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class ReservedUsernameAllMainLanguagesRomanianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class ReservedUsernameAllMainLanguagesBengaliTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class ReservedUsernameAllMainLanguagesCatalanTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class ReservedUsernameAllMainLanguagesNorwegianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class ReservedUsernameAllMainLanguagesBulgarianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class ReservedUsernameAllMainLanguagesDanishTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class ReservedUsernameAllMainLanguagesSlovakTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class ReservedUsernameAllMainLanguagesHindiTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class ReservedUsernameAllMainLanguagesEstonianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class ReservedUsernameAllMainLanguagesCroatianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class ReservedUsernameAllMainLanguagesAzerbaijaniTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class ReservedUsernameAllMainLanguagesCantoneseTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class ReservedUsernameAllMainLanguagesLithuanianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class ReservedUsernameAllMainLanguagesSlovenianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class ReservedUsernameAllMainLanguagesBasqueTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class ReservedUsernameAllMainLanguagesArmenianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class ReservedUsernameAllMainLanguagesUzbekTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class ReservedUsernameAllMainLanguagesTamilTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class ReservedUsernameAllMainLanguagesLatvianTestCase(ReservedUsernameTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the ReservedUsername model, for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
@@ -2943,6 +4083,146 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class UserWithDataWithLastNameAllMainLanguagesJapaneseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Japanese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Japanese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Japanese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ja': "Doron",
+                    'last_name_ja': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class UserWithDataWithLastNameAllMainLanguagesRussianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Russian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Russian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Russian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ru': "Doron",
+                    'last_name_ru': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class UserWithDataWithLastNameAllMainLanguagesChineseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Chinese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Chinese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Chinese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh': "Doron",
+                    'last_name_zh': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class UserWithDataWithLastNameAllMainLanguagesPolishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Polish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Polish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Polish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_pl': "Doron",
+                    'last_name_pl': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class UserWithDataWithLastNameAllMainLanguagesPersianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Persian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Persian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Persian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fa': "Doron",
+                    'last_name_fa': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserWithDataWithLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
@@ -2968,6 +4248,930 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserWithDataWithLastNameAllMainLanguagesKoreanTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Korean).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Korean alphabet, to be used in validate_all_values.
+                """
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserWithDataWithLastNameAllMainLanguagesArabicTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Arabic).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Arabic alphabet, to be used in validate_all_values.
+                """
+                # Check names in Arabic alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ar': "Doron",
+                    'last_name_ar': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserWithDataWithLastNameAllMainLanguagesIndonesianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Indonesian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Indonesian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Indonesian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_id': "Doron",
+                    'last_name_id': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserWithDataWithLastNameAllMainLanguagesUkrainianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Ukrainian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Ukrainian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Ukrainian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uk': "Doron",
+                    'last_name_uk': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserWithDataWithLastNameAllMainLanguagesTurkishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Turkish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Turkish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Turkish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserWithDataWithLastNameAllMainLanguagesVietnameseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Vietnamese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Vietnamese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Vietnamese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserWithDataWithLastNameAllMainLanguagesCzechTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Czech).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Czech alphabet, to be used in validate_all_values.
+                """
+                # Check names in Czech alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserWithDataWithLastNameAllMainLanguagesSwedishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Swedish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Swedish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserWithDataWithLastNameAllMainLanguagesFinnishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Finnish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Finnish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class UserWithDataWithLastNameAllMainLanguagesHungarianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Hungarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Hungarian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Hungarian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hu': "Doron",
+                    'last_name_hu': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class UserWithDataWithLastNameAllMainLanguagesThaiTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Thai).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Thai alphabet, to be used in validate_all_values.
+                """
+                # Check names in Thai alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_th': "Doron",
+                    'last_name_th': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class UserWithDataWithLastNameAllMainLanguagesGreekTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Greek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Greek alphabet, to be used in validate_all_values.
+                """
+                # Check names in Greek alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_el': "Doron",
+                    'last_name_el': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class UserWithDataWithLastNameAllMainLanguagesMalayTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Malay).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Malay alphabet, to be used in validate_all_values.
+                """
+                # Check names in Malay alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ms': "Doron",
+                    'last_name_ms': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class UserWithDataWithLastNameAllMainLanguagesSerbianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Serbian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Serbian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Serbian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sr': "Doron",
+                    'last_name_sr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class UserWithDataWithLastNameAllMainLanguagesRomanianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Romanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Romanian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Romanian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ro': "Doron",
+                    'last_name_ro': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class UserWithDataWithLastNameAllMainLanguagesBengaliTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Bengali).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Bengali alphabet, to be used in validate_all_values.
+                """
+                # Check names in Bengali alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_bn': "Doron",
+                    'last_name_bn': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class UserWithDataWithLastNameAllMainLanguagesCatalanTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Catalan).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Catalan alphabet, to be used in validate_all_values.
+                """
+                # Check names in Catalan alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ca': "Doron",
+                    'last_name_ca': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class UserWithDataWithLastNameAllMainLanguagesNorwegianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Norwegian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Norwegian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Norwegian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_no': "Doron",
+                    'last_name_no': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class UserWithDataWithLastNameAllMainLanguagesBulgarianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Bulgarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Bulgarian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Bulgarian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_bg': "Doron",
+                    'last_name_bg': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class UserWithDataWithLastNameAllMainLanguagesDanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Danish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Danish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Danish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_da': "Doron",
+                    'last_name_da': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class UserWithDataWithLastNameAllMainLanguagesSlovakTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Slovak).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Slovak alphabet, to be used in validate_all_values.
+                """
+                # Check names in Slovak alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sk': "Doron",
+                    'last_name_sk': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class UserWithDataWithLastNameAllMainLanguagesHindiTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Hindi).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Hindi alphabet, to be used in validate_all_values.
+                """
+                # Check names in Hindi alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hi': "Doron",
+                    'last_name_hi': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class UserWithDataWithLastNameAllMainLanguagesEstonianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Estonian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Estonian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Estonian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_et': "Doron",
+                    'last_name_et': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class UserWithDataWithLastNameAllMainLanguagesCroatianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Croatian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Croatian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Croatian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hr': "Doron",
+                    'last_name_hr': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class UserWithDataWithLastNameAllMainLanguagesAzerbaijaniTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Azerbaijani).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Azerbaijani alphabet, to be used in validate_all_values.
+                """
+                # Check names in Azerbaijani alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_az': "Doron",
+                    'last_name_az': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class UserWithDataWithLastNameAllMainLanguagesCantoneseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Cantonese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Cantonese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Cantonese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh_yue': "Doron",
+                    'last_name_zh_yue': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class UserWithDataWithLastNameAllMainLanguagesLithuanianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Lithuanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Lithuanian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Lithuanian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_lt': "Doron",
+                    'last_name_lt': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class UserWithDataWithLastNameAllMainLanguagesSlovenianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Slovenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Slovenian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Slovenian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sl': "Doron",
+                    'last_name_sl': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class UserWithDataWithLastNameAllMainLanguagesBasqueTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Basque).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Basque alphabet, to be used in validate_all_values.
+                """
+                # Check names in Basque alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_eu': "Doron",
+                    'last_name_eu': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class UserWithDataWithLastNameAllMainLanguagesArmenianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Armenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Armenian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Armenian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hy': "Doron",
+                    'last_name_hy': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class UserWithDataWithLastNameAllMainLanguagesUzbekTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Uzbek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Uzbek alphabet, to be used in validate_all_values.
+                """
+                # Check names in Uzbek alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uz': "Doron",
+                    'last_name_uz': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class UserWithDataWithLastNameAllMainLanguagesTamilTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Tamil).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Tamil alphabet, to be used in validate_all_values.
+                """
+                # Check names in Tamil alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ta': "Doron",
+                    'last_name_ta': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class UserWithDataWithLastNameAllMainLanguagesLatvianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data including a last name, for all main languages (Latvian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Latvian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Latvian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_lv': "Doron",
+                    'last_name_lv': "Matalon",
+                })
+                self.first_name = "Doron"
+                self.last_name = "Matalon"
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         @only_on_sites_with_login
@@ -3166,6 +5370,146 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class UserWithDataWithoutLastNameAllMainLanguagesJapaneseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Japanese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Japanese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Japanese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ja': "Doron",
+                    'last_name_ja': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class UserWithDataWithoutLastNameAllMainLanguagesRussianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Russian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Russian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Russian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ru': "Doron",
+                    'last_name_ru': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class UserWithDataWithoutLastNameAllMainLanguagesChineseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Chinese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Chinese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Chinese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh': "Doron",
+                    'last_name_zh': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class UserWithDataWithoutLastNameAllMainLanguagesPolishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Polish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Polish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Polish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_pl': "Doron",
+                    'last_name_pl': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class UserWithDataWithoutLastNameAllMainLanguagesPersianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Persian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Persian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Persian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fa': "Doron",
+                    'last_name_fa': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserWithDataWithoutLastNameAllMainLanguagesHebrewTestCase(UserWithDataTestCaseMixin, SiteTestCase):
             """
@@ -3191,6 +5535,930 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserWithDataWithoutLastNameAllMainLanguagesKoreanTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Korean).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Korean alphabet, to be used in validate_all_values.
+                """
+                # Check names in Korean alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ko': "Doron",
+                    'last_name_ko': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserWithDataWithoutLastNameAllMainLanguagesArabicTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Arabic).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Arabic alphabet, to be used in validate_all_values.
+                """
+                # Check names in Arabic alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ar': "Doron",
+                    'last_name_ar': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserWithDataWithoutLastNameAllMainLanguagesIndonesianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Indonesian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Indonesian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Indonesian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_id': "Doron",
+                    'last_name_id': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserWithDataWithoutLastNameAllMainLanguagesUkrainianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Ukrainian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Ukrainian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Ukrainian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uk': "Doron",
+                    'last_name_uk': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserWithDataWithoutLastNameAllMainLanguagesTurkishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Turkish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Turkish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Turkish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_tr': "Doron",
+                    'last_name_tr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserWithDataWithoutLastNameAllMainLanguagesVietnameseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Vietnamese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Vietnamese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Vietnamese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_vi': "Doron",
+                    'last_name_vi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserWithDataWithoutLastNameAllMainLanguagesCzechTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Czech).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Czech alphabet, to be used in validate_all_values.
+                """
+                # Check names in Czech alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_cs': "Doron",
+                    'last_name_cs': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserWithDataWithoutLastNameAllMainLanguagesSwedishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Swedish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Swedish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Swedish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sv': "Doron",
+                    'last_name_sv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserWithDataWithoutLastNameAllMainLanguagesFinnishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Finnish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Finnish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Finnish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_fi': "Doron",
+                    'last_name_fi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class UserWithDataWithoutLastNameAllMainLanguagesHungarianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Hungarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Hungarian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Hungarian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hu': "Doron",
+                    'last_name_hu': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class UserWithDataWithoutLastNameAllMainLanguagesThaiTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Thai).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Thai alphabet, to be used in validate_all_values.
+                """
+                # Check names in Thai alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_th': "Doron",
+                    'last_name_th': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class UserWithDataWithoutLastNameAllMainLanguagesGreekTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Greek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Greek alphabet, to be used in validate_all_values.
+                """
+                # Check names in Greek alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_el': "Doron",
+                    'last_name_el': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class UserWithDataWithoutLastNameAllMainLanguagesMalayTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Malay).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Malay alphabet, to be used in validate_all_values.
+                """
+                # Check names in Malay alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ms': "Doron",
+                    'last_name_ms': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class UserWithDataWithoutLastNameAllMainLanguagesSerbianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Serbian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Serbian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Serbian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sr': "Doron",
+                    'last_name_sr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class UserWithDataWithoutLastNameAllMainLanguagesRomanianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Romanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Romanian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Romanian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ro': "Doron",
+                    'last_name_ro': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class UserWithDataWithoutLastNameAllMainLanguagesBengaliTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Bengali).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Bengali alphabet, to be used in validate_all_values.
+                """
+                # Check names in Bengali alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_bn': "Doron",
+                    'last_name_bn': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class UserWithDataWithoutLastNameAllMainLanguagesCatalanTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Catalan).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Catalan alphabet, to be used in validate_all_values.
+                """
+                # Check names in Catalan alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ca': "Doron",
+                    'last_name_ca': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class UserWithDataWithoutLastNameAllMainLanguagesNorwegianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Norwegian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Norwegian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Norwegian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_no': "Doron",
+                    'last_name_no': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class UserWithDataWithoutLastNameAllMainLanguagesBulgarianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Bulgarian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Bulgarian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Bulgarian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_bg': "Doron",
+                    'last_name_bg': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class UserWithDataWithoutLastNameAllMainLanguagesDanishTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Danish).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Danish alphabet, to be used in validate_all_values.
+                """
+                # Check names in Danish alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_da': "Doron",
+                    'last_name_da': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class UserWithDataWithoutLastNameAllMainLanguagesSlovakTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Slovak).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Slovak alphabet, to be used in validate_all_values.
+                """
+                # Check names in Slovak alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sk': "Doron",
+                    'last_name_sk': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class UserWithDataWithoutLastNameAllMainLanguagesHindiTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Hindi).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Hindi alphabet, to be used in validate_all_values.
+                """
+                # Check names in Hindi alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hi': "Doron",
+                    'last_name_hi': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class UserWithDataWithoutLastNameAllMainLanguagesEstonianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Estonian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Estonian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Estonian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_et': "Doron",
+                    'last_name_et': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class UserWithDataWithoutLastNameAllMainLanguagesCroatianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Croatian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Croatian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Croatian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hr': "Doron",
+                    'last_name_hr': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class UserWithDataWithoutLastNameAllMainLanguagesAzerbaijaniTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Azerbaijani).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Azerbaijani alphabet, to be used in validate_all_values.
+                """
+                # Check names in Azerbaijani alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_az': "Doron",
+                    'last_name_az': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class UserWithDataWithoutLastNameAllMainLanguagesCantoneseTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Cantonese).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Cantonese alphabet, to be used in validate_all_values.
+                """
+                # Check names in Cantonese alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_zh_yue': "Doron",
+                    'last_name_zh_yue': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class UserWithDataWithoutLastNameAllMainLanguagesLithuanianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Lithuanian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Lithuanian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Lithuanian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_lt': "Doron",
+                    'last_name_lt': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class UserWithDataWithoutLastNameAllMainLanguagesSlovenianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Slovenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Slovenian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Slovenian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_sl': "Doron",
+                    'last_name_sl': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class UserWithDataWithoutLastNameAllMainLanguagesBasqueTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Basque).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Basque alphabet, to be used in validate_all_values.
+                """
+                # Check names in Basque alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_eu': "Doron",
+                    'last_name_eu': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class UserWithDataWithoutLastNameAllMainLanguagesArmenianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Armenian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Armenian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Armenian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_hy': "Doron",
+                    'last_name_hy': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class UserWithDataWithoutLastNameAllMainLanguagesUzbekTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Uzbek).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Uzbek alphabet, to be used in validate_all_values.
+                """
+                # Check names in Uzbek alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_uz': "Doron",
+                    'last_name_uz': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class UserWithDataWithoutLastNameAllMainLanguagesTamilTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Tamil).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Tamil alphabet, to be used in validate_all_values.
+                """
+                # Check names in Tamil alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_ta': "Doron",
+                    'last_name_ta': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class UserWithDataWithoutLastNameAllMainLanguagesLatvianTestCase(UserWithDataTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests creating a user with data without a last name, for all main languages (Latvian).
+            """
+
+            def set_up(self):
+                """
+                Sets up the user's first and last name in the Latvian alphabet, to be used in validate_all_values.
+                """
+                # Check names in Latvian alphabet.
+                super().set_up()
+                self.data.update({
+                    'first_name_lv': "Doron",
+                    'last_name_lv': "",
+                })
+                self.first_name = "Doron"
+                self.last_name = ""
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
         class UserEmailAddressTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
@@ -4018,6 +7286,81 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ja')
+        class UserEmailAddressAllMainLanguagesJapaneseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Japanese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ja')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ru')
+        class UserEmailAddressAllMainLanguagesRussianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Russian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ru')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh')
+        class UserEmailAddressAllMainLanguagesChineseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Chinese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='pl')
+        class UserEmailAddressAllMainLanguagesPolishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Polish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='pl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fa')
+        class UserEmailAddressAllMainLanguagesPersianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Persian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fa')
+
+
+        @only_on_sites_with_login
         @override_settings(LANGUAGE_CODE='he')
         class UserEmailAddressAllMainLanguagesHebrewTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):
             """
@@ -4030,5 +7373,500 @@ if (django_settings.TESTS):
                 """
                 super().validate_all_values()
                 self.assertEqual(first=self.language_code, second='he')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ko')
+        class UserEmailAddressAllMainLanguagesKoreanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Korean).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ko')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ar')
+        class UserEmailAddressAllMainLanguagesArabicTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Arabic).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ar')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='id')
+        class UserEmailAddressAllMainLanguagesIndonesianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Indonesian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='id')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uk')
+        class UserEmailAddressAllMainLanguagesUkrainianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Ukrainian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='tr')
+        class UserEmailAddressAllMainLanguagesTurkishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Turkish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='tr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='vi')
+        class UserEmailAddressAllMainLanguagesVietnameseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Vietnamese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='vi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='cs')
+        class UserEmailAddressAllMainLanguagesCzechTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Czech).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='cs')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sv')
+        class UserEmailAddressAllMainLanguagesSwedishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Swedish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sv')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='fi')
+        class UserEmailAddressAllMainLanguagesFinnishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Finnish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='fi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hu')
+        class UserEmailAddressAllMainLanguagesHungarianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Hungarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='th')
+        class UserEmailAddressAllMainLanguagesThaiTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Thai).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='th')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='el')
+        class UserEmailAddressAllMainLanguagesGreekTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Greek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='el')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ms')
+        class UserEmailAddressAllMainLanguagesMalayTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Malay).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ms')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sr')
+        class UserEmailAddressAllMainLanguagesSerbianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Serbian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ro')
+        class UserEmailAddressAllMainLanguagesRomanianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Romanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ro')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bn')
+        class UserEmailAddressAllMainLanguagesBengaliTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Bengali).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bn')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ca')
+        class UserEmailAddressAllMainLanguagesCatalanTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Catalan).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ca')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='no')
+        class UserEmailAddressAllMainLanguagesNorwegianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Norwegian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='no')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='bg')
+        class UserEmailAddressAllMainLanguagesBulgarianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Bulgarian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='bg')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='da')
+        class UserEmailAddressAllMainLanguagesDanishTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Danish).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='da')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sk')
+        class UserEmailAddressAllMainLanguagesSlovakTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Slovak).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sk')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hi')
+        class UserEmailAddressAllMainLanguagesHindiTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Hindi).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hi')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='et')
+        class UserEmailAddressAllMainLanguagesEstonianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Estonian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='et')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hr')
+        class UserEmailAddressAllMainLanguagesCroatianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Croatian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hr')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='az')
+        class UserEmailAddressAllMainLanguagesAzerbaijaniTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Azerbaijani).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='az')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='zh-yue')
+        class UserEmailAddressAllMainLanguagesCantoneseTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Cantonese).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='zh-yue')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lt')
+        class UserEmailAddressAllMainLanguagesLithuanianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Lithuanian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lt')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='sl')
+        class UserEmailAddressAllMainLanguagesSlovenianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Slovenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='sl')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='eu')
+        class UserEmailAddressAllMainLanguagesBasqueTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Basque).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='eu')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='hy')
+        class UserEmailAddressAllMainLanguagesArmenianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Armenian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='hy')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='uz')
+        class UserEmailAddressAllMainLanguagesUzbekTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Uzbek).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='uz')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='ta')
+        class UserEmailAddressAllMainLanguagesTamilTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Tamil).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='ta')
+
+
+        @only_on_sites_with_login
+        @override_settings(LANGUAGE_CODE='lv')
+        class UserEmailAddressAllMainLanguagesLatvianTestCase(UserEmailAddressTestCaseMixin, SiteTestCase):  # ~~~~ TODO: remove this test!!!
+            """
+            Tests the UserEmailAddress model, for all main languages (Latvian).
+            """
+
+            def validate_all_values(self):
+                """
+                Runs the mixin's shared assertions and verifies the active language code matches this test case's language.
+                """
+                super().validate_all_values()
+                self.assertEqual(first=self.language_code, second='lv')
 
 
