@@ -289,7 +289,7 @@ if (django_settings.TESTS):
                 self.assertIn(member="<title>{}</title>".format(escape(text=self.expected_title[self.site.id])), container=r.content.decode())
                 self.assert_text_in_page(text=self.birth_date, page=r.content.decode())
                 self.assert_text_not_in_page(text=self.birth_year, page=r.content.decode())
-                if (self.language_code not in {'ru', 'ms', 'hr', 'cs', 'vi', 'eu', 'id', 'uk', 'el'}):
+                if (self.language_code not in {'ru', 'id', 'uk', 'vi', 'cs', 'el', 'ms', 'hr', 'eu'}):
                     self.assertIn(member=escape(text=self.user_birth_month_day), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_year), container=r.content.decode())
                 self.assertIn(member=escape(text=self.user_birth_date), container=r.content.decode())
