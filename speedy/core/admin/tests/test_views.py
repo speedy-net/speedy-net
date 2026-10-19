@@ -39,7 +39,7 @@ if (django_settings.TESTS):
                 """
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertIn(member="<h1>{}</h1>".format(escape(text=self._permission_denied_h1)), container=r.content.decode())
-                self.assertIn(member=escape(text=self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+                self.assertIn(member=self._speedy_is_sorry_but_this_page_is_private_alert, container=r.content.decode())
 
             def set_up(self):
                 """
@@ -86,7 +86,7 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertNotIn(member="<h1>{}</h1>".format(escape(text=self._permission_denied_h1)), container=r.content.decode())
-                self.assertNotIn(member=escape(text=self._speedy_is_sorry_but_this_page_is_private_alert), container=r.content.decode())
+                self.assertNotIn(member=self._speedy_is_sorry_but_this_page_is_private_alert, container=r.content.decode())
                 return r
 
 

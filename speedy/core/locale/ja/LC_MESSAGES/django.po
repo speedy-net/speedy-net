@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-10-18 03:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\__translations\__translations.html:5
 msgid "Your friend"
@@ -932,9 +932,6 @@ msgid_plural ""
 "List contains %(show_value)d items, it should contain no more than "
 "%(limit_value)d."
 msgstr[0] ""
-"リストには %(show_value)d 項目が含まれています。含まれるのは %(limit_value)d "
-"までです。"
-msgstr[1] ""
 "リストには %(show_value)d 項目が含まれています。含まれるのは %(limit_value)d "
 "以内である必要があります。"
 
@@ -2277,9 +2274,6 @@ msgid_plural ""
 msgstr[0] ""
 "ユーザー名には少なくとも %(limit_value)d 文字の英数字が必要です（現在は "
 "%(show_value)d 文字です）。"
-msgstr[1] ""
-"ユーザー名には少なくとも %(limit_value)d 文字の英数字が必要です（現在は "
-"%(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:94
 #, python-format
@@ -2290,9 +2284,6 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d alphanumeric characters (it "
 "has %(show_value)d)."
 msgstr[0] ""
-"ユーザー名に使用できる英数字は最大 %(limit_value)d 文字です（現在は "
-"%(show_value)d 文字です）。"
-msgstr[1] ""
 "ユーザー名に使用できる英数字は最大 %(limit_value)d 文字です（現在は "
 "%(show_value)d 文字です）。"
 
@@ -2307,9 +2298,6 @@ msgid_plural ""
 msgstr[0] ""
 "ユーザー名には少なくとも %(limit_value)d 文字が必要です（現在は "
 "%(show_value)d 文字です）。"
-msgstr[1] ""
-"ユーザー名には少なくとも %(limit_value)d 文字が必要です（現在は "
-"%(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:140
 #, python-format
@@ -2320,8 +2308,6 @@ msgid_plural ""
 "Username must contain at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"ユーザー名は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
-msgstr[1] ""
 "ユーザー名は最大 %(limit_value)d 文字です（現在は %(show_value)d 文字です）。"
 
 #: .\accounts\validators.py:190
@@ -2334,16 +2320,12 @@ msgid_plural ""
 "characters."
 msgstr[0] ""
 "このパスワードは短すぎます。%(min_length)d文字以上で入力してください。"
-msgstr[1] ""
-"このパスワードは短すぎます。%(min_length)d文字以上で入力してください。"
 
 #: .\accounts\validators.py:206
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] ""
-"パスワードには少なくとも %(min_length)d 文字が含まれている必要があります。"
-msgstr[1] ""
 "パスワードには少なくとも %(min_length)d 文字を含める必要があります。"
 
 #: .\accounts\validators.py:245
@@ -2354,15 +2336,12 @@ msgid_plural ""
 "This password is too long. It must contain at most %(max_length)d characters."
 msgstr[0] ""
 "このパスワードは長すぎます。%(max_length)d文字以下で入力してください。"
-msgstr[1] ""
-"このパスワードは長すぎます。%(max_length)d文字以下で入力してください。"
 
 #: .\accounts\validators.py:261
 #, python-format
 msgid "Your password must contain at most %(max_length)d character."
 msgid_plural "Your password must contain at most %(max_length)d characters."
 msgstr[0] "パスワードには最大 %(max_length)d 文字を含める必要があります。"
-msgstr[1] "パスワードには最大 %(max_length)d 文字を含める必要があります。"
 
 #: .\accounts\validators.py:299 .\accounts\validators.py:310
 #, python-format

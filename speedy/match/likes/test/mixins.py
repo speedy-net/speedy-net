@@ -113,8 +113,8 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Beğendiğiniz kişiler',
                 },
                 'vi': {
-                    User.GENDER_FEMALE_STRING: 'Cô gái bạn thích',
-                    User.GENDER_MALE_STRING: 'chàng trai bạn thích',
+                    User.GENDER_FEMALE_STRING: 'Những cô gái bạn thích',
+                    User.GENDER_MALE_STRING: 'Những chàng trai bạn thích',
                     User.GENDER_OTHER_STRING: 'Những người bạn thích',
                 },
                 'cs': {
@@ -133,19 +133,19 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Ihmiset, joista tykkäät',
                 },
                 'hu': {
-                    User.GENDER_FEMALE_STRING: 'Lányok, akiket kedvelsz',
-                    User.GENDER_MALE_STRING: 'Fiúk, akiket kedvelsz',
-                    User.GENDER_OTHER_STRING: 'Olyan emberek, akiket kedvelsz',
+                    User.GENDER_FEMALE_STRING: 'Lányok, akiket Ön kedvel',
+                    User.GENDER_MALE_STRING: 'Fiúk, akiket Ön kedvel',
+                    User.GENDER_OTHER_STRING: 'Emberek, akiket Ön kedvel',
                 },
                 'th': {
-                    User.GENDER_FEMALE_STRING: 'ผู้หญิงที่คุณชอบ',
-                    User.GENDER_MALE_STRING: 'ผู้ชายที่คุณชอบ',
-                    User.GENDER_OTHER_STRING: 'คนที่คุณชอบ',
+                    User.GENDER_FEMALE_STRING: 'ผู้หญิงที่คุณถูกใจ',
+                    User.GENDER_MALE_STRING: 'ผู้ชายที่คุณถูกใจ',
+                    User.GENDER_OTHER_STRING: 'คนที่คุณถูกใจ',
                 },
                 'el': {
-                    User.GENDER_FEMALE_STRING: 'Κορίτσια που σου αρέσουν',
-                    User.GENDER_MALE_STRING: 'Αγόρια που σου αρέσουν',
-                    User.GENDER_OTHER_STRING: 'Άτομα που σου αρέσουν',
+                    User.GENDER_FEMALE_STRING: 'Κορίτσια που σας αρέσουν',
+                    User.GENDER_MALE_STRING: 'Αγόρια που σας αρέσουν',
+                    User.GENDER_OTHER_STRING: 'Άτομα που σας αρέσουν',
                 },
                 'ms': {
                     User.GENDER_FEMALE_STRING: 'Gadis yang Anda Suka',
@@ -153,24 +153,24 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Orang yang Anda Suka',
                 },
                 'sr': {
-                    User.GENDER_FEMALE_STRING: 'Гирлс Иоу Лике',
-                    User.GENDER_MALE_STRING: 'Боис Иоу Лике',
-                    User.GENDER_OTHER_STRING: 'Људи које волите',
+                    User.GENDER_FEMALE_STRING: 'Девојке које лајкујете',
+                    User.GENDER_MALE_STRING: 'Момци које лајкујете',
+                    User.GENDER_OTHER_STRING: 'Људи које лајкујете',
                 },
                 'ro': {
                     User.GENDER_FEMALE_STRING: 'Fete care vă plac',
                     User.GENDER_MALE_STRING: 'Băieți care vă plac',
-                    User.GENDER_OTHER_STRING: 'Oameni care vă plac',
+                    User.GENDER_OTHER_STRING: 'Persoane care vă plac',
                 },
                 'bn': {
                     User.GENDER_FEMALE_STRING: 'আপনার পছন্দের মেয়েরা',
-                    User.GENDER_MALE_STRING: 'বয়েজ ইউ লাইক',
-                    User.GENDER_OTHER_STRING: 'আপনি পছন্দ মানুষ',
+                    User.GENDER_MALE_STRING: 'আপনার পছন্দের ছেলেরা',
+                    User.GENDER_OTHER_STRING: 'আপনার পছন্দের মানুষ',
                 },
                 'ca': {
                     User.GENDER_FEMALE_STRING: "Noies que t'agraden",
                     User.GENDER_MALE_STRING: "Nois que t'agraden",
-                    User.GENDER_OTHER_STRING: "Gent que t'agrada",
+                    User.GENDER_OTHER_STRING: "Persones que t'agraden",
                 },
                 'no': {
                     User.GENDER_FEMALE_STRING: 'Jenter du liker',
@@ -189,13 +189,13 @@ if (django_settings.TESTS):
                 },
                 'sk': {
                     User.GENDER_FEMALE_STRING: 'Dievčatá, ktoré sa vám páčia',
-                    User.GENDER_MALE_STRING: 'Chlapci, ktorých máte radi',
-                    User.GENDER_OTHER_STRING: 'Ľudia, ktorých máte radi',
+                    User.GENDER_MALE_STRING: 'Chlapci, ktorí sa vám páčia',
+                    User.GENDER_OTHER_STRING: 'Ľudia, ktorí sa vám páčia',
                 },
                 'hi': {
                     User.GENDER_FEMALE_STRING: 'जिन लड़कियों को आप पसंद करते हैं',
-                    User.GENDER_MALE_STRING: 'लड़के तुम्हें पसंद हैं',
-                    User.GENDER_OTHER_STRING: 'वे लोग जिन्हें आप पसंद करते हैं',
+                    User.GENDER_MALE_STRING: 'आपको पसंद आने वाले लड़के',
+                    User.GENDER_OTHER_STRING: 'जिन लोगों को आप पसंद करते हैं',
                 },
                 'et': {
                     User.GENDER_FEMALE_STRING: 'Tüdrukud, kes teile meeldivad',
@@ -243,9 +243,9 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Siz yoqtirgan odamlar',
                 },
                 'ta': {
-                    User.GENDER_FEMALE_STRING: 'உனக்கு பிடித்த பெண்கள்',
-                    User.GENDER_MALE_STRING: 'உங்களுக்கு பிடித்த சிறுவர்கள்',
-                    User.GENDER_OTHER_STRING: 'உங்களுக்கு பிடித்தவர்கள்',
+                    User.GENDER_FEMALE_STRING: 'நீங்கள் விரும்பும் பெண்கள்',
+                    User.GENDER_MALE_STRING: 'நீங்கள் விரும்பும் சிறுவர்கள்',
+                    User.GENDER_OTHER_STRING: 'நீங்கள் விரும்பும் நபர்கள்',
                 },
                 'lv': {
                     User.GENDER_FEMALE_STRING: 'Meitenes, kas jums patīk',
@@ -347,7 +347,7 @@ if (django_settings.TESTS):
                 },
                 'vi': {
                     User.GENDER_FEMALE_STRING: 'Những cô gái thích bạn',
-                    User.GENDER_MALE_STRING: 'Chàng trai thích bạn',
+                    User.GENDER_MALE_STRING: 'Những chàng trai thích bạn',
                     User.GENDER_OTHER_STRING: 'Những người thích bạn',
                 },
                 'cs': {
@@ -366,44 +366,44 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Ihmiset, jotka tykkäävät sinusta',
                 },
                 'hu': {
-                    User.GENDER_FEMALE_STRING: 'Lányok, akik kedvelnek téged',
-                    User.GENDER_MALE_STRING: 'Fiúk, akik kedvelnek téged',
-                    User.GENDER_OTHER_STRING: 'Emberek, akik kedvelnek téged',
+                    User.GENDER_FEMALE_STRING: 'Lányok, akik kedvelik Önt',
+                    User.GENDER_MALE_STRING: 'Fiúk, akik kedvelik Önt',
+                    User.GENDER_OTHER_STRING: 'Emberek, akik kedvelik Önt',
                 },
                 'th': {
-                    User.GENDER_FEMALE_STRING: 'ผู้หญิงที่ชอบคุณ',
-                    User.GENDER_MALE_STRING: 'เด็กผู้ชายที่ชอบคุณ',
-                    User.GENDER_OTHER_STRING: 'คนที่ชอบคุณ',
+                    User.GENDER_FEMALE_STRING: 'ผู้หญิงที่ถูกใจคุณ',
+                    User.GENDER_MALE_STRING: 'ผู้ชายที่ถูกใจคุณ',
+                    User.GENDER_OTHER_STRING: 'คนที่ถูกใจคุณ',
                 },
                 'el': {
-                    User.GENDER_FEMALE_STRING: 'Κορίτσια που σου αρέσουν',
-                    User.GENDER_MALE_STRING: 'Αγόρια που σας αρέσουν',
-                    User.GENDER_OTHER_STRING: 'Άτομα που σε συμπαθούν',
+                    User.GENDER_FEMALE_STRING: 'Κορίτσια που τους αρέσετε',
+                    User.GENDER_MALE_STRING: 'Αγόρια που τους αρέσετε',
+                    User.GENDER_OTHER_STRING: 'Άτομα που τους αρέσετε',
                 },
                 'ms': {
-                    User.GENDER_FEMALE_STRING: 'Perempuan Yang Suka Awak',
-                    User.GENDER_MALE_STRING: 'Lelaki Yang Suka Awak',
-                    User.GENDER_OTHER_STRING: 'Orang Yang Suka Anda',
+                    User.GENDER_FEMALE_STRING: 'Gadis yang Menyukai Anda',
+                    User.GENDER_MALE_STRING: 'Lelaki yang Menyukai Anda',
+                    User.GENDER_OTHER_STRING: 'Orang yang Menyukai Anda',
                 },
                 'sr': {
-                    User.GENDER_FEMALE_STRING: 'Гирлс Вхо Лике Иоу',
-                    User.GENDER_MALE_STRING: 'Боис Вхо Лике Иоу',
-                    User.GENDER_OTHER_STRING: 'Људи који вас воле',
+                    User.GENDER_FEMALE_STRING: 'Девојке које вас лајкују',
+                    User.GENDER_MALE_STRING: 'Момци који вас лајкују',
+                    User.GENDER_OTHER_STRING: 'Људи који вас лајкују',
                 },
                 'ro': {
-                    User.GENDER_FEMALE_STRING: 'Fete care te plac',
-                    User.GENDER_MALE_STRING: 'Băieți care vă plac',
-                    User.GENDER_OTHER_STRING: 'Oameni care te plac',
+                    User.GENDER_FEMALE_STRING: 'Fete cărora le plăceți',
+                    User.GENDER_MALE_STRING: 'Băieți cărora le plăceți',
+                    User.GENDER_OTHER_STRING: 'Persoane cărora le plăceți',
                 },
                 'bn': {
-                    User.GENDER_FEMALE_STRING: 'মেয়েরা যারা তোমাকে পছন্দ করে',
-                    User.GENDER_MALE_STRING: 'বয়েজ হু লাইক ইউ',
+                    User.GENDER_FEMALE_STRING: 'যে মেয়েরা আপনাকে পছন্দ করে',
+                    User.GENDER_MALE_STRING: 'যে ছেলেরা আপনাকে পছন্দ করে',
                     User.GENDER_OTHER_STRING: 'যারা আপনাকে পছন্দ করে',
                 },
                 'ca': {
-                    User.GENDER_FEMALE_STRING: "Noies que t'agraden",
-                    User.GENDER_MALE_STRING: "Nois que t'agraden",
-                    User.GENDER_OTHER_STRING: "Gent que t'agrada",
+                    User.GENDER_FEMALE_STRING: 'Noies a qui agrades',
+                    User.GENDER_MALE_STRING: 'Nois a qui agrades',
+                    User.GENDER_OTHER_STRING: 'Persones a qui agrades',
                 },
                 'no': {
                     User.GENDER_FEMALE_STRING: 'Jenter som liker deg',
@@ -421,13 +421,13 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Mennesker, der kan lide dig',
                 },
                 'sk': {
-                    User.GENDER_FEMALE_STRING: 'Dievčatá, ktoré ťa majú radi',
-                    User.GENDER_MALE_STRING: 'Chlapci, ktorí ťa majú radi',
-                    User.GENDER_OTHER_STRING: 'Ľudia, ktorí ťa majú radi',
+                    User.GENDER_FEMALE_STRING: 'Dievčatá, ktoré vás majú rady',
+                    User.GENDER_MALE_STRING: 'Chlapci, ktorí vás majú radi',
+                    User.GENDER_OTHER_STRING: 'Ľudia, ktorí vás majú radi',
                 },
                 'hi': {
-                    User.GENDER_FEMALE_STRING: 'जो लड़कियाँ तुम्हें पसंद करती हैं',
-                    User.GENDER_MALE_STRING: 'लड़के जो तुम्हें पसंद करते हैं',
+                    User.GENDER_FEMALE_STRING: 'जो लड़कियां आपको पसंद करती हैं',
+                    User.GENDER_MALE_STRING: 'जो लड़के तुम्हें पसंद करते हैं',
                     User.GENDER_OTHER_STRING: 'जो लोग आपको पसंद करते हैं',
                 },
                 'et': {
@@ -436,9 +436,9 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Inimesed, kellele sa meeldid',
                 },
                 'hr': {
-                    User.GENDER_FEMALE_STRING: 'Djevojke kojima se sviđaš',
-                    User.GENDER_MALE_STRING: 'Dečki kojima se sviđaš',
-                    User.GENDER_OTHER_STRING: 'Ljudi kojima se sviđaš',
+                    User.GENDER_FEMALE_STRING: 'Djevojke kojima se sviđate',
+                    User.GENDER_MALE_STRING: 'Dečki kojima se sviđate',
+                    User.GENDER_OTHER_STRING: 'Ljudi kojima se sviđate',
                 },
                 'az': {
                     User.GENDER_FEMALE_STRING: 'Sizi bəyənən qızlar',
@@ -476,9 +476,9 @@ if (django_settings.TESTS):
                     User.GENDER_OTHER_STRING: 'Sizni yoqtirgan odamlar',
                 },
                 'ta': {
-                    User.GENDER_FEMALE_STRING: 'உன்னைப் பிடித்த பெண்கள்',
-                    User.GENDER_MALE_STRING: 'உங்களைப் போன்ற சிறுவர்கள்',
-                    User.GENDER_OTHER_STRING: 'உங்களைப் போன்றவர்கள்',
+                    User.GENDER_FEMALE_STRING: 'உங்களை விரும்பும் பெண்கள்',
+                    User.GENDER_MALE_STRING: 'உங்களை விரும்பும் சிறுவர்கள்',
+                    User.GENDER_OTHER_STRING: 'உங்களை விரும்பும் நபர்கள்',
                 },
                 'lv': {
                     User.GENDER_FEMALE_STRING: 'Meitenes, kurām jūs patīkat',
@@ -510,19 +510,19 @@ if (django_settings.TESTS):
                     **{gender: 'Iemand vindt je leuk op Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ja': {
-                    **{gender: 'Speedy Match であなたに「いいね！」した人がいます' for gender in User.ALL_GENDERS},
+                    **{gender: 'Speedy Match で誰かがあなたを好きです' for gender in User.ALL_GENDERS},
                 },
                 'ru': {
-                    **{gender: 'Кому-то вы понравились в Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Вы кому-то нравитесь на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '在 Speedy Match 上有人喜欢你' for gender in User.ALL_GENDERS},
+                    **{gender: '有人喜歡你Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
-                    **{gender: 'Ktoś polubił Cię w Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ktoś Cię lubi na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'fa': {
-                    **{gender: 'شخصی در Speedy Match شما را پسندیده است' for gender in User.ALL_GENDERS},
+                    **{gender: 'کسی شما را در Speedy Match دوست دارد' for gender in User.ALL_GENDERS},
                 },
                 'he': {
                     User.GENDER_FEMALE_STRING: "מישהי עשתה לך לייק בספידי מץ'",
@@ -533,22 +533,22 @@ if (django_settings.TESTS):
                     **{gender: '누군가가 다음에서 귀하를 좋아합니다 Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{gender: 'هناك شخص معجب بك على Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'شخص ما معجب بك على Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'id': {
-                    **{gender: 'Seseorang menyukai Anda di Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Seseorang menyukaimu di Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{gender: 'Ви комусь сподобалися у Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ти комусь подобаєшся на Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{gender: 'Birisi sizi Speedy Match üzerinde beğendi' for gender in User.ALL_GENDERS},
+                    **{gender: "Birisi seni Speedy Match'da beğeniyor" for gender in User.ALL_GENDERS},
                 },
                 'vi': {
                     **{gender: 'Có người thích bạn trên Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
-                    **{gender: 'Někomu se líbíte na Speedy Match' for gender in User.ALL_GENDERS},
+                    **{gender: 'Někdo vás má rád na Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'sv': {
                     **{gender: 'Någon gillar dig på Speedy Match' for gender in User.ALL_GENDERS},
@@ -605,7 +605,7 @@ if (django_settings.TESTS):
                     **{gender: 'Speedy Match-də kimsə sizi bəyənir' for gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
-                    **{gender: '有人喺 Speedy Match 度鍾意你' for gender in User.ALL_GENDERS},
+                    **{gender: '有人喜歡你Speedy Match' for gender in User.ALL_GENDERS},
                 },
                 'lt': {
                     **{gender: 'Kažkas jus pažymėjo „Patinka“ svetainėje Speedy Match' for gender in User.ALL_GENDERS},

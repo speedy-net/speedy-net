@@ -10,6 +10,7 @@ if (django_settings.TESTS):
 
         from django.test import override_settings
         from django.core import mail
+        from django.utils.html import escape
 
         from speedy.core.base.test import tests_settings
         from speedy.core.base.test.mixins import TestCaseMixin
@@ -410,17 +411,17 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=len(self.to_likes))
                 for string in strings:
-                    self.assertIn(member=string, container=r.content.decode())
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
                 r = self.client.get(path=self.from_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=len(self.from_likes))
                 for string in strings:
-                    self.assertIn(member=string, container=r.content.decode())
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
                 r = self.client.get(path=self.mutual_url)
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=len(r.context['object_list']), second=len(self.mutual_likes))
                 for string in strings:
-                    self.assertIn(member=string, container=r.content.decode())
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
 
             def test_visitor_has_no_access(self):
                 """

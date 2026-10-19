@@ -46,7 +46,7 @@ if (django_settings.TESTS):
 
             _friendship_request_sent_success_message_dict = {'en': 'Friendship request sent.', 'fr': 'Demande d’amitié envoyée.', 'de': 'Freundschaftsanfrage gesendet.', 'es': 'Solicitud de amistad enviada.', 'pt': 'Pedido de amizade enviado.', 'it': 'Richiesta di amicizia inviata.', 'nl': 'Vriendschapsverzoek verzonden.', 'ja': 'フレンドシップリクエストが送信されました。', 'ru': 'Запрос на дружбу отправлен.', 'zh': '已發送好友請求。', 'pl': 'Wysłano prośbę o dodanie do znajomych.', 'fa': 'درخواست دوستی ارسال شد.', 'he': 'בקשת חברות נשלחה.', 'ko': '친구 요청 전송됨.', 'ar': 'تم إرسال طلب الصداقة.', 'id': 'Permintaan pertemanan terkirim.', 'uk': 'Запит на дружбу надіслано.', 'tr': 'Arkadaşlık isteği gönderildi.', 'vi': 'Đã gửi lời mời kết bạn.', 'cs': 'Žádost o přátelství odeslána.', 'sv': 'Vänskapsförfrågan skickad.', 'fi': 'Ystävyyspyyntö lähetetty.', 'hu': 'Barátsági kérelem elküldve.', 'th': 'ส่งคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας εστάλη.', 'ms': 'Permintaan persahabatan dihantar.', 'sr': 'Захтев за пријатељство је послат.', 'ro': 'Cerere de prietenie trimisă.', 'bn': 'বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।', 'ca': "S'ha enviat una sol·licitud d'amistat.", 'no': 'Venneforespørsel sendt.', 'bg': 'Молбата за приятелство е изпратена.', 'da': 'Venskabsanmodning sendt.', 'sk': 'Žiadosť o priateľstvo bola odoslaná.', 'hi': 'मित्रता अनुरोध भेजा गया।', 'et': 'Sõbrakutse saadetud.', 'hr': 'Zahtjev za prijateljstvo poslan.', 'az': 'Dostluq istəyi göndərildi.', 'zh-yue': '已傳送好友請求。', 'lt': 'Kvietimas draugauti išsiųstas.', 'sl': 'Zahteva za prijateljstvo je bila poslana.', 'eu': 'Laguntasun-eskaera bidali da.', 'hy': 'Ընկերության հարցումն ուղարկվել է։', 'uz': "Do'stlik so'rovi yuborildi.", 'ta': 'நட்பு கோரிக்கை அனுப்பிய.', 'lv': 'Draudzības pieprasījums nosūtīts.'}
 
-            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': 'Freundschaftsanfrage akzeptiert.', 'es': 'Solicitud de amistad aceptada.', 'pt': 'Pedido de amizade aceita.', 'it': 'Richiesta di amicizia accettata.', 'nl': 'Vriendschapsverzoek geaccepteerd.', 'ja': 'フレンド申請受け付けました。', 'ru': 'Запрос на дружбу принят.', 'zh': '已接受好友請求。', 'pl': 'Prośba o przyjaźń została zaakceptowana.', 'fa': 'درخواست دوستی پذیرفته شد', 'he': 'בקשת החברות התקבלה.', 'ko': '친구 요청 수락됨.', 'ar': 'تم قبول طلب الصداقة.', 'id': 'Permintaan pertemanan diterima.', 'uk': 'Запит на дружбу прийнято.', 'tr': 'Arkadaşlık isteği kabul edildi.', 'vi': 'Lời mời kết bạn đã được chấp nhận.', 'cs': 'Žádost o přátelství přijata.', 'sv': 'Vänskapsförfrågan accepterad.', 'fi': 'Ystävyyspyyntö hyväksytty.', 'hu': 'Barátsági kérelem elfogadva.', 'th': 'ยอมรับคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας έγινε αποδεκτό.', 'ms': 'Permintaan persahabatan diterima.', 'sr': 'Захтев за пријатељство је прихваћен.', 'ro': 'Cerere de prietenie acceptată.', 'bn': 'বন্ধুত্বের অনুরোধ গৃহীত হয়েছে।', 'ca': "S'ha acceptat la sol·licitud d'amistat.", 'no': 'Venneforespørsel akseptert.', 'bg': 'Молбата за приятелство е приета.', 'da': 'Venskabsanmodning accepteret.', 'sk': 'Žiadosť o priateľstvo bola prijatá.', 'hi': 'मित्रता अनुरोध स्वीकार कर लिया गया।', 'et': 'Sõbrakutse vastu võetud.', 'hr': 'Zahtjev za prijateljstvo prihvaćen.', 'az': 'Dostluq istəyi qəbul edildi.', 'zh-yue': '好友請求已接受。', 'lt': 'Kvietimas draugauti priimtas.', 'sl': 'Zahteva za prijateljstvo je bila sprejeta.', 'eu': 'Laguntasun-eskaera onartu da.', 'hy': 'Ընկերության հարցումն ընդունվել է։', 'uz': "Do'stlik so'rovi qabul qilindi.", 'ta': 'நட்பு கோரிக்கை ஏற்றுக்கொள்ளப்பட்டது.', 'lv': 'Draudzības pieprasījums pieņemts.'}
+            _friendship_request_accepted_success_message_dict = {'en': 'Friendship request accepted.', 'fr': 'Demande d’amitié acceptée.', 'de': 'Freundschaftsanfrage akzeptiert.', 'es': 'Solicitud de amistad aceptada.', 'pt': 'Pedido de amizade aceita.', 'it': 'Richiesta di amicizia accettata.', 'nl': 'Vriendschapsverzoek geaccepteerd.', 'ja': 'フレンド申請受け付けました。', 'ru': 'Запрос на дружбу принят.', 'zh': '好友請求已接受。', 'pl': 'Prośba o przyjaźń została zaakceptowana.', 'fa': 'درخواست دوستی پذیرفته شد', 'he': 'בקשת החברות התקבלה.', 'ko': '친구 요청 수락됨.', 'ar': 'تم قبول طلب الصداقة.', 'id': 'Permintaan pertemanan diterima.', 'uk': 'Запит на дружбу прийнято.', 'tr': 'Arkadaşlık isteği kabul edildi.', 'vi': 'Lời mời kết bạn đã được chấp nhận.', 'cs': 'Žádost o přátelství přijata.', 'sv': 'Vänskapsförfrågan accepterad.', 'fi': 'Ystävyyspyyntö hyväksytty.', 'hu': 'Barátsági kérelem elfogadva.', 'th': 'ยอมรับคำขอเป็นเพื่อนแล้ว', 'el': 'Το αίτημα φιλίας έγινε αποδεκτό.', 'ms': 'Permintaan persahabatan diterima.', 'sr': 'Захтев за пријатељство је прихваћен.', 'ro': 'Cerere de prietenie acceptată.', 'bn': 'বন্ধুত্বের অনুরোধ গৃহীত হয়েছে।', 'ca': "S'ha acceptat la sol·licitud d'amistat.", 'no': 'Venneforespørsel akseptert.', 'bg': 'Молбата за приятелство е приета.', 'da': 'Venskabsanmodning accepteret.', 'sk': 'Žiadosť o priateľstvo bola prijatá.', 'hi': 'मित्रता अनुरोध स्वीकार कर लिया गया।', 'et': 'Sõbrakutse vastu võetud.', 'hr': 'Zahtjev za prijateljstvo prihvaćen.', 'az': 'Dostluq istəyi qəbul edildi.', 'zh-yue': '好友請求已接受。', 'lt': 'Kvietimas draugauti priimtas.', 'sl': 'Zahteva za prijateljstvo je bila sprejeta.', 'eu': 'Laguntasun-eskaera onartu da.', 'hy': 'Ընկերության հարցումն ընդունվել է։', 'uz': "Do'stlik so'rovi qabul qilindi.", 'ta': 'நட்பு கோரிக்கை ஏற்றுக்கொள்ளப்பட்டது.', 'lv': 'Draudzības pieprasījums pieņemts.'}
             _friendship_request_rejected_success_message_dict = {'en': 'Friendship request rejected.', 'fr': 'Demande d’amitié rejetée.', 'de': 'Freundschaftsanfrage abgelehnt.', 'es': 'Solicitud de amistad rechazada.', 'pt': 'Pedido de amizade recusada.', 'it': 'Richiesta di amicizia rifiutata.', 'nl': 'Vriendschapsverzoek afgewezen.', 'ja': 'フレンド申請は拒否されました。', 'ru': 'Запрос на дружбу отклонен.', 'zh': '好友請求被拒絕。', 'pl': 'Prośba o przyjaźń została odrzucona.', 'fa': 'درخواست دوستی رد شد.', 'he': 'בקשת החברות נדחתה.', 'ko': '친구 요청 거부됨.', 'ar': 'تم رفض طلب الصداقة.', 'id': 'Permintaan pertemanan ditolak.', 'uk': 'Запит на дружбу відхилено.', 'tr': 'Arkadaşlık isteği reddedildi.', 'vi': 'Lời mời kết bạn bị từ chối.', 'cs': 'Žádost o přátelství zamítnuta.', 'sv': 'Vänskapsförfrågan avvisad.', 'fi': 'Ystävyyspyyntö hylätty.', 'hu': 'Barátsági kérelem elutasítva.', 'th': 'คำขอเป็นเพื่อนถูกปฏิเสธ', 'el': 'Το αίτημα φιλίας απορρίφθηκε.', 'ms': 'Permintaan persahabatan ditolak.', 'sr': 'Захтев за пријатељство је одбијен.', 'ro': 'Cererea de prietenie a fost respinsă.', 'bn': 'বন্ধুত্বের অনুরোধ প্রত্যাখ্যান করা হয়েছে।', 'ca': "S'ha rebutjat la sol·licitud d'amistat.", 'no': 'Venneforespørsel avvist.', 'bg': 'Молбата за приятелство е отхвърлена.', 'da': 'Venskabsanmodning afvist.', 'sk': 'Žiadosť o priateľstvo bola zamietnutá.', 'hi': 'मित्रता अनुरोध अस्वीकार कर दिया गया।', 'et': 'Sõbrakutse lükati tagasi.', 'hr': 'Zahtjev za prijateljstvo odbijen.', 'az': 'Dostluq istəyi rədd edildi.', 'zh-yue': '好友請求被拒絕。', 'lt': 'Kvietimas draugauti atmestas.', 'sl': 'Zahteva za prijateljstvo je bila zavrnjena.', 'eu': 'Laguntasun-eskaera baztertu da.', 'hy': 'Ընկերության հարցումը մերժվել է։', 'uz': "Do'stlik so'rovi rad etildi.", 'ta': 'நட்பு கோரிக்கை நிராகரிக்கப்பட்டது.', 'lv': 'Draudzības pieprasījums noraidīts.'}
 
             _youve_cancelled_your_friendship_request_success_message_dict_by_gender = {
@@ -105,7 +105,7 @@ if (django_settings.TESTS):
                     **{gender: 'Arkadaşlık isteğinizi iptal ettiniz.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã hủy yêu cầu kết bạn của mình.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã hủy yêu cầu kết bạn.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Zrušili jste svou žádost o přátelství.' for gender in User.ALL_GENDERS},
@@ -117,7 +117,7 @@ if (django_settings.TESTS):
                     **{gender: 'Olet peruuttanut ystävyyspyyntösi.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Lemondtad a barátkozási kérelmed.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Visszavonta a barátsági kérelmét.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณได้ยกเลิกคำขอเป็นเพื่อนแล้ว' for gender in User.ALL_GENDERS},
@@ -132,10 +132,10 @@ if (django_settings.TESTS):
                     **{gender: 'Отказали сте свој захтев за пријатељство.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ți-ai anulat cererea de prietenie.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați anulat cererea de prietenie.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি আপনার বন্ধুত্বের অনুরোধ বাতিল করেছেন।' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি আপনার বন্ধুত্বের অনুরোধটি বাতিল করেছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Has cancel·lat la teva sol·licitud d'amistat." for gender in User.ALL_GENDERS},
@@ -153,7 +153,7 @@ if (django_settings.TESTS):
                     **{gender: 'Zrušili ste svoju žiadosť o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपने अपना मित्रता अनुरोध रद्द कर दिया है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने अपना मित्रता अनुरोध रद्द कर दिया है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete oma sõbrakutse tühistanud.' for gender in User.ALL_GENDERS},
@@ -177,7 +177,7 @@ if (django_settings.TESTS):
                     **{gender: 'Zure laguntasun-eskaera ezeztatu duzu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք չեղարկել եք ձեր ընկերության հարցումը.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք չեղարկել եք ձեր ընկերության հարցումը։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz do'stlik so'rovingizni bekor qildingiz." for gender in User.ALL_GENDERS},
@@ -225,7 +225,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы удалили этого пользователя из друзей.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已將此使用者從您的好友中刪除。' for gender in User.ALL_GENDERS},
+                    **{gender: '您已將此使用者從好友清單中移除。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Usunąłeś tego użytkownika ze swoich znajomych.' for gender in User.ALL_GENDERS},
@@ -254,7 +254,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcıyı arkadaşlarınızdan kaldırdınız.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã xóa người dùng này khỏi bạn bè của bạn.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã xóa người dùng này khỏi danh sách bạn bè.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Odebrali jste tohoto uživatele ze svých přátel.' for gender in User.ALL_GENDERS},
@@ -266,13 +266,13 @@ if (django_settings.TESTS):
                     **{gender: 'Olet poistanut tämän käyttäjän ystävistäsi.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Eltávolította ezt a felhasználót az ismerősei közül.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Eltávolította ezt a felhasználót a barátai közül.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณได้ลบผู้ใช้รายนี้ออกจากเพื่อนของคุณแล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Έχετε αφαιρέσει αυτόν τον χρήστη από τους φίλους σας.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Αφαιρέσατε αυτόν τον χρήστη από τους φίλους σας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Anda telah mengalih keluar pengguna ini daripada rakan anda.' for gender in User.ALL_GENDERS},
@@ -281,13 +281,13 @@ if (django_settings.TESTS):
                     **{gender: 'Уклонили сте овог корисника из својих пријатеља.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ai eliminat acest utilizator dintre prietenii tăi.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați eliminat acest utilizator dintre prietenii dvs.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের থেকে সরিয়ে দিয়েছেন৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি এই ব্যবহারকারীকে আপনার বন্ধুদের তালিকা থেকে সরিয়ে দিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Heu eliminat aquest usuari dels vostres amics.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Has eliminat aquest usuari dels teus amics.' for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Du har fjernet denne brukeren fra vennene dine.' for gender in User.ALL_GENDERS},
@@ -302,7 +302,7 @@ if (django_settings.TESTS):
                     **{gender: 'Tohto používateľa ste odstránili zo svojich priateľov.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपने इस उपयोगकर्ता को अपने मित्रों से हटा दिया है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने इस उपयोगकर्ता को अपने मित्रों की सूची से हटा दिया है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete selle kasutaja oma sõprade hulgast eemaldanud.' for gender in User.ALL_GENDERS},
@@ -326,7 +326,7 @@ if (django_settings.TESTS):
                     **{gender: 'Erabiltzaile hau zure lagunetatik kendu duzu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք հեռացրել եք այս օգտատիրոջը ձեր ընկերներից։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz bu foydalanuvchini do'stlaringiz ro'yxatidan olib tashladingiz." for gender in User.ALL_GENDERS},
@@ -372,7 +372,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы уже запросили дружбу у этого пользователя.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已經要求與該用戶建立友誼。' for gender in User.ALL_GENDERS},
+                    **{gender: '您已向該使用者發送過好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Już poprosiłeś tego użytkownika o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -401,7 +401,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcıdan zaten arkadaşlık talebinde bulundunuz.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã yêu cầu kết bạn từ người dùng này.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã gửi yêu cầu kết bạn đến người dùng này rồi.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Od tohoto uživatele jste již požádali o přátelství.' for gender in User.ALL_GENDERS},
@@ -413,13 +413,13 @@ if (django_settings.TESTS):
                     **{gender: 'Olet jo lähettänyt ystäväpyynnön tälle käyttäjälle.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Már kértél barátságot ettől a felhasználótól.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ön már küldött barátsági kérelmet ennek a felhasználónak.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'คุณได้ร้องขอมิตรภาพจากผู้ใช้รายนี้แล้ว' for gender in User.ALL_GENDERS},
+                    **{gender: 'คุณได้ส่งคำขอเป็นเพื่อนถึงผู้ใช้รายนี้แล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Έχετε ήδη ζητήσει φιλία από αυτόν τον χρήστη.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Έχετε ήδη στείλει αίτημα φιλίας σε αυτόν τον χρήστη.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Anda sudah meminta persahabatan daripada pengguna ini.' for gender in User.ALL_GENDERS},
@@ -428,13 +428,13 @@ if (django_settings.TESTS):
                     **{gender: 'Већ сте тражили пријатељство од овог корисника.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ai cerut deja prietenia acestui utilizator.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ați solicitat deja prietenia acestui utilizator.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি ইতিমধ্যে এই ব্যবহারকারীর কাছ থেকে বন্ধুত্বের অনুরোধ করেছেন৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি ইতিমধ্যেই এই ব্যবহারকারীর কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Ja has sol·licitat amistat a aquest usuari.' for gender in User.ALL_GENDERS},
+                    **{gender: "Ja has sol·licitat l'amistat d'aquest usuari." for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Du har allerede bedt om vennskap fra denne brukeren.' for gender in User.ALL_GENDERS},
@@ -449,7 +449,7 @@ if (django_settings.TESTS):
                     **{gender: 'Od tohto používateľa ste už požiadali o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आप पहले ही इस उपयोगकर्ता से मित्रता का अनुरोध कर चुके हैं।' for gender in User.ALL_GENDERS},
+                    **{gender: 'आपने पहले ही इस उपयोगकर्ता को मित्रता अनुरोध भेजा है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Olete sellelt kasutajalt juba sõprust taotlenud.' for gender in User.ALL_GENDERS},
@@ -473,7 +473,7 @@ if (django_settings.TESTS):
                     **{gender: 'Jada laguntasun-eskaera bidali diozu erabiltzaile honi.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք արդեն ընկերության հարցում եք ուղարկել այս օգտատիրոջը։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz allaqachon ushbu foydalanuvchidan do'stlik so'ragansiz." for gender in User.ALL_GENDERS},
@@ -519,7 +519,7 @@ if (django_settings.TESTS):
                     **{gender: 'Этот пользователь уже запросил у вас дружбу.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '該用戶已要求與您建立友誼。' for gender in User.ALL_GENDERS},
+                    **{gender: '該使用者已向您發送好友請求。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Ten użytkownik poprosił Cię już o przyjaźń.' for gender in User.ALL_GENDERS},
@@ -548,7 +548,7 @@ if (django_settings.TESTS):
                     **{gender: 'Bu kullanıcı zaten sizden arkadaşlık talebinde bulundu.' for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Người dùng này đã yêu cầu kết bạn từ bạn.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Người dùng này đã gửi yêu cầu kết bạn với bạn.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Tento uživatel od vás již požádal o přátelství.' for gender in User.ALL_GENDERS},
@@ -560,13 +560,13 @@ if (django_settings.TESTS):
                     **{gender: 'Tämä käyttäjä on jo lähettänyt sinulle ystäväpyynnön.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Ez a felhasználó már barátságot kért tőled.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ez a felhasználó már küldött Önnek barátsági kérelmet.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'ผู้ใช้รายนี้ร้องขอมิตรภาพจากคุณแล้ว' for gender in User.ALL_GENDERS},
+                    **{gender: 'ผู้ใช้รายนี้ได้ส่งคำขอเป็นเพื่อนถึงคุณแล้ว' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Αυτός ο χρήστης έχει ήδη ζητήσει φιλία από εσάς.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Αυτός ο χρήστης σας έχει ήδη στείλει αίτημα φιλίας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Pengguna ini telah meminta persahabatan daripada anda.' for gender in User.ALL_GENDERS},
@@ -575,10 +575,10 @@ if (django_settings.TESTS):
                     **{gender: 'Овај корисник је већ затражио пријатељство од вас.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Acest utilizator a cerut deja prietenie de la tine.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Acest utilizator v-a solicitat deja prietenia.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছ থেকে বন্ধুত্বের অনুরোধ করেছে৷' for gender in User.ALL_GENDERS},
+                    **{gender: 'এই ব্যবহারকারী ইতিমধ্যেই আপনার কাছে বন্ধুত্বের অনুরোধ পাঠিয়েছেন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
                     **{gender: "Aquest usuari ja t'ha sol·licitat amistat." for gender in User.ALL_GENDERS},
@@ -596,7 +596,7 @@ if (django_settings.TESTS):
                     **{gender: 'Tento používateľ už od vás požiadal o priateľstvo.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'यह उपयोगकर्ता पहले ही आपसे मित्रता का अनुरोध कर चुका है.' for gender in User.ALL_GENDERS},
+                    **{gender: 'इस उपयोगकर्ता ने पहले ही आपको मित्रता अनुरोध भेजा है।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'See kasutaja on juba sinult sõprust taotlenud.' for gender in User.ALL_GENDERS},
@@ -620,7 +620,7 @@ if (django_settings.TESTS):
                     **{gender: 'Erabiltzaile honek jada laguntasun-eskaera bidali dizu.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Այս օգտատերն արդեն ընկերության հարցում է ուղարկել ձեզ։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Bu foydalanuvchi sizdan allaqachon do'stlik so'ragan." for gender in User.ALL_GENDERS},
@@ -702,7 +702,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Вы уже дружите с этим пользователем.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): '您已經是該使用者的朋友。' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '您已經是該使用者的好友了。' for user_gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Jesteś już znajomym tego użytkownika.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -737,7 +739,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Bu kullanıcıyla zaten arkadaşsınız.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Bạn đã là bạn bè với người dùng này.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Bạn đã là bạn bè với người dùng này rồi.' for user_gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'S tímto uživatelem jste již přáteli.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -749,7 +753,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Olet jo ystävä tämän käyttäjän kanssa.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Ön már barátja ezzel a felhasználóval.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ön már barátja ennek a felhasználónak.' for user_gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'คุณเป็นเพื่อนกับผู้ใช้รายนี้แล้ว' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -758,19 +764,39 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Είστε ήδη φίλοι με αυτόν τον χρήστη.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Anda sudah berkawan dengan pengguna ini.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Anda sudah menjadi rakan dengan pengguna ini.' for user_gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Већ сте пријатељи са овим корисником.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Већ сте пријатељи са овом корисницом.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Већ сте пријатељи са овим корисником.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Већ сте пријатељи са овим корисником.' for user_gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Sunteți deja prieten cu acest utilizator.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prietenă cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prietenă cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prietenă cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prieten cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): 'Sunteți deja prieten cu această utilizatoare.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): 'Sunteți deja prieten cu acest utilizator.',
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): 'Sunteți deja prieten cu acest utilizator.',
                 },
                 'bn': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'আপনি ইতিমধ্যেই এই ব্যবহারকারীর বন্ধু।' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Ja sou amic d'aquest usuari." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amiga d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amiga d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_FEMALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amiga d'aquesta persona.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amic d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amic d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_MALE_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amic d'aquesta persona.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_FEMALE_STRING): "Ja ets amic/amiga d'aquesta usuària.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_MALE_STRING): "Ja ets amic/amiga d'aquest usuari.",
+                    get_both_genders_context_from_genders(user_gender=User.GENDER_OTHER_STRING, other_user_gender=User.GENDER_OTHER_STRING): "Ja ets amic/amiga d'aquesta persona.",
                 },
                 'no': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Du er allerede venner med denne brukeren.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -785,7 +811,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'S týmto používateľom ste už priatelia.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'आप पहले से ही इस उपयोगकर्ता के मित्र हैं।' for user_gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Olete selle kasutajaga juba sõbrad.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -809,7 +837,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Jada erabiltzaile honen laguna zara.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ.' for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Դուք արդեն ընկերներ եք այս օգտատիրոջ հետ։' for user_gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=other_user_gender): "Siz allaqachon bu foydalanuvchi bilan do'stsiz." for other_user_gender in User.ALL_GENDERS for user_gender in User.ALL_GENDERS},
@@ -857,7 +887,7 @@ if (django_settings.TESTS):
                     **{gender: 'Вы не можете дружить сами с собой.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '你無法與自己成為朋友。' for gender in User.ALL_GENDERS},
+                    **{gender: '你不可能和自己做朋友。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Nie możesz być przyjacielem samego siebie.' for gender in User.ALL_GENDERS},
@@ -898,28 +928,30 @@ if (django_settings.TESTS):
                     **{gender: 'Et voi olla ystävä itsesi kanssa.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Nem lehetsz barátod magaddal.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Nem lehet barátja önmagának.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
                     **{gender: 'คุณไม่สามารถเป็นเพื่อนกับตัวเองได้' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Δεν μπορείς να είσαι φίλος με τον εαυτό σου.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Δεν μπορείτε να είστε φίλος με τον εαυτό σας.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{gender: 'Anda tidak boleh berkawan dengan diri sendiri.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Anda tidak boleh menjadi rakan dengan diri sendiri.' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: 'Не можете бити пријатељи сами са собом.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Не можете бити пријатељ сами са собом.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Nu poți fi prieten cu tine însuți.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Nu puteți fi prieten cu dvs. înșivă.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনি নিজের সাথে বন্ধু হতে পারবেন না।' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনি নিজের সাথে বন্ধুত্ব করতে পারবেন না।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'No pots ser amic de tu mateix.' for gender in User.ALL_GENDERS},
+                    User.GENDER_FEMALE_STRING: 'No pots ser amiga de tu mateixa.',
+                    User.GENDER_MALE_STRING: 'No pots ser amic de tu mateix.',
+                    User.GENDER_OTHER_STRING: 'No pots ser amic/amiga de tu mateix/a.',
                 },
                 'no': {
                     **{gender: 'Du kan ikke være venn med deg selv.' for gender in User.ALL_GENDERS},
@@ -934,13 +966,13 @@ if (django_settings.TESTS):
                     **{gender: 'Nemôžete byť sami so sebou priateľmi.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आप स्वयं से मित्र नहीं बन सकते.' for gender in User.ALL_GENDERS},
+                    **{gender: 'आप खुद से दोस्ती नहीं कर सकते।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Sa ei saa iseendaga sõber olla.' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Ne možete sami sebi biti prijatelji.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ne možete biti prijatelj sami sa sobom.' for gender in User.ALL_GENDERS},
                 },
                 'az': {
                     **{gender: 'Özünüzlə dost ola bilməzsiniz.' for gender in User.ALL_GENDERS},
@@ -958,7 +990,7 @@ if (django_settings.TESTS):
                     **{gender: 'Ezin zara zeure buruaren lagun izan.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք չեք կարող ընկեր լինել ինքներդ ձեզ հետ։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Siz o'zingiz bilan do'st bo'la olmaysiz." for gender in User.ALL_GENDERS},
@@ -1000,7 +1032,7 @@ if (django_settings.TESTS):
                     **{gender: 'У вас уже есть {0} друзей. В у вас не может быть более {1} друзей. Speedy Net Пожалуйста, удалите друзей, прежде чем продолжить.' for gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{gender: '您已經有 {0} 個朋友。您在 上的好友不能超過 Speedy Net {1} 個。請先刪除好友，然後再繼續。' for gender in User.ALL_GENDERS},
+                    **{gender: '你已經擁有{0}朋友。你不可能擁有超過{1} Speedy Net上的好友。請先移除好友再繼續。' for gender in User.ALL_GENDERS},
                 },
                 'pl': {
                     **{gender: 'Masz już {0} znajomych. W nie możesz mieć więcej niż {1} znajomych Speedy Net. Zanim będziesz kontynuować, usuń znajomych.' for gender in User.ALL_GENDERS},
@@ -1029,7 +1061,7 @@ if (django_settings.TESTS):
                     **{gender: "Zaten {0} arkadaşınız var. 'te {1}'den fazla arkadaşınız olamaz. Devam Speedy Net etmeden önce lütfen arkadaşlarınızı kaldırın." for gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{gender: 'Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} bạn bè trên Speedy Net. Vui lòng xóa bạn bè trước khi bạn tiếp tục.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Bạn đã có {0} bạn bè. Bạn không thể có nhiều hơn {1} Bạn bè trên Speedy Net. Vui lòng xóa bạn bè trước khi tiếp tục.' for gender in User.ALL_GENDERS},
                 },
                 'cs': {
                     **{gender: 'Již máte {0} přátel. Na nemůžete mít více než {1} přátel Speedy Net. Než budete pokračovat, odeberte přátele.' for gender in User.ALL_GENDERS},
@@ -1041,28 +1073,28 @@ if (django_settings.TESTS):
                     **{gender: 'Sinulla on jo {0} ystävää. Sinulla voi olla enintään {1} ystävää Speedy Netissä. Poista ystävät ennen kuin jatkat.' for gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{gender: 'Már van {0} barátod. Legfeljebb {1} barátod lehet a Speedy Neten. Kérjük, távolítsa el az ismerőseit, mielőtt folytatná.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Önnek már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net oldalon. Kérjük, távolítson el barátokat, mielőtt folytatná.' for gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{gender: 'คุณมีเพื่อน {0} แล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net กรุณาลบเพื่อนก่อนที่จะดำเนินการต่อ' for gender in User.ALL_GENDERS},
+                    **{gender: 'คุณมีเพื่อน {0} คนแล้ว คุณไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net กรุณาลบเพื่อนก่อนที่จะดำเนินการต่อ' for gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{gender: 'Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο Speedy Net. Καταργήστε φίλους πριν προχωρήσετε.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Έχετε ήδη {0} φίλους. Δεν μπορείτε να έχετε περισσότερους από {1} φίλους στο Speedy Net. Παρακαλούμε αφαιρέστε φίλους πριν συνεχίσετε.' for gender in User.ALL_GENDERS},
                 },
                 'ms': {
                     **{gender: 'Anda sudah mempunyai {0} rakan. Anda tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila alih keluar rakan sebelum anda meneruskan.' for gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{gender: "You already have {0} friends. You can't have more than {1} friends on Speedy Net. Please remove friends before you proceed." for gender in User.ALL_GENDERS},
+                    **{gender: 'Већ имате {0} пријатеља. Не можете имати више од {1} пријатеља на Speedy Net. Молимо вас да уклоните неке пријатеље пре него што наставите.' for gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{gender: 'Ai deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să eliminați prietenii înainte de a continua.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Aveți deja {0} prieteni. Nu puteți avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să eliminați prieteni înainte de a continua.' for gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{gender: 'আপনার ইতিমধ্যেই {0} বন্ধু আছে৷ স্পিডি নেটে আপনার {1} এর বেশি বন্ধু থ Speedy Net াকতে পারে না। আপনি এগিয়ে যাওয়ার আগে বন্ধুদের সরান.' for gender in User.ALL_GENDERS},
+                    **{gender: 'আপনার ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ আপনি {1} জনের বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে কিছু বন্ধুকে সরিয়ে দিন।' for gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{gender: 'Ja tens {0} amics. No pots tenir més de {1} amics a Speedy Net. Si us plau, elimineu els amics abans de continuar.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Ja tens {0} amics. No pots tenir més de {1} amics a Speedy Net. Elimina alguns amics abans de continuar.' for gender in User.ALL_GENDERS},
                 },
                 'no': {
                     **{gender: 'Du har allerede {0} venner. Du kan ikke ha mer enn {1} venner på Speedy Net. Fjern venner før du fortsetter.' for gender in User.ALL_GENDERS},
@@ -1074,16 +1106,16 @@ if (django_settings.TESTS):
                     **{gender: 'Du har allerede {0} venner. Du kan ikke have mere end {1} venner på Speedy Net. Fjern venligst venner, før du fortsætter.' for gender in User.ALL_GENDERS},
                 },
                 'sk': {
-                    **{gender: 'Už máte {0} priateľov. V službe nemôžete mať viac ako {1} priateľov Speedy Net. Pred pokračovaním odstráňte priateľov.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Už máte {0} priateľov. Na Speedy Net nemôžete mať viac ako {1} priateľov. Pred pokračovaním odstráňte niektorých priateľov.' for gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{gender: 'आपके पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर आपके {1} से अधिक मित्र नह Speedy Net ीं हो सकते। कृपया आगे बढ़ने से पहले मित्रों को हटा दें।' for gender in User.ALL_GENDERS},
+                    **{gender: 'आप पहले से ही {0} दोस्त। आपके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर मौजूद दोस्तों से अनुरोध है कि आगे बढ़ने से पहले उन्हें हटा दें।' for gender in User.ALL_GENDERS},
                 },
                 'et': {
                     **{gender: 'Teil on juba {0} sõpra. Teil võib Speedy Netis olla kuni {1} sõpra. Enne jätkamist eemaldage sõbrad.' for gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{gender: 'Već imaš {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy Netu. Prije nastavka uklonite prijatelje.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Već imate {0} prijatelja. Ne možete imati više od {1} prijatelja na Speedy Netu. Prije nastavka uklonite prijatelje.' for gender in User.ALL_GENDERS},
                 },
                 'az': {
                     **{gender: 'Sizin artıq {0} dostunuz var. Speedy Net-də {1}-dən çox dostunuz ola bilməz. Davam etməzdən əvvəl dostlarınızı silin.' for gender in User.ALL_GENDERS},
@@ -1101,7 +1133,7 @@ if (django_settings.TESTS):
                     **{gender: 'Jada {0} lagun dituzu. Ezin duzu {1} lagun baino gehiago izan Speedy Net-en. Mesedez, kendu lagun batzuk jarraitu baino lehen.' for gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{gender: 'Դուք արդեն ունեք {0} ընկեր. դուք չեք կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում. խնդրում ենք շարունակելուց առաջ հեռացնել ընկերներից մի քանիսին.' for gender in User.ALL_GENDERS},
+                    **{gender: 'Դուք արդեն ունեք {0} ընկեր։ Դուք չեք կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում։ Խնդրում ենք շարունակելուց առաջ հեռացնել ընկերներից մի քանիսին։' for gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{gender: "Sizda allaqachon {0} do'stlaringiz bor. Speedy Net’da {1}’dan ortiq do'stlaringiz bo'la olmaydi. Davom etishdan oldin do'stlaringizni olib tashlang." for gender in User.ALL_GENDERS},
@@ -1151,28 +1183,28 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Deze gebruiker heeft al {0} vrienden. Ze kunnen niet meer dan {1} vrienden hebben op Speedy Net. Vraag ze alsjeblieft om vrienden te verwijderen voordat je verder gaat.' for user_gender in User.ALL_GENDERS},
                 },
                 'ja': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'このユーザーにはすでに友だちが {0} 人います。Speedy Net では友だちは {1} 人を超えて追加できません。続行する前に、友だちを削除するよう依頼してください。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'このユーザーにはすでに友だちが {0} 人います。Speedy Net では友だちは {1} 人を超えて追加できません。続行する前に、友だちを削除するよう依頼してください。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'このユーザーにはすでに {0} 人の友達がいます。 では、{1} 人以上の友達を持つことはできません Speedy Net 。続行する前に、友達を削除するように依頼してください。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'このユーザーにはすでに {0} 人の友達がいます。 では、{1} 人以上の友達を持つことはできません Speedy Net 。続行する前に、友達を削除するように依頼してください。' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'このユーザーにはすでに {0} 人の友達がいます。 では、{1} 人以上の友達を持つことはできません Speedy Net 。続行する前に、友達を削除するように依頼してください。' for user_gender in User.ALL_GENDERS},
                 },
                 'ru': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'У этой пользовательницы уже {0} друзей. Она не может иметь более {1} друзей в Speedy Net. Попросите её удалить друзей, прежде чем продолжить.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'У этого пользователя уже {0} друзей. Он не может иметь более {1} друзей в Speedy Net. Попросите его удалить друзей, прежде чем продолжить.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'У этого пользователя уже есть {0} друзей. У них не может быть более {1} друзей в Speedy Net. Прежде чем продолжить, попросите их удалить друзей.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'У этого пользователя уже есть {0} друзей. У них не может быть более {1} друзей в Speedy Net. Прежде чем продолжить, попросите их удалить друзей.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'У этого пользователя уже есть {0} друзей. У них не может быть более {1} друзей в Speedy Net. Прежде чем продолжить, попросите их удалить друзей.' for user_gender in User.ALL_GENDERS},
                 },
                 'zh': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '该用户已有 {0} 位好友。在 Speedy Net 上，好友数量不能超过 {1} 位。请先让她删除一些好友，然后再继续。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '该用户已有 {0} 位好友。在 Speedy Net 上，好友数量不能超过 {1} 位。请先让他删除一些好友，然后再继续。' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '该用户已经有 {0} 位好友了。在 Speedy Net 上不能拥有超过 {1} 位好友。请让对方先移除一些好友，然后再继续。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '該使用者已擁有{0}朋友。他們不可能擁有超過{1}您在 Speedy Net 上有好友。請先讓他們刪除好友，然後再繼續操作。' for user_gender in User.ALL_GENDERS},
                 },
                 'pl': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ta użytkowniczka ma już {0} znajomych. Nie może mieć więcej niż {1} znajomych w Speedy Net. Poproś ją o usunięcie znajomych, zanim przejdziesz dalej.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ten użytkownik ma już {0} znajomych. Nie może mieć więcej niż {1} znajomych w Speedy Net. Poproś go o usunięcie znajomych, zanim przejdziesz dalej.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ten użytkownik ma już {0} znajomych. Nie mogą mieć więcej niż {1} znajomych w Speedy Net. Zanim przejdziesz dalej, poproś ich o usunięcie znajomych.' for user_gender in User.ALL_GENDERS},
                 },
                 'fa': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'این کاربر هم\u200cاکنون {0} دوست دارد. او نمی\u200cتواند بیش از {1} دوست در Speedy Net داشته باشد. لطفاً از او بخواهید پیش از ادامه، دوستانی را حذف کند.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'این کاربر هم\u200cاکنون {0} دوست دارد. او نمی\u200cتواند بیش از {1} دوست در Speedy Net داشته باشد. لطفاً از او بخواهید پیش از ادامه، دوستانی را حذف کند.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'این کاربر قبلاً {0} دوست دارد. آنها نمی توانند بیش از {1} دوست در Speedy Net داشته باشند. لطفاً قبل از ادامه، از آنها بخواهید دوستان خود را حذف کنند.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'این کاربر قبلاً {0} دوست دارد. آنها نمی توانند بیش از {1} دوست در Speedy Net داشته باشند. لطفاً قبل از ادامه، از آنها بخواهید دوستان خود را حذف کنند.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'این کاربر قبلاً {0} دوست دارد. آنها نمی توانند بیش از {1} دوست در Speedy Net داشته باشند. لطفاً قبل از ادامه، از آنها بخواهید دوستان خود را حذف کنند.' for user_gender in User.ALL_GENDERS},
                 },
                 'he': {
@@ -1192,33 +1224,33 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '이 사용자에게는 이미 {0}명의 친구가 있습니다. 해당 사용자는 Speedy Net에서 {1}명 이상의 친구를 둘 수 없습니다. 계속하기 전에 친구를 지우도록 요청하세요.' for user_gender in User.ALL_GENDERS},
                 },
                 'ar': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'لدى هذه المستخدمة بالفعل {0} من الأصدقاء. لا يمكنها امتلاك أكثر من {1} صديق على Speedy Net. يُرجى أن تطلب منها إزالة أصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'لدى هذا المستخدم بالفعل {0} من الأصدقاء. لا يمكنه امتلاك أكثر من {1} صديق على Speedy Net. يُرجى أن تطلب منه إزالة أصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'هذا المستخدم لديه بالفعل {0} أصدقاء. لا يمكن أن يكون لديهم أكثر من {1} من الأصدقاء Speedy Net على سبيدي نت. من فضلك اطلب منهم إزالة الأصدقاء قبل المتابعة.' for user_gender in User.ALL_GENDERS},
                 },
                 'id': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Pengguna ini sudah memiliki {0} teman. Dia tidak boleh memiliki lebih dari {1} teman di Speedy Net. Harap minta dia menghapus beberapa teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Pengguna ini sudah memiliki {0} teman. Dia tidak boleh memiliki lebih dari {1} teman di Speedy Net. Harap minta dia menghapus beberapa teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Pengguna ini sudah memiliki {0} teman. Mereka tidak boleh memiliki lebih dari {1} teman di Speedy Net. Silakan minta mereka untuk menghapus teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Pengguna ini sudah memiliki {0} teman. Mereka tidak boleh memiliki lebih dari {1} teman di Speedy Net. Silakan minta mereka untuk menghapus teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Pengguna ini sudah memiliki {0} teman. Mereka tidak boleh memiliki lebih dari {1} teman di Speedy Net. Silakan minta mereka untuk menghapus teman sebelum Anda melanjutkan.' for user_gender in User.ALL_GENDERS},
                 },
                 'uk': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ця користувачка вже має {0} друзів. Вона не може мати більше ніж {1} друзів у Speedy Net. Попросіть її видалити друзів, перш ніж продовжити.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Цей користувач уже має {0} друзів. Він не може мати більше ніж {1} друзів у Speedy Net. Попросіть його видалити друзів, перш ніж продовжити.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'У цього користувача вже є {0} друзів. Вони не можуть мати більше ніж {1} друзів у Speedy Net. Перш ніж продовжити, попросіть їх видалити друзів.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'У цього користувача вже є {0} друзів. Вони не можуть мати більше ніж {1} друзів у Speedy Net. Перш ніж продовжити, попросіть їх видалити друзів.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'У цього користувача вже є {0} друзів. Вони не можуть мати більше ніж {1} друзів у Speedy Net. Перш ніж продовжити, попросіть їх видалити друзів.' for user_gender in User.ALL_GENDERS},
                 },
                 'tr': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Bu kullanıcının zaten {0} arkadaşı var. Speedy Net üzerinde {1} arkadaştan fazlasına sahip olamaz. Lütfen devam etmeden önce arkadaşlarını kaldırmasını isteyin.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Bu kullanıcının zaten {0} arkadaşı var. Speedy Net üzerinde {1} arkadaştan fazlasına sahip olamaz. Lütfen devam etmeden önce arkadaşlarını kaldırmasını isteyin.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): "Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin." for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Bu kullanıcının zaten {0} arkadaşı var. 'te {1}'den fazla arkadaşı olamaz Speedy Net. Lütfen devam etmeden önce arkadaşlarını çıkarmalarını isteyin." for user_gender in User.ALL_GENDERS},
                 },
                 'vi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Người dùng này đã có {0} bạn bè. Cô ấy không thể có quá {1} bạn bè trên Speedy Net. Vui lòng yêu cầu cô ấy xóa bớt bạn bè trước khi tiếp tục.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Người dùng này đã có {0} bạn bè. Anh ấy không thể có quá {1} bạn bè trên Speedy Net. Vui lòng yêu cầu anh ấy xóa bớt bạn bè trước khi tiếp tục.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} bạn bè trên Speedy Net. Hãy yêu cầu họ xóa bạn bè trước khi bạn tiếp tục.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Người dùng này đã có {0} bạn bè. Họ không thể có nhiều hơn {1} Bạn bè trên Speedy Net. Vui lòng yêu cầu họ xóa bạn bè trước khi bạn tiếp tục.' for user_gender in User.ALL_GENDERS},
                 },
                 'cs': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Tato uživatelka už má {0} přátel. Na Speedy Net nemůže mít více než {1} přátel. Požádejte ji, aby před pokračováním některé přátele odstranila.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Tento uživatel už má {0} přátel. Na Speedy Net nemůže mít více než {1} přátel. Požádejte ho, aby před pokračováním některé přátele odstranil.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Tento uživatel již má {0} přátel. Na nemohou mít více než {1} přátel. Speedy Net Než budete pokračovat, požádejte je, aby odstranili přátele.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Tento uživatel již má {0} přátel. Na nemohou mít více než {1} přátel. Speedy Net Než budete pokračovat, požádejte je, aby odstranili přátele.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Tento uživatel již má {0} přátel. Na nemohou mít více než {1} přátel. Speedy Net Než budete pokračovat, požádejte je, aby odstranili přátele.' for user_gender in User.ALL_GENDERS},
                 },
                 'sv': {
@@ -1232,84 +1264,84 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Tällä käyttäjällä on jo {0} ystävää. Heillä ei voi olla enempää kuin {1} ystävää Speedy Netissä. Pyydä heitä poistamaan ystävät ennen kuin jatkat.' for user_gender in User.ALL_GENDERS},
                 },
                 'hu': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ennek a felhasználónak már {0} barátja van. A Speedy Net oldalon nem lehet több mint {1} barátja. A folytatás előtt kérje meg, hogy távolítson el barátokat.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ennek a felhasználónak már {0} barátja van. A Speedy Net oldalon nem lehet több mint {1} barátja. A folytatás előtt kérje meg, hogy távolítson el barátokat.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ennek a felhasználónak már {0} ismerőse van. Legfeljebb {1} barátjuk lehet a Speedy Neten. Kérje meg őket, hogy távolítsák el az ismerőseiket, mielőtt folytatná.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt folytatná.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt folytatná.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ennek a felhasználónak már {0} barátja van. Legfeljebb {1} barátja lehet a Speedy Net oldalon. Kérje meg, hogy távolítson el barátokat, mielőtt folytatná.' for user_gender in User.ALL_GENDERS},
                 },
                 'th': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'ผู้ใช้นี้มีเพื่อนอยู่แล้ว {0} คน เธอไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net กรุณาขอให้เธอลบเพื่อนก่อนดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'ผู้ใช้นี้มีเพื่อนอยู่แล้ว {0} คน เขาไม่สามารถมีเพื่อนได้มากกว่า {1} คนบน Speedy Net กรุณาขอให้เขาลบเพื่อนก่อนดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'ผู้ใช้รายนี้มีเพื่อนแล้ว {0} คน พวกเขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net โปรดขอให้พวกเขาลบเพื่อนก่อนที่จะดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'ผู้ใช้รายนี้มีเพื่อน {0} คนแล้ว เขามีเพื่อนได้ไม่เกิน {1} คนบน Speedy Net กรุณาขอให้เขาลบเพื่อนก่อนที่คุณจะดำเนินการต่อ' for user_gender in User.ALL_GENDERS},
                 },
                 'el': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Αυτή η χρήστρια έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από {1} φίλους στο Speedy Net. Παρακαλώ ζητήστε της να αφαιρέσει φίλους πριν συνεχίσετε.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από {1} φίλους στο Speedy Net. Παρακαλώ ζητήστε του να αφαιρέσει φίλους πριν συνεχίσετε.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορούν να έχουν περισσότερους από {1} φίλους στο Speedy Net. Ζητήστε τους να αφαιρέσουν φίλους πριν προχωρήσετε.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από {1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν συνεχίσετε.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από {1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν συνεχίσετε.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Αυτός ο χρήστης έχει ήδη {0} φίλους. Δεν μπορεί να έχει περισσότερους από {1} φίλους στο Speedy Net. Παρακαλούμε ζητήστε του να αφαιρέσει φίλους πριν συνεχίσετε.' for user_gender in User.ALL_GENDERS},
                 },
                 'ms': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Pengguna ini sudah mempunyai {0} rakan. Dia tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila minta dia membuang beberapa rakan sebelum anda meneruskan.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Pengguna ini sudah mempunyai {0} rakan. Dia tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila minta dia membuang beberapa rakan sebelum anda meneruskan.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan sebelum anda meneruskan.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan sebelum anda meneruskan.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Pengguna ini sudah mempunyai {0} rakan. Mereka tidak boleh mempunyai lebih daripada {1} rakan di Speedy Net. Sila minta mereka mengalih keluar rakan sebelum anda meneruskan.' for user_gender in User.ALL_GENDERS},
                 },
                 'sr': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ова корисница већ има {0} пријатеља. Не може да има више од {1} пријатеља на Speedy Net. Замолите је да уклони пријатеље пре него што наставите.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Овај корисник већ има {0} пријатеља. Не може да има више од {1} пријатеља на Speedy Net. Замолите га да уклони пријатеље пре него што наставите.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "This user already has {0} friends. They can't have more than {1} friends on Speedy Net. Please ask them to remove friends before you proceed." for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ова корисница већ има {0} пријатеља. Не може имати више од {1} пријатеља на Speedy Net. Молимо вас да је замолите да уклони неке пријатеље пре него што настави.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Овај корисник већ има {0} пријатеља. Не може имати више од {1} пријатеља на Speedy Net. Молимо вас да га замолите да уклони неке пријатеље пре него што настави.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Овај корисник већ има {0} пријатеља. Они не могу имати више од {1} пријатеља на Speedy Net. Молимо вас да их замолите да уклоне неке пријатеље пре него што наставе.' for user_gender in User.ALL_GENDERS},
                 },
                 'ro': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Această utilizatoare are deja {0} prieteni. Ea nu poate avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să-i cereți să elimine prieteni înainte de a continua.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Acest utilizator are deja {0} prieteni. El nu poate avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să-i cereți să elimine prieteni înainte de a continua.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Acest utilizator are deja {0} prieteni. Nu pot avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să le cereți să elimine prietenii înainte de a continua.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Acest utilizator are deja {0} prieteni. Nu pot avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să le cereți să elimine prietenii înainte de a continua.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Acest utilizator are deja {0} prieteni. Nu pot avea mai mult de {1} prieteni pe Speedy Net. Vă rugăm să le cereți să elimine prietenii înainte de a continua.' for user_gender in User.ALL_GENDERS},
                 },
                 'bn': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'এই ব্যবহারকারীর ইতিমধ্যে {0} জন বন্ধু আছে। তিনি Speedy Net-এ {1} জনের বেশি বন্ধু রাখতে পারবেন না। অনুগ্রহ করে এগিয়ে যাওয়ার আগে তাকে কিছু বন্ধু সরাতে বলুন।' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'এই ব্যবহারকারীর ইতিমধ্যে {0} জন বন্ধু আছে। তিনি Speedy Net-এ {1} জনের বেশি বন্ধু রাখতে পারবেন না। অনুগ্রহ করে এগিয়ে যাওয়ার আগে তাকে কিছু বন্ধু সরাতে বলুন।' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'এই ব্যবহারকারীর ইতিমধ্যেই {0} বন্ধু রয়েছে৷ স্পিডি নেটে তাদের {1} এর বেশি বন্ধু থাকত Speedy Net ে পারে না। আপনি এগিয়ে যাওয়ার আগে দয়া করে তাদের বন্ধুদের সরাতে বলুন।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'এই ব্যবহারকারীর ইতিমধ্যেই {0} জন বন্ধু আছে। Speedy Net-এ তারা {1} জনের বেশি বন্ধু রাখতে পারবেন না। এগিয়ে যাওয়ার আগে অনুগ্রহ করে তাদের কিছু বন্ধুকে সরিয়ে দিতে বলুন।' for user_gender in User.ALL_GENDERS},
                 },
                 'ca': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Aquesta usuària ja té {0} amics. No pot tenir més de {1} amics a Speedy Net. Si us plau, demana-li que elimini amics abans de continuar.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Aquest usuari ja té {0} amics. No pot tenir més de {1} amics a Speedy Net. Si us plau, demana-li que elimini amics abans de continuar.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Aquest usuari ja té {0} amics. No poden tenir més de {1} amics a Speedy Net. Si us plau, demaneu-los que eliminen els amics abans de continuar.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Aquesta usuària ja té {0} amics. No pot tenir més de {1} amics a Speedy Net. Demana-li que elimini alguns amics abans de continuar.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Aquest usuari ja té {0} amics. No pot tenir més de {1} amics a Speedy Net. Demana-li que elimini alguns amics abans de continuar.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Aquesta persona ja té {0} amics. No pot tenir més de {1} amics a Speedy Net. Demana-li que elimini alguns amics abans de continuar.' for user_gender in User.ALL_GENDERS},
                 },
                 'no': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Denne brukeren har allerede {0} venner. Hun kan ikke ha mer enn {1} venner på Speedy Net. Be henne fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Denne brukeren har allerede {0} venner. Han kan ikke ha mer enn {1} venner på Speedy Net. Be ham fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Denne brukeren har allerede {0} venner. Vedkommende kan ikke ha mer enn {1} venner på Speedy Net. Be dem fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på Speedy Net. Be dem om å fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på Speedy Net. Be dem om å fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Denne brukeren har allerede {0} venner. De kan ikke ha mer enn {1} venner på Speedy Net. Be dem om å fjerne venner før du fortsetter.' for user_gender in User.ALL_GENDERS},
                 },
                 'bg': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Тази потребителка вече има {0} приятели. Тя не може да има повече от {1} приятели в Speedy Net. Моля, помолете я да премахне приятели, преди да продължите.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Този потребител вече има {0} приятели. Той не може да има повече от {1} приятели в Speedy Net. Моля, помолете го да премахне приятели, преди да продължите.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Този потребител вече има {0} приятели. Те не могат да имат повече от {1} приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да продължите.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Този потребител вече има {0} приятели. Те не могат да имат повече от {1} приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да продължите.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Този потребител вече има {0} приятели. Те не могат да имат повече от {1} приятели в Speedy Net. Моля, помолете ги да премахнат приятели, преди да продължите.' for user_gender in User.ALL_GENDERS},
                 },
                 'da': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Denne bruger har allerede {0} venner. Hun kan ikke have mere end {1} venner på Speedy Net. Bed hende om at fjerne venner, før du fortsætter.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Denne bruger har allerede {0} venner. Han kan ikke have mere end {1} venner på Speedy Net. Bed ham om at fjerne venner, før du fortsætter.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Denne bruger har allerede {0} venner. De kan ikke have mere end {1} venner på Speedy Net. Bed dem venligst om at fjerne venner, før du fortsætter.' for user_gender in User.ALL_GENDERS},
                 },
                 'sk': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Táto používateľka už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Požiadajte ju, aby pred pokračovaním odstránila priateľov.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Požiadajte ho, aby pred pokračovaním odstránil priateľov.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Tento používateľ už má {0} priateľov. V službe nemôžu mať viac ako {1} priateľov. Speedy Net Skôr ako budete pokračovať, požiadajte ich, aby odstránili priateľov.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Tento používateľ už má {0} priateľov. Na Speedy Net nemôže mať viac ako {1} priateľov. Pred pokračovaním ho požiadajte, aby odstránil niektorých priateľov.' for user_gender in User.ALL_GENDERS},
                 },
                 'hi': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'इस उपयोगकर्ता के पास पहले से {0} मित्र हैं। वह Speedy Net पर {1} से अधिक मित्र नहीं रख सकती। कृपया आगे बढ़ने से पहले उसे मित्र हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'इस उपयोगकर्ता के पास पहले से {0} मित्र हैं। वह Speedy Net पर {1} से अधिक मित्र नहीं रख सकता। कृपया आगे बढ़ने से पहले उसे मित्र हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'इस उपयोगकर्ता के पास पहले से ही {0} मित्र हैं। स्पीडी नेट पर उनके {1} से अधिक मित्र Speedy Net नहीं हो सकते। कृपया आगे बढ़ने से पहले उनसे मित्रों को हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'इस उपयोगकर्ता के पास पहले से ही है {0} दोस्त। उनके पास इससे ज़्यादा दोस्त नहीं हो सकते। {1} Speedy Net पर आपके दोस्त हैं। कृपया आगे बढ़ने से पहले उनसे अपने दोस्तों को हटाने के लिए कहें।' for user_gender in User.ALL_GENDERS},
                 },
                 'et': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Sellel kasutajal on juba {0} sõpra. Tal ei tohi Speedy Net platvormil olla rohkem kui {1} sõpra. Palun paluge tal enne jätkamist sõpru eemaldada.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Sellel kasutajal on juba {0} sõpra. Tal ei tohi Speedy Net platvormil olla rohkem kui {1} sõpra. Palun paluge tal enne jätkamist sõpru eemaldada.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Sellel kasutajal on juba {0} sõpra. Neil ei saa Speedy Netis olla rohkem kui {1} sõpra. Enne jätkamist paluge neil sõbrad eemaldada.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Sellel kasutajal on juba {0} sõpra. Neil ei saa Speedy Netis olla rohkem kui {1} sõpra. Enne jätkamist paluge neil sõbrad eemaldada.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Sellel kasutajal on juba {0} sõpra. Neil ei saa Speedy Netis olla rohkem kui {1} sõpra. Enne jätkamist paluge neil sõbrad eemaldada.' for user_gender in User.ALL_GENDERS},
                 },
                 'hr': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ova korisnica već ima {0} prijatelja. Ne može imati više od {1} prijatelja na platformi Speedy Net. Molimo zamolite je da ukloni prijatelje prije nego što nastavite.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ovaj korisnik već ima {0} prijatelja. Ne može imati više od {1} prijatelja na platformi Speedy Net. Molimo zamolite ga da ukloni prijatelje prije nego što nastavite.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ovaj korisnik već ima {0} prijatelja. Ne mogu imati više od {1} prijatelja na Speedy Netu. Zamolite ih da uklone prijatelje prije nego nastavite.' for user_gender in User.ALL_GENDERS},
                 },
                 'az': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onların Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl onlardan dostlarını silmələrini xahiş edin.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Bu istifadəçinin artıq {0} dostu var. Onun Speedy Net-də {1}-dən çox dostu ola bilməz. Davam etməzdən əvvəl ondan dostlarını silməsini xahiş edin.' for user_gender in User.ALL_GENDERS},
                 },
                 'zh-yue': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): '此用戶已有 {0} 位朋友。對方在 Speedy Net 上最多只可有 {1} 位朋友。請先請對方移除部分朋友，再繼續。' for user_gender in User.ALL_GENDERS},
@@ -1317,14 +1349,14 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): '此用戶已有 {0} 位朋友。對方在 Speedy Net 上最多只可有 {1} 位朋友。請先請對方移除部分朋友，再繼續。' for user_gender in User.ALL_GENDERS},
                 },
                 'lt': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ši naudotoja jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1} draugų. Paprašykite jos prieš tęsiant pašalinti kai kuriuos draugus.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1} draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1} draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1} draugų. Paprašykite jų prieš tęsiant pašalinti kai kuriuos draugus.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Šis naudotojas jau turi {0} draugų. Speedy Net negali turėti daugiau nei {1} draugų. Paprašykite jo prieš tęsiant pašalinti kai kuriuos draugus.' for user_gender in User.ALL_GENDERS},
                 },
                 'sl': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ta uporabnica že ima {0} prijateljev. Na Speedy Net ne more imeti več kot {1} prijateljev. Prosite jo, naj pred nadaljevanjem odstrani nekaj prijateljev.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Ta uporabnik že ima {0} prijateljev. Na Speedy Net ne more imeti več kot {1} prijateljev. Prosite ga, naj pred nadaljevanjem odstrani nekaj prijateljev.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Ta uporabnik že ima {0} prijateljev. Na Speedy Net ne more imeti več kot {1} prijateljev. Prosite ga, naj pred nadaljevanjem odstrani nekaj prijateljev.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ta uporabnik že ima {0} prijateljev. Na Speedy Net ne more imeti več kot {1} prijateljev. Prosite jih, naj pred nadaljevanjem odstranijo nekaj prijateljev.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Ta uporabnik že ima {0} prijateljev. Na Speedy Net ne more imeti več kot {1} prijateljev. Prosite ga, naj pred nadaljevanjem odstrani nekaj prijateljev.' for user_gender in User.ALL_GENDERS},
                 },
                 'eu': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Erabiltzaile honek jada {0} lagun ditu. Ezin du {1} lagun baino gehiago izan Speedy Net-en. Mesedez, eskatu lagun batzuk kentzeko zuk jarraitu baino lehen.' for user_gender in User.ALL_GENDERS},
@@ -1332,9 +1364,9 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Erabiltzaile honek jada {0} lagun ditu. Ezin du {1} lagun baino gehiago izan Speedy Net-en. Mesedez, eskatu lagun batzuk kentzeko zuk jarraitu baino lehen.' for user_gender in User.ALL_GENDERS},
                 },
                 'hy': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր. նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում. խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր։ Նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում։ Խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր։ Նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում։ Խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը։' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Այս օգտատերն արդեն ունի {0} ընկեր։ Նա չի կարող ունենալ {1}-ից ավելի ընկեր Speedy Net-ում։ Խնդրում ենք խնդրել նրան հեռացնել ընկերներից մի քանիսին, նախքան շարունակելը։' for user_gender in User.ALL_GENDERS},
                 },
                 'uz': {
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): "Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da {1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan do'stlarini olib tashlashlarini so'rang." for user_gender in User.ALL_GENDERS},
@@ -1342,12 +1374,12 @@ if (django_settings.TESTS):
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): "Bu foydalanuvchining allaqachon {0} do'stlari bor. Ularning Speedy Net’da {1}’dan ortiq do'stlari bo'la olmaydi. Davom etishdan oldin ulardan do'stlarini olib tashlashlarini so'rang." for user_gender in User.ALL_GENDERS},
                 },
                 'ta': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவளுக்கு {1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு அவளிடம் கேளுங்கள்.' for user_gender in User.ALL_GENDERS},
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவனுக்கு {1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு அவனிடம் கேளுங்கள்.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'இந்தப் பயனருக்கு ஏற்கனவே {0} நண்பர்கள் உள்ளனர். Speedy Net இல் அவர்களுக்கு {1} நண்பர்களுக்கு மேல் இருக்க முடியாது. நீங்கள் தொடர்வதற்கு முன் சில நண்பர்களை நீக்குமாறு அவர்களிடம் கேளுங்கள்.' for user_gender in User.ALL_GENDERS},
                 },
                 'lv': {
-                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Šai lietotājai jau ir {0} draugi. Vietnē Speedy Net lietotājai nevar būt vairāk par {1} draugiem. Lūdzu, palūdziet šai lietotājai pirms turpināšanas noņemt dažus draugus.' for user_gender in User.ALL_GENDERS},
+                    **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_FEMALE_STRING): 'Šim lietotājam jau ir {0} draugi. Vietnē Speedy Net lietotājam nevar būt vairāk par {1} draugiem. Lūdzu, palūdziet šim lietotājam pirms turpināšanas noņemt dažus draugus.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_MALE_STRING): 'Šim lietotājam jau ir {0} draugi. Vietnē Speedy Net lietotājam nevar būt vairāk par {1} draugiem. Lūdzu, palūdziet šim lietotājam pirms turpināšanas noņemt dažus draugus.' for user_gender in User.ALL_GENDERS},
                     **{get_both_genders_context_from_genders(user_gender=user_gender, other_user_gender=User.GENDER_OTHER_STRING): 'Šim lietotājam jau ir {0} draugi. Vietnē Speedy Net lietotājam nevar būt vairāk par {1} draugiem. Lūdzu, palūdziet šim lietotājam pirms turpināšanas noņemt dažus draugus.' for user_gender in User.ALL_GENDERS},
                 },
