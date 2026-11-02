@@ -1866,7 +1866,7 @@ if (django_settings.TESTS):
                 """
                 This test depends on the time zone of the computer running the tests. If you run them on your local computer, and your local date is different from the current date at UTC, then this test will be skipped with a reason. On the website, it might display "Today" even if the last visit date is "tomorrow" or "yesterday", depending on the server's time zone.
                 """
-                if (self.language_code not in ['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'he']):
+                if (self.language_code not in {'en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'he'}):
                     self.skipTest(reason="Skipped test - the dates are translated only in the main 8 languages.")
                 user_1 = ActiveUserFactory()
                 # If user_1.profile.last_visit_str is not "Today", skip this test.
