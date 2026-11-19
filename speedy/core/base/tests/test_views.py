@@ -168,6 +168,7 @@ if (django_settings.TESTS):
             self.assertEqual(first=r.status_code, second=200)
             self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
             self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+            self.assertTemplateUsed(response=r, template_name='main/main_page.html')
 
         def test_german_domain_is_served_in_german_or_redirects_permanently_to_www_page(self):
             """
@@ -182,6 +183,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
                 self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+                self.assertTemplateUsed(response=r, template_name='main/main_page.html')
             elif (django_settings.SITE_ID in {django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID}):
                 self.assertNotIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
                 self.assertEqual(first=r.status_code, second=301)
