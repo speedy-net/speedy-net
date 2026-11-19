@@ -156,4 +156,37 @@ if (django_settings.TESTS):
             self.assertEqual(first=r.status_code, second=301)
             self.assertEqual(first=r['Location'], second=self.www_page_url)
 
+        def test_english_domain_is_served_in_english(self):
+            """
+            Asserts the English domain of the site ("en") is served in English on all sites.
+            """
+            language_code = 'en'
+            self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
+            client = self.client_class(HTTP_HOST=http_host)
+            r = client.get(path='/')
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
+            self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+
+        def test_german_domain_is_served_in_german_or_redirects_permanently_to_www_page(self):
+            """
+            Asserts the German domain of the site ("de") is served in German on Speedy Net and Speedy Match, and redirects permanently (301) to the "www" page on Speedy Composer and Speedy Mail Software, which only have English and Hebrew.
+            """
+            language_code = 'de'
+            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
+            client = self.client_class(HTTP_HOST=http_host)
+            r = client.get(path='/')
+            if (django_settings.SITE_ID in {django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID}):
+                self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
+                self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+            elif (django_settings.SITE_ID in {django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID}):
+                self.assertNotIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+                self.assertEqual(first=r.status_code, second=301)
+                self.assertEqual(first=r['Location'], second=self.www_page_url)
+            else:
+                raise NotImplementedError("Unsupported SITE_ID.")
+
 
