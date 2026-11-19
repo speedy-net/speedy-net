@@ -182,10 +182,11 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=200)
                 self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
                 self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
-            else:
-                self.assertIn(member=django_settings.SITE_ID, container={django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID})
+            elif (django_settings.SITE_ID in {django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID}):
                 self.assertNotIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
                 self.assertEqual(first=r.status_code, second=301)
                 self.assertEqual(first=r['Location'], second=self.www_page_url)
+            else:
+                raise NotImplementedError("Unsupported SITE_ID.")
 
 
