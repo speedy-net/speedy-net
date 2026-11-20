@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 03:23+0300\n"
+"POT-Creation-Date: 2026-11-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2659,19 +2659,19 @@ msgstr "зворотній зв'язок"
 msgid "feedbacks"
 msgstr "відгуки"
 
-#: .\friends\views.py:326
+#: .\friends\views.py:327
 msgid "Friendship request sent."
 msgstr "Запит на дружбу надіслано."
 
-#: .\friends\views.py:350
+#: .\friends\views.py:351
 msgid "No friendship request."
 msgstr "Без запиту дружби."
 
-#: .\friends\views.py:420
+#: .\friends\views.py:421
 msgid "Friendship request accepted."
 msgstr "Запит на дружбу прийнято."
 
-#: .\friends\views.py:447
+#: .\friends\views.py:448
 msgid "Friendship request rejected."
 msgstr "Запит на дружбу відхилено."
 
@@ -2735,11 +2735,11 @@ msgstr "позначка читання"
 msgid "read marks"
 msgstr "прочитані позначки"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:229
 msgid "English"
 msgstr "англійська"
 
-#: .\settings\base.py:228
+#: .\settings\base.py:230
 msgid "Hebrew"
 msgstr "іврит"
 

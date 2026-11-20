@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 03:23+0300\n"
+"POT-Creation-Date: 2026-11-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2613,19 +2613,19 @@ msgstr "fikr-mulohaza"
 msgid "feedbacks"
 msgstr "Fikr-mulohazalar"
 
-#: .\friends\views.py:326
+#: .\friends\views.py:327
 msgid "Friendship request sent."
 msgstr "Do'stlik so'rovi yuborildi."
 
-#: .\friends\views.py:350
+#: .\friends\views.py:351
 msgid "No friendship request."
 msgstr "Do'stlik so'rovi yo'q."
 
-#: .\friends\views.py:420
+#: .\friends\views.py:421
 msgid "Friendship request accepted."
 msgstr "Do'stlik so'rovi qabul qilindi."
 
-#: .\friends\views.py:447
+#: .\friends\views.py:448
 msgid "Friendship request rejected."
 msgstr "Do'stlik so'rovi rad etildi."
 
@@ -2689,11 +2689,11 @@ msgstr "o'qish belgisi"
 msgid "read marks"
 msgstr "o'qish belgilari"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:229
 msgid "English"
 msgstr "Ingliz tili"
 
-#: .\settings\base.py:228
+#: .\settings\base.py:230
 msgid "Hebrew"
 msgstr "Ivrit tili"
 

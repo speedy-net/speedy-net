@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 03:23+0300\n"
+"POT-Creation-Date: 2026-11-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2578,19 +2578,19 @@ msgstr "nhận xét"
 msgid "feedbacks"
 msgstr "phản hồi"
 
-#: .\friends\views.py:326
+#: .\friends\views.py:327
 msgid "Friendship request sent."
 msgstr "Đã gửi lời mời kết bạn."
 
-#: .\friends\views.py:350
+#: .\friends\views.py:351
 msgid "No friendship request."
 msgstr "Không có lời mời kết bạn."
 
-#: .\friends\views.py:420
+#: .\friends\views.py:421
 msgid "Friendship request accepted."
 msgstr "Lời mời kết bạn đã được chấp nhận."
 
-#: .\friends\views.py:447
+#: .\friends\views.py:448
 msgid "Friendship request rejected."
 msgstr "Lời mời kết bạn bị từ chối."
 
@@ -2654,11 +2654,11 @@ msgstr "đọc dấu"
 msgid "read marks"
 msgstr "đọc dấu"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:229
 msgid "English"
 msgstr "Tiếng Anh"
 
-#: .\settings\base.py:228
+#: .\settings\base.py:230
 msgid "Hebrew"
 msgstr "tiếng Do Thái"
 

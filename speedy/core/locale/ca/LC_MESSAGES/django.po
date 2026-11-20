@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-16 09:19+0300\n"
+"POT-Creation-Date: 2026-11-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2626,19 +2626,19 @@ msgstr "comentaris"
 msgid "feedbacks"
 msgstr "comentaris"
 
-#: .\friends\views.py:326
+#: .\friends\views.py:327
 msgid "Friendship request sent."
 msgstr "S'ha enviat una sol·licitud d'amistat."
 
-#: .\friends\views.py:350
+#: .\friends\views.py:351
 msgid "No friendship request."
 msgstr "Cap sol·licitud d'amistat."
 
-#: .\friends\views.py:420
+#: .\friends\views.py:421
 msgid "Friendship request accepted."
 msgstr "S'ha acceptat la sol·licitud d'amistat."
 
-#: .\friends\views.py:447
+#: .\friends\views.py:448
 msgid "Friendship request rejected."
 msgstr "S'ha rebutjat la sol·licitud d'amistat."
 
@@ -2702,11 +2702,11 @@ msgstr "marca de lectura"
 msgid "read marks"
 msgstr "marques de lectura"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:229
 msgid "English"
 msgstr "anglès"
 
-#: .\settings\base.py:228
+#: .\settings\base.py:230
 msgid "Hebrew"
 msgstr "hebreu"
 

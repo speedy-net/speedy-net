@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-11-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2608,19 +2608,19 @@ msgstr "iritzia"
 msgid "feedbacks"
 msgstr "iritziak"
 
-#: .\friends\views.py:326
+#: .\friends\views.py:327
 msgid "Friendship request sent."
 msgstr "Laguntasun-eskaera bidali da."
 
-#: .\friends\views.py:350
+#: .\friends\views.py:351
 msgid "No friendship request."
 msgstr "Ez dago laguntasun-eskaerarik."
 
-#: .\friends\views.py:420
+#: .\friends\views.py:421
 msgid "Friendship request accepted."
 msgstr "Laguntasun-eskaera onartu da."
 
-#: .\friends\views.py:447
+#: .\friends\views.py:448
 msgid "Friendship request rejected."
 msgstr "Laguntasun-eskaera baztertu da."
 
@@ -2684,11 +2684,11 @@ msgstr "irakurritako marka"
 msgid "read marks"
 msgstr "irakurritako markak"
 
-#: .\settings\base.py:227
+#: .\settings\base.py:229
 msgid "English"
 msgstr "Ingelesa"
 
-#: .\settings\base.py:228
+#: .\settings\base.py:230
 msgid "Hebrew"
 msgstr "Hebreera"
 
