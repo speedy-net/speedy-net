@@ -6,6 +6,8 @@ from django.conf import settings as django_settings
 if (django_settings.TESTS):
     import random
 
+    from django.utils import translation
+
     from speedy.core.base.test.mixins import TestCaseMixin
     from speedy.core.base.test.models import SiteTestCase
 
@@ -97,6 +99,13 @@ if (django_settings.TESTS):
             self.www_host = 'www.{domain}'.format(domain=self.site.domain)
             self.www_page_url = '//{www_host}/'.format(www_host=self.www_host)
             self.client = self.client_class(HTTP_HOST=self.www_host)
+
+        def tear_down(self):
+            """
+            Resets the active language, because requests to language domains activate their language in the current thread and it would leak to the next tests.
+            """
+            translation.activate(language=django_settings.LANGUAGE_CODE)
+            super().tear_down()
 
         def run_test_language_domain_is_served_in_language(self, language_code):
             """
