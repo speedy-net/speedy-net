@@ -20,6 +20,7 @@ def update_all_friends_count_on_new_friend(sender, instance: Friend, created, **
     :param kwargs: Additional keyword arguments passed by the signal.
     """
     if (created):
+        bust_cache(cache_type='site_friends', entities_pks=[instance.to_user_id, instance.from_user_id])
         user = instance.to_user
         user.speedy_net_profile._update_all_friends_count()
         user.speedy_net_profile.save()
@@ -35,6 +36,7 @@ def update_all_friends_count_on_unfriend(sender, instance: Friend, **kwargs):
     :type instance: friendship.models.Friend
     :param kwargs: Additional keyword arguments passed by the signal, including ``origin`` (the object that originated the cascade delete, if any).
     """
+    bust_cache(cache_type='site_friends', entities_pks=[instance.to_user_id, instance.from_user_id])
     user = instance.to_user
     # Check origin because for cascade delete User -> Friend, accessing user.speedy_net_profile will re-create deleted SpeedyNetSiteProfile.
     if (not (user == kwargs.get('origin'))):

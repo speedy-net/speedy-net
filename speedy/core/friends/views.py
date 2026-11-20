@@ -18,6 +18,7 @@ from speedy.core.base.utils import get_both_genders_context_from_users
 from speedy.core.base.views import PaginationMixin
 from speedy.core.accounts.models import User
 from speedy.core.profiles.views import UserMixin
+from .lists import SiteFriendsList
 from .rules import is_self, friendship_request_sent, friendship_request_received, are_friends
 
 
@@ -51,10 +52,10 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
         """
         Return the list of objects to paginate for this view.
 
-        :return: The user's list of friends on the current site.
-        :rtype: list
+        :return: The user's list of friends on the current site, which loads only the requested page of friends from the database.
+        :rtype: speedy.core.friends.lists.SiteFriendsList
         """
-        return self.user.site_friends
+        return SiteFriendsList(user=self.user)
 
     def get_context_data(self, **kwargs):
         """

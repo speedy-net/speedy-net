@@ -12,16 +12,18 @@ CACHE_TYPES = {
     'received_friendship_requests_count': 'speedy-core-friends-received-friendship-requests-count-{entity_pk}',
     'unread_chats_count': 'speedy-core-messages-unread-chats-count-{entity_pk}',
     'matches': 'speedy-match-accounts-matches-{entity_pk}',
+    'site_friends': 'speedy-core-friends-site-friends-{entity_pk}',
 }
 
 # For each cache type, the list of cache types which should be deleted (busted) when it is invalidated.
 BUST_CACHES = {
     'all': list(CACHE_TYPES.keys()),
-    'blocked': ['blocked', 'matches', 'received_friendship_requests_count'],
-    'blocking': ['blocking', 'matches', 'received_friendship_requests_count'],
+    'blocked': ['blocked', 'matches', 'received_friendship_requests_count', 'site_friends'],
+    'blocking': ['blocking', 'matches', 'received_friendship_requests_count', 'site_friends'],
     'received_friendship_requests_count': ['received_friendship_requests_count'],
     'unread_chats_count': ['unread_chats_count'],
-    'matches': ['matches', 'received_friendship_requests_count'],
+    'matches': ['matches', 'received_friendship_requests_count', 'site_friends'],
+    'site_friends': ['site_friends'],
 }
 
 
