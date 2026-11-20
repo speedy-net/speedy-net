@@ -98,6 +98,45 @@ if (django_settings.TESTS):
             self.www_page_url = '//{www_host}/'.format(www_host=self.www_host)
             self.client = self.client_class(HTTP_HOST=self.www_host)
 
+        def run_test_language_domain_is_served_in_language(self, language_code):
+            """
+            Asserts the domain of the site with the given language code is served in that language (with the main page template) and not with the "www" welcome page.
+
+            :param language_code: Required. The language code, which must be in the languages of the site.
+            :type language_code: str
+            """
+            self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
+            client = self.client_class(HTTP_HOST=http_host)
+            r = client.get(path='/')
+            self.assertEqual(first=r.status_code, second=200)
+            self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
+            self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+            self.assertTemplateUsed(response=r, template_name='main/main_page.html')
+
+        def run_test_language_domain_is_served_in_language_or_redirects_permanently_to_www_page(self, language_code):
+            """
+            Asserts the domain of the site with the given language code is served in that language on Speedy Net and Speedy Match, and redirects permanently (301) to the "www" page on Speedy Composer and Speedy Mail Software, which only have English and Hebrew.
+
+            :param language_code: Required. The language code.
+            :type language_code: str
+            """
+            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
+            client = self.client_class(HTTP_HOST=http_host)
+            r = client.get(path='/')
+            if (django_settings.SITE_ID in {django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID}):
+                self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
+                self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
+                self.assertTemplateUsed(response=r, template_name='main/main_page.html')
+            elif (django_settings.SITE_ID in {django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID}):
+                self.assertNotIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
+                self.assertEqual(first=r.status_code, second=301)
+                self.assertEqual(first=r['Location'], second=self.www_page_url)
+            else:
+                raise NotImplementedError("Unsupported SITE_ID.")
+
         def test_visitor_can_access_www_page(self):
             """
             Asserts a visitor can access the "www" welcome page and that it uses the expected template.
@@ -161,34 +200,34 @@ if (django_settings.TESTS):
             Asserts the English domain of the site ("en") is served in English on all sites.
             """
             language_code = 'en'
-            self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
-            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
-            client = self.client_class(HTTP_HOST=http_host)
-            r = client.get(path='/')
-            self.assertEqual(first=r.status_code, second=200)
-            self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
-            self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
-            self.assertTemplateUsed(response=r, template_name='main/main_page.html')
+            self.run_test_language_domain_is_served_in_language(language_code=language_code)
+
+        def test_hebrew_domain_is_served_in_hebrew(self):
+            """
+            Asserts the Hebrew domain of the site ("he") is served in Hebrew on all sites.
+            """
+            language_code = 'he'
+            self.run_test_language_domain_is_served_in_language(language_code=language_code)
+
+        def test_french_domain_is_served_in_french_or_redirects_permanently_to_www_page(self):
+            """
+            Asserts the French domain of the site ("fr") is served in French on Speedy Net and Speedy Match, and redirects permanently (301) to the "www" page on Speedy Composer and Speedy Mail Software, which only have English and Hebrew.
+            """
+            language_code = 'fr'
+            self.run_test_language_domain_is_served_in_language_or_redirects_permanently_to_www_page(language_code=language_code)
 
         def test_german_domain_is_served_in_german_or_redirects_permanently_to_www_page(self):
             """
             Asserts the German domain of the site ("de") is served in German on Speedy Net and Speedy Match, and redirects permanently (301) to the "www" page on Speedy Composer and Speedy Mail Software, which only have English and Hebrew.
             """
             language_code = 'de'
-            http_host = "{language_code}.{domain}".format(language_code=language_code, domain=self.site.domain)
-            client = self.client_class(HTTP_HOST=http_host)
-            r = client.get(path='/')
-            if (django_settings.SITE_ID in {django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID}):
-                self.assertIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertEqual(first=r.wsgi_request.LANGUAGE_CODE, second=language_code)
-                self.assertNotIn(member='www/welcome.html', container=[template.name for template in r.templates])
-                self.assertTemplateUsed(response=r, template_name='main/main_page.html')
-            elif (django_settings.SITE_ID in {django_settings.SPEEDY_COMPOSER_SITE_ID, django_settings.SPEEDY_MAIL_SOFTWARE_SITE_ID}):
-                self.assertNotIn(member=language_code, container=[code for code, name in django_settings.LANGUAGES])
-                self.assertEqual(first=r.status_code, second=301)
-                self.assertEqual(first=r['Location'], second=self.www_page_url)
-            else:
-                raise NotImplementedError("Unsupported SITE_ID.")
+            self.run_test_language_domain_is_served_in_language_or_redirects_permanently_to_www_page(language_code=language_code)
+
+        def test_cantonese_domain_is_served_in_cantonese_or_redirects_permanently_to_www_page(self):
+            """
+            Asserts the Cantonese domain of the site ("zh-yue") is served in Cantonese on Speedy Net and Speedy Match, and redirects permanently (301) to the "www" page on Speedy Composer and Speedy Mail Software, which only have English and Hebrew.
+            """
+            language_code = 'zh-yue'
+            self.run_test_language_domain_is_served_in_language_or_redirects_permanently_to_www_page(language_code=language_code)
 
 
