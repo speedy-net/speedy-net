@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 12:16+0200\n"
+"POT-Creation-Date: 2026-11-22 00:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -867,7 +867,7 @@ msgstr "செல்லுபடியாகும் மின்னஞ்ச�
 msgid "Email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1614
+#: .\__translations\__translations.py:13 .\accounts\models.py:1616
 msgid "email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
@@ -909,7 +909,7 @@ msgstr "நட்பு கோரிக்கைகள்"
 msgid "Friend"
 msgstr "நண்பர்"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:956
+#: .\__translations\__translations.py:26 .\accounts\models.py:958
 msgid "Friends"
 msgstr "நண்பர்கள்"
 
@@ -2193,68 +2193,68 @@ msgstr "கடைசியாக பயன்படுத்தப்பட்�
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "கடைசி ஐபி முகவரி மூல https://ipapi. com/ முடிவுகள்"
 
-#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
+#: .\accounts\models.py:992 .\accounts\models.py:1594 .\blocks\models.py:25
 msgid "user"
 msgstr "பயனர்"
 
-#: .\accounts\models.py:991
+#: .\accounts\models.py:993
 msgid "users"
 msgstr "பயனர்கள்"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "Superuser must be equal to staff."
 msgstr "சூப்பர் பயனர் ஊழியர்களுக்கு சமமாக இருக்க வேண்டும்."
 
-#: .\accounts\models.py:1593
+#: .\accounts\models.py:1595
 msgid "email"
 msgstr "மின்னஞ்சல்"
 
-#: .\accounts\models.py:1594
+#: .\accounts\models.py:1596
 msgid "is confirmed"
 msgstr "உறுதிப்படுத்தப்பட்டுள்ளது"
 
-#: .\accounts\models.py:1595
+#: .\accounts\models.py:1597
 msgid "is primary"
 msgstr "முதன்மை"
 
-#: .\accounts\models.py:1596
+#: .\accounts\models.py:1598
 msgid "confirmation token"
 msgstr "உறுதிப்படுத்தல் குறி"
 
-#: .\accounts\models.py:1597
+#: .\accounts\models.py:1599
 msgid "confirmation sent"
 msgstr "அனுப்பிய உறுதிப்படுத்தல்"
 
-#: .\accounts\models.py:1598
+#: .\accounts\models.py:1600
 msgid "Who can see this email"
 msgstr "யார் இந்த மின்னஞ்சல் பார்க்க முடியும்"
 
-#: .\accounts\models.py:1615
+#: .\accounts\models.py:1617
 msgid "email addresses"
 msgstr "மின்னஞ்சல் முகவரிகள்"
 
-#: .\accounts\models.py:1756
+#: .\accounts\models.py:1758
 msgid "User"
 msgstr "பயனர்"
 
-#: .\accounts\models.py:1757
+#: .\accounts\models.py:1759
 msgid "last visit"
 msgstr "கடைசி வருகை"
 
-#: .\accounts\models.py:1782
+#: .\accounts\models.py:1784
 msgid "Today"
 msgstr "இன்று"
 
-#: .\accounts\models.py:1784
+#: .\accounts\models.py:1786
 msgid "Yesterday"
 msgstr "நேற்று"
 
-#: .\accounts\models.py:1786
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "{date} அன்று ({timesince_ago})"
 
-#: .\accounts\models.py:1788
+#: .\accounts\models.py:1790
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} முன்பு"

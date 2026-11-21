@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 12:16+0200\n"
+"POT-Creation-Date: 2026-11-22 00:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -849,7 +849,7 @@ msgstr "輸入有效的電子郵件地址。"
 msgid "Email address"
 msgstr "電子郵件"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1614
+#: .\__translations\__translations.py:13 .\accounts\models.py:1616
 msgid "email address"
 msgstr "電子郵件"
 
@@ -889,7 +889,7 @@ msgstr "好友請求"
 msgid "Friend"
 msgstr "朋友"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:956
+#: .\__translations\__translations.py:26 .\accounts\models.py:958
 msgid "Friends"
 msgstr "朋友們"
 
@@ -2141,68 +2141,68 @@ msgstr "最後使用的 IP 位址 https://ipapi.com/ 時間"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "最後使用的 IP 位址的原始結果來自 https://ipapi.com/"
 
-#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
+#: .\accounts\models.py:992 .\accounts\models.py:1594 .\blocks\models.py:25
 msgid "user"
 msgstr "使用者"
 
-#: .\accounts\models.py:991
+#: .\accounts\models.py:993
 msgid "users"
 msgstr "使用者"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "Superuser must be equal to staff."
 msgstr "超級使用者必須與員工擁有同等權限。"
 
-#: .\accounts\models.py:1593
+#: .\accounts\models.py:1595
 msgid "email"
 msgstr "電子郵件"
 
-#: .\accounts\models.py:1594
+#: .\accounts\models.py:1596
 msgid "is confirmed"
 msgstr "已確認"
 
-#: .\accounts\models.py:1595
+#: .\accounts\models.py:1597
 msgid "is primary"
 msgstr "是主要的"
 
-#: .\accounts\models.py:1596
+#: .\accounts\models.py:1598
 msgid "confirmation token"
 msgstr "確認令牌"
 
-#: .\accounts\models.py:1597
+#: .\accounts\models.py:1599
 msgid "confirmation sent"
 msgstr "已發送確認訊息"
 
-#: .\accounts\models.py:1598
+#: .\accounts\models.py:1600
 msgid "Who can see this email"
 msgstr "誰可以看到這封郵件"
 
-#: .\accounts\models.py:1615
+#: .\accounts\models.py:1617
 msgid "email addresses"
 msgstr "電子郵件地址"
 
-#: .\accounts\models.py:1756
+#: .\accounts\models.py:1758
 msgid "User"
 msgstr "使用者"
 
-#: .\accounts\models.py:1757
+#: .\accounts\models.py:1759
 msgid "last visit"
 msgstr "上次造訪"
 
-#: .\accounts\models.py:1782
+#: .\accounts\models.py:1784
 msgid "Today"
 msgstr "今天"
 
-#: .\accounts\models.py:1784
+#: .\accounts\models.py:1786
 msgid "Yesterday"
 msgstr "昨天"
 
-#: .\accounts\models.py:1786
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "在{date}（{timesince_ago}）"
 
-#: .\accounts\models.py:1788
+#: .\accounts\models.py:1790
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince}前"

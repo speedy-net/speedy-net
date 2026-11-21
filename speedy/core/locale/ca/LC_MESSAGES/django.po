@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 12:16+0200\n"
+"POT-Creation-Date: 2026-11-22 00:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -879,7 +879,7 @@ msgstr "Introduïu una adreça de correu electrònic vàlida."
 msgid "Email address"
 msgstr "Adreça de correu electrònic"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1614
+#: .\__translations\__translations.py:13 .\accounts\models.py:1616
 msgid "email address"
 msgstr "adreça de correu electrònic"
 
@@ -921,7 +921,7 @@ msgstr "Sol·licituds d'amistat"
 msgid "Friend"
 msgstr "Amic"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:956
+#: .\__translations\__translations.py:26 .\accounts\models.py:958
 msgid "Friends"
 msgstr "Amics"
 
@@ -2196,68 +2196,68 @@ msgstr "Hora de l'última adreça IP utilitzada https://ipapi.com/"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "L'última adreça IP utilitzada https://ipapi.com/ resultats en brut"
 
-#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
+#: .\accounts\models.py:992 .\accounts\models.py:1594 .\blocks\models.py:25
 msgid "user"
 msgstr "usuari"
 
-#: .\accounts\models.py:991
+#: .\accounts\models.py:993
 msgid "users"
 msgstr "usuaris"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "Superuser must be equal to staff."
 msgstr "El superusuari ha de ser igual al personal."
 
-#: .\accounts\models.py:1593
+#: .\accounts\models.py:1595
 msgid "email"
 msgstr "correu electrònic"
 
-#: .\accounts\models.py:1594
+#: .\accounts\models.py:1596
 msgid "is confirmed"
 msgstr "està confirmat"
 
-#: .\accounts\models.py:1595
+#: .\accounts\models.py:1597
 msgid "is primary"
 msgstr "és primària"
 
-#: .\accounts\models.py:1596
+#: .\accounts\models.py:1598
 msgid "confirmation token"
 msgstr "token de confirmació"
 
-#: .\accounts\models.py:1597
+#: .\accounts\models.py:1599
 msgid "confirmation sent"
 msgstr "confirmació enviada"
 
-#: .\accounts\models.py:1598
+#: .\accounts\models.py:1600
 msgid "Who can see this email"
 msgstr "Qui pot veure aquest correu electrònic"
 
-#: .\accounts\models.py:1615
+#: .\accounts\models.py:1617
 msgid "email addresses"
 msgstr "adreces de correu electrònic"
 
-#: .\accounts\models.py:1756
+#: .\accounts\models.py:1758
 msgid "User"
 msgstr "Usuari"
 
-#: .\accounts\models.py:1757
+#: .\accounts\models.py:1759
 msgid "last visit"
 msgstr "última visita"
 
-#: .\accounts\models.py:1782
+#: .\accounts\models.py:1784
 msgid "Today"
 msgstr "Avui"
 
-#: .\accounts\models.py:1784
+#: .\accounts\models.py:1786
 msgid "Yesterday"
 msgstr "Ahir"
 
-#: .\accounts\models.py:1786
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "El {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1788
+#: .\accounts\models.py:1790
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "fa {timesince}"

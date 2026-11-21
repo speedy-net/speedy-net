@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 12:16+0200\n"
+"POT-Creation-Date: 2026-11-22 00:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -855,7 +855,7 @@ msgstr "Indtast en gyldig e-mailadresse."
 msgid "Email address"
 msgstr "E-mailadresse"
 
-#: .\__translations\__translations.py:13 .\accounts\models.py:1614
+#: .\__translations\__translations.py:13 .\accounts\models.py:1616
 msgid "email address"
 msgstr "e-mailadresse"
 
@@ -897,7 +897,7 @@ msgstr "Venskabsanmodninger"
 msgid "Friend"
 msgstr "Ven"
 
-#: .\__translations\__translations.py:26 .\accounts\models.py:956
+#: .\__translations\__translations.py:26 .\accounts\models.py:958
 msgid "Friends"
 msgstr "Venner"
 
@@ -2172,68 +2172,68 @@ msgstr "Tidspunkt for sidst brugte IP-adresse https://ipapi.com/"
 msgid "Last IP address used raw https://ipapi.com/ results"
 msgstr "Rå https://ipapi.com/-resultater for sidst brugte IP-adresse"
 
-#: .\accounts\models.py:990 .\accounts\models.py:1592 .\blocks\models.py:25
+#: .\accounts\models.py:992 .\accounts\models.py:1594 .\blocks\models.py:25
 msgid "user"
 msgstr "bruger"
 
-#: .\accounts\models.py:991
+#: .\accounts\models.py:993
 msgid "users"
 msgstr "brugere"
 
-#: .\accounts\models.py:1050
+#: .\accounts\models.py:1052
 msgid "Superuser must be equal to staff."
 msgstr "Superbruger skal være lig med personale."
 
-#: .\accounts\models.py:1593
+#: .\accounts\models.py:1595
 msgid "email"
 msgstr "e-mail"
 
-#: .\accounts\models.py:1594
+#: .\accounts\models.py:1596
 msgid "is confirmed"
 msgstr "er bekræftet"
 
-#: .\accounts\models.py:1595
+#: .\accounts\models.py:1597
 msgid "is primary"
 msgstr "er primær"
 
-#: .\accounts\models.py:1596
+#: .\accounts\models.py:1598
 msgid "confirmation token"
 msgstr "bekræftelsestoken"
 
-#: .\accounts\models.py:1597
+#: .\accounts\models.py:1599
 msgid "confirmation sent"
 msgstr "bekræftelse sendt"
 
-#: .\accounts\models.py:1598
+#: .\accounts\models.py:1600
 msgid "Who can see this email"
 msgstr "Hvem kan se denne e-mail"
 
-#: .\accounts\models.py:1615
+#: .\accounts\models.py:1617
 msgid "email addresses"
 msgstr "e-mailadresser"
 
-#: .\accounts\models.py:1756
+#: .\accounts\models.py:1758
 msgid "User"
 msgstr "Bruger"
 
-#: .\accounts\models.py:1757
+#: .\accounts\models.py:1759
 msgid "last visit"
 msgstr "sidste besøg"
 
-#: .\accounts\models.py:1782
+#: .\accounts\models.py:1784
 msgid "Today"
 msgstr "I dag"
 
-#: .\accounts\models.py:1784
+#: .\accounts\models.py:1786
 msgid "Yesterday"
 msgstr "I går"
 
-#: .\accounts\models.py:1786
+#: .\accounts\models.py:1788
 #, python-brace-format
 msgid "On {date} ({timesince_ago})"
 msgstr "På {date} ({timesince_ago})"
 
-#: .\accounts\models.py:1788
+#: .\accounts\models.py:1790
 #, python-brace-format
 msgid "{timesince} ago"
 msgstr "{timesince} siden"
