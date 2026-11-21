@@ -5,6 +5,7 @@ Disallow: /admin/
 Disallow: /google*.html
 Disallow: /registration-step-*
 Disallow: /login/?*
+Disallow: /*/friends
 Crawl-Delay: 40
 
 User-agent: Amazonbot
@@ -38,5 +39,8 @@ User-agent: barkrowler
 Disallow: /
 
 User-agent: ShapBot
+Disallow: /
+
+User-agent: ExaSearchBot
 Disallow: /
 
