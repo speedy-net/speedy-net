@@ -1,8 +1,7 @@
 """
 Widgets for the friends app of Speedy Core, which define the UserFriendsWidget.
 """
-import random
-
+from speedy.core.friends.lists import SiteFriendsList
 from speedy.core.profiles.widgets import Widget
 
 
@@ -25,10 +24,7 @@ class UserFriendsWidget(Widget):
         :return: A list of up to <count> random friends, in random order.
         :rtype: list
         """
-        user_friends = self.user.site_friends
-        friends_to_return = min(len(user_friends), count)
-        random_friends = random.sample(user_friends, friends_to_return)
-        return random_friends
+        return SiteFriendsList(user=self.user).random_sample(count=count)
 
     def get_context_data(self):
         """

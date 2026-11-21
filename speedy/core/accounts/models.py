@@ -917,7 +917,9 @@ class User(PermissionsMixin, OptimisticLockingModelMixin, Entity, AbstractBaseUs
 
         :return: The number of friends in the current site.
         """
-        return len(self.site_friends)
+        from speedy.core.friends.lists import SiteFriendsList
+
+        return len(SiteFriendsList(user=self))
 
     @cached_property
     def speedy_net_friends(self):

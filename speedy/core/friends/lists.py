@@ -1,6 +1,8 @@
 """
 Lazy, cached lists of friends of Speedy Core, used to paginate friend lists without loading all the friends of a user on every request.
 """
+import random
+
 from django.conf import settings as django_settings
 
 from friendship.models import Friend
@@ -45,6 +47,18 @@ class SiteFriendsList(object):
 
     def __iter__(self):
         return iter(self._load(ids=self._ids))
+
+    def random_sample(self, count):
+        """
+        Return up to <count> random friendships, in random order, loading only them from the database.
+
+        :param count: The maximum number of friendships to return.
+        :type count: int
+        :return: A list of random friendships.
+        :rtype: list
+        """
+        ids = random.sample(self._ids, min(len(self._ids), count))
+        return self._load(ids=ids)
 
     def _load(self, ids):
         """
