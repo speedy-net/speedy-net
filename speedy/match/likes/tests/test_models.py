@@ -116,15 +116,6 @@ if (django_settings.TESTS):
             Tests the SiteProfile.get_like_gender method, which reports the predominant gender of a user's liked/liking users, run only once (in English) since it is language-independent.
             """
 
-            def set_up(self):
-                """
-                Creates three active users, one of each gender (user_1 female, user_2 male, user_3 other).
-                """
-                super().set_up()
-                self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)
-                self.user_2 = ActiveUserFactory(gender=User.GENDER_MALE)
-                self.user_3 = ActiveUserFactory(gender=User.GENDER_OTHER)
-
             def _create_users(self, users_count, gender):
                 """
                 Creates the given number of active users of the given gender, storing each as a sequentially-numbered instance attribute starting from user_4.
@@ -136,6 +127,15 @@ if (django_settings.TESTS):
                 """
                 for i in range(users_count):
                     setattr(self, "user_{}".format(4 + i), ActiveUserFactory(gender=gender))
+
+            def set_up(self):
+                """
+                Creates three active users, one of each gender (user_1 female, user_2 male, user_3 other).
+                """
+                super().set_up()
+                self.user_1 = ActiveUserFactory(gender=User.GENDER_FEMALE)
+                self.user_2 = ActiveUserFactory(gender=User.GENDER_MALE)
+                self.user_3 = ActiveUserFactory(gender=User.GENDER_OTHER)
 
             def test_get_like_gender_if_there_are_no_liked_and_liking_users(self):
                 """

@@ -349,6 +349,39 @@ if (django_settings.TESTS):
                 self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
                 self.assert_registration_form_required_fields(required_fields=self.required_fields)
 
+            def run_test_visitor_register_logs_n_records(self, number_of_records_logged):
+                """
+                Registers a user and asserts the expected number of "New user" log records were emitted.
+
+                :param number_of_records_logged: The expected number of "New user" log records.
+                """
+                log_records = []
+                console_handler = next(h for h in logging.root.handlers if h.name == 'console')
+                with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
+                    r = self.client.post(path='/', data=self.data)
+                    for call in mocked_emit.call_args_list:
+                        log_record = call.args[-1]
+                        if (log_record.msg.startswith('New user')):
+                            log_records.append(log_record)
+                self.assertEqual(first=len(log_records), second=number_of_records_logged)
+
+            def run_test_required_fields(self, data):
+                """
+                Posts the given (incomplete) data and asserts the expected required-field errors are returned, and no models are created.
+
+                :param data: The form data to post, missing one or more required fields.
+                """
+                r = self.client.post(path='/', data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
+                self.assert_models_count(
+                    entity_count=0,
+                    user_count=0,
+                    user_email_address_count=0,
+                    confirmed_email_address_count=0,
+                    unconfirmed_email_address_count=0,
+                )
+
             def test_visitor_can_see_registration_page(self):
                 """
                 Asserts the main page is served with the registration page template.
@@ -403,22 +436,6 @@ if (django_settings.TESTS):
                         self.assertEqual(first=getattr(user, key), second=value)
                 self.assertEqual(first=user.date_of_birth, second=date(year=1980, month=8, day=20))
 
-            def run_test_visitor_register_logs_n_records(self, number_of_records_logged):
-                """
-                Registers a user and asserts the expected number of "New user" log records were emitted.
-
-                :param number_of_records_logged: The expected number of "New user" log records.
-                """
-                log_records = []
-                console_handler = next(h for h in logging.root.handlers if h.name == 'console')
-                with mock.patch.object(target=console_handler, attribute='emit') as mocked_emit:
-                    r = self.client.post(path='/', data=self.data)
-                    for call in mocked_emit.call_args_list:
-                        log_record = call.args[-1]
-                        if (log_record.msg.startswith('New user')):
-                            log_records.append(log_record)
-                self.assertEqual(first=len(log_records), second=number_of_records_logged)
-
             @override_settings(DEBUG=True)
             def test_visitor_register_logs_one_record(self):
                 """
@@ -432,23 +449,6 @@ if (django_settings.TESTS):
                 Asserts registering with overridden logging settings and DEBUG=True logs exactly two "New user" records.
                 """
                 self.run_test_visitor_register_logs_n_records(number_of_records_logged=2)
-
-            def run_test_required_fields(self, data):
-                """
-                Posts the given (incomplete) data and asserts the expected required-field errors are returned, and no models are created.
-
-                :param data: The form data to post, missing one or more required fields.
-                """
-                r = self.client.post(path='/', data=data)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertDictEqual(d1=r.context['form'].errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
-                self.assert_models_count(
-                    entity_count=0,
-                    user_count=0,
-                    user_email_address_count=0,
-                    confirmed_email_address_count=0,
-                    unconfirmed_email_address_count=0,
-                )
 
             def test_required_fields_1(self):
                 """
@@ -2964,6 +2964,79 @@ if (django_settings.TESTS):
                 self.required_fields = self.data.keys() - {to_attribute(name="last_name", language_code=self.language_code)}
                 self.assert_profile_form_required_fields(required_fields=self.required_fields)
 
+            def run_test_required_fields(self, data):
+                """
+                Posts the given data and asserts all required fields are reported as missing, and the user's name is left unchanged.
+
+                :param data: The form data to submit, expected to be missing required fields.
+                """
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.first_name, second=self.original_first_name)
+                self.assertEqual(first=user.last_name, second=self.original_last_name)
+                self.assert_user_first_and_last_name_in_all_languages(user=user)
+
+            def run_test_user_can_change_his_slug(self, new_slug):
+                """
+                Asserts the user can change his slug to the given new slug (normalized), and the slug is updated.
+
+                :param new_slug: The new slug to submit, which must normalize to a value different from the user's current slug.
+                """
+                old_slug = self.user.slug
+                data = self.data.copy()
+                data['slug'] = new_slug
+                self.assertNotEqual(first=self.user.slug, second=normalize_slug(slug=new_slug))
+                self.assertEqual(first=normalize_username(username=new_slug), second=self.user.username)
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
+                self.assertNotEqual(first=user.slug, second=old_slug)
+
+            def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
+                """
+                Asserts the given new slug normalizes to the expected value, then asserts the user can change his slug to it.
+
+                :param new_slug: The new, unnormalized slug to submit.
+                :param new_slug_normalized: The expected normalized form of new_slug.
+                """
+                self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
+                self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
+                self.run_test_user_can_change_his_slug(new_slug=new_slug)
+
+            def run_test_user_cannot_change_his_username(self, new_slug):
+                """
+                Asserts the user cannot change his slug when the new slug would change his username, and nothing is modified.
+
+                :param new_slug: The new slug to submit, which normalizes to a username different from the user's current username.
+                """
+                old_slug = self.user.slug
+                data = self.data.copy()
+                data['slug'] = new_slug
+                self.assertNotEqual(first=self.user.slug, second=new_slug)
+                self.assertNotEqual(first=normalize_username(username=new_slug), second=self.user.username)
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertDictEqual(d1=r.context['form'].errors, d2=self._you_cant_change_your_username_errors_dict_by_gender(gender=self.user.get_gender()))
+                user = User.objects.get(pk=self.user.pk)
+                self.assertEqual(first=user.slug, second=old_slug)
+                self.assertNotEqual(first=user.slug, second=new_slug)
+                self.assertEqual(first=user.username, second=normalize_username(username=old_slug))
+                self.assertNotEqual(first=user.username, second=normalize_username(username=new_slug))
+
+            def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
+                """
+                Asserts the given new slug normalizes to the expected value, then asserts the user cannot change his username using it.
+
+                :param new_slug: The new, unnormalized slug to submit.
+                :param new_slug_normalized: The expected normalized form of new_slug.
+                """
+                self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
+                self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
+                self.run_test_user_cannot_change_his_username(new_slug=new_slug)
+
             def test_visitor_has_no_access(self):
                 """
                 Asserts a logged-out visitor is redirected to the login page.
@@ -3114,20 +3187,6 @@ if (django_settings.TESTS):
                         self.assertEqual(first=getattr(user, key), second=value)
                 self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
 
-            def run_test_required_fields(self, data):
-                """
-                Posts the given data and asserts all required fields are reported as missing, and the user's name is left unchanged.
-
-                :param data: The form data to submit, expected to be missing required fields.
-                """
-                r = self.client.post(path=self.page_url, data=data)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertDictEqual(d1=r.context['form'].errors, d2=self._profile_form_all_the_required_fields_are_required_errors_dict())
-                user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.first_name, second=self.original_first_name)
-                self.assertEqual(first=user.last_name, second=self.original_last_name)
-                self.assert_user_first_and_last_name_in_all_languages(user=user)
-
             def test_required_fields_1(self):
                 """
                 Asserts all required fields are reported as required when the form is submitted empty.
@@ -3141,34 +3200,6 @@ if (django_settings.TESTS):
                 """
                 data = {field_name: '' for field_name in self.required_fields}
                 self.run_test_required_fields(data=data)
-
-            def run_test_user_can_change_his_slug(self, new_slug):
-                """
-                Asserts the user can change his slug to the given new slug (normalized), and the slug is updated.
-
-                :param new_slug: The new slug to submit, which must normalize to a value different from the user's current slug.
-                """
-                old_slug = self.user.slug
-                data = self.data.copy()
-                data['slug'] = new_slug
-                self.assertNotEqual(first=self.user.slug, second=normalize_slug(slug=new_slug))
-                self.assertEqual(first=normalize_username(username=new_slug), second=self.user.username)
-                r = self.client.post(path=self.page_url, data=data)
-                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
-                user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.slug, second=normalize_slug(slug=new_slug))
-                self.assertNotEqual(first=user.slug, second=old_slug)
-
-            def run_test_user_can_change_his_slug_with_normalize_slug(self, new_slug, new_slug_normalized):
-                """
-                Asserts the given new slug normalizes to the expected value, then asserts the user can change his slug to it.
-
-                :param new_slug: The new, unnormalized slug to submit.
-                :param new_slug_normalized: The expected normalized form of new_slug.
-                """
-                self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
-                self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
-                self.run_test_user_can_change_his_slug(new_slug=new_slug)
 
             def test_user_can_change_his_slug(self):
                 """
@@ -3193,37 +3224,6 @@ if (django_settings.TESTS):
                 new_slug = '==-{}\\@!!#@#&^&*()({}=*&^%$)(\\/={}---'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 new_slug_normalized = '{}-{}-{}'.format(self.user.slug[0:4], self.user.slug[4:8], self.user.slug[8:12])
                 self.run_test_user_can_change_his_slug_with_normalize_slug(new_slug=new_slug, new_slug_normalized=new_slug_normalized)
-
-            def run_test_user_cannot_change_his_username(self, new_slug):
-                """
-                Asserts the user cannot change his slug when the new slug would change his username, and nothing is modified.
-
-                :param new_slug: The new slug to submit, which normalizes to a username different from the user's current username.
-                """
-                old_slug = self.user.slug
-                data = self.data.copy()
-                data['slug'] = new_slug
-                self.assertNotEqual(first=self.user.slug, second=new_slug)
-                self.assertNotEqual(first=normalize_username(username=new_slug), second=self.user.username)
-                r = self.client.post(path=self.page_url, data=data)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertDictEqual(d1=r.context['form'].errors, d2=self._you_cant_change_your_username_errors_dict_by_gender(gender=self.user.get_gender()))
-                user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.slug, second=old_slug)
-                self.assertNotEqual(first=user.slug, second=new_slug)
-                self.assertEqual(first=user.username, second=normalize_username(username=old_slug))
-                self.assertNotEqual(first=user.username, second=normalize_username(username=new_slug))
-
-            def run_test_user_cannot_change_his_username_with_normalize_slug(self, new_slug, new_slug_normalized):
-                """
-                Asserts the given new slug normalizes to the expected value, then asserts the user cannot change his username using it.
-
-                :param new_slug: The new, unnormalized slug to submit.
-                :param new_slug_normalized: The expected normalized form of new_slug.
-                """
-                self.assertNotEqual(first=normalize_slug(slug=new_slug), second=new_slug)
-                self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
-                self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
             def test_user_cannot_change_his_username_1(self):
                 """

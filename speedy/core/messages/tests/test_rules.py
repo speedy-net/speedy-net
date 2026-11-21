@@ -27,18 +27,6 @@ if (django_settings.TESTS):
             Tests the rules governing whether a user can send a message to another user (self-messaging, blocking, and rate limits on emails, Discord links and identical messages), run only once (in English) since it is language-independent.
             """
 
-            def set_up(self):
-                """
-                Creates two active users, user_1 and user_2, whose accounts are backdated by 10 minutes.
-                """
-                super().set_up()
-                self.user_1 = ActiveUserFactory()
-                self.user_2 = ActiveUserFactory()
-                self.user_1.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
-                self.user_1.save_user_and_profile()
-                self.user_2.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
-                self.user_2.save_user_and_profile()
-
             def _create_users(self, users_count):
                 """
                 Creates the given number of additional active users, backdated by 10 minutes, and assigns them to self as user_3, user_4, etc.
@@ -51,6 +39,18 @@ if (django_settings.TESTS):
                     user.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
                     user.save_user_and_profile()
                     setattr(self, "user_{}".format(3 + i), user)
+
+            def set_up(self):
+                """
+                Creates two active users, user_1 and user_2, whose accounts are backdated by 10 minutes.
+                """
+                super().set_up()
+                self.user_1 = ActiveUserFactory()
+                self.user_2 = ActiveUserFactory()
+                self.user_1.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
+                self.user_1.save_user_and_profile()
+                self.user_2.date_created -= relativedelta(hours=0, minutes=10)  # relativedelta(hours=6, minutes=10)
+                self.user_2.save_user_and_profile()
 
             def test_cannot_send_message_to_self(self):
                 """

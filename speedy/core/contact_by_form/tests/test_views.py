@@ -86,6 +86,20 @@ if (django_settings.TESTS):
                 self.assertEqual(first=feedback.sender_email, second=expected_sender_email)
                 self.assertEqual(first=feedback.text, second=expected_text)
 
+            def run_test_visitor_can_submit_form(self, data):
+                """
+                Submits the feedback form as a visitor with the given data and asserts a Feedback instance is created, matching the submitted data, and the response redirects to the thank-you page.
+
+                :param data: The form data to submit.
+                :type data: dict
+                """
+                self.assertEqual(first=Feedback.objects.count(), second=0)
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertRedirects(response=r, expected_url='/contact/thank-you/', status_code=302, target_status_code=200)
+                self.assertEqual(first=Feedback.objects.count(), second=1)
+                feedback = Feedback.objects.first()
+                self.check_feedback(feedback=feedback, expected_sender_id=None, expected_sender_name=data['sender_name'], expected_sender_email=data['sender_email'], expected_text=data['text'])
+
             def test_visitor_can_see_feedback_form(self):
                 """
                 Asserts a visitor sees the feedback form with the sender_name, sender_email and text fields, their ids, labels, and a textarea.
@@ -103,20 +117,6 @@ if (django_settings.TESTS):
                 self.assertContains(response=r, text='<label for="id_sender_email"', count=1)
                 self.assertContains(response=r, text='<label for="id_text"', count=1)
                 self.assertContains(response=r, text='<textarea ', count=1)
-
-            def run_test_visitor_can_submit_form(self, data):
-                """
-                Submits the feedback form as a visitor with the given data and asserts a Feedback instance is created, matching the submitted data, and the response redirects to the thank-you page.
-
-                :param data: The form data to submit.
-                :type data: dict
-                """
-                self.assertEqual(first=Feedback.objects.count(), second=0)
-                r = self.client.post(path=self.page_url, data=data)
-                self.assertRedirects(response=r, expected_url='/contact/thank-you/', status_code=302, target_status_code=200)
-                self.assertEqual(first=Feedback.objects.count(), second=1)
-                feedback = Feedback.objects.first()
-                self.check_feedback(feedback=feedback, expected_sender_id=None, expected_sender_name=data['sender_name'], expected_sender_email=data['sender_email'], expected_text=data['text'])
 
             def test_visitor_can_submit_form_1(self):
                 """

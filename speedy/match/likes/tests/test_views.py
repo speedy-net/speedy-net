@@ -349,6 +349,29 @@ if (django_settings.TESTS):
             Tests the like-list views (people I like, people who like me, mutual likes), including ordering, blocking, gender-based titles, and deletion protections.
             """
 
+            def _test_all_like_list_views_contain_strings(self, strings):
+                """
+                Asserts each of the three like-list views (to, from, mutual) returns 200, has the expected object count for the current state, and contains every given string in its rendered content.
+
+                :param strings: The strings expected to appear in each view's rendered content (typically the page titles).
+                :type strings: list
+                """
+                r = self.client.get(path=self.to_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertEqual(first=len(r.context['object_list']), second=len(self.to_likes))
+                for string in strings:
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
+                r = self.client.get(path=self.from_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertEqual(first=len(r.context['object_list']), second=len(self.from_likes))
+                for string in strings:
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
+                r = self.client.get(path=self.mutual_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertEqual(first=len(r.context['object_list']), second=len(self.mutual_likes))
+                for string in strings:
+                    self.assertIn(member=escape(text=string), container=r.content.decode())
+
             def set_up(self):
                 """
                 Creates 5 users (user_1 through user_5) plus several other users, with a mix of likes to and from user_1 (including mutual likes), builds the like-list page URLs, logs in as user_1, and staggers each user's last-visit time to establish a known ordering.
@@ -399,29 +422,6 @@ if (django_settings.TESTS):
                 sleep(0.01)
                 self.user_3.profile.update_last_visit()
                 self.assertEqual(first=UserLike.objects.count(), second=9)
-
-            def _test_all_like_list_views_contain_strings(self, strings):
-                """
-                Asserts each of the three like-list views (to, from, mutual) returns 200, has the expected object count for the current state, and contains every given string in its rendered content.
-
-                :param strings: The strings expected to appear in each view's rendered content (typically the page titles).
-                :type strings: list
-                """
-                r = self.client.get(path=self.to_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertEqual(first=len(r.context['object_list']), second=len(self.to_likes))
-                for string in strings:
-                    self.assertIn(member=escape(text=string), container=r.content.decode())
-                r = self.client.get(path=self.from_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertEqual(first=len(r.context['object_list']), second=len(self.from_likes))
-                for string in strings:
-                    self.assertIn(member=escape(text=string), container=r.content.decode())
-                r = self.client.get(path=self.mutual_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertEqual(first=len(r.context['object_list']), second=len(self.mutual_likes))
-                for string in strings:
-                    self.assertIn(member=escape(text=string), container=r.content.decode())
 
             def test_visitor_has_no_access(self):
                 """

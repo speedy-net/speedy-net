@@ -107,6 +107,18 @@ if (django_settings.TESTS):
                 self.assertEqual(first=sum(counts_tuple), second=len(tests_settings.SLUGS_TO_TEST_LIST))
                 self.assertTupleEqual(tuple1=counts_tuple, tuple2=test_settings["expected_counts_tuple"])
 
+            def run_test_required_fields(self, data):
+                """
+                Submits the given data and asserts the form is invalid with the expected "all required fields are required" errors.
+
+                :param data: The form data to submit.
+                :type data: dict
+                """
+                form = RegistrationForm(language_code=self.language_code, data=data)
+                form.full_clean()
+                self.assertIs(expr1=form.is_valid(), expr2=False)
+                self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
+
             def test_visitor_can_register(self):
                 """
                 Verify a visitor can register and that the created entity/user and its email address have all the expected values.
@@ -317,18 +329,6 @@ if (django_settings.TESTS):
                 email_addresses = UserEmailAddress.objects.filter(user=user)
                 email_addresses_set = {e.email for e in email_addresses}
                 self.assertSetEqual(set1=email_addresses_set, set2={'email22@example.com'})
-
-            def run_test_required_fields(self, data):
-                """
-                Submits the given data and asserts the form is invalid with the expected "all required fields are required" errors.
-
-                :param data: The form data to submit.
-                :type data: dict
-                """
-                form = RegistrationForm(language_code=self.language_code, data=data)
-                form.full_clean()
-                self.assertIs(expr1=form.is_valid(), expr2=False)
-                self.assertDictEqual(d1=form.errors, d2=self._registration_form_all_the_required_fields_are_required_errors_dict())
 
             def test_required_fields_1(self):
                 """

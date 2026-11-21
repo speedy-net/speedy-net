@@ -115,21 +115,6 @@ if (django_settings.TESTS):
             ActiveUserFactory does.
             """
 
-            def set_up(self):
-                """
-                Creates an inactive user with a visible photo and a confirmed primary email address, ready to start the registration wizard at step 2.
-                """
-                super().set_up()
-                self.user = InactiveUserFactory()
-                self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
-                self.user.photo = UserImageFactory(owner=self.user, visible_on_website=True)
-                self.user.save()
-                email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
-                email.save()
-                email.make_primary()
-                self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
-                self.assertEqual(first=self.user.speedy_match_profile.activation_step, second=2)
-
             def _post_step(self, step, data, **kwargs):
                 """
                 Posts data to a given registration wizard step.
@@ -203,6 +188,21 @@ if (django_settings.TESTS):
                 return self._post_step(step=9, data={
                     'relationship_status_match': json.dumps(obj={str(relationship_status): SpeedyMatchSiteProfile.RANK_5 for relationship_status in User.RELATIONSHIP_STATUS_VALID_VALUES}),
                 }, **kwargs)
+
+            def set_up(self):
+                """
+                Creates an inactive user with a visible photo and a confirmed primary email address, ready to start the registration wizard at step 2.
+                """
+                super().set_up()
+                self.user = InactiveUserFactory()
+                self.client.login(username=self.user.slug, password=tests_settings.USER_PASSWORD)
+                self.user.photo = UserImageFactory(owner=self.user, visible_on_website=True)
+                self.user.save()
+                email = UserEmailAddressFactory(user=self.user, is_confirmed=True)
+                email.save()
+                email.make_primary()
+                self.assertEqual(first=self.user.speedy_match_profile.is_active, second=False)
+                self.assertEqual(first=self.user.speedy_match_profile.activation_step, second=2)
 
             def run_test_user_with_unmatchable_height_is_not_allowed_to_use_speedy_match(self, height):
                 """
