@@ -31,9 +31,16 @@ class SiteFriendsList(object):
         key = cache_key(cache_type='site_friends', entity_pk=user.pk)
         ids = cache_manager.cache_get(key=key, sliding_timeout=django_settings.CACHE_GET_SITE_FRIENDS_SLIDING_TIMEOUT)
         if (ids is None):
-            friendships = user.site_friends
-            ids = [friendship.pk for friendship in friendships]
-            self._preloaded = {friendship.pk: friendship for friendship in friendships}
+            if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                # On Speedy Net a single light query returns the ids, without loading any friend, so a cache miss is cheap even for users with many friends.
+                from speedy.net.accounts.models import SiteProfile as SpeedyNetSiteProfile
+
+                related_name = SpeedyNetSiteProfile.RELATED_NAME
+                ids = list(Friend.objects.filter(**{"to_user": user, "from_user__{}__is_active".format(related_name): True}).order_by("-from_user__{}__last_visit".format(related_name), "pk").values_list("pk", flat=True))
+            else:
+                friendships = user.site_friends
+                ids = [friendship.pk for friendship in friendships]
+                self._preloaded = {friendship.pk: friendship for friendship in friendships}
             cache_manager.cache_set(key=key, value=ids, timeout=django_settings.CACHE_SET_SITE_FRIENDS_TIMEOUT)
         self._ids = ids
 
