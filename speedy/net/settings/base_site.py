@@ -50,4 +50,12 @@ ADMIN_USER_PROFILE_WIDGETS += [
     'speedy.match.profiles.widgets.UserOnSpeedyMatchWidget',
 ]
 
+DISALLOWED_USER_AGENTS += [
+    re.compile(pattern=r'Version/16.0 Safari/605.1.15'),
+    re.compile(pattern=r'Version/15.6.1 Safari/605.1.15'),
+    re.compile(pattern=r'Firefox/135.0'),
+    re.compile(pattern=r'Firefox/133.0'),
+    re.compile(pattern=r'Firefox/120.0'),
+]
+
 
