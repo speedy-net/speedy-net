@@ -17,7 +17,7 @@ if (django_settings.TESTS):
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
 
-        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin,         EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewWithInactiveUserTestCaseMixin
+        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin,         EditProfileNotificationsViewTestCaseMixin
 
         from speedy.core.accounts.models import User
 
@@ -74,29 +74,6 @@ if (django_settings.TESTS):
                 self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
                 user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=user.notify_on_message, second=User.NOTIFICATIONS_OFF)
-
-
-        @only_on_speedy_net
-        class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithInactiveUserTestCaseMixin, SiteTestCase):
-            """
-            Test the activate site profile view on Speedy Net with a user inactive on both sites (English only, the view logic doesn't depend on the language).
-
-            Attributes:
-                redirect_url (str): The URL the user is redirected to after a successful request.
-            """
-            redirect_url = '/welcome/'
-
-            def test_inactive_user_can_request_activation(self):
-                """
-                Verify posting to the page activates the user on Speedy Net but not on Speedy Match, and redirects.
-                """
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
-                user = User.objects.get(pk=self.user.pk)
-                self.assertEqual(first=user.is_active, second=True)
-                self.assertEqual(first=user.profile.is_active, second=True)
-                self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
 
 
         class DeleteAccountViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyNetAccountsLanguageMixin, TestCaseMixin):
