@@ -4487,23 +4487,6 @@ if (django_settings.TESTS):
                 else:
                     raise NotImplementedError("Unsupported SITE_ID.")
 
-            def test_inactive_user_can_request_activation(self):
-                """
-                Verify posting to the page activates the user on Speedy Net but not on Speedy Match, and redirects. Skipped on Speedy Match.
-                """
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    r = self.client.post(path=self.page_url)
-                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
-                    user = User.objects.get(pk=self.user.pk)
-                    self.assertEqual(first=user.is_active, second=True)
-                    self.assertEqual(first=user.profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
-
             def set_up(self):
                 """
                 Creates an inactive user with no email addresses, and logs in as that user.
@@ -4520,6 +4503,23 @@ if (django_settings.TESTS):
                     confirmed_email_address_count=0,
                     unconfirmed_email_address_count=0,
                 )
+
+            def test_inactive_user_can_request_activation(self):
+                """
+                Verify posting to the page activates the user on Speedy Net but not on Speedy Match, and redirects. Skipped on Speedy Match.
+                """
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    r = self.client.post(path=self.page_url)
+                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                    user = User.objects.get(pk=self.user.pk)
+                    self.assertEqual(first=user.is_active, second=True)
+                    self.assertEqual(first=user.profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login
