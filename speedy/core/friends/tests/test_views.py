@@ -74,6 +74,24 @@ if (django_settings.TESTS):
                 r = self.client.get(path=self.first_user_friends_list_url)
                 self.assertEqual(first=r.status_code, second=200)
 
+            def test_user_agent_with_googlebot_slash_is_blocked_only_on_speedy_net(self):
+                """
+                Asserts a user agent which contains "Googlebot/" gets a 403 Forbidden response on Speedy Net (as an anonymous user) and a 200 OK response on Speedy Match.
+                """
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.client.logout()
+                r = self.client.get(path=self.first_user_friends_list_url, HTTP_USER_AGENT='Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)')
+                self.assertEqual(first=r.status_code, second={django_settings.SPEEDY_NET_SITE_ID: 403, django_settings.SPEEDY_MATCH_SITE_ID: 200}[self.site.id])
+
+            def test_user_agent_with_googlebot_without_slash_is_not_blocked(self):
+                """
+                Asserts a user agent which contains "Googlebot" without the slash gets a 200 OK response on both sites (on Speedy Net as an anonymous user).
+                """
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.client.logout()
+                r = self.client.get(path=self.first_user_friends_list_url, HTTP_USER_AGENT='Mozilla/5.0 (compatible; Googlebot 2.1)')
+                self.assertEqual(first=r.status_code, second=200)
+
 
         @only_on_sites_with_login
         class ReceivedFriendshipRequestsListViewOnlyEnglishTestCase(SiteTestCase):
