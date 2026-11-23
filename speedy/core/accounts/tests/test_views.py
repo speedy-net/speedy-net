@@ -4427,6 +4427,23 @@ if (django_settings.TESTS):
                 super().set_up()
                 self.redirect_url = self.get_redirect_url()
 
+            def run_test_inactive_user_can_request_activation(self, speedy_match_profile_is_active):
+                """
+                Asserts posting to the page activates the user and the Speedy Net profile, redirects, and sets the Speedy Match profile activation state to the given value. Skipped on Speedy Match.
+                """
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    r = self.client.post(path=self.page_url)
+                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                    user = User.objects.get(pk=self.user.pk)
+                    self.assertEqual(first=user.is_active, second=True)
+                    self.assertEqual(first=user.profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=speedy_match_profile_is_active)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
+
             def test_visitor_has_no_access(self):
                 """
                 Asserts a logged-out visitor is redirected to the login page.
@@ -4519,18 +4536,7 @@ if (django_settings.TESTS):
                 """
                 Verify posting to the page activates the user on Speedy Net but not on Speedy Match, and redirects. Skipped on Speedy Match.
                 """
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    r = self.client.post(path=self.page_url)
-                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
-                    user = User.objects.get(pk=self.user.pk)
-                    self.assertEqual(first=user.is_active, second=True)
-                    self.assertEqual(first=user.profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_match_profile.is_active, second=False)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
+                self.run_test_inactive_user_can_request_activation(speedy_match_profile_is_active=False)
 
 
         @only_on_sites_with_login
@@ -4569,18 +4575,7 @@ if (django_settings.TESTS):
                 """
                 Verify posting to the page activates the user on both Speedy Net and Speedy Match, and redirects. Skipped on Speedy Match.
                 """
-                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
-                    r = self.client.post(path=self.page_url)
-                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
-                    user = User.objects.get(pk=self.user.pk)
-                    self.assertEqual(first=user.is_active, second=True)
-                    self.assertEqual(first=user.profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
-                    self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
-                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
-                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
-                else:
-                    raise NotImplementedError("Unsupported SITE_ID.")
+                self.run_test_inactive_user_can_request_activation(speedy_match_profile_is_active=True)
 
 
         @only_on_sites_with_login
