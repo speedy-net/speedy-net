@@ -27,9 +27,10 @@ if (django_settings.TESTS):
         from speedy.core.accounts.models import User
 
 
-        class UserFriendListViewTestCaseMixin(TestCaseMixin):
+        @only_on_sites_with_login
+        class UserFriendListViewOnlyEnglishTestCase(SiteTestCase):
             """
-            Mixin that tests access to the user friend-list page. Subclasses run it once in English (on Speedy Net) or override some tests (on Speedy Match, where friend lists are irrelevant for other users).
+            Tests access to the user friend-list page, run only once (in English) since it is language-independent.
             """
 
             def set_up(self):
@@ -45,27 +46,53 @@ if (django_settings.TESTS):
 
             def test_visitor_can_open_the_page(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Verify an anonymous visitor can open a user's friend list page on Speedy Net. Skipped on Speedy Match.
                 """
-                raise NotImplementedError("test_visitor_can_open_the_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.client.logout()
+                    r = self.client.get(path=self.first_user_friends_list_url)
+                    self.assertEqual(first=r.status_code, second=200)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_visitor_cannot_open_the_page(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Asserts a logged-out visitor is redirected to the login page when trying to view the friends list page on Speedy Match. Skipped on Speedy Net, since the page is public.
                 """
-                raise NotImplementedError("test_visitor_cannot_open_the_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Net.")
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.client.logout()
+                    r = self.client.get(path=self.first_user_friends_list_url)
+                    self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.first_user_friends_list_url), status_code=302, target_status_code=200)
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_can_open_other_users_friends_page(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Verify a logged-in user can open another user's friend list page on Speedy Net. Skipped on Speedy Match.
                 """
-                raise NotImplementedError("test_user_can_open_other_users_friends_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    r = self.client.get(path=self.second_user_friends_list_url)
+                    self.assertEqual(first=r.status_code, second=200)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_cannot_open_other_users_friends_page(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Asserts a logged-in user gets a 403 Forbidden response when trying to view another user's friends page on Speedy Match, since friend lists are irrelevant there. Skipped on Speedy Net, since the page is public.
                 """
-                raise NotImplementedError("test_user_cannot_open_other_users_friends_page must be defined in classes inherited from UserFriendListViewTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Net.")
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    r = self.client.get(path=self.second_user_friends_list_url)
+                    self.assertEqual(first=r.status_code, second=403)
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_can_open_his_friends_page(self):
                 """
