@@ -4413,7 +4413,19 @@ if (django_settings.TESTS):
             Tests the site profile activation (welcome) view: access rules for logged-out visitors and already-active users, and that inactive users can open and request activation on the page.
             """
             page_url = '/welcome/'
-            redirect_url = None
+
+            def get_redirect_url(self):
+                """
+                Returns the URL an inactive user is redirected to when trying to access another page. Must be defined in classes inherited from ActivateSiteProfileViewTestCaseMixin.
+                """
+                raise NotImplementedError("get_redirect_url must be defined in classes inherited from ActivateSiteProfileViewTestCaseMixin.")
+
+            def set_up(self):
+                """
+                Sets the URL an inactive user is redirected to, according to the site.
+                """
+                super().set_up()
+                self.redirect_url = self.get_redirect_url()
 
             def test_visitor_has_no_access(self):
                 """
@@ -4473,13 +4485,12 @@ if (django_settings.TESTS):
         class ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
             """
             Tests site profile activation behavior for an inactive user, run only once (in English) since it is language-independent.
-
-            Attributes:
-                redirect_url (str): The URL an inactive user is redirected to when trying to access another page, depends on the site.
             """
 
-            @property
-            def redirect_url(self):
+            def get_redirect_url(self):
+                """
+                Returns the URL an inactive user is redirected to: the welcome page on Speedy Net, registration step 2 on Speedy Match.
+                """
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     return '/welcome/'
                 elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
@@ -4526,11 +4537,16 @@ if (django_settings.TESTS):
         class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
             """
             Tests site profile activation behavior for a Speedy Net-inactive user, run only once (in English) since it is language-independent.
-
-            Attributes:
-                redirect_url (str): The URL an inactive user is redirected to when trying to access another page.
             """
-            redirect_url = '/welcome/'
+
+            def get_redirect_url(self):
+                """
+                Returns the URL an inactive user is redirected to: the welcome page on both sites.
+                """
+                if (django_settings.SITE_ID in {django_settings.SPEEDY_NET_SITE_ID, django_settings.SPEEDY_MATCH_SITE_ID}):
+                    return '/welcome/'
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def set_up(self):
                 """
