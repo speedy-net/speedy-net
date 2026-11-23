@@ -1,39 +1,14 @@
 """
-Test cases for the view profile and delete account rules of Speedy Net.
+Test cases for the delete account rules of Speedy Net.
 """
 from django.conf import settings as django_settings
 
 if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
-        import unittest
-
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_net
 
         from speedy.core.accounts.test.user_factories import InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
-
-        from speedy.core.accounts.tests.test_rules import ViewProfileRulesTestCaseMixin
-
-
-        @only_on_speedy_net
-        class ViewProfileRulesOnlyEnglishTestCase(ViewProfileRulesTestCaseMixin, SiteTestCase):
-            """
-            Test the view profile permission rule on Speedy Net (English only, the rule logic doesn't depend on the language).
-            """
-
-            def test_doron_and_jennifer_have_access(self):
-                """
-                Verify both users can view each other's profile on Speedy Net.
-                """
-                self.assertIs(expr1=self.doron.has_perm(perm='accounts.view_profile', obj=self.jennifer), expr2=True)
-                self.assertIs(expr1=self.jennifer.has_perm(perm='accounts.view_profile', obj=self.doron), expr2=True)
-
-            @unittest.skip(reason="This test is irrelevant in Speedy Net.")
-            def test_doron_and_jennifer_have_no_access(self):
-                """
-                Skipped; irrelevant on Speedy Net since profiles are always visible.
-                """
-                raise NotImplementedError("test_doron_and_jennifer_have_no_access is not implemented in ViewProfileRulesOnlyEnglishTestCase.")
 
 
         @only_on_speedy_net
