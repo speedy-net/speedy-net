@@ -56,6 +56,7 @@ DISALLOWED_USER_AGENTS += [
     re.compile(pattern=r'Firefox/135.0'),
     re.compile(pattern=r'Firefox/133.0'),
     re.compile(pattern=r'Firefox/120.0'),
+    re.compile(pattern=r'Chrome/124.0.6367.207 Safari/537.36'),
 ]
 
 
