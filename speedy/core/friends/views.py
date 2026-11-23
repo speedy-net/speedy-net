@@ -1,8 +1,9 @@
 """
 Views for the friends app of Speedy Core: friend lists, sent and received friendship requests, and sending, cancelling, accepting, rejecting and removing friendships.
 """
+from django.conf import settings as django_settings
 from django.contrib import messages
-from django.core.exceptions import ValidationError
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.urls import reverse
 from django.shortcuts import redirect, get_object_or_404
 from django.utils import formats
@@ -38,6 +39,20 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
     """
     template_name = 'friends/friend_list.html'
     permission_required = 'friends.view_friend_list'
+
+    def dispatch(self, request, *args, **kwargs):
+        """
+        Deny access to crawlers which identify as Googlebot in Speedy Net, since friend lists are disallowed in robots.txt.
+
+        :param request: The HTTP request.
+        :type request: django.http.HttpRequest
+        :return: The response of the view.
+        :rtype: django.http.HttpResponse
+        :raises PermissionDenied: If the user agent contains "Googlebot/" in Speedy Net.
+        """
+        if ((django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID) and ('Googlebot/' in request.META.get('HTTP_USER_AGENT', ''))):
+            raise PermissionDenied()
+        return super().dispatch(request=request, *args, **kwargs)
 
     def redirect_on_exception(self):
         """
