@@ -13,7 +13,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_speedy_match
 
-        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewWithInactiveUserTestCaseMixin, ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin
+        from speedy.core.accounts.tests.test_views import IndexViewTestCaseMixin, EditProfileNotificationsViewTestCaseMixin, ActivateSiteProfileViewWithInactiveUserTestCaseMixin
         from speedy.core.accounts.test.user_factories import InactiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
         from speedy.core.uploads.test.factories import UserImageFactory
@@ -92,21 +92,6 @@ if (django_settings.TESTS):
                 Skipped. This test is irrelevant in Speedy Match.
                 """
                 raise NotImplementedError("test_inactive_user_can_request_activation is not implemented in ActivateSiteProfileViewWithInactiveUserOnlyEnglishTestCase.")
-
-
-        @only_on_speedy_match
-        class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin, SiteTestCase):
-            """
-            Tests the activation view with a Speedy Net inactive user; this test is irrelevant in Speedy Match and is skipped.
-            """
-            redirect_url = '/welcome/'
-
-            @unittest.skip(reason="This test is irrelevant in Speedy Match.")
-            def test_inactive_user_can_request_activation(self):
-                """
-                Skipped. This test is irrelevant in Speedy Match.
-                """
-                raise NotImplementedError("test_inactive_user_can_request_activation is not implemented in ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase.")
 
 
         class ActivateSiteProfileViewWizardTestCaseMixin(TestCaseMixin):

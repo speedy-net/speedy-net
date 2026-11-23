@@ -4492,10 +4492,15 @@ if (django_settings.TESTS):
                 )
 
 
-        class ActivateSiteProfileViewWithSpeedyNetInactiveUserTestCaseMixin(ActivateSiteProfileViewTestCaseMixin):
+        @only_on_sites_with_login
+        class ActivateSiteProfileViewWithSpeedyNetInactiveUserOnlyEnglishTestCase(ActivateSiteProfileViewTestCaseMixin, SiteTestCase):
             """
-            Tests site profile activation behavior for a Speedy Net-inactive user.
+            Tests site profile activation behavior for a Speedy Net-inactive user, run only once (in English) since it is language-independent.
+
+            Attributes:
+                redirect_url (str): The URL an inactive user is redirected to when trying to access another page.
             """
+            redirect_url = '/welcome/'
 
             def set_up(self):
                 """
@@ -4513,6 +4518,23 @@ if (django_settings.TESTS):
                     confirmed_email_address_count=1,
                     unconfirmed_email_address_count=0,
                 )
+
+            def test_inactive_user_can_request_activation(self):
+                """
+                Verify posting to the page activates the user on both Speedy Net and Speedy Match, and redirects. Skipped on Speedy Match.
+                """
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    r = self.client.post(path=self.page_url)
+                    self.assertRedirects(response=r, expected_url='/', status_code=302, target_status_code=302)
+                    user = User.objects.get(pk=self.user.pk)
+                    self.assertEqual(first=user.is_active, second=True)
+                    self.assertEqual(first=user.profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_net_profile.is_active, second=True)
+                    self.assertEqual(first=user.speedy_match_profile.is_active, second=True)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login
