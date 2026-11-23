@@ -7,7 +7,6 @@ if (django_settings.TESTS):
     if (django_settings.LOGIN_ENABLED):
         from friendship.models import Friend
 
-        from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
 
@@ -88,9 +87,9 @@ if (django_settings.TESTS):
 
 
         @only_on_sites_with_login
-        class ViewFriendListRulesTestCaseMixin(TestCaseMixin):
+        class ViewFriendListRulesOnlyEnglishTestCase(SiteTestCase):
             """
-            Mixin that tests the friends.view_friend_list permission rule. Subclasses run it once in English (on Speedy Net) or once per site (on Speedy Match, where it is overridden).
+            Tests the friends.view_friend_list permission rule, run only once (in English) since it is language-independent.
             """
 
             def set_up(self):
@@ -109,15 +108,25 @@ if (django_settings.TESTS):
 
             def test_user_can_view_another_user_friend_list(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Asserts any user can view another user's friend list on Speedy Net. Skipped on Speedy Match.
                 """
-                raise NotImplementedError("test_user_can_view_another_user_friend_list must be defined in classes inherited from ViewFriendListRulesTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user), expr2=True)
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Match.")
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
             def test_user_cannot_view_another_user_friend_list(self):
                 """
-                Not implemented in this mixin. Subclasses must override this test.
+                Asserts the user has no permission to view another user's friend list on Speedy Match, since friend lists are irrelevant there. Skipped on Speedy Net, since friend lists are always visible.
                 """
-                raise NotImplementedError("test_user_cannot_view_another_user_friend_list must be defined in classes inherited from ViewFriendListRulesTestCaseMixin.")
+                if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
+                    self.skipTest(reason="This test is irrelevant in Speedy Net.")
+                elif (django_settings.SITE_ID == django_settings.SPEEDY_MATCH_SITE_ID):
+                    self.assertIs(expr1=self.user.has_perm(perm='friends.view_friend_list', obj=self.other_user), expr2=False)
+                else:
+                    raise NotImplementedError("Unsupported SITE_ID.")
 
 
         @only_on_sites_with_login
