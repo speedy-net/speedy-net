@@ -306,7 +306,7 @@ if (django_settings.TESTS):
                 self.user_2 = ActiveUserFactory()
                 self.page_url = '/{}/likes/unlike/'.format(self.user_2.slug)
 
-            def test_user_can_unlike(self):
+            def run_test_user_can_unlike(self):
                 """
                 Asserts a user who likes another user can successfully unlike him, removing the UserLike record.
                 """
@@ -317,6 +317,12 @@ if (django_settings.TESTS):
                 r = self.client.post(path=self.page_url)
                 self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
+
+            def test_user_can_unlike(self):
+                """
+                Asserts a user who likes another user can successfully unlike him, removing the UserLike record.
+                """
+                self.run_test_user_can_unlike()
 
             def test_user_cannot_unlike_if_doesnt_like(self):
                 """
@@ -332,13 +338,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a user can unlike a user he likes once, but a second unlike attempt returns 403.
                 """
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
-                self.assertEqual(first=UserLike.objects.count(), second=0)
-                UserLike.objects.add_like(from_user=self.user_1, to_user=self.user_2)
-                self.assertEqual(first=UserLike.objects.count(), second=1)
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url=self.user_2.get_absolute_url(), status_code=302, target_status_code=200)
-                self.assertEqual(first=UserLike.objects.count(), second=0)
+                self.run_test_user_can_unlike()
                 r = self.client.post(path=self.page_url)
                 self.assertEqual(first=r.status_code, second=403)
                 self.assertEqual(first=UserLike.objects.count(), second=0)
