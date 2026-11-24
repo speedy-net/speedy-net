@@ -662,6 +662,25 @@ if (django_settings.TESTS):
                 self.page_url = '/{}/friends/request/accept/{}/'.format(self.second_user.slug, friendship_request.pk)
                 self.second_user_friends_list_url = '/{}/friends/'.format(self.second_user.slug)
 
+            def run_test_user_that_has_received_request_can_accept_it_if_not_maximum(self, user_with_almost_maximum_friends):
+                """
+                Asserts the receiving user can accept the friendship request when the given user (the receiving user or the sender) has fewer than the maximum allowed friends, becoming friends and seeing a success message.
+                """
+                self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
+                for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
+                    Friend.objects.add_friend(from_user=user_with_almost_maximum_friends, to_user=ActiveUserFactory()).accept()
+                self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
+                r = self.client.post(path=self.page_url)
+                expected_url = self.first_user.get_absolute_url()
+                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
+                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
+                self.assertIsNone(obj=r.context)
+                r = self.client.get(path=expected_url)
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
+                r = self.client.get(path=expected_url)
+                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
+
             def test_visitor_cannot_accept_friendship_request(self):
                 """
                 Asserts a logged-out visitor is redirected to the login page when trying to accept a friendship request.
@@ -698,20 +717,7 @@ if (django_settings.TESTS):
                 """
                 Asserts the receiving user can accept the friendship request when they have fewer than the maximum allowed friends, becoming friends with the sender and seeing a success message.
                 """
-                self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
-                for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
-                    Friend.objects.add_friend(from_user=self.second_user, to_user=ActiveUserFactory()).accept()
-                self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
-                r = self.client.post(path=self.page_url)
-                expected_url = self.first_user.get_absolute_url()
-                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
-                self.assertIsNone(obj=r.context)
-                r = self.client.get(path=expected_url)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
-                r = self.client.get(path=expected_url)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
+                self.run_test_user_that_has_received_request_can_accept_it_if_not_maximum(user_with_almost_maximum_friends=self.second_user)
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
             def test_user_that_has_received_request_cannot_accept_it_if_maximum(self):
@@ -738,20 +744,7 @@ if (django_settings.TESTS):
                 """
                 Asserts the receiving user can accept the friendship request when the sender has fewer than the maximum allowed friends, becoming friends and seeing a success message.
                 """
-                self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
-                for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
-                    Friend.objects.add_friend(from_user=self.first_user, to_user=ActiveUserFactory()).accept()
-                self.client.login(username=self.second_user.slug, password=tests_settings.USER_PASSWORD)
-                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=False)
-                r = self.client.post(path=self.page_url)
-                expected_url = self.first_user.get_absolute_url()
-                self.assertRedirects(response=r, expected_url=expected_url, status_code=302, target_status_code=200, fetch_redirect_response=False)
-                self.assertIs(expr1=Friend.objects.are_friends(user1=self.first_user, user2=self.second_user), expr2=True)
-                self.assertIsNone(obj=r.context)
-                r = self.client.get(path=expected_url)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[self._friendship_request_accepted_success_message])
-                r = self.client.get(path=expected_url)
-                self.assertListEqual(list1=list(map(str, r.context['messages'])), list2=[])
+                self.run_test_user_that_has_received_request_can_accept_it_if_not_maximum(user_with_almost_maximum_friends=self.first_user)
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MAX_NUMBER_OF_FRIENDS_ALLOWED=tests_settings.OVERRIDE_USER_SETTINGS.MAX_NUMBER_OF_FRIENDS_ALLOWED))
             def test_user_that_has_received_request_cannot_accept_it_if_other_maximum(self):
