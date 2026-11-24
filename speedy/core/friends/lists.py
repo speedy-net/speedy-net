@@ -48,6 +48,14 @@ class SiteFriendsList(object):
         return len(self._ids)
 
     def __getitem__(self, item):
+        """
+        Return the friendship at the given index, or a list of the friendships in the given slice, loading only them from the database.
+
+        :param item: The index or slice of the requested friendships.
+        :type item: int | slice
+        :return: The friendship, or a list of friendships if item is a slice.
+        :rtype: speedy.core.friends.models.Friend | list[speedy.core.friends.models.Friend]
+        """
         if (isinstance(item, slice)):
             return self._load(ids=self._ids[item])
         return self._load(ids=[self._ids[item]])[0]

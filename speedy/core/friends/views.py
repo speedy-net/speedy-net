@@ -46,6 +46,10 @@ class UserFriendListView(UserMixin, PermissionRequiredMixin, FriendsMixin, gener
 
         :param request: The HTTP request.
         :type request: django.http.HttpRequest
+        :param args: The positional arguments passed to the view.
+        :type args: tuple
+        :param kwargs: The keyword arguments passed to the view (the URL parameters).
+        :type kwargs: dict
         :return: The response of the view.
         :rtype: django.http.HttpResponse
         :raises PermissionDenied: If the user agent contains "Googlebot/" in Speedy Net.

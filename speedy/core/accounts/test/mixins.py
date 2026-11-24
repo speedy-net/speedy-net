@@ -186,6 +186,9 @@ if (django_settings.TESTS):
         def run_test_user_cannot_change_email_address(self, path):
             """
             Asserts posting to the given email address URL is forbidden (403), and model counts are unchanged.
+
+            :param path: The URL of the email address view to post to.
+            :type path: str
             """
             r = self.client.post(path=path)
             self.assertEqual(first=r.status_code, second=403)
