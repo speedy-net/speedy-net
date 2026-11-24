@@ -16,11 +16,12 @@ if (django_settings.TESTS):
 
         def run_test_visitor_cannot_post_friendship_request(self):
             """
-            Asserts a logged-out visitor posting to the page URL is redirected to the login page.
+            Asserts a logged-out visitor posting to the page URL is redirected to the login page, without a template context.
             """
             self.client.logout()
             r = self.client.post(path=self.page_url)
             self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+            self.assertIsNone(obj=r.context)
 
 
     class SpeedyCoreFriendsLanguageMixin(TestCaseMixin):

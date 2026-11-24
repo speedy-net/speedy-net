@@ -221,7 +221,6 @@ if (django_settings.TESTS):
                 Asserts a logged-out visitor is redirected to the login page when trying to send a friendship request.
                 """
                 self.run_test_visitor_cannot_post_friendship_request()
-                self.assertIsNone(obj=r.context)
 
             def test_user_can_send_friendship_request(self):
                 """
@@ -510,7 +509,6 @@ if (django_settings.TESTS):
                 Asserts a logged-out visitor is redirected to the login page when trying to cancel a friendship request.
                 """
                 self.run_test_visitor_cannot_post_friendship_request()
-                self.assertIsNone(obj=r.context)
 
             def test_user_can_cancel_friendship_request(self):
                 """
@@ -689,7 +687,6 @@ if (django_settings.TESTS):
                 Asserts a logged-out visitor is redirected to the login page when trying to accept a friendship request.
                 """
                 self.run_test_visitor_cannot_post_friendship_request()
-                self.assertIsNone(obj=r.context)
 
             def test_user_cannot_accept_friendship_request_they_sent_another_user(self):
                 """
@@ -910,7 +907,6 @@ if (django_settings.TESTS):
                 Asserts a logged-out visitor is redirected to the login page when trying to reject a friendship request.
                 """
                 self.run_test_visitor_cannot_post_friendship_request()
-                self.assertIsNone(obj=r.context)
 
             def test_user_cannot_reject_friendship_request_they_sent_another_user(self):
                 """
