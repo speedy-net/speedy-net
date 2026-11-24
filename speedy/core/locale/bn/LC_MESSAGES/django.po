@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 05:07+0200\n"
+"POT-Creation-Date: 2026-11-24 07:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2580,19 +2580,19 @@ msgstr "প্রতিক্রিয়া"
 msgid "feedbacks"
 msgstr "প্রতিক্রিয়া"
 
-#: .\friends\views.py:342
+#: .\friends\views.py:346
 msgid "Friendship request sent."
 msgstr "বন্ধুত্বের অনুরোধ পাঠানো হয়েছে।"
 
-#: .\friends\views.py:366
+#: .\friends\views.py:370
 msgid "No friendship request."
 msgstr "বন্ধুত্বের অনুরোধ নয়।"
 
-#: .\friends\views.py:436
+#: .\friends\views.py:440
 msgid "Friendship request accepted."
 msgstr "বন্ধুত্বের অনুরোধ গৃহীত হয়েছে।"
 
-#: .\friends\views.py:463
+#: .\friends\views.py:467
 msgid "Friendship request rejected."
 msgstr "বন্ধুত্বের অনুরোধ প্রত্যাখ্যান করা হয়েছে।"
 

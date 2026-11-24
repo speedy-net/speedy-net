@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 05:07+0200\n"
+"POT-Creation-Date: 2026-11-24 07:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2648,19 +2648,19 @@ msgstr "feedback"
 msgid "feedbacks"
 msgstr "feedback-uri"
 
-#: .\friends\views.py:342
+#: .\friends\views.py:346
 msgid "Friendship request sent."
 msgstr "Cerere de prietenie trimisă."
 
-#: .\friends\views.py:366
+#: .\friends\views.py:370
 msgid "No friendship request."
 msgstr "Nicio cerere de prietenie."
 
-#: .\friends\views.py:436
+#: .\friends\views.py:440
 msgid "Friendship request accepted."
 msgstr "Cerere de prietenie acceptată."
 
-#: .\friends\views.py:463
+#: .\friends\views.py:467
 msgid "Friendship request rejected."
 msgstr "Cererea de prietenie a fost respinsă."
 
