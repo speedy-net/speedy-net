@@ -3037,41 +3037,10 @@ if (django_settings.TESTS):
                 self.assertEqual(first=normalize_slug(slug=new_slug), second=new_slug_normalized)
                 self.run_test_user_cannot_change_his_username(new_slug=new_slug)
 
-            def test_visitor_has_no_access(self):
+            def run_test_user_has_saved_settings(self, expected_date_of_birth):
                 """
-                Asserts a logged-out visitor is redirected to the login page.
+                Asserts the saved user has the posted names in all languages, the posted data, and the expected date of birth.
                 """
-                self.client.logout()
-                r = self.client.get(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
-
-            def test_active_user_can_open_the_page(self):
-                """
-                Asserts an active user can open the edit profile page.
-                """
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
-
-            def test_inactive_user_can_open_the_page(self):
-                """
-                Asserts an inactive user, and a Speedy Net-inactive user, can both open the edit profile page.
-                """
-                self.user.profile.deactivate()
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
-                self.user.speedy_net_profile.deactivate()
-                r = self.client.get(path=self.page_url)
-                self.assertEqual(first=r.status_code, second=200)
-                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
-
-            def test_active_user_can_save_his_settings(self):
-                """
-                Asserts an active user can save his settings, and the name is updated for the test's language code while other per-language name fields are unchanged.
-                """
-                r = self.client.post(path=self.page_url, data=self.data)
-                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
                 user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=user.first_name, second=self.first_name)
                 self.assertEqual(first=user.first_name_en, second={'en': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'en') else '__'])
@@ -3170,7 +3139,44 @@ if (django_settings.TESTS):
                 for (key, value) in self.data.items():
                     if (not (key in ['date_of_birth'])):
                         self.assertEqual(first=getattr(user, key), second=value)
-                self.assertEqual(first=user.date_of_birth, second=date(year=1976, month=6, day=3))
+                self.assertEqual(first=user.date_of_birth, second=expected_date_of_birth)
+
+            def test_visitor_has_no_access(self):
+                """
+                Asserts a logged-out visitor is redirected to the login page.
+                """
+                self.client.logout()
+                r = self.client.get(path=self.page_url)
+                self.assertRedirects(response=r, expected_url='/login/?next=' + self.page_url, status_code=302, target_status_code=200)
+
+            def test_active_user_can_open_the_page(self):
+                """
+                Asserts an active user can open the edit profile page.
+                """
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
+
+            def test_inactive_user_can_open_the_page(self):
+                """
+                Asserts an inactive user, and a Speedy Net-inactive user, can both open the edit profile page.
+                """
+                self.user.profile.deactivate()
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
+                self.user.speedy_net_profile.deactivate()
+                r = self.client.get(path=self.page_url)
+                self.assertEqual(first=r.status_code, second=200)
+                self.assertTemplateUsed(response=r, template_name='accounts/edit_profile/profile.html')
+
+            def test_active_user_can_save_his_settings(self):
+                """
+                Asserts an active user can save his settings, and the name is updated for the test's language code while other per-language name fields are unchanged.
+                """
+                r = self.client.post(path=self.page_url, data=self.data)
+                self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200)
+                self.run_test_user_has_saved_settings(expected_date_of_birth=date(year=1976, month=6, day=3))
 
             def test_inactive_user_can_save_his_settings(self):
                 """
@@ -3260,105 +3266,7 @@ if (django_settings.TESTS):
                     data['date_of_birth'] = date_of_birth
                     r = self.client.post(path=self.page_url, data=data)
                     self.assertRedirects(response=r, expected_url=self.page_url, status_code=302, target_status_code=200, msg_prefix="{} is not a valid date of birth.".format(date_of_birth))
-                    user = User.objects.get(pk=self.user.pk)
-                    self.assertEqual(first=user.first_name, second=self.first_name)
-                    self.assertEqual(first=user.first_name_en, second={'en': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'en') else '__'])
-                    self.assertEqual(first=user.first_name_fr, second={'fr': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'fr') else '__'])
-                    self.assertEqual(first=user.first_name_de, second={'de': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'de') else '__'])
-                    self.assertEqual(first=user.first_name_es, second={'es': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'es') else '__'])
-                    self.assertEqual(first=user.first_name_pt, second={'pt': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'pt') else '__'])
-                    self.assertEqual(first=user.first_name_it, second={'it': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'it') else '__'])
-                    self.assertEqual(first=user.first_name_nl, second={'nl': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'nl') else '__'])
-                    self.assertEqual(first=user.first_name_ja, second={'ja': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ja') else '__'])
-                    self.assertEqual(first=user.first_name_ru, second={'ru': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ru') else '__'])
-                    self.assertEqual(first=user.first_name_zh, second={'zh': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'zh') else '__'])
-                    self.assertEqual(first=user.first_name_pl, second={'pl': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'pl') else '__'])
-                    self.assertEqual(first=user.first_name_fa, second={'fa': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'fa') else '__'])
-                    self.assertEqual(first=user.first_name_he, second={'he': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'he') else '__'])
-                    self.assertEqual(first=user.first_name_ko, second={'ko': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ko') else '__'])
-                    self.assertEqual(first=user.first_name_ar, second={'ar': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ar') else '__'])
-                    self.assertEqual(first=user.first_name_id, second={'id': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'id') else '__'])
-                    self.assertEqual(first=user.first_name_uk, second={'uk': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'uk') else '__'])
-                    self.assertEqual(first=user.first_name_tr, second={'tr': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'tr') else '__'])
-                    self.assertEqual(first=user.first_name_vi, second={'vi': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'vi') else '__'])
-                    self.assertEqual(first=user.first_name_cs, second={'cs': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'cs') else '__'])
-                    self.assertEqual(first=user.first_name_sv, second={'sv': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'sv') else '__'])
-                    self.assertEqual(first=user.first_name_fi, second={'fi': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'fi') else '__'])
-                    self.assertEqual(first=user.first_name_hu, second={'hu': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'hu') else '__'])
-                    self.assertEqual(first=user.first_name_th, second={'th': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'th') else '__'])
-                    self.assertEqual(first=user.first_name_el, second={'el': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'el') else '__'])
-                    self.assertEqual(first=user.first_name_ms, second={'ms': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ms') else '__'])
-                    self.assertEqual(first=user.first_name_sr, second={'sr': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'sr') else '__'])
-                    self.assertEqual(first=user.first_name_ro, second={'ro': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ro') else '__'])
-                    self.assertEqual(first=user.first_name_bn, second={'bn': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'bn') else '__'])
-                    self.assertEqual(first=user.first_name_ca, second={'ca': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ca') else '__'])
-                    self.assertEqual(first=user.first_name_no, second={'no': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'no') else '__'])
-                    self.assertEqual(first=user.first_name_bg, second={'bg': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'bg') else '__'])
-                    self.assertEqual(first=user.first_name_da, second={'da': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'da') else '__'])
-                    self.assertEqual(first=user.first_name_sk, second={'sk': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'sk') else '__'])
-                    self.assertEqual(first=user.first_name_hi, second={'hi': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'hi') else '__'])
-                    self.assertEqual(first=user.first_name_et, second={'et': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'et') else '__'])
-                    self.assertEqual(first=user.first_name_hr, second={'hr': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'hr') else '__'])
-                    self.assertEqual(first=user.first_name_az, second={'az': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'az') else '__'])
-                    self.assertEqual(first=user.first_name_zh_yue, second={'zh-yue': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'zh-yue') else '__'])
-                    self.assertEqual(first=user.first_name_lt, second={'lt': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'lt') else '__'])
-                    self.assertEqual(first=user.first_name_sl, second={'sl': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'sl') else '__'])
-                    self.assertEqual(first=user.first_name_eu, second={'eu': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'eu') else '__'])
-                    self.assertEqual(first=user.first_name_hy, second={'hy': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'hy') else '__'])
-                    self.assertEqual(first=user.first_name_uz, second={'uz': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'uz') else '__'])
-                    self.assertEqual(first=user.first_name_ta, second={'ta': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'ta') else '__'])
-                    self.assertEqual(first=user.first_name_lv, second={'lv': self.first_name, '__': self.original_first_name}[self.language_code if (self.language_code == 'lv') else '__'])
-                    self.assertEqual(first=user.last_name, second=self.last_name)
-                    self.assertEqual(first=user.last_name_en, second={'en': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'en') else '__'])
-                    self.assertEqual(first=user.last_name_fr, second={'fr': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'fr') else '__'])
-                    self.assertEqual(first=user.last_name_de, second={'de': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'de') else '__'])
-                    self.assertEqual(first=user.last_name_es, second={'es': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'es') else '__'])
-                    self.assertEqual(first=user.last_name_pt, second={'pt': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'pt') else '__'])
-                    self.assertEqual(first=user.last_name_it, second={'it': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'it') else '__'])
-                    self.assertEqual(first=user.last_name_nl, second={'nl': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'nl') else '__'])
-                    self.assertEqual(first=user.last_name_ja, second={'ja': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ja') else '__'])
-                    self.assertEqual(first=user.last_name_ru, second={'ru': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ru') else '__'])
-                    self.assertEqual(first=user.last_name_zh, second={'zh': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'zh') else '__'])
-                    self.assertEqual(first=user.last_name_pl, second={'pl': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'pl') else '__'])
-                    self.assertEqual(first=user.last_name_fa, second={'fa': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'fa') else '__'])
-                    self.assertEqual(first=user.last_name_he, second={'he': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'he') else '__'])
-                    self.assertEqual(first=user.last_name_ko, second={'ko': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ko') else '__'])
-                    self.assertEqual(first=user.last_name_ar, second={'ar': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ar') else '__'])
-                    self.assertEqual(first=user.last_name_id, second={'id': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'id') else '__'])
-                    self.assertEqual(first=user.last_name_uk, second={'uk': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'uk') else '__'])
-                    self.assertEqual(first=user.last_name_tr, second={'tr': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'tr') else '__'])
-                    self.assertEqual(first=user.last_name_vi, second={'vi': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'vi') else '__'])
-                    self.assertEqual(first=user.last_name_cs, second={'cs': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'cs') else '__'])
-                    self.assertEqual(first=user.last_name_sv, second={'sv': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'sv') else '__'])
-                    self.assertEqual(first=user.last_name_fi, second={'fi': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'fi') else '__'])
-                    self.assertEqual(first=user.last_name_hu, second={'hu': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'hu') else '__'])
-                    self.assertEqual(first=user.last_name_th, second={'th': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'th') else '__'])
-                    self.assertEqual(first=user.last_name_el, second={'el': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'el') else '__'])
-                    self.assertEqual(first=user.last_name_ms, second={'ms': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ms') else '__'])
-                    self.assertEqual(first=user.last_name_sr, second={'sr': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'sr') else '__'])
-                    self.assertEqual(first=user.last_name_ro, second={'ro': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ro') else '__'])
-                    self.assertEqual(first=user.last_name_bn, second={'bn': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'bn') else '__'])
-                    self.assertEqual(first=user.last_name_ca, second={'ca': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ca') else '__'])
-                    self.assertEqual(first=user.last_name_no, second={'no': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'no') else '__'])
-                    self.assertEqual(first=user.last_name_bg, second={'bg': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'bg') else '__'])
-                    self.assertEqual(first=user.last_name_da, second={'da': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'da') else '__'])
-                    self.assertEqual(first=user.last_name_sk, second={'sk': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'sk') else '__'])
-                    self.assertEqual(first=user.last_name_hi, second={'hi': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'hi') else '__'])
-                    self.assertEqual(first=user.last_name_et, second={'et': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'et') else '__'])
-                    self.assertEqual(first=user.last_name_hr, second={'hr': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'hr') else '__'])
-                    self.assertEqual(first=user.last_name_az, second={'az': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'az') else '__'])
-                    self.assertEqual(first=user.last_name_zh_yue, second={'zh-yue': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'zh-yue') else '__'])
-                    self.assertEqual(first=user.last_name_lt, second={'lt': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'lt') else '__'])
-                    self.assertEqual(first=user.last_name_sl, second={'sl': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'sl') else '__'])
-                    self.assertEqual(first=user.last_name_eu, second={'eu': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'eu') else '__'])
-                    self.assertEqual(first=user.last_name_hy, second={'hy': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'hy') else '__'])
-                    self.assertEqual(first=user.last_name_uz, second={'uz': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'uz') else '__'])
-                    self.assertEqual(first=user.last_name_ta, second={'ta': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'ta') else '__'])
-                    self.assertEqual(first=user.last_name_lv, second={'lv': self.last_name, '__': self.original_last_name}[self.language_code if (self.language_code == 'lv') else '__'])
-                    for (key, value) in self.data.items():
-                        if (not (key in ['date_of_birth'])):
-                            self.assertEqual(first=getattr(user, key), second=value)
-                    self.assertEqual(first=user.date_of_birth, second=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
+                    self.run_test_user_has_saved_settings(expected_date_of_birth=datetime.strptime(date_of_birth, '%Y-%m-%d').date())
 
             def test_change_date_of_birth_12_times(self):
                 """
