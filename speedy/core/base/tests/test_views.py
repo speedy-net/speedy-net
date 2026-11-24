@@ -107,6 +107,18 @@ if (django_settings.TESTS):
             translation.activate(language=django_settings.LANGUAGE_CODE)
             super().tear_down()
 
+        def run_test_domain_without_language_code_redirects_permanently_to_www_page(self, http_host):
+            """
+            Asserts the given domain of the site without a language code redirects permanently (301) to the "www" page.
+
+            :param http_host: Required. The HTTP host.
+            :type http_host: str
+            """
+            client = self.client_class(HTTP_HOST=http_host)
+            r = client.get(path='/')
+            self.assertEqual(first=r.status_code, second=301)
+            self.assertEqual(first=r['Location'], second=self.www_page_url)
+
         def run_test_language_domain_is_served_in_language(self, language_code):
             """
             Asserts the domain of the site with the given language code is served in that language (with the main page template) and not with the "www" welcome page.
@@ -189,20 +201,14 @@ if (django_settings.TESTS):
             Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
             """
             http_host = "1.{domain}".format(domain=self.site.domain)
-            client = self.client_class(HTTP_HOST=http_host)
-            r = client.get(path='/')
-            self.assertEqual(first=r.status_code, second=301)
-            self.assertEqual(first=r['Location'], second=self.www_page_url)
+            self.run_test_domain_without_language_code_redirects_permanently_to_www_page(http_host=http_host)
 
         def test_domain_without_language_code_redirects_permanently_to_www_page_2(self):
             """
             Asserts the domain of the site without a language code redirects permanently (301) to the "www" page.
             """
             http_host = "{labels}.{domain}".format(labels=".".join([str(i) for i in range(1, random.randint(2, 6) + 1)]), domain=self.site.domain)
-            client = self.client_class(HTTP_HOST=http_host)
-            r = client.get(path='/')
-            self.assertEqual(first=r.status_code, second=301)
-            self.assertEqual(first=r['Location'], second=self.www_page_url)
+            self.run_test_domain_without_language_code_redirects_permanently_to_www_page(http_host=http_host)
 
         def test_english_domain_is_served_in_english(self):
             """
