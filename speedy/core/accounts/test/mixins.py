@@ -178,6 +178,33 @@ if (django_settings.TESTS):
             self.assertListEqual(list1=field_name_localized_list, list2=['first_name_en', 'first_name_fr', 'first_name_de', 'first_name_es', 'first_name_pt', 'first_name_it', 'first_name_nl', 'first_name_ja', 'first_name_ru', 'first_name_zh', 'first_name_pl', 'first_name_fa', 'first_name_he', 'first_name_ko', 'first_name_ar', 'first_name_id', 'first_name_uk', 'first_name_tr', 'first_name_vi', 'first_name_cs', 'first_name_sv', 'first_name_fi', 'first_name_hu', 'first_name_th', 'first_name_el', 'first_name_ms', 'first_name_sr', 'first_name_ro', 'first_name_bn', 'first_name_ca', 'first_name_no', 'first_name_bg', 'first_name_da', 'first_name_sk', 'first_name_hi', 'first_name_et', 'first_name_hr', 'first_name_az', 'first_name_zh_yue', 'first_name_lt', 'first_name_sl', 'first_name_eu', 'first_name_hy', 'first_name_uz', 'first_name_ta', 'first_name_lv', 'last_name_en', 'last_name_fr', 'last_name_de', 'last_name_es', 'last_name_pt', 'last_name_it', 'last_name_nl', 'last_name_ja', 'last_name_ru', 'last_name_zh', 'last_name_pl', 'last_name_fa', 'last_name_he', 'last_name_ko', 'last_name_ar', 'last_name_id', 'last_name_uk', 'last_name_tr', 'last_name_vi', 'last_name_cs', 'last_name_sv', 'last_name_fi', 'last_name_hu', 'last_name_th', 'last_name_el', 'last_name_ms', 'last_name_sr', 'last_name_ro', 'last_name_bn', 'last_name_ca', 'last_name_no', 'last_name_bg', 'last_name_da', 'last_name_sk', 'last_name_hi', 'last_name_et', 'last_name_hr', 'last_name_az', 'last_name_zh_yue', 'last_name_lt', 'last_name_sl', 'last_name_eu', 'last_name_hy', 'last_name_uz', 'last_name_ta', 'last_name_lv'])
 
 
+    class SpeedyCoreAccountsUserEmailAddressModelsMixin(TestCaseMixin):
+        """
+        Mixin providing assertions for the user email address views tests, where self.user is the logged in user and self.random_choice is the user's randomly chosen activation state.
+        """
+
+        def run_test_user_cannot_change_email_address(self, path):
+            """
+            Asserts posting to the given email address URL is forbidden (403), and model counts are unchanged.
+            """
+            r = self.client.post(path=path)
+            self.assertEqual(first=r.status_code, second=403)
+            self.assert_models_count(
+                entity_count=2,
+                user_count=2,
+                user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                unconfirmed_email_address_count=2,
+            )
+            self.assert_user_email_addresses_count(
+                user=self.user,
+                user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                user_primary_email_addresses_count=1,
+                user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
+                user_unconfirmed_email_addresses_count=1,
+            )
+
+
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         """
         Mixin providing per-language speedy.core.accounts validation error messages and errors dicts for tests, localized according to self.language_code.

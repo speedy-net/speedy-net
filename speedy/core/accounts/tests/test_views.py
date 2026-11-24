@@ -18,7 +18,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_random_user_password
-        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsUserEmailAddressModelsMixin, SpeedyCoreAccountsLanguageMixin
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
@@ -5380,7 +5380,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+        class DeleteUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsUserEmailAddressModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the delete email address view: access rules, protecting the primary and only-confirmed addresses from deletion, successful deletion, and the ORM-level protection against bulk queryset deletion.
             """
@@ -5423,45 +5423,24 @@ if (django_settings.TESTS):
                     user_unconfirmed_email_addresses_count=1,
                 )
 
-            def run_test_user_cannot_delete_email_address(self, path):
-                """
-                Asserts posting to the given delete URL is forbidden (403), and model counts are unchanged.
-                """
-                r = self.client.post(path=path)
-                self.assertEqual(first=r.status_code, second=403)
-                self.assert_models_count(
-                    entity_count=2,
-                    user_count=2,
-                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    unconfirmed_email_address_count=2,
-                )
-                self.assert_user_email_addresses_count(
-                    user=self.user,
-                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    user_unconfirmed_email_addresses_count=1,
-                )
-
             def test_visitor_has_no_access(self):
                 """
                 Asserts a logged-out visitor is forbidden (403) from deleting an email address, and model counts are unchanged.
                 """
                 self.client.logout()
-                self.run_test_user_cannot_delete_email_address(path=self.confirmed_email_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.confirmed_email_address_url)
 
             def test_user_has_no_access_to_other_users_address(self):
                 """
                 Asserts a user is forbidden (403) from deleting another user's email address, and model counts are unchanged.
                 """
-                self.run_test_user_cannot_delete_email_address(path=self.other_user_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.other_user_address_url)
 
             def test_user_cannot_delete_primary_email_address(self):
                 """
                 Asserts a user cannot delete his primary email address, and model counts are unchanged.
                 """
-                self.run_test_user_cannot_delete_email_address(path=self.primary_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.primary_address_url)
 
             def test_user_cannot_delete_only_confirmed_email_address(self):
                 """
@@ -5683,7 +5662,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+        class SetPrimaryUserEmailAddressViewTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsUserEmailAddressModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the set primary email address view: access rules, protecting unconfirmed addresses from becoming primary, and successfully making a confirmed address primary.
             """
@@ -5727,45 +5706,24 @@ if (django_settings.TESTS):
                     user_unconfirmed_email_addresses_count=1,
                 )
 
-            def run_test_user_cannot_set_email_address_as_primary(self, path):
-                """
-                Asserts posting to the given set-primary URL is forbidden (403), and model counts are unchanged.
-                """
-                r = self.client.post(path=path)
-                self.assertEqual(first=r.status_code, second=403)
-                self.assert_models_count(
-                    entity_count=2,
-                    user_count=2,
-                    user_email_address_count=4 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    confirmed_email_address_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    unconfirmed_email_address_count=2,
-                )
-                self.assert_user_email_addresses_count(
-                    user=self.user,
-                    user_email_addresses_count=3 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=2 + {"1": 1, "2": 0, "3": 1}[str(self.random_choice)],
-                    user_unconfirmed_email_addresses_count=1,
-                )
-
             def test_visitor_has_no_access(self):
                 """
                 Asserts a logged-out visitor is forbidden (403) from setting an email address as primary, and model counts are unchanged.
                 """
                 self.client.logout()
-                self.run_test_user_cannot_set_email_address_as_primary(path=self.confirmed_email_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.confirmed_email_address_url)
 
             def test_user_has_no_access_to_other_users_address(self):
                 """
                 Asserts a user is forbidden (403) from setting another user's email address as primary, and model counts are unchanged.
                 """
-                self.run_test_user_cannot_set_email_address_as_primary(path=self.other_user_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.other_user_address_url)
 
             def test_user_cannot_make_unconfirmed_email_address_primary(self):
                 """
                 Asserts a user cannot make an unconfirmed email address his primary address, and model counts are unchanged.
                 """
-                self.run_test_user_cannot_set_email_address_as_primary(path=self.unconfirmed_email_address_url)
+                self.run_test_user_cannot_change_email_address(path=self.unconfirmed_email_address_url)
 
             def test_user_can_make_confirmed_email_address_primary(self):
                 """
