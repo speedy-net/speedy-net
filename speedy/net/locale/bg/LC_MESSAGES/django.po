@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-11-24 05:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Invalid password."
 msgstr "Невалидна парола."
 
-#: .\accounts\forms.py:68 .\accounts\tests\test_views.py:270
+#: .\accounts\forms.py:68 .\accounts\tests\test_views.py:224
 #: .\accounts\views.py:149
 msgid "Yes. Delete my account."
 msgstr "Да. Изтрий акаунта ми."
@@ -198,14 +198,23 @@ msgid ""
 "people from all countries and ages (no age limit!). The site is vegan and "
 "vegetarian friendly. It is currently available in %(languages_num)s "
 "languages."
-msgstr "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">Speedy Net</a> е нова социална мрежа. Със Speedy Net можете да общувате с приятелите си. Speedy Net е отворен за безплатна регистрация за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за вегани и вегетарианци. В момента е достъпен на %(languages_num)s езика."
+msgstr ""
+"<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy "
+"Net\">Speedy Net</a> е нова социална мрежа. Със Speedy Net можете да "
+"общувате с приятелите си. Speedy Net е отворен за безплатна регистрация за "
+"хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е "
+"подходящ за вегани и вегетарианци. В момента е достъпен на %(languages_num)s "
+"езика."
 
 #: .\templates\about\about.html:19
 msgid ""
 "The founders of Speedy Net are vegan, support animal rights and object to "
 "experiments on animals. Speedy Net is a social network friendly for vegan "
 "and vegetarian people and animals."
-msgstr "Основателите на Speedy Net са вегани, подкрепят правата на животните и се противопоставят на опитите върху животни. Speedy Net е социална мрежа, подходяща за хора и животни вегани и вегетарианци."
+msgstr ""
+"Основателите на Speedy Net са вегани, подкрепят правата на животните и се "
+"противопоставят на опитите върху животни. Speedy Net е социална мрежа, "
+"подходяща за хора и животни вегани и вегетарианци."
 
 #: .\templates\about\about.html:21
 msgid ""
@@ -213,7 +222,11 @@ msgid ""
 "you to add as friends only people you know personally. You can select which "
 "details will appear on your profile as public, which details only to friends "
 "and which details will be private. Private details will appear only to you."
-msgstr "Решихме да ограничим броя на приятелите в Speedy Net до 800. Съветваме ви да добавяте като приятели само хора, които познавате лично. Можете да изберете кои подробности ще се показват в профила ви като публични, кои само за приятели и кои ще бъдат лични. Личните данни ще се показват само на вас."
+msgstr ""
+"Решихме да ограничим броя на приятелите в Speedy Net до 800. Съветваме ви да "
+"добавяте като приятели само хора, които познавате лично. Можете да изберете "
+"кои подробности ще се показват в профила ви като публични, кои само за "
+"приятели и кои ще бъдат лични. Личните данни ще се показват само на вас."
 
 #: .\templates\about\about.html:23 .\templates\main\main_page.html:15
 #, python-format
@@ -251,7 +264,11 @@ msgid ""
 "Speedy Net is named after <a href=\"https://www.facebook.com/speedy.the."
 "female.dog\" title=\"Speedy\">Speedy</a>, a female dog that was with us for "
 "many years and died in 2003. Speedy gave birth to 7 puppies in 1988."
-msgstr "Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female.dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в продължение на много години и умря през 2003 г. Speedy роди 7 кученца през 1988 г."
+msgstr ""
+"Speedy Net е кръстен на <a href=\"https://www.facebook.com/speedy.the.female."
+"dog\" title=\"Speedy\">Speedy</a>, женско куче, което беше с нас в "
+"продължение на много години и умря през 2003 г. Speedy роди 7 кученца през "
+"1988 г."
 
 #: .\templates\about\about.html:31
 msgid "Speedy Net is currently in alpha. It was launched in June 2012."
@@ -288,7 +305,9 @@ msgstr "Моля, потвърдете своя имейл адрес."
 
 #: .\templates\accounts\edit_profile\activate.html:22
 msgid "Your Speedy Net account is not active. Enter this page to activate it."
-msgstr "Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го активирате."
+msgstr ""
+"Вашият акаунт в Speedy Net не е активен. Влезте в тази страница, за да го "
+"активирате."
 
 #: .\templates\accounts\edit_profile\base.html:9
 msgid "Blocked Users"
@@ -312,7 +331,11 @@ msgid ""
 "your friends. Speedy Net is open to free registration for people from all "
 "countries and ages (no age limit!). The site is vegan and vegetarian "
 "friendly."
-msgstr "Speedy Net е нова социална мрежа. Със Speedy Net можете да общувате с приятелите си. Speedy Net е отворен за безплатна регистрация за хора от всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за вегани и вегетарианци."
+msgstr ""
+"Speedy Net е нова социална мрежа. Със Speedy Net можете да общувате с "
+"приятелите си. Speedy Net е отворен за безплатна регистрация за хора от "
+"всички страни и възрасти (без възрастово ограничение!). Сайтът е подходящ за "
+"вегани и вегетарианци."
 
 #: .\templates\main\main_page.html:17
 msgid ""

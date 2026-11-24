@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-22 00:49+0200\n"
+"POT-Creation-Date: 2026-11-24 05:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2626,19 +2626,19 @@ msgstr "comentaris"
 msgid "feedbacks"
 msgstr "comentaris"
 
-#: .\friends\views.py:327
+#: .\friends\views.py:342
 msgid "Friendship request sent."
 msgstr "S'ha enviat una sol·licitud d'amistat."
 
-#: .\friends\views.py:351
+#: .\friends\views.py:366
 msgid "No friendship request."
 msgstr "Cap sol·licitud d'amistat."
 
-#: .\friends\views.py:421
+#: .\friends\views.py:436
 msgid "Friendship request accepted."
 msgstr "S'ha acceptat la sol·licitud d'amistat."
 
-#: .\friends\views.py:448
+#: .\friends\views.py:463
 msgid "Friendship request rejected."
 msgstr "S'ha rebutjat la sol·licitud d'amistat."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:38+0300\n"
+"POT-Creation-Date: 2026-11-24 05:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Invalid password."
 msgstr "密碼無效。"
 
-#: .\accounts\forms.py:68 .\accounts\tests\test_views.py:270
+#: .\accounts\forms.py:68 .\accounts\tests\test_views.py:224
 #: .\accounts\views.py:149
 msgid "Yes. Delete my account."
 msgstr "是的，請刪除我的帳號。"
@@ -192,9 +192,9 @@ msgid ""
 msgstr ""
 "<a href=\"https://%(language_code)s.speedy.net/\" title=\"Speedy Net\">速網</"
 "a> Speedy Net 是一個全新的社群網路。透過 Speedy Net，您可以與朋友交流。 "
-"Speedy Net 向所有國家和地區、所有年齡段的使用者免費開放註冊（沒有年齡限制！）。"
-"該網站對素食主義者和純素食主義者友好。目前可在以下地區使用：%(languages_num)s"
-"語言。"
+"Speedy Net 向所有國家和地區、所有年齡段的使用者免費開放註冊（沒有年齡限"
+"制！）。該網站對素食主義者和純素食主義者友好。目前可在以下地區使用："
+"%(languages_num)s語言。"
 
 #: .\templates\about\about.html:19
 msgid ""
@@ -315,8 +315,8 @@ msgid ""
 "friendly."
 msgstr ""
 "Speedy Net是一個全新的社群網路。透過Speedy Net，您可以與朋友交流。 Speedy Net"
-"針對所有國家和地區的使用者免費開放註冊（無年齡限制！）。該網站對素食主義者和純"
-"素食主義者友好。"
+"針對所有國家和地區的使用者免費開放註冊（無年齡限制！）。該網站對素食主義者和"
+"純素食主義者友好。"
 
 #: .\templates\main\main_page.html:17
 msgid ""
