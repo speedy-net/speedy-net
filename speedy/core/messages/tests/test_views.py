@@ -280,6 +280,9 @@ if (django_settings.TESTS):
             def run_test_user_can_submit_the_form_and_other_user_gets_notified_on_message(self, text):
                 """
                 Asserts submitting the compose form with the given text creates the message and private chat, redirects to the chat page, and sends one notification email to the recipient with the site-specific subject.
+
+                :param text: The text of the message submitted in the compose form.
+                :type text: str
                 """
                 self.assert_models_count(
                     entity_count=2,

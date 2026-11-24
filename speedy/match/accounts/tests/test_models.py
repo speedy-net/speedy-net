@@ -1767,6 +1767,15 @@ if (django_settings.TESTS):
             def run_test_matching_ranks(self, user_1, user_2, expected_rank_1, expected_rank_2):
                 """
                 Saves both users, and asserts the matching rank of each user with the other user's profile is the expected rank.
+
+                :param user_1: The first user.
+                :type user_1: speedy.core.accounts.models.User
+                :param user_2: The second user.
+                :type user_2: speedy.core.accounts.models.User
+                :param expected_rank_1: The expected matching rank of the first user with the second user's profile.
+                :type expected_rank_1: int
+                :param expected_rank_2: The expected matching rank of the second user with the first user's profile.
+                :type expected_rank_2: int
                 """
                 user_1.save_user_and_profile()
                 user_2.save_user_and_profile()

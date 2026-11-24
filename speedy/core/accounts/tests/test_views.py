@@ -3040,6 +3040,9 @@ if (django_settings.TESTS):
             def run_test_user_has_saved_settings(self, expected_date_of_birth):
                 """
                 Asserts the saved user has the posted names in all languages, the posted data, and the expected date of birth.
+
+                :param expected_date_of_birth: The date of birth the saved user is expected to have.
+                :type expected_date_of_birth: datetime.date
                 """
                 user = User.objects.get(pk=self.user.pk)
                 self.assertEqual(first=user.first_name, second=self.first_name)
@@ -4338,6 +4341,9 @@ if (django_settings.TESTS):
             def run_test_inactive_user_can_request_activation(self, speedy_match_profile_is_active):
                 """
                 Asserts posting to the page activates the user and the Speedy Net profile, redirects, and sets the Speedy Match profile activation state to the given value. Skipped on Speedy Match.
+
+                :param speedy_match_profile_is_active: The expected activation state of the user's Speedy Match profile after the activation.
+                :type speedy_match_profile_is_active: bool
                 """
                 if (django_settings.SITE_ID == django_settings.SPEEDY_NET_SITE_ID):
                     r = self.client.post(path=self.page_url)

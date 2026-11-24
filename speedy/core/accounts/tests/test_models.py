@@ -3193,6 +3193,11 @@ if (django_settings.TESTS):
             def run_test_non_unique_confirmed_email_address(self, existing_email, new_email):
                 """
                 Asserts that adding an email address (or a case variant of it) that is already confirmed by another user raises a ValidationError and doesn't create a new email address for the new user.
+
+                :param existing_email: The email address of the existing user.
+                :type existing_email: str
+                :param new_email: The email address the new user adds.
+                :type new_email: str
                 """
                 existing_user = DefaultUserFactory()
                 existing_user_email = UserEmailAddressFactory(user=existing_user, email=existing_email, is_confirmed=True)

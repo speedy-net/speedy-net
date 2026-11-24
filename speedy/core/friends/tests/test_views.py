@@ -665,6 +665,9 @@ if (django_settings.TESTS):
             def run_test_user_that_has_received_request_can_accept_it_if_not_maximum(self, user_with_almost_maximum_friends):
                 """
                 Asserts the receiving user can accept the friendship request when the given user (the receiving user or the sender) has fewer than the maximum allowed friends, becoming friends and seeing a success message.
+
+                :param user_with_almost_maximum_friends: The user (the receiving user or the sender) who is given one fewer than the maximum allowed number of friends before the request is accepted.
+                :type user_with_almost_maximum_friends: speedy.core.accounts.models.User
                 """
                 self.assertEqual(first=User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED, second=4)
                 for i in range(User.settings.MAX_NUMBER_OF_FRIENDS_ALLOWED - 1):
