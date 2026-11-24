@@ -277,6 +277,57 @@ if (django_settings.TESTS):
                     'text': 'Hi Hi Hi',
                 }
 
+            def run_test_user_can_submit_the_form_and_other_user_gets_notified_on_message(self, text):
+                """
+                Asserts submitting the compose form with the given text creates the message and private chat, redirects to the chat page, and sends one notification email to the recipient with the site-specific subject.
+                """
+                self.assert_models_count(
+                    entity_count=2,
+                    user_count=2,
+                    user_email_address_count=2,
+                    confirmed_email_address_count=2,
+                    unconfirmed_email_address_count=0,
+                )
+                self.user_1 = User.objects.get(pk=self.user_1.pk)
+                self.assert_user_email_addresses_count(
+                    user=self.user_1,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=1,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                self.user_2 = User.objects.get(pk=self.user_2.pk)
+                self.assert_user_email_addresses_count(
+                    user=self.user_2,
+                    user_email_addresses_count=1,
+                    user_primary_email_addresses_count=1,
+                    user_confirmed_email_addresses_count=1,
+                    user_unconfirmed_email_addresses_count=0,
+                )
+                self.assertEqual(first=len(mail.outbox), second=0)
+                self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
+                self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_ON)
+                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
+                self.assertEqual(first=Message.objects.count(), second=0)
+                data = self.data.copy()
+                data['text'] = text
+                r = self.client.post(path=self.page_url, data=data)
+                self.assertEqual(first=Message.objects.count(), second=1)
+                message = Message.objects.latest()
+                chat = message.chat
+                self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user_1)), status_code=302, target_status_code=200)
+                self.assertEqual(first=message.text, second=text)
+                self.assertEqual(first=message.sender.id, second=self.user_1.id)
+                self.assertEqual(first=chat.last_message, second=message)
+                self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
+                self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
+                self.assertIs(expr1=chat.is_private, expr2=True)
+                self.assertEqual(first=len(mail.outbox), second=1)
+                self.assertEqual(first=mail.outbox[0].subject, second={
+                    django_settings.SPEEDY_NET_SITE_ID: self._you_have_a_new_message_on_speedy_net_subject,
+                    django_settings.SPEEDY_MATCH_SITE_ID: self._you_have_a_new_message_on_speedy_match_subject,
+                }[self.site.id])
+
             def test_visitor_has_no_access(self):
                 """
                 Asserts a logged-out visitor is redirected to the login page on both GET and POST requests.
@@ -319,101 +370,13 @@ if (django_settings.TESTS):
                 """
                 Asserts submitting the compose form creates a message and private chat, redirects to the chat page, and sends one notification email to the recipient with the site-specific subject.
                 """
-                self.assert_models_count(
-                    entity_count=2,
-                    user_count=2,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
-                    unconfirmed_email_address_count=0,
-                )
-                self.user_1 = User.objects.get(pk=self.user_1.pk)
-                self.assert_user_email_addresses_count(
-                    user=self.user_1,
-                    user_email_addresses_count=1,
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=1,
-                    user_unconfirmed_email_addresses_count=0,
-                )
-                self.user_2 = User.objects.get(pk=self.user_2.pk)
-                self.assert_user_email_addresses_count(
-                    user=self.user_2,
-                    user_email_addresses_count=1,
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=1,
-                    user_unconfirmed_email_addresses_count=0,
-                )
-                self.assertEqual(first=len(mail.outbox), second=0)
-                self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
-                self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_ON)
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
-                self.assertEqual(first=Message.objects.count(), second=0)
-                r = self.client.post(path=self.page_url, data=self.data)
-                self.assertEqual(first=Message.objects.count(), second=1)
-                message = Message.objects.latest()
-                chat = message.chat
-                self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user_1)), status_code=302, target_status_code=200)
-                self.assertEqual(first=message.text, second='Hi Hi Hi')
-                self.assertEqual(first=message.sender.id, second=self.user_1.id)
-                self.assertEqual(first=chat.last_message, second=message)
-                self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
-                self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
-                self.assertIs(expr1=chat.is_private, expr2=True)
-                self.assertEqual(first=len(mail.outbox), second=1)
-                self.assertEqual(first=mail.outbox[0].subject, second={
-                    django_settings.SPEEDY_NET_SITE_ID: self._you_have_a_new_message_on_speedy_net_subject,
-                    django_settings.SPEEDY_MATCH_SITE_ID: self._you_have_a_new_message_on_speedy_match_subject,
-                }[self.site.id])
+                self.run_test_user_can_submit_the_form_and_other_user_gets_notified_on_message(text='Hi Hi Hi')
 
             def test_user_can_submit_the_form_and_other_user_gets_notified_on_message_2(self):
                 """
                 Asserts submitting the compose form with the maximum allowed length text (50000 characters) still creates the message and private chat, redirects to the chat page, and sends one notification email to the recipient.
                 """
-                self.assert_models_count(
-                    entity_count=2,
-                    user_count=2,
-                    user_email_address_count=2,
-                    confirmed_email_address_count=2,
-                    unconfirmed_email_address_count=0,
-                )
-                self.user_1 = User.objects.get(pk=self.user_1.pk)
-                self.assert_user_email_addresses_count(
-                    user=self.user_1,
-                    user_email_addresses_count=1,
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=1,
-                    user_unconfirmed_email_addresses_count=0,
-                )
-                self.user_2 = User.objects.get(pk=self.user_2.pk)
-                self.assert_user_email_addresses_count(
-                    user=self.user_2,
-                    user_email_addresses_count=1,
-                    user_primary_email_addresses_count=1,
-                    user_confirmed_email_addresses_count=1,
-                    user_unconfirmed_email_addresses_count=0,
-                )
-                self.assertEqual(first=len(mail.outbox), second=0)
-                self.assertEqual(first=self.user_1.notify_on_message, second=User.NOTIFICATIONS_ON)
-                self.assertEqual(first=self.user_2.notify_on_message, second=User.NOTIFICATIONS_ON)
-                self.client.login(username=self.user_1.slug, password=tests_settings.USER_PASSWORD)
-                self.assertEqual(first=Message.objects.count(), second=0)
-                data = self.data.copy()
-                data['text'] = "a" * 50000
-                r = self.client.post(path=self.page_url, data=data)
-                self.assertEqual(first=Message.objects.count(), second=1)
-                message = Message.objects.latest()
-                chat = message.chat
-                self.assertRedirects(response=r, expected_url='/messages/{}/'.format(chat.get_slug(current_user=self.user_1)), status_code=302, target_status_code=200)
-                self.assertEqual(first=message.text, second="a" * 50000)
-                self.assertEqual(first=message.sender.id, second=self.user_1.id)
-                self.assertEqual(first=chat.last_message, second=message)
-                self.assertEqual(first=chat.ent1.id, second=self.user_1.id)
-                self.assertEqual(first=chat.ent2.id, second=self.user_2.id)
-                self.assertIs(expr1=chat.is_private, expr2=True)
-                self.assertEqual(first=len(mail.outbox), second=1)
-                self.assertEqual(first=mail.outbox[0].subject, second={
-                    django_settings.SPEEDY_NET_SITE_ID: self._you_have_a_new_message_on_speedy_net_subject,
-                    django_settings.SPEEDY_MATCH_SITE_ID: self._you_have_a_new_message_on_speedy_match_subject,
-                }[self.site.id])
+                self.run_test_user_can_submit_the_form_and_other_user_gets_notified_on_message(text="a" * 50000)
 
             def test_user_can_submit_the_form_and_other_user_doesnt_get_notified_on_message(self):
                 """
