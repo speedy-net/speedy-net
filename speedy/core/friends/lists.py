@@ -45,6 +45,12 @@ class SiteFriendsList(object):
         self._ids = ids
 
     def __len__(self):
+        """
+        Return the number of the friendships in the list, without loading any of them.
+
+        :return: The number of friendships.
+        :rtype: int
+        """
         return len(self._ids)
 
     def __getitem__(self, item):
@@ -61,6 +67,12 @@ class SiteFriendsList(object):
         return self._load(ids=[self._ids[item]])[0]
 
     def __iter__(self):
+        """
+        Return an iterator over all the friendships in the list, loading them from the database.
+
+        :return: An iterator over the friendships.
+        :rtype: collections.abc.Iterator[speedy.core.friends.models.Friend]
+        """
         return iter(self._load(ids=self._ids))
 
     def random_sample(self, count):
