@@ -18,7 +18,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.mixins import TestCaseMixin
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
-        from speedy.core.friends.test.mixins import SpeedyCoreFriendsLanguageMixin
+        from speedy.core.friends.test.mixins import SpeedyCoreFriendsModelsMixin, SpeedyCoreFriendsLanguageMixin
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
@@ -200,7 +200,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=r.status_code, second=403)
 
 
-        class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
+        class UserFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsModelsMixin, SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests sending a friendship request, run once per supported language via the AllMainLanguages subclasses below.
             """
@@ -220,9 +220,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a logged-out visitor is redirected to the login page when trying to send a friendship request.
                 """
-                self.client.logout()
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+                self.run_test_visitor_cannot_post_friendship_request()
                 self.assertIsNone(obj=r.context)
 
             def test_user_can_send_friendship_request(self):
@@ -492,7 +490,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class CancelFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
+        class CancelFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsModelsMixin, SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests cancelling a friendship request, run once per supported language via the AllMainLanguages subclasses below.
             """
@@ -511,9 +509,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a logged-out visitor is redirected to the login page when trying to cancel a friendship request.
                 """
-                self.client.logout()
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+                self.run_test_visitor_cannot_post_friendship_request()
                 self.assertIsNone(obj=r.context)
 
             def test_user_can_cancel_friendship_request(self):
@@ -650,7 +646,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class AcceptFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
+        class AcceptFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsModelsMixin, SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests accepting a friendship request, run once per supported language via the AllMainLanguages subclasses below.
             """
@@ -670,9 +666,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a logged-out visitor is redirected to the login page when trying to accept a friendship request.
                 """
-                self.client.logout()
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+                self.run_test_visitor_cannot_post_friendship_request()
                 self.assertIsNone(obj=r.context)
 
             def test_user_cannot_accept_friendship_request_they_sent_another_user(self):
@@ -899,7 +893,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class RejectFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
+        class RejectFriendshipRequestViewTestCaseMixin(SpeedyCoreFriendsModelsMixin, SpeedyCoreFriendsLanguageMixin, TestCaseMixin):
             """
             Mixin that tests rejecting a friendship request, run once per supported language via the AllMainLanguages subclasses below.
             """
@@ -919,9 +913,7 @@ if (django_settings.TESTS):
                 """
                 Asserts a logged-out visitor is redirected to the login page when trying to reject a friendship request.
                 """
-                self.client.logout()
-                r = self.client.post(path=self.page_url)
-                self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+                self.run_test_visitor_cannot_post_friendship_request()
                 self.assertIsNone(obj=r.context)
 
             def test_user_cannot_reject_friendship_request_they_sent_another_user(self):

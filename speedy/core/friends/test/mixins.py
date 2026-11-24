@@ -9,6 +9,20 @@ if (django_settings.TESTS):
     from speedy.core.accounts.models import User
 
 
+    class SpeedyCoreFriendsModelsMixin(TestCaseMixin):
+        """
+        Mixin providing shared friendship-request test helpers for friends tests.
+        """
+
+        def run_test_visitor_cannot_post_friendship_request(self):
+            """
+            Asserts a logged-out visitor posting to the page URL is redirected to the login page.
+            """
+            self.client.logout()
+            r = self.client.post(path=self.page_url)
+            self.assertRedirects(response=r, expected_url='/login/?next={}'.format(self.page_url), status_code=302, target_status_code=200)
+
+
     class SpeedyCoreFriendsLanguageMixin(TestCaseMixin):
         """
         Mixin providing language-dependent, gender-aware success and error messages for friends tests, in all supported languages.
