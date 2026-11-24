@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings
-        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsSlugModelsMixin, SpeedyCoreAccountsLanguageMixin
         from speedy.core.accounts.test.user_factories import DefaultUserFactory, InactiveUserFactory, SpeedyNetInactiveUserFactory, ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
 
@@ -869,7 +869,7 @@ if (django_settings.TESTS):
                 self.assertEqual(first=self.language_code, second='he')
 
 
-        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
+        class UserTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsSlugModelsMixin, SpeedyMatchAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, SpeedyMatchAccountsLanguageMixin, TestCaseMixin):
             """
             Tests the User model's validations and behavior, such as required fields, slug/username/id generation, password handling, and concurrency protection.
             """
@@ -1573,22 +1573,14 @@ if (django_settings.TESTS):
                 """
                 Asserts that with the default MIN_SLUG_LENGTH, all slugs in SLUGS_TO_TEST_LIST that meet the minimum length are saved successfully.
                 """
-                self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
-                test_settings = {
-                    "expected_counts_tuple": (8, 0),
-                }
-                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+                self.run_test_slug_and_username_min_length_ok()
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
             def test_slug_min_length_fail_username_min_length_ok(self):
                 """
                 Asserts that with an overridden, larger MIN_SLUG_LENGTH, only slugs in SLUGS_TO_TEST_LIST that meet the new minimum are saved successfully, and the rest fail.
                 """
-                self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
-                test_settings = {
-                    "expected_counts_tuple": (4, 4),
-                }
-                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+                self.run_test_slug_min_length_fail_username_min_length_ok()
 
             def test_slug_and_username_max_length_fail(self):
                 """

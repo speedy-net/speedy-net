@@ -14,7 +14,7 @@ if (django_settings.TESTS):
         from speedy.core.base.test.models import SiteTestCase
         from speedy.core.base.test.decorators import only_on_sites_with_login
         from speedy.core.base.test.utils import get_django_settings_class_with_override_settings, get_random_user_password
-        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin
+        from speedy.core.accounts.test.mixins import SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsSlugModelsMixin, SpeedyCoreAccountsLanguageMixin
 
         from speedy.core.accounts.test.user_factories import ActiveUserFactory
         from speedy.core.accounts.test.user_email_address_factories import UserEmailAddressFactory
@@ -24,7 +24,7 @@ if (django_settings.TESTS):
         from speedy.core.accounts.forms import RegistrationForm, PasswordResetForm, SiteProfileDeactivationForm
 
 
-        class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
+        class RegistrationFormTestCaseMixin(SpeedyCoreAccountsModelsMixin, SpeedyCoreAccountsSlugModelsMixin, SpeedyCoreAccountsLanguageMixin, TestCaseMixin):
             """
             Test mixin for the registration form, covering slug/username normalization, validation and required fields, duplicate emails, and invalid dates of birth.
             """
@@ -576,22 +576,14 @@ if (django_settings.TESTS):
                 """
                 Verify the default minimum slug length is 6 and running all the test slugs yields the expected success/failure counts.
                 """
-                self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
-                test_settings = {
-                    "expected_counts_tuple": (8, 0),
-                }
-                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+                self.run_test_slug_and_username_min_length_ok()
 
             @override_settings(USER_SETTINGS=get_django_settings_class_with_override_settings(django_settings_class=django_settings.USER_SETTINGS, MIN_SLUG_LENGTH=tests_settings.OVERRIDE_USER_SETTINGS.MIN_SLUG_LENGTH))
             def test_slug_min_length_fail_username_min_length_ok(self):
                 """
                 With an overridden higher minimum slug length, verify running all the test slugs yields the expected success/failure counts.
                 """
-                self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
-                test_settings = {
-                    "expected_counts_tuple": (4, 4),
-                }
-                self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+                self.run_test_slug_min_length_fail_username_min_length_ok()
 
             def test_slug_validation_fails_with_username_too_long(self):
                 """

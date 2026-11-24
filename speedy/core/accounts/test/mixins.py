@@ -205,6 +205,31 @@ if (django_settings.TESTS):
             )
 
 
+    class SpeedyCoreAccountsSlugModelsMixin(TestCaseMixin):
+        """
+        Mixin providing the slug and username minimum length tests, which are shared by the tests of the forms and the models. The class using it defines run_test_all_slugs_to_test_list.
+        """
+
+        def run_test_slug_and_username_min_length_ok(self):
+            """
+            Verify the default minimum slug length is 6 and running all the test slugs yields the expected success/failure counts.
+            """
+            self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=6)
+            test_settings = {
+                "expected_counts_tuple": (8, 0),
+            }
+            self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+
+        def run_test_slug_min_length_fail_username_min_length_ok(self):
+            """
+            Verify that with an overridden higher minimum slug length (60), running all the test slugs yields the expected success/failure counts.
+            """
+            self.assertEqual(first=User.settings.MIN_SLUG_LENGTH, second=60)
+            test_settings = {
+                "expected_counts_tuple": (4, 4),
+            }
+            self.run_test_all_slugs_to_test_list(test_settings=test_settings)
+
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         """
         Mixin providing per-language speedy.core.accounts validation error messages and errors dicts for tests, localized according to self.language_code.
