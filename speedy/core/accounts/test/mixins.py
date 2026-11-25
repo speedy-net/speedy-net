@@ -233,6 +233,7 @@ if (django_settings.TESTS):
             }
             self.run_test_all_slugs_to_test_list(test_settings=test_settings)
 
+
     class SpeedyCoreAccountsLanguageMixin(SpeedyCoreBaseLanguageMixin, TestCaseMixin):
         """
         Mixin providing per-language speedy.core.accounts validation error messages and errors dicts for tests, localized according to self.language_code.
