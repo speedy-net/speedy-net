@@ -30,6 +30,7 @@ if (django_settings.TESTS):
             """
             A minimal Django test case combining SpeedyCoreAccountsModelsMixin's assertion helpers with django.test.TestCase, instantiated below so its assertion methods can be reused outside an actual test run (e.g. from factory post-generation hooks).
             """
+            pass
 
 
         _test_case_with_mixin = DjangoTestCaseWithMixin()
