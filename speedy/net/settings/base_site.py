@@ -51,12 +51,14 @@ ADMIN_USER_PROFILE_WIDGETS += [
 ]
 
 DISALLOWED_USER_AGENTS += [
-    re.compile(pattern=r'Version/16.0 Safari/605.1.15'),
-    re.compile(pattern=r'Version/15.6.1 Safari/605.1.15'),
-    re.compile(pattern=r'Firefox/135.0'),
-    re.compile(pattern=r'Firefox/133.0'),
-    re.compile(pattern=r'Firefox/120.0'),
-    re.compile(pattern=r'Chrome/124.0.6367.207 Safari/537.36'),
+    re.compile(pattern=r'Version/16\.0 Safari/605\.1\.15'),
+    re.compile(pattern=r'Version/15\.6\.1 Safari/605\.1\.15'),
+    re.compile(pattern=r'Firefox/135\.0'),
+    re.compile(pattern=r'Firefox/133\.0'),
+    re.compile(pattern=r'Firefox/120\.0'),
+    re.compile(pattern=r'Chrome/124\.0\.6367\.207 Safari/537\.36'),
+    re.compile(pattern=r'Chrome/1[0-3][0-9]\.[0-9.]+ Safari/537\.36'),
+    re.compile(pattern=r'Firefox/1[0-3][0-9]\.'),
 ]
 
 
